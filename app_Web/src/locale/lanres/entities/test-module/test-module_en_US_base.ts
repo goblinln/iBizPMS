@@ -161,6 +161,24 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
+		bugexp_treeview: {
+			nodata:commonLogic.appcommonhandle("",null),
+			nodes: {
+				'all': commonLogic.appcommonhandle("全部",null),
+				'root': commonLogic.appcommonhandle("默认根节点",null),
+			},
+			uiactions: {
+			},
+		},
+		caseexp_treeview: {
+			nodata:commonLogic.appcommonhandle("",null),
+			nodes: {
+				'all': commonLogic.appcommonhandle("全部",null),
+				'root': commonLogic.appcommonhandle("默认根节点",null),
+			},
+			uiactions: {
+			},
+		},
 		moduleexp_treeview: {
 			nodata:commonLogic.appcommonhandle("",null),
 			nodes: {

@@ -1,25 +1,19 @@
 import productplan_zh_CN from '@locale/lanres/entities/product-plan/product-plan_zh_CN';
 import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
-import projecttaskreport_zh_CN from '@locale/lanres/entities/project-task-report/project-task-report_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
 import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
 import productbranch_zh_CN from '@locale/lanres/entities/product-branch/product-branch_zh_CN';
-import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-task-estimate/project-task-estimate_zh_CN';
+import taskestimate_zh_CN from '@locale/lanres/entities/task-estimate/task-estimate_zh_CN';
 import story_zh_CN from '@locale/lanres/entities/story/story_zh_CN';
-import productbug_zh_CN from '@locale/lanres/entities/product-bug/product-bug_zh_CN';
 import project_zh_CN from '@locale/lanres/entities/project/project_zh_CN';
 import productmodule_zh_CN from '@locale/lanres/entities/product-module/product-module_zh_CN';
 import productteam_zh_CN from '@locale/lanres/entities/product-team/product-team_zh_CN';
-import projectbug_zh_CN from '@locale/lanres/entities/project-bug/project-bug_zh_CN';
 import productlife_zh_CN from '@locale/lanres/entities/product-life/product-life_zh_CN';
-import projectstory_zh_CN from '@locale/lanres/entities/project-story/project-story_zh_CN';
-import projecttask_zh_CN from '@locale/lanres/entities/project-task/project-task_zh_CN';
-import projectbuild_zh_CN from '@locale/lanres/entities/project-build/project-build_zh_CN';
-import projecttaskgantt_zh_CN from '@locale/lanres/entities/project-task-gantt/project-task-gantt_zh_CN';
-import productbuild_zh_CN from '@locale/lanres/entities/product-build/product-build_zh_CN';
+import task_zh_CN from '@locale/lanres/entities/task/task_zh_CN';
+import build_zh_CN from '@locale/lanres/entities/build/build_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/entities/project-team/project-team_zh_CN';
-import projecttesttask_zh_CN from '@locale/lanres/entities/project-test-task/project-test-task_zh_CN';
+import testtask_zh_CN from '@locale/lanres/entities/test-task/test-task_zh_CN';
 import bug_zh_CN from '@locale/lanres/entities/bug/bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
 import productproject_zh_CN from '@locale/lanres/entities/product-project/product-project_zh_CN';
@@ -430,25 +424,19 @@ function getAppLocale(){
             'productplan': productplan_zh_CN(),
             'testcase': testcase_zh_CN(),
             'product': product_zh_CN(),
-            'projecttaskreport': projecttaskreport_zh_CN(),
             'projectburn': projectburn_zh_CN(),
             'test': test_zh_CN(),
             'productbranch': productbranch_zh_CN(),
-            'projecttaskestimate': projecttaskestimate_zh_CN(),
+            'taskestimate': taskestimate_zh_CN(),
             'story': story_zh_CN(),
-            'productbug': productbug_zh_CN(),
             'project': project_zh_CN(),
             'productmodule': productmodule_zh_CN(),
             'productteam': productteam_zh_CN(),
-            'projectbug': projectbug_zh_CN(),
             'productlife': productlife_zh_CN(),
-            'projectstory': projectstory_zh_CN(),
-            'projecttask': projecttask_zh_CN(),
-            'projectbuild': projectbuild_zh_CN(),
-            'projecttaskgantt': projecttaskgantt_zh_CN(),
-            'productbuild': productbuild_zh_CN(),
+            'task': task_zh_CN(),
+            'build': build_zh_CN(),
             'projectteam': projectteam_zh_CN(),
-            'projecttesttask': projecttesttask_zh_CN(),
+            'testtask': testtask_zh_CN(),
             'bug': bug_zh_CN(),
             'projectmodule': projectmodule_zh_CN(),
             'productproject': productproject_zh_CN(),

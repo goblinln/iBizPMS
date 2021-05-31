@@ -44,15 +44,6 @@ export class GlobalService {
         return (await import('./product/product.service')).default.getInstance();
     }
     /**
-     * 项目任务管理服务
-     *
-     * @return {ProjectTaskReport}
-     * @memberof GlobalService
-     */
-    async getProjectTaskReportService() {
-        return (await import('./project-task-report/project-task-report.service')).default.getInstance();
-    }
-    /**
      * burn服务
      *
      * @return {ProjectBurn}
@@ -82,11 +73,11 @@ export class GlobalService {
     /**
      * 任务预计服务
      *
-     * @return {ProjectTaskEstimate}
+     * @return {TaskEstimate}
      * @memberof GlobalService
      */
-    async getProjectTaskEstimateService() {
-        return (await import('./project-task-estimate/project-task-estimate.service')).default.getInstance();
+    async getTaskEstimateService() {
+        return (await import('./task-estimate/task-estimate.service')).default.getInstance();
     }
     /**
      * 需求服务
@@ -96,15 +87,6 @@ export class GlobalService {
      */
     async getStoryService() {
         return (await import('./story/story.service')).default.getInstance();
-    }
-    /**
-     * 产品缺陷服务
-     *
-     * @return {ProductBug}
-     * @memberof GlobalService
-     */
-    async getProductBugService() {
-        return (await import('./product-bug/product-bug.service')).default.getInstance();
     }
     /**
      * 项目服务
@@ -134,15 +116,6 @@ export class GlobalService {
         return (await import('./product-team/product-team.service')).default.getInstance();
     }
     /**
-     * 项目BUG服务
-     *
-     * @return {ProjectBug}
-     * @memberof GlobalService
-     */
-    async getProjectBugService() {
-        return (await import('./project-bug/project-bug.service')).default.getInstance();
-    }
-    /**
      * 产品生命周期服务
      *
      * @return {ProductLife}
@@ -152,49 +125,22 @@ export class GlobalService {
         return (await import('./product-life/product-life.service')).default.getInstance();
     }
     /**
-     * 项目关联需求服务
-     *
-     * @return {ProjectStory}
-     * @memberof GlobalService
-     */
-    async getProjectStoryService() {
-        return (await import('./project-story/project-story.service')).default.getInstance();
-    }
-    /**
      * 任务服务
      *
-     * @return {ProjectTask}
+     * @return {Task}
      * @memberof GlobalService
      */
-    async getProjectTaskService() {
-        return (await import('./project-task/project-task.service')).default.getInstance();
+    async getTaskService() {
+        return (await import('./task/task.service')).default.getInstance();
     }
     /**
      * build服务
      *
-     * @return {ProjectBuild}
+     * @return {Build}
      * @memberof GlobalService
      */
-    async getProjectBuildService() {
-        return (await import('./project-build/project-build.service')).default.getInstance();
-    }
-    /**
-     * 项目甘特图服务
-     *
-     * @return {ProjectTaskGantt}
-     * @memberof GlobalService
-     */
-    async getProjectTaskGanttService() {
-        return (await import('./project-task-gantt/project-task-gantt.service')).default.getInstance();
-    }
-    /**
-     * 产品版本服务
-     *
-     * @return {ProductBuild}
-     * @memberof GlobalService
-     */
-    async getProductBuildService() {
-        return (await import('./product-build/product-build.service')).default.getInstance();
+    async getBuildService() {
+        return (await import('./build/build.service')).default.getInstance();
     }
     /**
      * 项目团队服务
@@ -208,14 +154,14 @@ export class GlobalService {
     /**
      * 测试版本服务
      *
-     * @return {ProjectTestTask}
+     * @return {TestTask}
      * @memberof GlobalService
      */
-    async getProjectTestTaskService() {
-        return (await import('./project-test-task/project-test-task.service')).default.getInstance();
+    async getTestTaskService() {
+        return (await import('./test-task/test-task.service')).default.getInstance();
     }
     /**
-     * 测试BUG服务
+     * BUG服务
      *
      * @return {Bug}
      * @memberof GlobalService

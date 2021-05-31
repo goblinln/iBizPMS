@@ -1,4 +1,4 @@
-import { ProjectTestTaskService } from "../service";
+import { TestTaskService } from "../service";
 /**
  * 代码表--所有测试单
  *
@@ -90,10 +90,10 @@ export default class AllTestTask {
     /**
      * 测试版本应用实体服务对象
      *
-     * @type {ProjectTestTaskService}
+     * @type {TestTaskService}
      * @memberof AllTestTask
      */
-    public projecttesttaskService: ProjectTestTaskService = new ProjectTestTaskService();
+    public testtaskService: TestTaskService = new TestTaskService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class AllTestTask {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projecttesttaskService.FetchDefault(context, data);
+            const promise: Promise<any> = this.testtaskService.FetchDefault(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

@@ -1,25 +1,19 @@
 import productplan_en_US from '@locale/lanres/entities/product-plan/product-plan_en_US';
 import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
-import projecttaskreport_en_US from '@locale/lanres/entities/project-task-report/project-task-report_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
 import test_en_US from '@locale/lanres/entities/test/test_en_US';
 import productbranch_en_US from '@locale/lanres/entities/product-branch/product-branch_en_US';
-import projecttaskestimate_en_US from '@locale/lanres/entities/project-task-estimate/project-task-estimate_en_US';
+import taskestimate_en_US from '@locale/lanres/entities/task-estimate/task-estimate_en_US';
 import story_en_US from '@locale/lanres/entities/story/story_en_US';
-import productbug_en_US from '@locale/lanres/entities/product-bug/product-bug_en_US';
 import project_en_US from '@locale/lanres/entities/project/project_en_US';
 import productmodule_en_US from '@locale/lanres/entities/product-module/product-module_en_US';
 import productteam_en_US from '@locale/lanres/entities/product-team/product-team_en_US';
-import projectbug_en_US from '@locale/lanres/entities/project-bug/project-bug_en_US';
 import productlife_en_US from '@locale/lanres/entities/product-life/product-life_en_US';
-import projectstory_en_US from '@locale/lanres/entities/project-story/project-story_en_US';
-import projecttask_en_US from '@locale/lanres/entities/project-task/project-task_en_US';
-import projectbuild_en_US from '@locale/lanres/entities/project-build/project-build_en_US';
-import projecttaskgantt_en_US from '@locale/lanres/entities/project-task-gantt/project-task-gantt_en_US';
-import productbuild_en_US from '@locale/lanres/entities/product-build/product-build_en_US';
+import task_en_US from '@locale/lanres/entities/task/task_en_US';
+import build_en_US from '@locale/lanres/entities/build/build_en_US';
 import projectteam_en_US from '@locale/lanres/entities/project-team/project-team_en_US';
-import projecttesttask_en_US from '@locale/lanres/entities/project-test-task/project-test-task_en_US';
+import testtask_en_US from '@locale/lanres/entities/test-task/test-task_en_US';
 import bug_en_US from '@locale/lanres/entities/bug/bug_en_US';
 import projectmodule_en_US from '@locale/lanres/entities/project-module/project-module_en_US';
 import productproject_en_US from '@locale/lanres/entities/product-project/product-project_en_US';
@@ -432,25 +426,19 @@ function getAppLocale(){
             'productplan': productplan_en_US(),
             'testcase': testcase_en_US(),
             'product': product_en_US(),
-            'projecttaskreport': projecttaskreport_en_US(),
             'projectburn': projectburn_en_US(),
             'test': test_en_US(),
             'productbranch': productbranch_en_US(),
-            'projecttaskestimate': projecttaskestimate_en_US(),
+            'taskestimate': taskestimate_en_US(),
             'story': story_en_US(),
-            'productbug': productbug_en_US(),
             'project': project_en_US(),
             'productmodule': productmodule_en_US(),
             'productteam': productteam_en_US(),
-            'projectbug': projectbug_en_US(),
             'productlife': productlife_en_US(),
-            'projectstory': projectstory_en_US(),
-            'projecttask': projecttask_en_US(),
-            'projectbuild': projectbuild_en_US(),
-            'projecttaskgantt': projecttaskgantt_en_US(),
-            'productbuild': productbuild_en_US(),
+            'task': task_en_US(),
+            'build': build_en_US(),
             'projectteam': projectteam_en_US(),
-            'projecttesttask': projecttesttask_en_US(),
+            'testtask': testtask_en_US(),
             'bug': bug_en_US(),
             'projectmodule': projectmodule_en_US(),
             'productproject': productproject_en_US(),

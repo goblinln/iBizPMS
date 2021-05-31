@@ -2216,97 +2216,97 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/projecttaskestimates/:projecttaskestimate?/views/lookgridview9',
+                    path: 'projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/lookgridview9',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.lookgridview9.caption',
+                        caption: 'entities.taskestimate.views.lookgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'projecttaskestimates', parameterName: 'projecttaskestimate' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'lookgridview9' },
                         ],
-                        resource:'projecttaskestimate',
+                        resource:'taskestimate',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttaskestimates/:projecttaskestimate?/views/lookgridview9',
+                    path: 'taskestimates/:taskestimate?/views/lookgridview9',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.lookgridview9.caption',
+                        caption: 'entities.taskestimate.views.lookgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttaskestimates', parameterName: 'projecttaskestimate' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'lookgridview9' },
                         ],
-                        resource:'projecttaskestimate',
+                        resource:'taskestimate',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/projecttaskestimates/:projecttaskestimate?/views/editgridview9',
+                    path: 'projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/editgridview9',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.editgridview9.caption',
+                        caption: 'entities.taskestimate.views.editgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'projecttaskestimates', parameterName: 'projecttaskestimate' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'editgridview9' },
                         ],
-                        resource:'projecttaskestimate',
+                        resource:'taskestimate',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttaskestimates/:projecttaskestimate?/views/editgridview9',
+                    path: 'taskestimates/:taskestimate?/views/editgridview9',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.editgridview9.caption',
+                        caption: 'entities.taskestimate.views.editgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttaskestimates', parameterName: 'projecttaskestimate' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'editgridview9' },
                         ],
-                        resource:'projecttaskestimate',
+                        resource:'taskestimate',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/projecttaskestimates/:projecttaskestimate?/views/optionview',
+                    path: 'projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/optionview',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.optionview.caption',
+                        caption: 'entities.taskestimate.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'projecttaskestimates', parameterName: 'projecttaskestimate' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'optionview' },
                         ],
-                        resource:'projecttaskestimate',
+                        resource:'taskestimate',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttaskestimates/:projecttaskestimate?/views/optionview',
+                    path: 'taskestimates/:taskestimate?/views/optionview',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.optionview.caption',
+                        caption: 'entities.taskestimate.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttaskestimates', parameterName: 'projecttaskestimate' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'optionview' },
                         ],
-                        resource:'projecttaskestimate',
+                        resource:'taskestimate',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -3584,6 +3584,59 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/stories/:story?/views/tabexpview',
+                    meta: {
+                        caption: 'entities.story.views.tabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/views/tabexpview',
+                    meta: {
+                        caption: 'entities.story.views.tabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/tabexpview',
+                    meta: {
+                        caption: 'entities.story.views.tabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/stories/:story?/views/reviewview',
                     meta: {
                         caption: 'entities.story.views.reviewview.caption',
@@ -3895,6 +3948,59 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview_editmode' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/views/curprojectwgridview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectwgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectwgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/views/curprojectwgridview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectwgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectwgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/curprojectwgridview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectwgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectwgridview' },
                         ],
                         resource:'story',
                         requireAuth: true,
@@ -4538,6 +4644,59 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/stories/:story?/views/curprojectkanbanview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectkanbanview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/views/curprojectkanbanview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectkanbanview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/curprojectkanbanview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectkanbanview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/stories/:story?/views/mpickupview',
                     meta: {
                         caption: 'entities.story.views.mpickupview.caption',
@@ -4743,6 +4902,59 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reportsubgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/views/curprojectgridview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/views/curprojectgridview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/curprojectgridview',
+                    meta: {
+                        caption: 'entities.story.views.curprojectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'curprojectgridview' },
                         ],
                         resource:'story',
                         requireAuth: true,
@@ -5728,41 +5940,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projectbugs/:projectbug?/views/projectgridview',
-                    meta: {
-                        caption: 'entities.projectbug.views.projectgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbugs', parameterName: 'projectbug' },
-                            { pathName: 'views', parameterName: 'projectgridview' },
-                        ],
-                        resource:'projectbug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbugs/:projectbug?/views/projectgridview',
-                    meta: {
-                        caption: 'entities.projectbug.views.projectgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbugs', parameterName: 'projectbug' },
-                            { pathName: 'views', parameterName: 'projectgridview' },
-                        ],
-                        resource:'projectbug',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'products/:product?/productlives/:productlife?/views/roadmaplistview',
                     meta: {
                         caption: 'entities.productlife.views.roadmaplistview.caption',
@@ -5856,2239 +6033,2297 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'projectstories/:projectstory?/views/tabexpview',
+                    path: 'projects/:project?/tasks/:task?/views/dailycompletezsgridview',
                     meta: {
-                        caption: 'entities.projectstory.views.tabexpview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstories', parameterName: 'projectstory' },
-                            { pathName: 'views', parameterName: 'tabexpview' },
-                        ],
-                        resource:'projectstory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstories/:projectstory?/views/curprojectwgridview',
-                    meta: {
-                        caption: 'entities.projectstory.views.curprojectwgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstories', parameterName: 'projectstory' },
-                            { pathName: 'views', parameterName: 'curprojectwgridview' },
-                        ],
-                        resource:'projectstory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstories/:projectstory?/views/curprojectkanbanview',
-                    meta: {
-                        caption: 'entities.projectstory.views.curprojectkanbanview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstories', parameterName: 'projectstory' },
-                            { pathName: 'views', parameterName: 'curprojectkanbanview' },
-                        ],
-                        resource:'projectstory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstories/:projectstory?/views/curprojectgridview',
-                    meta: {
-                        caption: 'entities.projectstory.views.curprojectgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstories', parameterName: 'projectstory' },
-                            { pathName: 'views', parameterName: 'curprojectgridview' },
-                        ],
-                        resource:'projectstory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/dailycompletezsgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.dailycompletezsgridview.caption',
+                        caption: 'entities.task.views.dailycompletezsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'dailycompletezsgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/dailycompletezsgridview',
+                    path: 'tasks/:task?/views/dailycompletezsgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.dailycompletezsgridview.caption',
+                        caption: 'entities.task.views.dailycompletezsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'dailycompletezsgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/pivottableview',
+                    path: 'projects/:project?/tasks/:task?/views/pivottableview',
                     meta: {
-                        caption: 'entities.projecttask.views.pivottableview.caption',
+                        caption: 'entities.task.views.pivottableview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pivottableview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/pivottableview',
+                    path: 'tasks/:task?/views/pivottableview',
                     meta: {
-                        caption: 'entities.projecttask.views.pivottableview.caption',
+                        caption: 'entities.task.views.pivottableview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pivottableview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/workhoursview',
+                    path: 'projects/:project?/tasks/:task?/views/workhoursview',
                     meta: {
-                        caption: 'entities.projecttask.views.workhoursview.caption',
+                        caption: 'entities.task.views.workhoursview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workhoursview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/workhoursview',
+                    path: 'tasks/:task?/views/workhoursview',
                     meta: {
-                        caption: 'entities.projecttask.views.workhoursview.caption',
+                        caption: 'entities.task.views.workhoursview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workhoursview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/gridview9_storyrelated',
+                    path: 'projects/:project?/tasks/:task?/views/gridview9_storyrelated',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview9_storyrelated.caption',
+                        caption: 'entities.task.views.gridview9_storyrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/gridview9_storyrelated',
+                    path: 'tasks/:task?/views/gridview9_storyrelated',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview9_storyrelated.caption',
+                        caption: 'entities.task.views.gridview9_storyrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/wheditview',
+                    path: 'projects/:project?/tasks/:task?/views/wheditview',
                     meta: {
-                        caption: 'entities.projecttask.views.wheditview.caption',
+                        caption: 'entities.task.views.wheditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'wheditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/wheditview',
+                    path: 'tasks/:task?/views/wheditview',
                     meta: {
-                        caption: 'entities.projecttask.views.wheditview.caption',
+                        caption: 'entities.task.views.wheditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'wheditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/taskgroupgridview',
+                    path: 'projects/:project?/tasks/:task?/views/taskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.taskgroupgridview.caption',
+                        caption: 'entities.task.views.taskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'taskgroupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/taskgroupgridview',
+                    path: 'tasks/:task?/views/taskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.taskgroupgridview.caption',
+                        caption: 'entities.task.views.taskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'taskgroupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/chartview9',
+                    path: 'projects/:project?/tasks/:task?/views/chartview9',
                     meta: {
-                        caption: 'entities.projecttask.views.chartview9.caption',
+                        caption: 'entities.task.views.chartview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'chartview9' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/chartview9',
+                    path: 'tasks/:task?/views/chartview9',
                     meta: {
-                        caption: 'entities.projecttask.views.chartview9.caption',
+                        caption: 'entities.task.views.chartview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'chartview9' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/zsgridview9weeknextweekplan',
+                    path: 'projects/:project?/tasks/:task?/views/zsgridview9weeknextweekplan',
                     meta: {
-                        caption: 'entities.projecttask.views.zsgridview9weeknextweekplan.caption',
+                        caption: 'entities.task.views.zsgridview9weeknextweekplan.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9weeknextweekplan' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/zsgridview9weeknextweekplan',
+                    path: 'tasks/:task?/views/zsgridview9weeknextweekplan',
                     meta: {
-                        caption: 'entities.projecttask.views.zsgridview9weeknextweekplan.caption',
+                        caption: 'entities.task.views.zsgridview9weeknextweekplan.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9weeknextweekplan' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/grouptreeexpview',
+                    path: 'projects/:project?/tasks/:task?/views/grouptreeexpview',
                     meta: {
-                        caption: 'entities.projecttask.views.grouptreeexpview.caption',
+                        caption: 'entities.task.views.grouptreeexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'grouptreeexpview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/grouptreeexpview',
+                    path: 'tasks/:task?/views/grouptreeexpview',
                     meta: {
-                        caption: 'entities.projecttask.views.grouptreeexpview.caption',
+                        caption: 'entities.task.views.grouptreeexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'grouptreeexpview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maingridview9_child',
+                    path: 'projects/:project?/tasks/:task?/views/maingridview9_child',
                     meta: {
-                        caption: 'entities.projecttask.views.maingridview9_child.caption',
+                        caption: 'entities.task.views.maingridview9_child.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview9_child' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/maingridview9_child',
+                    path: 'tasks/:task?/views/maingridview9_child',
                     meta: {
-                        caption: 'entities.projecttask.views.maingridview9_child.caption',
+                        caption: 'entities.task.views.maingridview9_child.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview9_child' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maingridview_bymodule',
+                    path: 'projects/:project?/tasks/:task?/views/maingridview_bymodule',
                     meta: {
-                        caption: 'entities.projecttask.views.maingridview_bymodule.caption',
+                        caption: 'entities.task.views.maingridview_bymodule.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview_bymodule' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/maingridview_bymodule',
+                    path: 'tasks/:task?/views/maingridview_bymodule',
                     meta: {
-                        caption: 'entities.projecttask.views.maingridview_bymodule.caption',
+                        caption: 'entities.task.views.maingridview_bymodule.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview_bymodule' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maininfoview9',
+                    path: 'projects/:project?/tasks/:task?/views/maininfoview9',
                     meta: {
-                        caption: 'entities.projecttask.views.maininfoview9.caption',
+                        caption: 'entities.task.views.maininfoview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maininfoview9' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/maininfoview9',
+                    path: 'tasks/:task?/views/maininfoview9',
                     meta: {
-                        caption: 'entities.projecttask.views.maininfoview9.caption',
+                        caption: 'entities.task.views.maininfoview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maininfoview9' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/pritaskgroupgridview',
+                    path: 'projects/:project?/tasks/:task?/views/pritaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.pritaskgroupgridview.caption',
+                        caption: 'entities.task.views.pritaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pritaskgroupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/pritaskgroupgridview',
+                    path: 'tasks/:task?/views/pritaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.pritaskgroupgridview.caption',
+                        caption: 'entities.task.views.pritaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pritaskgroupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/assigntaskview',
+                    path: 'projects/:project?/tasks/:task?/views/assigntaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.assigntaskview.caption',
+                        caption: 'entities.task.views.assigntaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assigntaskview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/assigntaskview',
+                    path: 'tasks/:task?/views/assigntaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.assigntaskview.caption',
+                        caption: 'entities.task.views.assigntaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assigntaskview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/reportpickupgridview',
+                    path: 'projects/:project?/tasks/:task?/views/reportpickupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.reportpickupgridview.caption',
+                        caption: 'entities.task.views.reportpickupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'reportpickupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/reportpickupgridview',
+                    path: 'tasks/:task?/views/reportpickupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.reportpickupgridview.caption',
+                        caption: 'entities.task.views.reportpickupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'reportpickupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/myfavoritegridview',
+                    path: 'projects/:project?/tasks/:task?/views/myfavoritegridview',
                     meta: {
-                        caption: 'entities.projecttask.views.myfavoritegridview.caption',
+                        caption: 'entities.task.views.myfavoritegridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/myfavoritegridview',
+                    path: 'tasks/:task?/views/myfavoritegridview',
                     meta: {
-                        caption: 'entities.projecttask.views.myfavoritegridview.caption',
+                        caption: 'entities.task.views.myfavoritegridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/assignedtotaskgroupgridview',
+                    path: 'projects/:project?/tasks/:task?/views/assignedtotaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.assignedtotaskgroupgridview.caption',
+                        caption: 'entities.task.views.assignedtotaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assignedtotaskgroupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/assignedtotaskgroupgridview',
+                    path: 'tasks/:task?/views/assignedtotaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.assignedtotaskgroupgridview.caption',
+                        caption: 'entities.task.views.assignedtotaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assignedtotaskgroupgridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/gridview',
+                    path: 'projects/:project?/tasks/:task?/views/gridview',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview.caption',
+                        caption: 'entities.task.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/gridview',
+                    path: 'tasks/:task?/views/gridview',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview.caption',
+                        caption: 'entities.task.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/zsgridview9week',
+                    path: 'projects/:project?/tasks/:task?/views/zsgridview9week',
                     meta: {
-                        caption: 'entities.projecttask.views.zsgridview9week.caption',
+                        caption: 'entities.task.views.zsgridview9week.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9week' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/zsgridview9week',
+                    path: 'tasks/:task?/views/zsgridview9week',
                     meta: {
-                        caption: 'entities.projecttask.views.zsgridview9week.caption',
+                        caption: 'entities.task.views.zsgridview9week.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9week' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/mainmygridview',
+                    path: 'projects/:project?/tasks/:task?/views/mainmygridview',
                     meta: {
-                        caption: 'entities.projecttask.views.mainmygridview.caption',
+                        caption: 'entities.task.views.mainmygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/mainmygridview',
+                    path: 'tasks/:task?/views/mainmygridview',
                     meta: {
-                        caption: 'entities.projecttask.views.mainmygridview.caption',
+                        caption: 'entities.task.views.mainmygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/todoeditview',
+                    path: 'projects/:project?/tasks/:task?/views/todoeditview',
                     meta: {
-                        caption: 'entities.projecttask.views.todoeditview.caption',
+                        caption: 'entities.task.views.todoeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'todoeditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/todoeditview',
+                    path: 'tasks/:task?/views/todoeditview',
                     meta: {
-                        caption: 'entities.projecttask.views.todoeditview.caption',
+                        caption: 'entities.task.views.todoeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'todoeditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/storyneweditview',
+                    path: 'projects/:project?/tasks/:task?/views/storyneweditview',
                     meta: {
-                        caption: 'entities.projecttask.views.storyneweditview.caption',
+                        caption: 'entities.task.views.storyneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storyneweditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/storyneweditview',
+                    path: 'tasks/:task?/views/storyneweditview',
                     meta: {
-                        caption: 'entities.projecttask.views.storyneweditview.caption',
+                        caption: 'entities.task.views.storyneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storyneweditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maindashboardview',
+                    path: 'projects/:project?/tasks/:task?/views/maindashboardview',
                     meta: {
-                        caption: 'entities.projecttask.views.maindashboardview.caption',
+                        caption: 'entities.task.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/maindashboardview',
+                    path: 'tasks/:task?/views/maindashboardview',
                     meta: {
-                        caption: 'entities.projecttask.views.maindashboardview.caption',
+                        caption: 'entities.task.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/workinfoeditview9',
+                    path: 'projects/:project?/tasks/:task?/views/workinfoeditview9',
                     meta: {
-                        caption: 'entities.projecttask.views.workinfoeditview9.caption',
+                        caption: 'entities.task.views.workinfoeditview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workinfoeditview9' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/workinfoeditview9',
+                    path: 'tasks/:task?/views/workinfoeditview9',
                     meta: {
-                        caption: 'entities.projecttask.views.workinfoeditview9.caption',
+                        caption: 'entities.task.views.workinfoeditview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workinfoeditview9' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/closetaskview',
+                    path: 'projects/:project?/tasks/:task?/views/closetaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.closetaskview.caption',
+                        caption: 'entities.task.views.closetaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'closetaskview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/closetaskview',
+                    path: 'tasks/:task?/views/closetaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.closetaskview.caption',
+                        caption: 'entities.task.views.closetaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'closetaskview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/calendareditview',
+                    path: 'projects/:project?/tasks/:task?/views/calendareditview',
                     meta: {
-                        caption: 'entities.projecttask.views.calendareditview.caption',
+                        caption: 'entities.task.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttasks/:projecttask?/views/calendareditview',
+                    path: 'tasks/:task?/views/calendareditview',
                     meta: {
-                        caption: 'entities.projecttask.views.calendareditview.caption',
+                        caption: 'entities.task.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
-                        resource:'projecttask',
+                        resource:'task',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/pickupview',
+                    path: 'projects/:project?/tasks/:task?/views/tasktypeganttview',
                     meta: {
-                        caption: 'entities.projecttask.views.pickupview.caption',
+                        caption: 'entities.task.views.tasktypeganttview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/pickupview',
-                    meta: {
-                        caption: 'entities.projecttask.views.pickupview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/storysubtasknewview',
-                    meta: {
-                        caption: 'entities.projecttask.views.storysubtasknewview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'storysubtasknewview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/storysubtasknewview',
-                    meta: {
-                        caption: 'entities.projecttask.views.storysubtasknewview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'storysubtasknewview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/canceltaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.canceltaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'canceltaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/canceltaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.canceltaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'canceltaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/activationtaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.activationtaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'activationtaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/activationtaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.activationtaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'activationtaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/reportmpickupview',
-                    meta: {
-                        caption: 'entities.projecttask.views.reportmpickupview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'reportmpickupview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/reportmpickupview',
-                    meta: {
-                        caption: 'entities.projecttask.views.reportmpickupview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'reportmpickupview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/zsgridview9',
-                    meta: {
-                        caption: 'entities.projecttask.views.zsgridview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'zsgridview9' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/zsgridview9',
-                    meta: {
-                        caption: 'entities.projecttask.views.zsgridview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'zsgridview9' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/pausetaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.pausetaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'pausetaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/pausetaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.pausetaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'pausetaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/monthlycompletezsgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.monthlycompletezsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'monthlycompletezsgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/monthlycompletezsgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.monthlycompletezsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'monthlycompletezsgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maingridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.maingridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/maingridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.maingridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.pickupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.pickupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maindashboardview_link',
-                    meta: {
-                        caption: 'entities.projecttask.views.maindashboardview_link.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maindashboardview_link' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/maindashboardview_link',
-                    meta: {
-                        caption: 'entities.projecttask.views.maindashboardview_link.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maindashboardview_link' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/treeexpview',
-                    meta: {
-                        caption: 'entities.projecttask.views.treeexpview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/treeexpview',
-                    meta: {
-                        caption: 'entities.projecttask.views.treeexpview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/typetaskgroupgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.typetaskgroupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'typetaskgroupgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/typetaskgroupgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.typetaskgroupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'typetaskgroupgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/opentaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.opentaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'opentaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/opentaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.opentaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'opentaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/restarttaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.restarttaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'restarttaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/restarttaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.restarttaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'restarttaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/forwardview',
-                    meta: {
-                        caption: 'entities.projecttask.views.forwardview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'forwardview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/forwardview',
-                    meta: {
-                        caption: 'entities.projecttask.views.forwardview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'forwardview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/moretabexpview',
-                    meta: {
-                        caption: 'entities.projecttask.views.moretabexpview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'moretabexpview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/moretabexpview',
-                    meta: {
-                        caption: 'entities.projecttask.views.moretabexpview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'moretabexpview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/childtaskmoregridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.childtaskmoregridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'childtaskmoregridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/childtaskmoregridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.childtaskmoregridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'childtaskmoregridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/kanbanview',
-                    meta: {
-                        caption: 'entities.projecttask.views.kanbanview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'kanbanview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/kanbanview',
-                    meta: {
-                        caption: 'entities.projecttask.views.kanbanview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'kanbanview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/storytaskgroupgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.storytaskgroupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'storytaskgroupgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/storytaskgroupgridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.storytaskgroupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'storytaskgroupgridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/editview',
-                    meta: {
-                        caption: 'entities.projecttask.views.editview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/editview',
-                    meta: {
-                        caption: 'entities.projecttask.views.editview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maindetailview9',
-                    meta: {
-                        caption: 'entities.projecttask.views.maindetailview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maindetailview9' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/maindetailview9',
-                    meta: {
-                        caption: 'entities.projecttask.views.maindetailview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maindetailview9' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/treeeditview',
-                    meta: {
-                        caption: 'entities.projecttask.views.treeeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'treeeditview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/treeeditview',
-                    meta: {
-                        caption: 'entities.projecttask.views.treeeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'treeeditview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/gridview9_assignedtome',
-                    meta: {
-                        caption: 'entities.projecttask.views.gridview9_assignedtome.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/gridview9_assignedtome',
-                    meta: {
-                        caption: 'entities.projecttask.views.gridview9_assignedtome.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/maineditview',
-                    meta: {
-                        caption: 'entities.projecttask.views.maineditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maineditview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/maineditview',
-                    meta: {
-                        caption: 'entities.projecttask.views.maineditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'maineditview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/childmoregridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.childmoregridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'childmoregridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/childmoregridview',
-                    meta: {
-                        caption: 'entities.projecttask.views.childmoregridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'childmoregridview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/gridview9_project',
-                    meta: {
-                        caption: 'entities.projecttask.views.gridview9_project.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'gridview9_project' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/gridview9_project',
-                    meta: {
-                        caption: 'entities.projecttask.views.gridview9_project.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'gridview9_project' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttasks/:projecttask?/views/donetaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.donetaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'donetaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projecttasks/:projecttask?/views/donetaskview',
-                    meta: {
-                        caption: 'entities.projecttask.views.donetaskview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttasks', parameterName: 'projecttask' },
-                            { pathName: 'views', parameterName: 'donetaskview' },
-                        ],
-                        resource:'projecttask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectbuilds/:projectbuild?/views/maingridview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.maingridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbuilds/:projectbuild?/views/maingridview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.maingridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectbuilds/:projectbuild?/views/testroundsgridview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.testroundsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'testroundsgridview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbuilds/:projectbuild?/views/testroundsgridview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.testroundsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'testroundsgridview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectbuilds/:projectbuild?/views/optionview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.optionview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'optionview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbuilds/:projectbuild?/views/optionview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.optionview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'optionview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectbuilds/:projectbuild?/views/mainview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.mainview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'mainview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbuilds/:projectbuild?/views/mainview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.mainview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'mainview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectbuilds/:projectbuild?/views/maintabexpview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.maintabexpview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'maintabexpview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbuilds/:projectbuild?/views/maintabexpview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.maintabexpview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'maintabexpview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectbuilds/:projectbuild?/views/editformeditview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.editformeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'editformeditview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbuilds/:projectbuild?/views/editformeditview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.editformeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'editformeditview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectbuilds/:projectbuild?/views/editview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.editview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectbuilds/:projectbuild?/views/editview',
-                    meta: {
-                        caption: 'entities.projectbuild.views.editview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-code-fork',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectbuilds', parameterName: 'projectbuild' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'projectbuild',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projecttaskgantts/:projecttaskgantt?/views/tasktypeganttview',
-                    meta: {
-                        caption: 'entities.projecttaskgantt.views.tasktypeganttview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttaskgantts', parameterName: 'projecttaskgantt' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'tasktypeganttview' },
                         ],
-                        resource:'projecttaskgantt',
+                        resource:'task',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttaskgantts/:projecttaskgantt?/views/tasktypeganttview',
+                    path: 'tasks/:task?/views/tasktypeganttview',
                     meta: {
-                        caption: 'entities.projecttaskgantt.views.tasktypeganttview.caption',
+                        caption: 'entities.task.views.tasktypeganttview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttaskgantts', parameterName: 'projecttaskgantt' },
+                            { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'tasktypeganttview' },
                         ],
-                        resource:'projecttaskgantt',
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/pickupview',
+                    meta: {
+                        caption: 'entities.task.views.pickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/pickupview',
+                    meta: {
+                        caption: 'entities.task.views.pickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/storysubtasknewview',
+                    meta: {
+                        caption: 'entities.task.views.storysubtasknewview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'storysubtasknewview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/storysubtasknewview',
+                    meta: {
+                        caption: 'entities.task.views.storysubtasknewview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'storysubtasknewview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/canceltaskview',
+                    meta: {
+                        caption: 'entities.task.views.canceltaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'canceltaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/canceltaskview',
+                    meta: {
+                        caption: 'entities.task.views.canceltaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'canceltaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/activationtaskview',
+                    meta: {
+                        caption: 'entities.task.views.activationtaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'activationtaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/activationtaskview',
+                    meta: {
+                        caption: 'entities.task.views.activationtaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'activationtaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/reportmpickupview',
+                    meta: {
+                        caption: 'entities.task.views.reportmpickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'reportmpickupview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/reportmpickupview',
+                    meta: {
+                        caption: 'entities.task.views.reportmpickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'reportmpickupview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/zsgridview9',
+                    meta: {
+                        caption: 'entities.task.views.zsgridview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'zsgridview9' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/zsgridview9',
+                    meta: {
+                        caption: 'entities.task.views.zsgridview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'zsgridview9' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/pausetaskview',
+                    meta: {
+                        caption: 'entities.task.views.pausetaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'pausetaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/pausetaskview',
+                    meta: {
+                        caption: 'entities.task.views.pausetaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'pausetaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/monthlycompletezsgridview',
+                    meta: {
+                        caption: 'entities.task.views.monthlycompletezsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'monthlycompletezsgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/monthlycompletezsgridview',
+                    meta: {
+                        caption: 'entities.task.views.monthlycompletezsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'monthlycompletezsgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/maingridview',
+                    meta: {
+                        caption: 'entities.task.views.maingridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/maingridview',
+                    meta: {
+                        caption: 'entities.task.views.maingridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.task.views.pickupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.task.views.pickupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/maindashboardview_link',
+                    meta: {
+                        caption: 'entities.task.views.maindashboardview_link.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maindashboardview_link' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/maindashboardview_link',
+                    meta: {
+                        caption: 'entities.task.views.maindashboardview_link.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maindashboardview_link' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.task.views.treeexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.task.views.treeexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/typetaskgroupgridview',
+                    meta: {
+                        caption: 'entities.task.views.typetaskgroupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'typetaskgroupgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/typetaskgroupgridview',
+                    meta: {
+                        caption: 'entities.task.views.typetaskgroupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'typetaskgroupgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/opentaskview',
+                    meta: {
+                        caption: 'entities.task.views.opentaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'opentaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/opentaskview',
+                    meta: {
+                        caption: 'entities.task.views.opentaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'opentaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/restarttaskview',
+                    meta: {
+                        caption: 'entities.task.views.restarttaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'restarttaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/restarttaskview',
+                    meta: {
+                        caption: 'entities.task.views.restarttaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'restarttaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/forwardview',
+                    meta: {
+                        caption: 'entities.task.views.forwardview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'forwardview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/forwardview',
+                    meta: {
+                        caption: 'entities.task.views.forwardview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'forwardview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/moretabexpview',
+                    meta: {
+                        caption: 'entities.task.views.moretabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'moretabexpview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/moretabexpview',
+                    meta: {
+                        caption: 'entities.task.views.moretabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'moretabexpview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/childtaskmoregridview',
+                    meta: {
+                        caption: 'entities.task.views.childtaskmoregridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'childtaskmoregridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/childtaskmoregridview',
+                    meta: {
+                        caption: 'entities.task.views.childtaskmoregridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'childtaskmoregridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/kanbanview',
+                    meta: {
+                        caption: 'entities.task.views.kanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'kanbanview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/kanbanview',
+                    meta: {
+                        caption: 'entities.task.views.kanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'kanbanview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/storytaskgroupgridview',
+                    meta: {
+                        caption: 'entities.task.views.storytaskgroupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'storytaskgroupgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/storytaskgroupgridview',
+                    meta: {
+                        caption: 'entities.task.views.storytaskgroupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'storytaskgroupgridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/editview',
+                    meta: {
+                        caption: 'entities.task.views.editview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/editview',
+                    meta: {
+                        caption: 'entities.task.views.editview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/maindetailview9',
+                    meta: {
+                        caption: 'entities.task.views.maindetailview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maindetailview9' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/maindetailview9',
+                    meta: {
+                        caption: 'entities.task.views.maindetailview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maindetailview9' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/treeeditview',
+                    meta: {
+                        caption: 'entities.task.views.treeeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'treeeditview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/treeeditview',
+                    meta: {
+                        caption: 'entities.task.views.treeeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'treeeditview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/gridview9_assignedtome',
+                    meta: {
+                        caption: 'entities.task.views.gridview9_assignedtome.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/gridview9_assignedtome',
+                    meta: {
+                        caption: 'entities.task.views.gridview9_assignedtome.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/maineditview',
+                    meta: {
+                        caption: 'entities.task.views.maineditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maineditview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/maineditview',
+                    meta: {
+                        caption: 'entities.task.views.maineditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'maineditview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/childmoregridview',
+                    meta: {
+                        caption: 'entities.task.views.childmoregridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'childmoregridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/childmoregridview',
+                    meta: {
+                        caption: 'entities.task.views.childmoregridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'childmoregridview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/gridview9_project',
+                    meta: {
+                        caption: 'entities.task.views.gridview9_project.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'gridview9_project' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/gridview9_project',
+                    meta: {
+                        caption: 'entities.task.views.gridview9_project.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'gridview9_project' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/donetaskview',
+                    meta: {
+                        caption: 'entities.task.views.donetaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'donetaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/donetaskview',
+                    meta: {
+                        caption: 'entities.task.views.donetaskview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'donetaskview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/views/maingridview',
+                    meta: {
+                        caption: 'entities.build.views.maingridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/maingridview',
+                    meta: {
+                        caption: 'entities.build.views.maingridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'builds/:build?/views/maingridview',
+                    meta: {
+                        caption: 'entities.build.views.maingridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/views/testroundsgridview',
+                    meta: {
+                        caption: 'entities.build.views.testroundsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'testroundsgridview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/testroundsgridview',
+                    meta: {
+                        caption: 'entities.build.views.testroundsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'testroundsgridview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'builds/:build?/views/testroundsgridview',
+                    meta: {
+                        caption: 'entities.build.views.testroundsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'testroundsgridview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/views/optionview',
+                    meta: {
+                        caption: 'entities.build.views.optionview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/optionview',
+                    meta: {
+                        caption: 'entities.build.views.optionview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'builds/:build?/views/optionview',
+                    meta: {
+                        caption: 'entities.build.views.optionview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/views/mainview',
+                    meta: {
+                        caption: 'entities.build.views.mainview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mainview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/mainview',
+                    meta: {
+                        caption: 'entities.build.views.mainview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mainview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'builds/:build?/views/mainview',
+                    meta: {
+                        caption: 'entities.build.views.mainview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mainview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/views/maintabexpview',
+                    meta: {
+                        caption: 'entities.build.views.maintabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'maintabexpview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/maintabexpview',
+                    meta: {
+                        caption: 'entities.build.views.maintabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'maintabexpview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'builds/:build?/views/maintabexpview',
+                    meta: {
+                        caption: 'entities.build.views.maintabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'maintabexpview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/views/editformeditview',
+                    meta: {
+                        caption: 'entities.build.views.editformeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'editformeditview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/editformeditview',
+                    meta: {
+                        caption: 'entities.build.views.editformeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'editformeditview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'builds/:build?/views/editformeditview',
+                    meta: {
+                        caption: 'entities.build.views.editformeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'editformeditview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/builds/:build?/views/editview',
+                    meta: {
+                        caption: 'entities.build.views.editview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/editview',
+                    meta: {
+                        caption: 'entities.build.views.editview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'builds/:build?/views/editview',
+                    meta: {
+                        caption: 'entities.build.views.editview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'build',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -8199,631 +8434,631 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/editview_edit',
+                    path: 'projects/:project?/testtasks/:testtask?/views/editview_edit',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview_edit.caption',
+                        caption: 'entities.testtask.views.editview_edit.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_edit' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/editview_edit',
+                    path: 'testtasks/:testtask?/views/editview_edit',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview_edit.caption',
+                        caption: 'entities.testtask.views.editview_edit.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_edit' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/calendareditview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/calendareditview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.calendareditview.caption',
+                        caption: 'entities.testtask.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/calendareditview',
+                    path: 'testtasks/:testtask?/views/calendareditview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.calendareditview.caption',
+                        caption: 'entities.testtask.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/maintabexpview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/maintabexpview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.maintabexpview.caption',
+                        caption: 'entities.testtask.views.maintabexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/maintabexpview',
+                    path: 'testtasks/:testtask?/views/maintabexpview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.maintabexpview.caption',
+                        caption: 'entities.testtask.views.maintabexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/maindashboardview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/maindashboardview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.maindashboardview.caption',
+                        caption: 'entities.testtask.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/maindashboardview',
+                    path: 'testtasks/:testtask?/views/maindashboardview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.maindashboardview.caption',
+                        caption: 'entities.testtask.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/activiteoptionview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/activiteoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.activiteoptionview.caption',
+                        caption: 'entities.testtask.views.activiteoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'activiteoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/activiteoptionview',
+                    path: 'testtasks/:testtask?/views/activiteoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.activiteoptionview.caption',
+                        caption: 'entities.testtask.views.activiteoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'activiteoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/startoptionview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/startoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.startoptionview.caption',
+                        caption: 'entities.testtask.views.startoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'startoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/startoptionview',
+                    path: 'testtasks/:testtask?/views/startoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.startoptionview.caption',
+                        caption: 'entities.testtask.views.startoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'startoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/editview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/editview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview.caption',
+                        caption: 'entities.testtask.views.editview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/editview',
+                    path: 'testtasks/:testtask?/views/editview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview.caption',
+                        caption: 'entities.testtask.views.editview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/projectgridview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/projectgridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.projectgridview.caption',
+                        caption: 'entities.testtask.views.projectgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectgridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/projectgridview',
+                    path: 'testtasks/:testtask?/views/projectgridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.projectgridview.caption',
+                        caption: 'entities.testtask.views.projectgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectgridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/projectneweditview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/projectneweditview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.projectneweditview.caption',
+                        caption: 'entities.testtask.views.projectneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectneweditview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/projectneweditview',
+                    path: 'testtasks/:testtask?/views/projectneweditview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.projectneweditview.caption',
+                        caption: 'entities.testtask.views.projectneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectneweditview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/editview9_info',
+                    path: 'projects/:project?/testtasks/:testtask?/views/editview9_info',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview9_info.caption',
+                        caption: 'entities.testtask.views.editview9_info.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_info' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/editview9_info',
+                    path: 'testtasks/:testtask?/views/editview9_info',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview9_info.caption',
+                        caption: 'entities.testtask.views.editview9_info.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_info' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/myygridview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/myygridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.myygridview.caption',
+                        caption: 'entities.testtask.views.myygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'myygridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/myygridview',
+                    path: 'testtasks/:testtask?/views/myygridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.myygridview.caption',
+                        caption: 'entities.testtask.views.myygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'myygridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/closeoptionview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/closeoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.closeoptionview.caption',
+                        caption: 'entities.testtask.views.closeoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'closeoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/closeoptionview',
+                    path: 'testtasks/:testtask?/views/closeoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.closeoptionview.caption',
+                        caption: 'entities.testtask.views.closeoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'closeoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/blockoptionview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/blockoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.blockoptionview.caption',
+                        caption: 'entities.testtask.views.blockoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'blockoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/blockoptionview',
+                    path: 'testtasks/:testtask?/views/blockoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.blockoptionview.caption',
+                        caption: 'entities.testtask.views.blockoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'blockoptionview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/editview9_detail',
+                    path: 'projects/:project?/testtasks/:testtask?/views/editview9_detail',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview9_detail.caption',
+                        caption: 'entities.testtask.views.editview9_detail.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_detail' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/editview9_detail',
+                    path: 'testtasks/:testtask?/views/editview9_detail',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview9_detail.caption',
+                        caption: 'entities.testtask.views.editview9_detail.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_detail' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/gridview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/gridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.gridview.caption',
+                        caption: 'entities.testtask.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/gridview',
+                    path: 'testtasks/:testtask?/views/gridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.gridview.caption',
+                        caption: 'entities.testtask.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/mydgridview',
+                    path: 'projects/:project?/testtasks/:testtask?/views/mydgridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.mydgridview.caption',
+                        caption: 'entities.testtask.views.mydgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'mydgridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/mydgridview',
+                    path: 'testtasks/:testtask?/views/mydgridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.mydgridview.caption',
+                        caption: 'entities.testtask.views.mydgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'mydgridview' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/editview_committest',
+                    path: 'projects/:project?/testtasks/:testtask?/views/editview_committest',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview_committest.caption',
+                        caption: 'entities.testtask.views.editview_committest.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_committest' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/editview_committest',
+                    path: 'testtasks/:testtask?/views/editview_committest',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview_committest.caption',
+                        caption: 'entities.testtask.views.editview_committest.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_committest' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/projecttesttasks/:projecttesttask?/views/gridview9_untested',
+                    path: 'projects/:project?/testtasks/:testtask?/views/gridview9_untested',
                     meta: {
-                        caption: 'entities.projecttesttask.views.gridview9_untested.caption',
+                        caption: 'entities.testtask.views.gridview9_untested.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview9_untested' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                         },
                         component: AppViewShell,
                     },
                     {
-                    path: 'projecttesttasks/:projecttesttask?/views/gridview9_untested',
+                    path: 'testtasks/:testtask?/views/gridview9_untested',
                     meta: {
-                        caption: 'entities.projecttesttask.views.gridview9_untested.caption',
+                        caption: 'entities.testtask.views.gridview9_untested.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projecttesttasks', parameterName: 'projecttesttask' },
+                            { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview9_untested' },
                         ],
-                        resource:'projecttesttask',
+                        resource:'testtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -8838,6 +9073,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'testbugsgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/testbugsgridview',
+                    meta: {
+                        caption: 'entities.bug.views.testbugsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'testbugsgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/testbugsgridview',
+                    meta: {
+                        caption: 'entities.bug.views.testbugsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testbugsgridview' },
                         ],
@@ -8882,6 +9153,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/assingtoview',
+                    meta: {
+                        caption: 'entities.bug.views.assingtoview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'assingtoview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/assingtoview',
+                    meta: {
+                        caption: 'entities.bug.views.assingtoview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'assingtoview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/assingtoview',
                     meta: {
                         caption: 'entities.bug.views.assingtoview.caption',
@@ -8908,6 +9215,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'maindashboardview_link' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/maindashboardview_link',
+                    meta: {
+                        caption: 'entities.bug.views.maindashboardview_link.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'maindashboardview_link' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/maindashboardview_link',
+                    meta: {
+                        caption: 'entities.bug.views.maindashboardview_link.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
                         ],
@@ -8952,6 +9295,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/mpickupview5',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview5.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview5' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/mpickupview5',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview5.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview5' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/mpickupview5',
                     meta: {
                         caption: 'entities.bug.views.mpickupview5.caption',
@@ -8978,6 +9357,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'editview_4791' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/editview_4791',
+                    meta: {
+                        caption: 'entities.bug.views.editview_4791.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'editview_4791' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/editview_4791',
+                    meta: {
+                        caption: 'entities.bug.views.editview_4791.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_4791' },
                         ],
@@ -9022,6 +9437,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/buglifeeditview9',
+                    meta: {
+                        caption: 'entities.bug.views.buglifeeditview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buglifeeditview9' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/buglifeeditview9',
+                    meta: {
+                        caption: 'entities.bug.views.buglifeeditview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buglifeeditview9' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/buglifeeditview9',
                     meta: {
                         caption: 'entities.bug.views.buglifeeditview9.caption',
@@ -9048,6 +9499,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'maindashboardview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/maindashboardview',
+                    meta: {
+                        caption: 'entities.bug.views.maindashboardview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'maindashboardview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/maindashboardview',
+                    meta: {
+                        caption: 'entities.bug.views.maindashboardview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
@@ -9092,6 +9579,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/pickupgridview5',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview5.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview5' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/pickupgridview5',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview5.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview5' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/pickupgridview5',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview5.caption',
@@ -9118,6 +9641,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/buildsubgridview_new_9212',
+                    meta: {
+                        caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/buildsubgridview_new_9212',
+                    meta: {
+                        caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
                         ],
@@ -9162,6 +9721,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/pickupgridview',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview.caption',
@@ -9188,6 +9783,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'releasesubgridview_done' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/releasesubgridview_done',
+                    meta: {
+                        caption: 'entities.bug.views.releasesubgridview_done.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'releasesubgridview_done' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/releasesubgridview_done',
+                    meta: {
+                        caption: 'entities.bug.views.releasesubgridview_done.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_done' },
                         ],
@@ -9232,6 +9863,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/mpickupview',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/mpickupview',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/mpickupview',
                     meta: {
                         caption: 'entities.bug.views.mpickupview.caption',
@@ -9258,6 +9925,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'calendareditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/calendareditview',
+                    meta: {
+                        caption: 'entities.bug.views.calendareditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'calendareditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/calendareditview',
+                    meta: {
+                        caption: 'entities.bug.views.calendareditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
@@ -9302,6 +10005,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/bugprojectkanbanview',
+                    meta: {
+                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'bugprojectkanbanview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/bugprojectkanbanview',
+                    meta: {
+                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'bugprojectkanbanview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/bugprojectkanbanview',
                     meta: {
                         caption: 'entities.bug.views.bugprojectkanbanview.caption',
@@ -9328,6 +10067,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'maineditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/maineditview',
+                    meta: {
+                        caption: 'entities.bug.views.maineditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'maineditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/maineditview',
+                    meta: {
+                        caption: 'entities.bug.views.maineditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maineditview' },
                         ],
@@ -9372,6 +10147,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/resolvechartview',
+                    meta: {
+                        caption: 'entities.bug.views.resolvechartview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'resolvechartview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/resolvechartview',
+                    meta: {
+                        caption: 'entities.bug.views.resolvechartview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'resolvechartview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/resolvechartview',
                     meta: {
                         caption: 'entities.bug.views.resolvechartview.caption',
@@ -9398,6 +10209,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/usr2gridview',
+                    meta: {
+                        caption: 'entities.bug.views.usr2gridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/usr2gridview',
+                    meta: {
+                        caption: 'entities.bug.views.usr2gridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'usr2gridview' },
                         ],
@@ -9442,6 +10289,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/gridview9_taskrelated',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_taskrelated.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_taskrelated' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/gridview9_taskrelated',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_taskrelated.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_taskrelated' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/gridview9_taskrelated',
                     meta: {
                         caption: 'entities.bug.views.gridview9_taskrelated.caption',
@@ -9468,6 +10351,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview4' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/mpickupview4',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview4.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview4' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/mpickupview4',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview4.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview4' },
                         ],
@@ -9512,6 +10431,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/editview',
+                    meta: {
+                        caption: 'entities.bug.views.editview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/editview',
+                    meta: {
+                        caption: 'entities.bug.views.editview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/editview',
                     meta: {
                         caption: 'entities.bug.views.editview.caption',
@@ -9538,6 +10493,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'plansubgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/plansubgridview',
+                    meta: {
+                        caption: 'entities.bug.views.plansubgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'plansubgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/plansubgridview',
+                    meta: {
+                        caption: 'entities.bug.views.plansubgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'plansubgridview' },
                         ],
@@ -9582,6 +10573,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/closeview',
+                    meta: {
+                        caption: 'entities.bug.views.closeview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'closeview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/closeview',
+                    meta: {
+                        caption: 'entities.bug.views.closeview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'closeview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/closeview',
                     meta: {
                         caption: 'entities.bug.views.closeview.caption',
@@ -9608,6 +10635,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'bugkanbanview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/bugkanbanview',
+                    meta: {
+                        caption: 'entities.bug.views.bugkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'bugkanbanview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/bugkanbanview',
+                    meta: {
+                        caption: 'entities.bug.views.bugkanbanview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugkanbanview' },
                         ],
@@ -9652,6 +10715,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/tasktobugeditview',
+                    meta: {
+                        caption: 'entities.bug.views.tasktobugeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'tasktobugeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/tasktobugeditview',
+                    meta: {
+                        caption: 'entities.bug.views.tasktobugeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'tasktobugeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/tasktobugeditview',
                     meta: {
                         caption: 'entities.bug.views.tasktobugeditview.caption',
@@ -9678,6 +10777,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'activationview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/activationview',
+                    meta: {
+                        caption: 'entities.bug.views.activationview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'activationview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/activationview',
+                    meta: {
+                        caption: 'entities.bug.views.activationview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'activationview' },
                         ],
@@ -9722,6 +10857,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/gridview9_storyformbug',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_storyformbug.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_storyformbug' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/gridview9_storyformbug',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_storyformbug.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_storyformbug' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/gridview9_storyformbug',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyformbug.caption',
@@ -9748,6 +10919,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_storyaffect' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/gridview9_storyaffect',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_storyaffect.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_storyaffect' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/gridview9_storyaffect',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_storyaffect.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyaffect' },
                         ],
@@ -9792,6 +10999,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/myfavoritegridview',
+                    meta: {
+                        caption: 'entities.bug.views.myfavoritegridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'myfavoritegridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/myfavoritegridview',
+                    meta: {
+                        caption: 'entities.bug.views.myfavoritegridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'myfavoritegridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/myfavoritegridview',
                     meta: {
                         caption: 'entities.bug.views.myfavoritegridview.caption',
@@ -9818,6 +11061,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'releasesubgridview_undone' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/releasesubgridview_undone',
+                    meta: {
+                        caption: 'entities.bug.views.releasesubgridview_undone.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'releasesubgridview_undone' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/releasesubgridview_undone',
+                    meta: {
+                        caption: 'entities.bug.views.releasesubgridview_undone.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_undone' },
                         ],
@@ -9862,6 +11141,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/stepsinfoeditview',
+                    meta: {
+                        caption: 'entities.bug.views.stepsinfoeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'stepsinfoeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/stepsinfoeditview',
+                    meta: {
+                        caption: 'entities.bug.views.stepsinfoeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'stepsinfoeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/stepsinfoeditview',
                     meta: {
                         caption: 'entities.bug.views.stepsinfoeditview.caption',
@@ -9888,6 +11203,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'testreportsubgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/testreportsubgridview',
+                    meta: {
+                        caption: 'entities.bug.views.testreportsubgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'testreportsubgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/testreportsubgridview',
+                    meta: {
+                        caption: 'entities.bug.views.testreportsubgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testreportsubgridview' },
                         ],
@@ -9932,6 +11283,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/resolveview',
+                    meta: {
+                        caption: 'entities.bug.views.resolveview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'resolveview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/resolveview',
+                    meta: {
+                        caption: 'entities.bug.views.resolveview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'resolveview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/resolveview',
                     meta: {
                         caption: 'entities.bug.views.resolveview.caption',
@@ -9958,6 +11345,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview4' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/pickupgridview4',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview4.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview4' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/pickupgridview4',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview4.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview4' },
                         ],
@@ -10002,6 +11425,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/gridview9_myassignedtome',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_myassignedtome.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/gridview9_myassignedtome',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_myassignedtome.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/gridview9_myassignedtome',
                     meta: {
                         caption: 'entities.bug.views.gridview9_myassignedtome.caption',
@@ -10037,6 +11496,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/projectneweditview',
+                    meta: {
+                        caption: 'entities.bug.views.projectneweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectneweditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/projectneweditview',
+                    meta: {
+                        caption: 'entities.bug.views.projectneweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectneweditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/projectneweditview',
                     meta: {
                         caption: 'entities.bug.views.projectneweditview.caption',
@@ -10054,6 +11549,77 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'tests/:test?/bugs/:bug?/views/projectgridview',
+                    meta: {
+                        caption: 'entities.bug.views.projectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/projectgridview',
+                    meta: {
+                        caption: 'entities.bug.views.projectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/projectgridview',
+                    meta: {
+                        caption: 'entities.bug.views.projectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'bugs/:bug?/views/projectgridview',
+                    meta: {
+                        caption: 'entities.bug.views.projectgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'tests/:test?/bugs/:bug?/views/casetobugeditview',
                     meta: {
                         caption: 'entities.bug.views.casetobugeditview.caption',
@@ -10063,6 +11629,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'casetobugeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/casetobugeditview',
+                    meta: {
+                        caption: 'entities.bug.views.casetobugeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'casetobugeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/casetobugeditview',
+                    meta: {
+                        caption: 'entities.bug.views.casetobugeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'casetobugeditview' },
                         ],
@@ -10107,6 +11709,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/buildsubgridview_done',
+                    meta: {
+                        caption: 'entities.bug.views.buildsubgridview_done.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buildsubgridview_done' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/buildsubgridview_done',
+                    meta: {
+                        caption: 'entities.bug.views.buildsubgridview_done.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buildsubgridview_done' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/buildsubgridview_done',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_done.caption',
@@ -10133,6 +11771,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectbugsgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/projectbugsgridview',
+                    meta: {
+                        caption: 'entities.bug.views.projectbugsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'projectbugsgridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/projectbugsgridview',
+                    meta: {
+                        caption: 'entities.bug.views.projectbugsgridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectbugsgridview' },
                         ],
@@ -10177,6 +11851,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/confirmview',
+                    meta: {
+                        caption: 'entities.bug.views.confirmview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'confirmview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/confirmview',
+                    meta: {
+                        caption: 'entities.bug.views.confirmview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'confirmview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/confirmview',
                     meta: {
                         caption: 'entities.bug.views.confirmview.caption',
@@ -10203,6 +11913,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'dashboardmaineditview9' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/dashboardmaineditview9',
+                    meta: {
+                        caption: 'entities.bug.views.dashboardmaineditview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'dashboardmaineditview9' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/dashboardmaineditview9',
+                    meta: {
+                        caption: 'entities.bug.views.dashboardmaineditview9.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'dashboardmaineditview9' },
                         ],
@@ -10247,6 +11993,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
+                    meta: {
+                        caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
@@ -10273,6 +12055,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buildsubgridview_new' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/buildsubgridview_new',
+                    meta: {
+                        caption: 'entities.bug.views.buildsubgridview_new.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'buildsubgridview_new' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/buildsubgridview_new',
+                    meta: {
+                        caption: 'entities.bug.views.buildsubgridview_new.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new' },
                         ],
@@ -10317,6 +12135,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/todoeditview',
+                    meta: {
+                        caption: 'entities.bug.views.todoeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'todoeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/todoeditview',
+                    meta: {
+                        caption: 'entities.bug.views.todoeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'todoeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/todoeditview',
                     meta: {
                         caption: 'entities.bug.views.todoeditview.caption',
@@ -10343,6 +12197,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/gridview',
+                    meta: {
+                        caption: 'entities.bug.views.gridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/gridview',
+                    meta: {
+                        caption: 'entities.bug.views.gridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -10387,6 +12277,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/mpickupview2',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview2.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview2' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/mpickupview2',
+                    meta: {
+                        caption: 'entities.bug.views.mpickupview2.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mpickupview2' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/mpickupview2',
                     meta: {
                         caption: 'entities.bug.views.mpickupview2.caption',
@@ -10413,6 +12339,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/gridview9_storyrelated',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_storyrelated.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/gridview9_storyrelated',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_storyrelated.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
                         ],
@@ -10457,6 +12419,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/gridview9_assignedtome',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_assignedtome.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/gridview9_assignedtome',
+                    meta: {
+                        caption: 'entities.bug.views.gridview9_assignedtome.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.bug.views.gridview9_assignedtome.caption',
@@ -10483,6 +12481,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'editview_1162' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/editview_1162',
+                    meta: {
+                        caption: 'entities.bug.views.editview_1162.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'editview_1162' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/editview_1162',
+                    meta: {
+                        caption: 'entities.bug.views.editview_1162.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_1162' },
                         ],
@@ -10527,6 +12561,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/storytobugeditview',
+                    meta: {
+                        caption: 'entities.bug.views.storytobugeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'storytobugeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/storytobugeditview',
+                    meta: {
+                        caption: 'entities.bug.views.storytobugeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'storytobugeditview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/storytobugeditview',
                     meta: {
                         caption: 'entities.bug.views.storytobugeditview.caption',
@@ -10562,6 +12632,42 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'projects/:project?/bugs/:bug?/views/totalopenedchartview',
+                    meta: {
+                        caption: 'entities.bug.views.totalopenedchartview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'totalopenedchartview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/totalopenedchartview',
+                    meta: {
+                        caption: 'entities.bug.views.totalopenedchartview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'totalopenedchartview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'bugs/:bug?/views/totalopenedchartview',
                     meta: {
                         caption: 'entities.bug.views.totalopenedchartview.caption',
@@ -10588,6 +12694,42 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mainmygridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projects/:project?/bugs/:bug?/views/mainmygridview',
+                    meta: {
+                        caption: 'entities.bug.views.mainmygridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'mainmygridview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/bugs/:bug?/views/mainmygridview',
+                    meta: {
+                        caption: 'entities.bug.views.mainmygridview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
@@ -19725,7 +21867,7 @@ const router = new Router({
                 {
                     path: 'views/taskdailycompletezsgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.dailycompletezsgridview.caption',
+                        caption: 'entities.task.views.dailycompletezsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -19945,7 +22087,7 @@ const router = new Router({
                 {
                     path: 'views/taskpivottableview',
                     meta: {
-                        caption: 'entities.projecttask.views.pivottableview.caption',
+                        caption: 'entities.task.views.pivottableview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -20245,7 +22387,7 @@ const router = new Router({
                 {
                     path: 'views/buildmaingridview',
                     meta: {
-                        caption: 'entities.projectbuild.views.maingridview.caption',
+                        caption: 'entities.build.views.maingridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-code-fork',
@@ -20316,7 +22458,7 @@ const router = new Router({
                 {
                     path: 'views/taskworkhoursview',
                     meta: {
-                        caption: 'entities.projecttask.views.workhoursview.caption',
+                        caption: 'entities.task.views.workhoursview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -20376,7 +22518,7 @@ const router = new Router({
                 {
                     path: 'views/taskgridview9_storyrelated',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview9_storyrelated.caption',
+                        caption: 'entities.task.views.gridview9_storyrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -20600,7 +22742,7 @@ const router = new Router({
                 {
                     path: 'views/taskwheditview',
                     meta: {
-                        caption: 'entities.projecttask.views.wheditview.caption',
+                        caption: 'entities.task.views.wheditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -20747,7 +22889,7 @@ const router = new Router({
                 {
                     path: 'views/tasktaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.taskgroupgridview.caption',
+                        caption: 'entities.task.views.taskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -20762,7 +22904,7 @@ const router = new Router({
                 {
                     path: 'views/taskchartview9',
                     meta: {
-                        caption: 'entities.projecttask.views.chartview9.caption',
+                        caption: 'entities.task.views.chartview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -20872,7 +23014,7 @@ const router = new Router({
                 {
                     path: 'views/taskzsgridview9weeknextweekplan',
                     meta: {
-                        caption: 'entities.projecttask.views.zsgridview9weeknextweekplan.caption',
+                        caption: 'entities.task.views.zsgridview9weeknextweekplan.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -20993,7 +23135,7 @@ const router = new Router({
                 {
                     path: 'views/taskgrouptreeexpview',
                     meta: {
-                        caption: 'entities.projecttask.views.grouptreeexpview.caption',
+                        caption: 'entities.task.views.grouptreeexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -21047,7 +23189,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskeditview_edit',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview_edit.caption',
+                        caption: 'entities.testtask.views.editview_edit.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -21213,7 +23355,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaingridview9_child',
                     meta: {
-                        caption: 'entities.projecttask.views.maingridview9_child.caption',
+                        caption: 'entities.task.views.maingridview9_child.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -21267,7 +23409,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaingridview_bymodule',
                     meta: {
-                        caption: 'entities.projecttask.views.maingridview_bymodule.caption',
+                        caption: 'entities.task.views.maingridview_bymodule.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -21437,7 +23579,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaininfoview9',
                     meta: {
-                        caption: 'entities.projecttask.views.maininfoview9.caption',
+                        caption: 'entities.task.views.maininfoview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -21519,7 +23661,7 @@ const router = new Router({
                 {
                     path: 'views/buildtestroundsgridview',
                     meta: {
-                        caption: 'entities.projectbuild.views.testroundsgridview.caption',
+                        caption: 'entities.build.views.testroundsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-code-fork',
@@ -21640,7 +23782,7 @@ const router = new Router({
                 {
                     path: 'views/taskpritaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.pritaskgroupgridview.caption',
+                        caption: 'entities.task.views.pritaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -21724,7 +23866,7 @@ const router = new Router({
                 {
                     path: 'views/taskassigntaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.assigntaskview.caption',
+                        caption: 'entities.task.views.assigntaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -21769,7 +23911,7 @@ const router = new Router({
                 {
                     path: 'views/taskreportpickupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.reportpickupgridview.caption',
+                        caption: 'entities.task.views.reportpickupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -21877,7 +24019,7 @@ const router = new Router({
                 {
                     path: 'views/taskmyfavoritegridview',
                     meta: {
-                        caption: 'entities.projecttask.views.myfavoritegridview.caption',
+                        caption: 'entities.task.views.myfavoritegridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22073,7 +24215,7 @@ const router = new Router({
                 {
                     path: 'views/buildoptionview',
                     meta: {
-                        caption: 'entities.projectbuild.views.optionview.caption',
+                        caption: 'entities.build.views.optionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-code-fork',
@@ -22155,7 +24297,7 @@ const router = new Router({
                 {
                     path: 'views/buildmainview',
                     meta: {
-                        caption: 'entities.projectbuild.views.mainview.caption',
+                        caption: 'entities.build.views.mainview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-code-fork',
@@ -22200,7 +24342,7 @@ const router = new Router({
                 {
                     path: 'views/taskassignedtotaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.assignedtotaskgroupgridview.caption',
+                        caption: 'entities.task.views.assignedtotaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22327,7 +24469,7 @@ const router = new Router({
                 {
                     path: 'views/taskgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview.caption',
+                        caption: 'entities.task.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22355,7 +24497,7 @@ const router = new Router({
                 {
                     path: 'views/taskzsgridview9week',
                     meta: {
-                        caption: 'entities.projecttask.views.zsgridview9week.caption',
+                        caption: 'entities.task.views.zsgridview9week.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22398,7 +24540,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskcalendareditview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.calendareditview.caption',
+                        caption: 'entities.testtask.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -22413,7 +24555,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskmaintabexpview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.maintabexpview.caption',
+                        caption: 'entities.testtask.views.maintabexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -22456,7 +24598,7 @@ const router = new Router({
                 {
                     path: 'views/taskmainmygridview',
                     meta: {
-                        caption: 'entities.projecttask.views.mainmygridview.caption',
+                        caption: 'entities.task.views.mainmygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22471,7 +24613,7 @@ const router = new Router({
                 {
                     path: 'views/tasktodoeditview',
                     meta: {
-                        caption: 'entities.projecttask.views.todoeditview.caption',
+                        caption: 'entities.task.views.todoeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22566,7 +24708,7 @@ const router = new Router({
                 {
                     path: 'views/taskstoryneweditview',
                     meta: {
-                        caption: 'entities.projecttask.views.storyneweditview.caption',
+                        caption: 'entities.task.views.storyneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22622,7 +24764,7 @@ const router = new Router({
                 {
                     path: 'views/taskestimatelookgridview9',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.lookgridview9.caption',
+                        caption: 'entities.taskestimate.views.lookgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -22691,7 +24833,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskmaindashboardview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.maindashboardview.caption',
+                        caption: 'entities.testtask.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -22773,7 +24915,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaindashboardview',
                     meta: {
-                        caption: 'entities.projecttask.views.maindashboardview.caption',
+                        caption: 'entities.task.views.maindashboardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -22803,7 +24945,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskactiviteoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.activiteoptionview.caption',
+                        caption: 'entities.testtask.views.activiteoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -22857,7 +24999,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskstartoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.startoptionview.caption',
+                        caption: 'entities.testtask.views.startoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -23021,7 +25163,7 @@ const router = new Router({
                 {
                     path: 'views/taskworkinfoeditview9',
                     meta: {
-                        caption: 'entities.projecttask.views.workinfoeditview9.caption',
+                        caption: 'entities.task.views.workinfoeditview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -23049,7 +25191,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskeditview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview.caption',
+                        caption: 'entities.testtask.views.editview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -23077,7 +25219,7 @@ const router = new Router({
                 {
                     path: 'views/taskclosetaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.closetaskview.caption',
+                        caption: 'entities.task.views.closetaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -23133,7 +25275,7 @@ const router = new Router({
                 {
                     path: 'views/taskcalendareditview',
                     meta: {
-                        caption: 'entities.projecttask.views.calendareditview.caption',
+                        caption: 'entities.task.views.calendareditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -23260,7 +25402,7 @@ const router = new Router({
                 {
                     path: 'views/tasktasktypeganttview',
                     meta: {
-                        caption: 'entities.projecttaskgantt.views.tasktypeganttview.caption',
+                        caption: 'entities.task.views.tasktypeganttview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -23288,7 +25430,7 @@ const router = new Router({
                 {
                     path: 'views/taskpickupview',
                     meta: {
-                        caption: 'entities.projecttask.views.pickupview.caption',
+                        caption: 'entities.task.views.pickupview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -23605,7 +25747,7 @@ const router = new Router({
                 {
                     path: 'views/taskstorysubtasknewview',
                     meta: {
-                        caption: 'entities.projecttask.views.storysubtasknewview.caption',
+                        caption: 'entities.task.views.storysubtasknewview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -23713,7 +25855,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskprojectgridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.projectgridview.caption',
+                        caption: 'entities.testtask.views.projectgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -23754,7 +25896,7 @@ const router = new Router({
                 {
                     path: 'views/taskcanceltaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.canceltaskview.caption',
+                        caption: 'entities.task.views.canceltaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -23812,7 +25954,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskprojectneweditview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.projectneweditview.caption',
+                        caption: 'entities.testtask.views.projectneweditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -23842,7 +25984,7 @@ const router = new Router({
                 {
                     path: 'views/storytabexpview',
                     meta: {
-                        caption: 'entities.projectstory.views.tabexpview.caption',
+                        caption: 'entities.story.views.tabexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-star-o',
@@ -23857,7 +25999,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskeditview9_info',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview9_info.caption',
+                        caption: 'entities.testtask.views.editview9_info.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -24004,7 +26146,7 @@ const router = new Router({
                 {
                     path: 'views/taskactivationtaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.activationtaskview.caption',
+                        caption: 'entities.task.views.activationtaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -24213,7 +26355,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskmyygridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.myygridview.caption',
+                        caption: 'entities.testtask.views.myygridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -24256,7 +26398,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskcloseoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.closeoptionview.caption',
+                        caption: 'entities.testtask.views.closeoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -24446,7 +26588,7 @@ const router = new Router({
                 {
                     path: 'views/taskreportmpickupview',
                     meta: {
-                        caption: 'entities.projecttask.views.reportmpickupview.caption',
+                        caption: 'entities.task.views.reportmpickupview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -24543,7 +26685,7 @@ const router = new Router({
                 {
                     path: 'views/buildmaintabexpview',
                     meta: {
-                        caption: 'entities.projectbuild.views.maintabexpview.caption',
+                        caption: 'entities.build.views.maintabexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-code-fork',
@@ -24638,7 +26780,7 @@ const router = new Router({
                 {
                     path: 'views/storycurprojectwgridview',
                     meta: {
-                        caption: 'entities.projectstory.views.curprojectwgridview.caption',
+                        caption: 'entities.story.views.curprojectwgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-star-o',
@@ -24709,7 +26851,7 @@ const router = new Router({
                 {
                     path: 'views/taskzsgridview9',
                     meta: {
-                        caption: 'entities.projecttask.views.zsgridview9.caption',
+                        caption: 'entities.task.views.zsgridview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -24860,7 +27002,7 @@ const router = new Router({
                 {
                     path: 'views/taskestimateeditgridview9',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.editgridview9.caption',
+                        caption: 'entities.taskestimate.views.editgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -25061,7 +27203,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskblockoptionview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.blockoptionview.caption',
+                        caption: 'entities.testtask.views.blockoptionview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -25128,7 +27270,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskeditview9_detail',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview9_detail.caption',
+                        caption: 'entities.testtask.views.editview9_detail.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -25225,7 +27367,7 @@ const router = new Router({
                 {
                     path: 'views/taskpausetaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.pausetaskview.caption',
+                        caption: 'entities.task.views.pausetaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -25624,7 +27766,7 @@ const router = new Router({
                 {
                     path: 'views/taskmonthlycompletezsgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.monthlycompletezsgridview.caption',
+                        caption: 'entities.task.views.monthlycompletezsgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -25773,7 +27915,7 @@ const router = new Router({
                 {
                     path: 'views/bugprojectgridview',
                     meta: {
-                        caption: 'entities.projectbug.views.projectgridview.caption',
+                        caption: 'entities.bug.views.projectgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-bug',
@@ -26049,7 +28191,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaingridview',
                     meta: {
-                        caption: 'entities.projecttask.views.maingridview.caption',
+                        caption: 'entities.task.views.maingridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -26090,7 +28232,7 @@ const router = new Router({
                 {
                     path: 'views/taskpickupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.pickupgridview.caption',
+                        caption: 'entities.task.views.pickupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -26174,7 +28316,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaindashboardview_link',
                     meta: {
-                        caption: 'entities.projecttask.views.maindashboardview_link.caption',
+                        caption: 'entities.task.views.maindashboardview_link.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -26269,7 +28411,7 @@ const router = new Router({
                 {
                     path: 'views/buildeditformeditview',
                     meta: {
-                        caption: 'entities.projectbuild.views.editformeditview.caption',
+                        caption: 'entities.build.views.editformeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-code-fork',
@@ -26336,7 +28478,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskgridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.gridview.caption',
+                        caption: 'entities.testtask.views.gridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -26708,7 +28850,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskmydgridview',
                     meta: {
-                        caption: 'entities.projecttesttask.views.mydgridview.caption',
+                        caption: 'entities.testtask.views.mydgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -26762,7 +28904,7 @@ const router = new Router({
                 {
                     path: 'views/storycurprojectkanbanview',
                     meta: {
-                        caption: 'entities.projectstory.views.curprojectkanbanview.caption',
+                        caption: 'entities.story.views.curprojectkanbanview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-star-o',
@@ -26829,7 +28971,7 @@ const router = new Router({
                 {
                     path: 'views/tasktreeexpview',
                     meta: {
-                        caption: 'entities.projecttask.views.treeexpview.caption',
+                        caption: 'entities.task.views.treeexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -26857,7 +28999,7 @@ const router = new Router({
                 {
                     path: 'views/tasktypetaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.typetaskgroupgridview.caption',
+                        caption: 'entities.task.views.typetaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -26956,7 +29098,7 @@ const router = new Router({
                 {
                     path: 'views/taskopentaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.opentaskview.caption',
+                        caption: 'entities.task.views.opentaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -27174,7 +29316,7 @@ const router = new Router({
                 {
                     path: 'views/taskrestarttaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.restarttaskview.caption',
+                        caption: 'entities.task.views.restarttaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -27323,7 +29465,7 @@ const router = new Router({
                 {
                     path: 'views/taskforwardview',
                     meta: {
-                        caption: 'entities.projecttask.views.forwardview.caption',
+                        caption: 'entities.task.views.forwardview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -27405,7 +29547,7 @@ const router = new Router({
                 {
                     path: 'views/taskmoretabexpview',
                     meta: {
-                        caption: 'entities.projecttask.views.moretabexpview.caption',
+                        caption: 'entities.task.views.moretabexpview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -27593,7 +29735,7 @@ const router = new Router({
                 {
                     path: 'views/taskchildtaskmoregridview',
                     meta: {
-                        caption: 'entities.projecttask.views.childtaskmoregridview.caption',
+                        caption: 'entities.task.views.childtaskmoregridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -27608,7 +29750,7 @@ const router = new Router({
                 {
                     path: 'views/storycurprojectgridview',
                     meta: {
-                        caption: 'entities.projectstory.views.curprojectgridview.caption',
+                        caption: 'entities.story.views.curprojectgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-star-o',
@@ -27956,7 +30098,7 @@ const router = new Router({
                 {
                     path: 'views/taskkanbanview',
                     meta: {
-                        caption: 'entities.projecttask.views.kanbanview.caption',
+                        caption: 'entities.task.views.kanbanview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -28081,7 +30223,7 @@ const router = new Router({
                 {
                     path: 'views/taskestimateoptionview',
                     meta: {
-                        caption: 'entities.projecttaskestimate.views.optionview.caption',
+                        caption: 'entities.taskestimate.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -28463,7 +30605,7 @@ const router = new Router({
                 {
                     path: 'views/taskstorytaskgroupgridview',
                     meta: {
-                        caption: 'entities.projecttask.views.storytaskgroupgridview.caption',
+                        caption: 'entities.task.views.storytaskgroupgridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -28547,7 +30689,7 @@ const router = new Router({
                 {
                     path: 'views/buildeditview',
                     meta: {
-                        caption: 'entities.projectbuild.views.editview.caption',
+                        caption: 'entities.build.views.editview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-code-fork',
@@ -28590,7 +30732,7 @@ const router = new Router({
                 {
                     path: 'views/taskeditview',
                     meta: {
-                        caption: 'entities.projecttask.views.editview.caption',
+                        caption: 'entities.task.views.editview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -28795,7 +30937,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaindetailview9',
                     meta: {
-                        caption: 'entities.projecttask.views.maindetailview9.caption',
+                        caption: 'entities.task.views.maindetailview9.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -28901,7 +31043,7 @@ const router = new Router({
                 {
                     path: 'views/tasktreeeditview',
                     meta: {
-                        caption: 'entities.projecttask.views.treeeditview.caption',
+                        caption: 'entities.task.views.treeeditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -28916,7 +31058,7 @@ const router = new Router({
                 {
                     path: 'views/taskgridview9_assignedtome',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview9_assignedtome.caption',
+                        caption: 'entities.task.views.gridview9_assignedtome.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -29149,7 +31291,7 @@ const router = new Router({
                 {
                     path: 'views/taskmaineditview',
                     meta: {
-                        caption: 'entities.projecttask.views.maineditview.caption',
+                        caption: 'entities.task.views.maineditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -29190,7 +31332,7 @@ const router = new Router({
                 {
                     path: 'views/taskchildmoregridview',
                     meta: {
-                        caption: 'entities.projecttask.views.childmoregridview.caption',
+                        caption: 'entities.task.views.childmoregridview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -29205,7 +31347,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskeditview_committest',
                     meta: {
-                        caption: 'entities.projecttesttask.views.editview_committest.caption',
+                        caption: 'entities.testtask.views.editview_committest.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',
@@ -29291,7 +31433,7 @@ const router = new Router({
                 {
                     path: 'views/taskgridview9_project',
                     meta: {
-                        caption: 'entities.projecttask.views.gridview9_project.caption',
+                        caption: 'entities.task.views.gridview9_project.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -29306,7 +31448,7 @@ const router = new Router({
                 {
                     path: 'views/taskdonetaskview',
                     meta: {
-                        caption: 'entities.projecttask.views.donetaskview.caption',
+                        caption: 'entities.task.views.donetaskview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',
@@ -29390,7 +31532,7 @@ const router = new Router({
                 {
                     path: 'views/testtaskgridview9_untested',
                     meta: {
-                        caption: 'entities.projecttesttask.views.gridview9_untested.caption',
+                        caption: 'entities.testtask.views.gridview9_untested.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-clipboard',

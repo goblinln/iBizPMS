@@ -159,24 +159,6 @@ function getLocaleResourceBase(){
 			productmodule_openquickcfgview: commonLogic.appcommonhandle("编辑",null),
 			},
 		},
-		bugexp_treeview: {
-			nodata:commonLogic.appcommonhandle("",null),
-			nodes: {
-				'root': commonLogic.appcommonhandle("默认根节点",null),
-				'all': commonLogic.appcommonhandle("全部",null),
-			},
-			uiactions: {
-			},
-		},
-		caseexp_treeview: {
-			nodata:commonLogic.appcommonhandle("",null),
-			nodes: {
-				'all': commonLogic.appcommonhandle("全部",null),
-				'root': commonLogic.appcommonhandle("默认根节点",null),
-			},
-			uiactions: {
-			},
-		},
 	};
 	return data;
 }

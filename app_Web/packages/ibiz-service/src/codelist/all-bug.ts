@@ -88,7 +88,7 @@ export default class AllBug {
     }
 
     /**
-     * 测试BUG应用实体服务对象
+     * BUG应用实体服务对象
      *
      * @type {BugService}
      * @memberof AllBug
