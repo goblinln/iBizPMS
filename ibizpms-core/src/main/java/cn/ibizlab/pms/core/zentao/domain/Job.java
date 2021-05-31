@@ -214,14 +214,6 @@ public class Job extends EntityMP implements Serializable {
     private String editedby;
 
 
-    /**
-     * 测试结果
-     */
-    @JsonIgnore
-    @JSONField(serialize = false)
-    @TableField(exist = false)
-    private List<cn.ibizlab.pms.core.zentao.domain.TestResult> testresult;
-
 
     /**
      * 设置 [editedDate]

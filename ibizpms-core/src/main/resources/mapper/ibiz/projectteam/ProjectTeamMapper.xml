@@ -158,8 +158,11 @@
 
     <!--数据查询[SpecifyTeam]-->
     <sql id="SpecifyTeam" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DAYS`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, DATE_ADD(t1.`join`, INTERVAL t1.days day) AS `EXITDATE`, t1.`HOURS`, t1.`ID`, t1.`JOIN`, t1.`LEFT`, t1.`LIMITED`, t1.`ORDER`, t1.`ORG`, t1.`ORGNAME`, t11.`PM`, t11.`NAME` AS `PROJECTNAME`, t1.`ROLE`, t1.`ROOT`, (t1.`DAYS` * t1.`HOURS`) AS `TOTAL`, t1.`TYPE`, t1.`UPDATEBY`, (select t.realname from zt_user t where t.account = t1.account) AS `USERNAME` FROM `zt_team` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.`TYPE` = 'project' ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

@@ -3111,7 +3111,7 @@
 
 
     <!--输出实体[ZT_TESTRESULT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testresult-15-122">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testresult-16-122">
         <createTable tableName="zt_testresult">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3157,7 +3157,7 @@
 
 
     <!--输出实体[ZT_TESTRUN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testrun-18-123">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testrun-19-123">
         <createTable tableName="zt_testrun">
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>

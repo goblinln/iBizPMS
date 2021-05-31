@@ -7,14 +7,18 @@
   "name" : "项目团队",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchProjectTeam"
+    "id" : "FetchSpecifyTeam"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectTeam.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "PROJECTNAME",
+    "codeName" : "ProjectName"
   },
   "getValuePSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "ROOT",
+    "codeName" : "Root"
   }
 }

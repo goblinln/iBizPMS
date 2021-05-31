@@ -663,14 +663,6 @@ public class Case extends EntityMP implements Serializable {
     @TableField(exist = false)
     private List<cn.ibizlab.pms.core.zentao.domain.CaseStep> casesteps;
 
-    /**
-     * 测试结果
-     */
-    @JsonIgnore
-    @JSONField(serialize = false)
-    @TableField(exist = false)
-    private List<cn.ibizlab.pms.core.zentao.domain.TestResult> testresult;
-
 
     /**
      * 设置 [scriptedDate]

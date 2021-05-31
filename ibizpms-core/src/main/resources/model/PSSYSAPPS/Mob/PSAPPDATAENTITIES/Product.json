@@ -31,23 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -82,37 +65,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
+      "id" : "Remove"
     },
     "builtinMethod" : false
   }, {
@@ -164,6 +130,40 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Close"
     },
     "builtinMethod" : false
   }, {
@@ -851,23 +851,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -902,37 +885,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
+      "id" : "Remove"
     },
     "builtinMethod" : false
   }, {
@@ -970,6 +936,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchCurDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefault"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefault"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -987,20 +970,37 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchCurDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchCurDefault",
-    "getPSDEDataSet" : {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "CurDefault"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchCurDefault"
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Close"
     },
     "builtinMethod" : false
   }, {

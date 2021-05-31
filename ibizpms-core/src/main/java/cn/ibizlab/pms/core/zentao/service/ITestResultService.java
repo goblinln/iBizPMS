@@ -47,13 +47,10 @@ public interface ITestResultService extends IService<TestResult> {
     Page<TestResult> searchDefault(TestResultSearchContext context);
     List<TestResult> selectByIbizcase(Long id);
     void removeByIbizcase(Long id);
-    void saveByIbizcase(Long id, List<TestResult> list) ;
     List<TestResult> selectByCompile(Long id);
     void removeByCompile(Long id);
-    void saveByCompile(Long id, List<TestResult> list) ;
     List<TestResult> selectByJob(Long id);
     void removeByJob(Long id);
-    void saveByJob(Long id, List<TestResult> list) ;
     List<TestResult> selectByRun(Long id);
     void removeByRun(Long id);
     void saveByRun(Long id, List<TestResult> list) ;

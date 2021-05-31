@@ -54,6 +54,10 @@
         "actionType" : "DEACTION",
         "dataAccessAction" : "UPDATE",
         "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "RunCases"
+        },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"

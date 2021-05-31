@@ -243,12 +243,16 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'project' )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "SpecifyTeam",
     "logicName" : "指定团队",
-    "name" : "SpecifyTeam",
-    "customCode" : true
+    "name" : "SpecifyTeam"
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",

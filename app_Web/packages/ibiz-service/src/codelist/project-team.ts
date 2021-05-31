@@ -1,4 +1,4 @@
-import { ProjectService } from "../service";
+import { ProjectTeamService } from "../service";
 /**
  * 代码表--项目团队
  *
@@ -88,12 +88,12 @@ export default class ProjectTeam {
     }
 
     /**
-     * 项目应用实体服务对象
+     * 项目团队应用实体服务对象
      *
-     * @type {ProjectService}
+     * @type {ProjectTeamService}
      * @memberof ProjectTeam
      */
-    public projectService: ProjectService = new ProjectService();
+    public projectteamService: ProjectTeamService = new ProjectTeamService();
 
 
     /**
@@ -109,10 +109,10 @@ export default class ProjectTeam {
         if(items && items instanceof Array && items.length >0){
             items.forEach((item: any) => {
                 let itemdata:any = {};
-                Object.assign(itemdata,{id:item.id});
-                Object.assign(itemdata,{value:item.id});
-                Object.assign(itemdata,{text:item.name});
-                Object.assign(itemdata,{label:item.name});
+                Object.assign(itemdata,{id:item.root});
+                Object.assign(itemdata,{value:item.root});
+                Object.assign(itemdata,{text:item.projectname});
+                Object.assign(itemdata,{label:item.projectname});
                 
                 
                 
@@ -134,7 +134,7 @@ export default class ProjectTeam {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projectService.FetchProjectTeam(context, data);
+            const promise: Promise<any> = this.projectteamService.FetchSpecifyTeam(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;
