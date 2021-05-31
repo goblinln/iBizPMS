@@ -6969,12 +6969,6 @@
                       "editMode" : true
                     }
                   } ],
-                  "getPSAppViewNavParams" : [ {
-                    "key" : "linkstories",
-                    "name" : "linkstories",
-                    "value" : "linkStories",
-                    "rawValue" : false
-                  } ],
                   "getPSAppViewRefs" : [ {
                     "name" : "NEWDATA",
                     "realOpenMode" : "DRAWER_RIGHT",
@@ -7033,10 +7027,11 @@
                         }
                       }, {
                         "actionType" : "DEDATASET",
+                        "customCond" : "StoryChild",
                         "name" : "fetch",
                         "getPSAppDEMethod" : {
                           "modelref" : true,
-                          "id" : "FetchStoryChild"
+                          "id" : "FetchDefault"
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
@@ -7375,6 +7370,17 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "getPSNavigateParams" : [ {
+                  "key" : "n_parent_gt",
+                  "name" : "n_parent_gt",
+                  "value" : "0",
+                  "rawValue" : true
+                }, {
+                  "key" : "n_parent_eq",
+                  "name" : "n_parent_eq",
+                  "value" : "srfparentkey",
+                  "rawValue" : false
+                } ],
                 "parentDataJO" : {
                   "srfparentdename" : "ZT_STORY",
                   "SRFPARENTTYPE" : "CUSTOM"

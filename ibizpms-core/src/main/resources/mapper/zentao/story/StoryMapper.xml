@@ -966,7 +966,7 @@
 
     <!--数据查询[StoryRelated]-->
     <sql id="StoryRelated" databaseId="mysql">
-		<![CDATA[ SELECT	 	t1.`ID`,	 	t1.`TITLE`, 	t1.STORYSN  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.MODULESN  	LEFT JOIN zt_story t21 ON t1.PARENT = t21.STORYSN  	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.productsn  	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.BRANCHSN ]]>
+		<![CDATA[ SELECT	 	t1.`ID`,	 	t1.`TITLE`, 	t1.STORYSN  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND  FIND_IN_SET ( t1.ID, (select tt.linkStories from zt_story tt where tt.id = #{srf.datacontext.srfparentkey})) ]]>

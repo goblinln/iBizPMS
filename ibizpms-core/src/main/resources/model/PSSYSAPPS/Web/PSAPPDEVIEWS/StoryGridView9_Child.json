@@ -76,12 +76,6 @@
       "editMode" : true
     }
   } ],
-  "getPSAppViewNavParams" : [ {
-    "key" : "linkstories",
-    "name" : "linkstories",
-    "value" : "linkStories",
-    "rawValue" : false
-  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_RIGHT",
@@ -140,10 +134,11 @@
         }
       }, {
         "actionType" : "DEDATASET",
+        "customCond" : "StoryChild",
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchStoryChild"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
