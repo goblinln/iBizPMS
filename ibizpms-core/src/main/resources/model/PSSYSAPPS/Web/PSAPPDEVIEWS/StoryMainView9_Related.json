@@ -2301,7 +2301,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
               },
-              "name" : "TEST_BUG",
+              "name" : "TEST__TEST_BUG",
               "getParentPSAppDEField" : {
                 "name" : "PRODUCT",
                 "codeName" : "Product"
@@ -2860,7 +2860,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
               },
-              "name" : "TEST_BUG",
+              "name" : "TEST__TEST_BUG",
               "getParentPSAppDEField" : {
                 "name" : "PRODUCT",
                 "codeName" : "Product"
@@ -3351,7 +3351,7 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
               },
-              "name" : "TEST_CASE",
+              "name" : "TEST__TEST_CASE",
               "getParentPSAppDEField" : {
                 "name" : "PRODUCT",
                 "codeName" : "Product"
