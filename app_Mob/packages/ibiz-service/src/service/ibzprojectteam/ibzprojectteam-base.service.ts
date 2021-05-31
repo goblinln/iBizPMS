@@ -90,6 +90,14 @@ export class IBZPROJECTTEAMBaseService extends EntityBaseService<IIBZPROJECTTEAM
     }
 
     protected getSpecifyTeamCond() {
+        if (!this.condCache.has('specifyTeam')) {
+            const strCond: any[] = ['AND', ['EQ', 'TYPE','project']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('specifyTeam', cond);
+            }
+        }
         return this.condCache.get('specifyTeam');
     }
 
