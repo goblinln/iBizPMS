@@ -1010,6 +1010,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'products/:product?/builds/:build?/views/mobmpickupview',
+                    meta: {
+                        caption: 'entities.build.views.mobmpickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mobmpickupview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'builds/:build?/views/mobmpickupview',
                     meta: {
                         caption: 'entities.build.views.mobmpickupview.caption',
@@ -1036,6 +1054,24 @@ const router = new Router({
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mobeditview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/mobeditview',
+                    meta: {
+                        caption: 'entities.build.views.mobeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'mobeditview' },
                         ],
@@ -1080,6 +1116,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'products/:product?/builds/:build?/views/logmobeditview',
+                    meta: {
+                        caption: 'entities.build.views.logmobeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'logmobeditview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'builds/:build?/views/logmobeditview',
                     meta: {
                         caption: 'entities.build.views.logmobeditview.caption',
@@ -1106,6 +1160,24 @@ const router = new Router({
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'editmobeditview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/editmobeditview',
+                    meta: {
+                        caption: 'entities.build.views.editmobeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'editmobeditview' },
                         ],
@@ -1150,6 +1222,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'products/:product?/builds/:build?/views/mobpickupview',
+                    meta: {
+                        caption: 'entities.build.views.mobpickupview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mobpickupview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'builds/:build?/views/mobpickupview',
                     meta: {
                         caption: 'entities.build.views.mobpickupview.caption',
@@ -1176,6 +1266,24 @@ const router = new Router({
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mobtabexpview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/mobtabexpview',
+                    meta: {
+                        caption: 'entities.build.views.mobtabexpview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'mobtabexpview' },
                         ],
@@ -1220,6 +1328,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'products/:product?/builds/:build?/views/mobpickupmdview',
+                    meta: {
+                        caption: 'entities.build.views.mobpickupmdview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mobpickupmdview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'builds/:build?/views/mobpickupmdview',
                     meta: {
                         caption: 'entities.build.views.mobpickupmdview.caption',
@@ -1246,6 +1372,24 @@ const router = new Router({
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'logmobmdview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/logmobmdview',
+                    meta: {
+                        caption: 'entities.build.views.logmobmdview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'logmobmdview' },
                         ],
@@ -1290,6 +1434,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'products/:product?/builds/:build?/views/newmobeditview',
+                    meta: {
+                        caption: 'entities.build.views.newmobeditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'newmobeditview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'builds/:build?/views/newmobeditview',
                     meta: {
                         caption: 'entities.build.views.newmobeditview.caption',
@@ -1316,6 +1478,24 @@ const router = new Router({
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
                             { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'builds', parameterName: 'build' },
+                            { pathName: 'views', parameterName: 'mobmdview' },
+                        ],
+                        resource:'build',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/builds/:build?/views/mobmdview',
+                    meta: {
+                        caption: 'entities.build.views.mobmdview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-code-fork',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'mobmdview' },
                         ],

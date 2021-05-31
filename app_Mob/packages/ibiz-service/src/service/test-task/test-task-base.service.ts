@@ -84,119 +84,6 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         return new HttpResponse(entity);
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestTaskService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/testtasks/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * UnlinkCase
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestTaskService
-     */
-    async UnlinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/unlinkcase`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Block
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestTaskService
-     */
-    async Block(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/block`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestTaskService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/testtasks`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * LinkCase
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestTaskService
-     */
-    async LinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/linkcase`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Start
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestTaskService
-     */
-    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/start`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestTaskService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.testtask) {
-            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -270,6 +157,119 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * LinkCase
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestTaskService
+     */
+    async LinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/linkcase`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Start
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestTaskService
+     */
+    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/start`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestTaskService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/getdraft`, _data);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestTaskService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.testtask) {
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * UnlinkCase
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestTaskService
+     */
+    async UnlinkCase(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/unlinkcase`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Block
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestTaskService
+     */
+    async Block(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/block`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestTaskService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/testtasks`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * GetUserConcat
      *
      * @param {*} [_context={}]
@@ -284,7 +284,7 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
     }
 
     /**
-     * UnlinkCaseBatch接口方法
+     * ActivateBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -292,16 +292,16 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/activatebatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
-     * BlockBatch接口方法
+     * CloseBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -309,10 +309,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async BlockBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/blockbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/closebatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -352,7 +352,7 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
     }
 
     /**
-     * ActivateBatch接口方法
+     * UnlinkCaseBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -360,16 +360,16 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/activatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
-     * CloseBatch接口方法
+     * BlockBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -377,10 +377,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async BlockBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/testtasks/closebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/blockbatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

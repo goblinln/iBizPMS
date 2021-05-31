@@ -52,19 +52,5 @@ public class ProductBuildResource {
     @Lazy
     public ProductBuildMapping productbuildMapping;
 
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"版本" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbuilds/fetchdefault")
-	public ResponseEntity<List<ProductBuildDTO>> fetchProductBuildDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Build> domains = buildService.searchDefault(context) ;
-        List<ProductBuildDTO> list = productbuildMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 
