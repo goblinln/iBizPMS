@@ -1718,7 +1718,7 @@
     "dename":"TestTask",
     "delogicname":"测试版本",
     "sysmoudle":{"id":"ZENTAO","name":"基础管理模块"},
-    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"MyTestTaskPc" , "name":"我的测试单"}],
+    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"MyTestTaskPc" , "name":"我的测试单"},{"id":"ProjectTestTaskDS" , "name":"项目测试单"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"Activate" , "name":"激活" , "type":"USERCUSTOM" },{"id":"Block" , "name":"阻塞" , "type":"USERCUSTOM" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Close" , "name":"关闭" , "type":"USERCUSTOM" },{"id":"GetUserConcat" , "name":"获取联系人" , "type":"DELOGIC" },{"id":"LinkCase" , "name":"关联测试用例" , "type":"USERCUSTOM" },{"id":"MobTestTaskCounter" , "name":"移动端测试版本计数器" , "type":"DELOGIC" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"Start" , "name":"开始" , "type":"USERCUSTOM" },{"id":"UnlinkCase" , "name":"关联测试用例" , "type":"USERCUSTOM" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} , {"id":"createman","name":"创建人"}]
     }

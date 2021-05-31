@@ -261,6 +261,18 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取项目测试单", tags = {"测试版本" } ,notes = "获取项目测试单")
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchprojecttesttaskds")
+	public ResponseEntity<List<TestTaskDTO>> fetchprojecttesttaskds(@RequestBody TestTaskSearchContext context) {
+        Page<TestTask> domains = testtaskService.searchProjectTestTaskDS(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/{action}")
@@ -457,6 +469,19 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取项目测试单", tags = {"测试版本" } ,notes = "根据产品获取项目测试单")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchprojecttesttaskds")
+	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskProjectTestTaskDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<TestTask> domains = testtaskService.searchProjectTestTaskDS(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TESTTASKMANAGE')")
     @ApiOperation(value = "根据项目建立测试版本", tags = {"测试版本" },  notes = "根据项目建立测试版本")
@@ -638,6 +663,19 @@ public class TestTaskResource {
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskMyTestTaskPcByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取项目测试单", tags = {"测试版本" } ,notes = "根据项目获取项目测试单")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchprojecttesttaskds")
+	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskProjectTestTaskDSByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<TestTask> domains = testtaskService.searchProjectTestTaskDS(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

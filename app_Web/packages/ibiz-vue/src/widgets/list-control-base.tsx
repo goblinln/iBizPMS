@@ -326,7 +326,6 @@ export class ListControlBase extends MDControlBase {
                     });
                     _this.totalRecord = response.total;
                     _this.items.push(...datas);
-                    _this.items = _this.arrayNonRepeatfy(_this.items);
                 }
                 _this.isControlLoaded = true;
                 _this.isAddBehind = false;
@@ -396,25 +395,6 @@ export class ListControlBase extends MDControlBase {
 
             }
         }
-    }
-
-    /**
-     * 列表数据去重
-     *
-     * @param {Array<any>} [arr]
-     * @returns {void}
-     * @memberof ListControlBase
-     */
-    public arrayNonRepeatfy(arr: Array<any>) {
-        let map = new Map();
-        let array = new Array();
-        for (let i = 0; i < arr.length; i++) {
-            map.set(arr[i].srfkey, arr[i]);
-        }
-        map.forEach((value: any, key: string, map: any) => {
-            array.push(value);
-        });
-        return array;
     }
 
     /**

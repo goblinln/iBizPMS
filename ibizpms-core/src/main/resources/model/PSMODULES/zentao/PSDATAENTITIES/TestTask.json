@@ -225,6 +225,16 @@
     } ],
     "enableBackend" : true,
     "enableFront" : true
+  }, {
+    "codeName" : "ProjectTestTaskDS",
+    "logicName" : "项目测试单",
+    "name" : "ProjectTestTaskDS",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Default"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {

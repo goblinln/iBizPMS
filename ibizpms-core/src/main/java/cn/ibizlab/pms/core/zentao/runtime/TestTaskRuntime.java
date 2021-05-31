@@ -131,6 +131,8 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             return testtaskService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTestTaskPc"))
             return testtaskService.searchMyTestTaskPc(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTestTaskDS"))
+            return testtaskService.searchProjectTestTaskDS(searchContext);    
         return null;
     }
 
@@ -385,6 +387,9 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         }
         else if (action.equals("searchMyTestTaskPc")) {
             return aroundDataSet("MyTestTaskPc", point);
+        }
+        else if (action.equals("searchProjectTestTaskDS")) {
+            return aroundDataSet("ProjectTestTaskDS", point);
         }
         return point.proceed();
     }

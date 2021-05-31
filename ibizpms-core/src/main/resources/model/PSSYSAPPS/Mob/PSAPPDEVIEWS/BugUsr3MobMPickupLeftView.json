@@ -792,31 +792,6 @@
         "enableSelect" : true,
         "enableSelectDataRS" : false,
         "enableUpdateDataRS" : false
-      } ], [ {
-        "actionRSMode" : 1,
-        "codeName" : "Bugs",
-        "dataRSMode" : 0,
-        "getMajorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
-        },
-        "getMinorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
-        },
-        "name" : "PRODUCT__PRODUCT_BUG",
-        "getParentPSAppDEField" : {
-          "name" : "PRODUCT",
-          "codeName" : "Product"
-        },
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
       } ] ]
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
@@ -897,31 +872,6 @@
     "getParentPSAppDEField" : {
       "name" : "PROJECT",
       "codeName" : "Project"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ], [ {
-    "actionRSMode" : 1,
-    "codeName" : "Bugs",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
-    },
-    "name" : "PRODUCT__PRODUCT_BUG",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
     },
     "rSMode" : 2,
     "enableCreateDataRS" : false,

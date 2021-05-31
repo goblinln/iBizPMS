@@ -9100,24 +9100,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/testbugsgridview',
-                    meta: {
-                        caption: 'entities.bug.views.testbugsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'testbugsgridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/testbugsgridview',
                     meta: {
                         caption: 'entities.bug.views.testbugsgridview.caption',
@@ -9162,24 +9144,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'assingtoview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/assingtoview',
-                    meta: {
-                        caption: 'entities.bug.views.assingtoview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'assingtoview' },
                         ],
@@ -9242,24 +9206,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/maindashboardview_link',
-                    meta: {
-                        caption: 'entities.bug.views.maindashboardview_link.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'maindashboardview_link' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.bug.views.maindashboardview_link.caption',
@@ -9304,24 +9250,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'mpickupview5' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/mpickupview5',
-                    meta: {
-                        caption: 'entities.bug.views.mpickupview5.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview5' },
                         ],
@@ -9384,24 +9312,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/editview_4791',
-                    meta: {
-                        caption: 'entities.bug.views.editview_4791.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'editview_4791' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/editview_4791',
                     meta: {
                         caption: 'entities.bug.views.editview_4791.caption',
@@ -9446,24 +9356,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'buglifeeditview9' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/buglifeeditview9',
-                    meta: {
-                        caption: 'entities.bug.views.buglifeeditview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buglifeeditview9' },
                         ],
@@ -9526,24 +9418,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/maindashboardview',
-                    meta: {
-                        caption: 'entities.bug.views.maindashboardview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'maindashboardview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/maindashboardview',
                     meta: {
                         caption: 'entities.bug.views.maindashboardview.caption',
@@ -9588,24 +9462,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'pickupgridview5' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/pickupgridview5',
-                    meta: {
-                        caption: 'entities.bug.views.pickupgridview5.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview5' },
                         ],
@@ -9668,24 +9524,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/buildsubgridview_new_9212',
-                    meta: {
-                        caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/buildsubgridview_new_9212',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
@@ -9730,24 +9568,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.bug.views.pickupgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
@@ -9810,24 +9630,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/releasesubgridview_done',
-                    meta: {
-                        caption: 'entities.bug.views.releasesubgridview_done.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'releasesubgridview_done' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/releasesubgridview_done',
                     meta: {
                         caption: 'entities.bug.views.releasesubgridview_done.caption',
@@ -9872,24 +9674,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'mpickupview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/mpickupview',
-                    meta: {
-                        caption: 'entities.bug.views.mpickupview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview' },
                         ],
@@ -9952,24 +9736,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/calendareditview',
-                    meta: {
-                        caption: 'entities.bug.views.calendareditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'calendareditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/calendareditview',
                     meta: {
                         caption: 'entities.bug.views.calendareditview.caption',
@@ -10014,24 +9780,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'bugprojectkanbanview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/bugprojectkanbanview',
-                    meta: {
-                        caption: 'entities.bug.views.bugprojectkanbanview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugprojectkanbanview' },
                         ],
@@ -10094,24 +9842,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/maineditview',
-                    meta: {
-                        caption: 'entities.bug.views.maineditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'maineditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/maineditview',
                     meta: {
                         caption: 'entities.bug.views.maineditview.caption',
@@ -10156,24 +9886,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'resolvechartview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/resolvechartview',
-                    meta: {
-                        caption: 'entities.bug.views.resolvechartview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolvechartview' },
                         ],
@@ -10236,24 +9948,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/usr2gridview',
-                    meta: {
-                        caption: 'entities.bug.views.usr2gridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/usr2gridview',
                     meta: {
                         caption: 'entities.bug.views.usr2gridview.caption',
@@ -10298,24 +9992,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'gridview9_taskrelated' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/gridview9_taskrelated',
-                    meta: {
-                        caption: 'entities.bug.views.gridview9_taskrelated.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_taskrelated' },
                         ],
@@ -10378,24 +10054,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/mpickupview4',
-                    meta: {
-                        caption: 'entities.bug.views.mpickupview4.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'mpickupview4' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/mpickupview4',
                     meta: {
                         caption: 'entities.bug.views.mpickupview4.caption',
@@ -10440,24 +10098,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/editview',
-                    meta: {
-                        caption: 'entities.bug.views.editview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -10520,24 +10160,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/plansubgridview',
-                    meta: {
-                        caption: 'entities.bug.views.plansubgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'plansubgridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/plansubgridview',
                     meta: {
                         caption: 'entities.bug.views.plansubgridview.caption',
@@ -10582,24 +10204,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'closeview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/closeview',
-                    meta: {
-                        caption: 'entities.bug.views.closeview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'closeview' },
                         ],
@@ -10662,24 +10266,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/bugkanbanview',
-                    meta: {
-                        caption: 'entities.bug.views.bugkanbanview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'bugkanbanview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/bugkanbanview',
                     meta: {
                         caption: 'entities.bug.views.bugkanbanview.caption',
@@ -10724,24 +10310,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'tasktobugeditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/tasktobugeditview',
-                    meta: {
-                        caption: 'entities.bug.views.tasktobugeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'tasktobugeditview' },
                         ],
@@ -10804,24 +10372,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/activationview',
-                    meta: {
-                        caption: 'entities.bug.views.activationview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'activationview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/activationview',
                     meta: {
                         caption: 'entities.bug.views.activationview.caption',
@@ -10866,24 +10416,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'gridview9_storyformbug' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/gridview9_storyformbug',
-                    meta: {
-                        caption: 'entities.bug.views.gridview9_storyformbug.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyformbug' },
                         ],
@@ -10946,24 +10478,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/gridview9_storyaffect',
-                    meta: {
-                        caption: 'entities.bug.views.gridview9_storyaffect.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'gridview9_storyaffect' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/gridview9_storyaffect',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyaffect.caption',
@@ -11008,24 +10522,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'myfavoritegridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/myfavoritegridview',
-                    meta: {
-                        caption: 'entities.bug.views.myfavoritegridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
                         ],
@@ -11088,24 +10584,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/releasesubgridview_undone',
-                    meta: {
-                        caption: 'entities.bug.views.releasesubgridview_undone.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'releasesubgridview_undone' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/releasesubgridview_undone',
                     meta: {
                         caption: 'entities.bug.views.releasesubgridview_undone.caption',
@@ -11150,24 +10628,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'stepsinfoeditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/stepsinfoeditview',
-                    meta: {
-                        caption: 'entities.bug.views.stepsinfoeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'stepsinfoeditview' },
                         ],
@@ -11230,24 +10690,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/testreportsubgridview',
-                    meta: {
-                        caption: 'entities.bug.views.testreportsubgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'testreportsubgridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/testreportsubgridview',
                     meta: {
                         caption: 'entities.bug.views.testreportsubgridview.caption',
@@ -11292,24 +10734,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'resolveview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/resolveview',
-                    meta: {
-                        caption: 'entities.bug.views.resolveview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolveview' },
                         ],
@@ -11372,24 +10796,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/pickupgridview4',
-                    meta: {
-                        caption: 'entities.bug.views.pickupgridview4.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'pickupgridview4' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/pickupgridview4',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview4.caption',
@@ -11434,24 +10840,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/gridview9_myassignedtome',
-                    meta: {
-                        caption: 'entities.bug.views.gridview9_myassignedtome.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
                         ],
@@ -11514,24 +10902,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/projectneweditview',
-                    meta: {
-                        caption: 'entities.bug.views.projectneweditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'projectneweditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/projectneweditview',
                     meta: {
                         caption: 'entities.bug.views.projectneweditview.caption',
@@ -11576,24 +10946,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'projectgridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/projectgridview',
-                    meta: {
-                        caption: 'entities.bug.views.projectgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectgridview' },
                         ],
@@ -11656,24 +11008,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/casetobugeditview',
-                    meta: {
-                        caption: 'entities.bug.views.casetobugeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'casetobugeditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/casetobugeditview',
                     meta: {
                         caption: 'entities.bug.views.casetobugeditview.caption',
@@ -11718,24 +11052,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'buildsubgridview_done' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/buildsubgridview_done',
-                    meta: {
-                        caption: 'entities.bug.views.buildsubgridview_done.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_done' },
                         ],
@@ -11798,24 +11114,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/projectbugsgridview',
-                    meta: {
-                        caption: 'entities.bug.views.projectbugsgridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'projectbugsgridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/projectbugsgridview',
                     meta: {
                         caption: 'entities.bug.views.projectbugsgridview.caption',
@@ -11860,24 +11158,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'confirmview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/confirmview',
-                    meta: {
-                        caption: 'entities.bug.views.confirmview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'confirmview' },
                         ],
@@ -11940,24 +11220,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/dashboardmaineditview9',
-                    meta: {
-                        caption: 'entities.bug.views.dashboardmaineditview9.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'dashboardmaineditview9' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/dashboardmaineditview9',
                     meta: {
                         caption: 'entities.bug.views.dashboardmaineditview9.caption',
@@ -12002,24 +11264,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
-                    meta: {
-                        caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
                         ],
@@ -12082,24 +11326,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/buildsubgridview_new',
-                    meta: {
-                        caption: 'entities.bug.views.buildsubgridview_new.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'buildsubgridview_new' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/buildsubgridview_new',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_new.caption',
@@ -12144,24 +11370,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'todoeditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/todoeditview',
-                    meta: {
-                        caption: 'entities.bug.views.todoeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'todoeditview' },
                         ],
@@ -12224,24 +11432,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/gridview',
-                    meta: {
-                        caption: 'entities.bug.views.gridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/gridview',
                     meta: {
                         caption: 'entities.bug.views.gridview.caption',
@@ -12286,24 +11476,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'mpickupview2' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/mpickupview2',
-                    meta: {
-                        caption: 'entities.bug.views.mpickupview2.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview2' },
                         ],
@@ -12366,24 +11538,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/gridview9_storyrelated',
-                    meta: {
-                        caption: 'entities.bug.views.gridview9_storyrelated.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/gridview9_storyrelated',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyrelated.caption',
@@ -12428,24 +11582,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'gridview9_assignedtome' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/gridview9_assignedtome',
-                    meta: {
-                        caption: 'entities.bug.views.gridview9_assignedtome.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
                         ],
@@ -12508,24 +11644,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/editview_1162',
-                    meta: {
-                        caption: 'entities.bug.views.editview_1162.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'editview_1162' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/editview_1162',
                     meta: {
                         caption: 'entities.bug.views.editview_1162.caption',
@@ -12570,24 +11688,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'storytobugeditview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/storytobugeditview',
-                    meta: {
-                        caption: 'entities.bug.views.storytobugeditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'storytobugeditview' },
                         ],
@@ -12650,24 +11750,6 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'products/:product?/bugs/:bug?/views/totalopenedchartview',
-                    meta: {
-                        caption: 'entities.bug.views.totalopenedchartview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'totalopenedchartview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'bugs/:bug?/views/totalopenedchartview',
                     meta: {
                         caption: 'entities.bug.views.totalopenedchartview.caption',
@@ -12712,24 +11794,6 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'bugs', parameterName: 'bug' },
-                            { pathName: 'views', parameterName: 'mainmygridview' },
-                        ],
-                        resource:'bug',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'products/:product?/bugs/:bug?/views/mainmygridview',
-                    meta: {
-                        caption: 'entities.bug.views.mainmygridview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-bug',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'products', parameterName: 'product' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],

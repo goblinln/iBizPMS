@@ -343,7 +343,7 @@ export class WFDynaEditView3Base extends MainViewBase {
                                     if (Object.keys(resultData).length > 0) {
                                         let tempData: any = {};
                                         Object.keys(resultData).forEach((key: any) => {
-                                            if (resultData[key] && (key !== "srfuf")) tempData[key] = resultData[key];
+                                            if (Util.isExistAndNotEmpty(resultData[key]) && (key !== "srfuf")) tempData[key] = resultData[key];
                                         })
                                         Object.assign(tempSubmitData, tempData);
                                     }
