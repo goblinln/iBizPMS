@@ -44,7 +44,7 @@ export default class SysUpdateLogUIService extends SysUpdateLogUIServiceBase {
      */
     public static getInstance(context: any): SysUpdateLogUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysUpdateLogUIService();
+            this.basicUIServiceInstance = new SysUpdateLogUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

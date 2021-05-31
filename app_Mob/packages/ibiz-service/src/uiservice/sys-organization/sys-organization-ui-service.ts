@@ -44,7 +44,7 @@ export default class SysOrganizationUIService extends SysOrganizationUIServiceBa
      */
     public static getInstance(context: any): SysOrganizationUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysOrganizationUIService();
+            this.basicUIServiceInstance = new SysOrganizationUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

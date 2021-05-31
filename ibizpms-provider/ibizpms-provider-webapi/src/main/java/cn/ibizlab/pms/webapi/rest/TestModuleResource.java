@@ -243,7 +243,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品建立测试模块", tags = {"测试模块" },  notes = "根据产品建立测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules")
     public ResponseEntity<TestModuleDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -255,7 +255,7 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品更新测试模块", tags = {"测试模块" },  notes = "根据产品更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -268,14 +268,14 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品删除测试模块", tags = {"测试模块" },  notes = "根据产品删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品批量删除测试模块", tags = {"测试模块" },  notes = "根据产品批量删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testmodules/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -292,7 +292,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品获取测试模块草稿", tags = {"测试模块" },  notes = "根据产品获取测试模块草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testmodules/getdraft")
     public ResponseEntity<TestModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestModuleDTO dto) {
@@ -301,7 +301,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(testmoduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品检查测试模块", tags = {"测试模块" },  notes = "根据产品检查测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -320,7 +320,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品删除模块", tags = {"测试模块" },  notes = "根据产品删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}/removemodule")
     public ResponseEntity<TestModuleDTO> removeModuleByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {

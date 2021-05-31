@@ -44,7 +44,7 @@ export default class SysPostUIService extends SysPostUIServiceBase {
      */
     public static getInstance(context: any): SysPostUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysPostUIService();
+            this.basicUIServiceInstance = new SysPostUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

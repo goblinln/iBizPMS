@@ -44,7 +44,7 @@ export default class FileUIService extends FileUIServiceBase {
      */
     public static getInstance(context: any): FileUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new FileUIService();
+            this.basicUIServiceInstance = new FileUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

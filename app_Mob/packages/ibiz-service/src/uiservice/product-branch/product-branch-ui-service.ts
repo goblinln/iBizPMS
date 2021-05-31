@@ -44,7 +44,7 @@ export default class ProductBranchUIService extends ProductBranchUIServiceBase {
      */
     public static getInstance(context: any): ProductBranchUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProductBranchUIService();
+            this.basicUIServiceInstance = new ProductBranchUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

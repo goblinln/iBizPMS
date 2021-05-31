@@ -44,7 +44,7 @@ export default class IbztaskteamUIService extends IbztaskteamUIServiceBase {
      */
     public static getInstance(context: any): IbztaskteamUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbztaskteamUIService();
+            this.basicUIServiceInstance = new IbztaskteamUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

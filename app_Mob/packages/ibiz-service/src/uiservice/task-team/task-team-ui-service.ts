@@ -44,7 +44,7 @@ export default class TaskTeamUIService extends TaskTeamUIServiceBase {
      */
     public static getInstance(context: any): TaskTeamUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TaskTeamUIService();
+            this.basicUIServiceInstance = new TaskTeamUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

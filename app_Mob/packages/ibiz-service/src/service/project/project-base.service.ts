@@ -177,62 +177,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.condCache.get('view');
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/projects/${_context.project}`);
-    }
-    /**
-     * UnlinkStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/${_context.project}/unlinkstory`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/projects/${_context.project}`);
-        return res;
-    }
-    /**
-     * LinkProduct
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async LinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/${_context.project}/linkproduct`, _data);
-    }
-    /**
-     * LinkStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/${_context.project}/linkstory`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -245,17 +189,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projects/getdraft`, _data);
         return res;
-    }
-    /**
-     * FetchCurDefaultQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchCurDefaultQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchcurdefaultquery`, _data);
     }
     /**
      * Start
@@ -287,15 +220,26 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects`, _data);
     }
     /**
-     * Suspend
+     * FetchCurDefaultQuery
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectService
      */
-    async Suspend(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/${_context.project}/suspend`, _data);
+    async FetchCurDefaultQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchcurdefaultquery`, _data);
+    }
+    /**
+     * LinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/${_context.project}/linkstory`, _data);
     }
     /**
      * UnlinkProduct
@@ -309,18 +253,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/${_context.project}/unlinkproduct`, _data);
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projects/${_context.project}`, _data);
-    }
-    /**
      * Activate
      *
      * @param {*} [_context={}]
@@ -330,6 +262,17 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      */
     async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projects/${_context.project}/activate`, _data);
+    }
+    /**
+     * UnlinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/${_context.project}/unlinkstory`, _data);
     }
     /**
      * Putoff
@@ -353,47 +296,62 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projects/${_context.project}/close`, _data);
     }
-
     /**
-     * UnlinkStoryBatch接口方法
+     * Suspend
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
      */
-    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/unlinkstorybatch`,_data);
+    async Suspend(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/${_context.project}/suspend`, _data);
     }
-
     /**
-     * LinkProductBatch接口方法
+     * Remove
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
      */
-    public async LinkProductBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/linkproductbatch`,_data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/projects/${_context.project}`);
     }
-
     /**
-     * LinkStoryBatch接口方法
+     * Update
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
      */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/linkstorybatch`,_data);
+        return this.http.put(`/projects/${_context.project}`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/projects/${_context.project}`);
+        return res;
+    }
+    /**
+     * LinkProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async LinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/${_context.project}/linkproduct`, _data);
     }
 
     /**
@@ -411,7 +369,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     }
 
     /**
-     * SuspendBatch接口方法
+     * LinkStoryBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -419,9 +377,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async SuspendBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/suspendbatch`,_data);
+        return this.http.post(`/projects/linkstorybatch`,_data);
     }
 
     /**
@@ -453,6 +411,20 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     }
 
     /**
+     * UnlinkStoryBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/projects/unlinkstorybatch`,_data);
+    }
+
+    /**
      * PutoffBatch接口方法
      *
      * @param {*} [context={}]
@@ -478,5 +450,33 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/projects/closebatch`,_data);
+    }
+
+    /**
+     * SuspendBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async SuspendBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/projects/suspendbatch`,_data);
+    }
+
+    /**
+     * LinkProductBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async LinkProductBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/projects/linkproductbatch`,_data);
     }
 }

@@ -44,7 +44,7 @@ export default class BugUIService extends BugUIServiceBase {
      */
     public static getInstance(context: any): BugUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BugUIService();
+            this.basicUIServiceInstance = new BugUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

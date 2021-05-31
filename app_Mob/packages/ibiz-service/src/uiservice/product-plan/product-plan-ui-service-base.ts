@@ -1,8 +1,8 @@
 import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { ProductPlanService } from '../../service';
-import ProductPlanAuthService from '../../authservice/product-plan/product-plan-auth-service';
+import { AuthServiceRegister } from '../../register';
+import { GlobalService } from '../../service';
 
 /**
  * 产品计划UI服务对象基类
@@ -32,6 +32,18 @@ export class ProductPlanUIServiceBase extends UIServiceBase {
     }
 
     /**
+     * 加载应用实体模型数据
+     *
+     * @memberof  ProductPlanUIServiceBase
+     */
+     protected async loaded() {
+        await super.loaded();
+        this.authService = await AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
+        await this.authService.loaded();
+    }
+
+    /**
      * 初始化基础数据
      * 
      * @memberof  ProductPlanUIServiceBase
@@ -45,8 +57,6 @@ export class ProductPlanUIServiceBase extends UIServiceBase {
         this.indexTypeDEField = null;
         this.stateField = "";
         this.mainStateFields = ['statuss'];
-        this.authService = new ProductPlanAuthService({context:this.context});
-        this.dataService = new ProductPlanService();
     }
 
     /**
@@ -54,10 +64,11 @@ export class ProductPlanUIServiceBase extends UIServiceBase {
      * 
      * @memberof  ProductPlanUIServiceBase
      */
-    protected async initActionMap() {
-        if (this.entityModel && this.entityModel.getAllPSAppDEUIActions() && (this.entityModel.getAllPSAppDEUIActions() as IPSAppDEUIAction[]).length > 0) {
-            for(let element of (this.entityModel.getAllPSAppDEUIActions() as IPSAppDEUIAction[])){
-                const targetAction:any = await AppLogicFactory.getInstance(element, this.context);
+    protected async initActionMap(): Promise<void> {
+        const actions = this.entityModel?.getAllPSAppDEUIActions() as IPSAppDEUIAction[];
+        if (actions && actions.length > 0) {
+            for (const element of actions) {
+                const targetAction: any = await AppLogicFactory.getInstance(element, this.context);
                 this.actionMap.set(element.uIActionTag, targetAction);
             }
         }

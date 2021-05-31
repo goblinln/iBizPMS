@@ -44,7 +44,7 @@ export default class SysDepartmentUIService extends SysDepartmentUIServiceBase {
      */
     public static getInstance(context: any): SysDepartmentUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysDepartmentUIService();
+            this.basicUIServiceInstance = new SysDepartmentUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

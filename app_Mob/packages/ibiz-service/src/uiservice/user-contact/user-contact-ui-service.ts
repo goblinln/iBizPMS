@@ -44,7 +44,7 @@ export default class UserContactUIService extends UserContactUIServiceBase {
      */
     public static getInstance(context: any): UserContactUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new UserContactUIService();
+            this.basicUIServiceInstance = new UserContactUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

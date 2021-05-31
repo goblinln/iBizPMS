@@ -44,7 +44,7 @@ export default class IbzDailyUIService extends IbzDailyUIServiceBase {
      */
     public static getInstance(context: any): IbzDailyUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzDailyUIService();
+            this.basicUIServiceInstance = new IbzDailyUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

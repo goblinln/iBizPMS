@@ -44,7 +44,7 @@ export default class DynaFilterUIService extends DynaFilterUIServiceBase {
      */
     public static getInstance(context: any): DynaFilterUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DynaFilterUIService();
+            this.basicUIServiceInstance = new DynaFilterUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

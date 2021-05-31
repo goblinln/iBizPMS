@@ -44,7 +44,7 @@ export default class SysUpdateFeaturesUIService extends SysUpdateFeaturesUIServi
      */
     public static getInstance(context: any): SysUpdateFeaturesUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new SysUpdateFeaturesUIService();
+            this.basicUIServiceInstance = new SysUpdateFeaturesUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

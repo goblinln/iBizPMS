@@ -1446,6 +1446,9 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "测试模块管理",
+    "name" : "TESTMODULEMANAGE"
+  }, {
     "logicName" : "测试报告管理",
     "name" : "TESTREPORTMANAGE"
   }, {

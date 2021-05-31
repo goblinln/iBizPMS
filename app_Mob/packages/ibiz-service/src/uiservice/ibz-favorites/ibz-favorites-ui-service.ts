@@ -44,7 +44,7 @@ export default class IbzFavoritesUIService extends IbzFavoritesUIServiceBase {
      */
     public static getInstance(context: any): IbzFavoritesUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzFavoritesUIService();
+            this.basicUIServiceInstance = new IbzFavoritesUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

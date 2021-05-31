@@ -705,7 +705,7 @@
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "Product_Create",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "CREATE",
+    "mapPSDEOPPrivName" : "TESTMODULEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
@@ -721,7 +721,7 @@
   }, {
     "logicName" : "Product_Delete",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "DELETE",
+    "mapPSDEOPPrivName" : "TESTMODULEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
@@ -731,7 +731,7 @@
   }, {
     "logicName" : "Product_Manage",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "MANAGE",
+    "mapPSDEOPPrivName" : "TESTMODULEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
@@ -757,7 +757,7 @@
   }, {
     "logicName" : "Product_Update",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "mapPSDEOPPrivName" : "TESTMODULEMANAGE",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"

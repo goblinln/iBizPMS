@@ -44,7 +44,7 @@ export default class TestCaseStepUIService extends TestCaseStepUIServiceBase {
      */
     public static getInstance(context: any): TestCaseStepUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new TestCaseStepUIService();
+            this.basicUIServiceInstance = new TestCaseStepUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

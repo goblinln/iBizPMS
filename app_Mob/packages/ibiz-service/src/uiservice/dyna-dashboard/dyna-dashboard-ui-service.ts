@@ -44,7 +44,7 @@ export default class DynaDashboardUIService extends DynaDashboardUIServiceBase {
      */
     public static getInstance(context: any): DynaDashboardUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new DynaDashboardUIService();
+            this.basicUIServiceInstance = new DynaDashboardUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

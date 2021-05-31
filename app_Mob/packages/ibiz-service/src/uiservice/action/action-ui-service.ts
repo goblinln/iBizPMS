@@ -44,7 +44,7 @@ export default class ActionUIService extends ActionUIServiceBase {
      */
     public static getInstance(context: any): ActionUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ActionUIService();
+            this.basicUIServiceInstance = new ActionUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

@@ -44,7 +44,7 @@ export default class ProjectUIService extends ProjectUIServiceBase {
      */
     public static getInstance(context: any): ProjectUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProjectUIService();
+            this.basicUIServiceInstance = new ProjectUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

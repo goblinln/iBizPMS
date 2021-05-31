@@ -44,7 +44,7 @@ export default class IBZPROJECTTEAMUIService extends IBZPROJECTTEAMUIServiceBase
      */
     public static getInstance(context: any): IBZPROJECTTEAMUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IBZPROJECTTEAMUIService();
+            this.basicUIServiceInstance = new IBZPROJECTTEAMUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

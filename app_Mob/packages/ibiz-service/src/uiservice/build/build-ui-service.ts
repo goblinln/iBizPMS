@@ -44,7 +44,7 @@ export default class BuildUIService extends BuildUIServiceBase {
      */
     public static getInstance(context: any): BuildUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new BuildUIService();
+            this.basicUIServiceInstance = new BuildUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

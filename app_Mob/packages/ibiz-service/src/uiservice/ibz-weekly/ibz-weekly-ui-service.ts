@@ -44,7 +44,7 @@ export default class IbzWeeklyUIService extends IbzWeeklyUIServiceBase {
      */
     public static getInstance(context: any): IbzWeeklyUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new IbzWeeklyUIService();
+            this.basicUIServiceInstance = new IbzWeeklyUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;

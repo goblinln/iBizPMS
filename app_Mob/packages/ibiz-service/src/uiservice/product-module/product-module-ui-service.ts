@@ -44,7 +44,7 @@ export default class ProductModuleUIService extends ProductModuleUIServiceBase {
      */
     public static getInstance(context: any): ProductModuleUIService {
         if (!this.basicUIServiceInstance) {
-            this.basicUIServiceInstance = new ProductModuleUIService();
+            this.basicUIServiceInstance = new ProductModuleUIService({context:context});
         }
         if (!context.srfdynainstid) {
             return this.basicUIServiceInstance;
