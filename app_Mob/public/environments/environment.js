@@ -11,7 +11,7 @@ window.Environment = {
     // 是否为pc端应用
     isAppMode: false,
     // 是否开启权限认证
-    enablePermissionValid: false,
+    enablePermissionValid: true,
     // 打开目标工具，可选参数：sln、mos
     debugOpenMode: 'mos',
     // 配置平台地址
