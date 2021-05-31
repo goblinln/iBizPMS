@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"alwaysCheck","desc":"始终检查","order":1000},{"name":"includeMaxValue","desc":"含最大值","order":1000},{"name":"includeMinValue","desc":"含最小值","order":1000},{"name":"maxValue","desc":"最大值","order":1000},{"name":"minValue","desc":"最小值","order":1000}]}]

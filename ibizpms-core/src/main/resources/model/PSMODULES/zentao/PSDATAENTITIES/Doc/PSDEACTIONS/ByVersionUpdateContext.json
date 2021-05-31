@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ByVersionUpdateContext",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json",
-  "logicName" : "根据版本更新正文信息",
-  "name" : "ByVersionUpdateContext"
-}

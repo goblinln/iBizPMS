@@ -1,9 +1,0 @@
-{
-  "codeListType" : "DYNAMIC",
-  "codeName" : "CurStory",
-  "dynaInstMode" : 1,
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurStory.json",
-  "emptyText" : "未定义",
-  "minorSortDir" : "DESC",
-  "name" : "当前需求版本（动态）"
-}

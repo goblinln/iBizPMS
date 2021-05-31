@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"fileExts","desc":"文件后缀[FILEEXTS]","order":1000},{"name":"maxFileCount","desc":"最大文件数量[MAXFILECNT]","order":1000},{"name":"maxFileSize","desc":"最大文件大小[MAXFILESIZE]","order":1000},{"name":"minFileCount","desc":"最小文件数量[MINFILECNT]","order":1000}]}]

@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "MobLinkCase",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/MobLinkCase.json",
-  "logicName" : "移动端关联需求",
-  "name" : "MobLinkCase",
-  "userCat" : "CAT1"
-}

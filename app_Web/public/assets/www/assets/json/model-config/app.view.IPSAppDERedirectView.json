@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"enableCustomGetDataAction","desc":"自定义获取数据行为","order":1000},{"name":"enableWorkflow","desc":"启用工作流","order":1000},{"name":"getGetDataPSAppDEAction","desc":"获取数据应用实体行为","order":1000},{"name":"getTypePSAppDEField","desc":"应用实体数据类型识别属性","order":1000}]}]

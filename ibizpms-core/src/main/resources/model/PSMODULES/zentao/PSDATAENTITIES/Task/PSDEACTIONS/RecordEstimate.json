@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "RecordEstimate",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json",
-  "logicName" : "工时录入",
-  "name" : "RecordEstimate",
-  "userCat" : "CAT1"
-}

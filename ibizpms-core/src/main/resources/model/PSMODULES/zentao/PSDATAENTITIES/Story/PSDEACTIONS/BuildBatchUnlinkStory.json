@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "BuildBatchUnlinkStory",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildBatchUnlinkStory.json",
-  "logicName" : "版本批量解除关联需求",
-  "name" : "buildBatchUnlinkStory",
-  "userCat" : "CAT1"
-}

@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"dropDownView","desc":"下拉选择视图","order":1000},{"name":"enableLinkView","desc":"支持链接视图","order":1000},{"name":"enablePickupView","desc":"支持选择视图","order":1000},{"name":"getLinkPSAppView","desc":"数据链接视图","order":1000},{"name":"singleSelect","desc":"单项选择","order":1000}]}]

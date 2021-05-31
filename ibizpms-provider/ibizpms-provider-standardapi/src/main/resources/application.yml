@@ -1,5 +1,0 @@
-spring:
-  profiles:
-    include: sys ,nacos, standardapi-prod
-  application:
-    name: ibizpms-standardapi

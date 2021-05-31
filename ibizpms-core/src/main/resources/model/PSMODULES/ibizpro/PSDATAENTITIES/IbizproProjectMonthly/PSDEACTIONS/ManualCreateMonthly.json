@@ -1,8 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "ManualCreateMonthly",
-  "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly/PSDEACTIONS/ManualCreateMonthly.json",
-  "logicName" : "手动生成项目月报",
-  "name" : "ManualCreateMonthly"
-}

@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"getMinorSortPSAppDEField","desc":"默认排序应用实体属性","order":1000},{"name":"getPSDEChartLegend","desc":"实体图表图例对象","order":1000},{"name":"getPSDEChartSerieses","desc":"图表数据序列集合","order":1000},{"name":"getPSDEChartTitle","desc":"实体图表标题对象","order":1000},{"name":"minorSortDir","desc":"默认排序方向","order":1000}]}]

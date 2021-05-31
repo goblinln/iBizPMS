@@ -1,1 +1,0 @@
-[{"group":"位置","order":50,"methods":[{"name":"width","desc":"宽度","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"dataItemName","desc":"数据项名称","order":1000},{"name":"getPSDEUIActionGroup","desc":"界面行为组","order":1000},{"name":"valueFormat","desc":"值格式化","order":1000}]}]

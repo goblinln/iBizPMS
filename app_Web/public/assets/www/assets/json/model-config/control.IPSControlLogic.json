@@ -1,1 +1,0 @@
-[{"group":"基本","order":10,"methods":[{"name":"name","desc":"目标逻辑名称","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"eventArg","desc":"事件参数","order":1000},{"name":"eventArg2","desc":"事件参数2","order":1000},{"name":"eventNames","desc":"事件名称","order":1000},{"name":"logicTag","desc":"逻辑标记","order":1000},{"name":"logicType","desc":"目标逻辑类型","order":1000}]}]

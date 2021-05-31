@@ -1,9 +1,0 @@
-{
-  "actionMode" : "CUSTOM",
-  "actionType" : "USERCUSTOM",
-  "codeName" : "EeRestartPlan",
-  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeRestartPlan.json",
-  "logicName" : "继续计划",
-  "name" : "EeRestartPlan",
-  "userCat" : "CAT1"
-}

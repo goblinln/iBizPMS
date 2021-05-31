@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"checkMode","desc":"检查模式","order":1000},{"name":"getPSDEFValueRule","desc":"属性值规则 ","order":1000},{"name":"getPSDEGridEditItemName","desc":"表格编辑项名称","order":1000},{"name":"getPSSysValueRule","desc":"系统值规则","order":1000},{"name":"valueRuleType","desc":"值规则类型","order":1000}]}]

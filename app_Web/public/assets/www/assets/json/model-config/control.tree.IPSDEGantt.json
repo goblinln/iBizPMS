@@ -1,1 +1,0 @@
-[{"group":"其它","order":100,"methods":[{"name":"beginDataItemName","desc":"开始时间数据项","order":1000},{"name":"endDataItemName","desc":"结束时间数据项","order":1000},{"name":"finishDataItemName","desc":"完成量数据项","order":1000},{"name":"prevDataItemName","desc":"前置数据项","order":1000},{"name":"sNDataItemName","desc":"编号数据项","order":1000},{"name":"totalDataItemName","desc":"总量数据项","order":1000}]}]
