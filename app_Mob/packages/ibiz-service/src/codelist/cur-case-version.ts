@@ -135,18 +135,18 @@ export default class CurCaseVersion {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.testcasestepService.FetchVersions(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
+            // const promise: Promise<any> = this.testcasestepService.FetchVersions(context, data);
+            // promise.then((response: any) => {
+            //     if (response && response.status === 200) {
+            //         const data =  response.data;
+            //         resolve(this.doItems(data));
+            //     } else {
+            //         resolve([]);
+            //     }
+            // }).catch((response: any) => {
+            //     console.error(response);
+            //     reject(response);
+            // });
         });
     }
 
