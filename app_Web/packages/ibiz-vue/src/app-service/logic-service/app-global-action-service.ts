@@ -1,0 +1,916 @@
+import { IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
+import { DynamicInstanceConfig } from "@ibiz/dynamic-model-api/dist/types/core";
+import { GetModelService, Util } from "ibiz-core";
+import { NavDataService } from "../common-service/app-navdata-service";
+
+/**
+ * 全局界面行为服务
+ * 
+ * @export
+ * @class AppGlobalService
+ */
+export class AppGlobalService {
+
+    /**
+     * 单例变量声明
+     *
+     * @private
+     * @static
+     * @type {AppGlobalService}
+     * @memberof AppGlobalService
+     */
+    private static appGlobalService: AppGlobalService;
+
+    /**
+     * 获取 AppGlobalService 单例对象
+     *
+     * @static
+     * @returns {AppGlobalService}
+     * @memberof AppGlobalService
+     */
+    public static getInstance(): AppGlobalService {
+        if (!AppGlobalService.appGlobalService) {
+            AppGlobalService.appGlobalService = new AppGlobalService();
+        }
+        return this.appGlobalService;
+    }
+
+    /**
+     * 执行全局界面行为
+     *
+     * @param {string} tag 界面行为标识
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * 
+     * @memberof AppGlobalService
+     */
+    public executeGlobalAction(tag: string, args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        switch (tag) {
+            case "HELP":
+                this.HELP(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Save":
+                this.Save(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "SaveAndExit":
+                this.SaveAndExit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "SaveAndNew":
+                this.SaveAndNew(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "SaveRow":
+                this.SaveRow(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Edit":
+                this.Edit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "View":
+                this.View(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "PRINT":
+                this.PRINT(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "ViewWFStep":
+                this.ViewWFStep(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+
+            case "ExportExcel":
+                this.ExportExcel(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "FirstRecord":
+                this.FirstRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Exit":
+                this.Exit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "ToggleFilter":
+                this.ToggleFilter(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Edit":
+                this.Edit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "SaveAndStart":
+                this.SaveAndStart(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Copy":
+                this.Copy(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Remove":
+                this.Remove(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "RemoveAndExit":
+                this.RemoveAndExit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "PrevRecord":
+                this.PrevRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "RefreshParent":
+                this.RefreshParent(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "RefreshAll":
+                this.RefreshAll(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Import":
+                this.Import(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "Refresh":
+                this.Refresh(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "NextRecord":
+                this.NextRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "New":
+                this.New(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "NewRow":
+                this.NewRow(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "ToggleRowEdit":
+                this.ToggleRowEdit(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            case "LastRecord":
+                this.LastRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
+                break;
+            default:
+                actionContext.$warning(`${tag}未支持`,'executeGlobalAction');
+        }
+    }
+
+    /**
+     * 帮助
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public HELP(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        actionContext.$throw('帮助未支持','HELP');
+    }
+
+    /**
+     * 保存
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public Save(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (xData && xData.save instanceof Function) {
+            xData.save().then((response: any) => {
+                if (!response || response.status !== 200) {
+                    return;
+                }
+                actionContext.$parent.$emit('viewdataschange', [{ ...response.data }]);
+            });
+        } else if (actionContext.save && actionContext.save instanceof Function) {
+            actionContext.save();
+        }
+    }
+
+    /**
+     * 保存并关闭
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public SaveAndExit(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (xData && xData.saveAndExit instanceof Function) {
+            xData.saveAndExit().then((response: any) => {
+                if (!response || response.status !== 200) {
+                    return;
+                }
+            });
+        } else if (actionContext.saveAndExit && actionContext.saveAndExit instanceof Function) {
+            actionContext.saveAndExit().then((response: any) => {
+                if (!response || response.status !== 200) {
+                    return;
+                }
+            });
+        }
+    }
+
+    /**
+     * 保存并新建
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public SaveAndNew(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (!xData || !(xData.saveAndNew instanceof Function)) {
+            return;
+        }
+        xData.saveAndNew().then((response: any) => {
+            if (!response || response.status !== 200) {
+                actionContext.$parent.$emit('viewdataschange', JSON.stringify({ status: 'error', action: 'saveAndNew' }));
+                return;
+            }
+            actionContext.$parent.$emit('viewdataschange', JSON.stringify({ status: 'success', action: 'saveAndNew', data: response.data }));
+            if (xData.autoLoad instanceof Function) {
+                xData.autoLoad();
+            }
+        });
+    }
+
+    /**
+     * 保存行
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public SaveRow(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (xData && xData.save instanceof Function) {
+            xData.save();
+        } else if (actionContext.save && actionContext.save instanceof Function) {
+            actionContext.save();
+        }
+    }
+
+    /**
+     * 编辑
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public Edit(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (args.length === 0) {
+            return;
+        }
+        if (actionContext.opendata && actionContext.opendata instanceof Function) {
+            const data: any = {};
+            if (args.length > 0 && srfParentDeName) {
+                Object.assign(data, { [srfParentDeName]: args[0][srfParentDeName] })
+            }
+            actionContext.opendata([{ ...data }], params, $event, xData);
+        } else {
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!','Edit');
+        }
+    }
+
+    /**
+     * 查看
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public View(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (args.length === 0) {
+            return;
+        }
+        if (actionContext.opendata && actionContext.opendata instanceof Function) {
+            const data: any = {};
+            if (args.length > 0 && srfParentDeName) {
+                Object.assign(data, { [srfParentDeName]: args[0][srfParentDeName] })
+            }
+            actionContext.opendata([{ ...data }], params, $event, xData);
+        } else {
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!','View');
+        }
+    }
+
+    /**
+     * 打印
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public PRINT(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (!xData || !(xData.print instanceof Function) || !$event) {
+            return;
+        }
+        xData.print();
+    }
+
+    /**
+     * 当前流程步骤
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public ViewWFStep(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (!xData || !(xData.wfsubmit instanceof Function)) {
+            return;
+        }
+        xData.wfsubmit(args).then((response: any) => {
+            if (!response || response.status !== 200) {
+                return;
+            }
+            const { data: _data } = response;
+
+            if (actionContext.viewdata) {
+                actionContext.$emit('viewdataschange', [{ ..._data }]);
+                actionContext.$emit('close');
+            } else if (actionContext.$tabPageExp) {
+                actionContext.$tabPageExp.onClose(actionContext.$route.fullPath);
+            }
+        });
+    }
+
+    /**
+     * 导出
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public ExportExcel(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (!xData || !(xData.exportExcel instanceof Function) || !$event) {
+            return;
+        }
+        xData.exportExcel($event.exportparms);
+    }
+
+    /**
+     * 第一个记录
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public FirstRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
+
+            // 获取最后一个记录的数据
+            let recordData: any = preNavData.data[0];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
+    }
+
+    /**
+     * 关闭
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public Exit(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        actionContext.closeView(args);
+    }
+
+    /**
+     * 过滤
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public ToggleFilter(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (actionContext.hasOwnProperty('isExpandSearchForm')) {
+            actionContext.isExpandSearchForm = !actionContext.isExpandSearchForm;
+        }
+    }
+
+    /**
+     * 开始流程
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @memberof AppGlobalService
+     */
+    public async SaveAndStart(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        const _this: any = actionContext;
+        if (!xData || !(xData.wfstart instanceof Function) || (!_this.appEntityService)) {
+            return;
+        }
+        if(!(xData && xData.formValidateStatus())){
+            return;
+        }
+        const startWorkFlow: Function = (param: any, localdata: any) => {
+            xData.wfstart(param, localdata).then((response: any) => {
+                if (!response || response.status !== 200) {
+                    return;
+                }
+                const { data: _data } = response;
+                _this.closeView(_data);
+            });
+        }
+        const openStartView: Function = async (item: any, localdata: any) => {
+            if (item['wfversion']) {
+                if ((_this.viewInstance as IPSAppView)?.getPSAppViewRefs?.()?.length) {
+                    let targetView: IPSAppViewRef = _this.viewInstance.getPSAppViewRefs().find((element: any) => {
+                        return `WFSTART@${item['wfversion']}` === element.name;
+                    })
+                    let targetOpenView: any = targetView.getRefPSAppView();
+                    if (targetOpenView) {
+                            await targetOpenView.fill(true);
+                            // 准备参数
+                            let tempContext: any = Util.deepCopy(_this.context);
+                            let tempViewParam: any = { actionView: `WFSTART@${item['wfversion']}`, actionForm: item['process-form'] };
+                            Object.assign(tempContext, { viewpath: targetOpenView.modelFilePath });
+                            const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: targetOpenView.title, height: targetOpenView.height, width: targetOpenView.width }, tempContext, tempViewParam);
+                            appmodal.subscribe((result: any) => {
+                                if (!result || !Object.is(result.ret, 'OK')) {
+                                    return;
+                                }
+                                let tempSubmitData: any = Util.deepCopy(args[0]);
+                                if (result.datas && result.datas[0]) {
+                                    const resultData: any = result.datas[0];
+                                    if (Object.keys(resultData).length > 0) {
+                                        let tempData: any = {};
+                                        Object.keys(resultData).forEach((key: any) => {
+                                            if (resultData[key] || (resultData[key] === 0) || (resultData[key] === false)) {
+                                                tempData[key] = resultData[key];
+                                            }
+                                        })
+                                        Object.assign(tempSubmitData, tempData);
+                                        Object.assign(tempSubmitData, args[0]);
+                                    }
+                                }
+                                startWorkFlow([tempSubmitData], localdata);
+                            });
+                    }
+                } else {
+                    startWorkFlow(args, localdata);
+                }
+            } else {
+                startWorkFlow(args, localdata);
+            }
+        }
+        let localdata: any;
+        let requestResult: Promise<any>;
+        let copyContext: any = Util.deepCopy(_this.context);
+        if (copyContext.srfdynainstid) {
+            let dynainstParam: DynamicInstanceConfig = (await GetModelService(copyContext)).getDynaInsConfig();
+            Object.assign(copyContext, dynainstParam ? dynainstParam : {});
+            requestResult = _this.appEntityService.getCopyWorkflow(copyContext);
+        }else{
+            requestResult = _this.appEntityService.getStandWorkflow(copyContext);
+        }
+        requestResult.then((response: any) => {
+            const { data: targetData, status: status } = response;
+            if ((status !== 200) || (targetData.length === 0)) {
+                return;
+            }
+            if (targetData && targetData.length > 1) {
+                targetData.forEach((element: any) => {
+                    Object.assign(element, { value: element.definitionkey, label: element.definitionname });
+                })
+                const h = _this.$createElement;
+                _this.$msgbox({
+                    title: '请选择流程版本',
+                    message: h('i-select', {
+                        key: Util.createUUID(),
+                        props: {
+                            value: localdata,
+                            placeholder: "请选择流程版本...",
+                            transfer: true,
+                            transferClassName: "start-workflow-select-wraper"
+                        },
+                        on: {
+                            'on-change': ($event: any) => {
+                                localdata = { processDefinitionKey: $event };
+                            }
+                        }
+                    }, targetData.map((item: any) => {
+                        return h('i-option', {
+                            key: item.value,
+                            props: {
+                                value: item.value,
+                                label: item.label
+                            }
+                        })
+                    })),
+                    showCancelButton: true,
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消'
+                }).then((action: string) => {
+                    if (Object.is(action, 'confirm') && localdata && Object.keys(localdata).length > 0) {
+                        let targetItem: any = targetData.find((item: any) => {
+                            return item.definitionkey === localdata.processDefinitionKey;
+                        })
+                        openStartView(targetItem, localdata);
+                    }
+                })
+            } else {
+                localdata = { processDefinitionKey: targetData[0]['definitionkey'] };
+                targetData[0]['process-view'] = "WFSTART@1";
+                openStartView(targetData[0], localdata);
+            }
+        })
+    }
+
+    /**
+     * 拷贝
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public Copy(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (args.length === 0) {
+            return;
+        }
+        const _this: any = actionContext;
+        if (_this.newdata && _this.newdata instanceof Function) {
+            const data: any = {};
+            if (args.length > 0 && srfParentDeName) {
+                Object.assign(data, { [srfParentDeName]: args[0][srfParentDeName] });
+            }
+            if (!params) params = {};
+            Object.assign(params, { copymode: true });
+            _this.newdata([{ ...data }], params, $event, xData);
+        } else {
+            // todo 拷贝
+            Object.assign(actionContext.viewparams, { copymode: true });
+        }
+    }
+
+    /**
+     * 删除
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public Remove(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (!xData || !(xData.remove instanceof Function)) {
+            return;
+        }
+        xData.remove(args);
+    }
+
+    /**
+     * 删除并关闭
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public RemoveAndExit(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (xData && xData.removeAndExit instanceof Function) {
+            xData.removeAndExit().then((response: any) => {
+                if (!response || response.status !== 200) {
+                    return;
+                }
+            });
+        } else if (actionContext.removeAndExit && actionContext.removeAndExit instanceof Function) {
+            actionContext.removeAndExit().then((response: any) => {
+                if (!response || response.status !== 200) {
+                    return;
+                }
+            });
+        }
+    }
+
+    /**
+     * 上一个记录
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public PrevRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
+
+            // 定位当前页面在多数据中的位置,并获取前一个记录的数据
+            let currentIndex: number = preNavData.data.findIndex((item:any) => item.srfkey == args?.[0]?.srfkey);
+            if(currentIndex == -1){
+                throw new Error('无法定位当前页面!')
+            }
+            if(currentIndex == 0){
+                throw new Error('已经是第一个记录了!')
+            }
+            let preIndex: number = currentIndex == 0 ? currentIndex : currentIndex - 1;
+            let recordData: any = preNavData.data[preIndex];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
+    }
+
+    /**
+     * 树刷新父数据
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public RefreshParent(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (xData && xData.refresh_parent && xData.refresh_parent instanceof Function) {
+            xData.refresh_parent();
+            return;
+        }
+        if (actionContext.refresh_parent && actionContext.refresh_parent instanceof Function) {
+            actionContext.refresh_parent();
+            return;
+        }
+    }
+
+    /**
+     * 树刷新全部节点
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public RefreshAll(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (xData && xData.refresh_all && xData.refresh_all instanceof Function) {
+            xData.refresh_all();
+            return;
+        }
+        if (actionContext.refresh_all && actionContext.refresh_all instanceof Function) {
+            actionContext.refresh_all();
+            return;
+        }
+        if (actionContext.engine) {
+            actionContext.engine.load();
+        }
+    }
+
+    /**
+     * 数据导入
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public Import(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (!xData || !(xData.importExcel instanceof Function) || !$event) {
+            return;
+        }
+        xData.importExcel(params);
+    }
+
+    /**
+     * 刷新
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public Refresh(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (xData && xData.refresh && xData.refresh instanceof Function) {
+            xData.refresh(args);
+        } else if (actionContext.refresh && actionContext.refresh instanceof Function) {
+            actionContext.refresh(args);
+        }
+    }
+
+    /**
+     * 下一个记录
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public NextRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
+
+            // 定位当前页面在多数据中的位置,并获取前一个记录的数据
+            let currentIndex: number = preNavData.data.findIndex((item:any) => item.srfkey == args?.[0]?.srfkey);
+            if(currentIndex == -1){
+                throw new Error('无法定位当前页面!')
+            }
+            if(currentIndex == preNavData.data.length - 1){
+                throw new Error('已经是最后一个记录了!')
+            }
+            let nextIndex: number = currentIndex == (preNavData.data.length-1) ? currentIndex : currentIndex + 1;
+            let recordData: any = preNavData.data[nextIndex];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
+    }
+
+    /**
+     * 新建
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public New(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (actionContext.newdata && actionContext.newdata instanceof Function) {
+            const data: any = {};
+            actionContext.newdata([{ ...data }], [{ ...data }], params, $event, xData);
+        } else {
+            actionContext.$throw('newdata 视图处理逻辑不存在，请添加!','New');
+        }
+    }
+
+    /**
+     * 新建行
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public NewRow(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        const data: any = {};
+        if (actionContext.hasOwnProperty('newRow') && actionContext.newRow instanceof Function) {
+            actionContext.newRow([{ ...data }], params, $event, xData);
+        } else if (xData.newRow && xData.newRow instanceof Function) {
+            xData.newRow([{ ...data }], params, $event, xData);
+        } else {
+            actionContext.$throw('newRow 视图处理逻辑不存在，请添加!','NewRow');
+        }
+    }
+
+    /**
+     * 行编辑
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public ToggleRowEdit(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        xData.actualIsOpenEdit = !xData.actualIsOpenEdit;
+    }
+
+    /**
+     * 最后一个记录
+     *
+     * @param {any[]} args 当前数据
+     * @param {any} contextJO 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {string} [srfParentDeName] 应用实体名称
+     * @memberof AppGlobalService
+     */
+    public LastRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
+
+            // 获取最后一个记录的数据
+            let recordData: any = preNavData.data[preNavData.data.length - 1];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
+    }
+}

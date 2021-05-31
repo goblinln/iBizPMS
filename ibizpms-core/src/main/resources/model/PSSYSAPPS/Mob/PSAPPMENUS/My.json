@@ -1,0 +1,50 @@
+{
+  "codeName" : "My",
+  "controlType" : "APPMENU",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPMENUS/My.json",
+  "logicName" : "我的",
+  "getPSAppMenuItems" : [ {
+    "accUserMode" : 2,
+    "caption" : "我的待办",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem6",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc7"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/mydb.svg"
+    },
+    "tooltip" : "我的待办"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "仪表盘",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem5",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc8"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/dashboard.svg"
+    },
+    "tooltip" : "仪表盘"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "我的工作",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem15",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc6"
+    },
+    "getPSSysImage" : {
+      "imagePath" : "assets/images/mywork.svg"
+    },
+    "tooltip" : "我的工作"
+  } ],
+  "enableCustomize" : false,
+  "name" : "my",
+  "modelid" : "0a451faac36c785cff2734e6a0743e3d",
+  "modeltype" : "PSAPPMENU"
+}

@@ -1,0 +1,96 @@
+.nsc-container {
+    position: relative !important;
+
+    > .nsc-content {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        z-index: 100000;
+        display: none;
+        transition: width 0.3s ease-in-out;
+    }
+
+    > .nsc-content.active {
+        display: block;
+    }
+
+    > .nsc-content.inactive {
+        display: none;
+    }
+
+    > .nsc-content.loading {
+        animation: breath 2s infinite ease-in-out;
+        width: 0%;
+        background: #c6ffdd;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #f7797d, #fbd786, #c6ffdd) !important;
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd) !important;
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    > .nsc-content.error {
+        animation: breath 0.5s infinite ease-in-out;
+        background: var(--app-color-danger);
+    }
+
+    > .nsc-content.waring {
+        animation: breath 0.5s infinite ease-in-out;
+        background: var(--app-color-warning);
+    }
+
+    > .nsc-content.success {
+        animation: breath 0.5s infinite ease-in-out;
+        background: var(--app-color-success);
+    }
+
+    @keyframes breath {
+        from {
+            opacity: 0.5;
+        }
+
+        10% {
+            opacity: 0.6;
+        }
+
+        20% {
+            opacity: 0.7;
+        }
+
+        30% {
+            opacity: 0.8;
+        }
+
+        40% {
+            opacity: 0.9;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 0.9;
+        }
+
+        70% {
+            opacity: 0.8;
+        }
+
+        80% {
+            opacity: 0.7;
+        }
+
+        90% {
+            opacity: 0.6;
+        }
+
+        to {
+            opacity: 0.5;
+        }
+    }
+}

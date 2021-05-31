@@ -1,0 +1,1 @@
+[{"group":"基本","order":10,"methods":[{"name":"codeName","desc":"代码名称","order":1000}]},{"group":"其它","order":100,"methods":[{"name":"ctrlModel","desc":"部件模型","order":1000},{"name":"dataType","desc":"数据类型","order":1000},{"name":"panelModel","desc":"面板模型","order":1000},{"name":"type","desc":"模型类型","order":1000},{"name":"viewModel","desc":"视图模型","order":1000}]}]

@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"getMinorSortPSAppDEField","desc":"从排序应用属性对象","order":1000},{"name":"getPickupPSAppView","desc":"嵌入选择视图","order":1000},{"name":"getTextPSAppDEField","desc":"文本应用属性对象","order":1000},{"name":"getValuePSAppDEField","desc":"值应用属性对象","order":1000}]}]

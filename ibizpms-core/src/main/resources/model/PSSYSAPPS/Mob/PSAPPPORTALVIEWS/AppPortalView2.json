@@ -1,0 +1,382 @@
+{
+  "accUserMode" : 0,
+  "caption" : "我的",
+  "codeName" : "AppPortalView2",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPPORTALVIEWS/AppPortalView2.json",
+  "name" : "AppPortalView2",
+  "getPSAppCounterRefs" : [ {
+    "getPSAppCounter" : {
+      "codeName" : "MySubmitReporttCounter",
+      "counterType" : "DEDR",
+      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCOUNTERS/MySubmitReporttCounter.json",
+      "name" : "我未提交的汇报",
+      "timer" : 60000
+    },
+    "tag" : "b73492b7548b7bd6df9079e4136aa42c",
+    "id" : "b73492b7548b7bd6df9079e4136aa42c"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "AppPortalView2_db",
+    "controlType" : "DASHBOARD",
+    "name" : "dashboard",
+    "getPSAppDynaDashboardUtil" : {
+      "modelref" : true,
+      "id" : "DYNADASHBOARD"
+    },
+    "getPSControlHandler" : {
+      "enableDEFieldPrivilege" : false,
+      "id" : "dashboard"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true
+    },
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getPSControls" : [ {
+      "aMListStyle" : "ICONVIEW",
+      "codeName" : "My",
+      "getContentPSControl" : {
+        "name" : "db_appmenu1_appmenu"
+      },
+      "controlType" : "PORTLET",
+      "name" : "db_appmenu1",
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "db_appmenu1"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true
+      },
+      "getPSControls" : [ {
+        "appMenuStyle" : "ICONVIEW",
+        "codeName" : "My",
+        "controlStyle" : "ICONVIEW",
+        "controlType" : "APPMENU",
+        "layoutMode" : "TABLE_24COL",
+        "logicName" : "我的",
+        "name" : "db_appmenu1_appmenu",
+        "getPSAppMenuItems" : [ {
+          "accUserMode" : 2,
+          "caption" : "我的待办",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem6",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc7"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/mydb.svg"
+          },
+          "tooltip" : "我的待办"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "仪表盘",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem5",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc8"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/dashboard.svg"
+          },
+          "tooltip" : "仪表盘"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "我的工作",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem15",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc6"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/mywork.svg"
+          },
+          "tooltip" : "我的工作"
+        } ],
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "db_appmenu1_appmenu"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true
+        },
+        "enableCustomize" : false,
+        "modelid" : "0a451faac36c785cff2734e6a0743e3d",
+        "modeltype" : "PSAPPMENU"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "portletType" : "APPMENU",
+      "title" : "我的地盘",
+      "showTitleBar" : true,
+      "modelid" : "0a451faac36c785cff2734e6a0743e3d",
+      "modeltype" : "PSSYSDBPART"
+    }, {
+      "aMListStyle" : "ICONVIEW",
+      "codeName" : "reportNew",
+      "getContentPSControl" : {
+        "name" : "db_appmenu2_appmenu"
+      },
+      "controlType" : "PORTLET",
+      "name" : "db_appmenu2",
+      "getPSControlHandler" : {
+        "enableDEFieldPrivilege" : false,
+        "id" : "db_appmenu2"
+      },
+      "getPSControlParam" : {
+        "autoLoad" : true,
+        "showBusyIndicator" : true
+      },
+      "getPSControls" : [ {
+        "appMenuStyle" : "ICONVIEW",
+        "codeName" : "reportNew",
+        "controlStyle" : "ICONVIEW",
+        "controlType" : "APPMENU",
+        "layoutMode" : "TABLE_24COL",
+        "logicName" : "汇报",
+        "name" : "db_appmenu2_appmenu",
+        "getPSAppCounterRef" : {
+          "modelref" : true,
+          "id" : "b73492b7548b7bd6df9079e4136aa42c"
+        },
+        "getPSAppMenuItems" : [ {
+          "accUserMode" : 2,
+          "caption" : "日报",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem1",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc5"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/daily.svg"
+          },
+          "tooltip" : "日报"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "周报",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem2",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc9"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/weekly.svg"
+          },
+          "tooltip" : "周报"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "月报",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem3",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "Monthly"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/monthly.svg"
+          },
+          "tooltip" : "月报"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "汇报",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem6",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "Reportly"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/report.svg"
+          },
+          "tooltip" : "汇报"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "我收到的",
+          "counterId" : "myunreadreportcnt",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem4",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc12"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/myreview.svg"
+          },
+          "tooltip" : "我收到的"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "我提交的",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem5",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc11"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSSysImage" : {
+            "imagePath" : "assets/images/submit.svg"
+          },
+          "tooltip" : "我提交的"
+        }, {
+          "accUserMode" : 2,
+          "caption" : "月报（待阅）",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem7",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "NeedLookMonthly"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "月报（待阅）",
+          "hidden" : true
+        }, {
+          "accUserMode" : 2,
+          "caption" : "周报(待阅)",
+          "itemType" : "MENUITEM",
+          "name" : "menuitem8",
+          "getPSAppFunc" : {
+            "modelref" : true,
+            "id" : "AppFunc13"
+          },
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "tooltip" : "周报(待阅)",
+          "hidden" : true
+        } ],
+        "getPSControlHandler" : {
+          "enableDEFieldPrivilege" : false,
+          "id" : "db_appmenu2_appmenu"
+        },
+        "getPSControlParam" : {
+          "autoLoad" : true,
+          "showBusyIndicator" : true
+        },
+        "enableCustomize" : false,
+        "modelid" : "952bf575ce64bb548f99b83834b283c0",
+        "modeltype" : "PSAPPMENU"
+      } ],
+      "getPSLayoutPos" : {
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "portletType" : "APPMENU",
+      "title" : "汇报",
+      "showTitleBar" : true,
+      "modelid" : "952bf575ce64bb548f99b83834b283c0",
+      "modeltype" : "PSSYSDBPART"
+    } ],
+    "enableCustomized" : false,
+    "modelid" : "fef4d4f067fe339a72b2ff7265ac3854",
+    "modeltype" : "PSSYSDASHBOARD"
+  } ],
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPPORTALVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "应用门户视图2",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "APPPORTALVIEW",
+  "enableDP" : true,
+  "modelid" : "fef4d4f067fe339a72b2ff7265ac3854",
+  "modeltype" : "PSAPPPORTALVIEW"
+}

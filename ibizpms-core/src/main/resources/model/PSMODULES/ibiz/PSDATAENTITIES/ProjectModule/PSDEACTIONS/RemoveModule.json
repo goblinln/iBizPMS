@@ -1,0 +1,14 @@
+{
+  "actionMode" : "DELETE",
+  "actionType" : "DELOGIC",
+  "batchActionMode" : 1,
+  "codeName" : "RemoveModule",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEACTIONS/RemoveModule.json",
+  "logicName" : "删除模块",
+  "name" : "RemoveModule",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/RemoveModule.json"
+  },
+  "batchAction" : true
+}

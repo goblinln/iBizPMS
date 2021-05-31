@@ -1,0 +1,7 @@
+package cn.ibizlab.pms.zentao.logic.productplanlogic.computeduration;
+global cn.ibizlab.pms.core.zentao.service.IProductPlanService iBzSysProductplanDefaultService;
+global cn.ibizlab.pms.util.security.AuthenticationUser curuser;
+
+
+no-loop
+

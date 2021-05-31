@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"cacheScope","desc":"缓存范围","order":1000},{"name":"cacheTimeout","desc":"缓存超时时长（毫秒）","order":1000},{"name":"enableCache","desc":"支持缓存","order":1000},{"name":"enableDEFieldPrivilege","desc":"支持属性级权限","order":1000},{"name":"uniStateField","desc":"统一状态监控属性","order":1000},{"name":"uniStateKeyValue","desc":"缓存统一状态主键属性","order":1000}]}]

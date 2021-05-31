@@ -1,0 +1,17 @@
+{
+  "codeListType" : "DYNAMIC",
+  "codeName" : "UserRealNameProject",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/UserRealNameProject.json",
+  "emptyText" : "未定义",
+  "orMode" : "STR",
+  "refFlag" : true,
+  "systemTag" : "iBizPMS",
+  "textSeparator" : ",",
+  "valueSeparator" : ",",
+  "codeItemValueNumber" : false,
+  "enableCache" : false,
+  "subSysAsCloud" : false,
+  "subSysCodeList" : false,
+  "userScope" : false
+}

@@ -1,0 +1,12 @@
+{
+  "actionMode" : "UPDATE",
+  "actionType" : "DELOGIC",
+  "codeName" : "UpdateStoryVersion",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateStoryVersion.json",
+  "logicName" : "更新需求版本",
+  "name" : "updateStoryVersion",
+  "getPSDELogic" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/UpdateStoryVersion.json"
+  }
+}

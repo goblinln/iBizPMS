@@ -1,0 +1,65 @@
+.file-upload {
+  display: flex;
+  width: auto;
+  height: auto;
+  flex-wrap: wrap;
+  margin-left: -8px;
+  margin-top: -8px;
+  color: rgb(67,78,82);
+  .el-row {
+      .el-col{
+          width: 350px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          border-radius: 4px;
+          margin-left: 8px;
+          margin-top: 8px;
+          i{
+              font-size: 24px;
+              margin: 0 8px;
+          }
+          .fileEditor{
+              position: absolute;
+              right: 50px;
+          }
+          .fileDelete{
+              position: absolute;
+              right: 10px;
+          }
+          .filePreview{
+            position: absolute;
+            right: 90px;
+          }
+      }
+      .fileMain{
+          background: rgb(241,249,234);
+      }
+      .fileDisable{
+          background: rgb(252,240,240);
+      }
+  }
+  .fileAdd{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 350px;
+      height: 50px;
+      border-radius: 4px;
+      margin-left: 8px;
+      margin-top: 8px;
+      border: 1px rgb(227,227,227) dotted;
+      cursor: pointer;
+      .el-icon-plus{
+          font-size: 24px;
+          margin: 0 auto;
+      }
+  }
+}
+.upload{
+visibility: hidden;
+}
+.dialogDiv .el-dialog {
+height: auto;
+}

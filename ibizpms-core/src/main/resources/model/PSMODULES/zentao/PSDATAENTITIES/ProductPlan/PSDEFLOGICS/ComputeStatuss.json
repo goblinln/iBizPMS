@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeStatuss",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeStatuss.json",
+  "logicName" : "计算真实状态",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算真实状态",
+  "getPSDEField" : {
+    "name" : "STATUSS",
+    "codeName" : "Statuss"
+  },
+  "scriptCode" : "var parent = entity.get(\"parent\");\nvar statuss = \"normal\";\nif(parent > 0){\n\tstatuss = \"chlid\";\n}else if(parent < 0){\n\tstatuss = \"parent\";\n}\nreturn statuss;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

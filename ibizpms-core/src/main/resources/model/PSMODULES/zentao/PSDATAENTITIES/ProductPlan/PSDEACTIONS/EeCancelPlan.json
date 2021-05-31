@@ -1,0 +1,9 @@
+{
+  "actionMode" : "CUSTOM",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "EeCancelPlan",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeCancelPlan.json",
+  "logicName" : "EE取消计划",
+  "name" : "EeCancelPlan",
+  "userCat" : "CAT1"
+}

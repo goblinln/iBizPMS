@@ -1,0 +1,8 @@
+{
+  "actionMode" : "CREATE",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "CreateTasks",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/CreateTasks.json",
+  "logicName" : "生成任务",
+  "name" : "CreateTasks"
+}

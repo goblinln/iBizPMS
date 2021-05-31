@@ -1,0 +1,25 @@
+{
+  "codeListType" : "DYNAMIC",
+  "codeName" : "PlanTemplet",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/PlanTemplet.json",
+  "emptyText" : "未定义",
+  "name" : "计划模板",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchCurUserTemplet"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzPlanTemplet.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "IBZ_PLANTEMPLETNAME",
+    "codeName" : "IbzPlanTempletName"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "IBZ_PLANTEMPLETID",
+    "codeName" : "IbzPlanTempletId"
+  },
+  "enableCache" : true
+}

@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"clockwise","desc":"顺时针","order":1000},{"name":"endAngle","desc":"结束角度","order":1000},{"name":"maxValue","desc":"最大值","order":1000},{"name":"minValue","desc":"最小值","order":1000},{"name":"radius","desc":"半径","order":1000},{"name":"splitNumber","desc":"分割段数","order":1000},{"name":"startAngle","desc":"起始角度","order":1000}]}]

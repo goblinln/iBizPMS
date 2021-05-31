@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.report.mapper.IbzReportlyMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.mailto AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.reportto AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_REPORTLY` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_account_eq != null ">
+			<![CDATA[ AND  t1.`ACCOUNT` = #{srf.n_account_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_ibz_reportlyid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_REPORTLYID` = #{srf.n_ibz_reportlyid_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_ibz_reportlyname_like != null ">
+            <bind name="bind_n_ibz_reportlyname_like" value="'%' + srf.n_ibz_reportlyname_like + '%'" />
+            <![CDATA[ AND  t1.`IBZ_REPORTLYNAME` like #{bind_n_ibz_reportlyname_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_issubmit_eq != null ">
+			<![CDATA[ AND  t1.`ISSUBMIT` = #{srf.n_issubmit_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="IbzReportlyResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.IBZ_REPORTLYID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="IbzReportlyResultMap" type="cn.ibizlab.pms.core.report.domain.IbzReportly" autoMapping="true">
+		<id property="ibzreportlyid" column="ibz_reportlyid" /><!--主键字段映射-->
+		<result property="ibzreportlyname" column="ibz_reportlyname" />
+            
+		
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext"  resultMap="IbzReportlyResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[MyAllReportly]-->
+	 <select id="searchMyAllReportly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext"  resultMap="IbzReportlyResultMap">
+         select t1.* from (
+                <include refid="MyAllReportly" />
+         )t1
+     </select>
+
+    <!--数据集合[MyReceived]-->
+	 <select id="searchMyReceived"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext"  resultMap="IbzReportlyResultMap">
+         select t1.* from (
+                <include refid="MyReceived" />
+         )t1
+     </select>
+
+    <!--数据集合[MyReportlyMob]-->
+	 <select id="searchMyReportlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext"  resultMap="IbzReportlyResultMap">
+         select t1.* from (
+                <include refid="MyReportlyMob" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.mailto AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.reportto AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_REPORTLY` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="Default" />
+	</select>
+
+    <!--数据查询[MyAllReportly]-->
+    <sql id="MyAllReportly" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_REPORTLY` t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.account = #{srf.sessioncontext.srfloginname} ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMyAllReportly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="MyAllReportly" />
+	</select>
+
+    <!--数据查询[MyReceived]-->
+    <sql id="MyReceived" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`ACCOUNT`, 	t1.`CONTENT`, 	t1.`CREATEDATE`, 	t1.`CREATEMAN`, 	t1.`DATE`, 	t1.`IBZ_REPORTLYID`, 	t1.`IBZ_REPORTLYNAME`, 	t1.`ISSUBMIT`, 	t1.`MAILTO`, 	( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 	t1.`REPORTTO`, 	t1.`SUBMITTIME`, 	t1.`UPDATEDATE`, 	t1.`UPDATEMAN`  FROM 	`t_ibz_reportly` t1 	LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_REPORTLYID  	AND t11.objectType = 'reportly'  	AND t11.action = 'read'  	AND t11.actor = #{srf.sessioncontext.srfloginname} ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.issubmit = '1' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} OR FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.MAILTO )) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMyReceived"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="MyReceived" />
+	</select>
+
+    <!--数据查询[MyReportlyMob]-->
+    <sql id="MyReportlyMob" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, DATE_FORMAT(t1.DATE,'%Y-%m-%d') as `DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, CONCAT_WS('','工作内容：',case when t1.CONTENT is null then '无' else t1.CONTENT end)  as `CONTENT`, t1.`MAILTO`, '1' as `REPORTSTATUS`, t1.`REPORTTO`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN`,  'reportly' as type  FROM `T_IBZ_REPORTLY` t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.account = #{srf.sessioncontext.srfloginname} ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMyReportlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="MyReportlyMob" />
+	</select>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.mailto AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.reportto AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_REPORTLY` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="View" />
+	</select>
+
+</mapper>
+

@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"enableAdvanceSearch","desc":"支持高级搜索","order":1000},{"name":"enableAutoSearch","desc":"支持自动搜索","order":1000},{"name":"enableFilterSave","desc":"支持条件保存","order":1000},{"name":"searchButtonStyle","desc":"搜索按钮样式","order":1000}]}]

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.ProductLifeMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`BEGIN`, t1.`BRANCH`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`END`, t1.`IBZ_PRODUCTLIFEID`, t1.`IBZ_PRODUCTLIFENAME`, t1.`MARKER`, t1.`PARENT`, t1.`PRODUCT`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZ_PRODUCTLIFE` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibz_productlifename_like != null ">
+            <bind name="bind_n_ibz_productlifename_like" value="'%' + srf.n_ibz_productlifename_like + '%'" />
+            <![CDATA[ AND  t1.`IBZ_PRODUCTLIFENAME` like #{bind_n_ibz_productlifename_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_year_eq != null ">
+			<![CDATA[ AND  t1.`YEAR` = #{srf.n_year_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_ibz_productlifeid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_PRODUCTLIFEID` = #{srf.n_ibz_productlifeid_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_product_eq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="ProductLifeResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.IBZ_PRODUCTLIFEID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ProductLifeResultMap" type="cn.ibizlab.pms.core.ibiz.domain.ProductLife" autoMapping="true">
+		<id property="productlifeid" column="ibz_productlifeid" /><!--主键字段映射-->
+		<result property="productlifename" column="ibz_productlifename" />
+		<result property="product" column="product" />
+            
+		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ibzproduct" javaType="cn.ibizlab.pms.core.zentao.domain.Product" column="product" select="cn.ibizlab.pms.core.zentao.mapper.ProductMapper.selectById" fetchType="lazy"></association>
+    </resultMap>
+
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_PRODUCTLIFE_ZT_PRODUCT_PRODUCT] -->
+	 <select id="selectByProduct" resultMap="ProductLifeResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND t1.`PRODUCT`=#{id} ]]>
+		</trim>
+     </select>
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext"  resultMap="ProductLifeResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[GetRoadmap]-->
+	 <select id="searchGetRoadmap"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext"  resultMap="ProductLifeResultMap">
+         select t1.* from (
+                <include refid="GetRoadmap" />
+         )t1
+     </select>
+
+    <!--数据集合[GetRoadmapS]-->
+	 <select id="searchGetRoadmapS"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext"  resultMap="ProductLifeResultMap">
+         select t1.* from (
+                <include refid="GetRoadmapS" />
+         )t1
+     </select>
+
+    <!--数据集合[RoadMapYear]-->
+	 <select id="searchRoadMapYear"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext"  resultMap="ProductLifeResultMap">
+         select t1.* from (
+                <include refid="RoadMapYear" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BEGIN`, t1.`BRANCH`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`END`, t1.`IBZ_PRODUCTLIFEID`, t1.`IBZ_PRODUCTLIFENAME`, t1.`MARKER`, t1.`PARENT`, t1.`PRODUCT`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZ_PRODUCTLIFE` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="Default" />
+	</select>
+
+    <!--数据查询[GetRoadmap]-->
+    <sql id="GetRoadmap" databaseId="mysql">
+		<![CDATA[ SELECT 	* FROM 	( 		( 			SELECT 				t111.* 			FROM 				( 					SELECT 						CONCAT( 							t1.product, 							'-productplan-', 							t1.id 						) AS ibz_productlifeid, 						CASE 					WHEN t11.title IS NULL THEN 						t1.title 					ELSE 						CONCAT(t11.title, '/', t1.title) 					END AS ibz_productlifename, 					t1.product AS product, 					t1.branch AS branch, 					t1.parent AS parent, 					'productplan' AS type, 					t1.`begin` AS `begin`, 					t1.`end` AS `end`, 					LEFT (t1.`end`, 4) AS `year`, 					null AS marker 				FROM 					zt_productplan t1 				LEFT JOIN zt_productplan t11 ON t1.parent = t11.id 				WHERE 					t1.DELETED = '0' 				AND t1.product = #{srf.datacontext.product} 				AND t1.parent != '-1' 				AND (#{srf.datacontext.branch} is null or t1.branch =  #{srf.datacontext.branch}) 				AND LEFT (t1.`end`, 4) = #{srf.datacontext.year} 				) t111, 				( 					SELECT 						( 							CASE 							WHEN max(date) IS NULL THEN 								0 							ELSE 								max(date) 							END 						) AS `lastdata` 					FROM 						zt_release 					WHERE 						DELETED = '0' 					AND product = #{srf.datacontext.product} 					AND (#{srf.datacontext.branch} is null or branch =  #{srf.datacontext.branch}) 				) t112 			WHERE 				t111.`end` > t112.lastdata 		) 		UNION 			( 				SELECT 					CONCAT( 						t2.product, 						'-release-', 						t2.id 					) AS ibz_productlifeid, 					t2.`name` AS ibz_productlifename, 					t2.product AS product, 					t2.branch AS branch, 					null AS parent, 					'release' AS type, 					null AS `begin`, 					t2.`date` AS `end`, 					LEFT (t2.`date`, 4) AS `year`, 					t2.marker AS marker 				FROM 					zt_release t2 				WHERE 					t2.DELETED = '0' 				AND t2.product = #{srf.datacontext.product} 				AND LEFT (t2.`date`, 4) = #{srf.datacontext.year} 				AND (#{srf.datacontext.branch} is null or t2.branch =  #{srf.datacontext.branch}) 			) 	) AS ibz_productlife ORDER BY 	`end`  ASC ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectGetRoadmap"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="GetRoadmap" />
+	</select>
+
+    <!--数据查询[GetRoadmapS]-->
+    <sql id="GetRoadmapS" databaseId="mysql">
+		<![CDATA[ SELECT * FROM ( ( SELECT t111.* FROM ( SELECT CONCAT( t1.product, '-productplan-', t1.id ) AS ibz_productlifeid, CASE WHEN t11.title IS NULL THEN t1.title ELSE CONCAT(t11.title, '/', t1.title) END AS ibz_productlifename, t1.product AS product, t1.branch AS branch, t1.parent AS parent, 'productplan' AS type, t1.`begin` AS `begin`, t1.`end` AS `end`, LEFT (t1.`end`, 4) AS `year`, null AS marker FROM zt_productplan t1 LEFT JOIN zt_productplan t11 ON t1.parent = t11.id WHERE t1.DELETED = '0' AND t1.product = #{srf.datacontext.product} AND t1.parent != '-1' AND (#{srf.datacontext.branch} is null or t1.branch = #{srf.datacontext.branch}) AND LEFT (t1.`end`, 4) = #{srf.datacontext.year} ) t111, ( SELECT ( CASE WHEN max(date) IS NULL THEN 0 ELSE max(date) END ) AS `lastdata` FROM zt_release WHERE DELETED = '0' AND product = #{srf.datacontext.product} AND (#{srf.datacontext.branch} is null or branch = #{srf.datacontext.branch}) ) t112 WHERE t111.`end` > t112.lastdata ) UNION ( SELECT CONCAT( t2.product, '-release-', t2.id ) AS ibz_productlifeid, t2.`name` AS ibz_productlifename, t2.product AS product, t2.branch AS branch, null AS parent, 'release' AS type, t2.`date` AS `begin`, t2.`date` AS `end`, LEFT (t2.`date`, 4) AS `year`, t2.marker AS marker FROM zt_release t2 WHERE t2.DELETED = '0' AND t2.product = #{srf.datacontext.product} AND LEFT (t2.`date`, 4) = #{srf.datacontext.year} AND (#{srf.datacontext.branch} is null or t2.branch = #{srf.datacontext.branch}) ) ) AS ibz_productlife ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectGetRoadmapS"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="GetRoadmapS" />
+	</select>
+
+    <!--数据查询[RoadMapYear]-->
+    <sql id="RoadMapYear" databaseId="mysql">
+		<![CDATA[ SELECT 	* FROM 	( 		( 			SELECT DISTINCT 				LEFT (`end`, 4) AS `year`,product 			FROM 				zt_productplan, 				( 					SELECT 						( 							CASE 							WHEN MIN(LEFT(`date`, 4)) IS NULL THEN 								0 							ELSE 								MIN(LEFT(`date`, 4)) 							END 						) AS `minyear` 					FROM 						zt_release 					WHERE 						deleted = '0' 					AND product = #{srf.datacontext.product} 					AND (#{srf.datacontext.branch} is null or branch =  #{srf.datacontext.branch}) 				) ztr 			WHERE 				deleted = '0' 			AND product = #{srf.datacontext.product} 			AND (#{srf.datacontext.branch} is null or branch =  #{srf.datacontext.branch}) 			AND LEFT (`end`, 4) < '2030' 			AND LEFT (`end`, 4) > `minyear` 		) 		UNION 			( 				SELECT DISTINCT 					LEFT (`date`, 4) AS `year`,product 				FROM 					zt_release 				WHERE 					deleted = '0' 				AND product = #{srf.datacontext.product} 				AND (#{srf.datacontext.branch} is null or branch =  #{srf.datacontext.branch}) 			) 	) as t1 ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectRoadMapYear"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="RoadMapYear" />
+	</select>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`BEGIN`, t1.`BRANCH`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`END`, t1.`IBZ_PRODUCTLIFEID`, t1.`IBZ_PRODUCTLIFENAME`, t1.`MARKER`, t1.`PARENT`, t1.`PRODUCT`, t1.`TYPE`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZ_PRODUCTLIFE` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="View" />
+	</select>
+
+</mapper>
+

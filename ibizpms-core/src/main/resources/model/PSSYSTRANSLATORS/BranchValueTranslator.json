@@ -1,0 +1,6 @@
+{
+  "codeName" : "BranchValueTranslator",
+  "dynaModelFilePath" : "PSSYSTRANSLATORS/BranchValueTranslator.json",
+  "name" : "平台分支值转换",
+  "translatorType" : "USER"
+}

@@ -1,0 +1,9 @@
+{
+  "actionMode" : "READ",
+  "actionType" : "BUILTIN",
+  "codeName" : "GetTestStats",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEACTIONS/GetTestStats.json",
+  "logicName" : "获取测试统计详情",
+  "name" : "GetTestStats",
+  "builtinAction" : true
+}

@@ -1,0 +1,17 @@
+export default [
+    'name',
+    'taskcnt',
+    'dept',
+    'id',
+    'workday',
+    'totaltaskcnt',
+    'assignedto',
+    'left',
+    'assign',
+    'begin',
+    'totalleft',
+    'workload',
+    'end',
+    'projectname',
+    'project',
+];

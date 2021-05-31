@@ -1,0 +1,52 @@
+.context-menu-container {
+  z-index: 10001;
+
+  .context-menu-content {
+      position: absolute;
+      background: var(--item-background-color-bright);
+
+      .ivu-divider {
+          width: 100%;
+      }
+  }
+
+  .context-menus {
+      .context-menus-item {
+          list-style: none;
+          line-height: 36px;
+          padding: 0 13px;
+          margin: 0;
+          font-size: 14px;
+          color: var(--item-font-color-light);
+          cursor: pointer;
+          outline: none;
+          display: flex;
+
+          .icon {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 16px;
+              width: 20px;
+              margin-right: 8px;
+          }
+      }
+
+      .context-menus-item:hover {
+          background-color: var(--item-background-color-hover);
+          color: var(--item-font-color-light);
+      }
+  }
+}
+
+.context-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.context-menu-component {
+  line-height: 100%;
+}

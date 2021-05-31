@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_ToBug_COU.json",
+  "name" : "测试用例转Bug（创建或更新）（系统使用）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyCreateOrUpdate"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "TOBUG",
+    "name" : "TOBUG",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOBUG"
+    }
+  } ],
+  "roleTag" : "Case_ToBug_COU",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

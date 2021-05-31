@@ -1,0 +1,18 @@
+{
+  "codeName" : "CreateProductDailyService",
+  "dynaModelFilePath" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json",
+  "name" : "定时生成产品日报",
+  "getPSDEAction" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/StatsProductDaily.json"
+  },
+  "getPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily.json"
+  },
+  "serviceContainer" : "SC01",
+  "serviceHandler" : "CreateProductDailyService",
+  "serviceOrder" : 0,
+  "startMode" : "AUTO",
+  "taskType" : "DEACTION"
+}

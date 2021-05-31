@@ -1,0 +1,20 @@
+{
+  "codeListType" : "DYNAMIC",
+  "codeName" : "ProjectProductPlan",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectProductPlan.json",
+  "emptyText" : "未定义",
+  "name" : "项目产品计划（动态）",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchProjectPlan"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  }
+}

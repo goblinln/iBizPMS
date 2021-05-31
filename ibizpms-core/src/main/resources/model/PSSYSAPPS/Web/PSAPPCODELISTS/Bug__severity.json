@@ -1,0 +1,35 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "Bug__severity",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__severity.json",
+  "emptyText" : "未定义",
+  "name" : "Bug严重程度",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_1",
+    "color" : "rgba(241, 11, 11, 1)",
+    "text" : "致命",
+    "value" : "1"
+  }, {
+    "codeName" : "Item_2",
+    "color" : "rgba(239, 155, 18, 1)",
+    "text" : "严重",
+    "value" : "2"
+  }, {
+    "codeName" : "Item_3",
+    "color" : "rgba(58, 149, 247, 1)",
+    "text" : "一般",
+    "value" : "3"
+  }, {
+    "codeName" : "Item_4",
+    "color" : "rgba(11, 228, 87, 1)",
+    "text" : "轻微",
+    "value" : "4"
+  } ],
+  "codeItemValueNumber" : true,
+  "enableCache" : true
+}

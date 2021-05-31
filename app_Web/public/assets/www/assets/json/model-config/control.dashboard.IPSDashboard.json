@@ -1,0 +1,1 @@
+[{"group":"其它","order":100,"methods":[{"name":"enableCustomized","desc":"支持看板定制","order":1000},{"name":"getPSAppDynaDashboardUtil","desc":"应用动态看板功能","order":1000}]}]

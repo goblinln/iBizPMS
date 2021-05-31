@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ibizpms-app-web
+  labels:
+    app: ibizpms-app-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ibizpms-app-web
+  template:
+    metadata:
+      labels:
+        app: ibizpms-app-web
+    spec:
+      imagePullSecrets:
+      - name: aly-shanghai
+      containers:
+      - name: ibizpms-app-web
+        image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-web:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ibizpms-app-web
+  labels:
+    app: ibizpms-app-web
+spec:
+  type: NodePort
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+    nodePort: 8080
+    protocol: TCP
+  selector:
+    app: ibizpms-app-web
+

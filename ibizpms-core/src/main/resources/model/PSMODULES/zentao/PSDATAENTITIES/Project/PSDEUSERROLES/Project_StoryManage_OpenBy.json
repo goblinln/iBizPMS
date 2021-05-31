@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_StoryManage_OpenBy.json",
+  "name" : "项目需求管理（创建者或者更新者）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenByQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "STORYMANAGE",
+    "name" : "STORYMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "STORYMANAGE"
+    }
+  } ],
+  "roleTag" : "Project_StoryManage_OpenBy",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}
