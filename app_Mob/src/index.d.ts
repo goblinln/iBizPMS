@@ -19,6 +19,7 @@ declare module "vue/types/vue" {
         $uiActionTool:any,
         $appmodal:any,
         $appdrawer:any,
+        $Notice:any,
         $uiState:UIStateService;
     }
 }

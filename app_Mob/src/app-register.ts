@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Http, Util, Verify, ViewTool } from 'ibiz-core';
-import { AppModal, AppDrawer, Notice } from 'ibiz-vue';
+import { AppModal, AppDrawer } from 'ibiz-vue';
 import { authServiceRegister, UtilServiceRegister, codeListRegister } from 'ibiz-service';
 import { ComponentsRegister } from 'ibiz-vue';
 Vue.use(ComponentsRegister);
