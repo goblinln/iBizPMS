@@ -7583,6 +7583,7 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "取消收藏",
                 "codeName" : "StoryNFavoritesMob",
+                "dataAccessAction" : "NFAVORITES",
                 "fullCodeName" : "Story_StoryNFavoritesMob",
                 "name" : "取消收藏（移动端）",
                 "getPSAppDEMethod" : {
@@ -12045,6 +12046,7 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "取消收藏",
                 "codeName" : "StoryNFavoritesMob",
+                "dataAccessAction" : "NFAVORITES",
                 "fullCodeName" : "Story_StoryNFavoritesMob",
                 "name" : "取消收藏（移动端）",
                 "getPSAppDEMethod" : {
