@@ -7846,7 +7846,33 @@
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
                       "modelid" : "58c48ed7c9b66ea86309ed8ef86a7cc6",
-                      "modeltype" : "PSAPPDEVIEW"
+                      "modeltype" : "PSAPPDEVIEW",
+                      "getPSAppDERSPaths" : [ [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "Bugs",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                        },
+                        "name" : "TEST_BUG",
+                        "getParentPSAppDEField" : {
+                          "name" : "PRODUCT",
+                          "codeName" : "Product"
+                        },
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ] ]
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -8379,7 +8405,33 @@
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
                       "modelid" : "e378b13cfdc97557168ac3f71b35fe6b",
-                      "modeltype" : "PSAPPDEVIEW"
+                      "modeltype" : "PSAPPDEVIEW",
+                      "getPSAppDERSPaths" : [ [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "Bugs",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+                        },
+                        "name" : "TEST_BUG",
+                        "getParentPSAppDEField" : {
+                          "name" : "PRODUCT",
+                          "codeName" : "Product"
+                        },
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ] ]
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -8844,7 +8896,33 @@
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
                       "modelid" : "578d2fd4888ee9b9a2d87ff640e786cd",
-                      "modeltype" : "PSAPPDEVIEW"
+                      "modeltype" : "PSAPPDEVIEW",
+                      "getPSAppDERSPaths" : [ [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "TestCases",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                        },
+                        "name" : "TEST_CASE",
+                        "getParentPSAppDEField" : {
+                          "name" : "PRODUCT",
+                          "codeName" : "Product"
+                        },
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ] ]
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,

@@ -6,7 +6,7 @@
   "name" : "ProductTestTabExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -19,7 +19,7 @@
     "name" : "tabexppanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:tabviewpanel8",
@@ -86,7 +86,7 @@
       "name" : "tabviewpanel2",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "getPSSysImageId" : "5fda7835d8e0da0ca9abbf5cc0ed15ab",
@@ -669,7 +669,7 @@
       "name" : "tabviewpanel8",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "getPSSysImageId" : "d078d8595463448e7fc5216ace75145c",
@@ -693,7 +693,7 @@
       "name" : "tabviewpanel3",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "getPSSysImageId" : "56da1cf605be82556695143a9b2f9c29",
@@ -717,7 +717,7 @@
       "name" : "tabviewpanel4",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "getPSSysImageId" : "847c392064b88afd631becc432e82a13",
@@ -741,7 +741,7 @@
       "name" : "tabviewpanel5",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "getPSSysImageId" : "ac27a02079984835f706837e3d7fa65a",
@@ -765,7 +765,7 @@
       "name" : "tabviewpanel6",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "getPSSysImageId" : "cae3164f0185a9d9d10b4e1aa5b8690b",
@@ -789,7 +789,7 @@
       "name" : "tabviewpanel7",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL7"
@@ -825,7 +825,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

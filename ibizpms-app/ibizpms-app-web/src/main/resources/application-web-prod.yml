@@ -87,6 +87,10 @@ zuul:
       path: /projectburns/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    ibz_api__test:
+      path: /tests/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_branch:
       path: /productbranches/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}

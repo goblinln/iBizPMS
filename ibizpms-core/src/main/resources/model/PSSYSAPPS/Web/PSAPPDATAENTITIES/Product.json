@@ -1374,31 +1374,6 @@
     "uIActionType" : "DEUIACTION",
     "id" : "Manager@Product"
   }, {
-    "actionTarget" : "NONE",
-    "caption" : "管理",
-    "codeName" : "TestManager",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestGridView.json",
-      "viewType" : "DEGRIDVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Product_TestManager",
-    "name" : "产品测试管理",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf03a@FontAwesome",
-      "cssClass" : "fa fa-list"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "TestManager",
-    "uIActionType" : "DEUIACTION",
-    "id" : "TestManager@Product"
-  }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseProduct",

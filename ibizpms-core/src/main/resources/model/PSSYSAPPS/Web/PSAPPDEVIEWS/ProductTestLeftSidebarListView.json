@@ -7,7 +7,7 @@
   "name" : "ProductTestLeftSidebarListView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -121,7 +121,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "modelref" : true,
       "id" : "TestManager@Product"
@@ -144,7 +144,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -177,7 +177,7 @@
         "name" : "产品测试管理",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         },
         "getPSSysImage" : {
           "glyph" : "xf03a@FontAwesome",
@@ -234,7 +234,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product/PSLISTS/TestSidebar.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test/PSLISTS/TestSidebar.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -254,7 +254,7 @@
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSAppViewLogics" : [ {
       "eventArg" : "deuiaction1",
@@ -284,7 +284,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         },
         "modelref" : true,
         "id" : "ProductTop@Product"
@@ -296,7 +296,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         },
         "modelref" : true,
         "id" : "CancelProductTop@Product"
@@ -316,7 +316,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -327,7 +327,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionName" : "Remove",
@@ -340,7 +340,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionName" : "Get",
@@ -353,7 +353,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         }
       }, {
         "actionName" : "Create",
@@ -366,7 +366,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -386,7 +386,7 @@
       "name" : "list_quicktoolbar",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
       },
       "getPSControlParam" : {
         "id" : "list_quicktoolbar"
@@ -412,13 +412,9 @@
           "dataAccessAction" : "NOTOP",
           "fullCodeName" : "Product_ProductTop",
           "name" : "置顶",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "ProductTop"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
           },
           "getPSSysImage" : {
             "glyph" : "xf0a6@FontAwesome",
@@ -458,13 +454,9 @@
           "dataAccessAction" : "TOP",
           "fullCodeName" : "Product_CancelProductTop",
           "name" : "取消置顶",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "CancelProductTop"
-          },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
           },
           "getPSSysImage" : {
             "glyph" : "xf0a7@FontAwesome",
@@ -584,7 +576,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
