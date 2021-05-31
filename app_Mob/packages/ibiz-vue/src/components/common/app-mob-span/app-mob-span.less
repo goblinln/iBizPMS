@@ -1,0 +1,19 @@
+.app-mob-span{
+  width: 100%;
+  display: flex;
+  ion-input{
+    z-index: 99 !important;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    word-wrap:break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    pointer-events:none;
+    input{
+      &::selection{
+        background: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@utils": ["src/utils"],
+      "@utils/*": ["src/utils/*"],
+      "@engine": ["src/engine"],
+      "@engine/*": ["src/engine/*"],
+      "@pages": ["src/pages"],
+      "@pages/*": ["src/pages/*"],
+      "@widgets": ["src/widgets"],
+      "@widgets/*": ["src/widgets/*"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@locale": ["src/locale"],
+      "@locale/*": ["src/locale/*"],
+      "@mock": ["src/mock"],
+      "@mock/*": ["src/mock/*"],
+      "@codelist": ["src/codelist"],
+      "@codelist/*": ["src/codelist/*"],
+      "@app-core": ["src/app-core"],
+      "@app-core/*": ["src/app-core/*"],
+      "@ibiz-core": ["src/ibiz-core"],
+      "@ibiz-core/*": ["src/ibiz-core/*"],
+      "@ui-service": ["src/ui-service"],
+      "@ui-service/*": ["src/ui-service/*"],
+      "@global-ui-service": ["src/global-ui-service"],
+      "@global-ui-service/*": ["src/global-ui-service/*"],
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost",
+      "es6",
+      "es7"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/*.jsx",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
