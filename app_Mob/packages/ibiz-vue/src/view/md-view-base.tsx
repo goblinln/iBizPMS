@@ -11,11 +11,11 @@ import { MainViewBase } from "./main-view-base";
  */
 export class MDViewBase extends MainViewBase {
 
-    /**
-        * 视图实例
-        * 
-        * @memberof MDViewBase
-        */
+   /**
+    * 视图实例
+    * 
+    * @memberof MDViewBase
+    */
     public viewInstance!: any;
 
     /**
@@ -317,7 +317,7 @@ export class MDViewBase extends MainViewBase {
             return;
         }
         let showfilter = this.searchFormInstance ? true : false;
-        return this.model ? <app-search-history on-quickValueChange={(event: any) => this.quickValueChange(event)} on-openSearchform={() => { }} viewmodel={this.model} showfilter={showfilter} slot="quicksearch"></app-search-history> : null;
+        return this.model && this.enableControlUIAuth  ? <app-search-history on-quickValueChange={(event: any) => this.quickValueChange(event)} on-openSearchform={() => { }} viewmodel={this.model} showfilter={showfilter} slot="quicksearch"></app-search-history> : null;
     }
 
     /**
@@ -443,7 +443,7 @@ export class MDViewBase extends MainViewBase {
             "pull-min": "50",
             "pull-max": "100",
             "closeDuration": '280ms',
-            "disabled": "false",
+            "disabled": (!this.enableControlUIAuth) as unknown as string,
             "slot":"fixed"
           },
           "on": {

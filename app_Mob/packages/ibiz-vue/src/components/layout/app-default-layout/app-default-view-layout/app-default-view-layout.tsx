@@ -49,7 +49,8 @@ export class AppDefaultViewLayout extends Vue {
      * renderViewContent
      */
     public renderViewContent() {
-        return <ion-content ref="ionScroll">
+        const id = this.viewInstance.codeName;
+        return <ion-content ref="ionScroll" id={id} >
             {this.$slots.default}
         </ion-content>
     }

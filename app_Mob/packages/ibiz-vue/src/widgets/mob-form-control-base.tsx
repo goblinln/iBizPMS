@@ -549,18 +549,18 @@ export class MobFormControlBase extends MainControlBase {
             this.$Notice.error(codeName + this.$t('app.view') + this.$t('app.ctrl.form') + 'loadAction' + this.$t('app.notConfig'));
             return Promise.reject();
         }
-        this.ctrlBeginLoading();
         const arg: any = { ...opt };
         Object.assign(arg, this.viewparams);
         let response: any
+        this.onControlRequset('load', { ...this.context },  arg);
         try {
             response = await this.service.get(this.loadAction, { ...this.context }, arg, this.showBusyIndicator);
         } catch (error) {
-            this.endLoading();
+            this.onControlResponse('load',response);
             this.$Notice.error(error.data.message ? error.data.message : (this.$t('app.commonWords.sysException') as string));
         }
         if (response && response.status === 200) {
-            this.endLoading();
+            this.onControlResponse('load',response);
             const data = response.data;
             this.onFormLoad(data, 'load');
             this.ctrlEvent({
@@ -572,9 +572,9 @@ export class MobFormControlBase extends MainControlBase {
                 this.formState.next({ type: 'load', data: data });
             });
         } else if (response && response.status !== 401) {
-            this.endLoading();
+            this.onControlResponse('load',response);
             const { error: _data } = response;
-            this.$Notice.error(_data.message || this.$t('app.commonWords.sysException') as string);
+            this.$Notice.error(_data?.message || this.$t('app.commonWords.sysException') as string);
         }
         return response;
     }
@@ -611,7 +611,7 @@ export class MobFormControlBase extends MainControlBase {
             });
         } else if (response && response.status !== 401) {
             const { error: _data } = response;
-            this.$Notice.error(_data.message);
+            this.$Notice.error(_data?.message);
         }
 
         return response;
@@ -909,7 +909,7 @@ export class MobFormControlBase extends MainControlBase {
                 this.resetValidates();
                 this.fillValidates(_data.parameters.fieldErrors)
             }
-            this.$Notice.error(_data.message);
+            this.$Notice.error(_data?.message);
         });
     }
 
@@ -1201,10 +1201,10 @@ export class MobFormControlBase extends MainControlBase {
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
+        this.onControlRequset('autoSave', { ...this.context },  arg);
         const post: Promise<any> = this.service.add(action, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
-        this.ctrlBeginLoading();
         post.then((response: any) => {
-            this.endLoading();
+            this.onControlResponse('autoSave',response);
             if (!response.status || response.status !== 200) {
                 if (response.data) {
                     this.$Notice.error( response.data.message || this.$t('app.commonWords.sysException') as string );
@@ -1223,7 +1223,7 @@ export class MobFormControlBase extends MainControlBase {
                 this.formState.next({ type: 'save', data: data });
             });
         }).catch((response: any) => {
-            this.endLoading();
+            this.onControlResponse('autoSave',response);
             if (response && response.status && response.data) {
                 if (response.data.errorKey) {
                     if (Object.is(response.data.errorKey, "versionCheck")) {
@@ -1391,7 +1391,7 @@ export class MobFormControlBase extends MainControlBase {
             this.$Notice.success((data.srfmajortext ? data.srfmajortext : '') + '&nbsp;' + this.$t('app.message.deleteSccess'));
         } else if (response && response.status !== 401) {
             const { error: _data } = response;
-            this.$Notice.error(_data.message || (this.$t('app.commonWords.sysException') as string));
+            this.$Notice.error(_data?.message || (this.$t('app.commonWords.sysException') as string));
         }
         return response;
     }

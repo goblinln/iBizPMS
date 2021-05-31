@@ -394,21 +394,21 @@ export class MobMDCtrlControlBase extends MDControlBase {
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(data, { viewparams: tempViewParams });
-        this.ctrlBeginLoading();
+        this.onControlRequset('load', { ...this.context },  data);
         let response: any;
         try {
             response = await this.service.search(this.fetchAction, this.context, data, isloadding);
         } catch (error) {
-            this.endLoading();
+            this.onControlResponse('load',response);
             this.$Notice.error(error?.data?.message || this.$t('app.commonWords.sysException') as string);
         }
         this.bottomLoadding = false;
         if (!response || response.status !== 200) {
             this.$Notice.error(response?.error?.message || this.$t('app.commonWords.sysException') as string);
-            this.endLoading();
+            this.onControlResponse('load',response);
             return response;
         }
-        this.endLoading();
+        this.onControlResponse('load',response);
         this.onCtrlEvent(this.controlInstance.name, 'load', response.data ? response.data : []);
         this.totalRecord = response.total;
         this.onCtrlEvent(this.controlInstance.name, 'totalRecordChange', this.totalRecord);

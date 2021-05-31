@@ -1,7 +1,6 @@
 import { Subscription } from 'rxjs';
 import { UIServiceRegister } from 'ibiz-service';
-import { CtrlLoadingService } from '..';
-import { AppCenterService, AppLoadingService, ViewLoadingService } from '../app-service';
+import { AppCenterService, AppLoadingService } from '../app-service';
 import { AppControlBase } from './app-control-base';
 import { ModelTool } from 'ibiz-core';
 import { IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
@@ -38,10 +37,10 @@ export class MainControlBase extends AppControlBase {
      * @readonly
      * @memberof MainViewBase
      */
-     get appDeCodeName(){
+    get appDeCodeName() {
         return this.controlInstance?.getPSAppDataEntity?.()?.codeName || '';
     }
-    
+
     /**
      * 应用实体主键属性codeName
      *
@@ -213,5 +212,34 @@ export class MainControlBase extends AppControlBase {
      */
     public getViewLogicTag(ctrlTag: string, columnTag: any, detailTag: string) {
         return `${ctrlTag}_${columnTag}_${detailTag}_click`;
+    }
+
+    /**
+     * 处理部件UI请求
+     *
+     * @memberof MainControlBase
+     */
+    public onControlRequset(action: string, context: any, viewparam: any) {
+        this.ctrlBeginLoading();
+    }
+
+    /**
+     * 处理部件UI响应
+     *
+     * @memberof MainControlBase
+     */
+    public onControlResponse(action: string, response: any) {
+        this.endLoading();
+        if (Object.is(action, 'load')) {
+            this.controlIsLoaded = true;
+        }
+        if (response?.status == 403) {
+            this.enableControlUIAuth = false;
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'authlimit',
+                data: response,
+            });
+        }
     }
 }

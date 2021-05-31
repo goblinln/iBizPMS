@@ -228,6 +228,11 @@ public class StorySearchContext extends QueryWrapperContext<Story> {
         this.n_parent_eq = n_parent_eq;
     }
                 
+	private Long n_parent_gt;//[父需求]
+	public void setN_parent_gt(Long n_parent_gt) {
+        this.n_parent_gt = n_parent_gt;
+    }
+                
 	private Long n_parent_gtandeq;//[父需求]
 	public void setN_parent_gtandeq(Long n_parent_gtandeq) {
         this.n_parent_gtandeq = n_parent_gtandeq;

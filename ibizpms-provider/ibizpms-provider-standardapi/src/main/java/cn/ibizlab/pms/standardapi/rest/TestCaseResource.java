@@ -71,15 +71,6 @@ public class TestCaseResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/getdraft")
-    public ResponseEntity<TestCaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestCaseDTO dto) {
-        Case domain = testcaseMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaseMapping.toDto(caseService.getDraft(domain)));
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/{testcase_id}")
@@ -87,6 +78,15 @@ public class TestCaseResource {
         Case domain = caseService.get(testcase_id);
         TestCaseDTO dto = testcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
+    @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/getdraft")
+    public ResponseEntity<TestCaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestCaseDTO dto) {
+        Case domain = testcaseMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testcaseMapping.toDto(caseService.getDraft(domain)));
     }
 
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")

@@ -71,6 +71,15 @@ export class AppControlBase extends Vue implements ControlInterface {
      */
     public name?: string;
 
+    
+    /**
+     * 部件UI是否存在权限
+     *
+     * @type {boolean}
+     * @memberof ControlBase
+     */
+     public enableControlUIAuth: boolean = true;
+
     /**
      * 视图通讯对象
      *

@@ -547,7 +547,7 @@ export class MobCalendarControlBase extends MDControlBase{
                     resolve(response);
                 } else {
                     const { error: _data } = response;
-                    this.$Notice.error(_data.message);
+                    this.$Notice.error(_data?.message);
                     reject(response);
                 }
             }
@@ -661,14 +661,14 @@ export class MobCalendarControlBase extends MDControlBase{
      */
     protected async load(opt: any = {},isSetTileContent:boolean=true): Promise<any> {
         const arg: any = { ...opt };
-        this.ctrlBeginLoading();
+        this.onControlRequset('load', { ...this.context },  { ...arg });
         const response: any = await this.service.search(this.activeItem, { ...this.context }, { ...arg }, this.showBusyIndicator);
         if (response && response.status === 200) {
-            this.endLoading();
+            this.onControlResponse('load',response)
             this.calendarItems = response.data;
             isSetTileContent?this.setTileContent():"";
         } else {
-            this.endLoading();
+            this.onControlResponse('load',response)
             this.$Notice.error('系统异常，请重试!');
         }
         this.show = true;

@@ -277,4 +277,31 @@ html {
   .loading span:nth-child(4){
     -webkit-animation-delay:0.52s;
   }
+  .no-authority-shade {
+    position: relative;
+    height: 100%;
+    & :first-child {
+      filter: blur(2px);
+    }
+    .no-authority-shade-child {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      background-color: rgba(125,125,125, .3);
+      background-image: url("/assets/images/no-authority.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 100;
+      &::after {
+        content: '暂无权限';
+        position: absolute;
+        color: white;
+        top: 50%;
+        left: 50%;
+        transform: translate(-40px, 70px);
+      }
+    }
+    
+  }
 }

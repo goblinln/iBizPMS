@@ -23,6 +23,14 @@ export class ViewBase extends Vue {
     protected Environment: any = AppServiceBase.getInstance().getAppEnvironment();
 
     /**
+     * 部件UI是否存在权限
+     *
+     * @type {boolean}
+     * @memberof ControlBase
+     */
+     public enableControlUIAuth: any = true;
+
+    /**
      * 传入视图上下文
      *
      * @type {any}
@@ -1067,10 +1075,14 @@ export class ViewBase extends Vue {
         if (action == 'controlIsMounted') {
             _this.setIsMounted(controlname)
         } else {
-            if (_this.engine) {
-                _this.engine.onCtrlEvent(controlname, action, data);
+            if (Object.is(action, 'authlimit')) {
+                this.enableControlUIAuth = false;
+                this.renderShade();
+            } else {
+                if (_this.engine) {
+                    _this.engine.onCtrlEvent(controlname, action, data);
+                }
             }
-
         }
     }
 
@@ -1137,5 +1149,20 @@ export class ViewBase extends Vue {
         );
     }
 
-
+    /**
+     * 绘制遮罩
+     *
+     * @memberof ViewBase
+     */
+     public renderShade() {
+        const currentViewKey = `${this.viewInstance.codeName}`;
+        const el: any = currentViewKey ? document.getElementById(currentViewKey) : null;
+        if (el) {
+            el.setAttribute('class', 'no-authority-shade');
+            const shade = document.createElement('div');
+            shade.setAttribute('class', 'no-authority-shade-child');
+            el.appendChild(shade);
+        }
+    }
+    
 }

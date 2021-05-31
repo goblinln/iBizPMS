@@ -4942,6 +4942,11 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     }, {
+      "codeName" : "N_PARENT_GT",
+      "name" : "N_PARENT_GT",
+      "stdDataType" : 1,
+      "valueOP" : "GT"
+    }, {
       "codeName" : "N_PARENT_GTANDEQ",
       "name" : "N_PARENT_GTANDEQ",
       "stdDataType" : 1,

@@ -123,6 +123,9 @@
 		<if test="srf.n_parent_eq != null ">
 			<![CDATA[ AND  t1.`PARENT` = #{srf.n_parent_eq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_parent_gt != null ">
+			<![CDATA[ AND  t1.`PARENT` > #{srf.n_parent_gt,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_parent_gtandeq != null ">
 			<![CDATA[ AND  t1.`PARENT` >= #{srf.n_parent_gtandeq,jdbcType=BIGINT} ]]>
         </if>
