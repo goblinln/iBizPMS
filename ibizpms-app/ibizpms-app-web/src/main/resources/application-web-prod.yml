@@ -79,10 +79,6 @@ zuul:
       path: /products/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
-    ibz_api__project_task_report:
-      path: /projecttaskreports/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
-      stripPrefix: false
     zt_burn:
       path: /projectburns/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -103,10 +99,6 @@ zuul:
       path: /stories/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
-    ibz_api__product_bug:
-      path: /productbugs/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
-      stripPrefix: false
     zt_project:
       path: /projects/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -119,16 +111,8 @@ zuul:
       path: /productteams/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
-    ibz_api__project_bug:
-      path: /projectbugs/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
-      stripPrefix: false
     ibz_productlife:
       path: /productlives/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
-      stripPrefix: false
-    ibz_api__project_story:
-      path: /projectstories/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_task:
@@ -137,14 +121,6 @@ zuul:
       stripPrefix: false
     zt_build:
       path: /builds/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
-      stripPrefix: false
-    ibz_api__project_task_gantt:
-      path: /projecttaskgantts/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
-      stripPrefix: false
-    ibz_api__product_build:
-      path: /productbuilds/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectteam:

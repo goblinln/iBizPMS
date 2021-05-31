@@ -7,7 +7,7 @@
   "name" : "StoryCurProjectGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -172,7 +172,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       },
       "modelref" : true,
       "id" : "ProjectCreateView@Story"
@@ -184,7 +184,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       },
       "modelref" : true,
       "id" : "projectLinkStories@Story"
@@ -196,7 +196,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       },
       "modelref" : true,
       "id" : "ProjecPlanLink@Story"
@@ -233,7 +233,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -267,7 +267,7 @@
         "name" : "项目新建",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "PROJECT",
@@ -338,7 +338,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "STORY",
@@ -398,7 +398,7 @@
         "name" : "按照计划关联",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "PROJECT",
@@ -550,7 +550,7 @@
     "codeName" : "ProjectStory",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory/PSGRIDS/ProjectStory.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSGRIDS/ProjectStory.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -565,7 +565,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -597,7 +597,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "modelref" : true,
         "id" : "Breakdowntasks@Story"
@@ -609,7 +609,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "modelref" : true,
         "id" : "BatchBreakdowntasks@Story"
@@ -621,7 +621,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
         "modelref" : true,
         "id" : "ProjectUnlinkStory@Story"
@@ -641,7 +641,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -652,7 +652,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "Remove",
@@ -665,7 +665,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "Get",
@@ -678,7 +678,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -691,7 +691,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "Create",
@@ -704,7 +704,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -768,7 +768,7 @@
       "excelCaption" : "需求名称",
       "getLinkPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMainView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
         "viewType" : "DEPORTALVIEW"
       },
       "linkValueItem" : "srfkey",
@@ -930,7 +930,7 @@
             "name" : "分解任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "CURPROJECT",
@@ -1021,7 +1021,7 @@
             "name" : "分解任务（批量分解）",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "CURPROJECT",
@@ -1113,7 +1113,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "PROJECT",
@@ -1355,7 +1355,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -1377,11 +1377,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSSEARCHBARS/Custom.json",
     "logicName" : "需求自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -2742,7 +2742,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2762,5 +2762,52 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "ce036665dd22b3e4a3ca89005d573e65",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Stories",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "name" : "PROJECT__PROJECT_STORY",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Stories",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "name" : "PRODUCT__PRODUCT_STORY",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

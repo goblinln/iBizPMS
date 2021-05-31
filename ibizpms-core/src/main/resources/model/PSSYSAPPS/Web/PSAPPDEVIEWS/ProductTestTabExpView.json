@@ -197,7 +197,7 @@
               "modelref" : true,
               "id" : "create"
             },
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule/PSTREEVIEWS/BugExp.json",
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule/PSTREEVIEWS/BugExp.json",
             "getFetchPSControlAction" : {
               "modelref" : true,
               "id" : "fetch"
@@ -207,10 +207,10 @@
               "id" : "load"
             },
             "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
-            "logicName" : "BUG导航视图树",
+            "logicName" : "BUG导航视图树（测试）",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
@@ -224,14 +224,14 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
                 }
               }, {
                 "actionType" : "DEDATASET",
                 "name" : "fetch",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
                 }
               }, {
                 "actionName" : "Remove",
@@ -244,7 +244,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
                 }
               }, {
                 "actionName" : "Get",
@@ -257,7 +257,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
                 }
               }, {
                 "actionName" : "Create",
@@ -270,7 +270,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
                 }
               } ],
               "userDRAction" : "READ",
@@ -287,7 +287,7 @@
                 "modelref" : true,
                 "id" : "MODULE"
               },
-              "name" : "非根模块（动态） - 非根模块（动态）",
+              "name" : "null - null",
               "getParentPSAppDEField" : {
                 "name" : "PARENT",
                 "codeName" : "Parent"
@@ -295,62 +295,18 @@
               "getParentPSDER1N" : {
                 "codeName" : "ParentModule",
                 "dERType" : "DER1N",
-                "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
+                "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT.json",
                 "getMajorPSDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
                 },
                 "masterOrder" : -1,
                 "masterRS" : 0,
                 "getMinorPSDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
                 },
-                "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
-                "orderValue" : 100,
-                "getPSPickupDEField" : {
-                  "name" : "PARENT",
-                  "codeName" : "Parent"
-                },
-                "getPSPickupTextDEField" : {
-                  "name" : "PARENTNAME",
-                  "codeName" : "ParentName"
-                },
-                "pickupDEFName" : "PARENT",
-                "removeActionType" : -1,
-                "removeOrder" : 0
-              },
-              "getParentPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "MODULE"
-              },
-              "parentValueLevel" : 1,
-              "searchMode" : 3
-            }, {
-              "getChildPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "MODULE"
-              },
-              "name" : "根模块（动态） - 非根模块（动态）",
-              "getParentPSAppDEField" : {
-                "name" : "PARENT",
-                "codeName" : "Parent"
-              },
-              "getParentPSDER1N" : {
-                "codeName" : "ParentModule",
-                "dERType" : "DER1N",
-                "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDERS/DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT.json",
-                "getMajorPSDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-                },
-                "masterOrder" : -1,
-                "masterRS" : 0,
-                "getMinorPSDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-                },
-                "name" : "DER1N_IBZ_PRODUCTMODULE_IBZ_PRODUCTMODULE_PARENT",
+                "name" : "DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT",
                 "orderValue" : 100,
                 "getPSPickupDEField" : {
                   "name" : "PARENT",
@@ -373,21 +329,9 @@
             }, {
               "getChildPSDETreeNode" : {
                 "modelref" : true,
-                "id" : "ALL"
-              },
-              "name" : "默认根节点 - 全部",
-              "getParentPSDETreeNode" : {
-                "modelref" : true,
-                "id" : "ROOT"
-              },
-              "parentValueLevel" : 1,
-              "searchMode" : 3
-            }, {
-              "getChildPSDETreeNode" : {
-                "modelref" : true,
                 "id" : "ROOTMODULE"
               },
-              "name" : "全部 - 根模块（动态）",
+              "name" : "null - null",
               "getPSNavigateParams" : [ {
                 "key" : "n_type_eq",
                 "name" : "n_type_eq",
@@ -405,8 +349,95 @@
               },
               "parentValueLevel" : 1,
               "searchMode" : 3
+            }, {
+              "getChildPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "ALL"
+              },
+              "name" : "null - null",
+              "getParentPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "ROOT"
+              },
+              "parentValueLevel" : 1,
+              "searchMode" : 3
+            }, {
+              "getChildPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "MODULE"
+              },
+              "name" : "null - null",
+              "getParentPSAppDEField" : {
+                "name" : "PARENT",
+                "codeName" : "Parent"
+              },
+              "getParentPSDER1N" : {
+                "codeName" : "ParentModule",
+                "dERType" : "DER1N",
+                "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT.json",
+                "getMajorPSDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+                },
+                "masterOrder" : -1,
+                "masterRS" : 0,
+                "getMinorPSDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+                },
+                "name" : "DER1N_IBZ_TESTMODULE_IBZ_TESTMODULE_PARENT",
+                "orderValue" : 100,
+                "getPSPickupDEField" : {
+                  "name" : "PARENT",
+                  "codeName" : "Parent"
+                },
+                "getPSPickupTextDEField" : {
+                  "name" : "PARENTNAME",
+                  "codeName" : "ParentName"
+                },
+                "pickupDEFName" : "PARENT",
+                "removeActionType" : -1,
+                "removeOrder" : 0
+              },
+              "getParentPSDETreeNode" : {
+                "modelref" : true,
+                "id" : "MODULE"
+              },
+              "parentValueLevel" : 1,
+              "searchMode" : 3
             } ],
             "getPSDETreeNodes" : [ {
+              "counterMode" : 0,
+              "name" : "全部",
+              "getNavPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView.json",
+                "viewType" : "DEGRIDVIEW"
+              },
+              "nodeType" : "ALL",
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+              },
+              "text" : "全部",
+              "treeNodeType" : "STATIC",
+              "hasPSDETreeNodeRSs" : true,
+              "appendPNodeId" : false,
+              "disableSelect" : false,
+              "enableCheck" : false,
+              "enableEditData" : false,
+              "enableNewData" : false,
+              "enableQuickCreate" : false,
+              "enableQuickSearch" : true,
+              "enableRemoveData" : false,
+              "enableViewData" : false,
+              "expandFirstOnly" : false,
+              "expanded" : true,
+              "rootNode" : false,
+              "selectFirstOnly" : false,
+              "selected" : false,
+              "id" : "ALL"
+            }, {
               "counterMode" : 0,
               "name" : "默认根节点",
               "nodeType" : "ROOT",
@@ -436,73 +467,6 @@
                 "codeName" : "Id"
               },
               "maxSize" : -1,
-              "name" : "非根模块（动态）",
-              "navFilter" : "n_module_eq",
-              "getNavPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView.json",
-                "viewType" : "DEGRIDVIEW"
-              },
-              "nodeType" : "MODULE",
-              "getPSAppDEDataSet" : {
-                "modelref" : true,
-                "id" : "FetchDefault"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-              },
-              "getPSNavigateContexts" : [ {
-                "key" : "MODULENAME",
-                "name" : "MODULENAME",
-                "value" : "name",
-                "rawValue" : false
-              }, {
-                "key" : "BRANCH",
-                "name" : "BRANCH",
-                "value" : "branch",
-                "rawValue" : false
-              } ],
-              "getPSNavigateParams" : [ {
-                "key" : "modulename",
-                "name" : "modulename",
-                "value" : "name",
-                "rawValue" : false
-              }, {
-                "key" : "branch",
-                "name" : "branch",
-                "value" : "branch",
-                "rawValue" : false
-              } ],
-              "getTextPSAppDEField" : {
-                "name" : "NAME",
-                "codeName" : "Name"
-              },
-              "treeNodeType" : "DE",
-              "hasPSDETreeNodeRSs" : true,
-              "appendCaption" : false,
-              "appendPNodeId" : false,
-              "disableSelect" : false,
-              "enableCheck" : false,
-              "enableEditData" : false,
-              "enableNewData" : false,
-              "enableQuickCreate" : false,
-              "enableQuickSearch" : true,
-              "enableRemoveData" : false,
-              "enableViewData" : false,
-              "expandFirstOnly" : false,
-              "expanded" : false,
-              "rootNode" : false,
-              "selectFirstOnly" : false,
-              "selected" : false,
-              "id" : "MODULE"
-            }, {
-              "counterMode" : 0,
-              "getIdPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              },
-              "maxSize" : -1,
               "name" : "根模块（动态）",
               "navFilter" : "n_module_eq",
               "getNavPSAppView" : {
@@ -517,30 +481,8 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
               },
-              "getPSNavigateContexts" : [ {
-                "key" : "MODULENAME",
-                "name" : "MODULENAME",
-                "value" : "name",
-                "rawValue" : false
-              }, {
-                "key" : "BRANCH",
-                "name" : "BRANCH",
-                "value" : "branch",
-                "rawValue" : false
-              } ],
-              "getPSNavigateParams" : [ {
-                "key" : "modulename",
-                "name" : "modulename",
-                "value" : "name",
-                "rawValue" : false
-              }, {
-                "key" : "branch",
-                "name" : "branch",
-                "value" : "branch",
-                "rawValue" : false
-              } ],
               "getTextPSAppDEField" : {
                 "name" : "NAME",
                 "codeName" : "Name"
@@ -565,32 +507,34 @@
               "id" : "ROOTMODULE"
             }, {
               "counterMode" : 0,
-              "name" : "全部",
+              "getIdPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              },
+              "maxSize" : -1,
+              "name" : "非根模块（动态）",
+              "navFilter" : "n_module_eq",
               "getNavPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
-              "nodeType" : "ALL",
+              "nodeType" : "MODULE",
+              "getPSAppDEDataSet" : {
+                "modelref" : true,
+                "id" : "FetchDefault"
+              },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
               },
-              "getPSNavigateContexts" : [ {
-                "key" : "BRANCH",
-                "name" : "BRANCH",
-                "value" : "0",
-                "rawValue" : true
-              } ],
-              "getPSNavigateParams" : [ {
-                "key" : "branch",
-                "name" : "branch",
-                "value" : "0",
-                "rawValue" : true
-              } ],
-              "text" : "全部",
-              "treeNodeType" : "STATIC",
+              "getTextPSAppDEField" : {
+                "name" : "NAME",
+                "codeName" : "Name"
+              },
+              "treeNodeType" : "DE",
               "hasPSDETreeNodeRSs" : true,
+              "appendCaption" : false,
               "appendPNodeId" : false,
               "disableSelect" : false,
               "enableCheck" : false,
@@ -601,11 +545,11 @@
               "enableRemoveData" : false,
               "enableViewData" : false,
               "expandFirstOnly" : false,
-              "expanded" : true,
+              "expanded" : false,
               "rootNode" : false,
               "selectFirstOnly" : false,
               "selected" : false,
-              "id" : "ALL"
+              "id" : "MODULE"
             } ],
             "getRemovePSControlAction" : {
               "modelref" : true,
@@ -621,7 +565,7 @@
             "outputIconDefault" : false,
             "rootVisible" : false,
             "name" : "treeexpbar_tree",
-            "modelid" : "0aa3f2c95faa19b07f18e9cc1f16ee4b",
+            "modelid" : "1b450768dc7ba88b0163f8ae0bab9516",
             "modeltype" : "PSDETREEVIEW"
           } ],
           "xDataControlName" : "treeexpbar_tree",
