@@ -6858,6 +6858,16 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERCUSTOM_ZT_PROJECT_ZT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "Product__READ"
+  }, {
     "logicName" : "开始",
     "name" : "START"
   }, {
@@ -8325,6 +8335,24 @@
     "pickupDEFName" : "PARENT",
     "removeActionType" : -1,
     "removeOrder" : 0
+  }, {
+    "codeName" : "Product",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERCUSTOM_ZT_PROJECT_ZT_PRODUCT.json",
+    "logicName" : "产品",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "name" : "DERCUSTOM_ZT_PROJECT_ZT_PRODUCT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1
   }, {
     "codeName" : "Project",
     "dERType" : "DERINDEX",

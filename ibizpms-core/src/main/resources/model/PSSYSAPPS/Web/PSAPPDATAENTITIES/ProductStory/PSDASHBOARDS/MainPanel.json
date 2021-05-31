@@ -13,7 +13,7 @@
     "layout" : "TABLE_24COL"
   },
   "getPSControls" : [ {
-    "codeName" : "MainViewdashboard_container1",
+    "codeName" : "ProjectMainViewdashboard_container1",
     "controlType" : "PORTLET",
     "name" : "dashboard_container1",
     "getPSAppDataEntity" : {
@@ -37,7 +37,7 @@
       "layout" : "TABLE_24COL"
     },
     "getPSControls" : [ {
-      "codeName" : "MainViewdashboard_container2",
+      "codeName" : "ProjectMainViewdashboard_container2",
       "controlType" : "PORTLET",
       "name" : "dashboard_container2",
       "getPSAppDataEntity" : {
@@ -3229,7 +3229,7 @@
         "modelid" : "4ea59943812a7db08d0a61ee7976943d",
         "modeltype" : "PSSYSDBPART"
       }, {
-        "codeName" : "MainViewdashboard_container4",
+        "codeName" : "ProjectMainViewdashboard_container4",
         "controlType" : "PORTLET",
         "name" : "dashboard_container4",
         "getPSAppDataEntity" : {
@@ -3853,7 +3853,7 @@
       "portletType" : "CONTAINER",
       "showTitleBar" : true
     }, {
-      "codeName" : "MainViewdashboard_container3",
+      "codeName" : "ProjectMainViewdashboard_container3",
       "controlType" : "PORTLET",
       "name" : "dashboard_container3",
       "getPSAppDataEntity" : {
@@ -8927,6 +8927,6 @@
     "showTitleBar" : true
   } ],
   "enableCustomized" : false,
-  "modelid" : "3f2ca3e560d9082bb56fbf7667a57a66",
+  "modelid" : "4302f2bcabc053b1d562a893d86b6af4",
   "modeltype" : "PSSYSDASHBOARD"
 }

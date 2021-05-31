@@ -34126,6 +34126,12 @@
      "code_name":"Product",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PRODUCT"
+    },
+    {"name":"DERCUSTOM_ZT_PROJECT_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Product",
+     "entity_name":"ZT_PROJECT",
+     "ref_entity_name":"ZT_PRODUCT"
     }
     ],
     "parentEntitys":[
@@ -38010,6 +38016,12 @@
      "code_name":"IBizParent",
      "entity_name":"ZT_PROJECT",
      "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_PROJECT_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Product",
+     "entity_name":"ZT_PROJECT",
+     "ref_entity_name":"ZT_PRODUCT"
     },
     {"name":"DERINDEX_ZT_PROJECT_IBIZPRO_INDEX",
      "relation_type":"DERINDEX",

@@ -150,6 +150,21 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTaskEstimateService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
+            const res = await this.http.get(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -171,17 +186,16 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTaskEstimateService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projecttask && _context.projecttaskestimate) {
-            const res = await this.http.get(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
-            return res;
+            return this.http.delete(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -196,20 +210,6 @@ export class ProjectTaskEstimateBaseService extends EntityBaseService<IProjectTa
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projecttask && true) {
             return this.http.post(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/fetchdefault`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTaskEstimateService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projecttask && _context.projecttaskestimate) {
-            return this.http.delete(`/projects/${_context.project}/projecttasks/${_context.projecttask}/projecttaskestimates/${_context.projecttaskestimate}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

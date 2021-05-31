@@ -2065,6 +2065,41 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/productstories/:productstory?/views/projectmainview',
+                    meta: {
+                        caption: 'entities.productstory.views.projectmainview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productstories', parameterName: 'productstory' },
+                            { pathName: 'views', parameterName: 'projectmainview' },
+                        ],
+                        resource:'productstory',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productstories/:productstory?/views/projectmainview',
+                    meta: {
+                        caption: 'entities.productstory.views.projectmainview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstories', parameterName: 'productstory' },
+                            { pathName: 'views', parameterName: 'projectmainview' },
+                        ],
+                        resource:'productstory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/productstories/:productstory?/views/editview',
                     meta: {
                         caption: 'entities.productstory.views.editview.caption',
@@ -2653,6 +2688,41 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'productstories', parameterName: 'productstory' },
                             { pathName: 'views', parameterName: 'mpickupview3' },
+                        ],
+                        resource:'productstory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/productstories/:productstory?/views/projecteditview',
+                    meta: {
+                        caption: 'entities.productstory.views.projecteditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productstories', parameterName: 'productstory' },
+                            { pathName: 'views', parameterName: 'projecteditview' },
+                        ],
+                        resource:'productstory',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productstories/:productstory?/views/projecteditview',
+                    meta: {
+                        caption: 'entities.productstory.views.projecteditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstories', parameterName: 'productstory' },
+                            { pathName: 'views', parameterName: 'projecteditview' },
                         ],
                         resource:'productstory',
                         requireAuth: true,
@@ -4229,41 +4299,6 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projectstories', parameterName: 'projectstory' },
                             { pathName: 'views', parameterName: 'curprojectwgridview' },
-                        ],
-                        resource:'projectstory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projects/:project?/projectstories/:projectstory?/views/projecteditview',
-                    meta: {
-                        caption: 'entities.projectstory.views.projecteditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'projectstories', parameterName: 'projectstory' },
-                            { pathName: 'views', parameterName: 'projecteditview' },
-                        ],
-                        resource:'projectstory',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'projectstories/:projectstory?/views/projecteditview',
-                    meta: {
-                        caption: 'entities.projectstory.views.projecteditview.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstories', parameterName: 'projectstory' },
-                            { pathName: 'views', parameterName: 'projecteditview' },
                         ],
                         resource:'projectstory',
                         requireAuth: true,
@@ -19542,6 +19577,21 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/storyprojectmainview',
+                    meta: {
+                        caption: 'entities.productstory.views.projectmainview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'storyprojectmainview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/ibzmyterritorylistview',
                     meta: {
                         caption: 'entities.ibzmyterritory.views.listview.caption',
@@ -22178,7 +22228,7 @@ const router = new Router({
                 {
                     path: 'views/storyprojecteditview',
                     meta: {
-                        caption: 'entities.projectstory.views.projecteditview.caption',
+                        caption: 'entities.productstory.views.projecteditview.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-star-o',

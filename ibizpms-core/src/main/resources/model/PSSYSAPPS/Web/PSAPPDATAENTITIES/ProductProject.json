@@ -3375,6 +3375,16 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERCUSTOM_ZT_PROJECT_ZT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "Product__READ"
+  }, {
     "logicName" : "开始",
     "name" : "START"
   }, {
@@ -3395,7 +3405,7 @@
   } ],
   "codeName" : "ProductProject",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json",
   "enableUIActions" : 15,
   "logicName" : "产品关联项目",

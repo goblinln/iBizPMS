@@ -2758,6 +2758,14 @@
     "psappsbitemid" : "a4b37dfcc3cf1dce515a926ada4499c2",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "StoryProjectMainView",
+    "psappsbitemname" : "需求数据看板视图",
+    "itemtag2" : "DE41F2D0-2275-4FBD-82CD-F73A5A9ED880",
+    "psappviewid" : "4302f2bcabc053b1d562a893d86b6af4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMainView.json",
+    "psappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "ActionProductTrendsListView9",
     "psappsbitemname" : "产品动态",
     "itemtag2" : "573001171fa0dffa8162ea97a89feeb7",
@@ -9062,20 +9070,146 @@
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "需求",
-    "psappsbitemrsid" : "9cc7b0f941bdbeb0d6a33319ce41c728",
+    "psappsbitemrsid" : "445e79951ed4969f3e412d0f423a3d17",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "NEWDATA",
     "ppsappsbitemid" : "ea4121d9c3dd2ec065e9e07f61039187",
-    "cpsappsbitemid" : "2e388392bdb8d1c415956899f9f17384",
+    "cpsappsbitemid" : "0579d232f476241af780969690624b05",
     "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
+    "psappsbitemrsid" : "2aab5069fd9c3bcf76c07b875fc3c819",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "psappsbitemrsname" : "编辑界面_退出操作",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "需求激活",
+    "psappsbitemrsid" : "a6b663acd44b6f244d3e13c887858d75",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "27181a7ab51ce30ee7e9a25a1d5d58c3",
+    "psappsbitemrsname" : "需求激活 （操作栏）",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "需求编辑视图",
+    "psappsbitemrsid" : "85a56dbd13875a02aff8a0130b1609fe",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "bcbe697c635addcd8f2cb5db745e86cd",
+    "psappsbitemrsname" : "变更需求 (操作栏)",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "需求评审",
+    "psappsbitemrsid" : "2f7b1cc3b4129a8d312e668cb723bce0",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "b156fcc42a2d6a67c0bc728c4efc85b5",
+    "psappsbitemrsname" : "需求评审 （操作栏）",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "指派",
+    "psappsbitemrsid" : "430efb57f27133c2aefac18fea34d0a6",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "b14248667616922225f388e47b6c72b4",
+    "psappsbitemrsname" : "指派给 (操作栏)",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "需求关闭",
+    "psappsbitemrsid" : "8539fc975938c6bb8bd64b328be0ce94",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "6dce302e1053c9aab8961889166e211b",
+    "psappsbitemrsname" : "关闭需求 （操作栏）",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "需求细分",
+    "psappsbitemrsid" : "a836f40c507786238b04bb0b7d7746db",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "d260a8b8186f9a232e06ccd26f595987",
+    "psappsbitemrsname" : "需求细分（操作栏）",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "需求编辑视图",
+    "psappsbitemrsid" : "c69a43ce02f92371754f5fb8ba778db0",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "724d825a617259129f6d06f2718420e9",
+    "psappsbitemrsname" : "打开需求基本信息编辑（操作栏）",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "ea820953d66153413686f118b84fbea0",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "psappsbitemrsname" : "下载",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "b7ee469c555b19bf70ce823ddc73c601",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "rstag" : "BACKEND",
+    "rstag2" : "后台调用",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "psappsbitemrsname" : "删除",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "需求编辑视图",
+    "psappsbitemrsid" : "7b1d3e6918ec9b35ee2cca09a4beeb0c",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "7c4d2065c5cbb2c55d396e21fc6c8b06",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "需求编辑视图",
+    "psappsbitemrsid" : "06fbb4a4e93a273807b26254586e3085",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "4c7edbf7428860a2d00346172fc476df",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "需求编辑视图",
+    "psappsbitemrsid" : "0fd7ac87d290df73e1ae755e8dcca18e",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "beb1d975fc8843a14d6d95e1dbfd8d8b",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "c39a8ececa20141157c115cabe5ac604",
+    "ppsappsbitemname" : "需求数据看板视图",
+    "ppsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "cpsappsbitemid" : "71a0c4d3151f3a61e0ab826783494f72",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
     "cpsappsbitemname" : "需求数据看板视图",
-    "psappsbitemrsid" : "14eefa77f44de91f8a2ccf2fed03f17e",
+    "psappsbitemrsid" : "bbfb560bd9991d7e16eaf0b5756955c3",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "ea4121d9c3dd2ec065e9e07f61039187",
-    "cpsappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
+    "cpsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {
@@ -9169,20 +9303,20 @@
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "需求",
-    "psappsbitemrsid" : "c8f5f61024ba3883f77924393ddb06e5",
+    "psappsbitemrsid" : "de44d548e0d93285f4d1724dd38d96cf",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "NEWDATA",
     "ppsappsbitemid" : "9173d9372f0be9f64955f214579a2f02",
-    "cpsappsbitemid" : "2e388392bdb8d1c415956899f9f17384",
+    "cpsappsbitemid" : "0579d232f476241af780969690624b05",
     "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "需求数据看板视图",
-    "psappsbitemrsid" : "a85147553f8e8f8222a50ad281b59869",
+    "psappsbitemrsid" : "e7a782bbc002b9d200f9a1d286053c01",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "9173d9372f0be9f64955f214579a2f02",
-    "cpsappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
+    "cpsappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {

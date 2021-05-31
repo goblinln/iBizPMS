@@ -137,6 +137,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("需求数据看板视图",null),
 			},
+			'projectmainview': {
+				caption: commonLogic.appcommonhandle("需求",null),
+				title: commonLogic.appcommonhandle("需求数据看板视图",null),
+			},
 			'editview': {
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("需求",null),
@@ -204,6 +208,10 @@ function getLocaleResourceBase(){
 			'mpickupview3': {
 				caption: commonLogic.appcommonhandle("关联需求",null),
 				title: commonLogic.appcommonhandle("关联需求",null),
+			},
+			'projecteditview': {
+				caption: commonLogic.appcommonhandle("需求",null),
+				title: commonLogic.appcommonhandle("需求",null),
 			},
 			'gridview9_child': {
 				caption: commonLogic.appcommonhandle("细分需求",null),
@@ -710,6 +718,47 @@ function getLocaleResourceBase(){
 				'mailtopk': commonLogic.appcommonhandle("抄送给",null), 
 				'keywords': commonLogic.appcommonhandle("关键词",null), 
 				'id': commonLogic.appcommonhandle("编号",null), 
+			},
+			uiactions: {
+			},
+		},
+		mainprojectnew_form: {
+			details: {
+				'group1': commonLogic.appcommonhandle("需求基本信息",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("最后修改日期",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("编号",null), 
+				'srfmajortext': commonLogic.appcommonhandle("需求名称",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'product': commonLogic.appcommonhandle("所属产品",null), 
+				'module': commonLogic.appcommonhandle("所属模块",null), 
+				'prodoctname': commonLogic.appcommonhandle("所属产品",null), 
+				'branch': commonLogic.appcommonhandle("",null), 
+				'modulename': commonLogic.appcommonhandle("所属模块",null), 
+				'plan': commonLogic.appcommonhandle("计划",null), 
+				'source': commonLogic.appcommonhandle("需求来源",null), 
+				'sourcenote': commonLogic.appcommonhandle("来源备注",null), 
+				'assignedto': commonLogic.appcommonhandle("由谁评审",null), 
+				'neednotreview': commonLogic.appcommonhandle("",null), 
+				'reviewedby': commonLogic.appcommonhandle("由谁评审",null), 
+				'project': commonLogic.appcommonhandle("项目",null), 
+				'title': commonLogic.appcommonhandle("需求名称",null), 
+				'pri': commonLogic.appcommonhandle("优先级",null), 
+				'storypoints': commonLogic.appcommonhandle("故事点",null), 
+				'estimate': commonLogic.appcommonhandle("预计",null), 
+				'color': commonLogic.appcommonhandle("标题颜色",null), 
+				'spec': commonLogic.appcommonhandle("需求描述",null), 
+				'verify': commonLogic.appcommonhandle("验收标准",null), 
+				'files': commonLogic.appcommonhandle("附件",null), 
+				'mailto': commonLogic.appcommonhandle("抄送给",null), 
+				'mailtoconact': commonLogic.appcommonhandle("",null), 
+				'keywords': commonLogic.appcommonhandle("关键词",null), 
+				'id': commonLogic.appcommonhandle("编号",null), 
+				'mailtopk': commonLogic.appcommonhandle("抄送给",null), 
 			},
 			uiactions: {
 			},
@@ -1301,6 +1350,12 @@ function getLocaleResourceBase(){
 			},
 		},
 		plansubeditviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Save And Close",null),
+				tip: commonLogic.appcommonhandle("Save And Close Window",null),
+			},
+		},
+		projecteditviewtoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("Save And Close",null),
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),

@@ -53,7 +53,7 @@ public class ProductProjectResource {
     public ProductProjectMapping productprojectMapping;
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取当前项目", tags = {"项目" } ,notes = "根据产品获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/fetchcurproduct")
 	public ResponseEntity<List<ProductProjectDTO>> fetchProductProjectCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectSearchContext context) {
