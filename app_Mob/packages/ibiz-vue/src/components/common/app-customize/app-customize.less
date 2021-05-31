@@ -1,0 +1,64 @@
+.drag-list{
+  background-color: #F4F4F6;
+  overflow: auto;
+  height: 100%;
+  .drag-list-item{
+    margin: 0 10px;
+    box-sizing: border-box;
+    .header{
+      height: 40px;
+      line-height: 40px;
+      color:#BDC4CD;
+      font-size: 12px;
+    }
+    .content{
+      width: 100%;
+      background-color: white;
+      position: relative;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+      .start{
+        font-size: 30px;
+        color: #ea382d;
+      }
+      .drag-list-pic{
+        width: 50px;
+        height: 50px;
+      }
+      .drag-list-text{
+        width: 60%;
+        div:nth-child(1){
+          font-size: 15px;
+          color: #484a4b;
+        }
+        div:nth-child(2){
+          font-size: 12px;
+          color: #909AA9;
+        }
+      }
+      .end{
+        font-size: 20px;
+        color: #797979;
+        min-width: 20px;
+      }
+    }
+  }
+  .add{
+    .content{
+      .start{
+        color:#468CF3;
+      }
+    }
+  }
+  .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+}
