@@ -1,0 +1,18 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "YesNo3",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/YesNo3.json",
+  "emptyText" : "未定义",
+  "name" : "是否（YESNO）",
+  "getPSCodeItems" : [ {
+    "codeName" : "Yes",
+    "text" : "是",
+    "value" : "yes"
+  }, {
+    "codeName" : "No",
+    "text" : "否",
+    "value" : "no"
+  } ],
+  "enableCache" : true
+}

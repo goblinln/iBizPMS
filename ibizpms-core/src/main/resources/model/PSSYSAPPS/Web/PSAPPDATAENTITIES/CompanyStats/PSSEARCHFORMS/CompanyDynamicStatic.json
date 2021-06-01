@@ -1,0 +1,106 @@
+{
+  "codeName" : "CompanyDynamicStatic",
+  "controlType" : "SEARCHFORM",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats/PSSEARCHFORMS/CompanyDynamicStatic.json",
+  "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
+  "logicName" : "公司动态统计专用",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CompanyStats.json"
+  },
+  "getPSDEFormItems" : [ {
+    "id" : "begin",
+    "dataType" : 25
+  }, {
+    "id" : "end",
+    "dataType" : 25
+  } ],
+  "getPSDEFormPages" : [ {
+    "caption" : "表单分页",
+    "codeName" : "formpage1",
+    "detailStyle" : "DEFAULT",
+    "detailType" : "FORMPAGE",
+    "name" : "formpage1",
+    "getPSDEFormDetails" : [ {
+      "caption" : "起始日期",
+      "codeName" : "begin",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 80,
+      "name" : "begin",
+      "noPrivDisplayMode" : 1,
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "begin"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colLGOffset" : 1,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    }, {
+      "caption" : "结束日期",
+      "codeName" : "end",
+      "dataType" : 25,
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMITEM",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "labelPos" : "LEFT",
+      "labelWidth" : 80,
+      "name" : "end",
+      "noPrivDisplayMode" : 1,
+      "getPSEditor" : {
+        "dateTimeFormat" : "YYYY-MM-DD",
+        "editorParams" : {
+          "TIMEFMT" : "YYYY-MM-DD"
+        },
+        "editorType" : "DATEPICKEREX_NOTIME",
+        "editorWidth" : 100.0,
+        "name" : "end"
+      },
+      "getPSLayoutPos" : {
+        "colLG" : 6,
+        "colMD" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "allowEmpty" : true,
+      "emptyCaption" : false,
+      "hidden" : false,
+      "inputTipClosable" : false,
+      "showCaption" : true
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "infoGroupMode" : false
+  } ],
+  "getPSLayout" : {
+    "columnCount" : 24,
+    "layout" : "TABLE_24COL"
+  },
+  "searchButtonStyle" : "DEFAULT",
+  "tabHeaderPos" : "TOP",
+  "enableAdvanceSearch" : false,
+  "enableAutoSearch" : false,
+  "enableFilterSave" : false,
+  "noTabHeader" : true,
+  "modelid" : "998be256746fc1cca97786857670f156",
+  "modeltype" : "PSDEFORM_SEARCHFORM"
+}

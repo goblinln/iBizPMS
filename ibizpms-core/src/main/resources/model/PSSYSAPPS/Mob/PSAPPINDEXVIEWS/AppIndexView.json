@@ -211,25 +211,6 @@
       },
       "tooltip" : "头像",
       "hidden" : true
-    }, {
-      "accUserMode" : 2,
-      "caption" : "test",
-      "itemType" : "MENUITEM",
-      "name" : "menuitem11",
-      "getPSAppFunc" : {
-        "modelref" : true,
-        "id" : "AppFunc15"
-      },
-      "getPSLayout" : {
-        "columnCount" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "getPSLayoutPos" : {
-        "colMD" : 24,
-        "layout" : "TABLE_24COL"
-      },
-      "tooltip" : "test",
-      "hidden" : true
     } ],
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,

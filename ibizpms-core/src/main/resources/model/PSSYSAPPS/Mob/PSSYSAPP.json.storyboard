@@ -736,14 +736,6 @@
     "psappsbitemid" : "e4694bfbe88f853ca0a098a7cd601090",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TodoMobRedirectView",
-    "psappsbitemname" : "待办数据重定向视图",
-    "itemtag2" : "944DA28F-75D4-4345-A678-A5682C914540",
-    "psappviewid" : "25ae8db8702f1b4b13ff1cbd953004db",
-    "itemtag" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoMobRedirectView.json",
-    "psappsbitemid" : "25ba407753633d035eda7e279e506128",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ProductMobEditView",
     "psappsbitemname" : "产品移动端编辑视图",
     "itemtag2" : "7aef1c6fa377cd51ffd9a3446d23f02e",
@@ -2124,16 +2116,6 @@
     "ppsappsbitemid" : "ba7376f9b5494dadab4ed9bf13dab522",
     "cpsappsbitemid" : "91bc5b765782e8ca5a35cfb2831415ee",
     "psappsbitemrsname" : "测试",
-    "rstype" : "APPFUNC"
-  }, {
-    "cpsappsbitemname" : "待办数据重定向视图",
-    "psappsbitemrsid" : "4c95077e91f5c7603af922b6ac0994ae",
-    "ppsappsbitemname" : "iBiz软件生产管理",
-    "rstag" : "APPVIEW",
-    "rstag2" : "打开应用视图",
-    "ppsappsbitemid" : "ba7376f9b5494dadab4ed9bf13dab522",
-    "cpsappsbitemid" : "25ba407753633d035eda7e279e506128",
-    "psappsbitemrsname" : "test重定向",
     "rstype" : "APPFUNC"
   }, {
     "psappsbitemrsid" : "4b00a4d0e30ee2a7835d3c324a1caf62",

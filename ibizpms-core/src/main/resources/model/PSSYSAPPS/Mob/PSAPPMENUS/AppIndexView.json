@@ -116,17 +116,6 @@
     },
     "tooltip" : "头像",
     "hidden" : true
-  }, {
-    "accUserMode" : 2,
-    "caption" : "test",
-    "itemType" : "MENUITEM",
-    "name" : "menuitem11",
-    "getPSAppFunc" : {
-      "modelref" : true,
-      "id" : "AppFunc15"
-    },
-    "tooltip" : "test",
-    "hidden" : true
   } ],
   "enableCustomize" : false,
   "name" : "appindexview",
