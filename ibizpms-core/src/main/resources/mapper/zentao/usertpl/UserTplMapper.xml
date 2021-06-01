@@ -48,10 +48,24 @@
     </resultMap>
 
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext"  resultMap="UserTplResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext"  resultMap="UserTplResultMap">
          select t1.* from (
                 <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext"  resultMap="UserTplResultMap">
+         select t1.* from (
+                <include refid="My" />
          )t1
      </select>
 
@@ -69,6 +83,18 @@
          )t1
      </select>
 
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext" resultMap="UserTplResultMap">
+		<include refid="Account" />
+	</select>
+
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY`, t1.`USERTPLSN` FROM `zt_usertpl` t1   ]]>
@@ -82,6 +108,18 @@
 	
 	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext" resultMap="UserTplResultMap">
 		<include refid="Default" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext" resultMap="UserTplResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[MyUserTpl]-->

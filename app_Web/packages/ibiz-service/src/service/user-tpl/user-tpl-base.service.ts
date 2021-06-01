@@ -68,6 +68,10 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getDefaultCond() {
         if (!this.condCache.has('default')) {
             const strCond: any[] = ['AND', ['OR', ['EQ', 'PUBLIC','1'], ['EQ', 'ACCOUNT',{ type: 'WEBCONTEXT', value: 'account'}]], ['EQ', 'TYPE',{ type: 'WEBCONTEXT', value: 'type'}]];
@@ -78,6 +82,10 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
             }
         }
         return this.condCache.get('default');
+    }
+
+    protected getMyCond() {
+        return this.condCache.get('my');
     }
 
     protected getMyUserTplCond() {
@@ -197,6 +205,17 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         return this.http.post(`/usertpls/${_context.usertpl}/hasdeleted`, _data);
     }
     /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserTplService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/usertpls/fetchaccount`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -206,6 +225,17 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/usertpls/fetchdefault`, _data);
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserTplService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/usertpls/fetchmy`, _data);
     }
     /**
      * FetchMyUserTpl

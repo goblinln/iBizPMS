@@ -127,8 +127,12 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Page<UserTpl> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return usertplService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return usertplService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return usertplService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyUserTpl"))
             return usertplService.searchMyUserTpl(searchContext);    
         if (iPSDEDataSet.getName().equals("MyUserTplQuery"))
@@ -139,8 +143,12 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<UserTpl> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return usertplService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return usertplService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return usertplService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyUserTpl"))
             return usertplService.selectMyUserTpl(searchContext);
         if (iPSDataQuery.getName().equals("MyUserTplQuery"))
@@ -328,8 +336,14 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("save")) {
             return aroundAction("Save", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyUserTpl")) {
             return aroundDataSet("MyUserTpl", point);

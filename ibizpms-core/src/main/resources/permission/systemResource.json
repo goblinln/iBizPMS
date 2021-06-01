@@ -1758,7 +1758,7 @@
     "dename":"UserTpl",
     "delogicname":"用户模板",
     "sysmoudle":{"id":"ZENTAO","name":"基础管理模块"},
-    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"MyUserTpl" , "name":"我的模板"},{"id":"MyUserTplQuery" , "name":"我的模板（权限）"}],
+    "dedataset":[{"id":"Account" , "name":"指定用户数据"},{"id":"Default" , "name":"DEFAULT"},{"id":"My" , "name":"我的数据"},{"id":"MyUserTpl" , "name":"我的模板"},{"id":"MyUserTplQuery" , "name":"我的模板（权限）"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"HasDeleted" , "name":"删除" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }

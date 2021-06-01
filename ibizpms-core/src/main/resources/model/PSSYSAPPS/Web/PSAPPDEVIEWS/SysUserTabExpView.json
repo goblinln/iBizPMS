@@ -13,12 +13,6 @@
     "engineType" : "TabExpView",
     "name" : "engine"
   } ],
-  "getPSAppViewNavContexts" : [ {
-    "key" : "SYSUSER",
-    "name" : "SYSUSER",
-    "value" : "srfuserid",
-    "rawValue" : false
-  } ],
   "getPSControls" : [ {
     "codeName" : "TabExpViewtabexppanel",
     "controlType" : "TABEXPPANEL",

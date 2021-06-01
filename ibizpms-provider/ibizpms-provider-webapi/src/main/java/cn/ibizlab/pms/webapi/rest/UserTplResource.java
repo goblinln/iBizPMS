@@ -153,11 +153,37 @@ public class UserTplResource {
 
 
     @PreAuthorize("@UserTplRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"用户模板" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchaccount")
+	public ResponseEntity<List<UserTplDTO>> fetchaccount(@RequestBody UserTplSearchContext context) {
+        usertplRuntime.addAuthorityConditions(context,"READ");
+        Page<UserTpl> domains = usertplService.searchAccount(context) ;
+        List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户模板" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchdefault")
 	public ResponseEntity<List<UserTplDTO>> fetchdefault(@RequestBody UserTplSearchContext context) {
         usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchDefault(context) ;
+        List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"用户模板" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchmy")
+	public ResponseEntity<List<UserTplDTO>> fetchmy(@RequestBody UserTplSearchContext context) {
+        usertplRuntime.addAuthorityConditions(context,"READ");
+        Page<UserTpl> domains = usertplService.searchMy(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

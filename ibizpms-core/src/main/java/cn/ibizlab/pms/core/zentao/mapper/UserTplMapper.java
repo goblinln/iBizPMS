@@ -19,12 +19,16 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserTplMapper extends BaseMapper<UserTpl> {
 
+    List<UserTpl> selectAccount(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     List<UserTpl> selectDefault(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
+    List<UserTpl> selectMy(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     List<UserTpl> selectMyUserTpl(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     List<UserTpl> selectMyUserTplQuery(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     List<UserTpl> selectView(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
 
+    Page<UserTpl> searchAccount(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     Page<UserTpl> searchDefault(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
+    Page<UserTpl> searchMy(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     Page<UserTpl> searchMyUserTpl(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     Page<UserTpl> searchMyUserTplQuery(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     @Override

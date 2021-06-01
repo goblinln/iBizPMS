@@ -240,8 +240,14 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
 
 
 
+    public List<UserTpl> selectAccount(UserTplSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<UserTpl> selectDefault(UserTplSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
+    }
+    public List<UserTpl> selectMy(UserTplSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
     }
     public List<UserTpl> selectMyUserTpl(UserTplSearchContext context){
         return baseMapper.selectMyUserTpl(context, context.getSelectCond());
@@ -255,11 +261,29 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
 
 
     /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<UserTpl> searchAccount(UserTplSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserTpl> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<UserTpl>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 DEFAULT
      */
     @Override
     public Page<UserTpl> searchDefault(UserTplSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserTpl> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<UserTpl>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<UserTpl> searchMy(UserTplSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserTpl> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<UserTpl>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

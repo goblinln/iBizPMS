@@ -40,12 +40,16 @@ public interface IUserTplService extends IService<UserTpl> {
     boolean save(UserTpl et);
     void saveBatch(List<UserTpl> list);
     List<UserTpl> select(UserTplSearchContext context);
+    List<UserTpl> selectAccount(UserTplSearchContext context);
     List<UserTpl> selectDefault(UserTplSearchContext context);
+    List<UserTpl> selectMy(UserTplSearchContext context);
     List<UserTpl> selectMyUserTpl(UserTplSearchContext context);
     List<UserTpl> selectMyUserTplQuery(UserTplSearchContext context);
     List<UserTpl> selectView(UserTplSearchContext context);
 
+    Page<UserTpl> searchAccount(UserTplSearchContext context);
     Page<UserTpl> searchDefault(UserTplSearchContext context);
+    Page<UserTpl> searchMy(UserTplSearchContext context);
     Page<UserTpl> searchMyUserTpl(UserTplSearchContext context);
     Page<UserTpl> searchMyUserTplQuery(UserTplSearchContext context);
     UserTpl dynamicCall(Long key, String action, UserTpl et);
