@@ -87,6 +87,10 @@ zuul:
       path: /tests/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    zt_storyspec:
+      path: /storyspecs/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_branch:
       path: /productbranches/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
