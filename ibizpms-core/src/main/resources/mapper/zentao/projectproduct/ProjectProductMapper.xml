@@ -41,6 +41,9 @@
 		<if test="srf.n_plan_eq != null ">
 			<![CDATA[ AND  t1.`PLAN` = #{srf.n_plan_eq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_plan_noteq != null ">
+			<![CDATA[ AND  t1.`PLAN` <> #{srf.n_plan_noteq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_branch_eq != null ">
 			<![CDATA[ AND  t1.`BRANCH` = #{srf.n_branch_eq,jdbcType=BIGINT} ]]>
         </if>

@@ -73,6 +73,11 @@ public class ProjectProductSearchContext extends QueryWrapperContext<ProjectProd
         this.n_plan_eq = n_plan_eq;
     }
                 
+	private Long n_plan_noteq;//[产品计划]
+	public void setN_plan_noteq(Long n_plan_noteq) {
+        this.n_plan_noteq = n_plan_noteq;
+    }
+                
 	private Long n_branch_eq;//[平台/分支]
 	public void setN_branch_eq(Long n_branch_eq) {
         this.n_branch_eq = n_branch_eq;
