@@ -199,18 +199,6 @@
     "stringLength" : 1048576
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Select"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -357,7 +345,7 @@
   } ],
   "codeName" : "DynaFilter",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 0,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DynaFilter.json",
   "enableUIActions" : 15,
   "logicName" : "动态搜索栏",

@@ -69,7 +69,7 @@ public interface PSSubSysServiceAPIFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsysserviceapis/fetchdefault")
-    Page<PSSubSysServiceAPI> fetchDefault(@SpringQueryMap PSSubSysServiceAPISearchContext context);
+    Page<PSSubSysServiceAPI> searchDefault(@SpringQueryMap PSSubSysServiceAPISearchContext context);
 
 
 

@@ -69,7 +69,7 @@ public interface SysDepartmentFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/fetchdefault")
-    Page<SysDepartment> fetchDefault(@SpringQueryMap SysDepartmentSearchContext context);
+    Page<SysDepartment> searchDefault(@SpringQueryMap SysDepartmentSearchContext context);
 
 
 

@@ -69,7 +69,7 @@ public interface IBIZProPluginFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/fetchdefault")
-    Page<IBIZProPlugin> fetchDefault(@SpringQueryMap IBIZProPluginSearchContext context);
+    Page<IBIZProPlugin> searchDefault(@SpringQueryMap IBIZProPluginSearchContext context);
 
 
 

@@ -64,6 +64,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('action', () => import('../authservice/action/action-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('taskestimate', () => import('../authservice/task-estimate/task-estimate-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('story', () => import('../authservice/story/story-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('project', () => import('../authservice/project/project-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('history', () => import('../authservice/history/history-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productmodule', () => import('../authservice/product-module/product-module-auth-service'));
@@ -80,6 +81,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('bug', () => import('../authservice/bug/bug-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectmodule', () => import('../authservice/project-module/project-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productrelease', () => import('../authservice/product-release/product-release-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('dynadashboard', () => import('../authservice/dyna-dashboard/dyna-dashboard-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzreportroleconfig', () => import('../authservice/ibz-report-role-config/ibz-report-role-config-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysuser', () => import('../authservice/sys-user/sys-user-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzcasestep', () => import('../authservice/ibzcase-step/ibzcase-step-auth-service'));
@@ -161,10 +163,8 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('ibzproproductusertask', () => import('../authservice/ibzpro-product-user-task/ibzpro-product-user-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysupdatefeatures', () => import('../authservice/sys-update-features/sys-update-features-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('casestats', () => import('../authservice/case-stats/case-stats-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('dynadashboard', () => import('../authservice/dyna-dashboard/dyna-dashboard-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysemployee', () => import('../authservice/sys-employee/sys-employee-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzproproductline', () => import('../authservice/ibzpro-product-line/ibzpro-product-line-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));
     }
 
     /**

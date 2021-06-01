@@ -65,6 +65,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('action', () => import('../uiservice/action/action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('taskestimate', () => import('../uiservice/task-estimate/task-estimate-ui-service'));
         UIServiceRegister.allUIServiceMap.set('story', () => import('../uiservice/story/story-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
         UIServiceRegister.allUIServiceMap.set('project', () => import('../uiservice/project/project-ui-service'));
         UIServiceRegister.allUIServiceMap.set('history', () => import('../uiservice/history/history-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productmodule', () => import('../uiservice/product-module/product-module-ui-service'));
@@ -81,6 +82,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('bug', () => import('../uiservice/bug/bug-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectmodule', () => import('../uiservice/project-module/project-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productrelease', () => import('../uiservice/product-release/product-release-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('dynadashboard', () => import('../uiservice/dyna-dashboard/dyna-dashboard-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzreportroleconfig', () => import('../uiservice/ibz-report-role-config/ibz-report-role-config-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysuser', () => import('../uiservice/sys-user/sys-user-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzcasestep', () => import('../uiservice/ibzcase-step/ibzcase-step-ui-service'));
@@ -162,10 +164,8 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzproproductusertask', () => import('../uiservice/ibzpro-product-user-task/ibzpro-product-user-task-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysupdatefeatures', () => import('../uiservice/sys-update-features/sys-update-features-ui-service'));
         UIServiceRegister.allUIServiceMap.set('casestats', () => import('../uiservice/case-stats/case-stats-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('dynadashboard', () => import('../uiservice/dyna-dashboard/dyna-dashboard-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysemployee', () => import('../uiservice/sys-employee/sys-employee-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproproductline', () => import('../uiservice/ibzpro-product-line/ibzpro-product-line-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
     }
 
     /**

@@ -69,12 +69,12 @@ public interface PSSystemDBCfgFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/fetchbuild")
-    Page<PSSystemDBCfg> fetchBuild(@SpringQueryMap PSSystemDBCfgSearchContext context);
+    Page<PSSystemDBCfg> searchBuild(@SpringQueryMap PSSystemDBCfgSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/fetchdefault")
-    Page<PSSystemDBCfg> fetchDefault(@SpringQueryMap PSSystemDBCfgSearchContext context);
+    Page<PSSystemDBCfg> searchDefault(@SpringQueryMap PSSystemDBCfgSearchContext context);
 
 
 

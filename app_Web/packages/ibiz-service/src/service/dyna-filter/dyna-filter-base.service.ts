@@ -65,15 +65,4 @@ export class DynaFilterBaseService extends EntityBaseService<IDynaFilter> {
         }
         return new HttpResponse(entity);
     }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DynaFilterService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/dynafilters/${_context.dynafilter}/select`);
-    }
 }

@@ -69,7 +69,7 @@ public interface SysTeamMemberFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/systeammembers/fetchdefault")
-    Page<SysTeamMember> fetchDefault(@SpringQueryMap SysTeamMemberSearchContext context);
+    Page<SysTeamMember> searchDefault(@SpringQueryMap SysTeamMemberSearchContext context);
 
 
 

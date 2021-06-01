@@ -69,67 +69,67 @@ public interface SysEmployeeFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchbuguser")
-    Page<SysEmployee> fetchBugUser(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchBugUser(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchcontactlist")
-    Page<SysEmployee> fetchContActList(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchContActList(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchdefault")
-    Page<SysEmployee> fetchDefault(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchDefault(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchproductteamm")
-    Page<SysEmployee> fetchProductTeamM(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchProductTeamM(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamm")
-    Page<SysEmployee> fetchProjectTeamM(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchProjectTeamM(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteammproduct")
-    Page<SysEmployee> fetchProjectTeamMProduct(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchProjectTeamMProduct(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamtaskusertemp")
-    Page<SysEmployee> fetchProjectTeamTaskUserTemp(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchProjectTeamTaskUserTemp(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamuser")
-    Page<SysEmployee> fetchProjectTeamUser(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchProjectTeamUser(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamusertask")
-    Page<SysEmployee> fetchProjectTeamUserTask(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchProjectTeamUserTask(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteampk")
-    Page<SysEmployee> fetchProjectteamPk(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchProjectteamPk(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchstoryproductteampk")
-    Page<SysEmployee> fetchStoryProductTeamPK(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchStoryProductTeamPK(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchtaskmteam")
-    Page<SysEmployee> fetchTaskMTeam(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchTaskMTeam(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchtaskteam")
-    Page<SysEmployee> fetchTaskTeam(@SpringQueryMap SysEmployeeSearchContext context);
+    Page<SysEmployee> searchTaskTeam(@SpringQueryMap SysEmployeeSearchContext context);
 
 
 

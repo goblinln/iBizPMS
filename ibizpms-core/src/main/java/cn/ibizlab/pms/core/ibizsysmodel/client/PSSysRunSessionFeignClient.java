@@ -69,7 +69,7 @@ public interface PSSysRunSessionFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/fetchdefault")
-    Page<PSSysRunSession> fetchDefault(@SpringQueryMap PSSysRunSessionSearchContext context);
+    Page<PSSysRunSession> searchDefault(@SpringQueryMap PSSysRunSessionSearchContext context);
 
 
 

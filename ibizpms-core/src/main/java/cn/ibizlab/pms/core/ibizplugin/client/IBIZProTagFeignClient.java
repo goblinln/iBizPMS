@@ -69,7 +69,7 @@ public interface IBIZProTagFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/fetchdefault")
-    Page<IBIZProTag> fetchDefault(@SpringQueryMap IBIZProTagSearchContext context);
+    Page<IBIZProTag> searchDefault(@SpringQueryMap IBIZProTagSearchContext context);
 
 
 

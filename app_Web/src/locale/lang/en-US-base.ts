@@ -9,6 +9,7 @@ import productbranch_en_US from '@locale/lanres/entities/product-branch/product-
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import taskestimate_en_US from '@locale/lanres/entities/task-estimate/task-estimate_en_US';
 import story_en_US from '@locale/lanres/entities/story/story_en_US';
+import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
 import project_en_US from '@locale/lanres/entities/project/project_en_US';
 import history_en_US from '@locale/lanres/entities/history/history_en_US';
 import productmodule_en_US from '@locale/lanres/entities/product-module/product-module_en_US';
@@ -25,6 +26,7 @@ import testreport_en_US from '@locale/lanres/entities/test-report/test-report_en
 import bug_en_US from '@locale/lanres/entities/bug/bug_en_US';
 import projectmodule_en_US from '@locale/lanres/entities/project-module/project-module_en_US';
 import productrelease_en_US from '@locale/lanres/entities/product-release/product-release_en_US';
+import dynadashboard_en_US from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_en_US';
 import ibzreportroleconfig_en_US from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_en_US';
 import sysuser_en_US from '@locale/lanres/entities/sys-user/sys-user_en_US';
 import ibzcasestep_en_US from '@locale/lanres/entities/ibzcase-step/ibzcase-step_en_US';
@@ -106,10 +108,8 @@ import pssystemdbcfg_en_US from '@locale/lanres/entities/pssystem-dbcfg/pssystem
 import ibzproproductusertask_en_US from '@locale/lanres/entities/ibzpro-product-user-task/ibzpro-product-user-task_en_US';
 import sysupdatefeatures_en_US from '@locale/lanres/entities/sys-update-features/sys-update-features_en_US';
 import casestats_en_US from '@locale/lanres/entities/case-stats/case-stats_en_US';
-import dynadashboard_en_US from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_en_US';
 import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee_en_US';
 import ibzproproductline_en_US from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_en_US';
-import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
 import components_en_US from '@locale/lanres/components/components_en_US';
 import codelist_en_US from '@locale/lanres/codelist/codelist_en_US';
 import userCustom_en_US from '@locale/lanres/userCustom/userCustom_en_US';
@@ -432,6 +432,7 @@ function getAppLocale(){
             'action': action_en_US(),
             'taskestimate': taskestimate_en_US(),
             'story': story_en_US(),
+            'dynafilter': dynafilter_en_US(),
             'project': project_en_US(),
             'history': history_en_US(),
             'productmodule': productmodule_en_US(),
@@ -448,6 +449,7 @@ function getAppLocale(){
             'bug': bug_en_US(),
             'projectmodule': projectmodule_en_US(),
             'productrelease': productrelease_en_US(),
+            'dynadashboard': dynadashboard_en_US(),
             'ibzreportroleconfig': ibzreportroleconfig_en_US(),
             'sysuser': sysuser_en_US(),
             'ibzcasestep': ibzcasestep_en_US(),
@@ -529,10 +531,8 @@ function getAppLocale(){
             'ibzproproductusertask': ibzproproductusertask_en_US(),
             'sysupdatefeatures': sysupdatefeatures_en_US(),
             'casestats': casestats_en_US(),
-            'dynadashboard': dynadashboard_en_US(),
             'sysemployee': sysemployee_en_US(),
             'ibzproproductline': ibzproproductline_en_US(),
-            'dynafilter': dynafilter_en_US(),
         },
         components: components_en_US(),
         codelist: codelist_en_US(),

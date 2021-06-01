@@ -111,6 +111,10 @@ zuul:
       path: /stories/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    dynafilter:
+      path: /dynafilters/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_project:
       path: /projects/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -173,6 +177,10 @@ zuul:
       stripPrefix: false
     zt_release:
       path: /productreleases/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    dynadashboard:
+      path: /dynadashboards/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_report_role_config:
@@ -499,20 +507,12 @@ zuul:
       path: /casestats/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
-    dynadashboard:
-      path: /dynadashboards/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
     ibzemp:
       path: /sysemployees/**
       serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
       stripPrefix: false
     ibzpro_productline:
       path: /ibzproproductlines/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    dynafilter:
-      path: /dynafilters/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
   sensitive-headers:

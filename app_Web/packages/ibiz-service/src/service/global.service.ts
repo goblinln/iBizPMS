@@ -116,6 +116,15 @@ export class GlobalService {
         return (await import('./story/story.service')).default.getInstance();
     }
     /**
+     * 动态搜索栏服务
+     *
+     * @return {DynaFilter}
+     * @memberof GlobalService
+     */
+    async getDynaFilterService() {
+        return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
+    }
+    /**
      * 项目服务
      *
      * @return {Project}
@@ -258,6 +267,15 @@ export class GlobalService {
      */
     async getProductReleaseService() {
         return (await import('./product-release/product-release.service')).default.getInstance();
+    }
+    /**
+     * 动态数据看板服务
+     *
+     * @return {DynaDashboard}
+     * @memberof GlobalService
+     */
+    async getDynaDashboardService() {
+        return (await import('./dyna-dashboard/dyna-dashboard.service')).default.getInstance();
     }
     /**
      * 汇报角色配置服务
@@ -989,15 +1007,6 @@ export class GlobalService {
         return (await import('./case-stats/case-stats.service')).default.getInstance();
     }
     /**
-     * 动态数据看板服务
-     *
-     * @return {DynaDashboard}
-     * @memberof GlobalService
-     */
-    async getDynaDashboardService() {
-        return (await import('./dyna-dashboard/dyna-dashboard.service')).default.getInstance();
-    }
-    /**
      * 人员服务
      *
      * @return {SysEmployee}
@@ -1014,14 +1023,5 @@ export class GlobalService {
      */
     async getIBZProProductLineService() {
         return (await import('./ibzpro-product-line/ibzpro-product-line.service')).default.getInstance();
-    }
-    /**
-     * 动态搜索栏服务
-     *
-     * @return {DynaFilter}
-     * @memberof GlobalService
-     */
-    async getDynaFilterService() {
-        return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
     }
 }

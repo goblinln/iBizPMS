@@ -69,7 +69,7 @@ public interface PSModuleFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/psmodules/fetchdefault")
-    Page<PSModule> fetchDefault(@SpringQueryMap PSModuleSearchContext context);
+    Page<PSModule> searchDefault(@SpringQueryMap PSModuleSearchContext context);
 
 
 

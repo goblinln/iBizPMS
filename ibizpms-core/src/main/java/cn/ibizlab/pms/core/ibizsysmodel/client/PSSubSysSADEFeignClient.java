@@ -69,7 +69,7 @@ public interface PSSubSysSADEFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/fetchdefault")
-    Page<PSSubSysSADE> fetchDefault(@SpringQueryMap PSSubSysSADESearchContext context);
+    Page<PSSubSysSADE> searchDefault(@SpringQueryMap PSSubSysSADESearchContext context);
 
 
 
