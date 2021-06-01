@@ -334,25 +334,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.condCache.get('view');
     }
     /**
-     * StoryNFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
-        }
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -513,6 +494,25 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * StoryNFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async StoryNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storynfavorites`, _data);
+        }
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * FetchParentDefault
      *
      * @param {*} [_context={}]
@@ -544,29 +544,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         }
         if (_context.product && _context.story) {
             const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/stories/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/getdraft`, _data);
             return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
@@ -604,6 +581,29 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/stories/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/stories/getdraft`, _data);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

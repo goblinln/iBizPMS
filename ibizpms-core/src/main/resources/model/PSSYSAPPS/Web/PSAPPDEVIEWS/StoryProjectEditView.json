@@ -573,7 +573,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchStoryCurProject"
+              "id" : "FetchCurProject"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

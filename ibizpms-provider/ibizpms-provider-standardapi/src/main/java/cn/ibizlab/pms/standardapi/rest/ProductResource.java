@@ -52,14 +52,6 @@ public class ProductResource {
     @Lazy
     public ProductMapping productMapping;
 
-    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
-    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
-        Product domain = productMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "删除产品", tags = {"产品" },  notes = "删除产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}")
@@ -73,6 +65,14 @@ public class ProductResource {
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
         productService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "获取产品草稿", tags = {"产品" },  notes = "获取产品草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/getdraft")
+    public ResponseEntity<ProductDTO> getDraft(ProductDTO dto) {
+        Product domain = productMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productMapping.toDto(productService.getDraft(domain)));
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
@@ -89,24 +89,19 @@ public class ProductResource {
     }
 
 
-    @VersionCheck(entity = "product" , versionfield = "updatedate")
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
-    @ApiOperation(value = "更新产品", tags = {"产品" },  notes = "更新产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}")
-    @Transactional
-    public ResponseEntity<ProductDTO> update(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
-		Product domain  = productMapping.toDomain(productdto);
-        domain.setId(product_id);
-		productService.update(domain );
-        if(!productRuntime.test(product_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ProductDTO dto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurproject")
+	public ResponseEntity<List<ProductDTO>> fetchcurproject(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchCurProject(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProductRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products")
@@ -122,19 +117,6 @@ public class ProductResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurproject")
-	public ResponseEntity<List<ProductDTO>> fetchcurproject(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchCurProject(context) ;
-        List<ProductDTO> list = productMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
     @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
@@ -157,6 +139,24 @@ public class ProductResource {
         Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
         productdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
+    }
+
+
+    @VersionCheck(entity = "product" , versionfield = "updatedate")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
+    @ApiOperation(value = "更新产品", tags = {"产品" },  notes = "更新产品")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}")
+    @Transactional
+    public ResponseEntity<ProductDTO> update(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
+		Product domain  = productMapping.toDomain(productdto);
+        domain.setId(product_id);
+		productService.update(domain );
+        if(!productRuntime.test(product_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(product_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

@@ -101,6 +101,7 @@ export class PickupTreeViewBase extends MDViewBase {
         })
         Object.assign(targetCtrlParam.staticProps,{
             isSingleSelect: this.isSingleSelect,
+            isSelectFirstDefault: true
         })
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent };
     }
