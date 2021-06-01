@@ -523,7 +523,7 @@ export class MobExpBarControlBase extends MainControlBase {
             const appDataEntity: IPSAppDataEntity | null = this.$xDataControl?.getPSAppDataEntity();
             if (appDataEntity) {
                 Object.assign(tempContext, { [`${appDataEntity.codeName?.toLowerCase()}`]: arg[appDataEntity.codeName?.toLowerCase()] });
-                Object.assign(tempContext, { srfparentdename: appDataEntity.codeName, srfparentkey: arg[appDataEntity.codeName?.toLowerCase()] });
+                Object.assign(tempContext, { srfparentdename: appDataEntity.codeName, srfparentdemapname: (appDataEntity as any)?.getPSDEName(), srfparentkey: arg[appDataEntity.codeName?.toLowerCase()] });
                 if (this.navFilter && !Object.is(this.navFilter, "")) {
                     Object.assign(tempViewParam, { [this.navFilter]: arg[appDataEntity.codeName?.toLowerCase()] });
                 }

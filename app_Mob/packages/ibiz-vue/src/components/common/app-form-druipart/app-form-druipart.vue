@@ -103,6 +103,22 @@ export default class AppFormDRUIPart extends Vue {
      */
     @Prop() public parentdata!: any;
 
+    /**
+     * 应用实体参数名称(区分大小写)
+     *
+     * @type {string}
+     * @memberof AppFormDRUIPart
+     */
+    @Prop() public parentName!: string;
+
+    /**
+     * 应用实体映射实体名称(区分大小写)
+     *
+     * @type {string}
+     * @memberof AppFormDRUIPart
+     */
+    @Prop() public parentDeName!: string;
+
    /**
      * 视图模型
      *
@@ -310,6 +326,16 @@ export default class AppFormDRUIPart extends Vue {
         const { context, param } = this.$viewTool.formatNavigateParam(this.navigateContext, this.navigateParam, _context, this.viewparams, JSON.parse(this.data));
         Object.assign(this.tempContext, context);
         Object.assign(this.tempViewParams, param);
+        Object.assign(this.tempContext, {
+            srfparentdename: this.parentName,
+            srfparentdemapname: this.parentDeName,
+            srfparentkey: _paramitem,
+        });
+        Object.assign(this.tempViewParams, {
+            srfparentdename: this.parentName,
+            srfparentdemapname: this.parentDeName,
+            srfparentkey: _paramitem,
+        });
         if (this.isRelationalData) {
             if (this.tempMode && Object.is(this.tempMode, 2)) {
                 this.blockUIStop();

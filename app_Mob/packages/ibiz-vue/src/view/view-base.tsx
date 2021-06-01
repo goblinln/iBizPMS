@@ -756,6 +756,9 @@ export class ViewBase extends Vue {
             if (this.context && this.context.srfparentkey) {
                 Object.assign(this.viewparams, { srfparentkey: this.context.srfparentkey });
             }
+            if (_this.context && _this.context.srfparentdemapname) {
+                Object.assign(_this.viewparams, { srfparentdemapname: _this.context.srfparentdemapname });
+            }
             // 处理首页视图srfsessionid;
             if (this.viewDefaultUsage == 'indexView') {
                 setSrfsessionid();

@@ -737,8 +737,8 @@
         "srfkey": "ProjectProductPlan",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"ProductPlan",
-        "appdedataset":"FetchProjectPlan",
+        "appdataentity":"",
+        "appdedataset":"",
         "items": []
     }, 
     {

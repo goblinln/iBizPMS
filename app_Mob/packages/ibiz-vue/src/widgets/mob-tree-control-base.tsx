@@ -470,6 +470,10 @@ export class MobTreeControlBase extends MDControlBase {
             Object.assign(tempContext, { srfparentkey: curNode.data.srfparentkey });
             Object.assign(tempViewParams, { srfparentkey: curNode.data.srfparentkey });
         }
+        if (curNode.data && curNode.data.srfparentdemapname) {
+            Object.assign(tempContext, { srfparentdemapname: curNode.data.srfparentdemapname });
+            Object.assign(tempViewParams, { srfparentdemapname: curNode.data.srfparentdemapname });
+        }
         Object.assign(params, { viewparams: tempViewParams });
         this.service.getNodes(tempContext, params).then((response: any) => {
             if (!response || response.status !== 200) {

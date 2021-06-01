@@ -7479,13 +7479,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/mobmdview9',
+                    path: 'todos/:todo?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -7495,13 +7495,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/mobmdview9',
+                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/mobmdview9',
                     meta: {
                         caption: 'entities.action.views.mobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmdview9' },
                         ],
@@ -7639,13 +7639,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/allmobmdview9',
+                    path: 'todos/:todo?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -7655,13 +7655,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/allmobmdview9',
+                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/allmobmdview9',
                     meta: {
                         caption: 'entities.action.views.allmobmdview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'allmobmdview9' },
                         ],
@@ -7799,13 +7799,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/moremobmdview',
+                    path: 'todos/:todo?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -7815,13 +7815,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/moremobmdview',
+                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/moremobmdview',
                     meta: {
                         caption: 'entities.action.views.moremobmdview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'moremobmdview' },
                         ],
@@ -7959,13 +7959,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/mobmapview',
+                    path: 'todos/:todo?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
@@ -7975,13 +7975,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'todos/:todo?/actions/:action?/views/mobmapview',
+                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/mobmapview',
                     meta: {
                         caption: 'entities.action.views.mobmapview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'appindexview', parameterName: 'appindexview' },
-                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mobmapview' },
                         ],
