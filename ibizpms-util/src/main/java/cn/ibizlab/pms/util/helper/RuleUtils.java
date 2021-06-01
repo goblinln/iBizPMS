@@ -296,6 +296,10 @@ public class RuleUtils
             {
                 return finalObject.toString().compareToIgnoreCase(exp.toString())<0;
             }
+			else if (finalObject instanceof Long)
+			{
+				return (((Long) finalObject).longValue() < (Long.parseLong(exp.toString())));
+			}
             else
                 return false;
         }
