@@ -246,23 +246,6 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchEstimate",
-    "methodType" : "FETCH",
-    "name" : "FetchESTIMATEANDLEFT",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Estimate"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchEstimate"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "ComputeBurn",
     "methodType" : "DEACTION",
     "name" : "ComputeBurn",
@@ -277,6 +260,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ComputeBurn"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchEstimate",
+    "methodType" : "FETCH",
+    "name" : "FetchESTIMATEANDLEFT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Estimate"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchEstimate"
     },
     "builtinMethod" : false
   }, {

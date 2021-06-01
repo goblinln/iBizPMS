@@ -54,6 +54,19 @@ public class ProductLifeResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取GetRoadmap", tags = {"产品生命周期" } ,notes = "根据产品获取GetRoadmap")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productlives/fetchroadmap")
+	public ResponseEntity<List<ProductLifeDTO>> fetchRoadmapByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductLifeSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<ProductLife> domains = productlifeService.searchGetRoadmap(context) ;
+        List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取RoadMapYear", tags = {"产品生命周期" } ,notes = "根据产品获取RoadMapYear")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productlives/fetchroadmapyear")
 	public ResponseEntity<List<ProductLifeDTO>> fetchRoadMapYearByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductLifeSearchContext context) {
@@ -66,12 +79,27 @@ public class ProductLifeResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取GetRoadmap", tags = {"产品生命周期" } ,notes = "根据产品获取GetRoadmap")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productlives/fetchroadmap")
-	public ResponseEntity<List<ProductLifeDTO>> fetchRoadmapByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductLifeSearchContext context) {
+	@ApiOperation(value = "根据系统用户产品获取GetRoadmap", tags = {"产品生命周期" } ,notes = "根据系统用户产品获取GetRoadmap")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productlives/fetchroadmap")
+	public ResponseEntity<List<ProductLifeDTO>> fetchRoadmapBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductLifeSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProductLife> domains = productlifeService.searchGetRoadmap(context) ;
+        List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据系统用户产品获取RoadMapYear", tags = {"产品生命周期" } ,notes = "根据系统用户产品获取RoadMapYear")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productlives/fetchroadmapyear")
+	public ResponseEntity<List<ProductLifeDTO>> fetchRoadMapYearBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductLifeSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

@@ -19467,7 +19467,7 @@
   }, {
     "logicName" : "项目-读取",
     "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
