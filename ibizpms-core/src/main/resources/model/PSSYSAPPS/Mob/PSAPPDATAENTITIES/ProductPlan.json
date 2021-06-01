@@ -1991,6 +1991,16 @@
     "name" : "READ",
     "id" : "ZTProduct__READ"
   }, {
+    "logicName" : "Project_Read",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "Project__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -2030,6 +2040,27 @@
       "name" : "PRODUCT",
       "codeName" : "Product"
     },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "ProductPlans",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "name" : "PROJECT__PRODUCT_PLAN",
     "rSMode" : 2,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,

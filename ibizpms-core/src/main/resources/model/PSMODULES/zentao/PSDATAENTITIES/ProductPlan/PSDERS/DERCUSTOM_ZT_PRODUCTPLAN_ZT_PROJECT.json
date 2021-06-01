@@ -1,0 +1,20 @@
+{
+  "codeName" : "Project",
+  "dERSubType" : "DER1N",
+  "dERType" : "DERCUSTOM",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT.json",
+  "logicName" : "项目",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+  },
+  "masterRS" : 4,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+  },
+  "name" : "DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT",
+  "orderValue" : 100,
+  "removeActionType" : 0,
+  "removeOrder" : -1
+}

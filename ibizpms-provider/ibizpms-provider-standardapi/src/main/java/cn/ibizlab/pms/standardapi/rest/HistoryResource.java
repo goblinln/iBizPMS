@@ -148,6 +148,22 @@ public class HistoryResource {
 
 
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目产品计划系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目产品计划系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchDefaultByProjectProductPlanAction(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目Bug系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据项目Bug系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")

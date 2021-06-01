@@ -35534,6 +35534,12 @@
      "code_name":"IBizParent",
      "entity_name":"ZT_PRODUCTPLAN",
      "ref_entity_name":"ZT_PRODUCTPLAN"
+    },
+    {"name":"DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Project",
+     "entity_name":"ZT_PRODUCTPLAN",
+     "ref_entity_name":"ZT_PROJECT"
     }
     ]
  }
@@ -38001,6 +38007,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"Project",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"Project",
+     "entity_name":"ZT_PRODUCTPLAN",
      "ref_entity_name":"ZT_PROJECT"
     },
     {"name":"DERCUSTOM_ZT_STORY_ZT_PROJECT",

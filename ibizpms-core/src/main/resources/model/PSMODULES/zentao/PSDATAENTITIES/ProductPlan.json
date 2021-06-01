@@ -3409,6 +3409,16 @@
     "name" : "READ",
     "id" : "ZTProduct__READ"
   }, {
+    "logicName" : "Project_Read",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "Project__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -3703,6 +3713,25 @@
     "pickupDEFName" : "PARENT",
     "removeActionType" : 3,
     "removeOrder" : 0
+  }, {
+    "codeName" : "Project",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT.json",
+    "logicName" : "项目",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    },
+    "name" : "DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1
   } ],
   "name" : "ZT_PRODUCTPLAN",
   "saaSDCIdColumnName" : "SRFDCID",
