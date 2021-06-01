@@ -18453,6 +18453,12 @@
         "name" : "ACTIVATE"
       }
     }, {
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "任务收藏",
+        "name" : "FAVORITES"
+      }
+    }, {
       "name" : "CLOSE",
       "getPSDEOPPriv" : {
         "logicName" : "关闭",
