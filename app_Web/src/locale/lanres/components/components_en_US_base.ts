@@ -437,7 +437,8 @@ function getLocaleResourceBase(){
           author: "accepting officer",
           type: "operation",
           lasttime: "completion time",
-          opinion: "approval opinion"
+          opinion: "approval opinion",
+          inhand: "inhand:",
         },
         content: {
           title: "「Open/Close」Bottom Page [Ctrl + ']",

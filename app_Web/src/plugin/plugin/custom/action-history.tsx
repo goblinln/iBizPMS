@@ -145,7 +145,6 @@ export class ActionHistory extends AppListBase {
                     });
                     this.totalRecord = response.total;
                     this.items.push(...datas);
-                    this.items = this.arrayNonRepeatfy(this.items);
                 }
                 this.isAddBehind = false;
                 this.ctrlEvent({

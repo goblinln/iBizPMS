@@ -113,20 +113,21 @@
                                     <div class="arrow"></div>
                                 </div>
                             </template>
-                            <template v-for="(identitylink, index) in usertask.identitylinks">
-                                <div class="timeline-draw timeline" :key="index">
-                                    <div class="timeline-wrapper">
-                                        <div class="timeline-index">
-                                            <div v-if="usertask.index < usertasksLength" class="icon-line"></div>
-                                        </div>
-                                        <div class="usertaskname"></div>
-                                        <div class="authorname">
+                            <div v-if="usertask.identitylinks.length > 0" class="timeline-draw timeline" style="height: auto;">
+                                <div class="timeline-wrapper" style="height: auto;">
+                                    <div class="timeline-index">
+                                        <div v-if="usertask.index < usertasksLength" class="icon-line"></div>
+                                    </div>
+                                    <div class="usertaskname" style="width: 200px;">
+                                        {{ $t('components.timeline.inhand') }}
+                                    </div>
+                                    <div class="authorname" style="display: flex;width: 100%;height: auto;flex-wrap: wrap;">
+                                        <div v-for="(identitylink, index) in usertask.identitylinks" :key="index" style="width: 100px">
                                             {{ identitylink.displayname }}
                                         </div>
                                     </div>
-                                    <div class="arrow"></div>
                                 </div>
-                            </template>
+                            </div>
                         </div>
                     </div>
                     <div v-else class="timeline-content" :key="usertaskIndex">

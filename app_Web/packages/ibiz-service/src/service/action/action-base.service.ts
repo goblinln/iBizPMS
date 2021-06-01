@@ -164,6 +164,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.project && _context.bug && true) {
             return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
         }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmy`, _data);
+        }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmy`, _data);
         }
@@ -223,6 +226,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.project && _context.bug && _context.action) {
             const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.productplan && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`);
             return res;
         }
         if (_context.product && _context.story && _context.action) {
@@ -291,6 +298,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.project && _context.bug && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.productplan && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
         }
         if (_context.product && _context.story && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -407,6 +418,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions`, _data);
         }
+        if (_context.project && _context.productplan && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions`, _data);
+        }
         if (_context.product && _context.story && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -502,6 +523,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.project && _context.bug && true) {
             return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
         }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
         }
@@ -554,6 +578,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.project && _context.bug && true) {
             return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
@@ -632,6 +659,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
             return res;
         }
+        if (_context.project && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.product && _context.story && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -702,6 +735,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.project && _context.bug && true) {
             return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
         }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);

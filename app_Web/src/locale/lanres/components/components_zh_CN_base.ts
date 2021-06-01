@@ -438,7 +438,8 @@ function getLocaleResourceBase(){
           author: "办理人员",
           type: "操作",
           lasttime: "完成时间",
-          opinion: "审批意见"
+          opinion: "审批意见",
+          inhand: "待办理:",
         },
         content: {
           title: "「打开/关闭」底部分页 [ctrl + `]",
