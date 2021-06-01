@@ -119,7 +119,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('systeam', () => import('../uiservice/sys-team/sys-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('taskestimatestats', () => import('../uiservice/taskestimatestats/taskestimatestats-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzlibcasesteptmp', () => import('../uiservice/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('todo', () => import('../uiservice/todo/todo-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzlibmodule', () => import('../uiservice/ibz-lib-module/ibz-lib-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibizproproductweekly', () => import('../uiservice/ibizpro-product-weekly/ibizpro-product-weekly-ui-service'));
         UIServiceRegister.allUIServiceMap.set('useryearworkstats', () => import('../uiservice/user-year-work-stats/user-year-work-stats-ui-service'));
@@ -166,6 +165,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('casestats', () => import('../uiservice/case-stats/case-stats-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysemployee', () => import('../uiservice/sys-employee/sys-employee-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproproductline', () => import('../uiservice/ibzpro-product-line/ibzpro-product-line-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('todo', () => import('../uiservice/todo/todo-ui-service'));
     }
 
     /**

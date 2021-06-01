@@ -63,7 +63,6 @@ import company_zh_CN from '@locale/lanres/entities/company/company_zh_CN';
 import systeam_zh_CN from '@locale/lanres/entities/sys-team/sys-team_zh_CN';
 import taskestimatestats_zh_CN from '@locale/lanres/entities/taskestimatestats/taskestimatestats_zh_CN';
 import ibzlibcasesteptmp_zh_CN from '@locale/lanres/entities/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp_zh_CN';
-import todo_zh_CN from '@locale/lanres/entities/todo/todo_zh_CN';
 import ibzlibmodule_zh_CN from '@locale/lanres/entities/ibz-lib-module/ibz-lib-module_zh_CN';
 import ibizproproductweekly_zh_CN from '@locale/lanres/entities/ibizpro-product-weekly/ibizpro-product-weekly_zh_CN';
 import useryearworkstats_zh_CN from '@locale/lanres/entities/user-year-work-stats/user-year-work-stats_zh_CN';
@@ -110,6 +109,7 @@ import sysupdatefeatures_zh_CN from '@locale/lanres/entities/sys-update-features
 import casestats_zh_CN from '@locale/lanres/entities/case-stats/case-stats_zh_CN';
 import sysemployee_zh_CN from '@locale/lanres/entities/sys-employee/sys-employee_zh_CN';
 import ibzproproductline_zh_CN from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_zh_CN';
+import todo_zh_CN from '@locale/lanres/entities/todo/todo_zh_CN';
 import components_zh_CN from '@locale/lanres/components/components_zh_CN';
 import codelist_zh_CN from '@locale/lanres/codelist/codelist_zh_CN';
 import userCustom_zh_CN from '@locale/lanres/userCustom/userCustom_zh_CN';
@@ -484,7 +484,6 @@ function getAppLocale(){
             'systeam': systeam_zh_CN(),
             'taskestimatestats': taskestimatestats_zh_CN(),
             'ibzlibcasesteptmp': ibzlibcasesteptmp_zh_CN(),
-            'todo': todo_zh_CN(),
             'ibzlibmodule': ibzlibmodule_zh_CN(),
             'ibizproproductweekly': ibizproproductweekly_zh_CN(),
             'useryearworkstats': useryearworkstats_zh_CN(),
@@ -531,6 +530,7 @@ function getAppLocale(){
             'casestats': casestats_zh_CN(),
             'sysemployee': sysemployee_zh_CN(),
             'ibzproproductline': ibzproproductline_zh_CN(),
+            'todo': todo_zh_CN(),
         },
         components: components_zh_CN(),
         codelist: codelist_zh_CN(),

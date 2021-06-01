@@ -118,7 +118,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('systeam', () => import('../authservice/sys-team/sys-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('taskestimatestats', () => import('../authservice/taskestimatestats/taskestimatestats-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzlibcasesteptmp', () => import('../authservice/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('todo', () => import('../authservice/todo/todo-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzlibmodule', () => import('../authservice/ibz-lib-module/ibz-lib-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibizproproductweekly', () => import('../authservice/ibizpro-product-weekly/ibizpro-product-weekly-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('useryearworkstats', () => import('../authservice/user-year-work-stats/user-year-work-stats-auth-service'));
@@ -165,6 +164,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('casestats', () => import('../authservice/case-stats/case-stats-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysemployee', () => import('../authservice/sys-employee/sys-employee-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzproproductline', () => import('../authservice/ibzpro-product-line/ibzpro-product-line-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('todo', () => import('../authservice/todo/todo-auth-service'));
     }
 
     /**

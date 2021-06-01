@@ -32579,201 +32579,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'todos/:todo?/views/closeview',
-                    meta: {
-                        caption: 'entities.todo.views.closeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'closeview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/assigntoview',
-                    meta: {
-                        caption: 'entities.todo.views.assigntoview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'assigntoview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/dashboardview',
-                    meta: {
-                        caption: 'entities.todo.views.dashboardview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/calendareditview',
-                    meta: {
-                        caption: 'entities.todo.views.calendareditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'calendareditview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/maindashboardview_link',
-                    meta: {
-                        caption: 'entities.todo.views.maindashboardview_link.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'maindashboardview_link' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/gridview9',
-                    meta: {
-                        caption: 'entities.todo.views.gridview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/gridview',
-                    meta: {
-                        caption: 'entities.todo.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/todocreateview',
-                    meta: {
-                        caption: 'entities.todo.views.todocreateview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'todocreateview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/baseeditview9',
-                    meta: {
-                        caption: 'entities.todo.views.baseeditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'baseeditview9' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/editview',
-                    meta: {
-                        caption: 'entities.todo.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/finishview',
-                    meta: {
-                        caption: 'entities.todo.views.finishview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'finishview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/desceditview9',
-                    meta: {
-                        caption: 'entities.todo.views.desceditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'desceditview9' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'todos/:todo?/views/activiteview',
-                    meta: {
-                        caption: 'entities.todo.views.activiteview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'todos', parameterName: 'todo' },
-                            { pathName: 'views', parameterName: 'activiteview' },
-                        ],
-                        resource:'todo',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'ibzlibs/:ibzlib?/ibzlibmodules/:ibzlibmodule?/views/gridview',
                     meta: {
                         caption: 'entities.ibzlibmodule.views.gridview.caption',
@@ -36739,6 +36544,201 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
                         resource:'ibzproproductline',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/closeview',
+                    meta: {
+                        caption: 'entities.todo.views.closeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'closeview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/assigntoview',
+                    meta: {
+                        caption: 'entities.todo.views.assigntoview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'assigntoview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.todo.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/calendareditview',
+                    meta: {
+                        caption: 'entities.todo.views.calendareditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'calendareditview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/maindashboardview_link',
+                    meta: {
+                        caption: 'entities.todo.views.maindashboardview_link.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'maindashboardview_link' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/gridview9',
+                    meta: {
+                        caption: 'entities.todo.views.gridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/gridview',
+                    meta: {
+                        caption: 'entities.todo.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/todocreateview',
+                    meta: {
+                        caption: 'entities.todo.views.todocreateview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'todocreateview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/baseeditview9',
+                    meta: {
+                        caption: 'entities.todo.views.baseeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'baseeditview9' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/editview',
+                    meta: {
+                        caption: 'entities.todo.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/finishview',
+                    meta: {
+                        caption: 'entities.todo.views.finishview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'finishview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/desceditview9',
+                    meta: {
+                        caption: 'entities.todo.views.desceditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'desceditview9' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'todos/:todo?/views/activiteview',
+                    meta: {
+                        caption: 'entities.todo.views.activiteview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'activiteview' },
+                        ],
+                        resource:'todo',
                         requireAuth: true,
                     },
                     component: AppViewShell

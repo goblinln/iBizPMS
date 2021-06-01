@@ -602,15 +602,6 @@ export class GlobalService {
         return (await import('./ibz-lib-case-step-tmp/ibz-lib-case-step-tmp.service')).default.getInstance();
     }
     /**
-     * 待办事宜表服务
-     *
-     * @return {Todo}
-     * @memberof GlobalService
-     */
-    async getTodoService() {
-        return (await import('./todo/todo.service')).default.getInstance();
-    }
-    /**
      * 用例库模块服务
      *
      * @return {IbzLibModule}
@@ -1023,5 +1014,14 @@ export class GlobalService {
      */
     async getIBZProProductLineService() {
         return (await import('./ibzpro-product-line/ibzpro-product-line.service')).default.getInstance();
+    }
+    /**
+     * 待办事宜表服务
+     *
+     * @return {Todo}
+     * @memberof GlobalService
+     */
+    async getTodoService() {
+        return (await import('./todo/todo.service')).default.getInstance();
     }
 }
