@@ -31,23 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -96,6 +79,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -179,12 +179,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProject",
+    "codeName" : "FetchMain",
     "methodType" : "FETCH",
-    "name" : "FetchProjectTrends",
+    "name" : "FetchType",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "ProjectTrends"
+      "id" : "Type"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -192,7 +192,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProject"
+      "id" : "FetchMain"
     },
     "builtinMethod" : false
   }, {
@@ -213,12 +213,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMain",
+    "codeName" : "FetchProject",
     "methodType" : "FETCH",
-    "name" : "FetchType",
+    "name" : "FetchProjectTrends",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Type"
+      "id" : "ProjectTrends"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -226,7 +226,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMain"
+      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {
@@ -457,23 +457,6 @@
     "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -488,40 +471,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMy",
-    "methodType" : "FETCH",
-    "name" : "FetchMyTrends",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyTrends"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMy"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProject",
-    "methodType" : "FETCH",
-    "name" : "FetchProjectTrends",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTrends"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {
@@ -542,12 +491,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProduct",
+    "codeName" : "FetchMy",
     "methodType" : "FETCH",
-    "name" : "FetchProductTrends",
+    "name" : "FetchMyTrends",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "ProductTrends"
+      "id" : "MyTrends"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -555,7 +504,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProduct"
+      "id" : "FetchMy"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMain",
+    "methodType" : "FETCH",
+    "name" : "FetchType",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Type"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMain"
     },
     "builtinMethod" : false
   }, {
@@ -576,12 +542,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMain",
-    "methodType" : "FETCH",
-    "name" : "FetchType",
-    "getPSDEDataSet" : {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "Type"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -589,7 +555,41 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMain"
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProduct",
+    "methodType" : "FETCH",
+    "name" : "FetchProductTrends",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTrends"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProject",
+    "methodType" : "FETCH",
+    "name" : "FetchProjectTrends",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTrends"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {

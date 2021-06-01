@@ -133,7 +133,7 @@ public class ProjectProductResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"项目产品" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projectproducts/fetchdefault")
-	public ResponseEntity<List<ProjectProductDTO>> fetchProjectProductDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
+	public ResponseEntity<List<ProjectProductDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProjectProduct> domains = projectproductService.searchDefault(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());
@@ -146,7 +146,7 @@ public class ProjectProductResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取关联计划", tags = {"项目产品" } ,notes = "根据产品获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projectproducts/fetchrelationplan")
-	public ResponseEntity<List<ProjectProductDTO>> fetchProjectProductRelationPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
+	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
         context.setN_product_eq(product_id);
         Page<ProjectProduct> domains = projectproductService.searchRelationPlan(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());
@@ -237,7 +237,7 @@ public class ProjectProductResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"项目产品" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectproducts/fetchdefault")
-	public ResponseEntity<List<ProjectProductDTO>> fetchProjectProductDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
+	public ResponseEntity<List<ProjectProductDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
         context.setN_project_eq(project_id);
         Page<ProjectProduct> domains = projectproductService.searchDefault(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());
@@ -250,7 +250,7 @@ public class ProjectProductResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取关联计划", tags = {"项目产品" } ,notes = "根据项目获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectproducts/fetchrelationplan")
-	public ResponseEntity<List<ProjectProductDTO>> fetchProjectProductRelationPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
+	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
         context.setN_project_eq(project_id);
         Page<ProjectProduct> domains = projectproductService.searchRelationPlan(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());

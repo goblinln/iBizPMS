@@ -480,7 +480,7 @@ public class BuildResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取Bug产品版本", tags = {"版本" } ,notes = "根据产品获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchbugproductbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBuildBugProductBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchBugProductBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchBugProductBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -493,7 +493,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('NONE')")
 	@ApiOperation(value = "根据产品获取Bug产品或者项目版本", tags = {"版本" } ,notes = "根据产品获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchbugproductorprojectbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBuildBugProductOrProjectBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchBugProductOrProjectBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchBugProductOrProjectBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -506,7 +506,7 @@ public class BuildResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取产品版本", tags = {"版本" } ,notes = "根据产品获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchcurproduct")
-	public ResponseEntity<List<BuildDTO>> fetchBuildCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchCurProduct(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -519,7 +519,7 @@ public class BuildResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchdefault")
-	public ResponseEntity<List<BuildDTO>> fetchBuildDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchDefault(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -532,7 +532,7 @@ public class BuildResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取产品版本", tags = {"版本" } ,notes = "根据产品获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchproductbuildds")
-	public ResponseEntity<List<BuildDTO>> fetchBuildProductBuildDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchProductBuildDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchProductBuildDS(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -545,7 +545,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('NONE')")
 	@ApiOperation(value = "根据产品获取测试版本", tags = {"版本" } ,notes = "根据产品获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchtestbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBuildTestBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchTestBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchTestBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -558,7 +558,7 @@ public class BuildResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取测试轮次", tags = {"版本" } ,notes = "根据产品获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchtestrounds")
-	public ResponseEntity<List<BuildDTO>> fetchBuildTestRoundsByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchTestRoundsByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchTestRounds(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -571,7 +571,7 @@ public class BuildResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取更新日志", tags = {"版本" } ,notes = "根据产品获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchupdatelog")
-	public ResponseEntity<List<BuildDTO>> fetchBuildUpdateLogByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchUpdateLogByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Build> domains = buildService.searchUpdateLog(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -734,7 +734,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取Bug产品版本", tags = {"版本" } ,notes = "根据项目获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchbugproductbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBuildBugProductBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchBugProductBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchBugProductBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -747,7 +747,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('NONE')")
 	@ApiOperation(value = "根据项目获取Bug产品或者项目版本", tags = {"版本" } ,notes = "根据项目获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchbugproductorprojectbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBuildBugProductOrProjectBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchBugProductOrProjectBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchBugProductOrProjectBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -760,7 +760,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取产品版本", tags = {"版本" } ,notes = "根据项目获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchcurproduct")
-	public ResponseEntity<List<BuildDTO>> fetchBuildCurProductByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchCurProductByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchCurProduct(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -773,7 +773,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchdefault")
-	public ResponseEntity<List<BuildDTO>> fetchBuildDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchDefault(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -786,7 +786,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取产品版本", tags = {"版本" } ,notes = "根据项目获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchproductbuildds")
-	public ResponseEntity<List<BuildDTO>> fetchBuildProductBuildDSByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchProductBuildDSByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchProductBuildDS(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -799,7 +799,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('NONE')")
 	@ApiOperation(value = "根据项目获取测试版本", tags = {"版本" } ,notes = "根据项目获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchtestbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBuildTestBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchTestBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchTestBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -812,7 +812,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取测试轮次", tags = {"版本" } ,notes = "根据项目获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchtestrounds")
-	public ResponseEntity<List<BuildDTO>> fetchBuildTestRoundsByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchTestRoundsByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchTestRounds(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -825,7 +825,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取更新日志", tags = {"版本" } ,notes = "根据项目获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchupdatelog")
-	public ResponseEntity<List<BuildDTO>> fetchBuildUpdateLogByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchUpdateLogByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Build> domains = buildService.searchUpdateLog(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());

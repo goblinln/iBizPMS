@@ -53,6 +53,19 @@ public class ProjectBurnResource {
     public ProjectBurnMapping projectburnMapping;
 
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目获取燃尽图预计（含周末）")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectburns/fetchestimate")
+	public ResponseEntity<List<ProjectBurnDTO>> fetchEstimateByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Burn> domains = burnService.searchEstimate(context) ;
+        List<ProjectBurnDTO> list = projectburnMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'MANAGE')")
     @ApiOperation(value = "根据项目更新燃尽图", tags = {"burn" },  notes = "根据项目更新燃尽图")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
@@ -65,18 +78,5 @@ public class ProjectBurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectburndto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目获取燃尽图预计（含周末）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectburns/fetchestimate")
-	public ResponseEntity<List<ProjectBurnDTO>> fetchProjectBurnEstimateByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Burn> domains = burnService.searchEstimate(context) ;
-        List<ProjectBurnDTO> list = projectburnMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 

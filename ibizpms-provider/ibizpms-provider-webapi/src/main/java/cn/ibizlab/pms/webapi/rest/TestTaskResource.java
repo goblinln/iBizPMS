@@ -446,7 +446,7 @@ public class TestTaskResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchdefault")
-	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
@@ -459,7 +459,7 @@ public class TestTaskResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取我的测试单", tags = {"测试版本" } ,notes = "根据产品获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchmytesttaskpc")
-	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
@@ -472,7 +472,7 @@ public class TestTaskResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取项目测试单", tags = {"测试版本" } ,notes = "根据产品获取项目测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchprojecttesttaskds")
-	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskProjectTestTaskDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchProjectTestTaskDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestTask> domains = testtaskService.searchProjectTestTaskDS(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
@@ -647,7 +647,7 @@ public class TestTaskResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchdefault")
-	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
@@ -660,7 +660,7 @@ public class TestTaskResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取我的测试单", tags = {"测试版本" } ,notes = "根据项目获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchmytesttaskpc")
-	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskMyTestTaskPcByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchMyTestTaskPcByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
@@ -673,7 +673,7 @@ public class TestTaskResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取项目测试单", tags = {"测试版本" } ,notes = "根据项目获取项目测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchprojecttesttaskds")
-	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskProjectTestTaskDSByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchProjectTestTaskDSByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<TestTask> domains = testtaskService.searchProjectTestTaskDS(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());

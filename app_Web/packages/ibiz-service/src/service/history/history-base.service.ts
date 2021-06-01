@@ -107,42 +107,39 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.action && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.test && _context.bug && _context.action && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.ibzlib && _context.action && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.project && _context.testtask && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.testsuite && _context.action && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.project && _context.task && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.ibzreportly && _context.action && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.project && _context.story && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.ibzmonthly && _context.action && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.project && _context.build && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.ibzdaily && _context.action && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.project && _context.bug && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.doc && _context.action && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.product && _context.story && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.doclib && _context.action && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.product && _context.productplan && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.testreport && _context.action && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.product && _context.build && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.ibzweekly && _context.action && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.project && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.todo && _context.action && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.product && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.action && true) {
-            return this.http.post(`/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
-        return this.http.post(`/histories/fetchdefault`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

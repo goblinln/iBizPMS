@@ -243,7 +243,7 @@ public class TestRunResource {
     @PreAuthorize("@TestRunRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/{testtask_id}/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByTestTask(@PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
+	public ResponseEntity<List<TestRunDTO>> fetchDefaultByTestTask(@PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
         context.setN_task_eq(testtask_id);
         testrunRuntime.addAuthorityConditions(context,"READ");
         Page<TestRun> domains = testrunService.searchDefault(context) ;
@@ -339,7 +339,7 @@ public class TestRunResource {
     @PreAuthorize("@TestRunRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据产品测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/{testtask_id}/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
+	public ResponseEntity<List<TestRunDTO>> fetchDefaultByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
         context.setN_task_eq(testtask_id);
         testrunRuntime.addAuthorityConditions(context,"READ");
         Page<TestRun> domains = testrunService.searchDefault(context) ;
@@ -435,7 +435,7 @@ public class TestRunResource {
     @PreAuthorize("@TestRunRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目测试版本获取DEFAULT", tags = {"测试运行" } ,notes = "根据项目测试版本获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchTestRunDefaultByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
+	public ResponseEntity<List<TestRunDTO>> fetchDefaultByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody TestRunSearchContext context) {
         context.setN_task_eq(testtask_id);
         testrunRuntime.addAuthorityConditions(context,"READ");
         Page<TestRun> domains = testrunService.searchDefault(context) ;

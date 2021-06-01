@@ -250,7 +250,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档获取当前版本", tags = {"文档内容" } ,notes = "根据文档获取当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/fetchcurversion")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentCurVersionByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchCurVersionByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
@@ -263,7 +263,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档获取DEFAULT", tags = {"文档内容" } ,notes = "根据文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/doccontents/fetchdefault")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentDefaultByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchDefaultByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
@@ -354,7 +354,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库文档获取当前版本", tags = {"文档内容" } ,notes = "根据文档库文档获取当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/doccontents/fetchcurversion")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentCurVersionByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchCurVersionByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
@@ -367,7 +367,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据文档库文档获取DEFAULT", tags = {"文档内容" } ,notes = "根据文档库文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/doccontents/fetchdefault")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentDefaultByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchDefaultByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
@@ -459,7 +459,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库文档获取当前版本", tags = {"文档内容" } ,notes = "根据产品文档库文档获取当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/fetchcurversion")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentCurVersionByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchCurVersionByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
@@ -472,7 +472,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品文档库文档获取DEFAULT", tags = {"文档内容" } ,notes = "根据产品文档库文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/fetchdefault")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentDefaultByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchDefaultByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
@@ -564,7 +564,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目文档库文档获取当前版本", tags = {"文档内容" } ,notes = "根据项目文档库文档获取当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/fetchcurversion")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentCurVersionByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchCurVersionByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
@@ -577,7 +577,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目文档库文档获取DEFAULT", tags = {"文档内容" } ,notes = "根据项目文档库文档获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/fetchdefault")
-	public ResponseEntity<List<DocContentDTO>> fetchDocContentDefaultByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchDefaultByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody DocContentSearchContext context) {
         context.setN_doc_eq(doc_id);
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());

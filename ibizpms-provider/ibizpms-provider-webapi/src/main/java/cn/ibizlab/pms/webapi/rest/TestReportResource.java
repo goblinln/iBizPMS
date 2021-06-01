@@ -446,7 +446,7 @@ public class TestReportResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试报告" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testreports/fetchdefault")
-	public ResponseEntity<List<TestReportDTO>> fetchTestReportDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestReportSearchContext context) {
+	public ResponseEntity<List<TestReportDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestReportSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestReport> domains = testreportService.searchDefault(context) ;
         List<TestReportDTO> list = testreportMapping.toDto(domains.getContent());
@@ -632,7 +632,7 @@ public class TestReportResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试报告" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/fetchdefault")
-	public ResponseEntity<List<TestReportDTO>> fetchTestReportDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestReportSearchContext context) {
+	public ResponseEntity<List<TestReportDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestReportSearchContext context) {
         context.setN_project_eq(project_id);
         Page<TestReport> domains = testreportService.searchDefault(context) ;
         List<TestReportDTO> list = testreportMapping.toDto(domains.getContent());

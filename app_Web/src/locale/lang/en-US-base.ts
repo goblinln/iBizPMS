@@ -4,9 +4,11 @@ import product_en_US from '@locale/lanres/entities/product/product_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
 import test_en_US from '@locale/lanres/entities/test/test_en_US';
 import productbranch_en_US from '@locale/lanres/entities/product-branch/product-branch_en_US';
+import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import taskestimate_en_US from '@locale/lanres/entities/task-estimate/task-estimate_en_US';
 import story_en_US from '@locale/lanres/entities/story/story_en_US';
 import project_en_US from '@locale/lanres/entities/project/project_en_US';
+import history_en_US from '@locale/lanres/entities/history/history_en_US';
 import productmodule_en_US from '@locale/lanres/entities/product-module/product-module_en_US';
 import productteam_en_US from '@locale/lanres/entities/product-team/product-team_en_US';
 import testmodule_en_US from '@locale/lanres/entities/test-module/test-module_en_US';
@@ -108,9 +110,7 @@ import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee
 import ibzproproductline_en_US from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_en_US';
 import projectproduct_en_US from '@locale/lanres/entities/project-product/project-product_en_US';
 import accounttaskestimate_en_US from '@locale/lanres/entities/account-taskestimate/account-taskestimate_en_US';
-import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
-import history_en_US from '@locale/lanres/entities/history/history_en_US';
 import module_en_US from '@locale/lanres/entities/module/module_en_US';
 import components_en_US from '@locale/lanres/components/components_en_US';
 import codelist_en_US from '@locale/lanres/codelist/codelist_en_US';
@@ -429,9 +429,11 @@ function getAppLocale(){
             'projectburn': projectburn_en_US(),
             'test': test_en_US(),
             'productbranch': productbranch_en_US(),
+            'action': action_en_US(),
             'taskestimate': taskestimate_en_US(),
             'story': story_en_US(),
             'project': project_en_US(),
+            'history': history_en_US(),
             'productmodule': productmodule_en_US(),
             'productteam': productteam_en_US(),
             'testmodule': testmodule_en_US(),
@@ -533,9 +535,7 @@ function getAppLocale(){
             'ibzproproductline': ibzproproductline_en_US(),
             'projectproduct': projectproduct_en_US(),
             'accounttaskestimate': accounttaskestimate_en_US(),
-            'action': action_en_US(),
             'dynafilter': dynafilter_en_US(),
-            'history': history_en_US(),
             'module': module_en_US(),
         },
         components: components_en_US(),

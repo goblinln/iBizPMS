@@ -132,6 +132,61 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.condCache.get('view');
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.testtask && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.task && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.bug && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.story && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.productplan && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.build && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`, _data);
+        }
+        if (_context.project && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/actions/${_context.action}`, _data);
+        }
+        if (_context.product && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/actions/${_context.action}`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -140,7 +195,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
+        if (_context.test && _context.bug && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -148,9 +203,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions`, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions`, _data);
         }
-        if (_context.ibzlib && true) {
+        if (_context.project && _context.testtask && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -158,9 +213,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions`, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions`, _data);
         }
-        if (_context.testsuite && true) {
+        if (_context.project && _context.task && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -168,9 +223,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/testsuites/${_context.testsuite}/actions`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions`, _data);
         }
-        if (_context.ibzreportly && true) {
+        if (_context.project && _context.story && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -178,9 +233,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions`, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions`, _data);
         }
-        if (_context.ibzmonthly && true) {
+        if (_context.project && _context.build && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -188,9 +243,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions`, _data);
         }
-        if (_context.ibzdaily && true) {
+        if (_context.project && _context.bug && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -198,9 +253,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions`, _data);
         }
-        if (_context.doc && true) {
+        if (_context.product && _context.story && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -208,9 +263,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/docs/${_context.doc}/actions`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions`, _data);
         }
-        if (_context.doclib && true) {
+        if (_context.product && _context.productplan && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -218,9 +273,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/doclibs/${_context.doclib}/actions`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions`, _data);
         }
-        if (_context.testreport && true) {
+        if (_context.product && _context.build && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -228,9 +283,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/testreports/${_context.testreport}/actions`, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions`, _data);
         }
-        if (_context.ibzweekly && true) {
+        if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -238,9 +293,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions`, _data);
+            return this.http.post(`/projects/${_context.project}/actions`, _data);
         }
-        if (_context.todo && true) {
+        if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -248,60 +303,97 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/todos/${_context.todo}/actions`, _data);
+            return this.http.post(`/products/${_context.product}/actions`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/actions`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProductTrends
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchProductTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmy`, _data);
         }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchproducttrends`, _data);
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
         }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproducttrends`, _data);
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmy`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchproducttrends`, _data);
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmy`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchproducttrends`, _data);
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmy`, _data);
         }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchproducttrends`, _data);
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
         }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchproducttrends`, _data);
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmy`, _data);
         }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproducttrends`, _data);
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmy`, _data);
         }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchproducttrends`, _data);
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmy`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproducttrends`, _data);
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmy`, _data);
         }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchproducttrends`, _data);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchmy`, _data);
         }
-        return this.http.post(`/actions/fetchproducttrends`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchMain
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchMain(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmain`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchmain`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -312,176 +404,73 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
+        if (_context.test && _context.bug && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/getdraft`, _data);
+            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzlib && true) {
+        if (_context.project && _context.testtask && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/getdraft`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.testsuite && true) {
+        if (_context.project && _context.task && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/getdraft`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzreportly && true) {
+        if (_context.project && _context.story && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/getdraft`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzmonthly && true) {
+        if (_context.project && _context.build && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/getdraft`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzdaily && true) {
+        if (_context.project && _context.bug && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/getdraft`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.doc && true) {
+        if (_context.product && _context.story && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/docs/${_context.doc}/actions/getdraft`, _data);
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.doclib && true) {
+        if (_context.product && _context.productplan && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/doclibs/${_context.doclib}/actions/getdraft`, _data);
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.testreport && true) {
+        if (_context.product && _context.build && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/testreports/${_context.testreport}/actions/getdraft`, _data);
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzweekly && true) {
+        if (_context.project && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/getdraft`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.todo && true) {
+        if (_context.product && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/todos/${_context.todo}/actions/getdraft`, _data);
+            const res = await this.http.get(`/products/${_context.product}/actions/getdraft`, _data);
             return res;
         }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/actions/getdraft`, _data);
-        return res;
-    }
-    /**
-     * FetchMobType
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchMobType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmobtype`, _data);
-        }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchmobtype`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmobtype`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmobtype`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmobtype`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmobtype`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchmobtype`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmobtype`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchmobtype`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmobtype`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchmobtype`, _data);
-        }
-        return this.http.post(`/actions/fetchmobtype`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
-        }
-        if (_context.ibzlib && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`, _data);
-        }
-        if (_context.testsuite && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testsuites/${_context.testsuite}/actions/${_context.action}`, _data);
-        }
-        if (_context.ibzreportly && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`, _data);
-        }
-        if (_context.ibzmonthly && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`, _data);
-        }
-        if (_context.ibzdaily && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`, _data);
-        }
-        if (_context.doc && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/docs/${_context.doc}/actions/${_context.action}`, _data);
-        }
-        if (_context.doclib && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
-        }
-        if (_context.testreport && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testreports/${_context.testreport}/actions/${_context.action}`, _data);
-        }
-        if (_context.ibzweekly && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`, _data);
-        }
-        if (_context.todo && _context.action) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/todos/${_context.todo}/actions/${_context.action}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/actions/${_context.action}`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -492,271 +481,138 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @memberof ActionService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && _context.action) {
-            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`);
+        if (_context.test && _context.bug && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzlib && _context.action) {
-            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/actions/${_context.action}`);
+        if (_context.project && _context.testtask && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
             return res;
         }
-        if (_context.testsuite && _context.action) {
-            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/${_context.action}`);
+        if (_context.project && _context.task && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzreportly && _context.action) {
-            const res = await this.http.get(`/ibzreportlies/${_context.ibzreportly}/actions/${_context.action}`);
+        if (_context.project && _context.story && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzmonthly && _context.action) {
-            const res = await this.http.get(`/ibzmonthlies/${_context.ibzmonthly}/actions/${_context.action}`);
+        if (_context.project && _context.build && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzdaily && _context.action) {
-            const res = await this.http.get(`/ibzdailies/${_context.ibzdaily}/actions/${_context.action}`);
+        if (_context.project && _context.bug && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
             return res;
         }
-        if (_context.doc && _context.action) {
-            const res = await this.http.get(`/docs/${_context.doc}/actions/${_context.action}`);
+        if (_context.product && _context.story && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
             return res;
         }
-        if (_context.doclib && _context.action) {
-            const res = await this.http.get(`/doclibs/${_context.doclib}/actions/${_context.action}`);
+        if (_context.product && _context.productplan && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`);
             return res;
         }
-        if (_context.testreport && _context.action) {
-            const res = await this.http.get(`/testreports/${_context.testreport}/actions/${_context.action}`);
+        if (_context.product && _context.build && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzweekly && _context.action) {
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`);
+        if (_context.project && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}`);
             return res;
         }
-        if (_context.todo && _context.action) {
-            const res = await this.http.get(`/todos/${_context.todo}/actions/${_context.action}`);
+        if (_context.product && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
             return res;
         }
-        const res = await this.http.get(`/actions/${_context.action}`);
-        return res;
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProjectTrends
+     * FetchProduct
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchProjectTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchprojecttrends`, _data);
+    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchprojecttrends`, _data);
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
         }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchprojecttrends`, _data);
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchprojecttrends`, _data);
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchprojecttrends`, _data);
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchprojecttrends`, _data);
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
         }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchprojecttrends`, _data);
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
         }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchprojecttrends`, _data);
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
         }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchprojecttrends`, _data);
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchprojecttrends`, _data);
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
         }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchprojecttrends`, _data);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
         }
-        return this.http.post(`/actions/fetchprojecttrends`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchMyTrends
+     * FetchProject
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);
         }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchmytrends`, _data);
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
         }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmytrends`, _data);
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
         }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchmytrends`, _data);
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
         }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchmytrends`, _data);
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
         }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchmytrends`, _data);
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
         }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
         }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
         }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproject`, _data);
         }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproject`, _data);
         }
-        return this.http.post(`/actions/fetchmytrends`, _data);
-    }
-    /**
-     * FetchQueryUserYEAR
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchQueryUserYEAR(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchqueryuseryear`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchqueryuseryear`, _data);
-        }
-        return this.http.post(`/actions/fetchqueryuseryear`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchdefault`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchdefault`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchdefault`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchdefault`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchdefault`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchdefault`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchdefault`, _data);
-        }
-        return this.http.post(`/actions/fetchdefault`, _data);
-    }
-    /**
-     * FetchType
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/actions/fetchtype`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzreportly && true) {
-            return this.http.post(`/ibzreportlies/${_context.ibzreportly}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzmonthly && true) {
-            return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzdaily && true) {
-            return this.http.post(`/ibzdailies/${_context.ibzdaily}/actions/fetchtype`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchtype`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchtype`, _data);
-        }
-        if (_context.testreport && true) {
-            return this.http.post(`/testreports/${_context.testreport}/actions/fetchtype`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchtype`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchtype`, _data);
-        }
-        return this.http.post(`/actions/fetchtype`, _data);
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

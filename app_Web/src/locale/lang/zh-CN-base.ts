@@ -4,9 +4,11 @@ import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
 import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
 import productbranch_zh_CN from '@locale/lanres/entities/product-branch/product-branch_zh_CN';
+import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
 import taskestimate_zh_CN from '@locale/lanres/entities/task-estimate/task-estimate_zh_CN';
 import story_zh_CN from '@locale/lanres/entities/story/story_zh_CN';
 import project_zh_CN from '@locale/lanres/entities/project/project_zh_CN';
+import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
 import productmodule_zh_CN from '@locale/lanres/entities/product-module/product-module_zh_CN';
 import productteam_zh_CN from '@locale/lanres/entities/product-team/product-team_zh_CN';
 import testmodule_zh_CN from '@locale/lanres/entities/test-module/test-module_zh_CN';
@@ -108,9 +110,7 @@ import sysemployee_zh_CN from '@locale/lanres/entities/sys-employee/sys-employee
 import ibzproproductline_zh_CN from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_zh_CN';
 import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
 import accounttaskestimate_zh_CN from '@locale/lanres/entities/account-taskestimate/account-taskestimate_zh_CN';
-import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
-import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
 import module_zh_CN from '@locale/lanres/entities/module/module_zh_CN';
 import components_zh_CN from '@locale/lanres/components/components_zh_CN';
 import codelist_zh_CN from '@locale/lanres/codelist/codelist_zh_CN';
@@ -427,9 +427,11 @@ function getAppLocale(){
             'projectburn': projectburn_zh_CN(),
             'test': test_zh_CN(),
             'productbranch': productbranch_zh_CN(),
+            'action': action_zh_CN(),
             'taskestimate': taskestimate_zh_CN(),
             'story': story_zh_CN(),
             'project': project_zh_CN(),
+            'history': history_zh_CN(),
             'productmodule': productmodule_zh_CN(),
             'productteam': productteam_zh_CN(),
             'testmodule': testmodule_zh_CN(),
@@ -531,9 +533,7 @@ function getAppLocale(){
             'ibzproproductline': ibzproproductline_zh_CN(),
             'projectproduct': projectproduct_zh_CN(),
             'accounttaskestimate': accounttaskestimate_zh_CN(),
-            'action': action_zh_CN(),
             'dynafilter': dynafilter_zh_CN(),
-            'history': history_zh_CN(),
             'module': module_zh_CN(),
         },
         components: components_zh_CN(),

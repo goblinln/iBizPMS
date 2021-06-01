@@ -348,7 +348,7 @@ public class TestModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取BYPATH", tags = {"测试模块" } ,notes = "根据产品获取BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchbypath")
-	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleByPathByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchByPathByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
         context.setN_root_eq(product_id);
         Page<TestModule> domains = testmoduleService.searchByPath(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -361,7 +361,7 @@ public class TestModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试模块" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchdefault")
-	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
         context.setN_root_eq(product_id);
         Page<TestModule> domains = testmoduleService.searchDefault(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -374,7 +374,7 @@ public class TestModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取父模块", tags = {"测试模块" } ,notes = "根据产品获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchparentmodule")
-	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleParentModuleByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchParentModuleByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
         context.setN_root_eq(product_id);
         Page<TestModule> domains = testmoduleService.searchParentModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -387,7 +387,7 @@ public class TestModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取根模块", tags = {"测试模块" } ,notes = "根据产品获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchroot")
-	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleRootByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchRootByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
         context.setN_root_eq(product_id);
         Page<TestModule> domains = testmoduleService.searchRoot(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -400,7 +400,7 @@ public class TestModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取根模块_无分支", tags = {"测试模块" } ,notes = "根据产品获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchroot_nobranch")
-	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleRoot_NoBranchByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchRoot_NoBranchByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
         context.setN_root_eq(product_id);
         Page<TestModule> domains = testmoduleService.searchRoot_NoBranch(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -413,7 +413,7 @@ public class TestModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取TestModule", tags = {"测试模块" } ,notes = "根据产品获取TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchtestmodule")
-	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleTestModuleByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
         context.setN_root_eq(product_id);
         Page<TestModule> domains = testmoduleService.searchTestModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());

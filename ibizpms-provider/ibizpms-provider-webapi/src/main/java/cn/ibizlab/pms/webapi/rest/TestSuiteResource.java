@@ -330,7 +330,7 @@ public class TestSuiteResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试套件" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchdefault")
-	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuiteDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {
+	public ResponseEntity<List<TestSuiteDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());
@@ -343,7 +343,7 @@ public class TestSuiteResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取公开套件", tags = {"测试套件" } ,notes = "根据产品获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchpublictestsuite")
-	public ResponseEntity<List<TestSuiteDTO>> fetchTestSuitePublicTestSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {
+	public ResponseEntity<List<TestSuiteDTO>> fetchPublicTestSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestSuiteSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());

@@ -71,6 +71,15 @@ export class GlobalService {
         return (await import('./product-branch/product-branch.service')).default.getInstance();
     }
     /**
+     * 系统日志服务
+     *
+     * @return {Action}
+     * @memberof GlobalService
+     */
+    async getActionService() {
+        return (await import('./action/action.service')).default.getInstance();
+    }
+    /**
      * 任务预计服务
      *
      * @return {TaskEstimate}
@@ -96,6 +105,15 @@ export class GlobalService {
      */
     async getProjectService() {
         return (await import('./project/project.service')).default.getInstance();
+    }
+    /**
+     * 操作历史服务
+     *
+     * @return {History}
+     * @memberof GlobalService
+     */
+    async getHistoryService() {
+        return (await import('./history/history.service')).default.getInstance();
     }
     /**
      * 需求模块服务
@@ -1007,15 +1025,6 @@ export class GlobalService {
         return (await import('./account-taskestimate/account-taskestimate.service')).default.getInstance();
     }
     /**
-     * 系统日志服务
-     *
-     * @return {Action}
-     * @memberof GlobalService
-     */
-    async getActionService() {
-        return (await import('./action/action.service')).default.getInstance();
-    }
-    /**
      * 动态搜索栏服务
      *
      * @return {DynaFilter}
@@ -1023,15 +1032,6 @@ export class GlobalService {
      */
     async getDynaFilterService() {
         return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
-    }
-    /**
-     * 操作历史服务
-     *
-     * @return {History}
-     * @memberof GlobalService
-     */
-    async getHistoryService() {
-        return (await import('./history/history.service')).default.getInstance();
     }
     /**
      * 模块服务

@@ -274,7 +274,7 @@ public class BranchResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchcurproduct")
-	public ResponseEntity<List<BranchDTO>> fetchBranchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
+	public ResponseEntity<List<BranchDTO>> fetchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Branch> domains = branchService.searchCurProduct(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
@@ -287,7 +287,7 @@ public class BranchResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchdefault")
-	public ResponseEntity<List<BranchDTO>> fetchBranchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
+	public ResponseEntity<List<BranchDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Branch> domains = branchService.searchDefault(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());

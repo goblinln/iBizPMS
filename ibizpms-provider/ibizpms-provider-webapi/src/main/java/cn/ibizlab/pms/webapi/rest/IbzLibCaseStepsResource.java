@@ -136,7 +136,7 @@ public class IbzLibCaseStepsResource {
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
-	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {
+	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchDefaultByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {
         context.setN_case_eq(ibzcase_id);
         ibzlibcasestepsRuntime.addAuthorityConditions(context,"READ");
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;
@@ -232,7 +232,7 @@ public class IbzLibCaseStepsResource {
     @PreAuthorize("@IbzLibCaseStepsRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据用例库测试用例获取DEFAULT", tags = {"用例库用例步骤" } ,notes = "根据用例库测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/{ibzlib_id}/ibzcases/{ibzcase_id}/ibzlibcasesteps/fetchdefault")
-	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchIbzLibCaseStepsDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {
+	public ResponseEntity<List<IbzLibCaseStepsDTO>> fetchDefaultByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id,@RequestBody IbzLibCaseStepsSearchContext context) {
         context.setN_case_eq(ibzcase_id);
         ibzlibcasestepsRuntime.addAuthorityConditions(context,"READ");
         Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(context) ;

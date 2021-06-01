@@ -476,7 +476,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "根据文档库获取自定义文档库的模块")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule_custom")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleAllDocLibModule_CustomByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDocLibModule_CustomByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchAllDocLibModule_Custom(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -489,7 +489,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取所有文档库模块", tags = {"文档库分类" } ,notes = "根据文档库获取所有文档库模块")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleAllDoclibModuleByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDoclibModuleByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchAllDoclibModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -502,7 +502,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取子模块目录", tags = {"文档库分类" } ,notes = "根据文档库获取子模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchchildmodulebyparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleChildModuleByParentByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByParentByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -515,7 +515,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取文档库分类子模块", tags = {"文档库分类" } ,notes = "根据文档库获取文档库分类子模块")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchchildmodulebyrealparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleChildModuleByRealParentByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByRealParentByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByRealParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -528,7 +528,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取数据集", tags = {"文档库分类" } ,notes = "根据文档库获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchdefault")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleDefaultByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchDefaultByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchDefault(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -541,7 +541,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取我的收藏", tags = {"文档库分类" } ,notes = "根据文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchmyfavourites")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleMyFavouritesByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchMyFavouritesByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchMyFavourites(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -554,7 +554,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取父集合", tags = {"文档库分类" } ,notes = "根据文档库获取父集合")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchparentmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleParentModuleByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchParentModuleByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchParentModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -567,7 +567,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取所有根模块目录", tags = {"文档库分类" } ,notes = "根据文档库获取所有根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulu")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLu(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -580,7 +580,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取根模块目录", tags = {"文档库分类" } ,notes = "根据文档库获取根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulubyroot")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuByRootByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByRootByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuByRoot(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -593,7 +593,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@DocLibRuntime.test(#doclib_id, 'READ')")
 	@ApiOperation(value = "根据文档库获取根模块目录动态", tags = {"文档库分类" } ,notes = "根据文档库获取根模块目录动态")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulubysrfparentkey")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuBysrfparentkeyByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuBysrfparentkeyByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuBysrfparentkey(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -744,7 +744,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "根据产品文档库获取自定义文档库的模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule_custom")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleAllDocLibModule_CustomByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDocLibModule_CustomByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchAllDocLibModule_Custom(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -757,7 +757,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取所有文档库模块", tags = {"文档库分类" } ,notes = "根据产品文档库获取所有文档库模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleAllDoclibModuleByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDoclibModuleByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchAllDoclibModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -770,7 +770,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取子模块目录", tags = {"文档库分类" } ,notes = "根据产品文档库获取子模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchchildmodulebyparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleChildModuleByParentByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByParentByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -783,7 +783,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取文档库分类子模块", tags = {"文档库分类" } ,notes = "根据产品文档库获取文档库分类子模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchchildmodulebyrealparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleChildModuleByRealParentByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByRealParentByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByRealParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -796,7 +796,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取数据集", tags = {"文档库分类" } ,notes = "根据产品文档库获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchdefault")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleDefaultByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchDefaultByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchDefault(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -809,7 +809,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取我的收藏", tags = {"文档库分类" } ,notes = "根据产品文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchmyfavourites")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleMyFavouritesByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchMyFavouritesByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchMyFavourites(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -822,7 +822,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取父集合", tags = {"文档库分类" } ,notes = "根据产品文档库获取父集合")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchparentmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleParentModuleByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchParentModuleByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchParentModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -835,7 +835,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取所有根模块目录", tags = {"文档库分类" } ,notes = "根据产品文档库获取所有根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulu")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLu(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -848,7 +848,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取根模块目录", tags = {"文档库分类" } ,notes = "根据产品文档库获取根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulubyroot")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuByRootByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByRootByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuByRoot(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -861,7 +861,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品文档库获取根模块目录动态", tags = {"文档库分类" } ,notes = "根据产品文档库获取根模块目录动态")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulubysrfparentkey")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuBysrfparentkeyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuBysrfparentkeyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuBysrfparentkey(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1012,7 +1012,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取自定义文档库的模块", tags = {"文档库分类" } ,notes = "根据项目文档库获取自定义文档库的模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule_custom")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleAllDocLibModule_CustomByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDocLibModule_CustomByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchAllDocLibModule_Custom(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1025,7 +1025,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取所有文档库模块", tags = {"文档库分类" } ,notes = "根据项目文档库获取所有文档库模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchalldoclibmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleAllDoclibModuleByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchAllDoclibModuleByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchAllDoclibModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1038,7 +1038,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取子模块目录", tags = {"文档库分类" } ,notes = "根据项目文档库获取子模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchchildmodulebyparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleChildModuleByParentByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByParentByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1051,7 +1051,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取文档库分类子模块", tags = {"文档库分类" } ,notes = "根据项目文档库获取文档库分类子模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchchildmodulebyrealparent")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleChildModuleByRealParentByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchChildModuleByRealParentByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchChildModuleByRealParent(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1064,7 +1064,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取数据集", tags = {"文档库分类" } ,notes = "根据项目文档库获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchdefault")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleDefaultByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchDefaultByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchDefault(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1077,7 +1077,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取我的收藏", tags = {"文档库分类" } ,notes = "根据项目文档库获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchmyfavourites")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleMyFavouritesByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchMyFavouritesByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchMyFavourites(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1090,7 +1090,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取父集合", tags = {"文档库分类" } ,notes = "根据项目文档库获取父集合")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchparentmodule")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleParentModuleByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchParentModuleByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchParentModule(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1103,7 +1103,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取所有根模块目录", tags = {"文档库分类" } ,notes = "根据项目文档库获取所有根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulu")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLu(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1116,7 +1116,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取根模块目录", tags = {"文档库分类" } ,notes = "根据项目文档库获取根模块目录")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulubyroot")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuByRootByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuByRootByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuByRoot(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());
@@ -1129,7 +1129,7 @@ public class DocLibModuleResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'DOCLIBMANAGE')")
 	@ApiOperation(value = "根据项目文档库获取根模块目录动态", tags = {"文档库分类" } ,notes = "根据项目文档库获取根模块目录动态")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/fetchrootmodulemulubysrfparentkey")
-	public ResponseEntity<List<DocLibModuleDTO>> fetchDocLibModuleRootModuleMuLuBysrfparentkeyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
+	public ResponseEntity<List<DocLibModuleDTO>> fetchRootModuleMuLuBysrfparentkeyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocLibModuleSearchContext context) {
         context.setN_root_eq(doclib_id);
         Page<DocLibModule> domains = doclibmoduleService.searchRootModuleMuLuBysrfparentkey(context) ;
         List<DocLibModuleDTO> list = doclibmoduleMapping.toDto(domains.getContent());

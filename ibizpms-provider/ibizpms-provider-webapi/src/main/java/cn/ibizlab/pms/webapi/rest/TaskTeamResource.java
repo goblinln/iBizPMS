@@ -132,7 +132,7 @@ public class TaskTeamResource {
     @PreAuthorize("@TaskRuntime.test(#task_id, 'READ')")
 	@ApiOperation(value = "根据任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskteams/fetchdefault")
-	public ResponseEntity<List<TaskTeamDTO>> fetchTaskTeamDefaultByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {
+	public ResponseEntity<List<TaskTeamDTO>> fetchDefaultByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {
         context.setN_root_eq(task_id);
         Page<TaskTeam> domains = taskteamService.searchDefault(context) ;
         List<TaskTeamDTO> list = taskteamMapping.toDto(domains.getContent());
@@ -223,7 +223,7 @@ public class TaskTeamResource {
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'TASKMANAGE')")
 	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据项目任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskteams/fetchdefault")
-	public ResponseEntity<List<TaskTeamDTO>> fetchTaskTeamDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {
+	public ResponseEntity<List<TaskTeamDTO>> fetchDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {
         context.setN_root_eq(task_id);
         Page<TaskTeam> domains = taskteamService.searchDefault(context) ;
         List<TaskTeamDTO> list = taskteamMapping.toDto(domains.getContent());
