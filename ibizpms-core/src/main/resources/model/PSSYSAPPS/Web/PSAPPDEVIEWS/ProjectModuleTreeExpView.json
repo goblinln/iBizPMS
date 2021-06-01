@@ -332,17 +332,6 @@
         "eventNames" : "CLICK",
         "logicTrigger" : "CTRLEVENT",
         "logicType" : "APPVIEWUIACTION",
-        "name" : "zt_product_cm_deuiaction1_click",
-        "getPSAppViewUIAction" : {
-          "modelref" : true,
-          "id" : "zt_product_cm_deuiaction1"
-        },
-        "getPSViewCtrlName" : "zt_product_cm"
-      }, {
-        "eventArg" : "deuiaction1",
-        "eventNames" : "CLICK",
-        "logicTrigger" : "CTRLEVENT",
-        "logicType" : "APPVIEWUIACTION",
         "name" : "module_cm_deuiaction1_click",
         "getPSAppViewUIAction" : {
           "modelref" : true,
@@ -458,13 +447,6 @@
         "getPSUIAction" : {
           "modelref" : true,
           "id" : "RefreshAll"
-        },
-        "xDataControlName" : "treeexpbar_tree"
-      }, {
-        "name" : "zt_product_cm_deuiaction1",
-        "getPSUIAction" : {
-          "modelref" : true,
-          "id" : "RefreshParent"
         },
         "xDataControlName" : "treeexpbar_tree"
       }, {
@@ -615,53 +597,6 @@
         "id" : "treeexpbar_tree"
       },
       "getPSControls" : [ {
-        "codeName" : "TreeExpViewzt_product_cm",
-        "controlType" : "CONTEXTMENU",
-        "hookEventNames" : [ "CLICK" ],
-        "logicName" : "树节点默认工具栏",
-        "name" : "zt_product_cm",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-        },
-        "getPSControlParam" : {
-          "id" : "zt_product_cm"
-        },
-        "getPSDEToolbarItems" : [ {
-          "caption" : "刷新",
-          "groupExtractMode" : "ITEM",
-          "itemType" : "DEUIACTION",
-          "name" : "deuiaction1",
-          "noPrivDisplayMode" : 2,
-          "getPSAppViewUIAction" : {
-            "modelref" : true,
-            "id" : "zt_product_cm_deuiaction1"
-          },
-          "getPSSysImage" : {
-            "glyph" : "xf021@FontAwesome",
-            "cssClass" : "fa fa-refresh"
-          },
-          "getPSUIAction" : {
-            "caption" : "刷新",
-            "codeName" : "RefreshParent",
-            "fullCodeName" : "RefreshParent",
-            "name" : "树界面_刷新父节点操作",
-            "getPSSysImage" : {
-              "glyph" : "xf021@FontAwesome",
-              "cssClass" : "fa fa-refresh"
-            },
-            "timeout" : 60000,
-            "uIActionMode" : "SYS",
-            "uIActionTag" : "RefreshParent",
-            "uIActionType" : "DEUIACTION"
-          },
-          "tooltip" : "刷新",
-          "showCaption" : true,
-          "showIcon" : true
-        } ],
-        "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
-        "modeltype" : "PSDETOOLBAR"
-      }, {
         "codeName" : "TreeExpViewmodule2_cm",
         "controlType" : "CONTEXTMENU",
         "hookEventNames" : [ "CLICK" ],
@@ -2021,76 +1956,28 @@
       }, {
         "counterMode" : 0,
         "getIdPSAppDEField" : {
-          "name" : "PRODUCT",
-          "codeName" : "Product"
+          "name" : "ID",
+          "codeName" : "Id"
         },
         "maxSize" : -1,
         "name" : "项目产品（动态）",
         "nodeType" : "ZT_PRODUCT",
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchDefault"
+          "id" : "FetchCurProject"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
-        },
-        "getPSDEContextMenu" : {
-          "codeName" : "TreeExpViewzt_product_cm",
-          "controlType" : "CONTEXTMENU",
-          "hookEventNames" : [ "CLICK" ],
-          "logicName" : "树节点默认工具栏",
-          "name" : "zt_product_cm",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json"
-          },
-          "getPSControlParam" : {
-            "id" : "zt_product_cm"
-          },
-          "getPSDEToolbarItems" : [ {
-            "caption" : "刷新",
-            "groupExtractMode" : "ITEM",
-            "itemType" : "DEUIACTION",
-            "name" : "deuiaction1",
-            "noPrivDisplayMode" : 2,
-            "getPSAppViewUIAction" : {
-              "modelref" : true,
-              "id" : "zt_product_cm_deuiaction1"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf021@FontAwesome",
-              "cssClass" : "fa fa-refresh"
-            },
-            "getPSUIAction" : {
-              "caption" : "刷新",
-              "codeName" : "RefreshParent",
-              "fullCodeName" : "RefreshParent",
-              "name" : "树界面_刷新父节点操作",
-              "getPSSysImage" : {
-                "glyph" : "xf021@FontAwesome",
-                "cssClass" : "fa fa-refresh"
-              },
-              "timeout" : 60000,
-              "uIActionMode" : "SYS",
-              "uIActionTag" : "RefreshParent",
-              "uIActionType" : "DEUIACTION"
-            },
-            "tooltip" : "刷新",
-            "showCaption" : true,
-            "showIcon" : true
-          } ],
-          "modelid" : "469ba7ea4acf6809bb19ecce4890c1d9",
-          "modeltype" : "PSDETOOLBAR"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
         },
         "sortDir" : "ASC",
         "getSortPSAppDEField" : {
-          "name" : "PROJECT",
-          "codeName" : "Project"
+          "name" : "ID",
+          "codeName" : "Id"
         },
         "getTextPSAppDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
+          "name" : "NAME",
+          "codeName" : "Name"
         },
         "treeNodeType" : "DE",
         "hasPSDETreeNodeRSs" : true,

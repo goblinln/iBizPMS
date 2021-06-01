@@ -10326,14 +10326,6 @@
     "psappsbitemrsname" : "树界面_刷新全部操作",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "c15794601dd87b4c459033ab73a26997",
-    "ppsappsbitemname" : "任务模块树导航视图",
-    "rstag" : "SYS",
-    "rstag2" : "系统预定义",
-    "ppsappsbitemid" : "d28206b76e803e9405d1cc8902d76287",
-    "psappsbitemrsname" : "树界面_刷新父节点操作",
-    "rstype" : "UIACTION"
-  }, {
     "cpsappsbitemname" : "任务模块",
     "psappsbitemrsid" : "f7084feca7b7147b2a1a57cf231e0323",
     "ppsappsbitemname" : "任务模块树导航视图",
