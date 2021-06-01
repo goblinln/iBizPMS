@@ -17,4 +17,9 @@ public class FeignConfiguration {
                 new ResponseEntityDecoder(new FeignDecoder(messageConverters)));
     }
 
+    @Bean
+    public feign.QueryMapEncoder feignEncoder(){
+        return new FeignEncoder();
+    }
+
 }

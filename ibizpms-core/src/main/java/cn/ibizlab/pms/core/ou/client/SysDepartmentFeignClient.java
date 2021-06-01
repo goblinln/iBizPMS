@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ou.domain.SysDepartment;
 import cn.ibizlab.pms.core.ou.filter.SysDepartmentSearchContext;
@@ -68,7 +69,7 @@ public interface SysDepartmentFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/fetchdefault")
-    Page<SysDepartment> searchDefault(@RequestBody SysDepartmentSearchContext context);
+    Page<SysDepartment> fetchDefault(@SpringQueryMapSysDepartmentSearchContext context);
 
 
 

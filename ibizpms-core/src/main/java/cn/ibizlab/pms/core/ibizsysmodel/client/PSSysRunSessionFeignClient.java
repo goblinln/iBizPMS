@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSSysRunSession;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysRunSessionSearchContext;
@@ -68,7 +69,7 @@ public interface PSSysRunSessionFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysrunsessions/fetchdefault")
-    Page<PSSysRunSession> searchDefault(@RequestBody PSSysRunSessionSearchContext context);
+    Page<PSSysRunSession> fetchDefault(@SpringQueryMapPSSysRunSessionSearchContext context);
 
 
 

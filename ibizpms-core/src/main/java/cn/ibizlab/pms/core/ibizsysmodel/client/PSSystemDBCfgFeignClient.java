@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSSystemDBCfg;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSystemDBCfgSearchContext;
@@ -68,12 +69,12 @@ public interface PSSystemDBCfgFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/fetchbuild")
-    Page<PSSystemDBCfg> searchBuild(@RequestBody PSSystemDBCfgSearchContext context);
+    Page<PSSystemDBCfg> fetchBuild(@SpringQueryMapPSSystemDBCfgSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/fetchdefault")
-    Page<PSSystemDBCfg> searchDefault(@RequestBody PSSystemDBCfgSearchContext context);
+    Page<PSSystemDBCfg> fetchDefault(@SpringQueryMapPSSystemDBCfgSearchContext context);
 
 
 

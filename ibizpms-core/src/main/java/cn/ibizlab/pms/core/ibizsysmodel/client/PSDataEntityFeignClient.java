@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSDataEntity;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSDataEntitySearchContext;
@@ -68,7 +69,7 @@ public interface PSDataEntityFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/fetchdefault")
-    Page<PSDataEntity> searchDefault(@RequestBody PSDataEntitySearchContext context);
+    Page<PSDataEntity> fetchDefault(@SpringQueryMapPSDataEntitySearchContext context);
 
 
 

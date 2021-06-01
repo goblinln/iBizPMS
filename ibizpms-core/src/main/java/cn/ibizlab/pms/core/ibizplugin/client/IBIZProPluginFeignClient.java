@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizplugin.domain.IBIZProPlugin;
 import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProPluginSearchContext;
@@ -68,7 +69,7 @@ public interface IBIZProPluginFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/fetchdefault")
-    Page<IBIZProPlugin> searchDefault(@RequestBody IBIZProPluginSearchContext context);
+    Page<IBIZProPlugin> fetchDefault(@SpringQueryMapIBIZProPluginSearchContext context);
 
 
 

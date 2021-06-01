@@ -7,15 +7,19 @@
   "name" : "项目（动态）",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchCurProduct"
+    "id" : "FetchDefault"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "PROJECTNAME",
+    "codeName" : "ProjectName"
   },
   "getValuePSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "PROJECT",
+    "codeName" : "Project"
   },
   "enableCache" : true
 }

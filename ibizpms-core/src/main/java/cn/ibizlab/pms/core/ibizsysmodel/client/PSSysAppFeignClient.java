@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSSysApp;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSysAppSearchContext;
@@ -68,12 +69,12 @@ public interface PSSysAppFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/fetchbuild")
-    Page<PSSysApp> searchBuild(@RequestBody PSSysAppSearchContext context);
+    Page<PSSysApp> fetchBuild(@SpringQueryMapPSSysAppSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/fetchdefault")
-    Page<PSSysApp> searchDefault(@RequestBody PSSysAppSearchContext context);
+    Page<PSSysApp> fetchDefault(@SpringQueryMapPSSysAppSearchContext context);
 
 
 

@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ou.domain.SysEmployee;
 import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
@@ -68,67 +69,67 @@ public interface SysEmployeeFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchbuguser")
-    Page<SysEmployee> searchBugUser(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchBugUser(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchcontactlist")
-    Page<SysEmployee> searchContActList(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchContActList(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchdefault")
-    Page<SysEmployee> searchDefault(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchDefault(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchproductteamm")
-    Page<SysEmployee> searchProductTeamM(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchProductTeamM(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamm")
-    Page<SysEmployee> searchProjectTeamM(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchProjectTeamM(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteammproduct")
-    Page<SysEmployee> searchProjectTeamMProduct(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchProjectTeamMProduct(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamtaskusertemp")
-    Page<SysEmployee> searchProjectTeamTaskUserTemp(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchProjectTeamTaskUserTemp(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamuser")
-    Page<SysEmployee> searchProjectTeamUser(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchProjectTeamUser(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteamusertask")
-    Page<SysEmployee> searchProjectTeamUserTask(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchProjectTeamUserTask(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchprojectteampk")
-    Page<SysEmployee> searchProjectteamPk(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchProjectteamPk(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchstoryproductteampk")
-    Page<SysEmployee> searchStoryProductTeamPK(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchStoryProductTeamPK(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchtaskmteam")
-    Page<SysEmployee> searchTaskMTeam(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchTaskMTeam(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysemployees/fetchtaskteam")
-    Page<SysEmployee> searchTaskTeam(@RequestBody SysEmployeeSearchContext context);
+    Page<SysEmployee> fetchTaskTeam(@SpringQueryMapSysEmployeeSearchContext context);
 
 
 

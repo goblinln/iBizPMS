@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSSubSysServiceAPI;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSubSysServiceAPISearchContext;
@@ -68,7 +69,7 @@ public interface PSSubSysServiceAPIFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsysserviceapis/fetchdefault")
-    Page<PSSubSysServiceAPI> searchDefault(@RequestBody PSSubSysServiceAPISearchContext context);
+    Page<PSSubSysServiceAPI> fetchDefault(@SpringQueryMapPSSubSysServiceAPISearchContext context);
 
 
 

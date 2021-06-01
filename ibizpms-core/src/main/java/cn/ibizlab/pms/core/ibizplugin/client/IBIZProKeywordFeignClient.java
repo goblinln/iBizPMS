@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizplugin.domain.IBIZProKeyword;
 import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProKeywordSearchContext;
@@ -68,7 +69,7 @@ public interface IBIZProKeywordFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/fetchdefault")
-    Page<IBIZProKeyword> searchDefault(@RequestBody IBIZProKeywordSearchContext context);
+    Page<IBIZProKeyword> fetchDefault(@SpringQueryMapIBIZProKeywordSearchContext context);
 
 
 

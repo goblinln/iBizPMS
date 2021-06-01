@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizplugin.domain.IBIZProMessage;
 import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProMessageSearchContext;
@@ -80,17 +81,17 @@ public interface IBIZProMessageFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchdefault")
-    Page<IBIZProMessage> searchDefault(@RequestBody IBIZProMessageSearchContext context);
+    Page<IBIZProMessage> fetchDefault(@SpringQueryMapIBIZProMessageSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchuserallmessages")
-    Page<IBIZProMessage> searchUserAllMessages(@RequestBody IBIZProMessageSearchContext context);
+    Page<IBIZProMessage> fetchUserAllMessages(@SpringQueryMapIBIZProMessageSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchuserunreadmessages")
-    Page<IBIZProMessage> searchUserUnreadMessages(@RequestBody IBIZProMessageSearchContext context);
+    Page<IBIZProMessage> fetchUserUnreadMessages(@SpringQueryMapIBIZProMessageSearchContext context);
 
 
 

@@ -521,6 +521,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     @SneakyThrows
     public boolean test(Serializable key, String action) {
+        if(ObjectUtils.isEmpty(key)){
+            return false;
+        }
         if (DataAccessActions.DENY.equals(action)) {
             return false;
         }

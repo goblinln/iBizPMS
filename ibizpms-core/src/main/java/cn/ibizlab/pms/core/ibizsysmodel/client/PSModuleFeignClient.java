@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSModule;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSModuleSearchContext;
@@ -68,7 +69,7 @@ public interface PSModuleFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/psmodules/fetchdefault")
-    Page<PSModule> searchDefault(@RequestBody PSModuleSearchContext context);
+    Page<PSModule> fetchDefault(@SpringQueryMapPSModuleSearchContext context);
 
 
 
