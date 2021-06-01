@@ -38556,7 +38556,7 @@
     {
     "fieldname":"PROJECTNAME" ,
     "codename":"ProjectName",
-    "field_logic_name":"项目",
+    "field_logic_name":"项目名称",
     "entity_name":"ZT_PROJECTPRODUCT",
     "ref_de":"ZT_PROJECT",
     "ref_field_name":"NAME",
@@ -38646,7 +38646,7 @@
     {
     "fieldname":"PROJECT" ,
     "codename":"Project",
-    "field_logic_name":"项目",
+    "field_logic_name":"项目编号",
     "entity_name":"ZT_PROJECTPRODUCT",
     "ref_de":"ZT_PROJECT",
     "ref_field_name":"ID",

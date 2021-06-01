@@ -43,12 +43,12 @@ public class ProjectProductSearchContext extends QueryWrapperContext<ProjectProd
         this.n_productname_like = n_productname_like;
     }
                 
-	private String n_projectname_eq;//[项目]
+	private String n_projectname_eq;//[项目名称]
 	public void setN_projectname_eq(String n_projectname_eq) {
         this.n_projectname_eq = n_projectname_eq;
     }
                 
-	private String n_projectname_like;//[项目]
+	private String n_projectname_like;//[项目名称]
 	public void setN_projectname_like(String n_projectname_like) {
         this.n_projectname_like = n_projectname_like;
     }
@@ -83,7 +83,7 @@ public class ProjectProductSearchContext extends QueryWrapperContext<ProjectProd
         this.n_branch_eq = n_branch_eq;
     }
                 
-	private Long n_project_eq;//[项目]
+	private Long n_project_eq;//[项目编号]
 	public void setN_project_eq(Long n_project_eq) {
         this.n_project_eq = n_project_eq;
     }
@@ -98,6 +98,9 @@ public class ProjectProductSearchContext extends QueryWrapperContext<ProjectProd
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
                      wrapper.like("t11.`name`", query)
+                        .or().like("t21.`NAME`", query)
+                        .or().like("t1.`PROJECT`", query)
+                        .or().like("t21.`CODE`", query)
             );
 		 }
 	}

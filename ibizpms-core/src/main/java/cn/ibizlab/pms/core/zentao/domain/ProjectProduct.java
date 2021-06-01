@@ -118,12 +118,12 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @ApiModelProperty("产品")
     private String productname;
     /**
-     * 项目
+     * 项目名称
      */
     @TableField(exist = false)
     @JSONField(name = "projectname")
     @JsonProperty("projectname")
-    @ApiModelProperty("项目")
+    @ApiModelProperty("项目名称")
     private String projectname;
     /**
      * 计划名称
@@ -158,12 +158,12 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @ApiModelProperty("平台/分支")
     private Long branch;
     /**
-     * 项目
+     * 项目编号
      */
     @TableField(value = "`PROJECT`")
     @JSONField(name = "project")
     @JsonProperty("project")
-    @ApiModelProperty("项目")
+    @ApiModelProperty("项目编号")
     private Long project;
     /**
      * 产品编号
@@ -314,7 +314,7 @@ public class ProjectProduct extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [项目]
+     * 设置 [项目编号]
      */
     public void setProject(Long project) {
         this.project = project;

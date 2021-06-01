@@ -4799,7 +4799,7 @@
                             "name" : "PRODUCTCODE",
                             "codeName" : "ProductCode"
                           },
-                          "width" : 100,
+                          "width" : 200,
                           "widthUnit" : "PX",
                           "enableSort" : true
                         } ],

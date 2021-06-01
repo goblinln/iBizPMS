@@ -41,7 +41,7 @@ export interface IProductProject extends IEntityBase {
      */
     productname?: any;
     /**
-     * 项目
+     * 项目名称
      */
     projectname?: any;
     /**
@@ -61,7 +61,7 @@ export interface IProductProject extends IEntityBase {
      */
     branch?: any;
     /**
-     * 项目
+     * 项目编号
      */
     project?: any;
     /**

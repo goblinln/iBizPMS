@@ -606,7 +606,7 @@
     "dataType" : "PICKUPTEXT",
     "importOrder" : 1000,
     "length" : 90,
-    "logicName" : "项目",
+    "logicName" : "项目名称",
     "name" : "PROJECTNAME",
     "getPSDER" : {
       "modelref" : true,
@@ -619,6 +619,7 @@
     "stdDataType" : 25,
     "stringLength" : 90,
     "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {
@@ -883,7 +884,7 @@
     "dataType" : "PICKUP",
     "importOrder" : 1000,
     "length" : 8,
-    "logicName" : "项目",
+    "logicName" : "项目编号",
     "name" : "PROJECT",
     "getPSDER" : {
       "modelref" : true,
@@ -896,6 +897,7 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
+    "enableQuickSearch" : true,
     "enableUIModify" : false,
     "linkDEField" : true
   }, {
@@ -1343,6 +1345,7 @@
     "stdDataType" : 25,
     "stringLength" : 45,
     "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
     "linkDEField" : true,
     "phisicalDEField" : false
   }, {

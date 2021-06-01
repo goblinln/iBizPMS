@@ -66,7 +66,7 @@ export abstract class ProductProjectBase extends EntityBase implements IProductP
      */
     productname?: any;
     /**
-     * 项目
+     * 项目名称
      */
     projectname?: any;
     /**
@@ -86,7 +86,7 @@ export abstract class ProductProjectBase extends EntityBase implements IProductP
      */
     branch?: any;
     /**
-     * 项目
+     * 项目编号
      */
     project?: any;
     /**

@@ -1063,7 +1063,7 @@
     "getPSNavigateContexts" : [ {
       "key" : "PRODUCT",
       "name" : "PRODUCT",
-      "value" : "projectproduct",
+      "value" : "product",
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
@@ -1242,7 +1242,7 @@
     "getPSNavigateContexts" : [ {
       "key" : "PRODUCT",
       "name" : "PRODUCT",
-      "value" : "projectproduct",
+      "value" : "product",
       "rawValue" : false
     } ],
     "parentFilter" : "product",

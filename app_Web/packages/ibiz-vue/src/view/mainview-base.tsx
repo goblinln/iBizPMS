@@ -797,13 +797,19 @@ export class MainViewBase extends ViewBase {
                         return;
                     }
                     let requestParam: Array<any> = [];
+                    const getActiveField:Function = (path:string) =>{
+                        const activeAppDER = minorPSAppDERSs.find((item:IPSAppDERS) =>{
+                            return (item.getMajorPSAppDataEntity() as IPSAppDataEntity).modelPath == path; 
+                        })
+                        return activeAppDER?.getParentPSAppDEField();
+                    }
                     result.datas.forEach((record: any) => {
                         let tempParam: any = {};
                         tempParam[
-                            (ModelTool.getAppEntityKeyField(otherView.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName.toLowerCase()
+                            (getActiveField((otherView.getPSAppDataEntity() as IPSAppDataEntity).modelPath))?.codeName.toLowerCase()
                         ] = this.context['srfparentkey'];
                         tempParam[
-                            (ModelTool.getAppEntityKeyField(openView.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName.toLowerCase()
+                            (getActiveField((openView.getPSAppDataEntity() as IPSAppDataEntity).modelPath))?.codeName.toLowerCase()
                         ] = record.srfkey;
                         requestParam.push(tempParam);
                     });

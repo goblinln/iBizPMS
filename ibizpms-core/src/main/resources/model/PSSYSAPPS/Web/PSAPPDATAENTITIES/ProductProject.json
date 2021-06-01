@@ -206,10 +206,11 @@
     "majorField" : true
   }, {
     "codeName" : "ProjectName",
-    "logicName" : "项目",
+    "logicName" : "项目名称",
     "name" : "PROJECTNAME",
     "stdDataType" : 25,
-    "stringLength" : 90
+    "stringLength" : 90,
+    "enableQuickSearch" : true
   }, {
     "codeName" : "Planname",
     "logicName" : "计划名称",
@@ -233,9 +234,10 @@
     "stdDataType" : 1
   }, {
     "codeName" : "Project",
-    "logicName" : "项目",
+    "logicName" : "项目编号",
     "name" : "PROJECT",
-    "stdDataType" : 1
+    "stdDataType" : 1,
+    "enableQuickSearch" : true
   }, {
     "codeName" : "ProductCode",
     "logicName" : "产品编号",
@@ -287,7 +289,8 @@
     "logicName" : "项目代号",
     "name" : "PROJECTCODE",
     "stdDataType" : 25,
-    "stringLength" : 45
+    "stringLength" : 45,
+    "enableQuickSearch" : true
   }, {
     "codeName" : "Projectend",
     "logicName" : "结束日期",
@@ -550,6 +553,15 @@
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "PRODUCTNAME",
     "codeName" : "ProductName"
+  }, {
+    "name" : "PROJECTNAME",
+    "codeName" : "ProjectName"
+  }, {
+    "name" : "PROJECT",
+    "codeName" : "Project"
+  }, {
+    "name" : "PROJECTCODE",
+    "codeName" : "Projectcode"
   } ],
   "storageMode" : 0,
   "defaultMode" : true,

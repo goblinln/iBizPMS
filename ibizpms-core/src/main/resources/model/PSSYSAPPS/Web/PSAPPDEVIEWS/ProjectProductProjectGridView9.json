@@ -195,7 +195,7 @@
         "name" : "PROJECTCODE",
         "codeName" : "Projectcode"
       },
-      "width" : 100,
+      "width" : 200,
       "widthUnit" : "PX",
       "enableSort" : true
     }, {
@@ -346,7 +346,7 @@
       },
       "allowEmpty" : true
     } ],
-    "pagingSize" : 50,
+    "pagingSize" : 20,
     "getRemovePSControlAction" : {
       "actionName" : "Remove",
       "actionType" : "DEACTION",
@@ -366,12 +366,12 @@
     "enableColFilter" : false,
     "enableCustomized" : true,
     "enableGroup" : false,
-    "enablePagingBar" : false,
+    "enablePagingBar" : true,
     "enableRowEdit" : false,
     "enableRowEditOrder" : false,
     "enableRowNew" : false,
     "forceFit" : false,
-    "hideHeader" : true,
+    "hideHeader" : false,
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",

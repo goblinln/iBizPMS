@@ -121,7 +121,7 @@ public class ProductProjectDTO extends DTOBase implements Serializable {
     @JSONField(name = "projectname")
     @JsonProperty("projectname")
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
-    @ApiModelProperty("项目")
+    @ApiModelProperty("项目名称")
     private String projectname;
 
     /**
@@ -172,8 +172,8 @@ public class ProductProjectDTO extends DTOBase implements Serializable {
     @JSONField(name = "project")
     @JsonProperty("project")
     @JsonSerialize(using = ToStringSerializer.class)
-    @NotNull(message = "[项目]不允许为空!")
-    @ApiModelProperty("项目")
+    @NotNull(message = "[项目编号]不允许为空!")
+    @ApiModelProperty("项目编号")
     private Long project;
 
     /**
