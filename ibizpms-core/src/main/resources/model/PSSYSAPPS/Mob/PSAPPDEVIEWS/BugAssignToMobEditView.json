@@ -1050,13 +1050,13 @@
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
-                "name" : "周报日志",
+                "name" : "待办日志",
                 "rSMode" : 2,
                 "enableCreateDataRS" : false,
                 "enableDEAction" : true,
@@ -1071,13 +1071,13 @@
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+                  "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
                 },
-                "name" : "代办日志",
+                "name" : "周报日志",
                 "rSMode" : 2,
                 "enableCreateDataRS" : false,
                 "enableDEAction" : true,

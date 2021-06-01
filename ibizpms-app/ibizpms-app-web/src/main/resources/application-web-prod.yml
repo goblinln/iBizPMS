@@ -91,6 +91,10 @@ zuul:
       path: /productbranches/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    zt_action:
+      path: /actions/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_taskestimate:
       path: /taskestimates/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -101,6 +105,10 @@ zuul:
       stripPrefix: false
     zt_project:
       path: /projects/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    zt_history:
+      path: /histories/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_productmodule:
@@ -507,16 +515,8 @@ zuul:
       path: /accounttaskestimates/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
-    zt_action:
-      path: /actions/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
     dynafilter:
       path: /dynafilters/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    zt_history:
-      path: /histories/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     zt_module:

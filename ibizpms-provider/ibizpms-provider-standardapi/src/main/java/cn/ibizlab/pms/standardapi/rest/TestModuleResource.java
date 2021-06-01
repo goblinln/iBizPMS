@@ -66,6 +66,30 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @ApiOperation(value = "根据产品删除测试模块", tags = {"测试模块" },  notes = "根据产品删除测试模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testmodules/{testmodule_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @ApiOperation(value = "根据产品批量删除测试模块", tags = {"测试模块" },  notes = "根据产品批量删除测试模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testmodules/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        testmoduleService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @ApiOperation(value = "根据产品获取测试模块草稿", tags = {"测试模块" },  notes = "根据产品获取测试模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testmodules/getdraft")
+    public ResponseEntity<TestModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestModuleDTO dto) {
+        TestModule domain = testmoduleMapping.toDomain(dto);
+        domain.setRoot(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(testmoduleService.getDraft(domain)));
+    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试模块" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testmodules/fetchdefault")
@@ -98,30 +122,6 @@ public class TestModuleResource {
         TestModule domain = testmoduleService.get(testmodule_id);
         TestModuleDTO dto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
-    @ApiOperation(value = "根据产品删除测试模块", tags = {"测试模块" },  notes = "根据产品删除测试模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testmodules/{testmodule_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
-    @ApiOperation(value = "根据产品批量删除测试模块", tags = {"测试模块" },  notes = "根据产品批量删除测试模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        testmoduleService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
-    @ApiOperation(value = "根据产品获取测试模块草稿", tags = {"测试模块" },  notes = "根据产品获取测试模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testmodules/getdraft")
-    public ResponseEntity<TestModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestModuleDTO dto) {
-        TestModule domain = testmoduleMapping.toDomain(dto);
-        domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(testmoduleService.getDraft(domain)));
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")

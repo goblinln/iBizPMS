@@ -133,21 +133,6 @@ public class HistoryResource {
 	}
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'READ')")
-	@ApiOperation(value = "根据待办系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据待办系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/{action_id}/histories/fetchdefault")
-	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByTodoAction(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
-        context.setN_action_eq(action_id);
-        Page<History> domains = historyService.searchDefault(context) ;
-        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-
     @PreAuthorize("@TaskRuntime.test(#task_id, 'READ')")
 	@ApiOperation(value = "根据任务系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据任务系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
@@ -182,6 +167,21 @@ public class HistoryResource {
 	@ApiOperation(value = "根据周报系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据周报系统日志获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/{ibzweekly_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByIbzWeeklyAction(@PathVariable("ibzweekly_id") Long ibzweekly_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
+        context.setN_action_eq(action_id);
+        Page<History> domains = historyService.searchDefault(context) ;
+        List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+    @PreAuthorize("@TodoRuntime.test(#todo_id, 'READ')")
+	@ApiOperation(value = "根据待办系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据待办系统日志获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/{action_id}/histories/fetchdefault")
+	public ResponseEntity<List<HistoryDTO>> fetchHistoryDefaultByTodoAction(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
         List<HistoryDTO> list = historyMapping.toDto(domains.getContent());

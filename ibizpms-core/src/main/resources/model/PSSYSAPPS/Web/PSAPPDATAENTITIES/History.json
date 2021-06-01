@@ -399,7 +399,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json"
     },
-    "name" : "操作历史记录",
+    "name" : "ACTION__HISTORY",
     "getParentPSAppDEField" : {
       "name" : "ACTION",
       "codeName" : "Action"
@@ -430,5 +430,5 @@
   "enableUIModify" : true,
   "enableUIRemove" : true,
   "enableWFActions" : false,
-  "major" : true
+  "major" : false
 }
