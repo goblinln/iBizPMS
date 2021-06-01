@@ -2,11 +2,11 @@ zuul:
   routes:
     common:
       path:
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     v7:
       path: /appdata
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibizutil:
       path: /ibizutil/**
@@ -14,11 +14,15 @@ zuul:
       stripPrefix: false
     ibizutilpms:
       path: /ibizutilpms/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     recordloginlog:
       path: /recordloginlog
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    sys_user:
+      path: /accounts/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
 #    dingtalktoken:
 #      path: /uaa/open/dingtalk/access_token
@@ -38,7 +42,7 @@ zuul:
 #      stripPrefix: false
     loginv7:
       path: /v7/login
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibzuaa-api}
       stripPrefix: false
 #    changepwd:
 #      path: /v7/changepwd
@@ -50,7 +54,7 @@ zuul:
 #      stripPrefix: false
     ibzemp:
       path: /sysemployees/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
 
 environment:
   - TZ=Asia/Shanghai
@@ -61,6 +65,7 @@ ibiz:
     service:
       pms-webapi: ibizpms-webapi
       ibizpms-webapi: ibizpms-webapi
+      ibizpms-standardapi: ibizpms-standardapi
       uaa: ibizrt4ebsx-rt4ebsx
       ou: ibizrt4ebsx-rt4ebsx
   auth:
