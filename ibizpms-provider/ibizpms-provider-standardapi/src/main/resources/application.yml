@@ -1,5 +1,5 @@
 spring:
   profiles:
-    include: sys ,nacos, standardapi-prod
+    include: sys ,nacos, standardapi-prod, zentao
   application:
     name: ibizpms-standardapi
