@@ -775,9 +775,9 @@ export class MainViewBase extends ViewBase {
                     return;
                 }
                 let openView: IPSAppDEView = openViewModel.getRefPSAppView() as IPSAppDEView;
-                await openView.fill();
+                await openView.fill(true);
                 let otherView: IPSAppDEView = otherViewModel.getRefPSAppView() as IPSAppDEView;
-                await otherView.fill();
+                await otherView.fill(true);
                 let view: any = {
                     viewname: 'app-view-shell',
                     height: openView.height,
@@ -800,7 +800,7 @@ export class MainViewBase extends ViewBase {
                     result.datas.forEach((record: any) => {
                         let tempParam: any = {};
                         tempParam[
-                            (ModelTool.getAppEntityKeyField(otherView.getPSAppDataEntity() as IPSAppDataEntity,) as IPSAppDEField)?.codeName.toLowerCase()
+                            (ModelTool.getAppEntityKeyField(otherView.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName.toLowerCase()
                         ] = this.context['srfparentkey'];
                         tempParam[
                             (ModelTool.getAppEntityKeyField(openView.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName.toLowerCase()

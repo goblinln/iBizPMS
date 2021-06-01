@@ -2515,7 +2515,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-136-90">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-137-90">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>
@@ -2571,7 +2571,7 @@
 
 
     <!--输出实体[ZT_PROJECTPRODUCT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-41-95">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-43-95">
         <createTable tableName="zt_projectproduct">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
