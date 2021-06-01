@@ -76,6 +76,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "ACCOUNT",
+    "name" : "ACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  } ],
   "getPSAppViewNavParams" : [ {
     "key" : "n_createmanname_eq",
     "name" : "n_createmanname_eq",

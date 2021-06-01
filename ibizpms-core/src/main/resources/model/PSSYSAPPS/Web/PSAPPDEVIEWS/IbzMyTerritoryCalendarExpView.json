@@ -41,6 +41,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "ACCOUNT",
+    "name" : "ACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  } ],
   "getPSControls" : [ {
     "codeName" : "CalendarExpViewcalendarexpbar",
     "controlType" : "CALENDAREXPBAR",

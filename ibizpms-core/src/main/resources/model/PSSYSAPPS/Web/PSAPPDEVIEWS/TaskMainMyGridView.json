@@ -87,6 +87,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "ACCOUNT",
+    "name" : "ACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_RIGHT",

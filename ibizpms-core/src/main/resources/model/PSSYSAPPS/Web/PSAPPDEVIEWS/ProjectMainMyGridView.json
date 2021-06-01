@@ -121,14 +121,9 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "SRFLOGINNAME",
-    "name" : "SRFLOGINNAME",
-    "value" : "srfloginname",
-    "rawValue" : false
-  }, {
-    "key" : "N_ACCOUNT_EQ",
-    "name" : "N_ACCOUNT_EQ",
-    "value" : "srfloginname",
+    "key" : "ACCOUNT",
+    "name" : "ACCOUNT",
+    "value" : "srfuserid",
     "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {

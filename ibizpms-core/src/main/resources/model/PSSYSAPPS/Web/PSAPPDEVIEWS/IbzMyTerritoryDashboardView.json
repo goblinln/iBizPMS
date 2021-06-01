@@ -17,6 +17,12 @@
       "paramType" : "CTRL"
     } ]
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "ACCOUNT",
+    "name" : "ACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  } ],
   "getPSControls" : [ {
     "codeName" : "Home",
     "controlType" : "DASHBOARD",
