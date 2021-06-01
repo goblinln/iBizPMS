@@ -510,10 +510,10 @@ public class ActionExService extends ActionServiceImpl {
     }
 
     @Override
-    public List<Action> selectProductTrends(ActionSearchContext context) {
+    public Page<Action> searchProductTrends(ActionSearchContext context) {
         context.setN_objectid_eq(null);
         context.setN_objecttype_eq(null);
-        return super.selectProductTrends(context);
+        return super.searchProductTrends(context);
     }
 }
 
