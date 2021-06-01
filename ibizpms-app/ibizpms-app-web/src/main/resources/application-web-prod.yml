@@ -327,10 +327,6 @@ zuul:
       path: /ibzlibcasesteptmps/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
-    zt_todo:
-      path: /todos/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
     ibz_libmodule:
       path: /ibzlibmodules/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
@@ -513,6 +509,10 @@ zuul:
       stripPrefix: false
     ibzpro_productline:
       path: /ibzproproductlines/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    zt_todo:
+      path: /todos/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
   sensitive-headers:
