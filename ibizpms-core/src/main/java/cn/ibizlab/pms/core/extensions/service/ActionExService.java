@@ -7,6 +7,7 @@ import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
 import cn.ibizlab.pms.core.ou.service.ISysEmployeeService;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.*;
+import cn.ibizlab.pms.core.zentao.filter.ActionSearchContext;
 import cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.ActionServiceImpl;
@@ -17,6 +18,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -500,5 +502,18 @@ public class ActionExService extends ActionServiceImpl {
         }
     }
 
+    @Override
+    public Page<Action> searchProjectTrends(ActionSearchContext context) {
+        context.setN_objectid_eq(null);
+        context.setN_objecttype_eq(null);
+        return super.searchProjectTrends(context);
+    }
+
+    @Override
+    public List<Action> selectProductTrends(ActionSearchContext context) {
+        context.setN_objectid_eq(null);
+        context.setN_objecttype_eq(null);
+        return super.selectProductTrends(context);
+    }
 }
 
