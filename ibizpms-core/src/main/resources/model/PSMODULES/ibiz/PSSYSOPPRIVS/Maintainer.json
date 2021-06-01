@@ -123,6 +123,26 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     }
   }, {
+    "name" : "运维人员-ZT_PROJECT[项目Bug管理（公开项目）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BugManage_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "运维人员-ZT_PROJECT[项目Bug管理（创建者或者更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BugManage_OpenBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
     "name" : "运维人员-ZT_TASK[当前组织（创建）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -327,6 +347,16 @@
     "getPSDEUserRole" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "运维人员-ZT_PROJECT[项目Bug管理（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BugManage_DEV.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,

@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BugManage_Open.json",
+  "name" : "项目Bug管理（公开项目）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenQuery"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "BUGMANAGE",
+    "name" : "BUGMANAGE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "BUGMANAGE"
+    }
+  } ],
+  "roleTag" : "Project_BugManage_Open",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

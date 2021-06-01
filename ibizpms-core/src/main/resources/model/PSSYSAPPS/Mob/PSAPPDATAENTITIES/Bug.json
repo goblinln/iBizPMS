@@ -31,23 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "AssignTo",
     "methodType" : "DEACTION",
     "name" : "assignTo",
@@ -65,37 +48,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
+    "codeName" : "Activate",
     "methodType" : "DEACTION",
-    "name" : "Get",
+    "name" : "Activate",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Get.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Activate.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Activate"
     },
     "builtinMethod" : false
   }, {
@@ -113,6 +79,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Confirm",
+    "methodType" : "DEACTION",
+    "name" : "Confirm",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CONFIRM"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Confirm"
     },
     "builtinMethod" : false
   }, {
@@ -150,37 +133,54 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Activate",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Activate",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Activate.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ACTIVATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Activate"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Confirm",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "Confirm",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CONFIRM"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Confirm"
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -592,23 +592,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchProjectBug",
     "methodType" : "FETCH",
     "name" : "FetchProjectBugDS",
@@ -623,6 +606,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
@@ -1469,20 +1469,54 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Create",
+    "codeName" : "AssignTo",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "assignTo",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ASSIGNTO"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "AssignTo"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Activate",
+    "methodType" : "DEACTION",
+    "name" : "Activate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Activate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Activate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -1503,88 +1537,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "AssignTo",
+    "codeName" : "Confirm",
     "methodType" : "DEACTION",
-    "name" : "assignTo",
+    "name" : "Confirm",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ASSIGNTO"
+      "id" : "CONFIRM"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
+      "id" : "Confirm"
     },
     "builtinMethod" : false
   }, {
@@ -1622,40 +1588,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Activate",
-    "methodType" : "DEACTION",
-    "name" : "Activate",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Activate.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ACTIVATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Confirm",
-    "methodType" : "DEACTION",
-    "name" : "Confirm",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CONFIRM"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Confirm"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchProjectBug",
     "methodType" : "FETCH",
     "name" : "FetchProjectBugDS",
@@ -1670,6 +1602,74 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProjectBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -5059,8 +5059,28 @@
     "name" : "ACTIVATE",
     "id" : "ZTProduct__ACTIVATE"
   }, {
+    "logicName" : "项目-激活",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "ACTIVATE",
+    "id" : "ZTProject__ACTIVATE"
+  }, {
     "logicName" : "激活",
     "name" : "ACTIVATE"
+  }, {
+    "logicName" : "项目-指派",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "ASSIGNTO",
+    "id" : "ZTProject__ASSIGNTO"
   }, {
     "logicName" : "产品-指派",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -5088,6 +5108,16 @@
     "name" : "BUILDLINK",
     "id" : "ZTProduct__BUILDLINK"
   }, {
+    "logicName" : "项目-版本关联",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "BUILDLINK",
+    "id" : "ZTProject__BUILDLINK"
+  }, {
     "logicName" : "关闭",
     "name" : "CLOSE"
   }, {
@@ -5101,6 +5131,16 @@
     "name" : "CLOSE",
     "id" : "ZTProduct__CLOSE"
   }, {
+    "logicName" : "项目-关闭",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CLOSE",
+    "id" : "ZTProject__CLOSE"
+  }, {
     "logicName" : "产品-确认",
     "mapPSDEName" : "ZT_PRODUCT",
     "mapPSDEOPPrivName" : "BUGMANAGE",
@@ -5110,6 +5150,16 @@
     },
     "name" : "CONFIRM",
     "id" : "ZTProduct__CONFIRM"
+  }, {
+    "logicName" : "项目-确认",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CONFIRM",
+    "id" : "ZTProject__CONFIRM"
   }, {
     "logicName" : "确认",
     "name" : "CONFIRM"
@@ -5124,11 +5174,31 @@
     "name" : "CREATE",
     "id" : "ZTProduct__CREATE"
   }, {
+    "logicName" : "项目-建立",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProject__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "项目-删除",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "产品-删除",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -5150,8 +5220,28 @@
     "name" : "FAVORITES",
     "id" : "ZTProduct__FAVORITES"
   }, {
+    "logicName" : "项目-Bug收藏",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "FAVORITES",
+    "id" : "ZTProject__FAVORITES"
+  }, {
     "logicName" : "Bug收藏",
     "name" : "FAVORITES"
+  }, {
+    "logicName" : "项目-管理",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProject__MANAGE"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
@@ -5165,6 +5255,16 @@
     },
     "name" : "MANAGE",
     "id" : "ZTProduct__MANAGE"
+  }, {
+    "logicName" : "项目-Bug取消收藏",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "NFAVORITES",
+    "id" : "ZTProject__NFAVORITES"
   }, {
     "logicName" : "产品-Bug取消收藏",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -5181,6 +5281,16 @@
   }, {
     "logicName" : "计划关联",
     "name" : "PLANLINK"
+  }, {
+    "logicName" : "项目-计划关联",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "PLANLINK",
+    "id" : "ZTProject__PLANLINK"
   }, {
     "logicName" : "产品-计划关联",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -5202,6 +5312,16 @@
     "name" : "READ",
     "id" : "ZTProduct__READ"
   }, {
+    "logicName" : "项目-读取",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProject__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
@@ -5214,6 +5334,16 @@
     },
     "name" : "RELEASELINK",
     "id" : "ZTProduct__RELEASELINK"
+  }, {
+    "logicName" : "项目-发布关联",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "RELEASELINK",
+    "id" : "ZTProject__RELEASELINK"
   }, {
     "logicName" : "发布关联",
     "name" : "RELEASELINK"
@@ -5230,6 +5360,26 @@
   }, {
     "logicName" : "解决",
     "name" : "RESOLVE"
+  }, {
+    "logicName" : "项目-解决",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "RESOLVE",
+    "id" : "ZTProject__RESOLVE"
+  }, {
+    "logicName" : "项目-转用例",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "TOCASE",
+    "id" : "ZTProject__TOCASE"
   }, {
     "logicName" : "产品-转用例",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -5256,6 +5406,26 @@
     },
     "name" : "TOSTORY",
     "id" : "ZTProduct__TOSTORY"
+  }, {
+    "logicName" : "项目-转需求",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "TOSTORY",
+    "id" : "ZTProject__TOSTORY"
+  }, {
+    "logicName" : "项目-更新",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "BUGMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProject__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

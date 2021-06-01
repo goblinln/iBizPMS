@@ -184,4 +184,16 @@ export class TestBaseService extends EntityBaseService<ITest> {
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/tests/fetchcurdefault`, _data);
     }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/tests/${_context.test}`);
+        return res;
+    }
 }

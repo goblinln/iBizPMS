@@ -65,6 +65,17 @@ public class TestResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#test_id, 'READ')")
+    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/tests/{test_id}")
+    public ResponseEntity<TestDTO> get(@PathVariable("test_id") Long test_id) {
+        Product domain = productService.get(test_id);
+        TestDTO dto = testMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(test_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/{action}")

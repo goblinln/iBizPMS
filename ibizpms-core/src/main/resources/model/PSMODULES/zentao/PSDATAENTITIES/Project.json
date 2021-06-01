@@ -6825,6 +6825,9 @@
     "logicName" : "激活",
     "name" : "ACTIVATE"
   }, {
+    "logicName" : "Bug管理",
+    "name" : "BUGMANAGE"
+  }, {
     "logicName" : "版本管理",
     "name" : "BUILDMANAGE"
   }, {
@@ -6887,6 +6890,63 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BugManage_DEV.json",
+    "name" : "项目Bug管理（参与者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "BUGMANAGE",
+      "name" : "BUGMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "BUGMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_BugManage_DEV",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BugManage_Open.json",
+    "name" : "项目Bug管理（公开项目）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "BUGMANAGE",
+      "name" : "BUGMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "BUGMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_BugManage_Open",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BugManage_OpenBy.json",
+    "name" : "项目Bug管理（创建者或者更新者）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "BUGMANAGE",
+      "name" : "BUGMANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "BUGMANAGE"
+      }
+    } ],
+    "roleTag" : "Project_BugManage_OpenBy",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_BuildManage_DEV.json",
     "name" : "项目版本管理（参与者）（跟随角色）",
     "getPSDEDataSet" : {
