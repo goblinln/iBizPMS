@@ -377,6 +377,15 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
+		mainproject_grid: {
+			columns: {
+				'name': commonLogic.appcommonhandle("产品名称",null),
+				'code': commonLogic.appcommonhandle("产品代号",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
+			},
+		},
 		main_grid: {
 			columns: {
 				'name': commonLogic.appcommonhandle("产品名称",null),
@@ -394,15 +403,6 @@ function getLocaleResourceBase(){
 				'code': commonLogic.appcommonhandle("产品代号",null),
 				'status': commonLogic.appcommonhandle("状态",null),
 				'type': commonLogic.appcommonhandle("产品类型",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
-			},
-		},
-		mainproject_grid: {
-			columns: {
-				'name': commonLogic.appcommonhandle("产品名称",null),
-				'code': commonLogic.appcommonhandle("产品代号",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
@@ -462,6 +462,12 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
+		editviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Save And Close",null),
+				tip: commonLogic.appcommonhandle("Save And Close Window",null),
+			},
+		},
 		listexpviewlistexpbar_list_quicktoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("New",null),
@@ -475,12 +481,6 @@ function getLocaleResourceBase(){
 			},
 		},
 		testgridviewtoolbar_toolbar: {
-		},
-		editviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("Save And Close",null),
-				tip: commonLogic.appcommonhandle("Save And Close Window",null),
-			},
 		},
 		leftsidebarlistviewtoolbar_toolbar: {
 			'deuiaction3_manager': {

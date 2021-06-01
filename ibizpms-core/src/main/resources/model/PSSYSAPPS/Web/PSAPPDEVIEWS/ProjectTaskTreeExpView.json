@@ -911,7 +911,7 @@
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
-          "value" : "projectproduct",
+          "value" : "product",
           "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
@@ -1069,7 +1069,7 @@
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
-          "value" : "projectproduct",
+          "value" : "product",
           "rawValue" : false
         } ],
         "parentFilter" : "product",
@@ -1323,7 +1323,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
         },
         "getPSDEContextMenu" : {
           "codeName" : "TaskTreeExpViewzt_product_cm",

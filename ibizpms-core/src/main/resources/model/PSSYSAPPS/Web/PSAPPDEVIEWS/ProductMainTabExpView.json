@@ -94,11 +94,11 @@
       }
     }, {
       "name" : "EXPITEM:tabviewpanel5",
-      "realTitle" : "项目产品表格视图（关联项目）",
+      "realTitle" : "project表格视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectProductProjectGridView9.json",
-        "viewType" : "DEGRIDVIEW9"
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectCurProductGridView.json",
+        "viewType" : "DEGRIDVIEW"
       }
     }, {
       "name" : "EXPITEM:tabviewpanel3",
@@ -4563,8 +4563,8 @@
       "controlType" : "TABVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectProductProjectGridView9.json",
-        "viewType" : "DEGRIDVIEW9"
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectCurProductGridView.json",
+        "viewType" : "DEGRIDVIEW"
       },
       "name" : "tabviewpanel5",
       "getPSAppDataEntity" : {

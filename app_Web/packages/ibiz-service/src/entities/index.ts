@@ -1,6 +1,5 @@
 export * from './interface';
 export * from './product-plan/product-plan';
-export * from './product-project/product-project';
 export * from './test-case/test-case';
 export * from './product/product';
 export * from './project-burn/project-burn';
@@ -29,6 +28,7 @@ export * from './project-module/project-module';
 export * from './product-release/product-release';
 export * from './dyna-dashboard/dyna-dashboard';
 export * from './ibz-report-role-config/ibz-report-role-config';
+export * from './project-product/project-product';
 export * from './sys-user/sys-user';
 export * from './ibzcase-step/ibzcase-step';
 export * from './task-team/task-team';

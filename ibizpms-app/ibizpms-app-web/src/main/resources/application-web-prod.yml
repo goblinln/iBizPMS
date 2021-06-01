@@ -71,10 +71,6 @@ zuul:
       path: /productplans/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
-    zt_projectproduct:
-      path: /productprojects/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
-      stripPrefix: false
     zt_case:
       path: /testcases/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -185,6 +181,10 @@ zuul:
       stripPrefix: false
     ibz_report_role_config:
       path: /ibzreportroleconfigs/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    zt_projectproduct:
+      path: /projectproducts/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     sys_user:

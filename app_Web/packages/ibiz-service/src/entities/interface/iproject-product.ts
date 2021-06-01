@@ -41,7 +41,7 @@ export interface IProjectProduct extends IEntityBase {
      */
     productname?: any;
     /**
-     * 项目
+     * 项目名称
      */
     projectname?: any;
     /**
@@ -61,7 +61,7 @@ export interface IProjectProduct extends IEntityBase {
      */
     branch?: any;
     /**
-     * 项目
+     * 项目编号
      */
     project?: any;
     /**
@@ -92,4 +92,18 @@ export interface IProjectProduct extends IEntityBase {
      * 更新时间
      */
     updatedate?: any;
+    /**
+     * 项目状态
+     *
+     * @type {('wait' | 'doing' | 'suspended' | 'closed')} wait: 未开始, doing: 进行中, suspended: 已挂起, closed: 已关闭
+     */
+    status?: 'wait' | 'doing' | 'suspended' | 'closed';
+    /**
+     * 项目代号
+     */
+    projectcode?: any;
+    /**
+     * 结束日期
+     */
+    projectend?: any;
 }

@@ -1,5 +1,4 @@
 export * from './product-plan/product-plan-ui-service';
-export * from './product-project/product-project-ui-service';
 export * from './test-case/test-case-ui-service';
 export * from './product/product-ui-service';
 export * from './project-burn/project-burn-ui-service';
@@ -28,6 +27,7 @@ export * from './project-module/project-module-ui-service';
 export * from './product-release/product-release-ui-service';
 export * from './dyna-dashboard/dyna-dashboard-ui-service';
 export * from './ibz-report-role-config/ibz-report-role-config-ui-service';
+export * from './project-product/project-product-ui-service';
 export * from './sys-user/sys-user-ui-service';
 export * from './ibzcase-step/ibzcase-step-ui-service';
 export * from './task-team/task-team-ui-service';

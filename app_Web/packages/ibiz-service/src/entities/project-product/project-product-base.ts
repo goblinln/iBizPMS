@@ -66,7 +66,7 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      */
     productname?: any;
     /**
-     * 项目
+     * 项目名称
      */
     projectname?: any;
     /**
@@ -86,7 +86,7 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      */
     branch?: any;
     /**
-     * 项目
+     * 项目编号
      */
     project?: any;
     /**
@@ -117,6 +117,20 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      * 更新时间
      */
     updatedate?: any;
+    /**
+     * 项目状态
+     *
+     * @type {('wait' | 'doing' | 'suspended' | 'closed')} wait: 未开始, doing: 进行中, suspended: 已挂起, closed: 已关闭
+     */
+    status?: 'wait' | 'doing' | 'suspended' | 'closed';
+    /**
+     * 项目代号
+     */
+    projectcode?: any;
+    /**
+     * 结束日期
+     */
+    projectend?: any;
 
     /**
      * 重置实体数据

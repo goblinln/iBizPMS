@@ -1,5 +1,4 @@
 import productplan_zh_CN from '@locale/lanres/entities/product-plan/product-plan_zh_CN';
-import productproject_zh_CN from '@locale/lanres/entities/product-project/product-project_zh_CN';
 import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
@@ -28,6 +27,7 @@ import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-
 import productrelease_zh_CN from '@locale/lanres/entities/product-release/product-release_zh_CN';
 import dynadashboard_zh_CN from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_zh_CN';
 import ibzreportroleconfig_zh_CN from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_zh_CN';
+import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
 import sysuser_zh_CN from '@locale/lanres/entities/sys-user/sys-user_zh_CN';
 import ibzcasestep_zh_CN from '@locale/lanres/entities/ibzcase-step/ibzcase-step_zh_CN';
 import taskteam_zh_CN from '@locale/lanres/entities/task-team/task-team_zh_CN';
@@ -420,7 +420,6 @@ function getAppLocale(){
         },
         entities: {
             'productplan': productplan_zh_CN(),
-            'productproject': productproject_zh_CN(),
             'testcase': testcase_zh_CN(),
             'product': product_zh_CN(),
             'projectburn': projectburn_zh_CN(),
@@ -449,6 +448,7 @@ function getAppLocale(){
             'productrelease': productrelease_zh_CN(),
             'dynadashboard': dynadashboard_zh_CN(),
             'ibzreportroleconfig': ibzreportroleconfig_zh_CN(),
+            'projectproduct': projectproduct_zh_CN(),
             'sysuser': sysuser_zh_CN(),
             'ibzcasestep': ibzcasestep_zh_CN(),
             'taskteam': taskteam_zh_CN(),

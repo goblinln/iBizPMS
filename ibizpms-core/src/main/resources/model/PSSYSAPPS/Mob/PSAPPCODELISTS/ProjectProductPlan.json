@@ -4,5 +4,13 @@
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ProjectProductPlan.json",
   "emptyText" : "未定义",
-  "name" : "项目产品计划（动态）"
+  "name" : "项目产品计划（动态）",
+  "getPSAppDEDataSet" : {
+    "modelref" : true,
+    "id" : "FetchProjectPlan"
+  },
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+  }
 }

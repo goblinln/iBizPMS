@@ -1,5 +1,4 @@
 export * from './iproduct-plan';
-export * from './iproduct-project';
 export * from './itest-case';
 export * from './iproduct';
 export * from './iproject-burn';
@@ -28,6 +27,7 @@ export * from './iproject-module';
 export * from './iproduct-release';
 export * from './idyna-dashboard';
 export * from './iibz-report-role-config';
+export * from './iproject-product';
 export * from './isys-user';
 export * from './iibzcase-step';
 export * from './itask-team';

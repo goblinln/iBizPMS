@@ -628,6 +628,20 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
+		curproductgridviewtoolbar_toolbar: {
+			'deuiaction2': {
+				caption: commonLogic.appcommonhandle("刷新",null),
+				tip: commonLogic.appcommonhandle("刷新",null),
+			},
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Export",null),
+				tip: commonLogic.appcommonhandle("Export {0} Data To Excel",null),
+			},
+			'deuiaction4': {
+				caption: commonLogic.appcommonhandle("Filter",null),
+				tip: commonLogic.appcommonhandle("Filter",null),
+			},
+		},
 		editviewtoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("Save And Close",null),
@@ -681,20 +695,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("新建",null),
 				tip: commonLogic.appcommonhandle("新建",null),
 			},
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("Export",null),
-				tip: commonLogic.appcommonhandle("Export {0} Data To Excel",null),
-			},
-			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("Filter",null),
-				tip: commonLogic.appcommonhandle("Filter",null),
-			},
-		},
-		curproductgridviewtoolbar_toolbar: {
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("刷新",null),
 				tip: commonLogic.appcommonhandle("刷新",null),

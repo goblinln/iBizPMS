@@ -54,7 +54,6 @@ export class AuthServiceRegister{
      */
     protected init(): void {
                 AuthServiceRegister.allAuthServiceMap.set('productplan', () => import('../authservice/product-plan/product-plan-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('productproject', () => import('../authservice/product-project/product-project-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testcase', () => import('../authservice/test-case/test-case-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('product', () => import('../authservice/product/product-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectburn', () => import('../authservice/project-burn/project-burn-auth-service'));
@@ -83,6 +82,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('productrelease', () => import('../authservice/product-release/product-release-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('dynadashboard', () => import('../authservice/dyna-dashboard/dyna-dashboard-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzreportroleconfig', () => import('../authservice/ibz-report-role-config/ibz-report-role-config-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('projectproduct', () => import('../authservice/project-product/project-product-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysuser', () => import('../authservice/sys-user/sys-user-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzcasestep', () => import('../authservice/ibzcase-step/ibzcase-step-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('taskteam', () => import('../authservice/task-team/task-team-auth-service'));

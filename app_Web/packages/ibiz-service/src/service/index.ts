@@ -1,6 +1,5 @@
 export { GlobalService } from './global.service';
 export * from './product-plan/product-plan.service';
-export * from './product-project/product-project.service';
 export * from './test-case/test-case.service';
 export * from './product/product.service';
 export * from './project-burn/project-burn.service';
@@ -29,6 +28,7 @@ export * from './project-module/project-module.service';
 export * from './product-release/product-release.service';
 export * from './dyna-dashboard/dyna-dashboard.service';
 export * from './ibz-report-role-config/ibz-report-role-config.service';
+export * from './project-product/project-product.service';
 export * from './sys-user/sys-user.service';
 export * from './ibzcase-step/ibzcase-step.service';
 export * from './task-team/task-team.service';

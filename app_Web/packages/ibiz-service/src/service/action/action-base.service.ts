@@ -132,55 +132,122 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.condCache.get('view');
     }
     /**
-     * FetchProject
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmy`, _data);
         }
         if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmy`, _data);
         }
         if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
         }
         if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmy`, _data);
         }
         if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmy`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmy`, _data);
         }
         if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmy`, _data);
         }
         if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
         }
         if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmy`, _data);
         }
         if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmy`, _data);
         }
         if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmy`, _data);
         }
         if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproject`, _data);
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmy`, _data);
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchproject`, _data);
+            return this.http.post(`/projects/${_context.project}/actions/fetchmy`, _data);
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchproject`, _data);
+            return this.http.post(`/products/${_context.product}/actions/fetchmy`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testreport && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.test && _context.bug && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.testtask && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.testreport && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.story && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.task && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.build && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.bug && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.story && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.productplan && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.build && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.testsuite && _context.action) {
+            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.project && _context.action) {
+            const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.product && _context.action) {
+            const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -403,108 +470,55 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProduct
+     * FetchProject
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproject`, _data);
         }
         if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);
         }
         if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
         }
         if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
         }
         if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
         }
         if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
         }
         if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
         }
         if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
         }
         if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
         }
         if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
         }
         if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproject`, _data);
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
+            return this.http.post(`/projects/${_context.project}/actions/fetchproject`, _data);
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmy`, _data);
-        }
-        if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmy`, _data);
-        }
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
-        }
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmy`, _data);
-        }
-        if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmy`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmy`, _data);
-        }
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmy`, _data);
-        }
-        if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmy`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmy`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmy`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmy`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmy`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchmy`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchmy`, _data);
+            return this.http.post(`/products/${_context.product}/actions/fetchproject`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -558,73 +572,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/actions/fetchmain`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testreport && _context.action) {
-            const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.test && _context.bug && _context.action) {
-            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.project && _context.testtask && _context.action) {
-            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.project && _context.testreport && _context.action) {
-            const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.project && _context.story && _context.action) {
-            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.project && _context.task && _context.action) {
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.project && _context.build && _context.action) {
-            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.project && _context.bug && _context.action) {
-            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.product && _context.story && _context.action) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.product && _context.productplan && _context.action) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.product && _context.build && _context.action) {
-            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.testsuite && _context.action) {
-            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.project && _context.action) {
-            const res = await this.http.get(`/projects/${_context.project}/actions/${_context.action}`);
-            return res;
-        }
-        if (_context.product && _context.action) {
-            const res = await this.http.get(`/products/${_context.product}/actions/${_context.action}`);
-            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -720,6 +667,59 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/products/${_context.product}/actions/getdraft`, _data);
             return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testreport && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.testreport && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

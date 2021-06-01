@@ -1,4 +1,4 @@
-import { ProductProjectService } from "../service";
+import { ProjectService } from "../service";
 /**
  * 代码表--当前产品项目
  *
@@ -88,12 +88,12 @@ export default class CurProductProject {
     }
 
     /**
-     * 项目产品应用实体服务对象
+     * 项目应用实体服务对象
      *
-     * @type {ProductProjectService}
+     * @type {ProjectService}
      * @memberof CurProductProject
      */
-    public productprojectService: ProductProjectService = new ProductProjectService();
+    public projectService: ProjectService = new ProjectService();
 
 
     /**
@@ -109,10 +109,10 @@ export default class CurProductProject {
         if(items && items instanceof Array && items.length >0){
             items.forEach((item: any) => {
                 let itemdata:any = {};
-                Object.assign(itemdata,{id:item.project});
-                Object.assign(itemdata,{value:item.project});
-                Object.assign(itemdata,{text:item.projectname});
-                Object.assign(itemdata,{label:item.projectname});
+                Object.assign(itemdata,{id:item.id});
+                Object.assign(itemdata,{value:item.id});
+                Object.assign(itemdata,{text:item.name});
+                Object.assign(itemdata,{label:item.name});
                 
                 
                 
@@ -134,7 +134,7 @@ export default class CurProductProject {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.productprojectService.FetchDefault(context, data);
+            const promise: Promise<any> = this.projectService.FetchCurProduct(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

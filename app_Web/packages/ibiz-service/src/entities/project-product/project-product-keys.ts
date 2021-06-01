@@ -20,4 +20,7 @@ export default [
     'createdate',
     'updateman',
     'updatedate',
+    'status',
+    'projectcode',
+    'projectend',
 ];

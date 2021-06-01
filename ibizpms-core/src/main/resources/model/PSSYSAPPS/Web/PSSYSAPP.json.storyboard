@@ -208,14 +208,6 @@
     "psappsbitemid" : "7a191bca35518e2ca8e20abb668868f8",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProjectProductProjectGridView9",
-    "psappsbitemname" : "项目产品表格视图（关联项目）",
-    "itemtag2" : "F908A9BD-230A-4D25-86E3-A8EDDE19B68E",
-    "psappviewid" : "e884d2f7aaa71d700cfa3c8726ae963a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectProductProjectGridView9.json",
-    "psappsbitemid" : "8b72909598acaf1e636fbedbdce84247",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugGridView9_StoryFormBug",
     "psappsbitemname" : "来源Bug",
     "itemtag2" : "1c7701743f680b0a9ebe5e0a49f7f1e6",
@@ -246,6 +238,14 @@
     "psappviewid" : "f67e66bcffbdb0dcb87e541997e19ee2",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView_Close.json",
     "psappsbitemid" : "dd30938a03ca28b45f46fdeb38e71649",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductPlanProjectGridView9",
+    "psappsbitemname" : "产品计划表格视图（项目）",
+    "itemtag2" : "e338cc82172ec843aea263144fd66c6e",
+    "psappviewid" : "d66b7fe2cd9096259cab78e8feb19163",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanProjectGridView9.json",
+    "psappsbitemid" : "946573f59674393ea7b16921328a420a",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IBIZProTagEditView",
@@ -1807,6 +1807,14 @@
     "psappsbitemid" : "b14248667616922225f388e47b6c72b4",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "ProjectCurProductGridView",
+    "psappsbitemname" : "project表格视图",
+    "itemtag2" : "287ecbf30bc1f630d6066929d2ee17d7",
+    "psappviewid" : "522b28992d16207a0fc47340589bb2cf",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectCurProductGridView.json",
+    "psappsbitemid" : "591f98ab5fbc0b8d8e91a2d03471d057",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "SysUpdateLogGridView",
     "psappsbitemname" : "系统更新日志表格视图",
     "itemtag2" : "8ebbce9d19ad07451304be3892b36037",
@@ -2055,6 +2063,14 @@
     "psappsbitemid" : "27181a7ab51ce30ee7e9a25a1d5d58c3",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "ProductProjectGridView9",
+    "psappsbitemname" : "产品表格视图（项目）",
+    "itemtag2" : "39f5e0e54f25306a3fb3e67a04e71be8",
+    "psappviewid" : "581084cd753b743ee95f85d6b2ee472c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductProjectGridView9.json",
+    "psappsbitemid" : "14d1f6119eca028b762933fcebbe4309",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "TestTaskMyYGridView",
     "psappsbitemname" : "测试单表格视图",
     "itemtag2" : "09c672ede6eef3537b926e6c5384e25b",
@@ -2197,14 +2213,6 @@
     "psappviewid" : "19a7142c8e8fcb5413c2314ee80dd036",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBuildSubGridView_New_9212.json",
     "psappsbitemid" : "38d675c547a702688875f910063fff75",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectProductProductGridView9",
-    "psappsbitemname" : "项目产品表格视图（关联计划）",
-    "itemtag2" : "8BA45C38-B127-42FE-9BA0-AED5E7E9FFD9",
-    "psappviewid" : "e82ad51f06733f38e6085d96e6b182b6",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectProductProductGridView9.json",
-    "psappsbitemid" : "929580515d835779d833a98fe0f00042",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TodoBaseEditView9",
@@ -2460,14 +2468,6 @@
     "psappviewid" : "91d3e67caa36efe3f59590d8531a7e0b",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleTreeExpView.json",
     "psappsbitemid" : "9a698f3a1ec33c890f2c90731096d3e9",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectProductPlanGridView9",
-    "psappsbitemname" : "项目产品表格视图（关联计划）",
-    "itemtag2" : "E747EA68-A4D4-4F4A-AD2E-0431E80399A1",
-    "psappviewid" : "4989b1b0c87b14b4e52b78c6bc03cd0b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectProductPlanGridView9.json",
-    "psappsbitemid" : "a82cc89404a04d41b76c11ce78bee453",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskTeamGridView9_Look",
@@ -6536,26 +6536,62 @@
     "psappsbitemrsname" : "[平台]导航视图",
     "rstype" : "APPVIEWEMBED"
   }, {
-    "psappsbitemrsid" : "d5eccb52b87c519944fda561e9e677b8",
-    "ppsappsbitemname" : "项目产品表格视图（关联项目）",
+    "psappsbitemrsid" : "06961194ea1180e89b7cedd567f4a8d3",
+    "ppsappsbitemname" : "project表格视图",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "591f98ab5fbc0b8d8e91a2d03471d057",
+    "psappsbitemrsname" : "表格界面_刷新操作",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "f4a53df2cbb1260ee35595bfb67cace1",
+    "ppsappsbitemname" : "project表格视图",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "591f98ab5fbc0b8d8e91a2d03471d057",
+    "psappsbitemrsname" : "表格界面_导出操作（Excel）",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "89a90410586d8c8fe1e399020eb2a0ce",
+    "ppsappsbitemname" : "project表格视图",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "591f98ab5fbc0b8d8e91a2d03471d057",
+    "psappsbitemrsname" : "表格界面_搜索栏",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "b07330470f731fa69d1dabfbf2d4b777",
+    "ppsappsbitemname" : "项目",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "f7c158807832944657b576345215ada7",
+    "psappsbitemrsname" : "编辑界面_保存并退出操作",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "项目",
+    "psappsbitemrsid" : "f1cbc388e075f420c259b98c8119afb9",
+    "ppsappsbitemname" : "project表格视图",
     "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "8b72909598acaf1e636fbedbdce84247",
-    "psappsbitemrsname" : "新建视图",
+    "ppsappsbitemid" : "591f98ab5fbc0b8d8e91a2d03471d057",
+    "cpsappsbitemid" : "f7c158807832944657b576345215ada7",
+    "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "psappsbitemrsid" : "af2b17f8f121eed70e37ed26a68ea64b",
-    "ppsappsbitemname" : "项目产品表格视图（关联项目）",
+    "cpsappsbitemname" : "项目",
+    "psappsbitemrsid" : "ba29b9b0e404f63ee47ef9ff858b9d3c",
+    "ppsappsbitemname" : "project表格视图",
     "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "8b72909598acaf1e636fbedbdce84247",
-    "psappsbitemrsname" : "编辑视图",
+    "ppsappsbitemid" : "591f98ab5fbc0b8d8e91a2d03471d057",
+    "cpsappsbitemid" : "f7c158807832944657b576345215ada7",
+    "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "项目产品表格视图（关联项目）",
-    "psappsbitemrsid" : "66b4709f86171e39ae3550e10e73a9b6",
+    "cpsappsbitemname" : "project表格视图",
+    "psappsbitemrsid" : "f9e4f09729e1da558057a99b5403e1d3",
     "ppsappsbitemname" : "产品",
     "rstag" : "EXPITEM:tabviewpanel5",
     "ppsappsbitemid" : "f71c096d3b2446f9415df8e160427f10",
-    "cpsappsbitemid" : "8b72909598acaf1e636fbedbdce84247",
+    "cpsappsbitemid" : "591f98ab5fbc0b8d8e91a2d03471d057",
     "psappsbitemrsname" : "[项目]导航视图",
     "rstype" : "APPVIEWEMBED"
   }, {
@@ -7088,14 +7124,6 @@
     "cpsappsbitemid" : "965a3f5fff887bd6aec13bc7654c993b",
     "psappsbitemrsname" : "左边栏产品列表视图",
     "rstype" : "APPFUNC"
-  }, {
-    "psappsbitemrsid" : "b07330470f731fa69d1dabfbf2d4b777",
-    "ppsappsbitemname" : "项目",
-    "rstag" : "SYS",
-    "rstag2" : "系统预定义",
-    "ppsappsbitemid" : "f7c158807832944657b576345215ada7",
-    "psappsbitemrsname" : "编辑界面_保存并退出操作",
-    "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "项目",
     "psappsbitemrsid" : "0c9f80717e7b594918f01584e46299ba",
@@ -13759,47 +13787,63 @@
     "psappsbitemrsname" : "删除",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "1af0b8c3849feabf54725ea283711d26",
-    "ppsappsbitemname" : "项目产品表格视图（关联计划）",
+    "cpsappsbitemname" : "产品编辑视图",
+    "psappsbitemrsid" : "c7ef777af1b1c36c50b20fef039cf834",
+    "ppsappsbitemname" : "产品表格视图（项目）",
     "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "929580515d835779d833a98fe0f00042",
+    "ppsappsbitemid" : "14d1f6119eca028b762933fcebbe4309",
+    "cpsappsbitemid" : "33845955e88701a9d9eccbcf22d936d5",
     "psappsbitemrsname" : "新建视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "psappsbitemrsid" : "9be68d1f64206965285d47fe57ab2ab2",
-    "ppsappsbitemname" : "项目产品表格视图（关联计划）",
+    "cpsappsbitemname" : "产品编辑视图",
+    "psappsbitemrsid" : "4a49cba5fd599003ad446bba8465b2af",
+    "ppsappsbitemname" : "产品表格视图（项目）",
     "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "929580515d835779d833a98fe0f00042",
+    "ppsappsbitemid" : "14d1f6119eca028b762933fcebbe4309",
+    "cpsappsbitemid" : "33845955e88701a9d9eccbcf22d936d5",
     "psappsbitemrsname" : "编辑视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "项目产品表格视图（关联计划）",
-    "psappsbitemrsid" : "4fae18b5a91a3338c03a16ab71e18d98",
+    "cpsappsbitemname" : "产品表格视图（项目）",
+    "psappsbitemrsid" : "134bbfd1a9b99b48e4ac11122ac98ea3",
     "ppsappsbitemname" : "项目信息",
     "ppsappsbitemid" : "d2c5522562b6d4ee88d074e1e497dfa9",
-    "cpsappsbitemid" : "929580515d835779d833a98fe0f00042",
+    "cpsappsbitemid" : "14d1f6119eca028b762933fcebbe4309",
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
-    "psappsbitemrsid" : "8d356747c931d32029d3b0ae8f1ed3ab",
-    "ppsappsbitemname" : "项目产品表格视图（关联计划）",
+    "psappsbitemrsid" : "49fc84ce83b3e2f9fb1d6234c988041e",
+    "ppsappsbitemname" : "计划",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "6e37e0d940cadcaf682d8148eb3aef67",
+    "psappsbitemrsname" : "编辑界面_保存并退出操作",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "计划",
+    "psappsbitemrsid" : "e792d87f95f2f4011aa027e9c83b4cba",
+    "ppsappsbitemname" : "产品计划表格视图（项目）",
     "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "a82cc89404a04d41b76c11ce78bee453",
+    "ppsappsbitemid" : "946573f59674393ea7b16921328a420a",
+    "cpsappsbitemid" : "6e37e0d940cadcaf682d8148eb3aef67",
     "psappsbitemrsname" : "新建视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "psappsbitemrsid" : "c13abff0e75d4273df071cd65be6cd17",
-    "ppsappsbitemname" : "项目产品表格视图（关联计划）",
+    "cpsappsbitemname" : "计划",
+    "psappsbitemrsid" : "67d76cb68dadc02f84f3ea3c8ab83063",
+    "ppsappsbitemname" : "产品计划表格视图（项目）",
     "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "a82cc89404a04d41b76c11ce78bee453",
+    "ppsappsbitemid" : "946573f59674393ea7b16921328a420a",
+    "cpsappsbitemid" : "6e37e0d940cadcaf682d8148eb3aef67",
     "psappsbitemrsname" : "编辑视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "项目产品表格视图（关联计划）",
-    "psappsbitemrsid" : "ae57c588fa7bb4e91c7e61eaaddbe930",
+    "cpsappsbitemname" : "产品计划表格视图（项目）",
+    "psappsbitemrsid" : "5ee2ceef9f3977828e4b1574fd763060",
     "ppsappsbitemname" : "项目信息",
     "ppsappsbitemid" : "d2c5522562b6d4ee88d074e1e497dfa9",
-    "cpsappsbitemid" : "a82cc89404a04d41b76c11ce78bee453",
+    "cpsappsbitemid" : "946573f59674393ea7b16921328a420a",
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
@@ -14627,14 +14671,6 @@
     "ppsappsbitemid" : "e19945d5e5b6f2f185aa116161b7258a",
     "cpsappsbitemid" : "2e388392bdb8d1c415956899f9f17384",
     "psappsbitemrsname" : "提需求",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "49fc84ce83b3e2f9fb1d6234c988041e",
-    "ppsappsbitemname" : "计划",
-    "rstag" : "SYS",
-    "rstag2" : "系统预定义",
-    "ppsappsbitemid" : "6e37e0d940cadcaf682d8148eb3aef67",
-    "psappsbitemrsname" : "编辑界面_保存并退出操作",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "计划",

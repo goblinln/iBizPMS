@@ -26,15 +26,6 @@ export class GlobalService {
         return (await import('./product-plan/product-plan.service')).default.getInstance();
     }
     /**
-     * 项目产品服务
-     *
-     * @return {ProductProject}
-     * @memberof GlobalService
-     */
-    async getProductProjectService() {
-        return (await import('./product-project/product-project.service')).default.getInstance();
-    }
-    /**
      * 测试用例服务
      *
      * @return {TestCase}
@@ -285,6 +276,15 @@ export class GlobalService {
      */
     async getIbzReportRoleConfigService() {
         return (await import('./ibz-report-role-config/ibz-report-role-config.service')).default.getInstance();
+    }
+    /**
+     * 项目产品服务
+     *
+     * @return {ProjectProduct}
+     * @memberof GlobalService
+     */
+    async getProjectProductService() {
+        return (await import('./project-product/project-product.service')).default.getInstance();
     }
     /**
      * 系统用户服务

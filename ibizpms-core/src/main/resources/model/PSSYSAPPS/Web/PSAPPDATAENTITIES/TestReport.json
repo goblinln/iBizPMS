@@ -31,12 +31,12 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "LoadTestReportBasic",
+    "codeName" : "InitTestTaskReportMulti",
     "methodType" : "DEACTION",
-    "name" : "GetTestReportBasicInfo",
+    "name" : "GetInfoTestTaskS",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetTestReportBasicInfo.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -44,7 +44,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "LoadTestReportBasic"
+      "id" : "InitTestTaskReportMulti"
     },
     "builtinMethod" : false
   }, {
@@ -62,74 +62,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "InitProjectReport"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitProjectDuringReport",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTaskOvByTime",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTaskOvByTime.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitProjectDuringReport"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitTestTaskReport",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskR",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitTestTaskReport"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitTestTaskReportMulti",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskS",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitTestTaskReportMulti"
     },
     "builtinMethod" : false
   }, {
@@ -167,6 +99,40 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LoadTestReportBasic",
+    "methodType" : "DEACTION",
+    "name" : "GetTestReportBasicInfo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetTestReportBasicInfo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LoadTestReportBasic"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -184,20 +150,54 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Update",
+    "codeName" : "InitTestTaskReport",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "GetInfoTestTaskR",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "InitTestTaskReport"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "InitProjectDuringReport",
+    "methodType" : "DEACTION",
+    "name" : "GetInfoTaskOvByTime",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTaskOvByTime.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "InitProjectDuringReport"
     },
     "builtinMethod" : false
   }, {
@@ -496,12 +496,12 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "LoadTestReportBasic",
+    "codeName" : "InitTestTaskReportMulti",
     "methodType" : "DEACTION",
-    "name" : "GetTestReportBasicInfo",
+    "name" : "GetInfoTestTaskS",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetTestReportBasicInfo.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -509,7 +509,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "LoadTestReportBasic"
+      "id" : "InitTestTaskReportMulti"
     },
     "builtinMethod" : false
   }, {
@@ -527,74 +527,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "InitProjectReport"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitProjectDuringReport",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTaskOvByTime",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTaskOvByTime.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitProjectDuringReport"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitTestTaskReport",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskR",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitTestTaskReport"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitTestTaskReportMulti",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskS",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitTestTaskReportMulti"
     },
     "builtinMethod" : false
   }, {
@@ -632,23 +564,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -666,6 +581,57 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "LoadTestReportBasic",
+    "methodType" : "DEACTION",
+    "name" : "GetTestReportBasicInfo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetTestReportBasicInfo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LoadTestReportBasic"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "InitTestTaskReport",
+    "methodType" : "DEACTION",
+    "name" : "GetInfoTestTaskR",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "InitTestTaskReport"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -680,6 +646,40 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "InitProjectDuringReport",
+    "methodType" : "DEACTION",
+    "name" : "GetInfoTaskOvByTime",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTaskOvByTime.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "InitProjectDuringReport"
     },
     "builtinMethod" : false
   }, {

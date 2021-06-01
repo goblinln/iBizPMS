@@ -176,6 +176,14 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
+		mainproject_grid: {
+			columns: {
+				'title': commonLogic.appcommonhandle("名称",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
+			},
+		},
 		maininfo_grid: {
 			columns: {
 				'id': commonLogic.appcommonhandle("编号",null),
@@ -207,14 +215,6 @@ function getLocaleResourceBase(){
 				productplan_newsubplan: commonLogic.appcommonhandle("子计划",null),
 				copy: commonLogic.appcommonhandle("拷贝",null),
 				productplan_delete: commonLogic.appcommonhandle("删除",null),
-			},
-		},
-		mainproject_grid: {
-			columns: {
-				'title': commonLogic.appcommonhandle("名称",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
 			},
 		},
 		editviewtoolbar_toolbar: {
