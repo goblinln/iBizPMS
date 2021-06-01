@@ -306,6 +306,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     }
 
 
+    public List<Action> selectAccount(ActionSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<Action> selectBianGengLineHistory(ActionSearchContext context){
         return baseMapper.selectBianGengLineHistory(context, context.getSelectCond());
     }
@@ -314,6 +317,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     }
     public List<Action> selectMobType(ActionSearchContext context){
         return baseMapper.selectMobType(context, context.getSelectCond());
+    }
+    public List<Action> selectMy(ActionSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
     }
     public List<Action> selectMyAction(ActionSearchContext context){
         return baseMapper.selectMyAction(context, context.getSelectCond());
@@ -339,6 +345,15 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
 
 
     /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<Action> searchAccount(ActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Action> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Action>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 DEFAULT
      */
     @Override
@@ -353,6 +368,15 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     public Page<Action> searchMobType(ActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Action> pages=baseMapper.searchMobType(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Action>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<Action> searchMy(ActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Action> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Action>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

@@ -459,6 +459,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
 
+    public List<Project> selectAccount(ProjectSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<Project> selectBugSelectableProjectList(ProjectSearchContext context){
         return baseMapper.selectBugSelectableProjectList(context, context.getSelectCond());
     }
@@ -495,6 +498,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     public List<Project> selectInvolvedProjectStoryTaskBug(ProjectSearchContext context){
         return baseMapper.selectInvolvedProjectStoryTaskBug(context, context.getSelectCond());
     }
+    public List<Project> selectMy(ProjectSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
+    }
     public List<Project> selectMyProject(ProjectSearchContext context){
         return baseMapper.selectMyProject(context, context.getSelectCond());
     }
@@ -517,6 +523,15 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
         return baseMapper.selectView(context, context.getSelectCond());
     }
 
+
+    /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<Project> searchAccount(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
 
     /**
      * 查询集合 BugProject
@@ -623,6 +638,15 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     @Override
     public Page<Project> searchInvolvedProject_StoryTaskBug(ProjectSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchInvolvedProject_StoryTaskBug(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<Project> searchMy(ProjectSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

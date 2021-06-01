@@ -81,20 +81,6 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchRoadMapYear
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async FetchRoadMapYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchRoadmap
      *
      * @param {*} [_context={}]
@@ -103,8 +89,28 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
      * @memberof ProductLifeService
      */
     async FetchRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productlives/fetchroadmap`, _data);
+        }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchRoadMapYear
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLifeService
+     */
+    async FetchRoadMapYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productlives/fetchroadmapyear`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

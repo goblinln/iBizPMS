@@ -656,6 +656,18 @@ public class TaskResource {
 
 
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"任务" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchaccount")
+	public ResponseEntity<List<TaskDTO>> fetchaccount(@RequestBody TaskSearchContext context) {
+        Page<Task> domains = taskService.searchAccount(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我任务", tags = {"任务" } ,notes = "获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchassignedtomytask(@RequestBody TaskSearchContext context) {
@@ -804,6 +816,18 @@ public class TaskResource {
     @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchesbulk")
 	public ResponseEntity<List<TaskDTO>> fetchesbulk(@RequestBody TaskSearchContext context) {
         Page<Task> domains = taskService.searchESBulk(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TaskRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"任务" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/tasks/fetchmy")
+	public ResponseEntity<List<TaskDTO>> fetchmy(@RequestBody TaskSearchContext context) {
+        Page<Task> domains = taskService.searchMy(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1674,6 +1698,19 @@ public class TaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"任务" } ,notes = "根据项目获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchaccount")
+	public ResponseEntity<List<TaskDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchAccount(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取指派给我任务", tags = {"任务" } ,notes = "根据项目获取指派给我任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchassignedtomytask")
 	public ResponseEntity<List<TaskDTO>> fetchAssignedToMyTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
@@ -1835,6 +1872,19 @@ public class TaskResource {
 	public ResponseEntity<List<TaskDTO>> fetchESBulkByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Task> domains = taskService.searchESBulk(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取我的数据", tags = {"任务" } ,notes = "根据项目获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmy")
+	public ResponseEntity<List<TaskDTO>> fetchMyByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchMy(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

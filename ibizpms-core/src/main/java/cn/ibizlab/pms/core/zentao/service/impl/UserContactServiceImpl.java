@@ -233,11 +233,17 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
 
 
 
+    public List<UserContact> selectAccount(UserContactSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<UserContact> selectCurUSERCONTACT(UserContactSearchContext context){
         return baseMapper.selectCurUSERCONTACT(context, context.getSelectCond());
     }
     public List<UserContact> selectDefault(UserContactSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
+    }
+    public List<UserContact> selectMy(UserContactSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
     }
     public List<UserContact> selectMyUSERCONTACT(UserContactSearchContext context){
         return baseMapper.selectMyUSERCONTACT(context, context.getSelectCond());
@@ -246,6 +252,15 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
         return baseMapper.selectView(context, context.getSelectCond());
     }
 
+
+    /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<UserContact> searchAccount(UserContactSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserContact> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<UserContact>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
 
     /**
      * 查询集合 抄送联系人
@@ -262,6 +277,15 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
     @Override
     public Page<UserContact> searchDefault(UserContactSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserContact> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<UserContact>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<UserContact> searchMy(UserContactSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserContact> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<UserContact>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

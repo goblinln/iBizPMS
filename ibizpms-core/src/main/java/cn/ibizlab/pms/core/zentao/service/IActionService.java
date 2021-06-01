@@ -46,9 +46,11 @@ public interface IActionService extends IService<Action> {
     Action sendTodo(Action et);
     Action sendToread(Action et);
     List<Action> select(ActionSearchContext context);
+    List<Action> selectAccount(ActionSearchContext context);
     List<Action> selectBianGengLineHistory(ActionSearchContext context);
     List<Action> selectDefault(ActionSearchContext context);
     List<Action> selectMobType(ActionSearchContext context);
+    List<Action> selectMy(ActionSearchContext context);
     List<Action> selectMyAction(ActionSearchContext context);
     List<Action> selectMyTrends(ActionSearchContext context);
     List<Action> selectProductTrends(ActionSearchContext context);
@@ -57,8 +59,10 @@ public interface IActionService extends IService<Action> {
     List<Action> selectType(ActionSearchContext context);
     List<Action> selectView(ActionSearchContext context);
 
+    Page<Action> searchAccount(ActionSearchContext context);
     Page<Action> searchDefault(ActionSearchContext context);
     Page<Action> searchMobType(ActionSearchContext context);
+    Page<Action> searchMy(ActionSearchContext context);
     Page<Action> searchMyAction(ActionSearchContext context);
     Page<Action> searchMyTrends(ActionSearchContext context);
     Page<Action> searchProductTrends(ActionSearchContext context);

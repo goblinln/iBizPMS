@@ -127,6 +127,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public Page<Story> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return storyService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("AssignedToMyStory"))
             return storyService.searchAssignedToMyStory(searchContext);    
         if (iPSDEDataSet.getName().equals("AssignedToMyStoryCalendar"))
@@ -151,6 +153,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.searchESBulk(searchContext);    
         if (iPSDEDataSet.getName().equals("GetProductStories"))
             return storyService.searchGetProductStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return storyService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentStory"))
             return storyService.searchMyAgentStory(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
@@ -193,6 +197,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public List<Story> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return storyService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyStory"))
             return storyService.selectAssignedToMyStory(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyStoryCalendar"))
@@ -217,6 +223,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.selectESBulk(searchContext);
         if (iPSDataQuery.getName().equals("GetProductStories"))
             return storyService.selectGetProductStories(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return storyService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentStory"))
             return storyService.selectMyAgentStory(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
@@ -785,6 +793,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         else if (action.equals("unlinkStory")) {
             return aroundAction("UnlinkStory", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchAssignedToMyStory")) {
             return aroundDataSet("AssignedToMyStory", point);
         }
@@ -820,6 +831,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("searchGetProductStories")) {
             return aroundDataSet("GetProductStories", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyAgentStory")) {
             return aroundDataSet("MyAgentStory", point);

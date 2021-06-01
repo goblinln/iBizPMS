@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BugMapper extends BaseMapper<Bug> {
 
+    List<Bug> selectAccount(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectAssignedToMyBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectAssignedToMyBugPc(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectBuildBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
@@ -39,6 +40,7 @@ public interface BugMapper extends BaseMapper<Bug> {
     List<Bug> selectCurUserResolve(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectDefault(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectESBulk(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectMy(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectMyAgentBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectMyCreateOrPartake(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectMyCurOpenedBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
@@ -57,6 +59,7 @@ public interface BugMapper extends BaseMapper<Bug> {
     List<Bug> selectTaskBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectView(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
 
+    Page<Bug> searchAccount(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchAssignedToMyBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchAssignedToMyBugPc(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchBugsByBuild(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
@@ -78,6 +81,7 @@ public interface BugMapper extends BaseMapper<Bug> {
     Page<Bug> searchCurUserResolve(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchDefault(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchESBulk(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    Page<Bug> searchMy(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchMyAgentBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchMyCreateOrPartake(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchMyCurOpenedBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);

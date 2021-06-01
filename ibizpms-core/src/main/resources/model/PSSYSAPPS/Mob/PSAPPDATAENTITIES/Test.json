@@ -169,6 +169,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "Account",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchAllList",
     "methodType" : "FETCH",
     "name" : "AllList",
@@ -238,6 +247,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ESBulk"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "My",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
     },
     "builtinMethod" : false
   }, {
@@ -804,23 +822,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchCurDefault",
     "methodType" : "FETCH",
     "name" : "FetchCurDefault",
@@ -835,6 +836,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -941,6 +959,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "Account",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchAllList",
     "methodType" : "FETCH",
     "name" : "AllList",
@@ -1010,6 +1037,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ESBulk"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "My",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
     },
     "builtinMethod" : false
   }, {

@@ -263,6 +263,13 @@
 		</trim>
      </select>
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext"  resultMap="TaskResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[AssignedToMyTask]-->
 	 <select id="searchAssignedToMyTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext"  resultMap="TaskResultMap">
          select t1.* from (
@@ -353,6 +360,13 @@
 	 <select id="searchESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext"  resultMap="TaskResultMap">
          select t1.* from (
                 <include refid="ESBulk" />
+         )t1
+     </select>
+
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext"  resultMap="TaskResultMap">
+         select t1.* from (
+                <include refid="My" />
          )t1
      </select>
 
@@ -573,6 +587,18 @@
 		 )t1
 		 group by type,ESTSTARTED,DEADLINE,DURATION
      </select>
+
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="Account" />
+	</select>
 
     <!--数据查询[AssignedToMyTask]-->
     <sql id="AssignedToMyTask" databaseId="mysql">
@@ -800,6 +826,18 @@
 	
 	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ESBulk" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[MyAgentTask]-->

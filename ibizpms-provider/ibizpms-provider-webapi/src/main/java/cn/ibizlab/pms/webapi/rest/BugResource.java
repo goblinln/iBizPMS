@@ -462,6 +462,18 @@ public class BugResource {
 
 
     @PreAuthorize("@BugRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"Bug" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchaccount")
+	public ResponseEntity<List<BugDTO>> fetchaccount(@RequestBody BugSearchContext context) {
+        Page<Bug> domains = bugService.searchAccount(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我Bug", tags = {"Bug" } ,notes = "获取指派给我Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchassignedtomybug")
 	public ResponseEntity<List<BugDTO>> fetchassignedtomybug(@RequestBody BugSearchContext context) {
@@ -706,6 +718,18 @@ public class BugResource {
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchesbulk")
 	public ResponseEntity<List<BugDTO>> fetchesbulk(@RequestBody BugSearchContext context) {
         Page<Bug> domains = bugService.searchESBulk(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@BugRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"Bug" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmy")
+	public ResponseEntity<List<BugDTO>> fetchmy(@RequestBody BugSearchContext context) {
+        Page<Bug> domains = bugService.searchMy(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1244,6 +1268,19 @@ public class BugResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"Bug" } ,notes = "根据产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchaccount")
+	public ResponseEntity<List<BugDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Bug> domains = bugService.searchAccount(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取指派给我Bug", tags = {"Bug" } ,notes = "根据产品获取指派给我Bug")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchassignedtomybug")
 	public ResponseEntity<List<BugDTO>> fetchAssignedToMyBugByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -1509,6 +1546,19 @@ public class BugResource {
 	public ResponseEntity<List<BugDTO>> fetchESBulkByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Bug> domains = bugService.searchESBulk(context) ;
+        List<BugDTO> list = bugMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取我的数据", tags = {"Bug" } ,notes = "根据产品获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/bugs/fetchmy")
+	public ResponseEntity<List<BugDTO>> fetchMyByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Bug> domains = bugService.searchMy(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

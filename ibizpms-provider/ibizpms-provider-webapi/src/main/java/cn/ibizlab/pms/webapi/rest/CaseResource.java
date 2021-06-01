@@ -391,6 +391,18 @@ public class CaseResource {
 
 
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"测试用例" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchaccount")
+	public ResponseEntity<List<CaseDTO>> fetchaccount(@RequestBody CaseSearchContext context) {
+        Page<Case> domains = caseService.searchAccount(context) ;
+        List<CaseDTO> list = caseMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取批量新建用例", tags = {"测试用例" } ,notes = "获取批量新建用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchbatchnew")
 	public ResponseEntity<List<CaseDTO>> fetchbatchnew(@RequestBody CaseSearchContext context) {
@@ -491,6 +503,18 @@ public class CaseResource {
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcase_project")
 	public ResponseEntity<List<CaseDTO>> fetchmodulereportcase_project(@RequestBody CaseSearchContext context) {
         Page<Case> domains = caseService.searchModuleRePortCase_Project(context) ;
+        List<CaseDTO> list = caseMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"测试用例" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmy")
+	public ResponseEntity<List<CaseDTO>> fetchmy(@RequestBody CaseSearchContext context) {
+        Page<Case> domains = caseService.searchMy(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -956,6 +980,19 @@ public class CaseResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"测试用例" } ,notes = "根据产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchaccount")
+	public ResponseEntity<List<CaseDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Case> domains = caseService.searchAccount(context) ;
+        List<CaseDTO> list = caseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取批量新建用例", tags = {"测试用例" } ,notes = "根据产品获取批量新建用例")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchbatchnew")
 	public ResponseEntity<List<CaseDTO>> fetchBatchNewByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
@@ -1065,6 +1102,19 @@ public class CaseResource {
 	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCase_ProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
         Page<Case> domains = caseService.searchModuleRePortCase_Project(context) ;
+        List<CaseDTO> list = caseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取我的数据", tags = {"测试用例" } ,notes = "根据产品获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/fetchmy")
+	public ResponseEntity<List<CaseDTO>> fetchMyByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Case> domains = caseService.searchMy(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

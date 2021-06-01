@@ -68,8 +68,16 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getDefaultCond() {
         return this.condCache.get('default');
+    }
+
+    protected getMyCond() {
+        return this.condCache.get('my');
     }
 
     protected getMyCreateTodoCond() {
@@ -255,6 +263,17 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         return this.http.post(`/todos/${_context.todo}/sendmsgpreprocess`, _data);
     }
     /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/todos/fetchaccount`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -264,6 +283,17 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/todos/fetchdefault`, _data);
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/todos/fetchmy`, _data);
     }
     /**
      * FetchMyTodo

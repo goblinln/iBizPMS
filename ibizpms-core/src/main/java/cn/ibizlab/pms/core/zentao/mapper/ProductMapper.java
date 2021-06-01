@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductMapper extends BaseMapper<Product> {
 
+    List<Product> selectAccount(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectAllList(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectAllProduct(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectCheckNameOrCode(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
@@ -28,6 +29,7 @@ public interface ProductMapper extends BaseMapper<Product> {
     List<Product> selectDefault(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectDeveloperQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectESBulk(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectMy(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectOpenQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectProductManagerQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectProductPM(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
@@ -36,6 +38,7 @@ public interface ProductMapper extends BaseMapper<Product> {
     List<Product> selectStoryCurProject(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectView(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
 
+    Page<Product> searchAccount(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchAllList(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchAllProduct(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchCheckNameOrCode(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
@@ -45,6 +48,7 @@ public interface ProductMapper extends BaseMapper<Product> {
     Page<Product> searchDefault(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchDeveloperQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchESBulk(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    Page<Product> searchMy(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchOpenQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchProductManagerQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchProductPM(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);

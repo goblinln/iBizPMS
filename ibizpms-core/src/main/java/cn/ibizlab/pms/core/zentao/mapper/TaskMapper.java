@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TaskMapper extends BaseMapper<Task> {
 
+    List<Task> selectAccount(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectAssignedToMyTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectAssignedToMyTaskPc(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectBugTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -32,6 +33,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     List<Task> selectDefault(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectDefaultRow(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectESBulk(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectMy(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyAgentTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyAllTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyCompleteTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -64,6 +66,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     List<Task> selectTypeGroupPlan(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectView(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
 
+    Page<Task> searchAccount(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchAssignedToMyTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchAssignedToMyTaskPc(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchBugTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -77,6 +80,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     Page<Task> searchDefault(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchDefaultRow(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchESBulk(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    Page<Task> searchMy(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyAgentTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyAllTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyCompleteTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);

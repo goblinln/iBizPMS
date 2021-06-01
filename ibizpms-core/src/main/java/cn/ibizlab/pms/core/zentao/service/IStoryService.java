@@ -79,6 +79,7 @@ public interface IStoryService extends IService<Story> {
     Story syncFromIbiz(Story et);
     Story unlinkStory(Story et);
     List<Story> select(StorySearchContext context);
+    List<Story> selectAccount(StorySearchContext context);
     List<Story> selectAssignedToMyStory(StorySearchContext context);
     List<Story> selectAssignedToMyStoryCalendar(StorySearchContext context);
     List<Story> selectBugStory(StorySearchContext context);
@@ -91,6 +92,7 @@ public interface IStoryService extends IService<Story> {
     List<Story> selectDefault(StorySearchContext context);
     List<Story> selectESBulk(StorySearchContext context);
     List<Story> selectGetProductStories(StorySearchContext context);
+    List<Story> selectMy(StorySearchContext context);
     List<Story> selectMyAgentStory(StorySearchContext context);
     List<Story> selectMyCreateOrPartake(StorySearchContext context);
     List<Story> selectMyCurOpenedStory(StorySearchContext context);
@@ -110,6 +112,7 @@ public interface IStoryService extends IService<Story> {
     List<Story> selectTaskRelatedStory(StorySearchContext context);
     List<Story> selectView(StorySearchContext context);
 
+    Page<Story> searchAccount(StorySearchContext context);
     Page<Story> searchAssignedToMyStory(StorySearchContext context);
     Page<Story> searchAssignedToMyStoryCalendar(StorySearchContext context);
     Page<Story> searchBugStory(StorySearchContext context);
@@ -122,6 +125,7 @@ public interface IStoryService extends IService<Story> {
     Page<Story> searchDefault(StorySearchContext context);
     Page<Story> searchESBulk(StorySearchContext context);
     Page<Story> searchGetProductStories(StorySearchContext context);
+    Page<Story> searchMy(StorySearchContext context);
     Page<Story> searchMyAgentStory(StorySearchContext context);
     Page<Story> searchMyCreateOrPartake(StorySearchContext context);
     Page<Story> searchMyCurOpenedStory(StorySearchContext context);

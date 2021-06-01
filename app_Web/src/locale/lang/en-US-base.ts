@@ -1,5 +1,6 @@
 import productplan_en_US from '@locale/lanres/entities/product-plan/product-plan_en_US';
 import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
+import account_en_US from '@locale/lanres/entities/account/account_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
 import test_en_US from '@locale/lanres/entities/test/test_en_US';
@@ -15,6 +16,7 @@ import productmodule_en_US from '@locale/lanres/entities/product-module/product-
 import productteam_en_US from '@locale/lanres/entities/product-team/product-team_en_US';
 import testmodule_en_US from '@locale/lanres/entities/test-module/test-module_en_US';
 import productlife_en_US from '@locale/lanres/entities/product-life/product-life_en_US';
+import usercontact_en_US from '@locale/lanres/entities/user-contact/user-contact_en_US';
 import task_en_US from '@locale/lanres/entities/task/task_en_US';
 import build_en_US from '@locale/lanres/entities/build/build_en_US';
 import testreult_en_US from '@locale/lanres/entities/test-reult/test-reult_en_US';
@@ -28,7 +30,6 @@ import productrelease_en_US from '@locale/lanres/entities/product-release/produc
 import dynadashboard_en_US from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_en_US';
 import ibzreportroleconfig_en_US from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_en_US';
 import projectproduct_en_US from '@locale/lanres/entities/project-product/project-product_en_US';
-import sysuser_en_US from '@locale/lanres/entities/sys-user/sys-user_en_US';
 import ibzcasestep_en_US from '@locale/lanres/entities/ibzcase-step/ibzcase-step_en_US';
 import taskteam_en_US from '@locale/lanres/entities/task-team/task-team_en_US';
 import file_en_US from '@locale/lanres/entities/file/file_en_US';
@@ -81,7 +82,6 @@ import ibzplantemplet_en_US from '@locale/lanres/entities/ibz-plan-templet/ibz-p
 import sysuserrole_en_US from '@locale/lanres/entities/sys-user-role/sys-user-role_en_US';
 import ibizprokeyword_en_US from '@locale/lanres/entities/ibizpro-keyword/ibizpro-keyword_en_US';
 import doclibmodule_en_US from '@locale/lanres/entities/doc-lib-module/doc-lib-module_en_US';
-import usercontact_en_US from '@locale/lanres/entities/user-contact/user-contact_en_US';
 import ibizproproductdaily_en_US from '@locale/lanres/entities/ibizpro-product-daily/ibizpro-product-daily_en_US';
 import sysrole_en_US from '@locale/lanres/entities/sys-role/sys-role_en_US';
 import plantempletdetail_en_US from '@locale/lanres/entities/plan-templet-detail/plan-templet-detail_en_US';
@@ -423,6 +423,7 @@ function getAppLocale(){
         entities: {
             'productplan': productplan_en_US(),
             'testcase': testcase_en_US(),
+            'account': account_en_US(),
             'product': product_en_US(),
             'projectburn': projectburn_en_US(),
             'test': test_en_US(),
@@ -438,6 +439,7 @@ function getAppLocale(){
             'productteam': productteam_en_US(),
             'testmodule': testmodule_en_US(),
             'productlife': productlife_en_US(),
+            'usercontact': usercontact_en_US(),
             'task': task_en_US(),
             'build': build_en_US(),
             'testreult': testreult_en_US(),
@@ -451,7 +453,6 @@ function getAppLocale(){
             'dynadashboard': dynadashboard_en_US(),
             'ibzreportroleconfig': ibzreportroleconfig_en_US(),
             'projectproduct': projectproduct_en_US(),
-            'sysuser': sysuser_en_US(),
             'ibzcasestep': ibzcasestep_en_US(),
             'taskteam': taskteam_en_US(),
             'file': file_en_US(),
@@ -504,7 +505,6 @@ function getAppLocale(){
             'sysuserrole': sysuserrole_en_US(),
             'ibizprokeyword': ibizprokeyword_en_US(),
             'doclibmodule': doclibmodule_en_US(),
-            'usercontact': usercontact_en_US(),
             'ibizproproductdaily': ibizproproductdaily_en_US(),
             'sysrole': sysrole_en_US(),
             'plantempletdetail': plantempletdetail_en_US(),

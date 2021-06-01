@@ -127,6 +127,8 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Page<Product> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return productService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("AllList"))
             return productService.searchAllList(searchContext);    
         if (iPSDEDataSet.getName().equals("AllProduct"))
@@ -145,6 +147,8 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return productService.searchDeveloperQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("ESBulk"))
             return productService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return productService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("OpenQuery"))
             return productService.searchOpenQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("ProductManagerQuery"))
@@ -161,6 +165,8 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<Product> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return productService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("AllList"))
             return productService.selectAllList(searchContext);
         if (iPSDataQuery.getName().equals("AllProduct"))
@@ -179,6 +185,8 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return productService.selectDeveloperQuery(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
             return productService.selectESBulk(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return productService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("OpenQuery"))
             return productService.selectOpenQuery(searchContext);
         if (iPSDataQuery.getName().equals("ProductManagerQuery"))
@@ -412,6 +420,9 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("save")) {
             return aroundAction("Save", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchAllList")) {
             return aroundDataSet("AllList", point);
         }
@@ -438,6 +449,9 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("searchESBulk")) {
             return aroundDataSet("ESBulk", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchOpenQuery")) {
             return aroundDataSet("OpenQuery", point);

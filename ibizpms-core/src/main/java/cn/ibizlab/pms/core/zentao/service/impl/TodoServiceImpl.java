@@ -282,8 +282,14 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
 
 
 
+    public List<Todo> selectAccount(TodoSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<Todo> selectDefault(TodoSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
+    }
+    public List<Todo> selectMy(TodoSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
     }
     public List<Todo> selectMyCreateTodo(TodoSearchContext context){
         return baseMapper.selectMyCreateTodo(context, context.getSelectCond());
@@ -303,11 +309,29 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
 
 
     /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<Todo> searchAccount(TodoSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Todo> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Todo>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 DEFAULT
      */
     @Override
     public Page<Todo> searchDefault(TodoSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Todo> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Todo>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<Todo> searchMy(TodoSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Todo> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Todo>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

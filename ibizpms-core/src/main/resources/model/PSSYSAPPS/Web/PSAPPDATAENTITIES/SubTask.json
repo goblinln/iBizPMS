@@ -744,6 +744,15 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "Account",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchAssignedToMyTask",
     "methodType" : "FETCH",
     "name" : "AssignedToMyTask",
@@ -858,6 +867,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ESBulk"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "My",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
     },
     "builtinMethod" : false
   }, {
@@ -2293,6 +2311,25 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "Account",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempAccount",
+    "methodType" : "FETCHTEMP",
+    "name" : "Account",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchAssignedToMyTask",
     "methodType" : "FETCH",
     "name" : "AssignedToMyTask",
@@ -2536,6 +2573,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ESBulk"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "My",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempMy",
+    "methodType" : "FETCHTEMP",
+    "name" : "My",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false

@@ -127,6 +127,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Page<Project> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return projectService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("BugProject"))
             return projectService.searchBugProject(searchContext);    
         if (iPSDEDataSet.getName().equals("CurDefaultQuery"))
@@ -151,6 +153,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return projectService.searchInvolvedProject(searchContext);    
         if (iPSDEDataSet.getName().equals("InvolvedProject_StoryTaskBug"))
             return projectService.searchInvolvedProject_StoryTaskBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return projectService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyProject"))
             return projectService.searchMyProject(searchContext);    
         if (iPSDEDataSet.getName().equals("OpenByQuery"))
@@ -169,6 +173,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<Project> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return projectService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("BugSelectableProjectList"))
             return projectService.selectBugSelectableProjectList(searchContext);
         if (iPSDataQuery.getName().equals("CurDefaultQuery"))
@@ -193,6 +199,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return projectService.selectInvolvedProject(searchContext);
         if (iPSDataQuery.getName().equals("InvolvedProjectStoryTaskBug"))
             return projectService.selectInvolvedProjectStoryTaskBug(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return projectService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyProject"))
             return projectService.selectMyProject(searchContext);
         if (iPSDataQuery.getName().equals("OpenByQuery"))
@@ -559,6 +567,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("updateOrder")) {
             return aroundAction("UpdateOrder", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchBugProject")) {
             return aroundDataSet("BugProject", point);
         }
@@ -594,6 +605,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("searchInvolvedProject_StoryTaskBug")) {
             return aroundDataSet("InvolvedProject_StoryTaskBug", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyProject")) {
             return aroundDataSet("MyProject", point);

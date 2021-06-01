@@ -210,6 +210,19 @@ public class ProductResource {
 
 
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取用户数据", tags = {"产品" } ,notes = "获取用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchaccount")
+	public ResponseEntity<List<ProductDTO>> fetchaccount(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchAccount(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取全部产品", tags = {"产品" } ,notes = "获取全部产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchalllist")
 	public ResponseEntity<List<ProductDTO>> fetchalllist(@RequestBody ProductSearchContext context) {
@@ -306,6 +319,19 @@ public class ProductResource {
 	public ResponseEntity<List<ProductDTO>> fetchesbulk(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchESBulk(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"产品" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchmy")
+	public ResponseEntity<List<ProductDTO>> fetchmy(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchMy(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

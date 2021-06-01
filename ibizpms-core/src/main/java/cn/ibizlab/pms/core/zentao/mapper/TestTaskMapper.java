@@ -19,12 +19,16 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TestTaskMapper extends BaseMapper<TestTask> {
 
+    List<TestTask> selectAccount(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     List<TestTask> selectDefault(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
+    List<TestTask> selectMy(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     List<TestTask> selectMyTestTaskPc(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     List<TestTask> selectSimple(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     List<TestTask> selectView(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
 
+    Page<TestTask> searchAccount(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     Page<TestTask> searchDefault(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
+    Page<TestTask> searchMy(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     Page<TestTask> searchMyTestTaskPc(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     Page<TestTask> searchProjectTestTaskDS(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     @Override

@@ -466,6 +466,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     }
 
 
+    public List<Case> selectAccount(CaseSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<Case> selectBatchNew(CaseSearchContext context){
         return baseMapper.selectBatchNew(context, context.getSelectCond());
     }
@@ -492,6 +495,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     }
     public List<Case> selectModuleRePortCase_Project(CaseSearchContext context){
         return baseMapper.selectModuleRePortCase_Project(context, context.getSelectCond());
+    }
+    public List<Case> selectMy(CaseSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
     }
     public List<Case> selectMyCreateOrUpdate(CaseSearchContext context){
         return baseMapper.selectMyCreateOrUpdate(context, context.getSelectCond());
@@ -542,6 +548,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return baseMapper.selectView(context, context.getSelectCond());
     }
 
+
+    /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<Case> searchAccount(CaseSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Case>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
 
     /**
      * 查询集合 批量新建用例
@@ -621,6 +636,15 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     public Page<Case> searchModuleRePortCase_Project(CaseSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchModuleRePortCase_Project(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Case>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<Case> searchMy(CaseSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Case>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

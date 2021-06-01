@@ -137,6 +137,15 @@
       "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
+    "codeName" : "Account",
+    "logicName" : "指定用户数据",
+    "name" : "Account",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
     "codeName" : "BianGengLineHistory",
     "logicName" : "项目立项变更线路操作历史记录",
     "name" : "BianGengLineHistory",
@@ -164,6 +173,15 @@
     "codeName" : "MobType",
     "logicName" : "动态(根据类型过滤)",
     "name" : "MobType",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
+    "codeName" : "My",
+    "logicName" : "我的数据",
+    "name" : "My",
     "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -259,6 +277,16 @@
     "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
+    "codeName" : "Account",
+    "logicName" : "指定用户数据",
+    "name" : "Account",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Account"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
@@ -276,6 +304,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MobType"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "My",
+    "logicName" : "我的数据",
+    "name" : "My",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "My"
     } ],
     "enableBackend" : true,
     "enableFront" : true

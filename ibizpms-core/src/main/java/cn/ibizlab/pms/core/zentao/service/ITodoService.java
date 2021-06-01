@@ -46,14 +46,18 @@ public interface ITodoService extends IService<Todo> {
     Todo sendMessage(Todo et);
     Todo sendMsgPreProcess(Todo et);
     List<Todo> select(TodoSearchContext context);
+    List<Todo> selectAccount(TodoSearchContext context);
     List<Todo> selectDefault(TodoSearchContext context);
+    List<Todo> selectMy(TodoSearchContext context);
     List<Todo> selectMyCreateTodo(TodoSearchContext context);
     List<Todo> selectMyTodo(TodoSearchContext context);
     List<Todo> selectMyTodoPc(TodoSearchContext context);
     List<Todo> selectMyUpcoming(TodoSearchContext context);
     List<Todo> selectView(TodoSearchContext context);
 
+    Page<Todo> searchAccount(TodoSearchContext context);
     Page<Todo> searchDefault(TodoSearchContext context);
+    Page<Todo> searchMy(TodoSearchContext context);
     Page<Todo> searchMyCreateTodo(TodoSearchContext context);
     Page<Todo> searchMyTodo(TodoSearchContext context);
     Page<Todo> searchMyTodoPc(TodoSearchContext context);

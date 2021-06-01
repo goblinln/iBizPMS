@@ -127,10 +127,14 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public Page<UserContact> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         UserContactSearchContext searchContext = (UserContactSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return usercontactService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("CurUSERCONTACT"))
             return usercontactService.searchCurUSERCONTACT(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return usercontactService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return usercontactService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyUSERCONTACT"))
             return usercontactService.searchMyUSERCONTACT(searchContext);    
         return null;
@@ -139,10 +143,14 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public List<UserContact> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         UserContactSearchContext searchContext = (UserContactSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return usercontactService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("CurUSERCONTACT"))
             return usercontactService.selectCurUSERCONTACT(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return usercontactService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return usercontactService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyUSERCONTACT"))
             return usercontactService.selectMyUSERCONTACT(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
@@ -319,11 +327,17 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         else if (action.equals("save")) {
             return aroundAction("Save", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchCurUSERCONTACT")) {
             return aroundDataSet("CurUSERCONTACT", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyUSERCONTACT")) {
             return aroundDataSet("MyUSERCONTACT", point);

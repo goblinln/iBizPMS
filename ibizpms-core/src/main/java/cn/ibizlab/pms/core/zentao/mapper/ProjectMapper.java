@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectMapper extends BaseMapper<Project> {
 
+    List<Project> selectAccount(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectBugSelectableProjectList(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectCurDefaultQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectCurDefaultQueryExp(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
@@ -31,6 +32,7 @@ public interface ProjectMapper extends BaseMapper<Project> {
     List<Project> selectESBulk(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectInvolvedProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectInvolvedProjectStoryTaskBug(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectMy(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectMyProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectOpenByQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectOpenQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
@@ -39,6 +41,7 @@ public interface ProjectMapper extends BaseMapper<Project> {
     List<Project> selectUnDoneProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectView(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
 
+    Page<Project> searchAccount(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchBugProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchCurDefaultQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchCurDefaultQueryExp(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
@@ -51,6 +54,7 @@ public interface ProjectMapper extends BaseMapper<Project> {
     Page<Project> searchESBulk(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchInvolvedProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchInvolvedProject_StoryTaskBug(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    Page<Project> searchMy(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchMyProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchOpenByQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchOpenQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);

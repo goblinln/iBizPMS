@@ -127,6 +127,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public Page<Bug> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return bugService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("AssignedToMyBug"))
             return bugService.searchAssignedToMyBug(searchContext);    
         if (iPSDEDataSet.getName().equals("AssignedToMyBugPc"))
@@ -169,6 +171,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("ESBulk"))
             return bugService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return bugService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentBug"))
             return bugService.searchMyAgentBug(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
@@ -207,6 +211,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public List<Bug> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return bugService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyBug"))
             return bugService.selectAssignedToMyBug(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyBugPc"))
@@ -247,6 +253,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
             return bugService.selectESBulk(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return bugService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentBug"))
             return bugService.selectMyAgentBug(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
@@ -660,6 +668,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         else if (action.equals("updateStoryVersion")) {
             return aroundAction("UpdateStoryVersion", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchAssignedToMyBug")) {
             return aroundDataSet("AssignedToMyBug", point);
         }
@@ -722,6 +733,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         }
         else if (action.equals("searchESBulk")) {
             return aroundDataSet("ESBulk", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyAgentBug")) {
             return aroundDataSet("MyAgentBug", point);

@@ -53,96 +53,15 @@ public class ProductPlanResource {
     public ProductPlanMapping productplanMapping;
 
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品解除关联需求", tags = {"产品计划" },  notes = "根据产品解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/unlinkstory")
-    public ResponseEntity<ProductPlanDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-        domain = productplanService.unlinkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新产品计划", tags = {"产品计划" },  notes = "根据产品更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-		productplanService.update(domain);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取项目计划列表", tags = {"产品计划" } ,notes = "根据产品获取项目计划列表")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchprojectplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
-        List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据产品导入计划模板", tags = {"产品计划" },  notes = "根据产品导入计划模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/importplantemplet")
-    public ResponseEntity<ProductPlanDTO> importPlanTempletByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
+    @ApiOperation(value = "根据产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
         domain.setProduct(product_id);
-        domain.setId(productplan_id);
-        domain = productplanService.importPlanTemplet(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据产品关联需求", tags = {"产品计划" },  notes = "根据产品关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/linkstory")
-    public ResponseEntity<ProductPlanDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-        domain = productplanService.linkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据产品删除产品计划", tags = {"产品计划" },  notes = "根据产品删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据产品批量删除产品计划", tags = {"产品计划" },  notes = "根据产品批量删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        productplanService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据产品获取产品默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchproductquery")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<ProductPlan> domains = productplanService.searchProductQuery(context) ;
-        List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品解除关联Bug", tags = {"产品计划" },  notes = "根据产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/unlinkbug")
@@ -155,22 +74,16 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "根据产品获取产品计划", tags = {"产品计划" },  notes = "根据产品获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
-        ProductPlan domain = productplanService.get(productplan_id);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品解除关联需求", tags = {"产品计划" },  notes = "根据产品解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/unlinkstory")
+    public ResponseEntity<ProductPlanDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+        domain.setId(productplan_id);
+        domain = productplanService.unlinkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
@@ -197,37 +110,50 @@ public class ProductPlanResource {
     }
 
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据产品删除产品计划", tags = {"产品计划" },  notes = "根据产品删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
+    }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目解除关联需求", tags = {"产品计划" },  notes = "根据项目解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/unlinkstory")
-    public ResponseEntity<ProductPlanDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据产品批量删除产品计划", tags = {"产品计划" },  notes = "根据产品批量删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        productplanService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据产品导入计划模板", tags = {"产品计划" },  notes = "根据产品导入计划模板")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/importplantemplet")
+    public ResponseEntity<ProductPlanDTO> importPlanTempletByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
+        domain.setProduct(product_id);
         domain.setId(productplan_id);
-        domain = productplanService.unlinkStory(domain) ;
+        domain = productplanService.importPlanTemplet(domain) ;
         productplandto = productplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据项目更新产品计划", tags = {"产品计划" },  notes = "根据项目更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据产品关联需求", tags = {"产品计划" },  notes = "根据产品关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/linkstory")
+    public ResponseEntity<ProductPlanDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
+        domain.setProduct(product_id);
         domain.setId(productplan_id);
-		productplanService.update(domain);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        domain = productplanService.linkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取项目计划列表", tags = {"产品计划" } ,notes = "根据项目获取项目计划列表")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/fetchprojectplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
-        
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取项目计划列表", tags = {"产品计划" } ,notes = "根据产品获取项目计划列表")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchprojectplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
+        context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -236,50 +162,11 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据项目导入计划模板", tags = {"产品计划" },  notes = "根据项目导入计划模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/importplantemplet")
-    public ResponseEntity<ProductPlanDTO> importPlanTempletByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.importPlanTemplet(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('LINKSTORY')")
-    @ApiOperation(value = "根据项目关联需求", tags = {"产品计划" },  notes = "根据项目关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/linkstory")
-    public ResponseEntity<ProductPlanDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.linkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据项目删除产品计划", tags = {"产品计划" },  notes = "根据项目删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/productplans/{productplan_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据项目批量删除产品计划", tags = {"产品计划" },  notes = "根据项目批量删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/productplans/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        productplanService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取产品默认查询", tags = {"产品计划" } ,notes = "根据项目获取产品默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/fetchproductquery")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryByProject(@PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
-        
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据产品获取产品默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchproductquery")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
+        context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchProductQuery(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -288,6 +175,38 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新产品计划", tags = {"产品计划" },  notes = "根据产品更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
+        domain.setProduct(product_id);
+        domain.setId(productplan_id);
+		productplanService.update(domain);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @ApiOperation(value = "根据产品获取产品计划", tags = {"产品计划" },  notes = "根据产品获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
+        ProductPlan domain = productplanService.get(productplan_id);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据项目获取产品计划草稿", tags = {"产品计划" },  notes = "根据项目获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+    }
+
     @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据项目解除关联Bug", tags = {"产品计划" },  notes = "根据项目解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/unlinkbug")
@@ -300,22 +219,16 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-    @ApiOperation(value = "根据项目获取产品计划", tags = {"产品计划" },  notes = "根据项目获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
-        ProductPlan domain = productplanService.get(productplan_id);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据项目获取产品计划草稿", tags = {"产品计划" },  notes = "根据项目获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目解除关联需求", tags = {"产品计划" },  notes = "根据项目解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/unlinkstory")
+    public ResponseEntity<ProductPlanDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
         
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+        domain.setId(productplan_id);
+        domain = productplanService.unlinkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('LINKBUG')")
@@ -342,38 +255,50 @@ public class ProductPlanResource {
     }
 
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据项目删除产品计划", tags = {"产品计划" },  notes = "根据项目删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/productplans/{productplan_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
+    }
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据项目批量删除产品计划", tags = {"产品计划" },  notes = "根据项目批量删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/productplans/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        productplanService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户产品解除关联需求", tags = {"产品计划" },  notes = "根据系统用户产品解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/unlinkstory")
-    public ResponseEntity<ProductPlanDTO> unlinkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据项目导入计划模板", tags = {"产品计划" },  notes = "根据项目导入计划模板")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/importplantemplet")
+    public ResponseEntity<ProductPlanDTO> importPlanTempletByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
+        
         domain.setId(productplan_id);
-        domain = productplanService.unlinkStory(domain) ;
+        domain = productplanService.importPlanTemplet(domain) ;
         productplandto = productplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
-    @ApiOperation(value = "根据系统用户产品更新产品计划", tags = {"产品计划" },  notes = "根据系统用户产品更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+    @PreAuthorize("@ProductPlanRuntime.quickTest('LINKSTORY')")
+    @ApiOperation(value = "根据项目关联需求", tags = {"产品计划" },  notes = "根据项目关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/productplans/{productplan_id}/linkstory")
+    public ResponseEntity<ProductPlanDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
+        
         domain.setId(productplan_id);
-		productplanService.update(domain);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        domain = productplanService.linkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取项目计划列表", tags = {"产品计划" } ,notes = "根据系统用户产品获取项目计划列表")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productplans/fetchprojectplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
-        context.setN_product_eq(product_id);
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取项目计划列表", tags = {"产品计划" } ,notes = "根据项目获取项目计划列表")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/fetchprojectplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
+        
         Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -382,50 +307,11 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据系统用户产品导入计划模板", tags = {"产品计划" },  notes = "根据系统用户产品导入计划模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/importplantemplet")
-    public ResponseEntity<ProductPlanDTO> importPlanTempletBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-        domain = productplanService.importPlanTemplet(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据系统用户产品关联需求", tags = {"产品计划" },  notes = "根据系统用户产品关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/linkstory")
-    public ResponseEntity<ProductPlanDTO> linkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-        domain = productplanService.linkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据系统用户产品删除产品计划", tags = {"产品计划" },  notes = "根据系统用户产品删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据系统用户产品批量删除产品计划", tags = {"产品计划" },  notes = "根据系统用户产品批量删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {
-        productplanService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据系统用户产品获取产品默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productplans/fetchproductquery")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
-        context.setN_product_eq(product_id);
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取产品默认查询", tags = {"产品计划" } ,notes = "根据项目获取产品默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/fetchproductquery")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryByProject(@PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
+        
         Page<ProductPlan> domains = productplanService.searchProductQuery(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -434,6 +320,39 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductPlanRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据项目更新产品计划", tags = {"产品计划" },  notes = "根据项目更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
+        
+        domain.setId(productplan_id);
+		productplanService.update(domain);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @ApiOperation(value = "根据项目获取产品计划", tags = {"产品计划" },  notes = "根据项目获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
+        ProductPlan domain = productplanService.get(productplan_id);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据系统用户产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据系统用户产品获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+    }
+
     @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据系统用户产品解除关联Bug", tags = {"产品计划" },  notes = "根据系统用户产品解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/unlinkbug")
@@ -446,22 +365,16 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "根据系统用户产品获取产品计划", tags = {"产品计划" },  notes = "根据系统用户产品获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
-        ProductPlan domain = productplanService.get(productplan_id);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据系统用户产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据系统用户产品获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户产品解除关联需求", tags = {"产品计划" },  notes = "根据系统用户产品解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/unlinkstory")
+    public ResponseEntity<ProductPlanDTO> unlinkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+        domain.setId(productplan_id);
+        domain = productplanService.unlinkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
@@ -488,38 +401,50 @@ public class ProductPlanResource {
     }
 
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据系统用户产品删除产品计划", tags = {"产品计划" },  notes = "根据系统用户产品删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
+    }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据系统用户产品批量删除产品计划", tags = {"产品计划" },  notes = "根据系统用户产品批量删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {
+        productplanService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目解除关联需求", tags = {"产品计划" },  notes = "根据系统用户项目解除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/unlinkstory")
-    public ResponseEntity<ProductPlanDTO> unlinkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据系统用户产品导入计划模板", tags = {"产品计划" },  notes = "根据系统用户产品导入计划模板")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/importplantemplet")
+    public ResponseEntity<ProductPlanDTO> importPlanTempletBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
+        domain.setProduct(product_id);
         domain.setId(productplan_id);
-        domain = productplanService.unlinkStory(domain) ;
+        domain = productplanService.importPlanTemplet(domain) ;
         productplandto = productplanMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据系统用户项目更新产品计划", tags = {"产品计划" },  notes = "根据系统用户项目更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> updateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据系统用户产品关联需求", tags = {"产品计划" },  notes = "根据系统用户产品关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/linkstory")
+    public ResponseEntity<ProductPlanDTO> linkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
         ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
+        domain.setProduct(product_id);
         domain.setId(productplan_id);
-		productplanService.update(domain);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        domain = productplanService.linkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取项目计划列表", tags = {"产品计划" } ,notes = "根据系统用户项目获取项目计划列表")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/productplans/fetchprojectplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
-        
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据系统用户产品获取项目计划列表", tags = {"产品计划" } ,notes = "根据系统用户产品获取项目计划列表")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productplans/fetchprojectplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
+        context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -528,50 +453,11 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户项目导入计划模板", tags = {"产品计划" },  notes = "根据系统用户项目导入计划模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/importplantemplet")
-    public ResponseEntity<ProductPlanDTO> importPlanTempletBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.importPlanTemplet(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('LINKSTORY')")
-    @ApiOperation(value = "根据系统用户项目关联需求", tags = {"产品计划" },  notes = "根据系统用户项目关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/linkstory")
-    public ResponseEntity<ProductPlanDTO> linkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        
-        domain.setId(productplan_id);
-        domain = productplanService.linkStory(domain) ;
-        productplandto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户项目删除产品计划", tags = {"产品计划" },  notes = "根据系统用户项目删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}")
-    public ResponseEntity<Boolean> removeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户项目批量删除产品计划", tags = {"产品计划" },  notes = "根据系统用户项目批量删除产品计划")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUserProject(@RequestBody List<Long> ids) {
-        productplanService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取产品默认查询", tags = {"产品计划" } ,notes = "根据系统用户项目获取产品默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/productplans/fetchproductquery")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
-        
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据系统用户产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据系统用户产品获取产品默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productplans/fetchproductquery")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
+        context.setN_product_eq(product_id);
         Page<ProductPlan> domains = productplanService.searchProductQuery(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -580,6 +466,39 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
+    @ApiOperation(value = "根据系统用户产品更新产品计划", tags = {"产品计划" },  notes = "根据系统用户产品更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
+        domain.setProduct(product_id);
+        domain.setId(productplan_id);
+		productplanService.update(domain);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @ApiOperation(value = "根据系统用户产品获取产品计划", tags = {"产品计划" },  notes = "根据系统用户产品获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
+        ProductPlan domain = productplanService.get(productplan_id);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+
+    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户项目获取产品计划草稿", tags = {"产品计划" },  notes = "根据系统用户项目获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+    }
+
     @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据系统用户项目解除关联Bug", tags = {"产品计划" },  notes = "根据系统用户项目解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/unlinkbug")
@@ -592,22 +511,16 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-    @ApiOperation(value = "根据系统用户项目获取产品计划", tags = {"产品计划" },  notes = "根据系统用户项目获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
-        ProductPlan domain = productplanService.get(productplan_id);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户项目获取产品计划草稿", tags = {"产品计划" },  notes = "根据系统用户项目获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户项目解除关联需求", tags = {"产品计划" },  notes = "根据系统用户项目解除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/unlinkstory")
+    public ResponseEntity<ProductPlanDTO> unlinkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
         
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+        domain.setId(productplan_id);
+        domain = productplanService.unlinkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
     @PreAuthorize("@ProductPlanRuntime.quickTest('LINKBUG')")
@@ -633,6 +546,93 @@ public class ProductPlanResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户项目删除产品计划", tags = {"产品计划" },  notes = "根据系统用户项目删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}")
+    public ResponseEntity<Boolean> removeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
+    }
+
+    @PreAuthorize("@ProductPlanRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户项目批量删除产品计划", tags = {"产品计划" },  notes = "根据系统用户项目批量删除产品计划")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUserProject(@RequestBody List<Long> ids) {
+        productplanService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户项目导入计划模板", tags = {"产品计划" },  notes = "根据系统用户项目导入计划模板")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/importplantemplet")
+    public ResponseEntity<ProductPlanDTO> importPlanTempletBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
+        
+        domain.setId(productplan_id);
+        domain = productplanService.importPlanTemplet(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
+    }
+
+    @PreAuthorize("@ProductPlanRuntime.quickTest('LINKSTORY')")
+    @ApiOperation(value = "根据系统用户项目关联需求", tags = {"产品计划" },  notes = "根据系统用户项目关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/linkstory")
+    public ResponseEntity<ProductPlanDTO> linkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
+        
+        domain.setId(productplan_id);
+        domain = productplanService.linkStory(domain) ;
+        productplandto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplandto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取项目计划列表", tags = {"产品计划" } ,notes = "根据系统用户项目获取项目计划列表")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/productplans/fetchprojectplan")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
+        
+        Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
+        List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取产品默认查询", tags = {"产品计划" } ,notes = "根据系统用户项目获取产品默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/productplans/fetchproductquery")
+	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
+        
+        Page<ProductPlan> domains = productplanService.searchProductQuery(context) ;
+        List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductPlanRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据系统用户项目更新产品计划", tags = {"产品计划" },  notes = "根据系统用户项目更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> updateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
+        
+        domain.setId(productplan_id);
+		productplanService.update(domain);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @ApiOperation(value = "根据系统用户项目获取产品计划", tags = {"产品计划" },  notes = "根据系统用户项目获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
+        ProductPlan domain = productplanService.get(productplan_id);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
 }
 

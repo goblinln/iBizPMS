@@ -1,5 +1,6 @@
 import productplan_zh_CN from '@locale/lanres/entities/product-plan/product-plan_zh_CN';
 import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
+import account_zh_CN from '@locale/lanres/entities/account/account_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
 import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
@@ -15,6 +16,7 @@ import productmodule_zh_CN from '@locale/lanres/entities/product-module/product-
 import productteam_zh_CN from '@locale/lanres/entities/product-team/product-team_zh_CN';
 import testmodule_zh_CN from '@locale/lanres/entities/test-module/test-module_zh_CN';
 import productlife_zh_CN from '@locale/lanres/entities/product-life/product-life_zh_CN';
+import usercontact_zh_CN from '@locale/lanres/entities/user-contact/user-contact_zh_CN';
 import task_zh_CN from '@locale/lanres/entities/task/task_zh_CN';
 import build_zh_CN from '@locale/lanres/entities/build/build_zh_CN';
 import testreult_zh_CN from '@locale/lanres/entities/test-reult/test-reult_zh_CN';
@@ -28,7 +30,6 @@ import productrelease_zh_CN from '@locale/lanres/entities/product-release/produc
 import dynadashboard_zh_CN from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_zh_CN';
 import ibzreportroleconfig_zh_CN from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_zh_CN';
 import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
-import sysuser_zh_CN from '@locale/lanres/entities/sys-user/sys-user_zh_CN';
 import ibzcasestep_zh_CN from '@locale/lanres/entities/ibzcase-step/ibzcase-step_zh_CN';
 import taskteam_zh_CN from '@locale/lanres/entities/task-team/task-team_zh_CN';
 import file_zh_CN from '@locale/lanres/entities/file/file_zh_CN';
@@ -81,7 +82,6 @@ import ibzplantemplet_zh_CN from '@locale/lanres/entities/ibz-plan-templet/ibz-p
 import sysuserrole_zh_CN from '@locale/lanres/entities/sys-user-role/sys-user-role_zh_CN';
 import ibizprokeyword_zh_CN from '@locale/lanres/entities/ibizpro-keyword/ibizpro-keyword_zh_CN';
 import doclibmodule_zh_CN from '@locale/lanres/entities/doc-lib-module/doc-lib-module_zh_CN';
-import usercontact_zh_CN from '@locale/lanres/entities/user-contact/user-contact_zh_CN';
 import ibizproproductdaily_zh_CN from '@locale/lanres/entities/ibizpro-product-daily/ibizpro-product-daily_zh_CN';
 import sysrole_zh_CN from '@locale/lanres/entities/sys-role/sys-role_zh_CN';
 import plantempletdetail_zh_CN from '@locale/lanres/entities/plan-templet-detail/plan-templet-detail_zh_CN';
@@ -421,6 +421,7 @@ function getAppLocale(){
         entities: {
             'productplan': productplan_zh_CN(),
             'testcase': testcase_zh_CN(),
+            'account': account_zh_CN(),
             'product': product_zh_CN(),
             'projectburn': projectburn_zh_CN(),
             'test': test_zh_CN(),
@@ -436,6 +437,7 @@ function getAppLocale(){
             'productteam': productteam_zh_CN(),
             'testmodule': testmodule_zh_CN(),
             'productlife': productlife_zh_CN(),
+            'usercontact': usercontact_zh_CN(),
             'task': task_zh_CN(),
             'build': build_zh_CN(),
             'testreult': testreult_zh_CN(),
@@ -449,7 +451,6 @@ function getAppLocale(){
             'dynadashboard': dynadashboard_zh_CN(),
             'ibzreportroleconfig': ibzreportroleconfig_zh_CN(),
             'projectproduct': projectproduct_zh_CN(),
-            'sysuser': sysuser_zh_CN(),
             'ibzcasestep': ibzcasestep_zh_CN(),
             'taskteam': taskteam_zh_CN(),
             'file': file_zh_CN(),
@@ -502,7 +503,6 @@ function getAppLocale(){
             'sysuserrole': sysuserrole_zh_CN(),
             'ibizprokeyword': ibizprokeyword_zh_CN(),
             'doclibmodule': doclibmodule_zh_CN(),
-            'usercontact': usercontact_zh_CN(),
             'ibizproproductdaily': ibizproproductdaily_zh_CN(),
             'sysrole': sysrole_zh_CN(),
             'plantempletdetail': plantempletdetail_zh_CN(),

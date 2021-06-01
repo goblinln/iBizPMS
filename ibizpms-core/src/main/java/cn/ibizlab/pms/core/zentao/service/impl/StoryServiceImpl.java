@@ -633,6 +633,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     }
 
 
+    public List<Story> selectAccount(StorySearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<Story> selectAssignedToMyStory(StorySearchContext context){
         return baseMapper.selectAssignedToMyStory(context, context.getSelectCond());
     }
@@ -668,6 +671,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     }
     public List<Story> selectGetProductStories(StorySearchContext context){
         return baseMapper.selectGetProductStories(context, context.getSelectCond());
+    }
+    public List<Story> selectMy(StorySearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
     }
     public List<Story> selectMyAgentStory(StorySearchContext context){
         return baseMapper.selectMyAgentStory(context, context.getSelectCond());
@@ -724,6 +730,15 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         return baseMapper.selectView(context, context.getSelectCond());
     }
 
+
+    /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<Story> searchAccount(StorySearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
 
     /**
      * 查询集合 指派给我的需求
@@ -830,6 +845,15 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     public Page<Story> searchGetProductStories(StorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchGetProductStories(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<Story> searchMy(StorySearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

@@ -19,13 +19,17 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserContactMapper extends BaseMapper<UserContact> {
 
+    List<UserContact> selectAccount(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     List<UserContact> selectCurUSERCONTACT(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     List<UserContact> selectDefault(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
+    List<UserContact> selectMy(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     List<UserContact> selectMyUSERCONTACT(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     List<UserContact> selectView(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
 
+    Page<UserContact> searchAccount(IPage page, @Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     Page<UserContact> searchCurUSERCONTACT(IPage page, @Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     Page<UserContact> searchDefault(IPage page, @Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
+    Page<UserContact> searchMy(IPage page, @Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     Page<UserContact> searchMyUSERCONTACT(IPage page, @Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     @Override
     UserContact selectById(Serializable id);

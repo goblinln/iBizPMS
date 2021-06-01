@@ -39,13 +39,17 @@ public interface IUserContactService extends IService<UserContact> {
     boolean save(UserContact et);
     void saveBatch(List<UserContact> list);
     List<UserContact> select(UserContactSearchContext context);
+    List<UserContact> selectAccount(UserContactSearchContext context);
     List<UserContact> selectCurUSERCONTACT(UserContactSearchContext context);
     List<UserContact> selectDefault(UserContactSearchContext context);
+    List<UserContact> selectMy(UserContactSearchContext context);
     List<UserContact> selectMyUSERCONTACT(UserContactSearchContext context);
     List<UserContact> selectView(UserContactSearchContext context);
 
+    Page<UserContact> searchAccount(UserContactSearchContext context);
     Page<UserContact> searchCurUSERCONTACT(UserContactSearchContext context);
     Page<UserContact> searchDefault(UserContactSearchContext context);
+    Page<UserContact> searchMy(UserContactSearchContext context);
     Page<UserContact> searchMyUSERCONTACT(UserContactSearchContext context);
     UserContact dynamicCall(Long key, String action, UserContact et);
     /**

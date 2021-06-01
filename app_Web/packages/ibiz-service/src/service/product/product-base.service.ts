@@ -70,6 +70,10 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getAllListCond() {
         if (!this.condCache.has('allList')) {
             const strCond: any[] = ['AND', ['OR', ['NOTEQ', 'STATUS','closed']]];
@@ -130,6 +134,10 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('eSBulk');
     }
 
+    protected getMyCond() {
+        return this.condCache.get('my');
+    }
+
     protected getOpenQueryCond() {
         if (!this.condCache.has('openQuery')) {
             const strCond: any[] = ['AND', ['EQ', 'ACL','open']];
@@ -182,6 +190,9 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+            return this.http.delete(`/accounts/${_context.account}/products/${_context.product}`);
+        }
         return this.http.delete(`/products/${_context.product}`);
     }
     /**
@@ -193,6 +204,12 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/products/getdraft`, _data);
+            return res;
+        }
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/products/getdraft`, _data);
@@ -207,6 +224,10 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/producttop`, _data);
+        }
         return this.http.post(`/products/${_context.product}/producttop`, _data);
     }
     /**
@@ -218,7 +239,26 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/products/fetchcurproject`, _data);
+        }
         return this.http.post(`/products/fetchcurproject`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/accounts/${_context.account}/products/${_context.product}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/products/${_context.product}`, _data);
     }
     /**
      * Create
@@ -229,6 +269,16 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/accounts/${_context.account}/products`, _data);
+        }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
             _data[this.APPDEKEY] = null;
@@ -247,31 +297,12 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}`);
+            return res;
+        }
         const res = await this.http.get(`/products/${_context.product}`);
         return res;
-    }
-    /**
-     * Close
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/close`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/products/${_context.product}`, _data);
     }
     /**
      * CancelProductTop
@@ -282,6 +313,10 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/cancelproducttop`, _data);
+        }
         return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
     }
     /**
@@ -293,7 +328,25 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductService
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/products/fetchcurdefault`, _data);
+        }
         return this.http.post(`/products/fetchcurdefault`, _data);
+    }
+    /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/close`, _data);
+        }
+        return this.http.post(`/products/${_context.product}/close`, _data);
     }
 
     /**
@@ -306,6 +359,10 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @memberof ProductServiceBase
      */
     public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.account && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/closebatch`,_data);
+        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/products/closebatch`,_data);
     }

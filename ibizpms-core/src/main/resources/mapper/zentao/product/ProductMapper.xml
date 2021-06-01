@@ -100,6 +100,13 @@
 		 )t1
      </select>
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[AllList]-->
 	 <select id="searchAllList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
          select t1.* from (
@@ -171,6 +178,13 @@
          )t1
      </select>
 
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
+         select t1.* from (
+                <include refid="My" />
+         )t1
+     </select>
+
     <!--数据集合[OpenQuery]-->
 	 <select id="searchOpenQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
          select t1.* from (
@@ -205,6 +219,18 @@
                 <include refid="StoryCurProject" />
          )t1
      </select>
+
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="Account" />
+	</select>
 
     <!--数据查询[AllList]-->
     <sql id="AllList" databaseId="mysql">
@@ -339,6 +365,18 @@
 	
 	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="ESBulk" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[OpenQuery]-->

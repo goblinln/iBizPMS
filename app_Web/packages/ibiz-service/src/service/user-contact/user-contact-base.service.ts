@@ -68,6 +68,10 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getCurUSERCONTACTCond() {
         if (!this.condCache.has('curUSERCONTACT')) {
             const strCond: any[] = ['AND', ['EQ', 'ACCOUNT',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
@@ -84,6 +88,10 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.condCache.get('default');
     }
 
+    protected getMyCond() {
+        return this.condCache.get('my');
+    }
+
     protected getMyUSERCONTACTCond() {
         if (!this.condCache.has('myUSERCONTACT')) {
             const strCond: any[] = ['AND', ['EQ', 'ACCOUNT',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
@@ -98,116 +106,5 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
 
     protected getViewCond() {
         return this.condCache.get('view');
-    }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/usercontacts/${_context.usercontact}/select`);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/usercontacts`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/usercontacts/${_context.usercontact}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/usercontacts/${_context.usercontact}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/usercontacts/getdraft`, _data);
-        return res;
-    }
-    /**
-     * FetchCurUSERCONTACT
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async FetchCurUSERCONTACT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/usercontacts/fetchcurusercontact`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/usercontacts/fetchdefault`, _data);
-    }
-    /**
-     * FetchMyUSERCONTACT
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async FetchMyUSERCONTACT(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/usercontacts/fetchmyusercontact`, _data);
     }
 }

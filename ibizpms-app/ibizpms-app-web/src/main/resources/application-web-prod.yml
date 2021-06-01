@@ -75,6 +75,10 @@ zuul:
       path: /testcases/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    sys_user:
+      path: /accounts/**
+      serviceId: ${ibiz.ref.service.ibzuaa-api:ibzuaa-api}
+      stripPrefix: false
     zt_product:
       path: /products/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -135,6 +139,10 @@ zuul:
       path: /productlives/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    zt_usercontact:
+      path: /usercontacts/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_task:
       path: /tasks/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -186,10 +194,6 @@ zuul:
     zt_projectproduct:
       path: /projectproducts/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    sys_user:
-      path: /sysusers/**
-      serviceId: ${ibiz.ref.service.ibzuaa-api:ibzuaa-api}
       stripPrefix: false
     ibz_casestep:
       path: /ibzcasesteps/**
@@ -397,10 +401,6 @@ zuul:
       stripPrefix: false
     ibz_doclibmodule:
       path: /doclibmodules/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    zt_usercontact:
-      path: /usercontacts/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibizpro_productdaily:

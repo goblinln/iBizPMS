@@ -386,6 +386,13 @@
 		</trim>
      </select>
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext"  resultMap="BugResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[AssignedToMyBug]-->
 	 <select id="searchAssignedToMyBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext"  resultMap="BugResultMap">
          select t1.* from (
@@ -535,6 +542,13 @@
          )t1
      </select>
 
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext"  resultMap="BugResultMap">
+         select t1.* from (
+                <include refid="My" />
+         )t1
+     </select>
+
     <!--数据集合[MyAgentBug]-->
 	 <select id="searchMyAgentBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext"  resultMap="BugResultMap">
          select t1.* from (
@@ -648,6 +662,18 @@
                 <include refid="TaskBug" />
          )t1
      </select>
+
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+		<include refid="Account" />
+	</select>
 
     <!--数据查询[AssignedToMyBug]-->
     <sql id="AssignedToMyBug" databaseId="mysql">
@@ -1010,6 +1036,18 @@
 	
 	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="ESBulk" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[MyAgentBug]-->

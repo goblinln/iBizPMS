@@ -237,11 +237,37 @@ public class TodoResource {
 
 
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"待办" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/fetchaccount")
+	public ResponseEntity<List<TodoDTO>> fetchaccount(@RequestBody TodoSearchContext context) {
+        todoRuntime.addAuthorityConditions(context,"READ");
+        Page<Todo> domains = todoService.searchAccount(context) ;
+        List<TodoDTO> list = todoMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"待办" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchdefault")
 	public ResponseEntity<List<TodoDTO>> fetchdefault(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchDefault(context) ;
+        List<TodoDTO> list = todoMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"待办" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmy")
+	public ResponseEntity<List<TodoDTO>> fetchmy(@RequestBody TodoSearchContext context) {
+        todoRuntime.addAuthorityConditions(context,"READ");
+        Page<Todo> domains = todoService.searchMy(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

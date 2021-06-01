@@ -632,14 +632,6 @@
     "psappsbitemid" : "bf45f5ab18b015e1196b2e43129c5c1d",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzMyTerritoryTabExpView",
-    "psappsbitemname" : "我的地盘",
-    "itemtag2" : "74ce79e26744fdc318821d881a3c0773",
-    "psappviewid" : "ef6be1c6669da048517cc2fd219529f6",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryTabExpView.json",
-    "psappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "IbzDailyDailyInfoEditView",
     "psappsbitemname" : "日报编辑视图(日报描述)",
     "itemtag2" : "0db29ffeb3abdcbb6d8afb5362d654ee",
@@ -2229,6 +2221,14 @@
     "psappviewid" : "7ef300c01cce979e53218b74c8243d2a",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProjectGridViewFile.json",
     "psappsbitemid" : "d99493e1b190f53b59a83e106311fe9b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysUserTabExpView",
+    "psappsbitemname" : "我的地盘",
+    "itemtag2" : "1a461f22bfcd01ffce22e8fd8f691f8f",
+    "psappviewid" : "b266331997a4e75743cb286a837ef6cd",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserTabExpView.json",
+    "psappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TodoFinishView",
@@ -11179,10 +11179,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "项目",
-    "psappsbitemrsid" : "31e45bcedff86029373352a3fb7a5daa",
+    "psappsbitemrsid" : "1fe76a0adc3bd186d802e62239d2b347",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel7",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "51a2cff9ce53e603e43655fc8f476b5d",
     "psappsbitemrsname" : "[项目]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -11206,10 +11206,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "系统日志列表视图",
-    "psappsbitemrsid" : "c3f3eb52f29f7eb012378ed2911e6014",
+    "psappsbitemrsid" : "6a41e79b23ea62352e5f18338b8105a6",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel9",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "a184d31d05164705638c4be8ae86d4a5",
     "psappsbitemrsname" : "[动态]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -11613,10 +11613,10 @@
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "测试",
-    "psappsbitemrsid" : "5b34be6b6682a35ceba620478ba5525b",
+    "psappsbitemrsid" : "e56e7716c26c9e16ee1d4900edb987bd",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel6",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "b005e693a0d4cb45029b4c8652ffd635",
     "psappsbitemrsname" : "[测试]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -11715,10 +11715,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "bug表格视图",
-    "psappsbitemrsid" : "0435e26423f3c9ed927cadf0786c7dc9",
+    "psappsbitemrsid" : "0d086fc372f3e453de9796f9e65b0c16",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel5",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "65de40e85ca737a6c9c5b3dcb464e724",
     "psappsbitemrsname" : "[BUG]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -12165,10 +12165,10 @@
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "我的地盘分页导航视图",
-    "psappsbitemrsid" : "76f6de884da05dc1c50c74de5890fb19",
+    "psappsbitemrsid" : "59f076452353285da5f9221d186fb0fb",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel12",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "ab03ad5fb70f0432934ed5d778637021",
     "psappsbitemrsname" : "[汇报]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -12208,10 +12208,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "usertpl表格视图",
-    "psappsbitemrsid" : "d7157a0fbb952c1f4b31099e8668f21d",
+    "psappsbitemrsid" : "2d040ce6fb136bbd1e4f5ad44019a07b",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel11",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "aa2c66b212bb253c25920255152b49d3",
     "psappsbitemrsname" : "[模板]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -12261,10 +12261,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "代理表格视图",
-    "psappsbitemrsid" : "9b5342c00762e86ab651e6a95e788c6f",
+    "psappsbitemrsid" : "a20df5308a67bc2c4ab4dd930379e244",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel15",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "4690f9c6f13c8d0eed9b984453a27ec7",
     "psappsbitemrsname" : "[代理]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -12352,10 +12352,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "usercontact表格视图",
-    "psappsbitemrsid" : "2979752ce6f099f9bcf8fe9f34d84f43",
+    "psappsbitemrsid" : "aeef88c484d6260c2d8489a36b490553",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel8",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "c6d071c8221e56c2ef6c5142deed8e17",
     "psappsbitemrsname" : "[联系人]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -12377,21 +12377,21 @@
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "人员数据看板视图",
-    "psappsbitemrsid" : "4230001d48e52d5ae4da550b865dae68",
+    "psappsbitemrsid" : "6c8e698cf40d14b8f413b0eb861b2113",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel14",
-    "ppsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "cpsappsbitemid" : "d01e71eb088ce1bef31bfdcf5df25de8",
     "psappsbitemrsname" : "[个人信息]导航视图",
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "我的地盘",
-    "psappsbitemrsid" : "dac3a09d3624f53e7d06620de16ba24b",
+    "psappsbitemrsid" : "ca5c24497de894621dfd9847813186d9",
     "ppsappsbitemname" : "iBiz软件生产管理",
     "rstag" : "APPVIEW",
     "rstag2" : "打开应用视图",
     "ppsappsbitemid" : "0936c0f4bd25ce74e2285c87d8c527b9",
-    "cpsappsbitemid" : "c96cd19a6748b34749f41f70fc571f71",
+    "cpsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "psappsbitemrsname" : "我的地盘",
     "rstype" : "APPFUNC"
   }, {

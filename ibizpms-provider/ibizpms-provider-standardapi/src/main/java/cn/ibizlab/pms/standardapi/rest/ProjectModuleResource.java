@@ -53,17 +53,6 @@ public class ProjectModuleResource {
     public ProjectModuleMapping projectmoduleMapping;
 
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
-    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
-        ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
-        domain.setRoot(project_id);
-        projectmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
-    }
-
-
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
     @ApiOperation(value = "根据项目建立任务模块", tags = {"任务模块" },  notes = "根据项目建立任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules")
@@ -86,6 +75,17 @@ public class ProjectModuleResource {
 		projectmoduleService.update(domain);
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
+    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+        ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
+        domain.setRoot(project_id);
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
 
@@ -137,17 +137,6 @@ public class ProjectModuleResource {
 
 
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目保存任务模块", tags = {"任务模块" },  notes = "根据系统用户项目保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/projectmodules/save")
-    public ResponseEntity<ProjectModuleDTO> saveBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
-        ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
-        domain.setRoot(project_id);
-        projectmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
-    }
-
-
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
     @ApiOperation(value = "根据系统用户项目建立任务模块", tags = {"任务模块" },  notes = "根据系统用户项目建立任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/projectmodules")
@@ -170,6 +159,17 @@ public class ProjectModuleResource {
 		projectmoduleService.update(domain);
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户项目保存任务模块", tags = {"任务模块" },  notes = "根据系统用户项目保存任务模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/projectmodules/save")
+    public ResponseEntity<ProjectModuleDTO> saveBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+        ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
+        domain.setRoot(project_id);
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
 

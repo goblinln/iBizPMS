@@ -340,8 +340,14 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     }
 
 
+    public List<TestTask> selectAccount(TestTaskSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<TestTask> selectDefault(TestTaskSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
+    }
+    public List<TestTask> selectMy(TestTaskSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
     }
     public List<TestTask> selectMyTestTaskPc(TestTaskSearchContext context){
         return baseMapper.selectMyTestTaskPc(context, context.getSelectCond());
@@ -355,11 +361,29 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
 
 
     /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<TestTask> searchAccount(TestTaskSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestTask> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<TestTask>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 DEFAULT
      */
     @Override
     public Page<TestTask> searchDefault(TestTaskSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestTask> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<TestTask>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<TestTask> searchMy(TestTaskSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestTask> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<TestTask>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

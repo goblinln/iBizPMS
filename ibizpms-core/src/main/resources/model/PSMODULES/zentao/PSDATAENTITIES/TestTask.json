@@ -151,6 +151,15 @@
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
+    "codeName" : "Account",
+    "logicName" : "指定用户数据",
+    "name" : "Account",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
@@ -162,6 +171,15 @@
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
     "defaultMode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5"
+    } ],
+    "codeName" : "My",
+    "logicName" : "我的数据",
+    "name" : "My",
+    "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -205,6 +223,16 @@
     "name" : "VIEW"
   } ],
   "getAllPSDEDataSets" : [ {
+    "codeName" : "Account",
+    "logicName" : "指定用户数据",
+    "name" : "Account",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Account"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
@@ -213,6 +241,16 @@
       "id" : "Default"
     } ],
     "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "My",
+    "logicName" : "我的数据",
+    "name" : "My",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "My"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {

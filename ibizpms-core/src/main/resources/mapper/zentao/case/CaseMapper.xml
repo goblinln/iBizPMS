@@ -220,6 +220,13 @@
 		</trim>
      </select>
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext"  resultMap="CaseResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[BatchNew]-->
 	 <select id="searchBatchNew"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext"  resultMap="CaseResultMap">
          select t1.* from (
@@ -280,6 +287,13 @@
 	 <select id="searchModuleRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext"  resultMap="CaseResultMap">
          select t1.* from (
                 <include refid="ModuleRePortCase_Project" />
+         )t1
+     </select>
+
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext"  resultMap="CaseResultMap">
+         select t1.* from (
+                <include refid="My" />
          )t1
      </select>
 
@@ -387,6 +401,18 @@
                 <include refid="RunRePortCase_Project" />
          )t1
      </select>
+
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="Account" />
+	</select>
 
     <!--数据查询[BatchNew]-->
     <sql id="BatchNew" databaseId="mysql">
@@ -533,6 +559,18 @@
 	
 	<select id="selectModuleRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="ModuleRePortCase_Project" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[MyCreateOrUpdate]-->

@@ -134,6 +134,19 @@ public class UserContactResource {
     }
 
 
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"用户联系方式" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchaccount")
+	public ResponseEntity<List<UserContactDTO>> fetchaccount(@RequestBody UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
+        Page<UserContact> domains = usercontactService.searchAccount(context) ;
+        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取抄送联系人", tags = {"用户联系方式" } ,notes = "获取抄送联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchcurusercontact")
@@ -151,6 +164,19 @@ public class UserContactResource {
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchdefault")
 	public ResponseEntity<List<UserContactDTO>> fetchdefault(@RequestBody UserContactSearchContext context) {
         Page<UserContact> domains = usercontactService.searchDefault(context) ;
+        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"用户联系方式" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmy")
+	public ResponseEntity<List<UserContactDTO>> fetchmy(@RequestBody UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
+        Page<UserContact> domains = usercontactService.searchMy(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

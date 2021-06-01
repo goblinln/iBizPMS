@@ -127,10 +127,14 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public Page<Action> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ActionSearchContext searchContext = (ActionSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return actionService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return actionService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("MobType"))
             return actionService.searchMobType(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return actionService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAction"))
             return actionService.searchMyAction(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTrends"))
@@ -149,12 +153,16 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public List<Action> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ActionSearchContext searchContext = (ActionSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return actionService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("BianGengLineHistory"))
             return actionService.selectBianGengLineHistory(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return actionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MobType"))
             return actionService.selectMobType(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return actionService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyAction"))
             return actionService.selectMyAction(searchContext);
         if (iPSDataQuery.getName().equals("MyTrends"))
@@ -404,11 +412,17 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         else if (action.equals("sendToread")) {
             return aroundAction("sendToread", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
         }
         else if (action.equals("searchMobType")) {
             return aroundDataSet("MobType", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyAction")) {
             return aroundDataSet("MyAction", point);

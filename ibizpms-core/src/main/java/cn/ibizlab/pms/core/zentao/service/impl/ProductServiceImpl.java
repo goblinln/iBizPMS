@@ -382,6 +382,9 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
 
+    public List<Product> selectAccount(ProductSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<Product> selectAllList(ProductSearchContext context){
         return baseMapper.selectAllList(context, context.getSelectCond());
     }
@@ -409,6 +412,9 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public List<Product> selectESBulk(ProductSearchContext context){
         return baseMapper.selectESBulk(context, context.getSelectCond());
     }
+    public List<Product> selectMy(ProductSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
+    }
     public List<Product> selectOpenQuery(ProductSearchContext context){
         return baseMapper.selectOpenQuery(context, context.getSelectCond());
     }
@@ -431,6 +437,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return baseMapper.selectView(context, context.getSelectCond());
     }
 
+
+    /**
+     * 查询集合 用户数据
+     */
+    @Override
+    public Page<Product> searchAccount(ProductSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
 
     /**
      * 查询集合 全部产品
@@ -510,6 +525,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     public Page<Product> searchESBulk(ProductSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchESBulk(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<Product> searchMy(ProductSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

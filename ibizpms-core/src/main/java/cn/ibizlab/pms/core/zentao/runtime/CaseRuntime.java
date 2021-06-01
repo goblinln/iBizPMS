@@ -127,6 +127,8 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Page<Case> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return caseService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("BatchNew"))
             return caseService.searchBatchNew(searchContext);    
         if (iPSDEDataSet.getName().equals("CurOpenedCase"))
@@ -145,6 +147,8 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return caseService.searchModuleRePortCaseEntry(searchContext);    
         if (iPSDEDataSet.getName().equals("ModuleRePortCase_Project"))
             return caseService.searchModuleRePortCase_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return caseService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateOrUpdate"))
             return caseService.searchMyCreateOrUpdate(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorite"))
@@ -181,6 +185,8 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<Case> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return caseService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("BatchNew"))
             return caseService.selectBatchNew(searchContext);
         if (iPSDataQuery.getName().equals("CurOpenedCase"))
@@ -199,6 +205,8 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return caseService.selectModuleRePortCaseEntry(searchContext);
         if (iPSDataQuery.getName().equals("ModuleRePortCase_Project"))
             return caseService.selectModuleRePortCase_Project(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return caseService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateOrUpdate"))
             return caseService.selectMyCreateOrUpdate(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorite"))
@@ -556,6 +564,9 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         else if (action.equals("unlinkSuiteCases")) {
             return aroundAction("unlinkSuiteCases", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchBatchNew")) {
             return aroundDataSet("BatchNew", point);
         }
@@ -582,6 +593,9 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchModuleRePortCase_Project")) {
             return aroundDataSet("ModuleRePortCase_Project", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyCreateOrUpdate")) {
             return aroundDataSet("MyCreateOrUpdate", point);

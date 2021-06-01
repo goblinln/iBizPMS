@@ -56,6 +56,7 @@ public interface ICaseService extends IService<Case> {
     Case unlinkSuiteCase(Case et);
     Case unlinkSuiteCases(Case et);
     List<Case> select(CaseSearchContext context);
+    List<Case> selectAccount(CaseSearchContext context);
     List<Case> selectBatchNew(CaseSearchContext context);
     List<Case> selectCurOpenedCase(CaseSearchContext context);
     List<Case> selectCurSuite(CaseSearchContext context);
@@ -65,6 +66,7 @@ public interface ICaseService extends IService<Case> {
     List<Case> selectModuleRePortCase(CaseSearchContext context);
     List<Case> selectModuleRePortCaseEntry(CaseSearchContext context);
     List<Case> selectModuleRePortCase_Project(CaseSearchContext context);
+    List<Case> selectMy(CaseSearchContext context);
     List<Case> selectMyCreateOrUpdate(CaseSearchContext context);
     List<Case> selectMyFavorite(CaseSearchContext context);
     List<Case> selectMyReProduct(CaseSearchContext context);
@@ -82,6 +84,7 @@ public interface ICaseService extends IService<Case> {
     List<Case> selectRunRePortCase_Project(CaseSearchContext context);
     List<Case> selectView(CaseSearchContext context);
 
+    Page<Case> searchAccount(CaseSearchContext context);
     Page<Case> searchBatchNew(CaseSearchContext context);
     Page<Case> searchCurOpenedCase(CaseSearchContext context);
     Page<Case> searchCurSuite(CaseSearchContext context);
@@ -91,6 +94,7 @@ public interface ICaseService extends IService<Case> {
     Page<Case> searchModuleRePortCase(CaseSearchContext context);
     Page<Case> searchModuleRePortCaseEntry(CaseSearchContext context);
     Page<Case> searchModuleRePortCase_Project(CaseSearchContext context);
+    Page<Case> searchMy(CaseSearchContext context);
     Page<Case> searchMyCreateOrUpdate(CaseSearchContext context);
     Page<Case> searchMyFavorites(CaseSearchContext context);
     Page<Case> searchMyReProduct(CaseSearchContext context);

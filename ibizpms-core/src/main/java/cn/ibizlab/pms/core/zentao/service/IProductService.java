@@ -44,6 +44,7 @@ public interface IProductService extends IService<Product> {
     boolean save(Product et);
     void saveBatch(List<Product> list);
     List<Product> select(ProductSearchContext context);
+    List<Product> selectAccount(ProductSearchContext context);
     List<Product> selectAllList(ProductSearchContext context);
     List<Product> selectAllProduct(ProductSearchContext context);
     List<Product> selectCheckNameOrCode(ProductSearchContext context);
@@ -53,6 +54,7 @@ public interface IProductService extends IService<Product> {
     List<Product> selectDefault(ProductSearchContext context);
     List<Product> selectDeveloperQuery(ProductSearchContext context);
     List<Product> selectESBulk(ProductSearchContext context);
+    List<Product> selectMy(ProductSearchContext context);
     List<Product> selectOpenQuery(ProductSearchContext context);
     List<Product> selectProductManagerQuery(ProductSearchContext context);
     List<Product> selectProductPM(ProductSearchContext context);
@@ -61,6 +63,7 @@ public interface IProductService extends IService<Product> {
     List<Product> selectStoryCurProject(ProductSearchContext context);
     List<Product> selectView(ProductSearchContext context);
 
+    Page<Product> searchAccount(ProductSearchContext context);
     Page<Product> searchAllList(ProductSearchContext context);
     Page<Product> searchAllProduct(ProductSearchContext context);
     Page<Product> searchCheckNameOrCode(ProductSearchContext context);
@@ -70,6 +73,7 @@ public interface IProductService extends IService<Product> {
     Page<Product> searchDefault(ProductSearchContext context);
     Page<Product> searchDeveloperQuery(ProductSearchContext context);
     Page<Product> searchESBulk(ProductSearchContext context);
+    Page<Product> searchMy(ProductSearchContext context);
     Page<Product> searchOpenQuery(ProductSearchContext context);
     Page<Product> searchProductManagerQuery(ProductSearchContext context);
     Page<Product> searchProductPM(ProductSearchContext context);

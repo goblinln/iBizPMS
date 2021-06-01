@@ -266,6 +266,13 @@
 		</trim>
      </select>
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[AssignedToMyStory]-->
 	 <select id="searchAssignedToMyStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
          select t1.* from (
@@ -353,6 +360,13 @@
 	 <select id="searchGetProductStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
          select t1.* from (
                 <include refid="GetProductStories" />
+         )t1
+     </select>
+
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="My" />
          )t1
      </select>
 
@@ -495,6 +509,18 @@
                 <include refid="View" />
          )t1
      </select>
+
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="Account" />
+	</select>
 
     <!--数据查询[AssignedToMyStory]-->
     <sql id="AssignedToMyStory" databaseId="mysql">
@@ -704,6 +730,18 @@
 	
 	<select id="selectGetProductStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="GetProductStories" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[MyAgentStory]-->

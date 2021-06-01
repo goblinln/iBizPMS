@@ -35,6 +35,15 @@ export class GlobalService {
         return (await import('./test-case/test-case.service')).default.getInstance();
     }
     /**
+     * 系统用户服务
+     *
+     * @return {Account}
+     * @memberof GlobalService
+     */
+    async getAccountService() {
+        return (await import('./account/account.service')).default.getInstance();
+    }
+    /**
      * 产品服务
      *
      * @return {Product}
@@ -170,6 +179,15 @@ export class GlobalService {
         return (await import('./product-life/product-life.service')).default.getInstance();
     }
     /**
+     * 用户联系方式服务
+     *
+     * @return {UserContact}
+     * @memberof GlobalService
+     */
+    async getUserContactService() {
+        return (await import('./user-contact/user-contact.service')).default.getInstance();
+    }
+    /**
      * 任务服务
      *
      * @return {Task}
@@ -285,15 +303,6 @@ export class GlobalService {
      */
     async getProjectProductService() {
         return (await import('./project-product/project-product.service')).default.getInstance();
-    }
-    /**
-     * 系统用户服务
-     *
-     * @return {SysUser}
-     * @memberof GlobalService
-     */
-    async getSysUserService() {
-        return (await import('./sys-user/sys-user.service')).default.getInstance();
     }
     /**
      * 用例步骤服务
@@ -762,15 +771,6 @@ export class GlobalService {
      */
     async getDocLibModuleService() {
         return (await import('./doc-lib-module/doc-lib-module.service')).default.getInstance();
-    }
-    /**
-     * 用户联系方式服务
-     *
-     * @return {UserContact}
-     * @memberof GlobalService
-     */
-    async getUserContactService() {
-        return (await import('./user-contact/user-contact.service')).default.getInstance();
     }
     /**
      * 产品日报服务

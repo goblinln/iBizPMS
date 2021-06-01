@@ -238,10 +238,34 @@ public class TestTaskResource {
 
 
     @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"测试版本" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchaccount")
+	public ResponseEntity<List<TestTaskDTO>> fetchaccount(@RequestBody TestTaskSearchContext context) {
+        Page<TestTask> domains = testtaskService.searchAccount(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchdefault(@RequestBody TestTaskSearchContext context) {
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"测试版本" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchmy")
+	public ResponseEntity<List<TestTaskDTO>> fetchmy(@RequestBody TestTaskSearchContext context) {
+        Page<TestTask> domains = testtaskService.searchMy(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -444,11 +468,37 @@ public class TestTaskResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"测试版本" } ,notes = "根据产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchaccount")
+	public ResponseEntity<List<TestTaskDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<TestTask> domains = testtaskService.searchAccount(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取我的数据", tags = {"测试版本" } ,notes = "根据产品获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchmy")
+	public ResponseEntity<List<TestTaskDTO>> fetchMyByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<TestTask> domains = testtaskService.searchMy(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -645,11 +695,37 @@ public class TestTaskResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"测试版本" } ,notes = "根据项目获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchaccount")
+	public ResponseEntity<List<TestTaskDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<TestTask> domains = testtaskService.searchAccount(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取我的数据", tags = {"测试版本" } ,notes = "根据项目获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchmy")
+	public ResponseEntity<List<TestTaskDTO>> fetchMyByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<TestTask> domains = testtaskService.searchMy(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

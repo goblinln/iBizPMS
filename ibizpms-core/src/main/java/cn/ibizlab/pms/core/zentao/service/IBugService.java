@@ -62,6 +62,7 @@ public interface IBugService extends IService<Bug> {
     Bug unlinkBug(Bug et);
     Bug updateStoryVersion(Bug et);
     List<Bug> select(BugSearchContext context);
+    List<Bug> selectAccount(BugSearchContext context);
     List<Bug> selectAssignedToMyBug(BugSearchContext context);
     List<Bug> selectAssignedToMyBugPc(BugSearchContext context);
     List<Bug> selectBuildBugs(BugSearchContext context);
@@ -82,6 +83,7 @@ public interface IBugService extends IService<Bug> {
     List<Bug> selectCurUserResolve(BugSearchContext context);
     List<Bug> selectDefault(BugSearchContext context);
     List<Bug> selectESBulk(BugSearchContext context);
+    List<Bug> selectMy(BugSearchContext context);
     List<Bug> selectMyAgentBug(BugSearchContext context);
     List<Bug> selectMyCreateOrPartake(BugSearchContext context);
     List<Bug> selectMyCurOpenedBug(BugSearchContext context);
@@ -100,6 +102,7 @@ public interface IBugService extends IService<Bug> {
     List<Bug> selectTaskBug(BugSearchContext context);
     List<Bug> selectView(BugSearchContext context);
 
+    Page<Bug> searchAccount(BugSearchContext context);
     Page<Bug> searchAssignedToMyBug(BugSearchContext context);
     Page<Bug> searchAssignedToMyBugPc(BugSearchContext context);
     Page<Bug> searchBugsByBuild(BugSearchContext context);
@@ -121,6 +124,7 @@ public interface IBugService extends IService<Bug> {
     Page<Bug> searchCurUserResolve(BugSearchContext context);
     Page<Bug> searchDefault(BugSearchContext context);
     Page<Bug> searchESBulk(BugSearchContext context);
+    Page<Bug> searchMy(BugSearchContext context);
     Page<Bug> searchMyAgentBug(BugSearchContext context);
     Page<Bug> searchMyCreateOrPartake(BugSearchContext context);
     Page<Bug> searchMyCurOpenedBug(BugSearchContext context);

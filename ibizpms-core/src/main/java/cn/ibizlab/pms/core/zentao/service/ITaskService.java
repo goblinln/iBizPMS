@@ -74,6 +74,7 @@ public interface ITaskService extends IService<Task> {
     Task updateRelatedPlanStatus(Task et);
     Task updateStoryVersion(Task et);
     List<Task> select(TaskSearchContext context);
+    List<Task> selectAccount(TaskSearchContext context);
     List<Task> selectAssignedToMyTask(TaskSearchContext context);
     List<Task> selectAssignedToMyTaskPc(TaskSearchContext context);
     List<Task> selectBugTask(TaskSearchContext context);
@@ -87,6 +88,7 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectDefault(TaskSearchContext context);
     List<Task> selectDefaultRow(TaskSearchContext context);
     List<Task> selectESBulk(TaskSearchContext context);
+    List<Task> selectMy(TaskSearchContext context);
     List<Task> selectMyAgentTask(TaskSearchContext context);
     List<Task> selectMyAllTask(TaskSearchContext context);
     List<Task> selectMyCompleteTask(TaskSearchContext context);
@@ -119,6 +121,7 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectTypeGroupPlan(TaskSearchContext context);
     List<Task> selectView(TaskSearchContext context);
 
+    Page<Task> searchAccount(TaskSearchContext context);
     Page<Task> searchAssignedToMyTask(TaskSearchContext context);
     Page<Task> searchAssignedToMyTaskPc(TaskSearchContext context);
     Page<Task> searchBugTask(TaskSearchContext context);
@@ -132,6 +135,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchDefault(TaskSearchContext context);
     Page<Task> searchDefaultRow(TaskSearchContext context);
     Page<Task> searchESBulk(TaskSearchContext context);
+    Page<Task> searchMy(TaskSearchContext context);
     Page<Task> searchMyAgentTask(TaskSearchContext context);
     Page<Task> searchMyAllTask(TaskSearchContext context);
     Page<Task> searchMyCompleteTask(TaskSearchContext context);

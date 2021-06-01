@@ -127,8 +127,12 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public Page<TestTask> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         TestTaskSearchContext searchContext = (TestTaskSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return testtaskService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return testtaskService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return testtaskService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTestTaskPc"))
             return testtaskService.searchMyTestTaskPc(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectTestTaskDS"))
@@ -139,8 +143,12 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public List<TestTask> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TestTaskSearchContext searchContext = (TestTaskSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return testtaskService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return testtaskService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return testtaskService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyTestTaskPc"))
             return testtaskService.selectMyTestTaskPc(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
@@ -382,8 +390,14 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         else if (action.equals("unlinkCase")) {
             return aroundAction("unlinkCase", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyTestTaskPc")) {
             return aroundDataSet("MyTestTaskPc", point);

@@ -573,6 +573,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     }
 
 
+    public List<Bug> selectAccount(BugSearchContext context){
+        return baseMapper.selectAccount(context, context.getSelectCond());
+    }
     public List<Bug> selectAssignedToMyBug(BugSearchContext context){
         return baseMapper.selectAssignedToMyBug(context, context.getSelectCond());
     }
@@ -633,6 +636,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     public List<Bug> selectESBulk(BugSearchContext context){
         return baseMapper.selectESBulk(context, context.getSelectCond());
     }
+    public List<Bug> selectMy(BugSearchContext context){
+        return baseMapper.selectMy(context, context.getSelectCond());
+    }
     public List<Bug> selectMyAgentBug(BugSearchContext context){
         return baseMapper.selectMyAgentBug(context, context.getSelectCond());
     }
@@ -685,6 +691,15 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return baseMapper.selectView(context, context.getSelectCond());
     }
 
+
+    /**
+     * 查询集合 指定用户数据
+     */
+    @Override
+    public Page<Bug> searchAccount(BugSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchAccount(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
 
     /**
      * 查询集合 指派给我Bug
@@ -872,6 +887,15 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     public Page<Bug> searchESBulk(BugSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchESBulk(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我的数据
+     */
+    @Override
+    public Page<Bug> searchMy(BugSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMy(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

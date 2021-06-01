@@ -1310,7 +1310,29 @@
               "loadDefault" : true,
               "showCaptionBar" : false,
               "modelid" : "d3faf41f12df89727a6f18eca8b7a117",
-              "modeltype" : "PSAPPDEVIEW"
+              "modeltype" : "PSAPPDEVIEW",
+              "getPSAppDERSPaths" : [ [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "ACCOUNT__PROJECT",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ] ]
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1828,7 +1850,29 @@
               "rowEditDefault" : false,
               "showCaptionBar" : false,
               "modelid" : "6c2a0306865904de97c8482291e72235",
-              "modeltype" : "PSAPPDEVIEW"
+              "modeltype" : "PSAPPDEVIEW",
+              "getPSAppDERSPaths" : [ [ {
+                "actionRSMode" : 1,
+                "codeName" : "Projects",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                },
+                "name" : "ACCOUNT__PROJECT",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ] ]
             },
             "getPSLayoutPos" : {
               "colMD" : 24,

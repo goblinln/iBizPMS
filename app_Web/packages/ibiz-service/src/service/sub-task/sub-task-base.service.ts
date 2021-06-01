@@ -69,6 +69,10 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getAssignedToMyTaskCond() {
         return this.condCache.get('assignedToMyTask');
     }
@@ -119,6 +123,10 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
 
     protected getESBulkCond() {
         return this.condCache.get('eSBulk');
+    }
+
+    protected getMyCond() {
+        return this.condCache.get('my');
     }
 
     protected getMyAgentTaskCond() {

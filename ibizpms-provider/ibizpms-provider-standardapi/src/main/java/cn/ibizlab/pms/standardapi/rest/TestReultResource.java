@@ -55,6 +55,17 @@ public class TestReultResource {
 
 
     @PreAuthorize("@TestResultRuntime.quickTest('READ')")
+    @ApiOperation(value = "根据系统用户测试用例获取测试结果", tags = {"测试结果" },  notes = "根据系统用户测试用例获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/testcases/{case_id}/testreults/{testreult_id}")
+    public ResponseEntity<TestReultDTO> getBySysUserCase(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("case_id") Long case_id, @PathVariable("testreult_id") Long testreult_id) {
+        TestResult domain = testresultService.get(testreult_id);
+        TestReultDTO dto = testreultMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+
+    @PreAuthorize("@TestResultRuntime.quickTest('READ')")
     @ApiOperation(value = "根据产品测试用例获取测试结果", tags = {"测试结果" },  notes = "根据产品测试用例获取测试结果")
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/{case_id}/testreults/{testreult_id}")
     public ResponseEntity<TestReultDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testreult_id") Long testreult_id) {

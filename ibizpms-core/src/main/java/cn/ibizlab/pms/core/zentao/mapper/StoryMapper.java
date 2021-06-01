@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface StoryMapper extends BaseMapper<Story> {
 
+    List<Story> selectAccount(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectAssignedToMyStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectAssignedToMyStoryCalendar(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectBugStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
@@ -31,6 +32,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     List<Story> selectDefault(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectESBulk(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectGetProductStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectMy(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectMyAgentStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectMyCreateOrPartake(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectMyCurOpenedStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
@@ -50,6 +52,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     List<Story> selectTaskRelatedStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectView(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
 
+    Page<Story> searchAccount(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchAssignedToMyStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchAssignedToMyStoryCalendar(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchBugStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
@@ -62,6 +65,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     Page<Story> searchDefault(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchESBulk(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchGetProductStories(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    Page<Story> searchMy(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchMyAgentStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchMyCreateOrPartake(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchMyCurOpenedStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);

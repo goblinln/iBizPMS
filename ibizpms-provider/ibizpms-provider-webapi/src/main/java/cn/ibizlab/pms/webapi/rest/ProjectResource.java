@@ -424,6 +424,19 @@ public class ProjectResource {
     }
 
 
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"项目" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchaccount")
+	public ResponseEntity<List<ProjectDTO>> fetchaccount(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchAccount(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProjectRuntime.quickTest('NONE')")
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchbugproject")
@@ -559,6 +572,19 @@ public class ProjectResource {
 	public ResponseEntity<List<ProjectDTO>> fetchinvolvedproject_storytaskbug(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchInvolvedProject_StoryTaskBug(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"项目" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchmy")
+	public ResponseEntity<List<ProjectDTO>> fetchmy(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchMy(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

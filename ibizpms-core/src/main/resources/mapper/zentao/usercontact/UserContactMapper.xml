@@ -37,6 +37,13 @@
     </resultMap>
 
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext"  resultMap="UserContactResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[CurUSERCONTACT]-->
 	 <select id="searchCurUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext"  resultMap="UserContactResultMap">
          select t1.* from (
@@ -51,12 +58,31 @@
          )t1
      </select>
 
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext"  resultMap="UserContactResultMap">
+         select t1.* from (
+                <include refid="My" />
+         )t1
+     </select>
+
     <!--数据集合[MyUSERCONTACT]-->
 	 <select id="searchMyUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext"  resultMap="UserContactResultMap">
          select t1.* from (
                 <include refid="MyUSERCONTACT" />
          )t1
      </select>
+
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+		<include refid="Account" />
+	</select>
 
     <!--数据查询[CurUSERCONTACT]-->
     <sql id="CurUSERCONTACT" databaseId="mysql">
@@ -83,6 +109,18 @@
 	
 	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
 		<include refid="Default" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[MyUSERCONTACT]-->

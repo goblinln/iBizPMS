@@ -46,12 +46,16 @@ public interface ITestTaskService extends IService<TestTask> {
     TestTask start(TestTask et);
     TestTask unlinkCase(TestTask et);
     List<TestTask> select(TestTaskSearchContext context);
+    List<TestTask> selectAccount(TestTaskSearchContext context);
     List<TestTask> selectDefault(TestTaskSearchContext context);
+    List<TestTask> selectMy(TestTaskSearchContext context);
     List<TestTask> selectMyTestTaskPc(TestTaskSearchContext context);
     List<TestTask> selectSimple(TestTaskSearchContext context);
     List<TestTask> selectView(TestTaskSearchContext context);
 
+    Page<TestTask> searchAccount(TestTaskSearchContext context);
     Page<TestTask> searchDefault(TestTaskSearchContext context);
+    Page<TestTask> searchMy(TestTaskSearchContext context);
     Page<TestTask> searchMyTestTaskPc(TestTaskSearchContext context);
     Page<TestTask> searchProjectTestTaskDS(TestTaskSearchContext context);
     List<TestTask> selectByBuild(Long id);

@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CaseMapper extends BaseMapper<Case> {
 
+    List<Case> selectAccount(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectBatchNew(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectCurOpenedCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectCurSuite(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
@@ -28,6 +29,7 @@ public interface CaseMapper extends BaseMapper<Case> {
     List<Case> selectModuleRePortCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectModuleRePortCaseEntry(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectModuleRePortCase_Project(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectMy(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectMyCreateOrUpdate(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectMyFavorite(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectMyReProduct(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
@@ -45,6 +47,7 @@ public interface CaseMapper extends BaseMapper<Case> {
     List<Case> selectRunRePortCase_Project(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     List<Case> selectView(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
 
+    Page<Case> searchAccount(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchBatchNew(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchCurOpenedCase(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchCurSuite(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
@@ -54,6 +57,7 @@ public interface CaseMapper extends BaseMapper<Case> {
     Page<Case> searchModuleRePortCase(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchModuleRePortCaseEntry(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchModuleRePortCase_Project(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    Page<Case> searchMy(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchMyCreateOrUpdate(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchMyFavorites(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchMyReProduct(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);

@@ -127,6 +127,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Page<Task> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         TaskSearchContext searchContext = (TaskSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return taskService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("AssignedToMyTask"))
             return taskService.searchAssignedToMyTask(searchContext);    
         if (iPSDEDataSet.getName().equals("AssignedToMyTaskPc"))
@@ -153,6 +155,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchDefaultRow(searchContext);    
         if (iPSDEDataSet.getName().equals("ESBulk"))
             return taskService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return taskService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentTask"))
             return taskService.searchMyAgentTask(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAllTask"))
@@ -215,6 +219,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<Task> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TaskSearchContext searchContext = (TaskSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return taskService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyTask"))
             return taskService.selectAssignedToMyTask(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyTaskPc"))
@@ -241,6 +247,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectDefaultRow(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
             return taskService.selectESBulk(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return taskService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentTask"))
             return taskService.selectMyAgentTask(searchContext);
         if (iPSDataQuery.getName().equals("MyAllTask"))
@@ -792,6 +800,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         else if (action.equals("updateStoryVersion")) {
             return aroundAction("updateStoryVersion", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchAssignedToMyTask")) {
             return aroundDataSet("AssignedToMyTask", point);
         }
@@ -830,6 +841,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchESBulk")) {
             return aroundDataSet("ESBulk", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyAgentTask")) {
             return aroundDataSet("MyAgentTask", point);

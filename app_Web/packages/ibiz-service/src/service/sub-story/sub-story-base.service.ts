@@ -69,6 +69,10 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getAssignedToMyStoryCond() {
         if (!this.condCache.has('assignedToMyStory')) {
             const strCond: any[] = ['AND', ['EQ', 'ASSIGNEDTO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
@@ -163,6 +167,10 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
             }
         }
         return this.condCache.get('getProductStories');
+    }
+
+    protected getMyCond() {
+        return this.condCache.get('my');
     }
 
     protected getMyAgentStoryCond() {
@@ -836,6 +844,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.http.post(`/substories/${_context.substory}/unlinkstory`, _data);
     }
     /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/substories/fetchaccount`, _data);
+    }
+    /**
      * FetchAssignedToMyStory
      *
      * @param {*} [_context={}]
@@ -966,6 +985,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async FetchGetProductStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/substories/fetchgetproductstories`, _data);
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/substories/fetchmy`, _data);
     }
     /**
      * FetchMyAgentStory

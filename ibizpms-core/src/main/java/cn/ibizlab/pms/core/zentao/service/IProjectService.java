@@ -59,6 +59,7 @@ public interface IProjectService extends IService<Project> {
     Project unlinkStory(Project et);
     Project updateOrder(Project et);
     List<Project> select(ProjectSearchContext context);
+    List<Project> selectAccount(ProjectSearchContext context);
     List<Project> selectBugSelectableProjectList(ProjectSearchContext context);
     List<Project> selectCurDefaultQuery(ProjectSearchContext context);
     List<Project> selectCurDefaultQueryExp(ProjectSearchContext context);
@@ -71,6 +72,7 @@ public interface IProjectService extends IService<Project> {
     List<Project> selectESBulk(ProjectSearchContext context);
     List<Project> selectInvolvedProject(ProjectSearchContext context);
     List<Project> selectInvolvedProjectStoryTaskBug(ProjectSearchContext context);
+    List<Project> selectMy(ProjectSearchContext context);
     List<Project> selectMyProject(ProjectSearchContext context);
     List<Project> selectOpenByQuery(ProjectSearchContext context);
     List<Project> selectOpenQuery(ProjectSearchContext context);
@@ -79,6 +81,7 @@ public interface IProjectService extends IService<Project> {
     List<Project> selectUnDoneProject(ProjectSearchContext context);
     List<Project> selectView(ProjectSearchContext context);
 
+    Page<Project> searchAccount(ProjectSearchContext context);
     Page<Project> searchBugProject(ProjectSearchContext context);
     Page<Project> searchCurDefaultQuery(ProjectSearchContext context);
     Page<Project> searchCurDefaultQueryExp(ProjectSearchContext context);
@@ -91,6 +94,7 @@ public interface IProjectService extends IService<Project> {
     Page<Project> searchESBulk(ProjectSearchContext context);
     Page<Project> searchInvolvedProject(ProjectSearchContext context);
     Page<Project> searchInvolvedProject_StoryTaskBug(ProjectSearchContext context);
+    Page<Project> searchMy(ProjectSearchContext context);
     Page<Project> searchMyProject(ProjectSearchContext context);
     Page<Project> searchOpenByQuery(ProjectSearchContext context);
     Page<Project> searchOpenQuery(ProjectSearchContext context);

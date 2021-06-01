@@ -127,8 +127,12 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Page<Todo> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("Account"))
+            return todoService.searchAccount(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return todoService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("My"))
+            return todoService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateTodo"))
             return todoService.searchMyCreateTodo(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTodo"))
@@ -143,8 +147,12 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<Todo> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("Account"))
+            return todoService.selectAccount(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return todoService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("My"))
+            return todoService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateTodo"))
             return todoService.selectMyCreateTodo(searchContext);
         if (iPSDataQuery.getName().equals("MyTodo"))
@@ -390,8 +398,14 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         else if (action.equals("sendMsgPreProcess")) {
             return aroundAction("sendMsgPreProcess", point);
         }
+        else if (action.equals("searchAccount")) {
+            return aroundDataSet("Account", point);
+        }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchMy")) {
+            return aroundDataSet("My", point);
         }
         else if (action.equals("searchMyCreateTodo")) {
             return aroundDataSet("MyCreateTodo", point);

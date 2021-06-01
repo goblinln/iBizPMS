@@ -714,6 +714,18 @@ public class StoryResource {
 
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"需求" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/fetchaccount")
+	public ResponseEntity<List<StoryDTO>> fetchaccount(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchAccount(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我的需求", tags = {"需求" } ,notes = "获取指派给我的需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchassignedtomystory")
 	public ResponseEntity<List<StoryDTO>> fetchassignedtomystory(@RequestBody StorySearchContext context) {
@@ -850,6 +862,18 @@ public class StoryResource {
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchgetproductstories")
 	public ResponseEntity<List<StoryDTO>> fetchgetproductstories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchGetProductStories(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"需求" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/fetchmy")
+	public ResponseEntity<List<StoryDTO>> fetchmy(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchMy(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1638,6 +1662,19 @@ public class StoryResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"需求" } ,notes = "根据产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchaccount")
+	public ResponseEntity<List<StoryDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchAccount(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取指派给我的需求", tags = {"需求" } ,notes = "根据产品获取指派给我的需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchassignedtomystory")
 	public ResponseEntity<List<StoryDTO>> fetchAssignedToMyStoryByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -1786,6 +1823,19 @@ public class StoryResource {
 	public ResponseEntity<List<StoryDTO>> fetchGetProductStoriesByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
         context.setN_product_eq(product_id);
         Page<Story> domains = storyService.searchGetProductStories(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取我的数据", tags = {"需求" } ,notes = "根据产品获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchmy")
+	public ResponseEntity<List<StoryDTO>> fetchMyByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchMy(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

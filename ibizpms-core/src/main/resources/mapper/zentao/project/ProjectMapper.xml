@@ -130,6 +130,13 @@
 		 )t1
      </select>
 
+    <!--数据集合[Account]-->
+	 <select id="searchAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
+         select t1.* from (
+                <include refid="Account" />
+         )t1
+     </select>
+
     <!--数据集合[BugProject]-->
 	 <select id="searchBugProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
          select t1.* from (
@@ -224,6 +231,13 @@
          )t1
      </select>
 
+    <!--数据集合[My]-->
+	 <select id="searchMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
+         select t1.* from (
+                <include refid="My" />
+         )t1
+     </select>
+
     <!--数据集合[MyProject]-->
 	 <select id="searchMyProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
          select t1.* from (
@@ -265,6 +279,18 @@
                 <include refid="UnDoneProject" />
          )t1
      </select>
+
+    <!--数据查询[Account]-->
+    <sql id="Account" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectAccount"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="Account" />
+	</select>
 
     <!--数据查询[BugSelectableProjectList]-->
     <sql id="BugSelectableProjectList" databaseId="mysql">
@@ -441,6 +467,18 @@
 	
 	<select id="selectInvolvedProjectStoryTaskBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="InvolvedProjectStoryTaskBug" />
+	</select>
+
+    <!--数据查询[My]-->
+    <sql id="My" databaseId="mysql">
+		<![CDATA[  ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMy"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="My" />
 	</select>
 
     <!--数据查询[MyProject]-->

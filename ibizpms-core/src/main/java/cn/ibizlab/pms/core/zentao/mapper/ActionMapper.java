@@ -19,9 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ActionMapper extends BaseMapper<Action> {
 
+    List<Action> selectAccount(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectBianGengLineHistory(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectDefault(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectMobType(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectMy(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectMyAction(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectMyTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectProductTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
@@ -30,8 +32,10 @@ public interface ActionMapper extends BaseMapper<Action> {
     List<Action> selectType(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     List<Action> selectView(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
 
+    Page<Action> searchAccount(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchDefault(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchMobType(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    Page<Action> searchMy(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchMyAction(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchMyTrends(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchProductTrends(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);

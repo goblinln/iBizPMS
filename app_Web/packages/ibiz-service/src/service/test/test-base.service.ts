@@ -70,6 +70,10 @@ export class TestBaseService extends EntityBaseService<ITest> {
         return new HttpResponse(entity);
     }
 
+    protected getAccountCond() {
+        return this.condCache.get('account');
+    }
+
     protected getAllListCond() {
         if (!this.condCache.has('allList')) {
             const strCond: any[] = ['AND', ['OR', ['NOTEQ', 'STATUS','closed']]];
@@ -128,6 +132,10 @@ export class TestBaseService extends EntityBaseService<ITest> {
 
     protected getESBulkCond() {
         return this.condCache.get('eSBulk');
+    }
+
+    protected getMyCond() {
+        return this.condCache.get('my');
     }
 
     protected getOpenQueryCond() {
