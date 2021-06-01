@@ -196,23 +196,6 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.projectteam) {
-            return this.http.delete(`/accounts/${_context.account}/projects/${_context.project}/projectteams/${_context.projectteam}`);
-        }
-        if (_context.project && _context.projectteam) {
-            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -244,6 +227,23 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * FetchCntEst
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/projectteams/fetchcntest`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * FetchSpecifyTeam
      *
      * @param {*} [_context={}]
@@ -261,19 +261,19 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchCntEst
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/projectteams/fetchcntest`, _data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.projectteam) {
+            return this.http.delete(`/accounts/${_context.account}/projects/${_context.project}/projectteams/${_context.projectteam}`);
         }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
+        if (_context.project && _context.projectteam) {
+            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

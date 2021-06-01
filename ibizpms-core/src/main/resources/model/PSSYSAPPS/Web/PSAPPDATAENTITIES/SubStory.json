@@ -4111,10 +4111,17 @@
         "name" : "REVIEW"
       }
     }, {
-      "name" : "FAVORITES",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
+        "logicName" : "取消收藏",
+        "mapPSDEName" : "ZT_PRODUCT",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+        },
+        "name" : "NFAVORITES",
+        "id" : "ZTProduct__NFAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -4443,10 +4450,10 @@
         "name" : "REVIEW"
       }
     }, {
-      "name" : "NFAVORITES",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     }, {
       "name" : "ACTIVATE",
@@ -4556,12 +4563,6 @@
         "name" : "DELETE"
       }
     }, {
-      "name" : "NFAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
-      }
-    }, {
       "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "需求激活",
@@ -4578,6 +4579,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "建用例",
         "name" : "CCASE"
+      }
+    }, {
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     }, {
       "name" : "ASSIGNTO",
@@ -4699,10 +4706,10 @@
         "name" : "ACTIVATE"
       }
     }, {
-      "name" : "NFAVORITES",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "1",
@@ -5038,10 +5045,10 @@
         "name" : "ACTIVATE"
       }
     }, {
-      "name" : "FAVORITES",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITES"
       }
     }, {
       "name" : "ISCHILD",
@@ -5413,6 +5420,19 @@
         "name" : "ACTIVATE"
       }
     }, {
+      "name" : "NFAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "mapPSDEName" : "ZT_PRODUCT",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+        },
+        "name" : "NFAVORITES",
+        "id" : "ZTProduct__NFAVORITES"
+      }
+    }, {
       "name" : "CCASE",
       "getPSDEOPPriv" : {
         "logicName" : "建用例",
@@ -5423,12 +5443,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求细分",
         "name" : "ISCHILD"
-      }
-    }, {
-      "name" : "FAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -5561,16 +5575,16 @@
         "name" : "ISCHILD"
       }
     }, {
-      "name" : "FAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
-      }
-    }, {
       "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "需求激活",
         "name" : "ACTIVATE"
+      }
+    }, {
+      "name" : "NFAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -6270,10 +6284,10 @@
         "name" : "CLOSE"
       }
     }, {
-      "name" : "NFAVORITES",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     }, {
       "name" : "ISCHILD",
@@ -6652,10 +6666,10 @@
         "name" : "ISCHILD"
       }
     }, {
-      "name" : "NFAVORITES",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "1",
@@ -6943,10 +6957,17 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "FAVORITES",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
+        "logicName" : "取消收藏",
+        "mapPSDEName" : "ZT_PRODUCT",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+        },
+        "name" : "NFAVORITES",
+        "id" : "ZTProduct__NFAVORITES"
       }
     }, {
       "name" : "CHANGE",
@@ -7270,12 +7291,6 @@
         "name" : "DELETE"
       }
     }, {
-      "name" : "FAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
-      }
-    }, {
       "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
         "logicName" : "需求指派",
@@ -7310,6 +7325,19 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求关闭",
         "name" : "CLOSE"
+      }
+    }, {
+      "name" : "NFAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "mapPSDEName" : "ZT_PRODUCT",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+        },
+        "name" : "NFAVORITES",
+        "id" : "ZTProduct__NFAVORITES"
       }
     }, {
       "name" : "REVIEW",
@@ -7454,6 +7482,19 @@
         "name" : "ASSIGNTO"
       }
     }, {
+      "name" : "NFAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "mapPSDEName" : "ZT_PRODUCT",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+        },
+        "name" : "NFAVORITES",
+        "id" : "ZTProduct__NFAVORITES"
+      }
+    }, {
       "name" : "CLOSE",
       "getPSDEOPPriv" : {
         "logicName" : "需求关闭",
@@ -7470,12 +7511,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求变更",
         "name" : "CHANGE"
-      }
-    }, {
-      "name" : "FAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
       }
     }, {
       "name" : "ISCHILD",
@@ -7611,16 +7646,16 @@
         "name" : "REVIEW"
       }
     }, {
-      "name" : "NFAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
-      }
-    }, {
       "name" : "CLOSE",
       "getPSDEOPPriv" : {
         "logicName" : "需求关闭",
         "name" : "CLOSE"
+      }
+    }, {
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "1",
@@ -7747,10 +7782,10 @@
         "name" : "REVIEW"
       }
     }, {
-      "name" : "NFAVORITES",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     }, {
       "name" : "CCASE",
@@ -8390,10 +8425,10 @@
         "name" : "ACTIVATE"
       }
     }, {
-      "name" : "FAVORITES",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -8752,12 +8787,6 @@
         "name" : "CCASE"
       }
     }, {
-      "name" : "FAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
-      }
-    }, {
       "name" : "REVIEW",
       "getPSDEOPPriv" : {
         "logicName" : "需求评审",
@@ -8768,6 +8797,19 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求变更",
         "name" : "CHANGE"
+      }
+    }, {
+      "name" : "NFAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "mapPSDEName" : "ZT_PRODUCT",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+        },
+        "name" : "NFAVORITES",
+        "id" : "ZTProduct__NFAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -8998,16 +9040,23 @@
         "name" : "ISCHILD"
       }
     }, {
+      "name" : "NFAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "mapPSDEName" : "ZT_PRODUCT",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+        },
+        "name" : "NFAVORITES",
+        "id" : "ZTProduct__NFAVORITES"
+      }
+    }, {
       "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "需求激活",
         "name" : "ACTIVATE"
-      }
-    }, {
-      "name" : "FAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求收藏",
-        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -9202,10 +9251,10 @@
         "name" : "ACTIVATE"
       }
     }, {
-      "name" : "NFAVORITES",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "1",
@@ -9462,6 +9511,12 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
+      }
+    }, {
       "name" : "ISCHILD",
       "getPSDEOPPriv" : {
         "logicName" : "需求细分",
@@ -9472,12 +9527,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求激活",
         "name" : "ACTIVATE"
-      }
-    }, {
-      "name" : "NFAVORITES",
-      "getPSDEOPPriv" : {
-        "logicName" : "取消收藏",
-        "name" : "NFAVORITES"
       }
     } ],
     "state2Value" : "1",
