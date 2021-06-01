@@ -52,5 +52,35 @@ public class StorySpecResource {
     @Lazy
     public StorySpecMapping storyspecMapping;
 
+
+
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品需求获取版本", tags = {"需求描述" } ,notes = "根据产品需求获取版本")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchversion")
+	public ResponseEntity<List<StorySpecDTO>> fetchVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
+        context.setN_story_eq(story_id);
+        Page<StorySpec> domains = storyspecService.searchVersion(context) ;
+        List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+
+    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据项目需求获取版本", tags = {"需求描述" } ,notes = "根据项目需求获取版本")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/storyspecs/fetchversion")
+	public ResponseEntity<List<StorySpecDTO>> fetchVersionByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
+        context.setN_story_eq(story_id);
+        Page<StorySpec> domains = storyspecService.searchVersion(context) ;
+        List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 
