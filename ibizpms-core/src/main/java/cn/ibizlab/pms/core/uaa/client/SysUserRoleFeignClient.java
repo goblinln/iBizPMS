@@ -69,7 +69,7 @@ public interface SysUserRoleFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/fetchdefault")
-    Page<SysUserRole> fetchDefault(@SpringQueryMapSysUserRoleSearchContext context);
+    Page<SysUserRole> fetchDefault(@SpringQueryMap SysUserRoleSearchContext context);
 
 
 

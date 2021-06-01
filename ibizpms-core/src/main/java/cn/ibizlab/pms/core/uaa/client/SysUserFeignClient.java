@@ -73,7 +73,7 @@ public interface SysUserFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysusers/fetchdefault")
-    Page<SysUser> fetchDefault(@SpringQueryMapSysUserSearchContext context);
+    Page<SysUser> fetchDefault(@SpringQueryMap SysUserSearchContext context);
 
 
 

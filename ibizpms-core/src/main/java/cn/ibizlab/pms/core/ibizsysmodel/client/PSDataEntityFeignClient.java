@@ -69,7 +69,7 @@ public interface PSDataEntityFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/fetchdefault")
-    Page<PSDataEntity> fetchDefault(@SpringQueryMapPSDataEntitySearchContext context);
+    Page<PSDataEntity> fetchDefault(@SpringQueryMap PSDataEntitySearchContext context);
 
 
 

@@ -69,7 +69,7 @@ public interface SysPostFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysposts/fetchdefault")
-    Page<SysPost> fetchDefault(@SpringQueryMapSysPostSearchContext context);
+    Page<SysPost> fetchDefault(@SpringQueryMap SysPostSearchContext context);
 
 
 

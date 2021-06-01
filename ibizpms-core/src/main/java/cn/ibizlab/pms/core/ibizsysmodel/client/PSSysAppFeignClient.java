@@ -69,12 +69,12 @@ public interface PSSysAppFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/fetchbuild")
-    Page<PSSysApp> fetchBuild(@SpringQueryMapPSSysAppSearchContext context);
+    Page<PSSysApp> fetchBuild(@SpringQueryMap PSSysAppSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssysapps/fetchdefault")
-    Page<PSSysApp> fetchDefault(@SpringQueryMapPSSysAppSearchContext context);
+    Page<PSSysApp> fetchDefault(@SpringQueryMap PSSysAppSearchContext context);
 
 
 

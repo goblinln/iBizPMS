@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 服务DTO对象[DynaDashboardDTO]
  */
 @Data
-@ApiModel("动态数据看板")
+@ApiModel("主页动态面板")
 @JsonFilter(value = "dtofieldfilter")
 public class DynaDashboardDTO extends DTOBase implements Serializable {
 

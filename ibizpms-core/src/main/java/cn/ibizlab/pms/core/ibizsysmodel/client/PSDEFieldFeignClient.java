@@ -69,7 +69,7 @@ public interface PSDEFieldFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdefields/fetchdefault")
-    Page<PSDEField> fetchDefault(@SpringQueryMapPSDEFieldSearchContext context);
+    Page<PSDEField> fetchDefault(@SpringQueryMap PSDEFieldSearchContext context);
 
 
 

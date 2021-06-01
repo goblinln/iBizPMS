@@ -69,12 +69,12 @@ public interface PSSysSFPubFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchbuild")
-    Page<PSSysSFPub> fetchBuild(@SpringQueryMapPSSysSFPubSearchContext context);
+    Page<PSSysSFPub> fetchBuild(@SpringQueryMap PSSysSFPubSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/fetchdefault")
-    Page<PSSysSFPub> fetchDefault(@SpringQueryMapPSSysSFPubSearchContext context);
+    Page<PSSysSFPub> fetchDefault(@SpringQueryMap PSSysSFPubSearchContext context);
 
 
 

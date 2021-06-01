@@ -81,17 +81,17 @@ public interface IBIZProMessageFeignClient {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchdefault")
-    Page<IBIZProMessage> fetchDefault(@SpringQueryMapIBIZProMessageSearchContext context);
+    Page<IBIZProMessage> fetchDefault(@SpringQueryMap IBIZProMessageSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchuserallmessages")
-    Page<IBIZProMessage> fetchUserAllMessages(@SpringQueryMapIBIZProMessageSearchContext context);
+    Page<IBIZProMessage> fetchUserAllMessages(@SpringQueryMap IBIZProMessageSearchContext context);
 
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/fetchuserunreadmessages")
-    Page<IBIZProMessage> fetchUserUnreadMessages(@SpringQueryMapIBIZProMessageSearchContext context);
+    Page<IBIZProMessage> fetchUserUnreadMessages(@SpringQueryMap IBIZProMessageSearchContext context);
 
 
 
