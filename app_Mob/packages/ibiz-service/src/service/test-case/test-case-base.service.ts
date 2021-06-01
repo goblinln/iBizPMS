@@ -322,17 +322,17 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         return this.condCache.get('view');
     }
     /**
-     * TestRunCases
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseService
      */
-    async TestRunCases(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testruncases`, _data);
+            return this.http.put(`/tests/${_context.test}/testcases/${_context.testcase}`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -351,6 +351,23 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testcases/getdraft`, _data);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -361,6 +378,21 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && true) {
             return this.http.post(`/tests/${_context.test}/testcases/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase) {
+            const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}`);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -386,21 +418,6 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testcase) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/tests/${_context.test}/testcases/${_context.testcase}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * RunCases
      *
      * @param {*} [_context={}]
@@ -416,34 +433,17 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * GetDraft
+     * TestRunCases
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tests/${_context.test}/testcases/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async TestRunCases(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testcase) {
-            const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}`);
-            return res;
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testruncases`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

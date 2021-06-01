@@ -67,6 +67,23 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id, 'UPDATE')")
+    @ApiOperation(value = "更新任务预计", tags = {"任务预计" },  notes = "更新任务预计")
+	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimates/{taskestimate_id}")
+    @Transactional
+    public ResponseEntity<TaskEstimateDTO> update(@PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+		TaskEstimate domain  = taskestimateMapping.toDomain(taskestimatedto);
+        domain.setId(taskestimate_id);
+		taskestimateService.update(domain );
+        if(!taskestimateRuntime.test(taskestimate_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(taskestimate_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "获取任务预计草稿", tags = {"任务预计" },  notes = "获取任务预计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimates/getdraft")
@@ -87,6 +104,17 @@ public class TaskEstimateResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id, 'READ')")
+    @ApiOperation(value = "获取任务预计", tags = {"任务预计" },  notes = "获取任务预计")
+	@RequestMapping(method = RequestMethod.GET, value = "/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> get(@PathVariable("taskestimate_id") Long taskestimate_id) {
+        TaskEstimate domain = taskestimateService.get(taskestimate_id);
+        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(taskestimate_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建任务预计", tags = {"任务预计" },  notes = "新建任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates")
@@ -109,34 +137,6 @@ public class TaskEstimateResource {
         taskestimateService.createBatch(taskestimateMapping.toDomain(taskestimatedtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
-    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id, 'UPDATE')")
-    @ApiOperation(value = "更新任务预计", tags = {"任务预计" },  notes = "更新任务预计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimates/{taskestimate_id}")
-    @Transactional
-    public ResponseEntity<TaskEstimateDTO> update(@PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
-		TaskEstimate domain  = taskestimateMapping.toDomain(taskestimatedto);
-        domain.setId(taskestimate_id);
-		taskestimateService.update(domain );
-        if(!taskestimateRuntime.test(taskestimate_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(taskestimate_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@TaskEstimateRuntime.test(#taskestimate_id, 'READ')")
-    @ApiOperation(value = "获取任务预计", tags = {"任务预计" },  notes = "获取任务预计")
-	@RequestMapping(method = RequestMethod.GET, value = "/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> get(@PathVariable("taskestimate_id") Long taskestimate_id) {
-        TaskEstimate domain = taskestimateService.get(taskestimate_id);
-        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskestimateRuntime.getOPPrivs(taskestimate_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "检查任务预计", tags = {"任务预计" },  notes = "检查任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimates/checkkey")
@@ -267,6 +267,19 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据任务更新任务预计", tags = {"任务预计" },  notes = "根据任务更新任务预计")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+        TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
+        domain.setTask(task_id);
+        domain.setId(taskestimate_id);
+		taskestimateService.update(domain);
+        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据任务获取任务预计草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskestimates/getdraft")
@@ -289,6 +302,15 @@ public class TaskEstimateResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
+    @ApiOperation(value = "根据任务获取任务预计", tags = {"任务预计" },  notes = "根据任务获取任务预计")
+	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
+        TaskEstimate domain = taskestimateService.get(taskestimate_id);
+        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据任务建立任务预计", tags = {"任务预计" },  notes = "根据任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskestimates")
@@ -310,28 +332,6 @@ public class TaskEstimateResource {
         }
         taskestimateService.createBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据任务更新任务预计", tags = {"任务预计" },  notes = "根据任务更新任务预计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
-        TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
-        domain.setTask(task_id);
-        domain.setId(taskestimate_id);
-		taskestimateService.update(domain);
-        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
-    @ApiOperation(value = "根据任务获取任务预计", tags = {"任务预计" },  notes = "根据任务获取任务预计")
-	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
-        TaskEstimate domain = taskestimateService.get(taskestimate_id);
-        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
@@ -459,6 +459,19 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据项目任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务更新任务预计")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+        TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
+        domain.setTask(task_id);
+        domain.setId(taskestimate_id);
+		taskestimateService.update(domain);
+        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据项目任务获取任务预计草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/getdraft")
@@ -481,6 +494,15 @@ public class TaskEstimateResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
+    @ApiOperation(value = "根据项目任务获取任务预计", tags = {"任务预计" },  notes = "根据项目任务获取任务预计")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
+        TaskEstimate domain = taskestimateService.get(taskestimate_id);
+        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据项目任务建立任务预计", tags = {"任务预计" },  notes = "根据项目任务建立任务预计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskestimates")
@@ -502,28 +524,6 @@ public class TaskEstimateResource {
         }
         taskestimateService.createBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据项目任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务更新任务预计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
-        TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
-        domain.setTask(task_id);
-        domain.setId(taskestimate_id);
-		taskestimateService.update(domain);
-        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
-    @ApiOperation(value = "根据项目任务获取任务预计", tags = {"任务预计" },  notes = "根据项目任务获取任务预计")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
-        TaskEstimate domain = taskestimateService.get(taskestimate_id);
-        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")

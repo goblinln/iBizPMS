@@ -447,23 +447,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchSpecifyTeam",
-    "methodType" : "FETCH",
-    "name" : "FetchSpecifyTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "SpecifyTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchSpecifyTeam"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -478,6 +461,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchSpecifyTeam",
+    "methodType" : "FETCH",
+    "name" : "FetchSpecifyTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchSpecifyTeam"
     },
     "builtinMethod" : false
   }, {

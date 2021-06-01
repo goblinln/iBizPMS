@@ -117,6 +117,36 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         return this.condCache.get('view');
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductReleaseService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productrelease) {
+            const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductReleaseService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productrelease) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * LinkBugbyLeftBug
      *
      * @param {*} [_context={}]
@@ -147,6 +177,51 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * LinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductReleaseService
+     */
+    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productrelease) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkstory`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * UnlinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductReleaseService
+     */
+    async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productrelease) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/unlinkstory`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Terminate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductReleaseService
+     */
+    async Terminate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productrelease) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/terminate`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -168,21 +243,6 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * UnlinkStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductReleaseService
-     */
-    async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productrelease) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/unlinkstory`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -197,32 +257,19 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Terminate
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductReleaseService
      */
-    async Terminate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productrelease) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/terminate`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * LinkStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductReleaseService
-     */
-    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productrelease) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkstory`, _data);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productreleases/getdraft`, _data);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -252,53 +299,6 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/activate`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductReleaseService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productreleases/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductReleaseService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productrelease) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductReleaseService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productrelease) {
-            const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}`);
-            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -338,6 +338,23 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
     }
 
     /**
+     * LinkStoryBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductReleaseServiceBase
+     */
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productreleases/linkstorybatch`,_data);
+        }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
      * UnlinkStoryBatch接口方法
      *
      * @param {*} [context={}]
@@ -367,23 +384,6 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/terminatebatch`,_data);
-        }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * LinkStoryBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductReleaseServiceBase
-     */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productreleases/linkstorybatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
