@@ -22,6 +22,7 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];
     protected selectContextParam = {
+        story: 'story',
     };
 
     newEntity(data: IStorySpec): StorySpec {
@@ -38,6 +39,13 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
 
     async getLocal(context: IContext, srfKey: string): Promise<IStorySpec> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.story && entity.story !== '') {
+            const s = await ___ibz___.gs.getStoryService();
+            const data = await s.getLocal2(context, entity.story);
+            if (data) {
+                entity.story = data.id;
+            }
+        }
         return entity!;
     }
 
@@ -46,6 +54,13 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
     }
 
     async getDraftLocal(_context: IContext, entity: IStorySpec = {}): Promise<IStorySpec> {
+        if (_context.story && _context.story !== '') {
+            const s = await ___ibz___.gs.getStoryService();
+            const data = await s.getLocal2(_context, _context.story);
+            if (data) {
+                entity.story = data.id;
+            }
+        }
         return new StorySpec(entity);
     }
 
@@ -64,5 +79,22 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
             entity = result.data;
         }
         return new HttpResponse(entity);
+    }
+    /**
+     * FetchVersion
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StorySpecService
+     */
+    async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }
