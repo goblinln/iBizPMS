@@ -1,7 +1,7 @@
 import { ProductProjectBase } from './product-project-base';
 
 /**
- * 项目
+ * 项目产品
  *
  * @export
  * @class ProductProject

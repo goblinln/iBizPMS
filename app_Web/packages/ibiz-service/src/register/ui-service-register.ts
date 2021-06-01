@@ -55,6 +55,7 @@ export class UIServiceRegister {
      */
     protected init(): void {
                 UIServiceRegister.allUIServiceMap.set('productplan', () => import('../uiservice/product-plan/product-plan-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('productproject', () => import('../uiservice/product-project/product-project-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testcase', () => import('../uiservice/test-case/test-case-ui-service'));
         UIServiceRegister.allUIServiceMap.set('product', () => import('../uiservice/product/product-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectburn', () => import('../uiservice/project-burn/project-burn-ui-service'));
@@ -79,7 +80,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('testreport', () => import('../uiservice/test-report/test-report-ui-service'));
         UIServiceRegister.allUIServiceMap.set('bug', () => import('../uiservice/bug/bug-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectmodule', () => import('../uiservice/project-module/project-module-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('productproject', () => import('../uiservice/product-project/product-project-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productrelease', () => import('../uiservice/product-release/product-release-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzreportroleconfig', () => import('../uiservice/ibz-report-role-config/ibz-report-role-config-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysuser', () => import('../uiservice/sys-user/sys-user-ui-service'));
@@ -165,7 +165,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('dynadashboard', () => import('../uiservice/dyna-dashboard/dyna-dashboard-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysemployee', () => import('../uiservice/sys-employee/sys-employee-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproproductline', () => import('../uiservice/ibzpro-product-line/ibzpro-product-line-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('projectproduct', () => import('../uiservice/project-product/project-product-ui-service'));
         UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
     }
 

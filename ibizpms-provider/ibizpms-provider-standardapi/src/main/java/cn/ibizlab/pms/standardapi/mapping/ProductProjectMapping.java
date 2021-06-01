@@ -3,7 +3,7 @@ package cn.ibizlab.pms.standardapi.mapping;
 import cn.ibizlab.pms.util.security.FieldContext;
 
 import org.mapstruct.*;
-import cn.ibizlab.pms.core.zentao.domain.Project;
+import cn.ibizlab.pms.core.zentao.domain.ProjectProduct;
 import cn.ibizlab.pms.standardapi.dto.ProductProjectDTO;
 import cn.ibizlab.pms.util.domain.MappingBase;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import java.util.List;
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
         nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 @DecoratedWith(ProductProjectMappingDecorator.class)
-public interface ProductProjectMapping extends MappingBase<ProductProjectDTO, Project> {
+public interface ProductProjectMapping extends MappingBase<ProductProjectDTO, ProjectProduct> {
 
 
 }
@@ -27,8 +27,8 @@ class ProductProjectMappingDecorator implements ProductProjectMapping {
     private ProductProjectMapping delegate;
 
     @Override
-    public Project toDomain(ProductProjectDTO dto) {
-        Project domain = delegate.toDomain(dto);
+    public ProjectProduct toDomain(ProductProjectDTO dto) {
+        ProjectProduct domain = delegate.toDomain(dto);
         List<String> fields = FieldContext.get();
         if (fields != null) {
             for (String field : fields) {
@@ -39,7 +39,7 @@ class ProductProjectMappingDecorator implements ProductProjectMapping {
     }
 
     @Override
-    public ProductProjectDTO toDto(Project entity) {
+    public ProductProjectDTO toDto(ProjectProduct entity) {
 
         ProductProjectDTO dto = delegate.toDto(entity);
         List<String> fields = FieldContext.get();
@@ -53,8 +53,8 @@ class ProductProjectMappingDecorator implements ProductProjectMapping {
     }
 
     @Override
-    public List<Project> toDomain(List<ProductProjectDTO> dtoList) {
-        List<Project> domains = delegate.toDomain(dtoList);
+    public List<ProjectProduct> toDomain(List<ProductProjectDTO> dtoList) {
+        List<ProjectProduct> domains = delegate.toDomain(dtoList);
         List<String> fields = FieldContext.get();
         if (fields != null) {
             for (String field : fields) {
@@ -65,7 +65,7 @@ class ProductProjectMappingDecorator implements ProductProjectMapping {
     }
 
     @Override
-    public List<ProductProjectDTO> toDto(List<Project> entityList) {
+    public List<ProductProjectDTO> toDto(List<ProjectProduct> entityList) {
         List<ProductProjectDTO> dtos = delegate.toDto(entityList);
         List<String> fields = FieldContext.get();
         if (fields != null) {

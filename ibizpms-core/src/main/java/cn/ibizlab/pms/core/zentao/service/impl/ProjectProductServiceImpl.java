@@ -384,6 +384,9 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
                 ztproject=majorEntity;
             }
             et.setProjectname(ztproject.getName());
+            et.setStatus(ztproject.getStatus());
+            et.setProjectcode(ztproject.getCode());
+            et.setProjectend(ztproject.getEnd());
         }
     }
 

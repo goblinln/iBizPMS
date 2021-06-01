@@ -7,7 +7,7 @@
   "name" : "ProjectCurProductGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -175,7 +175,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -315,7 +315,7 @@
     "codeName" : "Main",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject/PSGRIDS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSGRIDS/Main.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -330,7 +330,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -344,7 +344,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -355,7 +355,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         }
       }, {
         "actionName" : "Remove",
@@ -368,7 +368,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         }
       }, {
         "actionName" : "Get",
@@ -381,7 +381,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -394,7 +394,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         }
       }, {
         "actionName" : "Create",
@@ -407,7 +407,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -444,6 +444,12 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "name",
       "excelCaption" : "项目名称",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+        "viewType" : "DETABEXPVIEW"
+      },
+      "linkValueItem" : "srfkey",
       "name" : "name",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -452,6 +458,7 @@
       },
       "width" : 1,
       "widthUnit" : "STAR",
+      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",
@@ -614,7 +621,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -636,11 +643,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSSEARCHBARS/Custom.json",
     "logicName" : "项目自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -1336,7 +1343,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1356,27 +1363,5 @@
   "rowEditDefault" : false,
   "showCaptionBar" : false,
   "modelid" : "522b28992d16207a0fc47340589bb2cf",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "ProductProjects",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
-    },
-    "name" : "PRODUCT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

@@ -71,6 +71,19 @@ public class TestCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试用例" } ,notes = "根据产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchdefault")
+	public ResponseEntity<List<TestCaseDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Case> domains = caseService.searchDefault(context) ;
+        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
     @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{testcase_id}")
@@ -84,6 +97,18 @@ public class TestCaseResource {
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
         caseService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
+    @ApiOperation(value = "根据产品testRunCases", tags = {"测试用例" },  notes = "根据产品testRunCases")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/testruncases")
+    public ResponseEntity<TestCaseDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        domain.setProduct(product_id);
+        domain.setId(testcase_id);
+        domain = caseService.testRunCases(domain) ;
+        testcasedto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
@@ -130,30 +155,5 @@ public class TestCaseResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品testRunCases", tags = {"测试用例" },  notes = "根据产品testRunCases")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/testruncases")
-    public ResponseEntity<TestCaseDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        domain.setProduct(product_id);
-        domain.setId(testcase_id);
-        domain = caseService.testRunCases(domain) ;
-        testcasedto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试用例" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchdefault")
-	public ResponseEntity<List<TestCaseDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Case> domains = caseService.searchDefault(context) ;
-        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 

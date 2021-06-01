@@ -1,7 +1,7 @@
 import { AuthService } from '../auth-service';
 
 /**
- * 项目权限服务对象基类
+ * 项目产品权限服务对象基类
  *
  * @export
  * @class ProductProjectAuthServiceBase

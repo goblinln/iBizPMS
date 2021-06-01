@@ -7,11 +7,11 @@
   "name" : "项目产品计划（动态）",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchRelationPlan"
+    "id" : "FetchProductPlan"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
   },
   "getTextPSAppDEField" : {
     "name" : "PLANNAME",

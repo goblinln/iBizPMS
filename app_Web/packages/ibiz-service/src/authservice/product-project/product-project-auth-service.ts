@@ -2,7 +2,7 @@ import { ProductProjectAuthServiceBase } from './product-project-auth-service-ba
 
 
 /**
- * 项目权限服务对象
+ * 项目产品权限服务对象
  *
  * @export
  * @class ProductProjectAuthService

@@ -5,7 +5,7 @@ import { AuthServiceRegister } from '../../register';
 import { GlobalService } from '../../service';
 
 /**
- * 项目UI服务对象基类
+ * 项目产品UI服务对象基类
  *
  * @export
  * @class ProductProjectUIServiceBase
@@ -49,14 +49,14 @@ export class ProductProjectUIServiceBase extends UIServiceBase {
      * @memberof  ProductProjectUIServiceBase
      */
     protected initBasicData(){
-        this.isEnableDEMainState = true;
+        this.isEnableDEMainState = false;
         this.dynaInstTag = "";
-        this.tempOrgIdDEField ="orgid";
+        this.tempOrgIdDEField ="org";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;
         this.stateField = "";
-        this.mainStateFields = ['status','istop'];
+        this.mainStateFields = [];
     }
 
     /**
@@ -80,6 +80,10 @@ export class ProductProjectUIServiceBase extends UIServiceBase {
      * @memberof  ProductProjectUIServiceBase
      */  
     protected initViewFuncMap(){
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
     }
 

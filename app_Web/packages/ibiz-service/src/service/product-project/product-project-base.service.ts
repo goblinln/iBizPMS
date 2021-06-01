@@ -4,10 +4,9 @@ import { IProductProject, ProductProject } from '../../entities';
 import keys from '../../entities/product-project/product-project-keys';
 import { isNil, isEmpty } from 'ramda';
 import { PSDEDQCondEngine } from 'ibiz-core';
-import { ProjectTaskQCntLogic } from '../../logic/entity/product-project/project-task-qcnt/project-task-qcnt-logic';
 
 /**
- * 项目服务对象基类
+ * 项目产品服务对象基类
  *
  * @export
  * @class ProductProjectBaseService
@@ -22,9 +21,11 @@ export class ProductProjectBaseService extends EntityBaseService<IProductProject
     protected APPDENAME = 'ProductProject';
     protected APPDENAMEPLURAL = 'ProductProjects';
     protected APPDEKEY = 'id';
-    protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','code','projectsn',];
+    protected APPDETEXT = 'productname';
+    protected quickSearchFields = ['productname',];
     protected selectContextParam = {
+        product: 'product',
+        project: 'project',
     };
 
     newEntity(data: IProductProject): ProductProject {
@@ -41,6 +42,24 @@ export class ProductProjectBaseService extends EntityBaseService<IProductProject
 
     async getLocal(context: IContext, srfKey: string): Promise<IProductProject> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.product && entity.product !== '') {
+            const s = await ___ibz___.gs.getProductService();
+            const data = await s.getLocal2(context, entity.product);
+            if (data) {
+                entity.productname = data.name;
+                entity.product = data.id;
+                entity.product = data;
+            }
+        }
+        if (entity && entity.project && entity.project !== '') {
+            const s = await ___ibz___.gs.getProjectService();
+            const data = await s.getLocal2(context, entity.project);
+            if (data) {
+                entity.projectname = data.name;
+                entity.project = data.id;
+                entity.project = data;
+            }
+        }
         return entity!;
     }
 
@@ -49,6 +68,24 @@ export class ProductProjectBaseService extends EntityBaseService<IProductProject
     }
 
     async getDraftLocal(_context: IContext, entity: IProductProject = {}): Promise<IProductProject> {
+        if (_context.product && _context.product !== '') {
+            const s = await ___ibz___.gs.getProductService();
+            const data = await s.getLocal2(_context, _context.product);
+            if (data) {
+                entity.productname = data.name;
+                entity.product = data.id;
+                entity.product = data;
+            }
+        }
+        if (_context.project && _context.project !== '') {
+            const s = await ___ibz___.gs.getProjectService();
+            const data = await s.getLocal2(_context, _context.project);
+            if (data) {
+                entity.projectname = data.name;
+                entity.project = data.id;
+                entity.project = data;
+            }
+        }
         return new ProductProject(entity);
     }
 
@@ -69,124 +106,60 @@ export class ProductProjectBaseService extends EntityBaseService<IProductProject
         return new HttpResponse(entity);
     }
 
-    protected getBugSelectableProjectListCond() {
-        return this.condCache.get('bugSelectableProjectList');
-    }
-
-    protected getCurDefaultQueryCond() {
-        return this.condCache.get('curDefaultQuery');
-    }
-
-    protected getCurDefaultQueryExpCond() {
-        return this.condCache.get('curDefaultQueryExp');
-    }
-
-    protected getCurPlanProjectCond() {
-        return this.condCache.get('curPlanProject');
-    }
-
-    protected getCurProductCond() {
-        return this.condCache.get('curProduct');
-    }
-
-    protected getCurUserCond() {
-        return this.condCache.get('curUser');
-    }
-
-    protected getCurUserSaCond() {
-        return this.condCache.get('curUserSa');
-    }
-
     protected getDefaultCond() {
         return this.condCache.get('default');
     }
 
-    protected getDeveloperQueryCond() {
-        if (!this.condCache.has('developerQuery')) {
-            const strCond: any[] = ['AND'];
+    protected getRelationPlanCond() {
+        if (!this.condCache.has('relationPlan')) {
+            const strCond: any[] = ['AND', ['NOTEQ', 'PLAN','0']];
             if (!isNil(strCond) && !isEmpty(strCond)) {
                 const cond = new PSDEDQCondEngine();
                 cond.parse(strCond);
-                this.condCache.set('developerQuery', cond);
+                this.condCache.set('relationPlan', cond);
             }
         }
-        return this.condCache.get('developerQuery');
+        return this.condCache.get('relationPlan');
     }
 
-    protected getESBulkCond() {
-        return this.condCache.get('eSBulk');
-    }
-
-    protected getInvolvedProjectCond() {
-        return this.condCache.get('involvedProject');
-    }
-
-    protected getInvolvedProjectStoryTaskBugCond() {
-        return this.condCache.get('involvedProjectStoryTaskBug');
-    }
-
-    protected getMyProjectCond() {
-        if (!this.condCache.has('myProject')) {
-            const strCond: any[] = ['AND', ['EQ', 'DELETED','0']];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('myProject', cond);
-            }
-        }
-        return this.condCache.get('myProject');
-    }
-
-    protected getOpenByQueryCond() {
-        if (!this.condCache.has('openByQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'ACL','private'], ['OR', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'UPDATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'PM',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('openByQuery', cond);
-            }
-        }
-        return this.condCache.get('openByQuery');
-    }
-
-    protected getOpenQueryCond() {
-        if (!this.condCache.has('openQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'ACL','open']];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('openQuery', cond);
-            }
-        }
-        return this.condCache.get('openQuery');
-    }
-
-    protected getProjectTeamCond() {
-        return this.condCache.get('projectTeam');
-    }
-
-    protected getStoryProjectCond() {
-        return this.condCache.get('storyProject');
-    }
-
-    protected getUnDoneProjectCond() {
-        return this.condCache.get('unDoneProject');
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
     }
 
     protected getViewCond() {
         return this.condCache.get('view');
     }
     /**
-     * FetchCurProduct
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductProjectService
      */
-    async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/productprojects/fetchdefault`, _data);
+        }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productprojects/fetchcurproduct`, _data);
+            return this.http.post(`/products/${_context.product}/productprojects/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProductPlan
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductProjectService
+     */
+    async FetchProductPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/productprojects/fetchproductplan`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productprojects/fetchproductplan`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

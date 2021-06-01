@@ -1,7 +1,7 @@
 import { ProductProjectBaseService } from './product-project-base.service';
 
 /**
- * 项目服务
+ * 项目产品服务
  *
  * @export
  * @class ProductProjectService

@@ -10,12 +10,7 @@
   },
   "groupMode" : "NONE",
   "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
-  "logicName" : "主表格",
-  "minorSortDir" : "DESC",
-  "getMinorSortPSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
-  },
+  "logicName" : "主表格（产品）",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
@@ -23,148 +18,89 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "编号",
-    "codeName" : "id",
+    "caption" : "产品名称",
+    "codeName" : "productname",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "编号",
-    "name" : "id",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "width" : 100,
-    "widthUnit" : "PX",
-    "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "项目名称",
-    "codeName" : "name",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "name",
-    "excelCaption" : "项目名称",
-    "name" : "name",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
-    },
-    "width" : 1,
-    "widthUnit" : "STAR",
-    "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "项目代号",
-    "codeName" : "code",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "code",
-    "excelCaption" : "项目代号",
-    "name" : "code",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "CODE",
-      "codeName" : "Code"
-    },
-    "width" : 150,
-    "widthUnit" : "PX",
-    "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "FRONT",
-    "caption" : "项目状态",
-    "codeName" : "status",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "status",
-    "excelCaption" : "项目状态",
-    "name" : "status",
-    "noPrivDisplayMode" : 1,
-    "getPSAppCodeList" : {
+    "dataItemName" : "productname",
+    "excelCaption" : "产品名称",
+    "getLinkPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
     },
+    "linkValueItem" : "product",
+    "name" : "productname",
+    "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
     },
     "width" : 100,
-    "widthUnit" : "PX",
+    "widthUnit" : "STAR",
+    "enableLinkView" : true,
     "enableSort" : true
   }, {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "结束日期",
-    "codeName" : "end",
+    "caption" : "产品代号",
+    "codeName" : "productcode",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "end",
-    "excelCaption" : "结束日期",
-    "name" : "end",
+    "dataItemName" : "productcode",
+    "excelCaption" : "产品代号",
+    "name" : "productcode",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "END",
-      "codeName" : "End"
+      "name" : "PRODUCTCODE",
+      "codeName" : "ProductCode"
     },
-    "valueFormat" : "YYYY-MM-DD",
-    "width" : 120,
+    "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
-    "name" : "id",
+    "name" : "product",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCT",
+      "codeName" : "Product"
     }
   }, {
     "dataType" : 1,
-    "name" : "projectsn",
+    "name" : "project",
     "getPSAppDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "status",
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "name",
-    "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "PROJECT",
+      "codeName" : "Project"
     }
   }, {
     "dataType" : 1,
-    "name" : "parent",
+    "name" : "plan",
     "getPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
+      "name" : "PLAN",
+      "codeName" : "Plan"
     }
   }, {
     "dataType" : 25,
-    "name" : "code",
+    "name" : "productcode",
     "getPSAppDEField" : {
-      "name" : "CODE",
-      "codeName" : "Code"
+      "name" : "PRODUCTCODE",
+      "codeName" : "ProductCode"
     }
   }, {
-    "dataType" : 25,
-    "name" : "srfmstag"
+    "dataType" : 1,
+    "name" : "branch",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
   }, {
     "dataType" : 25,
     "name" : "srfmajortext",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
     }
   }, {
-    "dataType" : 1,
+    "dataType" : 25,
     "name" : "srfdataaccaction",
     "getPSAppDEField" : {
       "name" : "ID",
@@ -172,25 +108,24 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
+    "dataType" : 25,
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     }
   }, {
-    "format" : "YYYY-MM-DD",
-    "dataType" : 5,
-    "name" : "end",
+    "dataType" : 25,
+    "name" : "productname",
     "getPSAppDEField" : {
-      "name" : "END",
-      "codeName" : "End"
+      "name" : "PRODUCTNAME",
+      "codeName" : "ProductName"
     }
   } ],
   "getPSDEGridEditItems" : [ {
-    "caption" : "项目编号",
+    "caption" : "主键",
     "codeName" : "srfkey",
-    "enableCond" : 0,
+    "enableCond" : 3,
     "ignoreInput" : 0,
     "name" : "srfkey",
     "getPSAppDEField" : {
@@ -203,7 +138,7 @@
     },
     "allowEmpty" : true
   } ],
-  "pagingSize" : 20,
+  "pagingSize" : 50,
   "getRemovePSControlAction" : {
     "actionName" : "Remove",
     "actionType" : "DEACTION",
@@ -223,14 +158,14 @@
   "enableColFilter" : false,
   "enableCustomized" : true,
   "enableGroup" : false,
-  "enablePagingBar" : true,
+  "enablePagingBar" : false,
   "enableRowEdit" : false,
   "enableRowEditOrder" : false,
   "enableRowNew" : false,
   "forceFit" : false,
-  "hideHeader" : false,
+  "hideHeader" : true,
   "noSort" : false,
-  "singleSelect" : false,
-  "modelid" : "e4a47cb6ae2070016f57c5aec5944868",
+  "singleSelect" : true,
+  "modelid" : "8e4fab9a9c723fb2bbf2cbc7f82bb810",
   "modeltype" : "PSDEGRID"
 }

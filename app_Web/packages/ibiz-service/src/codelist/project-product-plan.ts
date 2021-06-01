@@ -1,4 +1,4 @@
-import { ProjectProductService } from "../service";
+import { ProductProjectService } from "../service";
 /**
  * 代码表--项目产品计划（动态）
  *
@@ -90,10 +90,10 @@ export default class ProjectProductPlan {
     /**
      * 项目产品应用实体服务对象
      *
-     * @type {ProjectProductService}
+     * @type {ProductProjectService}
      * @memberof ProjectProductPlan
      */
-    public projectproductService: ProjectProductService = new ProjectProductService();
+    public productprojectService: ProductProjectService = new ProductProjectService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class ProjectProductPlan {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.projectproductService.FetchRelationPlan(context, data);
+            const promise: Promise<any> = this.productprojectService.FetchProductPlan(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

@@ -1700,7 +1700,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectProduct.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductProject.json"
     },
     "getPSDEContextMenu" : {
       "codeName" : "TreeExpViewzt_product_cm",

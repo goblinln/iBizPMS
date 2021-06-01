@@ -1,7 +1,7 @@
 import { ProductProjectUIServiceBase } from './product-project-ui-service-base';
 
 /**
- * 项目UI服务对象
+ * 项目产品UI服务对象
  *
  * @export
  * @class ProductProjectUIService

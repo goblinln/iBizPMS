@@ -119,11 +119,11 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.project && _context.testreport && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.project && _context.task && _context.action && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
-        }
         if (_context.project && _context.story && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.project && _context.task && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.project && _context.build && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);

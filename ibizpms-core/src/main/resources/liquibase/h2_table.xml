@@ -260,7 +260,7 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_build-112-7">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_build-114-7">
         <createTable tableName="zt_build">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2571,7 +2571,7 @@
 
 
     <!--输出实体[ZT_PROJECTPRODUCT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-43-95">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-65-95">
         <createTable tableName="zt_projectproduct">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2861,7 +2861,7 @@
 
 
     <!--输出实体[ZT_STORYSPEC]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_storyspec-8-108">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_storyspec-10-108">
         <createTable tableName="zt_storyspec">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3574,7 +3574,7 @@
         <!--输出实体[ZT_NOTIFY]外键关系 -->
         <!--输出实体[IBZ_PRODUCTTEAM]外键关系 -->
         <!--输出实体[ZT_PRODUCT]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-zt_product-472-135">
+    <changeSet author="a_A_23e8aa361" id="fk-zt_product-473-135">
        <addForeignKeyConstraint baseColumnNames="LINE" baseTableName="zt_product" constraintName="DER1N_ZT_PRODUCT_IBZPRO_PRODUC" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_module" validate="true"/>
     </changeSet>
         <!--输出实体[IBZ_PRODUCTLIFE]外键关系 -->

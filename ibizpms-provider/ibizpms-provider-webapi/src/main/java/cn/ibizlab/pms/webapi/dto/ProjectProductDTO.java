@@ -246,6 +246,36 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
 
+    /**
+     * 属性 [STATUS]
+     *
+     */
+    @JSONField(name = "status")
+    @JsonProperty("status")
+    @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
+    @ApiModelProperty("项目状态")
+    private String status;
+
+    /**
+     * 属性 [PROJECTCODE]
+     *
+     */
+    @JSONField(name = "projectcode")
+    @JsonProperty("projectcode")
+    @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
+    @ApiModelProperty("项目代号")
+    private String projectcode;
+
+    /**
+     * 属性 [PROJECTEND]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "projectend" , format="yyyy-MM-dd")
+    @JsonProperty("projectend")
+    @ApiModelProperty("结束日期")
+    private Timestamp projectend;
+
 
     /**
      * 设置 [PRODUCT]

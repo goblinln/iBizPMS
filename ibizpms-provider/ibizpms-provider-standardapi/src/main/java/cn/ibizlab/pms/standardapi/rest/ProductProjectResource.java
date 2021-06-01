@@ -30,23 +30,23 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import cn.ibizlab.pms.standardapi.dto.*;
 import cn.ibizlab.pms.standardapi.mapping.*;
-import cn.ibizlab.pms.core.zentao.domain.Project;
-import cn.ibizlab.pms.core.zentao.service.IProjectService;
-import cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext;
+import cn.ibizlab.pms.core.zentao.domain.ProjectProduct;
+import cn.ibizlab.pms.core.zentao.service.IProjectProductService;
+import cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
-import cn.ibizlab.pms.core.zentao.runtime.ProjectRuntime;
+import cn.ibizlab.pms.core.zentao.runtime.ProjectProductRuntime;
 
 @Slf4j
-@Api(tags = {"项目" })
+@Api(tags = {"项目产品" })
 @RestController("StandardAPI-productproject")
 @RequestMapping("")
 public class ProductProjectResource {
 
     @Autowired
-    public IProjectService projectService;
+    public IProjectProductService projectproductService;
 
     @Autowired
-    public ProjectRuntime projectRuntime;
+    public ProjectProductRuntime projectproductRuntime;
 
     @Autowired
     @Lazy
@@ -54,12 +54,51 @@ public class ProductProjectResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取当前项目", tags = {"项目" } ,notes = "根据产品获取当前项目")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/fetchcurproduct")
-	public ResponseEntity<List<ProductProjectDTO>> fetchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectSearchContext context) {
-        
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchCurProduct(context) ;
+	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"项目产品" } ,notes = "根据产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/fetchdefault")
+	public ResponseEntity<List<ProductProjectDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<ProjectProduct> domains = projectproductService.searchDefault(context) ;
+        List<ProductProjectDTO> list = productprojectMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取关联计划", tags = {"项目产品" } ,notes = "根据产品获取关联计划")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productprojects/fetchproductplan")
+	public ResponseEntity<List<ProductProjectDTO>> fetchProductPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<ProjectProduct> domains = projectproductService.searchRelationPlan(context) ;
+        List<ProductProjectDTO> list = productprojectMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"项目产品" } ,notes = "根据项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productprojects/fetchdefault")
+	public ResponseEntity<List<ProductProjectDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<ProjectProduct> domains = projectproductService.searchDefault(context) ;
+        List<ProductProjectDTO> list = productprojectMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取关联计划", tags = {"项目产品" } ,notes = "根据项目获取关联计划")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productprojects/fetchproductplan")
+	public ResponseEntity<List<ProductProjectDTO>> fetchProductPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<ProjectProduct> domains = projectproductService.searchRelationPlan(context) ;
         List<ProductProjectDTO> list = productprojectMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

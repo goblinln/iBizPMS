@@ -616,7 +616,7 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
-        "name" : "PROJECT__PROJECT_STORY",
+        "name" : "PROJECT__STORY",
         "rSMode" : 2,
         "enableCreateDataRS" : false,
         "enableDEAction" : true,
@@ -700,7 +700,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "name" : "PROJECT__PROJECT_STORY",
+    "name" : "PROJECT__STORY",
     "rSMode" : 2,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,

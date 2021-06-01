@@ -363,7 +363,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
     },
-    "name" : "PROJECT__PROJECT_STORY",
+    "name" : "PROJECT__STORY",
     "rSMode" : 2,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,

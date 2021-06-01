@@ -229,6 +229,31 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
+    /**
+     * 项目状态
+     */
+    @TableField(exist = false)
+    @JSONField(name = "status")
+    @JsonProperty("status")
+    @ApiModelProperty("项目状态")
+    private String status;
+    /**
+     * 项目代号
+     */
+    @TableField(exist = false)
+    @JSONField(name = "projectcode")
+    @JsonProperty("projectcode")
+    @ApiModelProperty("项目代号")
+    private String projectcode;
+    /**
+     * 结束日期
+     */
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "projectend", format = "yyyy-MM-dd")
+    @JsonProperty("projectend")
+    @ApiModelProperty("结束日期")
+    private Timestamp projectend;
 
     /**
      * 
