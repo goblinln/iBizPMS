@@ -795,18 +795,6 @@
               "editorType" : "PICKEREX_TRIGGER",
               "handlerType" : "PickupText",
               "name" : "modulename",
-              "getPSAppDEACMode" : {
-                "modelref" : true,
-                "id" : "Default"
-              },
-              "getPSAppDEDataSet" : {
-                "modelref" : true,
-                "id" : "FetchBugModule"
-              },
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-              },
               "getPSNavigateContexts" : [ {
                 "key" : "N_BRANCH_EQ",
                 "name" : "N_BRANCH_EQ",

@@ -107,11 +107,17 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testreport && _context.action && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.test && _context.bug && _context.action && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.project && _context.testtask && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.project && _context.testreport && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.project && _context.task && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -133,6 +139,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.build && _context.action && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.testsuite && _context.action && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.project && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);

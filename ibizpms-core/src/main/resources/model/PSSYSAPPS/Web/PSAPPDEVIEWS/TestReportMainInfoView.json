@@ -103,7 +103,7 @@
         "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "GetTestReportBasicInfo"
+          "id" : "LoadTestReportBasic"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -134,10 +134,6 @@
     "getPSDEFormItemUpdates" : [ {
       "codeName" : "GetInfoTestTask",
       "name" : "获取测试单相应信息",
-      "getPSAppDEMethod" : {
-        "modelref" : true,
-        "id" : "getinfotesttask"
-      },
       "getPSDEFIUpdateDetails" : [ {
         "name" : "builds"
       }, {
@@ -1238,5 +1234,56 @@
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
   "modelid" : "d876490f0254c8897bbdc3b0eb56a42e",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "TestReports",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
+    "name" : "TEST__TEST_REPORT",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "TestReports",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
+    },
+    "name" : "PROJECT__TEST_REPORT",
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

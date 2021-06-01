@@ -6,7 +6,7 @@
   "name" : "TestResultMEditView9",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
   },
   "getPSAppViewLogics" : [ {
     "logicTrigger" : "CUSTOM",
@@ -37,7 +37,7 @@
     "codeName" : "Main",
     "columnEnableLink" : 2,
     "controlType" : "MULTIEDITVIEWPANEL",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult/PSMULTIEDITVIEWPANELS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult/PSMULTIEDITVIEWPANELS/Main.json",
     "getEmbeddedPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestResultEditView9.json",
@@ -56,7 +56,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -70,7 +70,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -81,7 +81,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
         }
       }, {
         "actionName" : "Remove",
@@ -94,7 +94,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
         }
       }, {
         "actionName" : "Get",
@@ -107,7 +107,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -120,7 +120,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
         }
       }, {
         "actionName" : "Create",
@@ -133,7 +133,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -328,7 +328,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -357,7 +357,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -371,5 +371,56 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "modelid" : "e01d5c7f0080afdcf4e9c9ee9924abef",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "TestCases",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "name" : "TEST__TEST_CASE",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "TestReults",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
+    },
+    "name" : "TEST_CASE__TEST_RESULT",
+    "getParentPSAppDEField" : {
+      "name" : "CASE",
+      "codeName" : "IBizCase"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

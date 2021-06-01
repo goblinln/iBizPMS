@@ -29,7 +29,7 @@
     "name" : "获取测试单相应信息",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "GetInfoTestTaskR"
+      "id" : "InitTestTaskReport"
     },
     "getPSDEFIUpdateDetails" : [ {
       "name" : "cases"
@@ -65,7 +65,7 @@
     "name" : "根据起始时间更新概况",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "GetInfoTaskOvByTime"
+      "id" : "InitProjectDuringReport"
     },
     "getPSDEFIUpdateDetails" : [ {
       "name" : "overviews"

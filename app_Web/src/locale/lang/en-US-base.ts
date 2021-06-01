@@ -3,6 +3,7 @@ import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
 import test_en_US from '@locale/lanres/entities/test/test_en_US';
+import storyspec_en_US from '@locale/lanres/entities/story-spec/story-spec_en_US';
 import productbranch_en_US from '@locale/lanres/entities/product-branch/product-branch_en_US';
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import taskestimate_en_US from '@locale/lanres/entities/task-estimate/task-estimate_en_US';
@@ -15,8 +16,11 @@ import testmodule_en_US from '@locale/lanres/entities/test-module/test-module_en
 import productlife_en_US from '@locale/lanres/entities/product-life/product-life_en_US';
 import task_en_US from '@locale/lanres/entities/task/task_en_US';
 import build_en_US from '@locale/lanres/entities/build/build_en_US';
+import testreult_en_US from '@locale/lanres/entities/test-reult/test-reult_en_US';
+import testsuite_en_US from '@locale/lanres/entities/test-suite/test-suite_en_US';
 import projectteam_en_US from '@locale/lanres/entities/project-team/project-team_en_US';
 import testtask_en_US from '@locale/lanres/entities/test-task/test-task_en_US';
+import testreport_en_US from '@locale/lanres/entities/test-report/test-report_en_US';
 import bug_en_US from '@locale/lanres/entities/bug/bug_en_US';
 import projectmodule_en_US from '@locale/lanres/entities/project-module/project-module_en_US';
 import productproject_en_US from '@locale/lanres/entities/product-project/product-project_en_US';
@@ -80,15 +84,12 @@ import ibizproproductdaily_en_US from '@locale/lanres/entities/ibizpro-product-d
 import sysrole_en_US from '@locale/lanres/entities/sys-role/sys-role_en_US';
 import plantempletdetail_en_US from '@locale/lanres/entities/plan-templet-detail/plan-templet-detail_en_US';
 import ibizproproductmonthly_en_US from '@locale/lanres/entities/ibizpro-product-monthly/ibizpro-product-monthly_en_US';
-import testresult_en_US from '@locale/lanres/entities/test-result/test-result_en_US';
-import testsuite_en_US from '@locale/lanres/entities/test-suite/test-suite_en_US';
 import ibzplantempletdetail_en_US from '@locale/lanres/entities/ibz-plan-templet-detail/ibz-plan-templet-detail_en_US';
 import ibzproconfig_en_US from '@locale/lanres/entities/ibzpro-config/ibzpro-config_en_US';
 import ibzprostory_en_US from '@locale/lanres/entities/ibzpro-story/ibzpro-story_en_US';
 import ibztaskteam_en_US from '@locale/lanres/entities/ibztask-team/ibztask-team_en_US';
 import productline_en_US from '@locale/lanres/entities/product-line/product-line_en_US';
 import pssyssfpub_en_US from '@locale/lanres/entities/pssys-sfpub/pssys-sfpub_en_US';
-import testreport_en_US from '@locale/lanres/entities/test-report/test-report_en_US';
 import projectstats_en_US from '@locale/lanres/entities/project-stats/project-stats_en_US';
 import testrun_en_US from '@locale/lanres/entities/test-run/test-run_en_US';
 import ibzmonthly_en_US from '@locale/lanres/entities/ibz-monthly/ibz-monthly_en_US';
@@ -109,9 +110,7 @@ import dynadashboard_en_US from '@locale/lanres/entities/dyna-dashboard/dyna-das
 import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee_en_US';
 import ibzproproductline_en_US from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_en_US';
 import projectproduct_en_US from '@locale/lanres/entities/project-product/project-product_en_US';
-import accounttaskestimate_en_US from '@locale/lanres/entities/account-taskestimate/account-taskestimate_en_US';
 import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
-import module_en_US from '@locale/lanres/entities/module/module_en_US';
 import components_en_US from '@locale/lanres/components/components_en_US';
 import codelist_en_US from '@locale/lanres/codelist/codelist_en_US';
 import userCustom_en_US from '@locale/lanres/userCustom/userCustom_en_US';
@@ -428,6 +427,7 @@ function getAppLocale(){
             'product': product_en_US(),
             'projectburn': projectburn_en_US(),
             'test': test_en_US(),
+            'storyspec': storyspec_en_US(),
             'productbranch': productbranch_en_US(),
             'action': action_en_US(),
             'taskestimate': taskestimate_en_US(),
@@ -440,8 +440,11 @@ function getAppLocale(){
             'productlife': productlife_en_US(),
             'task': task_en_US(),
             'build': build_en_US(),
+            'testreult': testreult_en_US(),
+            'testsuite': testsuite_en_US(),
             'projectteam': projectteam_en_US(),
             'testtask': testtask_en_US(),
+            'testreport': testreport_en_US(),
             'bug': bug_en_US(),
             'projectmodule': projectmodule_en_US(),
             'productproject': productproject_en_US(),
@@ -505,15 +508,12 @@ function getAppLocale(){
             'sysrole': sysrole_en_US(),
             'plantempletdetail': plantempletdetail_en_US(),
             'ibizproproductmonthly': ibizproproductmonthly_en_US(),
-            'testresult': testresult_en_US(),
-            'testsuite': testsuite_en_US(),
             'ibzplantempletdetail': ibzplantempletdetail_en_US(),
             'ibzproconfig': ibzproconfig_en_US(),
             'ibzprostory': ibzprostory_en_US(),
             'ibztaskteam': ibztaskteam_en_US(),
             'productline': productline_en_US(),
             'pssyssfpub': pssyssfpub_en_US(),
-            'testreport': testreport_en_US(),
             'projectstats': projectstats_en_US(),
             'testrun': testrun_en_US(),
             'ibzmonthly': ibzmonthly_en_US(),
@@ -534,9 +534,7 @@ function getAppLocale(){
             'sysemployee': sysemployee_en_US(),
             'ibzproproductline': ibzproproductline_en_US(),
             'projectproduct': projectproduct_en_US(),
-            'accounttaskestimate': accounttaskestimate_en_US(),
             'dynafilter': dynafilter_en_US(),
-            'module': module_en_US(),
         },
         components: components_en_US(),
         codelist: codelist_en_US(),

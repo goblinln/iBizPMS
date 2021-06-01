@@ -486,18 +486,6 @@
           "editorType" : "PICKEREX_TRIGGER",
           "handlerType" : "PickupText",
           "name" : "modulename",
-          "getPSAppDEACMode" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "getPSAppDEDataSet" : {
-            "modelref" : true,
-            "id" : "FetchDocModule"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-          },
           "getPSNavigateContexts" : [ {
             "key" : "DOCLIB",
             "name" : "DOCLIB",

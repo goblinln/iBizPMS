@@ -27,10 +27,6 @@
   "getPSDEFormItemUpdates" : [ {
     "codeName" : "GetInfoTestTask",
     "name" : "获取测试单相应信息",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "getinfotesttask"
-    },
     "getPSDEFIUpdateDetails" : [ {
       "name" : "end"
     }, {

@@ -1,3 +1,4 @@
+import { StorySpecService } from "../service";
 /**
  * 代码表--当前需求版本（动态）
  *
@@ -84,20 +85,69 @@ export default class CurStory {
      * @memberof CurStory
      */
     public queryParamNames:any ={
+        sort: 'version,desc'
     }
 
+    /**
+     * 需求描述应用实体服务对象
+     *
+     * @type {StorySpecService}
+     * @memberof CurStory
+     */
+    public storyspecService: StorySpecService = new StorySpecService();
 
+
+    /**
+     * 处理数据
+     *
+     * @public
+     * @param {any[]} items
+     * @returns {any[]}
+     * @memberof CurStory
+     */
+    public doItems(items: any[]): any[] {
+        let _items: any[] = [];
+        if(items && items instanceof Array && items.length >0){
+            items.forEach((item: any) => {
+                let itemdata:any = {};
+                Object.assign(itemdata,{id:item.version});
+                Object.assign(itemdata,{value:item.version});
+                Object.assign(itemdata,{text:item.title});
+                Object.assign(itemdata,{label:item.title});
+                
+                
+                
+                _items.push(itemdata);
+            });
+        }
+        return _items;
+    }
 
     /**
      * 获取数据项
      *
+     * @param {*} context
      * @param {*} data
      * @param {boolean} [isloading]
      * @returns {Promise<any>}
      * @memberof CurStory
      */
-    public getItems(data: any={}, isloading?: boolean): Promise<any> {
-        return Promise.reject([]);
+    public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
+        return new Promise((resolve, reject) => {
+            data = this.handleQueryParam(data);
+            const promise: Promise<any> = this.storyspecService.FetchVersion(context, data);
+            promise.then((response: any) => {
+                if (response && response.status === 200) {
+                    const data =  response.data;
+                    resolve(this.doItems(data));
+                } else {
+                    resolve([]);
+                }
+            }).catch((response: any) => {
+                console.error(response);
+                reject(response);
+            });
+        });
     }
 
     /**

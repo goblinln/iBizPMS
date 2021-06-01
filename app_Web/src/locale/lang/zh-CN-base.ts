@@ -3,6 +3,7 @@ import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
 import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
+import storyspec_zh_CN from '@locale/lanres/entities/story-spec/story-spec_zh_CN';
 import productbranch_zh_CN from '@locale/lanres/entities/product-branch/product-branch_zh_CN';
 import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
 import taskestimate_zh_CN from '@locale/lanres/entities/task-estimate/task-estimate_zh_CN';
@@ -15,8 +16,11 @@ import testmodule_zh_CN from '@locale/lanres/entities/test-module/test-module_zh
 import productlife_zh_CN from '@locale/lanres/entities/product-life/product-life_zh_CN';
 import task_zh_CN from '@locale/lanres/entities/task/task_zh_CN';
 import build_zh_CN from '@locale/lanres/entities/build/build_zh_CN';
+import testreult_zh_CN from '@locale/lanres/entities/test-reult/test-reult_zh_CN';
+import testsuite_zh_CN from '@locale/lanres/entities/test-suite/test-suite_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/entities/project-team/project-team_zh_CN';
 import testtask_zh_CN from '@locale/lanres/entities/test-task/test-task_zh_CN';
+import testreport_zh_CN from '@locale/lanres/entities/test-report/test-report_zh_CN';
 import bug_zh_CN from '@locale/lanres/entities/bug/bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
 import productproject_zh_CN from '@locale/lanres/entities/product-project/product-project_zh_CN';
@@ -80,15 +84,12 @@ import ibizproproductdaily_zh_CN from '@locale/lanres/entities/ibizpro-product-d
 import sysrole_zh_CN from '@locale/lanres/entities/sys-role/sys-role_zh_CN';
 import plantempletdetail_zh_CN from '@locale/lanres/entities/plan-templet-detail/plan-templet-detail_zh_CN';
 import ibizproproductmonthly_zh_CN from '@locale/lanres/entities/ibizpro-product-monthly/ibizpro-product-monthly_zh_CN';
-import testresult_zh_CN from '@locale/lanres/entities/test-result/test-result_zh_CN';
-import testsuite_zh_CN from '@locale/lanres/entities/test-suite/test-suite_zh_CN';
 import ibzplantempletdetail_zh_CN from '@locale/lanres/entities/ibz-plan-templet-detail/ibz-plan-templet-detail_zh_CN';
 import ibzproconfig_zh_CN from '@locale/lanres/entities/ibzpro-config/ibzpro-config_zh_CN';
 import ibzprostory_zh_CN from '@locale/lanres/entities/ibzpro-story/ibzpro-story_zh_CN';
 import ibztaskteam_zh_CN from '@locale/lanres/entities/ibztask-team/ibztask-team_zh_CN';
 import productline_zh_CN from '@locale/lanres/entities/product-line/product-line_zh_CN';
 import pssyssfpub_zh_CN from '@locale/lanres/entities/pssys-sfpub/pssys-sfpub_zh_CN';
-import testreport_zh_CN from '@locale/lanres/entities/test-report/test-report_zh_CN';
 import projectstats_zh_CN from '@locale/lanres/entities/project-stats/project-stats_zh_CN';
 import testrun_zh_CN from '@locale/lanres/entities/test-run/test-run_zh_CN';
 import ibzmonthly_zh_CN from '@locale/lanres/entities/ibz-monthly/ibz-monthly_zh_CN';
@@ -109,9 +110,7 @@ import dynadashboard_zh_CN from '@locale/lanres/entities/dyna-dashboard/dyna-das
 import sysemployee_zh_CN from '@locale/lanres/entities/sys-employee/sys-employee_zh_CN';
 import ibzproproductline_zh_CN from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_zh_CN';
 import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
-import accounttaskestimate_zh_CN from '@locale/lanres/entities/account-taskestimate/account-taskestimate_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
-import module_zh_CN from '@locale/lanres/entities/module/module_zh_CN';
 import components_zh_CN from '@locale/lanres/components/components_zh_CN';
 import codelist_zh_CN from '@locale/lanres/codelist/codelist_zh_CN';
 import userCustom_zh_CN from '@locale/lanres/userCustom/userCustom_zh_CN';
@@ -426,6 +425,7 @@ function getAppLocale(){
             'product': product_zh_CN(),
             'projectburn': projectburn_zh_CN(),
             'test': test_zh_CN(),
+            'storyspec': storyspec_zh_CN(),
             'productbranch': productbranch_zh_CN(),
             'action': action_zh_CN(),
             'taskestimate': taskestimate_zh_CN(),
@@ -438,8 +438,11 @@ function getAppLocale(){
             'productlife': productlife_zh_CN(),
             'task': task_zh_CN(),
             'build': build_zh_CN(),
+            'testreult': testreult_zh_CN(),
+            'testsuite': testsuite_zh_CN(),
             'projectteam': projectteam_zh_CN(),
             'testtask': testtask_zh_CN(),
+            'testreport': testreport_zh_CN(),
             'bug': bug_zh_CN(),
             'projectmodule': projectmodule_zh_CN(),
             'productproject': productproject_zh_CN(),
@@ -503,15 +506,12 @@ function getAppLocale(){
             'sysrole': sysrole_zh_CN(),
             'plantempletdetail': plantempletdetail_zh_CN(),
             'ibizproproductmonthly': ibizproproductmonthly_zh_CN(),
-            'testresult': testresult_zh_CN(),
-            'testsuite': testsuite_zh_CN(),
             'ibzplantempletdetail': ibzplantempletdetail_zh_CN(),
             'ibzproconfig': ibzproconfig_zh_CN(),
             'ibzprostory': ibzprostory_zh_CN(),
             'ibztaskteam': ibztaskteam_zh_CN(),
             'productline': productline_zh_CN(),
             'pssyssfpub': pssyssfpub_zh_CN(),
-            'testreport': testreport_zh_CN(),
             'projectstats': projectstats_zh_CN(),
             'testrun': testrun_zh_CN(),
             'ibzmonthly': ibzmonthly_zh_CN(),
@@ -532,9 +532,7 @@ function getAppLocale(){
             'sysemployee': sysemployee_zh_CN(),
             'ibzproproductline': ibzproproductline_zh_CN(),
             'projectproduct': projectproduct_zh_CN(),
-            'accounttaskestimate': accounttaskestimate_zh_CN(),
             'dynafilter': dynafilter_zh_CN(),
-            'module': module_zh_CN(),
         },
         components: components_zh_CN(),
         codelist: codelist_zh_CN(),

@@ -2077,18 +2077,6 @@
         },
         "editorType" : "PICKEREX_TRIGGER",
         "name" : "modulenameeq",
-        "getPSAppDEACMode" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchBugModule"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-        },
         "dropDownView" : false,
         "enableAC" : true,
         "enableLinkView" : false,
@@ -2126,18 +2114,6 @@
         },
         "editorType" : "PICKEREX_TRIGGER",
         "name" : "modulenamelike",
-        "getPSAppDEACMode" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchBugModule"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-        },
         "dropDownView" : false,
         "enableAC" : true,
         "enableLinkView" : false,

@@ -7,7 +7,7 @@
   "name" : "测试结果",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestResult.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReult.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "N_a",

@@ -5,10 +5,6 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPCODELISTS/Module__type.json",
   "emptyText" : "未定义",
   "name" : "模块类型",
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-  },
   "getPSCodeItems" : [ {
     "codeName" : "Line",
     "text" : "产品线",

@@ -1,4 +1,3 @@
-import { ModuleService } from "../service";
 /**
  * 代码表--所属模板（动态）
  *
@@ -87,66 +86,18 @@ export default class BugModule {
     public queryParamNames:any ={
     }
 
-    /**
-     * 模块应用实体服务对象
-     *
-     * @type {ModuleService}
-     * @memberof BugModule
-     */
-    public moduleService: ModuleService = new ModuleService();
 
-
-    /**
-     * 处理数据
-     *
-     * @public
-     * @param {any[]} items
-     * @returns {any[]}
-     * @memberof BugModule
-     */
-    public doItems(items: any[]): any[] {
-        let _items: any[] = [];
-        if(items && items instanceof Array && items.length >0){
-            items.forEach((item: any) => {
-                let itemdata:any = {};
-                Object.assign(itemdata,{id:item.id});
-                Object.assign(itemdata,{value:item.id});
-                Object.assign(itemdata,{text:item.name});
-                Object.assign(itemdata,{label:item.name});
-                Object.assign(itemdata,{pvalue:item.parent});
-                
-                
-                _items.push(itemdata);
-            });
-        }
-        return _items;
-    }
 
     /**
      * 获取数据项
      *
-     * @param {*} context
      * @param {*} data
      * @param {boolean} [isloading]
      * @returns {Promise<any>}
      * @memberof BugModule
      */
-    public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
-        return new Promise((resolve, reject) => {
-            data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.moduleService.FetchBugModuleCodeList(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
-        });
+    public getItems(data: any={}, isloading?: boolean): Promise<any> {
+        return Promise.reject([]);
     }
 
     /**
