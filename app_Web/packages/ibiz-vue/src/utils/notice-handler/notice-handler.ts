@@ -64,12 +64,15 @@ export class NoticeHandler {
                 return null;
             } else {
                 if (!error || !error.status || !error.data) {
+                    LogUtil.error(error);
                     return this.createError({ code: AppErrorCode.SYSTEMERROR });
                 } else {
                     const errorInfo: any = error.data;
                     if (errorInfo.message) {
+                        LogUtil.error(error);
                         return this.createError(errorInfo);
                     } else {
+                        LogUtil.error(error);
                         return this.createError({ code: AppErrorCode.SYSTEMERROR });
                     }
                 }

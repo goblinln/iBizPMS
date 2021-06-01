@@ -275,7 +275,7 @@ export class AppGridBase extends GridControlBase {
             align: 'center',
             'class-name':'default-ua-column'
         };
-        renderParams['width'] = 68;
+        renderParams['width'] = 48;
         renderParams['fixed'] = 'right';
         //绘制
         return this.$createElement('el-table-column', {
@@ -284,7 +284,7 @@ export class AppGridBase extends GridControlBase {
                 default: (scope: any) => {
                     let offset = require('@popperjs/core/lib/modifiers/offset').default;
                     return <div class="ua-column-container" on-mouseenter={(e: any) => {
-                        let _offset = Object.assign({ options: { offset: [0, -68] } }, offset);
+                        let _offset = Object.assign({ options: { offset: [0, -48] } }, offset);
                         (this.$apppopover as any).openPopover2(e, () => this.renderActionButtons(column, scope), 'left', true, true, undefined, 48, "view-default ua-column-popover", [_offset]);
                     }}>
                         <i class='el-icon-more ua-column-icon' ></i>

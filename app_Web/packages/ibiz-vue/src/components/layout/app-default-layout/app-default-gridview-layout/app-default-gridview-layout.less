@@ -208,11 +208,11 @@
       .ivu-poptip.page-column{
         position: absolute;
         top: 0px;
-        right: 4px;
+        right: 0px;
         z-index: 3;
         background-color: #57A3FD;;
         height: 45px;
-        width: 68px;
+        width: 48px;
         box-shadow: -2px 0px 3px 0px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         &::before{
@@ -230,12 +230,13 @@
           content: "";
           background-color: #F6F6F6;
           position: absolute;
-          width: 30px;
-          height: 30px;
+          width: 20px;
+          height: 20px;
           border-radius: 0 50% 0 0;
-          top: 12px;
+          top: 16px;
           right: -5px;
           box-shadow: 0 10px 0 0px #F6F6F6;
+          pointer-events: none;
         }
         .ivu-poptip-rel{
           display: flex;
@@ -270,14 +271,14 @@
           }
           &::before {
             animation-name: openbook1;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-timing-function: ease-in;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
           }
           &::after {
             animation-name: openbook2;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-timing-function: ease-in;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
@@ -301,14 +302,14 @@
           }
           &::before {
             animation-name: closebook1;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-timing-function: ease-in;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
           }
           &::after {
             animation-name: closebook2;
-            animation-duration: 1s;
+            animation-duration: 0.5s;
             animation-timing-function: ease-in;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;

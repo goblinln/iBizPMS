@@ -927,6 +927,11 @@ export class ViewBase extends Vue {
      */
     public closeView(args: any[]) {
         let view: any = this;
+        if (window.opener && Boolean(this.$store.getters['getCustomParamByTag']('srffullscreen'))) {
+            window.opener.postMessage({type:'CLOSE',data:args},'*');
+            window.close();
+            return;
+        }
         if (view.viewdata) {
             view.$emit('view-event', { action: 'viewdataschange', data: Array.isArray(args) ? args : [args] });
             view.$emit('view-event', { action: 'close', data: Array.isArray(args) ? args : [args] });
