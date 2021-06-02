@@ -78,7 +78,6 @@
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -87,7 +86,6 @@
     }
   }, {
     "name" : "EDITDATA",
-    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
