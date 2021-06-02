@@ -139,7 +139,7 @@
 
     <!--数据查询[Account]-->
     <sql id="Account" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, case when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE` as `DATE`, DATE_FORMAT(t1.`date`,'%c月%d日') AS `DATE1`, case when t1.`END` = 2400 then null else t1.`END` end as `END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`TODOSN`, t1.`id`, t1.`IDVALUE`, case when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  LEFT JOIN zt_bug t11 on t11.ID= t1.idvalue LEFT JOIN zt_task t21 on t21.ID= t1.idvalue LEFT JOIN zt_story t31 on t31.ID= t1.idvalue ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -169,8 +169,11 @@
 
     <!--数据查询[My]-->
     <sql id="My" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, case when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE` as `DATE`, DATE_FORMAT(t1.`date`,'%c月%d日') AS `DATE1`, case when t1.`END` = 2400 then null else t1.`END` end as `END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`TODOSN`, t1.`id`, t1.`IDVALUE`, case when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  LEFT JOIN zt_bug t11 on t11.ID= t1.idvalue LEFT JOIN zt_task t21 on t21.ID= t1.idvalue LEFT JOIN zt_story t31 on t31.ID= t1.idvalue ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND (t1.account = #{srf.sessioncontext.srfloginname} or t1.assignedto =#{srf.sessioncontext.srfloginname}) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
