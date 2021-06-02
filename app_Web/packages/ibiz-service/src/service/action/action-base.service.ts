@@ -140,325 +140,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMain
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchMain(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.project && _context.testreport && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.project && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.project && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.project && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.project && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.project && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.product && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.product && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.product && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
-        }
-        if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmain`, _data);
-        }
-        if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmain`, _data);
-        }
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
-        }
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmain`, _data);
-        }
-        if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
-        }
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
-        }
-        if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
-        }
-        if (_context.project && _context.productplan && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.todo && true) {
-            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchmain`, _data);
-        }
-        if (_context.account && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchmain`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmain`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchmain`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchmain`, _data);
-        }
-        if (_context.account && true) {
-            return this.http.post(`/accounts/${_context.account}/actions/fetchmain`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.testtask && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.project && _context.testreport && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.project && _context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.project && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.project && _context.build && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.project && _context.bug && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.project && _context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.product && _context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.product && _context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.product && _context.build && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.test && _context.testreport && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.test && _context.bug && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && _context.testtask && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && _context.testreport && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && _context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && _context.build && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && _context.bug && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && _context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.productplan && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && _context.build && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.todo && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/todos/${_context.todo}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.testtask && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.task && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/tasks/${_context.task}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.story && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/stories/${_context.story}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && _context.bug && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/bugs/${_context.bug}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.testsuite && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/actions/getdraft`, _data);
-            return res;
-        }
-        if (_context.account && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/actions/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -800,116 +481,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProject
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.project && _context.testreport && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.project && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.project && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.project && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.project && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.project && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.product && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.product && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.product && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
-        }
-        if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproject`, _data);
-        }
-        if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);
-        }
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
-        }
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
-        }
-        if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
-        }
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
-        }
-        if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
-        }
-        if (_context.project && _context.productplan && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.todo && true) {
-            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchproject`, _data);
-        }
-        if (_context.account && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchproject`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproject`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchproject`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchproject`, _data);
-        }
-        if (_context.account && true) {
-            return this.http.post(`/accounts/${_context.account}/actions/fetchproject`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -1049,6 +620,435 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.account && _context.action) {
             const res = await this.http.get(`/accounts/${_context.account}/actions/${_context.action}`);
             return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.testtask && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.project && _context.testreport && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.project && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.project && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.project && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.project && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.product && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.product && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.product && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.test && _context.testreport && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.test && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.testtask && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.testreport && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.productplan && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.build && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.todo && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/todos/${_context.todo}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.testtask && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/tasks/${_context.task}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.story && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/stories/${_context.story}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && _context.bug && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/bugs/${_context.bug}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.testsuite && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/testsuites/${_context.testsuite}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.account && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/actions/getdraft`, _data);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.testtask && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.project && _context.testreport && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.project && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.project && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.project && _context.build && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.project && _context.bug && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.project && _context.productplan && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.product && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.product && _context.productplan && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.product && _context.build && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testreport && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.testreport && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.testtask && true) {
+            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.project && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.bug && true) {
+            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/actions/fetchproduct`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.testtask && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.project && _context.testreport && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.project && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.project && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.project && _context.build && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.project && _context.bug && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.project && _context.productplan && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.product && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.product && _context.productplan && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.product && _context.build && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchaccount`, _data);
+        }
+        if (_context.test && _context.testreport && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.testreport && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.testtask && true) {
+            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.project && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && _context.bug && true) {
+            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchaccount`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchaccount`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchaccount`, _data);
+        }
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/actions/fetchaccount`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -1306,116 +1306,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProduct
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.project && _context.testreport && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.project && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.project && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.project && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.project && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.project && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.product && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.product && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.product && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
-        }
-        if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
-        }
-        if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.productplan && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.todo && true) {
-            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchproduct`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
-        }
-        if (_context.account && true) {
-            return this.http.post(`/accounts/${_context.account}/actions/fetchproduct`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchMy
      *
      * @param {*} [_context={}]
@@ -1526,112 +1416,222 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchAccount
+     * FetchMain
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ActionService
      */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMain(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.account && _context.project && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.project && _context.testreport && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.project && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.project && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.project && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.project && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.project && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.product && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.product && _context.productplan && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.product && _context.build && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
         }
         if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmain`, _data);
         }
         if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmain`, _data);
         }
         if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
         }
         if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmain`, _data);
         }
         if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmain`, _data);
         }
         if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmain`, _data);
         }
         if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmain`, _data);
         }
         if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmain`, _data);
         }
         if (_context.project && _context.productplan && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmain`, _data);
         }
         if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchaccount`, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmain`, _data);
         }
         if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchaccount`, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmain`, _data);
         }
         if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchaccount`, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.todo && true) {
-            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.testtask && true) {
-            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchmain`, _data);
         }
         if (_context.account && _context.bug && true) {
-            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchmain`, _data);
         }
         if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchaccount`, _data);
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmain`, _data);
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/actions/fetchmain`, _data);
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchaccount`, _data);
+            return this.http.post(`/products/${_context.product}/actions/fetchmain`, _data);
         }
         if (_context.account && true) {
-            return this.http.post(`/accounts/${_context.account}/actions/fetchaccount`, _data);
+            return this.http.post(`/accounts/${_context.account}/actions/fetchmain`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProject
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.testtask && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.project && _context.testreport && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.project && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.project && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.project && _context.build && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.project && _context.bug && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.project && _context.productplan && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.product && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.product && _context.productplan && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.product && _context.build && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
+        }
+        if (_context.test && _context.testreport && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.testreport && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproject`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.testtask && true) {
+            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.story && true) {
+            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.project && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/fetchproject`, _data);
+        }
+        if (_context.account && _context.bug && true) {
+            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/fetchproject`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproject`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproject`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproject`, _data);
+        }
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/actions/fetchproject`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

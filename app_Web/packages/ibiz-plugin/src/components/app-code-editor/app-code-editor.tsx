@@ -32,7 +32,7 @@ export class AppCodeEditor extends Vue {
      * @type {string}
      * @memberof AppCodeEditor
      */
-    @Prop({ type: String, default: 'vs-dark' })
+    @Prop({ type: String, default: 'vs-light' })
     theme!: 'vs-light' | 'vs-dark';
 
     /**
@@ -41,7 +41,7 @@ export class AppCodeEditor extends Vue {
      * @type {string}
      * @memberof AppCodeEditor
      */
-    @Prop({ type: String, default: 'json' })
+    @Prop({ type: String, default: 'typescript' })
     language!: 'json' | 'javascript' | 'typescript';
 
     /**

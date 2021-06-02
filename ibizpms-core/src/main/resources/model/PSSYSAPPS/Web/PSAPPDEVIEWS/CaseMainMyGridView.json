@@ -931,6 +931,10 @@
             "dataAccessAction" : "NFAVORITE",
             "fullCodeName" : "Case_caseFavorite",
             "name" : "收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "CaseFavorite"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
@@ -983,6 +987,10 @@
             "dataAccessAction" : "FAVORITE",
             "fullCodeName" : "Case_CaseNFavorite",
             "name" : "取消收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "CaseNFavorite"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
