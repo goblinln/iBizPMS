@@ -79,11 +79,6 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    protected IService getService() {
-        return this.buildService;
-    }
-
-    @Override
     public BuildSearchContext createSearchContext() {
         return new BuildSearchContext();
     }

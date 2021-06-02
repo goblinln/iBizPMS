@@ -58,8 +58,7 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
     @Override
     public List<Lang> select(LangSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Lang> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

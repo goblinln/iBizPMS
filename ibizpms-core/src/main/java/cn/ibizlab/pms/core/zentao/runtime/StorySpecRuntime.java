@@ -79,11 +79,6 @@ public class StorySpecRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.storyspecService;
-    }
-
-    @Override
     public StorySpecSearchContext createSearchContext() {
         return new StorySpecSearchContext();
     }

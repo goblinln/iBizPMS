@@ -58,8 +58,7 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
     @Override
     public List<Jenkins> select(JenkinsSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Jenkins> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

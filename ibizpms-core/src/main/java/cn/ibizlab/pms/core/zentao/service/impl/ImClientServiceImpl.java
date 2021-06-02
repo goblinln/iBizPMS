@@ -58,8 +58,7 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
     @Override
     public List<ImClient> select(ImClientSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ImClient> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

@@ -37,6 +37,7 @@ public interface ISysTeamService {
     boolean checkKey(SysTeam et);
     boolean save(SysTeam et);
     void saveBatch(List<SysTeam> list);
+    List<SysTeam> select(SysTeamSearchContext context);
 
     Page<SysTeam> searchDefault(SysTeamSearchContext context);
     SysTeam dynamicCall(String key, String action, SysTeam et);

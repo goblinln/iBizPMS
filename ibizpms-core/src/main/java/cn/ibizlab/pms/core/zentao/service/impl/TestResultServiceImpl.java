@@ -70,8 +70,7 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     @Override
     public List<TestResult> select(TestResultSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestResult> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

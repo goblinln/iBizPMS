@@ -79,11 +79,6 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.taskService;
-    }
-
-    @Override
     public TaskSearchContext createSearchContext() {
         return new TaskSearchContext();
     }

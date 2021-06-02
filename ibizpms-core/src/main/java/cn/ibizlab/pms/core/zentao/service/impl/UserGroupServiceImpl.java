@@ -58,8 +58,7 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
     @Override
     public List<UserGroup> select(UserGroupSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserGroup> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

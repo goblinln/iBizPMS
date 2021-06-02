@@ -79,11 +79,6 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.extensionService;
-    }
-
-    @Override
     public ExtensionSearchContext createSearchContext() {
         return new ExtensionSearchContext();
     }

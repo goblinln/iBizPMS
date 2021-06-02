@@ -38,6 +38,7 @@ public interface ISysUserService {
     boolean checkKey(SysUser et);
     boolean save(SysUser et);
     void saveBatch(List<SysUser> list);
+    List<SysUser> select(SysUserSearchContext context);
 
     Page<SysUser> searchDefault(SysUserSearchContext context);
     SysUser dynamicCall(String key, String action, SysUser et);

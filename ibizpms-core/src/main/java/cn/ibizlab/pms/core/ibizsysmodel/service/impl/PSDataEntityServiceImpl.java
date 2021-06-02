@@ -48,6 +48,12 @@ public class PSDataEntityServiceImpl implements IPSDataEntityService {
 
 
     @Override
+    public List<PSDataEntity> select(PSDataEntitySearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSDataEntity et) {
         PSDataEntity rt = pSDataEntityFeignClient.create(et);
         if(rt==null)

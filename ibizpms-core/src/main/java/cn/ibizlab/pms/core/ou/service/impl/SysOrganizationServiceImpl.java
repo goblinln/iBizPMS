@@ -48,6 +48,12 @@ public class SysOrganizationServiceImpl implements ISysOrganizationService {
 
 
     @Override
+    public List<SysOrganization> select(SysOrganizationSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(SysOrganization et) {
         SysOrganization rt = sysOrganizationFeignClient.create(et);
         if(rt==null)

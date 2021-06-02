@@ -79,11 +79,6 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzweeklyService;
-    }
-
-    @Override
     public IbzWeeklySearchContext createSearchContext() {
         return new IbzWeeklySearchContext();
     }

@@ -79,11 +79,6 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.usertplService;
-    }
-
-    @Override
     public UserTplSearchContext createSearchContext() {
         return new UserTplSearchContext();
     }

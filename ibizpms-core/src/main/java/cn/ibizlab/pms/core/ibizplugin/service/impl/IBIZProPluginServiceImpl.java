@@ -48,6 +48,12 @@ public class IBIZProPluginServiceImpl implements IIBIZProPluginService {
 
 
     @Override
+    public List<IBIZProPlugin> select(IBIZProPluginSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(IBIZProPlugin et) {
         IBIZProPlugin rt = iBIZProPluginFeignClient.create(et);
         if(rt==null)

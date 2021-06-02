@@ -79,11 +79,6 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    protected IService getService() {
-        return this.useryearworkstatsService;
-    }
-
-    @Override
     public UserYearWorkStatsSearchContext createSearchContext() {
         return new UserYearWorkStatsSearchContext();
     }

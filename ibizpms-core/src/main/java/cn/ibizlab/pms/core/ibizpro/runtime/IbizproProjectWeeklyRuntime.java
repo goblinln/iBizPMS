@@ -79,11 +79,6 @@ public class IbizproProjectWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
     }
 
     @Override
-    protected IService getService() {
-        return this.ibizproprojectweeklyService;
-    }
-
-    @Override
     public IbizproProjectWeeklySearchContext createSearchContext() {
         return new IbizproProjectWeeklySearchContext();
     }

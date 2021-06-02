@@ -24,7 +24,7 @@ import java.util.function.Consumer;
 
 @Slf4j
 @Data
-public class QueryWrapperContext<T> extends SearchContextBase implements ISearchContext, net.ibizsys.runtime.util.ISearchContext {
+public class QueryWrapperContext<T> extends SearchContextBase implements ISearchContext {
 
     @JsonIgnore
     @JSONField(serialize = false)

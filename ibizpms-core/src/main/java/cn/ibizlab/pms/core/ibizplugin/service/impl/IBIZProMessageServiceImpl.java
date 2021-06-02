@@ -48,6 +48,12 @@ public class IBIZProMessageServiceImpl implements IIBIZProMessageService {
 
 
     @Override
+    public List<IBIZProMessage> select(IBIZProMessageSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(IBIZProMessage et) {
         IBIZProMessage rt = iBIZProMessageFeignClient.create(et);
         if(rt==null)

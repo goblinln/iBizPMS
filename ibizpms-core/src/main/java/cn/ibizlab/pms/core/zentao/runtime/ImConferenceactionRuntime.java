@@ -79,11 +79,6 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
     }
 
     @Override
-    protected IService getService() {
-        return this.imconferenceactionService;
-    }
-
-    @Override
     public ImConferenceactionSearchContext createSearchContext() {
         return new ImConferenceactionSearchContext();
     }

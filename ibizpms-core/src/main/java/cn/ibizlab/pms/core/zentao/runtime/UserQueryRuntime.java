@@ -79,11 +79,6 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.userqueryService;
-    }
-
-    @Override
     public UserQuerySearchContext createSearchContext() {
         return new UserQuerySearchContext();
     }

@@ -79,11 +79,6 @@ public class ProjectStoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.projectstoryService;
-    }
-
-    @Override
     public ProjectStorySearchContext createSearchContext() {
         return new ProjectStorySearchContext();
     }

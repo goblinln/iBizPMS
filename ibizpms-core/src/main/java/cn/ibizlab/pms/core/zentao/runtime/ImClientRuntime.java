@@ -79,11 +79,6 @@ public class ImClientRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.imclientService;
-    }
-
-    @Override
     public ImClientSearchContext createSearchContext() {
         return new ImClientSearchContext();
     }

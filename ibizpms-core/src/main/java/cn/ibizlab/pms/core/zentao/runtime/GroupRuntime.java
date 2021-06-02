@@ -79,11 +79,6 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    protected IService getService() {
-        return this.groupService;
-    }
-
-    @Override
     public GroupSearchContext createSearchContext() {
         return new GroupSearchContext();
     }

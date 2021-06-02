@@ -79,11 +79,6 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzplantempletService;
-    }
-
-    @Override
     public IbzPlanTempletSearchContext createSearchContext() {
         return new IbzPlanTempletSearchContext();
     }

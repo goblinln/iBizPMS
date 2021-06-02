@@ -79,11 +79,6 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.productstatsService;
-    }
-
-    @Override
     public ProductStatsSearchContext createSearchContext() {
         return new ProductStatsSearchContext();
     }

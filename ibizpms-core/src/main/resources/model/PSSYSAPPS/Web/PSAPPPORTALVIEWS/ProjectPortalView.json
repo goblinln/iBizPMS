@@ -215,7 +215,7 @@
                     "name" : "fetch",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "FetchCurDefaultQueryExp"
+                      "id" : "FetchCurDefaultQuery"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,

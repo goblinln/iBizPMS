@@ -79,11 +79,6 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzproproductusertaskService;
-    }
-
-    @Override
     public IbzproProductUserTaskSearchContext createSearchContext() {
         return new IbzproProductUserTaskSearchContext();
     }

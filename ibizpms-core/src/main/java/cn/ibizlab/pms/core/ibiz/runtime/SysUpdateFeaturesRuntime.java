@@ -79,11 +79,6 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    protected IService getService() {
-        return this.sysupdatefeaturesService;
-    }
-
-    @Override
     public SysUpdateFeaturesSearchContext createSearchContext() {
         return new SysUpdateFeaturesSearchContext();
     }

@@ -79,11 +79,6 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.moduleService;
-    }
-
-    @Override
     public ModuleSearchContext createSearchContext() {
         return new ModuleSearchContext();
     }

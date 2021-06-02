@@ -37,6 +37,7 @@ public interface IPSSystemDBCfgService {
     boolean checkKey(PSSystemDBCfg et);
     boolean save(PSSystemDBCfg et);
     void saveBatch(List<PSSystemDBCfg> list);
+    List<PSSystemDBCfg> select(PSSystemDBCfgSearchContext context);
 
     Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context);
     Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context);

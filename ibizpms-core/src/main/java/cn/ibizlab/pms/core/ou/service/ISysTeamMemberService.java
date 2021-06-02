@@ -37,6 +37,7 @@ public interface ISysTeamMemberService {
     boolean checkKey(SysTeamMember et);
     boolean save(SysTeamMember et);
     void saveBatch(List<SysTeamMember> list);
+    List<SysTeamMember> select(SysTeamMemberSearchContext context);
 
     Page<SysTeamMember> searchDefault(SysTeamMemberSearchContext context);
     List<SysTeamMember> selectByUserid(String userid);

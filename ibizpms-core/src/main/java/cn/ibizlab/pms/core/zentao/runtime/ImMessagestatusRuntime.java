@@ -79,11 +79,6 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     }
 
     @Override
-    protected IService getService() {
-        return this.immessagestatusService;
-    }
-
-    @Override
     public ImMessagestatusSearchContext createSearchContext() {
         return new ImMessagestatusSearchContext();
     }

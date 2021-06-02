@@ -79,11 +79,6 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzreportroleconfigService;
-    }
-
-    @Override
     public IbzReportRoleConfigSearchContext createSearchContext() {
         return new IbzReportRoleConfigSearchContext();
     }

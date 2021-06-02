@@ -64,8 +64,7 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     public List<Action> select(ActionSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Action> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

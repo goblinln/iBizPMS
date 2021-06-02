@@ -79,11 +79,6 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.effortService;
-    }
-
-    @Override
     public EffortSearchContext createSearchContext() {
         return new EffortSearchContext();
     }

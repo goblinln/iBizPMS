@@ -79,11 +79,6 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.repoService;
-    }
-
-    @Override
     public RepoSearchContext createSearchContext() {
         return new RepoSearchContext();
     }

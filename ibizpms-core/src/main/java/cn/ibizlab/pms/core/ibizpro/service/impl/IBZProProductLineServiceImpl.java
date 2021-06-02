@@ -61,8 +61,7 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
     @Override
     public List<IBZProProductLine> select(IBZProProductLineSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProProductLine> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

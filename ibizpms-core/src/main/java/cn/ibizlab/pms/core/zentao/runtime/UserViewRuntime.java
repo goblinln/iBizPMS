@@ -79,11 +79,6 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.userviewService;
-    }
-
-    @Override
     public UserViewSearchContext createSearchContext() {
         return new UserViewSearchContext();
     }

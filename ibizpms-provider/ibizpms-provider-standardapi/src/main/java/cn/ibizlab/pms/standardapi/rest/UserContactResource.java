@@ -54,19 +54,6 @@ public class UserContactResource {
 
 
     @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
-    @ApiOperation(value = "根据系统用户更新用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户更新用户联系方式")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/usercontacts/{usercontact_id}")
-    public ResponseEntity<UserContactDTO> updateBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
-        UserContact domain = usercontactMapping.toDomain(usercontactdto);
-        
-        domain.setId(usercontact_id);
-		usercontactService.update(domain);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
     @ApiOperation(value = "根据系统用户删除用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户删除用户联系方式")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/usercontacts/{usercontact_id}")
     public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
@@ -81,15 +68,6 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
-    @ApiOperation(value = "根据系统用户获取用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/usercontacts/{usercontact_id}")
-    public ResponseEntity<UserContactDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
-        UserContact domain = usercontactService.get(usercontact_id);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
     @ApiOperation(value = "根据系统用户获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/usercontacts/getdraft")
@@ -98,18 +76,6 @@ public class UserContactResource {
         
         return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
     }
-
-    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
-    @ApiOperation(value = "根据系统用户建立用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户建立用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/usercontacts")
-    public ResponseEntity<UserContactDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody UserContactDTO usercontactdto) {
-        UserContact domain = usercontactMapping.toDomain(usercontactdto);
-        
-		usercontactService.create(domain);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
     @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取指定用户数据")
@@ -139,5 +105,39 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
+    @ApiOperation(value = "根据系统用户建立用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户建立用户联系方式")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/usercontacts")
+    public ResponseEntity<UserContactDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody UserContactDTO usercontactdto) {
+        UserContact domain = usercontactMapping.toDomain(usercontactdto);
+        
+		usercontactService.create(domain);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
+    @ApiOperation(value = "根据系统用户更新用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户更新用户联系方式")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/usercontacts/{usercontact_id}")
+    public ResponseEntity<UserContactDTO> updateBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
+        UserContact domain = usercontactMapping.toDomain(usercontactdto);
+        
+        domain.setId(usercontact_id);
+		usercontactService.update(domain);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
+    @ApiOperation(value = "根据系统用户获取用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/usercontacts/{usercontact_id}")
+    public ResponseEntity<UserContactDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
+        UserContact domain = usercontactService.get(usercontact_id);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 }
 

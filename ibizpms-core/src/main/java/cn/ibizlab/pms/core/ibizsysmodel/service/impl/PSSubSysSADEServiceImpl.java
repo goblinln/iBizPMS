@@ -48,6 +48,12 @@ public class PSSubSysSADEServiceImpl implements IPSSubSysSADEService {
 
 
     @Override
+    public List<PSSubSysSADE> select(PSSubSysSADESearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSubSysSADE et) {
         PSSubSysSADE rt = pSSubSysSADEFeignClient.create(et);
         if(rt==null)

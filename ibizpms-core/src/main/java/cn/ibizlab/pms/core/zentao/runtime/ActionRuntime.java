@@ -79,11 +79,6 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.actionService;
-    }
-
-    @Override
     public ActionSearchContext createSearchContext() {
         return new ActionSearchContext();
     }

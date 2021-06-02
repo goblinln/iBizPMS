@@ -79,11 +79,6 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.ibztopService;
-    }
-
-    @Override
     public IbzTopSearchContext createSearchContext() {
         return new IbzTopSearchContext();
     }

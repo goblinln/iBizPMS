@@ -182,83 +182,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && true) {
-            return this.http.post(`/accounts/${_context.account}/products/fetchmy`, _data);
-        }
-        return this.http.post(`/products/fetchmy`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/products/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/products/getdraft`, _data);
-        return res;
-    }
-    /**
-     * FetchCurDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && true) {
-            return this.http.post(`/accounts/${_context.account}/products/fetchcurdefault`, _data);
-        }
-        return this.http.post(`/products/fetchcurdefault`, _data);
-    }
-    /**
-     * Close
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/close`, _data);
-        }
-        return this.http.post(`/products/${_context.product}/close`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product) {
-            return this.http.delete(`/accounts/${_context.account}/products/${_context.product}`);
-        }
-        return this.http.delete(`/products/${_context.product}`);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -273,21 +196,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         }
         const res = await this.http.get(`/products/${_context.product}`);
         return res;
-    }
-    /**
-     * ProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/producttop`, _data);
-        }
-        return this.http.post(`/products/${_context.product}/producttop`, _data);
     }
     /**
      * CancelProductTop
@@ -319,20 +227,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/fetchaccount`, _data);
     }
     /**
-     * FetchCurProject
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && true) {
-            return this.http.post(`/accounts/${_context.account}/products/fetchcurproject`, _data);
-        }
-        return this.http.post(`/products/fetchcurproject`, _data);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -361,6 +255,20 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products`, _data);
     }
     /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/products/fetchmy`, _data);
+        }
+        return this.http.post(`/products/fetchmy`, _data);
+    }
+    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -375,6 +283,98 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/products/${_context.product}`, _data);
+    }
+    /**
+     * FetchCurDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/products/fetchcurdefault`, _data);
+        }
+        return this.http.post(`/products/fetchcurdefault`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/products/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/products/getdraft`, _data);
+        return res;
+    }
+    /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/close`, _data);
+        }
+        return this.http.post(`/products/${_context.product}/close`, _data);
+    }
+    /**
+     * ProductTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/producttop`, _data);
+        }
+        return this.http.post(`/products/${_context.product}/producttop`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product) {
+            return this.http.delete(`/accounts/${_context.account}/products/${_context.product}`);
+        }
+        return this.http.delete(`/products/${_context.product}`);
+    }
+    /**
+     * FetchCurProject
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            return this.http.post(`/accounts/${_context.account}/products/fetchcurproject`, _data);
+        }
+        return this.http.post(`/products/fetchcurproject`, _data);
     }
 
     /**

@@ -79,11 +79,6 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.taskteamService;
-    }
-
-    @Override
     public TaskTeamSearchContext createSearchContext() {
         return new TaskTeamSearchContext();
     }

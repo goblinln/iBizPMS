@@ -79,11 +79,6 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.relationService;
-    }
-
-    @Override
     public RelationSearchContext createSearchContext() {
         return new RelationSearchContext();
     }

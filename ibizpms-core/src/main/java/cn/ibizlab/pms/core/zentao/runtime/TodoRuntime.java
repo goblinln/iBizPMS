@@ -79,11 +79,6 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.todoService;
-    }
-
-    @Override
     public TodoSearchContext createSearchContext() {
         return new TodoSearchContext();
     }

@@ -79,11 +79,6 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.immessageService;
-    }
-
-    @Override
     public ImMessageSearchContext createSearchContext() {
         return new ImMessageSearchContext();
     }

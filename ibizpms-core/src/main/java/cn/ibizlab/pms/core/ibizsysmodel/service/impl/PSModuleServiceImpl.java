@@ -48,6 +48,12 @@ public class PSModuleServiceImpl implements IPSModuleService {
 
 
     @Override
+    public List<PSModule> select(PSModuleSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSModule et) {
         PSModule rt = pSModuleFeignClient.create(et);
         if(rt==null)

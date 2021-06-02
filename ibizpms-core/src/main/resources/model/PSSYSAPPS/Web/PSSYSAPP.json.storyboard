@@ -1543,6 +1543,14 @@
     "psappsbitemid" : "ad6a399bb78b48461ceea74978ff8d31",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "TaskRedirectView",
+    "psappsbitemname" : "task数据重定向视图",
+    "itemtag2" : "f7854cd6ae06fdd7f7154d478ddd5aa2",
+    "psappviewid" : "c07c184c29443c7ae9b759c2de34a10e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+    "psappsbitemid" : "c3920aaca3f577015b8c6d6f31c13df5",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "ProjectModuleTreeExpView",
     "psappsbitemname" : "任务模块树导航视图",
     "itemtag2" : "68985caeb95f6948e7ffe418876bc694",
@@ -13513,12 +13521,12 @@
     "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "任务编辑视图",
-    "psappsbitemrsid" : "90a4ece1dd6d140fadd78b728ff9fd9f",
+    "cpsappsbitemname" : "task数据重定向视图",
+    "psappsbitemrsid" : "4061b7b1182773d2b96fad73f4a677c8",
     "ppsappsbitemname" : "任务表格视图",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "7fd986ba2a272a0c9a0ec81cac2a4e30",
-    "cpsappsbitemid" : "a5b6de253817cdc764f104b9c64a7eb7",
+    "cpsappsbitemid" : "c3920aaca3f577015b8c6d6f31c13df5",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {

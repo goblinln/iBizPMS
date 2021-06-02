@@ -61,8 +61,7 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     @Override
     public List<IbizproProductMonthly> select(IbizproProductMonthlySearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductMonthly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

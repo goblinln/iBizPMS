@@ -16,7 +16,7 @@ import java.util.*;
 
 @Slf4j
 @Data
-public class SearchContextBase implements ISearchContext{
+public class SearchContextBase implements ISearchContext, net.ibizsys.runtime.util.ISearchContext {
 
     /**
      * 自定义查询条件

@@ -79,11 +79,6 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    protected IService getService() {
-        return this.projectteamService;
-    }
-
-    @Override
     public ProjectTeamSearchContext createSearchContext() {
         return new ProjectTeamSearchContext();
     }

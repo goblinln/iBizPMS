@@ -79,11 +79,6 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    protected IService getService() {
-        return this.entryService;
-    }
-
-    @Override
     public EntrySearchContext createSearchContext() {
         return new EntrySearchContext();
     }

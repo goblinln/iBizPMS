@@ -79,11 +79,6 @@ public class TestSuiteRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.testsuiteService;
-    }
-
-    @Override
     public TestSuiteSearchContext createSearchContext() {
         return new TestSuiteSearchContext();
     }

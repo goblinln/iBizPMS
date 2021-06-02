@@ -79,11 +79,6 @@ public class DocContentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    protected IService getService() {
-        return this.doccontentService;
-    }
-
-    @Override
     public DocContentSearchContext createSearchContext() {
         return new DocContentSearchContext();
     }

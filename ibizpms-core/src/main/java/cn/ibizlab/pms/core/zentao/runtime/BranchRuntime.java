@@ -79,11 +79,6 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.branchService;
-    }
-
-    @Override
     public BranchSearchContext createSearchContext() {
         return new BranchSearchContext();
     }

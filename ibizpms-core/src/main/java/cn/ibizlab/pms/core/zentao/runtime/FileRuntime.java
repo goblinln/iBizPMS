@@ -79,11 +79,6 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.fileService;
-    }
-
-    @Override
     public FileSearchContext createSearchContext() {
         return new FileSearchContext();
     }

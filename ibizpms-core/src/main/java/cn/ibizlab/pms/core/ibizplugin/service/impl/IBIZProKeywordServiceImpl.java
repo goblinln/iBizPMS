@@ -48,6 +48,12 @@ public class IBIZProKeywordServiceImpl implements IIBIZProKeywordService {
 
 
     @Override
+    public List<IBIZProKeyword> select(IBIZProKeywordSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(IBIZProKeyword et) {
         IBIZProKeyword rt = iBIZProKeywordFeignClient.create(et);
         if(rt==null)

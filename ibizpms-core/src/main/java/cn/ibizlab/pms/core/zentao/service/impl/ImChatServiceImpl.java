@@ -58,8 +58,7 @@ public class ImChatServiceImpl extends ServiceImpl<ImChatMapper, ImChat> impleme
     @Override
     public List<ImChat> select(ImChatSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ImChat> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

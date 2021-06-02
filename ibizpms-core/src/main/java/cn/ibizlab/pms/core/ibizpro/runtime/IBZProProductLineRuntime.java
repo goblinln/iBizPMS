@@ -79,11 +79,6 @@ public class IBZProProductLineRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzproproductlineService;
-    }
-
-    @Override
     public IBZProProductLineSearchContext createSearchContext() {
         return new IBZProProductLineSearchContext();
     }

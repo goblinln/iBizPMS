@@ -79,11 +79,6 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.webhookService;
-    }
-
-    @Override
     public WebHookSearchContext createSearchContext() {
         return new WebHookSearchContext();
     }

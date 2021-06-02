@@ -79,11 +79,6 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    protected IService getService() {
-        return this.storyService;
-    }
-
-    @Override
     public StorySearchContext createSearchContext() {
         return new StorySearchContext();
     }

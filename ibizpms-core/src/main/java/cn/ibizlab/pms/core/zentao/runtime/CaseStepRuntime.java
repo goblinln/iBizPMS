@@ -79,11 +79,6 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.casestepService;
-    }
-
-    @Override
     public CaseStepSearchContext createSearchContext() {
         return new CaseStepSearchContext();
     }

@@ -79,11 +79,6 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    protected IService getService() {
-        return this.taskmsgrecordService;
-    }
-
-    @Override
     public TaskMsgRecordSearchContext createSearchContext() {
         return new TaskMsgRecordSearchContext();
     }

@@ -79,11 +79,6 @@ public class ProjectStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.projectstatsService;
-    }
-
-    @Override
     public ProjectStatsSearchContext createSearchContext() {
         return new ProjectStatsSearchContext();
     }

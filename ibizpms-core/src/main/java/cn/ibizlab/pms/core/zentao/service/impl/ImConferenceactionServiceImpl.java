@@ -58,8 +58,7 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
     @Override
     public List<ImConferenceaction> select(ImConferenceactionSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ImConferenceaction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

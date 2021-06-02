@@ -79,11 +79,6 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    protected IService getService() {
-        return this.accounttaskestimateService;
-    }
-
-    @Override
     public AccountTaskestimateSearchContext createSearchContext() {
         return new AccountTaskestimateSearchContext();
     }

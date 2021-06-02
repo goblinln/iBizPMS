@@ -79,11 +79,6 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    protected IService getService() {
-        return this.productplanService;
-    }
-
-    @Override
     public ProductPlanSearchContext createSearchContext() {
         return new ProductPlanSearchContext();
     }

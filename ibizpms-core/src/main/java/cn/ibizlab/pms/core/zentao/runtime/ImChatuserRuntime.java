@@ -79,11 +79,6 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    protected IService getService() {
-        return this.imchatuserService;
-    }
-
-    @Override
     public ImChatuserSearchContext createSearchContext() {
         return new ImChatuserSearchContext();
     }

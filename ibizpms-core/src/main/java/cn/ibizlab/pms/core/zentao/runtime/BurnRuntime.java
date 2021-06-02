@@ -79,11 +79,6 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.burnService;
-    }
-
-    @Override
     public BurnSearchContext createSearchContext() {
         return new BurnSearchContext();
     }

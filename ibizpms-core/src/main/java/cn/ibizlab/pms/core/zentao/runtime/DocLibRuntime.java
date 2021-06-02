@@ -79,11 +79,6 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.doclibService;
-    }
-
-    @Override
     public DocLibSearchContext createSearchContext() {
         return new DocLibSearchContext();
     }

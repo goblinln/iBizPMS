@@ -48,6 +48,12 @@ public class PSSysAppServiceImpl implements IPSSysAppService {
 
 
     @Override
+    public List<PSSysApp> select(PSSysAppSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSysApp et) {
         PSSysApp rt = pSSysAppFeignClient.create(et);
         if(rt==null)

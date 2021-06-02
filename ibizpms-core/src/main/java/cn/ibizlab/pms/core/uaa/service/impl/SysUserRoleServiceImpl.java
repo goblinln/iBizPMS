@@ -48,6 +48,12 @@ public class SysUserRoleServiceImpl implements ISysUserRoleService {
 
 
     @Override
+    public List<SysUserRole> select(SysUserRoleSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(SysUserRole et) {
         SysUserRole rt = sysUserRoleFeignClient.create(et);
         if(rt==null)

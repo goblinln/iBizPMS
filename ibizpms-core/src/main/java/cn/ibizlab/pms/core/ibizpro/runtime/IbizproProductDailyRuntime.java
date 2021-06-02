@@ -79,11 +79,6 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    protected IService getService() {
-        return this.ibizproproductdailyService;
-    }
-
-    @Override
     public IbizproProductDailySearchContext createSearchContext() {
         return new IbizproProductDailySearchContext();
     }

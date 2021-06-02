@@ -61,8 +61,7 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     public List<File> select(FileSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

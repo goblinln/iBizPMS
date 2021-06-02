@@ -61,8 +61,7 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     public List<StorySpec> select(StorySpecSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<StorySpec> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

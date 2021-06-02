@@ -79,11 +79,6 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzprojectmemberService;
-    }
-
-    @Override
     public IbzProjectMemberSearchContext createSearchContext() {
         return new IbzProjectMemberSearchContext();
     }

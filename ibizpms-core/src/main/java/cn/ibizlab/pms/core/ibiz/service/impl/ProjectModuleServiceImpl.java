@@ -66,8 +66,7 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     public List<ProjectModule> select(ProjectModuleSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProjectModule> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

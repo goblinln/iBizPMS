@@ -79,11 +79,6 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.configService;
-    }
-
-    @Override
     public ConfigSearchContext createSearchContext() {
         return new ConfigSearchContext();
     }

@@ -79,11 +79,6 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.groupprivService;
-    }
-
-    @Override
     public GroupPrivSearchContext createSearchContext() {
         return new GroupPrivSearchContext();
     }

@@ -37,6 +37,7 @@ public interface ISysEmployeeService {
     boolean checkKey(SysEmployee et);
     boolean save(SysEmployee et);
     void saveBatch(List<SysEmployee> list);
+    List<SysEmployee> select(SysEmployeeSearchContext context);
 
     Page<SysEmployee> searchBugUser(SysEmployeeSearchContext context);
     Page<SysEmployee> searchContActList(SysEmployeeSearchContext context);

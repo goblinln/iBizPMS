@@ -58,8 +58,7 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     @Override
     public List<IbzProTestTaskAction> select(IbzProTestTaskActionSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProTestTaskAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

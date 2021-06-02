@@ -79,11 +79,6 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.usergroupService;
-    }
-
-    @Override
     public UserGroupSearchContext createSearchContext() {
         return new UserGroupSearchContext();
     }

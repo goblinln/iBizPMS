@@ -79,11 +79,6 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    protected IService getService() {
-        return this.notifyService;
-    }
-
-    @Override
     public NotifySearchContext createSearchContext() {
         return new NotifySearchContext();
     }

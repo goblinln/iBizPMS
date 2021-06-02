@@ -58,8 +58,7 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
     @Override
     public List<Effort> select(EffortSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Effort> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

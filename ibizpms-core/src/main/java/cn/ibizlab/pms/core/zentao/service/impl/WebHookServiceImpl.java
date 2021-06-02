@@ -58,8 +58,7 @@ public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> impl
     @Override
     public List<WebHook> select(WebHookSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<WebHook> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

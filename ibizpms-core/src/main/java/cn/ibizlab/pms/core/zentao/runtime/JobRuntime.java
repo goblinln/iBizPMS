@@ -79,11 +79,6 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     }
 
     @Override
-    protected IService getService() {
-        return this.jobService;
-    }
-
-    @Override
     public JobSearchContext createSearchContext() {
         return new JobSearchContext();
     }

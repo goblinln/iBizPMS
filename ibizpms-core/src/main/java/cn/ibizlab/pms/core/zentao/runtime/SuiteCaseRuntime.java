@@ -79,11 +79,6 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.suitecaseService;
-    }
-
-    @Override
     public SuiteCaseSearchContext createSearchContext() {
         return new SuiteCaseSearchContext();
     }

@@ -79,11 +79,6 @@ public class IBZProSequenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzprosequenceService;
-    }
-
-    @Override
     public IBZProSequenceSearchContext createSearchContext() {
         return new IBZProSequenceSearchContext();
     }

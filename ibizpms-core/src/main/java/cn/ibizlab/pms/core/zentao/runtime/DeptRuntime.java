@@ -79,11 +79,6 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.deptService;
-    }
-
-    @Override
     public DeptSearchContext createSearchContext() {
         return new DeptSearchContext();
     }

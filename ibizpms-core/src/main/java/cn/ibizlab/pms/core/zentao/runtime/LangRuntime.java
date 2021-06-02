@@ -79,11 +79,6 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.langService;
-    }
-
-    @Override
     public LangSearchContext createSearchContext() {
         return new LangSearchContext();
     }

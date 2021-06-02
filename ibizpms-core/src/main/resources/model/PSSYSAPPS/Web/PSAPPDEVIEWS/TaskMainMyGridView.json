@@ -72,15 +72,15 @@
       "getOpenDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       },
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       } ],
       "viewLogicType" : "APP_OPENDATA",
@@ -104,12 +104,11 @@
     }
   }, {
     "name" : "EDITDATA",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "任务编辑视图",
+    "realTitle" : "task数据重定向视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -1085,7 +1084,7 @@
             },
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "CheckOperator"
+              "id" : "TaskForward"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1171,7 +1170,7 @@
             },
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "CheckOperator"
+              "id" : "TaskForward"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

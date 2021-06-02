@@ -79,11 +79,6 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    protected IService getService() {
-        return this.dynadashboardService;
-    }
-
-    @Override
     public DynaDashboardSearchContext createSearchContext() {
         return new DynaDashboardSearchContext();
     }

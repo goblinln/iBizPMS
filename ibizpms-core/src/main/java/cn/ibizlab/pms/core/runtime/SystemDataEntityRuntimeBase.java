@@ -10,6 +10,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import cn.ibizlab.pms.util.filter.SearchContextBase;
 import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.UAADEAuthority;
@@ -105,11 +106,11 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     /**
     * 工作流（排除属性）
     */
-    private final static String EXCLUDEFIELDS="1";
+    private final static String EXCLUDEFIELDS = "1";
     /**
     * 工作流（包含属性）
     */
-    private final static String INCLUDEFIELDS="2";
+    private final static String INCLUDEFIELDS = "2";
 
     @Autowired
     ISystemRuntime system;
@@ -332,14 +333,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     @Override
     public List<? extends IEntityBase> select(String strCondition) {
-        QueryWrapperContext context = createSearchContext();
+        QueryWrapperContext context = (QueryWrapperContext) createSearchContext();
         context.getSelectCond().and(ScopeUtils.parse(this, strCondition));
         return this.select(context);
     }
 
     @Override
     public IEntityBase selectOne(String strCondition) {
-        QueryWrapperContext context = createSearchContext();
+        QueryWrapperContext context = (QueryWrapperContext) createSearchContext();
         context.getSelectCond().and(ScopeUtils.parse(this, strCondition));
         return selectOne(context);
     }
@@ -444,7 +445,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     
     @Override
     public int checkKeyState(Object objKey) {
-        QueryWrapperContext context = this.createSearchContext();
+        QueryWrapperContext context = (QueryWrapperContext) this.createSearchContext();
         context.getSelectCond().eq(this.getKey(), objKey);
         List domains = this.select(context);
         if (domains.size() > 0)
@@ -457,9 +458,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         
     }
 
-    abstract protected IService getService();
-
-    abstract public QueryWrapperContext createSearchContext();
+    abstract public SearchContextBase createSearchContext();
 
     /**
      * 判断是否含有统一资源标识
@@ -521,14 +520,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     @SneakyThrows
     public boolean test(Serializable key, String action) {
-        if(ObjectUtils.isEmpty(key)){
-            return false;
-        }
         if (DataAccessActions.DENY.equals(action)) {
             return false;
         }
         if (DataAccessActions.NONE.equals(action)) {
             return true;
+        }
+        if(ObjectUtils.isEmpty(key) || "undefined".equals(key)){
+            return false;
         }
         boolean check = true;
         int accessMode;
@@ -563,7 +562,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         }
 
         //检查数据范围
-        QueryWrapperContext context = this.createSearchContext();
+        QueryWrapperContext context = (QueryWrapperContext) this.createSearchContext();
         context.getSelectCond().eq(this.getKey(), key);
         addAuthorityConditions(context, action);
         List domains = this.select(context);
@@ -610,7 +609,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return false;
 
         //检查数据范围
-        QueryWrapperContext context = this.createSearchContext();
+        QueryWrapperContext context = (QueryWrapperContext) this.createSearchContext();
         context.getSelectCond().in(this.getKey(), keys);
         addAuthorityConditions(context, action);
 

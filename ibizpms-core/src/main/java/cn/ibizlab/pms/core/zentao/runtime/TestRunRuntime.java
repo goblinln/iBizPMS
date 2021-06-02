@@ -79,11 +79,6 @@ public class TestRunRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.testrunService;
-    }
-
-    @Override
     public TestRunSearchContext createSearchContext() {
         return new TestRunSearchContext();
     }

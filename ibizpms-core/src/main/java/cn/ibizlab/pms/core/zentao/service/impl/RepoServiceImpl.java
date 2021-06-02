@@ -61,8 +61,7 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
     @Override
     public List<Repo> select(RepoSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Repo> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

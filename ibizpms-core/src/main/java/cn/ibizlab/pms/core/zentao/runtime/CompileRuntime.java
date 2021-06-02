@@ -79,11 +79,6 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.compileService;
-    }
-
-    @Override
     public CompileSearchContext createSearchContext() {
         return new CompileSearchContext();
     }

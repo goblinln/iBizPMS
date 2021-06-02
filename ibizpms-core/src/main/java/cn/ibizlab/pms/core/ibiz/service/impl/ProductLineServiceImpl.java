@@ -58,8 +58,7 @@ public class ProductLineServiceImpl extends ServiceImpl<ProductLineMapper, Produ
     @Override
     public List<ProductLine> select(ProductLineSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductLine> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

@@ -79,11 +79,6 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.taskstatsService;
-    }
-
-    @Override
     public TaskStatsSearchContext createSearchContext() {
         return new TaskStatsSearchContext();
     }

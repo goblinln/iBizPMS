@@ -79,11 +79,6 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.releaseService;
-    }
-
-    @Override
     public ReleaseSearchContext createSearchContext() {
         return new ReleaseSearchContext();
     }

@@ -79,11 +79,6 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzlibmoduleService;
-    }
-
-    @Override
     public IbzLibModuleSearchContext createSearchContext() {
         return new IbzLibModuleSearchContext();
     }

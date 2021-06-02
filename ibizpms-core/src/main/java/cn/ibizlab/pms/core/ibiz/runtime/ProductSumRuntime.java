@@ -79,11 +79,6 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    protected IService getService() {
-        return this.productsumService;
-    }
-
-    @Override
     public ProductSumSearchContext createSearchContext() {
         return new ProductSumSearchContext();
     }

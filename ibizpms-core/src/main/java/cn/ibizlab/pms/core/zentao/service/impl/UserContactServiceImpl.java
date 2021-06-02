@@ -58,8 +58,7 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
     @Override
     public List<UserContact> select(UserContactSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserContact> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

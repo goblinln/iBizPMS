@@ -64,8 +64,7 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     public List<StoryStage> select(StoryStageSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<StoryStage> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

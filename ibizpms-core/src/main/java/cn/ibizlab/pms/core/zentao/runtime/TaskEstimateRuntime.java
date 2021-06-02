@@ -79,11 +79,6 @@ public class TaskEstimateRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.taskestimateService;
-    }
-
-    @Override
     public TaskEstimateSearchContext createSearchContext() {
         return new TaskEstimateSearchContext();
     }

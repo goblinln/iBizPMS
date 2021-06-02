@@ -48,6 +48,12 @@ public class PSSubSysServiceAPIServiceImpl implements IPSSubSysServiceAPIService
 
 
     @Override
+    public List<PSSubSysServiceAPI> select(PSSubSysServiceAPISearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSubSysServiceAPI et) {
         PSSubSysServiceAPI rt = pSSubSysServiceAPIFeignClient.create(et);
         if(rt==null)

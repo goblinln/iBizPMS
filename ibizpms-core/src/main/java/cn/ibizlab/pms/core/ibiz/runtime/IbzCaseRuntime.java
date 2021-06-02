@@ -79,11 +79,6 @@ public class IbzCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzcaseService;
-    }
-
-    @Override
     public IbzCaseSearchContext createSearchContext() {
         return new IbzCaseSearchContext();
     }

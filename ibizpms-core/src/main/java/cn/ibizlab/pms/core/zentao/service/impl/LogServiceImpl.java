@@ -58,8 +58,7 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
     @Override
     public List<Log> select(LogSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Log> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

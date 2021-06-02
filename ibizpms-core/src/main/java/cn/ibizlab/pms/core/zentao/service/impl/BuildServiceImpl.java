@@ -73,8 +73,7 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     public List<Build> select(BuildSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Build> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

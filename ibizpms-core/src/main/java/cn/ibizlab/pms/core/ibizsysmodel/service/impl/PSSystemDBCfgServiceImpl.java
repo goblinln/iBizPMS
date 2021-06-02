@@ -48,6 +48,12 @@ public class PSSystemDBCfgServiceImpl implements IPSSystemDBCfgService {
 
 
     @Override
+    public List<PSSystemDBCfg> select(PSSystemDBCfgSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSystemDBCfg et) {
         PSSystemDBCfg rt = pSSystemDBCfgFeignClient.create(et);
         if(rt==null)

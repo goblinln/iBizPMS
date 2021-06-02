@@ -79,11 +79,6 @@ public class IBZProTranslatorRuntime extends cn.ibizlab.pms.core.runtime.SystemD
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzprotranslatorService;
-    }
-
-    @Override
     public IBZProTranslatorSearchContext createSearchContext() {
         return new IBZProTranslatorSearchContext();
     }

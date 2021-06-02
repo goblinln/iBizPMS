@@ -79,11 +79,6 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.ibiloginService;
-    }
-
-    @Override
     public IbiLoginSearchContext createSearchContext() {
         return new IbiLoginSearchContext();
     }

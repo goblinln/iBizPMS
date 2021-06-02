@@ -58,8 +58,7 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
     @Override
     public List<Block> select(BlockSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Block> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

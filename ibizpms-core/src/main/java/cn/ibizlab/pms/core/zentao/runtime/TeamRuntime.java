@@ -79,11 +79,6 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.teamService;
-    }
-
-    @Override
     public TeamSearchContext createSearchContext() {
         return new TeamSearchContext();
     }

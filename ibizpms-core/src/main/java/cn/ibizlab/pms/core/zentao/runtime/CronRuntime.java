@@ -79,11 +79,6 @@ public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    protected IService getService() {
-        return this.cronService;
-    }
-
-    @Override
     public CronSearchContext createSearchContext() {
         return new CronSearchContext();
     }

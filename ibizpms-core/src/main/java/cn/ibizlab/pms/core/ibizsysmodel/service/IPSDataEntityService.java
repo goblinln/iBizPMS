@@ -37,6 +37,7 @@ public interface IPSDataEntityService {
     boolean checkKey(PSDataEntity et);
     boolean save(PSDataEntity et);
     void saveBatch(List<PSDataEntity> list);
+    List<PSDataEntity> select(PSDataEntitySearchContext context);
 
     Page<PSDataEntity> searchDefault(PSDataEntitySearchContext context);
     List<PSDataEntity> selectByPsmoduleid(String psmoduleid);

@@ -79,11 +79,6 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    protected IService getService() {
-        return this.repohistoryService;
-    }
-
-    @Override
     public RepoHistorySearchContext createSearchContext() {
         return new RepoHistorySearchContext();
     }

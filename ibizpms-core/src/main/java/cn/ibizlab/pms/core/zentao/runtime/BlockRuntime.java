@@ -79,11 +79,6 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    protected IService getService() {
-        return this.blockService;
-    }
-
-    @Override
     public BlockSearchContext createSearchContext() {
         return new BlockSearchContext();
     }

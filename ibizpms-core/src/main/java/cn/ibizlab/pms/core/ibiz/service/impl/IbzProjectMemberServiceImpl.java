@@ -58,8 +58,7 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
     @Override
     public List<IbzProjectMember> select(IbzProjectMemberSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

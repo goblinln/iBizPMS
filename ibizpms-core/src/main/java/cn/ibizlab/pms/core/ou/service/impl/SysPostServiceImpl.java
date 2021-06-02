@@ -48,6 +48,12 @@ public class SysPostServiceImpl implements ISysPostService {
 
 
     @Override
+    public List<SysPost> select(SysPostSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(SysPost et) {
         SysPost rt = sysPostFeignClient.create(et);
         if(rt==null)

@@ -79,11 +79,6 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzdailyService;
-    }
-
-    @Override
     public IbzDailySearchContext createSearchContext() {
         return new IbzDailySearchContext();
     }

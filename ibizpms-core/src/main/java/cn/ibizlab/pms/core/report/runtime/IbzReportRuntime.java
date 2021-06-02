@@ -79,11 +79,6 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzreportService;
-    }
-
-    @Override
     public IbzReportSearchContext createSearchContext() {
         return new IbzReportSearchContext();
     }

@@ -58,8 +58,7 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
     @Override
     public List<Cron> select(CronSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Cron> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

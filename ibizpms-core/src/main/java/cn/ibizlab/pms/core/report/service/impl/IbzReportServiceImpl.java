@@ -58,8 +58,7 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
     @Override
     public List<IbzReport> select(IbzReportSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReport> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

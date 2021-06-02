@@ -61,8 +61,7 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     public List<IbizproProductWeekly> select(IbizproProductWeeklySearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProductWeekly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

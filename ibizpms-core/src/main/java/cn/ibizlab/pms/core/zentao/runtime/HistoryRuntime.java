@@ -79,11 +79,6 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.historyService;
-    }
-
-    @Override
     public HistorySearchContext createSearchContext() {
         return new HistorySearchContext();
     }

@@ -64,8 +64,7 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     public List<BugStats> select(BugStatsSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<BugStats> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

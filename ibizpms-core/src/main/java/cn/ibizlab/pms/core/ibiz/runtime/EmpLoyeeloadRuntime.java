@@ -79,11 +79,6 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.employeeloadService;
-    }
-
-    @Override
     public EmpLoyeeloadSearchContext createSearchContext() {
         return new EmpLoyeeloadSearchContext();
     }

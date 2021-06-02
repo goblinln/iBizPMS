@@ -48,6 +48,12 @@ public class SysUserServiceImpl implements ISysUserService {
 
 
     @Override
+    public List<SysUser> select(SysUserSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(SysUser et) {
         SysUser rt = sysUserFeignClient.create(et);
         if(rt==null)

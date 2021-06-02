@@ -79,11 +79,6 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    protected IService getService() {
-        return this.scoreService;
-    }
-
-    @Override
     public ScoreSearchContext createSearchContext() {
         return new ScoreSearchContext();
     }

@@ -63,8 +63,7 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     public List<TestModule> select(TestModuleSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestModule> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

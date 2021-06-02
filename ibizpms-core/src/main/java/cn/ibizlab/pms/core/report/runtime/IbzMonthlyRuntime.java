@@ -79,11 +79,6 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzmonthlyService;
-    }
-
-    @Override
     public IbzMonthlySearchContext createSearchContext() {
         return new IbzMonthlySearchContext();
     }

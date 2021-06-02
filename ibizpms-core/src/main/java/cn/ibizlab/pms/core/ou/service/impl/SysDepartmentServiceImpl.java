@@ -48,6 +48,12 @@ public class SysDepartmentServiceImpl implements ISysDepartmentService {
 
 
     @Override
+    public List<SysDepartment> select(SysDepartmentSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(SysDepartment et) {
         SysDepartment rt = sysDepartmentFeignClient.create(et);
         if(rt==null)

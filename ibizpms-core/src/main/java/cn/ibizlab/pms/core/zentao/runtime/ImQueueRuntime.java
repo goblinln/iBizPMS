@@ -79,11 +79,6 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.imqueueService;
-    }
-
-    @Override
     public ImQueueSearchContext createSearchContext() {
         return new ImQueueSearchContext();
     }

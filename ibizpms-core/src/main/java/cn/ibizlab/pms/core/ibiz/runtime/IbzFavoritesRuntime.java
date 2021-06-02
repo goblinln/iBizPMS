@@ -79,11 +79,6 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzfavoritesService;
-    }
-
-    @Override
     public IbzFavoritesSearchContext createSearchContext() {
         return new IbzFavoritesSearchContext();
     }

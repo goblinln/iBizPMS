@@ -48,6 +48,12 @@ public class SysEmployeeServiceImpl implements ISysEmployeeService {
 
 
     @Override
+    public List<SysEmployee> select(SysEmployeeSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(SysEmployee et) {
         SysEmployee rt = sysEmployeeFeignClient.create(et);
         if(rt==null)

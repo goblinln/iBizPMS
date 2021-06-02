@@ -37,6 +37,7 @@ public interface IPSSysAppService {
     boolean checkKey(PSSysApp et);
     boolean save(PSSysApp et);
     void saveBatch(List<PSSysApp> list);
+    List<PSSysApp> select(PSSysAppSearchContext context);
 
     Page<PSSysApp> searchBuild(PSSysAppSearchContext context);
     Page<PSSysApp> searchDefault(PSSysAppSearchContext context);

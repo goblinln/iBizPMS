@@ -48,6 +48,12 @@ public class PSDEFieldServiceImpl implements IPSDEFieldService {
 
 
     @Override
+    public List<PSDEField> select(PSDEFieldSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSDEField et) {
         PSDEField rt = pSDEFieldFeignClient.create(et);
         if(rt==null)

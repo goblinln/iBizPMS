@@ -37,6 +37,7 @@ public interface ISysRoleService {
     boolean checkKey(SysRole et);
     boolean save(SysRole et);
     void saveBatch(List<SysRole> list);
+    List<SysRole> select(SysRoleSearchContext context);
 
     Page<SysRole> searchDefault(SysRoleSearchContext context);
     List<SysRole> selectByProleid(String roleid);

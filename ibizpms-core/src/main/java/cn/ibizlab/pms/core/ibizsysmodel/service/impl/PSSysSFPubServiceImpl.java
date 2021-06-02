@@ -48,6 +48,12 @@ public class PSSysSFPubServiceImpl implements IPSSysSFPubService {
 
 
     @Override
+    public List<PSSysSFPub> select(PSSysSFPubSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSysSFPub et) {
         PSSysSFPub rt = pSSysSFPubFeignClient.create(et);
         if(rt==null)

@@ -79,11 +79,6 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzmyterritoryService;
-    }
-
-    @Override
     public IbzMyTerritorySearchContext createSearchContext() {
         return new IbzMyTerritorySearchContext();
     }

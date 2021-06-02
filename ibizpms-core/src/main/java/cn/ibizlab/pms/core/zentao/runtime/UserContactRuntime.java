@@ -79,11 +79,6 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    protected IService getService() {
-        return this.usercontactService;
-    }
-
-    @Override
     public UserContactSearchContext createSearchContext() {
         return new UserContactSearchContext();
     }

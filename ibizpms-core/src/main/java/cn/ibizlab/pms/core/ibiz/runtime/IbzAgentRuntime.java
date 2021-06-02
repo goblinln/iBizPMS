@@ -79,11 +79,6 @@ public class IbzAgentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzagentService;
-    }
-
-    @Override
     public IbzAgentSearchContext createSearchContext() {
         return new IbzAgentSearchContext();
     }

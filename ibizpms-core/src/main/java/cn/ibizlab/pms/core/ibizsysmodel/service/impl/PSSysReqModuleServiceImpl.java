@@ -48,6 +48,12 @@ public class PSSysReqModuleServiceImpl implements IPSSysReqModuleService {
 
 
     @Override
+    public List<PSSysReqModule> select(PSSysReqModuleSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSysReqModule et) {
         PSSysReqModule rt = pSSysReqModuleFeignClient.create(et);
         if(rt==null)

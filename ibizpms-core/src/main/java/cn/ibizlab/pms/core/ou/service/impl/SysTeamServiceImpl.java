@@ -48,6 +48,12 @@ public class SysTeamServiceImpl implements ISysTeamService {
 
 
     @Override
+    public List<SysTeam> select(SysTeamSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(SysTeam et) {
         SysTeam rt = sysTeamFeignClient.create(et);
         if(rt==null)

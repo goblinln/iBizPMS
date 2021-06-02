@@ -79,11 +79,6 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    protected IService getService() {
-        return this.bugstatsService;
-    }
-
-    @Override
     public BugStatsSearchContext createSearchContext() {
         return new BugStatsSearchContext();
     }

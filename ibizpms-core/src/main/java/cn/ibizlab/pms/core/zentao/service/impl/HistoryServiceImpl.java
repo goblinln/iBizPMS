@@ -61,8 +61,7 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
     @Override
     public List<History> select(HistorySearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<History> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

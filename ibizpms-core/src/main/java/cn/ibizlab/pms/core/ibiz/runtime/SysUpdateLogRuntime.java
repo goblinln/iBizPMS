@@ -79,11 +79,6 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    protected IService getService() {
-        return this.sysupdatelogService;
-    }
-
-    @Override
     public SysUpdateLogSearchContext createSearchContext() {
         return new SysUpdateLogSearchContext();
     }

@@ -79,11 +79,6 @@ public class IbzLibCaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     }
 
     @Override
-    protected IService getService() {
-        return this.ibzlibcasestepService;
-    }
-
-    @Override
     public IbzLibCaseStepSearchContext createSearchContext() {
         return new IbzLibCaseStepSearchContext();
     }

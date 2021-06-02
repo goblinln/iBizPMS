@@ -48,6 +48,12 @@ public class PSSysReqItemServiceImpl implements IPSSysReqItemService {
 
 
     @Override
+    public List<PSSysReqItem> select(PSSysReqItemSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSysReqItem et) {
         PSSysReqItem rt = pSSysReqItemFeignClient.create(et);
         if(rt==null)

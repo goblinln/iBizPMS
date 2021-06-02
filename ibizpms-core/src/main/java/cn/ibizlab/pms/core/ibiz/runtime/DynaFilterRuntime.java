@@ -79,11 +79,6 @@ public class DynaFilterRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    protected IService getService() {
-        return this.dynafilterService;
-    }
-
-    @Override
     public DynaFilterSearchContext createSearchContext() {
         return new DynaFilterSearchContext();
     }

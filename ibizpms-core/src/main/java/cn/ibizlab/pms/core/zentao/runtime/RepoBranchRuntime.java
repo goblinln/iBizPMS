@@ -79,11 +79,6 @@ public class RepoBranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    protected IService getService() {
-        return this.repobranchService;
-    }
-
-    @Override
     public RepoBranchSearchContext createSearchContext() {
         return new RepoBranchSearchContext();
     }

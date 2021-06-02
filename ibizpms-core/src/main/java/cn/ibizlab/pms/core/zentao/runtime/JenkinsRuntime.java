@@ -79,11 +79,6 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    protected IService getService() {
-        return this.jenkinsService;
-    }
-
-    @Override
     public JenkinsSearchContext createSearchContext() {
         return new JenkinsSearchContext();
     }

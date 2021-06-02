@@ -79,11 +79,6 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
     }
 
     @Override
-    protected IService getService() {
-        return this.ibizproprojectmonthlyService;
-    }
-
-    @Override
     public IbizproProjectMonthlySearchContext createSearchContext() {
         return new IbizproProjectMonthlySearchContext();
     }

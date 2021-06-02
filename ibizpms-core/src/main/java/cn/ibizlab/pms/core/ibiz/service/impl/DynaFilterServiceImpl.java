@@ -58,8 +58,7 @@ public class DynaFilterServiceImpl extends ServiceImpl<DynaFilterMapper, DynaFil
     @Override
     public List<DynaFilter> select(DynaFilterSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<DynaFilter> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

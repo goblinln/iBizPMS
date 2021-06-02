@@ -79,11 +79,6 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    protected IService getService() {
-        return this.storystageService;
-    }
-
-    @Override
     public StoryStageSearchContext createSearchContext() {
         return new StoryStageSearchContext();
     }

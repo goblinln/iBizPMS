@@ -48,6 +48,12 @@ public class PSSysRunSessionServiceImpl implements IPSSysRunSessionService {
 
 
     @Override
+    public List<PSSysRunSession> select(PSSysRunSessionSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(PSSysRunSession et) {
         PSSysRunSession rt = pSSysRunSessionFeignClient.create(et);
         if(rt==null)

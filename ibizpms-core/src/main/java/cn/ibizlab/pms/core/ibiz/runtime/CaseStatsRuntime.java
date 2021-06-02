@@ -79,11 +79,6 @@ public class CaseStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    protected IService getService() {
-        return this.casestatsService;
-    }
-
-    @Override
     public CaseStatsSearchContext createSearchContext() {
         return new CaseStatsSearchContext();
     }

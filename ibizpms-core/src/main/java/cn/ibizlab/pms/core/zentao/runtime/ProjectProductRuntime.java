@@ -79,11 +79,6 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     }
 
     @Override
-    protected IService getService() {
-        return this.projectproductService;
-    }
-
-    @Override
     public ProjectProductSearchContext createSearchContext() {
         return new ProjectProductSearchContext();
     }

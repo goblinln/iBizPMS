@@ -40,6 +40,7 @@ public interface IIBIZProMessageService {
     boolean save(IBIZProMessage et);
     void saveBatch(List<IBIZProMessage> list);
     IBIZProMessage send(IBIZProMessage et);
+    List<IBIZProMessage> select(IBIZProMessageSearchContext context);
 
     Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context);
     Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context);

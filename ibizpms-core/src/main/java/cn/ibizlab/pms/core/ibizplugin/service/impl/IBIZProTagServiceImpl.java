@@ -48,6 +48,12 @@ public class IBIZProTagServiceImpl implements IIBIZProTagService {
 
 
     @Override
+    public List<IBIZProTag> select(IBIZProTagSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        return searchDefault(context).getContent();
+    }
+
+    @Override
     public boolean create(IBIZProTag et) {
         IBIZProTag rt = iBIZProTagFeignClient.create(et);
         if(rt==null)

@@ -79,11 +79,6 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    protected IService getService() {
-        return this.projectmoduleService;
-    }
-
-    @Override
     public ProjectModuleSearchContext createSearchContext() {
         return new ProjectModuleSearchContext();
     }

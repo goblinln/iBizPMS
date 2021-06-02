@@ -58,8 +58,7 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
     @Override
     public List<RepoBranch> select(RepoBranchSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<RepoBranch> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

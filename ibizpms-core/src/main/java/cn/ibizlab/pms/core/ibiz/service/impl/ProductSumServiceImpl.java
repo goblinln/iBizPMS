@@ -58,8 +58,7 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
     @Override
     public List<ProductSum> select(ProductSumSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductSum> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

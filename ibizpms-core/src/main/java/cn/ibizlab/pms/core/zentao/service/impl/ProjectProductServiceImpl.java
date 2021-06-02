@@ -70,8 +70,7 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     @Override
     public List<ProjectProduct> select(ProjectProductSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProjectProduct> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override

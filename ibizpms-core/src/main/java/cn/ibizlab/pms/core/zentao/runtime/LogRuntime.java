@@ -79,11 +79,6 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     }
 
     @Override
-    protected IService getService() {
-        return this.logService;
-    }
-
-    @Override
     public LogSearchContext createSearchContext() {
         return new LogSearchContext();
     }

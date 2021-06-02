@@ -58,8 +58,7 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
     @Override
     public List<ProjectStats> select(ProjectStatsSearchContext context) {
         context.setSize(Integer.MAX_VALUE);
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProjectStats> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
-        return pages.getRecords();
+        return searchDefault(context).getContent();
     }
 
     @Override
