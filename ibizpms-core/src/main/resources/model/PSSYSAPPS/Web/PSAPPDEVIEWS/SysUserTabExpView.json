@@ -111,11 +111,11 @@
       }
     }, {
       "name" : "EXPITEM:tabviewpanel10",
-      "realTitle" : "我的地盘日历视图",
+      "realTitle" : "我的地盘日历导航视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserCalendarView.json",
-        "viewType" : "DECALENDARVIEW"
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserCalendarExpView.json",
+        "viewType" : "DECALENDAREXPVIEW"
       }
     }, {
       "name" : "EXPITEM:tabviewpanel2",
@@ -8218,8 +8218,8 @@
       "controlType" : "TABVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserCalendarView.json",
-        "viewType" : "DECALENDARVIEW"
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserCalendarExpView.json",
+        "viewType" : "DECALENDAREXPVIEW"
       },
       "name" : "tabviewpanel10",
       "getPSAppDataEntity" : {

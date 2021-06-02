@@ -4,6 +4,7 @@
   "controlType" : "CALENDAR",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount/PSCALENDARS/CalendarMyWork.json",
   "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
   "legendPos" : "TOP",
   "logicName" : "日历导航（我的工作）",
   "getPSAppDataEntity" : {
@@ -44,7 +45,7 @@
     },
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchAssignedToMyBugPc"
+      "id" : "FetchMy"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -335,7 +336,7 @@
     },
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchAssignedToMyTaskPc"
+      "id" : "FetchMy"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -613,7 +614,7 @@
     },
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchMyTodoPc"
+      "id" : "FetchMy"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -905,7 +906,7 @@
     },
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchMyTestTaskPc"
+      "id" : "FetchMy"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -1051,7 +1052,7 @@
     },
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchAssignedToMyStoryCalendar"
+      "id" : "FetchMy"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

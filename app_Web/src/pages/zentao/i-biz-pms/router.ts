@@ -30755,6 +30755,23 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'bugs/:bug?/views/redirectview',
+                    meta: {
+                        caption: 'entities.bug.views.redirectview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-bug',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugs', parameterName: 'bug' },
+                            { pathName: 'views', parameterName: 'redirectview' },
+                        ],
+                        resource:'bug',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview9_storyrelated',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyrelated.caption',

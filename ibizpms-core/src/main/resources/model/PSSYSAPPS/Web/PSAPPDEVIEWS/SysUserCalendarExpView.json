@@ -179,7 +179,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchAssignedToMyBugPc"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -470,7 +470,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchAssignedToMyTaskPc"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -748,7 +748,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchMyTodoPc"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1040,7 +1040,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchMyTestTaskPc"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -1186,7 +1186,7 @@
         },
         "getPSAppDEDataSet" : {
           "modelref" : true,
-          "id" : "FetchAssignedToMyStoryCalendar"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

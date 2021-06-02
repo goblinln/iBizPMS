@@ -272,6 +272,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("关联Bug",null),
 				title: commonLogic.appcommonhandle("关联Bug",null),
 			},
+			'redirectview': {
+				caption: commonLogic.appcommonhandle("Bug",null),
+				title: commonLogic.appcommonhandle("bug数据重定向视图",null),
+			},
 			'gridview9_storyrelated': {
 				caption: commonLogic.appcommonhandle("相关Bug",null),
 				title: commonLogic.appcommonhandle("相关Bug",null),
