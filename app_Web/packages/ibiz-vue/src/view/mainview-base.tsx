@@ -585,17 +585,13 @@ export class MainViewBase extends ViewBase {
                         };
                         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
                             if (targetOpenView.getPSAppDataEntity()) {
+                                if(returnContext && (Object.keys(returnContext).length > 0)){
+                                    Object.assign(tempContext, returnContext);
+                                }
                                 deResParameters = Util.formatAppDERSPath(
                                     tempContext,
                                     (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
                                 );
-                                if (deResParameters && (deResParameters.length == 0) && returnContext && (Object.keys(returnContext).length > 0)) {
-                                    Object.assign(tempContext, returnContext);
-                                    deResParameters = Util.formatAppDERSPath(
-                                        tempContext,
-                                        (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
-                                    );
-                                }
                                 parameters = [
                                     {
                                         pathName: Util.srfpluralize(
@@ -629,6 +625,9 @@ export class MainViewBase extends ViewBase {
                             }
                             if (targetOpenView && targetOpenView.modelPath) {
                                 Object.assign(tempContext, { viewpath: targetOpenView.modelPath });
+                            }
+                            if (returnContext && (Object.keys(returnContext).length > 0)) {
+                                Object.assign(tempContext, returnContext);
                             }
                         }
                         this.openTargtView(

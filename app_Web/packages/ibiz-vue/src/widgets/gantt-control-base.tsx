@@ -556,17 +556,13 @@ export class GanttControlBase extends MDControlBase {
                         };
                         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
                             if (targetOpenView.getPSAppDataEntity()) {
+                                if(returnContext && (Object.keys(returnContext).length > 0)){
+                                    Object.assign(tempContext, returnContext);
+                                }
                                 deResParameters = Util.formatAppDERSPath(
                                     tempContext,
                                     (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
                                 );
-                                if (deResParameters && (deResParameters.length == 0) && returnContext && (Object.keys(returnContext).length > 0)) {
-                                    Object.assign(tempContext, returnContext);
-                                    deResParameters = Util.formatAppDERSPath(
-                                        tempContext,
-                                        (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
-                                    );
-                                }
                                 parameters = [
                                     {
                                         pathName: Util.srfpluralize(
@@ -600,6 +596,9 @@ export class GanttControlBase extends MDControlBase {
                             }
                             if (targetOpenView && targetOpenView.modelPath) {
                                 Object.assign(tempContext, { viewpath: targetOpenView.modelPath });
+                            }
+                            if(returnContext && (Object.keys(returnContext).length > 0)){
+                                Object.assign(tempContext, returnContext);
                             }
                         }
                         this.openTargtView(targetOpenView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);

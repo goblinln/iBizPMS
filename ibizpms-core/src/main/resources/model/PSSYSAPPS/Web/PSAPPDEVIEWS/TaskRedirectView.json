@@ -30,6 +30,7 @@
   },
   "getRedirectPSAppViewRefs" : [ {
     "name" : "EDITVIEW",
+    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
@@ -38,6 +39,7 @@
     }
   }, {
     "name" : "ZT_TASK:EDITVIEW",
+    "realOpenMode" : "DRAWER_TOP",
     "realTitle" : "任务主数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,

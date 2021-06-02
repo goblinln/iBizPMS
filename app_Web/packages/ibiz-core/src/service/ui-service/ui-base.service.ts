@@ -348,8 +348,14 @@ export class UIServiceBase {
         let tempContext: any = {};
         if (this.entityModel && this.entityModel.getMinorPSAppDERSs() && ((this.entityModel.getMinorPSAppDERSs() as IPSAppDERS[]).length > 0)) {
             this.entityModel.getMinorPSAppDERSs()?.forEach((item: IPSAppDERS) => {
-                if (item.M.getParentPSAppDEField && item.M.getParentPSAppDEField.codeName && curData[item.M.getParentPSAppDEField.codeName] && !context[item.M.getParentPSAppDEField.codeName]) {
-                    Object.assign(tempContext, { [item.M.getParentPSAppDEField.codeName.toLowerCase()]: curData[item.M.getParentPSAppDEField.codeName] });
+                const parentPSAppDEFieldCodeName:string = item.M.getParentPSAppDEField?.codeName;
+                if (parentPSAppDEFieldCodeName) {
+                    if(curData[parentPSAppDEFieldCodeName.toLowerCase()]){
+                        const majorAppEntity:IPSAppDataEntity | null = item.getMajorPSAppDataEntity();
+                        if(!context[(majorAppEntity as IPSAppDataEntity).codeName.toLowerCase()]){
+                            Object.assign(tempContext, { [(majorAppEntity as IPSAppDataEntity).codeName.toLowerCase()]: curData[parentPSAppDEFieldCodeName.toLowerCase()] });
+                        }
+                    }
                 }
             })
         }

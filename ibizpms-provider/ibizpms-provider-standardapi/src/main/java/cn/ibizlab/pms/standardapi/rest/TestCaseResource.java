@@ -59,6 +59,18 @@ public class TestCaseResource {
     private ICaseStepService casestepService;
 
 
+    @PreAuthorize("@CaseRuntime.quickTest('NFAVORITE')")
+    @ApiOperation(value = "根据系统用户CaseNFavorite", tags = {"测试用例" },  notes = "根据系统用户CaseNFavorite")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}/casenfavorite")
+    public ResponseEntity<TestCaseDTO> caseNFavoriteBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        
+        domain.setId(testcase_id);
+        domain = caseService.caseNFavorite(domain) ;
+        testcasedto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
+    }
+
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"测试用例" } ,notes = "根据系统用户获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/testcases/fetchmyfavorites")
@@ -72,37 +84,32 @@ public class TestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户获取测试用例草稿", tags = {"测试用例" },  notes = "根据系统用户获取测试用例草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/testcases/getdraft")
-    public ResponseEntity<TestCaseDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TestCaseDTO dto) {
-        Case domain = testcaseMapping.toDomain(dto);
+    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户获取DEFAULT", tags = {"测试用例" } ,notes = "根据系统用户获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/testcases/fetchdefault")
+	public ResponseEntity<List<TestCaseDTO>> fetchDefaultBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
         
-        return ResponseEntity.status(HttpStatus.OK).body(testcaseMapping.toDto(caseService.getDraft(domain)));
+        Page<Case> domains = caseService.searchDefault(context) ;
+        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@CaseRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户删除测试用例", tags = {"测试用例" },  notes = "根据系统用户删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}")
+    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(testcase_id));
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('RUNCASE')")
-    @ApiOperation(value = "根据系统用户runCases", tags = {"测试用例" },  notes = "根据系统用户runCases")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}/runcases")
-    public ResponseEntity<TestCaseDTO> runCasesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        
-        domain.setId(testcase_id);
-        domain = caseService.runCases(domain) ;
-        testcasedto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
-    }
-
-    @PreAuthorize("@CaseRuntime.quickTest('TESRUNCASE')")
-    @ApiOperation(value = "根据系统用户testRunCases", tags = {"测试用例" },  notes = "根据系统用户testRunCases")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}/testruncases")
-    public ResponseEntity<TestCaseDTO> testRunCasesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        
-        domain.setId(testcase_id);
-        domain = caseService.testRunCases(domain) ;
-        testcasedto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
+    @PreAuthorize("@CaseRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户批量删除测试用例", tags = {"测试用例" },  notes = "根据系统用户批量删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/testcases/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
+        caseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("@CaseRuntime.quickTest('FAVORITE')")
@@ -117,27 +124,14 @@ public class TestCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"测试用例" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/testcases/fetchaccount")
-	public ResponseEntity<List<TestCaseDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
-        
-        Page<Case> domains = caseService.searchAccount(context) ;
-        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@CaseRuntime.quickTest('NFAVORITE')")
-    @ApiOperation(value = "根据系统用户CaseNFavorite", tags = {"测试用例" },  notes = "根据系统用户CaseNFavorite")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}/casenfavorite")
-    public ResponseEntity<TestCaseDTO> caseNFavoriteBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+    @PreAuthorize("@CaseRuntime.quickTest('RUNCASE')")
+    @ApiOperation(value = "根据系统用户runCases", tags = {"测试用例" },  notes = "根据系统用户runCases")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}/runcases")
+    public ResponseEntity<TestCaseDTO> runCasesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
         Case domain = testcaseMapping.toDomain(testcasedto);
         
         domain.setId(testcase_id);
-        domain = caseService.caseNFavorite(domain) ;
+        domain = caseService.runCases(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
@@ -155,27 +149,6 @@ public class TestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户建立测试用例", tags = {"测试用例" },  notes = "根据系统用户建立测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases")
-    public ResponseEntity<TestCaseDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        
-		caseService.create(domain);
-        TestCaseDTO dto = testcaseMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@CaseRuntime.quickTest('READ')")
-    @ApiOperation(value = "根据系统用户获取测试用例", tags = {"测试用例" },  notes = "根据系统用户获取测试用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}")
-    public ResponseEntity<TestCaseDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id) {
-        Case domain = caseService.get(testcase_id);
-        TestCaseDTO dto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
     @PreAuthorize("@CaseRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "根据系统用户更新测试用例", tags = {"测试用例" },  notes = "根据系统用户更新测试用例")
@@ -190,27 +163,12 @@ public class TestCaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户删除测试用例", tags = {"测试用例" },  notes = "根据系统用户删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}")
-    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(testcase_id));
-    }
-
-    @PreAuthorize("@CaseRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户批量删除测试用例", tags = {"测试用例" },  notes = "根据系统用户批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/testcases/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
-        caseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取DEFAULT", tags = {"测试用例" } ,notes = "根据系统用户获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/testcases/fetchdefault")
-	public ResponseEntity<List<TestCaseDTO>> fetchDefaultBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"测试用例" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/testcases/fetchaccount")
+	public ResponseEntity<List<TestCaseDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
         
-        Page<Case> domains = caseService.searchDefault(context) ;
+        Page<Case> domains = caseService.searchAccount(context) ;
         List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -218,6 +176,60 @@ public class TestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@CaseRuntime.quickTest('READ')")
+    @ApiOperation(value = "根据系统用户获取测试用例", tags = {"测试用例" },  notes = "根据系统用户获取测试用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}")
+    public ResponseEntity<TestCaseDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id) {
+        Case domain = caseService.get(testcase_id);
+        TestCaseDTO dto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户获取测试用例草稿", tags = {"测试用例" },  notes = "根据系统用户获取测试用例草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/testcases/getdraft")
+    public ResponseEntity<TestCaseDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TestCaseDTO dto) {
+        Case domain = testcaseMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(testcaseMapping.toDto(caseService.getDraft(domain)));
+    }
+
+    @PreAuthorize("@CaseRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户建立测试用例", tags = {"测试用例" },  notes = "根据系统用户建立测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases")
+    public ResponseEntity<TestCaseDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        
+		caseService.create(domain);
+        TestCaseDTO dto = testcaseMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@CaseRuntime.quickTest('TESRUNCASE')")
+    @ApiOperation(value = "根据系统用户testRunCases", tags = {"测试用例" },  notes = "根据系统用户testRunCases")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/testcases/{testcase_id}/testruncases")
+    public ResponseEntity<TestCaseDTO> testRunCasesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        
+        domain.setId(testcase_id);
+        domain = caseService.testRunCases(domain) ;
+        testcasedto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
+    @ApiOperation(value = "根据产品CaseNFavorite", tags = {"测试用例" },  notes = "根据产品CaseNFavorite")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/casenfavorite")
+    public ResponseEntity<TestCaseDTO> caseNFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        domain.setProduct(product_id);
+        domain.setId(testcase_id);
+        domain = caseService.caseNFavorite(domain) ;
+        testcasedto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
+    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"测试用例" } ,notes = "根据产品获取我的收藏")
@@ -232,37 +244,32 @@ public class TestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试用例" } ,notes = "根据产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchdefault")
+	public ResponseEntity<List<TestCaseDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Case> domains = caseService.searchDefault(context) ;
+        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/getdraft")
-    public ResponseEntity<TestCaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestCaseDTO dto) {
-        Case domain = testcaseMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaseMapping.toDto(caseService.getDraft(domain)));
+    @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{testcase_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(testcase_id));
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品runCases", tags = {"测试用例" },  notes = "根据产品runCases")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/runcases")
-    public ResponseEntity<TestCaseDTO> runCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        domain.setProduct(product_id);
-        domain.setId(testcase_id);
-        domain = caseService.runCases(domain) ;
-        testcasedto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品testRunCases", tags = {"测试用例" },  notes = "根据产品testRunCases")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/testruncases")
-    public ResponseEntity<TestCaseDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        domain.setProduct(product_id);
-        domain.setId(testcase_id);
-        domain = caseService.testRunCases(domain) ;
-        testcasedto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
+    @ApiOperation(value = "根据产品批量删除测试用例", tags = {"测试用例" },  notes = "根据产品批量删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        caseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
@@ -277,27 +284,14 @@ public class TestCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"测试用例" } ,notes = "根据产品获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchaccount")
-	public ResponseEntity<List<TestCaseDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Case> domains = caseService.searchAccount(context) ;
-        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品CaseNFavorite", tags = {"测试用例" },  notes = "根据产品CaseNFavorite")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/casenfavorite")
-    public ResponseEntity<TestCaseDTO> caseNFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+    @ApiOperation(value = "根据产品runCases", tags = {"测试用例" },  notes = "根据产品runCases")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/runcases")
+    public ResponseEntity<TestCaseDTO> runCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
         Case domain = testcaseMapping.toDomain(testcasedto);
         domain.setProduct(product_id);
         domain.setId(testcase_id);
-        domain = caseService.caseNFavorite(domain) ;
+        domain = caseService.runCases(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
@@ -315,27 +309,6 @@ public class TestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases")
-    public ResponseEntity<TestCaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        domain.setProduct(product_id);
-		caseService.create(domain);
-        TestCaseDTO dto = testcaseMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/{testcase_id}")
-    public ResponseEntity<TestCaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
-        Case domain = caseService.get(testcase_id);
-        TestCaseDTO dto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
     @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
@@ -350,27 +323,12 @@ public class TestCaseResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{testcase_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(testcase_id));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
-    @ApiOperation(value = "根据产品批量删除测试用例", tags = {"测试用例" },  notes = "根据产品批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        caseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试用例" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchdefault")
-	public ResponseEntity<List<TestCaseDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
+	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"测试用例" } ,notes = "根据产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchaccount")
+	public ResponseEntity<List<TestCaseDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
         context.setN_product_eq(product_id);
-        Page<Case> domains = caseService.searchDefault(context) ;
+        Page<Case> domains = caseService.searchAccount(context) ;
         List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -378,5 +336,47 @@ public class TestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/{testcase_id}")
+    public ResponseEntity<TestCaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
+        Case domain = caseService.get(testcase_id);
+        TestCaseDTO dto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
+    @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testcases/getdraft")
+    public ResponseEntity<TestCaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestCaseDTO dto) {
+        Case domain = testcaseMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testcaseMapping.toDto(caseService.getDraft(domain)));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
+    @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases")
+    public ResponseEntity<TestCaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        domain.setProduct(product_id);
+		caseService.create(domain);
+        TestCaseDTO dto = testcaseMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CASEMANAGE')")
+    @ApiOperation(value = "根据产品testRunCases", tags = {"测试用例" },  notes = "根据产品testRunCases")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/testruncases")
+    public ResponseEntity<TestCaseDTO> testRunCasesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        domain.setProduct(product_id);
+        domain.setId(testcase_id);
+        domain = caseService.testRunCases(domain) ;
+        testcasedto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
+    }
+
 }
 

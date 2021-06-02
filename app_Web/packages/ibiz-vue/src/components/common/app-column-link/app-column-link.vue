@@ -257,18 +257,13 @@ export default class AppColumnLink extends Vue {
         };
         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
             if (targetOpenView.getPSAppDataEntity()) {
-                let deResParameters = Util.formatAppDERSPath(
+                if (returnContext && (Object.keys(returnContext).length > 0)) {
+                    Object.assign(context, returnContext);
+                }
+                view.deResParameters = Util.formatAppDERSPath(
                     context,
                     (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
                 );
-                if (deResParameters && (deResParameters.length == 0) && returnContext && (Object.keys(returnContext).length > 0)) {
-                    Object.assign(context, returnContext);
-                    deResParameters = Util.formatAppDERSPath(
-                        context,
-                        (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
-                    );
-                }
-                view.deResParameters = deResParameters;
                 view.parameters = [
                     {
                         pathName: Util.srfpluralize(
@@ -302,6 +297,9 @@ export default class AppColumnLink extends Vue {
             }
             if (targetOpenView && targetOpenView.modelPath) {
                 Object.assign(context, { viewpath: targetOpenView.modelPath });
+            }
+            if (returnContext && (Object.keys(returnContext).length > 0)) {
+                Object.assign(context, returnContext);
             }
         }
         if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
