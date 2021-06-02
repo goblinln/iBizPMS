@@ -21636,6 +21636,23 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'tasks/:task?/views/redirectview',
+                    meta: {
+                        caption: 'entities.task.views.redirectview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'redirectview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'accounts/:account?/projects/:project?/tasks/:task?/views/forwardview',
                     meta: {
                         caption: 'entities.task.views.forwardview.caption',

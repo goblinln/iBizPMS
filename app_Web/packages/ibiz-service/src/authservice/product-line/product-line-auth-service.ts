@@ -2,7 +2,7 @@ import { ProductLineAuthServiceBase } from './product-line-auth-service-base';
 
 
 /**
- * 产品线（废弃）权限服务对象
+ * 产品线权限服务对象
  *
  * @export
  * @class ProductLineAuthService

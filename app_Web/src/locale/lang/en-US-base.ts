@@ -90,7 +90,6 @@ import ibzplantempletdetail_en_US from '@locale/lanres/entities/ibz-plan-templet
 import ibzproconfig_en_US from '@locale/lanres/entities/ibzpro-config/ibzpro-config_en_US';
 import ibzprostory_en_US from '@locale/lanres/entities/ibzpro-story/ibzpro-story_en_US';
 import ibztaskteam_en_US from '@locale/lanres/entities/ibztask-team/ibztask-team_en_US';
-import productline_en_US from '@locale/lanres/entities/product-line/product-line_en_US';
 import pssyssfpub_en_US from '@locale/lanres/entities/pssys-sfpub/pssys-sfpub_en_US';
 import projectstats_en_US from '@locale/lanres/entities/project-stats/project-stats_en_US';
 import testrun_en_US from '@locale/lanres/entities/test-run/test-run_en_US';
@@ -512,7 +511,6 @@ function getAppLocale(){
             'ibzproconfig': ibzproconfig_en_US(),
             'ibzprostory': ibzprostory_en_US(),
             'ibztaskteam': ibztaskteam_en_US(),
-            'productline': productline_en_US(),
             'pssyssfpub': pssyssfpub_en_US(),
             'projectstats': projectstats_en_US(),
             'testrun': testrun_en_US(),

@@ -5,7 +5,7 @@ import { AuthServiceRegister } from '../../register';
 import { GlobalService } from '../../service';
 
 /**
- * 产品线（废弃）UI服务对象基类
+ * 产品线UI服务对象基类
  *
  * @export
  * @class ProductLineUIServiceBase
@@ -51,7 +51,7 @@ export class ProductLineUIServiceBase extends UIServiceBase {
     protected initBasicData(){
         this.isEnableDEMainState = false;
         this.dynaInstTag = "";
-        this.tempOrgIdDEField =null;
+        this.tempOrgIdDEField ="orgid";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;
@@ -80,6 +80,7 @@ export class ProductLineUIServiceBase extends UIServiceBase {
      * @memberof  ProductLineUIServiceBase
      */  
     protected initViewFuncMap(){
+        this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
     }
 
 }

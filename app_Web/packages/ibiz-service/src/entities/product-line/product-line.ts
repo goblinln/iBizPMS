@@ -1,7 +1,7 @@
 import { ProductLineBase } from './product-line-base';
 
 /**
- * 产品线（废弃）
+ * 产品线
  *
  * @export
  * @class ProductLine

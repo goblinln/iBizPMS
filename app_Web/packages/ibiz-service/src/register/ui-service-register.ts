@@ -146,7 +146,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzproconfig', () => import('../uiservice/ibzpro-config/ibzpro-config-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzprostory', () => import('../uiservice/ibzpro-story/ibzpro-story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibztaskteam', () => import('../uiservice/ibztask-team/ibztask-team-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('productline', () => import('../uiservice/product-line/product-line-ui-service'));
         UIServiceRegister.allUIServiceMap.set('pssyssfpub', () => import('../uiservice/pssys-sfpub/pssys-sfpub-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectstats', () => import('../uiservice/project-stats/project-stats-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testrun', () => import('../uiservice/test-run/test-run-ui-service'));

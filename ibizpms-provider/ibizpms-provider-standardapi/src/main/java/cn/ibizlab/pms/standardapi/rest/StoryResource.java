@@ -53,6 +53,18 @@ public class StoryResource {
     public StoryMapping storyMapping;
 
 
+    @PreAuthorize("@StoryRuntime.quickTest('NFAVORITES')")
+    @ApiOperation(value = "根据系统用户取消收藏", tags = {"需求" },  notes = "根据系统用户取消收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/storynfavorites")
+    public ResponseEntity<StoryDTO> storyNFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.storyNFavorites(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
     @PreAuthorize("@StoryRuntime.quickTest('CHANGE')")
     @ApiOperation(value = "根据系统用户变更", tags = {"需求" },  notes = "根据系统用户变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/change")
@@ -78,39 +90,14 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@StoryRuntime.quickTest('NFAVORITES')")
-    @ApiOperation(value = "根据系统用户取消收藏", tags = {"需求" },  notes = "根据系统用户取消收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/storynfavorites")
-    public ResponseEntity<StoryDTO> storyNFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @PreAuthorize("@StoryRuntime.quickTest('ASSIGNTO')")
+    @ApiOperation(value = "根据系统用户指派", tags = {"需求" },  notes = "根据系统用户指派")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/assignto")
+    public ResponseEntity<StoryDTO> assignToBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
-        domain = storyService.storyNFavorites(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-    @PreAuthorize("@StoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchdefault")
-	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('REVIEW')")
-    @ApiOperation(value = "根据系统用户评审", tags = {"需求" },  notes = "根据系统用户评审")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/review")
-    public ResponseEntity<StoryDTO> reviewBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        
-        domain.setId(story_id);
-        domain = storyService.review(domain) ;
+        domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -138,6 +125,32 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户获取获取产品发布相关需求")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchstoryrelated")
+	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchStoryRelated(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchaccount")
+	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchAccount(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@StoryRuntime.quickTest('CLOSE')")
     @ApiOperation(value = "根据系统用户关闭", tags = {"需求" },  notes = "根据系统用户关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/close")
@@ -146,6 +159,18 @@ public class StoryResource {
         
         domain.setId(story_id);
         domain = storyService.close(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('FAVORITES')")
+    @ApiOperation(value = "根据系统用户需求收藏", tags = {"需求" },  notes = "根据系统用户需求收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/storyfavorites")
+    public ResponseEntity<StoryDTO> storyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -182,14 +207,67 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('ASSIGNTO')")
-    @ApiOperation(value = "根据系统用户指派", tags = {"需求" },  notes = "根据系统用户指派")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/assignto")
-    public ResponseEntity<StoryDTO> assignToBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchdefault")
+	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('REVIEW')")
+    @ApiOperation(value = "根据系统用户评审", tags = {"需求" },  notes = "根据系统用户评审")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/review")
+    public ResponseEntity<StoryDTO> reviewBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
-        domain = storyService.assignTo(domain) ;
+        domain = storyService.review(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户获取数据查询", tags = {"需求" } ,notes = "根据系统用户获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchparentdefault")
+	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchParentDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户删除需求", tags = {"需求" },  notes = "根据系统用户删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/stories/{story_id}")
+    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户批量删除需求", tags = {"需求" },  notes = "根据系统用户批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/stories/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('ACTIVATE')")
+    @ApiOperation(value = "根据系统用户激活", tags = {"需求" },  notes = "根据系统用户激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/activate")
+    public ResponseEntity<StoryDTO> activateBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -207,84 +285,18 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@StoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchstoryrelated")
-	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchStoryRelated(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('FAVORITES')")
-    @ApiOperation(value = "根据系统用户需求收藏", tags = {"需求" },  notes = "根据系统用户需求收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/storyfavorites")
-    public ResponseEntity<StoryDTO> storyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据产品取消收藏", tags = {"需求" },  notes = "根据产品取消收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storynfavorites")
+    public ResponseEntity<StoryDTO> storyNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
-        
+        domain.setProduct(product_id);
         domain.setId(story_id);
-        domain = storyService.storyFavorites(domain) ;
+        domain = storyService.storyNFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
-
-    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户删除需求", tags = {"需求" },  notes = "根据系统用户删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/stories/{story_id}")
-    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
-    }
-
-    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户批量删除需求", tags = {"需求" },  notes = "根据系统用户批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/stories/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@StoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchaccount")
-	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchAccount(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取数据查询", tags = {"需求" } ,notes = "根据系统用户获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/fetchparentdefault")
-	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchParentDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('ACTIVATE')")
-    @ApiOperation(value = "根据系统用户激活", tags = {"需求" },  notes = "根据系统用户激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/stories/{story_id}/activate")
-    public ResponseEntity<StoryDTO> activateBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        
-        domain.setId(story_id);
-        domain = storyService.activate(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
     @ApiOperation(value = "根据产品变更", tags = {"需求" },  notes = "根据产品变更")
@@ -312,38 +324,13 @@ public class StoryResource {
                 .body(list);
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据产品取消收藏", tags = {"需求" },  notes = "根据产品取消收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storynfavorites")
-    public ResponseEntity<StoryDTO> storyNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @ApiOperation(value = "根据产品指派", tags = {"需求" },  notes = "根据产品指派")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/assignto")
+    public ResponseEntity<StoryDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
         domain.setId(story_id);
-        domain = storyService.storyNFavorites(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"需求" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchdefault")
-	public ResponseEntity<List<StoryDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据产品评审", tags = {"需求" },  notes = "根据产品评审")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/review")
-    public ResponseEntity<StoryDTO> reviewByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        domain.setProduct(product_id);
-        domain.setId(story_id);
-        domain = storyService.review(domain) ;
+        domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -371,6 +358,32 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据产品获取获取产品发布相关需求")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchstoryrelated")
+	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchStoryRelated(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"需求" } ,notes = "根据产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchaccount")
+	public ResponseEntity<List<StoryDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchAccount(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
     @ApiOperation(value = "根据产品关闭", tags = {"需求" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/close")
@@ -379,6 +392,18 @@ public class StoryResource {
         domain.setProduct(product_id);
         domain.setId(story_id);
         domain = storyService.close(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据产品需求收藏", tags = {"需求" },  notes = "根据产品需求收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storyfavorites")
+    public ResponseEntity<StoryDTO> storyFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -415,14 +440,67 @@ public class StoryResource {
     }
 
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"需求" } ,notes = "根据产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchdefault")
+	public ResponseEntity<List<StoryDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据产品指派", tags = {"需求" },  notes = "根据产品指派")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/assignto")
-    public ResponseEntity<StoryDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @ApiOperation(value = "根据产品评审", tags = {"需求" },  notes = "根据产品评审")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/review")
+    public ResponseEntity<StoryDTO> reviewByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
         domain.setId(story_id);
-        domain = storyService.assignTo(domain) ;
+        domain = storyService.review(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据产品获取数据查询", tags = {"需求" } ,notes = "根据产品获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchparentdefault")
+	public ResponseEntity<List<StoryDTO>> fetchParentDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchParentDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据产品删除需求", tags = {"需求" },  notes = "根据产品删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据产品批量删除需求", tags = {"需求" },  notes = "根据产品批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据产品激活", tags = {"需求" },  notes = "根据产品激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/activate")
+    public ResponseEntity<StoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -440,84 +518,18 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据产品获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchstoryrelated")
-	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchStoryRelated(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据产品需求收藏", tags = {"需求" },  notes = "根据产品需求收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storyfavorites")
-    public ResponseEntity<StoryDTO> storyFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+
+    @PreAuthorize("@StoryRuntime.quickTest('NFAVORITES')")
+    @ApiOperation(value = "根据项目取消收藏", tags = {"需求" },  notes = "根据项目取消收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/storynfavorites")
+    public ResponseEntity<StoryDTO> storyNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
-        domain.setProduct(product_id);
+        
         domain.setId(story_id);
-        domain = storyService.storyFavorites(domain) ;
+        domain = storyService.storyNFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据产品删除需求", tags = {"需求" },  notes = "根据产品删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据产品批量删除需求", tags = {"需求" },  notes = "根据产品批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"需求" } ,notes = "根据产品获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchaccount")
-	public ResponseEntity<List<StoryDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchAccount(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取数据查询", tags = {"需求" } ,notes = "根据产品获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchparentdefault")
-	public ResponseEntity<List<StoryDTO>> fetchParentDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchParentDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据产品激活", tags = {"需求" },  notes = "根据产品激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/activate")
-    public ResponseEntity<StoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        domain.setProduct(product_id);
-        domain.setId(story_id);
-        domain = storyService.activate(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
 
     @PreAuthorize("@StoryRuntime.quickTest('CHANGE')")
     @ApiOperation(value = "根据项目变更", tags = {"需求" },  notes = "根据项目变更")
@@ -544,39 +556,14 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@StoryRuntime.quickTest('NFAVORITES')")
-    @ApiOperation(value = "根据项目取消收藏", tags = {"需求" },  notes = "根据项目取消收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/storynfavorites")
-    public ResponseEntity<StoryDTO> storyNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @PreAuthorize("@StoryRuntime.quickTest('ASSIGNTO')")
+    @ApiOperation(value = "根据项目指派", tags = {"需求" },  notes = "根据项目指派")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/assignto")
+    public ResponseEntity<StoryDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
-        domain = storyService.storyNFavorites(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"需求" } ,notes = "根据项目获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchdefault")
-	public ResponseEntity<List<StoryDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('REVIEW')")
-    @ApiOperation(value = "根据项目评审", tags = {"需求" },  notes = "根据项目评审")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/review")
-    public ResponseEntity<StoryDTO> reviewByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        
-        domain.setId(story_id);
-        domain = storyService.review(domain) ;
+        domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -604,6 +591,32 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据项目获取获取产品发布相关需求")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchstoryrelated")
+	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchStoryRelated(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"需求" } ,notes = "根据项目获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchaccount")
+	public ResponseEntity<List<StoryDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchAccount(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@StoryRuntime.quickTest('CLOSE')")
     @ApiOperation(value = "根据项目关闭", tags = {"需求" },  notes = "根据项目关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/close")
@@ -612,6 +625,18 @@ public class StoryResource {
         
         domain.setId(story_id);
         domain = storyService.close(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('FAVORITES')")
+    @ApiOperation(value = "根据项目需求收藏", tags = {"需求" },  notes = "根据项目需求收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/storyfavorites")
+    public ResponseEntity<StoryDTO> storyFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -648,14 +673,67 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('ASSIGNTO')")
-    @ApiOperation(value = "根据项目指派", tags = {"需求" },  notes = "根据项目指派")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/assignto")
-    public ResponseEntity<StoryDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"需求" } ,notes = "根据项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchdefault")
+	public ResponseEntity<List<StoryDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('REVIEW')")
+    @ApiOperation(value = "根据项目评审", tags = {"需求" },  notes = "根据项目评审")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/review")
+    public ResponseEntity<StoryDTO> reviewByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
-        domain = storyService.assignTo(domain) ;
+        domain = storyService.review(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据项目获取数据查询", tags = {"需求" } ,notes = "根据项目获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchparentdefault")
+	public ResponseEntity<List<StoryDTO>> fetchParentDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchParentDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据项目删除需求", tags = {"需求" },  notes = "根据项目删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/stories/{story_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据项目批量删除需求", tags = {"需求" },  notes = "根据项目批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/stories/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('ACTIVATE')")
+    @ApiOperation(value = "根据项目激活", tags = {"需求" },  notes = "根据项目激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/activate")
+    public ResponseEntity<StoryDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -673,85 +751,19 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据项目获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchstoryrelated")
-	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchStoryRelated(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('FAVORITES')")
-    @ApiOperation(value = "根据项目需求收藏", tags = {"需求" },  notes = "根据项目需求收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/storyfavorites")
-    public ResponseEntity<StoryDTO> storyFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据系统用户产品取消收藏", tags = {"需求" },  notes = "根据系统用户产品取消收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/storynfavorites")
+    public ResponseEntity<StoryDTO> storyNFavoritesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
-        
+        domain.setProduct(product_id);
         domain.setId(story_id);
-        domain = storyService.storyFavorites(domain) ;
+        domain = storyService.storyNFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
-
-    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据项目删除需求", tags = {"需求" },  notes = "根据项目删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/stories/{story_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
-    }
-
-    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据项目批量删除需求", tags = {"需求" },  notes = "根据项目批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/stories/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"需求" } ,notes = "根据项目获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchaccount")
-	public ResponseEntity<List<StoryDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchAccount(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据项目获取数据查询", tags = {"需求" } ,notes = "根据项目获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchparentdefault")
-	public ResponseEntity<List<StoryDTO>> fetchParentDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchParentDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('ACTIVATE')")
-    @ApiOperation(value = "根据项目激活", tags = {"需求" },  notes = "根据项目激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/{story_id}/activate")
-    public ResponseEntity<StoryDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        
-        domain.setId(story_id);
-        domain = storyService.activate(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
     @ApiOperation(value = "根据系统用户产品变更", tags = {"需求" },  notes = "根据系统用户产品变更")
@@ -779,38 +791,13 @@ public class StoryResource {
                 .body(list);
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据系统用户产品取消收藏", tags = {"需求" },  notes = "根据系统用户产品取消收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/storynfavorites")
-    public ResponseEntity<StoryDTO> storyNFavoritesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @ApiOperation(value = "根据系统用户产品指派", tags = {"需求" },  notes = "根据系统用户产品指派")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/assignto")
+    public ResponseEntity<StoryDTO> assignToBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
         domain.setId(story_id);
-        domain = storyService.storyNFavorites(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchdefault")
-	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据系统用户产品评审", tags = {"需求" },  notes = "根据系统用户产品评审")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/review")
-    public ResponseEntity<StoryDTO> reviewBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        domain.setProduct(product_id);
-        domain.setId(story_id);
-        domain = storyService.review(domain) ;
+        domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -838,6 +825,32 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据系统用户产品获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户产品获取获取产品发布相关需求")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchstoryrelated")
+	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchStoryRelated(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据系统用户产品获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchaccount")
+	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchAccount(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
     @ApiOperation(value = "根据系统用户产品关闭", tags = {"需求" },  notes = "根据系统用户产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/close")
@@ -846,6 +859,18 @@ public class StoryResource {
         domain.setProduct(product_id);
         domain.setId(story_id);
         domain = storyService.close(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据系统用户产品需求收藏", tags = {"需求" },  notes = "根据系统用户产品需求收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/storyfavorites")
+    public ResponseEntity<StoryDTO> storyFavoritesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -882,14 +907,67 @@ public class StoryResource {
     }
 
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据系统用户产品获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchdefault")
+	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据系统用户产品指派", tags = {"需求" },  notes = "根据系统用户产品指派")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/assignto")
-    public ResponseEntity<StoryDTO> assignToBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @ApiOperation(value = "根据系统用户产品评审", tags = {"需求" },  notes = "根据系统用户产品评审")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/review")
+    public ResponseEntity<StoryDTO> reviewBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         domain.setProduct(product_id);
         domain.setId(story_id);
-        domain = storyService.assignTo(domain) ;
+        domain = storyService.review(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+	@ApiOperation(value = "根据系统用户产品获取数据查询", tags = {"需求" } ,notes = "根据系统用户产品获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchparentdefault")
+	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Story> domains = storyService.searchParentDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据系统用户产品删除需求", tags = {"需求" },  notes = "根据系统用户产品删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}")
+    public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
+    @ApiOperation(value = "根据系统用户产品批量删除需求", tags = {"需求" },  notes = "根据系统用户产品批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/stories/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
+    @ApiOperation(value = "根据系统用户产品激活", tags = {"需求" },  notes = "根据系统用户产品激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/activate")
+    public ResponseEntity<StoryDTO> activateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -907,85 +985,19 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户产品获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchstoryrelated")
-	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchStoryRelated(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据系统用户产品需求收藏", tags = {"需求" },  notes = "根据系统用户产品需求收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/storyfavorites")
-    public ResponseEntity<StoryDTO> storyFavoritesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+
+
+    @PreAuthorize("@StoryRuntime.quickTest('NFAVORITES')")
+    @ApiOperation(value = "根据系统用户项目取消收藏", tags = {"需求" },  notes = "根据系统用户项目取消收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/storynfavorites")
+    public ResponseEntity<StoryDTO> storyNFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
-        domain.setProduct(product_id);
+        
         domain.setId(story_id);
-        domain = storyService.storyFavorites(domain) ;
+        domain = storyService.storyNFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据系统用户产品删除需求", tags = {"需求" },  notes = "根据系统用户产品删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}")
-    public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
-    @ApiOperation(value = "根据系统用户产品批量删除需求", tags = {"需求" },  notes = "根据系统用户产品批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/stories/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户产品获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchaccount")
-	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchAccount(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取数据查询", tags = {"需求" } ,notes = "根据系统用户产品获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/fetchparentdefault")
-	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Story> domains = storyService.searchParentDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'MANAGE')")
-    @ApiOperation(value = "根据系统用户产品激活", tags = {"需求" },  notes = "根据系统用户产品激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/activate")
-    public ResponseEntity<StoryDTO> activateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        domain.setProduct(product_id);
-        domain.setId(story_id);
-        domain = storyService.activate(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-
 
     @PreAuthorize("@StoryRuntime.quickTest('CHANGE')")
     @ApiOperation(value = "根据系统用户项目变更", tags = {"需求" },  notes = "根据系统用户项目变更")
@@ -1012,39 +1024,14 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@StoryRuntime.quickTest('NFAVORITES')")
-    @ApiOperation(value = "根据系统用户项目取消收藏", tags = {"需求" },  notes = "根据系统用户项目取消收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/storynfavorites")
-    public ResponseEntity<StoryDTO> storyNFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @PreAuthorize("@StoryRuntime.quickTest('ASSIGNTO')")
+    @ApiOperation(value = "根据系统用户项目指派", tags = {"需求" },  notes = "根据系统用户项目指派")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/assignto")
+    public ResponseEntity<StoryDTO> assignToBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
-        domain = storyService.storyNFavorites(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户项目获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchdefault")
-	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('REVIEW')")
-    @ApiOperation(value = "根据系统用户项目评审", tags = {"需求" },  notes = "根据系统用户项目评审")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/review")
-    public ResponseEntity<StoryDTO> reviewBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        
-        domain.setId(story_id);
-        domain = storyService.review(domain) ;
+        domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -1072,6 +1059,32 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户项目获取获取产品发布相关需求")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchstoryrelated")
+	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchStoryRelated(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户项目获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchaccount")
+	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchAccount(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("@StoryRuntime.quickTest('CLOSE')")
     @ApiOperation(value = "根据系统用户项目关闭", tags = {"需求" },  notes = "根据系统用户项目关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/close")
@@ -1080,6 +1093,18 @@ public class StoryResource {
         
         domain.setId(story_id);
         domain = storyService.close(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('FAVORITES')")
+    @ApiOperation(value = "根据系统用户项目需求收藏", tags = {"需求" },  notes = "根据系统用户项目需求收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/storyfavorites")
+    public ResponseEntity<StoryDTO> storyFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -1116,14 +1141,67 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('ASSIGNTO')")
-    @ApiOperation(value = "根据系统用户项目指派", tags = {"需求" },  notes = "根据系统用户项目指派")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/assignto")
-    public ResponseEntity<StoryDTO> assignToBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户项目获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchdefault")
+	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('REVIEW')")
+    @ApiOperation(value = "根据系统用户项目评审", tags = {"需求" },  notes = "根据系统用户项目评审")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/review")
+    public ResponseEntity<StoryDTO> reviewBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
         Story domain = storyMapping.toDomain(storydto);
         
         domain.setId(story_id);
-        domain = storyService.assignTo(domain) ;
+        domain = storyService.review(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取数据查询", tags = {"需求" } ,notes = "根据系统用户项目获取数据查询")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchparentdefault")
+	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
+        
+        Page<Story> domains = storyService.searchParentDefault(context) ;
+        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户项目删除需求", tags = {"需求" },  notes = "根据系统用户项目删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}")
+    public ResponseEntity<Boolean> removeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户项目批量删除需求", tags = {"需求" },  notes = "根据系统用户项目批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUserProject(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@StoryRuntime.quickTest('ACTIVATE')")
+    @ApiOperation(value = "根据系统用户项目激活", tags = {"需求" },  notes = "根据系统用户项目激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/activate")
+    public ResponseEntity<StoryDTO> activateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        
+        domain.setId(story_id);
+        domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
@@ -1141,83 +1219,5 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户项目获取获取产品发布相关需求")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchstoryrelated")
-	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchStoryRelated(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('FAVORITES')")
-    @ApiOperation(value = "根据系统用户项目需求收藏", tags = {"需求" },  notes = "根据系统用户项目需求收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/storyfavorites")
-    public ResponseEntity<StoryDTO> storyFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        
-        domain.setId(story_id);
-        domain = storyService.storyFavorites(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
-    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户项目删除需求", tags = {"需求" },  notes = "根据系统用户项目删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}")
-    public ResponseEntity<Boolean> removeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
-    }
-
-    @PreAuthorize("@StoryRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户项目批量删除需求", tags = {"需求" },  notes = "根据系统用户项目批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUserProject(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户项目获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchaccount")
-	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchAccount(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取数据查询", tags = {"需求" } ,notes = "根据系统用户项目获取数据查询")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/fetchparentdefault")
-	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
-        
-        Page<Story> domains = storyService.searchParentDefault(context) ;
-        List<StoryDTO> list = storyMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@StoryRuntime.quickTest('ACTIVATE')")
-    @ApiOperation(value = "根据系统用户项目激活", tags = {"需求" },  notes = "根据系统用户项目激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/activate")
-    public ResponseEntity<StoryDTO> activateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        
-        domain.setId(story_id);
-        domain = storyService.activate(domain) ;
-        storydto = storyMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(storydto);
-    }
-
 }
 

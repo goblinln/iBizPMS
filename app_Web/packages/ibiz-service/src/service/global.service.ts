@@ -845,15 +845,6 @@ export class GlobalService {
         return (await import('./ibztask-team/ibztask-team.service')).default.getInstance();
     }
     /**
-     * 产品线服务
-     *
-     * @return {ProductLine}
-     * @memberof GlobalService
-     */
-    async getProductLineService() {
-        return (await import('./product-line/product-line.service')).default.getInstance();
-    }
-    /**
      * 后台服务架构服务
      *
      * @return {PSSysSFPub}

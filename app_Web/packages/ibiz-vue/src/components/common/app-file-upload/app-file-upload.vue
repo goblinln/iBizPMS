@@ -485,7 +485,7 @@ export default class AppFileUpload extends Vue {
      */
     public onDownload(file: any) {
         const url = `${this.downloadUrl}/${file.id}`;
-        this.DownloadFile(url);
+        this.DownloadFile(url,file);
     }
 
     /**
@@ -590,7 +590,7 @@ export default class AppFileUpload extends Vue {
      * @param item 下载文件
      * @memberof DiskFileUpload
      */
-    public DownloadFile(url: string) {
+    public DownloadFile(url: string,file: any) {
         // 发送get请求
         axios({
             method: 'get',
@@ -604,8 +604,7 @@ export default class AppFileUpload extends Vue {
             // 请求成功，后台返回的是一个文件流
             if (response.data) {
                 // 获取文件名
-                const disposition = response.headers['content-disposition'];
-                const filename = disposition.split('filename=')[1];
+                const filename = file.name;
                 const ext = '.' + filename.split('.').pop();
                 let filetype = this.calcFilemime(ext);
                 // 用blob对象获取文件流

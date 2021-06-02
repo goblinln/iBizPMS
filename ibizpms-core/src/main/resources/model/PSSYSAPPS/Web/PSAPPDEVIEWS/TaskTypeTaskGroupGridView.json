@@ -1125,7 +1125,7 @@
             },
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "TaskForward"
+              "id" : "CheckOperator"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1211,7 +1211,7 @@
             },
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "TaskForward"
+              "id" : "CheckOperator"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -1366,6 +1366,10 @@
             "dataAccessAction" : "NFAVORITES",
             "fullCodeName" : "Task_TaskFavorites",
             "name" : "收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "TaskFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
@@ -1396,6 +1400,10 @@
             "dataAccessAction" : "FAVORITES",
             "fullCodeName" : "Task_TaskNFavorites",
             "name" : "取消收藏",
+            "getPSAppDEMethod" : {
+              "modelref" : true,
+              "id" : "TaskNFavorites"
+            },
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"

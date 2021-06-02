@@ -179,11 +179,6 @@
         .el-table__body-wrapper,.el-table__fixed-body-wrapper{
           height: calc( 100% - 45px );
         }
-        .el-table__fixed-body-wrapper {
-          .default-ua-column {
-            right: 6px;
-          }
-        }
         // 选中和悬浮激活色
         .el-table__row.grid-selected-row,.el-table__row.hover-row{
           td{
@@ -206,6 +201,14 @@
           }
         }
       }
+      .el-table.el-table--scrollable-y {
+        .el-table__fixed-right {
+          right: 10px !important;
+        }
+      }
+      .el-table.el-table--scrollable-y ~ .page-column {
+        right: 10px;
+      }
       // 过滤项
       .ivu-form{
         position: relative;
@@ -213,7 +216,7 @@
       .ivu-poptip.page-column{
         position: absolute;
         top: 0px;
-        right: 10px;
+        right: 0px;
         z-index: 3;
         background-color: #57A3FD;;
         height: 45px;

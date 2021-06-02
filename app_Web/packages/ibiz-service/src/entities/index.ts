@@ -91,7 +91,6 @@ export * from './ibz-plan-templet-detail/ibz-plan-templet-detail';
 export * from './ibzpro-config/ibzpro-config';
 export * from './ibzpro-story/ibzpro-story';
 export * from './ibztask-team/ibztask-team';
-export * from './product-line/product-line';
 export * from './pssys-sfpub/pssys-sfpub';
 export * from './project-stats/project-stats';
 export * from './test-run/test-run';

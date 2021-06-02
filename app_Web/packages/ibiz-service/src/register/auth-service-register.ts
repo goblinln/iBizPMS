@@ -145,7 +145,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('ibzproconfig', () => import('../authservice/ibzpro-config/ibzpro-config-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzprostory', () => import('../authservice/ibzpro-story/ibzpro-story-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibztaskteam', () => import('../authservice/ibztask-team/ibztask-team-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('productline', () => import('../authservice/product-line/product-line-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('pssyssfpub', () => import('../authservice/pssys-sfpub/pssys-sfpub-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectstats', () => import('../authservice/project-stats/project-stats-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testrun', () => import('../authservice/test-run/test-run-auth-service'));

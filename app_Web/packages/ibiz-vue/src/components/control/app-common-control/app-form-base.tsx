@@ -384,26 +384,14 @@ export class AppFormBase extends EditFormControlBase {
         if (sysCss?.cssName) {
             Object.assign(controlClassNames, { [sysCss.cssName]: true });
         }
-        let title: any = uiAction?.caption;
-        const { codeName, controlType } = this.controlInstance;
-        const appDataEntity = this.controlInstance.getPSAppDataEntity();
-        if (appDataEntity) {
-            let tag = `entities.${appDataEntity.codeName?.toLowerCase()}.${codeName?.toLowerCase()}_${controlType?.toLowerCase()}.uiactions.`;
-            if (uiAction?.getPSAppDataEntity()) {
-                tag += uiAction.getPSAppDataEntity()?.codeName?.toLowerCase() + '_';
-            }
-            tag += uiAction?.uIActionTag?.toLowerCase();
-            title = this.$t(tag) || title;
-        }
         return (
             <div>
                 {badge}
                 <i-button
-                    title={title}
                     type='primary'
                     class={controlClassNames}
                     style={btnClass}
-                    on-click={($event: any) => debounce(this.onFormItemActionClick,[{ tag: modelJson.name, event: $event }],this)}
+                    on-click={($event: any) => debounce(this.onFormItemActionClick,[{formdetail:modelJson, event: $event }],this)}
                     disabled={this.detailsModel[modelJson.name]?.disabled}
                 >
                     {sysImage ? (

@@ -7,51 +7,49 @@
       "dataType" : 25,
       "name" : "value",
       "getPSAppDEField" : {
-        "name" : "IBZ_PRODUCTLINEID",
-        "codeName" : "ProductLineId"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 25,
       "name" : "text",
       "getPSAppDEField" : {
-        "name" : "IBZ_PRODUCTLINENAME",
-        "codeName" : "ProductLineName"
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     } ],
     "pagingSize" : 50,
     "getTextPSAppDEField" : {
-      "name" : "IBZ_PRODUCTLINENAME",
-      "codeName" : "ProductLineName"
+      "name" : "NAME",
+      "codeName" : "Name"
     },
     "getValuePSAppDEField" : {
-      "name" : "IBZ_PRODUCTLINEID",
-      "codeName" : "ProductLineId"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "defaultMode" : true,
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Create",
+    "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__CREATE"
+      "id" : "Save"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -59,47 +57,33 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__UPDATE"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Remove",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Remove.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__GET"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -111,37 +95,57 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CheckKey",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/CheckKey.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/CheckKey.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
@@ -157,42 +161,9 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
-    "codeName" : "ProductLineName",
-    "logicName" : "产品线名称",
-    "name" : "IBZ_PRODUCTLINENAME",
-    "stdDataType" : 25,
-    "stringLength" : 200,
-    "enableQuickSearch" : true,
-    "majorField" : true
-  }, {
-    "codeName" : "ProductLineId",
-    "logicName" : "产品线标识",
-    "name" : "IBZ_PRODUCTLINEID",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "keyField" : true
-  }, {
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "name" : "UPDATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "name" : "UPDATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
-  }, {
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "name" : "CREATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
-  }, {
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
@@ -200,121 +171,76 @@
     "logicName" : "排序",
     "name" : "ORDER",
     "stdDataType" : 9
+  }, {
+    "codeName" : "Id",
+    "logicName" : "id",
+    "name" : "ID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "IBizShort",
+    "logicName" : "简称",
+    "name" : "SHORT",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "MdeptId",
+    "logicName" : "部门标识",
+    "name" : "MDEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "MdeptName",
+    "logicName" : "归属部门名",
+    "name" : "MDEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Name",
+    "logicName" : "产品线名称",
+    "name" : "NAME",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "name" : "DELETED",
+    "stdDataType" : 25,
+    "stringLength" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Select"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__CREATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "PRODUCTLINE__DEACTION__GET"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CheckKey"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
+    "name" : "Save",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDEACTIONS/Save.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -324,6 +250,7 @@
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
+    "name" : "FetchDefault",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
@@ -337,6 +264,104 @@
       "id" : "FetchDefault"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
   }, {
     "codeName" : "FilterUpdate",
     "methodType" : "FILTERACTION",
@@ -392,15 +417,15 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json",
   "enableUIActions" : 15,
   "logicName" : "产品线",
-  "name" : "IBZ_PRODUCTLINE",
-  "getPSDEName" : "IBZ_PRODUCTLINE",
+  "name" : "IBZPRO_PRODUCTLINE",
+  "getPSDEName" : "IBZPRO_PRODUCTLINE",
   "getPSDEServiceAPI" : {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLine/PSDESERVICEAPIS/ProductLine.json"
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDESERVICEAPIS/ProductLine.json"
   },
   "getQuickSearchPSAppDEFields" : [ {
-    "name" : "IBZ_PRODUCTLINENAME",
-    "codeName" : "ProductLineName"
+    "name" : "NAME",
+    "codeName" : "Name"
   } ],
   "storageMode" : 0,
   "defaultMode" : true,

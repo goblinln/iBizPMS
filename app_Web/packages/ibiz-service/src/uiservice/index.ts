@@ -90,7 +90,6 @@ export * from './ibz-plan-templet-detail/ibz-plan-templet-detail-ui-service';
 export * from './ibzpro-config/ibzpro-config-ui-service';
 export * from './ibzpro-story/ibzpro-story-ui-service';
 export * from './ibztask-team/ibztask-team-ui-service';
-export * from './product-line/product-line-ui-service';
 export * from './pssys-sfpub/pssys-sfpub-ui-service';
 export * from './project-stats/project-stats-ui-service';
 export * from './test-run/test-run-ui-service';

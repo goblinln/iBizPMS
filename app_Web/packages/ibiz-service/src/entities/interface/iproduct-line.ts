@@ -1,7 +1,7 @@
 import { IEntityBase } from 'ibiz-core';
 
 /**
- * 产品线（废弃）
+ * 产品线
  *
  * @export
  * @interface IProductLine
@@ -9,31 +9,53 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IProductLine extends IEntityBase {
     /**
-     * 产品线名称
+     * 组织机构标识
      */
-    productlinename?: any;
-    /**
-     * 产品线标识
-     */
-    productlineid?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
-    /**
-     * 更新时间
-     */
-    updatedate?: any;
-    /**
-     * 建立时间
-     */
-    createdate?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
+    orgid?: any;
     /**
      * 排序
      */
     order?: any;
+    /**
+     * id
+     */
+    id?: any;
+    /**
+     * 简称
+     */
+    ibizshort?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 类型
+     *
+     * @type {('line' | 'story' | 'task' | 'doc' | 'case' | 'bug')} line: 产品线, story: 需求, task: 任务, doc: 文档目录, case: 测试用例, bug: Bug
+     */
+    type?: 'line' | 'story' | 'task' | 'doc' | 'case' | 'bug';
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 产品线名称
+     */
+    name?: any;
+    /**
+     * 已删除
+     */
+    deleted?: any;
 }

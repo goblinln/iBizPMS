@@ -90,7 +90,6 @@ export * from './iibz-plan-templet-detail';
 export * from './iibzpro-config';
 export * from './iibzpro-story';
 export * from './iibztask-team';
-export * from './iproduct-line';
 export * from './ipssys-sfpub';
 export * from './iproject-stats';
 export * from './itest-run';

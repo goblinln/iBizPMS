@@ -435,10 +435,6 @@ zuul:
       path: /ibztaskteams/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
-    ibz_productline:
-      path: /productlines/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
     pssyssfpub:
       path: /pssyssfpubs/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

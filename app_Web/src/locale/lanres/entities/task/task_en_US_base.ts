@@ -267,6 +267,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("继续任务",null),
 				title: commonLogic.appcommonhandle("继续任务",null),
 			},
+			'redirectview': {
+				caption: commonLogic.appcommonhandle("任务",null),
+				title: commonLogic.appcommonhandle("task数据重定向视图",null),
+			},
 			'forwardview': {
 				caption: commonLogic.appcommonhandle("转交任务",null),
 				title: commonLogic.appcommonhandle("转交任务",null),

@@ -1034,14 +1034,79 @@ export class EditFormControlBase extends FormControlBase {
     }
 
     /**
-     * 编辑器行为触发
+     * 表单按钮行为触发
      *
      * @param {*} arg
      * @returns {void}
      * @memberof EditFormControlBase
      */
-    public onFormItemActionClick({ tag, event }: any) {
-        AppViewLogicService.getInstance().executeViewLogic(`${this.controlInstance.name}_${tag}_click`, event, this, null, this.controlInstance.getPSAppViewLogics());
+     public async onFormItemActionClick({ formdetail, event }: any) {
+        if (formdetail && formdetail.actionType && Object.is(formdetail.actionType, 'FIUPDATE')) {
+            const itemUpdate = formdetail.getPSDEFormItemUpdate();
+            const showBusyIndicator = itemUpdate?.showBusyIndicator;
+            const getPSAppDEMethod = itemUpdate?.getPSAppDEMethod();
+            const getPSDEFIUpdateDetails = itemUpdate?.getPSDEFIUpdateDetails();
+            let details: string[] = [];
+            getPSDEFIUpdateDetails?.forEach((item: IPSDEFIUpdateDetail) => {
+                details.push(item.name);
+            })
+            if (formdetail.getParamPickupPSAppView()) {
+                const pickupview = formdetail.getParamPickupPSAppView();
+                await pickupview.fill();
+                if (!pickupview) {
+                    this.updateFormItems(getPSAppDEMethod?.codeName as string, this.data, details, showBusyIndicator);
+                } else {
+                    const tempContext: any = Util.deepCopy(this.context);
+                    const data: any = Util.deepCopy(this.viewparams);
+                    if (formdetail.paramViewParamJO) {
+                        let result: any = Util.computedNavData(this.data, tempContext, data, formdetail.paramViewParamJO);
+                        Object.assign(data, result);
+                    }
+                    if (pickupview.openMode.indexOf('DRAWER') !== -1) {
+                        const view: any = {
+                            viewname: 'app-view-shell',
+                            height: pickupview.height,
+                            width: pickupview.width,
+                            title: pickupview.title,
+                            placement: pickupview.openMode,
+                        };
+                        if (pickupview && pickupview.modelPath) {
+                            Object.assign(tempContext, { viewpath: pickupview.modelPath });
+                        }
+                        const appdrawer = this.$appdrawer.openDrawer(view, Util.getViewProps(tempContext, data));
+                        appdrawer.subscribe((result: any) => {
+                            if (result && Object.is(result.ret, 'OK')) {
+                                const arg: any = this.getData();
+                                Object.assign(arg, { srfactionparam: result.datas });
+                                this.updateFormItems(getPSAppDEMethod?.codeName as string, arg, details, showBusyIndicator);
+                            }
+                        });
+                    } else {
+                        const view: any = {
+                            viewname: 'app-view-shell',
+                            height: pickupview.height,
+                            width: pickupview.width,
+                            title: pickupview.title,
+                        };
+                        if (pickupview && pickupview.modelPath) {
+                            Object.assign(tempContext, { viewpath: pickupview.modelPath });
+                        }
+                        const appmodal = this.$appmodal.openModal(view, tempContext, data);
+                        appmodal.subscribe((result: any) => {
+                            if (result && Object.is(result.ret, 'OK')) {
+                                const arg: any = this.getData();
+                                Object.assign(arg, { srfactionparam: result.datas });
+                                this.updateFormItems(getPSAppDEMethod?.codeName as string, arg, details, showBusyIndicator);
+                            }
+                        });
+                    }
+                }
+            } else {
+                this.updateFormItems(getPSAppDEMethod?.codeName as string, this.data, details, showBusyIndicator);
+            }
+        } else {
+            AppViewLogicService.getInstance().executeViewLogic(`${this.controlInstance.name}_${formdetail.name}_click`, event, this, null, this.controlInstance.getPSAppViewLogics());
+        }
     }
 
     /**

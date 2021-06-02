@@ -2,9 +2,11 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { IProductLine, ProductLine } from '../../entities';
 import keys from '../../entities/product-line/product-line-keys';
+import { isNil, isEmpty } from 'ramda';
+import { PSDEDQCondEngine } from 'ibiz-core';
 
 /**
- * 产品线（废弃）服务对象基类
+ * 产品线服务对象基类
  *
  * @export
  * @class ProductLineBaseService
@@ -18,9 +20,9 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
     protected APPNAME = 'Web';
     protected APPDENAME = 'ProductLine';
     protected APPDENAMEPLURAL = 'ProductLines';
-    protected APPDEKEY = 'productlineid';
-    protected APPDETEXT = 'productlinename';
-    protected quickSearchFields = ['productlinename',];
+    protected APPDEKEY = 'id';
+    protected APPDETEXT = 'name';
+    protected quickSearchFields = ['name',];
     protected selectContextParam = {
     };
 
@@ -65,16 +67,56 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         }
         return new HttpResponse(entity);
     }
+
+    protected getDefaultCond() {
+        if (!this.condCache.has('default')) {
+            const strCond: any[] = ['AND', ['EQ', 'TYPE','line']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('default', cond);
+            }
+        }
+        return this.condCache.get('default');
+    }
+
+    protected getSimpleCond() {
+        if (!this.condCache.has('simple')) {
+            const strCond: any[] = ['AND', ['EQ', 'TYPE','line']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('simple', cond);
+            }
+        }
+        return this.condCache.get('simple');
+    }
+
+    protected getViewCond() {
+        return this.condCache.get('view');
+    }
     /**
-     * Select
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLineService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productlines/${_context.productline}/select`);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productlines/fetchdefault`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productlines/${_context.productline}`, _data);
     }
     /**
      * Create
@@ -95,41 +137,6 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.http.post(`/productlines`, _data);
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productlines/${_context.productline}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productlines/${_context.productline}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productlines/${_context.productline}`);
-        return res;
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -144,14 +151,26 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return res;
     }
     /**
-     * FetchDefault
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLineService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlines/fetchdefault`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/productlines/${_context.productline}`);
+        return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/productlines/${_context.productline}`);
     }
 }

@@ -276,10 +276,10 @@ export class AppBackEndAction {
                         width: frontPSAppView.width,
                         title: frontPSAppView.title,
                     };
-                    const appmodal = actionContext.$appmodal.openModal(view, context, data);
                     if (frontPSAppView && frontPSAppView.modelPath) {
                         Object.assign(context, { viewpath: frontPSAppView.modelPath });
                     }
+                    const appmodal = actionContext.$appmodal.openModal(view, context, data);
                     appmodal.subscribe((result: any) => {
                         if (result && Object.is(result.ret, 'OK')) {
                             Object.assign(data, { srfactionparam: result.datas });
