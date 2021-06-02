@@ -511,7 +511,7 @@ export class GanttControlBase extends MDControlBase {
                 }
                 this.appUIService
                     .getRDAppView(
-                        this.context,
+                        tempContext,
                         args[0][this.appDeCodeName.toLowerCase()],
                         params,
                     )
@@ -519,6 +519,7 @@ export class GanttControlBase extends MDControlBase {
                         if (!result) {
                             return;
                         }
+                        const returnContext: any = result.srftempcontext;
                         let targetOpenViewRef:
                             | IPSAppViewRef
                             | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
@@ -555,6 +556,17 @@ export class GanttControlBase extends MDControlBase {
                         };
                         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
                             if (targetOpenView.getPSAppDataEntity()) {
+                                deResParameters = Util.formatAppDERSPath(
+                                    tempContext,
+                                    (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
+                                );
+                                if (deResParameters && (deResParameters.length == 0) && returnContext && (Object.keys(returnContext).length > 0)) {
+                                    Object.assign(tempContext, returnContext);
+                                    deResParameters = Util.formatAppDERSPath(
+                                        tempContext,
+                                        (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
+                                    );
+                                }
                                 parameters = [
                                     {
                                         pathName: Util.srfpluralize(

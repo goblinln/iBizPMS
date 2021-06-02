@@ -221,10 +221,11 @@ export default class AppColumnLink extends Vue {
         if ( targetRedirectView.getRedirectPSAppViewRefs() && targetRedirectView.getRedirectPSAppViewRefs()?.length === 0 ) {
             return;
         }
-        let result = await this.appUIService.getRDAppView(this.context,this.data[this.deKeyField], params);
+        let result = await this.appUIService.getRDAppView(context,this.data[this.deKeyField], params);
         if (!result) {
             return;
         }
+        const returnContext: any = result.srftempcontext;
         let targetOpenViewRef: | IPSAppViewRef | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
             return item.name === result.param.split(':')[0];
         });
@@ -256,6 +257,18 @@ export default class AppColumnLink extends Vue {
         };
         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
             if (targetOpenView.getPSAppDataEntity()) {
+                let deResParameters = Util.formatAppDERSPath(
+                    context,
+                    (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
+                );
+                if (deResParameters && (deResParameters.length == 0) && returnContext && (Object.keys(returnContext).length > 0)) {
+                    Object.assign(context, returnContext);
+                    deResParameters = Util.formatAppDERSPath(
+                        context,
+                        (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
+                    );
+                }
+                view.deResParameters = deResParameters;
                 view.parameters = [
                     {
                         pathName: Util.srfpluralize(

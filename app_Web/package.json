@@ -28,7 +28,6 @@
         "dingtalk-jsapi": "^2.13.23",
         "async-validator": "^3.5.1",
         "axios": "^0.21.1",
-        "codemirror": "^5.61.0",
         "core-js": "^3.10.1",
         "echarts": "5.0.2",
         "element-ui": "^2.15.1",
@@ -67,7 +66,6 @@
         "xlsx": "^0.16.9"
     },
     "devDependencies": {
-        "@types/codemirror": "^5.60.0",
         "@ibiz/cli": "0.1.1",
         "@types/echarts": "^4.9.7",
         "@types/mockjs": "^1.0.3",

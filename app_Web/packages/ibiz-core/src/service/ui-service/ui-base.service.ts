@@ -1,7 +1,6 @@
-import { IPSAppDataEntity, IPSAppDEField, IPSDEMainState, IPSDEMainStateOPPriv, IPSDEOPPriv } from '@ibiz/dynamic-model-api';
+import { IPSAppDataEntity, IPSAppDEField, IPSAppDERS, IPSDEMainState, IPSDEMainStateOPPriv, IPSDEOPPriv } from '@ibiz/dynamic-model-api';
 import { LogUtil, ModelTool } from 'ibiz-core';
 import { AppServiceBase } from '../app-service/app-base.service';
-import { AuthServiceBase } from '../auth-service/auth-base.service';
 import { GetModelService } from '../model-service/model-service';
 
 /**
@@ -342,8 +341,20 @@ export class UIServiceBase {
         let result: any = await this.dataService.Get(context);
         const curData: any = result.data;
         // 设置原始数据
-        if (curData && Object.keys(curData).length >0){
+        if (curData && Object.keys(curData).length > 0) {
             Object.assign(returnData, { 'srfdata': curData });
+        }
+        // 计算临时上下文
+        let tempContext: any = {};
+        if (this.entityModel && this.entityModel.getMinorPSAppDERSs() && ((this.entityModel.getMinorPSAppDERSs() as IPSAppDERS[]).length > 0)) {
+            this.entityModel.getMinorPSAppDERSs()?.forEach((item: IPSAppDERS) => {
+                if (item.M.getParentPSAppDEField && item.M.getParentPSAppDEField.codeName && curData[item.M.getParentPSAppDEField.codeName] && !context[item.M.getParentPSAppDEField.codeName]) {
+                    Object.assign(tempContext, { [item.M.getParentPSAppDEField.codeName.toLowerCase()]: curData[item.M.getParentPSAppDEField.codeName] });
+                }
+            })
+        }
+        if (tempContext && Object.keys(tempContext).length > 0) {
+            Object.assign(returnData, { 'srftempcontext': tempContext });
         }
         // 设置临时组织标识（用于获取多实例）
         if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
