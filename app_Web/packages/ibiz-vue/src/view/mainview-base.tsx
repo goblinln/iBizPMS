@@ -540,6 +540,7 @@ export class MainViewBase extends ViewBase {
                 Object.assign(params,this.viewparams);
                 this.appUIService
                     .getRDAppView(
+                        this.context,
                         args[0][(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string)?.toLowerCase()],
                         params,
                     )
@@ -614,8 +615,8 @@ export class MainViewBase extends ViewBase {
                                     },
                                 ];
                             }
-                            if (targetRedirectView && targetRedirectView.modelPath) {
-                                Object.assign(tempContext, { viewpath: targetRedirectView.modelPath });
+                            if (targetOpenView && targetOpenView.modelPath) {
+                                Object.assign(tempContext, { viewpath: targetOpenView.modelPath });
                             }
                         }
                         this.openTargtView(

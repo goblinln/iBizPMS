@@ -115,7 +115,7 @@ import commonLogic from '@/locale/logic/common/common-logic';
 function getAppLocale(){
     const data:any = {
          app: {
-            commonWords:{
+            commonwords:{
                 error: "Error",
                 success: "Success",
                 ok: "OK",
@@ -348,7 +348,7 @@ function getAppLocale(){
                 year: "Year",
             },
             searchform: {
-                notConfig: {
+                notconfig: {
                     loadaction: "View search form loadAction parameter is not configured",
                     loaddraftaction: "View search form loaddraftAction parameter is not configured",
                 },
@@ -356,7 +356,7 @@ function getAppLocale(){
                 title: "Name",
                 globalerrortip:"Please check if the information is incorrect",
             },
-            wizardPanel: {
+            wizardpanel: {
                 back: "Back",
                 next: "Next",
                 complete: "Complete",

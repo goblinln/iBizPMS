@@ -330,15 +330,21 @@ export class UIServiceBase {
     /**
      * 获取指定数据的重定向页面
      *
+     * @param context 应用上下文
      * @param srfkey 数据主键
      * @param enableWorkflowParam  重定向视图需要处理流程中的数据
      * @memberof  UIServiceBase
      */
-    protected async getRDAppView(srfkey: string, enableWorkflowParam: any) {
+    protected async getRDAppView(context: any, srfkey: string, enableWorkflowParam: any) {
         // 进行数据查询
         let returnData: any = {};
-        let result: any = await this.dataService.Get({ [this.entityModel.codeName.toLowerCase()]: srfkey });
+        Object.assign(context, { [this.entityModel.codeName.toLowerCase()]: srfkey });
+        let result: any = await this.dataService.Get(context);
         const curData: any = result.data;
+        // 设置原始数据
+        if (curData && Object.keys(curData).length >0){
+            Object.assign(returnData, { 'srfdata': curData });
+        }
         // 设置临时组织标识（用于获取多实例）
         if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
             Object.assign(returnData, { 'srfsandboxtag': curData[this.tempOrgIdDEField] });
@@ -369,7 +375,7 @@ export class UIServiceBase {
             return returnData;
         } else {
             //返回视图功能数据
-            Object.assign(returnData, { 'param': `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ''}` });
+            Object.assign(returnData, { 'param': `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : strPDTViewParam}` });
             return returnData;
         }
     }
@@ -549,12 +555,12 @@ export class UIServiceBase {
         if (!Environment.enablePermissionValid) {
             return 1;
         }
-        if(data && (Object.keys(data).length > 0)){
+        if (data && (Object.keys(data).length > 0)) {
             const curActiveKey: string = `${data[this.appDeKeyFieldName?.toLowerCase()]}`;
-            const result = this.authService.getOPPrivs(curActiveKey, dataaccaction,this.getDEMainStateOPPrivs(data));
+            const result = this.authService.getOPPrivs(curActiveKey, dataaccaction, this.getDEMainStateOPPrivs(data));
             return result[dataaccaction];
-        }else{
-            const result = this.authService.getOPPrivs(undefined, dataaccaction,undefined);
+        } else {
+            const result = this.authService.getOPPrivs(undefined, dataaccaction, undefined);
             return result[dataaccaction];
         }
     }

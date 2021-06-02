@@ -221,7 +221,7 @@ export default class AppColumnLink extends Vue {
         if ( targetRedirectView.getRedirectPSAppViewRefs() && targetRedirectView.getRedirectPSAppViewRefs()?.length === 0 ) {
             return;
         }
-        let result = await this.appUIService.getRDAppView(this.data[this.deKeyField], params);
+        let result = await this.appUIService.getRDAppView(this.context,this.data[this.deKeyField], params);
         if (!result) {
             return;
         }
@@ -287,8 +287,8 @@ export default class AppColumnLink extends Vue {
                     },
                 ];
             }
-            if (targetRedirectView && targetRedirectView.modelPath) {
-                Object.assign(context, { viewpath: targetRedirectView.modelPath });
+            if (targetOpenView && targetOpenView.modelPath) {
+                Object.assign(context, { viewpath: targetOpenView.modelPath });
             }
         }
         if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {

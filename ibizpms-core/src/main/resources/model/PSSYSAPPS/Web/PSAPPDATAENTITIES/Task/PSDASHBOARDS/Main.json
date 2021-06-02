@@ -5814,34 +5814,34 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "APPVIEWUIACTION",
-            "name" : "dashboard_sysportlet2_u1596d9c_click",
+            "name" : "dashboard_sysportlet2_u62041c1_click",
             "getPSAppViewUIAction" : {
               "modelref" : true,
-              "id" : "转交任务(操作栏)(多人任务检查)"
+              "id" : "转交任务（操作栏）"
             }
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "APPVIEWUIACTION",
-            "name" : "dashboard_sysportlet2_u5a6cb3f_click",
+            "name" : "dashboard_sysportlet2_u7477548_click",
             "getPSAppViewUIAction" : {
               "modelref" : true,
-              "id" : "开始任务(操作栏)(多人任务检查)"
+              "id" : "开始任务（操作栏）"
             }
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "APPVIEWUIACTION",
-            "name" : "dashboard_sysportlet2_u1a35262_click",
+            "name" : "dashboard_sysportlet2_uaf82b8f_click",
             "getPSAppViewUIAction" : {
               "modelref" : true,
-              "id" : "工时（多人任务检查）"
+              "id" : "工时"
             }
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "APPVIEWUIACTION",
-            "name" : "dashboard_sysportlet2_u37f427d_click",
+            "name" : "dashboard_sysportlet2_u52fabd0_click",
             "getPSAppViewUIAction" : {
               "modelref" : true,
-              "id" : "暂停任务(操作栏)(多人任务检查)"
+              "id" : "暂停任务（操作栏）"
             }
           }, {
             "logicTrigger" : "CUSTOM",
@@ -5952,50 +5952,50 @@
             "uIActionTarget" : "SINGLEKEY",
             "xDataControlName" : "dashboard_sysportlet2"
           }, {
-            "name" : "转交任务(操作栏)(多人任务检查)",
+            "name" : "转交任务（操作栏）",
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
               },
               "modelref" : true,
-              "id" : "checkForwardDash@Task"
+              "id" : "ForwardDash@Task"
             },
             "uIActionTarget" : "SINGLEKEY",
             "xDataControlName" : "dashboard_sysportlet2"
           }, {
-            "name" : "开始任务(操作栏)(多人任务检查)",
+            "name" : "开始任务（操作栏）",
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
               },
               "modelref" : true,
-              "id" : "MStartTaskDash@Task"
+              "id" : "StartTaskDash@Task"
             },
             "uIActionTarget" : "SINGLEKEY",
             "xDataControlName" : "dashboard_sysportlet2"
           }, {
-            "name" : "工时（多人任务检查）",
+            "name" : "工时",
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
               },
               "modelref" : true,
-              "id" : "MWorkHours@Task"
+              "id" : "WorkHours@Task"
             },
             "uIActionTarget" : "SINGLEKEY",
             "xDataControlName" : "dashboard_sysportlet2"
           }, {
-            "name" : "暂停任务(操作栏)(多人任务检查)",
+            "name" : "暂停任务（操作栏）",
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
               },
               "modelref" : true,
-              "id" : "MPauseTask@Task"
+              "id" : "PauseTaskDash@Task"
             },
             "uIActionTarget" : "SINGLEKEY",
             "xDataControlName" : "dashboard_sysportlet2"
@@ -6262,192 +6262,144 @@
               "showIcon" : true
             }, {
               "detailType" : "DEUIACTION",
-              "name" : "u1596d9c",
+              "name" : "u62041c1",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "转交",
-                "codeName" : "checkForwardDash",
+                "codeName" : "ForwardDash",
                 "dataAccessAction" : "FORWARD",
-                "fullCodeName" : "Task_checkForwardDash",
-                "name" : "转交任务(操作栏)(多人任务检查)",
-                "getNextPSUIAction" : {
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                  },
+                "getFrontPSAppView" : {
                   "modelref" : true,
-                  "id" : "ForwardDash@Task"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskForwardView.json",
+                  "viewType" : "DEOPTVIEW"
                 },
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "TaskForward"
-                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "Task_ForwardDash",
+                "name" : "转交任务（操作栏）",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
-                "getPSNavigateParams" : [ {
-                  "key" : "actioninfo",
-                  "name" : "actioninfo",
-                  "value" : "当前任务只有%1$s才可以转交。",
-                  "rawValue" : true
-                } ],
                 "getPSSysImage" : {
                   "glyph" : "xf064@FontAwesome",
                   "cssClass" : "fa fa-mail-forward"
                 },
-                "refreshMode" : 1,
                 "timeout" : 60000,
-                "uIActionMode" : "BACKEND",
-                "uIActionTag" : "checkForwardDash",
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "ForwardDash",
                 "uIActionType" : "DEUIACTION",
-                "enableConfirm" : true,
-                "reloadData" : true,
-                "showBusyIndicator" : false,
-                "id" : "checkForwardDash@Task"
+                "id" : "ForwardDash@Task"
               },
               "addSeparator" : false,
               "showCaption" : true,
               "showIcon" : true
             }, {
               "detailType" : "DEUIACTION",
-              "name" : "u5a6cb3f",
+              "name" : "u7477548",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "开始",
-                "codeName" : "MStartTaskDash",
+                "codeName" : "StartTaskDash",
                 "dataAccessAction" : "START",
-                "fullCodeName" : "Task_MStartTaskDash",
-                "name" : "开始任务(操作栏)(多人任务检查)",
-                "getNextPSUIAction" : {
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                  },
+                "getFrontPSAppView" : {
                   "modelref" : true,
-                  "id" : "StartTaskDash@Task"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
+                  "viewType" : "DEOPTVIEW"
                 },
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "TaskForward"
-                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "Task_StartTaskDash",
+                "name" : "开始任务（操作栏）",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
-                "getPSNavigateParams" : [ {
-                  "key" : "actioninfo",
-                  "name" : "actioninfo",
-                  "value" : "当前任务只有%1$s才可以开始。",
-                  "rawValue" : true
-                } ],
                 "getPSSysImage" : {
                   "glyph" : "xf01d@FontAwesome",
                   "cssClass" : "fa fa-play-circle-o"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
-                "uIActionMode" : "BACKEND",
-                "uIActionTag" : "MStartTaskDash",
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "StartTaskDash",
                 "uIActionType" : "DEUIACTION",
-                "enableConfirm" : true,
-                "showBusyIndicator" : false,
-                "id" : "MStartTaskDash@Task"
+                "reloadData" : true,
+                "id" : "StartTaskDash@Task"
               },
               "addSeparator" : false,
               "showCaption" : true,
               "showIcon" : true
             }, {
               "detailType" : "DEUIACTION",
-              "name" : "u1a35262",
+              "name" : "uaf82b8f",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "工时",
-                "codeName" : "MWorkHours",
+                "codeName" : "WorkHours",
                 "dataAccessAction" : "RECORDESTIMATE",
-                "fullCodeName" : "Task_MWorkHours",
-                "name" : "工时（多人任务检查）",
-                "getNextPSUIAction" : {
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                  },
+                "getFrontPSAppView" : {
                   "modelref" : true,
-                  "id" : "WorkHours@Task"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskWorkHoursView.json",
+                  "viewType" : "DEOPTVIEW"
                 },
-                "getPSAppDEMethod" : {
-                  "modelref" : true,
-                  "id" : "TaskForward"
-                },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "Task_WorkHours",
+                "name" : "工时",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
-                "getPSNavigateParams" : [ {
-                  "key" : "actioninfo",
-                  "name" : "actioninfo",
-                  "value" : "当前任务只有%1$s才可以记录工时。",
-                  "rawValue" : true
+                "getPSNavigateContexts" : [ {
+                  "key" : "PROJECT",
+                  "name" : "PROJECT",
+                  "value" : "project",
+                  "rawValue" : false
                 } ],
                 "getPSSysImage" : {
                   "glyph" : "xf017@FontAwesome",
                   "cssClass" : "fa fa-clock-o"
                 },
                 "timeout" : 60000,
-                "uIActionMode" : "BACKEND",
-                "uIActionTag" : "MWorkHours",
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "WorkHours",
                 "uIActionType" : "DEUIACTION",
-                "enableConfirm" : true,
-                "showBusyIndicator" : false,
-                "id" : "MWorkHours@Task"
+                "id" : "WorkHours@Task"
               },
               "addSeparator" : false,
               "showCaption" : true,
               "showIcon" : true
             }, {
               "detailType" : "DEUIACTION",
-              "name" : "u37f427d",
+              "name" : "u52fabd0",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "暂停",
-                "codeName" : "MPauseTask",
+                "codeName" : "PauseTaskDash",
                 "dataAccessAction" : "PAUSE",
-                "fullCodeName" : "Task_MPauseTask",
-                "name" : "暂停任务(操作栏)(多人任务检查)",
-                "getNextPSUIAction" : {
-                  "getPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                  },
+                "getFrontPSAppView" : {
                   "modelref" : true,
-                  "id" : "PauseTaskDash@Task"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
+                  "viewType" : "DEOPTVIEW"
                 },
+                "frontProcessType" : "WIZARD",
+                "fullCodeName" : "Task_PauseTaskDash",
+                "name" : "暂停任务（操作栏）",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "TaskForward"
+                  "id" : "Pause"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
-                "getPSNavigateParams" : [ {
-                  "key" : "actioninfo",
-                  "name" : "actioninfo",
-                  "value" : "当前任务只有%1$s才可以暂停任务。",
-                  "rawValue" : true
-                } ],
                 "getPSSysImage" : {
                   "glyph" : "xf10c@FontAwesome",
                   "cssClass" : "fa fa-circle-o"
                 },
-                "refreshMode" : 1,
                 "timeout" : 60000,
-                "uIActionMode" : "BACKEND",
-                "uIActionTag" : "MPauseTask",
+                "uIActionMode" : "FRONT",
+                "uIActionTag" : "PauseTaskDash",
                 "uIActionType" : "DEUIACTION",
-                "enableConfirm" : true,
-                "reloadData" : true,
-                "showBusyIndicator" : false,
-                "id" : "MPauseTask@Task"
+                "id" : "PauseTaskDash@Task"
               },
               "addSeparator" : false,
               "showCaption" : true,

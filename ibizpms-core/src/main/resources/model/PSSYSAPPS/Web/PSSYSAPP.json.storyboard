@@ -720,20 +720,20 @@
     "psappsbitemid" : "70707e3381f7721e9e7532b7b3d2b3a7",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugGridView9_TaskRelated",
-    "psappsbitemname" : "相关Bug",
-    "itemtag2" : "1d5fa1834ef4c387c8bbb0e0450e9f5e",
-    "psappviewid" : "3da1f37a9dc628fb6755d3d9c03fc112",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView9_TaskRelated.json",
-    "psappsbitemid" : "47d726c6a64054b826a1e4c7b7d78bd6",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "StoryMainView",
     "psappsbitemname" : "需求数据看板视图",
     "itemtag2" : "0abb634ff3dc4041cf8d011feea0f2a0",
     "psappviewid" : "3f2ca3e560d9082bb56fbf7667a57a66",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
     "psappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugGridView9_TaskRelated",
+    "psappsbitemname" : "相关Bug",
+    "itemtag2" : "1d5fa1834ef4c387c8bbb0e0450e9f5e",
+    "psappviewid" : "3da1f37a9dc628fb6755d3d9c03fc112",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView9_TaskRelated.json",
+    "psappsbitemid" : "47d726c6a64054b826a1e4c7b7d78bd6",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzAgentMainInfoEditView",
@@ -1175,6 +1175,14 @@
     "psappsbitemid" : "65de40e85ca737a6c9c5b3dcb464e724",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "TaskTeamGridView9",
+    "psappsbitemname" : "团队",
+    "itemtag2" : "e52237e2778b5000be8021cf70f81845",
+    "psappviewid" : "d1339f33d3d82d7b6993e510b20fddbe",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9.json",
+    "psappsbitemid" : "a93e45d9c1fd41dfa15c59578849c265",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "BugAssingToView",
     "psappsbitemname" : "指派Bug",
     "itemtag2" : "3bd5379287405c62080d23d92d1f68b5",
@@ -1189,14 +1197,6 @@
     "psappviewid" : "9702df74499bfcf7b127558ebe7f1779",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseProjectReportLinkGridView.json",
     "psappsbitemid" : "6ad9e6d66ec2ca992762162391e9055b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskTeamGridView9",
-    "psappsbitemname" : "团队",
-    "itemtag2" : "e52237e2778b5000be8021cf70f81845",
-    "psappviewid" : "d1339f33d3d82d7b6993e510b20fddbe",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9.json",
-    "psappsbitemid" : "a93e45d9c1fd41dfa15c59578849c265",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestTaskMyDGridView",
@@ -2231,6 +2231,14 @@
     "psappsbitemid" : "44dad782d192f6922093768b2c96361a",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "TaskPauseTaskView",
+    "psappsbitemname" : "暂停任务",
+    "itemtag2" : "12f26dacfc9ba43a26028119393c0b98",
+    "psappviewid" : "9155179040bdf9819f076428450667b0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
+    "psappsbitemid" : "9bcaf836c523d9caa98833251e4e8159",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "FileProjectGridViewFile",
     "psappsbitemname" : "file表格视图",
     "itemtag2" : "4eb0a6a975dfb2f4d1ca63eea06f1a22",
@@ -2478,20 +2486,20 @@
     "psappsbitemid" : "9a698f3a1ec33c890f2c90731096d3e9",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskTeamGridView9_Look",
-    "psappsbitemname" : "团队",
-    "itemtag2" : "86e6bb9d2eb6f1c843a9abfabaae23c6",
-    "psappviewid" : "9d6b43cf5d65cb414cbccc84237178b7",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9_Look.json",
-    "psappsbitemid" : "cf8e37d79564f8f977f3957040255c89",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "StorySubGridView",
     "psappsbitemname" : "需求细分",
     "itemtag2" : "3002a1a685436f6b709a58191c28c7d6",
     "psappviewid" : "85897eeca4e1fb9fd7e7fe5c4fa28fa0",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
     "psappsbitemid" : "d260a8b8186f9a232e06ccd26f595987",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskTeamGridView9_Look",
+    "psappsbitemname" : "团队",
+    "itemtag2" : "86e6bb9d2eb6f1c843a9abfabaae23c6",
+    "psappviewid" : "9d6b43cf5d65cb414cbccc84237178b7",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9_Look.json",
+    "psappsbitemid" : "cf8e37d79564f8f977f3957040255c89",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzLibEditView9",
@@ -2620,6 +2628,14 @@
     "psappviewid" : "d7afba730262987d24bf40fcd4442fb9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsAssigntoGridView.json",
     "psappsbitemid" : "5d4110e3f8d144bbf232131868590e17",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskForwardView",
+    "psappsbitemname" : "转交任务",
+    "itemtag2" : "40ae68777aa2290106bf200940cd97c4",
+    "psappviewid" : "c52533db80ff130d23150b9bb3c3ae0b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskForwardView.json",
+    "psappsbitemid" : "9a4abd3706cb91d51e84fdb6a55e7d65",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskGroupTreeExpView",
@@ -5599,36 +5615,152 @@
     "psappsbitemrsname" : "指派任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "b57fba58130b796a5e45ee6fc987ea80",
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "9e6bfd787940c90524e8736382655356",
+    "ppsappsbitemname" : "转交任务",
+    "ppsappsbitemid" : "9a4abd3706cb91d51e84fdb6a55e7d65",
+    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "转交任务",
+    "psappsbitemrsid" : "4592cbb5bab32ed11b0ca1f0d2f75758",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
-    "psappsbitemrsname" : "转交任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "9a4abd3706cb91d51e84fdb6a55e7d65",
+    "psappsbitemrsname" : "转交任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "7bed2df88ba110db2979aa3da2c1c0ac",
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "36ac7aca2d210cd22475c90bfca5dc89",
+    "ppsappsbitemname" : "开始任务",
+    "ppsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "4c408ae7724bd8129c48c8c4baa1ea76",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
-    "psappsbitemrsname" : "开始任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "263130e18c71cbfdf62214966f31f736",
-    "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
-    "ppsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
-    "psappsbitemrsname" : "工时（多人任务检查）",
+    "psappsbitemrsid" : "2ac89703677969eca3722a0b49fa1bd5",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "NEWDATA",
+    "ppsappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
+    "psappsbitemrsname" : "新建视图",
+    "rstype" : "APPVIEWREF"
+  }, {
+    "psappsbitemrsid" : "300a6c270fbd5d25fada5cd4cd4857c7",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "EDITDATA",
+    "ppsappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
+    "psappsbitemrsname" : "编辑视图",
+    "rstype" : "APPVIEWREF"
+  }, {
+    "cpsappsbitemname" : "任务预计表格视图",
+    "psappsbitemrsid" : "4ddc9e128b0452b9d8b7e1037cc3796d",
+    "ppsappsbitemname" : "工时",
+    "ppsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
+    "cpsappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "psappsbitemrsid" : "b1ddfed1656f4f4eae5712091aa7f3c0",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "NEWDATA",
+    "ppsappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
+    "psappsbitemrsname" : "新建视图",
+    "rstype" : "APPVIEWREF"
+  }, {
+    "psappsbitemrsid" : "823d549afa75ddfec12448e8c448a83d",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "EDITDATA",
+    "ppsappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
+    "psappsbitemrsname" : "编辑视图",
+    "rstype" : "APPVIEWREF"
+  }, {
+    "cpsappsbitemname" : "任务预计表格视图",
+    "psappsbitemrsid" : "698f3e512fb02f47b6a22f046956aaaf",
+    "ppsappsbitemname" : "工时",
+    "ppsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
+    "cpsappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "任务预计选项操作视图",
+    "psappsbitemrsid" : "81898693c75cd6a90d77ffe810a509ae",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
+    "cpsappsbitemid" : "eb3acbe2d496a8853787f61fb10270a0",
+    "psappsbitemrsname" : "编辑",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "f985157284eacdab41a1b059cbbba26d",
+    "psappsbitemrsid" : "3cf53a26df3a34c0ae793a3c001aa398",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
+    "psappsbitemrsname" : "表格界面_删除操作",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "3407c08dc628e06140b49b494b09b7f8",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "NEWDATA",
+    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
+    "psappsbitemrsname" : "新建视图",
+    "rstype" : "APPVIEWREF"
+  }, {
+    "psappsbitemrsid" : "580e3c0595aa44c22852422d35f3b390",
+    "ppsappsbitemname" : "任务预计表格视图",
+    "rstag" : "EDITDATA",
+    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
+    "psappsbitemrsname" : "编辑视图",
+    "rstype" : "APPVIEWREF"
+  }, {
+    "cpsappsbitemname" : "任务预计表格视图",
+    "psappsbitemrsid" : "d7a435eb3b124e1c28da972d0a0a4ecf",
+    "ppsappsbitemname" : "工时",
+    "ppsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
+    "cpsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "工时",
+    "psappsbitemrsid" : "a86d8d5d776b8b04ac8276cde6a8d1ac",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
-    "psappsbitemrsname" : "暂停任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
+    "psappsbitemrsname" : "工时",
+    "rstype" : "UIACTION"
+  }, {
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "aac7a5b5ab4cc162ff03c75e95b42af5",
+    "ppsappsbitemname" : "暂停任务",
+    "ppsappsbitemid" : "9bcaf836c523d9caa98833251e4e8159",
+    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "暂停任务",
+    "psappsbitemrsid" : "57503258f250e1d1aeaf941a95272d6d",
+    "ppsappsbitemname" : "任务主数据看板视图",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
+    "ppsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
+    "cpsappsbitemid" : "9bcaf836c523d9caa98833251e4e8159",
+    "psappsbitemrsname" : "暂停任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
     "psappsbitemrsid" : "b08dd41f0ad0aea5f74c9420777aab59",
@@ -5847,14 +5979,6 @@
     "psappsbitemrsname" : "指派任务",
     "rstype" : "UIACTION"
   }, {
-    "cpsappsbitemname" : "历史记录",
-    "psappsbitemrsid" : "36ac7aca2d210cd22475c90bfca5dc89",
-    "ppsappsbitemname" : "开始任务",
-    "ppsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
-    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
-    "psappsbitemrsname" : "嵌入视图",
-    "rstype" : "APPVIEWEMBED"
-  }, {
     "cpsappsbitemname" : "开始任务",
     "psappsbitemrsid" : "3f7eb7c41c30a9268dc2829a7818bfe7",
     "ppsappsbitemname" : "任务表格视图",
@@ -5874,90 +5998,6 @@
     "cpsappsbitemid" : "b14737686c33ebb1da095f7d4a3bfc4e",
     "psappsbitemrsname" : "激活",
     "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "2ac89703677969eca3722a0b49fa1bd5",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
-    "psappsbitemrsname" : "新建视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "psappsbitemrsid" : "300a6c270fbd5d25fada5cd4cd4857c7",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
-    "psappsbitemrsname" : "编辑视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "cpsappsbitemname" : "任务预计表格视图",
-    "psappsbitemrsid" : "4ddc9e128b0452b9d8b7e1037cc3796d",
-    "ppsappsbitemname" : "工时",
-    "ppsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
-    "cpsappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
-    "psappsbitemrsname" : "嵌入视图",
-    "rstype" : "APPVIEWEMBED"
-  }, {
-    "psappsbitemrsid" : "b1ddfed1656f4f4eae5712091aa7f3c0",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
-    "psappsbitemrsname" : "新建视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "psappsbitemrsid" : "823d549afa75ddfec12448e8c448a83d",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
-    "psappsbitemrsname" : "编辑视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "cpsappsbitemname" : "任务预计表格视图",
-    "psappsbitemrsid" : "698f3e512fb02f47b6a22f046956aaaf",
-    "ppsappsbitemname" : "工时",
-    "ppsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
-    "cpsappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
-    "psappsbitemrsname" : "嵌入视图",
-    "rstype" : "APPVIEWEMBED"
-  }, {
-    "cpsappsbitemname" : "任务预计选项操作视图",
-    "psappsbitemrsid" : "81898693c75cd6a90d77ffe810a509ae",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
-    "cpsappsbitemid" : "eb3acbe2d496a8853787f61fb10270a0",
-    "psappsbitemrsname" : "编辑",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "3cf53a26df3a34c0ae793a3c001aa398",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "SYS",
-    "rstag2" : "系统预定义",
-    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
-    "psappsbitemrsname" : "表格界面_删除操作",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "3407c08dc628e06140b49b494b09b7f8",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "NEWDATA",
-    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
-    "psappsbitemrsname" : "新建视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "psappsbitemrsid" : "580e3c0595aa44c22852422d35f3b390",
-    "ppsappsbitemname" : "任务预计表格视图",
-    "rstag" : "EDITDATA",
-    "ppsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
-    "psappsbitemrsname" : "编辑视图",
-    "rstype" : "APPVIEWREF"
-  }, {
-    "cpsappsbitemname" : "任务预计表格视图",
-    "psappsbitemrsid" : "d7a435eb3b124e1c28da972d0a0a4ecf",
-    "ppsappsbitemname" : "工时",
-    "ppsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
-    "cpsappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
-    "psappsbitemrsname" : "嵌入视图",
-    "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "工时",
     "psappsbitemrsid" : "c9284979dd22bce47c8e592efc4c5942",
@@ -12706,36 +12746,44 @@
     "psappsbitemrsname" : "指派任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "3af4abfa97d5a73a1ce68a3a97f183e3",
+    "cpsappsbitemname" : "转交任务",
+    "psappsbitemrsid" : "76940b809e52c84a0c9789de0b40c467",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
-    "psappsbitemrsname" : "转交任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "9a4abd3706cb91d51e84fdb6a55e7d65",
+    "psappsbitemrsname" : "转交任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "b120f4f5ef93fc5f9d5fdf84583ee2f7",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "101ea69503f76ec9c0ce83826d64a7ec",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
-    "psappsbitemrsname" : "开始任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "5495f5b3e1705feeb4c5cdacfe704b31",
+    "cpsappsbitemname" : "工时",
+    "psappsbitemrsid" : "b766328b4f1940203b21e984abfcaf58",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
-    "psappsbitemrsname" : "工时（多人任务检查）",
+    "cpsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
+    "psappsbitemrsname" : "工时",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "c77f68146151f11deff7f271b3a55311",
+    "cpsappsbitemname" : "暂停任务",
+    "psappsbitemrsid" : "9440b5218ea10d4f65f8512bda967713",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
-    "psappsbitemrsname" : "暂停任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "9bcaf836c523d9caa98833251e4e8159",
+    "psappsbitemrsname" : "暂停任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
     "psappsbitemrsid" : "f19e0790b473e118d2f0727ab9bcdbf0",

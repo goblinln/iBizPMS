@@ -53,6 +53,15 @@ public class ProductTeamResource {
     public ProductTeamMapping productteamMapping;
 
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据产品获取产品团队草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/getdraft")
+    public ResponseEntity<ProductTeamDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductTeamDTO dto) {
+        PRODUCTTEAM domain = productteamMapping.toDomain(dto);
+        domain.setRoot(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(productteamService.getDraft(domain)));
+    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新产品团队", tags = {"产品团队" },  notes = "根据产品更新产品团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productteams/{productteam_id}")
@@ -65,15 +74,6 @@ public class ProductTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据产品获取产品团队草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/getdraft")
-    public ResponseEntity<ProductTeamDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductTeamDTO dto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(dto);
-        domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(productteamService.getDraft(domain)));
-    }
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
@@ -110,11 +110,11 @@ public class ProductTeamResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取产品团队成员信息", tags = {"产品团队" } ,notes = "根据产品获取产品团队成员信息")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchproductteaminfo")
-	public ResponseEntity<List<ProductTeamDTO>> fetchProductTeamInfoByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
+	@ApiOperation(value = "根据产品获取指定团队部门", tags = {"产品团队" } ,notes = "根据产品获取指定团队部门")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchspecifyteam")
+	public ResponseEntity<List<ProductTeamDTO>> fetchSpecifyTeamByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
-        Page<PRODUCTTEAM> domains = productteamService.searchProductTeamInfo(context) ;
+        Page<PRODUCTTEAM> domains = productteamService.searchSpecifyTeam(context) ;
         List<ProductTeamDTO> list = productteamMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -123,11 +123,11 @@ public class ProductTeamResource {
                 .body(list);
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据产品获取指定团队部门", tags = {"产品团队" } ,notes = "根据产品获取指定团队部门")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchspecifyteam")
-	public ResponseEntity<List<ProductTeamDTO>> fetchSpecifyTeamByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
+	@ApiOperation(value = "根据产品获取产品团队成员信息", tags = {"产品团队" } ,notes = "根据产品获取产品团队成员信息")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchproductteaminfo")
+	public ResponseEntity<List<ProductTeamDTO>> fetchProductTeamInfoByProduct(@PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
-        Page<PRODUCTTEAM> domains = productteamService.searchSpecifyTeam(context) ;
+        Page<PRODUCTTEAM> domains = productteamService.searchProductTeamInfo(context) ;
         List<ProductTeamDTO> list = productteamMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -152,6 +152,15 @@ public class ProductTeamResource {
 
 
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据系统用户产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据系统用户产品获取产品团队草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productteams/getdraft")
+    public ResponseEntity<ProductTeamDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductTeamDTO dto) {
+        PRODUCTTEAM domain = productteamMapping.toDomain(dto);
+        domain.setRoot(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(productteamService.getDraft(domain)));
+    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "根据系统用户产品更新产品团队", tags = {"产品团队" },  notes = "根据系统用户产品更新产品团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/products/{product_id}/productteams/{productteam_id}")
@@ -164,15 +173,6 @@ public class ProductTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据系统用户产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据系统用户产品获取产品团队草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productteams/getdraft")
-    public ResponseEntity<ProductTeamDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductTeamDTO dto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(dto);
-        domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(productteamService.getDraft(domain)));
-    }
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
@@ -209,11 +209,11 @@ public class ProductTeamResource {
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取产品团队成员信息", tags = {"产品团队" } ,notes = "根据系统用户产品获取产品团队成员信息")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productteams/fetchproductteaminfo")
-	public ResponseEntity<List<ProductTeamDTO>> fetchProductTeamInfoBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
+	@ApiOperation(value = "根据系统用户产品获取指定团队部门", tags = {"产品团队" } ,notes = "根据系统用户产品获取指定团队部门")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productteams/fetchspecifyteam")
+	public ResponseEntity<List<ProductTeamDTO>> fetchSpecifyTeamBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
-        Page<PRODUCTTEAM> domains = productteamService.searchProductTeamInfo(context) ;
+        Page<PRODUCTTEAM> domains = productteamService.searchSpecifyTeam(context) ;
         List<ProductTeamDTO> list = productteamMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -222,11 +222,11 @@ public class ProductTeamResource {
                 .body(list);
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-	@ApiOperation(value = "根据系统用户产品获取指定团队部门", tags = {"产品团队" } ,notes = "根据系统用户产品获取指定团队部门")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productteams/fetchspecifyteam")
-	public ResponseEntity<List<ProductTeamDTO>> fetchSpecifyTeamBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
+	@ApiOperation(value = "根据系统用户产品获取产品团队成员信息", tags = {"产品团队" } ,notes = "根据系统用户产品获取产品团队成员信息")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productteams/fetchproductteaminfo")
+	public ResponseEntity<List<ProductTeamDTO>> fetchProductTeamInfoBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody PRODUCTTEAMSearchContext context) {
         context.setN_root_eq(product_id);
-        Page<PRODUCTTEAM> domains = productteamService.searchSpecifyTeam(context) ;
+        Page<PRODUCTTEAM> domains = productteamService.searchProductTeamInfo(context) ;
         List<ProductTeamDTO> list = productteamMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

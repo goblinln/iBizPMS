@@ -511,6 +511,7 @@ export class GanttControlBase extends MDControlBase {
                 }
                 this.appUIService
                     .getRDAppView(
+                        this.context,
                         args[0][this.appDeCodeName.toLowerCase()],
                         params,
                     )
@@ -585,8 +586,8 @@ export class GanttControlBase extends MDControlBase {
                                     },
                                 ];
                             }
-                            if (targetRedirectView && targetRedirectView.modelPath) {
-                                Object.assign(tempContext, { viewpath: targetRedirectView.modelPath });
+                            if (targetOpenView && targetOpenView.modelPath) {
+                                Object.assign(tempContext, { viewpath: targetOpenView.modelPath });
                             }
                         }
                         this.openTargtView(targetOpenView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);

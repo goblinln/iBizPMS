@@ -631,20 +631,18 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     /**
-     * 根据父判断时候含有action能力 未设置父时，使用自身能力判断
+     * 根据父判断时候含有Paction能力 
      *
      * @param PDEName
      * @param PKey
      * @param action
      * @return
      */
-    public boolean test(String PDEName, Serializable PKey, String action) throws Exception {
+    public boolean test(String PDEName, Serializable PKey, String Paction) throws Exception {
         this.prepare();
-        if (StringUtils.isBlank(PDEName))
-            return quickTest(action);
         try {
             IDataEntityRuntime pDataEntityRuntime = getSystemRuntime().getDataEntityRuntime(PDEName);
-            return ((SystemDataEntityRuntimeBase) pDataEntityRuntime).test(PKey, action);
+            return ((SystemDataEntityRuntimeBase) pDataEntityRuntime).test(PKey, Paction);
         } catch (Exception e) {
             log.error(String.format("获取依赖实体[%s]运行对象错误：%s", PDEName, e.getLocalizedMessage()));
             throw e;
@@ -652,7 +650,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     /**
-     * 根据父判断时候含有action能力 未设置父时，使用自身能力判断
+     * 根据父判断时候含有action能力
      *
      * @param PDEName
      * @param PKey
@@ -660,13 +658,11 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @param action
      * @return
      */
-    public boolean test(String PDEName, Serializable PKey, Serializable key, String action) throws Exception {
+    public boolean test(String PDEName, Serializable PKey, String Paction, Serializable key, String action) throws Exception {
         this.prepare();
-        if (StringUtils.isBlank(PDEName))
-            return test(key, action);
         try {
             IDataEntityRuntime pDataEntityRuntime = getSystemRuntime().getDataEntityRuntime(PDEName);
-            return ((SystemDataEntityRuntimeBase) pDataEntityRuntime).test(PKey, action);
+            return ((SystemDataEntityRuntimeBase) pDataEntityRuntime).test(PKey, Paction);
         } catch (Exception e) {
             log.error(String.format("获取依赖实体[%s]运行对象错误：%s", PDEName, e.getLocalizedMessage()));
             throw e;

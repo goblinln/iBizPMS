@@ -190,83 +190,6 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.productplan) {
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}`);
-            return res;
-        }
-        if (_context.account && _context.product && _context.productplan) {
-            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}`);
-            return res;
-        }
-        if (_context.project && _context.productplan) {
-            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}`);
-            return res;
-        }
-        if (_context.product && _context.productplan) {
-            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * LinkStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.productplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
-        }
-        if (_context.account && _context.product && _context.productplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
-        }
-        if (_context.project && _context.productplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
-        }
-        if (_context.product && _context.productplan) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchProductQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/fetchproductquery`, _data);
-        }
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/fetchproductquery`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/fetchproductquery`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -314,6 +237,29 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/productplans`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProjectPlan
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/fetchprojectplan`, _data);
+        }
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/fetchprojectplan`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/fetchprojectplan`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -372,6 +318,56 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * FetchProductQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/fetchproductquery`, _data);
+        }
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/fetchproductquery`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/fetchproductquery`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * LinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.productplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
+        }
+        if (_context.account && _context.product && _context.productplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
+        }
+        if (_context.project && _context.productplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/linkstory`, _data);
+        }
+        if (_context.product && _context.productplan) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/linkstory`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * UnlinkStory
      *
      * @param {*} [_context={}]
@@ -395,6 +391,33 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         if (_context.product && _context.productplan) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/unlinkstory`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.productplan) {
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}`);
+            return res;
+        }
+        if (_context.account && _context.product && _context.productplan) {
+            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}`);
+            return res;
+        }
+        if (_context.project && _context.productplan) {
+            const res = await this.http.get(`/projects/${_context.project}/productplans/${_context.productplan}`);
+            return res;
+        }
+        if (_context.product && _context.productplan) {
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}`);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -487,58 +510,6 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
-    /**
-     * FetchProjectPlan
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductPlanService
-     */
-    async FetchProjectPlan(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/fetchprojectplan`, _data);
-        }
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/fetchprojectplan`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/fetchprojectplan`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productplans/fetchprojectplan`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * LinkStoryBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProductPlanServiceBase
-     */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.account && _context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/linkstorybatch`,_data);
-        }
-        if(_context.account && _context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/linkstorybatch`,_data);
-        }
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/productplans/linkstorybatch`,_data);
-        }
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/productplans/linkstorybatch`,_data);
-        }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
 
     /**
      * LinkBugBatch接口方法
@@ -594,6 +565,35 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productplans/importplantempletbatch`,_data);
+        }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * LinkStoryBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductPlanServiceBase
+     */
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.account && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/linkstorybatch`,_data);
+        }
+        if(_context.account && _context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/linkstorybatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/productplans/linkstorybatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/linkstorybatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

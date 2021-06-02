@@ -238,7 +238,7 @@ export class AppBackEndAction {
                                     }
                                 })
                                 .catch((response: any) => {
-                                    if (response && response.data && response.data.message) {
+                                    if (response) {
                                         actionContext.$throw(response,'AppBackEndAction');
                                     }
                                 });

@@ -39,7 +39,7 @@ export class DeRedirectViewBase extends MainViewBase {
   public async executeRedirectLogic() {
     let tempContext: any = Util.deepCopy(this.context);
     let tempViewParams: any = Util.deepCopy(this.viewparams);
-    this.appUIService.getRDAppView(this.context[this.appDeCodeName.toLowerCase()], { enableWorkflow: this.viewInstance?.enableWorkflow }).then(async (result: any) => {
+    this.appUIService.getRDAppView(this.context,this.context[this.appDeCodeName.toLowerCase()], { enableWorkflow: this.viewInstance?.enableWorkflow }).then(async (result: any) => {
       if (!result) {
         return;
       }
