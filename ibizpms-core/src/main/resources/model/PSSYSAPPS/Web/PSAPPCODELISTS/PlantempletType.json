@@ -7,7 +7,7 @@
   "name" : "计划模板类型",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
   },
   "getPSCodeItems" : [ {
     "codeName" : "Step",

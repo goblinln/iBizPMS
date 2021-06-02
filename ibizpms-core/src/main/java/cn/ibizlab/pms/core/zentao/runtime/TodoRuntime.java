@@ -223,6 +223,9 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("sendMsgPreProcess")) {
                 return todoService.sendMsgPreProcess((Todo) args[0]);
             }
+            else if (iPSDEAction.getName().equals("Start")) {
+                return todoService.start((Todo) args[0]);
+            }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equalsIgnoreCase("Create")) {
                 return todoService.create((Todo) args[0]);
@@ -271,6 +274,9 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             }
             else if (strActionName.equalsIgnoreCase("sendMsgPreProcess")) {
                 return todoService.sendMsgPreProcess((Todo) args[0]);
+            }
+            else if (strActionName.equalsIgnoreCase("Start")) {
+                return todoService.start((Todo) args[0]);
             }
             else  if (strActionName.equalsIgnoreCase(DEActions.SYSGET)) {
                 if(args[0] instanceof Todo){
@@ -397,6 +403,9 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("sendMsgPreProcess")) {
             return aroundAction("sendMsgPreProcess", point);
+        }
+        else if (action.equals("start")) {
+            return aroundAction("Start", point);
         }
         else if (action.equals("searchAccount")) {
             return aroundDataSet("Account", point);

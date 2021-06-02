@@ -103,12 +103,20 @@ zuul:
       path: /actions/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    zt_casestep:
+      path: /testcasesteps/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_taskestimate:
       path: /taskestimates/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_story:
       path: /stories/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    zt_todo:
+      path: /todos/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     dynafilter:
@@ -187,12 +195,12 @@ zuul:
       path: /dynadashboards/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    ibzpro_productline:
+      path: /productlines/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     ibz_report_role_config:
       path: /ibzreportroleconfigs/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    zt_projectproduct:
-      path: /projectproducts/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibz_casestep:
@@ -297,10 +305,6 @@ zuul:
       stripPrefix: false
     ibzpro_product:
       path: /ibzproproducts/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    zt_casestep:
-      path: /casesteps/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     zt_dept:
@@ -506,14 +510,6 @@ zuul:
     ibzemp:
       path: /sysemployees/**
       serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
-      stripPrefix: false
-    ibzpro_productline:
-      path: /ibzproproductlines/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    zt_todo:
-      path: /todos/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
   sensitive-headers:
     - Cookie,Set-Cookie,Authorization

@@ -82,6 +82,7 @@ export class AccountUIServiceBase extends UIServiceBase {
     protected initViewFuncMap(){
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
     }
 
 }

@@ -151,12 +151,16 @@
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "Account",
     "logicName" : "指定用户数据",
-    "name" : "Account",
-    "customCode" : true
+    "name" : "Account"
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -174,12 +178,20 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`OWNER` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OWNER\",\"dename\":\"ZT_TESTTASK\"}')}  OR  t1.`CREATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEBY\",\"dename\":\"ZT_TESTTASK\"}')}  OR  t1.`UPDATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"UPDATEBY\",\"dename\":\"ZT_TESTTASK\"}')} ) )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "My",
     "logicName" : "我的数据",
-    "name" : "My",
-    "customCode" : true
+    "name" : "My"
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",

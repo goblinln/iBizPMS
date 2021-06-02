@@ -9,7 +9,7 @@
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -100,7 +100,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -186,10 +186,10 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
       }
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine/PSGRIDS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine/PSGRIDS/Main.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -205,7 +205,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
       }
     },
     "getGetPSControlAction" : {
@@ -219,7 +219,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
       }
     },
     "groupMode" : "NONE",
@@ -227,7 +227,7 @@
     "logicName" : "主表格",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -241,7 +241,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -252,7 +252,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
         }
       }, {
         "actionName" : "Remove",
@@ -265,7 +265,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
         }
       }, {
         "actionName" : "Get",
@@ -278,7 +278,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -291,7 +291,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
         }
       }, {
         "actionName" : "Create",
@@ -304,7 +304,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -450,7 +450,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -465,7 +465,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
       }
     },
     "hasWFDataItems" : false,
@@ -493,7 +493,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

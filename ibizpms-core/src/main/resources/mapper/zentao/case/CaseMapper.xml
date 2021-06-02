@@ -404,8 +404,11 @@
 
     <!--数据查询[Account]-->
     <sql id="Account" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT t1.`AUTO`, t1.`id`, t1.`BRANCH`, t1.`COLOR`, t1.`DELETED`, t1.`FRAME`, t1.`FREQUENCY`, t1.`FROMBUG`, t1.`FROMCASEID`, t1.`FROMCASEVERSION`, t1.`HOWRUN`, t1.`CASESN`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'case' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LASTRUNDATE`, t1.`LASTRUNNER`, t1.`LASTRUNRESULT`, (case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end) AS `LASTRUNRESULT1`, t1.`LIB`, t41.`NAME` AS `LIBNAME`, t1.`LINKCASE`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRI`, t1.`PRODUCT`, t31.`NAME` AS `PRODUCTNAME`, (SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID` ) AS `RESULTCNT`, (SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID`  and caseResult in('fail','blocked') ) AS `RESULTFALICNT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, (case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end ) AS `STATUS1`, (SELECT COUNT(1) FROM zt_casestep WHERE `case` = t1.`ID` AND version = t1.`VERSION` ) AS `STEPCNT`, t1.`STORY`, t21.`TITLE` AS `STORYNAME`, t1.`STORYVERSION`, t1.`SUBSTATUS`, t1.`TITLE`, (SELECT COUNT(1) FROM zt_bug WHERE `case` = t1.`ID` ) AS `TOBUGCNT`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID LEFT JOIN zt_story t21 ON t1.STORY = t21.ID LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID LEFT JOIN zt_testsuite t41 ON t1.LIB = t41.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.deleted = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -563,8 +566,14 @@
 
     <!--数据查询[My]-->
     <sql id="My" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT t1.`AUTO`, t1.`id`, t1.`BRANCH`, t1.`COLOR`, t1.`DELETED`, t1.`FRAME`, t1.`FREQUENCY`, t1.`FROMBUG`, t1.`FROMCASEID`, t1.`FROMCASEVERSION`, t1.`HOWRUN`, t1.`CASESN`, (select (case when COUNT(t.IBZ_FAVORITESID) > 0 then 1 else 0 end ) as ISFAVORITES from T_IBZ_FAVORITES t where t.TYPE = 'case' and t.ACCOUNT = #{srf.sessioncontext.srfloginname} and t.OBJECTID = t1.id) AS `ISFAVORITES`, t1.`KEYWORDS`, t1.`LASTEDITEDBY`, t1.`LASTEDITEDDATE`, t1.`LASTRUNDATE`, t1.`LASTRUNNER`, t1.`LASTRUNRESULT`, (case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end) AS `LASTRUNRESULT1`, t1.`LIB`, t41.`NAME` AS `LIBNAME`, t1.`LINKCASE`, t1.`MODULE`, t11.`NAME` AS `MODULENAME`, t1.`OPENEDBY`, t1.`OPENEDDATE`, t1.`ORDER`, t1.`PATH`, t1.`PRI`, t1.`PRODUCT`, t31.`NAME` AS `PRODUCTNAME`, (SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID` ) AS `RESULTCNT`, (SELECT COUNT(1) FROM zt_testresult WHERE `case` = t1.`ID`  and caseResult in('fail','blocked') ) AS `RESULTFALICNT`, t1.`REVIEWEDBY`, t1.`REVIEWEDDATE`, t1.`SCRIPTEDBY`, t1.`SCRIPTEDDATE`, t1.`SCRIPTLOCATION`, t1.`SCRIPTSTATUS`, t1.`STAGE`, t1.`STATUS`, (case when t1.storyVersion < t21.version and t21.`status` <> 'changed' then 'storychange'  else t1.`status` end ) AS `STATUS1`, (SELECT COUNT(1) FROM zt_casestep WHERE `case` = t1.`ID` AND version = t1.`VERSION` ) AS `STEPCNT`, t1.`STORY`, t21.`TITLE` AS `STORYNAME`, t1.`STORYVERSION`, t1.`SUBSTATUS`, t1.`TITLE`, (SELECT COUNT(1) FROM zt_bug WHERE `case` = t1.`ID` ) AS `TOBUGCNT`, t1.`TYPE`, t1.`VERSION` FROM `zt_case` t1  LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID LEFT JOIN zt_story t21 ON t1.STORY = t21.ID LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID LEFT JOIN zt_testsuite t41 ON t1.LIB = t41.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.deleted = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND (t1.openedBy = #{srf.sessioncontext.srfloginname} or t1.lastrunner = #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

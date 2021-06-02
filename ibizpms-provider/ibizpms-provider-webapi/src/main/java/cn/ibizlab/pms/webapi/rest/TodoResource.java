@@ -236,6 +236,20 @@ public class TodoResource {
     }
 
 
+    @PreAuthorize("@TodoRuntime.quickTest('DENY')")
+    @ApiOperation(value = "开始", tags = {"待办" },  notes = "开始")
+	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/start")
+    public ResponseEntity<TodoDTO> start(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
+        Todo domain = todoMapping.toDomain(tododto);
+        domain.setId(todo_id);
+        domain = todoService.start(domain);
+        tododto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        tododto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(tododto);
+    }
+
+
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指定用户数据", tags = {"待办" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchaccount")

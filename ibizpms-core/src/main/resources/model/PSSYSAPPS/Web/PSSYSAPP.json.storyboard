@@ -104,6 +104,14 @@
     "psappsbitemid" : "51a2cff9ce53e603e43655fc8f476b5d",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "SysUserMyFavoritesTabExpView",
+    "psappsbitemname" : "我的收藏",
+    "itemtag2" : "dd0e820cfe881ccc512ece401b262e3a",
+    "psappviewid" : "9a474a6c9fb878252529c0c2b074c02e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserMyFavoritesTabExpView.json",
+    "psappsbitemid" : "df3ba24f131162d801e4845b8723fd66",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "CaseLinkCaseGridView",
     "psappsbitemname" : "测试用例表格视图（关联用例）",
     "itemtag2" : "e05f625fb7a113fcbf7ff3b309c4c128",
@@ -2348,14 +2356,6 @@
     "psappviewid" : "bba3204a7f64b5eafe512a6b63658910",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BurnChartView.json",
     "psappsbitemid" : "3f9ee26d63d333a096cb1930798f9f35",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzFavoritesTabExpView",
-    "psappsbitemname" : "我的收藏",
-    "itemtag2" : "ddc85ec8216e6b1839d296be2e03f16a",
-    "psappviewid" : "013fb02e5c34165206932c583a1e355f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzFavoritesTabExpView.json",
-    "psappsbitemid" : "757ff055cb8ec7a19a42c81bb9dbf43f",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseMainNewView",
@@ -14036,10 +14036,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "bug表格视图",
-    "psappsbitemrsid" : "6c940ed7e20a632bbbcffeff5132d1a4",
+    "psappsbitemrsid" : "0a8e9df3d8f9fc0e5ab8e362d15d37f8",
     "ppsappsbitemname" : "我的收藏",
     "rstag" : "EXPITEM:tabviewpanel3",
-    "ppsappsbitemid" : "757ff055cb8ec7a19a42c81bb9dbf43f",
+    "ppsappsbitemid" : "df3ba24f131162d801e4845b8723fd66",
     "cpsappsbitemid" : "e222eaf17d9e8281e27aeddf4e3c800b",
     "psappsbitemrsname" : "[Bug]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -14163,10 +14163,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "case我得收藏",
-    "psappsbitemrsid" : "da314ebc484eda58bd8028c59ea56e93",
+    "psappsbitemrsid" : "2522feddeb7943d08c538f9036d85303",
     "ppsappsbitemname" : "我的收藏",
     "rstag" : "EXPITEM:tabviewpanel4",
-    "ppsappsbitemid" : "757ff055cb8ec7a19a42c81bb9dbf43f",
+    "ppsappsbitemid" : "df3ba24f131162d801e4845b8723fd66",
     "cpsappsbitemid" : "02adca4df41916907502b900001e09dc",
     "psappsbitemrsname" : "[用例]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -14290,10 +14290,10 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "story表格视图",
-    "psappsbitemrsid" : "dc2b9a44f0b802580028c03d515793dc",
+    "psappsbitemrsid" : "ce4a69677334348533f3bf273925434e",
     "ppsappsbitemname" : "我的收藏",
     "rstag" : "EXPITEM:tabviewpanel",
-    "ppsappsbitemid" : "757ff055cb8ec7a19a42c81bb9dbf43f",
+    "ppsappsbitemid" : "df3ba24f131162d801e4845b8723fd66",
     "cpsappsbitemid" : "68d6748b2a30d473632612389a7f0330",
     "psappsbitemrsname" : "[需求]导航视图",
     "rstype" : "APPVIEWEMBED"
@@ -14457,21 +14457,21 @@
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "task表格视图",
-    "psappsbitemrsid" : "1f991f6d0663e425163720913d640cfe",
+    "psappsbitemrsid" : "4ce57da1669a8a85dc02a051b326910f",
     "ppsappsbitemname" : "我的收藏",
     "rstag" : "EXPITEM:tabviewpanel2",
-    "ppsappsbitemid" : "757ff055cb8ec7a19a42c81bb9dbf43f",
+    "ppsappsbitemid" : "df3ba24f131162d801e4845b8723fd66",
     "cpsappsbitemid" : "b4f52cafec5600db899aed465c84ec7b",
     "psappsbitemrsname" : "[任务]导航视图",
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "我的收藏",
-    "psappsbitemrsid" : "e56e6d770de4743cccbbc42abd2fc7c1",
+    "psappsbitemrsid" : "4f18d7484870b4f7ae72c4116b658422",
     "ppsappsbitemname" : "iBiz软件生产管理",
     "rstag" : "APPVIEW",
     "rstag2" : "打开应用视图",
     "ppsappsbitemid" : "0936c0f4bd25ce74e2285c87d8c527b9",
-    "cpsappsbitemid" : "757ff055cb8ec7a19a42c81bb9dbf43f",
+    "cpsappsbitemid" : "df3ba24f131162d801e4845b8723fd66",
     "psappsbitemrsname" : "我的收藏",
     "rstype" : "APPFUNC"
   }, {

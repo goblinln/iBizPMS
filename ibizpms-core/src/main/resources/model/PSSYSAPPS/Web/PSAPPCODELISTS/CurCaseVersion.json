@@ -16,7 +16,7 @@
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
   },
   "getTextPSAppDEField" : {
     "name" : "EXPECT",

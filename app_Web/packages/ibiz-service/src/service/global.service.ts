@@ -98,6 +98,15 @@ export class GlobalService {
         return (await import('./action/action.service')).default.getInstance();
     }
     /**
+     * 用例步骤服务
+     *
+     * @return {TestCaseStep}
+     * @memberof GlobalService
+     */
+    async getTestCaseStepService() {
+        return (await import('./test-case-step/test-case-step.service')).default.getInstance();
+    }
+    /**
      * 任务预计服务
      *
      * @return {TaskEstimate}
@@ -114,6 +123,15 @@ export class GlobalService {
      */
     async getStoryService() {
         return (await import('./story/story.service')).default.getInstance();
+    }
+    /**
+     * 待办事宜表服务
+     *
+     * @return {Todo}
+     * @memberof GlobalService
+     */
+    async getTodoService() {
+        return (await import('./todo/todo.service')).default.getInstance();
     }
     /**
      * 动态搜索栏服务
@@ -287,6 +305,15 @@ export class GlobalService {
         return (await import('./dyna-dashboard/dyna-dashboard.service')).default.getInstance();
     }
     /**
+     * 产品线服务
+     *
+     * @return {ProductLine}
+     * @memberof GlobalService
+     */
+    async getProductLineService() {
+        return (await import('./product-line/product-line.service')).default.getInstance();
+    }
+    /**
      * 汇报角色配置服务
      *
      * @return {IbzReportRoleConfig}
@@ -294,15 +321,6 @@ export class GlobalService {
      */
     async getIbzReportRoleConfigService() {
         return (await import('./ibz-report-role-config/ibz-report-role-config.service')).default.getInstance();
-    }
-    /**
-     * 项目产品服务
-     *
-     * @return {ProjectProduct}
-     * @memberof GlobalService
-     */
-    async getProjectProductService() {
-        return (await import('./project-product/project-product.service')).default.getInstance();
     }
     /**
      * 用例步骤服务
@@ -537,15 +555,6 @@ export class GlobalService {
      */
     async getIBZProProductService() {
         return (await import('./ibzpro-product/ibzpro-product.service')).default.getInstance();
-    }
-    /**
-     * 用例步骤服务
-     *
-     * @return {CaseStep}
-     * @memberof GlobalService
-     */
-    async getCaseStepService() {
-        return (await import('./case-step/case-step.service')).default.getInstance();
     }
     /**
      * 部门服务
@@ -1005,23 +1014,5 @@ export class GlobalService {
      */
     async getSysEmployeeService() {
         return (await import('./sys-employee/sys-employee.service')).default.getInstance();
-    }
-    /**
-     * 产品线服务
-     *
-     * @return {IBZProProductLine}
-     * @memberof GlobalService
-     */
-    async getIBZProProductLineService() {
-        return (await import('./ibzpro-product-line/ibzpro-product-line.service')).default.getInstance();
-    }
-    /**
-     * 待办事宜表服务
-     *
-     * @return {Todo}
-     * @memberof GlobalService
-     */
-    async getTodoService() {
-        return (await import('./todo/todo.service')).default.getInstance();
     }
 }

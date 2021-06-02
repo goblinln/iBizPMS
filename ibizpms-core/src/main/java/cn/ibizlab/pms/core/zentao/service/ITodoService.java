@@ -45,6 +45,7 @@ public interface ITodoService extends IService<Todo> {
     void saveBatch(List<Todo> list);
     Todo sendMessage(Todo et);
     Todo sendMsgPreProcess(Todo et);
+    Todo start(Todo et);
     List<Todo> select(TodoSearchContext context);
     List<Todo> selectAccount(TodoSearchContext context);
     List<Todo> selectDefault(TodoSearchContext context);

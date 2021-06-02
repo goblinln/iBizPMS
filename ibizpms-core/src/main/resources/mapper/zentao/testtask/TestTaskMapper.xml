@@ -162,8 +162,11 @@
 
     <!--数据查询[Account]-->
     <sql id="Account" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT t1.`AUTO`, t1.`BEGIN`, t1.`BUILD`, t11.`NAME` AS `BUILDNAME`, 0 AS `CASECNT`, t1.`CREATEBY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.OWNER AS `OWNERPK`, t1.`PRI`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t31.`NAME` AS `PROJECTTNAME`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TESTTASKSN`, t1.`UPDATEBY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_testtask` t1  LEFT JOIN `zt_build` t11 ON t1.`BUILD` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`id`  LEFT JOIN `zt_project` t31 ON t1.`PROJECT` = t31.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -189,8 +192,14 @@
 
     <!--数据查询[My]-->
     <sql id="My" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT t1.`AUTO`, t1.`BEGIN`, t1.`BUILD`, t11.`NAME` AS `BUILDNAME`, 0 AS `CASECNT`, t1.`CREATEBY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`MAILTO`, '' AS `MAILTOPK`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.OWNER AS `OWNERPK`, t1.`PRI`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t31.`NAME` AS `PROJECTTNAME`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`TESTTASKSN`, t1.`UPDATEBY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_testtask` t1  LEFT JOIN `zt_build` t11 ON t1.`BUILD` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`id`  LEFT JOIN `zt_project` t31 ON t1.`PROJECT` = t31.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ( ( t1.`OWNER` =  #{srf.sessioncontext.srfloginname}  OR  t1.`CREATEBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`UPDATEBY` =  #{srf.sessioncontext.srfloginname} ) ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

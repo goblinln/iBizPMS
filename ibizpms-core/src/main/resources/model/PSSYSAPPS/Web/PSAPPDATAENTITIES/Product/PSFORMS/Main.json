@@ -429,7 +429,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductLine.json"
               },
               "valueItemName" : "line",
               "dropDownView" : false,

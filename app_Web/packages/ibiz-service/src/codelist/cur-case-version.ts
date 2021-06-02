@@ -1,4 +1,4 @@
-import { CaseStepService } from "../service";
+import { TestCaseStepService } from "../service";
 /**
  * 代码表--当前用例版本（动态）
  *
@@ -91,10 +91,10 @@ export default class CurCaseVersion {
     /**
      * 用例步骤应用实体服务对象
      *
-     * @type {CaseStepService}
+     * @type {TestCaseStepService}
      * @memberof CurCaseVersion
      */
-    public casestepService: CaseStepService = new CaseStepService();
+    public testcasestepService: TestCaseStepService = new TestCaseStepService();
 
 
     /**
@@ -135,7 +135,7 @@ export default class CurCaseVersion {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.casestepService.FetchVersions(context, data);
+            const promise: Promise<any> = this.testcasestepService.FetchVersions(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

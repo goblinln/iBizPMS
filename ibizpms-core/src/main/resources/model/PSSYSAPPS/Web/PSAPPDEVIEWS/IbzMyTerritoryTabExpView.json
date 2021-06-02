@@ -3113,7 +3113,7 @@
                           "name" : "fetch",
                           "getPSAppDEMethod" : {
                             "modelref" : true,
-                            "id" : "FetchDefault"
+                            "id" : "FetchMy"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -5389,7 +5389,29 @@
                     "rowEditDefault" : false,
                     "showCaptionBar" : false,
                     "modelid" : "bc2507cdd677c5e56d209fbab236dfc2",
-                    "modeltype" : "PSAPPDEVIEW"
+                    "modeltype" : "PSAPPDEVIEW",
+                    "getPSAppDERSPaths" : [ [ {
+                      "actionRSMode" : 1,
+                      "codeName" : "Todos",
+                      "dataRSMode" : 0,
+                      "getMajorPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                      },
+                      "getMinorPSAppDataEntity" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+                      },
+                      "name" : "ACCOUNT__TODO",
+                      "rSMode" : 2,
+                      "enableCreateDataRS" : false,
+                      "enableDEAction" : true,
+                      "enableDEDataSet" : true,
+                      "enableGetDataRS" : false,
+                      "enableSelect" : true,
+                      "enableSelectDataRS" : false,
+                      "enableUpdateDataRS" : false
+                    } ] ]
                   },
                   "portletType" : "VIEW",
                   "title" : "我的待办",
@@ -5690,7 +5712,7 @@
                           "name" : "fetch",
                           "getPSAppDEMethod" : {
                             "modelref" : true,
-                            "id" : "FetchDefault"
+                            "id" : "FetchMy"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -6434,7 +6456,7 @@
                           "name" : "fetch",
                           "getPSAppDEMethod" : {
                             "modelref" : true,
-                            "id" : "FetchDefault"
+                            "id" : "FetchMy"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
@@ -7143,7 +7165,7 @@
                           "name" : "fetch",
                           "getPSAppDEMethod" : {
                             "modelref" : true,
-                            "id" : "FetchCurProjectTaskQuery"
+                            "id" : "FetchMy"
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,

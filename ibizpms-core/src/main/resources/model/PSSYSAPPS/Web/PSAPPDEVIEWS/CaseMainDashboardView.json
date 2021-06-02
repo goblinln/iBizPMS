@@ -555,7 +555,7 @@
                       "name" : "CaseStepMainGridView9",
                       "getPSAppDataEntity" : {
                         "modelref" : true,
-                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                       },
                       "getPSAppViewEngines" : [ {
                         "engineCat" : "VIEW",
@@ -664,7 +664,7 @@
                         "name" : "toolbar",
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                         },
                         "getPSControlParam" : {
                           "id" : "TOOLBAR"
@@ -755,7 +755,7 @@
                         "codeName" : "Main",
                         "columnEnableLink" : 2,
                         "controlType" : "GRID",
-                        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep/PSGRIDS/Main.json",
+                        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep/PSGRIDS/Main.json",
                         "getFetchPSControlAction" : {
                           "modelref" : true,
                           "id" : "fetch"
@@ -770,7 +770,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                         },
                         "getPSControlHandler" : {
                           "getPSHandlerActions" : [ {
@@ -784,7 +784,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                             }
                           }, {
                             "actionType" : "DEDATASET",
@@ -795,7 +795,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                             }
                           }, {
                             "actionName" : "Remove",
@@ -808,7 +808,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                             }
                           }, {
                             "actionName" : "Get",
@@ -821,7 +821,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                             }
                           }, {
                             "actionName" : "GetDraft",
@@ -834,7 +834,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                             }
                           }, {
                             "actionName" : "Create",
@@ -847,7 +847,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                             }
                           } ],
                           "userDRAction" : "READ",
@@ -1076,7 +1076,7 @@
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                           }
                         },
                         "sortMode" : "REMOTE",
@@ -1105,7 +1105,7 @@
                         "name" : "layoutpanel",
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
                         },
                         "getPSControlParam" : { },
                         "layoutPanel" : true,
@@ -1124,7 +1124,106 @@
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
                       "modelid" : "f69bb8c09dbc7ce369c3c3806007b1d1",
-                      "modeltype" : "PSAPPDEVIEW"
+                      "modeltype" : "PSAPPDEVIEW",
+                      "getPSAppDERSPaths" : [ [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "TestCases",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                        },
+                        "name" : "TEST__TEST_CASE",
+                        "getParentPSAppDEField" : {
+                          "name" : "PRODUCT",
+                          "codeName" : "Product"
+                        },
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      }, {
+                        "actionRSMode" : 1,
+                        "codeName" : "caseSteps",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
+                        },
+                        "name" : "TEST_CASE__TEST_CASE_STEP",
+                        "getParentPSAppDEField" : {
+                          "name" : "CASE",
+                          "codeName" : "IBizCase"
+                        },
+                        "rSMode" : 2,
+                        "tempDataOrder" : 10,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ], [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "TestCases",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                        },
+                        "name" : "ACCOUNT__TEST_CASE",
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      }, {
+                        "actionRSMode" : 1,
+                        "codeName" : "caseSteps",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseStep.json"
+                        },
+                        "name" : "TEST_CASE__TEST_CASE_STEP",
+                        "getParentPSAppDEField" : {
+                          "name" : "CASE",
+                          "codeName" : "IBizCase"
+                        },
+                        "rSMode" : 2,
+                        "tempDataOrder" : 10,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ] ]
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,

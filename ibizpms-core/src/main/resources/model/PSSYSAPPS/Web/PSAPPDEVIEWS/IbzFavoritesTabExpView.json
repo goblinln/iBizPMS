@@ -185,6 +185,11 @@
           "name" : "OBJECTTYPE",
           "value" : "story",
           "rawValue" : true
+        }, {
+          "key" : "ACCOUNT",
+          "name" : "ACCOUNT",
+          "value" : "srfuserid",
+          "rawValue" : false
         } ],
         "getPSAppViewRefs" : [ {
           "name" : "NEWDATA",

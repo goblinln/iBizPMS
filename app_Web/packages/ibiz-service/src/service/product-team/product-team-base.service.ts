@@ -159,21 +159,36 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
+     * FetchSpecifyTeam
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductTeamService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product && _context.productteam) {
-            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/productteams/${_context.productteam}`);
-            return res;
+    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productteams/fetchspecifyteam`, _data);
         }
-        if (_context.product && _context.productteam) {
-            const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}`);
-            return res;
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProductTeamInfo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductTeamService
+     */
+    async FetchProductTeamInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -201,19 +216,21 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProductTeamInfo
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductTeamService
      */
-    async FetchProductTeamInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product && _context.productteam) {
+            const res = await this.http.get(`/accounts/${_context.account}/products/${_context.product}/productteams/${_context.productteam}`);
+            return res;
         }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
+        if (_context.product && _context.productteam) {
+            const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}`);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -245,23 +262,6 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/productteams`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchSpecifyTeam
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductTeamService
-     */
-    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productteams/fetchspecifyteam`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

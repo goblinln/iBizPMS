@@ -7,8 +7,10 @@ import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
 import storyspec_zh_CN from '@locale/lanres/entities/story-spec/story-spec_zh_CN';
 import productbranch_zh_CN from '@locale/lanres/entities/product-branch/product-branch_zh_CN';
 import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
+import testcasestep_zh_CN from '@locale/lanres/entities/test-case-step/test-case-step_zh_CN';
 import taskestimate_zh_CN from '@locale/lanres/entities/task-estimate/task-estimate_zh_CN';
 import story_zh_CN from '@locale/lanres/entities/story/story_zh_CN';
+import todo_zh_CN from '@locale/lanres/entities/todo/todo_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
 import project_zh_CN from '@locale/lanres/entities/project/project_zh_CN';
 import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
@@ -28,8 +30,8 @@ import bug_zh_CN from '@locale/lanres/entities/bug/bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
 import productrelease_zh_CN from '@locale/lanres/entities/product-release/product-release_zh_CN';
 import dynadashboard_zh_CN from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_zh_CN';
+import productline_zh_CN from '@locale/lanres/entities/product-line/product-line_zh_CN';
 import ibzreportroleconfig_zh_CN from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_zh_CN';
-import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
 import ibzcasestep_zh_CN from '@locale/lanres/entities/ibzcase-step/ibzcase-step_zh_CN';
 import taskteam_zh_CN from '@locale/lanres/entities/task-team/task-team_zh_CN';
 import file_zh_CN from '@locale/lanres/entities/file/file_zh_CN';
@@ -56,7 +58,6 @@ import bugstats_zh_CN from '@locale/lanres/entities/bug-stats/bug-stats_zh_CN';
 import ibizproindex_zh_CN from '@locale/lanres/entities/ibizpro-index/ibizpro-index_zh_CN';
 import group_zh_CN from '@locale/lanres/entities/group/group_zh_CN';
 import ibzproproduct_zh_CN from '@locale/lanres/entities/ibzpro-product/ibzpro-product_zh_CN';
-import casestep_zh_CN from '@locale/lanres/entities/case-step/case-step_zh_CN';
 import dept_zh_CN from '@locale/lanres/entities/dept/dept_zh_CN';
 import ibizprotag_zh_CN from '@locale/lanres/entities/ibizpro-tag/ibizpro-tag_zh_CN';
 import company_zh_CN from '@locale/lanres/entities/company/company_zh_CN';
@@ -108,8 +109,6 @@ import ibzproproductusertask_zh_CN from '@locale/lanres/entities/ibzpro-product-
 import sysupdatefeatures_zh_CN from '@locale/lanres/entities/sys-update-features/sys-update-features_zh_CN';
 import casestats_zh_CN from '@locale/lanres/entities/case-stats/case-stats_zh_CN';
 import sysemployee_zh_CN from '@locale/lanres/entities/sys-employee/sys-employee_zh_CN';
-import ibzproproductline_zh_CN from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_zh_CN';
-import todo_zh_CN from '@locale/lanres/entities/todo/todo_zh_CN';
 import components_zh_CN from '@locale/lanres/components/components_zh_CN';
 import codelist_zh_CN from '@locale/lanres/codelist/codelist_zh_CN';
 import userCustom_zh_CN from '@locale/lanres/userCustom/userCustom_zh_CN';
@@ -428,8 +427,10 @@ function getAppLocale(){
             'storyspec': storyspec_zh_CN(),
             'productbranch': productbranch_zh_CN(),
             'action': action_zh_CN(),
+            'testcasestep': testcasestep_zh_CN(),
             'taskestimate': taskestimate_zh_CN(),
             'story': story_zh_CN(),
+            'todo': todo_zh_CN(),
             'dynafilter': dynafilter_zh_CN(),
             'project': project_zh_CN(),
             'history': history_zh_CN(),
@@ -449,8 +450,8 @@ function getAppLocale(){
             'projectmodule': projectmodule_zh_CN(),
             'productrelease': productrelease_zh_CN(),
             'dynadashboard': dynadashboard_zh_CN(),
+            'productline': productline_zh_CN(),
             'ibzreportroleconfig': ibzreportroleconfig_zh_CN(),
-            'projectproduct': projectproduct_zh_CN(),
             'ibzcasestep': ibzcasestep_zh_CN(),
             'taskteam': taskteam_zh_CN(),
             'file': file_zh_CN(),
@@ -477,7 +478,6 @@ function getAppLocale(){
             'ibizproindex': ibizproindex_zh_CN(),
             'group': group_zh_CN(),
             'ibzproproduct': ibzproproduct_zh_CN(),
-            'casestep': casestep_zh_CN(),
             'dept': dept_zh_CN(),
             'ibizprotag': ibizprotag_zh_CN(),
             'company': company_zh_CN(),
@@ -529,8 +529,6 @@ function getAppLocale(){
             'sysupdatefeatures': sysupdatefeatures_zh_CN(),
             'casestats': casestats_zh_CN(),
             'sysemployee': sysemployee_zh_CN(),
-            'ibzproproductline': ibzproproductline_zh_CN(),
-            'todo': todo_zh_CN(),
         },
         components: components_zh_CN(),
         codelist: codelist_zh_CN(),

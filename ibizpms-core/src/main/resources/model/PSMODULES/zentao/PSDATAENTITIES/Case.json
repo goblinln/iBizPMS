@@ -347,7 +347,12 @@
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "Account",
     "logicName" : "指定用户数据",
@@ -494,7 +499,16 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.openedBy = #{srf.sessioncontext.srfloginname} or t1.lastrunner = #{srf.sessioncontext.srfloginname} )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "My",
     "logicName" : "我的数据",

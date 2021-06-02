@@ -44,6 +44,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("修改密码",null),
 				title: commonLogic.appcommonhandle("系统用户编辑视图",null),
 			},
+			'myfavoritestabexpview': {
+				caption: commonLogic.appcommonhandle("我的收藏",null),
+				title: commonLogic.appcommonhandle("我的收藏",null),
+			},
 			'tabexpview': {
 				caption: commonLogic.appcommonhandle("我的地盘",null),
 				title: commonLogic.appcommonhandle("我的地盘",null),
