@@ -53,18 +53,6 @@ public class ProductBranchResource {
     public ProductBranchMapping productbranchMapping;
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches")
-    public ResponseEntity<ProductBranchDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
-        Branch domain = productbranchMapping.toDomain(productbranchdto);
-        domain.setProduct(product_id);
-		branchService.create(domain);
-        ProductBranchDTO dto = productbranchMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
 
     @PreAuthorize("@BranchRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量保存产品的分支和平台信息")
@@ -150,18 +138,18 @@ public class ProductBranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据系统用户产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品建立产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productbranches")
-    public ResponseEntity<ProductBranchDTO> createBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
+    @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches")
+    public ResponseEntity<ProductBranchDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
         Branch domain = productbranchMapping.toDomain(productbranchdto);
         domain.setProduct(product_id);
 		branchService.create(domain);
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
+
 
 
 
@@ -248,6 +236,18 @@ public class ProductBranchResource {
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据系统用户产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品建立产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productbranches")
+    public ResponseEntity<ProductBranchDTO> createBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
+        Branch domain = productbranchMapping.toDomain(productbranchdto);
+        domain.setProduct(product_id);
+		branchService.create(domain);
+        ProductBranchDTO dto = productbranchMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 }
 

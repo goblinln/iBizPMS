@@ -36,6 +36,13 @@
       "logicType" : "PREDEFINED",
       "name" : "新建数据",
       "getNewDataPSAppViews" : [ {
+        "refMode" : "task",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      }, {
         "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
@@ -76,6 +83,13 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
           "viewType" : "DEPICKUPVIEW"
+        }
+      }, {
+        "refMode" : "task",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "story",
@@ -140,6 +154,13 @@
         }
       },
       "getOpenDataPSAppViews" : [ {
+        "refMode" : "task",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      }, {
         "refMode" : "product",
         "getRefPSAppView" : {
           "modelref" : true,
@@ -182,6 +203,13 @@
           "viewType" : "DEREDIRECTVIEW"
         }
       }, {
+        "refMode" : "task",
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
+        }
+      }, {
         "refMode" : "product",
         "getRefPSAppView" : {
           "modelref" : true,
@@ -222,6 +250,15 @@
     }
   } ],
   "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA:task",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "任务主数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    }
+  }, {
     "name" : "NEWDATA:story",
     "realOpenMode" : "DRAWER_RIGHT",
     "realTitle" : "需求",
@@ -238,6 +275,15 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
       "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA:task",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "任务主数据看板视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "EDITDATA:product",

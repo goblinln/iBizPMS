@@ -54,6 +54,19 @@ public class TaskEstimateResource {
 
 
 
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据系统用户任务更新任务预计", tags = {"任务预计" },  notes = "根据系统用户任务更新任务预计")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> updateBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+        TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
+        domain.setTask(task_id);
+        domain.setId(taskestimate_id);
+		taskestimateService.update(domain);
+        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
     @ApiOperation(value = "根据系统用户任务删除任务预计", tags = {"任务预计" },  notes = "根据系统用户任务删除任务预计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
@@ -123,10 +136,12 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据系统用户任务更新任务预计", tags = {"任务预计" },  notes = "根据系统用户任务更新任务预计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> updateBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+    @ApiOperation(value = "根据项目任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务更新任务预计")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
         domain.setId(taskestimate_id);
@@ -134,8 +149,6 @@ public class TaskEstimateResource {
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-
 
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
@@ -207,10 +220,13 @@ public class TaskEstimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据项目任务更新任务预计", tags = {"任务预计" },  notes = "根据项目任务更新任务预计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
+    @ApiOperation(value = "根据系统用户项目任务更新任务预计", tags = {"任务预计" },  notes = "根据系统用户项目任务更新任务预计")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<TaskEstimateDTO> updateBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
         TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
         domain.setTask(task_id);
         domain.setId(taskestimate_id);
@@ -218,9 +234,6 @@ public class TaskEstimateResource {
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-
-
 
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
@@ -291,19 +304,6 @@ public class TaskEstimateResource {
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "根据系统用户项目任务更新任务预计", tags = {"任务预计" },  notes = "根据系统用户项目任务更新任务预计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<TaskEstimateDTO> updateBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id, @RequestBody TaskEstimateDTO taskestimatedto) {
-        TaskEstimate domain = taskestimateMapping.toDomain(taskestimatedto);
-        domain.setTask(task_id);
-        domain.setId(taskestimate_id);
-		taskestimateService.update(domain);
-        TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
 }
 
