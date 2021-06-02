@@ -42,6 +42,20 @@ public class TodoExService extends TodoServiceImpl {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
     }
 
+    @Override
+    public Todo start(Todo et) {
+        et = this.get(et.getId());
+
+        if (StringUtils.compare(et.getStatus(), StaticDict.Todo__status.WAIT.getValue()) == 0) {
+            et.setStatus(StaticDict.Todo__status.DOING.getValue());
+            super.update(et);
+            ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.TODO.getValue(),null,StaticDict.Action__type.STARTED.getValue(),
+                    "", "", null,iActionService);
+        }
+
+        return et;
+    }
+
     /**
      * [Activate:Activate] 行为扩展
      * @param et

@@ -1075,6 +1075,8 @@ public class TaskExService extends TaskServiceImpl {
     @Override
     @Transactional
     public Task assignTo(Task et) {
+        et.set("actioninfo", "当前任务只有%1$s才可以转交。");
+        this.taskForward(et);
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
         Task old = new Task();
         CachedBeanCopier.copy(this.get(et.getId()), old);
@@ -1467,6 +1469,8 @@ public class TaskExService extends TaskServiceImpl {
     @Override
     @Transactional
     public Task finish(Task et) {
+        et.set("actioninfo", "当前任务只有%1$s才可以完成。");
+        this.taskForward(et);
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
         Task old = new Task();
         CachedBeanCopier.copy(this.get(et.getId()), old);
@@ -1748,6 +1752,8 @@ public class TaskExService extends TaskServiceImpl {
     @Override
     @Transactional
     public Task pause(Task et) {
+        et.set("actioninfo", "当前任务只有%1$s才可以暂停任务。");
+        this.taskForward(et);
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
         Task old = new Task();
         CachedBeanCopier.copy(this.get(et.getId()), old);
@@ -1791,6 +1797,8 @@ public class TaskExService extends TaskServiceImpl {
     @Override
     @Transactional
     public Task recordEstimate(Task et) {
+        et.set("actioninfo", "当前任务只有%1$s才可以记录工时。");
+        this.taskForward(et);
         String files = et.getFiles();
         Task old = new Task();
         CachedBeanCopier.copy(this.get(et.getId()), old);
@@ -2027,6 +2035,8 @@ public class TaskExService extends TaskServiceImpl {
     @Override
     @Transactional
     public Task restart(Task et) {
+        et.set("actioninfo", "当前任务只有%1$s才可以继续。");
+        this.taskForward(et);
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
         Task old = new Task();
         CachedBeanCopier.copy(this.get(et.getId()), old);
@@ -2097,6 +2107,8 @@ public class TaskExService extends TaskServiceImpl {
     @Override
     @Transactional
     public Task start(Task et) {
+        et.set("actioninfo", "当前任务只有%1$s才可以开始。");
+        this.taskForward(et);
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
         Task old = new Task();
         CachedBeanCopier.copy(this.get(et.getId()), old);
@@ -2193,17 +2205,17 @@ public class TaskExService extends TaskServiceImpl {
     @Transactional
     public Task taskForward(Task et) {
         Object actioninfo = et.get("actioninfo");
-        et = this.get(et.getId());
-        if (StaticDict.YesNo.ITEM_1.getValue().equals(et.getMultiple())) {
-            if (!AuthenticationUser.getAuthenticationUser().getUsername().equals(et.getAssignedto())) {
+        Task task = this.get(et.getId());
+        if (StaticDict.YesNo.ITEM_1.getValue().equals(task.getMultiple())) {
+            if (!AuthenticationUser.getAuthenticationUser().getUsername().equals(task.getAssignedto())) {
                 SysEmployeeSearchContext context = new SysEmployeeSearchContext();
-                context.setN_username_in(et.getAssignedto());
+                context.setN_username_in(task.getAssignedto());
                 Page<SysEmployee> page = sysEmployeeFeignClient.searchDefault(context);
                 List<SysEmployee> list = page.getContent();
                 if (list.size() > 0) {
                     throw new RuntimeException(String.format(actioninfo.toString(), list.get(0).getPersonname()));
                 }
-                throw new RuntimeException(String.format(actioninfo.toString(), et.getAssignedto()));
+                throw new RuntimeException(String.format(actioninfo.toString(), task.getAssignedto()));
             }
         }
         //自定义代码
