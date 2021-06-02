@@ -158,61 +158,7 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		assigntoform_form: {
-			details: {
-				'group1': commonLogic.appcommonhandle("指派给",null), 
-				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
-				'srforikey': commonLogic.appcommonhandle("",null), 
-				'srfkey': commonLogic.appcommonhandle("编号",null), 
-				'srfmajortext': commonLogic.appcommonhandle("待办名称",null), 
-				'srftempmode': commonLogic.appcommonhandle("",null), 
-				'srfuf': commonLogic.appcommonhandle("",null), 
-				'srfdeid': commonLogic.appcommonhandle("",null), 
-				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'assignto': commonLogic.appcommonhandle("指派给",null), 
-				'date': commonLogic.appcommonhandle("日期",null), 
-				'future': commonLogic.appcommonhandle("",null), 
-				'begin': commonLogic.appcommonhandle("起止时间",null), 
-				'end': commonLogic.appcommonhandle("~",null), 
-				'lbldisabledate': commonLogic.appcommonhandle("",null), 
-				'id': commonLogic.appcommonhandle("编号",null), 
-			},
-			uiactions: {
-			},
-		},
 		finishfrom_form: {
-			details: {
-				'rawitem1': commonLogic.appcommonhandle("",null), 
-				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
-				'srforikey': commonLogic.appcommonhandle("",null), 
-				'srfkey': commonLogic.appcommonhandle("编号",null), 
-				'srfmajortext': commonLogic.appcommonhandle("待办名称",null), 
-				'srftempmode': commonLogic.appcommonhandle("",null), 
-				'srfuf': commonLogic.appcommonhandle("",null), 
-				'srfdeid': commonLogic.appcommonhandle("",null), 
-				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'id': commonLogic.appcommonhandle("编号",null), 
-			},
-			uiactions: {
-			},
-		},
-		activitefrom_form: {
-			details: {
-				'rawitem1': commonLogic.appcommonhandle("",null), 
-				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
-				'srforikey': commonLogic.appcommonhandle("",null), 
-				'srfkey': commonLogic.appcommonhandle("编号",null), 
-				'srfmajortext': commonLogic.appcommonhandle("待办名称",null), 
-				'srftempmode': commonLogic.appcommonhandle("",null), 
-				'srfuf': commonLogic.appcommonhandle("",null), 
-				'srfdeid': commonLogic.appcommonhandle("",null), 
-				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'id': commonLogic.appcommonhandle("编号",null), 
-			},
-			uiactions: {
-			},
-		},
-		closeform_form: {
 			details: {
 				'rawitem1': commonLogic.appcommonhandle("",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
@@ -303,6 +249,60 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
+		assigntoform_form: {
+			details: {
+				'group1': commonLogic.appcommonhandle("指派给",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("编号",null), 
+				'srfmajortext': commonLogic.appcommonhandle("待办名称",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'assignto': commonLogic.appcommonhandle("指派给",null), 
+				'date': commonLogic.appcommonhandle("日期",null), 
+				'future': commonLogic.appcommonhandle("",null), 
+				'begin': commonLogic.appcommonhandle("起止时间",null), 
+				'end': commonLogic.appcommonhandle("~",null), 
+				'lbldisabledate': commonLogic.appcommonhandle("",null), 
+				'id': commonLogic.appcommonhandle("编号",null), 
+			},
+			uiactions: {
+			},
+		},
+		activitefrom_form: {
+			details: {
+				'rawitem1': commonLogic.appcommonhandle("",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("编号",null), 
+				'srfmajortext': commonLogic.appcommonhandle("待办名称",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'id': commonLogic.appcommonhandle("编号",null), 
+			},
+			uiactions: {
+			},
+		},
+		closeform_form: {
+			details: {
+				'rawitem1': commonLogic.appcommonhandle("",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("编号",null), 
+				'srfmajortext': commonLogic.appcommonhandle("待办名称",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'id': commonLogic.appcommonhandle("编号",null), 
+			},
+			uiactions: {
+			},
+		},
 		calendarmain_form: {
 			details: {
 				'button1': commonLogic.appcommonhandle("指派",null), 
@@ -380,10 +380,8 @@ function getLocaleResourceBase(){
 				'status': commonLogic.appcommonhandle("状态",null),
 		},
 			uiactions: {
-				todo_assignto: commonLogic.appcommonhandle("指派",null),
+				todo_start: commonLogic.appcommonhandle("开始",null),
 				todo_finish: commonLogic.appcommonhandle("完成",null),
-				todo_activate: commonLogic.appcommonhandle("激活",null),
-				todo_close: commonLogic.appcommonhandle("关闭",null),
 				todo_edit1: commonLogic.appcommonhandle("编辑",null),
 				todo_delete: commonLogic.appcommonhandle("删除",null),
 			},

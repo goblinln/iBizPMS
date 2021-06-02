@@ -768,14 +768,6 @@
     "psappsbitemid" : "5b11c2cf6fbaa9f9ade33ae7ac2ca590",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TodoMobOptionView",
-    "psappsbitemname" : "待办事宜表选项操作视图",
-    "itemtag2" : "b8bda60945e66b4f8c3f4f6876212487",
-    "psappviewid" : "408fe78e73e857a785ba188e9468a539",
-    "itemtag" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoMobOptionView.json",
-    "psappsbitemid" : "8e83a6a19195b8232e10079ffe5a13b1",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskFavoriteMoreMobMDView",
     "psappsbitemname" : "任务移动端多数据视图",
     "itemtag2" : "c012ad361b1a398585df9a450228509e",
@@ -3480,22 +3472,12 @@
     "psappsbitemrsname" : "新建（移动端）",
     "rstype" : "UIACTION"
   }, {
-    "cpsappsbitemname" : "待办事宜表选项操作视图",
-    "psappsbitemrsid" : "e30e74cb2cc5073ad69f721642968c34",
-    "ppsappsbitemname" : "待办事宜表移动端多数据视图",
-    "rstag" : "FRONT",
-    "rstag2" : "前台调用",
-    "ppsappsbitemid" : "76e600505bade58cc186532bdc4fbadc",
-    "cpsappsbitemid" : "8e83a6a19195b8232e10079ffe5a13b1",
-    "psappsbitemrsname" : "todo指派（移动端）",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "62e9524ccb3e566148f8fdade944a899",
+    "psappsbitemrsid" : "a5a8537a9fb61367b060d6cd7510748f",
     "ppsappsbitemname" : "待办事宜表移动端多数据视图",
     "rstag" : "BACKEND",
     "rstag2" : "后台调用",
     "ppsappsbitemid" : "76e600505bade58cc186532bdc4fbadc",
-    "psappsbitemrsname" : "todo激活（移动端）",
+    "psappsbitemrsname" : "todo开始（移动端）",
     "rstype" : "UIACTION"
   }, {
     "psappsbitemrsid" : "b391ade405255a4c9dfeeabb8fcd5028",
@@ -3512,14 +3494,6 @@
     "rstag2" : "后台调用",
     "ppsappsbitemid" : "76e600505bade58cc186532bdc4fbadc",
     "psappsbitemrsname" : "todo删除（移动端）",
-    "rstype" : "UIACTION"
-  }, {
-    "psappsbitemrsid" : "4bf126e063db87dc30df8857d119b241",
-    "ppsappsbitemname" : "待办事宜表移动端多数据视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
-    "ppsappsbitemid" : "76e600505bade58cc186532bdc4fbadc",
-    "psappsbitemrsname" : "todo关闭（移动端）",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "快速新建",

@@ -1646,7 +1646,7 @@
 
 
     <!--输出实体[IBZ_FAVORITES]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_favorites-1-51">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_favorites-3-51">
         <createTable tableName="T_IBZ_FAVORITES">
                 <column name="TYPE" remarks="" type="VARCHAR(60)">
                 </column>
@@ -3260,7 +3260,7 @@
 
 
     <!--输出实体[ZT_TODO]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_todo-114-126">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_todo-127-126">
         <createTable tableName="zt_todo">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TODO_ID"/>

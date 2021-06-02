@@ -53,15 +53,6 @@ public class ProductModuleResource {
     public ProductModuleMapping productmoduleMapping;
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "根据产品获取需求模块", tags = {"需求模块" },  notes = "根据产品获取需求模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
-        ProductModule domain = productmoduleService.get(productmodule_id);
-        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新需求模块", tags = {"需求模块" },  notes = "根据产品更新需求模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
@@ -75,19 +66,6 @@ public class ProductModuleResource {
     }
 
 
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品批量保存需求模块", tags = {"需求模块" },  notes = "根据产品批量保存需求模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProductModuleDTO> productmoduledtos) {
-        List<ProductModule> domainlist=productmoduleMapping.toDomain(productmoduledtos);
-        for(ProductModule domain:domainlist){
-             domain.setRoot(product_id);
-        }
-        productmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "根据产品建立需求模块", tags = {"需求模块" },  notes = "根据产品建立需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules")
@@ -99,15 +77,6 @@ public class ProductModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据产品获取需求模块草稿", tags = {"需求模块" },  notes = "根据产品获取需求模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/getdraft")
-    public ResponseEntity<ProductModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductModuleDTO dto) {
-        ProductModule domain = productmoduleMapping.toDomain(dto);
-        domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"需求模块" } ,notes = "根据产品获取DEFAULT")
@@ -122,6 +91,28 @@ public class ProductModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据产品获取需求模块草稿", tags = {"需求模块" },  notes = "根据产品获取需求模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/getdraft")
+    public ResponseEntity<ProductModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductModuleDTO dto) {
+        ProductModule domain = productmoduleMapping.toDomain(dto);
+        domain.setRoot(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
+    }
+
+
+    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品批量保存需求模块", tags = {"需求模块" },  notes = "根据产品批量保存需求模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProductModuleDTO> productmoduledtos) {
+        List<ProductModule> domainlist=productmoduleMapping.toDomain(productmoduledtos);
+        for(ProductModule domain:domainlist){
+             domain.setRoot(product_id);
+        }
+        productmoduleService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除需求模块", tags = {"需求模块" },  notes = "根据产品删除需求模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productmodules/{productmodule_id}")
@@ -137,16 +128,16 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "根据系统用户产品获取需求模块", tags = {"需求模块" },  notes = "根据系统用户产品获取需求模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
+    @ApiOperation(value = "根据产品获取需求模块", tags = {"需求模块" },  notes = "根据产品获取需求模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
         ProductModule domain = productmoduleService.get(productmodule_id);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
+
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
     @ApiOperation(value = "根据系统用户产品更新需求模块", tags = {"需求模块" },  notes = "根据系统用户产品更新需求模块")
@@ -161,19 +152,6 @@ public class ProductModuleResource {
     }
 
 
-
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户产品批量保存需求模块", tags = {"需求模块" },  notes = "根据系统用户产品批量保存需求模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules/savebatch")
-    public ResponseEntity<Boolean> saveBatchBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody List<ProductModuleDTO> productmoduledtos) {
-        List<ProductModule> domainlist=productmoduleMapping.toDomain(productmoduledtos);
-        for(ProductModule domain:domainlist){
-             domain.setRoot(product_id);
-        }
-        productmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "根据系统用户产品建立需求模块", tags = {"需求模块" },  notes = "根据系统用户产品建立需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules")
@@ -185,15 +163,6 @@ public class ProductModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
-    @ApiOperation(value = "根据系统用户产品获取需求模块草稿", tags = {"需求模块" },  notes = "根据系统用户产品获取需求模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules/getdraft")
-    public ResponseEntity<ProductModuleDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductModuleDTO dto) {
-        ProductModule domain = productmoduleMapping.toDomain(dto);
-        domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
-    }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取DEFAULT", tags = {"需求模块" } ,notes = "根据系统用户产品获取DEFAULT")
@@ -208,6 +177,28 @@ public class ProductModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
+    @ApiOperation(value = "根据系统用户产品获取需求模块草稿", tags = {"需求模块" },  notes = "根据系统用户产品获取需求模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules/getdraft")
+    public ResponseEntity<ProductModuleDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductModuleDTO dto) {
+        ProductModule domain = productmoduleMapping.toDomain(dto);
+        domain.setRoot(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
+    }
+
+
+    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户产品批量保存需求模块", tags = {"需求模块" },  notes = "根据系统用户产品批量保存需求模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules/savebatch")
+    public ResponseEntity<Boolean> saveBatchBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody List<ProductModuleDTO> productmoduledtos) {
+        List<ProductModule> domainlist=productmoduleMapping.toDomain(productmoduledtos);
+        for(ProductModule domain:domainlist){
+             domain.setRoot(product_id);
+        }
+        productmoduleService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户产品删除需求模块", tags = {"需求模块" },  notes = "根据系统用户产品删除需求模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules/{productmodule_id}")
@@ -221,6 +212,15 @@ public class ProductModuleResource {
     public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {
         productmoduleService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @ApiOperation(value = "根据系统用户产品获取需求模块", tags = {"需求模块" },  notes = "根据系统用户产品获取需求模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
+        ProductModule domain = productmoduleService.get(productmodule_id);
+        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 }

@@ -326,18 +326,10 @@
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "mdctrl_ub540da9_click",
+      "name" : "mdctrl_u7658460_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "todo指派（移动端）"
-      }
-    }, {
-      "logicTrigger" : "CUSTOM",
-      "logicType" : "APPVIEWUIACTION",
-      "name" : "mdctrl_u7b9cd26_click",
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "todo激活（移动端）"
+        "id" : "todo开始（移动端）"
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -358,14 +350,6 @@
     }, {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "mdctrl_uc06f834_click",
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "todo关闭（移动端）"
-      }
-    }, {
-      "logicTrigger" : "CUSTOM",
-      "logicType" : "APPVIEWUIACTION",
       "name" : "mdctrl_uef7a5ea_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
@@ -373,26 +357,14 @@
       }
     } ],
     "getPSAppViewUIActions" : [ {
-      "name" : "todo指派（移动端）",
+      "name" : "todo开始（移动端）",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
         },
         "modelref" : true,
-        "id" : "assignToMob@Todo"
-      },
-      "uIActionTarget" : "SINGLEKEY",
-      "xDataControlName" : "mdctrl"
-    }, {
-      "name" : "todo激活（移动端）",
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-        },
-        "modelref" : true,
-        "id" : "activateMob@Todo"
+        "id" : "StartMob@Todo"
       },
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "mdctrl"
@@ -417,18 +389,6 @@
         },
         "modelref" : true,
         "id" : "deleteMob@Todo"
-      },
-      "uIActionTarget" : "SINGLEKEY",
-      "xDataControlName" : "mdctrl"
-    }, {
-      "name" : "todo关闭（移动端）",
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-        },
-        "modelref" : true,
-        "id" : "closeMob@Todo"
       },
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "mdctrl"
@@ -579,65 +539,33 @@
       "name" : "右滑行为组",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",
-        "name" : "ub540da9",
+        "name" : "u7658460",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "caption" : "指派",
-          "codeName" : "assignToMob",
-          "getFrontPSAppView" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoMobOptionView.json",
-            "viewType" : "DEMOBOPTVIEW"
-          },
-          "frontProcessType" : "WIZARD",
-          "fullCodeName" : "Todo_assignToMob",
-          "name" : "todo指派（移动端）",
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-          },
-          "getPSSysImage" : {
-            "cssClass" : "hand-right-outline"
-          },
-          "refreshMode" : 1,
-          "timeout" : 60000,
-          "uIActionMode" : "FRONT",
-          "uIActionTag" : "assignToMob",
-          "uIActionType" : "DEUIACTION",
-          "reloadData" : true,
-          "id" : "assignToMob@Todo"
-        },
-        "addSeparator" : false,
-        "showCaption" : true,
-        "showIcon" : true
-      }, {
-        "detailType" : "DEUIACTION",
-        "name" : "u7b9cd26",
-        "getPSUIAction" : {
-          "actionTarget" : "SINGLEKEY",
-          "caption" : "激活",
-          "codeName" : "activateMob",
-          "fullCodeName" : "Todo_activateMob",
-          "name" : "todo激活（移动端）",
+          "caption" : "开始",
+          "codeName" : "StartMob",
+          "dataAccessAction" : "START",
+          "fullCodeName" : "Todo_StartMob",
+          "name" : "todo开始（移动端）",
           "getPSAppDEMethod" : {
             "modelref" : true,
-            "id" : "Activate"
+            "id" : "Start"
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
           },
           "getPSSysImage" : {
-            "cssClass" : "color-wand"
+            "cssClass" : "play"
           },
           "refreshMode" : 1,
           "timeout" : 60000,
           "uIActionMode" : "BACKEND",
-          "uIActionTag" : "activateMob",
+          "uIActionTag" : "StartMob",
           "uIActionType" : "DEUIACTION",
           "enableConfirm" : true,
           "reloadData" : true,
-          "id" : "activateMob@Todo"
+          "id" : "StartMob@Todo"
         },
         "addSeparator" : false,
         "showCaption" : true,
@@ -702,38 +630,6 @@
           "enableConfirm" : true,
           "reloadData" : true,
           "id" : "deleteMob@Todo"
-        },
-        "addSeparator" : false,
-        "showCaption" : true,
-        "showIcon" : true
-      }, {
-        "detailType" : "DEUIACTION",
-        "name" : "uc06f834",
-        "getPSUIAction" : {
-          "actionTarget" : "SINGLEKEY",
-          "caption" : "关闭",
-          "codeName" : "closeMob",
-          "fullCodeName" : "Todo_closeMob",
-          "name" : "todo关闭（移动端）",
-          "getPSAppDEMethod" : {
-            "modelref" : true,
-            "id" : "Close"
-          },
-          "getPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-          },
-          "getPSSysImage" : {
-            "cssClass" : "close"
-          },
-          "refreshMode" : 1,
-          "timeout" : 60000,
-          "uIActionMode" : "BACKEND",
-          "uIActionTag" : "closeMob",
-          "uIActionType" : "DEUIACTION",
-          "enableConfirm" : true,
-          "reloadData" : true,
-          "id" : "closeMob@Todo"
         },
         "addSeparator" : false,
         "showCaption" : true,

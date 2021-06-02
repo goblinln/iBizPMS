@@ -88,7 +88,7 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         try {
             return MAPPER.writeValueAsString(iEntityBase);
         } catch (Exception e) {
-            throw new DataEntityRuntimeException(String.format("[%1$s]序列化数据异常，%2$s", this.getName(), e.getMessage()), this, e);
+            throw new DataEntityRuntimeException(String.format("[%1$s]序列化数据异常。%2$s", this.getName(), e.getMessage()), this, e);
         }
     }
 

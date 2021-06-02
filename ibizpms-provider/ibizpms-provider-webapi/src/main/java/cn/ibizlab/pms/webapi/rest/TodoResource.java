@@ -236,7 +236,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.quickTest('DENY')")
+    @PreAuthorize("@TodoRuntime.test(#todo_id, 'START')")
     @ApiOperation(value = "开始", tags = {"待办" },  notes = "开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/start")
     public ResponseEntity<TodoDTO> start(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {

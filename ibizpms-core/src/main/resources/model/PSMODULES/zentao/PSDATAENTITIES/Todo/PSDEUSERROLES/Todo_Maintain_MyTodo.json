@@ -20,6 +20,13 @@
       "id" : "FINISH"
     }
   }, {
+    "dataAccessAction" : "START",
+    "name" : "START",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    }
+  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Todo_Maintain_MyTodo_Delete",
     "getPSDEOPPriv" : {

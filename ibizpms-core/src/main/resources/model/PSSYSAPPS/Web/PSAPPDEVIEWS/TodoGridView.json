@@ -393,10 +393,10 @@
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_ucbe5848_click",
+      "name" : "grid_uagridcolumn1_ua345ff9_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "todo指派"
+        "id" : "todo开始"
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -405,22 +405,6 @@
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "todo完成"
-      }
-    }, {
-      "logicTrigger" : "CUSTOM",
-      "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_u028b830_click",
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "todo激活"
-      }
-    }, {
-      "logicTrigger" : "CUSTOM",
-      "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_u24b965b_click",
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "todo关闭"
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -440,14 +424,14 @@
       }
     } ],
     "getPSAppViewUIActions" : [ {
-      "name" : "todo指派",
+      "name" : "todo开始",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
         },
         "modelref" : true,
-        "id" : "assignTo@Todo"
+        "id" : "Start@Todo"
       },
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
@@ -460,30 +444,6 @@
         },
         "modelref" : true,
         "id" : "finish@Todo"
-      },
-      "uIActionTarget" : "SINGLEKEY",
-      "xDataControlName" : "grid"
-    }, {
-      "name" : "todo激活",
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-        },
-        "modelref" : true,
-        "id" : "activate@Todo"
-      },
-      "uIActionTarget" : "SINGLEKEY",
-      "xDataControlName" : "grid"
-    }, {
-      "name" : "todo关闭",
-      "getPSUIAction" : {
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-        },
-        "modelref" : true,
-        "id" : "close@Todo"
       },
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
@@ -777,34 +737,36 @@
         "name" : "todo行为组",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
-          "name" : "ucbe5848",
+          "name" : "ua345ff9",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "caption" : "指派",
-            "codeName" : "assignTo",
-            "getFrontPSAppView" : {
+            "noPrivDisplayMode" : 1,
+            "caption" : "开始",
+            "codeName" : "Start",
+            "confirmMsg" : "您确定要开始这条待办吗？",
+            "dataAccessAction" : "START",
+            "fullCodeName" : "Todo_Start",
+            "name" : "todo开始",
+            "getPSAppDEMethod" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
-              "viewType" : "DEOPTVIEW"
+              "id" : "Start"
             },
-            "frontProcessType" : "WIZARD",
-            "fullCodeName" : "Todo_assignTo",
-            "name" : "todo指派",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
             },
             "getPSSysImage" : {
-              "glyph" : "xf0a4@FontAwesome",
-              "cssClass" : "fa fa-hand-o-right"
+              "glyph" : "xf01d@FontAwesome",
+              "cssClass" : "fa fa-play-circle-o"
             },
             "refreshMode" : 1,
             "timeout" : 60000,
-            "uIActionMode" : "FRONT",
-            "uIActionTag" : "assignTo",
+            "uIActionMode" : "BACKEND",
+            "uIActionTag" : "Start",
             "uIActionType" : "DEUIACTION",
+            "enableConfirm" : true,
             "reloadData" : true,
-            "id" : "assignTo@Todo"
+            "id" : "Start@Todo"
           },
           "addSeparator" : false,
           "showCaption" : false,
@@ -839,74 +801,6 @@
             "enableConfirm" : true,
             "reloadData" : true,
             "id" : "finish@Todo"
-          },
-          "addSeparator" : false,
-          "showCaption" : false,
-          "showIcon" : true
-        }, {
-          "detailType" : "DEUIACTION",
-          "name" : "u028b830",
-          "getPSUIAction" : {
-            "actionTarget" : "SINGLEKEY",
-            "caption" : "激活",
-            "codeName" : "activate",
-            "confirmMsg" : "您确定要激活这条待办吗？",
-            "fullCodeName" : "Todo_activate",
-            "name" : "todo激活",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Activate"
-            },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf0d0@FontAwesome",
-              "cssClass" : "fa fa-magic"
-            },
-            "refreshMode" : 1,
-            "timeout" : 60000,
-            "uIActionMode" : "BACKEND",
-            "uIActionTag" : "activate",
-            "uIActionType" : "DEUIACTION",
-            "enableConfirm" : true,
-            "reloadData" : true,
-            "id" : "activate@Todo"
-          },
-          "addSeparator" : false,
-          "showCaption" : false,
-          "showIcon" : true
-        }, {
-          "detailType" : "DEUIACTION",
-          "name" : "u24b965b",
-          "getPSUIAction" : {
-            "actionTarget" : "SINGLEKEY",
-            "caption" : "关闭",
-            "codeName" : "close",
-            "confirmMsg" : "您确定要关闭这条待办吗？",
-            "fullCodeName" : "Todo_close",
-            "name" : "todo关闭",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "Close"
-            },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-            },
-            "getPSSysImage" : {
-              "glyph" : "xf00d@FontAwesome",
-              "cssClass" : "fa fa-close"
-            },
-            "refreshMode" : 1,
-            "timeout" : 60000,
-            "uIActionMode" : "BACKEND",
-            "uIActionTag" : "close",
-            "uIActionType" : "DEUIACTION",
-            "enableConfirm" : true,
-            "reloadData" : true,
-            "id" : "close@Todo"
           },
           "addSeparator" : false,
           "showCaption" : false,

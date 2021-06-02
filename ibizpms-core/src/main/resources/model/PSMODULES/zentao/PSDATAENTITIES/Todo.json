@@ -2385,13 +2385,6 @@
     "mSTag" : "closed",
     "name" : "closed",
     "getPSDEMainStateActions" : [ {
-      "name" : "Activate",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Activate.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Save",
       "getPSDEAction" : {
         "modelref" : true,
@@ -2403,20 +2396,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "createCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/CreateCycle.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Finish",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json"
       },
       "allowMode" : true
     }, {
@@ -2440,49 +2419,18 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Remove.json"
       },
       "allowMode" : true
-    }, {
-      "name" : "AssignTo",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/AssignTo.json"
-      },
-      "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "UPDATE",
+      "name" : "FINISH",
       "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
+        "logicName" : "完成",
+        "name" : "FINISH"
       }
     }, {
-      "name" : "DELETE",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      }
-    }, {
-      "name" : "MANAGE",
-      "getPSDEOPPriv" : {
-        "logicName" : "管理",
-        "name" : "MANAGE"
-      }
-    }, {
-      "name" : "CREATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "建立",
-        "name" : "CREATE"
-      }
-    }, {
-      "name" : "ACTIVATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "激活",
-        "name" : "ACTIVATE"
-      }
-    }, {
-      "name" : "READ",
-      "getPSDEOPPriv" : {
-        "logicName" : "读取",
-        "name" : "READ"
+        "logicName" : "开始",
+        "name" : "START"
       }
     } ],
     "stateValue" : "closed",
@@ -2493,7 +2441,7 @@
     "default" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
-    "oPPrivAllowMode" : true
+    "oPPrivAllowMode" : false
   }, {
     "codeName" : "doing",
     "enterStateMode" : "ANY",
@@ -2558,58 +2506,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "CREATE",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "建立",
-        "name" : "CREATE"
-      }
-    }, {
-      "name" : "MANAGE",
-      "getPSDEOPPriv" : {
-        "logicName" : "管理",
-        "name" : "MANAGE"
-      }
-    }, {
-      "name" : "FINISH",
-      "getPSDEOPPriv" : {
-        "logicName" : "完成",
-        "name" : "FINISH"
-      }
-    }, {
-      "name" : "ASSIGNTO",
-      "getPSDEOPPriv" : {
-        "logicName" : "指派",
-        "name" : "ASSIGNTO"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      }
-    }, {
-      "name" : "READ",
-      "getPSDEOPPriv" : {
-        "logicName" : "读取",
-        "name" : "READ"
-      }
-    }, {
-      "name" : "TOTASK",
-      "getPSDEOPPriv" : {
-        "logicName" : "转任务",
-        "name" : "TOTASK"
-      }
-    }, {
-      "name" : "TOBUG",
-      "getPSDEOPPriv" : {
-        "logicName" : "转BUG",
-        "name" : "TOBUG"
-      }
-    }, {
-      "name" : "UPDATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
+        "logicName" : "开始",
+        "name" : "START"
       }
     } ],
     "stateValue" : "doing",
@@ -2620,7 +2520,7 @@
     "default" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
-    "oPPrivAllowMode" : true
+    "oPPrivAllowMode" : false
   }, {
     "codeName" : "done",
     "enterStateMode" : "ANY",
@@ -2628,27 +2528,6 @@
     "mSTag" : "done",
     "name" : "done",
     "getPSDEMainStateActions" : [ {
-      "name" : "AssignTo",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/AssignTo.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "createCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/CreateCycle.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Activate",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Activate.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -2692,46 +2571,16 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "MANAGE",
+      "name" : "FINISH",
       "getPSDEOPPriv" : {
-        "logicName" : "管理",
-        "name" : "MANAGE"
+        "logicName" : "完成",
+        "name" : "FINISH"
       }
     }, {
-      "name" : "READ",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "读取",
-        "name" : "READ"
-      }
-    }, {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      }
-    }, {
-      "name" : "CLOSE",
-      "getPSDEOPPriv" : {
-        "logicName" : "关闭",
-        "name" : "CLOSE"
-      }
-    }, {
-      "name" : "CREATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "建立",
-        "name" : "CREATE"
-      }
-    }, {
-      "name" : "UPDATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
-      }
-    }, {
-      "name" : "ACTIVATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "激活",
-        "name" : "ACTIVATE"
+        "logicName" : "开始",
+        "name" : "START"
       }
     } ],
     "stateValue" : "done",
@@ -2742,7 +2591,7 @@
     "default" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
-    "oPPrivAllowMode" : true
+    "oPPrivAllowMode" : false
   }, {
     "codeName" : "wait",
     "enterStateMode" : "ANY",
@@ -2806,67 +2655,19 @@
       },
       "allowMode" : true
     }, {
+      "name" : "Start",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Update.json"
       },
       "allowMode" : true
-    } ],
-    "getPSDEMainStateOPPrivs" : [ {
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "logicName" : "删除",
-        "name" : "DELETE"
-      }
-    }, {
-      "name" : "FINISH",
-      "getPSDEOPPriv" : {
-        "logicName" : "完成",
-        "name" : "FINISH"
-      }
-    }, {
-      "name" : "READ",
-      "getPSDEOPPriv" : {
-        "logicName" : "读取",
-        "name" : "READ"
-      }
-    }, {
-      "name" : "CREATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "建立",
-        "name" : "CREATE"
-      }
-    }, {
-      "name" : "UPDATE",
-      "getPSDEOPPriv" : {
-        "logicName" : "更新",
-        "name" : "UPDATE"
-      }
-    }, {
-      "name" : "MANAGE",
-      "getPSDEOPPriv" : {
-        "logicName" : "管理",
-        "name" : "MANAGE"
-      }
-    }, {
-      "name" : "TOBUG",
-      "getPSDEOPPriv" : {
-        "logicName" : "转BUG",
-        "name" : "TOBUG"
-      }
-    }, {
-      "name" : "ASSIGNTO",
-      "getPSDEOPPriv" : {
-        "logicName" : "指派",
-        "name" : "ASSIGNTO"
-      }
-    }, {
-      "name" : "TOTASK",
-      "getPSDEOPPriv" : {
-        "logicName" : "转任务",
-        "name" : "TOTASK"
-      }
     } ],
     "stateValue" : "wait",
     "viewActions" : 0,
@@ -2876,7 +2677,7 @@
     "default" : false,
     "enableViewActions" : false,
     "fieldAllowMode" : false,
-    "oPPrivAllowMode" : true
+    "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "激活",
@@ -2902,6 +2703,9 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "开始",
+    "name" : "START"
   }, {
     "logicName" : "转BUG",
     "name" : "TOBUG"
@@ -2970,6 +2774,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "FINISH"
+      }
+    }, {
+      "dataAccessAction" : "START",
+      "name" : "START",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "START"
       }
     }, {
       "dataAccessAction" : "DELETE",
