@@ -81,23 +81,6 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchEstimate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectBurnService
-     */
-    async FetchEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/projectburns/fetchestimate`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectburns/fetchestimate`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * ComputeBurn
      *
      * @param {*} [_context={}]
@@ -113,6 +96,23 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
         if (_context.project && _context.projectburn) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchEstimate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectBurnService
+     */
+    async FetchEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/projectburns/fetchestimate`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectburns/fetchestimate`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

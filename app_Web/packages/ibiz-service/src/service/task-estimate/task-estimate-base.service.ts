@@ -135,25 +135,22 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         return this.condCache.get('view');
     }
     /**
-     * Get
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskEstimateService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.account && _context.project && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
+            return this.http.delete(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
         }
         if (_context.project && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
+            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
         }
         if (_context.account && _context.task && _context.taskestimate) {
-            const res = await this.http.get(`/accounts/${_context.account}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-            return res;
+            return this.http.delete(`/accounts/${_context.account}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -228,6 +225,49 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskEstimateService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        }
+        if (_context.account && _context.task && true) {
+            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskEstimateService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.project && _context.task && _context.taskestimate) {
+            const res = await this.http.get(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            return res;
+        }
+        if (_context.project && _context.task && _context.taskestimate) {
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            return res;
+        }
+        if (_context.account && _context.task && _context.taskestimate) {
+            const res = await this.http.get(`/accounts/${_context.account}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -247,46 +287,6 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         if (_context.account && _context.task && _context.taskestimate) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/accounts/${_context.account}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskEstimateService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.task && _context.taskestimate) {
-            return this.http.delete(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-        if (_context.project && _context.task && _context.taskestimate) {
-            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-        if (_context.account && _context.task && _context.taskestimate) {
-            return this.http.delete(`/accounts/${_context.account}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskEstimateService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
-        }
-        if (_context.account && _context.task && true) {
-            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

@@ -3507,6 +3507,36 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'usertpls/:usertpl?/views/gridview',
+                    meta: {
+                        caption: 'entities.usertpl.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'usertpls', parameterName: 'usertpl' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'usertpl',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'usertpls/:usertpl?/views/editview',
+                    meta: {
+                        caption: 'entities.usertpl.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'usertpls', parameterName: 'usertpl' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'usertpl',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'accounts/:account?/products/:product?/productbranches/:productbranch?/views/pmgridview',
                     meta: {
                         caption: 'entities.productbranch.views.pmgridview.caption',
@@ -32174,36 +32204,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridexpview' },
                         ],
                         resource:'syspost',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'usertpls/:usertpl?/views/gridview',
-                    meta: {
-                        caption: 'entities.usertpl.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'usertpls', parameterName: 'usertpl' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'usertpl',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'usertpls/:usertpl?/views/editview',
-                    meta: {
-                        caption: 'entities.usertpl.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'usertpls', parameterName: 'usertpl' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'usertpl',
                         requireAuth: true,
                     },
                     component: AppViewShell

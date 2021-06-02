@@ -80,6 +80,15 @@ export class GlobalService {
         return (await import('./story-spec/story-spec.service')).default.getInstance();
     }
     /**
+     * 用户模板服务
+     *
+     * @return {UserTpl}
+     * @memberof GlobalService
+     */
+    async getUserTplService() {
+        return (await import('./user-tpl/user-tpl.service')).default.getInstance();
+    }
+    /**
      * 产品的分支和平台信息服务
      *
      * @return {ProductBranch}
@@ -456,15 +465,6 @@ export class GlobalService {
      */
     async getSysPostService() {
         return (await import('./sys-post/sys-post.service')).default.getInstance();
-    }
-    /**
-     * 用户模板服务
-     *
-     * @return {UserTpl}
-     * @memberof GlobalService
-     */
-    async getUserTplService() {
-        return (await import('./user-tpl/user-tpl.service')).default.getInstance();
     }
     /**
      * 任务统计服务
@@ -915,15 +915,6 @@ export class GlobalService {
      */
     async getIBZWEEKLYService() {
         return (await import('./ibzweekly/ibzweekly.service')).default.getInstance();
-    }
-    /**
-     * 文档服务
-     *
-     * @return {IBzDoc}
-     * @memberof GlobalService
-     */
-    async getIBzDocService() {
-        return (await import('./ibz-doc/ibz-doc.service')).default.getInstance();
     }
     /**
      * 系统应用服务

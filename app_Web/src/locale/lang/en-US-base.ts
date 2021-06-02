@@ -5,6 +5,7 @@ import product_en_US from '@locale/lanres/entities/product/product_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
 import test_en_US from '@locale/lanres/entities/test/test_en_US';
 import storyspec_en_US from '@locale/lanres/entities/story-spec/story-spec_en_US';
+import usertpl_en_US from '@locale/lanres/entities/user-tpl/user-tpl_en_US';
 import productbranch_en_US from '@locale/lanres/entities/product-branch/product-branch_en_US';
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import testcasestep_en_US from '@locale/lanres/entities/test-case-step/test-case-step_en_US';
@@ -47,7 +48,6 @@ import doccontent_en_US from '@locale/lanres/entities/doc-content/doc-content_en
 import ibzreport_en_US from '@locale/lanres/entities/ibz-report/ibz-report_en_US';
 import ibztaskestimate_en_US from '@locale/lanres/entities/ibztask-estimate/ibztask-estimate_en_US';
 import syspost_en_US from '@locale/lanres/entities/sys-post/sys-post_en_US';
-import usertpl_en_US from '@locale/lanres/entities/user-tpl/user-tpl_en_US';
 import taskstats_en_US from '@locale/lanres/entities/task-stats/task-stats_en_US';
 import ibizproprojectweekly_en_US from '@locale/lanres/entities/ibizpro-project-weekly/ibizpro-project-weekly_en_US';
 import ibzfavorites_en_US from '@locale/lanres/entities/ibz-favorites/ibz-favorites_en_US';
@@ -98,7 +98,6 @@ import ibzmyterritory_en_US from '@locale/lanres/entities/ibz-my-territory/ibz-m
 import sysupdatelog_en_US from '@locale/lanres/entities/sys-update-log/sys-update-log_en_US';
 import doc_en_US from '@locale/lanres/entities/doc/doc_en_US';
 import ibzweekly_en_US from '@locale/lanres/entities/ibzweekly/ibzweekly_en_US';
-import ibzdoc_en_US from '@locale/lanres/entities/ibz-doc/ibz-doc_en_US';
 import pssysapp_en_US from '@locale/lanres/entities/pssys-app/pssys-app_en_US';
 import ibzproprojectusertask_en_US from '@locale/lanres/entities/ibzpro-project-user-task/ibzpro-project-user-task_en_US';
 import ibzcase_en_US from '@locale/lanres/entities/ibz-case/ibz-case_en_US';
@@ -426,6 +425,7 @@ function getAppLocale(){
             'projectburn': projectburn_en_US(),
             'test': test_en_US(),
             'storyspec': storyspec_en_US(),
+            'usertpl': usertpl_en_US(),
             'productbranch': productbranch_en_US(),
             'action': action_en_US(),
             'testcasestep': testcasestep_en_US(),
@@ -468,7 +468,6 @@ function getAppLocale(){
             'ibzreport': ibzreport_en_US(),
             'ibztaskestimate': ibztaskestimate_en_US(),
             'syspost': syspost_en_US(),
-            'usertpl': usertpl_en_US(),
             'taskstats': taskstats_en_US(),
             'ibizproprojectweekly': ibizproprojectweekly_en_US(),
             'ibzfavorites': ibzfavorites_en_US(),
@@ -519,7 +518,6 @@ function getAppLocale(){
             'sysupdatelog': sysupdatelog_en_US(),
             'doc': doc_en_US(),
             'ibzweekly': ibzweekly_en_US(),
-            'ibzdoc': ibzdoc_en_US(),
             'pssysapp': pssysapp_en_US(),
             'ibzproprojectusertask': ibzproprojectusertask_en_US(),
             'ibzcase': ibzcase_en_US(),

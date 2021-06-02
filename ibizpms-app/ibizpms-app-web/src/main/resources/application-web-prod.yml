@@ -467,10 +467,6 @@ zuul:
       path: /ibzweeklies/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
-    ibz_doc:
-      path: /ibzdocs/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
     pssysapp:
       path: /pssysapps/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

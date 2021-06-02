@@ -61,6 +61,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('projectburn', () => import('../uiservice/project-burn/project-burn-ui-service'));
         UIServiceRegister.allUIServiceMap.set('test', () => import('../uiservice/test/test-ui-service'));
         UIServiceRegister.allUIServiceMap.set('storyspec', () => import('../uiservice/story-spec/story-spec-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('usertpl', () => import('../uiservice/user-tpl/user-tpl-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productbranch', () => import('../uiservice/product-branch/product-branch-ui-service'));
         UIServiceRegister.allUIServiceMap.set('action', () => import('../uiservice/action/action-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testcasestep', () => import('../uiservice/test-case-step/test-case-step-ui-service'));
@@ -103,7 +104,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzreport', () => import('../uiservice/ibz-report/ibz-report-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibztaskestimate', () => import('../uiservice/ibztask-estimate/ibztask-estimate-ui-service'));
         UIServiceRegister.allUIServiceMap.set('syspost', () => import('../uiservice/sys-post/sys-post-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('usertpl', () => import('../uiservice/user-tpl/user-tpl-ui-service'));
         UIServiceRegister.allUIServiceMap.set('taskstats', () => import('../uiservice/task-stats/task-stats-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibizproprojectweekly', () => import('../uiservice/ibizpro-project-weekly/ibizpro-project-weekly-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzfavorites', () => import('../uiservice/ibz-favorites/ibz-favorites-ui-service'));
@@ -154,7 +154,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('sysupdatelog', () => import('../uiservice/sys-update-log/sys-update-log-ui-service'));
         UIServiceRegister.allUIServiceMap.set('doc', () => import('../uiservice/doc/doc-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzweekly', () => import('../uiservice/ibzweekly/ibzweekly-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('ibzdoc', () => import('../uiservice/ibz-doc/ibz-doc-ui-service'));
         UIServiceRegister.allUIServiceMap.set('pssysapp', () => import('../uiservice/pssys-app/pssys-app-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproprojectusertask', () => import('../uiservice/ibzpro-project-user-task/ibzpro-project-user-task-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzcase', () => import('../uiservice/ibz-case/ibz-case-ui-service'));
