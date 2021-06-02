@@ -21,6 +21,18 @@
     "codeName" : "Bug",
     "text" : "Bug",
     "value" : "bug"
+  }, {
+    "codeName" : "Product",
+    "text" : "产品",
+    "value" : "product"
+  }, {
+    "codeName" : "Project",
+    "text" : "项目",
+    "value" : "project"
+  }, {
+    "codeName" : "Productplan",
+    "text" : "产品计划",
+    "value" : "productplan"
   } ],
   "enableCache" : true
 }

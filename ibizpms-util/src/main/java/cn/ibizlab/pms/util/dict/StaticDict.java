@@ -2614,7 +2614,10 @@ public class StaticDict {
     public enum UserTplType {
         STORY("story","需求"),
         TASK("task","任务"),
-        BUG("bug","Bug");
+        BUG("bug","Bug"),
+        PRODUCT("product","产品"),
+        PROJECT("project","项目"),
+        PRODUCTPLAN("productplan","产品计划");
 
         private String value;
         private String text;

@@ -457,6 +457,9 @@ function getLocaleResourceBase(){
           "story": commonLogic.appcommonhandle("需求",null),
           "task": commonLogic.appcommonhandle("任务",null),
           "bug": commonLogic.appcommonhandle("Bug",null),
+          "product": commonLogic.appcommonhandle("产品",null),
+          "project": commonLogic.appcommonhandle("项目",null),
+          "productplan": commonLogic.appcommonhandle("产品计划",null),
           "empty": commonLogic.appcommonhandle("",null),
       },
       'UserTplQuickGroup': {

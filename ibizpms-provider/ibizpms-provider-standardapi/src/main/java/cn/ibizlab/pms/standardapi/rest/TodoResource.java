@@ -53,6 +53,27 @@ public class TodoResource {
     public TodoMapping todoMapping;
 
 
+    @PreAuthorize("@TodoRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户开始", tags = {"待办" },  notes = "根据系统用户开始")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/todos/{todo_id}/start")
+    public ResponseEntity<TodoDTO> startBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
+        Todo domain = todoMapping.toDomain(tododto);
+        
+        domain.setId(todo_id);
+        domain = todoService.start(domain) ;
+        tododto = todoMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(tododto);
+    }
+
+    @PreAuthorize("@TodoRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户获取待办草稿", tags = {"待办" },  notes = "根据系统用户获取待办草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/todos/getdraft")
+    public ResponseEntity<TodoDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TodoDTO dto) {
+        Todo domain = todoMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
+    }
+
     @PreAuthorize("@TodoRuntime.test(#todo_id, 'READ')")
     @ApiOperation(value = "根据系统用户获取待办", tags = {"待办" },  notes = "根据系统用户获取待办")
 	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/todos/{todo_id}")
@@ -90,18 +111,6 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户开始", tags = {"待办" },  notes = "根据系统用户开始")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/todos/{todo_id}/start")
-    public ResponseEntity<TodoDTO> startBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
-        Todo domain = todoMapping.toDomain(tododto);
-        
-        domain.setId(todo_id);
-        domain = todoService.start(domain) ;
-        tododto = todoMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(tododto);
-    }
-
     @PreAuthorize("@TodoRuntime.test(#todo_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户删除待办", tags = {"待办" },  notes = "根据系统用户删除待办")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/todos/{todo_id}")
@@ -115,41 +124,6 @@ public class TodoResource {
     public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
         todoService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"待办" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/todos/fetchmy")
-	public ResponseEntity<List<TodoDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TodoSearchContext context) {
-        
-        todoRuntime.addAuthorityConditions(context,"READ");
-        Page<Todo> domains = todoService.searchMy(context) ;
-        List<TodoDTO> list = todoMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@TodoRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户获取待办草稿", tags = {"待办" },  notes = "根据系统用户获取待办草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/todos/getdraft")
-    public ResponseEntity<TodoDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TodoDTO dto) {
-        Todo domain = todoMapping.toDomain(dto);
-        
-        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
-    }
-
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'FINISH')")
-    @ApiOperation(value = "根据系统用户Finish", tags = {"待办" },  notes = "根据系统用户Finish")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/todos/{todo_id}/finish")
-    public ResponseEntity<TodoDTO> finishBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
-        Todo domain = todoMapping.toDomain(tododto);
-        
-        domain.setId(todo_id);
-        domain = todoService.finish(domain) ;
-        tododto = todoMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
 
     @PreAuthorize("@TodoRuntime.test(#todo_id, 'UPDATE')")
@@ -166,6 +140,32 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"待办" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/todos/fetchmy")
+	public ResponseEntity<List<TodoDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TodoSearchContext context) {
+        
+        todoRuntime.addAuthorityConditions(context,"READ");
+        Page<Todo> domains = todoService.searchMy(context) ;
+        List<TodoDTO> list = todoMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TodoRuntime.test(#todo_id, 'FINISH')")
+    @ApiOperation(value = "根据系统用户Finish", tags = {"待办" },  notes = "根据系统用户Finish")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/todos/{todo_id}/finish")
+    public ResponseEntity<TodoDTO> finishBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
+        Todo domain = todoMapping.toDomain(tododto);
+        
+        domain.setId(todo_id);
+        domain = todoService.finish(domain) ;
+        tododto = todoMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(tododto);
+    }
 
 }
 

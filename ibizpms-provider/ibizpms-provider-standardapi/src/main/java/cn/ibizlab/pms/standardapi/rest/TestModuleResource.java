@@ -67,19 +67,6 @@ public class TestModuleResource {
                 .body(list);
 	}
     @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
-    @ApiOperation(value = "根据产品更新测试模块", tags = {"测试模块" },  notes = "根据产品更新测试模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testmodules/{testmodule_id}")
-    public ResponseEntity<TestModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
-        TestModule domain = testmoduleMapping.toDomain(testmoduledto);
-        domain.setRoot(product_id);
-        domain.setId(testmodule_id);
-		testmoduleService.update(domain);
-        TestModuleDTO dto = testmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
     @ApiOperation(value = "根据产品获取测试模块草稿", tags = {"测试模块" },  notes = "根据产品获取测试模块草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testmodules/getdraft")
     public ResponseEntity<TestModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestModuleDTO dto) {
@@ -123,6 +110,19 @@ public class TestModuleResource {
         TestModuleDTO dto = testmoduleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @ApiOperation(value = "根据产品更新测试模块", tags = {"测试模块" },  notes = "根据产品更新测试模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testmodules/{testmodule_id}")
+    public ResponseEntity<TestModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
+        TestModule domain = testmoduleMapping.toDomain(testmoduledto);
+        domain.setRoot(product_id);
+        domain.setId(testmodule_id);
+		testmoduleService.update(domain);
+        TestModuleDTO dto = testmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 
     @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")

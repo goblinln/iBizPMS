@@ -60,9 +60,9 @@ export abstract class UserTplBase extends EntityBase implements IUserTpl {
     /**
      * type
      *
-     * @type {('story' | 'task' | 'bug')} story: 需求, task: 任务, bug: Bug
+     * @type {('story' | 'task' | 'bug' | 'product' | 'project' | 'productplan')} story: 需求, task: 任务, bug: Bug, product: 产品, project: 项目, productplan: 产品计划
      */
-    type?: 'story' | 'task' | 'bug';
+    type?: 'story' | 'task' | 'bug' | 'product' | 'project' | 'productplan';
     /**
      * account
      */

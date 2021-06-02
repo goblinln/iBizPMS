@@ -108,6 +108,38 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         return this.condCache.get('view');
     }
     /**
+     * Start
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.todo) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/start`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/todos/getdraft`, _data);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -158,21 +190,6 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Start
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.todo) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/start`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Remove
      *
      * @param {*} [_context={}]
@@ -183,6 +200,21 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.account && _context.todo) {
             return this.http.delete(`/accounts/${_context.account}/todos/${_context.todo}`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TodoService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.todo) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/accounts/${_context.account}/todos/${_context.todo}`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -201,23 +233,6 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/accounts/${_context.account}/todos/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Finish
      *
      * @param {*} [_context={}]
@@ -229,21 +244,6 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
         if (_context.account && _context.todo) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/finish`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TodoService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.todo) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/accounts/${_context.account}/todos/${_context.todo}`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

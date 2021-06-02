@@ -33898,6 +33898,12 @@
      "code_name":"Product",
      "entity_name":"ZT_PROJECT",
      "ref_entity_name":"ZT_PRODUCT"
+    },
+    {"name":"DERCUSTOM_ZT_USERTPL_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"ProductUserTpl",
+     "entity_name":"ZT_USERTPL",
+     "ref_entity_name":"ZT_PRODUCT"
     }
     ],
     "parentEntitys":[
@@ -55397,6 +55403,12 @@
     "subEntitys":[
     ],
     "parentEntitys":[
+    {"name":"DERCUSTOM_ZT_USERTPL_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"ProductUserTpl",
+     "entity_name":"ZT_USERTPL",
+     "ref_entity_name":"ZT_PRODUCT"
+    }
     ]
  }
     ,

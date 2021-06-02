@@ -54,19 +54,26 @@ public class TaskEstimateResource {
 
 
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户任务删除任务预计", tags = {"任务预计" },  notes = "根据系统用户任务删除任务预计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<Boolean> removeBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
-    }
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户任务批量删除任务预计", tags = {"任务预计" },  notes = "根据系统用户任务批量删除任务预计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUserTask(@RequestBody List<Long> ids) {
-        taskestimateService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据系统用户任务获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaultBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
+        context.setN_task_eq(task_id);
+        Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
+        List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据系统用户任务获取任务预计草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/getdraft")
+    public ResponseEntity<TaskEstimateDTO> getDraftBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, TaskEstimateDTO dto) {
+        TaskEstimate domain = taskestimateMapping.toDomain(dto);
+        domain.setTask(task_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(taskestimateService.getDraft(domain)));
     }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
@@ -105,28 +112,21 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据系统用户任务获取任务预计草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/getdraft")
-    public ResponseEntity<TaskEstimateDTO> getDraftBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, TaskEstimateDTO dto) {
-        TaskEstimate domain = taskestimateMapping.toDomain(dto);
-        domain.setTask(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(taskestimateService.getDraft(domain)));
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户任务删除任务预计", tags = {"任务预计" },  notes = "根据系统用户任务删除任务预计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<Boolean> removeBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据系统用户任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaultBySysUserTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
-        context.setN_task_eq(task_id);
-        Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
-        List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户任务批量删除任务预计", tags = {"任务预计" },  notes = "根据系统用户任务批量删除任务预计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUserTask(@RequestBody List<Long> ids) {
+        taskestimateService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
     @ApiOperation(value = "根据系统用户任务获取任务预计", tags = {"任务预计" },  notes = "根据系统用户任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
@@ -138,19 +138,26 @@ public class TaskEstimateResource {
 
 
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据项目任务删除任务预计", tags = {"任务预计" },  notes = "根据项目任务删除任务预计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<Boolean> removeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
-    }
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据项目任务批量删除任务预计", tags = {"任务预计" },  notes = "根据项目任务批量删除任务预计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/batch")
-    public ResponseEntity<Boolean> removeBatchByProjectTask(@RequestBody List<Long> ids) {
-        taskestimateService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
+        context.setN_task_eq(task_id);
+        Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
+        List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据项目任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据项目任务获取任务预计草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/getdraft")
+    public ResponseEntity<TaskEstimateDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, TaskEstimateDTO dto) {
+        TaskEstimate domain = taskestimateMapping.toDomain(dto);
+        domain.setTask(task_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(taskestimateService.getDraft(domain)));
     }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
@@ -189,28 +196,21 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据项目任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据项目任务获取任务预计草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/getdraft")
-    public ResponseEntity<TaskEstimateDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, TaskEstimateDTO dto) {
-        TaskEstimate domain = taskestimateMapping.toDomain(dto);
-        domain.setTask(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(taskestimateService.getDraft(domain)));
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据项目任务删除任务预计", tags = {"任务预计" },  notes = "根据项目任务删除任务预计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<Boolean> removeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据项目任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
-        context.setN_task_eq(task_id);
-        Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
-        List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据项目任务批量删除任务预计", tags = {"任务预计" },  notes = "根据项目任务批量删除任务预计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/batch")
+    public ResponseEntity<Boolean> removeBatchByProjectTask(@RequestBody List<Long> ids) {
+        taskestimateService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
     @ApiOperation(value = "根据项目任务获取任务预计", tags = {"任务预计" },  notes = "根据项目任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
@@ -223,19 +223,26 @@ public class TaskEstimateResource {
 
 
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户项目任务删除任务预计", tags = {"任务预计" },  notes = "根据系统用户项目任务删除任务预计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
-    public ResponseEntity<Boolean> removeBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
-    }
-
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
-    @ApiOperation(value = "根据系统用户项目任务批量删除任务预计", tags = {"任务预计" },  notes = "根据系统用户项目任务批量删除任务预计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUserProjectTask(@RequestBody List<Long> ids) {
-        taskestimateService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据系统用户项目任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据系统用户项目任务获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault")
+	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaultBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
+        context.setN_task_eq(task_id);
+        Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
+        List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户项目任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据系统用户项目任务获取任务预计草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/getdraft")
+    public ResponseEntity<TaskEstimateDTO> getDraftBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, TaskEstimateDTO dto) {
+        TaskEstimate domain = taskestimateMapping.toDomain(dto);
+        domain.setTask(task_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(taskestimateService.getDraft(domain)));
     }
 
     @PreAuthorize("@TaskEstimateRuntime.quickTest('UPDATE')")
@@ -274,28 +281,21 @@ public class TaskEstimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户项目任务获取任务预计草稿", tags = {"任务预计" },  notes = "根据系统用户项目任务获取任务预计草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/getdraft")
-    public ResponseEntity<TaskEstimateDTO> getDraftBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, TaskEstimateDTO dto) {
-        TaskEstimate domain = taskestimateMapping.toDomain(dto);
-        domain.setTask(task_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskestimateMapping.toDto(taskestimateService.getDraft(domain)));
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户项目任务删除任务预计", tags = {"任务预计" },  notes = "根据系统用户项目任务删除任务预计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")
+    public ResponseEntity<Boolean> removeBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(taskestimateService.remove(taskestimate_id));
     }
 
-    @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户项目任务获取DEFAULT", tags = {"任务预计" } ,notes = "根据系统用户项目任务获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaultBySysUserProjectTask(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskEstimateSearchContext context) {
-        context.setN_task_eq(task_id);
-        Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
-        List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("@TaskEstimateRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据系统用户项目任务批量删除任务预计", tags = {"任务预计" },  notes = "根据系统用户项目任务批量删除任务预计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUserProjectTask(@RequestBody List<Long> ids) {
+        taskestimateService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
     @ApiOperation(value = "根据系统用户项目任务获取任务预计", tags = {"任务预计" },  notes = "根据系统用户项目任务获取任务预计")
 	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskestimates/{taskestimate_id}")

@@ -973,6 +973,26 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "用户模板",
+  "getMinorPSDERs" : [ {
+    "codeName" : "ProductUserTpl",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDERS/DERCUSTOM_ZT_USERTPL_ZT_PRODUCT.json",
+    "logicName" : "产品模板",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl.json"
+    },
+    "name" : "DERCUSTOM_ZT_USERTPL_ZT_PRODUCT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1
+  } ],
   "name" : "ZT_USERTPL",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
