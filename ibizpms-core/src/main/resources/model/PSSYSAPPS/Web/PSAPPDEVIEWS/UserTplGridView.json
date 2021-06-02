@@ -241,7 +241,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchMyUserTpl"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
