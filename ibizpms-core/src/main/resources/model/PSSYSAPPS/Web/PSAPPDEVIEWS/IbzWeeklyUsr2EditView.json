@@ -3069,6 +3069,20 @@
                 "actionAfterWizard" : "DEFAULT",
                 "logicType" : "PREDEFINED",
                 "name" : "新建数据",
+                "getNewDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                } ],
                 "viewLogicType" : "APP_NEWDATA",
                 "batchAddOnly" : false,
                 "enableBatchAdd" : false,
@@ -3081,6 +3095,20 @@
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
                 "name" : "打开数据",
+                "getOpenDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                } ],
                 "viewLogicType" : "APP_OPENDATA",
                 "editMode" : true
               }
@@ -3095,6 +3123,25 @@
               "name" : "size",
               "value" : "100",
               "rawValue" : true
+            } ],
+            "getPSAppViewRefs" : [ {
+              "name" : "NEWDATA",
+              "realOpenMode" : "DRAWER_TOP",
+              "realTitle" : "任务主数据看板视图",
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
+            }, {
+              "name" : "EDITDATA",
+              "realOpenMode" : "DRAWER_TOP",
+              "realTitle" : "任务主数据看板视图",
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
             } ],
             "getPSControls" : [ {
               "aggMode" : "NONE",
@@ -3789,6 +3836,20 @@
                 "actionAfterWizard" : "DEFAULT",
                 "logicType" : "PREDEFINED",
                 "name" : "新建数据",
+                "getNewDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                } ],
                 "viewLogicType" : "APP_NEWDATA",
                 "batchAddOnly" : false,
                 "enableBatchAdd" : false,
@@ -3801,6 +3862,20 @@
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
                 "name" : "打开数据",
+                "getOpenDataPSAppView" : {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                },
+                "getPSAppUILogicRefViews" : [ {
+                  "getRefPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                    "viewType" : "DEPORTALVIEW"
+                  }
+                } ],
                 "viewLogicType" : "APP_OPENDATA",
                 "editMode" : true
               }
@@ -3815,6 +3890,25 @@
               "name" : "size",
               "value" : "100",
               "rawValue" : true
+            } ],
+            "getPSAppViewRefs" : [ {
+              "name" : "NEWDATA",
+              "realOpenMode" : "DRAWER_TOP",
+              "realTitle" : "任务主数据看板视图",
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
+            }, {
+              "name" : "EDITDATA",
+              "realOpenMode" : "DRAWER_TOP",
+              "realTitle" : "任务主数据看板视图",
+              "getRefPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
+                "viewType" : "DEPORTALVIEW"
+              }
             } ],
             "getPSControls" : [ {
               "aggMode" : "NONE",

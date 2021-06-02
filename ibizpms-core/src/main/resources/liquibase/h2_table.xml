@@ -1345,8 +1345,6 @@
     </changeSet>
 
 
-
-
     <!--输出实体[IBZ_LOGIN]数据结构 -->
     <changeSet author="a_A_23e8aa361" id="tab-ibz_login-3-40">
         <createTable tableName="zt_user">

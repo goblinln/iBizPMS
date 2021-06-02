@@ -176,9 +176,6 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin.json"
   }, {
     "modelref" : true,

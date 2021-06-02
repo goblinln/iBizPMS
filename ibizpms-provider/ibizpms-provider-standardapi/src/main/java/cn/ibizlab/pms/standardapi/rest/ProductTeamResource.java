@@ -53,6 +53,19 @@ public class ProductTeamResource {
     public ProductTeamMapping productteamMapping;
 
 
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新产品团队", tags = {"产品团队" },  notes = "根据产品更新产品团队")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productteams/{productteam_id}")
+    public ResponseEntity<ProductTeamDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody ProductTeamDTO productteamdto) {
+        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
+        domain.setRoot(product_id);
+        domain.setId(productteam_id);
+		productteamService.update(domain);
+        ProductTeamDTO dto = productteamMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
     @ApiOperation(value = "根据产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据产品获取产品团队草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/getdraft")
@@ -122,19 +135,6 @@ public class ProductTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新产品团队", tags = {"产品团队" },  notes = "根据产品更新产品团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productteams/{productteam_id}")
-    public ResponseEntity<ProductTeamDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody ProductTeamDTO productteamdto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
-        domain.setRoot(product_id);
-        domain.setId(productteam_id);
-		productteamService.update(domain);
-        ProductTeamDTO dto = productteamMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除产品团队", tags = {"产品团队" },  notes = "根据产品删除产品团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/{productteam_id}")
@@ -150,6 +150,19 @@ public class ProductTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
+    @ApiOperation(value = "根据系统用户产品更新产品团队", tags = {"产品团队" },  notes = "根据系统用户产品更新产品团队")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/products/{product_id}/productteams/{productteam_id}")
+    public ResponseEntity<ProductTeamDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody ProductTeamDTO productteamdto) {
+        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
+        domain.setRoot(product_id);
+        domain.setId(productteam_id);
+		productteamService.update(domain);
+        ProductTeamDTO dto = productteamMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'CREATE')")
@@ -221,19 +234,6 @@ public class ProductTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'UPDATE')")
-    @ApiOperation(value = "根据系统用户产品更新产品团队", tags = {"产品团队" },  notes = "根据系统用户产品更新产品团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/products/{product_id}/productteams/{productteam_id}")
-    public ResponseEntity<ProductTeamDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody ProductTeamDTO productteamdto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
-        domain.setRoot(product_id);
-        domain.setId(productteam_id);
-		productteamService.update(domain);
-        ProductTeamDTO dto = productteamMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("@ProductRuntime.test(#product_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户产品删除产品团队", tags = {"产品团队" },  notes = "根据系统用户产品删除产品团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/productteams/{productteam_id}")

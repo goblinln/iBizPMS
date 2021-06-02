@@ -53,19 +53,17 @@ public class BuildResource {
     public BuildMapping buildMapping;
 
 
-    @VersionCheck(entity = "build" , versionfield = "updatedate")
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据产品更新版本", tags = {"版本" },  notes = "根据产品更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品移除Bug关联", tags = {"版本" },  notes = "根据产品移除Bug关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkbug")
+    public ResponseEntity<BuildDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProduct(product_id);
         domain.setId(build_id);
-		buildService.update(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        domain = buildService.unlinkBug(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"版本" } ,notes = "根据产品获取DEFAULT")
@@ -81,25 +79,13 @@ public class BuildResource {
                 .body(list);
 	}
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品移除关联需求", tags = {"版本" },  notes = "根据产品移除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkstory")
-    public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @ApiOperation(value = "根据产品关联需求", tags = {"版本" },  notes = "根据产品关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkstory")
+    public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProduct(product_id);
         domain.setId(build_id);
-        domain = buildService.unlinkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品关联Bug", tags = {"版本" },  notes = "根据产品关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkbug")
-    public ResponseEntity<BuildDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
-        domain.setId(build_id);
-        domain = buildService.linkBug(domain) ;
+        domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
@@ -127,6 +113,65 @@ public class BuildResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据产品建立版本", tags = {"版本" },  notes = "根据产品建立版本")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds")
+    public ResponseEntity<BuildDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+		buildService.create(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @VersionCheck(entity = "build" , versionfield = "updatedate")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据产品更新版本", tags = {"版本" },  notes = "根据产品更新版本")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+        domain.setId(build_id);
+		buildService.update(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品移除关联需求", tags = {"版本" },  notes = "根据产品移除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkstory")
+    public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+        domain.setId(build_id);
+        domain = buildService.unlinkStory(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据产品关联Bug", tags = {"版本" },  notes = "根据产品关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkbug")
+    public ResponseEntity<BuildDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+        domain.setId(build_id);
+        domain = buildService.linkBug(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @ApiOperation(value = "根据产品获取版本", tags = {"版本" },  notes = "根据产品获取版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
+        Build domain = buildService.get(build_id);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
     @ApiOperation(value = "根据产品删除版本", tags = {"版本" },  notes = "根据产品删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
@@ -141,65 +186,18 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据产品建立版本", tags = {"版本" },  notes = "根据产品建立版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds")
-    public ResponseEntity<BuildDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
-		buildService.create(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品关联需求", tags = {"版本" },  notes = "根据产品关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkstory")
-    public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @ApiOperation(value = "根据项目移除Bug关联", tags = {"版本" },  notes = "根据项目移除Bug关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkbug")
+    public ResponseEntity<BuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
-        domain.setId(build_id);
-        domain = buildService.linkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据产品移除Bug关联", tags = {"版本" },  notes = "根据产品移除Bug关联")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkbug")
-    public ResponseEntity<BuildDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        domain.setProject(project_id);
         domain.setId(build_id);
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "根据产品获取版本", tags = {"版本" },  notes = "根据产品获取版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
-        Build domain = buildService.get(build_id);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @VersionCheck(entity = "build" , versionfield = "updatedate")
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据项目更新版本", tags = {"版本" },  notes = "根据项目更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-        domain.setId(build_id);
-		buildService.update(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
@@ -215,25 +213,13 @@ public class BuildResource {
                 .body(list);
 	}
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目移除关联需求", tags = {"版本" },  notes = "根据项目移除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkstory")
-    public ResponseEntity<BuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkstory")
+    public ResponseEntity<BuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProject(project_id);
         domain.setId(build_id);
-        domain = buildService.unlinkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkbug")
-    public ResponseEntity<BuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-        domain.setId(build_id);
-        domain = buildService.linkBug(domain) ;
+        domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
@@ -261,6 +247,65 @@ public class BuildResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据项目建立版本", tags = {"版本" },  notes = "根据项目建立版本")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds")
+    public ResponseEntity<BuildDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+		buildService.create(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @VersionCheck(entity = "build" , versionfield = "updatedate")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据项目更新版本", tags = {"版本" },  notes = "根据项目更新版本")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+        domain.setId(build_id);
+		buildService.update(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目移除关联需求", tags = {"版本" },  notes = "根据项目移除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkstory")
+    public ResponseEntity<BuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+        domain.setId(build_id);
+        domain = buildService.unlinkStory(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkbug")
+    public ResponseEntity<BuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+        domain.setId(build_id);
+        domain = buildService.linkBug(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
+        Build domain = buildService.get(build_id);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
     @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
@@ -275,66 +320,19 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据项目建立版本", tags = {"版本" },  notes = "根据项目建立版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds")
-    public ResponseEntity<BuildDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-		buildService.create(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
 
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkstory")
-    public ResponseEntity<BuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @ApiOperation(value = "根据系统用户产品移除Bug关联", tags = {"版本" },  notes = "根据系统用户产品移除Bug关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/unlinkbug")
+    public ResponseEntity<BuildDTO> unlinkBugBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-        domain.setId(build_id);
-        domain = buildService.linkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目移除Bug关联", tags = {"版本" },  notes = "根据项目移除Bug关联")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkbug")
-    public ResponseEntity<BuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
+        domain.setProduct(product_id);
         domain.setId(build_id);
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-    @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
-        Build domain = buildService.get(build_id);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-
-    @VersionCheck(entity = "build" , versionfield = "updatedate")
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据系统用户产品更新版本", tags = {"版本" },  notes = "根据系统用户产品更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
-        domain.setId(build_id);
-		buildService.update(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取DEFAULT", tags = {"版本" } ,notes = "根据系统用户产品获取DEFAULT")
@@ -350,25 +348,13 @@ public class BuildResource {
                 .body(list);
 	}
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户产品移除关联需求", tags = {"版本" },  notes = "根据系统用户产品移除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/unlinkstory")
-    public ResponseEntity<BuildDTO> unlinkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @ApiOperation(value = "根据系统用户产品关联需求", tags = {"版本" },  notes = "根据系统用户产品关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/linkstory")
+    public ResponseEntity<BuildDTO> linkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProduct(product_id);
         domain.setId(build_id);
-        domain = buildService.unlinkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户产品关联Bug", tags = {"版本" },  notes = "根据系统用户产品关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/linkbug")
-    public ResponseEntity<BuildDTO> linkBugBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
-        domain.setId(build_id);
-        domain = buildService.linkBug(domain) ;
+        domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
@@ -396,6 +382,65 @@ public class BuildResource {
     }
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据系统用户产品建立版本", tags = {"版本" },  notes = "根据系统用户产品建立版本")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds")
+    public ResponseEntity<BuildDTO> createBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+		buildService.create(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @VersionCheck(entity = "build" , versionfield = "updatedate")
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据系统用户产品更新版本", tags = {"版本" },  notes = "根据系统用户产品更新版本")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+        domain.setId(build_id);
+		buildService.update(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户产品移除关联需求", tags = {"版本" },  notes = "根据系统用户产品移除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/unlinkstory")
+    public ResponseEntity<BuildDTO> unlinkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+        domain.setId(build_id);
+        domain = buildService.unlinkStory(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户产品关联Bug", tags = {"版本" },  notes = "根据系统用户产品关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/linkbug")
+    public ResponseEntity<BuildDTO> linkBugBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+        domain.setId(build_id);
+        domain = buildService.linkBug(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @ApiOperation(value = "根据系统用户产品获取版本", tags = {"版本" },  notes = "根据系统用户产品获取版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
+        Build domain = buildService.get(build_id);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
     @ApiOperation(value = "根据系统用户产品删除版本", tags = {"版本" },  notes = "根据系统用户产品删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
@@ -410,66 +455,19 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据系统用户产品建立版本", tags = {"版本" },  notes = "根据系统用户产品建立版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds")
-    public ResponseEntity<BuildDTO> createBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
-		buildService.create(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
 
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户产品关联需求", tags = {"版本" },  notes = "根据系统用户产品关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/linkstory")
-    public ResponseEntity<BuildDTO> linkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @ApiOperation(value = "根据系统用户项目移除Bug关联", tags = {"版本" },  notes = "根据系统用户项目移除Bug关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/unlinkbug")
+    public ResponseEntity<BuildDTO> unlinkBugBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
-        domain.setId(build_id);
-        domain = buildService.linkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户产品移除Bug关联", tags = {"版本" },  notes = "根据系统用户产品移除Bug关联")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/unlinkbug")
-    public ResponseEntity<BuildDTO> unlinkBugBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        domain.setProject(project_id);
         domain.setId(build_id);
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
-
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
-    @ApiOperation(value = "根据系统用户产品获取版本", tags = {"版本" },  notes = "根据系统用户产品获取版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
-        Build domain = buildService.get(build_id);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-
-    @VersionCheck(entity = "build" , versionfield = "updatedate")
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据系统用户项目更新版本", tags = {"版本" },  notes = "根据系统用户项目更新版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> updateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-        domain.setId(build_id);
-		buildService.update(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取DEFAULT", tags = {"版本" } ,notes = "根据系统用户项目获取DEFAULT")
@@ -485,25 +483,13 @@ public class BuildResource {
                 .body(list);
 	}
     @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目移除关联需求", tags = {"版本" },  notes = "根据系统用户项目移除关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/unlinkstory")
-    public ResponseEntity<BuildDTO> unlinkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+    @ApiOperation(value = "根据系统用户项目关联需求", tags = {"版本" },  notes = "根据系统用户项目关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/linkstory")
+    public ResponseEntity<BuildDTO> linkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
         domain.setProject(project_id);
         domain.setId(build_id);
-        domain = buildService.unlinkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目关联Bug", tags = {"版本" },  notes = "根据系统用户项目关联Bug")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/linkbug")
-    public ResponseEntity<BuildDTO> linkBugBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-        domain.setId(build_id);
-        domain = buildService.linkBug(domain) ;
+        domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
@@ -531,6 +517,65 @@ public class BuildResource {
     }
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据系统用户项目建立版本", tags = {"版本" },  notes = "根据系统用户项目建立版本")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds")
+    public ResponseEntity<BuildDTO> createBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+		buildService.create(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @VersionCheck(entity = "build" , versionfield = "updatedate")
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @ApiOperation(value = "根据系统用户项目更新版本", tags = {"版本" },  notes = "根据系统用户项目更新版本")
+	@RequestMapping(method = RequestMethod.PUT, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> updateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+        domain.setId(build_id);
+		buildService.update(domain);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户项目移除关联需求", tags = {"版本" },  notes = "根据系统用户项目移除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/unlinkstory")
+    public ResponseEntity<BuildDTO> unlinkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+        domain.setId(build_id);
+        domain = buildService.unlinkStory(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户项目关联Bug", tags = {"版本" },  notes = "根据系统用户项目关联Bug")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/linkbug")
+    public ResponseEntity<BuildDTO> linkBugBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+        domain.setId(build_id);
+        domain = buildService.linkBug(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @ApiOperation(value = "根据系统用户项目获取版本", tags = {"版本" },  notes = "根据系统用户项目获取版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}")
+    public ResponseEntity<BuildDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
+        Build domain = buildService.get(build_id);
+        BuildDTO dto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
     @ApiOperation(value = "根据系统用户项目删除版本", tags = {"版本" },  notes = "根据系统用户项目删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
@@ -543,51 +588,6 @@ public class BuildResource {
     public ResponseEntity<Boolean> removeBatchBySysUserProject(@RequestBody List<Long> ids) {
         buildService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
-    @ApiOperation(value = "根据系统用户项目建立版本", tags = {"版本" },  notes = "根据系统用户项目建立版本")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds")
-    public ResponseEntity<BuildDTO> createBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-		buildService.create(domain);
-        BuildDTO dto = buildMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目关联需求", tags = {"版本" },  notes = "根据系统用户项目关联需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/linkstory")
-    public ResponseEntity<BuildDTO> linkStoryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-        domain.setId(build_id);
-        domain = buildService.linkStory(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目移除Bug关联", tags = {"版本" },  notes = "根据系统用户项目移除Bug关联")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/unlinkbug")
-    public ResponseEntity<BuildDTO> unlinkBugBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
-        Build domain = buildMapping.toDomain(builddto);
-        domain.setProject(project_id);
-        domain.setId(build_id);
-        domain = buildService.unlinkBug(domain) ;
-        builddto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(builddto);
-    }
-
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
-    @ApiOperation(value = "根据系统用户项目获取版本", tags = {"版本" },  notes = "根据系统用户项目获取版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}")
-    public ResponseEntity<BuildDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
-        Build domain = buildService.get(build_id);
-        BuildDTO dto = buildMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 }
