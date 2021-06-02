@@ -68,22 +68,13 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "根据系统用户获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/usercontacts/getdraft")
-    public ResponseEntity<UserContactDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserContactDTO dto) {
-        UserContact domain = usercontactMapping.toDomain(dto);
-        
-        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
-    }
-
     @PreAuthorize("@UserContactRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/usercontacts/fetchaccount")
-	public ResponseEntity<List<UserContactDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/usercontacts/fetchmy")
+	public ResponseEntity<List<UserContactDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
         
         usercontactRuntime.addAuthorityConditions(context,"READ");
-        Page<UserContact> domains = usercontactService.searchAccount(context) ;
+        Page<UserContact> domains = usercontactService.searchMy(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -92,12 +83,12 @@ public class UserContactResource {
                 .body(list);
 	}
     @PreAuthorize("@UserContactRuntime.quickTest('READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/usercontacts/fetchmy")
-	public ResponseEntity<List<UserContactDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/usercontacts/fetchaccount")
+	public ResponseEntity<List<UserContactDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
         
         usercontactRuntime.addAuthorityConditions(context,"READ");
-        Page<UserContact> domains = usercontactService.searchMy(context) ;
+        Page<UserContact> domains = usercontactService.searchAccount(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -116,6 +107,15 @@ public class UserContactResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据系统用户获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/accounts/{sysuser_id}/usercontacts/getdraft")
+    public ResponseEntity<UserContactDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserContactDTO dto) {
+        UserContact domain = usercontactMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
+    }
 
     @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
     @ApiOperation(value = "根据系统用户更新用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户更新用户联系方式")

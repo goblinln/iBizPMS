@@ -95,6 +95,10 @@ zuul:
       path: /storyspecs/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    zt_usertpl:
+      path: /usertpls/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_branch:
       path: /productbranches/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -262,10 +266,6 @@ zuul:
     sys_post:
       path: /sysposts/**
       serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
-      stripPrefix: false
-    zt_usertpl:
-      path: /usertpls/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibz_taskstats:
       path: /taskstats/**
