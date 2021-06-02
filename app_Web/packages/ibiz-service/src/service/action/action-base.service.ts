@@ -214,6 +214,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.build && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchaccount`, _data);
         }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchaccount`, _data);
+        }
         if (_context.account && _context.testtask && true) {
             return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
         }
@@ -320,6 +323,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.build && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmy`, _data);
+        }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchmy`, _data);
         }
         if (_context.account && _context.testtask && true) {
             return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
@@ -448,6 +454,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.build && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.account && _context.todo && _context.action) {
+            const res = await this.http.get(`/accounts/${_context.account}/todos/${_context.todo}/actions/${_context.action}`);
             return res;
         }
         if (_context.account && _context.testtask && _context.action) {
@@ -633,6 +643,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/products/${_context.product}/builds/${_context.build}/actions/getdraft`, _data);
             return res;
         }
+        if (_context.account && _context.todo && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/accounts/${_context.account}/todos/${_context.todo}/actions/getdraft`, _data);
+            return res;
+        }
         if (_context.account && _context.testtask && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
@@ -770,6 +786,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.build && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproject`, _data);
         }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchproject`, _data);
+        }
         if (_context.account && _context.testtask && true) {
             return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
         }
@@ -877,6 +896,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.build && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmain`, _data);
         }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchmain`, _data);
+        }
         if (_context.account && _context.testtask && true) {
             return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
         }
@@ -983,6 +1005,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.build && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchmytrends`, _data);
         }
         if (_context.account && _context.testtask && true) {
             return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
@@ -1113,6 +1138,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}`, _data);
         }
+        if (_context.account && _context.todo && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/accounts/${_context.account}/todos/${_context.todo}/actions/${_context.action}`, _data);
+        }
         if (_context.account && _context.testtask && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
@@ -1229,6 +1258,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.build && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.account && _context.todo && true) {
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/fetchproduct`, _data);
         }
         if (_context.account && _context.testtask && true) {
             return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
@@ -1490,6 +1522,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions`, _data);
+        }
+        if (_context.account && _context.todo && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions`, _data);
         }
         if (_context.account && _context.testtask && true) {
         _data = await this.obtainMinor(_context, _data);

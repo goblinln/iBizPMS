@@ -1,43 +1,11 @@
 {
   "psappsbitems" : [ {
-    "psappviewname" : "ProductStatsEditView",
-    "psappsbitemname" : "产品统计编辑视图",
-    "itemtag2" : "ab500669e4f272263ba69c8b69f0ca5a",
-    "psappviewid" : "b8aa2b91fff3152c42b9e6fd679be2bc",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
-    "psappsbitemid" : "39928ad4053dcc7a7fa45e27c7332941",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TodoEditView",
     "psappsbitemname" : "编辑待办",
     "itemtag2" : "57b5b149f097fb679b8c067f1fb72a17",
     "psappviewid" : "e00040c0d616f2f1c0ad4b36c9e920b5",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
     "psappsbitemid" : "baa5d78369af5c4bed1b4dd47208e1cf",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IBIZProKeywordEditView",
-    "psappsbitemname" : "关键字编辑视图",
-    "itemtag2" : "a05ec8e48d9b574bc006978a2fca2e1a",
-    "psappviewid" : "2ecaa5fe641c4ba59086980bf0aacdd7",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProKeywordEditView.json",
-    "psappsbitemid" : "aede6ad8ef8c6ec23fb8816ef8b61c4b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzDailyDailyEditView",
-    "psappsbitemname" : "日报编辑视图",
-    "itemtag2" : "4dbd01633928212dbd5f61f1bfa31e14",
-    "psappviewid" : "83de2f22eaa4faf59cf7f38e7c448bf9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyEditView.json",
-    "psappsbitemid" : "9ad644a883a0d80bc13ea8832a57fdc1",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzWeeklyUsr2GridView",
-    "psappsbitemname" : "周报表格视图",
-    "itemtag2" : "59f7165531be9753da634e6f26177f75",
-    "psappviewid" : "d2d8b61120cbf258864721c3324ab556",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyUsr2GridView.json",
-    "psappsbitemid" : "d340181459c5424254bb3dd07c3bb627",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzReportlyMainGridView",
@@ -48,28 +16,12 @@
     "psappsbitemid" : "b4be1ac3805e3799a1bd71874ad14b07",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugStatsGridView",
-    "psappsbitemname" : "Bug统计表格视图",
-    "itemtag2" : "d5eaf18f5a5f90fc2e079912691aa2be",
-    "psappviewid" : "cc499c250db0b7a0d84342f6943d6ed0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsGridView.json",
-    "psappsbitemid" : "b2fddbeee640e2bde9477e897d7aee89",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ProductStatsTestEditView9",
     "psappsbitemname" : "产品统计编辑视图",
     "itemtag2" : "d959923a1e6ed86befd1f29dac167098",
     "psappviewid" : "ca19b98324385ce8ab457a006b9f0289",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsTestEditView9.json",
     "psappsbitemid" : "92d0f49f7819f56a58f3e5a7fa432fb6",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "SysDepartmentGridExpView",
-    "psappsbitemname" : "部门表格导航视图",
-    "itemtag2" : "69a46b02c406906741497bbffa910bcd",
-    "psappviewid" : "92ea2f270b6525a85636e8631640718d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysDepartmentGridExpView.json",
-    "psappsbitemid" : "b810f5ad42cb84f344b5495f58bd50fc",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "UserContactEditView",
@@ -80,28 +32,12 @@
     "psappsbitemid" : "18037b40ae2c75a1d816720015c7348e",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryMainView9",
-    "psappsbitemname" : "需求编辑视图",
-    "itemtag2" : "96341af2bede40435fecceeb636fc26d",
-    "psappviewid" : "94e0ee1a97736ff4d28b88a46cd395b7",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9.json",
-    "psappsbitemid" : "4c7edbf7428860a2d00346172fc476df",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductDashboardInfoMainView9",
-    "psappsbitemname" : "产品信息",
-    "itemtag2" : "fbb6480f0a71159d3a72f488528328d2",
-    "psappviewid" : "b5d2389c0dd12ae614b319090ecc2361",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductDashboardInfoMainView9.json",
-    "psappsbitemid" : "0403dc10bfeecd192258c55cc461c470",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectMainMyGridView",
-    "psappsbitemname" : "项目",
-    "itemtag2" : "a3b75eebb3b9f820639dcc108c11ac20",
-    "psappviewid" : "8a836afd6e08fa458fd83bb013fb0c7d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainMyGridView.json",
-    "psappsbitemid" : "51a2cff9ce53e603e43655fc8f476b5d",
+    "psappviewname" : "SysDepartmentGridExpView",
+    "psappsbitemname" : "部门表格导航视图",
+    "itemtag2" : "69a46b02c406906741497bbffa910bcd",
+    "psappviewid" : "92ea2f270b6525a85636e8631640718d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysDepartmentGridExpView.json",
+    "psappsbitemid" : "b810f5ad42cb84f344b5495f58bd50fc",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysUserMyFavoritesTabExpView",
@@ -112,28 +48,12 @@
     "psappsbitemid" : "df3ba24f131162d801e4845b8723fd66",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "CaseLinkCaseGridView",
-    "psappsbitemname" : "测试用例表格视图（关联用例）",
-    "itemtag2" : "e05f625fb7a113fcbf7ff3b309c4c128",
-    "psappviewid" : "7b7e9a3fb6ab91e52db487e8ec9b8987",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
-    "psappsbitemid" : "dd3a6f6ef7c3c82b7f1c1e71f0794cb7",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ActionProjectTrendsListView",
     "psappsbitemname" : "系统日志列表视图",
     "itemtag2" : "de06053b4930b767bc7c634641fc07fa",
     "psappviewid" : "7d34636d1c24d613abf8d3fdc64ec7ba",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionProjectTrendsListView.json",
     "psappsbitemid" : "a1fadfb06d036dbc2a5eb05a996c16e6",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskEditView9_Detail",
-    "psappsbitemname" : "测试版本编辑视图",
-    "itemtag2" : "f07f9745af0a90f4666ac39ff0d5210d",
-    "psappviewid" : "8d24f12656d8f0d0f21cde986d90249d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView9_Detail.json",
-    "psappsbitemid" : "b78767bc0a880b1ddb8793a64be194bd",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskChildTaskMoreGridView",
@@ -144,12 +64,12 @@
     "psappsbitemid" : "133d0b3972f0959923b3b150e5483531",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProductSumEditView",
-    "psappsbitemname" : "产品汇总表编辑视图",
-    "itemtag2" : "e594f9c37bdcdb9f7c0bf5ec5cd24ce0",
-    "psappviewid" : "046ec3c9ae15271f1722ebe378de2017",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
-    "psappsbitemid" : "083e6100662ec963e40039959a34a8de",
+    "psappviewname" : "TestTaskEditView_commitTest",
+    "psappsbitemname" : "提交测试",
+    "itemtag2" : "54f3d15e733a83785db67f67d7c16fec",
+    "psappviewid" : "f9491d4c2ef8e5263adeb7c8be5b66f9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_commitTest.json",
+    "psappsbitemid" : "f7c3d0c275f42d751064881f57abc171",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProductModuleQuickCfgView",
@@ -160,36 +80,12 @@
     "psappsbitemid" : "943ae23773ee1ee9b147e4bc9aafd14b",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TestTaskEditView_commitTest",
-    "psappsbitemname" : "提交测试",
-    "itemtag2" : "54f3d15e733a83785db67f67d7c16fec",
-    "psappviewid" : "f9491d4c2ef8e5263adeb7c8be5b66f9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_commitTest.json",
-    "psappsbitemid" : "f7c3d0c275f42d751064881f57abc171",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BranchPMInfoEditView",
     "psappsbitemname" : "平台管理",
     "itemtag2" : "8b34f5a86b365a5462deb664a38c9c36",
     "psappviewid" : "b281875cc25dc5ace73c1fe5bf383ad0",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BranchPMInfoEditView.json",
     "psappsbitemid" : "ce9a0ff4c1451ba607145e5593ad1c6f",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "SysEmployeeGridExpViewDept",
-    "psappsbitemname" : "人员表格导航视图",
-    "itemtag2" : "098d34fa200193a5c6581d5e70ba5dbb",
-    "psappviewid" : "f3aac9310b3f814a247eed4bc285ac07",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpViewDept.json",
-    "psappsbitemid" : "a66780562cf3eee702793b111e9fbc12",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryGridView9_Child",
-    "psappsbitemname" : "细分需求",
-    "itemtag2" : "09e6ca4e580578eea7453f7e9550d30b",
-    "psappviewid" : "8505c429c9deb51e3e1ef8b911fa83c2",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_Child.json",
-    "psappsbitemid" : "c3f0dcb13f3b82b60ba97dd8d9080404",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugProjectBugsGridView",
@@ -224,52 +120,12 @@
     "psappsbitemid" : "c65f99afb54136f70fd86599b7cf955b",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TodoDescEditView9",
-    "psappsbitemname" : "待办事宜表编辑视图",
-    "itemtag2" : "a1968186cf3b856af529d88f0f9fbc5b",
-    "psappviewid" : "f1b6682890513f1e91a45927d4cd6efa",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoDescEditView9.json",
-    "psappsbitemid" : "80e560a15f466b057ecfbfb9c7e7041e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "UserContactGridExpView",
-    "psappsbitemname" : "用户联系方式表格导航视图",
-    "itemtag2" : "68fb45c0f0e5306a552a2fc05617dc0b",
-    "psappviewid" : "4a012e784384c1f4ec3b0150e0885018",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactGridExpView.json",
-    "psappsbitemid" : "f17c190e0ddbc89f6f5449693dea8d0b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductEditView_Close",
-    "psappsbitemname" : "关闭产品",
-    "itemtag2" : "d7514c75d6dc2ccc7353ae6ae23782c9",
-    "psappviewid" : "f67e66bcffbdb0dcb87e541997e19ee2",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView_Close.json",
-    "psappsbitemid" : "dd30938a03ca28b45f46fdeb38e71649",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ProductPlanProjectGridView9",
     "psappsbitemname" : "产品计划表格视图（项目）",
     "itemtag2" : "e338cc82172ec843aea263144fd66c6e",
     "psappviewid" : "d66b7fe2cd9096259cab78e8feb19163",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanProjectGridView9.json",
     "psappsbitemid" : "946573f59674393ea7b16921328a420a",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IBIZProTagEditView",
-    "psappsbitemname" : "标签编辑视图",
-    "itemtag2" : "7eacf971afb5473862ddf40b50d62857",
-    "psappviewid" : "1dbebd55ab7518c3a31b7cc8af22a1a3",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProTagEditView.json",
-    "psappsbitemid" : "55904f4ce19420e90c2d76f40c0f83e5",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskTaskGroupGridView",
-    "psappsbitemname" : "任务表格视图（任务分组）",
-    "itemtag2" : "adbe2a7d9e0816919db1601b382b662f",
-    "psappviewid" : "206931400ca59472a0562a5d96898521",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTaskGroupGridView.json",
-    "psappsbitemid" : "0c060ae321eae44a8c0ee44649653eaa",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestTaskProjectNewEditView",
@@ -280,68 +136,20 @@
     "psappsbitemid" : "0ed619a03e349cad9e4ea95b244502e1",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BuildMainTabExpView",
-    "psappsbitemname" : "版本分页导航视图",
-    "itemtag2" : "267a15846d174febc86ffc08f7cf779f",
-    "psappviewid" : "7f78aec6820c14e08caf8fa56087866f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildMainTabExpView.json",
-    "psappsbitemid" : "84b97548b9aa7eeb22cc33f153811edb",
+    "psappviewname" : "TaskTaskGroupGridView",
+    "psappsbitemname" : "任务表格视图（任务分组）",
+    "itemtag2" : "adbe2a7d9e0816919db1601b382b662f",
+    "psappviewid" : "206931400ca59472a0562a5d96898521",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTaskGroupGridView.json",
+    "psappsbitemid" : "0c060ae321eae44a8c0ee44649653eaa",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProjectEditView_Suspend",
-    "psappsbitemname" : "项目",
-    "itemtag2" : "97fda877364a1c4f77a74c83f182200c",
-    "psappviewid" : "9669d3f350b532bb8acd60be74038748",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Suspend.json",
-    "psappsbitemid" : "3455f5617a958d20125b8757218b140a",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectMainTabExpView",
-    "psappsbitemname" : "项目",
-    "itemtag2" : "cff5bcd992068d9856dbd3370bec34dc",
-    "psappviewid" : "fd0b8748ff96edcde009d39903a9f211",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-    "psappsbitemid" : "c8ed5c8486cacc2d96d49cd8969241a0",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskEstimateGridView9",
-    "psappsbitemname" : "任务预计表格视图",
-    "itemtag2" : "b67550e07e2f8952299b4c995b7a7599",
-    "psappviewid" : "214650149c1d7b82e6897e6915b0e2b5",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateGridView9.json",
-    "psappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocLibByProductTreeExpView",
-    "psappsbitemname" : "文档库树导航视图（产品下属）",
-    "itemtag2" : "f2fa17903946977f6cf6544b2fb5d0ee",
-    "psappviewid" : "f1d15d6af90bb0d83c07c6dca5b4d61e",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibByProductTreeExpView.json",
-    "psappsbitemid" : "882ffd78c8faf2a48de19d80603b7f35",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectTeamMainGridView_EditRow",
-    "psappsbitemname" : "项目团队表格视图",
-    "itemtag2" : "f55aef38347fe3b87a564f26e9d6d139",
-    "psappviewid" : "29447769aa6216b5f7a881c0a5d81d73",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",
-    "psappsbitemid" : "b8a3f4ed11cef598d60c54f6cf84c50c",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "UserTplGridView",
-    "psappsbitemname" : "usertpl表格视图",
-    "itemtag2" : "031d7dd726d2a36cfcda248c841767d6",
-    "psappviewid" : "379360eb2f83ea4dc50744144c2878b7",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserTplGridView.json",
-    "psappsbitemid" : "aa2c66b212bb253c25920255152b49d3",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzMonthlyMainMonthlyGridView",
-    "psappsbitemname" : "月报表格视图",
-    "itemtag2" : "a546f9bcb46b89b86752f7e7a617c216",
-    "psappviewid" : "7c509954bcc0516db88536ea91442adf",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMainMonthlyGridView.json",
-    "psappsbitemid" : "e51e0d9fe1a622001ea8c23a4b2b056d",
+    "psappviewname" : "TaskRestartTaskView",
+    "psappsbitemname" : "继续任务",
+    "itemtag2" : "fe1be6d3fad387a84cb190a205f04ed1",
+    "psappviewid" : "c03ec72932f1e7c0badcb0434257d547",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRestartTaskView.json",
+    "psappsbitemid" : "07c6dca6313c000ae5b0480260ed176c",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysTeamMemberGridExpView",
@@ -352,52 +160,12 @@
     "psappsbitemid" : "03f11db7e8817d2dec8d7823fde146cc",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzMonthlyEditMonthlyEditView",
-    "psappsbitemname" : "月报编辑视图",
-    "itemtag2" : "dbd42c72893f4144bf08d885a74bb425",
-    "psappviewid" : "01c7a883016bed2ddb813c580d3d2e0e",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyEditMonthlyEditView.json",
-    "psappsbitemid" : "3d029864fa6eac4f0bff15ed7d767b43",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectTeamListView",
-    "psappsbitemname" : "项目团队列表视图",
-    "itemtag2" : "13ff9dd6d338d51f3681a37625cf54f6",
-    "psappviewid" : "753d59ea09ed63ba3e2aebe7d463abe7",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamListView.json",
-    "psappsbitemid" : "88c4bff4c4fb02ee65fb5bb96b91f237",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugBuildSubGridView_Done",
-    "psappsbitemname" : "bug表格视图",
-    "itemtag2" : "8ff9f81c1f2e6046dc880a44d030d857",
-    "psappviewid" : "a4808ebf1f78b25ee53d8638079082dc",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBuildSubGridView_Done.json",
-    "psappsbitemid" : "2eb219e0ea6ae3a255e9a1022d9f0c8f",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "IbzDailyDailyGridView",
     "psappsbitemname" : "日报表格视图",
     "itemtag2" : "e893301457ea1d111b20539306bbb8b8",
     "psappviewid" : "05c89f2ac0ec5594324c342827f1b7d3",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyGridView.json",
     "psappsbitemid" : "d2f844e766d528cdd757516179b84fde",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugTaskToBugEditView",
-    "psappsbitemname" : "Bug",
-    "itemtag2" : "ae528945210e6a38464f4a183d1151e1",
-    "psappviewid" : "54638099445607e6cb16757f25193b2f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTaskToBugEditView.json",
-    "psappsbitemid" : "251e5bfc03c5ba776ef224a77d0987f8",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryEditView9",
-    "psappsbitemname" : "关联需求",
-    "itemtag2" : "4930bf49537b98357cfdc014f66f1847",
-    "psappviewid" : "8c3bd17ea668e9cf5802751378c3a378",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView9.json",
-    "psappsbitemid" : "2ee6bff29d9f04451936d040850565fc",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseGridView9_StoryRelated",
@@ -424,36 +192,12 @@
     "psappsbitemid" : "4cd22567da2b04aaa102ed5a1d46b4af",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "Taskmaindashboardview_link",
-    "psappsbitemname" : "任务主数据看板视图",
-    "itemtag2" : "731c914a2414aeb1dada24c436413e02",
-    "psappviewid" : "a6e14baa45e0c99165384f7ef510d605",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/Taskmaindashboardview_link.json",
-    "psappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugGridView9_Storyaffect",
-    "psappsbitemname" : "相关Bug",
-    "itemtag2" : "0ef311a80168dc35903312f58cad2c9d",
-    "psappviewid" : "5eeecfcd239a98f93fb8f322d3470d76",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView9_Storyaffect.json",
-    "psappsbitemid" : "94f82a96c494ab0a2c4b6af875f66f7d",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ActionProductTrendsListView",
-    "psappsbitemname" : "系统日志列表视图",
-    "itemtag2" : "06a338833cdf40ede3d742edbea7bd05",
-    "psappviewid" : "f7a278d765ff0f85a2c59cbb2485fa30",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionProductTrendsListView.json",
-    "psappsbitemid" : "eae7fe407f58df2aa3bdfab5ca21b42c",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskCloseTaskView",
-    "psappsbitemname" : "关闭任务",
-    "itemtag2" : "52eba330bafa52db46ffdcc3eb8b1221",
-    "psappviewid" : "5b843e1de0332a77a847782432d7a40d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
-    "psappsbitemid" : "c73e5a7e27394d0814348f198a14bde7",
+    "psappviewname" : "IbzWeeklyEditViewEdit",
+    "psappsbitemname" : "实体2编辑视图",
+    "itemtag2" : "745a1f0416a835e2e6eac4eeed05c8ce",
+    "psappviewid" : "0551f0f5f821e55d9ba9e4e4ed97aae8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",
+    "psappsbitemid" : "f44c5474e2cb996e353c6bd2fe074c67",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugStatsProductBugStatusGridView",
@@ -464,44 +208,12 @@
     "psappsbitemid" : "f4425f2a959cdea91d2468956dafd03c",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzWeeklyEditViewEdit",
-    "psappsbitemname" : "实体2编辑视图",
-    "itemtag2" : "745a1f0416a835e2e6eac4eeed05c8ce",
-    "psappviewid" : "0551f0f5f821e55d9ba9e4e4ed97aae8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",
-    "psappsbitemid" : "f44c5474e2cb996e353c6bd2fe074c67",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseTestOptionView",
-    "psappsbitemname" : "执行",
-    "itemtag2" : "de18a73052d522d8b6f3004f811e89bd",
-    "psappviewid" : "6895fea07a2489f404d895d6746ae7b8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestOptionView.json",
-    "psappsbitemid" : "473f7d2f17642013c10bb2838a441b10",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "Bugmaindashboardview_link",
-    "psappsbitemname" : "Bug数据看板视图",
-    "itemtag2" : "73b061033f1954baf881c186701104da",
-    "psappviewid" : "05790021067211c1817c27dcb9c203df",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/Bugmaindashboardview_link.json",
-    "psappsbitemid" : "3254579f1ed3d13e3f8b21d4aa976820",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "CaseMainEditView",
     "psappsbitemname" : "测试用例",
     "itemtag2" : "d2a1da8d00084c6a7595fbf8c8dea217",
     "psappviewid" : "107f96ecdbdc7d13327ab0c95d68514b",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
     "psappsbitemid" : "d62ccf96391083f140331dc53e1708a1",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugActivationView",
-    "psappsbitemname" : "激活Bug",
-    "itemtag2" : "088dc20b26fdba3fad93865ba0f46285",
-    "psappviewid" : "54e3465c19bb1859f24cea9b31e3b24a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugActivationView.json",
-    "psappsbitemid" : "30c3c9d34f224f75a920972c3cfd7c0c",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysEmployeeGridExpViewProjectMember",
@@ -512,52 +224,12 @@
     "psappsbitemid" : "af4ac9744a62eacbb290e4f7bfed0c1e",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "UserContactGridView",
-    "psappsbitemname" : "usercontact表格视图",
-    "itemtag2" : "1745e1497c817e1c65c0e2eb419cffba",
-    "psappviewid" : "fad11065c8858a545a9df670cdccce44",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactGridView.json",
-    "psappsbitemid" : "c6d071c8221e56c2ef6c5142deed8e17",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "IBIZProTagGridView",
     "psappsbitemname" : "标签表格视图",
     "itemtag2" : "617a874aedc2fb1e0ee8f703e4759569",
     "psappviewid" : "526b0387339347f59f40b6ab23e4933f",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProTagGridView.json",
     "psappsbitemid" : "9bd2ab0cb3c14e68affdcc0ec6366245",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocLibUsr2TreeView",
-    "psappsbitemname" : "文档库树视图",
-    "itemtag2" : "4e74f9c95fae0dff05429fe3390dcbbb",
-    "psappviewid" : "0647a85a1b2f6013ccb63143973c706c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2TreeView.json",
-    "psappsbitemid" : "26c15f3a441b2a52e182e4a510a2efab",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "SysUpdateFeaturesGridView",
-    "psappsbitemname" : "系统更新功能表格视图",
-    "itemtag2" : "f599736aa84b59376a4a71ee885e344c",
-    "psappviewid" : "8cee8f79bfe729f53121904e9ebd7422",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateFeaturesGridView.json",
-    "psappsbitemid" : "b4f8be5c9a1b8200f87ff3231007b2bc",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskEditView",
-    "psappsbitemname" : "测试单编辑视图",
-    "itemtag2" : "e1f1255e389d5475935470b7530c9e43",
-    "psappviewid" : "5b139a407fa34f386f3f784f33841184",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-    "psappsbitemid" : "c19582676075e05f140b9175cd5c0d0a",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseOptionView",
-    "psappsbitemname" : "执行",
-    "itemtag2" : "0ae99d7cb39772dd4a873ab693e82b08",
-    "psappviewid" : "b61fe96397bb463004f549f334b7f363",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
-    "psappsbitemid" : "6422affef9718e2717a06a9a53748ec4",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "DocLibModuleEditViewMain",
@@ -576,52 +248,12 @@
     "psappsbitemid" : "1057a11b512065ee79973eff6edbb580",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskMainMyGridView",
-    "psappsbitemname" : "任务表格视图",
-    "itemtag2" : "52fa7e4b150cb3769c6ec35905d00a71",
-    "psappviewid" : "4f82827cafa5f802e5109bbcb9efa9f8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainMyGridView.json",
-    "psappsbitemid" : "7fd986ba2a272a0c9a0ec81cac2a4e30",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzReportlyCreateEditView",
-    "psappsbitemname" : "汇报编辑视图",
-    "itemtag2" : "9a7a41ad166f96b615dc3489425550e1",
-    "psappviewid" : "ee2c37e457f0b7bc79b04f7e9457d62d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",
-    "psappsbitemid" : "7d25c0ccc425df0ceb1cfc4ce4694d5c",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BuildMainView",
     "psappsbitemname" : "版本编辑视图",
     "itemtag2" : "fdb31cc20d0327cd87fd01aaec5c1f2d",
     "psappviewid" : "4754e81c870c007c624c850adffa3de9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildMainView.json",
     "psappsbitemid" : "8f474f343162512aa94dc50e7d0aec6d",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugCaseToBugEditView",
-    "psappsbitemname" : "Bug",
-    "itemtag2" : "c08b67481ea5ec40b571372c289c0737",
-    "psappviewid" : "a0fc84298809f2371ecccfeae95ccdcd",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCaseToBugEditView.json",
-    "psappsbitemid" : "21cd61cf53782b9856b38d17333ba493",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BuildEditView",
-    "psappsbitemname" : "版本编辑视图",
-    "itemtag2" : "ce243c7c0742fb05f1ea424fec95a8fd",
-    "psappviewid" : "e9d61d4506a28dec9a6f1d7b9e1fff6a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditView.json",
-    "psappsbitemid" : "2429909768b37d9b1f5bd6184d052b08",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzMyTerritoryTestTreeExpView",
-    "psappsbitemname" : "我的地盘树导航视图（测试统计）",
-    "itemtag2" : "72470b37b1940694ffa179c4919b728b",
-    "psappviewid" : "5a30c1b325586147f06e65667a7464e9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryTestTreeExpView.json",
-    "psappsbitemid" : "9a44ceca4e84ff9a785b8eccc5a0036c",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugMainDashboardView",
@@ -632,28 +264,12 @@
     "psappsbitemid" : "73b74b7549922ba8efcebf832ebcbb0e",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzLibGridView",
-    "psappsbitemname" : "用例库",
-    "itemtag2" : "53b9305c83050ed3fbaddb0336451a92",
-    "psappviewid" : "98fbf9b19456193cf4893a27a7eaa66b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibGridView.json",
-    "psappsbitemid" : "bf45f5ab18b015e1196b2e43129c5c1d",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzDailyDailyInfoEditView",
-    "psappsbitemname" : "日报编辑视图(日报描述)",
-    "itemtag2" : "0db29ffeb3abdcbb6d8afb5362d654ee",
-    "psappviewid" : "f0d0f8c1b108c3227888a127f1e7a89c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
-    "psappsbitemid" : "0f18d3fccb530d48ae8658603a308555",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzMyTerritoryALLReportTabExpView",
-    "psappsbitemname" : "我的地盘分页导航视图",
-    "itemtag2" : "5f315bfc0034cf2e0da20b6443fc1528",
-    "psappviewid" : "a5d09b7f598eadecc23c66d3109f84e0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryALLReportTabExpView.json",
-    "psappsbitemid" : "ab03ad5fb70f0432934ed5d778637021",
+    "psappviewname" : "IbzMyTerritoryTestTreeExpView",
+    "psappsbitemname" : "我的地盘树导航视图（测试统计）",
+    "itemtag2" : "72470b37b1940694ffa179c4919b728b",
+    "psappviewid" : "5a30c1b325586147f06e65667a7464e9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryTestTreeExpView.json",
+    "psappsbitemid" : "9a44ceca4e84ff9a785b8eccc5a0036c",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugProjectGridView",
@@ -664,20 +280,12 @@
     "psappsbitemid" : "7c0ebaf06d0c21cfca88b6c3f17fbef1",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "UserYearWorkStatsPODashboardView",
-    "psappsbitemname" : "用户年度工作内容统计数据看板视图",
-    "itemtag2" : "001e417e92c1018c4e747eab08920bfb",
-    "psappviewid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsPODashboardView.json",
-    "psappsbitemid" : "ff9bb5209d584bf8a0298db256828a72",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseMainMyNewGridView",
-    "psappsbitemname" : "功能测试",
-    "itemtag2" : "da9e612b01b40b8c3c6d6d89f9a795a9",
-    "psappviewid" : "301ea541e5179822452ef8d9979e0923",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainMyNewGridView.json",
-    "psappsbitemid" : "90538167bb3010db14707dd8e2431c7f",
+    "psappviewname" : "IbzMyTerritoryALLReportTabExpView",
+    "psappsbitemname" : "我的地盘分页导航视图",
+    "itemtag2" : "5f315bfc0034cf2e0da20b6443fc1528",
+    "psappviewid" : "a5d09b7f598eadecc23c66d3109f84e0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryALLReportTabExpView.json",
+    "psappsbitemid" : "ab03ad5fb70f0432934ed5d778637021",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskGridView9_StoryRelated",
@@ -688,44 +296,12 @@
     "psappsbitemid" : "1397761dc0cd737a06745a953d722bfe",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugStoryTOBugEditView",
-    "psappsbitemname" : "Bug",
-    "itemtag2" : "189ad75a4504896b49715e8bc1e4afeb",
-    "psappviewid" : "ecdca86e0402c79cb2a9978ea04f8330",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStoryTOBugEditView.json",
-    "psappsbitemid" : "ddd5496625c2ed1557c5d9bb3058c72a",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestReportProjectTabExpView",
-    "psappsbitemname" : "测试报告分页导航视图",
-    "itemtag2" : "e42f0f9be57f9e4eb52b32fb69892150",
-    "psappviewid" : "2dda1b4d7b8bacd3d921f0f0108f2fa1",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportProjectTabExpView.json",
-    "psappsbitemid" : "f8847799dd9bca0f9bb986b9250cb784",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugUsr2GridView",
-    "psappsbitemname" : "Bug表格视图",
-    "itemtag2" : "b0239c29fcf1ceb2d41c4c99e7c7f10d",
-    "psappviewid" : "39207f363dc5118f65d22eeef4c59883",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugUsr2GridView.json",
-    "psappsbitemid" : "c5b02c6d655c3265b0bd7f468e369593",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskTeamGridView9_Edit",
-    "psappsbitemname" : "团队",
-    "itemtag2" : "6c800b163747e96f111ee52ea64d4793",
-    "psappviewid" : "8fd7110e7d2b7d0fc9ea812d59d94f58",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9_Edit.json",
-    "psappsbitemid" : "70707e3381f7721e9e7532b7b3d2b3a7",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryMainView",
-    "psappsbitemname" : "需求数据看板视图",
-    "itemtag2" : "0abb634ff3dc4041cf8d011feea0f2a0",
-    "psappviewid" : "3f2ca3e560d9082bb56fbf7667a57a66",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-    "psappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
+    "psappviewname" : "CaseMainMyNewGridView",
+    "psappsbitemname" : "功能测试",
+    "itemtag2" : "da9e612b01b40b8c3c6d6d89f9a795a9",
+    "psappviewid" : "301ea541e5179822452ef8d9979e0923",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainMyNewGridView.json",
+    "psappsbitemid" : "90538167bb3010db14707dd8e2431c7f",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugGridView9_TaskRelated",
@@ -736,20 +312,20 @@
     "psappsbitemid" : "47d726c6a64054b826a1e4c7b7d78bd6",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "StoryMainView",
+    "psappsbitemname" : "需求数据看板视图",
+    "itemtag2" : "0abb634ff3dc4041cf8d011feea0f2a0",
+    "psappviewid" : "3f2ca3e560d9082bb56fbf7667a57a66",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+    "psappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "IbzAgentMainInfoEditView",
     "psappsbitemname" : "代理编辑视图",
     "itemtag2" : "e7d91eb296b2c64c43c9db52fe5fbf74",
     "psappviewid" : "aa5d52066660b94e42ba0e4213af8de9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentMainInfoEditView.json",
     "psappsbitemid" : "90b08f8656dca325fcc6a497c04dd19e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestReportEditView",
-    "psappsbitemname" : "测试报告编辑视图",
-    "itemtag2" : "f01a275da38bf3643413ea22ed57100e",
-    "psappviewid" : "f340b16bd1355b1c511d9da4b00476e2",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView.json",
-    "psappsbitemid" : "d597a9b29799608e786aecbff2a3118f",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysEmployeeGridExpView",
@@ -760,36 +336,12 @@
     "psappsbitemid" : "d2b5917852789bc73a6517db0ae8c356",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugMainEditView",
-    "psappsbitemname" : "Bug编辑",
-    "itemtag2" : "dc8308bc1634714e76de47a2c2c68ed0",
-    "psappviewid" : "30b9fb87a864a9b67484ea3384cd66fc",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
-    "psappsbitemid" : "a8582798baec01993c2318c7f304921d",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductStatsGridView9",
-    "psappsbitemname" : "产品统计表格视图",
-    "itemtag2" : "e8db2b256f2b4ebf61001cccb0b1d425",
-    "psappviewid" : "517ea7e243fcbce57c081f824d5eb013",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView9.json",
-    "psappsbitemid" : "90b8d98148f8736c17a3ed20810e3b11",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskWorkHoursView",
     "psappsbitemname" : "工时",
     "itemtag2" : "983756a9750ecbb662f1e9dcc4012a96",
     "psappviewid" : "136d70665b22cd3104c5f023d8955e8a",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskWorkHoursView.json",
     "psappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbizproIndexRedirectView",
-    "psappsbitemname" : "索引检索数据重定向视图",
-    "itemtag2" : "a0eb6ddcf26326b34f52fb731298d888",
-    "psappviewid" : "7d853e570eb4eba3bc754fa77bf75844",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
-    "psappsbitemid" : "3d0261af66258f1032ecab862c83b428",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseStepCarryOutEditMode",
@@ -800,28 +352,12 @@
     "psappsbitemid" : "cc893abd5005dff05fe36877d5cf4f65",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryProductStageKanbanView",
-    "psappsbitemname" : "需求看板视图",
-    "itemtag2" : "79eba4dcfab3e21e8ad7e1c75cb23f9b",
-    "psappviewid" : "bfa6b267c1c868a41b419be350e681e9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProductStageKanbanView.json",
-    "psappsbitemid" : "9ef896a5f44d1d557d302cbc9903d318",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestResultMEditView9",
-    "psappsbitemname" : "测试结果多表单编辑视图",
-    "itemtag2" : "3293c8041cb64d29acbd3495e2c7c368",
-    "psappviewid" : "e01d5c7f0080afdcf4e9c9ee9924abef",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestResultMEditView9.json",
-    "psappsbitemid" : "3a976660d8e040ce6f285c2dea8fa397",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskDoneTaskView",
-    "psappsbitemname" : "完成任务",
-    "itemtag2" : "d787aa00c22fe80568136f94c40cd2b2",
-    "psappviewid" : "fb6280b8fa4ffa498db1013ac94b96e6",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
-    "psappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappviewname" : "IbizproIndexRedirectView",
+    "psappsbitemname" : "索引检索数据重定向视图",
+    "itemtag2" : "a0eb6ddcf26326b34f52fb731298d888",
+    "psappviewid" : "7d853e570eb4eba3bc754fa77bf75844",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
+    "psappsbitemid" : "3d0261af66258f1032ecab862c83b428",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestReportActionEditView",
@@ -832,11 +368,12 @@
     "psappsbitemid" : "149bcfd6cfe7222b256e7e4744be7eb0",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProductPortalView",
-    "psappsbitemname" : "产品主页",
-    "psappviewid" : "305a8f8ecf4dfa714d2e3cbc2e0eecf5",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPPORTALVIEWS/ProductPortalView.json",
-    "psappsbitemid" : "5385c04b0a07e7c2313e2bbb3666241f",
+    "psappviewname" : "TaskDoneTaskView",
+    "psappsbitemname" : "完成任务",
+    "itemtag2" : "d787aa00c22fe80568136f94c40cd2b2",
+    "psappviewid" : "fb6280b8fa4ffa498db1013ac94b96e6",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
+    "psappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "StoryGridView9_SubStory",
@@ -845,14 +382,6 @@
     "psappviewid" : "389d7b00409ffa4bd014d70d4a21c110",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_SubStory.json",
     "psappsbitemid" : "c84e9fb5c9a50e307f17f0a763e11417",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocLibProjectTreeView",
-    "psappsbitemname" : "文档库树视图",
-    "itemtag2" : "a554fff45b366ddc2d11e8994cf03d74",
-    "psappviewid" : "6a15e6815011030492acf5fa6d8dd3af",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProjectTreeView.json",
-    "psappsbitemid" : "2b0e0c10fa1e6bd0e61e74c779537918",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectModuleMainGridView",
@@ -871,20 +400,20 @@
     "psappsbitemid" : "a89dbc58de8cb4dadfcd9b2d1bb08c8a",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TestModuleQuickCfgView",
-    "psappsbitemname" : "需求模块",
-    "itemtag2" : "db6b7431346730def79246c3c44f6997",
-    "psappviewid" : "d337f5c3c125dc2641321f2d93b65476",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
-    "psappsbitemid" : "6b0d9bfd4ae8dbfc83c30bf1edc55373",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "DocMianBEditView9",
     "psappsbitemname" : "文档编辑视图（正文）",
     "itemtag2" : "23495973eeefc5d5230568e73d06c064",
     "psappviewid" : "6524537caa86877c2028a06c2665617e",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocMianBEditView9.json",
     "psappsbitemid" : "72e16bf40d5ee59bcc81cb5320066dd7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestModuleQuickCfgView",
+    "psappsbitemname" : "需求模块",
+    "itemtag2" : "db6b7431346730def79246c3c44f6997",
+    "psappviewid" : "d337f5c3c125dc2641321f2d93b65476",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
+    "psappsbitemid" : "6b0d9bfd4ae8dbfc83c30bf1edc55373",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "DocCreateEditView",
@@ -911,14 +440,6 @@
     "psappsbitemid" : "a7cf4b034044794aeb51ddc337a735bc",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ReleaseQuickCreateView",
-    "psappsbitemname" : "发布编辑视图",
-    "itemtag2" : "c929c92c48b23551cbf67b5e08f8c409",
-    "psappviewid" : "120a2786f83e79c901470f9f38c4cd7a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",
-    "psappsbitemid" : "0607933955860ae860264554995f758e",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskMyFavoriteGridView",
     "psappsbitemname" : "task表格视图",
     "itemtag2" : "b637b61e1dff855a76e43069f64dd257",
@@ -927,44 +448,12 @@
     "psappsbitemid" : "b4f52cafec5600db899aed465c84ec7b",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TestReportprojectDashboardView",
-    "psappsbitemname" : "测试报告数据看板视图",
-    "itemtag2" : "197e29721da02bdf684a9e17f0fb4985",
-    "psappviewid" : "ae03acf710d901c5b781d7b9615c2dc4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportprojectDashboardView.json",
-    "psappsbitemid" : "fd7ca719fd06bfef18d91135efa8d884",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "UserYearWorkStatsQADashboardView",
-    "psappsbitemname" : "用户年度工作内容统计数据看板视图",
-    "itemtag2" : "c564af75d6a4fc7212691f0ff4a47de8",
-    "psappviewid" : "73c630ad73ee5b10d79c36c91df91b39",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsQADashboardView.json",
-    "psappsbitemid" : "864c94492959c3df831ea822af7321d2",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskCloseOptionView",
-    "psappsbitemname" : "关闭",
-    "itemtag2" : "c348caf0815f629c526327789ef38dc1",
-    "psappviewid" : "797e02cfcd15005ee6bc427b2860e845",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCloseOptionView.json",
-    "psappsbitemid" : "9c24a89c9e34bfc9c899ce2bdc31ac40",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskZsGridView9",
-    "psappsbitemname" : "任务表格视图（展示）",
-    "itemtag2" : "2606bc31a812e721f0457c042c8d838d",
-    "psappviewid" : "83a5deec3e454787f7a9744c860a163f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskZsGridView9.json",
-    "psappsbitemid" : "e1eeaec5733cb46416fa5da47050ea0c",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseMainDashboardView",
-    "psappsbitemname" : "功能测试",
-    "itemtag2" : "382363440a2881b842af36f169b5013f",
-    "psappviewid" : "bf84dbcdd77fd96f9b831316d7f969fd",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-    "psappsbitemid" : "773d8a0a9a9f5f824e6c08007275ddec",
+    "psappviewname" : "ReleaseQuickCreateView",
+    "psappsbitemname" : "发布编辑视图",
+    "itemtag2" : "c929c92c48b23551cbf67b5e08f8c409",
+    "psappviewid" : "120a2786f83e79c901470f9f38c4cd7a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",
+    "psappsbitemid" : "0607933955860ae860264554995f758e",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IBZProProductLineGridView",
@@ -983,12 +472,12 @@
     "psappsbitemid" : "33845955e88701a9d9eccbcf22d936d5",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugTestReportSubGridView",
-    "psappsbitemname" : "bug表格视图",
-    "itemtag2" : "5c6a213c7254ed6b01b150df5c136f08",
-    "psappviewid" : "6f90a9ed63f9dcec5758480a76e2680c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTestReportSubGridView.json",
-    "psappsbitemid" : "dcb0cb9a23855f4d11a7d2edd0e7baee",
+    "psappviewname" : "ProductLifeRoadMapListView",
+    "psappsbitemname" : "路线图",
+    "itemtag2" : "583dbd0ad1c99131258a923cc788f09e",
+    "psappviewid" : "07327890c326f9c806b9343f0c660fc1",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductLifeRoadMapListView.json",
+    "psappsbitemid" : "3fce152b128302ddedf40489e661c8f5",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "Todomaindashboardview_link",
@@ -999,76 +488,12 @@
     "psappsbitemid" : "81c091a25983acb386da3df608f5fcaf",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProductLifeRoadMapListView",
-    "psappsbitemname" : "路线图",
-    "itemtag2" : "583dbd0ad1c99131258a923cc788f09e",
-    "psappviewid" : "07327890c326f9c806b9343f0c660fc1",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductLifeRoadMapListView.json",
-    "psappsbitemid" : "3fce152b128302ddedf40489e661c8f5",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "SysPostGridExpView",
-    "psappsbitemname" : "岗位表格导航视图",
-    "itemtag2" : "ef35c9a52ae4bb981d8de0d9d76f0800",
-    "psappviewid" : "84ad1f110ad2f5100d78d5a23c67fd02",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysPostGridExpView.json",
-    "psappsbitemid" : "6730b5d528e2ac96e8fcdacd378708ea",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskOpenTaskView",
     "psappsbitemname" : "开始任务",
     "itemtag2" : "5457e2c63a9f3d273c37706ec678980c",
     "psappviewid" : "ba8ec48472c6227a226844baee25ae28",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
     "psappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzLibModuleEditView",
-    "psappsbitemname" : "用例库模块编辑视图",
-    "itemtag2" : "fe0f29704efaca6b89796ce53a9d8b47",
-    "psappviewid" : "d29746fae4429a6ea5c81cc7d552bb5a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleEditView.json",
-    "psappsbitemid" : "1705bd6bcc94140cc83f2560850f598b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BuildMainGridView",
-    "psappsbitemname" : "版本表格视图",
-    "itemtag2" : "9161fc313820b1a48f9042b8dff4562e",
-    "psappviewid" : "118edf7fdb85f90d0ca2fa11e3318f59",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildMainGridView.json",
-    "psappsbitemid" : "289921ca7f69b585c5c8a5c4761c4b5b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskWorkInfoEditView9",
-    "psappsbitemname" : "工时信息",
-    "itemtag2" : "17373e3862e6b2c5b25046ad61fa9c1f",
-    "psappviewid" : "5a54fcd3bab135a3c9530a67710c5af7",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskWorkInfoEditView9.json",
-    "psappsbitemid" : "b906a15d432fa51ea859de5e07daddad",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "SysTeamMemberGridExpViewTeam",
-    "psappsbitemname" : "组成员表格导航视图",
-    "itemtag2" : "5e4b74215df0245f84b8dba0ee25a823",
-    "psappviewid" : "f5d633f92a5353687cbb187a7dc9bf31",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpViewTeam.json",
-    "psappsbitemid" : "613e2473ef743346d250f3ca27c52bab",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzMyTerritoryUsr3TabExpView",
-    "psappsbitemname" : "管理",
-    "itemtag2" : "3f959a49e78a4dc9f7249c4c66f7dc10",
-    "psappviewid" : "9322aeb3d46b7e14022de0e611088cae",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryUsr3TabExpView.json",
-    "psappsbitemid" : "7732b2dd88448f1ef5db577ae20ee578",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskGridView9_UnTested",
-    "psappsbitemname" : "测试版本表格视图",
-    "itemtag2" : "6d41a0d7df0bf5121ab10bd13e692679",
-    "psappviewid" : "fe6c2d81a15a946d67c798e5af01f6ae",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskGridView9_UnTested.json",
-    "psappsbitemid" : "e5fbe4e4902ab8aba9c56b20a465a9d9",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BranchPMGridView",
@@ -1079,12 +504,12 @@
     "psappsbitemid" : "2912e0787424ae3449d30ccf3a51a2f1",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProductModuleGridViewBranch",
-    "psappsbitemname" : "产品模块表格视图",
-    "itemtag2" : "fd12e4c852ce1845e753077469d54971",
-    "psappviewid" : "10d6cb2fc147ac7b82b684d94cfa6c9b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridViewBranch.json",
-    "psappsbitemid" : "104bbfd0e51b305e4489bcd15e6889cd",
+    "psappviewname" : "IbzMyTerritoryUsr3TabExpView",
+    "psappsbitemname" : "管理",
+    "itemtag2" : "3f959a49e78a4dc9f7249c4c66f7dc10",
+    "psappviewid" : "9322aeb3d46b7e14022de0e611088cae",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryUsr3TabExpView.json",
+    "psappsbitemid" : "7732b2dd88448f1ef5db577ae20ee578",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugConfirmView",
@@ -1095,44 +520,12 @@
     "psappsbitemid" : "c32ebc5f3ed82bd5297e86c6f915350a",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "DocLibModuleChildWeiHuiTreeExpView",
-    "psappsbitemname" : "文档库分类树导航视图",
-    "itemtag2" : "a92872ed16422c69c0cc293d4fd2c863",
-    "psappviewid" : "864b0541f7ef09dabcaed9cff697b5a9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
-    "psappsbitemid" : "8f84f140c81d9f480320dddcad382ba3",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskMainTabExpView",
-    "psappsbitemname" : "测试版本分页导航视图",
-    "itemtag2" : "f8427f27213337876bf0149bc75fe7e0",
-    "psappviewid" : "4e229fd1de7c3b68c2a18a3d16916d61",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
-    "psappsbitemid" : "300fea367a7057f2e0eb105e67e063c9",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzAgentCreateEditView",
-    "psappsbitemname" : "代理编辑视图",
-    "itemtag2" : "cdb93d26b9bedb9d1fca7f1b70c3de2b",
-    "psappviewid" : "821253e790f5c38ff3e995117cf457bc",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
-    "psappsbitemid" : "4e7cddcbf8f4a3e3709e196fe365b453",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ProjectModuleQuickCfgView",
     "psappsbitemname" : "任务模块",
     "itemtag2" : "d5b7e07c93b773f9601cb1ba3b6b1217",
     "psappviewid" : "d74289c64b10041b287211156dc0e147",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleQuickCfgView.json",
     "psappsbitemid" : "2c7cd72b858517901b3674387ad5968d",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryReleaseSubEditView",
-    "psappsbitemname" : "需求",
-    "itemtag2" : "8d1e19d5b9c7a6d42307c3a63500ff63",
-    "psappviewid" : "c0f0cf52489e90899fc76ed262ed907b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryReleaseSubEditView.json",
-    "psappsbitemid" : "6eafb8bf24035addeded0dbc682dce02",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskPriTaskGroupGridView",
@@ -1159,28 +552,12 @@
     "psappsbitemid" : "a5b6de253817cdc764f104b9c64a7eb7",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "DocLibTreeView",
-    "psappsbitemname" : "文档库树视图",
-    "itemtag2" : "f794eee6a1af5043eed582015ac672a1",
-    "psappviewid" : "9bbb63a4a36369d6d14471da8a742eb9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
-    "psappsbitemid" : "03fe7a29b0853c6a7b1b241d6e366aac",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugMainMyGridView",
-    "psappsbitemname" : "bug表格视图",
-    "itemtag2" : "994697e33e6ab8ba377b017a67b0b3ec",
-    "psappviewid" : "fbe7f5ac8ca88bd5a1b2445d4c62bf9b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainMyGridView.json",
-    "psappsbitemid" : "65de40e85ca737a6c9c5b3dcb464e724",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskTeamGridView9",
-    "psappsbitemname" : "团队",
-    "itemtag2" : "e52237e2778b5000be8021cf70f81845",
-    "psappviewid" : "d1339f33d3d82d7b6993e510b20fddbe",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9.json",
-    "psappsbitemid" : "a93e45d9c1fd41dfa15c59578849c265",
+    "psappviewname" : "CaseProjectReportLinkGridView",
+    "psappsbitemname" : "测试用例表格视图（报告关联用例）",
+    "itemtag2" : "64f85efd1f61ff3f6ff3ff39dc99ed58",
+    "psappviewid" : "9702df74499bfcf7b127558ebe7f1779",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseProjectReportLinkGridView.json",
+    "psappsbitemid" : "6ad9e6d66ec2ca992762162391e9055b",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugAssingToView",
@@ -1191,12 +568,12 @@
     "psappsbitemid" : "0eaf1599ec9fcc433a81b806aa152be1",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "CaseProjectReportLinkGridView",
-    "psappsbitemname" : "测试用例表格视图（报告关联用例）",
-    "itemtag2" : "64f85efd1f61ff3f6ff3ff39dc99ed58",
-    "psappviewid" : "9702df74499bfcf7b127558ebe7f1779",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseProjectReportLinkGridView.json",
-    "psappsbitemid" : "6ad9e6d66ec2ca992762162391e9055b",
+    "psappviewname" : "BugMainMyGridView",
+    "psappsbitemname" : "bug表格视图",
+    "itemtag2" : "994697e33e6ab8ba377b017a67b0b3ec",
+    "psappviewid" : "fbe7f5ac8ca88bd5a1b2445d4c62bf9b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainMyGridView.json",
+    "psappsbitemid" : "65de40e85ca737a6c9c5b3dcb464e724",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestTaskMyDGridView",
@@ -1223,20 +600,12 @@
     "psappsbitemid" : "7191b23d5de61d00bea03865cd126f49",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzMonthlyNewMonthlyEditView",
-    "psappsbitemname" : "月报编辑视图",
-    "itemtag2" : "1b87f74decfedc8de15c98fccc8f86c2",
-    "psappviewid" : "7a308a89605e16def8311de4ffa7a3eb",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyNewMonthlyEditView.json",
-    "psappsbitemid" : "5a6d0882682c3a68c67eaca2648e9d4e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzproConfigGridView",
-    "psappsbitemname" : "系统配置表表格视图",
-    "itemtag2" : "7401b1f4a2005dbbeaa35d8db75597ac",
-    "psappviewid" : "d86ccce9f88117cf723ae455a1bd065c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproConfigGridView.json",
-    "psappsbitemid" : "270e79c4aa7d966ab0ac8f7a83c77a2e",
+    "psappviewname" : "DocLibModuleUsr2GridView",
+    "psappsbitemname" : "文档库分类表格视图",
+    "itemtag2" : "dc25b3e226ad5b8187dc46717ff989b4",
+    "psappviewid" : "1f58c36b426313948746ac301e8716b1",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleUsr2GridView.json",
+    "psappsbitemid" : "75e7b84ac722e2fc1799b5c7b0c29a3f",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectChartView9",
@@ -1247,60 +616,12 @@
     "psappsbitemid" : "2620dc097ae9083054daf75b4b480adf",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "DocLibModuleUsr2GridView",
-    "psappsbitemname" : "文档库分类表格视图",
-    "itemtag2" : "dc25b3e226ad5b8187dc46717ff989b4",
-    "psappviewid" : "1f58c36b426313948746ac301e8716b1",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleUsr2GridView.json",
-    "psappsbitemid" : "75e7b84ac722e2fc1799b5c7b0c29a3f",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectEditView_Close",
-    "psappsbitemname" : "项目",
-    "itemtag2" : "ac9a62b29f7cda252673cc689e622e23",
-    "psappviewid" : "765ac84633091fcfae4526324ff4ebac",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Close.json",
-    "psappsbitemid" : "e8d9e4a47ee0ad1599b2b05156250c47",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskCancelTaskView",
-    "psappsbitemname" : "取消任务",
-    "itemtag2" : "e28569a11f1597768162938e07a08f5c",
-    "psappviewid" : "6e1e2145a5e4622fb1936fe37f6d07e7",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
-    "psappsbitemid" : "a52dae0bf1e9bc1019df3c0041acb2dd",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductListExpView",
-    "psappsbitemname" : "产品列表导航视图",
-    "itemtag2" : "c5140b2659d2b825ec144969ce873a5a",
-    "psappviewid" : "a84a543c155b01389bc12eb1c27624b5",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductListExpView.json",
-    "psappsbitemid" : "b0f7a8c9dc4db5983ba79f4461e936ba",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzproConfigEditView",
-    "psappsbitemname" : "系统配置表编辑视图",
-    "itemtag2" : "c42ba0caa955c9f1d29c21011b5528fa",
-    "psappviewid" : "c4eda443b150028cdcefd6cd1a7f272c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproConfigEditView.json",
-    "psappsbitemid" : "17b253a92b363a3687e140752a85eff3",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "DocMoreMyFavouritesTreeView",
     "psappsbitemname" : "文档树视图",
     "itemtag2" : "e048046ccfb86b5be7d8a0ceade12197",
     "psappviewid" : "6e45dce2ca6fc6fe33d488f8fd03ed69",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocMoreMyFavouritesTreeView.json",
     "psappsbitemid" : "36e2f783b1b7e280be9f7c9cdd775988",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductMainTabExpView",
-    "psappsbitemname" : "产品",
-    "itemtag2" : "3e755fa107fce1e346df7355cc7c3d82",
-    "psappviewid" : "6c7b582273d0726bcf77214807cfe40c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
-    "psappsbitemid" : "f71c096d3b2446f9415df8e160427f10",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "DocLibModuleEditView",
@@ -1311,12 +632,12 @@
     "psappsbitemid" : "86f3cea0aecd7d9f0a48dee3304db759",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TestReportEditView_TestRange",
-    "psappsbitemname" : "测试报告编辑视图",
-    "itemtag2" : "8df1781d82d28c4d98a12b0263e24399",
-    "psappviewid" : "5918176ed83c3a3809e0b822a2823d7d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestRange.json",
-    "psappsbitemid" : "41af34785b1ff3a68fb11d147d729c76",
+    "psappviewname" : "IbzLibOpenLibView",
+    "psappsbitemname" : "用例库数据看板视图",
+    "itemtag2" : "d2c66123a3cffab28933996f81685621",
+    "psappviewid" : "90b86f20a267e8dc7352eff044a34691",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibOpenLibView.json",
+    "psappsbitemid" : "b8f05d0206f446c6f851389583612384",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysUpdateLogInfoEditView",
@@ -1327,20 +648,12 @@
     "psappsbitemid" : "658d76075d6088bd975ce4157266d20b",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzLibOpenLibView",
-    "psappsbitemname" : "用例库数据看板视图",
-    "itemtag2" : "d2c66123a3cffab28933996f81685621",
-    "psappviewid" : "90b86f20a267e8dc7352eff044a34691",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibOpenLibView.json",
-    "psappsbitemid" : "b8f05d0206f446c6f851389583612384",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskDailyCompleteZsGridView",
-    "psappsbitemname" : "任务表格视图（展示）",
-    "itemtag2" : "2a4d5aab10de13b4ea6a4e95007bd6a2",
-    "psappviewid" : "0235121fc2b0c27f0be0e06953580a3d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDailyCompleteZsGridView.json",
-    "psappsbitemid" : "dc7708231b30c7817653fbeafbdaff8f",
+    "psappviewname" : "TestResultEditView9",
+    "psappsbitemname" : "测试结果编辑视图",
+    "itemtag2" : "21603bd145ff3afa7d2a1cc0d1a71be2",
+    "psappviewid" : "741948bde940303ad18fe33ff1727894",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestResultEditView9.json",
+    "psappsbitemid" : "665db53f71aa6fd7ecc4324bf9157aa7",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectGridView",
@@ -1351,44 +664,12 @@
     "psappsbitemid" : "8f922bd061886f62851763e06e9ebd0b",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TestResultEditView9",
-    "psappsbitemname" : "测试结果编辑视图",
-    "itemtag2" : "21603bd145ff3afa7d2a1cc0d1a71be2",
-    "psappviewid" : "741948bde940303ad18fe33ff1727894",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestResultEditView9.json",
-    "psappsbitemid" : "665db53f71aa6fd7ecc4324bf9157aa7",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbizproIndexIndexPickupDataView",
-    "psappsbitemname" : "索引检索索引关系选择数据视图",
-    "itemtag2" : "17f6c4d04147b3902318f85eb76c0a5d",
-    "psappviewid" : "b73c533bd0b7c0813dc5fa85f2b3549f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupDataView.json",
-    "psappsbitemid" : "7f2a571b5f89032d39ca15efb190a4c5",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryMainView9_EditMode",
-    "psappsbitemname" : "需求编辑视图",
-    "itemtag2" : "7f956028855ccb9aa172be30e67dcf02",
-    "psappviewid" : "538555af88ea31549a5bc7dbf1e6286a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
-    "psappsbitemid" : "724d825a617259129f6d06f2718420e9",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugGridView9_StoryRelated",
     "psappsbitemname" : "相关Bug",
     "itemtag2" : "0bad89ba920485ae43980ca1f59d770a",
     "psappviewid" : "e378b13cfdc97557168ac3f71b35fe6b",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView9_StoryRelated.json",
     "psappsbitemid" : "1a2c622ea8f45e71d52a26cde3b18b46",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryGridView9_AssignedToMe",
-    "psappsbitemname" : "需求表格视图",
-    "itemtag2" : "e6fd6f0a14522a2103ba56be0e12144b",
-    "psappviewid" : "680d5889e78ea2e379d1601c7ed66711",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_AssignedToMe.json",
-    "psappsbitemid" : "39d14de99ebe9c0fe9876f5c7a9fd1fc",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskStorySubTaskNewView",
@@ -1415,12 +696,1498 @@
     "psappsbitemid" : "da691b6fe0e0e6ef6223de6a9fa09f83",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "FileProductGridView",
-    "psappsbitemname" : "file表格视图",
-    "itemtag2" : "355fbb0690343881f2daae7db2145359",
-    "psappviewid" : "25604124fe30ec7cc83066e3e058b0ec",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProductGridView.json",
-    "psappsbitemid" : "47b253e2a6f272cf025f98811c7234e4",
+    "psappviewname" : "DocBasicEditView9",
+    "psappsbitemname" : "文档编辑视图（基本信息）",
+    "itemtag2" : "293f3dda8c7a5154243520d1b9211c2b",
+    "psappviewid" : "00d6c7c0b8629ec81c0016d542d0f097",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocBasicEditView9.json",
+    "psappsbitemid" : "15d2ca65c6c28536b8139ad7b8dfe5d2",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestModuleGridViewBranch",
+    "psappsbitemname" : "产品模块表格视图",
+    "itemtag2" : "3cbfbe500957da286ff2b45098e7da79",
+    "psappviewid" : "65129e5f76f96cbb1d2d1c9e9bb2afed",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleGridViewBranch.json",
+    "psappsbitemid" : "fbb6acc484826d09e8dba20a1e5630fc",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseTestMainDetailEditView9",
+    "psappsbitemname" : "测试用例编辑视图",
+    "itemtag2" : "d7d1ecde4738b7e66029bf14edf40e1a",
+    "psappviewid" : "8135f7f81658710c74efc351f8d01237",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestMainDetailEditView9.json",
+    "psappsbitemid" : "ce516d0e84c36abed8d2674e1a5e6bc7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseEditView",
+    "psappsbitemname" : "功能测试编辑视图",
+    "itemtag2" : "a2a68f6001389543de0df0dffc20e57b",
+    "psappviewid" : "02b7ecd8e994b90558a9d6c23705f600",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+    "psappsbitemid" : "ee0fa6a0a9feb36ca122f47037b72dae",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskActiviteOptionView",
+    "psappsbitemname" : "激活",
+    "itemtag2" : "2575fa1b4ce76b72bb241aa2eaf10640",
+    "psappviewid" : "57c9e45f8ccb4c4622a567a88e779182",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskActiviteOptionView.json",
+    "psappsbitemid" : "f680ee2a8f3b42ccf68f4cb4da97ff21",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryReportSubGridView",
+    "psappsbitemname" : "story表格视图",
+    "itemtag2" : "3df53d8776d3e6b75e8267254d0c6ef3",
+    "psappviewid" : "c7344b0a55eadb587f401c2ea5a4d01f",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryReportSubGridView.json",
+    "psappsbitemid" : "cb40741f617bbd71a753b955c4f322f1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryMainView9_Related",
+    "psappsbitemname" : "需求编辑视图",
+    "itemtag2" : "383edfda56fec0c4dcb93d2b961cdbfd",
+    "psappviewid" : "5d2060546043b483498845da6eb440d9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_Related.json",
+    "psappsbitemid" : "7c4d2065c5cbb2c55d396e21fc6c8b06",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskStoryTaskGroupGridView",
+    "psappsbitemname" : "任务表格视图（需求分组）",
+    "itemtag2" : "272c1ceb939c05566b0efd7045fd799d",
+    "psappviewid" : "e648566cac4a7df484196995a17af08c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryTaskGroupGridView.json",
+    "psappsbitemid" : "4743d6165d25fd5ab56a90788d915e97",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzReportRoleConfigEditView",
+    "psappsbitemname" : "汇报角色配置编辑视图",
+    "itemtag2" : "5ecb0cb64c66591f3d6079d8056c8766",
+    "psappviewid" : "ca5520ca32c6104961484f490807058d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportRoleConfigEditView.json",
+    "psappsbitemid" : "68ca918b2e48a3e4480f8578c1a75ba7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryProjectEditView",
+    "psappsbitemname" : "需求",
+    "itemtag2" : "98d6e994097384a6c43342742a40102d",
+    "psappviewid" : "838cac8f8359eeecc2b7cab4beb3653e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
+    "psappsbitemid" : "0579d232f476241af780969690624b05",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysOrganizationGridExpView",
+    "psappsbitemname" : "单位表格导航视图",
+    "itemtag2" : "e32f44e71352ab8cd27b3ff22e0e47ab",
+    "psappviewid" : "349b5cf3162e27893fb220a362576e54",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationGridExpView.json",
+    "psappsbitemid" : "a3060e43021b28ea761afc37639c99ce",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ActionHistoryListView",
+    "psappsbitemname" : "历史记录",
+    "itemtag2" : "5935ac98547dd7e654dd72f687b9e859",
+    "psappviewid" : "63a73a2e80dc47c05dd3ead4f03ae3c3",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionHistoryListView.json",
+    "psappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzReportlyReportlyDetailEditView",
+    "psappsbitemname" : "汇报编辑视图",
+    "itemtag2" : "1e01c637f37c32d1c8d79edfeb2ef58e",
+    "psappviewid" : "d6d6a7c24897b28611fb32791d4d1a4a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyReportlyDetailEditView.json",
+    "psappsbitemid" : "adc771b7633628c60e1a48048bfd95e5",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysUpdateFeaturesEditView",
+    "psappsbitemname" : "系统更新功能编辑视图",
+    "itemtag2" : "cc7a4728369be34157f277bd44ac3eb4",
+    "psappviewid" : "46c538b1900cfe9c17255ccbe6a1285b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateFeaturesEditView.json",
+    "psappsbitemid" : "f3c892e18ededa8a06e2d0d21e9b8da1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskTypeTaskGroupGridView",
+    "psappsbitemname" : "任务表格视图（类型分组）",
+    "itemtag2" : "8cb2128f6b93c2425dbf0ff25c64593d",
+    "psappviewid" : "b81f0d050f0ec13741f177f26fcb4bd8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTypeTaskGroupGridView.json",
+    "psappsbitemid" : "bc22237374d0f10dcc636fb369225511",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryMyFavoritesGridView",
+    "psappsbitemname" : "story表格视图",
+    "itemtag2" : "3cbac211cdf08237cf1a3056fa7ee7bc",
+    "psappviewid" : "3efc6350b5c81769e497c9da9485ebaf",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMyFavoritesGridView.json",
+    "psappsbitemid" : "68d6748b2a30d473632612389a7f0330",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryEditView",
+    "psappsbitemname" : "需求",
+    "itemtag2" : "a120f05df15e80808b66616ae974ea3f",
+    "psappviewid" : "4863a523ac490ebce771717756f0c6a8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
+    "psappsbitemid" : "2e388392bdb8d1c415956899f9f17384",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocDocSumEditView9",
+    "psappsbitemname" : "文档编辑视图（文档摘要）",
+    "itemtag2" : "c5eb02b610b013ba7456f030254bc75e",
+    "psappviewid" : "9c8008d7bfae29c3af0c64991337b7f8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDocSumEditView9.json",
+    "psappsbitemid" : "2ac0f6c0e35364cbc8cf1a32012603f7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskMainDetailView9",
+    "psappsbitemname" : "任务编辑视图",
+    "itemtag2" : "58267aaeae8478ea9215322d3ef883d6",
+    "psappviewid" : "ef6cfafd09bb61ddb6fec7840f78e97d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDetailView9.json",
+    "psappsbitemid" : "5d2988e3b4a836a2e7b63b216eb308b0",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryAssignToView",
+    "psappsbitemname" : "指派",
+    "itemtag2" : "0fcbd490c1c82d33fe8c48fd0e84229e",
+    "psappviewid" : "6c8c8b96f11e8906ae6b5ab3e029f5d4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
+    "psappsbitemid" : "b14248667616922225f388e47b6c72b4",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskTodoEditView",
+    "psappsbitemname" : "任务编辑视图",
+    "itemtag2" : "d3f04323b402346c134b3a82ca36ee28",
+    "psappviewid" : "4f94ec3ac2a019aeeca8a8fee6fda464",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTodoEditView.json",
+    "psappsbitemid" : "b29fd0daf49a07962dacddb1f2a4621f",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskStartOptionView",
+    "psappsbitemname" : "开始",
+    "itemtag2" : "9270f49fdbee8c5490337f559609cc4c",
+    "psappviewid" : "5819d04a7d331ae7399e251d7a35183c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskStartOptionView.json",
+    "psappsbitemid" : "99822c84bccaed3a2c9065f875812b7d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibUsr2EditView",
+    "psappsbitemname" : "文档库编辑视图",
+    "itemtag2" : "d8efc553824d4d32c7dfa7d305728603",
+    "psappviewid" : "80df4b7b0e149f1b3d38d4cf9df1b81c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
+    "psappsbitemid" : "62d5b1cbd93f21429eb12cecf7319fe7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TodoActiviteView",
+    "psappsbitemname" : "激活",
+    "itemtag2" : "97ed511ff664728ed26c5736513317c7",
+    "psappviewid" : "f5f4e6f9ef5ab3f55ef802e9b2304006",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoActiviteView.json",
+    "psappsbitemid" : "3b56c5fc95d3c2b91e243d0af0c76656",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzReportRoleConfigGridView",
+    "psappsbitemname" : "汇报角色配置表格视图",
+    "itemtag2" : "bf30fb1cf411a45534a1e37d00dfe34c",
+    "psappviewid" : "356dfaec96b208208e3a9febae855a65",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportRoleConfigGridView.json",
+    "psappsbitemid" : "303e5c4da01bf8a7c768351c86580b99",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "PRODUCTTEAMEditView",
+    "psappsbitemname" : "产品团队编辑视图",
+    "itemtag2" : "1df5e3b605604e527be288505e05358d",
+    "psappviewid" : "a139999da375ad637cf0b9d455734b21",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
+    "psappsbitemid" : "49d7ffb47da3f9aab6d49c69f06b9d25",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskEstimateEditGridView9",
+    "psappsbitemname" : "任务预计表格视图",
+    "itemtag2" : "71840e8fb4b8bd5260ab19df2623a45f",
+    "psappviewid" : "85f2ffedf65fdd109559fbbbb33badd6",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateEditGridView9.json",
+    "psappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzPlanTempletDetailGridView9",
+    "psappsbitemname" : "计划模板详情表格视图",
+    "itemtag2" : "b41e52c91793048d949a648e64814290",
+    "psappviewid" : "323665023d61b39a6173f364869fd214",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletDetailGridView9.json",
+    "psappsbitemid" : "0240f389386a375754c7eb7acfbbca57",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseExcEditView",
+    "psappsbitemname" : "执行结果",
+    "itemtag2" : "c354d03c600a26c34f773e67f9446c6c",
+    "psappviewid" : "41f6cc75f6e3b4419a448eebe69aa6ac",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
+    "psappsbitemid" : "8e1215bf15a721bba5e717787ff7cf91",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StorytoStoryEditView",
+    "psappsbitemname" : "需求",
+    "itemtag2" : "ad47d3120fde82d88cf9f0a24b9be910",
+    "psappviewid" : "30e5d8c433af27ab7623edb999b6788d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorytoStoryEditView.json",
+    "psappsbitemid" : "e54d7afa36a6c346e8d33f49cdb2d818",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskProjectGridView",
+    "psappsbitemname" : "测试单表格视图（项目）",
+    "itemtag2" : "f8b952476306511812467864620aad1a",
+    "psappviewid" : "6d4f6fec471305827d450bf4f55406ae",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskProjectGridView.json",
+    "psappsbitemid" : "5ae162cbd444da79516de2edb902c50e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbizproIndexIndexPickupView",
+    "psappsbitemname" : "索引检索数据选择视图",
+    "itemtag2" : "09c5964f08fd6ef6e3575872c837f062",
+    "psappviewid" : "6dec69ecabb41af1b4fffe82c077724a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
+    "psappsbitemid" : "adfddf0a72db31a1312ba9db7d2663b1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryActiviteView",
+    "psappsbitemname" : "需求激活",
+    "itemtag2" : "cca449c353a96a327b888f58bb5148dd",
+    "psappviewid" : "9fb9c6b9baf7e8e9647041b8d7e13dd4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
+    "psappsbitemid" : "27181a7ab51ce30ee7e9a25a1d5d58c3",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskEstimateOptionView",
+    "psappsbitemname" : "任务预计选项操作视图",
+    "itemtag2" : "362feca48e3650c36b3b198377846974",
+    "psappviewid" : "d8db3dc48ecc1e32478d7490136cda6c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateOptionView.json",
+    "psappsbitemid" : "eb3acbe2d496a8853787f61fb10270a0",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryTabExpView",
+    "psappsbitemname" : "需求分页导航视图",
+    "itemtag2" : "abe9225fca64facd7bd48d8cded3f260",
+    "psappviewid" : "70bca4903c16f4c15bb3b73b570ce8a2",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryTabExpView.json",
+    "psappsbitemid" : "8465a670adf957b56c9545a0406a641e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskEditView9_Info",
+    "psappsbitemname" : "测试版本编辑视图",
+    "itemtag2" : "7a09a511656e525635b59bbf1f748438",
+    "psappviewid" : "70c1b45e198da89f71004066e0b148ac",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView9_Info.json",
+    "psappsbitemid" : "3cb40211068389ecc8065ba5e52c05e1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ActionEditView",
+    "psappsbitemname" : "备注",
+    "itemtag2" : "6cd7ccc58ed404e8b0fea4fcb497a42d",
+    "psappviewid" : "f8b69912b3ca27b5d083c8fb1971c84a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+    "psappsbitemid" : "6600a7c49c14d55c1be7380d3a8ec7e8",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserYearWorkStatsDashboardView",
+    "psappsbitemname" : "用户年度工作内容统计数据看板视图",
+    "itemtag2" : "0cafed8a7b2f2febe9850de80b6e4b72",
+    "psappviewid" : "35452fdae20ad8f9a786c708744662b4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsDashboardView.json",
+    "psappsbitemid" : "6bcd6b6e7a61af56cb9a185a90758e28",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseCurTestTaskGridView",
+    "psappsbitemname" : "功能测试",
+    "itemtag2" : "dbfb197e87e8fd65916fc73efd85c519",
+    "psappviewid" : "178ae3b2e5f30d153fa8a30edace0383",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseCurTestTaskGridView.json",
+    "psappsbitemid" : "91af3ffe131a7c68a09b25d39b41071e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseTestMainDashboardView",
+    "psappsbitemname" : "功能测试",
+    "itemtag2" : "7dabfb1945ec205e4eede17521315d7d",
+    "psappviewid" : "a20bfffd7d83da0f48e7f8c1702b64b5",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestMainDashboardView.json",
+    "psappsbitemid" : "785f1bee96399cf62558776a2f454ef7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectListExpView",
+    "psappsbitemname" : "项目列表导航视图",
+    "itemtag2" : "8bd5ff0ac97cdf2bb8c4fb23b8a91d29",
+    "psappviewid" : "d1de7b1c3f0c14ee93de65e6b1045786",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectListExpView.json",
+    "psappsbitemid" : "013690d44f594c69d62c20d0e6a90a92",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "Storymaindashboardview_link",
+    "psappsbitemname" : "需求数据看板视图",
+    "itemtag2" : "ccc278c11f1c96cdd9d493eb51404c38",
+    "psappviewid" : "021e4a7269fe8ec26b9001c39df0e215",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/Storymaindashboardview_link.json",
+    "psappsbitemid" : "8a39df9082e21b691f52ecc5fb6a361c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskPauseTaskView",
+    "psappsbitemname" : "暂停任务",
+    "itemtag2" : "12f26dacfc9ba43a26028119393c0b98",
+    "psappviewid" : "9155179040bdf9819f076428450667b0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
+    "psappsbitemid" : "9bcaf836c523d9caa98833251e4e8159",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TodoBaseEditView9",
+    "psappsbitemname" : "待办事宜表编辑视图",
+    "itemtag2" : "35cdca6b0feca15c352a480775aff595",
+    "psappviewid" : "d2bc94e4e8156e65ff17c8a6cd125b5b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoBaseEditView9.json",
+    "psappsbitemid" : "44dad782d192f6922093768b2c96361a",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskEstimateLookGridView9",
+    "psappsbitemname" : "任务预计表格视图",
+    "itemtag2" : "d07eed9fd32c24b8483212ea3151c265",
+    "psappviewid" : "53ea134a9cd9328191b62e355f47c173",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateLookGridView9.json",
+    "psappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskMonthlyCompleteZsGridView",
+    "psappsbitemname" : "任务表格视图（展示）",
+    "itemtag2" : "dfa9d0c407c0daf646566bc9a4049fc7",
+    "psappviewid" : "9be426255f9bdea95b9adf237b278782",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMonthlyCompleteZsGridView.json",
+    "psappsbitemid" : "0a158dd668af9e41d95d71b0b1915368",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskMainInfoView9",
+    "psappsbitemname" : "任务编辑视图",
+    "itemtag2" : "edbf3acbe4783f04646a0d80bfefd6c3",
+    "psappviewid" : "321ab2e4e87a29fef8eed086e951a006",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainInfoView9.json",
+    "psappsbitemid" : "a8ed7f99317fa1337340cfb38f2c2ca0",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductTestListExpView",
+    "psappsbitemname" : "测试统计",
+    "itemtag2" : "5e802c3db5a0b275a662eef64c4965f8",
+    "psappviewid" : "6b595fd11428565335f1d1bbd66911bb",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestListExpView.json",
+    "psappsbitemid" : "a7d1497e54d084f35d4ad1d05f0e3c66",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectStatsEditView9",
+    "psappsbitemname" : "项目统计编辑视图",
+    "itemtag2" : "fcb695b5aff311f9363e0d548b1ea6d8",
+    "psappviewid" : "fd583d6624bd0c70f13e1bfc2696fc2f",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView9.json",
+    "psappsbitemid" : "ef689b311c96eadbe94c00ccb6a336f4",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectMainView_Edit",
+    "psappsbitemname" : "项目编辑视图",
+    "itemtag2" : "bb88d6fccca0ba977b128dc4d9b3e1fa",
+    "psappviewid" : "d5700c9e8b9e0d9eba56c81a052ed438",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainView_Edit.json",
+    "psappsbitemid" : "87d2c4d08c8ad2bdee47b0070c2a95a4",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BurnChartView",
+    "psappsbitemname" : "燃尽图",
+    "itemtag2" : "377aca07970ece76d71fe26c1a053df0",
+    "psappviewid" : "bba3204a7f64b5eafe512a6b63658910",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BurnChartView.json",
+    "psappsbitemid" : "3f9ee26d63d333a096cb1930798f9f35",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseMainNewView",
+    "psappsbitemname" : "功能测试",
+    "itemtag2" : "70a49d4c329dea07c7109210aa0b55a6",
+    "psappviewid" : "6e8645d9fed039c0d242e50504074fb8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
+    "psappsbitemid" : "429866a7ee31fbc0ca57cde33026fc1c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugCloseView",
+    "psappsbitemname" : "关闭Bug",
+    "itemtag2" : "49998220006199035f90a6ed6170f8bc",
+    "psappviewid" : "490e98255c18ceb61481b97a9dff940d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
+    "psappsbitemid" : "f5a17c925336fa578540fa08704936e1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibEditView",
+    "psappsbitemname" : "创建文档库",
+    "itemtag2" : "0e32103bdd2341a08b23ef0ea45fe381",
+    "psappviewid" : "41693a4d3b2bd3a7195d31ceae6cdcf3",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibEditView.json",
+    "psappsbitemid" : "4c99a6182ec3e97cf281273b4db5c106",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryCurProjectWGridView",
+    "psappsbitemname" : "story表格视图",
+    "itemtag2" : "3ec8310822cdfc78121c198f3df1e37c",
+    "psappviewid" : "8263c5b2f9a9e0cbbbdf2f72e194a5a8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCurProjectWGridView.json",
+    "psappsbitemid" : "9173d9372f0be9f64955f214579a2f02",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryGridView9_Related",
+    "psappsbitemname" : "相关需求",
+    "itemtag2" : "066d0f4547d40a096b69f58b640686a9",
+    "psappviewid" : "78095af71f8ae9c432f8a6f3656f90b9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_Related.json",
+    "psappsbitemid" : "a74f75490be4aa1c2a94ed62a5c39d63",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestReportEditView_TestTasks",
+    "psappsbitemname" : "测试报告编辑视图",
+    "itemtag2" : "c763d97af37d052eb5618ce1b947821c",
+    "psappviewid" : "d7d565614eb5ab6d7763a92110c481dd",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestTasks.json",
+    "psappsbitemid" : "e31cded8e287b48e8187271a5df453e5",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductLifeRoadMapSListView9",
+    "psappsbitemname" : "路线图",
+    "itemtag2" : "bd5e733df020ec62f2caa3c5af6b31ea",
+    "psappviewid" : "d1b3f6d9d0ca781020cf5e4665461fbf",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductLifeRoadMapSListView9.json",
+    "psappsbitemid" : "363548004298e5115b2ac1a40a637606",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductModuleGridView",
+    "psappsbitemname" : "产品模块表格视图",
+    "itemtag2" : "dd97575cea081105c83d6d3158860e34",
+    "psappviewid" : "523abe6eb852ca08fe4a3c140ff47b42",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridView.json",
+    "psappsbitemid" : "d5c1ac1ccdc2920d777614d10878aa6b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductModuleTreeExpView",
+    "psappsbitemname" : "需求模块树导航视图",
+    "itemtag2" : "d0fbc9e7d4dd0d19df87103722400809",
+    "psappviewid" : "91d3e67caa36efe3f59590d8531a7e0b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleTreeExpView.json",
+    "psappsbitemid" : "9a698f3a1ec33c890f2c90731096d3e9",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StorySubGridView",
+    "psappsbitemname" : "需求细分",
+    "itemtag2" : "3002a1a685436f6b709a58191c28c7d6",
+    "psappviewid" : "85897eeca4e1fb9fd7e7fe5c4fa28fa0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
+    "psappsbitemid" : "d260a8b8186f9a232e06ccd26f595987",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzLibEditView9",
+    "psappsbitemname" : "用例库编辑视图",
+    "itemtag2" : "650205fafee1019e40e41fa0e133dbda",
+    "psappviewid" : "88905fc742e5cee96069f28b5a76f22b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibEditView9.json",
+    "psappsbitemid" : "13badcf78965e817584a3d53dc3b0b48",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibUsr3TreeView",
+    "psappsbitemname" : "文档库树视图",
+    "itemtag2" : "d38852f4ed3c67923987f467e5b99730",
+    "psappviewid" : "c24564db2a7ca9f2322928be41c5f16d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr3TreeView.json",
+    "psappsbitemid" : "9f5cd2730f59d8450a517243f62b3fc2",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugTodoEditView",
+    "psappsbitemname" : "待办提交",
+    "itemtag2" : "6cf0674fa6b7d94c203d6cdf1ca5707a",
+    "psappviewid" : "c0c12f14e7745eda77a80da04527a26e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTodoEditView.json",
+    "psappsbitemid" : "4203fe272bacb893139cb3002e124baa",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzMyTerritoryStatsTabExpView",
+    "psappsbitemname" : "我的地盘分页导航视图（统计）",
+    "itemtag2" : "94600d9f4a64f71728bd449ce4ae07f3",
+    "psappviewid" : "b4989339e1dc575a45c15699a325122a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryStatsTabExpView.json",
+    "psappsbitemid" : "39736e6aa3114300a1bfd3e52564bb92",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ActionAddCommentHistoryListView",
+    "psappsbitemname" : "历史记录",
+    "itemtag2" : "980a6d624690126294ea41f30b7150b8",
+    "psappviewid" : "6cc53210af0a1b521a3fbf7263c94a7b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionAddCommentHistoryListView.json",
+    "psappsbitemid" : "71a0c4d3151f3a61e0ab826783494f72",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocDashboardView",
+    "psappsbitemname" : "文档数据看板视图",
+    "itemtag2" : "efb45ef6591bb88cd2025b1bcbc73b53",
+    "psappviewid" : "86e1fc6d46d804998a58ab21982c2874",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
+    "psappsbitemid" : "26b4d443e527f5bd37a6d9ce68dd8638",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugStatsProductBugResolutionGridView",
+    "psappsbitemname" : "Bug统计表格视图",
+    "itemtag2" : "d5db22625f8b062ece1528ebdca1d012",
+    "psappviewid" : "59f7278a2d42e40c347241347f1c954b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugResolutionGridView.json",
+    "psappsbitemid" : "6ed7506f8a1c59f1cc36b70f45d9a16d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskBlockOptionView",
+    "psappsbitemname" : "阻塞",
+    "itemtag2" : "919de5c90d7e4beffe183c54274f165f",
+    "psappviewid" : "8c583872d1a8ff04bcde60d303eb0786",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskBlockOptionView.json",
+    "psappsbitemid" : "53abbe1dc1f4114175393d83e47b4188",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskGroupTreeExpView",
+    "psappsbitemname" : "任务树导航视图（分组树）",
+    "itemtag2" : "04cfeb182cb303edb3a557f8ca3b874d",
+    "psappviewid" : "25ad13bec39a81629f26d442db44d424",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGroupTreeExpView.json",
+    "psappsbitemid" : "d838a7adf56fcc22e4c88db5dbed64c1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskGridView9_AssignedToMe",
+    "psappsbitemname" : "任务表格视图",
+    "itemtag2" : "3434a90734f59b6a63b60102a289112e",
+    "psappviewid" : "f20fe6d7aa45a13c1e7343fbe4c0caaf",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGridView9_AssignedToMe.json",
+    "psappsbitemid" : "614e46c1dd79cbfa4532991c150a9868",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseStepMainGridView9",
+    "psappsbitemname" : "用例步骤",
+    "itemtag2" : "a87f486edeb2cc0167cc1e9832b3c1fe",
+    "psappviewid" : "f69bb8c09dbc7ce369c3c3806007b1d1",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseStepMainGridView9.json",
+    "psappsbitemid" : "f5ebe1921a1258f2b9b755830564ca96",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysEmployeeEditViewBasicInfo",
+    "psappsbitemname" : "人员编辑视图",
+    "itemtag2" : "bcb861b892a8bec1230a4983ae1340ca",
+    "psappviewid" : "4eec8bab9a7a03f86c72ec576cc7a70a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditViewBasicInfo.json",
+    "psappsbitemid" : "ddfb3d5478d9f36ea447197ac3a6e8de",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IBIZProKeywordGridView",
+    "psappsbitemname" : "关键字表格视图",
+    "itemtag2" : "cad590a5249f170499430af803a650be",
+    "psappviewid" : "031f322348f44c7fd48538bd1b66cd28",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProKeywordGridView.json",
+    "psappsbitemid" : "6ed8a5a915c3b5efd208403de492afc8",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryProjectPlanView",
+    "psappsbitemname" : "按照计划关联",
+    "itemtag2" : "3b5e99b1b5a62005d2d606daa5ec84ab",
+    "psappviewid" : "48cbb418a5d2a5597a66cd72581bd32c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
+    "psappsbitemid" : "ba0e6ea6e018a2a960074bf5145ea4d0",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectStatsEditView",
+    "psappsbitemname" : "项目统计编辑视图",
+    "itemtag2" : "26df4a79087bde3e270cc67acedd911a",
+    "psappviewid" : "c22d776245f0f05aa54112b0dc27aa9e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
+    "psappsbitemid" : "21127fe543f2bfd60ebf8910f83d51cb",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseTestTaskExcEditView",
+    "psappsbitemname" : "执行结果",
+    "itemtag2" : "db478632cba2ea50e667a258e51bf626",
+    "psappviewid" : "946ccf2f81dab9bfaf2bd841df90f209",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestTaskExcEditView.json",
+    "psappsbitemid" : "a4b37dfcc3cf1dce515a926ada4499c2",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryProjectMainView",
+    "psappsbitemname" : "需求数据看板视图",
+    "itemtag2" : "DE41F2D0-2275-4FBD-82CD-F73A5A9ED880",
+    "psappviewid" : "4302f2bcabc053b1d562a893d86b6af4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMainView.json",
+    "psappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserTplEditView",
+    "psappsbitemname" : "usertpl编辑视图",
+    "itemtag2" : "9d44ba179b71b37981e4cc125e219087",
+    "psappviewid" : "8c08fcf2db47efba2ca50d8feed5e52c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserTplEditView.json",
+    "psappsbitemid" : "2da7f6fe13de5f4bf549232346e9ed54",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ActionProjectTrendsListView9",
+    "psappsbitemname" : "产品动态",
+    "itemtag2" : "40247a03a8b0200b0e5f8ff9d6f8891c",
+    "psappviewid" : "96ec3f978c1cc22acc532331d5dc2a41",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionProjectTrendsListView9.json",
+    "psappsbitemid" : "0a7c3732c164eaed92896db7c6f4e552",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectStatsGridView9",
+    "psappsbitemname" : "项目统计表格视图",
+    "itemtag2" : "ccc95a8bb5b1a55d365bccfb5d6eafaa",
+    "psappviewid" : "cabba7fe7d745d33b88f1ba31a19c4b3",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsGridView9.json",
+    "psappsbitemid" : "904cd8009fd18e655d74d8a3c304ab55",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BuildTestRoundsGridView",
+    "psappsbitemname" : "版本表格视图（轮次）",
+    "itemtag2" : "6903a35357ce3b870e827ef987c219b4",
+    "psappviewid" : "33eb075a8e7a871bfcb7da61bdccb1a2",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildTestRoundsGridView.json",
+    "psappsbitemid" : "14fa59948d55dca5b8462e61b284ba26",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseMainMyGridView",
+    "psappsbitemname" : "功能测试",
+    "itemtag2" : "22011c31980a4bd51b1833fa145dfda2",
+    "psappviewid" : "13ed9a258da20a9536f8352d0e355583",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainMyGridView.json",
+    "psappsbitemid" : "4356fe7a943800ca2292818a449a7ab5",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibTreeViewProductRoot",
+    "psappsbitemname" : "文档库树视图",
+    "itemtag2" : "c96bc446772c10e7e85ae39cc5c2bc4d",
+    "psappviewid" : "a4d2ca556b880ddc8ee21ddac6adcf60",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeViewProductRoot.json",
+    "psappsbitemid" : "581aff4a6a518c7196dff3f0c04c01df",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseToBugEditView",
+    "psappsbitemname" : "转BUG",
+    "itemtag2" : "78f9f3efe20aabb85d0a9cc45c25004b",
+    "psappviewid" : "61eeda70f76acc759232dae5b6e56324",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
+    "psappsbitemid" : "74e5fdb2a7a9004d4cd284497000100b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductHtmlView",
+    "psappsbitemname" : "iBiz软件生产管理",
+    "itemtag2" : "d709dc50b38d85d6890218fbbe9409b3",
+    "psappviewid" : "b6969f6aea9c131d0c2144d88472ba6a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductHtmlView.json",
+    "psappsbitemid" : "4add18cff006a2c251f075ed8fafc9a1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryCurProjectGridView",
+    "psappsbitemname" : "story表格视图",
+    "itemtag2" : "7919a4e3c719728d1b93c1383ddb8ca0",
+    "psappviewid" : "ce036665dd22b3e4a3ca89005d573e65",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCurProjectGridView.json",
+    "psappsbitemid" : "ea4121d9c3dd2ec065e9e07f61039187",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestPortalView",
+    "psappsbitemname" : "测试主页",
+    "psappviewid" : "b127362083d624afe84ed1e8f674223e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPPORTALVIEWS/TestPortalView.json",
+    "psappsbitemid" : "f22589b3ddd31eaa6c7cd464a446af6d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectEditView",
+    "psappsbitemname" : "项目",
+    "itemtag2" : "f18a0c50be03d61557e74f340479eb52",
+    "psappviewid" : "f83dac873b9215483c4bb91673284b41",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
+    "psappsbitemid" : "f7c158807832944657b576345215ada7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "PRODUCTTEAMProductTeamListView",
+    "psappsbitemname" : "产品团队列表视图",
+    "itemtag2" : "1748efdcdc85d3e82f2cc1af4e16c645",
+    "psappviewid" : "256de1139e8adce86805c471e5de2db0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMProductTeamListView.json",
+    "psappsbitemid" : "30d75bc21e1cafbf65545993a812128c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ActionOptionView",
+    "psappsbitemname" : "添加备注",
+    "itemtag2" : "de826d622a45ff4e96b1421ef28d64ac",
+    "psappviewid" : "d393b56053431c45eb3c8026e4bb2ca1",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",
+    "psappsbitemid" : "f9f9f13b729fbc27411ae391c6dfb9e0",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugMyFavoriteGridView",
+    "psappsbitemname" : "bug表格视图",
+    "itemtag2" : "ee9416fd03535ce22857f4a76c912730",
+    "psappviewid" : "614209b95b3f796e655e0532af93b336",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMyFavoriteGridView.json",
+    "psappsbitemid" : "e222eaf17d9e8281e27aeddf4e3c800b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductStatsALLGridView",
+    "psappsbitemname" : "所有产品",
+    "itemtag2" : "375a075b152fef736ca44580241e4db4",
+    "psappviewid" : "1e6c67c04400850f345e5f804bf8ee50",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsALLGridView.json",
+    "psappsbitemid" : "c9f8cb44723f2f94f9fc252c2eb4bb43",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductSumQaChartView9",
+    "psappsbitemname" : "产品汇总表图表视图",
+    "itemtag2" : "de55bee3f59ba61802aca862f584f211",
+    "psappviewid" : "2e1e24a39d1f1969f411b507d49fc640",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumQaChartView9.json",
+    "psappsbitemid" : "de02c77c3f68b3ba743d14f661447b58",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserYearWorkStatsEditView",
+    "psappsbitemname" : "用户年度工作内容统计编辑视图",
+    "itemtag2" : "d373f70029b16477c800e74c134524c7",
+    "psappviewid" : "92828782339ab18470626ac28292615a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsEditView.json",
+    "psappsbitemid" : "f796a5c909ce1b227bf97bc79146a9ac",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TodoCloseView",
+    "psappsbitemname" : "关闭",
+    "itemtag2" : "d945e7dd5b94cde2b134eab61a4901f7",
+    "psappviewid" : "350eb8ac832890ae0f531aadd6689dc5",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCloseView.json",
+    "psappsbitemid" : "66be8b82d66b3e7614d534144fa98491",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductStatsEditView",
+    "psappsbitemname" : "产品统计编辑视图",
+    "itemtag2" : "ab500669e4f272263ba69c8b69f0ca5a",
+    "psappviewid" : "b8aa2b91fff3152c42b9e6fd679be2bc",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView.json",
+    "psappsbitemid" : "39928ad4053dcc7a7fa45e27c7332941",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzDailyDailyEditView",
+    "psappsbitemname" : "日报编辑视图",
+    "itemtag2" : "4dbd01633928212dbd5f61f1bfa31e14",
+    "psappviewid" : "83de2f22eaa4faf59cf7f38e7c448bf9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyEditView.json",
+    "psappsbitemid" : "9ad644a883a0d80bc13ea8832a57fdc1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IBIZProKeywordEditView",
+    "psappsbitemname" : "关键字编辑视图",
+    "itemtag2" : "a05ec8e48d9b574bc006978a2fca2e1a",
+    "psappviewid" : "2ecaa5fe641c4ba59086980bf0aacdd7",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProKeywordEditView.json",
+    "psappsbitemid" : "aede6ad8ef8c6ec23fb8816ef8b61c4b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzWeeklyUsr2GridView",
+    "psappsbitemname" : "周报表格视图",
+    "itemtag2" : "59f7165531be9753da634e6f26177f75",
+    "psappviewid" : "d2d8b61120cbf258864721c3324ab556",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyUsr2GridView.json",
+    "psappsbitemid" : "d340181459c5424254bb3dd07c3bb627",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugStatsGridView",
+    "psappsbitemname" : "Bug统计表格视图",
+    "itemtag2" : "d5eaf18f5a5f90fc2e079912691aa2be",
+    "psappviewid" : "cc499c250db0b7a0d84342f6943d6ed0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsGridView.json",
+    "psappsbitemid" : "b2fddbeee640e2bde9477e897d7aee89",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductDashboardInfoMainView9",
+    "psappsbitemname" : "产品信息",
+    "itemtag2" : "fbb6480f0a71159d3a72f488528328d2",
+    "psappviewid" : "b5d2389c0dd12ae614b319090ecc2361",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductDashboardInfoMainView9.json",
+    "psappsbitemid" : "0403dc10bfeecd192258c55cc461c470",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryMainView9",
+    "psappsbitemname" : "需求编辑视图",
+    "itemtag2" : "96341af2bede40435fecceeb636fc26d",
+    "psappviewid" : "94e0ee1a97736ff4d28b88a46cd395b7",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9.json",
+    "psappsbitemid" : "4c7edbf7428860a2d00346172fc476df",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectMainMyGridView",
+    "psappsbitemname" : "项目",
+    "itemtag2" : "a3b75eebb3b9f820639dcc108c11ac20",
+    "psappviewid" : "8a836afd6e08fa458fd83bb013fb0c7d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainMyGridView.json",
+    "psappsbitemid" : "51a2cff9ce53e603e43655fc8f476b5d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseLinkCaseGridView",
+    "psappsbitemname" : "测试用例表格视图（关联用例）",
+    "itemtag2" : "e05f625fb7a113fcbf7ff3b309c4c128",
+    "psappviewid" : "7b7e9a3fb6ab91e52db487e8ec9b8987",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
+    "psappsbitemid" : "dd3a6f6ef7c3c82b7f1c1e71f0794cb7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskEditView9_Detail",
+    "psappsbitemname" : "测试版本编辑视图",
+    "itemtag2" : "f07f9745af0a90f4666ac39ff0d5210d",
+    "psappviewid" : "8d24f12656d8f0d0f21cde986d90249d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView9_Detail.json",
+    "psappsbitemid" : "b78767bc0a880b1ddb8793a64be194bd",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductSumEditView",
+    "psappsbitemname" : "产品汇总表编辑视图",
+    "itemtag2" : "e594f9c37bdcdb9f7c0bf5ec5cd24ce0",
+    "psappviewid" : "046ec3c9ae15271f1722ebe378de2017",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumEditView.json",
+    "psappsbitemid" : "083e6100662ec963e40039959a34a8de",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryGridView9_Child",
+    "psappsbitemname" : "细分需求",
+    "itemtag2" : "09e6ca4e580578eea7453f7e9550d30b",
+    "psappviewid" : "8505c429c9deb51e3e1ef8b911fa83c2",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_Child.json",
+    "psappsbitemid" : "c3f0dcb13f3b82b60ba97dd8d9080404",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysEmployeeGridExpViewDept",
+    "psappsbitemname" : "人员表格导航视图",
+    "itemtag2" : "098d34fa200193a5c6581d5e70ba5dbb",
+    "psappviewid" : "f3aac9310b3f814a247eed4bc285ac07",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeGridExpViewDept.json",
+    "psappsbitemid" : "a66780562cf3eee702793b111e9fbc12",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TodoDescEditView9",
+    "psappsbitemname" : "待办事宜表编辑视图",
+    "itemtag2" : "a1968186cf3b856af529d88f0f9fbc5b",
+    "psappviewid" : "f1b6682890513f1e91a45927d4cd6efa",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoDescEditView9.json",
+    "psappsbitemid" : "80e560a15f466b057ecfbfb9c7e7041e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductEditView_Close",
+    "psappsbitemname" : "关闭产品",
+    "itemtag2" : "d7514c75d6dc2ccc7353ae6ae23782c9",
+    "psappviewid" : "f67e66bcffbdb0dcb87e541997e19ee2",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView_Close.json",
+    "psappsbitemid" : "dd30938a03ca28b45f46fdeb38e71649",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserContactGridExpView",
+    "psappsbitemname" : "用户联系方式表格导航视图",
+    "itemtag2" : "68fb45c0f0e5306a552a2fc05617dc0b",
+    "psappviewid" : "4a012e784384c1f4ec3b0150e0885018",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactGridExpView.json",
+    "psappsbitemid" : "f17c190e0ddbc89f6f5449693dea8d0b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IBIZProTagEditView",
+    "psappsbitemname" : "标签编辑视图",
+    "itemtag2" : "7eacf971afb5473862ddf40b50d62857",
+    "psappviewid" : "1dbebd55ab7518c3a31b7cc8af22a1a3",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProTagEditView.json",
+    "psappsbitemid" : "55904f4ce19420e90c2d76f40c0f83e5",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BuildMainTabExpView",
+    "psappsbitemname" : "版本分页导航视图",
+    "itemtag2" : "267a15846d174febc86ffc08f7cf779f",
+    "psappviewid" : "7f78aec6820c14e08caf8fa56087866f",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildMainTabExpView.json",
+    "psappsbitemid" : "84b97548b9aa7eeb22cc33f153811edb",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectEditView_Suspend",
+    "psappsbitemname" : "项目",
+    "itemtag2" : "97fda877364a1c4f77a74c83f182200c",
+    "psappviewid" : "9669d3f350b532bb8acd60be74038748",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Suspend.json",
+    "psappsbitemid" : "3455f5617a958d20125b8757218b140a",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectMainTabExpView",
+    "psappsbitemname" : "项目",
+    "itemtag2" : "cff5bcd992068d9856dbd3370bec34dc",
+    "psappviewid" : "fd0b8748ff96edcde009d39903a9f211",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+    "psappsbitemid" : "c8ed5c8486cacc2d96d49cd8969241a0",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibByProductTreeExpView",
+    "psappsbitemname" : "文档库树导航视图（产品下属）",
+    "itemtag2" : "f2fa17903946977f6cf6544b2fb5d0ee",
+    "psappviewid" : "f1d15d6af90bb0d83c07c6dca5b4d61e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibByProductTreeExpView.json",
+    "psappsbitemid" : "882ffd78c8faf2a48de19d80603b7f35",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskEstimateGridView9",
+    "psappsbitemname" : "任务预计表格视图",
+    "itemtag2" : "b67550e07e2f8952299b4c995b7a7599",
+    "psappviewid" : "214650149c1d7b82e6897e6915b0e2b5",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateGridView9.json",
+    "psappsbitemid" : "227dabf0185bc4e560e81aa59ed599f2",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectTeamMainGridView_EditRow",
+    "psappsbitemname" : "项目团队表格视图",
+    "itemtag2" : "f55aef38347fe3b87a564f26e9d6d139",
+    "psappviewid" : "29447769aa6216b5f7a881c0a5d81d73",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",
+    "psappsbitemid" : "b8a3f4ed11cef598d60c54f6cf84c50c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserTplGridView",
+    "psappsbitemname" : "usertpl表格视图",
+    "itemtag2" : "031d7dd726d2a36cfcda248c841767d6",
+    "psappviewid" : "379360eb2f83ea4dc50744144c2878b7",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserTplGridView.json",
+    "psappsbitemid" : "aa2c66b212bb253c25920255152b49d3",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzMonthlyMainMonthlyGridView",
+    "psappsbitemname" : "月报表格视图",
+    "itemtag2" : "a546f9bcb46b89b86752f7e7a617c216",
+    "psappviewid" : "7c509954bcc0516db88536ea91442adf",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyMainMonthlyGridView.json",
+    "psappsbitemid" : "e51e0d9fe1a622001ea8c23a4b2b056d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzMonthlyEditMonthlyEditView",
+    "psappsbitemname" : "月报编辑视图",
+    "itemtag2" : "dbd42c72893f4144bf08d885a74bb425",
+    "psappviewid" : "01c7a883016bed2ddb813c580d3d2e0e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyEditMonthlyEditView.json",
+    "psappsbitemid" : "3d029864fa6eac4f0bff15ed7d767b43",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugBuildSubGridView_Done",
+    "psappsbitemname" : "bug表格视图",
+    "itemtag2" : "8ff9f81c1f2e6046dc880a44d030d857",
+    "psappviewid" : "a4808ebf1f78b25ee53d8638079082dc",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBuildSubGridView_Done.json",
+    "psappsbitemid" : "2eb219e0ea6ae3a255e9a1022d9f0c8f",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectTeamListView",
+    "psappsbitemname" : "项目团队列表视图",
+    "itemtag2" : "13ff9dd6d338d51f3681a37625cf54f6",
+    "psappviewid" : "753d59ea09ed63ba3e2aebe7d463abe7",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamListView.json",
+    "psappsbitemid" : "88c4bff4c4fb02ee65fb5bb96b91f237",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryEditView9",
+    "psappsbitemname" : "关联需求",
+    "itemtag2" : "4930bf49537b98357cfdc014f66f1847",
+    "psappviewid" : "8c3bd17ea668e9cf5802751378c3a378",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView9.json",
+    "psappsbitemid" : "2ee6bff29d9f04451936d040850565fc",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugTaskToBugEditView",
+    "psappsbitemname" : "Bug",
+    "itemtag2" : "ae528945210e6a38464f4a183d1151e1",
+    "psappviewid" : "54638099445607e6cb16757f25193b2f",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTaskToBugEditView.json",
+    "psappsbitemid" : "251e5bfc03c5ba776ef224a77d0987f8",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugGridView9_Storyaffect",
+    "psappsbitemname" : "相关Bug",
+    "itemtag2" : "0ef311a80168dc35903312f58cad2c9d",
+    "psappviewid" : "5eeecfcd239a98f93fb8f322d3470d76",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView9_Storyaffect.json",
+    "psappsbitemid" : "94f82a96c494ab0a2c4b6af875f66f7d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "Taskmaindashboardview_link",
+    "psappsbitemname" : "任务主数据看板视图",
+    "itemtag2" : "731c914a2414aeb1dada24c436413e02",
+    "psappviewid" : "a6e14baa45e0c99165384f7ef510d605",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/Taskmaindashboardview_link.json",
+    "psappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ActionProductTrendsListView",
+    "psappsbitemname" : "系统日志列表视图",
+    "itemtag2" : "06a338833cdf40ede3d742edbea7bd05",
+    "psappviewid" : "f7a278d765ff0f85a2c59cbb2485fa30",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionProductTrendsListView.json",
+    "psappsbitemid" : "eae7fe407f58df2aa3bdfab5ca21b42c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskCloseTaskView",
+    "psappsbitemname" : "关闭任务",
+    "itemtag2" : "52eba330bafa52db46ffdcc3eb8b1221",
+    "psappviewid" : "5b843e1de0332a77a847782432d7a40d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
+    "psappsbitemid" : "c73e5a7e27394d0814348f198a14bde7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseTestOptionView",
+    "psappsbitemname" : "执行",
+    "itemtag2" : "de18a73052d522d8b6f3004f811e89bd",
+    "psappviewid" : "6895fea07a2489f404d895d6746ae7b8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestOptionView.json",
+    "psappsbitemid" : "473f7d2f17642013c10bb2838a441b10",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugActivationView",
+    "psappsbitemname" : "激活Bug",
+    "itemtag2" : "088dc20b26fdba3fad93865ba0f46285",
+    "psappviewid" : "54e3465c19bb1859f24cea9b31e3b24a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugActivationView.json",
+    "psappsbitemid" : "30c3c9d34f224f75a920972c3cfd7c0c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "Bugmaindashboardview_link",
+    "psappsbitemname" : "Bug数据看板视图",
+    "itemtag2" : "73b061033f1954baf881c186701104da",
+    "psappviewid" : "05790021067211c1817c27dcb9c203df",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/Bugmaindashboardview_link.json",
+    "psappsbitemid" : "3254579f1ed3d13e3f8b21d4aa976820",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserContactGridView",
+    "psappsbitemname" : "usercontact表格视图",
+    "itemtag2" : "1745e1497c817e1c65c0e2eb419cffba",
+    "psappviewid" : "fad11065c8858a545a9df670cdccce44",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserContactGridView.json",
+    "psappsbitemid" : "c6d071c8221e56c2ef6c5142deed8e17",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibUsr2TreeView",
+    "psappsbitemname" : "文档库树视图",
+    "itemtag2" : "4e74f9c95fae0dff05429fe3390dcbbb",
+    "psappviewid" : "0647a85a1b2f6013ccb63143973c706c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2TreeView.json",
+    "psappsbitemid" : "26c15f3a441b2a52e182e4a510a2efab",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseOptionView",
+    "psappsbitemname" : "执行",
+    "itemtag2" : "0ae99d7cb39772dd4a873ab693e82b08",
+    "psappviewid" : "b61fe96397bb463004f549f334b7f363",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
+    "psappsbitemid" : "6422affef9718e2717a06a9a53748ec4",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskEditView",
+    "psappsbitemname" : "测试单编辑视图",
+    "itemtag2" : "e1f1255e389d5475935470b7530c9e43",
+    "psappviewid" : "5b139a407fa34f386f3f784f33841184",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
+    "psappsbitemid" : "c19582676075e05f140b9175cd5c0d0a",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysUpdateFeaturesGridView",
+    "psappsbitemname" : "系统更新功能表格视图",
+    "itemtag2" : "f599736aa84b59376a4a71ee885e344c",
+    "psappviewid" : "8cee8f79bfe729f53121904e9ebd7422",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateFeaturesGridView.json",
+    "psappsbitemid" : "b4f8be5c9a1b8200f87ff3231007b2bc",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzReportlyCreateEditView",
+    "psappsbitemname" : "汇报编辑视图",
+    "itemtag2" : "9a7a41ad166f96b615dc3489425550e1",
+    "psappviewid" : "ee2c37e457f0b7bc79b04f7e9457d62d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",
+    "psappsbitemid" : "7d25c0ccc425df0ceb1cfc4ce4694d5c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskMainMyGridView",
+    "psappsbitemname" : "任务表格视图",
+    "itemtag2" : "52fa7e4b150cb3769c6ec35905d00a71",
+    "psappviewid" : "4f82827cafa5f802e5109bbcb9efa9f8",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainMyGridView.json",
+    "psappsbitemid" : "7fd986ba2a272a0c9a0ec81cac2a4e30",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BuildEditView",
+    "psappsbitemname" : "版本编辑视图",
+    "itemtag2" : "ce243c7c0742fb05f1ea424fec95a8fd",
+    "psappviewid" : "e9d61d4506a28dec9a6f1d7b9e1fff6a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditView.json",
+    "psappsbitemid" : "2429909768b37d9b1f5bd6184d052b08",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugCaseToBugEditView",
+    "psappsbitemname" : "Bug",
+    "itemtag2" : "c08b67481ea5ec40b571372c289c0737",
+    "psappviewid" : "a0fc84298809f2371ecccfeae95ccdcd",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCaseToBugEditView.json",
+    "psappsbitemid" : "21cd61cf53782b9856b38d17333ba493",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzLibGridView",
+    "psappsbitemname" : "用例库",
+    "itemtag2" : "53b9305c83050ed3fbaddb0336451a92",
+    "psappviewid" : "98fbf9b19456193cf4893a27a7eaa66b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibGridView.json",
+    "psappsbitemid" : "bf45f5ab18b015e1196b2e43129c5c1d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzDailyDailyInfoEditView",
+    "psappsbitemname" : "日报编辑视图(日报描述)",
+    "itemtag2" : "0db29ffeb3abdcbb6d8afb5362d654ee",
+    "psappviewid" : "f0d0f8c1b108c3227888a127f1e7a89c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoEditView.json",
+    "psappsbitemid" : "0f18d3fccb530d48ae8658603a308555",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugStoryTOBugEditView",
+    "psappsbitemname" : "Bug",
+    "itemtag2" : "189ad75a4504896b49715e8bc1e4afeb",
+    "psappviewid" : "ecdca86e0402c79cb2a9978ea04f8330",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStoryTOBugEditView.json",
+    "psappsbitemid" : "ddd5496625c2ed1557c5d9bb3058c72a",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserYearWorkStatsPODashboardView",
+    "psappsbitemname" : "用户年度工作内容统计数据看板视图",
+    "itemtag2" : "001e417e92c1018c4e747eab08920bfb",
+    "psappviewid" : "6e0ad417e9fe2138d57f5e9e6a2e3b32",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsPODashboardView.json",
+    "psappsbitemid" : "ff9bb5209d584bf8a0298db256828a72",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestReportProjectTabExpView",
+    "psappsbitemname" : "测试报告分页导航视图",
+    "itemtag2" : "e42f0f9be57f9e4eb52b32fb69892150",
+    "psappviewid" : "2dda1b4d7b8bacd3d921f0f0108f2fa1",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportProjectTabExpView.json",
+    "psappsbitemid" : "f8847799dd9bca0f9bb986b9250cb784",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugUsr2GridView",
+    "psappsbitemname" : "Bug表格视图",
+    "itemtag2" : "b0239c29fcf1ceb2d41c4c99e7c7f10d",
+    "psappviewid" : "39207f363dc5118f65d22eeef4c59883",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugUsr2GridView.json",
+    "psappsbitemid" : "c5b02c6d655c3265b0bd7f468e369593",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskTeamGridView9_Edit",
+    "psappsbitemname" : "团队",
+    "itemtag2" : "6c800b163747e96f111ee52ea64d4793",
+    "psappviewid" : "8fd7110e7d2b7d0fc9ea812d59d94f58",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9_Edit.json",
+    "psappsbitemid" : "70707e3381f7721e9e7532b7b3d2b3a7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestReportEditView",
+    "psappsbitemname" : "测试报告编辑视图",
+    "itemtag2" : "f01a275da38bf3643413ea22ed57100e",
+    "psappviewid" : "f340b16bd1355b1c511d9da4b00476e2",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView.json",
+    "psappsbitemid" : "d597a9b29799608e786aecbff2a3118f",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugMainEditView",
+    "psappsbitemname" : "Bug编辑",
+    "itemtag2" : "dc8308bc1634714e76de47a2c2c68ed0",
+    "psappviewid" : "30b9fb87a864a9b67484ea3384cd66fc",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
+    "psappsbitemid" : "a8582798baec01993c2318c7f304921d",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductStatsGridView9",
+    "psappsbitemname" : "产品统计表格视图",
+    "itemtag2" : "e8db2b256f2b4ebf61001cccb0b1d425",
+    "psappviewid" : "517ea7e243fcbce57c081f824d5eb013",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsGridView9.json",
+    "psappsbitemid" : "90b8d98148f8736c17a3ed20810e3b11",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryProductStageKanbanView",
+    "psappsbitemname" : "需求看板视图",
+    "itemtag2" : "79eba4dcfab3e21e8ad7e1c75cb23f9b",
+    "psappviewid" : "bfa6b267c1c868a41b419be350e681e9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProductStageKanbanView.json",
+    "psappsbitemid" : "9ef896a5f44d1d557d302cbc9903d318",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestResultMEditView9",
+    "psappsbitemname" : "测试结果多表单编辑视图",
+    "itemtag2" : "3293c8041cb64d29acbd3495e2c7c368",
+    "psappviewid" : "e01d5c7f0080afdcf4e9c9ee9924abef",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestResultMEditView9.json",
+    "psappsbitemid" : "3a976660d8e040ce6f285c2dea8fa397",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductPortalView",
+    "psappsbitemname" : "产品主页",
+    "psappviewid" : "305a8f8ecf4dfa714d2e3cbc2e0eecf5",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPPORTALVIEWS/ProductPortalView.json",
+    "psappsbitemid" : "5385c04b0a07e7c2313e2bbb3666241f",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibProjectTreeView",
+    "psappsbitemname" : "文档库树视图",
+    "itemtag2" : "a554fff45b366ddc2d11e8994cf03d74",
+    "psappviewid" : "6a15e6815011030492acf5fa6d8dd3af",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProjectTreeView.json",
+    "psappsbitemid" : "2b0e0c10fa1e6bd0e61e74c779537918",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestReportprojectDashboardView",
+    "psappsbitemname" : "测试报告数据看板视图",
+    "itemtag2" : "197e29721da02bdf684a9e17f0fb4985",
+    "psappviewid" : "ae03acf710d901c5b781d7b9615c2dc4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportprojectDashboardView.json",
+    "psappsbitemid" : "fd7ca719fd06bfef18d91135efa8d884",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskCloseOptionView",
+    "psappsbitemname" : "关闭",
+    "itemtag2" : "c348caf0815f629c526327789ef38dc1",
+    "psappviewid" : "797e02cfcd15005ee6bc427b2860e845",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCloseOptionView.json",
+    "psappsbitemid" : "9c24a89c9e34bfc9c899ce2bdc31ac40",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "UserYearWorkStatsQADashboardView",
+    "psappsbitemname" : "用户年度工作内容统计数据看板视图",
+    "itemtag2" : "c564af75d6a4fc7212691f0ff4a47de8",
+    "psappviewid" : "73c630ad73ee5b10d79c36c91df91b39",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsQADashboardView.json",
+    "psappsbitemid" : "864c94492959c3df831ea822af7321d2",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "CaseMainDashboardView",
+    "psappsbitemname" : "功能测试",
+    "itemtag2" : "382363440a2881b842af36f169b5013f",
+    "psappviewid" : "bf84dbcdd77fd96f9b831316d7f969fd",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+    "psappsbitemid" : "773d8a0a9a9f5f824e6c08007275ddec",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskZsGridView9",
+    "psappsbitemname" : "任务表格视图（展示）",
+    "itemtag2" : "2606bc31a812e721f0457c042c8d838d",
+    "psappviewid" : "83a5deec3e454787f7a9744c860a163f",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskZsGridView9.json",
+    "psappsbitemid" : "e1eeaec5733cb46416fa5da47050ea0c",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BugTestReportSubGridView",
+    "psappsbitemname" : "bug表格视图",
+    "itemtag2" : "5c6a213c7254ed6b01b150df5c136f08",
+    "psappviewid" : "6f90a9ed63f9dcec5758480a76e2680c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTestReportSubGridView.json",
+    "psappsbitemid" : "dcb0cb9a23855f4d11a7d2edd0e7baee",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysPostGridExpView",
+    "psappsbitemname" : "岗位表格导航视图",
+    "itemtag2" : "ef35c9a52ae4bb981d8de0d9d76f0800",
+    "psappviewid" : "84ad1f110ad2f5100d78d5a23c67fd02",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysPostGridExpView.json",
+    "psappsbitemid" : "6730b5d528e2ac96e8fcdacd378708ea",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "BuildMainGridView",
+    "psappsbitemname" : "版本表格视图",
+    "itemtag2" : "9161fc313820b1a48f9042b8dff4562e",
+    "psappviewid" : "118edf7fdb85f90d0ca2fa11e3318f59",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildMainGridView.json",
+    "psappsbitemid" : "289921ca7f69b585c5c8a5c4761c4b5b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzLibModuleEditView",
+    "psappsbitemname" : "用例库模块编辑视图",
+    "itemtag2" : "fe0f29704efaca6b89796ce53a9d8b47",
+    "psappviewid" : "d29746fae4429a6ea5c81cc7d552bb5a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleEditView.json",
+    "psappsbitemid" : "1705bd6bcc94140cc83f2560850f598b",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskWorkInfoEditView9",
+    "psappsbitemname" : "工时信息",
+    "itemtag2" : "17373e3862e6b2c5b25046ad61fa9c1f",
+    "psappviewid" : "5a54fcd3bab135a3c9530a67710c5af7",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskWorkInfoEditView9.json",
+    "psappsbitemid" : "b906a15d432fa51ea859de5e07daddad",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysTeamMemberGridExpViewTeam",
+    "psappsbitemname" : "组成员表格导航视图",
+    "itemtag2" : "5e4b74215df0245f84b8dba0ee25a823",
+    "psappviewid" : "f5d633f92a5353687cbb187a7dc9bf31",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysTeamMemberGridExpViewTeam.json",
+    "psappsbitemid" : "613e2473ef743346d250f3ca27c52bab",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskGridView9_UnTested",
+    "psappsbitemname" : "测试版本表格视图",
+    "itemtag2" : "6d41a0d7df0bf5121ab10bd13e692679",
+    "psappviewid" : "fe6c2d81a15a946d67c798e5af01f6ae",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskGridView9_UnTested.json",
+    "psappsbitemid" : "e5fbe4e4902ab8aba9c56b20a465a9d9",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductModuleGridViewBranch",
+    "psappsbitemname" : "产品模块表格视图",
+    "itemtag2" : "fd12e4c852ce1845e753077469d54971",
+    "psappviewid" : "10d6cb2fc147ac7b82b684d94cfa6c9b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridViewBranch.json",
+    "psappsbitemid" : "104bbfd0e51b305e4489bcd15e6889cd",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibModuleChildWeiHuiTreeExpView",
+    "psappsbitemname" : "文档库分类树导航视图",
+    "itemtag2" : "a92872ed16422c69c0cc293d4fd2c863",
+    "psappviewid" : "864b0541f7ef09dabcaed9cff697b5a9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
+    "psappsbitemid" : "8f84f140c81d9f480320dddcad382ba3",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestTaskMainTabExpView",
+    "psappsbitemname" : "测试版本分页导航视图",
+    "itemtag2" : "f8427f27213337876bf0149bc75fe7e0",
+    "psappviewid" : "4e229fd1de7c3b68c2a18a3d16916d61",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
+    "psappsbitemid" : "300fea367a7057f2e0eb105e67e063c9",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzAgentCreateEditView",
+    "psappsbitemname" : "代理编辑视图",
+    "itemtag2" : "cdb93d26b9bedb9d1fca7f1b70c3de2b",
+    "psappviewid" : "821253e790f5c38ff3e995117cf457bc",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzAgentCreateEditView.json",
+    "psappsbitemid" : "4e7cddcbf8f4a3e3709e196fe365b453",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryReleaseSubEditView",
+    "psappsbitemname" : "需求",
+    "itemtag2" : "8d1e19d5b9c7a6d42307c3a63500ff63",
+    "psappviewid" : "c0f0cf52489e90899fc76ed262ed907b",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryReleaseSubEditView.json",
+    "psappsbitemid" : "6eafb8bf24035addeded0dbc682dce02",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "DocLibTreeView",
+    "psappsbitemname" : "文档库树视图",
+    "itemtag2" : "f794eee6a1af5043eed582015ac672a1",
+    "psappviewid" : "9bbb63a4a36369d6d14471da8a742eb9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeView.json",
+    "psappsbitemid" : "03fe7a29b0853c6a7b1b241d6e366aac",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskTeamGridView9",
+    "psappsbitemname" : "团队",
+    "itemtag2" : "e52237e2778b5000be8021cf70f81845",
+    "psappviewid" : "d1339f33d3d82d7b6993e510b20fddbe",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9.json",
+    "psappsbitemid" : "a93e45d9c1fd41dfa15c59578849c265",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzMonthlyNewMonthlyEditView",
+    "psappsbitemname" : "月报编辑视图",
+    "itemtag2" : "1b87f74decfedc8de15c98fccc8f86c2",
+    "psappviewid" : "7a308a89605e16def8311de4ffa7a3eb",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyNewMonthlyEditView.json",
+    "psappsbitemid" : "5a6d0882682c3a68c67eaca2648e9d4e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzproConfigGridView",
+    "psappsbitemname" : "系统配置表表格视图",
+    "itemtag2" : "7401b1f4a2005dbbeaa35d8db75597ac",
+    "psappviewid" : "d86ccce9f88117cf723ae455a1bd065c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproConfigGridView.json",
+    "psappsbitemid" : "270e79c4aa7d966ab0ac8f7a83c77a2e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskCancelTaskView",
+    "psappsbitemname" : "取消任务",
+    "itemtag2" : "e28569a11f1597768162938e07a08f5c",
+    "psappviewid" : "6e1e2145a5e4622fb1936fe37f6d07e7",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
+    "psappsbitemid" : "a52dae0bf1e9bc1019df3c0041acb2dd",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectEditView_Close",
+    "psappsbitemname" : "项目",
+    "itemtag2" : "ac9a62b29f7cda252673cc689e622e23",
+    "psappviewid" : "765ac84633091fcfae4526324ff4ebac",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Close.json",
+    "psappsbitemid" : "e8d9e4a47ee0ad1599b2b05156250c47",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductListExpView",
+    "psappsbitemname" : "产品列表导航视图",
+    "itemtag2" : "c5140b2659d2b825ec144969ce873a5a",
+    "psappviewid" : "a84a543c155b01389bc12eb1c27624b5",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductListExpView.json",
+    "psappsbitemid" : "b0f7a8c9dc4db5983ba79f4461e936ba",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzproConfigEditView",
+    "psappsbitemname" : "系统配置表编辑视图",
+    "itemtag2" : "c42ba0caa955c9f1d29c21011b5528fa",
+    "psappviewid" : "c4eda443b150028cdcefd6cd1a7f272c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzproConfigEditView.json",
+    "psappsbitemid" : "17b253a92b363a3687e140752a85eff3",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProductMainTabExpView",
+    "psappsbitemname" : "产品",
+    "itemtag2" : "3e755fa107fce1e346df7355cc7c3d82",
+    "psappviewid" : "6c7b582273d0726bcf77214807cfe40c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+    "psappsbitemid" : "f71c096d3b2446f9415df8e160427f10",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TestReportEditView_TestRange",
+    "psappsbitemname" : "测试报告编辑视图",
+    "itemtag2" : "8df1781d82d28c4d98a12b0263e24399",
+    "psappviewid" : "5918176ed83c3a3809e0b822a2823d7d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestRange.json",
+    "psappsbitemid" : "41af34785b1ff3a68fb11d147d729c76",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TaskDailyCompleteZsGridView",
+    "psappsbitemname" : "任务表格视图（展示）",
+    "itemtag2" : "2a4d5aab10de13b4ea6a4e95007bd6a2",
+    "psappviewid" : "0235121fc2b0c27f0be0e06953580a3d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDailyCompleteZsGridView.json",
+    "psappsbitemid" : "dc7708231b30c7817653fbeafbdaff8f",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbizproIndexIndexPickupDataView",
+    "psappsbitemname" : "索引检索索引关系选择数据视图",
+    "itemtag2" : "17f6c4d04147b3902318f85eb76c0a5d",
+    "psappviewid" : "b73c533bd0b7c0813dc5fa85f2b3549f",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupDataView.json",
+    "psappsbitemid" : "7f2a571b5f89032d39ca15efb190a4c5",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryMainView9_EditMode",
+    "psappsbitemname" : "需求编辑视图",
+    "itemtag2" : "7f956028855ccb9aa172be30e67dcf02",
+    "psappviewid" : "538555af88ea31549a5bc7dbf1e6286a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
+    "psappsbitemid" : "724d825a617259129f6d06f2718420e9",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "StoryGridView9_AssignedToMe",
+    "psappsbitemname" : "需求表格视图",
+    "itemtag2" : "e6fd6f0a14522a2103ba56be0e12144b",
+    "psappviewid" : "680d5889e78ea2e379d1601c7ed66711",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_AssignedToMe.json",
+    "psappsbitemid" : "39d14de99ebe9c0fe9876f5c7a9fd1fc",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugBugLifeEditView9",
@@ -1429,6 +2196,14 @@
     "psappviewid" : "114241c3104f51fe267e9708ba41fe29",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBugLifeEditView9.json",
     "psappsbitemid" : "7280a97d37be1672e88c9131ab4e3b06",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "FileProductGridView",
+    "psappsbitemname" : "file表格视图",
+    "itemtag2" : "355fbb0690343881f2daae7db2145359",
+    "psappviewid" : "25604124fe30ec7cc83066e3e058b0ec",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProductGridView.json",
+    "psappsbitemid" : "47b253e2a6f272cf025f98811c7234e4",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysEmployeeEditView",
@@ -1453,22 +2228,6 @@
     "psappviewid" : "3414a6ef8747f3c0ce2a6ef571dde48e",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleTreeExpView.json",
     "psappsbitemid" : "d8ab62ae796a6309764f6ed8dc24cdda",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocBasicEditView9",
-    "psappsbitemname" : "文档编辑视图（基本信息）",
-    "itemtag2" : "293f3dda8c7a5154243520d1b9211c2b",
-    "psappviewid" : "00d6c7c0b8629ec81c0016d542d0f097",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocBasicEditView9.json",
-    "psappsbitemid" : "15d2ca65c6c28536b8139ad7b8dfe5d2",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestModuleGridViewBranch",
-    "psappsbitemname" : "产品模块表格视图",
-    "itemtag2" : "3cbfbe500957da286ff2b45098e7da79",
-    "psappviewid" : "65129e5f76f96cbb1d2d1c9e9bb2afed",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleGridViewBranch.json",
-    "psappsbitemid" : "fbb6acc484826d09e8dba20a1e5630fc",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzPlanTempletGridView",
@@ -1511,36 +2270,12 @@
     "psappsbitemid" : "69c98171dfdc1d4e6ba38d24e32e031e",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "CaseTestMainDetailEditView9",
-    "psappsbitemname" : "测试用例编辑视图",
-    "itemtag2" : "d7d1ecde4738b7e66029bf14edf40e1a",
-    "psappviewid" : "8135f7f81658710c74efc351f8d01237",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestMainDetailEditView9.json",
-    "psappsbitemid" : "ce516d0e84c36abed8d2674e1a5e6bc7",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "SysUpdateLogTabExpView",
     "psappsbitemname" : "系统更新日志分页导航视图",
     "itemtag2" : "51fab2cee458d3fb0a3763b88ff56a51",
     "psappviewid" : "c02fd7282430ea240e80829edd7f7898",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateLogTabExpView.json",
     "psappsbitemid" : "466de0218cc4d2cb31087592d6abdf24",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseEditView",
-    "psappsbitemname" : "功能测试编辑视图",
-    "itemtag2" : "a2a68f6001389543de0df0dffc20e57b",
-    "psappviewid" : "02b7ecd8e994b90558a9d6c23705f600",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
-    "psappsbitemid" : "ee0fa6a0a9feb36ca122f47037b72dae",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductTestTabExpView",
-    "psappsbitemname" : "测试",
-    "itemtag2" : "b7c61966deeb739a1052aee6fb99a9d2",
-    "psappviewid" : "005b0ba30f9e9e982e087961bd50c681",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestTabExpView.json",
-    "psappsbitemid" : "ad6a399bb78b48461ceea74978ff8d31",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskRedirectView",
@@ -1551,28 +2286,20 @@
     "psappsbitemid" : "c3920aaca3f577015b8c6d6f31c13df5",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "ProductTestTabExpView",
+    "psappsbitemname" : "测试",
+    "itemtag2" : "b7c61966deeb739a1052aee6fb99a9d2",
+    "psappviewid" : "005b0ba30f9e9e982e087961bd50c681",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestTabExpView.json",
+    "psappsbitemid" : "ad6a399bb78b48461ceea74978ff8d31",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "ProjectModuleTreeExpView",
     "psappsbitemname" : "任务模块树导航视图",
     "itemtag2" : "68985caeb95f6948e7ffe418876bc694",
     "psappviewid" : "568ff596b43788b813249f6aa22443c0",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleTreeExpView.json",
     "psappsbitemid" : "d28206b76e803e9405d1cc8902d76287",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskActiviteOptionView",
-    "psappsbitemname" : "激活",
-    "itemtag2" : "2575fa1b4ce76b72bb241aa2eaf10640",
-    "psappviewid" : "57c9e45f8ccb4c4622a567a88e779182",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskActiviteOptionView.json",
-    "psappsbitemid" : "f680ee2a8f3b42ccf68f4cb4da97ff21",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseStepGridView9",
-    "psappsbitemname" : "用例步骤表格视图",
-    "itemtag2" : "158ec2d4ab12bea22bedc3d52402c29e",
-    "psappviewid" : "21c4e5c64f8c35ef32192c3a1c27259d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseStepGridView9.json",
-    "psappsbitemid" : "d3d0035f26cba04cb7befe73502b9c51",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestResultTestTaskMEditView9",
@@ -1583,36 +2310,12 @@
     "psappsbitemid" : "4f028915afb9a2507436d24c03e4ac17",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryReportSubGridView",
-    "psappsbitemname" : "story表格视图",
-    "itemtag2" : "3df53d8776d3e6b75e8267254d0c6ef3",
-    "psappviewid" : "c7344b0a55eadb587f401c2ea5a4d01f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryReportSubGridView.json",
-    "psappsbitemid" : "cb40741f617bbd71a753b955c4f322f1",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryMainView9_Related",
-    "psappsbitemname" : "需求编辑视图",
-    "itemtag2" : "383edfda56fec0c4dcb93d2b961cdbfd",
-    "psappviewid" : "5d2060546043b483498845da6eb440d9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_Related.json",
-    "psappsbitemid" : "7c4d2065c5cbb2c55d396e21fc6c8b06",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskStoryTaskGroupGridView",
-    "psappsbitemname" : "任务表格视图（需求分组）",
-    "itemtag2" : "272c1ceb939c05566b0efd7045fd799d",
-    "psappviewid" : "e648566cac4a7df484196995a17af08c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryTaskGroupGridView.json",
-    "psappsbitemid" : "4743d6165d25fd5ab56a90788d915e97",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzReportRoleConfigEditView",
-    "psappsbitemname" : "汇报角色配置编辑视图",
-    "itemtag2" : "5ecb0cb64c66591f3d6079d8056c8766",
-    "psappviewid" : "ca5520ca32c6104961484f490807058d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportRoleConfigEditView.json",
-    "psappsbitemid" : "68ca918b2e48a3e4480f8578c1a75ba7",
+    "psappviewname" : "CaseStepGridView9",
+    "psappsbitemname" : "用例步骤表格视图",
+    "itemtag2" : "158ec2d4ab12bea22bedc3d52402c29e",
+    "psappviewid" : "21c4e5c64f8c35ef32192c3a1c27259d",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseStepGridView9.json",
+    "psappsbitemid" : "d3d0035f26cba04cb7befe73502b9c51",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskSubTaskNewView",
@@ -1623,14 +2326,6 @@
     "psappsbitemid" : "51b73e24809f1c432f953f4655a3f76d",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "SysUpdateLogEditView",
-    "psappsbitemname" : "系统更新日志编辑视图",
-    "itemtag2" : "18424b080ab66ea275ad893af9408695",
-    "psappviewid" : "172b7a0413a1bfcf5223f1dc1d3e931c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateLogEditView.json",
-    "psappsbitemid" : "07445da6965938ce9915bb3617650916",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "DocEditView",
     "psappsbitemname" : "doc编辑视图",
     "itemtag2" : "b1a366143a6943b9ce155a606b912931",
@@ -1639,12 +2334,12 @@
     "psappsbitemid" : "5a4411e2133ddf069c84ed9d96cdca19",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "SysOrganizationGridExpView",
-    "psappsbitemname" : "单位表格导航视图",
-    "itemtag2" : "e32f44e71352ab8cd27b3ff22e0e47ab",
-    "psappviewid" : "349b5cf3162e27893fb220a362576e54",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysOrganizationGridExpView.json",
-    "psappsbitemid" : "a3060e43021b28ea761afc37639c99ce",
+    "psappviewname" : "SysUpdateLogEditView",
+    "psappsbitemname" : "系统更新日志编辑视图",
+    "itemtag2" : "18424b080ab66ea275ad893af9408695",
+    "psappviewid" : "172b7a0413a1bfcf5223f1dc1d3e931c",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateLogEditView.json",
+    "psappsbitemid" : "07445da6965938ce9915bb3617650916",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "DocLibLibTabExpView",
@@ -1653,22 +2348,6 @@
     "psappviewid" : "7cfc48856417e4a8740c3d82334f88c9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibLibTabExpView.json",
     "psappsbitemid" : "33aabcb4231d44710184ef15a821b43b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryProjectEditView",
-    "psappsbitemname" : "需求",
-    "itemtag2" : "98d6e994097384a6c43342742a40102d",
-    "psappviewid" : "838cac8f8359eeecc2b7cab4beb3653e",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
-    "psappsbitemid" : "0579d232f476241af780969690624b05",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ActionHistoryListView",
-    "psappsbitemname" : "历史记录",
-    "itemtag2" : "5935ac98547dd7e654dd72f687b9e859",
-    "psappviewid" : "63a73a2e80dc47c05dd3ead4f03ae3c3",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionHistoryListView.json",
-    "psappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskMoreTabExpView",
@@ -1695,36 +2374,12 @@
     "psappsbitemid" : "38bad4eb335b01ce1b83a1305b2d2152",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "SysUpdateFeaturesEditView",
-    "psappsbitemname" : "系统更新功能编辑视图",
-    "itemtag2" : "cc7a4728369be34157f277bd44ac3eb4",
-    "psappviewid" : "46c538b1900cfe9c17255ccbe6a1285b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUpdateFeaturesEditView.json",
-    "psappsbitemid" : "f3c892e18ededa8a06e2d0d21e9b8da1",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzReportlyReportlyDetailEditView",
-    "psappsbitemname" : "汇报编辑视图",
-    "itemtag2" : "1e01c637f37c32d1c8d79edfeb2ef58e",
-    "psappviewid" : "d6d6a7c24897b28611fb32791d4d1a4a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyReportlyDetailEditView.json",
-    "psappsbitemid" : "adc771b7633628c60e1a48048bfd95e5",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "DocMoreMyDocTreeView",
     "psappsbitemname" : "文档树视图",
     "itemtag2" : "b601aa72c5a2d4de3299ddc9c2f464ff",
     "psappviewid" : "d5f2e9a6f7a981823a3327cba1c0b9d4",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocMoreMyDocTreeView.json",
     "psappsbitemid" : "ee458d44ddcd4614ee4695e154562d0a",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskTypeTaskGroupGridView",
-    "psappsbitemname" : "任务表格视图（类型分组）",
-    "itemtag2" : "8cb2128f6b93c2425dbf0ff25c64593d",
-    "psappviewid" : "b81f0d050f0ec13741f177f26fcb4bd8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTypeTaskGroupGridView.json",
-    "psappsbitemid" : "bc22237374d0f10dcc636fb369225511",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectMainDashboardView",
@@ -1735,14 +2390,6 @@
     "psappsbitemid" : "c8b6a4b9828f3b0e71014dd4edfec7f6",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryMyFavoritesGridView",
-    "psappsbitemname" : "story表格视图",
-    "itemtag2" : "3cbac211cdf08237cf1a3056fa7ee7bc",
-    "psappviewid" : "3efc6350b5c81769e497c9da9485ebaf",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMyFavoritesGridView.json",
-    "psappsbitemid" : "68d6748b2a30d473632612389a7f0330",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "StoryBuildSubGridView",
     "psappsbitemname" : "story表格视图",
     "itemtag2" : "ac959b8d63c69958b20ca4a2a492e21f",
@@ -1751,36 +2398,12 @@
     "psappsbitemid" : "8c63e711f1ff51a9ab208daec06e90dd",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryEditView",
-    "psappsbitemname" : "需求",
-    "itemtag2" : "a120f05df15e80808b66616ae974ea3f",
-    "psappviewid" : "4863a523ac490ebce771717756f0c6a8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-    "psappsbitemid" : "2e388392bdb8d1c415956899f9f17384",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugBugKanbanView",
     "psappsbitemname" : "Bug看板视图",
     "itemtag2" : "a651c59858f985e3069547fc78095e30",
     "psappviewid" : "4eab91076167a1215a6cbe746eb8033f",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBugKanbanView.json",
     "psappsbitemid" : "536ba99900fe8d6ae274b133539631e8",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocDocSumEditView9",
-    "psappsbitemname" : "文档编辑视图（文档摘要）",
-    "itemtag2" : "c5eb02b610b013ba7456f030254bc75e",
-    "psappviewid" : "9c8008d7bfae29c3af0c64991337b7f8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDocSumEditView9.json",
-    "psappsbitemid" : "2ac0f6c0e35364cbc8cf1a32012603f7",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskMainDetailView9",
-    "psappsbitemname" : "任务编辑视图",
-    "itemtag2" : "58267aaeae8478ea9215322d3ef883d6",
-    "psappviewid" : "ef6cfafd09bb61ddb6fec7840f78e97d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDetailView9.json",
-    "psappsbitemid" : "5d2988e3b4a836a2e7b63b216eb308b0",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestReportEditView_R",
@@ -1799,22 +2422,6 @@
     "psappsbitemid" : "bf1602d101409abf62905629058b4bce",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskTodoEditView",
-    "psappsbitemname" : "任务编辑视图",
-    "itemtag2" : "d3f04323b402346c134b3a82ca36ee28",
-    "psappviewid" : "4f94ec3ac2a019aeeca8a8fee6fda464",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTodoEditView.json",
-    "psappsbitemid" : "b29fd0daf49a07962dacddb1f2a4621f",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryAssignToView",
-    "psappsbitemname" : "指派",
-    "itemtag2" : "0fcbd490c1c82d33fe8c48fd0e84229e",
-    "psappviewid" : "6c8c8b96f11e8906ae6b5ab3e029f5d4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
-    "psappsbitemid" : "b14248667616922225f388e47b6c72b4",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ProjectCurProductGridView",
     "psappsbitemname" : "project表格视图",
     "itemtag2" : "287ecbf30bc1f630d6066929d2ee17d7",
@@ -1831,68 +2438,12 @@
     "psappsbitemid" : "eeafd30b11f28f6bf1b46a5421fbc63f",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "DocLibUsr2EditView",
-    "psappsbitemname" : "文档库编辑视图",
-    "itemtag2" : "d8efc553824d4d32c7dfa7d305728603",
-    "psappviewid" : "80df4b7b0e149f1b3d38d4cf9df1b81c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
-    "psappsbitemid" : "62d5b1cbd93f21429eb12cecf7319fe7",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskStartOptionView",
-    "psappsbitemname" : "开始",
-    "itemtag2" : "9270f49fdbee8c5490337f559609cc4c",
-    "psappviewid" : "5819d04a7d331ae7399e251d7a35183c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskStartOptionView.json",
-    "psappsbitemid" : "99822c84bccaed3a2c9065f875812b7d",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TodoActiviteView",
-    "psappsbitemname" : "激活",
-    "itemtag2" : "97ed511ff664728ed26c5736513317c7",
-    "psappviewid" : "f5f4e6f9ef5ab3f55ef802e9b2304006",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoActiviteView.json",
-    "psappsbitemid" : "3b56c5fc95d3c2b91e243d0af0c76656",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzReportRoleConfigGridView",
-    "psappsbitemname" : "汇报角色配置表格视图",
-    "itemtag2" : "bf30fb1cf411a45534a1e37d00dfe34c",
-    "psappviewid" : "356dfaec96b208208e3a9febae855a65",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportRoleConfigGridView.json",
-    "psappsbitemid" : "303e5c4da01bf8a7c768351c86580b99",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskAssignTaskView",
     "psappsbitemname" : "指派任务",
     "itemtag2" : "ddb758afd0a35047e4447c1f2d1c8ecd",
     "psappviewid" : "3891a34dcc372c6c8fe45dc7941cf290",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
     "psappsbitemid" : "44008e6848de4e4d1fe7be80ed7db631",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzProjectMemberEditView9",
-    "psappsbitemname" : "项目相关成员编辑视图（相关成员）",
-    "itemtag2" : "8c5175783a4a00bb3c438f65777659e3",
-    "psappviewid" : "322b17905b7ba95289eab32f7d4ae4d0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProjectMemberEditView9.json",
-    "psappsbitemid" : "5919fd7613bf8bf0adc0a558268fd96f",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectEditView_Putoff",
-    "psappsbitemname" : "项目",
-    "itemtag2" : "6410b37cbd436206c463c6c3365b7d32",
-    "psappviewid" : "7c19182192fc3a1406b9cfcad17706cc",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Putoff.json",
-    "psappsbitemid" : "338a9504f25c0a1a1956f006b36f1da1",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductSumPoChartView9",
-    "psappsbitemname" : "产品汇总表图表视图",
-    "itemtag2" : "794ccefcfcb7e9a72ae90e1a2080795b",
-    "psappviewid" : "0f46f0ff90c7191fa3d01a2c6989a4ca",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumPoChartView9.json",
-    "psappsbitemid" : "a89aea97b14683c7448b49dee829e8c5",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugStepsInfoEditView",
@@ -1903,12 +2454,28 @@
     "psappsbitemid" : "55d1f22db20dce55d0fb7697ad4691bd",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzLibModuleTreeExpView",
-    "psappsbitemname" : "模块维护",
-    "itemtag2" : "92488f89d63e3faf558a696543c0b5b8",
-    "psappviewid" : "b191a1a53f2f77ad0df1027d376e83ee",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleTreeExpView.json",
-    "psappsbitemid" : "5873961096fb55e46cc16dcc38378995",
+    "psappviewname" : "ProductSumPoChartView9",
+    "psappsbitemname" : "产品汇总表图表视图",
+    "itemtag2" : "794ccefcfcb7e9a72ae90e1a2080795b",
+    "psappviewid" : "0f46f0ff90c7191fa3d01a2c6989a4ca",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumPoChartView9.json",
+    "psappsbitemid" : "a89aea97b14683c7448b49dee829e8c5",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "ProjectEditView_Putoff",
+    "psappsbitemname" : "项目",
+    "itemtag2" : "6410b37cbd436206c463c6c3365b7d32",
+    "psappviewid" : "7c19182192fc3a1406b9cfcad17706cc",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Putoff.json",
+    "psappsbitemid" : "338a9504f25c0a1a1956f006b36f1da1",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "IbzProjectMemberEditView9",
+    "psappsbitemname" : "项目相关成员编辑视图（相关成员）",
+    "itemtag2" : "8c5175783a4a00bb3c438f65777659e3",
+    "psappviewid" : "322b17905b7ba95289eab32f7d4ae4d0",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzProjectMemberEditView9.json",
+    "psappsbitemid" : "5919fd7613bf8bf0adc0a558268fd96f",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "StoryEditView_StoryChange",
@@ -1919,20 +2486,20 @@
     "psappsbitemid" : "bcbe697c635addcd8f2cb5db745e86cd",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "IbzLibModuleTreeExpView",
+    "psappsbitemname" : "模块维护",
+    "itemtag2" : "92488f89d63e3faf558a696543c0b5b8",
+    "psappviewid" : "b191a1a53f2f77ad0df1027d376e83ee",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleTreeExpView.json",
+    "psappsbitemid" : "5873961096fb55e46cc16dcc38378995",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "SysEmployeeTreeExpView",
     "psappsbitemname" : "人员树导航视图",
     "itemtag2" : "7e3cf6db62150e1ffdb68884a655e36d",
     "psappviewid" : "c311fbb0b39f9771f7d71d4d61f57f31",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeTreeExpView.json",
     "psappsbitemid" : "d2929673eaf53c361bd81f403937f0f4",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugStatsBugResolvedByGridView",
-    "psappsbitemname" : "Bug统计表格视图（Bug完成表）",
-    "itemtag2" : "69140087e7eca0acc10efc1b59393807",
-    "psappviewid" : "42bcda6d6a7f1b04456c358f942ef63e",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsBugResolvedByGridView.json",
-    "psappsbitemid" : "f7e9e8c2df68551e5939087d720c850f",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectGridView9",
@@ -1943,44 +2510,12 @@
     "psappsbitemid" : "17357605da91de599e3dd77e9d348323",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "PRODUCTTEAMEditView",
-    "psappsbitemname" : "产品团队编辑视图",
-    "itemtag2" : "1df5e3b605604e527be288505e05358d",
-    "psappviewid" : "a139999da375ad637cf0b9d455734b21",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
-    "psappsbitemid" : "49d7ffb47da3f9aab6d49c69f06b9d25",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzPlanTempletDetailGridView9",
-    "psappsbitemname" : "计划模板详情表格视图",
-    "itemtag2" : "b41e52c91793048d949a648e64814290",
-    "psappviewid" : "323665023d61b39a6173f364869fd214",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletDetailGridView9.json",
-    "psappsbitemid" : "0240f389386a375754c7eb7acfbbca57",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskEstimateEditGridView9",
-    "psappsbitemname" : "任务预计表格视图",
-    "itemtag2" : "71840e8fb4b8bd5260ab19df2623a45f",
-    "psappviewid" : "85f2ffedf65fdd109559fbbbb33badd6",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateEditGridView9.json",
-    "psappsbitemid" : "7349e43762f76b24c256ef9fcf3ac1dc",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseExcEditView",
-    "psappsbitemname" : "执行结果",
-    "itemtag2" : "c354d03c600a26c34f773e67f9446c6c",
-    "psappviewid" : "41f6cc75f6e3b4419a448eebe69aa6ac",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
-    "psappsbitemid" : "8e1215bf15a721bba5e717787ff7cf91",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StorytoStoryEditView",
-    "psappsbitemname" : "需求",
-    "itemtag2" : "ad47d3120fde82d88cf9f0a24b9be910",
-    "psappviewid" : "30e5d8c433af27ab7623edb999b6788d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorytoStoryEditView.json",
-    "psappsbitemid" : "e54d7afa36a6c346e8d33f49cdb2d818",
+    "psappviewname" : "BugStatsBugResolvedByGridView",
+    "psappsbitemname" : "Bug统计表格视图（Bug完成表）",
+    "itemtag2" : "69140087e7eca0acc10efc1b59393807",
+    "psappviewid" : "42bcda6d6a7f1b04456c358f942ef63e",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsBugResolvedByGridView.json",
+    "psappsbitemid" : "f7e9e8c2df68551e5939087d720c850f",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskMainDashboardView",
@@ -1999,28 +2534,12 @@
     "psappsbitemid" : "ffeb774d2f80a6239ae8c8bfef3a9057",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TestTaskProjectGridView",
-    "psappsbitemname" : "测试单表格视图（项目）",
-    "itemtag2" : "f8b952476306511812467864620aad1a",
-    "psappviewid" : "6d4f6fec471305827d450bf4f55406ae",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskProjectGridView.json",
-    "psappsbitemid" : "5ae162cbd444da79516de2edb902c50e",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "DocLibProductTreeExpView",
     "psappsbitemname" : "文档库树导航视图（产品文档库）",
     "itemtag2" : "f28f4ba52a3f9ee6723853116abeae5c",
     "psappviewid" : "ea1c50ed94209eae6a5cbd3ffa5a8d17",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibProductTreeExpView.json",
     "psappsbitemid" : "463d813691d0cb1702a4f1695ed952cb",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbizproIndexIndexPickupView",
-    "psappsbitemname" : "索引检索数据选择视图",
-    "itemtag2" : "09c5964f08fd6ef6e3575872c837f062",
-    "psappviewid" : "6dec69ecabb41af1b4fffe82c077724a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexIndexPickupView.json",
-    "psappsbitemid" : "adfddf0a72db31a1312ba9db7d2663b1",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzAgentMainGridView",
@@ -2063,12 +2582,12 @@
     "psappsbitemid" : "7488966d46263f3037840c46bf720099",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryActiviteView",
-    "psappsbitemname" : "需求激活",
-    "itemtag2" : "cca449c353a96a327b888f58bb5148dd",
-    "psappviewid" : "9fb9c6b9baf7e8e9647041b8d7e13dd4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
-    "psappsbitemid" : "27181a7ab51ce30ee7e9a25a1d5d58c3",
+    "psappviewname" : "TestTaskMyYGridView",
+    "psappsbitemname" : "测试单表格视图",
+    "itemtag2" : "09c672ede6eef3537b926e6c5384e25b",
+    "psappviewid" : "781cd3123dfa8904727b8e9f3b0ff064",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMyYGridView.json",
+    "psappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProductProjectGridView9",
@@ -2079,76 +2598,12 @@
     "psappsbitemid" : "14d1f6119eca028b762933fcebbe4309",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TestTaskMyYGridView",
-    "psappsbitemname" : "测试单表格视图",
-    "itemtag2" : "09c672ede6eef3537b926e6c5384e25b",
-    "psappviewid" : "781cd3123dfa8904727b8e9f3b0ff064",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMyYGridView.json",
-    "psappsbitemid" : "44e17c7618bea68bff0c947b84d1397a",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskEstimateOptionView",
-    "psappsbitemname" : "任务预计选项操作视图",
-    "itemtag2" : "362feca48e3650c36b3b198377846974",
-    "psappviewid" : "d8db3dc48ecc1e32478d7490136cda6c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateOptionView.json",
-    "psappsbitemid" : "eb3acbe2d496a8853787f61fb10270a0",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskEditView9_Info",
-    "psappsbitemname" : "测试版本编辑视图",
-    "itemtag2" : "7a09a511656e525635b59bbf1f748438",
-    "psappviewid" : "70c1b45e198da89f71004066e0b148ac",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView9_Info.json",
-    "psappsbitemid" : "3cb40211068389ecc8065ba5e52c05e1",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryTabExpView",
-    "psappsbitemname" : "需求分页导航视图",
-    "itemtag2" : "abe9225fca64facd7bd48d8cded3f260",
-    "psappviewid" : "70bca4903c16f4c15bb3b73b570ce8a2",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryTabExpView.json",
-    "psappsbitemid" : "8465a670adf957b56c9545a0406a641e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "UserYearWorkStatsDashboardView",
-    "psappsbitemname" : "用户年度工作内容统计数据看板视图",
-    "itemtag2" : "0cafed8a7b2f2febe9850de80b6e4b72",
-    "psappviewid" : "35452fdae20ad8f9a786c708744662b4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsDashboardView.json",
-    "psappsbitemid" : "6bcd6b6e7a61af56cb9a185a90758e28",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ActionEditView",
-    "psappsbitemname" : "备注",
-    "itemtag2" : "6cd7ccc58ed404e8b0fea4fcb497a42d",
-    "psappviewid" : "f8b69912b3ca27b5d083c8fb1971c84a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
-    "psappsbitemid" : "6600a7c49c14d55c1be7380d3a8ec7e8",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "StoryCloseView",
     "psappsbitemname" : "需求关闭",
     "itemtag2" : "a0e15ea85f7c1c1db65c4790c83d9af3",
     "psappviewid" : "5d15dd63b8e4c48a6d5e7cca6b5308cc",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
     "psappsbitemid" : "6dce302e1053c9aab8961889166e211b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseCurTestTaskGridView",
-    "psappsbitemname" : "功能测试",
-    "itemtag2" : "dbfb197e87e8fd65916fc73efd85c519",
-    "psappviewid" : "178ae3b2e5f30d153fa8a30edace0383",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseCurTestTaskGridView.json",
-    "psappsbitemid" : "91af3ffe131a7c68a09b25d39b41071e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseTestMainDashboardView",
-    "psappsbitemname" : "功能测试",
-    "itemtag2" : "7dabfb1945ec205e4eede17521315d7d",
-    "psappviewid" : "a20bfffd7d83da0f48e7f8c1702b64b5",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestMainDashboardView.json",
-    "psappsbitemid" : "785f1bee96399cf62558776a2f454ef7",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugResolveView",
@@ -2159,14 +2614,6 @@
     "psappsbitemid" : "cffcb23e46638b1dc82abb9eeb88f174",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProductStatsEditView9",
-    "psappsbitemname" : "产品统计编辑视图",
-    "itemtag2" : "e5af84ac3250b0377dae57de7edb941c",
-    "psappviewid" : "c9f01b5b2c2c2c6f8e4bc4bd4db9a323",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView9.json",
-    "psappsbitemid" : "e19945d5e5b6f2f185aa116161b7258a",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "IbzMyTerritoryListView9PersonInfo",
     "psappsbitemname" : "我的工作",
     "itemtag2" : "41e5517fbc9cd429c0b589e36d353d43",
@@ -2175,12 +2622,12 @@
     "psappsbitemid" : "9a14b7093196a338f7b73d9630a8e646",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProjectListExpView",
-    "psappsbitemname" : "项目列表导航视图",
-    "itemtag2" : "8bd5ff0ac97cdf2bb8c4fb23b8a91d29",
-    "psappviewid" : "d1de7b1c3f0c14ee93de65e6b1045786",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectListExpView.json",
-    "psappsbitemid" : "013690d44f594c69d62c20d0e6a90a92",
+    "psappviewname" : "ProductStatsEditView9",
+    "psappsbitemname" : "产品统计编辑视图",
+    "itemtag2" : "e5af84ac3250b0377dae57de7edb941c",
+    "psappviewid" : "c9f01b5b2c2c2c6f8e4bc4bd4db9a323",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsEditView9.json",
+    "psappsbitemid" : "e19945d5e5b6f2f185aa116161b7258a",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "DocLibModuleTreeExpView",
@@ -2207,44 +2654,12 @@
     "psappsbitemid" : "e6dcaf4c4013299ba1cc5cd288d6fd02",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "Storymaindashboardview_link",
-    "psappsbitemname" : "需求数据看板视图",
-    "itemtag2" : "ccc278c11f1c96cdd9d493eb51404c38",
-    "psappviewid" : "021e4a7269fe8ec26b9001c39df0e215",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/Storymaindashboardview_link.json",
-    "psappsbitemid" : "8a39df9082e21b691f52ecc5fb6a361c",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugBuildSubGridView_New_9212",
     "psappsbitemname" : "bug表格视图",
     "itemtag2" : "2951f272c151e45cc7ae0563521f43a1",
     "psappviewid" : "19a7142c8e8fcb5413c2314ee80dd036",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBuildSubGridView_New_9212.json",
     "psappsbitemid" : "38d675c547a702688875f910063fff75",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TodoBaseEditView9",
-    "psappsbitemname" : "待办事宜表编辑视图",
-    "itemtag2" : "35cdca6b0feca15c352a480775aff595",
-    "psappviewid" : "d2bc94e4e8156e65ff17c8a6cd125b5b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoBaseEditView9.json",
-    "psappsbitemid" : "44dad782d192f6922093768b2c96361a",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskPauseTaskView",
-    "psappsbitemname" : "暂停任务",
-    "itemtag2" : "12f26dacfc9ba43a26028119393c0b98",
-    "psappviewid" : "9155179040bdf9819f076428450667b0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
-    "psappsbitemid" : "9bcaf836c523d9caa98833251e4e8159",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "FileProjectGridViewFile",
-    "psappsbitemname" : "file表格视图",
-    "itemtag2" : "4eb0a6a975dfb2f4d1ca63eea06f1a22",
-    "psappviewid" : "7ef300c01cce979e53218b74c8243d2a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProjectGridViewFile.json",
-    "psappsbitemid" : "d99493e1b190f53b59a83e106311fe9b",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysUserTabExpView",
@@ -2255,12 +2670,12 @@
     "psappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TodoFinishView",
-    "psappsbitemname" : "完成",
-    "itemtag2" : "558b84f63ffebfa17eea07e2c6795a96",
-    "psappviewid" : "e2542e0695475ad7d3be90ae4372d13f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoFinishView.json",
-    "psappsbitemid" : "e95fb10bb6bd51eb717a323a2da706be",
+    "psappviewname" : "FileProjectGridViewFile",
+    "psappsbitemname" : "file表格视图",
+    "itemtag2" : "4eb0a6a975dfb2f4d1ca63eea06f1a22",
+    "psappviewid" : "7ef300c01cce979e53218b74c8243d2a",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/FileProjectGridViewFile.json",
+    "psappsbitemid" : "d99493e1b190f53b59a83e106311fe9b",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskActivationTaskView",
@@ -2269,6 +2684,14 @@
     "psappviewid" : "739a21af264eba875d924856436a293a",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",
     "psappsbitemid" : "b14737686c33ebb1da095f7d4a3bfc4e",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "TodoFinishView",
+    "psappsbitemname" : "完成",
+    "itemtag2" : "558b84f63ffebfa17eea07e2c6795a96",
+    "psappviewid" : "e2542e0695475ad7d3be90ae4372d13f",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoFinishView.json",
+    "psappsbitemid" : "e95fb10bb6bd51eb717a323a2da706be",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzMonthlyMonthlyMainMsgEditView",
@@ -2310,84 +2733,12 @@
     "psappsbitemid" : "eac024113d0b22e05afb7fcf28d7c10b",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskEstimateLookGridView9",
-    "psappsbitemname" : "任务预计表格视图",
-    "itemtag2" : "d07eed9fd32c24b8483212ea3151c265",
-    "psappviewid" : "53ea134a9cd9328191b62e355f47c173",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateLookGridView9.json",
-    "psappsbitemid" : "a13987aaf355f2b8d50921d099c5d755",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskZsGridView9WeekNextWeekPlan",
     "psappsbitemname" : "任务表格视图（展示）",
     "itemtag2" : "3973990247fdb1ef953558efc7b2a450",
     "psappviewid" : "22d2c4b67575880b4481b855f652e1b3",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskZsGridView9WeekNextWeekPlan.json",
     "psappsbitemid" : "07184821d544dc829272a6e32afc6ae5",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskMonthlyCompleteZsGridView",
-    "psappsbitemname" : "任务表格视图（展示）",
-    "itemtag2" : "dfa9d0c407c0daf646566bc9a4049fc7",
-    "psappviewid" : "9be426255f9bdea95b9adf237b278782",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMonthlyCompleteZsGridView.json",
-    "psappsbitemid" : "0a158dd668af9e41d95d71b0b1915368",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductTestListExpView",
-    "psappsbitemname" : "测试统计",
-    "itemtag2" : "5e802c3db5a0b275a662eef64c4965f8",
-    "psappviewid" : "6b595fd11428565335f1d1bbd66911bb",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductTestListExpView.json",
-    "psappsbitemid" : "a7d1497e54d084f35d4ad1d05f0e3c66",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskMainInfoView9",
-    "psappsbitemname" : "任务编辑视图",
-    "itemtag2" : "edbf3acbe4783f04646a0d80bfefd6c3",
-    "psappviewid" : "321ab2e4e87a29fef8eed086e951a006",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainInfoView9.json",
-    "psappsbitemid" : "a8ed7f99317fa1337340cfb38f2c2ca0",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectMainView_Edit",
-    "psappsbitemname" : "项目编辑视图",
-    "itemtag2" : "bb88d6fccca0ba977b128dc4d9b3e1fa",
-    "psappviewid" : "d5700c9e8b9e0d9eba56c81a052ed438",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainView_Edit.json",
-    "psappsbitemid" : "87d2c4d08c8ad2bdee47b0070c2a95a4",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectStatsEditView9",
-    "psappsbitemname" : "项目统计编辑视图",
-    "itemtag2" : "fcb695b5aff311f9363e0d548b1ea6d8",
-    "psappviewid" : "fd583d6624bd0c70f13e1bfc2696fc2f",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView9.json",
-    "psappsbitemid" : "ef689b311c96eadbe94c00ccb6a336f4",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BurnChartView",
-    "psappsbitemname" : "燃尽图",
-    "itemtag2" : "377aca07970ece76d71fe26c1a053df0",
-    "psappviewid" : "bba3204a7f64b5eafe512a6b63658910",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BurnChartView.json",
-    "psappsbitemid" : "3f9ee26d63d333a096cb1930798f9f35",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "CaseMainNewView",
-    "psappsbitemname" : "功能测试",
-    "itemtag2" : "70a49d4c329dea07c7109210aa0b55a6",
-    "psappviewid" : "6e8645d9fed039c0d242e50504074fb8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
-    "psappsbitemid" : "429866a7ee31fbc0ca57cde33026fc1c",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugCloseView",
-    "psappsbitemname" : "关闭Bug",
-    "itemtag2" : "49998220006199035f90a6ed6170f8bc",
-    "psappviewid" : "490e98255c18ceb61481b97a9dff940d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
-    "psappsbitemid" : "f5a17c925336fa578540fa08704936e1",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzWeeklyEditView",
@@ -2398,44 +2749,12 @@
     "psappsbitemid" : "6f0f1a29c64a686e66cfad11e0ebb51a",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryCurProjectWGridView",
-    "psappsbitemname" : "story表格视图",
-    "itemtag2" : "3ec8310822cdfc78121c198f3df1e37c",
-    "psappviewid" : "8263c5b2f9a9e0cbbbdf2f72e194a5a8",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCurProjectWGridView.json",
-    "psappsbitemid" : "9173d9372f0be9f64955f214579a2f02",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocLibEditView",
-    "psappsbitemname" : "创建文档库",
-    "itemtag2" : "0e32103bdd2341a08b23ef0ea45fe381",
-    "psappviewid" : "41693a4d3b2bd3a7195d31ceae6cdcf3",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibEditView.json",
-    "psappsbitemid" : "4c99a6182ec3e97cf281273b4db5c106",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "StoryCurProjectKanbanView",
     "psappsbitemname" : "需求看板视图",
     "itemtag2" : "B81ED4D1-F5D4-4937-B63D-2B88D7B88207",
     "psappviewid" : "b71074fd6ed8635bd22a051c143204f6",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCurProjectKanbanView.json",
     "psappsbitemid" : "85788f2ef92995cddf374ea6aa53902e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryGridView9_Related",
-    "psappsbitemname" : "相关需求",
-    "itemtag2" : "066d0f4547d40a096b69f58b640686a9",
-    "psappviewid" : "78095af71f8ae9c432f8a6f3656f90b9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryGridView9_Related.json",
-    "psappsbitemid" : "a74f75490be4aa1c2a94ed62a5c39d63",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestReportEditView_TestTasks",
-    "psappsbitemname" : "测试报告编辑视图",
-    "itemtag2" : "c763d97af37d052eb5618ce1b947821c",
-    "psappviewid" : "d7d565614eb5ab6d7763a92110c481dd",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestTasks.json",
-    "psappsbitemid" : "e31cded8e287b48e8187271a5df453e5",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "SysTeamGridExpView",
@@ -2446,20 +2765,12 @@
     "psappsbitemid" : "fe17b876eceffd852258b1b2a2406f51",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProductLifeRoadMapSListView9",
-    "psappsbitemname" : "路线图",
-    "itemtag2" : "bd5e733df020ec62f2caa3c5af6b31ea",
-    "psappviewid" : "d1b3f6d9d0ca781020cf5e4665461fbf",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductLifeRoadMapSListView9.json",
-    "psappsbitemid" : "363548004298e5115b2ac1a40a637606",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductModuleGridView",
-    "psappsbitemname" : "产品模块表格视图",
-    "itemtag2" : "dd97575cea081105c83d6d3158860e34",
-    "psappviewid" : "523abe6eb852ca08fe4a3c140ff47b42",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleGridView.json",
-    "psappsbitemid" : "d5c1ac1ccdc2920d777614d10878aa6b",
+    "psappviewname" : "BugEditView",
+    "psappsbitemname" : "Bug",
+    "itemtag2" : "ef490de78e7e670aec96ce071f801287",
+    "psappviewid" : "46517a803b2470cd0bef27aeda0dbcaf",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
+    "psappsbitemid" : "98f05ed1f27a75bbd59f2084d4ec5712",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectLeftSidebarListView",
@@ -2470,52 +2781,12 @@
     "psappsbitemid" : "7858351d15c39eaabdf6954adc310e76",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugEditView",
-    "psappsbitemname" : "Bug",
-    "itemtag2" : "ef490de78e7e670aec96ce071f801287",
-    "psappviewid" : "46517a803b2470cd0bef27aeda0dbcaf",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-    "psappsbitemid" : "98f05ed1f27a75bbd59f2084d4ec5712",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductModuleTreeExpView",
-    "psappsbitemname" : "需求模块树导航视图",
-    "itemtag2" : "d0fbc9e7d4dd0d19df87103722400809",
-    "psappviewid" : "91d3e67caa36efe3f59590d8531a7e0b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductModuleTreeExpView.json",
-    "psappsbitemid" : "9a698f3a1ec33c890f2c90731096d3e9",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StorySubGridView",
-    "psappsbitemname" : "需求细分",
-    "itemtag2" : "3002a1a685436f6b709a58191c28c7d6",
-    "psappviewid" : "85897eeca4e1fb9fd7e7fe5c4fa28fa0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
-    "psappsbitemid" : "d260a8b8186f9a232e06ccd26f595987",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskTeamGridView9_Look",
     "psappsbitemname" : "团队",
     "itemtag2" : "86e6bb9d2eb6f1c843a9abfabaae23c6",
     "psappviewid" : "9d6b43cf5d65cb414cbccc84237178b7",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTeamGridView9_Look.json",
     "psappsbitemid" : "cf8e37d79564f8f977f3957040255c89",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbzLibEditView9",
-    "psappsbitemname" : "用例库编辑视图",
-    "itemtag2" : "650205fafee1019e40e41fa0e133dbda",
-    "psappviewid" : "88905fc742e5cee96069f28b5a76f22b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibEditView9.json",
-    "psappsbitemid" : "13badcf78965e817584a3d53dc3b0b48",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocLibUsr3TreeView",
-    "psappsbitemname" : "文档库树视图",
-    "itemtag2" : "d38852f4ed3c67923987f467e5b99730",
-    "psappviewid" : "c24564db2a7ca9f2322928be41c5f16d",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr3TreeView.json",
-    "psappsbitemid" : "9f5cd2730f59d8450a517243f62b3fc2",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProductMyTestTabExpView",
@@ -2526,12 +2797,12 @@
     "psappsbitemid" : "b005e693a0d4cb45029b4c8652ffd635",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugTodoEditView",
-    "psappsbitemname" : "待办提交",
-    "itemtag2" : "6cf0674fa6b7d94c203d6cdf1ca5707a",
-    "psappviewid" : "c0c12f14e7745eda77a80da04527a26e",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTodoEditView.json",
-    "psappsbitemid" : "4203fe272bacb893139cb3002e124baa",
+    "psappviewname" : "StoryMainView9_StorySpec",
+    "psappsbitemname" : "需求编辑视图",
+    "itemtag2" : "4b71edba826d49317fac82863a9fdcfa",
+    "psappviewid" : "78b241110616763b80cdedfcf64d16ee",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_StorySpec.json",
+    "psappsbitemid" : "beb1d975fc8843a14d6d95e1dbfd8d8b",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IbzDailymainEditView",
@@ -2540,14 +2811,6 @@
     "psappviewid" : "0f99fa483452685fcfa36df2f6641f35",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailymainEditView.json",
     "psappsbitemid" : "2f842cab620cb608cc1c283c992c1d72",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryMainView9_StorySpec",
-    "psappsbitemname" : "需求编辑视图",
-    "itemtag2" : "4b71edba826d49317fac82863a9fdcfa",
-    "psappviewid" : "78b241110616763b80cdedfcf64d16ee",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_StorySpec.json",
-    "psappsbitemid" : "beb1d975fc8843a14d6d95e1dbfd8d8b",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseStatsTestCaseStatsGridView",
@@ -2566,28 +2829,12 @@
     "psappsbitemid" : "27b5111f691a07500acd9af5dc28c974",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IbzMyTerritoryStatsTabExpView",
-    "psappsbitemname" : "我的地盘分页导航视图（统计）",
-    "itemtag2" : "94600d9f4a64f71728bd449ce4ae07f3",
-    "psappviewid" : "b4989339e1dc575a45c15699a325122a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryStatsTabExpView.json",
-    "psappsbitemid" : "39736e6aa3114300a1bfd3e52564bb92",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugProjectNewEditView",
     "psappsbitemname" : "Bug",
     "itemtag2" : "D1F87388-275B-4B38-B6B5-7EC856BBD5FF",
     "psappviewid" : "961d1d7a7d4ba141d74d67895bd4fdca",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugProjectNewEditView.json",
     "psappsbitemid" : "076c9bad67ba4db74b98ab27ff0c4dd9",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ActionAddCommentHistoryListView",
-    "psappsbitemname" : "历史记录",
-    "itemtag2" : "980a6d624690126294ea41f30b7150b8",
-    "psappviewid" : "6cc53210af0a1b521a3fbf7263c94a7b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionAddCommentHistoryListView.json",
-    "psappsbitemid" : "71a0c4d3151f3a61e0ab826783494f72",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestTaskEditView_Edit",
@@ -2598,36 +2845,12 @@
     "psappsbitemid" : "15c155edd79f11553d70c6d3fc5a1b2e",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "BugStatsProductBugResolutionGridView",
-    "psappsbitemname" : "Bug统计表格视图",
-    "itemtag2" : "d5db22625f8b062ece1528ebdca1d012",
-    "psappviewid" : "59f7278a2d42e40c347241347f1c954b",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsProductBugResolutionGridView.json",
-    "psappsbitemid" : "6ed7506f8a1c59f1cc36b70f45d9a16d",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocDashboardView",
-    "psappsbitemname" : "文档数据看板视图",
-    "itemtag2" : "efb45ef6591bb88cd2025b1bcbc73b53",
-    "psappviewid" : "86e1fc6d46d804998a58ab21982c2874",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocDashboardView.json",
-    "psappsbitemid" : "26b4d443e527f5bd37a6d9ce68dd8638",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "BugBugProjectKanbanView",
     "psappsbitemname" : "Bug看板视图",
     "itemtag2" : "C1F3397A-2F86-4CC3-9942-403F65A4E1C7",
     "psappviewid" : "2d1a3c406df1d563a76a87ceb60ac9b9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugBugProjectKanbanView.json",
     "psappsbitemid" : "3f7ea290d446f4e4ad1b52708fb61d1e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugStatsAssigntoGridView",
-    "psappsbitemname" : "Bug统计表格视图（Bug指派表）",
-    "itemtag2" : "a2eb1ef26f2efe717deae9fde6945f29",
-    "psappviewid" : "d7afba730262987d24bf40fcd4442fb9",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsAssigntoGridView.json",
-    "psappsbitemid" : "5d4110e3f8d144bbf232131868590e17",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskForwardView",
@@ -2638,28 +2861,12 @@
     "psappsbitemid" : "9a4abd3706cb91d51e84fdb6a55e7d65",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TaskGroupTreeExpView",
-    "psappsbitemname" : "任务树导航视图（分组树）",
-    "itemtag2" : "04cfeb182cb303edb3a557f8ca3b874d",
-    "psappviewid" : "25ad13bec39a81629f26d442db44d424",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGroupTreeExpView.json",
-    "psappsbitemid" : "d838a7adf56fcc22e4c88db5dbed64c1",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestTaskBlockOptionView",
-    "psappsbitemname" : "阻塞",
-    "itemtag2" : "919de5c90d7e4beffe183c54274f165f",
-    "psappviewid" : "8c583872d1a8ff04bcde60d303eb0786",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskBlockOptionView.json",
-    "psappsbitemid" : "53abbe1dc1f4114175393d83e47b4188",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TaskGridView9_AssignedToMe",
-    "psappsbitemname" : "任务表格视图",
-    "itemtag2" : "3434a90734f59b6a63b60102a289112e",
-    "psappviewid" : "f20fe6d7aa45a13c1e7343fbe4c0caaf",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskGridView9_AssignedToMe.json",
-    "psappsbitemid" : "614e46c1dd79cbfa4532991c150a9868",
+    "psappviewname" : "BugStatsAssigntoGridView",
+    "psappsbitemname" : "Bug统计表格视图（Bug指派表）",
+    "itemtag2" : "a2eb1ef26f2efe717deae9fde6945f29",
+    "psappviewid" : "d7afba730262987d24bf40fcd4442fb9",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStatsAssigntoGridView.json",
+    "psappsbitemid" : "5d4110e3f8d144bbf232131868590e17",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "BugStatsEditView",
@@ -2670,28 +2877,12 @@
     "psappsbitemid" : "1588f44f7d525f5fe43512d1c9598656",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "CaseStepMainGridView9",
-    "psappsbitemname" : "用例步骤",
-    "itemtag2" : "a87f486edeb2cc0167cc1e9832b3c1fe",
-    "psappviewid" : "f69bb8c09dbc7ce369c3c3806007b1d1",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseStepMainGridView9.json",
-    "psappsbitemid" : "f5ebe1921a1258f2b9b755830564ca96",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "IbzPlanTempletEditView",
     "psappsbitemname" : "产品计划模板编辑视图",
     "itemtag2" : "b881047a6250df4c2fd2700a84a292cc",
     "psappviewid" : "69072c07c875fb2f422378235b85ba69",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzPlanTempletEditView.json",
     "psappsbitemid" : "4b08b4805165d2cebd1cc23e67894c8c",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "SysEmployeeEditViewBasicInfo",
-    "psappsbitemname" : "人员编辑视图",
-    "itemtag2" : "bcb861b892a8bec1230a4983ae1340ca",
-    "psappviewid" : "4eec8bab9a7a03f86c72ec576cc7a70a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditViewBasicInfo.json",
-    "psappsbitemid" : "ddfb3d5478d9f36ea447197ac3a6e8de",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProductSumUsr2GridView",
@@ -2702,36 +2893,12 @@
     "psappsbitemid" : "653e9ddb1f15f1ea37e9b443d5036967",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "IBIZProKeywordGridView",
-    "psappsbitemname" : "关键字表格视图",
-    "itemtag2" : "cad590a5249f170499430af803a650be",
-    "psappviewid" : "031f322348f44c7fd48538bd1b66cd28",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBIZProKeywordGridView.json",
-    "psappsbitemid" : "6ed8a5a915c3b5efd208403de492afc8",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ProjectDashboardInfoView",
     "psappsbitemname" : "项目信息",
     "itemtag2" : "edd6f1e735aef67d67e50b3fde658cdd",
     "psappviewid" : "ef1a8c8701140368af895304274c602a",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectDashboardInfoView.json",
     "psappsbitemid" : "d2c5522562b6d4ee88d074e1e497dfa9",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectStatsEditView",
-    "psappsbitemname" : "项目统计编辑视图",
-    "itemtag2" : "26df4a79087bde3e270cc67acedd911a",
-    "psappviewid" : "c22d776245f0f05aa54112b0dc27aa9e",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsEditView.json",
-    "psappsbitemid" : "21127fe543f2bfd60ebf8910f83d51cb",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryProjectPlanView",
-    "psappsbitemname" : "按照计划关联",
-    "itemtag2" : "3b5e99b1b5a62005d2d606daa5ec84ab",
-    "psappviewid" : "48cbb418a5d2a5597a66cd72581bd32c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
-    "psappsbitemid" : "ba0e6ea6e018a2a960074bf5145ea4d0",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectEditView_Start",
@@ -2774,22 +2941,6 @@
     "psappsbitemid" : "7079c335d0cb79e5e89ff007ed3947b6",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "CaseTestTaskExcEditView",
-    "psappsbitemname" : "执行结果",
-    "itemtag2" : "db478632cba2ea50e667a258e51bf626",
-    "psappviewid" : "946ccf2f81dab9bfaf2bd841df90f209",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestTaskExcEditView.json",
-    "psappsbitemid" : "a4b37dfcc3cf1dce515a926ada4499c2",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "StoryProjectMainView",
-    "psappsbitemname" : "需求数据看板视图",
-    "itemtag2" : "DE41F2D0-2275-4FBD-82CD-F73A5A9ED880",
-    "psappviewid" : "4302f2bcabc053b1d562a893d86b6af4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMainView.json",
-    "psappsbitemid" : "737650e166b76c01d409b4b75e1f0877",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ActionProductTrendsListView9",
     "psappsbitemname" : "产品动态",
     "itemtag2" : "573001171fa0dffa8162ea97a89feeb7",
@@ -2798,36 +2949,12 @@
     "psappsbitemid" : "f3ff6f62302fdbeb34af16240bf65722",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "UserTplEditView",
-    "psappsbitemname" : "usertpl编辑视图",
-    "itemtag2" : "9d44ba179b71b37981e4cc125e219087",
-    "psappviewid" : "8c08fcf2db47efba2ca50d8feed5e52c",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserTplEditView.json",
-    "psappsbitemid" : "2da7f6fe13de5f4bf549232346e9ed54",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TaskAssignedtoTaskGroupGridView",
     "psappsbitemname" : "任务表格视图（指派分组）",
     "itemtag2" : "25d2fa7dfd8cd451029723a3d5ba343b",
     "psappviewid" : "4897b52ab790f5ab1425cf59f32cddbe",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignedtoTaskGroupGridView.json",
     "psappsbitemid" : "b665e7fb7eb1671177671e54b89dbf65",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ActionProjectTrendsListView9",
-    "psappsbitemname" : "产品动态",
-    "itemtag2" : "40247a03a8b0200b0e5f8ff9d6f8891c",
-    "psappviewid" : "96ec3f978c1cc22acc532331d5dc2a41",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionProjectTrendsListView9.json",
-    "psappsbitemid" : "0a7c3732c164eaed92896db7c6f4e552",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "IbizproIndexListView",
-    "psappsbitemname" : "索引检索列表视图",
-    "itemtag2" : "f239b1e812cf7a2418baebc5ff643ede",
-    "psappviewid" : "50f82495ceeaf8439cd7626c264176a4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexListView.json",
-    "psappsbitemid" : "d3b5c2535d138ca66109aa4d7c64d10a",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TestTaskMainDashboardView",
@@ -2846,20 +2973,12 @@
     "psappsbitemid" : "656ecfc3053e95c5ff8f8665d926e011",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProjectStatsGridView9",
-    "psappsbitemname" : "项目统计表格视图",
-    "itemtag2" : "ccc95a8bb5b1a55d365bccfb5d6eafaa",
-    "psappviewid" : "cabba7fe7d745d33b88f1ba31a19c4b3",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectStatsGridView9.json",
-    "psappsbitemid" : "904cd8009fd18e655d74d8a3c304ab55",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BuildTestRoundsGridView",
-    "psappsbitemname" : "版本表格视图（轮次）",
-    "itemtag2" : "6903a35357ce3b870e827ef987c219b4",
-    "psappviewid" : "33eb075a8e7a871bfcb7da61bdccb1a2",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildTestRoundsGridView.json",
-    "psappsbitemid" : "14fa59948d55dca5b8462e61b284ba26",
+    "psappviewname" : "IbizproIndexListView",
+    "psappsbitemname" : "索引检索列表视图",
+    "itemtag2" : "f239b1e812cf7a2418baebc5ff643ede",
+    "psappviewid" : "50f82495ceeaf8439cd7626c264176a4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexListView.json",
+    "psappsbitemid" : "d3b5c2535d138ca66109aa4d7c64d10a",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "IBIZProPluginEditView",
@@ -2870,28 +2989,12 @@
     "psappsbitemid" : "1cca345530a74a43629f5642e884628e",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "CaseMainMyGridView",
-    "psappsbitemname" : "功能测试",
-    "itemtag2" : "22011c31980a4bd51b1833fa145dfda2",
-    "psappviewid" : "13ed9a258da20a9536f8352d0e355583",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainMyGridView.json",
-    "psappsbitemid" : "4356fe7a943800ca2292818a449a7ab5",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "IbzMyTerritoryReportTabExpView",
     "psappsbitemname" : "我的地盘分页导航视图",
     "itemtag2" : "86e36f3ae8538117c03594ae18f8d36c",
     "psappviewid" : "eafce53cbf0c9a1108bc8a0319c09808",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryReportTabExpView.json",
     "psappsbitemid" : "467c6bc3fd127433519cdd5ea68d7f89",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "DocLibTreeViewProductRoot",
-    "psappsbitemname" : "文档库树视图",
-    "itemtag2" : "c96bc446772c10e7e85ae39cc5c2bc4d",
-    "psappviewid" : "a4d2ca556b880ddc8ee21ddac6adcf60",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibTreeViewProductRoot.json",
-    "psappsbitemid" : "581aff4a6a518c7196dff3f0c04c01df",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProductTestLeftSidebarListView",
@@ -2902,28 +3005,12 @@
     "psappsbitemid" : "5e790b1b8acfe74cb58664439c8e55df",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "CaseToBugEditView",
-    "psappsbitemname" : "转BUG",
-    "itemtag2" : "78f9f3efe20aabb85d0a9cc45c25004b",
-    "psappviewid" : "61eeda70f76acc759232dae5b6e56324",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
-    "psappsbitemid" : "74e5fdb2a7a9004d4cd284497000100b",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "TestReportProjectMainInfoView",
     "psappsbitemname" : "测试报告编辑视图",
     "itemtag2" : "09823aef8181da94043347f917ad73e2",
     "psappviewid" : "fc13cdf6e0efbfda27195989dba8b0ab",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportProjectMainInfoView.json",
     "psappsbitemid" : "566f7c5eff94b0cf4075890057415e83",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductHtmlView",
-    "psappsbitemname" : "iBiz软件生产管理",
-    "itemtag2" : "d709dc50b38d85d6890218fbbe9409b3",
-    "psappviewid" : "b6969f6aea9c131d0c2144d88472ba6a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductHtmlView.json",
-    "psappsbitemid" : "4add18cff006a2c251f075ed8fafc9a1",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseToBugTestEditView",
@@ -2934,19 +3021,12 @@
     "psappsbitemid" : "4f258dbdaba0a9f6ef4b5ceca7b169e1",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "StoryCurProjectGridView",
-    "psappsbitemname" : "story表格视图",
-    "itemtag2" : "7919a4e3c719728d1b93c1383ddb8ca0",
-    "psappviewid" : "ce036665dd22b3e4a3ca89005d573e65",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCurProjectGridView.json",
-    "psappsbitemid" : "ea4121d9c3dd2ec065e9e07f61039187",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "TestPortalView",
-    "psappsbitemname" : "测试主页",
-    "psappviewid" : "b127362083d624afe84ed1e8f674223e",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPPORTALVIEWS/TestPortalView.json",
-    "psappsbitemid" : "f22589b3ddd31eaa6c7cd464a446af6d",
+    "psappviewname" : "ProductSumUsr3GridView",
+    "psappsbitemname" : "产品汇总表表格视图",
+    "itemtag2" : "abee3b88a176ffce22fc14f90202895f",
+    "psappviewid" : "2ce171ae2b8f5fb2ee16e8f176347f23",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumUsr3GridView.json",
+    "psappsbitemid" : "ea9fd49cc8a4d29b8cd42ab309a0dd20",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProductPlanEditView",
@@ -2957,68 +3037,12 @@
     "psappsbitemid" : "6e37e0d940cadcaf682d8148eb3aef67",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "ProductSumUsr3GridView",
-    "psappsbitemname" : "产品汇总表表格视图",
-    "itemtag2" : "abee3b88a176ffce22fc14f90202895f",
-    "psappviewid" : "2ce171ae2b8f5fb2ee16e8f176347f23",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumUsr3GridView.json",
-    "psappsbitemid" : "ea9fd49cc8a4d29b8cd42ab309a0dd20",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectEditView",
-    "psappsbitemname" : "项目",
-    "itemtag2" : "f18a0c50be03d61557e74f340479eb52",
-    "psappviewid" : "f83dac873b9215483c4bb91673284b41",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
-    "psappsbitemid" : "f7c158807832944657b576345215ada7",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "PRODUCTTEAMProductTeamListView",
-    "psappsbitemname" : "产品团队列表视图",
-    "itemtag2" : "1748efdcdc85d3e82f2cc1af4e16c645",
-    "psappviewid" : "256de1139e8adce86805c471e5de2db0",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMProductTeamListView.json",
-    "psappsbitemid" : "30d75bc21e1cafbf65545993a812128c",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "BugMyFavoriteGridView",
-    "psappsbitemname" : "bug表格视图",
-    "itemtag2" : "ee9416fd03535ce22857f4a76c912730",
-    "psappviewid" : "614209b95b3f796e655e0532af93b336",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMyFavoriteGridView.json",
-    "psappsbitemid" : "e222eaf17d9e8281e27aeddf4e3c800b",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ActionOptionView",
-    "psappsbitemname" : "添加备注",
-    "itemtag2" : "de826d622a45ff4e96b1421ef28d64ac",
-    "psappviewid" : "d393b56053431c45eb3c8026e4bb2ca1",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",
-    "psappsbitemid" : "f9f9f13b729fbc27411ae391c6dfb9e0",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "IbzLibModuleGridView",
     "psappsbitemname" : "用例库模块表格视图",
     "itemtag2" : "691192a5e5b19f6d8687de38097a314a",
     "psappviewid" : "5be102d3e47fd3d8e2a2f43676a48a6f",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibModuleGridView.json",
     "psappsbitemid" : "977d928dd106bfd673e2634165fa936e",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductStatsALLGridView",
-    "psappsbitemname" : "所有产品",
-    "itemtag2" : "375a075b152fef736ca44580241e4db4",
-    "psappviewid" : "1e6c67c04400850f345e5f804bf8ee50",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductStatsALLGridView.json",
-    "psappsbitemid" : "c9f8cb44723f2f94f9fc252c2eb4bb43",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProductSumQaChartView9",
-    "psappsbitemname" : "产品汇总表图表视图",
-    "itemtag2" : "de55bee3f59ba61802aca862f584f211",
-    "psappviewid" : "2e1e24a39d1f1969f411b507d49fc640",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductSumQaChartView9.json",
-    "psappsbitemid" : "de02c77c3f68b3ba743d14f661447b58",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ActionMyTrendsListView",
@@ -3029,14 +3053,6 @@
     "psappsbitemid" : "a184d31d05164705638c4be8ae86d4a5",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "UserYearWorkStatsEditView",
-    "psappsbitemname" : "用户年度工作内容统计编辑视图",
-    "itemtag2" : "d373f70029b16477c800e74c134524c7",
-    "psappviewid" : "92828782339ab18470626ac28292615a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsEditView.json",
-    "psappsbitemid" : "f796a5c909ce1b227bf97bc79146a9ac",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "SysEmployeeDashboardView",
     "psappsbitemname" : "人员数据看板视图",
     "itemtag2" : "e06c86e5345b0680dfb2c5f17da7c248",
@@ -3045,12 +3061,12 @@
     "psappsbitemid" : "d01e71eb088ce1bef31bfdcf5df25de8",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "TodoCloseView",
-    "psappsbitemname" : "关闭",
-    "itemtag2" : "d945e7dd5b94cde2b134eab61a4901f7",
-    "psappviewid" : "350eb8ac832890ae0f531aadd6689dc5",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCloseView.json",
-    "psappsbitemid" : "66be8b82d66b3e7614d534144fa98491",
+    "psappviewname" : "PRODUCTTEAMRowEditGridView",
+    "psappsbitemname" : "产品团队表格视图",
+    "itemtag2" : "11d8a7d8c1459e0c8e95dc57f9a89305",
+    "psappviewid" : "0a884b42c2e735a2a4cf6a17cee587f4",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMRowEditGridView.json",
+    "psappsbitemid" : "a96bad467b4b0d17e6bbb4b703ba3b0d",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseCaseFavorite",
@@ -3059,14 +3075,6 @@
     "psappviewid" : "614186fc9cf2813c6ae2fd99ad3116b9",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseCaseFavorite.json",
     "psappsbitemid" : "02adca4df41916907502b900001e09dc",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "PRODUCTTEAMRowEditGridView",
-    "psappsbitemname" : "产品团队表格视图",
-    "itemtag2" : "11d8a7d8c1459e0c8e95dc57f9a89305",
-    "psappviewid" : "0a884b42c2e735a2a4cf6a17cee587f4",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMRowEditGridView.json",
-    "psappsbitemid" : "a96bad467b4b0d17e6bbb4b703ba3b0d",
     "itemtype" : "APPVIEW"
   } ],
   "psappsbitemrses" : [ {
@@ -5763,12 +5771,22 @@
     "psappsbitemrsname" : "暂停任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "b08dd41f0ad0aea5f74c9420777aab59",
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "637926fb993a00ebd073607f2c743697",
+    "ppsappsbitemname" : "继续任务",
+    "ppsappsbitemid" : "07c6dca6313c000ae5b0480260ed176c",
+    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "继续任务",
+    "psappsbitemrsid" : "f7f60c9ad6bb24cdf094a2060945fe3d",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
-    "psappsbitemrsname" : "继续任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "07c6dca6313c000ae5b0480260ed176c",
+    "psappsbitemrsname" : "继续任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "历史记录",
@@ -5789,12 +5807,22 @@
     "psappsbitemrsname" : "激活（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "29735003e57b96f5d464487cfb9a873e",
+    "cpsappsbitemname" : "历史记录",
+    "psappsbitemrsid" : "b45f323d558369adf8793e6470644ad7",
+    "ppsappsbitemname" : "完成任务",
+    "ppsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
+    "psappsbitemrsname" : "嵌入视图",
+    "rstype" : "APPVIEWEMBED"
+  }, {
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "54456425f7addc479055256a4ba8f21f",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
-    "psappsbitemrsname" : "完成任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "历史记录",
@@ -6008,14 +6036,6 @@
     "cpsappsbitemid" : "07557c03148ac716c64e2bbdd810c43f",
     "psappsbitemrsname" : "工时(子任务工时)",
     "rstype" : "UIACTION"
-  }, {
-    "cpsappsbitemname" : "历史记录",
-    "psappsbitemrsid" : "b45f323d558369adf8793e6470644ad7",
-    "ppsappsbitemname" : "完成任务",
-    "ppsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
-    "cpsappsbitemid" : "5e4b4b3fcd8f73b61d6d8011784efd87",
-    "psappsbitemrsname" : "嵌入视图",
-    "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "完成任务",
     "psappsbitemrsid" : "5a9b6f0938efab1ec273f853f04b7a98",
@@ -12786,12 +12806,14 @@
     "psappsbitemrsname" : "暂停任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "f19e0790b473e118d2f0727ab9bcdbf0",
+    "cpsappsbitemname" : "继续任务",
+    "psappsbitemrsid" : "574fed0c3360b7c78a29385e7d4219c3",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
-    "psappsbitemrsname" : "继续任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "07c6dca6313c000ae5b0480260ed176c",
+    "psappsbitemrsname" : "继续任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "激活任务",
@@ -12804,12 +12826,14 @@
     "psappsbitemrsname" : "激活（操作栏）",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "2955096f6392cfe44125abc4ff00bd2d",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "3132a056e813fb32088e72b69bfc4ecb",
     "ppsappsbitemname" : "任务主数据看板视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "1b31872226d1e389e8549f76c26e429e",
-    "psappsbitemrsname" : "完成任务(操作栏)(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务（操作栏）",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "取消任务",

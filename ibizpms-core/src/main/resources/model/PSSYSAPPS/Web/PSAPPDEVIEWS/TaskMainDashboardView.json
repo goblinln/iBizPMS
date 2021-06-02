@@ -5446,6 +5446,48 @@
               "enableUpdateDataRS" : false
             } ], [ {
               "actionRSMode" : 1,
+              "codeName" : "Todos",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+              },
+              "name" : "ACCOUNT__TODO",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            }, {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "TODO__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
               "codeName" : "TestTasks",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
@@ -5888,10 +5930,10 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "APPVIEWUIACTION",
-              "name" : "dashboard_sysportlet2_uf1ea16d_click",
+              "name" : "dashboard_sysportlet2_u6df3065_click",
               "getPSAppViewUIAction" : {
                 "modelref" : true,
-                "id" : "继续任务(操作栏)(多人任务检查)"
+                "id" : "继续任务（操作栏）"
               }
             }, {
               "logicTrigger" : "CUSTOM",
@@ -5904,10 +5946,10 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "APPVIEWUIACTION",
-              "name" : "dashboard_sysportlet2_u551257a_click",
+              "name" : "dashboard_sysportlet2_u9713e2f_click",
               "getPSAppViewUIAction" : {
                 "modelref" : true,
-                "id" : "完成任务(操作栏)(多人任务检查)"
+                "id" : "完成任务（操作栏）"
               }
             }, {
               "logicTrigger" : "CUSTOM",
@@ -6042,14 +6084,14 @@
               "uIActionTarget" : "SINGLEKEY",
               "xDataControlName" : "dashboard_sysportlet2"
             }, {
-              "name" : "继续任务(操作栏)(多人任务检查)",
+              "name" : "继续任务（操作栏）",
               "getPSUIAction" : {
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
                 "modelref" : true,
-                "id" : "ReStartTeamTask@Task"
+                "id" : "ReStartTask@Task"
               },
               "uIActionTarget" : "SINGLEKEY",
               "xDataControlName" : "dashboard_sysportlet2"
@@ -6066,14 +6108,14 @@
               "uIActionTarget" : "SINGLEKEY",
               "xDataControlName" : "dashboard_sysportlet2"
             }, {
-              "name" : "完成任务(操作栏)(多人任务检查)",
+              "name" : "完成任务（操作栏）",
               "getPSUIAction" : {
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
                 "modelref" : true,
-                "id" : "MDoneTask@Task"
+                "id" : "DoneTaskDash@Task"
               },
               "uIActionTarget" : "SINGLEKEY",
               "xDataControlName" : "dashboard_sysportlet2"
@@ -6448,45 +6490,35 @@
                 "showIcon" : true
               }, {
                 "detailType" : "DEUIACTION",
-                "name" : "uf1ea16d",
+                "name" : "u6df3065",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "继续",
-                  "codeName" : "ReStartTeamTask",
+                  "codeName" : "ReStartTask",
                   "dataAccessAction" : "RESTART",
-                  "fullCodeName" : "Task_ReStartTeamTask",
-                  "name" : "继续任务(操作栏)(多人任务检查)",
-                  "getNextPSUIAction" : {
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                    },
+                  "getFrontPSAppView" : {
                     "modelref" : true,
-                    "id" : "ReStartTask@Task"
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRestartTaskView.json",
+                    "viewType" : "DEOPTVIEW"
                   },
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "TaskForward"
-                  },
+                  "frontProcessType" : "WIZARD",
+                  "fullCodeName" : "Task_ReStartTask",
+                  "name" : "继续任务（操作栏）",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                   },
-                  "getPSNavigateParams" : [ {
-                    "key" : "actioninfo",
-                    "name" : "actioninfo",
-                    "value" : "当前任务只有%1$s才可以继续。",
-                    "rawValue" : true
-                  } ],
+                  "getPSSysImage" : {
+                    "glyph" : "xf051@FontAwesome",
+                    "cssClass" : "fa fa-step-forward"
+                  },
                   "refreshMode" : 1,
                   "timeout" : 60000,
-                  "uIActionMode" : "BACKEND",
-                  "uIActionTag" : "ReStartTeamTask",
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "ReStartTask",
                   "uIActionType" : "DEUIACTION",
-                  "enableConfirm" : true,
                   "reloadData" : true,
-                  "showBusyIndicator" : false,
-                  "id" : "ReStartTeamTask@Task"
+                  "id" : "ReStartTask@Task"
                 },
                 "addSeparator" : false,
                 "showCaption" : false,
@@ -6528,48 +6560,39 @@
                 "showIcon" : true
               }, {
                 "detailType" : "DEUIACTION",
-                "name" : "u551257a",
+                "name" : "u9713e2f",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "完成",
-                  "codeName" : "MDoneTask",
+                  "codeName" : "DoneTaskDash",
                   "dataAccessAction" : "FINISH",
+                  "getFrontPSAppView" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
+                    "viewType" : "DEOPTVIEW"
+                  },
                   "frontProcessType" : "WIZARD",
-                  "fullCodeName" : "Task_MDoneTask",
-                  "name" : "完成任务(操作栏)(多人任务检查)",
-                  "getNextPSUIAction" : {
-                    "getPSAppDataEntity" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-                    },
-                    "modelref" : true,
-                    "id" : "DoneTaskDash@Task"
-                  },
-                  "getPSAppDEMethod" : {
-                    "modelref" : true,
-                    "id" : "TaskForward"
-                  },
+                  "fullCodeName" : "Task_DoneTaskDash",
+                  "name" : "完成任务（操作栏）",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                   },
-                  "getPSNavigateParams" : [ {
-                    "key" : "actioninfo",
-                    "name" : "actioninfo",
-                    "value" : "当前任务只有%1$s才可以完成。",
-                    "rawValue" : true
+                  "getPSNavigateContexts" : [ {
+                    "key" : "TASK",
+                    "name" : "TASK",
+                    "value" : "id",
+                    "rawValue" : false
                   } ],
                   "getPSSysImage" : {
                     "glyph" : "xf046@FontAwesome",
                     "cssClass" : "fa fa-check-square-o"
                   },
                   "timeout" : 60000,
-                  "uIActionMode" : "BACKEND",
-                  "uIActionTag" : "MDoneTask",
+                  "uIActionMode" : "FRONT",
+                  "uIActionTag" : "DoneTaskDash",
                   "uIActionType" : "DEUIACTION",
-                  "enableConfirm" : true,
-                  "showBusyIndicator" : false,
-                  "id" : "MDoneTask@Task"
+                  "id" : "DoneTaskDash@Task"
                 },
                 "addSeparator" : false,
                 "showCaption" : true,

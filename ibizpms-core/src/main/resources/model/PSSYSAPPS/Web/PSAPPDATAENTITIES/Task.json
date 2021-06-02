@@ -3668,44 +3668,6 @@
     "id" : "MainEditDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "caption" : "继续",
-    "codeName" : "ReStartTeamTask",
-    "dataAccessAction" : "RESTART",
-    "fullCodeName" : "Task_ReStartTeamTask",
-    "name" : "继续任务(操作栏)(多人任务检查)",
-    "getNextPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-      },
-      "modelref" : true,
-      "id" : "ReStartTask@Task"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TaskForward"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSNavigateParams" : [ {
-      "key" : "actioninfo",
-      "name" : "actioninfo",
-      "value" : "当前任务只有%1$s才可以继续。",
-      "rawValue" : true
-    } ],
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "ReStartTeamTask",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "showBusyIndicator" : false,
-    "id" : "ReStartTeamTask@Task"
-  }, {
-    "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseTaskDash",
     "dataAccessAction" : "CLOSE",
@@ -4395,7 +4357,6 @@
     "id" : "DoneTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "继续",
     "codeName" : "ReStartTask",
     "dataAccessAction" : "RESTART",
