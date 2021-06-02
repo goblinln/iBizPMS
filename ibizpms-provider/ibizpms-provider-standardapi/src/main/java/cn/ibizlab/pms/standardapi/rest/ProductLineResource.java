@@ -52,36 +52,6 @@ public class ProductLineResource {
     @Lazy
     public ProductLineMapping productlineMapping;
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取数据集", tags = {"产品线" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/productlines/fetchdefault")
-	public ResponseEntity<List<ProductLineDTO>> fetchdefault(@RequestBody IBZProProductLineSearchContext context) {
-        ibzproproductlineRuntime.addAuthorityConditions(context,"READ");
-        Page<IBZProProductLine> domains = ibzproproductlineService.searchDefault(context) ;
-        List<ProductLineDTO> list = productlineMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@IBZProProductLineRuntime.test(#productline_id, 'UPDATE')")
-    @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")
-    @Transactional
-    public ResponseEntity<ProductLineDTO> update(@PathVariable("productline_id") Long productline_id, @RequestBody ProductLineDTO productlinedto) {
-		IBZProProductLine domain  = productlineMapping.toDomain(productlinedto);
-        domain.setId(productline_id);
-		ibzproproductlineService.update(domain );
-        if(!ibzproproductlineRuntime.test(productline_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ProductLineDTO dto = productlineMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(productline_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("@IBZProProductLineRuntime.test(#productline_id, 'DELETE')")
     @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
@@ -124,6 +94,36 @@ public class ProductLineResource {
         IBZProProductLine domain = productlineMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(ibzproproductlineService.getDraft(domain)));
     }
+
+    @PreAuthorize("@IBZProProductLineRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取数据集", tags = {"产品线" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productlines/fetchdefault")
+	public ResponseEntity<List<ProductLineDTO>> fetchdefault(@RequestBody IBZProProductLineSearchContext context) {
+        ibzproproductlineRuntime.addAuthorityConditions(context,"READ");
+        Page<IBZProProductLine> domains = ibzproproductlineService.searchDefault(context) ;
+        List<ProductLineDTO> list = productlineMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("@IBZProProductLineRuntime.test(#productline_id, 'UPDATE')")
+    @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")
+    @Transactional
+    public ResponseEntity<ProductLineDTO> update(@PathVariable("productline_id") Long productline_id, @RequestBody ProductLineDTO productlinedto) {
+		IBZProProductLine domain  = productlineMapping.toDomain(productlinedto);
+        domain.setId(productline_id);
+		ibzproproductlineService.update(domain );
+        if(!ibzproproductlineRuntime.test(productline_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ProductLineDTO dto = productlineMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(productline_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("@IBZProProductLineRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品线", tags = {"产品线" },  notes = "新建产品线")
