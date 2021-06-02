@@ -2908,6 +2908,7 @@
                                 "name" : "u6428ba2",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "开始",
                                   "codeName" : "StartTask",
                                   "dataAccessAction" : "START",
@@ -3012,6 +3013,7 @@
                                 "name" : "u53344aa",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
+                                  "noPrivDisplayMode" : 1,
                                   "caption" : "完成",
                                   "codeName" : "DoneTask",
                                   "dataAccessAction" : "FINISH",

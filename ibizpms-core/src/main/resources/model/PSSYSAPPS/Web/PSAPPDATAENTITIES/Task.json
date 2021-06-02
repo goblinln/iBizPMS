@@ -3935,47 +3935,6 @@
     "id" : "DoneTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "开始",
-    "codeName" : "MStartTaskDash1",
-    "dataAccessAction" : "START",
-    "fullCodeName" : "Task_MStartTaskDash1",
-    "name" : "开始任务(多人任务检查)",
-    "getNextPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-      },
-      "modelref" : true,
-      "id" : "StartTask@Task"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TaskForward"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSNavigateParams" : [ {
-      "key" : "actioninfo",
-      "name" : "actioninfo",
-      "value" : "当前任务只有%1$s才可以开始。",
-      "rawValue" : true
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "MStartTaskDash1",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "showBusyIndicator" : false,
-    "id" : "MStartTaskDash1@Task"
-  }, {
-    "actionTarget" : "SINGLEKEY",
     "caption" : "暂停",
     "codeName" : "MPauseTask",
     "dataAccessAction" : "PAUSE",
@@ -4099,47 +4058,6 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "TaskFavorites@Task"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "完成",
-    "codeName" : "done",
-    "dataAccessAction" : "FINISH",
-    "fullCodeName" : "Task_done",
-    "name" : "完成任务(多人任务检查)",
-    "getNextPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-      },
-      "modelref" : true,
-      "id" : "DoneTask@Task"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TaskForward"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSNavigateParams" : [ {
-      "key" : "actioninfo",
-      "name" : "actioninfo",
-      "value" : "当前任务只有%1$s才可以完成。",
-      "rawValue" : true
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf046@FontAwesome",
-      "cssClass" : "fa fa-check-square-o"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "done",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "showBusyIndicator" : false,
-    "id" : "done@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "工时",
@@ -4486,6 +4404,7 @@
     "id" : "TaskNFavorites@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "DoneTask",
     "dataAccessAction" : "FINISH",
@@ -4688,6 +4607,7 @@
     "id" : "delete@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "开始",
     "codeName" : "StartTask",
     "dataAccessAction" : "START",

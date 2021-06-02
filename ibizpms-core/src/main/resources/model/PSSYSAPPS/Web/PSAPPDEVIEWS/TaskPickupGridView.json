@@ -70,10 +70,10 @@
     }, {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_u8316814_click",
+      "name" : "grid_uagridcolumn1_ue9ec650_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "开始任务(多人任务检查)"
+        "id" : "开始任务"
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -86,10 +86,10 @@
     }, {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_ubf934a0_click",
+      "name" : "grid_uagridcolumn1_u850aef9_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "完成任务(多人任务检查)"
+        "id" : "完成任务"
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -185,14 +185,14 @@
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
     }, {
-      "name" : "开始任务(多人任务检查)",
+      "name" : "开始任务",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
-        "id" : "MStartTaskDash1@Task"
+        "id" : "StartTask@Task"
       },
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
@@ -209,14 +209,14 @@
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
     }, {
-      "name" : "完成任务(多人任务检查)",
+      "name" : "完成任务",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
         },
         "modelref" : true,
-        "id" : "done@Task"
+        "id" : "DoneTask@Task"
       },
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
@@ -857,48 +857,40 @@
           "showIcon" : true
         }, {
           "detailType" : "DEUIACTION",
-          "name" : "u8316814",
+          "name" : "ue9ec650",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "noPrivDisplayMode" : 1,
             "caption" : "开始",
-            "codeName" : "MStartTaskDash1",
+            "codeName" : "StartTask",
             "dataAccessAction" : "START",
-            "fullCodeName" : "Task_MStartTaskDash1",
-            "name" : "开始任务(多人任务检查)",
-            "getNextPSUIAction" : {
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-              },
+            "getFrontPSAppView" : {
               "modelref" : true,
-              "id" : "StartTask@Task"
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
+              "viewType" : "DEOPTVIEW"
             },
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "TaskForward"
-            },
+            "frontProcessType" : "WIZARD",
+            "fullCodeName" : "Task_StartTask",
+            "name" : "开始任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getPSNavigateParams" : [ {
-              "key" : "actioninfo",
-              "name" : "actioninfo",
-              "value" : "当前任务只有%1$s才可以开始。",
-              "rawValue" : true
+            "getPSNavigateContexts" : [ {
+              "key" : "TASK",
+              "name" : "TASK",
+              "value" : "id",
+              "rawValue" : false
             } ],
             "getPSSysImage" : {
               "glyph" : "xf01d@FontAwesome",
               "cssClass" : "fa fa-play-circle-o"
             },
             "timeout" : 60000,
-            "uIActionMode" : "BACKEND",
-            "uIActionTag" : "MStartTaskDash1",
+            "uIActionMode" : "FRONT",
+            "uIActionTag" : "StartTask",
             "uIActionType" : "DEUIACTION",
-            "enableConfirm" : true,
-            "showBusyIndicator" : false,
-            "id" : "MStartTaskDash1@Task"
+            "id" : "StartTask@Task"
           },
           "addSeparator" : false,
           "showCaption" : false,
@@ -943,48 +935,40 @@
           "showIcon" : true
         }, {
           "detailType" : "DEUIACTION",
-          "name" : "ubf934a0",
+          "name" : "u850aef9",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "noPrivDisplayMode" : 1,
             "caption" : "完成",
-            "codeName" : "done",
+            "codeName" : "DoneTask",
             "dataAccessAction" : "FINISH",
-            "fullCodeName" : "Task_done",
-            "name" : "完成任务(多人任务检查)",
-            "getNextPSUIAction" : {
-              "getPSAppDataEntity" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-              },
+            "getFrontPSAppView" : {
               "modelref" : true,
-              "id" : "DoneTask@Task"
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
+              "viewType" : "DEOPTVIEW"
             },
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "TaskForward"
-            },
+            "frontProcessType" : "WIZARD",
+            "fullCodeName" : "Task_DoneTask",
+            "name" : "完成任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
-            "getPSNavigateParams" : [ {
-              "key" : "actioninfo",
-              "name" : "actioninfo",
-              "value" : "当前任务只有%1$s才可以完成。",
-              "rawValue" : true
+            "getPSNavigateContexts" : [ {
+              "key" : "TASK",
+              "name" : "TASK",
+              "value" : "id",
+              "rawValue" : false
             } ],
             "getPSSysImage" : {
               "glyph" : "xf046@FontAwesome",
               "cssClass" : "fa fa-check-square-o"
             },
             "timeout" : 60000,
-            "uIActionMode" : "BACKEND",
-            "uIActionTag" : "done",
+            "uIActionMode" : "FRONT",
+            "uIActionTag" : "DoneTask",
             "uIActionType" : "DEUIACTION",
-            "enableConfirm" : true,
-            "showBusyIndicator" : false,
-            "id" : "done@Task"
+            "id" : "DoneTask@Task"
           },
           "addSeparator" : false,
           "showCaption" : false,

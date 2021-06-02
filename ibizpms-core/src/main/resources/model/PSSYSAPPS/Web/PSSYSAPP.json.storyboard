@@ -9519,12 +9519,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "ad365e947a1677d67e5755b7efc5014a",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "90753e196e6fde6472f057c050f2e9a9",
     "ppsappsbitemname" : "任务表格视图（子任务-更多）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "133d0b3972f0959923b3b150e5483531",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -9537,12 +9539,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "c5b521dbfe15e61d6813a4aac376b8dd",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "ab6544f4de3f81b03d10ab86a1098229",
     "ppsappsbitemname" : "任务表格视图（子任务-更多）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "133d0b3972f0959923b3b150e5483531",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
@@ -9669,12 +9673,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "b747bf16d5423a627ea2fc386878f356",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "d94fe4531d3632190a23b8f98422b769",
     "ppsappsbitemname" : "任务表格视图（任务分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "0c060ae321eae44a8c0ee44649653eaa",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -9687,12 +9693,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "8d61bc54d11d4fd58f13d9045723bfb9",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "18bff6e8953db49b15237a3e293abcd8",
     "ppsappsbitemname" : "任务表格视图（任务分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "0c060ae321eae44a8c0ee44649653eaa",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
@@ -9828,12 +9836,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "5d1fb8f9e15b7adaf5226677217f1365",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "69e4bc10c35693d5cfbf9778b591ec73",
     "ppsappsbitemname" : "任务表格视图（类型分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "bc22237374d0f10dcc636fb369225511",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -9846,12 +9856,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "bb0fe78e403cc0f9728435909bfebfcf",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "aec3642aa8a9bec708af3e44abed42b9",
     "ppsappsbitemname" : "任务表格视图（类型分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "bc22237374d0f10dcc636fb369225511",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
@@ -9987,12 +9999,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "aa8e078c6a76fbace7530aab93013031",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "0c913b4e75f4f96a8301f954a7e76293",
     "ppsappsbitemname" : "任务表格视图（需求分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "4743d6165d25fd5ab56a90788d915e97",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -10005,12 +10019,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "0f999dd5ad9625a3b933706d1202b45b",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "f1f147573f18977cf3933cae2b5df144",
     "ppsappsbitemname" : "任务表格视图（需求分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "4743d6165d25fd5ab56a90788d915e97",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
@@ -10146,12 +10162,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "ebaa74216cd985d08bbce1e426db28de",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "6cd1830461b0431b2ad5aefcea45f639",
     "ppsappsbitemname" : "任务表格视图（优先级分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "33a92f4c76cf29e34688cc95f1c96662",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -10164,12 +10182,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "fdaa73672c8b4c44b1f847b57b9d3457",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "4c88d0db169e5651df41a3d3b1028c0e",
     "ppsappsbitemname" : "任务表格视图（优先级分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "33a92f4c76cf29e34688cc95f1c96662",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
@@ -10305,12 +10325,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "85e5e8f4cd7b197506ca59f9cb9f1229",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "2889cbee713190f2ac626dd906c8d8eb",
     "ppsappsbitemname" : "任务表格视图（指派分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "b665e7fb7eb1671177671e54b89dbf65",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -10323,12 +10345,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "2794b994c35b428af2f7a4d4a1c9ae70",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "90a92ec15a816fac416868ce7084a5a2",
     "ppsappsbitemname" : "任务表格视图（指派分组）",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "b665e7fb7eb1671177671e54b89dbf65",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
@@ -13667,12 +13691,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "3c940a46280e76d5495f6ee1544e0649",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "a9d726b17512e4a198fc446bae9cd629",
     "ppsappsbitemname" : "任务表格视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "7fd986ba2a272a0c9a0ec81cac2a4e30",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -13685,12 +13711,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "6c8b33c07bf88c43e70e304efd2ebf62",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "5caa4308342c509cf8aa698a6bdec34f",
     "ppsappsbitemname" : "任务表格视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "7fd986ba2a272a0c9a0ec81cac2a4e30",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
@@ -14610,12 +14638,14 @@
     "psappsbitemrsname" : "需求变更确认",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "ce8a5eddc14e69c51e4941d8a6be1576",
+    "cpsappsbitemname" : "开始任务",
+    "psappsbitemrsid" : "cf1a5a0f64723195674d9f459cbfecab",
     "ppsappsbitemname" : "task表格视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "b4f52cafec5600db899aed465c84ec7b",
-    "psappsbitemrsname" : "开始任务(多人任务检查)",
+    "cpsappsbitemid" : "8374428ac9de03e73d66b85f0dfe93e0",
+    "psappsbitemrsname" : "开始任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "关闭任务",
@@ -14628,12 +14658,14 @@
     "psappsbitemrsname" : "关闭任务",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "3de3d3544f4951752208f97bd976f6d7",
+    "cpsappsbitemname" : "完成任务",
+    "psappsbitemrsid" : "d1f9fa8fe0ab700ba397fdaf7a163cc9",
     "ppsappsbitemname" : "task表格视图",
-    "rstag" : "BACKEND",
-    "rstag2" : "后台调用",
+    "rstag" : "FRONT",
+    "rstag2" : "前台调用",
     "ppsappsbitemid" : "b4f52cafec5600db899aed465c84ec7b",
-    "psappsbitemrsname" : "完成任务(多人任务检查)",
+    "cpsappsbitemid" : "eb4d42c7febbb45a5e528dc9264120b3",
+    "psappsbitemrsname" : "完成任务",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "任务",
