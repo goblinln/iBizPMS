@@ -180,6 +180,23 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product && _context.productmodule) {
+            return this.http.delete(`/accounts/${_context.account}/products/${_context.product}/productmodules/${_context.productmodule}`);
+        }
+        if (_context.product && _context.productmodule) {
+            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -211,23 +228,6 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productmodules/fetchdefault`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -251,19 +251,19 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Remove
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductModuleService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product && _context.productmodule) {
-            return this.http.delete(`/accounts/${_context.account}/products/${_context.product}/productmodules/${_context.productmodule}`);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.account && _context.product && true) {
+            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productmodules/fetchdefault`, _data);
         }
-        if (_context.product && _context.productmodule) {
-            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

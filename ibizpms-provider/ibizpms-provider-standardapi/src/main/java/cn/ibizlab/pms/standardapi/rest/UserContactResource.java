@@ -53,18 +53,6 @@ public class UserContactResource {
     public UserContactMapping usercontactMapping;
 
 
-    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
-    @ApiOperation(value = "根据系统用户建立用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户建立用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/usercontacts")
-    public ResponseEntity<UserContactDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody UserContactDTO usercontactdto) {
-        UserContact domain = usercontactMapping.toDomain(usercontactdto);
-        
-		usercontactService.create(domain);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("@UserContactRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/usercontacts/fetchmy")
@@ -138,6 +126,18 @@ public class UserContactResource {
         usercontactService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
+
+    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
+    @ApiOperation(value = "根据系统用户建立用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户建立用户联系方式")
+	@RequestMapping(method = RequestMethod.POST, value = "/accounts/{sysuser_id}/usercontacts")
+    public ResponseEntity<UserContactDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody UserContactDTO usercontactdto) {
+        UserContact domain = usercontactMapping.toDomain(usercontactdto);
+        
+		usercontactService.create(domain);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 }
 

@@ -96,17 +96,6 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.condCache.get('view');
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productlines/${_context.productline}`);
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -137,15 +126,27 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.http.post(`/productlines`, _data);
     }
     /**
-     * FetchDefault
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLineService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlines/fetchdefault`, _data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/productlines/${_context.productline}`);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/productlines/${_context.productline}`);
+        return res;
     }
     /**
      * GetDraft
@@ -162,15 +163,14 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return res;
     }
     /**
-     * Get
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLineService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productlines/${_context.productline}`);
-        return res;
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productlines/fetchdefault`, _data);
     }
 }
