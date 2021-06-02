@@ -42,8 +42,8 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "ACCOUNT",
-    "name" : "ACCOUNT",
+    "key" : "SYSACCOUNT",
+    "name" : "SYSACCOUNT",
     "value" : "srfuserid",
     "rawValue" : false
   } ],

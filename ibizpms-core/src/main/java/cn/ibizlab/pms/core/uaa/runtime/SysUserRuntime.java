@@ -124,6 +124,10 @@ public class SysUserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         SysUserSearchContext searchContext = (SysUserSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return sysuserService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyWork"))
+            return sysuserService.searchMyWork(searchContext);    
+        if (iPSDEDataSet.getName().equals("PersonInfo"))
+            return sysuserService.searchPersonInfo(searchContext);    
         return null;
     }
 
@@ -313,6 +317,12 @@ public class SysUserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchMyWork")) {
+            return aroundDataSet("MyWork", point);
+        }
+        else if (action.equals("searchPersonInfo")) {
+            return aroundDataSet("PersonInfo", point);
         }
         return point.proceed();
     }

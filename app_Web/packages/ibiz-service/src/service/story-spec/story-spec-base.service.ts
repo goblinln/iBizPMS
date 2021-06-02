@@ -89,11 +89,11 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
      * @memberof StorySpecService
      */
     async FetchVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        if (_context.sysaccount && _context.project && _context.story && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }
-        if (_context.account && _context.product && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        if (_context.sysaccount && _context.product && _context.story && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }
         if (_context.project && _context.story && true) {
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/storyspecs/fetchversion`, _data);
@@ -101,8 +101,8 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }
-        if (_context.account && _context.story && true) {
-            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/storyspecs/fetchversion`, _data);
+        if (_context.sysaccount && _context.story && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

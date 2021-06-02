@@ -173,6 +173,24 @@ public class SysUserServiceImpl implements ISysUserService {
         return sysUsers;
     }
 
+    /**
+     * 查询集合 我的工作
+     */
+    @Override
+    public Page<SysUser> searchMyWork(SysUserSearchContext context) {
+        Page<SysUser> sysUsers=sysUserFeignClient.searchMyWork(context);
+        return sysUsers;
+    }
+
+    /**
+     * 查询集合 个人信息-个人贡献
+     */
+    @Override
+    public Page<SysUser> searchPersonInfo(SysUserSearchContext context) {
+        Page<SysUser> sysUsers=sysUserFeignClient.searchPersonInfo(context);
+        return sysUsers;
+    }
+
     @Override
     @Transactional
     public SysUser dynamicCall(String key, String action, SysUser et) {

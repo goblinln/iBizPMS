@@ -41,6 +41,8 @@ public interface ISysUserService {
     List<SysUser> select(SysUserSearchContext context);
 
     Page<SysUser> searchDefault(SysUserSearchContext context);
+    Page<SysUser> searchMyWork(SysUserSearchContext context);
+    Page<SysUser> searchPersonInfo(SysUserSearchContext context);
     SysUser dynamicCall(String key, String action, SysUser et);
 }
 

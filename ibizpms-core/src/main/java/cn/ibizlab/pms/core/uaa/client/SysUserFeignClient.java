@@ -77,4 +77,14 @@ public interface SysUserFeignClient {
 
 
 
+    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/fetchmywork")
+    Page<SysUser> searchMyWork(@SpringQueryMap SysUserSearchContext context);
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/fetchpersoninfo")
+    Page<SysUser> searchPersonInfo(@SpringQueryMap SysUserSearchContext context);
+
+
+
 }

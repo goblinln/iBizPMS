@@ -56,7 +56,7 @@ public class TestCaseStepResource {
 
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据系统用户测试用例获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/testcases/{case_id}/testcasesteps/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/testcases/{case_id}/testcasesteps/fetchdefault")
 	public ResponseEntity<List<TestCaseStepDTO>> fetchDefaultBySysUserCase(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
         context.setN_case_eq(case_id);
         Page<CaseStep> domains = casestepService.searchDefault(context) ;

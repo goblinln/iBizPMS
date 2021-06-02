@@ -110,15 +110,15 @@
     }
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "SYSACCOUNT",
+    "name" : "SYSACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  }, {
     "key" : "OBJECTTYPE",
     "name" : "OBJECTTYPE",
     "value" : "story",
     "rawValue" : true
-  }, {
-    "key" : "ACCOUNT",
-    "name" : "ACCOUNT",
-    "value" : "srfuserid",
-    "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -2900,7 +2900,7 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
@@ -2942,7 +2942,7 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
@@ -3034,7 +3034,7 @@
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,

@@ -38,13 +38,13 @@ const router = new Router({
             component: AppIndexViewShell,
             children: [
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/views/optionview',
                     meta: {
                         caption: 'entities.productplan.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -55,13 +55,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/views/optionview',
                     meta: {
                         caption: 'entities.productplan.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -119,13 +119,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/views/maintabexp',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/views/maintabexp',
                     meta: {
                         caption: 'entities.productplan.views.maintabexp.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'maintabexp' },
@@ -136,13 +136,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/views/maintabexp',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/views/maintabexp',
                     meta: {
                         caption: 'entities.productplan.views.maintabexp.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'maintabexp' },
@@ -200,13 +200,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/views/gridview',
                     meta: {
                         caption: 'entities.productplan.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -217,13 +217,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/views/gridview',
                     meta: {
                         caption: 'entities.productplan.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -281,13 +281,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/views/maineditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/views/maineditview',
                     meta: {
                         caption: 'entities.productplan.views.maineditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'maineditview' },
@@ -298,13 +298,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/views/maineditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/views/maineditview',
                     meta: {
                         caption: 'entities.productplan.views.maineditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'maineditview' },
@@ -362,13 +362,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/views/editview',
                     meta: {
                         caption: 'entities.productplan.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -379,13 +379,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/views/editview',
                     meta: {
                         caption: 'entities.productplan.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -443,13 +443,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/views/projectgridview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/views/projectgridview9',
                     meta: {
                         caption: 'entities.productplan.views.projectgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'projectgridview9' },
@@ -460,13 +460,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/views/projectgridview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/views/projectgridview9',
                     meta: {
                         caption: 'entities.productplan.views.projectgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'projectgridview9' },
@@ -524,13 +524,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/views/maindataeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/views/maindataeditview',
                     meta: {
                         caption: 'entities.productplan.views.maindataeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'maindataeditview' },
@@ -541,13 +541,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/views/maindataeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/views/maindataeditview',
                     meta: {
                         caption: 'entities.productplan.views.maindataeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'views', parameterName: 'maindataeditview' },
@@ -623,7 +623,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/editview',
                     meta: {
                         caption: 'entities.testcase.views.editview.caption',
                         info:'',
@@ -631,7 +631,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -676,7 +676,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/maineditview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/maineditview',
                     meta: {
                         caption: 'entities.testcase.views.maineditview.caption',
                         info:'',
@@ -684,7 +684,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'maineditview' },
                         ],
@@ -729,7 +729,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/cursuitgridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/cursuitgridview',
                     meta: {
                         caption: 'entities.testcase.views.cursuitgridview.caption',
                         info:'',
@@ -737,7 +737,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'cursuitgridview' },
                         ],
@@ -782,7 +782,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/mainmygridview',
                     meta: {
                         caption: 'entities.testcase.views.mainmygridview.caption',
                         info:'',
@@ -790,7 +790,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
@@ -835,7 +835,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/curtesttaskgridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/curtesttaskgridview',
                     meta: {
                         caption: 'entities.testcase.views.curtesttaskgridview.caption',
                         info:'',
@@ -843,7 +843,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'curtesttaskgridview' },
                         ],
@@ -888,7 +888,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/tobugtesteditview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/tobugtesteditview',
                     meta: {
                         caption: 'entities.testcase.views.tobugtesteditview.caption',
                         info:'',
@@ -896,7 +896,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'tobugtesteditview' },
                         ],
@@ -941,7 +941,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/mainmynewgridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/mainmynewgridview',
                     meta: {
                         caption: 'entities.testcase.views.mainmynewgridview.caption',
                         info:'',
@@ -949,7 +949,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'mainmynewgridview' },
                         ],
@@ -994,7 +994,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/moduleentrygridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/moduleentrygridview',
                     meta: {
                         caption: 'entities.testcase.views.moduleentrygridview.caption',
                         info:'',
@@ -1002,7 +1002,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'moduleentrygridview' },
                         ],
@@ -1047,7 +1047,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/casetypechartview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/casetypechartview9',
                     meta: {
                         caption: 'entities.testcase.views.casetypechartview9.caption',
                         info:'',
@@ -1055,7 +1055,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'casetypechartview9' },
                         ],
@@ -1100,7 +1100,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/exceditview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/exceditview',
                     meta: {
                         caption: 'entities.testcase.views.exceditview.caption',
                         info:'',
@@ -1108,7 +1108,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'exceditview' },
                         ],
@@ -1153,7 +1153,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/modulechartview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/modulechartview9',
                     meta: {
                         caption: 'entities.testcase.views.modulechartview9.caption',
                         info:'',
@@ -1161,7 +1161,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'modulechartview9' },
                         ],
@@ -1206,7 +1206,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/gridview9_storyrelated',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/gridview9_storyrelated',
                     meta: {
                         caption: 'entities.testcase.views.gridview9_storyrelated.caption',
                         info:'',
@@ -1214,7 +1214,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
                         ],
@@ -1259,7 +1259,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/casefavorite',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/casefavorite',
                     meta: {
                         caption: 'entities.testcase.views.casefavorite.caption',
                         info:'',
@@ -1267,7 +1267,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'casefavorite' },
                         ],
@@ -1312,7 +1312,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/tobugeditview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/tobugeditview',
                     meta: {
                         caption: 'entities.testcase.views.tobugeditview.caption',
                         info:'',
@@ -1320,7 +1320,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'tobugeditview' },
                         ],
@@ -1365,7 +1365,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/maingridview',
                     meta: {
                         caption: 'entities.testcase.views.maingridview.caption',
                         info:'',
@@ -1373,7 +1373,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'maingridview' },
                         ],
@@ -1418,7 +1418,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/testoptionview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/testoptionview',
                     meta: {
                         caption: 'entities.testcase.views.testoptionview.caption',
                         info:'',
@@ -1426,7 +1426,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'testoptionview' },
                         ],
@@ -1471,7 +1471,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/mainnewview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/mainnewview',
                     meta: {
                         caption: 'entities.testcase.views.mainnewview.caption',
                         info:'',
@@ -1479,7 +1479,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'mainnewview' },
                         ],
@@ -1524,7 +1524,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/linkcasegridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/linkcasegridview',
                     meta: {
                         caption: 'entities.testcase.views.linkcasegridview.caption',
                         info:'',
@@ -1532,7 +1532,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'linkcasegridview' },
                         ],
@@ -1577,7 +1577,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/runerentrygridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/runerentrygridview',
                     meta: {
                         caption: 'entities.testcase.views.runerentrygridview.caption',
                         info:'',
@@ -1585,7 +1585,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'runerentrygridview' },
                         ],
@@ -1630,7 +1630,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/resultentrygridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/resultentrygridview',
                     meta: {
                         caption: 'entities.testcase.views.resultentrygridview.caption',
                         info:'',
@@ -1638,7 +1638,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'resultentrygridview' },
                         ],
@@ -1683,7 +1683,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/testmaindetaileditview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/testmaindetaileditview9',
                     meta: {
                         caption: 'entities.testcase.views.testmaindetaileditview9.caption',
                         info:'',
@@ -1691,7 +1691,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'testmaindetaileditview9' },
                         ],
@@ -1736,7 +1736,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/gridview9_storyaffect',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/gridview9_storyaffect',
                     meta: {
                         caption: 'entities.testcase.views.gridview9_storyaffect.caption',
                         info:'',
@@ -1744,7 +1744,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'gridview9_storyaffect' },
                         ],
@@ -1789,7 +1789,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/testtaskexceditview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/testtaskexceditview',
                     meta: {
                         caption: 'entities.testcase.views.testtaskexceditview.caption',
                         info:'',
@@ -1797,7 +1797,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'testtaskexceditview' },
                         ],
@@ -1842,7 +1842,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/suitelinkcasegridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/suitelinkcasegridview',
                     meta: {
                         caption: 'entities.testcase.views.suitelinkcasegridview.caption',
                         info:'',
@@ -1850,7 +1850,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'suitelinkcasegridview' },
                         ],
@@ -1895,7 +1895,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/typeentrygridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/typeentrygridview',
                     meta: {
                         caption: 'entities.testcase.views.typeentrygridview.caption',
                         info:'',
@@ -1903,7 +1903,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'typeentrygridview' },
                         ],
@@ -1948,7 +1948,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/projectreportlinkgridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/projectreportlinkgridview',
                     meta: {
                         caption: 'entities.testcase.views.projectreportlinkgridview.caption',
                         info:'',
@@ -1956,7 +1956,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'projectreportlinkgridview' },
                         ],
@@ -2001,7 +2001,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/testmaindashboardview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/testmaindashboardview',
                     meta: {
                         caption: 'entities.testcase.views.testmaindashboardview.caption',
                         info:'',
@@ -2009,7 +2009,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'testmaindashboardview' },
                         ],
@@ -2054,7 +2054,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/optionview',
                     meta: {
                         caption: 'entities.testcase.views.optionview.caption',
                         info:'',
@@ -2062,7 +2062,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'optionview' },
                         ],
@@ -2107,7 +2107,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/batchnewgridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/batchnewgridview',
                     meta: {
                         caption: 'entities.testcase.views.batchnewgridview.caption',
                         info:'',
@@ -2115,7 +2115,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'batchnewgridview' },
                         ],
@@ -2160,7 +2160,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/maindashboardview',
                     meta: {
                         caption: 'entities.testcase.views.maindashboardview.caption',
                         info:'',
@@ -2168,7 +2168,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
@@ -2213,7 +2213,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/maininfoeditview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/maininfoeditview9',
                     meta: {
                         caption: 'entities.testcase.views.maininfoeditview9.caption',
                         info:'',
@@ -2221,7 +2221,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'maininfoeditview9' },
                         ],
@@ -2266,7 +2266,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/totalopenedcasechartview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/totalopenedcasechartview9',
                     meta: {
                         caption: 'entities.testcase.views.totalopenedcasechartview9.caption',
                         info:'',
@@ -2274,7 +2274,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'totalopenedcasechartview9' },
                         ],
@@ -2319,7 +2319,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/gridview9_my',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/gridview9_my',
                     meta: {
                         caption: 'entities.testcase.views.gridview9_my.caption',
                         info:'',
@@ -2327,7 +2327,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'gridview9_my' },
                         ],
@@ -2372,7 +2372,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/maindetaileditview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/maindetaileditview9',
                     meta: {
                         caption: 'entities.testcase.views.maindetaileditview9.caption',
                         info:'',
@@ -2380,7 +2380,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'maindetaileditview9' },
                         ],
@@ -2425,7 +2425,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/gridview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/gridview9',
                     meta: {
                         caption: 'entities.testcase.views.gridview9.caption',
                         info:'',
@@ -2433,7 +2433,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'gridview9' },
                         ],
@@ -2478,7 +2478,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/runresultchartview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/runresultchartview9',
                     meta: {
                         caption: 'entities.testcase.views.runresultchartview9.caption',
                         info:'',
@@ -2486,7 +2486,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'runresultchartview9' },
                         ],
@@ -2531,7 +2531,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/gridview9_mecretae',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/gridview9_mecretae',
                     meta: {
                         caption: 'entities.testcase.views.gridview9_mecretae.caption',
                         info:'',
@@ -2539,7 +2539,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'gridview9_mecretae' },
                         ],
@@ -2584,7 +2584,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/reportlinkgridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/reportlinkgridview',
                     meta: {
                         caption: 'entities.testcase.views.reportlinkgridview.caption',
                         info:'',
@@ -2592,7 +2592,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'reportlinkgridview' },
                         ],
@@ -2637,7 +2637,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/views/gridview',
                     meta: {
                         caption: 'entities.testcase.views.gridview.caption',
                         info:'',
@@ -2645,7 +2645,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -2672,58 +2672,163 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/views/changepasswordeditview',
+                    path: 'sysaccounts/:sysaccount?/views/changepasswordeditview',
                     meta: {
-                        caption: 'entities.account.views.changepasswordeditview.caption',
+                        caption: 'entities.sysaccount.views.changepasswordeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'views', parameterName: 'changepasswordeditview' },
                         ],
-                        resource:'account',
+                        resource:'sysaccount',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/views/myfavoritestabexpview',
+                    path: 'sysaccounts/:sysaccount?/views/calendarview',
                     meta: {
-                        caption: 'entities.account.views.myfavoritestabexpview.caption',
+                        caption: 'entities.sysaccount.views.calendarview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'calendarview' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/views/listview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.listview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'listview' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/views/projectreporttabexpview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.projectreporttabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'projectreporttabexpview' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/views/calendarexpview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.calendarexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'calendarexpview' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/views/mywork',
+                    meta: {
+                        caption: 'entities.sysaccount.views.mywork.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'mywork' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/views/myfavoritestabexpview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.myfavoritestabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'views', parameterName: 'myfavoritestabexpview' },
                         ],
-                        resource:'account',
+                        resource:'sysaccount',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/views/tabexpview',
+                    path: 'sysaccounts/:sysaccount?/views/listview9',
                     meta: {
-                        caption: 'entities.account.views.tabexpview.caption',
+                        caption: 'entities.sysaccount.views.listview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
-                            { pathName: 'views', parameterName: 'tabexpview' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'listview9' },
                         ],
-                        resource:'account',
+                        resource:'sysaccount',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/testdashboardview',
+                    path: 'sysaccounts/:sysaccount?/views/listview9personinfo',
+                    meta: {
+                        caption: 'entities.sysaccount.views.listview9personinfo.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'listview9personinfo' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/views/tabexpview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.tabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/testdashboardview',
                     meta: {
                         caption: 'entities.product.views.testdashboardview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'testdashboardview' },
                         ],
@@ -2748,13 +2853,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/mytesttabexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/mytesttabexpview',
                     meta: {
                         caption: 'entities.product.views.mytesttabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'mytesttabexpview' },
                         ],
@@ -2779,13 +2884,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/testgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/testgridview',
                     meta: {
                         caption: 'entities.product.views.testgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'testgridview' },
                         ],
@@ -2810,13 +2915,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/projectgridview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/projectgridview9',
                     meta: {
                         caption: 'entities.product.views.projectgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'projectgridview9' },
                         ],
@@ -2841,13 +2946,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/storytreeexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/storytreeexpview',
                     meta: {
                         caption: 'entities.product.views.storytreeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'storytreeexpview' },
                         ],
@@ -2872,13 +2977,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/gridview_unclosed',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/gridview_unclosed',
                     meta: {
                         caption: 'entities.product.views.gridview_unclosed.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'gridview_unclosed' },
                         ],
@@ -2903,13 +3008,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/wizardview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/wizardview',
                     meta: {
                         caption: 'entities.product.views.wizardview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'wizardview' },
                         ],
@@ -2934,13 +3039,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/testlistexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/testlistexpview',
                     meta: {
                         caption: 'entities.product.views.testlistexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'testlistexpview' },
                         ],
@@ -2965,13 +3070,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/maintabexpview',
                     meta: {
                         caption: 'entities.product.views.maintabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
                         ],
@@ -2996,13 +3101,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/chartview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/chartview',
                     meta: {
                         caption: 'entities.product.views.chartview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'chartview' },
                         ],
@@ -3027,13 +3132,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/gridview',
                     meta: {
                         caption: 'entities.product.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -3058,13 +3163,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/pickupview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/pickupview',
                     meta: {
                         caption: 'entities.product.views.pickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'pickupview' },
                         ],
@@ -3089,13 +3194,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/leftsidebarlistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/leftsidebarlistview',
                     meta: {
                         caption: 'entities.product.views.leftsidebarlistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'leftsidebarlistview' },
                         ],
@@ -3120,13 +3225,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/pickupgridview',
                     meta: {
                         caption: 'entities.product.views.pickupgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
@@ -3151,13 +3256,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/listexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/listexpview',
                     meta: {
                         caption: 'entities.product.views.listexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'listexpview' },
                         ],
@@ -3182,13 +3287,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/dashboardinfomainview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/dashboardinfomainview9',
                     meta: {
                         caption: 'entities.product.views.dashboardinfomainview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'dashboardinfomainview9' },
                         ],
@@ -3213,13 +3318,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/htmlview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/htmlview',
                     meta: {
                         caption: 'entities.product.views.htmlview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'htmlview' },
                         ],
@@ -3244,13 +3349,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/maindashboardview',
                     meta: {
                         caption: 'entities.product.views.maindashboardview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
@@ -3275,13 +3380,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/mainview_edit',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/mainview_edit',
                     meta: {
                         caption: 'entities.product.views.mainview_edit.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'mainview_edit' },
                         ],
@@ -3306,13 +3411,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/expeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/expeditview',
                     meta: {
                         caption: 'entities.product.views.expeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'expeditview' },
                         ],
@@ -3337,13 +3442,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/editview',
                     meta: {
                         caption: 'entities.product.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -3368,13 +3473,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/views/editview_close',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/views/editview_close',
                     meta: {
                         caption: 'entities.product.views.editview_close.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'views', parameterName: 'editview_close' },
                         ],
@@ -3399,13 +3504,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/projectburns/:projectburn?/views/chartview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/projectburns/:projectburn?/views/chartview',
                     meta: {
                         caption: 'entities.projectburn.views.chartview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'projectburns', parameterName: 'projectburn' },
                             { pathName: 'views', parameterName: 'chartview' },
@@ -3537,7 +3642,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productbranches/:productbranch?/views/pmgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productbranches/:productbranch?/views/pmgridview',
                     meta: {
                         caption: 'entities.productbranch.views.pmgridview.caption',
                         info:'',
@@ -3545,7 +3650,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productbranches', parameterName: 'productbranch' },
                             { pathName: 'views', parameterName: 'pmgridview' },
@@ -3591,7 +3696,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productbranches/:productbranch?/views/pminfoeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productbranches/:productbranch?/views/pminfoeditview',
                     meta: {
                         caption: 'entities.productbranch.views.pminfoeditview.caption',
                         info:'',
@@ -3599,7 +3704,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productbranches', parameterName: 'productbranch' },
                             { pathName: 'views', parameterName: 'pminfoeditview' },
@@ -3645,7 +3750,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productbranches/:productbranch?/views/pickupview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productbranches/:productbranch?/views/pickupview',
                     meta: {
                         caption: 'entities.productbranch.views.pickupview.caption',
                         info:'',
@@ -3653,7 +3758,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productbranches', parameterName: 'productbranch' },
                             { pathName: 'views', parameterName: 'pickupview' },
@@ -3699,7 +3804,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productbranches/:productbranch?/views/pmeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productbranches/:productbranch?/views/pmeditview',
                     meta: {
                         caption: 'entities.productbranch.views.pmeditview.caption',
                         info:'',
@@ -3707,7 +3812,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productbranches', parameterName: 'productbranch' },
                             { pathName: 'views', parameterName: 'pmeditview' },
@@ -3753,7 +3858,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productbranches/:productbranch?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productbranches/:productbranch?/views/pickupgridview',
                     meta: {
                         caption: 'entities.productbranch.views.pickupgridview.caption',
                         info:'',
@@ -3761,7 +3866,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productbranches', parameterName: 'productbranch' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
@@ -3807,13 +3912,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3825,13 +3930,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3843,13 +3948,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3861,13 +3966,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3879,13 +3984,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3897,13 +4002,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3915,13 +4020,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3933,13 +4038,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3951,13 +4056,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -3969,13 +4074,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4191,13 +4296,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
@@ -4208,13 +4313,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
@@ -4225,13 +4330,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
@@ -4242,13 +4347,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
@@ -4259,13 +4364,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
@@ -4276,13 +4381,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
@@ -4293,13 +4398,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
@@ -4358,13 +4463,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/historylistview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/historylistview',
                     meta: {
                         caption: 'entities.action.views.historylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
                         ],
@@ -4389,13 +4494,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4407,13 +4512,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4425,13 +4530,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4443,13 +4548,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4461,13 +4566,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4479,13 +4584,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4497,13 +4602,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4515,13 +4620,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4533,13 +4638,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4551,13 +4656,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4773,13 +4878,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
@@ -4790,13 +4895,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
@@ -4807,13 +4912,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
@@ -4824,13 +4929,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
@@ -4841,13 +4946,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
@@ -4858,13 +4963,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
@@ -4875,13 +4980,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
@@ -4940,13 +5045,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         caption: 'entities.action.views.addcommenthistorylistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
                         ],
@@ -4971,13 +5076,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -4989,13 +5094,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5007,13 +5112,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5025,13 +5130,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5043,13 +5148,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5061,13 +5166,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5079,13 +5184,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5097,13 +5202,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5115,13 +5220,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5133,13 +5238,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5355,13 +5460,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
@@ -5372,13 +5477,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
@@ -5389,13 +5494,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
@@ -5406,13 +5511,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
@@ -5423,13 +5528,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
@@ -5440,13 +5545,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
@@ -5457,13 +5562,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
@@ -5522,13 +5627,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/alltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/alltrendslistview',
                     meta: {
                         caption: 'entities.action.views.alltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
                         ],
@@ -5553,13 +5658,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5571,13 +5676,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5589,13 +5694,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5607,13 +5712,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5625,13 +5730,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5643,13 +5748,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5661,13 +5766,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5679,13 +5784,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5697,13 +5802,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5715,13 +5820,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -5937,13 +6042,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
@@ -5954,13 +6059,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
@@ -5971,13 +6076,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
@@ -5988,13 +6093,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
@@ -6005,13 +6110,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
@@ -6022,13 +6127,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
@@ -6039,13 +6144,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
@@ -6104,13 +6209,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/projecttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
                         ],
@@ -6135,13 +6240,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6153,13 +6258,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6171,13 +6276,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6189,13 +6294,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6207,13 +6312,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6225,13 +6330,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6243,13 +6348,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6261,13 +6366,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6279,13 +6384,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6297,13 +6402,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6519,13 +6624,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
@@ -6536,13 +6641,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
@@ -6553,13 +6658,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
@@ -6570,13 +6675,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
@@ -6587,13 +6692,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
@@ -6604,13 +6709,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
@@ -6621,13 +6726,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
@@ -6686,13 +6791,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/projecttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.projecttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
                         ],
@@ -6717,13 +6822,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6735,13 +6840,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6753,13 +6858,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6771,13 +6876,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6789,13 +6894,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6807,13 +6912,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6825,13 +6930,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6843,13 +6948,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6861,13 +6966,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -6879,13 +6984,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7101,13 +7206,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
@@ -7118,13 +7223,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
@@ -7135,13 +7240,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
@@ -7152,13 +7257,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
@@ -7169,13 +7274,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
@@ -7186,13 +7291,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
@@ -7203,13 +7308,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
@@ -7268,13 +7373,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/producttrendslistview9',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
                         ],
@@ -7299,13 +7404,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7317,13 +7422,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7335,13 +7440,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7353,13 +7458,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7371,13 +7476,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7389,13 +7494,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7407,13 +7512,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7425,13 +7530,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7443,13 +7548,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7461,13 +7566,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7683,13 +7788,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
@@ -7700,13 +7805,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
@@ -7717,13 +7822,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
@@ -7734,13 +7839,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
@@ -7751,13 +7856,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
@@ -7768,13 +7873,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
@@ -7785,13 +7890,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
@@ -7850,13 +7955,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/myalltrendslistview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         caption: 'entities.action.views.myalltrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
                         ],
@@ -7881,13 +7986,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7899,13 +8004,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7917,13 +8022,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7935,13 +8040,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7953,13 +8058,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7971,13 +8076,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -7989,13 +8094,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8007,13 +8112,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8025,13 +8130,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8043,13 +8148,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8265,13 +8370,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
@@ -8282,13 +8387,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
@@ -8299,13 +8404,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
@@ -8316,13 +8421,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
@@ -8333,13 +8438,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
@@ -8350,13 +8455,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
@@ -8367,13 +8472,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
@@ -8432,13 +8537,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/mytrendslistview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/mytrendslistview',
                     meta: {
                         caption: 'entities.action.views.mytrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
                         ],
@@ -8463,13 +8568,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8481,13 +8586,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8499,13 +8604,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8517,13 +8622,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8535,13 +8640,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8553,13 +8658,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8571,13 +8676,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8589,13 +8694,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8607,13 +8712,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8625,13 +8730,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -8847,13 +8952,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -8864,13 +8969,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -8881,13 +8986,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -8898,13 +9003,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -8915,13 +9020,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -8932,13 +9037,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -8949,13 +9054,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -9014,13 +9119,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/optionview',
                     meta: {
                         caption: 'entities.action.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
                         ],
@@ -9045,13 +9150,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9063,13 +9168,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9081,13 +9186,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9099,13 +9204,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9117,13 +9222,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9135,13 +9240,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9153,13 +9258,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9171,13 +9276,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9189,13 +9294,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9207,13 +9312,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9429,13 +9534,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
@@ -9446,13 +9551,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
@@ -9463,13 +9568,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
@@ -9480,13 +9585,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
@@ -9497,13 +9602,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
@@ -9514,13 +9619,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
@@ -9531,13 +9636,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
@@ -9596,13 +9701,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/producttrendslistview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/producttrendslistview',
                     meta: {
                         caption: 'entities.action.views.producttrendslistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
                         ],
@@ -9627,13 +9732,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9645,13 +9750,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9663,13 +9768,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9681,13 +9786,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9699,13 +9804,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9717,13 +9822,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9735,13 +9840,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/productplans/:productplan?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/productplans/:productplan?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9753,13 +9858,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9771,13 +9876,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productplans/:productplan?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productplans/:productplan?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productplans', parameterName: 'productplan' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -9789,13 +9894,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'actions', parameterName: 'action' },
@@ -10011,13 +10116,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -10028,13 +10133,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -10045,13 +10150,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -10062,13 +10167,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -10079,13 +10184,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -10096,13 +10201,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -10113,13 +10218,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -10178,13 +10283,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/actions/:action?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/actions/:action?/views/editview',
                     meta: {
                         caption: 'entities.action.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -10226,13 +10331,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/testcasesteps/:testcasestep?/views/gridview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/testcasesteps/:testcasestep?/views/gridview9',
                     meta: {
                         caption: 'entities.testcasestep.views.gridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'testcasesteps', parameterName: 'testcasestep' },
                             { pathName: 'views', parameterName: 'gridview9' },
@@ -10275,13 +10380,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/testcasesteps/:testcasestep?/views/maingridview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/testcasesteps/:testcasestep?/views/maingridview9',
                     meta: {
                         caption: 'entities.testcasestep.views.maingridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'testcasesteps', parameterName: 'testcasestep' },
                             { pathName: 'views', parameterName: 'maingridview9' },
@@ -10307,13 +10412,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/lookgridview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/lookgridview9',
                     meta: {
                         caption: 'entities.taskestimate.views.lookgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'taskestimates', parameterName: 'taskestimate' },
@@ -10342,13 +10447,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/taskestimates/:taskestimate?/views/lookgridview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/taskestimates/:taskestimate?/views/lookgridview9',
                     meta: {
                         caption: 'entities.taskestimate.views.lookgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'lookgridview9' },
@@ -10374,13 +10479,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/editgridview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/editgridview9',
                     meta: {
                         caption: 'entities.taskestimate.views.editgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'taskestimates', parameterName: 'taskestimate' },
@@ -10409,13 +10514,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/taskestimates/:taskestimate?/views/editgridview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/taskestimates/:taskestimate?/views/editgridview9',
                     meta: {
                         caption: 'entities.taskestimate.views.editgridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'editgridview9' },
@@ -10441,13 +10546,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/optionview',
                     meta: {
                         caption: 'entities.taskestimate.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'taskestimates', parameterName: 'taskestimate' },
@@ -10476,13 +10581,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/taskestimates/:taskestimate?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/taskestimates/:taskestimate?/views/optionview',
                     meta: {
                         caption: 'entities.taskestimate.views.optionview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'taskestimates', parameterName: 'taskestimate' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -10508,7 +10613,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.story.views.maindashboardview_link.caption',
                         info:'',
@@ -10516,7 +10621,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
@@ -10527,7 +10632,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.story.views.maindashboardview_link.caption',
                         info:'',
@@ -10535,7 +10640,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
@@ -10582,7 +10687,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.story.views.maindashboardview_link.caption',
                         info:'',
@@ -10590,7 +10695,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
                         ],
@@ -10617,7 +10722,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/pickupgridview3',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/pickupgridview3',
                     meta: {
                         caption: 'entities.story.views.pickupgridview3.caption',
                         info:'',
@@ -10625,7 +10730,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview3' },
@@ -10636,7 +10741,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/pickupgridview3',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/pickupgridview3',
                     meta: {
                         caption: 'entities.story.views.pickupgridview3.caption',
                         info:'',
@@ -10644,7 +10749,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview3' },
@@ -10691,7 +10796,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/pickupgridview3',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/pickupgridview3',
                     meta: {
                         caption: 'entities.story.views.pickupgridview3.caption',
                         info:'',
@@ -10699,7 +10804,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview3' },
                         ],
@@ -10726,7 +10831,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/stagechartview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/stagechartview9',
                     meta: {
                         caption: 'entities.story.views.stagechartview9.caption',
                         info:'',
@@ -10734,7 +10839,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'stagechartview9' },
@@ -10745,7 +10850,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/stagechartview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/stagechartview9',
                     meta: {
                         caption: 'entities.story.views.stagechartview9.caption',
                         info:'',
@@ -10753,7 +10858,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'stagechartview9' },
@@ -10800,7 +10905,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/stagechartview9',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/stagechartview9',
                     meta: {
                         caption: 'entities.story.views.stagechartview9.caption',
                         info:'',
@@ -10808,7 +10913,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'stagechartview9' },
                         ],
@@ -10835,7 +10940,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/releasesubgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/releasesubgridview',
                     meta: {
                         caption: 'entities.story.views.releasesubgridview.caption',
                         info:'',
@@ -10843,7 +10948,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'releasesubgridview' },
@@ -10854,7 +10959,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/releasesubgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/releasesubgridview',
                     meta: {
                         caption: 'entities.story.views.releasesubgridview.caption',
                         info:'',
@@ -10862,7 +10967,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'releasesubgridview' },
@@ -10909,7 +11014,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/releasesubgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/releasesubgridview',
                     meta: {
                         caption: 'entities.story.views.releasesubgridview.caption',
                         info:'',
@@ -10917,7 +11022,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'releasesubgridview' },
                         ],
@@ -10944,7 +11049,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/pickupgridview4',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/pickupgridview4',
                     meta: {
                         caption: 'entities.story.views.pickupgridview4.caption',
                         info:'',
@@ -10952,7 +11057,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview4' },
@@ -10963,7 +11068,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/pickupgridview4',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/pickupgridview4',
                     meta: {
                         caption: 'entities.story.views.pickupgridview4.caption',
                         info:'',
@@ -10971,7 +11076,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview4' },
@@ -11018,7 +11123,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/pickupgridview4',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/pickupgridview4',
                     meta: {
                         caption: 'entities.story.views.pickupgridview4.caption',
                         info:'',
@@ -11026,7 +11131,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview4' },
                         ],
@@ -11053,7 +11158,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/projectpickupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/projectpickupgridview',
                     meta: {
                         caption: 'entities.story.views.projectpickupgridview.caption',
                         info:'',
@@ -11061,7 +11166,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectpickupgridview' },
@@ -11072,7 +11177,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/projectpickupgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/projectpickupgridview',
                     meta: {
                         caption: 'entities.story.views.projectpickupgridview.caption',
                         info:'',
@@ -11080,7 +11185,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectpickupgridview' },
@@ -11127,7 +11232,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/projectpickupgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/projectpickupgridview',
                     meta: {
                         caption: 'entities.story.views.projectpickupgridview.caption',
                         info:'',
@@ -11135,7 +11240,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectpickupgridview' },
                         ],
@@ -11162,7 +11267,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/buildsubgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/buildsubgridview',
                     meta: {
                         caption: 'entities.story.views.buildsubgridview.caption',
                         info:'',
@@ -11170,7 +11275,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'buildsubgridview' },
@@ -11181,7 +11286,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/buildsubgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/buildsubgridview',
                     meta: {
                         caption: 'entities.story.views.buildsubgridview.caption',
                         info:'',
@@ -11189,7 +11294,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'buildsubgridview' },
@@ -11236,7 +11341,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/buildsubgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/buildsubgridview',
                     meta: {
                         caption: 'entities.story.views.buildsubgridview.caption',
                         info:'',
@@ -11244,7 +11349,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'buildsubgridview' },
                         ],
@@ -11271,7 +11376,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/tostoryeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/tostoryeditview',
                     meta: {
                         caption: 'entities.story.views.tostoryeditview.caption',
                         info:'',
@@ -11279,7 +11384,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'tostoryeditview' },
@@ -11290,7 +11395,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/tostoryeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/tostoryeditview',
                     meta: {
                         caption: 'entities.story.views.tostoryeditview.caption',
                         info:'',
@@ -11298,7 +11403,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'tostoryeditview' },
@@ -11345,7 +11450,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/tostoryeditview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/tostoryeditview',
                     meta: {
                         caption: 'entities.story.views.tostoryeditview.caption',
                         info:'',
@@ -11353,7 +11458,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'tostoryeditview' },
                         ],
@@ -11380,7 +11485,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/revieweditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/revieweditview',
                     meta: {
                         caption: 'entities.story.views.revieweditview.caption',
                         info:'',
@@ -11388,7 +11493,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'revieweditview' },
@@ -11399,7 +11504,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/revieweditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/revieweditview',
                     meta: {
                         caption: 'entities.story.views.revieweditview.caption',
                         info:'',
@@ -11407,7 +11512,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'revieweditview' },
@@ -11454,7 +11559,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/revieweditview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/revieweditview',
                     meta: {
                         caption: 'entities.story.views.revieweditview.caption',
                         info:'',
@@ -11462,7 +11567,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'revieweditview' },
                         ],
@@ -11489,7 +11594,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/prichartview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/prichartview9',
                     meta: {
                         caption: 'entities.story.views.prichartview9.caption',
                         info:'',
@@ -11497,7 +11602,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'prichartview9' },
@@ -11508,7 +11613,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/prichartview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/prichartview9',
                     meta: {
                         caption: 'entities.story.views.prichartview9.caption',
                         info:'',
@@ -11516,7 +11621,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'prichartview9' },
@@ -11563,7 +11668,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/prichartview9',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/prichartview9',
                     meta: {
                         caption: 'entities.story.views.prichartview9.caption',
                         info:'',
@@ -11571,7 +11676,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'prichartview9' },
                         ],
@@ -11598,7 +11703,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/gridview9_substory',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/gridview9_substory',
                     meta: {
                         caption: 'entities.story.views.gridview9_substory.caption',
                         info:'',
@@ -11606,7 +11711,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_substory' },
@@ -11617,7 +11722,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/gridview9_substory',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/gridview9_substory',
                     meta: {
                         caption: 'entities.story.views.gridview9_substory.caption',
                         info:'',
@@ -11625,7 +11730,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_substory' },
@@ -11672,7 +11777,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/gridview9_substory',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/gridview9_substory',
                     meta: {
                         caption: 'entities.story.views.gridview9_substory.caption',
                         info:'',
@@ -11680,7 +11785,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_substory' },
                         ],
@@ -11707,7 +11812,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/myfavoritesgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/myfavoritesgridview',
                     meta: {
                         caption: 'entities.story.views.myfavoritesgridview.caption',
                         info:'',
@@ -11715,7 +11820,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'myfavoritesgridview' },
@@ -11726,7 +11831,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/myfavoritesgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/myfavoritesgridview',
                     meta: {
                         caption: 'entities.story.views.myfavoritesgridview.caption',
                         info:'',
@@ -11734,7 +11839,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'myfavoritesgridview' },
@@ -11781,7 +11886,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/myfavoritesgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/myfavoritesgridview',
                     meta: {
                         caption: 'entities.story.views.myfavoritesgridview.caption',
                         info:'',
@@ -11789,7 +11894,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'myfavoritesgridview' },
                         ],
@@ -11816,7 +11921,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mainview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mainview',
                     meta: {
                         caption: 'entities.story.views.mainview.caption',
                         info:'',
@@ -11824,7 +11929,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview' },
@@ -11835,7 +11940,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mainview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mainview',
                     meta: {
                         caption: 'entities.story.views.mainview.caption',
                         info:'',
@@ -11843,7 +11948,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview' },
@@ -11890,7 +11995,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mainview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mainview',
                     meta: {
                         caption: 'entities.story.views.mainview.caption',
                         info:'',
@@ -11898,7 +12003,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview' },
                         ],
@@ -11925,7 +12030,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/projectmainview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/projectmainview',
                     meta: {
                         caption: 'entities.story.views.projectmainview.caption',
                         info:'',
@@ -11933,7 +12038,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectmainview' },
@@ -11944,7 +12049,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/projectmainview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/projectmainview',
                     meta: {
                         caption: 'entities.story.views.projectmainview.caption',
                         info:'',
@@ -11952,7 +12057,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectmainview' },
@@ -11999,7 +12104,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/projectmainview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/projectmainview',
                     meta: {
                         caption: 'entities.story.views.projectmainview.caption',
                         info:'',
@@ -12007,7 +12112,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectmainview' },
                         ],
@@ -12034,7 +12139,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/editview',
                     meta: {
                         caption: 'entities.story.views.editview.caption',
                         info:'',
@@ -12042,7 +12147,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -12053,7 +12158,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/editview',
                     meta: {
                         caption: 'entities.story.views.editview.caption',
                         info:'',
@@ -12061,7 +12166,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -12108,7 +12213,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/editview',
                     meta: {
                         caption: 'entities.story.views.editview.caption',
                         info:'',
@@ -12116,7 +12221,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -12143,7 +12248,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/projectplanview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/projectplanview',
                     meta: {
                         caption: 'entities.story.views.projectplanview.caption',
                         info:'',
@@ -12151,7 +12256,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectplanview' },
@@ -12162,7 +12267,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/projectplanview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/projectplanview',
                     meta: {
                         caption: 'entities.story.views.projectplanview.caption',
                         info:'',
@@ -12170,7 +12275,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectplanview' },
@@ -12217,7 +12322,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/projectplanview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/projectplanview',
                     meta: {
                         caption: 'entities.story.views.projectplanview.caption',
                         info:'',
@@ -12225,7 +12330,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectplanview' },
                         ],
@@ -12252,7 +12357,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mainview9_editmode',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mainview9_editmode',
                     meta: {
                         caption: 'entities.story.views.mainview9_editmode.caption',
                         info:'',
@@ -12260,7 +12365,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_editmode' },
@@ -12271,7 +12376,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mainview9_editmode',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mainview9_editmode',
                     meta: {
                         caption: 'entities.story.views.mainview9_editmode.caption',
                         info:'',
@@ -12279,7 +12384,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_editmode' },
@@ -12326,7 +12431,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mainview9_editmode',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mainview9_editmode',
                     meta: {
                         caption: 'entities.story.views.mainview9_editmode.caption',
                         info:'',
@@ -12334,7 +12439,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_editmode' },
                         ],
@@ -12361,7 +12466,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/pickupgridview',
                     meta: {
                         caption: 'entities.story.views.pickupgridview.caption',
                         info:'',
@@ -12369,7 +12474,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
@@ -12380,7 +12485,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/pickupgridview',
                     meta: {
                         caption: 'entities.story.views.pickupgridview.caption',
                         info:'',
@@ -12388,7 +12493,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
@@ -12435,7 +12540,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/pickupgridview',
                     meta: {
                         caption: 'entities.story.views.pickupgridview.caption',
                         info:'',
@@ -12443,7 +12548,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
@@ -12470,7 +12575,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mpickupview2',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mpickupview2',
                     meta: {
                         caption: 'entities.story.views.mpickupview2.caption',
                         info:'',
@@ -12478,7 +12583,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview2' },
@@ -12489,7 +12594,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mpickupview2',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mpickupview2',
                     meta: {
                         caption: 'entities.story.views.mpickupview2.caption',
                         info:'',
@@ -12497,7 +12602,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview2' },
@@ -12544,7 +12649,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mpickupview2',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mpickupview2',
                     meta: {
                         caption: 'entities.story.views.mpickupview2.caption',
                         info:'',
@@ -12552,7 +12657,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview2' },
                         ],
@@ -12579,7 +12684,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/closeview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/closeview',
                     meta: {
                         caption: 'entities.story.views.closeview.caption',
                         info:'',
@@ -12587,7 +12692,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'closeview' },
@@ -12598,7 +12703,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/closeview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/closeview',
                     meta: {
                         caption: 'entities.story.views.closeview.caption',
                         info:'',
@@ -12606,7 +12711,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'closeview' },
@@ -12653,7 +12758,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/closeview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/closeview',
                     meta: {
                         caption: 'entities.story.views.closeview.caption',
                         info:'',
@@ -12661,7 +12766,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'closeview' },
                         ],
@@ -12688,7 +12793,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mainview9_related',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mainview9_related',
                     meta: {
                         caption: 'entities.story.views.mainview9_related.caption',
                         info:'',
@@ -12696,7 +12801,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_related' },
@@ -12707,7 +12812,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mainview9_related',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mainview9_related',
                     meta: {
                         caption: 'entities.story.views.mainview9_related.caption',
                         info:'',
@@ -12715,7 +12820,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_related' },
@@ -12762,7 +12867,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mainview9_related',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mainview9_related',
                     meta: {
                         caption: 'entities.story.views.mainview9_related.caption',
                         info:'',
@@ -12770,7 +12875,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_related' },
                         ],
@@ -12797,7 +12902,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/gridview9_assignedtome',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.story.views.gridview9_assignedtome.caption',
                         info:'',
@@ -12805,7 +12910,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
@@ -12816,7 +12921,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/gridview9_assignedtome',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.story.views.gridview9_assignedtome.caption',
                         info:'',
@@ -12824,7 +12929,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
@@ -12871,7 +12976,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/gridview9_assignedtome',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.story.views.gridview9_assignedtome.caption',
                         info:'',
@@ -12879,7 +12984,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
                         ],
@@ -12906,7 +13011,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/assigntoview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/assigntoview',
                     meta: {
                         caption: 'entities.story.views.assigntoview.caption',
                         info:'',
@@ -12914,7 +13019,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'assigntoview' },
@@ -12925,7 +13030,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/assigntoview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/assigntoview',
                     meta: {
                         caption: 'entities.story.views.assigntoview.caption',
                         info:'',
@@ -12933,7 +13038,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'assigntoview' },
@@ -12980,7 +13085,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/assigntoview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/assigntoview',
                     meta: {
                         caption: 'entities.story.views.assigntoview.caption',
                         info:'',
@@ -12988,7 +13093,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'assigntoview' },
                         ],
@@ -13015,7 +13120,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mainmygridview',
                     meta: {
                         caption: 'entities.story.views.mainmygridview.caption',
                         info:'',
@@ -13023,7 +13128,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
@@ -13034,7 +13139,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mainmygridview',
                     meta: {
                         caption: 'entities.story.views.mainmygridview.caption',
                         info:'',
@@ -13042,7 +13147,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
@@ -13089,7 +13194,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mainmygridview',
                     meta: {
                         caption: 'entities.story.views.mainmygridview.caption',
                         info:'',
@@ -13097,7 +13202,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
@@ -13124,7 +13229,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/tabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/tabexpview',
                     meta: {
                         caption: 'entities.story.views.tabexpview.caption',
                         info:'',
@@ -13132,7 +13237,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'tabexpview' },
@@ -13143,7 +13248,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/tabexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/tabexpview',
                     meta: {
                         caption: 'entities.story.views.tabexpview.caption',
                         info:'',
@@ -13151,7 +13256,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'tabexpview' },
@@ -13198,7 +13303,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/tabexpview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/tabexpview',
                     meta: {
                         caption: 'entities.story.views.tabexpview.caption',
                         info:'',
@@ -13206,7 +13311,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'tabexpview' },
                         ],
@@ -13233,7 +13338,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/reviewview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/reviewview',
                     meta: {
                         caption: 'entities.story.views.reviewview.caption',
                         info:'',
@@ -13241,7 +13346,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reviewview' },
@@ -13252,7 +13357,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/reviewview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/reviewview',
                     meta: {
                         caption: 'entities.story.views.reviewview.caption',
                         info:'',
@@ -13260,7 +13365,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reviewview' },
@@ -13307,7 +13412,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/reviewview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/reviewview',
                     meta: {
                         caption: 'entities.story.views.reviewview.caption',
                         info:'',
@@ -13315,7 +13420,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reviewview' },
                         ],
@@ -13342,7 +13447,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/usr2mpickupview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/usr2mpickupview',
                     meta: {
                         caption: 'entities.story.views.usr2mpickupview.caption',
                         info:'',
@@ -13350,7 +13455,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'usr2mpickupview' },
@@ -13361,7 +13466,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/usr2mpickupview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/usr2mpickupview',
                     meta: {
                         caption: 'entities.story.views.usr2mpickupview.caption',
                         info:'',
@@ -13369,7 +13474,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'usr2mpickupview' },
@@ -13416,7 +13521,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/usr2mpickupview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/usr2mpickupview',
                     meta: {
                         caption: 'entities.story.views.usr2mpickupview.caption',
                         info:'',
@@ -13424,7 +13529,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'usr2mpickupview' },
                         ],
@@ -13451,7 +13556,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/maingridview_bymodule',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/maingridview_bymodule',
                     meta: {
                         caption: 'entities.story.views.maingridview_bymodule.caption',
                         info:'',
@@ -13459,7 +13564,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maingridview_bymodule' },
@@ -13470,7 +13575,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/maingridview_bymodule',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/maingridview_bymodule',
                     meta: {
                         caption: 'entities.story.views.maingridview_bymodule.caption',
                         info:'',
@@ -13478,7 +13583,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maingridview_bymodule' },
@@ -13525,7 +13630,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/maingridview_bymodule',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/maingridview_bymodule',
                     meta: {
                         caption: 'entities.story.views.maingridview_bymodule.caption',
                         info:'',
@@ -13533,7 +13638,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maingridview_bymodule' },
                         ],
@@ -13560,7 +13665,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/gridview9_related',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/gridview9_related',
                     meta: {
                         caption: 'entities.story.views.gridview9_related.caption',
                         info:'',
@@ -13568,7 +13673,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_related' },
@@ -13579,7 +13684,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/gridview9_related',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/gridview9_related',
                     meta: {
                         caption: 'entities.story.views.gridview9_related.caption',
                         info:'',
@@ -13587,7 +13692,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_related' },
@@ -13634,7 +13739,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/gridview9_related',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/gridview9_related',
                     meta: {
                         caption: 'entities.story.views.gridview9_related.caption',
                         info:'',
@@ -13642,7 +13747,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_related' },
                         ],
@@ -13669,7 +13774,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mainview9_storyspec',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mainview9_storyspec',
                     meta: {
                         caption: 'entities.story.views.mainview9_storyspec.caption',
                         info:'',
@@ -13677,7 +13782,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_storyspec' },
@@ -13688,7 +13793,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mainview9_storyspec',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mainview9_storyspec',
                     meta: {
                         caption: 'entities.story.views.mainview9_storyspec.caption',
                         info:'',
@@ -13696,7 +13801,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_storyspec' },
@@ -13743,7 +13848,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mainview9_storyspec',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mainview9_storyspec',
                     meta: {
                         caption: 'entities.story.views.mainview9_storyspec.caption',
                         info:'',
@@ -13751,7 +13856,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9_storyspec' },
                         ],
@@ -13778,7 +13883,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mainview_editmode',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mainview_editmode',
                     meta: {
                         caption: 'entities.story.views.mainview_editmode.caption',
                         info:'',
@@ -13786,7 +13891,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview_editmode' },
@@ -13797,7 +13902,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mainview_editmode',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mainview_editmode',
                     meta: {
                         caption: 'entities.story.views.mainview_editmode.caption',
                         info:'',
@@ -13805,7 +13910,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview_editmode' },
@@ -13852,7 +13957,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mainview_editmode',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mainview_editmode',
                     meta: {
                         caption: 'entities.story.views.mainview_editmode.caption',
                         info:'',
@@ -13860,7 +13965,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview_editmode' },
                         ],
@@ -13887,7 +13992,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/curprojectwgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/curprojectwgridview',
                     meta: {
                         caption: 'entities.story.views.curprojectwgridview.caption',
                         info:'',
@@ -13895,7 +14000,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectwgridview' },
@@ -13906,7 +14011,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/curprojectwgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/curprojectwgridview',
                     meta: {
                         caption: 'entities.story.views.curprojectwgridview.caption',
                         info:'',
@@ -13914,7 +14019,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectwgridview' },
@@ -13961,7 +14066,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/curprojectwgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/curprojectwgridview',
                     meta: {
                         caption: 'entities.story.views.curprojectwgridview.caption',
                         info:'',
@@ -13969,7 +14074,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectwgridview' },
                         ],
@@ -13996,7 +14101,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mpickupview3',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mpickupview3',
                     meta: {
                         caption: 'entities.story.views.mpickupview3.caption',
                         info:'',
@@ -14004,7 +14109,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview3' },
@@ -14015,7 +14120,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mpickupview3',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mpickupview3',
                     meta: {
                         caption: 'entities.story.views.mpickupview3.caption',
                         info:'',
@@ -14023,7 +14128,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview3' },
@@ -14070,7 +14175,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mpickupview3',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mpickupview3',
                     meta: {
                         caption: 'entities.story.views.mpickupview3.caption',
                         info:'',
@@ -14078,7 +14183,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview3' },
                         ],
@@ -14105,7 +14210,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/projecteditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/projecteditview',
                     meta: {
                         caption: 'entities.story.views.projecteditview.caption',
                         info:'',
@@ -14113,7 +14218,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projecteditview' },
@@ -14124,7 +14229,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/projecteditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/projecteditview',
                     meta: {
                         caption: 'entities.story.views.projecteditview.caption',
                         info:'',
@@ -14132,7 +14237,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projecteditview' },
@@ -14179,7 +14284,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/projecteditview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/projecteditview',
                     meta: {
                         caption: 'entities.story.views.projecteditview.caption',
                         info:'',
@@ -14187,7 +14292,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projecteditview' },
                         ],
@@ -14214,7 +14319,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/gridview9_child',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/gridview9_child',
                     meta: {
                         caption: 'entities.story.views.gridview9_child.caption',
                         info:'',
@@ -14222,7 +14327,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_child' },
@@ -14233,7 +14338,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/gridview9_child',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/gridview9_child',
                     meta: {
                         caption: 'entities.story.views.gridview9_child.caption',
                         info:'',
@@ -14241,7 +14346,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_child' },
@@ -14288,7 +14393,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/gridview9_child',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/gridview9_child',
                     meta: {
                         caption: 'entities.story.views.gridview9_child.caption',
                         info:'',
@@ -14296,7 +14401,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_child' },
                         ],
@@ -14323,7 +14428,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/projectmpickupview3',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/projectmpickupview3',
                     meta: {
                         caption: 'entities.story.views.projectmpickupview3.caption',
                         info:'',
@@ -14331,7 +14436,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectmpickupview3' },
@@ -14342,7 +14447,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/projectmpickupview3',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/projectmpickupview3',
                     meta: {
                         caption: 'entities.story.views.projectmpickupview3.caption',
                         info:'',
@@ -14350,7 +14455,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectmpickupview3' },
@@ -14397,7 +14502,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/projectmpickupview3',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/projectmpickupview3',
                     meta: {
                         caption: 'entities.story.views.projectmpickupview3.caption',
                         info:'',
@@ -14405,7 +14510,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'projectmpickupview3' },
                         ],
@@ -14432,7 +14537,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/editview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/editview9',
                     meta: {
                         caption: 'entities.story.views.editview9.caption',
                         info:'',
@@ -14440,7 +14545,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview9' },
@@ -14451,7 +14556,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/editview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/editview9',
                     meta: {
                         caption: 'entities.story.views.editview9.caption',
                         info:'',
@@ -14459,7 +14564,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview9' },
@@ -14506,7 +14611,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/editview9',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/editview9',
                     meta: {
                         caption: 'entities.story.views.editview9.caption',
                         info:'',
@@ -14514,7 +14619,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview9' },
                         ],
@@ -14541,7 +14646,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/editview_storychange',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/editview_storychange',
                     meta: {
                         caption: 'entities.story.views.editview_storychange.caption',
                         info:'',
@@ -14549,7 +14654,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview_storychange' },
@@ -14560,7 +14665,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/editview_storychange',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/editview_storychange',
                     meta: {
                         caption: 'entities.story.views.editview_storychange.caption',
                         info:'',
@@ -14568,7 +14673,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview_storychange' },
@@ -14615,7 +14720,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/editview_storychange',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/editview_storychange',
                     meta: {
                         caption: 'entities.story.views.editview_storychange.caption',
                         info:'',
@@ -14623,7 +14728,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'editview_storychange' },
                         ],
@@ -14650,7 +14755,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mainview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mainview9',
                     meta: {
                         caption: 'entities.story.views.mainview9.caption',
                         info:'',
@@ -14658,7 +14763,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9' },
@@ -14669,7 +14774,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mainview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mainview9',
                     meta: {
                         caption: 'entities.story.views.mainview9.caption',
                         info:'',
@@ -14677,7 +14782,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9' },
@@ -14724,7 +14829,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mainview9',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mainview9',
                     meta: {
                         caption: 'entities.story.views.mainview9.caption',
                         info:'',
@@ -14732,7 +14837,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mainview9' },
                         ],
@@ -14759,7 +14864,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/planeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/planeditview',
                     meta: {
                         caption: 'entities.story.views.planeditview.caption',
                         info:'',
@@ -14767,7 +14872,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'planeditview' },
@@ -14778,7 +14883,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/planeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/planeditview',
                     meta: {
                         caption: 'entities.story.views.planeditview.caption',
                         info:'',
@@ -14786,7 +14891,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'planeditview' },
@@ -14833,7 +14938,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/planeditview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/planeditview',
                     meta: {
                         caption: 'entities.story.views.planeditview.caption',
                         info:'',
@@ -14841,7 +14946,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'planeditview' },
                         ],
@@ -14868,7 +14973,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/calendareditview',
                     meta: {
                         caption: 'entities.story.views.calendareditview.caption',
                         info:'',
@@ -14876,7 +14981,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'calendareditview' },
@@ -14887,7 +14992,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/calendareditview',
                     meta: {
                         caption: 'entities.story.views.calendareditview.caption',
                         info:'',
@@ -14895,7 +15000,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'calendareditview' },
@@ -14942,7 +15047,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/calendareditview',
                     meta: {
                         caption: 'entities.story.views.calendareditview.caption',
                         info:'',
@@ -14950,7 +15055,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
@@ -14977,7 +15082,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/activiteview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/activiteview',
                     meta: {
                         caption: 'entities.story.views.activiteview.caption',
                         info:'',
@@ -14985,7 +15090,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'activiteview' },
@@ -14996,7 +15101,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/activiteview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/activiteview',
                     meta: {
                         caption: 'entities.story.views.activiteview.caption',
                         info:'',
@@ -15004,7 +15109,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'activiteview' },
@@ -15051,7 +15156,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/activiteview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/activiteview',
                     meta: {
                         caption: 'entities.story.views.activiteview.caption',
                         info:'',
@@ -15059,7 +15164,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'activiteview' },
                         ],
@@ -15086,7 +15191,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/maingridview',
                     meta: {
                         caption: 'entities.story.views.maingridview.caption',
                         info:'',
@@ -15094,7 +15199,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maingridview' },
@@ -15105,7 +15210,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/maingridview',
                     meta: {
                         caption: 'entities.story.views.maingridview.caption',
                         info:'',
@@ -15113,7 +15218,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maingridview' },
@@ -15160,7 +15265,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/maingridview',
                     meta: {
                         caption: 'entities.story.views.maingridview.caption',
                         info:'',
@@ -15168,7 +15273,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'maingridview' },
                         ],
@@ -15195,7 +15300,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/pickupgridview2',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/pickupgridview2',
                     meta: {
                         caption: 'entities.story.views.pickupgridview2.caption',
                         info:'',
@@ -15203,7 +15308,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview2' },
@@ -15214,7 +15319,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/pickupgridview2',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/pickupgridview2',
                     meta: {
                         caption: 'entities.story.views.pickupgridview2.caption',
                         info:'',
@@ -15222,7 +15327,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview2' },
@@ -15269,7 +15374,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/pickupgridview2',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/pickupgridview2',
                     meta: {
                         caption: 'entities.story.views.pickupgridview2.caption',
                         info:'',
@@ -15277,7 +15382,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'pickupgridview2' },
                         ],
@@ -15304,7 +15409,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/curprojectkanbanview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/curprojectkanbanview',
                     meta: {
                         caption: 'entities.story.views.curprojectkanbanview.caption',
                         info:'',
@@ -15312,7 +15417,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectkanbanview' },
@@ -15323,7 +15428,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/curprojectkanbanview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/curprojectkanbanview',
                     meta: {
                         caption: 'entities.story.views.curprojectkanbanview.caption',
                         info:'',
@@ -15331,7 +15436,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectkanbanview' },
@@ -15378,7 +15483,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/curprojectkanbanview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/curprojectkanbanview',
                     meta: {
                         caption: 'entities.story.views.curprojectkanbanview.caption',
                         info:'',
@@ -15386,7 +15491,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectkanbanview' },
                         ],
@@ -15413,7 +15518,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/mpickupview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/mpickupview',
                     meta: {
                         caption: 'entities.story.views.mpickupview.caption',
                         info:'',
@@ -15421,7 +15526,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview' },
@@ -15432,7 +15537,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/mpickupview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/mpickupview',
                     meta: {
                         caption: 'entities.story.views.mpickupview.caption',
                         info:'',
@@ -15440,7 +15545,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview' },
@@ -15487,7 +15592,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/mpickupview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/mpickupview',
                     meta: {
                         caption: 'entities.story.views.mpickupview.caption',
                         info:'',
@@ -15495,7 +15600,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'mpickupview' },
                         ],
@@ -15522,7 +15627,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/productstagekanbanview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/productstagekanbanview',
                     meta: {
                         caption: 'entities.story.views.productstagekanbanview.caption',
                         info:'',
@@ -15530,7 +15635,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'productstagekanbanview' },
@@ -15541,7 +15646,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/productstagekanbanview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/productstagekanbanview',
                     meta: {
                         caption: 'entities.story.views.productstagekanbanview.caption',
                         info:'',
@@ -15549,7 +15654,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'productstagekanbanview' },
@@ -15596,7 +15701,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/productstagekanbanview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/productstagekanbanview',
                     meta: {
                         caption: 'entities.story.views.productstagekanbanview.caption',
                         info:'',
@@ -15604,7 +15709,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'productstagekanbanview' },
                         ],
@@ -15631,7 +15736,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/releasesubeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/releasesubeditview',
                     meta: {
                         caption: 'entities.story.views.releasesubeditview.caption',
                         info:'',
@@ -15639,7 +15744,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'releasesubeditview' },
@@ -15650,7 +15755,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/releasesubeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/releasesubeditview',
                     meta: {
                         caption: 'entities.story.views.releasesubeditview.caption',
                         info:'',
@@ -15658,7 +15763,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'releasesubeditview' },
@@ -15705,7 +15810,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/releasesubeditview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/releasesubeditview',
                     meta: {
                         caption: 'entities.story.views.releasesubeditview.caption',
                         info:'',
@@ -15713,7 +15818,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'releasesubeditview' },
                         ],
@@ -15740,7 +15845,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/reportsubgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/reportsubgridview',
                     meta: {
                         caption: 'entities.story.views.reportsubgridview.caption',
                         info:'',
@@ -15748,7 +15853,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reportsubgridview' },
@@ -15759,7 +15864,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/reportsubgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/reportsubgridview',
                     meta: {
                         caption: 'entities.story.views.reportsubgridview.caption',
                         info:'',
@@ -15767,7 +15872,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reportsubgridview' },
@@ -15814,7 +15919,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/reportsubgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/reportsubgridview',
                     meta: {
                         caption: 'entities.story.views.reportsubgridview.caption',
                         info:'',
@@ -15822,7 +15927,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reportsubgridview' },
                         ],
@@ -15849,7 +15954,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/curprojectgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/curprojectgridview',
                     meta: {
                         caption: 'entities.story.views.curprojectgridview.caption',
                         info:'',
@@ -15857,7 +15962,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectgridview' },
@@ -15868,7 +15973,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/curprojectgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/curprojectgridview',
                     meta: {
                         caption: 'entities.story.views.curprojectgridview.caption',
                         info:'',
@@ -15876,7 +15981,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectgridview' },
@@ -15923,7 +16028,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/curprojectgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/curprojectgridview',
                     meta: {
                         caption: 'entities.story.views.curprojectgridview.caption',
                         info:'',
@@ -15931,7 +16036,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'curprojectgridview' },
                         ],
@@ -15958,7 +16063,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/plansubeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/plansubeditview',
                     meta: {
                         caption: 'entities.story.views.plansubeditview.caption',
                         info:'',
@@ -15966,7 +16071,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'plansubeditview' },
@@ -15977,7 +16082,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/plansubeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/plansubeditview',
                     meta: {
                         caption: 'entities.story.views.plansubeditview.caption',
                         info:'',
@@ -15985,7 +16090,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'plansubeditview' },
@@ -16032,7 +16137,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/plansubeditview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/plansubeditview',
                     meta: {
                         caption: 'entities.story.views.plansubeditview.caption',
                         info:'',
@@ -16040,7 +16145,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'plansubeditview' },
                         ],
@@ -16067,7 +16172,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/plansubgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/plansubgridview',
                     meta: {
                         caption: 'entities.story.views.plansubgridview.caption',
                         info:'',
@@ -16075,7 +16180,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'plansubgridview' },
@@ -16086,7 +16191,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/plansubgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/plansubgridview',
                     meta: {
                         caption: 'entities.story.views.plansubgridview.caption',
                         info:'',
@@ -16094,7 +16199,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'plansubgridview' },
@@ -16141,7 +16246,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/plansubgridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/plansubgridview',
                     meta: {
                         caption: 'entities.story.views.plansubgridview.caption',
                         info:'',
@@ -16149,7 +16254,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'plansubgridview' },
                         ],
@@ -16176,7 +16281,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/main2gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/main2gridview',
                     meta: {
                         caption: 'entities.story.views.main2gridview.caption',
                         info:'',
@@ -16184,7 +16289,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'main2gridview' },
@@ -16195,7 +16300,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/main2gridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/main2gridview',
                     meta: {
                         caption: 'entities.story.views.main2gridview.caption',
                         info:'',
@@ -16203,7 +16308,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'main2gridview' },
@@ -16250,7 +16355,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/main2gridview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/main2gridview',
                     meta: {
                         caption: 'entities.story.views.main2gridview.caption',
                         info:'',
@@ -16258,7 +16363,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'main2gridview' },
                         ],
@@ -16285,7 +16390,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/gridview9_myassignedtome',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/gridview9_myassignedtome',
                     meta: {
                         caption: 'entities.story.views.gridview9_myassignedtome.caption',
                         info:'',
@@ -16293,7 +16398,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
@@ -16304,7 +16409,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/gridview9_myassignedtome',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/gridview9_myassignedtome',
                     meta: {
                         caption: 'entities.story.views.gridview9_myassignedtome.caption',
                         info:'',
@@ -16312,7 +16417,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
@@ -16359,7 +16464,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/gridview9_myassignedtome',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/gridview9_myassignedtome',
                     meta: {
                         caption: 'entities.story.views.gridview9_myassignedtome.caption',
                         info:'',
@@ -16367,7 +16472,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
                         ],
@@ -16394,7 +16499,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/stories/:story?/views/kanbanview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/stories/:story?/views/kanbanview',
                     meta: {
                         caption: 'entities.story.views.kanbanview.caption',
                         info:'',
@@ -16402,7 +16507,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'kanbanview' },
@@ -16413,7 +16518,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/stories/:story?/views/kanbanview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/stories/:story?/views/kanbanview',
                     meta: {
                         caption: 'entities.story.views.kanbanview.caption',
                         info:'',
@@ -16421,7 +16526,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'kanbanview' },
@@ -16468,7 +16573,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/stories/:story?/views/kanbanview',
+                    path: 'sysaccounts/:sysaccount?/stories/:story?/views/kanbanview',
                     meta: {
                         caption: 'entities.story.views.kanbanview.caption',
                         info:'',
@@ -16476,7 +16581,7 @@ const router = new Router({
                         iconCls: 'fa fa-star-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'kanbanview' },
                         ],
@@ -16503,13 +16608,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/closeview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/closeview',
                     meta: {
                         caption: 'entities.todo.views.closeview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'closeview' },
                         ],
@@ -16534,13 +16639,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/assigntoview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/assigntoview',
                     meta: {
                         caption: 'entities.todo.views.assigntoview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'assigntoview' },
                         ],
@@ -16565,13 +16670,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/dashboardview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/dashboardview',
                     meta: {
                         caption: 'entities.todo.views.dashboardview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'dashboardview' },
                         ],
@@ -16596,13 +16701,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/calendareditview',
                     meta: {
                         caption: 'entities.todo.views.calendareditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
@@ -16627,13 +16732,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.todo.views.maindashboardview_link.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
                         ],
@@ -16658,13 +16763,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/gridview9',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/gridview9',
                     meta: {
                         caption: 'entities.todo.views.gridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'gridview9' },
                         ],
@@ -16689,13 +16794,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/gridview',
                     meta: {
                         caption: 'entities.todo.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -16720,13 +16825,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/todocreateview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/todocreateview',
                     meta: {
                         caption: 'entities.todo.views.todocreateview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'todocreateview' },
                         ],
@@ -16751,13 +16856,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/baseeditview9',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/baseeditview9',
                     meta: {
                         caption: 'entities.todo.views.baseeditview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'baseeditview9' },
                         ],
@@ -16782,13 +16887,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/editview',
                     meta: {
                         caption: 'entities.todo.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -16813,13 +16918,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/finishview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/finishview',
                     meta: {
                         caption: 'entities.todo.views.finishview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'finishview' },
                         ],
@@ -16844,13 +16949,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/desceditview9',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/desceditview9',
                     meta: {
                         caption: 'entities.todo.views.desceditview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'desceditview9' },
                         ],
@@ -16875,13 +16980,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/todos/:todo?/views/activiteview',
+                    path: 'sysaccounts/:sysaccount?/todos/:todo?/views/activiteview',
                     meta: {
                         caption: 'entities.todo.views.activiteview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'todos', parameterName: 'todo' },
                             { pathName: 'views', parameterName: 'activiteview' },
                         ],
@@ -16906,13 +17011,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/tasktreeexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/tasktreeexpview',
                     meta: {
                         caption: 'entities.project.views.tasktreeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'tasktreeexpview' },
                         ],
@@ -16937,13 +17042,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/editview_start',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/editview_start',
                     meta: {
                         caption: 'entities.project.views.editview_start.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'editview_start' },
                         ],
@@ -16968,13 +17073,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/burndownchartview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/burndownchartview',
                     meta: {
                         caption: 'entities.project.views.burndownchartview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'burndownchartview' },
                         ],
@@ -16999,13 +17104,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/pickupgridview',
                     meta: {
                         caption: 'entities.project.views.pickupgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
@@ -17030,13 +17135,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/storymeditview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/storymeditview9',
                     meta: {
                         caption: 'entities.project.views.storymeditview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'storymeditview9' },
                         ],
@@ -17061,13 +17166,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/gridexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/gridexpview',
                     meta: {
                         caption: 'entities.project.views.gridexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'gridexpview' },
                         ],
@@ -17092,13 +17197,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/gridviewemp',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/gridviewemp',
                     meta: {
                         caption: 'entities.project.views.gridviewemp.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'gridviewemp' },
                         ],
@@ -17123,13 +17228,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/curproductgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/curproductgridview',
                     meta: {
                         caption: 'entities.project.views.curproductgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'curproductgridview' },
                         ],
@@ -17154,13 +17259,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/pickupview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/pickupview',
                     meta: {
                         caption: 'entities.project.views.pickupview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'pickupview' },
                         ],
@@ -17185,13 +17290,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/planaddeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/planaddeditview',
                     meta: {
                         caption: 'entities.project.views.planaddeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'planaddeditview' },
                         ],
@@ -17216,13 +17321,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/moreundoneprogridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/moreundoneprogridview',
                     meta: {
                         caption: 'entities.project.views.moreundoneprogridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'moreundoneprogridview' },
                         ],
@@ -17247,13 +17352,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/gridview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/gridview9',
                     meta: {
                         caption: 'entities.project.views.gridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'gridview9' },
                         ],
@@ -17278,13 +17383,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/editview_close',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/editview_close',
                     meta: {
                         caption: 'entities.project.views.editview_close.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'editview_close' },
                         ],
@@ -17309,13 +17414,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/editview_putoff',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/editview_putoff',
                     meta: {
                         caption: 'entities.project.views.editview_putoff.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'editview_putoff' },
                         ],
@@ -17340,13 +17445,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/leftsidebarlistview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/leftsidebarlistview',
                     meta: {
                         caption: 'entities.project.views.leftsidebarlistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'leftsidebarlistview' },
                         ],
@@ -17371,13 +17476,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/gridview',
                     meta: {
                         caption: 'entities.project.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -17402,13 +17507,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/maindashboardview',
                     meta: {
                         caption: 'entities.project.views.maindashboardview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
@@ -17433,13 +17538,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/mainmygridview',
                     meta: {
                         caption: 'entities.project.views.mainmygridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
@@ -17464,13 +17569,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/editview_suspend',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/editview_suspend',
                     meta: {
                         caption: 'entities.project.views.editview_suspend.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'editview_suspend' },
                         ],
@@ -17495,13 +17600,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/mgeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/mgeditview',
                     meta: {
                         caption: 'entities.project.views.mgeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'mgeditview' },
                         ],
@@ -17526,13 +17631,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/gridview9_unclosed',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/gridview9_unclosed',
                     meta: {
                         caption: 'entities.project.views.gridview9_unclosed.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'gridview9_unclosed' },
                         ],
@@ -17557,13 +17662,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/undoneprojectgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/undoneprojectgridview',
                     meta: {
                         caption: 'entities.project.views.undoneprojectgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'undoneprojectgridview' },
                         ],
@@ -17588,13 +17693,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/editview_activate',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/editview_activate',
                     meta: {
                         caption: 'entities.project.views.editview_activate.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'editview_activate' },
                         ],
@@ -17619,13 +17724,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/testtabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/testtabexpview',
                     meta: {
                         caption: 'entities.project.views.testtabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'testtabexpview' },
                         ],
@@ -17650,13 +17755,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/usr2gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/usr2gridview',
                     meta: {
                         caption: 'entities.project.views.usr2gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'usr2gridview' },
                         ],
@@ -17681,13 +17786,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/listexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/listexpview',
                     meta: {
                         caption: 'entities.project.views.listexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'listexpview' },
                         ],
@@ -17712,13 +17817,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/chartview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/chartview9',
                     meta: {
                         caption: 'entities.project.views.chartview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'chartview9' },
                         ],
@@ -17743,13 +17848,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/mainview_edit',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/mainview_edit',
                     meta: {
                         caption: 'entities.project.views.mainview_edit.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'mainview_edit' },
                         ],
@@ -17774,13 +17879,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/dashboardinfoview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/dashboardinfoview',
                     meta: {
                         caption: 'entities.project.views.dashboardinfoview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'dashboardinfoview' },
                         ],
@@ -17805,13 +17910,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/editview',
                     meta: {
                         caption: 'entities.project.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -17836,13 +17941,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/maintabexpview',
                     meta: {
                         caption: 'entities.project.views.maintabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
                         ],
@@ -17867,13 +17972,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/views/storyeditview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/views/storyeditview9',
                     meta: {
                         caption: 'entities.project.views.storyeditview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'views', parameterName: 'storyeditview9' },
                         ],
@@ -17898,13 +18003,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productmodules/:productmodule?/views/gridviewbranch',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productmodules/:productmodule?/views/gridviewbranch',
                     meta: {
                         caption: 'entities.productmodule.views.gridviewbranch.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productmodules', parameterName: 'productmodule' },
                             { pathName: 'views', parameterName: 'gridviewbranch' },
@@ -17946,13 +18051,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productmodules/:productmodule?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productmodules/:productmodule?/views/gridview',
                     meta: {
                         caption: 'entities.productmodule.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productmodules', parameterName: 'productmodule' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -17994,13 +18099,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productmodules/:productmodule?/views/quickcfgview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productmodules/:productmodule?/views/quickcfgview',
                     meta: {
                         caption: 'entities.productmodule.views.quickcfgview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productmodules', parameterName: 'productmodule' },
                             { pathName: 'views', parameterName: 'quickcfgview' },
@@ -18042,13 +18147,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productmodules/:productmodule?/views/treeexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productmodules/:productmodule?/views/treeexpview',
                     meta: {
                         caption: 'entities.productmodule.views.treeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productmodules', parameterName: 'productmodule' },
                             { pathName: 'views', parameterName: 'treeexpview' },
@@ -18090,13 +18195,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productmodules/:productmodule?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productmodules/:productmodule?/views/editview',
                     meta: {
                         caption: 'entities.productmodule.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productmodules', parameterName: 'productmodule' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -18138,13 +18243,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productteams/:productteam?/views/roweditgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productteams/:productteam?/views/roweditgridview',
                     meta: {
                         caption: 'entities.productteam.views.roweditgridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productteams', parameterName: 'productteam' },
                             { pathName: 'views', parameterName: 'roweditgridview' },
@@ -18186,13 +18291,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productteams/:productteam?/views/productteamlistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productteams/:productteam?/views/productteamlistview',
                     meta: {
                         caption: 'entities.productteam.views.productteamlistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productteams', parameterName: 'productteam' },
                             { pathName: 'views', parameterName: 'productteamlistview' },
@@ -18234,13 +18339,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productteams/:productteam?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productteams/:productteam?/views/editview',
                     meta: {
                         caption: 'entities.productteam.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productteams', parameterName: 'productteam' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -18530,13 +18635,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productlives/:productlife?/views/roadmaplistview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productlives/:productlife?/views/roadmaplistview',
                     meta: {
                         caption: 'entities.productlife.views.roadmaplistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productlives', parameterName: 'productlife' },
                             { pathName: 'views', parameterName: 'roadmaplistview' },
@@ -18578,13 +18683,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productlives/:productlife?/views/roadmaplistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productlives/:productlife?/views/roadmaplistview9',
                     meta: {
                         caption: 'entities.productlife.views.roadmaplistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productlives', parameterName: 'productlife' },
                             { pathName: 'views', parameterName: 'roadmaplistview9' },
@@ -18626,13 +18731,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productlives/:productlife?/views/roadmapslistview9',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productlives/:productlife?/views/roadmapslistview9',
                     meta: {
                         caption: 'entities.productlife.views.roadmapslistview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productlives', parameterName: 'productlife' },
                             { pathName: 'views', parameterName: 'roadmapslistview9' },
@@ -18674,13 +18779,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/usercontacts/:usercontact?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/usercontacts/:usercontact?/views/editview',
                     meta: {
                         caption: 'entities.usercontact.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'usercontacts', parameterName: 'usercontact' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -18705,13 +18810,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/usercontacts/:usercontact?/views/gridexpview',
+                    path: 'sysaccounts/:sysaccount?/usercontacts/:usercontact?/views/gridexpview',
                     meta: {
                         caption: 'entities.usercontact.views.gridexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'usercontacts', parameterName: 'usercontact' },
                             { pathName: 'views', parameterName: 'gridexpview' },
                         ],
@@ -18736,13 +18841,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/usercontacts/:usercontact?/views/usr2gridview',
+                    path: 'sysaccounts/:sysaccount?/usercontacts/:usercontact?/views/usr2gridview',
                     meta: {
                         caption: 'entities.usercontact.views.usr2gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'usercontacts', parameterName: 'usercontact' },
                             { pathName: 'views', parameterName: 'usr2gridview' },
                         ],
@@ -18767,13 +18872,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/usercontacts/:usercontact?/views/treeexpview',
+                    path: 'sysaccounts/:sysaccount?/usercontacts/:usercontact?/views/treeexpview',
                     meta: {
                         caption: 'entities.usercontact.views.treeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'usercontacts', parameterName: 'usercontact' },
                             { pathName: 'views', parameterName: 'treeexpview' },
                         ],
@@ -18798,13 +18903,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/usercontacts/:usercontact?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/usercontacts/:usercontact?/views/gridview',
                     meta: {
                         caption: 'entities.usercontact.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'usercontacts', parameterName: 'usercontact' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -18829,7 +18934,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/dailycompletezsgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/dailycompletezsgridview',
                     meta: {
                         caption: 'entities.task.views.dailycompletezsgridview.caption',
                         info:'',
@@ -18837,7 +18942,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'dailycompletezsgridview' },
@@ -18866,7 +18971,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/dailycompletezsgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/dailycompletezsgridview',
                     meta: {
                         caption: 'entities.task.views.dailycompletezsgridview.caption',
                         info:'',
@@ -18874,7 +18979,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'dailycompletezsgridview' },
                         ],
@@ -18901,7 +19006,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/pivottableview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/pivottableview',
                     meta: {
                         caption: 'entities.task.views.pivottableview.caption',
                         info:'',
@@ -18909,7 +19014,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pivottableview' },
@@ -18938,7 +19043,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/pivottableview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/pivottableview',
                     meta: {
                         caption: 'entities.task.views.pivottableview.caption',
                         info:'',
@@ -18946,7 +19051,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pivottableview' },
                         ],
@@ -18973,7 +19078,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/workhoursview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/workhoursview',
                     meta: {
                         caption: 'entities.task.views.workhoursview.caption',
                         info:'',
@@ -18981,7 +19086,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workhoursview' },
@@ -19010,7 +19115,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/workhoursview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/workhoursview',
                     meta: {
                         caption: 'entities.task.views.workhoursview.caption',
                         info:'',
@@ -19018,7 +19123,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workhoursview' },
                         ],
@@ -19045,7 +19150,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/gridview9_storyrelated',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/gridview9_storyrelated',
                     meta: {
                         caption: 'entities.task.views.gridview9_storyrelated.caption',
                         info:'',
@@ -19053,7 +19158,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
@@ -19082,7 +19187,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/gridview9_storyrelated',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/gridview9_storyrelated',
                     meta: {
                         caption: 'entities.task.views.gridview9_storyrelated.caption',
                         info:'',
@@ -19090,7 +19195,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
                         ],
@@ -19117,7 +19222,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/wheditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/wheditview',
                     meta: {
                         caption: 'entities.task.views.wheditview.caption',
                         info:'',
@@ -19125,7 +19230,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'wheditview' },
@@ -19154,7 +19259,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/wheditview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/wheditview',
                     meta: {
                         caption: 'entities.task.views.wheditview.caption',
                         info:'',
@@ -19162,7 +19267,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'wheditview' },
                         ],
@@ -19189,7 +19294,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/taskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/taskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.taskgroupgridview.caption',
                         info:'',
@@ -19197,7 +19302,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'taskgroupgridview' },
@@ -19226,7 +19331,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/taskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/taskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.taskgroupgridview.caption',
                         info:'',
@@ -19234,7 +19339,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'taskgroupgridview' },
                         ],
@@ -19261,7 +19366,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/chartview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/chartview9',
                     meta: {
                         caption: 'entities.task.views.chartview9.caption',
                         info:'',
@@ -19269,7 +19374,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'chartview9' },
@@ -19298,7 +19403,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/chartview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/chartview9',
                     meta: {
                         caption: 'entities.task.views.chartview9.caption',
                         info:'',
@@ -19306,7 +19411,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'chartview9' },
                         ],
@@ -19333,7 +19438,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/zsgridview9weeknextweekplan',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/zsgridview9weeknextweekplan',
                     meta: {
                         caption: 'entities.task.views.zsgridview9weeknextweekplan.caption',
                         info:'',
@@ -19341,7 +19446,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9weeknextweekplan' },
@@ -19370,7 +19475,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/zsgridview9weeknextweekplan',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/zsgridview9weeknextweekplan',
                     meta: {
                         caption: 'entities.task.views.zsgridview9weeknextweekplan.caption',
                         info:'',
@@ -19378,7 +19483,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9weeknextweekplan' },
                         ],
@@ -19405,7 +19510,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/grouptreeexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/grouptreeexpview',
                     meta: {
                         caption: 'entities.task.views.grouptreeexpview.caption',
                         info:'',
@@ -19413,7 +19518,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'grouptreeexpview' },
@@ -19442,7 +19547,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/grouptreeexpview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/grouptreeexpview',
                     meta: {
                         caption: 'entities.task.views.grouptreeexpview.caption',
                         info:'',
@@ -19450,7 +19555,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'grouptreeexpview' },
                         ],
@@ -19477,7 +19582,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maingridview9_child',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maingridview9_child',
                     meta: {
                         caption: 'entities.task.views.maingridview9_child.caption',
                         info:'',
@@ -19485,7 +19590,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview9_child' },
@@ -19514,7 +19619,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maingridview9_child',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maingridview9_child',
                     meta: {
                         caption: 'entities.task.views.maingridview9_child.caption',
                         info:'',
@@ -19522,7 +19627,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview9_child' },
                         ],
@@ -19549,7 +19654,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maingridview_bymodule',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maingridview_bymodule',
                     meta: {
                         caption: 'entities.task.views.maingridview_bymodule.caption',
                         info:'',
@@ -19557,7 +19662,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview_bymodule' },
@@ -19586,7 +19691,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maingridview_bymodule',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maingridview_bymodule',
                     meta: {
                         caption: 'entities.task.views.maingridview_bymodule.caption',
                         info:'',
@@ -19594,7 +19699,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview_bymodule' },
                         ],
@@ -19621,7 +19726,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maininfoview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maininfoview9',
                     meta: {
                         caption: 'entities.task.views.maininfoview9.caption',
                         info:'',
@@ -19629,7 +19734,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maininfoview9' },
@@ -19658,7 +19763,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maininfoview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maininfoview9',
                     meta: {
                         caption: 'entities.task.views.maininfoview9.caption',
                         info:'',
@@ -19666,7 +19771,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maininfoview9' },
                         ],
@@ -19693,7 +19798,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/pritaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/pritaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.pritaskgroupgridview.caption',
                         info:'',
@@ -19701,7 +19806,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pritaskgroupgridview' },
@@ -19730,7 +19835,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/pritaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/pritaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.pritaskgroupgridview.caption',
                         info:'',
@@ -19738,7 +19843,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pritaskgroupgridview' },
                         ],
@@ -19765,7 +19870,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/assigntaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/assigntaskview',
                     meta: {
                         caption: 'entities.task.views.assigntaskview.caption',
                         info:'',
@@ -19773,7 +19878,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assigntaskview' },
@@ -19802,7 +19907,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/assigntaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/assigntaskview',
                     meta: {
                         caption: 'entities.task.views.assigntaskview.caption',
                         info:'',
@@ -19810,7 +19915,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assigntaskview' },
                         ],
@@ -19837,7 +19942,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/reportpickupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/reportpickupgridview',
                     meta: {
                         caption: 'entities.task.views.reportpickupgridview.caption',
                         info:'',
@@ -19845,7 +19950,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'reportpickupgridview' },
@@ -19874,7 +19979,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/reportpickupgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/reportpickupgridview',
                     meta: {
                         caption: 'entities.task.views.reportpickupgridview.caption',
                         info:'',
@@ -19882,7 +19987,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'reportpickupgridview' },
                         ],
@@ -19909,7 +20014,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/myfavoritegridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/myfavoritegridview',
                     meta: {
                         caption: 'entities.task.views.myfavoritegridview.caption',
                         info:'',
@@ -19917,7 +20022,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
@@ -19946,7 +20051,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/myfavoritegridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/myfavoritegridview',
                     meta: {
                         caption: 'entities.task.views.myfavoritegridview.caption',
                         info:'',
@@ -19954,7 +20059,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
                         ],
@@ -19981,7 +20086,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/assignedtotaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/assignedtotaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.assignedtotaskgroupgridview.caption',
                         info:'',
@@ -19989,7 +20094,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assignedtotaskgroupgridview' },
@@ -20018,7 +20123,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/assignedtotaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/assignedtotaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.assignedtotaskgroupgridview.caption',
                         info:'',
@@ -20026,7 +20131,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'assignedtotaskgroupgridview' },
                         ],
@@ -20053,7 +20158,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/gridview',
                     meta: {
                         caption: 'entities.task.views.gridview.caption',
                         info:'',
@@ -20061,7 +20166,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -20090,7 +20195,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/gridview',
                     meta: {
                         caption: 'entities.task.views.gridview.caption',
                         info:'',
@@ -20098,7 +20203,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -20125,7 +20230,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/zsgridview9week',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/zsgridview9week',
                     meta: {
                         caption: 'entities.task.views.zsgridview9week.caption',
                         info:'',
@@ -20133,7 +20238,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9week' },
@@ -20162,7 +20267,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/zsgridview9week',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/zsgridview9week',
                     meta: {
                         caption: 'entities.task.views.zsgridview9week.caption',
                         info:'',
@@ -20170,7 +20275,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9week' },
                         ],
@@ -20197,7 +20302,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/mainmygridview',
                     meta: {
                         caption: 'entities.task.views.mainmygridview.caption',
                         info:'',
@@ -20205,7 +20310,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
@@ -20234,7 +20339,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/mainmygridview',
                     meta: {
                         caption: 'entities.task.views.mainmygridview.caption',
                         info:'',
@@ -20242,7 +20347,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
@@ -20269,7 +20374,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/todoeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/todoeditview',
                     meta: {
                         caption: 'entities.task.views.todoeditview.caption',
                         info:'',
@@ -20277,7 +20382,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'todoeditview' },
@@ -20306,7 +20411,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/todoeditview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/todoeditview',
                     meta: {
                         caption: 'entities.task.views.todoeditview.caption',
                         info:'',
@@ -20314,7 +20419,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'todoeditview' },
                         ],
@@ -20341,7 +20446,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/storyneweditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/storyneweditview',
                     meta: {
                         caption: 'entities.task.views.storyneweditview.caption',
                         info:'',
@@ -20349,7 +20454,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storyneweditview' },
@@ -20378,7 +20483,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/storyneweditview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/storyneweditview',
                     meta: {
                         caption: 'entities.task.views.storyneweditview.caption',
                         info:'',
@@ -20386,7 +20491,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storyneweditview' },
                         ],
@@ -20413,7 +20518,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maindashboardview',
                     meta: {
                         caption: 'entities.task.views.maindashboardview.caption',
                         info:'',
@@ -20421,7 +20526,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
@@ -20450,7 +20555,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maindashboardview',
                     meta: {
                         caption: 'entities.task.views.maindashboardview.caption',
                         info:'',
@@ -20458,7 +20563,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
@@ -20485,7 +20590,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/workinfoeditview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/workinfoeditview9',
                     meta: {
                         caption: 'entities.task.views.workinfoeditview9.caption',
                         info:'',
@@ -20493,7 +20598,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workinfoeditview9' },
@@ -20522,7 +20627,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/workinfoeditview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/workinfoeditview9',
                     meta: {
                         caption: 'entities.task.views.workinfoeditview9.caption',
                         info:'',
@@ -20530,7 +20635,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'workinfoeditview9' },
                         ],
@@ -20557,7 +20662,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/closetaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/closetaskview',
                     meta: {
                         caption: 'entities.task.views.closetaskview.caption',
                         info:'',
@@ -20565,7 +20670,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'closetaskview' },
@@ -20594,7 +20699,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/closetaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/closetaskview',
                     meta: {
                         caption: 'entities.task.views.closetaskview.caption',
                         info:'',
@@ -20602,7 +20707,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'closetaskview' },
                         ],
@@ -20629,7 +20734,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/calendareditview',
                     meta: {
                         caption: 'entities.task.views.calendareditview.caption',
                         info:'',
@@ -20637,7 +20742,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'calendareditview' },
@@ -20666,7 +20771,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/calendareditview',
                     meta: {
                         caption: 'entities.task.views.calendareditview.caption',
                         info:'',
@@ -20674,7 +20779,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
@@ -20701,7 +20806,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/tasktypeganttview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/tasktypeganttview',
                     meta: {
                         caption: 'entities.task.views.tasktypeganttview.caption',
                         info:'',
@@ -20709,7 +20814,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'tasktypeganttview' },
@@ -20738,7 +20843,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/tasktypeganttview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/tasktypeganttview',
                     meta: {
                         caption: 'entities.task.views.tasktypeganttview.caption',
                         info:'',
@@ -20746,7 +20851,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'tasktypeganttview' },
                         ],
@@ -20773,7 +20878,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/pickupview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/pickupview',
                     meta: {
                         caption: 'entities.task.views.pickupview.caption',
                         info:'',
@@ -20781,7 +20886,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pickupview' },
@@ -20810,7 +20915,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/pickupview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/pickupview',
                     meta: {
                         caption: 'entities.task.views.pickupview.caption',
                         info:'',
@@ -20818,7 +20923,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pickupview' },
                         ],
@@ -20845,7 +20950,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/storysubtasknewview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/storysubtasknewview',
                     meta: {
                         caption: 'entities.task.views.storysubtasknewview.caption',
                         info:'',
@@ -20853,7 +20958,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storysubtasknewview' },
@@ -20882,7 +20987,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/storysubtasknewview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/storysubtasknewview',
                     meta: {
                         caption: 'entities.task.views.storysubtasknewview.caption',
                         info:'',
@@ -20890,7 +20995,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storysubtasknewview' },
                         ],
@@ -20917,7 +21022,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/canceltaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/canceltaskview',
                     meta: {
                         caption: 'entities.task.views.canceltaskview.caption',
                         info:'',
@@ -20925,7 +21030,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'canceltaskview' },
@@ -20954,7 +21059,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/canceltaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/canceltaskview',
                     meta: {
                         caption: 'entities.task.views.canceltaskview.caption',
                         info:'',
@@ -20962,7 +21067,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'canceltaskview' },
                         ],
@@ -20989,7 +21094,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/activationtaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/activationtaskview',
                     meta: {
                         caption: 'entities.task.views.activationtaskview.caption',
                         info:'',
@@ -20997,7 +21102,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'activationtaskview' },
@@ -21026,7 +21131,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/activationtaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/activationtaskview',
                     meta: {
                         caption: 'entities.task.views.activationtaskview.caption',
                         info:'',
@@ -21034,7 +21139,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'activationtaskview' },
                         ],
@@ -21061,7 +21166,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/reportmpickupview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/reportmpickupview',
                     meta: {
                         caption: 'entities.task.views.reportmpickupview.caption',
                         info:'',
@@ -21069,7 +21174,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'reportmpickupview' },
@@ -21098,7 +21203,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/reportmpickupview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/reportmpickupview',
                     meta: {
                         caption: 'entities.task.views.reportmpickupview.caption',
                         info:'',
@@ -21106,7 +21211,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'reportmpickupview' },
                         ],
@@ -21133,7 +21238,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/zsgridview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/zsgridview9',
                     meta: {
                         caption: 'entities.task.views.zsgridview9.caption',
                         info:'',
@@ -21141,7 +21246,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9' },
@@ -21170,7 +21275,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/zsgridview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/zsgridview9',
                     meta: {
                         caption: 'entities.task.views.zsgridview9.caption',
                         info:'',
@@ -21178,7 +21283,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'zsgridview9' },
                         ],
@@ -21205,7 +21310,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/pausetaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/pausetaskview',
                     meta: {
                         caption: 'entities.task.views.pausetaskview.caption',
                         info:'',
@@ -21213,7 +21318,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pausetaskview' },
@@ -21242,7 +21347,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/pausetaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/pausetaskview',
                     meta: {
                         caption: 'entities.task.views.pausetaskview.caption',
                         info:'',
@@ -21250,7 +21355,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pausetaskview' },
                         ],
@@ -21277,7 +21382,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/monthlycompletezsgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/monthlycompletezsgridview',
                     meta: {
                         caption: 'entities.task.views.monthlycompletezsgridview.caption',
                         info:'',
@@ -21285,7 +21390,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'monthlycompletezsgridview' },
@@ -21314,7 +21419,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/monthlycompletezsgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/monthlycompletezsgridview',
                     meta: {
                         caption: 'entities.task.views.monthlycompletezsgridview.caption',
                         info:'',
@@ -21322,7 +21427,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'monthlycompletezsgridview' },
                         ],
@@ -21349,7 +21454,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maingridview',
                     meta: {
                         caption: 'entities.task.views.maingridview.caption',
                         info:'',
@@ -21357,7 +21462,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview' },
@@ -21386,7 +21491,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maingridview',
                     meta: {
                         caption: 'entities.task.views.maingridview.caption',
                         info:'',
@@ -21394,7 +21499,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maingridview' },
                         ],
@@ -21421,7 +21526,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/pickupgridview',
                     meta: {
                         caption: 'entities.task.views.pickupgridview.caption',
                         info:'',
@@ -21429,7 +21534,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
@@ -21458,7 +21563,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/pickupgridview',
                     meta: {
                         caption: 'entities.task.views.pickupgridview.caption',
                         info:'',
@@ -21466,7 +21571,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
@@ -21493,7 +21598,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.task.views.maindashboardview_link.caption',
                         info:'',
@@ -21501,7 +21606,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
@@ -21530,7 +21635,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.task.views.maindashboardview_link.caption',
                         info:'',
@@ -21538,7 +21643,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
                         ],
@@ -21565,7 +21670,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/treeexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/treeexpview',
                     meta: {
                         caption: 'entities.task.views.treeexpview.caption',
                         info:'',
@@ -21573,7 +21678,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'treeexpview' },
@@ -21602,7 +21707,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/treeexpview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/treeexpview',
                     meta: {
                         caption: 'entities.task.views.treeexpview.caption',
                         info:'',
@@ -21610,7 +21715,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'treeexpview' },
                         ],
@@ -21637,7 +21742,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/typetaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/typetaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.typetaskgroupgridview.caption',
                         info:'',
@@ -21645,7 +21750,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'typetaskgroupgridview' },
@@ -21674,7 +21779,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/typetaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/typetaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.typetaskgroupgridview.caption',
                         info:'',
@@ -21682,7 +21787,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'typetaskgroupgridview' },
                         ],
@@ -21709,7 +21814,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/opentaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/opentaskview',
                     meta: {
                         caption: 'entities.task.views.opentaskview.caption',
                         info:'',
@@ -21717,7 +21822,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'opentaskview' },
@@ -21746,7 +21851,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/opentaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/opentaskview',
                     meta: {
                         caption: 'entities.task.views.opentaskview.caption',
                         info:'',
@@ -21754,7 +21859,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'opentaskview' },
                         ],
@@ -21781,7 +21886,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/restarttaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/restarttaskview',
                     meta: {
                         caption: 'entities.task.views.restarttaskview.caption',
                         info:'',
@@ -21789,7 +21894,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'restarttaskview' },
@@ -21818,7 +21923,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/restarttaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/restarttaskview',
                     meta: {
                         caption: 'entities.task.views.restarttaskview.caption',
                         info:'',
@@ -21826,7 +21931,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'restarttaskview' },
                         ],
@@ -21870,7 +21975,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/forwardview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/forwardview',
                     meta: {
                         caption: 'entities.task.views.forwardview.caption',
                         info:'',
@@ -21878,7 +21983,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'forwardview' },
@@ -21907,7 +22012,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/forwardview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/forwardview',
                     meta: {
                         caption: 'entities.task.views.forwardview.caption',
                         info:'',
@@ -21915,7 +22020,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'forwardview' },
                         ],
@@ -21942,7 +22047,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/moretabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/moretabexpview',
                     meta: {
                         caption: 'entities.task.views.moretabexpview.caption',
                         info:'',
@@ -21950,7 +22055,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'moretabexpview' },
@@ -21979,7 +22084,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/moretabexpview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/moretabexpview',
                     meta: {
                         caption: 'entities.task.views.moretabexpview.caption',
                         info:'',
@@ -21987,7 +22092,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'moretabexpview' },
                         ],
@@ -22014,7 +22119,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/childtaskmoregridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/childtaskmoregridview',
                     meta: {
                         caption: 'entities.task.views.childtaskmoregridview.caption',
                         info:'',
@@ -22022,7 +22127,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'childtaskmoregridview' },
@@ -22051,7 +22156,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/childtaskmoregridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/childtaskmoregridview',
                     meta: {
                         caption: 'entities.task.views.childtaskmoregridview.caption',
                         info:'',
@@ -22059,7 +22164,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'childtaskmoregridview' },
                         ],
@@ -22086,7 +22191,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/kanbanview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/kanbanview',
                     meta: {
                         caption: 'entities.task.views.kanbanview.caption',
                         info:'',
@@ -22094,7 +22199,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'kanbanview' },
@@ -22123,7 +22228,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/kanbanview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/kanbanview',
                     meta: {
                         caption: 'entities.task.views.kanbanview.caption',
                         info:'',
@@ -22131,7 +22236,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'kanbanview' },
                         ],
@@ -22158,7 +22263,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/storytaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/storytaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.storytaskgroupgridview.caption',
                         info:'',
@@ -22166,7 +22271,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storytaskgroupgridview' },
@@ -22195,7 +22300,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/storytaskgroupgridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/storytaskgroupgridview',
                     meta: {
                         caption: 'entities.task.views.storytaskgroupgridview.caption',
                         info:'',
@@ -22203,7 +22308,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'storytaskgroupgridview' },
                         ],
@@ -22230,7 +22335,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/editview',
                     meta: {
                         caption: 'entities.task.views.editview.caption',
                         info:'',
@@ -22238,7 +22343,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -22267,7 +22372,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/editview',
                     meta: {
                         caption: 'entities.task.views.editview.caption',
                         info:'',
@@ -22275,7 +22380,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -22302,7 +22407,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maindetailview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maindetailview9',
                     meta: {
                         caption: 'entities.task.views.maindetailview9.caption',
                         info:'',
@@ -22310,7 +22415,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindetailview9' },
@@ -22339,7 +22444,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maindetailview9',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maindetailview9',
                     meta: {
                         caption: 'entities.task.views.maindetailview9.caption',
                         info:'',
@@ -22347,7 +22452,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maindetailview9' },
                         ],
@@ -22374,7 +22479,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/treeeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/treeeditview',
                     meta: {
                         caption: 'entities.task.views.treeeditview.caption',
                         info:'',
@@ -22382,7 +22487,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'treeeditview' },
@@ -22411,7 +22516,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/treeeditview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/treeeditview',
                     meta: {
                         caption: 'entities.task.views.treeeditview.caption',
                         info:'',
@@ -22419,7 +22524,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'treeeditview' },
                         ],
@@ -22446,7 +22551,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/gridview9_assignedtome',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.task.views.gridview9_assignedtome.caption',
                         info:'',
@@ -22454,7 +22559,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
@@ -22483,7 +22588,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/gridview9_assignedtome',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.task.views.gridview9_assignedtome.caption',
                         info:'',
@@ -22491,7 +22596,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
                         ],
@@ -22518,7 +22623,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/maineditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/maineditview',
                     meta: {
                         caption: 'entities.task.views.maineditview.caption',
                         info:'',
@@ -22526,7 +22631,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maineditview' },
@@ -22555,7 +22660,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/maineditview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/maineditview',
                     meta: {
                         caption: 'entities.task.views.maineditview.caption',
                         info:'',
@@ -22563,7 +22668,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'maineditview' },
                         ],
@@ -22590,7 +22695,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/childmoregridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/childmoregridview',
                     meta: {
                         caption: 'entities.task.views.childmoregridview.caption',
                         info:'',
@@ -22598,7 +22703,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'childmoregridview' },
@@ -22627,7 +22732,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/childmoregridview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/childmoregridview',
                     meta: {
                         caption: 'entities.task.views.childmoregridview.caption',
                         info:'',
@@ -22635,7 +22740,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'childmoregridview' },
                         ],
@@ -22662,7 +22767,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/gridview9_project',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/gridview9_project',
                     meta: {
                         caption: 'entities.task.views.gridview9_project.caption',
                         info:'',
@@ -22670,7 +22775,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_project' },
@@ -22699,7 +22804,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/gridview9_project',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/gridview9_project',
                     meta: {
                         caption: 'entities.task.views.gridview9_project.caption',
                         info:'',
@@ -22707,7 +22812,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'gridview9_project' },
                         ],
@@ -22734,7 +22839,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/tasks/:task?/views/donetaskview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/tasks/:task?/views/donetaskview',
                     meta: {
                         caption: 'entities.task.views.donetaskview.caption',
                         info:'',
@@ -22742,7 +22847,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'donetaskview' },
@@ -22771,7 +22876,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/tasks/:task?/views/donetaskview',
+                    path: 'sysaccounts/:sysaccount?/tasks/:task?/views/donetaskview',
                     meta: {
                         caption: 'entities.task.views.donetaskview.caption',
                         info:'',
@@ -22779,7 +22884,7 @@ const router = new Router({
                         iconCls: 'fa fa-tasks',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'donetaskview' },
                         ],
@@ -22806,7 +22911,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/views/maingridview',
                     meta: {
                         caption: 'entities.build.views.maingridview.caption',
                         info:'',
@@ -22814,7 +22919,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'maingridview' },
@@ -22825,7 +22930,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/views/maingridview',
                     meta: {
                         caption: 'entities.build.views.maingridview.caption',
                         info:'',
@@ -22833,7 +22938,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'maingridview' },
@@ -22897,7 +23002,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/views/testroundsgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/views/testroundsgridview',
                     meta: {
                         caption: 'entities.build.views.testroundsgridview.caption',
                         info:'',
@@ -22905,7 +23010,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'testroundsgridview' },
@@ -22916,7 +23021,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/views/testroundsgridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/views/testroundsgridview',
                     meta: {
                         caption: 'entities.build.views.testroundsgridview.caption',
                         info:'',
@@ -22924,7 +23029,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'testroundsgridview' },
@@ -22988,7 +23093,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/views/optionview',
                     meta: {
                         caption: 'entities.build.views.optionview.caption',
                         info:'',
@@ -22996,7 +23101,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -23007,7 +23112,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/views/optionview',
                     meta: {
                         caption: 'entities.build.views.optionview.caption',
                         info:'',
@@ -23015,7 +23120,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -23079,7 +23184,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/views/mainview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/views/mainview',
                     meta: {
                         caption: 'entities.build.views.mainview.caption',
                         info:'',
@@ -23087,7 +23192,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'mainview' },
@@ -23098,7 +23203,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/views/mainview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/views/mainview',
                     meta: {
                         caption: 'entities.build.views.mainview.caption',
                         info:'',
@@ -23106,7 +23211,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'mainview' },
@@ -23170,7 +23275,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/views/maintabexpview',
                     meta: {
                         caption: 'entities.build.views.maintabexpview.caption',
                         info:'',
@@ -23178,7 +23283,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
@@ -23189,7 +23294,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/views/maintabexpview',
                     meta: {
                         caption: 'entities.build.views.maintabexpview.caption',
                         info:'',
@@ -23197,7 +23302,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
@@ -23261,7 +23366,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/views/editformeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/views/editformeditview',
                     meta: {
                         caption: 'entities.build.views.editformeditview.caption',
                         info:'',
@@ -23269,7 +23374,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'editformeditview' },
@@ -23280,7 +23385,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/views/editformeditview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/views/editformeditview',
                     meta: {
                         caption: 'entities.build.views.editformeditview.caption',
                         info:'',
@@ -23288,7 +23393,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'editformeditview' },
@@ -23352,7 +23457,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/builds/:build?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/builds/:build?/views/editview',
                     meta: {
                         caption: 'entities.build.views.editview.caption',
                         info:'',
@@ -23360,7 +23465,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -23371,7 +23476,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/builds/:build?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/builds/:build?/views/editview',
                     meta: {
                         caption: 'entities.build.views.editview.caption',
                         info:'',
@@ -23379,7 +23484,7 @@ const router = new Router({
                         iconCls: 'fa fa-code-fork',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'builds', parameterName: 'build' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -23460,13 +23565,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/testreults/:testreult?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/testreults/:testreult?/views/editview',
                     meta: {
                         caption: 'entities.testreult.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'testreults', parameterName: 'testreult' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -23509,13 +23614,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/testreults/:testreult?/views/gridview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/testreults/:testreult?/views/gridview9',
                     meta: {
                         caption: 'entities.testreult.views.gridview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'testreults', parameterName: 'testreult' },
                             { pathName: 'views', parameterName: 'gridview9' },
@@ -23558,13 +23663,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/testreults/:testreult?/views/editview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/testreults/:testreult?/views/editview9',
                     meta: {
                         caption: 'entities.testreult.views.editview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'testreults', parameterName: 'testreult' },
                             { pathName: 'views', parameterName: 'editview9' },
@@ -23607,13 +23712,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/testreults/:testreult?/views/testtaskmeditview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/testreults/:testreult?/views/testtaskmeditview9',
                     meta: {
                         caption: 'entities.testreult.views.testtaskmeditview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'testreults', parameterName: 'testreult' },
                             { pathName: 'views', parameterName: 'testtaskmeditview9' },
@@ -23656,13 +23761,13 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testcases/:testcase?/testreults/:testreult?/views/meditview9',
+                    path: 'sysaccounts/:sysaccount?/testcases/:testcase?/testreults/:testreult?/views/meditview9',
                     meta: {
                         caption: 'entities.testreult.views.meditview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'testreults', parameterName: 'testreult' },
                             { pathName: 'views', parameterName: 'meditview9' },
@@ -23756,7 +23861,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/projectteams/:projectteam?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/projectteams/:projectteam?/views/maingridview',
                     meta: {
                         caption: 'entities.projectteam.views.maingridview.caption',
                         info:'',
@@ -23764,7 +23869,7 @@ const router = new Router({
                         iconCls: 'fa fa-users',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'projectteams', parameterName: 'projectteam' },
                             { pathName: 'views', parameterName: 'maingridview' },
@@ -23810,7 +23915,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/projectteams/:projectteam?/views/maingridview_editrow',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/projectteams/:projectteam?/views/maingridview_editrow',
                     meta: {
                         caption: 'entities.projectteam.views.maingridview_editrow.caption',
                         info:'',
@@ -23818,7 +23923,7 @@ const router = new Router({
                         iconCls: 'fa fa-users',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'projectteams', parameterName: 'projectteam' },
                             { pathName: 'views', parameterName: 'maingridview_editrow' },
@@ -23864,7 +23969,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/projectteams/:projectteam?/views/listview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/projectteams/:projectteam?/views/listview',
                     meta: {
                         caption: 'entities.projectteam.views.listview.caption',
                         info:'',
@@ -23872,7 +23977,7 @@ const router = new Router({
                         iconCls: 'fa fa-users',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'projectteams', parameterName: 'projectteam' },
                             { pathName: 'views', parameterName: 'listview' },
@@ -23918,7 +24023,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/editview_edit',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/editview_edit',
                     meta: {
                         caption: 'entities.testtask.views.editview_edit.caption',
                         info:'',
@@ -23926,7 +24031,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_edit' },
@@ -23955,7 +24060,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/editview_edit',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/editview_edit',
                     meta: {
                         caption: 'entities.testtask.views.editview_edit.caption',
                         info:'',
@@ -23963,7 +24068,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_edit' },
                         ],
@@ -23990,7 +24095,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/calendareditview',
                     meta: {
                         caption: 'entities.testtask.views.calendareditview.caption',
                         info:'',
@@ -23998,7 +24103,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'calendareditview' },
@@ -24027,7 +24132,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/calendareditview',
                     meta: {
                         caption: 'entities.testtask.views.calendareditview.caption',
                         info:'',
@@ -24035,7 +24140,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
@@ -24062,7 +24167,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/maintabexpview',
                     meta: {
                         caption: 'entities.testtask.views.maintabexpview.caption',
                         info:'',
@@ -24070,7 +24175,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
@@ -24099,7 +24204,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/maintabexpview',
                     meta: {
                         caption: 'entities.testtask.views.maintabexpview.caption',
                         info:'',
@@ -24107,7 +24212,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
                         ],
@@ -24134,7 +24239,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/maindashboardview',
                     meta: {
                         caption: 'entities.testtask.views.maindashboardview.caption',
                         info:'',
@@ -24142,7 +24247,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
@@ -24171,7 +24276,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/maindashboardview',
                     meta: {
                         caption: 'entities.testtask.views.maindashboardview.caption',
                         info:'',
@@ -24179,7 +24284,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
@@ -24206,7 +24311,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/activiteoptionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/activiteoptionview',
                     meta: {
                         caption: 'entities.testtask.views.activiteoptionview.caption',
                         info:'',
@@ -24214,7 +24319,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'activiteoptionview' },
@@ -24243,7 +24348,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/activiteoptionview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/activiteoptionview',
                     meta: {
                         caption: 'entities.testtask.views.activiteoptionview.caption',
                         info:'',
@@ -24251,7 +24356,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'activiteoptionview' },
                         ],
@@ -24278,7 +24383,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/startoptionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/startoptionview',
                     meta: {
                         caption: 'entities.testtask.views.startoptionview.caption',
                         info:'',
@@ -24286,7 +24391,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'startoptionview' },
@@ -24315,7 +24420,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/startoptionview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/startoptionview',
                     meta: {
                         caption: 'entities.testtask.views.startoptionview.caption',
                         info:'',
@@ -24323,7 +24428,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'startoptionview' },
                         ],
@@ -24350,7 +24455,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/editview',
                     meta: {
                         caption: 'entities.testtask.views.editview.caption',
                         info:'',
@@ -24358,7 +24463,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -24387,7 +24492,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/editview',
                     meta: {
                         caption: 'entities.testtask.views.editview.caption',
                         info:'',
@@ -24395,7 +24500,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -24422,7 +24527,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/projectgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/projectgridview',
                     meta: {
                         caption: 'entities.testtask.views.projectgridview.caption',
                         info:'',
@@ -24430,7 +24535,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectgridview' },
@@ -24459,7 +24564,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/projectgridview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/projectgridview',
                     meta: {
                         caption: 'entities.testtask.views.projectgridview.caption',
                         info:'',
@@ -24467,7 +24572,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectgridview' },
                         ],
@@ -24494,7 +24599,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/projectneweditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/projectneweditview',
                     meta: {
                         caption: 'entities.testtask.views.projectneweditview.caption',
                         info:'',
@@ -24502,7 +24607,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectneweditview' },
@@ -24531,7 +24636,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/projectneweditview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/projectneweditview',
                     meta: {
                         caption: 'entities.testtask.views.projectneweditview.caption',
                         info:'',
@@ -24539,7 +24644,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'projectneweditview' },
                         ],
@@ -24566,7 +24671,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/editview9_info',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/editview9_info',
                     meta: {
                         caption: 'entities.testtask.views.editview9_info.caption',
                         info:'',
@@ -24574,7 +24679,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_info' },
@@ -24603,7 +24708,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/editview9_info',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/editview9_info',
                     meta: {
                         caption: 'entities.testtask.views.editview9_info.caption',
                         info:'',
@@ -24611,7 +24716,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_info' },
                         ],
@@ -24638,7 +24743,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/myygridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/myygridview',
                     meta: {
                         caption: 'entities.testtask.views.myygridview.caption',
                         info:'',
@@ -24646,7 +24751,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'myygridview' },
@@ -24675,7 +24780,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/myygridview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/myygridview',
                     meta: {
                         caption: 'entities.testtask.views.myygridview.caption',
                         info:'',
@@ -24683,7 +24788,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'myygridview' },
                         ],
@@ -24710,7 +24815,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/closeoptionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/closeoptionview',
                     meta: {
                         caption: 'entities.testtask.views.closeoptionview.caption',
                         info:'',
@@ -24718,7 +24823,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'closeoptionview' },
@@ -24747,7 +24852,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/closeoptionview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/closeoptionview',
                     meta: {
                         caption: 'entities.testtask.views.closeoptionview.caption',
                         info:'',
@@ -24755,7 +24860,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'closeoptionview' },
                         ],
@@ -24782,7 +24887,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/blockoptionview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/blockoptionview',
                     meta: {
                         caption: 'entities.testtask.views.blockoptionview.caption',
                         info:'',
@@ -24790,7 +24895,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'blockoptionview' },
@@ -24819,7 +24924,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/blockoptionview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/blockoptionview',
                     meta: {
                         caption: 'entities.testtask.views.blockoptionview.caption',
                         info:'',
@@ -24827,7 +24932,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'blockoptionview' },
                         ],
@@ -24854,7 +24959,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/editview9_detail',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/editview9_detail',
                     meta: {
                         caption: 'entities.testtask.views.editview9_detail.caption',
                         info:'',
@@ -24862,7 +24967,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_detail' },
@@ -24891,7 +24996,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/editview9_detail',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/editview9_detail',
                     meta: {
                         caption: 'entities.testtask.views.editview9_detail.caption',
                         info:'',
@@ -24899,7 +25004,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview9_detail' },
                         ],
@@ -24926,7 +25031,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/gridview',
                     meta: {
                         caption: 'entities.testtask.views.gridview.caption',
                         info:'',
@@ -24934,7 +25039,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -24963,7 +25068,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/gridview',
                     meta: {
                         caption: 'entities.testtask.views.gridview.caption',
                         info:'',
@@ -24971,7 +25076,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -24998,7 +25103,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/mydgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/mydgridview',
                     meta: {
                         caption: 'entities.testtask.views.mydgridview.caption',
                         info:'',
@@ -25006,7 +25111,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'mydgridview' },
@@ -25035,7 +25140,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/mydgridview',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/mydgridview',
                     meta: {
                         caption: 'entities.testtask.views.mydgridview.caption',
                         info:'',
@@ -25043,7 +25148,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'mydgridview' },
                         ],
@@ -25070,7 +25175,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/editview_committest',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/editview_committest',
                     meta: {
                         caption: 'entities.testtask.views.editview_committest.caption',
                         info:'',
@@ -25078,7 +25183,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_committest' },
@@ -25107,7 +25212,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/editview_committest',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/editview_committest',
                     meta: {
                         caption: 'entities.testtask.views.editview_committest.caption',
                         info:'',
@@ -25115,7 +25220,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'editview_committest' },
                         ],
@@ -25142,7 +25247,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testtasks/:testtask?/views/gridview9_untested',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testtasks/:testtask?/views/gridview9_untested',
                     meta: {
                         caption: 'entities.testtask.views.gridview9_untested.caption',
                         info:'',
@@ -25150,7 +25255,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview9_untested' },
@@ -25179,7 +25284,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/testtasks/:testtask?/views/gridview9_untested',
+                    path: 'sysaccounts/:sysaccount?/testtasks/:testtask?/views/gridview9_untested',
                     meta: {
                         caption: 'entities.testtask.views.gridview9_untested.caption',
                         info:'',
@@ -25187,7 +25292,7 @@ const router = new Router({
                         iconCls: 'fa fa-clipboard',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'testtasks', parameterName: 'testtask' },
                             { pathName: 'views', parameterName: 'gridview9_untested' },
                         ],
@@ -25214,7 +25319,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/projectgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/projectgridview',
                     meta: {
                         caption: 'entities.testreport.views.projectgridview.caption',
                         info:'',
@@ -25222,7 +25327,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'projectgridview' },
@@ -25286,7 +25391,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/mainediteditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/mainediteditview',
                     meta: {
                         caption: 'entities.testreport.views.mainediteditview.caption',
                         info:'',
@@ -25294,7 +25399,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'mainediteditview' },
@@ -25358,7 +25463,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/projecttabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/projecttabexpview',
                     meta: {
                         caption: 'entities.testreport.views.projecttabexpview.caption',
                         info:'',
@@ -25366,7 +25471,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'projecttabexpview' },
@@ -25430,7 +25535,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/gridview',
                     meta: {
                         caption: 'entities.testreport.views.gridview.caption',
                         info:'',
@@ -25438,7 +25543,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -25502,7 +25607,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/editview_r',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/editview_r',
                     meta: {
                         caption: 'entities.testreport.views.editview_r.caption',
                         info:'',
@@ -25510,7 +25615,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'editview_r' },
@@ -25574,7 +25679,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/editview_testrange',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/editview_testrange',
                     meta: {
                         caption: 'entities.testreport.views.editview_testrange.caption',
                         info:'',
@@ -25582,7 +25687,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'editview_testrange' },
@@ -25646,7 +25751,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/projectmainediteditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/projectmainediteditview',
                     meta: {
                         caption: 'entities.testreport.views.projectmainediteditview.caption',
                         info:'',
@@ -25654,7 +25759,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'projectmainediteditview' },
@@ -25718,7 +25823,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/dashboardview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/dashboardview',
                     meta: {
                         caption: 'entities.testreport.views.dashboardview.caption',
                         info:'',
@@ -25726,7 +25831,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'dashboardview' },
@@ -25790,7 +25895,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/maintabexpview',
                     meta: {
                         caption: 'entities.testreport.views.maintabexpview.caption',
                         info:'',
@@ -25798,7 +25903,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
@@ -25862,7 +25967,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/editview_tosumup',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/editview_tosumup',
                     meta: {
                         caption: 'entities.testreport.views.editview_tosumup.caption',
                         info:'',
@@ -25870,7 +25975,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'editview_tosumup' },
@@ -25934,7 +26039,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/projectdashboardview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/projectdashboardview',
                     meta: {
                         caption: 'entities.testreport.views.projectdashboardview.caption',
                         info:'',
@@ -25942,7 +26047,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'projectdashboardview' },
@@ -26006,7 +26111,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/editview_testtasks',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/editview_testtasks',
                     meta: {
                         caption: 'entities.testreport.views.editview_testtasks.caption',
                         info:'',
@@ -26014,7 +26119,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'editview_testtasks' },
@@ -26078,7 +26183,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/maininfoview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/maininfoview',
                     meta: {
                         caption: 'entities.testreport.views.maininfoview.caption',
                         info:'',
@@ -26086,7 +26191,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'maininfoview' },
@@ -26150,7 +26255,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/editview_report',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/editview_report',
                     meta: {
                         caption: 'entities.testreport.views.editview_report.caption',
                         info:'',
@@ -26158,7 +26263,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'editview_report' },
@@ -26222,7 +26327,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/actioneditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/actioneditview',
                     meta: {
                         caption: 'entities.testreport.views.actioneditview.caption',
                         info:'',
@@ -26230,7 +26335,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'actioneditview' },
@@ -26294,7 +26399,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/editview',
                     meta: {
                         caption: 'entities.testreport.views.editview.caption',
                         info:'',
@@ -26302,7 +26407,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -26366,7 +26471,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/editview_project',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/editview_project',
                     meta: {
                         caption: 'entities.testreport.views.editview_project.caption',
                         info:'',
@@ -26374,7 +26479,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'editview_project' },
@@ -26438,7 +26543,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/testreports/:testreport?/views/projectmaininfoview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/testreports/:testreport?/views/projectmaininfoview',
                     meta: {
                         caption: 'entities.testreport.views.projectmaininfoview.caption',
                         info:'',
@@ -26446,7 +26551,7 @@ const router = new Router({
                         iconCls: 'fa fa-file-text-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'testreports', parameterName: 'testreport' },
                             { pathName: 'views', parameterName: 'projectmaininfoview' },
@@ -26510,7 +26615,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/testbugsgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/testbugsgridview',
                     meta: {
                         caption: 'entities.bug.views.testbugsgridview.caption',
                         info:'',
@@ -26518,7 +26623,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testbugsgridview' },
@@ -26565,7 +26670,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/testbugsgridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/testbugsgridview',
                     meta: {
                         caption: 'entities.bug.views.testbugsgridview.caption',
                         info:'',
@@ -26573,7 +26678,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testbugsgridview' },
                         ],
@@ -26600,7 +26705,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/assingtoview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/assingtoview',
                     meta: {
                         caption: 'entities.bug.views.assingtoview.caption',
                         info:'',
@@ -26608,7 +26713,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'assingtoview' },
@@ -26655,7 +26760,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/assingtoview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/assingtoview',
                     meta: {
                         caption: 'entities.bug.views.assingtoview.caption',
                         info:'',
@@ -26663,7 +26768,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'assingtoview' },
                         ],
@@ -26690,7 +26795,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.bug.views.maindashboardview_link.caption',
                         info:'',
@@ -26698,7 +26803,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
@@ -26745,7 +26850,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/maindashboardview_link',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/maindashboardview_link',
                     meta: {
                         caption: 'entities.bug.views.maindashboardview_link.caption',
                         info:'',
@@ -26753,7 +26858,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview_link' },
                         ],
@@ -26780,7 +26885,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/mpickupview5',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/mpickupview5',
                     meta: {
                         caption: 'entities.bug.views.mpickupview5.caption',
                         info:'',
@@ -26788,7 +26893,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview5' },
@@ -26835,7 +26940,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/mpickupview5',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/mpickupview5',
                     meta: {
                         caption: 'entities.bug.views.mpickupview5.caption',
                         info:'',
@@ -26843,7 +26948,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview5' },
                         ],
@@ -26870,7 +26975,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/editview_4791',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/editview_4791',
                     meta: {
                         caption: 'entities.bug.views.editview_4791.caption',
                         info:'',
@@ -26878,7 +26983,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_4791' },
@@ -26925,7 +27030,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/editview_4791',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/editview_4791',
                     meta: {
                         caption: 'entities.bug.views.editview_4791.caption',
                         info:'',
@@ -26933,7 +27038,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_4791' },
                         ],
@@ -26960,7 +27065,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/buglifeeditview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/buglifeeditview9',
                     meta: {
                         caption: 'entities.bug.views.buglifeeditview9.caption',
                         info:'',
@@ -26968,7 +27073,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buglifeeditview9' },
@@ -27015,7 +27120,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/buglifeeditview9',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/buglifeeditview9',
                     meta: {
                         caption: 'entities.bug.views.buglifeeditview9.caption',
                         info:'',
@@ -27023,7 +27128,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buglifeeditview9' },
                         ],
@@ -27050,7 +27155,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/maindashboardview',
                     meta: {
                         caption: 'entities.bug.views.maindashboardview.caption',
                         info:'',
@@ -27058,7 +27163,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
@@ -27105,7 +27210,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/maindashboardview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/maindashboardview',
                     meta: {
                         caption: 'entities.bug.views.maindashboardview.caption',
                         info:'',
@@ -27113,7 +27218,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maindashboardview' },
                         ],
@@ -27140,7 +27245,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/pickupgridview5',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/pickupgridview5',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview5.caption',
                         info:'',
@@ -27148,7 +27253,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview5' },
@@ -27195,7 +27300,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/pickupgridview5',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/pickupgridview5',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview5.caption',
                         info:'',
@@ -27203,7 +27308,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview5' },
                         ],
@@ -27230,7 +27335,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/buildsubgridview_new_9212',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/buildsubgridview_new_9212',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
                         info:'',
@@ -27238,7 +27343,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
@@ -27285,7 +27390,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/buildsubgridview_new_9212',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/buildsubgridview_new_9212',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_new_9212.caption',
                         info:'',
@@ -27293,7 +27398,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new_9212' },
                         ],
@@ -27320,7 +27425,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/pickupgridview',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview.caption',
                         info:'',
@@ -27328,7 +27433,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
@@ -27375,7 +27480,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/pickupgridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/pickupgridview',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview.caption',
                         info:'',
@@ -27383,7 +27488,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
@@ -27410,7 +27515,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/releasesubgridview_done',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/releasesubgridview_done',
                     meta: {
                         caption: 'entities.bug.views.releasesubgridview_done.caption',
                         info:'',
@@ -27418,7 +27523,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_done' },
@@ -27465,7 +27570,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/releasesubgridview_done',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/releasesubgridview_done',
                     meta: {
                         caption: 'entities.bug.views.releasesubgridview_done.caption',
                         info:'',
@@ -27473,7 +27578,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_done' },
                         ],
@@ -27500,7 +27605,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/mpickupview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/mpickupview',
                     meta: {
                         caption: 'entities.bug.views.mpickupview.caption',
                         info:'',
@@ -27508,7 +27613,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview' },
@@ -27555,7 +27660,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/mpickupview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/mpickupview',
                     meta: {
                         caption: 'entities.bug.views.mpickupview.caption',
                         info:'',
@@ -27563,7 +27668,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview' },
                         ],
@@ -27590,7 +27695,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/calendareditview',
                     meta: {
                         caption: 'entities.bug.views.calendareditview.caption',
                         info:'',
@@ -27598,7 +27703,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'calendareditview' },
@@ -27645,7 +27750,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/calendareditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/calendareditview',
                     meta: {
                         caption: 'entities.bug.views.calendareditview.caption',
                         info:'',
@@ -27653,7 +27758,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'calendareditview' },
                         ],
@@ -27680,7 +27785,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/bugprojectkanbanview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/bugprojectkanbanview',
                     meta: {
                         caption: 'entities.bug.views.bugprojectkanbanview.caption',
                         info:'',
@@ -27688,7 +27793,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugprojectkanbanview' },
@@ -27735,7 +27840,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/bugprojectkanbanview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/bugprojectkanbanview',
                     meta: {
                         caption: 'entities.bug.views.bugprojectkanbanview.caption',
                         info:'',
@@ -27743,7 +27848,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugprojectkanbanview' },
                         ],
@@ -27770,7 +27875,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/maineditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/maineditview',
                     meta: {
                         caption: 'entities.bug.views.maineditview.caption',
                         info:'',
@@ -27778,7 +27883,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maineditview' },
@@ -27825,7 +27930,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/maineditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/maineditview',
                     meta: {
                         caption: 'entities.bug.views.maineditview.caption',
                         info:'',
@@ -27833,7 +27938,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'maineditview' },
                         ],
@@ -27860,7 +27965,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/resolvechartview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/resolvechartview',
                     meta: {
                         caption: 'entities.bug.views.resolvechartview.caption',
                         info:'',
@@ -27868,7 +27973,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolvechartview' },
@@ -27915,7 +28020,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/resolvechartview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/resolvechartview',
                     meta: {
                         caption: 'entities.bug.views.resolvechartview.caption',
                         info:'',
@@ -27923,7 +28028,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolvechartview' },
                         ],
@@ -27950,7 +28055,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/usr2gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/usr2gridview',
                     meta: {
                         caption: 'entities.bug.views.usr2gridview.caption',
                         info:'',
@@ -27958,7 +28063,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'usr2gridview' },
@@ -28005,7 +28110,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/usr2gridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/usr2gridview',
                     meta: {
                         caption: 'entities.bug.views.usr2gridview.caption',
                         info:'',
@@ -28013,7 +28118,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'usr2gridview' },
                         ],
@@ -28040,7 +28145,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/gridview9_taskrelated',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview9_taskrelated',
                     meta: {
                         caption: 'entities.bug.views.gridview9_taskrelated.caption',
                         info:'',
@@ -28048,7 +28153,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_taskrelated' },
@@ -28095,7 +28200,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/gridview9_taskrelated',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/gridview9_taskrelated',
                     meta: {
                         caption: 'entities.bug.views.gridview9_taskrelated.caption',
                         info:'',
@@ -28103,7 +28208,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_taskrelated' },
                         ],
@@ -28130,7 +28235,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/mpickupview4',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/mpickupview4',
                     meta: {
                         caption: 'entities.bug.views.mpickupview4.caption',
                         info:'',
@@ -28138,7 +28243,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview4' },
@@ -28185,7 +28290,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/mpickupview4',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/mpickupview4',
                     meta: {
                         caption: 'entities.bug.views.mpickupview4.caption',
                         info:'',
@@ -28193,7 +28298,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview4' },
                         ],
@@ -28220,7 +28325,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/editview',
                     meta: {
                         caption: 'entities.bug.views.editview.caption',
                         info:'',
@@ -28228,7 +28333,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -28275,7 +28380,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/editview',
                     meta: {
                         caption: 'entities.bug.views.editview.caption',
                         info:'',
@@ -28283,7 +28388,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -28310,7 +28415,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/plansubgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/plansubgridview',
                     meta: {
                         caption: 'entities.bug.views.plansubgridview.caption',
                         info:'',
@@ -28318,7 +28423,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'plansubgridview' },
@@ -28365,7 +28470,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/plansubgridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/plansubgridview',
                     meta: {
                         caption: 'entities.bug.views.plansubgridview.caption',
                         info:'',
@@ -28373,7 +28478,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'plansubgridview' },
                         ],
@@ -28400,7 +28505,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/closeview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/closeview',
                     meta: {
                         caption: 'entities.bug.views.closeview.caption',
                         info:'',
@@ -28408,7 +28513,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'closeview' },
@@ -28455,7 +28560,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/closeview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/closeview',
                     meta: {
                         caption: 'entities.bug.views.closeview.caption',
                         info:'',
@@ -28463,7 +28568,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'closeview' },
                         ],
@@ -28490,7 +28595,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/bugkanbanview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/bugkanbanview',
                     meta: {
                         caption: 'entities.bug.views.bugkanbanview.caption',
                         info:'',
@@ -28498,7 +28603,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugkanbanview' },
@@ -28545,7 +28650,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/bugkanbanview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/bugkanbanview',
                     meta: {
                         caption: 'entities.bug.views.bugkanbanview.caption',
                         info:'',
@@ -28553,7 +28658,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'bugkanbanview' },
                         ],
@@ -28580,7 +28685,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/tasktobugeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/tasktobugeditview',
                     meta: {
                         caption: 'entities.bug.views.tasktobugeditview.caption',
                         info:'',
@@ -28588,7 +28693,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'tasktobugeditview' },
@@ -28635,7 +28740,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/tasktobugeditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/tasktobugeditview',
                     meta: {
                         caption: 'entities.bug.views.tasktobugeditview.caption',
                         info:'',
@@ -28643,7 +28748,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'tasktobugeditview' },
                         ],
@@ -28670,7 +28775,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/activationview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/activationview',
                     meta: {
                         caption: 'entities.bug.views.activationview.caption',
                         info:'',
@@ -28678,7 +28783,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'activationview' },
@@ -28725,7 +28830,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/activationview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/activationview',
                     meta: {
                         caption: 'entities.bug.views.activationview.caption',
                         info:'',
@@ -28733,7 +28838,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'activationview' },
                         ],
@@ -28760,7 +28865,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/gridview9_storyformbug',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview9_storyformbug',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyformbug.caption',
                         info:'',
@@ -28768,7 +28873,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyformbug' },
@@ -28815,7 +28920,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/gridview9_storyformbug',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/gridview9_storyformbug',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyformbug.caption',
                         info:'',
@@ -28823,7 +28928,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyformbug' },
                         ],
@@ -28850,7 +28955,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/gridview9_storyaffect',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview9_storyaffect',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyaffect.caption',
                         info:'',
@@ -28858,7 +28963,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyaffect' },
@@ -28905,7 +29010,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/gridview9_storyaffect',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/gridview9_storyaffect',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyaffect.caption',
                         info:'',
@@ -28913,7 +29018,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyaffect' },
                         ],
@@ -28940,7 +29045,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/myfavoritegridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/myfavoritegridview',
                     meta: {
                         caption: 'entities.bug.views.myfavoritegridview.caption',
                         info:'',
@@ -28948,7 +29053,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
@@ -28995,7 +29100,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/myfavoritegridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/myfavoritegridview',
                     meta: {
                         caption: 'entities.bug.views.myfavoritegridview.caption',
                         info:'',
@@ -29003,7 +29108,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'myfavoritegridview' },
                         ],
@@ -29030,7 +29135,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/releasesubgridview_undone',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/releasesubgridview_undone',
                     meta: {
                         caption: 'entities.bug.views.releasesubgridview_undone.caption',
                         info:'',
@@ -29038,7 +29143,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_undone' },
@@ -29085,7 +29190,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/releasesubgridview_undone',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/releasesubgridview_undone',
                     meta: {
                         caption: 'entities.bug.views.releasesubgridview_undone.caption',
                         info:'',
@@ -29093,7 +29198,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'releasesubgridview_undone' },
                         ],
@@ -29120,7 +29225,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/stepsinfoeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/stepsinfoeditview',
                     meta: {
                         caption: 'entities.bug.views.stepsinfoeditview.caption',
                         info:'',
@@ -29128,7 +29233,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'stepsinfoeditview' },
@@ -29175,7 +29280,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/stepsinfoeditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/stepsinfoeditview',
                     meta: {
                         caption: 'entities.bug.views.stepsinfoeditview.caption',
                         info:'',
@@ -29183,7 +29288,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'stepsinfoeditview' },
                         ],
@@ -29210,7 +29315,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/testreportsubgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/testreportsubgridview',
                     meta: {
                         caption: 'entities.bug.views.testreportsubgridview.caption',
                         info:'',
@@ -29218,7 +29323,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testreportsubgridview' },
@@ -29265,7 +29370,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/testreportsubgridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/testreportsubgridview',
                     meta: {
                         caption: 'entities.bug.views.testreportsubgridview.caption',
                         info:'',
@@ -29273,7 +29378,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'testreportsubgridview' },
                         ],
@@ -29300,7 +29405,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/resolveview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/resolveview',
                     meta: {
                         caption: 'entities.bug.views.resolveview.caption',
                         info:'',
@@ -29308,7 +29413,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolveview' },
@@ -29355,7 +29460,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/resolveview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/resolveview',
                     meta: {
                         caption: 'entities.bug.views.resolveview.caption',
                         info:'',
@@ -29363,7 +29468,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'resolveview' },
                         ],
@@ -29390,7 +29495,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/pickupgridview4',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/pickupgridview4',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview4.caption',
                         info:'',
@@ -29398,7 +29503,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview4' },
@@ -29445,7 +29550,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/pickupgridview4',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/pickupgridview4',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview4.caption',
                         info:'',
@@ -29453,7 +29558,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview4' },
                         ],
@@ -29480,7 +29585,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/gridview9_myassignedtome',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview9_myassignedtome',
                     meta: {
                         caption: 'entities.bug.views.gridview9_myassignedtome.caption',
                         info:'',
@@ -29488,7 +29593,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
@@ -29535,7 +29640,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/gridview9_myassignedtome',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/gridview9_myassignedtome',
                     meta: {
                         caption: 'entities.bug.views.gridview9_myassignedtome.caption',
                         info:'',
@@ -29543,7 +29648,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_myassignedtome' },
                         ],
@@ -29570,7 +29675,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/projectneweditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/projectneweditview',
                     meta: {
                         caption: 'entities.bug.views.projectneweditview.caption',
                         info:'',
@@ -29578,7 +29683,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectneweditview' },
@@ -29625,7 +29730,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/projectneweditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/projectneweditview',
                     meta: {
                         caption: 'entities.bug.views.projectneweditview.caption',
                         info:'',
@@ -29633,7 +29738,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectneweditview' },
                         ],
@@ -29660,7 +29765,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/projectgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/projectgridview',
                     meta: {
                         caption: 'entities.bug.views.projectgridview.caption',
                         info:'',
@@ -29668,7 +29773,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectgridview' },
@@ -29715,7 +29820,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/projectgridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/projectgridview',
                     meta: {
                         caption: 'entities.bug.views.projectgridview.caption',
                         info:'',
@@ -29723,7 +29828,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectgridview' },
                         ],
@@ -29750,7 +29855,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/casetobugeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/casetobugeditview',
                     meta: {
                         caption: 'entities.bug.views.casetobugeditview.caption',
                         info:'',
@@ -29758,7 +29863,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'casetobugeditview' },
@@ -29805,7 +29910,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/casetobugeditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/casetobugeditview',
                     meta: {
                         caption: 'entities.bug.views.casetobugeditview.caption',
                         info:'',
@@ -29813,7 +29918,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'casetobugeditview' },
                         ],
@@ -29840,7 +29945,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/buildsubgridview_done',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/buildsubgridview_done',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_done.caption',
                         info:'',
@@ -29848,7 +29953,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_done' },
@@ -29895,7 +30000,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/buildsubgridview_done',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/buildsubgridview_done',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_done.caption',
                         info:'',
@@ -29903,7 +30008,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_done' },
                         ],
@@ -29930,7 +30035,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/projectbugsgridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/projectbugsgridview',
                     meta: {
                         caption: 'entities.bug.views.projectbugsgridview.caption',
                         info:'',
@@ -29938,7 +30043,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectbugsgridview' },
@@ -29985,7 +30090,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/projectbugsgridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/projectbugsgridview',
                     meta: {
                         caption: 'entities.bug.views.projectbugsgridview.caption',
                         info:'',
@@ -29993,7 +30098,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'projectbugsgridview' },
                         ],
@@ -30020,7 +30125,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/confirmview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/confirmview',
                     meta: {
                         caption: 'entities.bug.views.confirmview.caption',
                         info:'',
@@ -30028,7 +30133,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'confirmview' },
@@ -30075,7 +30180,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/confirmview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/confirmview',
                     meta: {
                         caption: 'entities.bug.views.confirmview.caption',
                         info:'',
@@ -30083,7 +30188,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'confirmview' },
                         ],
@@ -30110,7 +30215,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/dashboardmaineditview9',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/dashboardmaineditview9',
                     meta: {
                         caption: 'entities.bug.views.dashboardmaineditview9.caption',
                         info:'',
@@ -30118,7 +30223,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'dashboardmaineditview9' },
@@ -30165,7 +30270,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/dashboardmaineditview9',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/dashboardmaineditview9',
                     meta: {
                         caption: 'entities.bug.views.dashboardmaineditview9.caption',
                         info:'',
@@ -30173,7 +30278,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'dashboardmaineditview9' },
                         ],
@@ -30200,7 +30305,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
                         info:'',
@@ -30208,7 +30313,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
@@ -30255,7 +30360,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/pickupgridview_buildlinkresolvedbugs',
                     meta: {
                         caption: 'entities.bug.views.pickupgridview_buildlinkresolvedbugs.caption',
                         info:'',
@@ -30263,7 +30368,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'pickupgridview_buildlinkresolvedbugs' },
                         ],
@@ -30290,7 +30395,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/buildsubgridview_new',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/buildsubgridview_new',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_new.caption',
                         info:'',
@@ -30298,7 +30403,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new' },
@@ -30345,7 +30450,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/buildsubgridview_new',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/buildsubgridview_new',
                     meta: {
                         caption: 'entities.bug.views.buildsubgridview_new.caption',
                         info:'',
@@ -30353,7 +30458,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'buildsubgridview_new' },
                         ],
@@ -30380,7 +30485,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/todoeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/todoeditview',
                     meta: {
                         caption: 'entities.bug.views.todoeditview.caption',
                         info:'',
@@ -30388,7 +30493,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'todoeditview' },
@@ -30435,7 +30540,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/todoeditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/todoeditview',
                     meta: {
                         caption: 'entities.bug.views.todoeditview.caption',
                         info:'',
@@ -30443,7 +30548,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'todoeditview' },
                         ],
@@ -30470,7 +30575,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview',
                     meta: {
                         caption: 'entities.bug.views.gridview.caption',
                         info:'',
@@ -30478,7 +30583,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -30525,7 +30630,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/gridview',
                     meta: {
                         caption: 'entities.bug.views.gridview.caption',
                         info:'',
@@ -30533,7 +30638,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
@@ -30560,7 +30665,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/mpickupview2',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/mpickupview2',
                     meta: {
                         caption: 'entities.bug.views.mpickupview2.caption',
                         info:'',
@@ -30568,7 +30673,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview2' },
@@ -30615,7 +30720,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/mpickupview2',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/mpickupview2',
                     meta: {
                         caption: 'entities.bug.views.mpickupview2.caption',
                         info:'',
@@ -30623,7 +30728,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mpickupview2' },
                         ],
@@ -30650,7 +30755,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/gridview9_storyrelated',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview9_storyrelated',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyrelated.caption',
                         info:'',
@@ -30658,7 +30763,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
@@ -30705,7 +30810,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/gridview9_storyrelated',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/gridview9_storyrelated',
                     meta: {
                         caption: 'entities.bug.views.gridview9_storyrelated.caption',
                         info:'',
@@ -30713,7 +30818,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_storyrelated' },
                         ],
@@ -30740,7 +30845,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/gridview9_assignedtome',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.bug.views.gridview9_assignedtome.caption',
                         info:'',
@@ -30748,7 +30853,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
@@ -30795,7 +30900,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/gridview9_assignedtome',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/gridview9_assignedtome',
                     meta: {
                         caption: 'entities.bug.views.gridview9_assignedtome.caption',
                         info:'',
@@ -30803,7 +30908,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
                         ],
@@ -30830,7 +30935,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/editview_1162',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/editview_1162',
                     meta: {
                         caption: 'entities.bug.views.editview_1162.caption',
                         info:'',
@@ -30838,7 +30943,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_1162' },
@@ -30885,7 +30990,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/editview_1162',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/editview_1162',
                     meta: {
                         caption: 'entities.bug.views.editview_1162.caption',
                         info:'',
@@ -30893,7 +30998,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'editview_1162' },
                         ],
@@ -30920,7 +31025,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/storytobugeditview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/storytobugeditview',
                     meta: {
                         caption: 'entities.bug.views.storytobugeditview.caption',
                         info:'',
@@ -30928,7 +31033,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'storytobugeditview' },
@@ -30975,7 +31080,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/storytobugeditview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/storytobugeditview',
                     meta: {
                         caption: 'entities.bug.views.storytobugeditview.caption',
                         info:'',
@@ -30983,7 +31088,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'storytobugeditview' },
                         ],
@@ -31010,7 +31115,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/totalopenedchartview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/totalopenedchartview',
                     meta: {
                         caption: 'entities.bug.views.totalopenedchartview.caption',
                         info:'',
@@ -31018,7 +31123,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'totalopenedchartview' },
@@ -31065,7 +31170,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/totalopenedchartview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/totalopenedchartview',
                     meta: {
                         caption: 'entities.bug.views.totalopenedchartview.caption',
                         info:'',
@@ -31073,7 +31178,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'totalopenedchartview' },
                         ],
@@ -31100,7 +31205,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/bugs/:bug?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/bugs/:bug?/views/mainmygridview',
                     meta: {
                         caption: 'entities.bug.views.mainmygridview.caption',
                         info:'',
@@ -31108,7 +31213,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
@@ -31155,7 +31260,7 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'accounts/:account?/bugs/:bug?/views/mainmygridview',
+                    path: 'sysaccounts/:sysaccount?/bugs/:bug?/views/mainmygridview',
                     meta: {
                         caption: 'entities.bug.views.mainmygridview.caption',
                         info:'',
@@ -31163,7 +31268,7 @@ const router = new Router({
                         iconCls: 'fa fa-bug',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'bugs', parameterName: 'bug' },
                             { pathName: 'views', parameterName: 'mainmygridview' },
                         ],
@@ -31190,13 +31295,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/projectmodules/:projectmodule?/views/treeexpview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/projectmodules/:projectmodule?/views/treeexpview',
                     meta: {
                         caption: 'entities.projectmodule.views.treeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'projectmodules', parameterName: 'projectmodule' },
                             { pathName: 'views', parameterName: 'treeexpview' },
@@ -31238,13 +31343,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/projectmodules/:projectmodule?/views/maingridview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/projectmodules/:projectmodule?/views/maingridview',
                     meta: {
                         caption: 'entities.projectmodule.views.maingridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'projectmodules', parameterName: 'projectmodule' },
                             { pathName: 'views', parameterName: 'maingridview' },
@@ -31286,13 +31391,13 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/projects/:project?/projectmodules/:projectmodule?/views/quickcfgview',
+                    path: 'sysaccounts/:sysaccount?/projects/:project?/projectmodules/:projectmodule?/views/quickcfgview',
                     meta: {
                         caption: 'entities.projectmodule.views.quickcfgview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'projects', parameterName: 'project' },
                             { pathName: 'projectmodules', parameterName: 'projectmodule' },
                             { pathName: 'views', parameterName: 'quickcfgview' },
@@ -31334,7 +31439,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productreleases/:productrelease?/views/quickcreateview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productreleases/:productrelease?/views/quickcreateview',
                     meta: {
                         caption: 'entities.productrelease.views.quickcreateview.caption',
                         info:'',
@@ -31342,7 +31447,7 @@ const router = new Router({
                         iconCls: 'fa fa-flag-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productreleases', parameterName: 'productrelease' },
                             { pathName: 'views', parameterName: 'quickcreateview' },
@@ -31388,7 +31493,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productreleases/:productrelease?/views/optionview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productreleases/:productrelease?/views/optionview',
                     meta: {
                         caption: 'entities.productrelease.views.optionview.caption',
                         info:'',
@@ -31396,7 +31501,7 @@ const router = new Router({
                         iconCls: 'fa fa-flag-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productreleases', parameterName: 'productrelease' },
                             { pathName: 'views', parameterName: 'optionview' },
@@ -31442,7 +31547,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productreleases/:productrelease?/views/maininfoview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productreleases/:productrelease?/views/maininfoview',
                     meta: {
                         caption: 'entities.productrelease.views.maininfoview.caption',
                         info:'',
@@ -31450,7 +31555,7 @@ const router = new Router({
                         iconCls: 'fa fa-flag-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productreleases', parameterName: 'productrelease' },
                             { pathName: 'views', parameterName: 'maininfoview' },
@@ -31496,7 +31601,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productreleases/:productrelease?/views/gridview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productreleases/:productrelease?/views/gridview',
                     meta: {
                         caption: 'entities.productrelease.views.gridview.caption',
                         info:'',
@@ -31504,7 +31609,7 @@ const router = new Router({
                         iconCls: 'fa fa-flag-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productreleases', parameterName: 'productrelease' },
                             { pathName: 'views', parameterName: 'gridview' },
@@ -31550,7 +31655,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productreleases/:productrelease?/views/editview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productreleases/:productrelease?/views/editview',
                     meta: {
                         caption: 'entities.productrelease.views.editview.caption',
                         info:'',
@@ -31558,7 +31663,7 @@ const router = new Router({
                         iconCls: 'fa fa-flag-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productreleases', parameterName: 'productrelease' },
                             { pathName: 'views', parameterName: 'editview' },
@@ -31604,7 +31709,7 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'accounts/:account?/products/:product?/productreleases/:productrelease?/views/maintabexpview',
+                    path: 'sysaccounts/:sysaccount?/products/:product?/productreleases/:productrelease?/views/maintabexpview',
                     meta: {
                         caption: 'entities.productrelease.views.maintabexpview.caption',
                         info:'',
@@ -31612,7 +31717,7 @@ const router = new Router({
                         iconCls: 'fa fa-flag-o',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'accounts', parameterName: 'account' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'productreleases', parameterName: 'productrelease' },
                             { pathName: 'views', parameterName: 'maintabexpview' },
@@ -37494,7 +37599,7 @@ const router = new Router({
                 {
                     path: 'views/sysuserchangepasswordeditview',
                     meta: {
-                        caption: 'entities.account.views.changepasswordeditview.caption',
+                        caption: 'entities.sysaccount.views.changepasswordeditview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -39081,6 +39186,19 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/sysusercalendarview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.calendarview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysusercalendarview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/todocloseview',
                     meta: {
                         caption: 'entities.todo.views.closeview.caption',
@@ -39157,6 +39275,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'releaseoptionview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/sysuserlistview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.listview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysuserlistview' },
                         ],
                         requireAuth: true,
                     },
@@ -41139,6 +41270,19 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/sysuserprojectreporttabexpview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.projectreporttabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysuserprojectreporttabexpview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/productmaintabexpview',
                     meta: {
                         caption: 'entities.product.views.maintabexpview.caption',
@@ -41286,6 +41430,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'casemainnewview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/sysusercalendarexpview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.calendarexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysusercalendarexpview' },
                         ],
                         requireAuth: true,
                     },
@@ -43024,9 +43181,22 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/sysusermywork',
+                    meta: {
+                        caption: 'entities.sysaccount.views.mywork.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysusermywork' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/sysusermyfavoritestabexpview',
                     meta: {
-                        caption: 'entities.account.views.myfavoritestabexpview.caption',
+                        caption: 'entities.sysaccount.views.myfavoritestabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -43790,6 +43960,19 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/sysuserlistview9',
+                    meta: {
+                        caption: 'entities.sysaccount.views.listview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysuserlistview9' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/productplaneditview',
                     meta: {
                         caption: 'entities.productplan.views.editview.caption',
@@ -43892,6 +44075,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'productsumstorysumgridview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/sysuserlistview9personinfo',
+                    meta: {
+                        caption: 'entities.sysaccount.views.listview9personinfo.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysuserlistview9personinfo' },
                         ],
                         requireAuth: true,
                     },
@@ -44004,7 +44200,7 @@ const router = new Router({
                 {
                     path: 'views/sysusertabexpview',
                     meta: {
-                        caption: 'entities.account.views.tabexpview.caption',
+                        caption: 'entities.sysaccount.views.tabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },

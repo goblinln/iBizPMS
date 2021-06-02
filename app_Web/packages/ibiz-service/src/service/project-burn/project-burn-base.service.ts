@@ -89,9 +89,9 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
      * @memberof ProjectBurnService
      */
     async ComputeBurn(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.projectburn) {
+        if (_context.sysaccount && _context.project && _context.projectburn) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
         }
         if (_context.project && _context.projectburn) {
         _data = await this.obtainMinor(_context, _data);
@@ -108,8 +108,8 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
      * @memberof ProjectBurnService
      */
     async FetchEstimate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/projectburns/fetchestimate`, _data);
+        if (_context.sysaccount && _context.project && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectburns/fetchestimate`, _data);
         }
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectburns/fetchestimate`, _data);
@@ -127,9 +127,9 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
      * @memberof ProjectBurnServiceBase
      */
     public async ComputeBurnBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.account && _context.project && true){
+        if(_context.sysaccount && _context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/projectburns/computeburnbatch`,_data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectburns/computeburnbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);

@@ -812,13 +812,13 @@
         "getPortletPSAppView" : {
           "accUserMode" : 2,
           "caption" : "我的工作",
-          "codeName" : "IbzMyTerritoryListView9PersonInfo",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryListView9PersonInfo.json",
+          "codeName" : "SysUserListView9PersonInfo",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserListView9PersonInfo.json",
           "mDCtrlActiveMode" : 2,
-          "name" : "IbzMyTerritoryListView9PersonInfo",
+          "name" : "SysUserListView9PersonInfo",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
           },
           "getPSAppViewEngines" : [ {
             "engineCat" : "VIEW",
@@ -836,7 +836,7 @@
               "modelref" : true,
               "id" : "create"
             },
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSLISTS/PersonInfoMyWork.json",
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount/PSLISTS/PersonInfoMyWork.json",
             "getFetchPSControlAction" : {
               "modelref" : true,
               "id" : "fetch"
@@ -861,12 +861,12 @@
               } ],
               "codeName" : "PersonInfoMianBan",
               "controlType" : "PANEL",
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSPANELS/PersonInfoMianBan.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount/PSPANELS/PersonInfoMianBan.json",
               "layoutMode" : "TABLE_24COL",
               "logicName" : "个人信息个人贡献项布局面板",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getPSControlParam" : { },
               "getPSLayout" : {
@@ -1225,13 +1225,13 @@
                 "showCaption" : true
               } ],
               "name" : "list_itempanel",
-              "modelid" : "c6bb9e7ace35f2d2ef0a9cf787f4fbd7",
+              "modelid" : "3223fa3597db7c949f8240bd18e5894a",
               "modeltype" : "PSSYSVIEWPANEL"
             },
             "logicName" : "PersonInfoMyWork",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
@@ -1245,18 +1245,18 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 }
               }, {
                 "actionType" : "DEDATASET",
                 "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "FetchPersonInfo"
+                  "id" : "CountMyContribution"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 }
               }, {
                 "actionName" : "Remove",
@@ -1269,7 +1269,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 }
               }, {
                 "actionName" : "Get",
@@ -1282,7 +1282,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 }
               }, {
                 "actionName" : "Create",
@@ -1295,7 +1295,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 }
               } ],
               "userDRAction" : "READ",
@@ -1315,10 +1315,10 @@
               "name" : "mybugs"
             }, {
               "dataType" : 9,
-              "name" : "mytasks"
+              "name" : "mytodocnt"
             }, {
               "dataType" : 9,
-              "name" : "mytodocnt"
+              "name" : "mytasks"
             }, {
               "dataType" : 9,
               "name" : "mystorys"
@@ -1326,15 +1326,15 @@
               "dataType" : 25,
               "name" : "srfkey",
               "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
+                "name" : "USERID",
+                "codeName" : "UserId"
               }
             }, {
               "dataType" : 25,
               "name" : "srfmajortext",
               "getPSAppDEField" : {
-                "name" : "REALNAME",
-                "codeName" : "Realname"
+                "name" : "PERSONNAME",
+                "codeName" : "PersonName"
               }
             } ],
             "pagingSize" : 1000,
@@ -1355,11 +1355,11 @@
             "noSort" : false,
             "showHeader" : true,
             "name" : "list",
-            "modelid" : "4dd517f089050019617f247c2be7bb2b",
+            "modelid" : "f1d414c8927c86c7756bbb252b5d3ba5",
             "modeltype" : "PSDELIST"
           } ],
           "getPSDEViewCodeName" : "ListView9PersonInfo",
-          "getPSDEViewId" : "41e5517fbc9cd429c0b589e36d353d43",
+          "getPSDEViewId" : "e6a795eabff8c1508bbec7dcd587d5f9",
           "getPSViewLayoutPanel" : {
             "codeName" : "Layoutpanel",
             "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -1367,7 +1367,7 @@
             "name" : "layoutpanel",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
             },
             "getPSControlParam" : { },
             "layoutPanel" : true,
@@ -1380,7 +1380,7 @@
           "enableDP" : true,
           "enableFilter" : false,
           "showCaptionBar" : false,
-          "modelid" : "12b93621cdf2d44e4bf3d664c17adb44",
+          "modelid" : "aea3063898bfd7a75a5ba0a2cd528861",
           "modeltype" : "PSAPPDEVIEW"
         },
         "portletType" : "VIEW",

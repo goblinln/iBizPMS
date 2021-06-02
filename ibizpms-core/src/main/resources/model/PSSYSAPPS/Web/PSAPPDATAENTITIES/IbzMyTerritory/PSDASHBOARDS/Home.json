@@ -115,13 +115,13 @@
           "getPortletPSAppView" : {
             "accUserMode" : 2,
             "caption" : "我的工作",
-            "codeName" : "IbzMyTerritoryListView9",
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMyTerritoryListView9.json",
+            "codeName" : "SysUserListView9",
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserListView9.json",
             "mDCtrlActiveMode" : 2,
-            "name" : "IbzMyTerritoryListView9",
+            "name" : "SysUserListView9",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -145,7 +145,7 @@
                 "modelref" : true,
                 "id" : "create"
               },
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSLISTS/MyWork.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount/PSLISTS/MyWork.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -158,7 +158,7 @@
               "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
               "getItemPSLayoutPanel" : {
                 "getAllPSPanelFields" : [ {
-                  "id" : "account"
+                  "id" : "username"
                 }, {
                   "id" : "mytasks"
                 }, {
@@ -178,12 +178,12 @@
                 } ],
                 "codeName" : "MyWork2",
                 "controlType" : "PANEL",
-                "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSPANELS/MyWork2.json",
+                "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount/PSPANELS/MyWork2.json",
                 "layoutMode" : "TABLE_24COL",
                 "logicName" : "我的工作项布局面板",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 },
                 "getPSControlParam" : { },
                 "getPSLayout" : {
@@ -219,14 +219,10 @@
                     "getPSPanelItems" : [ {
                       "itemStyle" : "DEFAULT",
                       "itemType" : "FIELD",
-                      "name" : "account",
+                      "name" : "username",
                       "getPSEditor" : {
                         "editorType" : "SPAN",
-                        "name" : "account",
-                        "getPSAppCodeList" : {
-                          "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-                        },
+                        "name" : "username",
                         "editable" : false,
                         "enableLinkView" : false
                       },
@@ -237,8 +233,7 @@
                       "getPSSysCss" : {
                         "cssName" : "panelitem-20px"
                       },
-                      "viewFieldName" : "account",
-                      "convertToCodeItemText" : true,
+                      "viewFieldName" : "username",
                       "hidden" : false,
                       "showCaption" : false
                     } ],
@@ -661,13 +656,13 @@
                   "showCaption" : true
                 } ],
                 "name" : "list_itempanel",
-                "modelid" : "497dee1fab50ba3fcac6f261fed935cc",
+                "modelid" : "c64bedc8276dde3a6895e805c7918d2c",
                 "modeltype" : "PSSYSVIEWPANEL"
               },
               "logicName" : "MyWork",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -681,18 +676,18 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
                   "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "FetchMyWork"
+                    "id" : "CountMyWork"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -705,7 +700,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -718,7 +713,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -731,7 +726,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -745,47 +740,47 @@
               },
               "getPSDEListDataItems" : [ {
                 "dataType" : 9,
+                "name" : "mystorys"
+              }, {
+                "dataType" : 9,
                 "name" : "projects"
               }, {
                 "dataType" : 25,
-                "name" : "myebugs"
-              }, {
-                "dataType" : 25,
-                "name" : "account"
-              }, {
-                "dataType" : 25,
-                "name" : "myetasks"
-              }, {
-                "dataType" : 9,
-                "name" : "mybugs"
+                "name" : "eprojects"
               }, {
                 "dataType" : 9,
                 "name" : "products"
               }, {
                 "dataType" : 9,
-                "name" : "mystorys"
+                "name" : "mybugs"
               }, {
                 "dataType" : 9,
                 "name" : "mytasks"
               }, {
                 "dataType" : 25,
-                "name" : "eprojects"
+                "name" : "username"
               }, {
                 "dataType" : 25,
                 "name" : "realname"
               }, {
                 "dataType" : 25,
+                "name" : "myebugs"
+              }, {
+                "dataType" : 25,
+                "name" : "myetasks"
+              }, {
+                "dataType" : 25,
                 "name" : "srfkey",
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "USERID",
+                  "codeName" : "UserId"
                 }
               }, {
                 "dataType" : 25,
                 "name" : "srfmajortext",
                 "getPSAppDEField" : {
-                  "name" : "REALNAME",
-                  "codeName" : "Realname"
+                  "name" : "PERSONNAME",
+                  "codeName" : "PersonName"
                 }
               } ],
               "pagingSize" : 1000,
@@ -806,11 +801,11 @@
               "noSort" : false,
               "showHeader" : true,
               "name" : "list",
-              "modelid" : "58dafe87c750d665463bd6357f644c98",
+              "modelid" : "a3f353958e6bdddeebeedaa4d8e97814",
               "modeltype" : "PSDELIST"
             } ],
             "getPSDEViewCodeName" : "ListView9",
-            "getPSDEViewId" : "ca9fdc16d8975c794822d69d579bdfd6",
+            "getPSDEViewId" : "09d4fd1f1b7f1b5224aa14da7c1e1d54",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDELISTVIEW9_STYLE2",
@@ -818,7 +813,7 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
@@ -831,7 +826,7 @@
             "enableDP" : true,
             "enableFilter" : false,
             "showCaptionBar" : false,
-            "modelid" : "ecc0369834ef12678e1c34ca782aad23",
+            "modelid" : "aaad67b6eadc2247803c31fc1b3be5b9",
             "modeltype" : "PSAPPDEVIEW"
           },
           "portletType" : "VIEW",
@@ -1236,7 +1231,7 @@
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1547,7 +1542,7 @@
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1942,7 +1937,7 @@
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
                 },
                 "getMinorPSAppDataEntity" : {
                   "modelref" : true,
@@ -3089,7 +3084,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3156,7 +3151,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3223,7 +3218,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3286,7 +3281,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3353,7 +3348,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3420,7 +3415,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3487,7 +3482,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3550,7 +3545,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3617,7 +3612,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -3684,7 +3679,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4295,7 +4290,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4337,7 +4332,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4379,7 +4374,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4421,7 +4416,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4463,7 +4458,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4505,7 +4500,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4547,7 +4542,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -4652,7 +4647,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -5253,7 +5248,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -5966,7 +5961,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -6062,7 +6057,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -6661,7 +6656,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -6703,7 +6698,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -6795,7 +6790,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -6987,7 +6982,6 @@
             } ],
             "getPSAppViewRefs" : [ {
               "name" : "NEWDATA",
-              "realOpenMode" : "DRAWER_TOP",
               "realTitle" : "任务主数据看板视图",
               "getRefPSAppView" : {
                 "modelref" : true,
@@ -6996,7 +6990,6 @@
               }
             }, {
               "name" : "EDITDATA",
-              "realOpenMode" : "DRAWER_TOP",
               "realTitle" : "任务主数据看板视图",
               "getRefPSAppView" : {
                 "modelref" : true,
@@ -7458,7 +7451,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
@@ -7529,7 +7522,7 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,

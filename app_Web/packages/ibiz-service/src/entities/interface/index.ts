@@ -1,6 +1,6 @@
 export * from './iproduct-plan';
 export * from './itest-case';
-export * from './iaccount';
+export * from './isys-account';
 export * from './iproduct';
 export * from './iproject-burn';
 export * from './itest';

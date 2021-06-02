@@ -37,11 +37,11 @@ export class GlobalService {
     /**
      * 系统用户服务
      *
-     * @return {Account}
+     * @return {SysAccount}
      * @memberof GlobalService
      */
-    async getAccountService() {
-        return (await import('./account/account.service')).default.getInstance();
+    async getSysAccountService() {
+        return (await import('./sys-account/sys-account.service')).default.getInstance();
     }
     /**
      * 产品服务

@@ -6,7 +6,7 @@
   "name" : "SysUserMyFavoritesTabExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -19,7 +19,7 @@
     "name" : "tabexppanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:tabviewpanel",
@@ -62,7 +62,7 @@
       "name" : "tabviewpanel",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL"
@@ -2848,7 +2848,7 @@
           "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
           },
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
@@ -2890,7 +2890,7 @@
           "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
           },
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
@@ -2982,7 +2982,7 @@
           "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
           },
           "getMinorPSAppDataEntity" : {
             "modelref" : true,
@@ -3011,7 +3011,7 @@
       "name" : "tabviewpanel2",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL2"
@@ -3030,7 +3030,7 @@
       "name" : "tabviewpanel4",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL4"
@@ -3049,7 +3049,7 @@
       "name" : "tabviewpanel3",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
       },
       "getPSControlParam" : {
         "id" : "TABVIEWPANEL3"
@@ -3079,7 +3079,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Account.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

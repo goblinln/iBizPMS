@@ -89,8 +89,8 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
      * @memberof ProductLifeService
      */
     async FetchRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productlives/fetchroadmap`, _data);
+        if (_context.sysaccount && _context.product && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/productlives/fetchroadmap`, _data);
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
@@ -106,8 +106,8 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
      * @memberof ProductLifeService
      */
     async FetchRoadMapYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.product && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productlives/fetchroadmapyear`, _data);
+        if (_context.sysaccount && _context.product && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/productlives/fetchroadmapyear`, _data);
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);

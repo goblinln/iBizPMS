@@ -56,7 +56,7 @@ public class HistoryResource {
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -117,7 +117,7 @@ public class HistoryResource {
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户Bug系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户Bug系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserBugAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -133,7 +133,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据系统用户产品系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户产品系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProductAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -149,7 +149,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -165,7 +165,7 @@ public class HistoryResource {
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户需求系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户需求系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserStoryAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -181,7 +181,7 @@ public class HistoryResource {
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户任务系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户任务系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserTaskAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -197,7 +197,7 @@ public class HistoryResource {
 
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据系统用户测试版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户测试版本系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserTestTaskAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -213,7 +213,7 @@ public class HistoryResource {
 
     @PreAuthorize("@TodoRuntime.test(#todo_id, 'READ')")
 	@ApiOperation(value = "根据系统用户待办系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户待办系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/todos/{todo_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserTodoAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -422,7 +422,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据系统用户产品版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户产品版本系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProductBuildAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -439,7 +439,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据系统用户产品产品计划系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户产品产品计划系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProductProductPlanAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -456,7 +456,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
 	@ApiOperation(value = "根据系统用户产品需求系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户产品需求系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/products/{product_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProductStoryAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -473,7 +473,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目产品计划系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目产品计划系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectProductPlanAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -490,7 +490,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目Bug系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目Bug系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectBugAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -507,7 +507,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目版本系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/builds/{build_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectBuildAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -524,7 +524,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目任务系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目任务系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectTaskAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -541,7 +541,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目需求系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目需求系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectStoryAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -558,7 +558,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目测试报告系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目测试报告系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/testreports/{testreport_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/testreports/{testreport_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectTestReportAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;
@@ -575,7 +575,7 @@ public class HistoryResource {
 
     @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
 	@ApiOperation(value = "根据系统用户项目测试版本系统日志获取DEFAULT", tags = {"操作历史" } ,notes = "根据系统用户项目测试版本系统日志获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/accounts/{sysuser_id}/projects/{project_id}/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/testtasks/{testtask_id}/actions/{action_id}/histories/fetchdefault")
 	public ResponseEntity<List<HistoryDTO>> fetchDefaultBySysUserProjectTestTaskAction(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id,@RequestBody HistorySearchContext context) {
         context.setN_action_eq(action_id);
         Page<History> domains = historyService.searchDefault(context) ;

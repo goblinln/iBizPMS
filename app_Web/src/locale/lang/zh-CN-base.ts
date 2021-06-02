@@ -1,6 +1,6 @@
 import productplan_zh_CN from '@locale/lanres/entities/product-plan/product-plan_zh_CN';
 import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
-import account_zh_CN from '@locale/lanres/entities/account/account_zh_CN';
+import sysaccount_zh_CN from '@locale/lanres/entities/sys-account/sys-account_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
 import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
@@ -418,7 +418,7 @@ function getAppLocale(){
         entities: {
             'productplan': productplan_zh_CN(),
             'testcase': testcase_zh_CN(),
-            'account': account_zh_CN(),
+            'sysaccount': sysaccount_zh_CN(),
             'product': product_zh_CN(),
             'projectburn': projectburn_zh_CN(),
             'test': test_zh_CN(),

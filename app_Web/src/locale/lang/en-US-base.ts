@@ -1,6 +1,6 @@
 import productplan_en_US from '@locale/lanres/entities/product-plan/product-plan_en_US';
 import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
-import account_en_US from '@locale/lanres/entities/account/account_en_US';
+import sysaccount_en_US from '@locale/lanres/entities/sys-account/sys-account_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
 import test_en_US from '@locale/lanres/entities/test/test_en_US';
@@ -420,7 +420,7 @@ function getAppLocale(){
         entities: {
             'productplan': productplan_en_US(),
             'testcase': testcase_en_US(),
-            'account': account_en_US(),
+            'sysaccount': sysaccount_en_US(),
             'product': product_en_US(),
             'projectburn': projectburn_en_US(),
             'test': test_en_US(),

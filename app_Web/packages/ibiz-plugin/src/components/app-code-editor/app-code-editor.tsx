@@ -152,10 +152,9 @@ export class AppCodeEditor extends Vue {
      * @memberof AppCodeEditor
      */
     registerEvent() {
-        this.codeEditor.onDidChangeModelContent(
+        this.codeEditor.onDidBlurEditorText(
             //数据发生改变
             (event: any) => {
-                console.log(this.codeEditor.getValue());
                 this.$emit('change', this.codeEditor.getValue());
             },
         );

@@ -1,0 +1,717 @@
+{
+  "accUserMode" : 2,
+  "caption" : "我的工作",
+  "codeName" : "SysUserListView9",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserListView9.json",
+  "mDCtrlActiveMode" : 2,
+  "name" : "SysUserListView9",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "ListView9",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "LIST",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_account_eq",
+    "name" : "n_account_eq",
+    "value" : "srfloginname",
+    "rawValue" : false
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MyWork",
+    "controlType" : "LIST",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount/PSLISTS/MyWork.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+    "getItemPSLayoutPanel" : {
+      "getAllPSPanelFields" : [ {
+        "id" : "username"
+      }, {
+        "id" : "mytasks"
+      }, {
+        "id" : "myetasks"
+      }, {
+        "id" : "mybugs"
+      }, {
+        "id" : "myebugs"
+      }, {
+        "id" : "mystorys"
+      }, {
+        "id" : "projects"
+      }, {
+        "id" : "eprojects"
+      }, {
+        "id" : "products"
+      } ],
+      "codeName" : "MyWork2",
+      "controlType" : "PANEL",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount/PSPANELS/MyWork2.json",
+      "layoutMode" : "TABLE_24COL",
+      "logicName" : "我的工作项布局面板",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+      },
+      "getPSControlParam" : { },
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "getRootPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container1",
+        "getPSLayout" : {
+          "layout" : "FLEX"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSPanelItems" : [ {
+          "contentWidth" : 230.0,
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container2",
+          "getPSLayout" : {
+            "align" : "flex-start",
+            "layout" : "FLEX",
+            "vAlign" : "flex-start"
+          },
+          "getPSLayoutPos" : {
+            "grow" : -1,
+            "layout" : "FLEX",
+            "width" : 230
+          },
+          "getPSPanelItems" : [ {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "FIELD",
+            "name" : "username",
+            "getPSEditor" : {
+              "editorType" : "SPAN",
+              "name" : "username",
+              "editable" : false,
+              "enableLinkView" : false
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX"
+            },
+            "getPSSysCss" : {
+              "cssName" : "panelitem-20px"
+            },
+            "viewFieldName" : "username",
+            "hidden" : false,
+            "showCaption" : false
+          } ],
+          "getPSSysCss" : {
+            "cssName" : "container-lefttop-margin"
+          },
+          "width" : 230.0,
+          "showCaption" : true
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container3",
+          "getPSLayout" : {
+            "dir" : "column",
+            "layout" : "FLEX"
+          },
+          "getPSLayoutPos" : {
+            "grow" : 1,
+            "layout" : "FLEX"
+          },
+          "getPSPanelItems" : [ {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "CONTAINER",
+            "name" : "container9",
+            "getPSLayout" : {
+              "dir" : "row",
+              "layout" : "FLEX"
+            },
+            "getPSLayoutPos" : {
+              "grow" : -1,
+              "layout" : "FLEX"
+            },
+            "getPSPanelItems" : [ {
+              "contentHeight" : 40.0,
+              "contentType" : "RAW",
+              "height" : 40.0,
+              "itemStyle" : "DEFAULT",
+              "itemType" : "RAWITEM",
+              "name" : "rawitem1",
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "height" : 40,
+                "layout" : "FLEX"
+              },
+              "rawContent" : "今天剩余工作总计",
+              "rawItemHeight" : 40.0,
+              "showCaption" : true
+            } ],
+            "getPSSysCss" : {
+              "cssName" : "container-updown-margin"
+            },
+            "showCaption" : true
+          }, {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "CONTAINER",
+            "name" : "container10",
+            "getPSLayout" : {
+              "align" : "space-around",
+              "layout" : "FLEX",
+              "vAlign" : "flex-start"
+            },
+            "getPSLayoutPos" : {
+              "grow" : 1,
+              "layout" : "FLEX"
+            },
+            "getPSPanelItems" : [ {
+              "itemStyle" : "DEFAULT",
+              "itemType" : "CONTAINER",
+              "name" : "container4",
+              "getPSLayout" : {
+                "align" : "center",
+                "dir" : "column",
+                "layout" : "FLEX",
+                "vAlign" : "center"
+              },
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSPanelItems" : [ {
+                "contentHeight" : 30.0,
+                "contentType" : "RAW",
+                "height" : 30.0,
+                "itemStyle" : "DEFAULT",
+                "itemType" : "RAWITEM",
+                "name" : "rawitem2",
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "height" : 30,
+                  "layout" : "FLEX"
+                },
+                "rawContent" : "我的任务",
+                "rawItemHeight" : 30.0,
+                "showCaption" : true
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "mytasks",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "mytasks",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-marginupdown"
+                },
+                "viewFieldName" : "MYTASKS",
+                "hidden" : false,
+                "showCaption" : false
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "myetasks",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "myetasks",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-red"
+                },
+                "viewFieldName" : "myetasks",
+                "hidden" : false,
+                "showCaption" : false
+              } ],
+              "showCaption" : true
+            }, {
+              "itemStyle" : "DEFAULT",
+              "itemType" : "CONTAINER",
+              "name" : "container5",
+              "getPSLayout" : {
+                "align" : "center",
+                "dir" : "column",
+                "layout" : "FLEX",
+                "vAlign" : "center"
+              },
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSPanelItems" : [ {
+                "contentHeight" : 30.0,
+                "contentType" : "RAW",
+                "height" : 30.0,
+                "itemStyle" : "DEFAULT",
+                "itemType" : "RAWITEM",
+                "name" : "rawitem3",
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "height" : 30,
+                  "layout" : "FLEX"
+                },
+                "rawContent" : "我的bug",
+                "rawItemHeight" : 30.0,
+                "showCaption" : true
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "mybugs",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "mybugs",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-marginupdown"
+                },
+                "viewFieldName" : "MYBUGS",
+                "hidden" : false,
+                "showCaption" : false
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "myebugs",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "myebugs",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-red"
+                },
+                "viewFieldName" : "MYEBUGS",
+                "hidden" : false,
+                "showCaption" : false
+              } ],
+              "showCaption" : true
+            }, {
+              "itemStyle" : "DEFAULT",
+              "itemType" : "CONTAINER",
+              "name" : "container6",
+              "getPSLayout" : {
+                "align" : "center",
+                "dir" : "column",
+                "layout" : "FLEX",
+                "vAlign" : "center"
+              },
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSPanelItems" : [ {
+                "contentHeight" : 30.0,
+                "contentType" : "RAW",
+                "height" : 30.0,
+                "itemStyle" : "DEFAULT",
+                "itemType" : "RAWITEM",
+                "name" : "rawitem4",
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "height" : 30,
+                  "layout" : "FLEX"
+                },
+                "rawContent" : "我的需求",
+                "rawItemHeight" : 30.0,
+                "showCaption" : true
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "mystorys",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "mystorys",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-marginupdown"
+                },
+                "viewFieldName" : "MYSTORYS",
+                "hidden" : false,
+                "showCaption" : false
+              }, {
+                "contentType" : "RAW",
+                "itemStyle" : "DEFAULT",
+                "itemType" : "RAWITEM",
+                "name" : "rawitem7",
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-red"
+                },
+                "rawContent" : "---",
+                "showCaption" : true
+              } ],
+              "showCaption" : true
+            }, {
+              "itemStyle" : "DEFAULT",
+              "itemType" : "CONTAINER",
+              "name" : "container7",
+              "getPSLayout" : {
+                "align" : "center",
+                "dir" : "column",
+                "layout" : "FLEX",
+                "vAlign" : "center"
+              },
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSPanelItems" : [ {
+                "contentHeight" : 30.0,
+                "contentType" : "RAW",
+                "height" : 30.0,
+                "itemStyle" : "DEFAULT",
+                "itemType" : "RAWITEM",
+                "name" : "rawitem5",
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "height" : 30,
+                  "layout" : "FLEX"
+                },
+                "rawContent" : "未关闭的项目",
+                "rawItemHeight" : 30.0,
+                "showCaption" : true
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "projects",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "projects",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-marginupdown"
+                },
+                "viewFieldName" : "PROJECTS",
+                "hidden" : false,
+                "showCaption" : false
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "eprojects",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "eprojects",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-red"
+                },
+                "viewFieldName" : "EPROJECTS",
+                "hidden" : false,
+                "showCaption" : false
+              } ],
+              "showCaption" : true
+            }, {
+              "itemStyle" : "DEFAULT",
+              "itemType" : "CONTAINER",
+              "name" : "container8",
+              "getPSLayout" : {
+                "align" : "center",
+                "dir" : "column",
+                "layout" : "FLEX",
+                "vAlign" : "center"
+              },
+              "getPSLayoutPos" : {
+                "grow" : -1,
+                "layout" : "FLEX"
+              },
+              "getPSPanelItems" : [ {
+                "contentHeight" : 30.0,
+                "contentType" : "RAW",
+                "height" : 30.0,
+                "itemStyle" : "DEFAULT",
+                "itemType" : "RAWITEM",
+                "name" : "rawitem6",
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "height" : 30,
+                  "layout" : "FLEX"
+                },
+                "rawContent" : "未关闭的产品",
+                "rawItemHeight" : 30.0,
+                "showCaption" : true
+              }, {
+                "itemStyle" : "DEFAULT",
+                "itemType" : "FIELD",
+                "name" : "products",
+                "getPSEditor" : {
+                  "editorType" : "SPAN",
+                  "name" : "products",
+                  "editable" : false,
+                  "enableLinkView" : false
+                },
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-marginupdown"
+                },
+                "viewFieldName" : "PRODUCTS",
+                "hidden" : false,
+                "showCaption" : false
+              }, {
+                "contentType" : "RAW",
+                "itemStyle" : "DEFAULT",
+                "itemType" : "RAWITEM",
+                "name" : "rawitem8",
+                "getPSLayoutPos" : {
+                  "grow" : -1,
+                  "layout" : "FLEX"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "text-center-red"
+                },
+                "rawContent" : "---",
+                "showCaption" : true
+              } ],
+              "showCaption" : true
+            } ],
+            "getPSSysCss" : {
+              "cssName" : "container-left-border"
+            },
+            "showCaption" : true
+          } ],
+          "showCaption" : true
+        } ],
+        "getPSSysCss" : {
+          "cssName" : "container-margin-top-7px"
+        },
+        "showCaption" : true
+      } ],
+      "name" : "list_itempanel",
+      "modelid" : "c64bedc8276dde3a6895e805c7918d2c",
+      "modeltype" : "PSSYSVIEWPANEL"
+    },
+    "logicName" : "MyWork",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "CountMyWork"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "LIST"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 9,
+      "name" : "mystorys"
+    }, {
+      "dataType" : 9,
+      "name" : "projects"
+    }, {
+      "dataType" : 25,
+      "name" : "eprojects"
+    }, {
+      "dataType" : 9,
+      "name" : "products"
+    }, {
+      "dataType" : 9,
+      "name" : "mybugs"
+    }, {
+      "dataType" : 9,
+      "name" : "mytasks"
+    }, {
+      "dataType" : 25,
+      "name" : "username"
+    }, {
+      "dataType" : 25,
+      "name" : "realname"
+    }, {
+      "dataType" : 25,
+      "name" : "myebugs"
+    }, {
+      "dataType" : 25,
+      "name" : "myetasks"
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "USERID",
+        "codeName" : "UserId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "PERSONNAME",
+        "codeName" : "PersonName"
+      }
+    } ],
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "list",
+    "modelid" : "a3f353958e6bdddeebeedaa4d8e97814",
+    "modeltype" : "PSDELIST"
+  } ],
+  "getPSDEViewCodeName" : "ListView9",
+  "getPSDEViewId" : "09d4fd1f1b7f1b5224aa14da7c1e1d54",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDELISTVIEW9_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "我的工作",
+  "viewStyle" : "STYLE2",
+  "viewType" : "DELISTVIEW9",
+  "xDataControlName" : "list",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "showCaptionBar" : false,
+  "modelid" : "aaad67b6eadc2247803c31fc1b3be5b9",
+  "modeltype" : "PSAPPDEVIEW"
+}

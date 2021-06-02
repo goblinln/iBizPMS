@@ -82,5 +82,15 @@ public class SysUserFallback implements SysUserFeignClient {
     }
 
 
+    public Page<SysUser> searchMyWork(SysUserSearchContext context) {
+        return null;
+    }
+
+
+    public Page<SysUser> searchPersonInfo(SysUserSearchContext context) {
+        return null;
+    }
+
+
 
 }

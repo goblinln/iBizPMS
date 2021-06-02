@@ -1,6 +1,6 @@
 export * from './product-plan/product-plan-ui-service';
 export * from './test-case/test-case-ui-service';
-export * from './account/account-ui-service';
+export * from './sys-account/sys-account-ui-service';
 export * from './product/product-ui-service';
 export * from './project-burn/project-burn-ui-service';
 export * from './test/test-ui-service';

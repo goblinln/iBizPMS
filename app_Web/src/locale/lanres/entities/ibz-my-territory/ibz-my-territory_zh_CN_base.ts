@@ -157,17 +157,17 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		mywork_list: {
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
-			},
-		},
 		personinfomywork_list: {
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			},
 		},
 		welcome_list: {
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
+			},
+		},
+		mywork_list: {
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			},

@@ -97,8 +97,8 @@ export class TestReultBaseService extends EntityBaseService<ITestReult> {
             const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}`);
             return res;
         }
-        if (_context.account && _context.testcase && _context.testreult) {
-            const res = await this.http.get(`/accounts/${_context.account}/testcases/${_context.testcase}/testreults/${_context.testreult}`);
+        if (_context.sysaccount && _context.testcase && _context.testreult) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/testreults/${_context.testreult}`);
             return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });

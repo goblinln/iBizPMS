@@ -1,7 +1,7 @@
 export { GlobalService } from './global.service';
 export * from './product-plan/product-plan.service';
 export * from './test-case/test-case.service';
-export * from './account/account.service';
+export * from './sys-account/sys-account.service';
 export * from './product/product.service';
 export * from './project-burn/project-burn.service';
 export * from './test/test.service';

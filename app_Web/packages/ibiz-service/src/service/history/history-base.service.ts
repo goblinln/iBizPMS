@@ -107,35 +107,35 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.account && _context.project && _context.testtask && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.testtask && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.project && _context.testreport && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.testreport && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.project && _context.story && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.story && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.project && _context.task && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.task && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.project && _context.build && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.build && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.project && _context.bug && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.bug && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.project && _context.productplan && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.productplan && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.product && _context.story && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.product && _context.story && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.product && _context.productplan && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.product && _context.productplan && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.product && _context.build && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.product && _context.build && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.test && _context.testreport && _context.action && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -173,26 +173,26 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.build && _context.action && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.todo && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.todo && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.testtask && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.testtask && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testtasks/${_context.testtask}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.task && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.task && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/tasks/${_context.task}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.story && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.story && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.project && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.project && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.product && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.product && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.bug && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.bug && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/bugs/${_context.bug}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.testsuite && _context.action && true) {
             return this.http.post(`/testsuites/${_context.testsuite}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -203,8 +203,8 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.action && true) {
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-        if (_context.account && _context.action && true) {
-            return this.http.post(`/accounts/${_context.account}/actions/${_context.action}/histories/fetchdefault`, _data);
+        if (_context.sysaccount && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
