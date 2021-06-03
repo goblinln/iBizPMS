@@ -1,4 +1,4 @@
-package cn.ibizlab.pms.core.zentao.runtime;
+package cn.ibizlab.pms.core.zentao.runtime.aspect;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
 import cn.ibizlab.pms.core.zentao.runtime.IStoryStageRuntime;
@@ -7,12 +7,14 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
 @Slf4j
+@Component
 public class StoryStageAspect {
 
      @Autowired
