@@ -62,13 +62,6 @@
       "id" : "ZTProduct__RELEASELINK"
     }
   }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "Bug_Maintain_OpenBy_Update",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    }
-  }, {
     "dataAccessAction" : "NFAVORITES",
     "name" : "NFAVORITES",
     "getPSDEOPPriv" : {
@@ -81,13 +74,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "ZTProduct__ACTIVATE"
-    }
-  }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "Bug_Maintain_OpenBy_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
     }
   } ],
   "roleTag" : "Bug_Maintain_OpenBy",

@@ -42,7 +42,7 @@ export class AppCodeEditor extends Vue {
      * @memberof AppCodeEditor
      */
     @Prop({ type: String, default: 'typescript' })
-    language!: 'json' | 'javascript' | 'typescript';
+    language!: 'json' | 'javascript' | 'typescript' | 'css' | 'less' | 'sass' | 'java';
 
     /**
      * 当前使用语言
@@ -58,7 +58,7 @@ export class AppCodeEditor extends Vue {
      * @type {string[]}
      * @memberof AppCodeEditor
      */
-    languages: string[] = ['json', 'javascript', 'typescript'];
+    languages: string[] = ['json', 'javascript', 'typescript', 'css', 'less', 'sass' ,'java'];
 
     /**
      * 代码编辑器对象
@@ -113,7 +113,7 @@ export class AppCodeEditor extends Vue {
      *
      * @memberof AppCodeEditor
      */
-    created(){
+    created() {
         this.presentLanguage = this.language;
         this.registerEvent = this.registerEvent.bind(this);
     }

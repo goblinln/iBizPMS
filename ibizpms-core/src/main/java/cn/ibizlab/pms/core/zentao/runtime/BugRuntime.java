@@ -167,6 +167,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentBug"))
             return bugService.searchMyAgentBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreate"))
+            return bugService.searchMyCreate(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
             return bugService.searchMyCreateOrPartake(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCurOpenedBug"))
@@ -249,6 +251,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentBug"))
             return bugService.selectMyAgentBug(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreate"))
+            return bugService.selectMyCreate(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
             return bugService.selectMyCreateOrPartake(searchContext);
         if (iPSDataQuery.getName().equals("MyCurOpenedBug"))

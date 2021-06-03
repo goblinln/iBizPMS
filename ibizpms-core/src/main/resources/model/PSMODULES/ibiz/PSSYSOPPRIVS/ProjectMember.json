@@ -103,6 +103,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "项目成员-ZT_BUG[Bug删除（我创建的）（系统使用）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Delete_MyCreate.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
     "name" : "项目成员-ZT_PROJECT[项目任务管理（创建者或者更新者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -331,16 +341,6 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-    }
-  }, {
-    "name" : "项目成员-ZT_BUG[BUG维护（我相关的产品）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_MyReP.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
     }
   }, {
     "name" : "项目成员-ZT_PROJECT[项目查看（公开项目）（跟随角色）]",

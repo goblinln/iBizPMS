@@ -65,37 +65,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "InitTestTaskReportMulti",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskS",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "InitTestTaskReportMulti"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitTestTaskReport",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskR",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitTestTaskReport"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -116,6 +99,40 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "InitTestTaskReport",
+    "methodType" : "DEACTION",
+    "name" : "GetInfoTestTaskR",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "InitTestTaskReport"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "InitTestTaskReportMulti",
+    "methodType" : "DEACTION",
+    "name" : "GetInfoTestTaskS",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "InitTestTaskReportMulti"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "InitProjectReport",
     "methodType" : "DEACTION",
     "name" : "GetInfoTestTaskProject",
@@ -133,12 +150,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -146,7 +163,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -164,23 +181,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -496,6 +496,23 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "InitProjectDuringReport",
     "methodType" : "DEACTION",
     "name" : "GetInfoTaskOvByTime",
@@ -530,37 +547,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "InitTestTaskReportMulti",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskS",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "InitTestTaskReportMulti"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "InitTestTaskReport",
-    "methodType" : "DEACTION",
-    "name" : "GetInfoTestTaskR",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "InitTestTaskReport"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -581,6 +581,40 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "InitTestTaskReport",
+    "methodType" : "DEACTION",
+    "name" : "GetInfoTestTaskR",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskR.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "InitTestTaskReport"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "InitTestTaskReportMulti",
+    "methodType" : "DEACTION",
+    "name" : "GetInfoTestTaskS",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetInfoTestTaskS.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "InitTestTaskReportMulti"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "InitProjectReport",
     "methodType" : "DEACTION",
     "name" : "GetInfoTestTaskProject",
@@ -598,29 +632,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -628,7 +645,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -646,23 +663,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
     },
     "builtinMethod" : false
   }, {

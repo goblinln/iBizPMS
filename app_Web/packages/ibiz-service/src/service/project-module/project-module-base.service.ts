@@ -157,37 +157,6 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         return this.condCache.get('view');
     }
     /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectmodules`, _data);
-        }
-        if (_context.project && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/projectmodules`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -203,42 +172,6 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         if (_context.project && _context.projectmodule) {
             const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
             return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && _context.projectmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
-        }
-        if (_context.project && _context.projectmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectmodules/fetchdefault`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -279,6 +212,73 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         }
         if (_context.project && _context.projectmodule) {
             return this.http.delete(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectmodules/fetchdefault`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectmodules`, _data);
+        }
+        if (_context.project && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/projectmodules`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && _context.projectmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
+        }
+        if (_context.project && _context.projectmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

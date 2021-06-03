@@ -53,16 +53,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
-    "name" : "产品主管-ZT_BUG[BUG转需求（我相关的产品）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_TOSTORY_MyReP.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-    }
-  }, {
     "name" : "产品主管-ZT_TODO[待办转需求（我的待办）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

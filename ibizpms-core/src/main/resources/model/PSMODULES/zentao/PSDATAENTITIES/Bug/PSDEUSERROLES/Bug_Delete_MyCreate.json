@@ -1,0 +1,20 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Delete_MyCreate.json",
+  "name" : "Bug删除（我创建的）（系统使用）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyCreate"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  } ],
+  "roleTag" : "Bug_Delete_MyCreate",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

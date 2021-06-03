@@ -193,6 +193,9 @@ public class BugAspect {
         else if (action.equals("searchMyAgentBug")) {
             return getDataEntityRuntime().aroundDataSet("MyAgentBug", point);
         }
+        else if (action.equals("searchMyCreate")) {
+            return getDataEntityRuntime().aroundDataSet("MyCreate", point);
+        }
         else if (action.equals("searchMyCreateOrPartake")) {
             return getDataEntityRuntime().aroundDataSet("MyCreateOrPartake", point);
         }

@@ -85,6 +85,7 @@ public interface IBugService extends IService<Bug> {
     List<Bug> selectESBulk(BugSearchContext context);
     List<Bug> selectMy(BugSearchContext context);
     List<Bug> selectMyAgentBug(BugSearchContext context);
+    List<Bug> selectMyCreate(BugSearchContext context);
     List<Bug> selectMyCreateOrPartake(BugSearchContext context);
     List<Bug> selectMyCurOpenedBug(BugSearchContext context);
     List<Bug> selectMyFavorites(BugSearchContext context);
@@ -126,6 +127,7 @@ public interface IBugService extends IService<Bug> {
     Page<Bug> searchESBulk(BugSearchContext context);
     Page<Bug> searchMy(BugSearchContext context);
     Page<Bug> searchMyAgentBug(BugSearchContext context);
+    Page<Bug> searchMyCreate(BugSearchContext context);
     Page<Bug> searchMyCreateOrPartake(BugSearchContext context);
     Page<Bug> searchMyCurOpenedBug(BugSearchContext context);
     Page<Bug> searchMyFavorites(BugSearchContext context);

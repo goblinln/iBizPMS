@@ -15,6 +15,5 @@
   } ],
   "roleTag" : "Bug_TOCASE_MyReP",
   "userCat" : "CAT1",
-  "userDRAction" : "READ",
-  "systemReserved" : true
+  "userDRAction" : "READ"
 }

@@ -60,14 +60,6 @@ public class SysAccountResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @ApiOperation(value = "获取系统用户", tags = {"系统用户" },  notes = "获取系统用户")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysaccount_id}")
-    public ResponseEntity<SysAccountDTO> get(@PathVariable("sysaccount_id") String sysaccount_id) {
-        SysUser domain = sysuserService.get(sysaccount_id);
-        SysAccountDTO dto = sysaccountMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"系统用户" } ,notes = "获取个人信息-个人贡献")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmycontribution")
 	public ResponseEntity<List<SysAccountDTO>> countmycontribution(@RequestBody SysUserSearchContext context) {
@@ -79,6 +71,14 @@ public class SysAccountResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @ApiOperation(value = "获取系统用户", tags = {"系统用户" },  notes = "获取系统用户")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysaccount_id}")
+    public ResponseEntity<SysAccountDTO> get(@PathVariable("sysaccount_id") String sysaccount_id) {
+        SysUser domain = sysuserService.get(sysaccount_id);
+        SysAccountDTO dto = sysaccountMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysaccount_id}/{action}")

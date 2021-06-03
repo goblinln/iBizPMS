@@ -81,23 +81,6 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchRoadmap
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async FetchRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.product && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/productlives/fetchroadmap`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchRoadMapYear
      *
      * @param {*} [_context={}]
@@ -111,6 +94,23 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchRoadmap
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLifeService
+     */
+    async FetchRoadmap(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.product && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/productlives/fetchroadmap`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

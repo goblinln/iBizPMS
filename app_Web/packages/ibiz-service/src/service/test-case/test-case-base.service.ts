@@ -330,72 +330,40 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMyFavorites
+     * CaseFavorite
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseService
      */
-    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/fetchmyfavorites`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchmyfavorites`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/fetchdefault`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchdefault`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * TestRunCases
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseService
-     */
-    async TestRunCases(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async CaseFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testruncases`, _data);
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/casefavorite`, _data);
         }
         if (_context.sysaccount && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/testruncases`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/casefavorite`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchMy
+     * RunCases
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseService
      */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/fetchmy`, _data);
+    async RunCases(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/runcases`, _data);
         }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchmy`, _data);
+        if (_context.sysaccount && _context.testcase) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/runcases`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -419,21 +387,21 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * CaseFavorite
+     * CaseNFavorite
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseService
      */
-    async CaseFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async CaseNFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/casefavorite`, _data);
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/casenfavorite`, _data);
         }
         if (_context.sysaccount && _context.testcase) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/casefavorite`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/casenfavorite`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -469,38 +437,19 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * RunCases
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseService
      */
-    async RunCases(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testcase) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/runcases`, _data);
-        }
-        if (_context.sysaccount && _context.testcase) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/runcases`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/fetchaccount`, _data);
+            return this.http.post(`/tests/${_context.test}/testcases/fetchmy`, _data);
         }
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchaccount`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchmy`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -524,25 +473,6 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/testcases/getdraft`, _data);
             return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * CaseNFavorite
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseService
-     */
-    async CaseNFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testcase) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/casenfavorite`, _data);
-        }
-        if (_context.sysaccount && _context.testcase) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/casenfavorite`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -579,6 +509,76 @@ export class TestCaseBaseService extends EntityBaseService<ITestCase> {
         }
         if (_context.sysaccount && _context.testcase) {
             return this.http.delete(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * TestRunCases
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseService
+     */
+    async TestRunCases(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testruncases`, _data);
+        }
+        if (_context.sysaccount && _context.testcase) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/testruncases`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/fetchaccount`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchaccount`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchMyFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseService
+     */
+    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/fetchmyfavorites`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchmyfavorites`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/fetchdefault`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

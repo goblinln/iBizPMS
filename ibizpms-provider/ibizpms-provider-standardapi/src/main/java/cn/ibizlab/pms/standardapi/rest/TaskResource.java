@@ -53,18 +53,6 @@ public class TaskResource {
     public TaskMapping taskMapping;
 
 
-    @PreAuthorize("quickTest('ZT_TASK', 'CLOSE')")
-    @ApiOperation(value = "根据系统用户关闭", tags = {"任务" },  notes = "根据系统用户关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/close")
-    public ResponseEntity<TaskDTO> closeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        
-        domain.setId(task_id);
-        domain = taskService.close(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
     @PreAuthorize("quickTest('ZT_TASK', 'CREATE')")
     @ApiOperation(value = "根据系统用户建立任务", tags = {"任务" },  notes = "根据系统用户建立任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks")
@@ -89,25 +77,13 @@ public class TaskResource {
     }
 
     @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户任务收藏", tags = {"任务" },  notes = "根据系统用户任务收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/taskfavorites")
-    public ResponseEntity<TaskDTO> taskFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @ApiOperation(value = "根据系统用户需求变更确认", tags = {"任务" },  notes = "根据系统用户需求变更确认")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/confirmstorychange")
+    public ResponseEntity<TaskDTO> confirmStoryChangeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         
         domain.setId(task_id);
-        domain = taskService.taskFavorites(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("quickTest('ZT_TASK', 'RESTART')")
-    @ApiOperation(value = "根据系统用户继续", tags = {"任务" },  notes = "根据系统用户继续")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/restart")
-    public ResponseEntity<TaskDTO> restartBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        
-        domain.setId(task_id);
-        domain = taskService.restart(domain) ;
+        domain = taskService.confirmStoryChange(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
@@ -124,27 +100,14 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"任务" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/tasks/fetchaccount")
-	public ResponseEntity<List<TaskDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchAccount(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户任务收藏", tags = {"任务" },  notes = "根据系统用户任务收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/tasknfavorites")
-    public ResponseEntity<TaskDTO> taskNFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @PreAuthorize("quickTest('ZT_TASK', 'RESTART')")
+    @ApiOperation(value = "根据系统用户继续", tags = {"任务" },  notes = "根据系统用户继续")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/restart")
+    public ResponseEntity<TaskDTO> restartBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         
         domain.setId(task_id);
-        domain = taskService.taskNFavorites(domain) ;
+        domain = taskService.restart(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
@@ -161,19 +124,15 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
-    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"任务" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/tasks/fetchmy")
-	public ResponseEntity<List<TaskDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
+    @PreAuthorize("quickTest('ZT_TASK', 'CREATE')")
+    @ApiOperation(value = "根据系统用户获取任务草稿", tags = {"任务" },  notes = "根据系统用户获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
         
-        Page<Task> domains = taskService.searchMy(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
 	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"任务" } ,notes = "根据系统用户获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/tasks/fetchmyfavorites")
@@ -199,13 +158,38 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("quickTest('ZT_TASK', 'CREATE')")
-    @ApiOperation(value = "根据系统用户获取任务草稿", tags = {"任务" },  notes = "根据系统用户获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
+    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"任务" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/tasks/fetchaccount")
+	public ResponseEntity<List<TaskDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
         
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+        Page<Task> domains = taskService.searchAccount(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
+    @ApiOperation(value = "根据系统用户获取任务", tags = {"任务" },  notes = "根据系统用户获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('ZT_TASK', 'CLOSE')")
+    @ApiOperation(value = "根据系统用户关闭", tags = {"任务" },  notes = "根据系统用户关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/close")
+    public ResponseEntity<TaskDTO> closeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        
+        domain.setId(task_id);
+        domain = taskService.close(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
@@ -214,43 +198,6 @@ public class TaskResource {
 	public ResponseEntity<List<TaskDTO>> fetchReportBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
         
         Page<Task> domains = taskService.searchReportDS(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_TASK', 'ASSIGNTO')")
-    @ApiOperation(value = "根据系统用户指派/转交", tags = {"任务" },  notes = "根据系统用户指派/转交")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/assignto")
-    public ResponseEntity<TaskDTO> assignToBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        
-        domain.setId(task_id);
-        domain = taskService.assignTo(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户需求变更确认", tags = {"任务" },  notes = "根据系统用户需求变更确认")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/confirmstorychange")
-    public ResponseEntity<TaskDTO> confirmStoryChangeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        
-        domain.setId(task_id);
-        domain = taskService.confirmStoryChange(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取当前项目任务", tags = {"任务" } ,notes = "根据系统用户获取当前项目任务")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/tasks/fetchcurprojecttaskquery")
-	public ResponseEntity<List<TaskDTO>> fetchCurProjectTaskQueryBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -268,15 +215,6 @@ public class TaskResource {
         domain = taskService.cancel(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-    @ApiOperation(value = "根据系统用户获取任务", tags = {"任务" },  notes = "根据系统用户获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
@@ -345,18 +283,55 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'CLOSE')")
-    @ApiOperation(value = "根据项目关闭", tags = {"任务" },  notes = "根据项目关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/close")
-    public ResponseEntity<TaskDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户任务收藏", tags = {"任务" },  notes = "根据系统用户任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/tasknfavorites")
+    public ResponseEntity<TaskDTO> taskNFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
+        
         domain.setId(task_id);
-        domain = taskService.close(domain) ;
+        domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
+
+    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户任务收藏", tags = {"任务" },  notes = "根据系统用户任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/taskfavorites")
+    public ResponseEntity<TaskDTO> taskFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        
+        domain.setId(task_id);
+        domain = taskService.taskFavorites(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
+	@ApiOperation(value = "根据系统用户获取当前项目任务", tags = {"任务" } ,notes = "根据系统用户获取当前项目任务")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/tasks/fetchcurprojecttaskquery")
+	public ResponseEntity<List<TaskDTO>> fetchCurProjectTaskQueryBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
+        
+        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_TASK', 'ASSIGNTO')")
+    @ApiOperation(value = "根据系统用户指派/转交", tags = {"任务" },  notes = "根据系统用户指派/转交")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/tasks/{task_id}/assignto")
+    public ResponseEntity<TaskDTO> assignToBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        
+        domain.setId(task_id);
+        domain = taskService.assignTo(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目建立任务", tags = {"任务" },  notes = "根据项目建立任务")
@@ -382,25 +357,13 @@ public class TaskResource {
     }
 
     @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskfavorites")
-    public ResponseEntity<TaskDTO> taskFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @ApiOperation(value = "根据项目需求变更确认", tags = {"任务" },  notes = "根据项目需求变更确认")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/confirmstorychange")
+    public ResponseEntity<TaskDTO> confirmStoryChangeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
         domain.setId(task_id);
-        domain = taskService.taskFavorites(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'RESTART')")
-    @ApiOperation(value = "根据项目继续", tags = {"任务" },  notes = "根据项目继续")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/restart")
-    public ResponseEntity<TaskDTO> restartByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
-        domain.setId(task_id);
-        domain = taskService.restart(domain) ;
+        domain = taskService.confirmStoryChange(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
@@ -417,27 +380,14 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"任务" } ,notes = "根据项目获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchaccount")
-	public ResponseEntity<List<TaskDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Task> domains = taskService.searchAccount(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/tasknfavorites")
-    public ResponseEntity<TaskDTO> taskNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'RESTART')")
+    @ApiOperation(value = "根据项目继续", tags = {"任务" },  notes = "根据项目继续")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/restart")
+    public ResponseEntity<TaskDTO> restartByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
         domain.setId(task_id);
-        domain = taskService.taskNFavorites(domain) ;
+        domain = taskService.restart(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
@@ -454,19 +404,15 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取我的数据", tags = {"任务" } ,notes = "根据项目获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmy")
-	public ResponseEntity<List<TaskDTO>> fetchMyByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Task> domains = taskService.searchMy(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"任务" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchmyfavorites")
@@ -492,13 +438,38 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"任务" } ,notes = "根据项目获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchaccount")
+	public ResponseEntity<List<TaskDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchAccount(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")
+    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'CLOSE')")
+    @ApiOperation(value = "根据项目关闭", tags = {"任务" },  notes = "根据项目关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/close")
+    public ResponseEntity<TaskDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+        domain.setId(task_id);
+        domain = taskService.close(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
@@ -507,43 +478,6 @@ public class TaskResource {
 	public ResponseEntity<List<TaskDTO>> fetchReportByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Task> domains = taskService.searchReportDS(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'ASSIGNTO')")
-    @ApiOperation(value = "根据项目指派/转交", tags = {"任务" },  notes = "根据项目指派/转交")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/assignto")
-    public ResponseEntity<TaskDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
-        domain.setId(task_id);
-        domain = taskService.assignTo(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目需求变更确认", tags = {"任务" },  notes = "根据项目需求变更确认")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/confirmstorychange")
-    public ResponseEntity<TaskDTO> confirmStoryChangeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
-        domain.setId(task_id);
-        domain = taskService.confirmStoryChange(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取当前项目任务", tags = {"任务" } ,notes = "根据项目获取当前项目任务")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchcurprojecttaskquery")
-	public ResponseEntity<List<TaskDTO>> fetchCurProjectTaskQueryByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -561,15 +495,6 @@ public class TaskResource {
         domain = taskService.cancel(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")
-    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
@@ -638,19 +563,56 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'CLOSE')")
-    @ApiOperation(value = "根据系统用户项目关闭", tags = {"任务" },  notes = "根据系统用户项目关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/close")
-    public ResponseEntity<TaskDTO> closeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/tasknfavorites")
+    public ResponseEntity<TaskDTO> taskNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
         domain.setId(task_id);
-        domain = taskService.close(domain) ;
+        domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
+
+    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskfavorites")
+    public ResponseEntity<TaskDTO> taskFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.taskFavorites(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目获取当前项目任务", tags = {"任务" } ,notes = "根据项目获取当前项目任务")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/fetchcurprojecttaskquery")
+	public ResponseEntity<List<TaskDTO>> fetchCurProjectTaskQueryByProject(@PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'ASSIGNTO')")
+    @ApiOperation(value = "根据项目指派/转交", tags = {"任务" },  notes = "根据项目指派/转交")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/assignto")
+    public ResponseEntity<TaskDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.assignTo(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据系统用户项目建立任务", tags = {"任务" },  notes = "根据系统用户项目建立任务")
@@ -676,25 +638,13 @@ public class TaskResource {
     }
 
     @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目任务收藏", tags = {"任务" },  notes = "根据系统用户项目任务收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskfavorites")
-    public ResponseEntity<TaskDTO> taskFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @ApiOperation(value = "根据系统用户项目需求变更确认", tags = {"任务" },  notes = "根据系统用户项目需求变更确认")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/confirmstorychange")
+    public ResponseEntity<TaskDTO> confirmStoryChangeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
         domain.setId(task_id);
-        domain = taskService.taskFavorites(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'RESTART')")
-    @ApiOperation(value = "根据系统用户项目继续", tags = {"任务" },  notes = "根据系统用户项目继续")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/restart")
-    public ResponseEntity<TaskDTO> restartBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
-        domain.setId(task_id);
-        domain = taskService.restart(domain) ;
+        domain = taskService.confirmStoryChange(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
@@ -711,27 +661,14 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取指定用户数据", tags = {"任务" } ,notes = "根据系统用户项目获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/fetchaccount")
-	public ResponseEntity<List<TaskDTO>> fetchAccountBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Task> domains = taskService.searchAccount(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目任务收藏", tags = {"任务" },  notes = "根据系统用户项目任务收藏")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/tasknfavorites")
-    public ResponseEntity<TaskDTO> taskNFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'RESTART')")
+    @ApiOperation(value = "根据系统用户项目继续", tags = {"任务" },  notes = "根据系统用户项目继续")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/restart")
+    public ResponseEntity<TaskDTO> restartBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
         domain.setId(task_id);
-        domain = taskService.taskNFavorites(domain) ;
+        domain = taskService.restart(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
@@ -748,19 +685,15 @@ public class TaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(domains.getContent());
 	}
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取我的数据", tags = {"任务" } ,notes = "根据系统用户项目获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/fetchmy")
-	public ResponseEntity<List<TaskDTO>> fetchMyBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Task> domains = taskService.searchMy(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据系统用户项目获取任务草稿", tags = {"任务" },  notes = "根据系统用户项目获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
+
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取我的收藏", tags = {"任务" } ,notes = "根据系统用户项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/fetchmyfavorites")
@@ -786,13 +719,38 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据系统用户项目获取任务草稿", tags = {"任务" },  notes = "根据系统用户项目获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取指定用户数据", tags = {"任务" } ,notes = "根据系统用户项目获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/fetchaccount")
+	public ResponseEntity<List<TaskDTO>> fetchAccountBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchAccount(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")
+    @ApiOperation(value = "根据系统用户项目获取任务", tags = {"任务" },  notes = "根据系统用户项目获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'CLOSE')")
+    @ApiOperation(value = "根据系统用户项目关闭", tags = {"任务" },  notes = "根据系统用户项目关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/close")
+    public ResponseEntity<TaskDTO> closeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+        domain.setId(task_id);
+        domain = taskService.close(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
@@ -801,43 +759,6 @@ public class TaskResource {
 	public ResponseEntity<List<TaskDTO>> fetchReportBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
         context.setN_project_eq(project_id);
         Page<Task> domains = taskService.searchReportDS(context) ;
-        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'ASSIGNTO')")
-    @ApiOperation(value = "根据系统用户项目指派/转交", tags = {"任务" },  notes = "根据系统用户项目指派/转交")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/assignto")
-    public ResponseEntity<TaskDTO> assignToBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
-        domain.setId(task_id);
-        domain = taskService.assignTo(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目需求变更确认", tags = {"任务" },  notes = "根据系统用户项目需求变更确认")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/confirmstorychange")
-    public ResponseEntity<TaskDTO> confirmStoryChangeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
-        domain.setId(task_id);
-        domain = taskService.confirmStoryChange(domain) ;
-        taskdto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取当前项目任务", tags = {"任务" } ,notes = "根据系统用户项目获取当前项目任务")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/fetchcurprojecttaskquery")
-	public ResponseEntity<List<TaskDTO>> fetchCurProjectTaskQueryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
         List<TaskDTO> list = taskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -855,15 +776,6 @@ public class TaskResource {
         domain = taskService.cancel(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
-    }
-
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")
-    @ApiOperation(value = "根据系统用户项目获取任务", tags = {"任务" },  notes = "根据系统用户项目获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
@@ -928,6 +840,55 @@ public class TaskResource {
         domain.setProject(project_id);
         domain.setId(task_id);
         domain = taskService.start(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户项目任务收藏", tags = {"任务" },  notes = "根据系统用户项目任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/tasknfavorites")
+    public ResponseEntity<TaskDTO> taskNFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.taskNFavorites(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户项目任务收藏", tags = {"任务" },  notes = "根据系统用户项目任务收藏")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/taskfavorites")
+    public ResponseEntity<TaskDTO> taskFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.taskFavorites(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据系统用户项目获取当前项目任务", tags = {"任务" } ,notes = "根据系统用户项目获取当前项目任务")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/fetchcurprojecttaskquery")
+	public ResponseEntity<List<TaskDTO>> fetchCurProjectTaskQueryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody TaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<Task> domains = taskService.searchCurProjectTaskQuery(context) ;
+        List<TaskDTO> list = taskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'ASSIGNTO')")
+    @ApiOperation(value = "根据系统用户项目指派/转交", tags = {"任务" },  notes = "根据系统用户项目指派/转交")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/tasks/{task_id}/assignto")
+    public ResponseEntity<TaskDTO> assignToBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.assignTo(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }

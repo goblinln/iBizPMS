@@ -31,23 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "CancelTestTop",
-    "methodType" : "DEACTION",
-    "name" : "CancelProductTop",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CancelTestTop"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "TestTop",
     "methodType" : "DEACTION",
     "name" : "ProductTop",
@@ -62,6 +45,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestTop"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CancelTestTop",
+    "methodType" : "DEACTION",
+    "name" : "CancelProductTop",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CancelTestTop"
     },
     "builtinMethod" : false
   }, {
@@ -873,23 +873,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CancelTestTop",
-    "methodType" : "DEACTION",
-    "name" : "CancelProductTop",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CancelTestTop"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "TestTop",
     "methodType" : "DEACTION",
     "name" : "ProductTop",
@@ -904,6 +887,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestTop"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CancelTestTop",
+    "methodType" : "DEACTION",
+    "name" : "CancelProductTop",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CancelTestTop"
     },
     "builtinMethod" : false
   }, {

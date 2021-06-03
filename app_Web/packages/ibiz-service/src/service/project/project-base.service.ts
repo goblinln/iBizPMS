@@ -185,78 +185,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.condCache.get('view');
     }
     /**
-     * FetchCurProduct
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchcurproduct`, _data);
-        }
-        return this.http.post(`/projects/fetchcurproduct`, _data);
-    }
-    /**
-     * FetchCurDefaultQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchCurDefaultQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchcurdefaultquery`, _data);
-        }
-        return this.http.post(`/projects/fetchcurdefaultquery`, _data);
-    }
-    /**
-     * Start
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/start`, _data);
-        }
-        return this.http.post(`/projects/${_context.project}/start`, _data);
-    }
-    /**
-     * UnlinkProduct
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async UnlinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/unlinkproduct`, _data);
-        }
-        return this.http.post(`/projects/${_context.project}/unlinkproduct`, _data);
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchmy`, _data);
-        }
-        return this.http.post(`/projects/fetchmy`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -277,50 +205,19 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return res;
     }
     /**
-     * Get
+     * LinkProduct
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}`);
-            return res;
-        }
-        const res = await this.http.get(`/projects/${_context.project}`);
-        return res;
-    }
-    /**
-     * CancelProjectTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async CancelProjectTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async LinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/cancelprojecttop`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/linkproduct`, _data);
         }
-        return this.http.post(`/projects/${_context.project}/cancelprojecttop`, _data);
-    }
-    /**
-     * LinkStory
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/linkstory`, _data);
-        }
-        return this.http.post(`/projects/${_context.project}/linkstory`, _data);
+        return this.http.post(`/projects/${_context.project}/linkproduct`, _data);
     }
     /**
      * UnlinkStory
@@ -338,34 +235,77 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/${_context.project}/unlinkstory`, _data);
     }
     /**
-     * LinkProduct
+     * FetchCurProduct
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectService
      */
-    async LinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/linkproduct`, _data);
+    async FetchCurProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchcurproduct`, _data);
         }
-        return this.http.post(`/projects/${_context.project}/linkproduct`, _data);
+        return this.http.post(`/projects/fetchcurproduct`, _data);
     }
     /**
-     * ProjectTop
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectService
      */
-    async ProjectTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchmy`, _data);
+        }
+        return this.http.post(`/projects/fetchmy`, _data);
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchaccount`, _data);
+        }
+        return this.http.post(`/projects/fetchaccount`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}`);
+            return res;
+        }
+        const res = await this.http.get(`/projects/${_context.project}`);
+        return res;
+    }
+    /**
+     * LinkStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projecttop`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/linkstory`, _data);
         }
-        return this.http.post(`/projects/${_context.project}/projecttop`, _data);
+        return this.http.post(`/projects/${_context.project}/linkstory`, _data);
     }
     /**
      * Putoff
@@ -398,6 +338,36 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/${_context.project}/activate`, _data);
     }
     /**
+     * CancelProjectTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async CancelProjectTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/cancelprojecttop`, _data);
+        }
+        return this.http.post(`/projects/${_context.project}/cancelprojecttop`, _data);
+    }
+    /**
+     * ProjectTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async ProjectTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/projecttop`, _data);
+        }
+        return this.http.post(`/projects/${_context.project}/projecttop`, _data);
+    }
+    /**
      * Remove
      *
      * @param {*} [_context={}]
@@ -427,6 +397,21 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/${_context.project}/close`, _data);
     }
     /**
+     * Start
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/start`, _data);
+        }
+        return this.http.post(`/projects/${_context.project}/start`, _data);
+    }
+    /**
      * Suspend
      *
      * @param {*} [_context={}]
@@ -442,34 +427,19 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/${_context.project}/suspend`, _data);
     }
     /**
-     * Update
+     * UnlinkProduct
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async UnlinkProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/unlinkproduct`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projects/${_context.project}`, _data);
-    }
-    /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchaccount`, _data);
-        }
-        return this.http.post(`/projects/fetchaccount`, _data);
+        return this.http.post(`/projects/${_context.project}/unlinkproduct`, _data);
     }
     /**
      * Create
@@ -499,27 +469,39 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         }
         return this.http.post(`/projects`, _data);
     }
-
     /**
-     * StartBatch接口方法
+     * FetchCurDefaultQuery
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
      */
-    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.sysaccount && true){
+    async FetchCurDefaultQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/fetchcurdefaultquery`, _data);
+        }
+        return this.http.post(`/projects/fetchcurdefaultquery`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/startbatch`,_data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/startbatch`,_data);
+        return this.http.put(`/projects/${_context.project}`, _data);
     }
 
     /**
-     * UnlinkProductBatch接口方法
+     * LinkProductBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -527,31 +509,13 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async UnlinkProductBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async LinkProductBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.sysaccount && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/unlinkproductbatch`,_data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/linkproductbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/unlinkproductbatch`,_data);
-    }
-
-    /**
-     * LinkStoryBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ProjectServiceBase
-     */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.sysaccount && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/linkstorybatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/linkstorybatch`,_data);
+        return this.http.post(`/projects/linkproductbatch`,_data);
     }
 
     /**
@@ -573,7 +537,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     }
 
     /**
-     * LinkProductBatch接口方法
+     * LinkStoryBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -581,13 +545,13 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async LinkProductBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.sysaccount && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/linkproductbatch`,_data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/linkstorybatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/projects/linkproductbatch`,_data);
+        return this.http.post(`/projects/linkstorybatch`,_data);
     }
 
     /**
@@ -645,6 +609,24 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     }
 
     /**
+     * StartBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.sysaccount && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/startbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/projects/startbatch`,_data);
+    }
+
+    /**
      * SuspendBatch接口方法
      *
      * @param {*} [context={}]
@@ -660,5 +642,23 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/projects/suspendbatch`,_data);
+    }
+
+    /**
+     * UnlinkProductBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async UnlinkProductBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.sysaccount && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/unlinkproductbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/projects/unlinkproductbatch`,_data);
     }
 }

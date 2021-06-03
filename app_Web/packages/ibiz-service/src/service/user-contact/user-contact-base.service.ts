@@ -124,33 +124,16 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.condCache.get('view');
     }
     /**
-     * GetDraft
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof UserContactService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/getdraft`, _data);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -172,20 +155,6 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -230,6 +199,37 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         if (_context.sysaccount && _context.usercontact) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/getdraft`, _data);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

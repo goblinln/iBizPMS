@@ -193,17 +193,6 @@ export class TestBaseService extends EntityBaseService<ITest> {
         return this.http.post(`/tests/fetchcurdefault`, _data);
     }
     /**
-     * CancelTestTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestService
-     */
-    async CancelTestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
-    }
-    /**
      * TestTop
      *
      * @param {*} [_context={}]
@@ -213,6 +202,17 @@ export class TestBaseService extends EntityBaseService<ITest> {
      */
     async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/tests/${_context.test}/testtop`, _data);
+    }
+    /**
+     * CancelTestTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestService
+     */
+    async CancelTestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/tests/${_context.test}/canceltesttop`, _data);
     }
     /**
      * Get
