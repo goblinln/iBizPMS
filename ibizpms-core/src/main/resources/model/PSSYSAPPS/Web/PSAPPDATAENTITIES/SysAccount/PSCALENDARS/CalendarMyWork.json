@@ -326,7 +326,7 @@
       "codeName" : "Id"
     },
     "itemStyle" : "DEFAULT",
-    "itemType" : "task",
+    "itemType" : "MYTASK",
     "maxSize" : -1,
     "name" : "任务",
     "getNavPSAppView" : {
@@ -571,7 +571,7 @@
         "showCaption" : true
       } ],
       "mobilePanel" : true,
-      "name" : "tasklayoutpanel",
+      "name" : "mytasklayoutpanel",
       "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
       "modeltype" : "PSSYSVIEWPANEL"
     },
@@ -584,7 +584,7 @@
       "codeName" : "Name"
     },
     "enableQuickCreate" : false,
-    "id" : "task"
+    "id" : "MYTASK"
   }, {
     "bKColor" : "rgba(255, 166, 0, 1)",
     "getBeginTimePSAppDEField" : {

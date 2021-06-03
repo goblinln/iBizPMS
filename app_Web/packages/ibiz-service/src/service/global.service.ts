@@ -971,6 +971,15 @@ export class GlobalService {
         return (await import('./ibzpro-product-user-task/ibzpro-product-user-task.service')).default.getInstance();
     }
     /**
+     * 任务服务
+     *
+     * @return {MyTask}
+     * @memberof GlobalService
+     */
+    async getMyTaskService() {
+        return (await import('./my-task/my-task.service')).default.getInstance();
+    }
+    /**
      * 系统更新功能服务
      *
      * @return {SysUpdateFeatures}

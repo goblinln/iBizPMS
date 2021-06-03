@@ -90,6 +90,8 @@ export class SysAccountUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
     }
 
 }

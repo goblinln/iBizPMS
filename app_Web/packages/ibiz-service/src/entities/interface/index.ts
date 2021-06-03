@@ -104,6 +104,7 @@ export * from './iibz-case';
 export * from './isys-team-member';
 export * from './ipssystem-dbcfg';
 export * from './iibzpro-product-user-task';
+export * from './imy-task';
 export * from './isys-update-features';
 export * from './icase-stats';
 export * from './isys-employee';

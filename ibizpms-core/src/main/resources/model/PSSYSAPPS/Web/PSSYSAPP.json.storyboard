@@ -576,6 +576,14 @@
     "psappsbitemid" : "09c914d5f5c56347ee713af11ed19311",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "SysUserEditViewBasicInfo",
+    "psappsbitemname" : "人员编辑视图",
+    "itemtag2" : "72dd4c66aea89c8eeb1c58b8e6dcbe87",
+    "psappviewid" : "26333ad9e69016e503f26a4ee42dd0ce",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserEditViewBasicInfo.json",
+    "psappsbitemid" : "c62a2427bcae477cc0e3974002055f9f",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "TestReportProjectMainEditEditView",
     "psappsbitemname" : "测试报告编辑视图",
     "itemtag2" : "a6e76f20999b9629d83d7d7892a54e30",
@@ -1629,6 +1637,14 @@
     "psappviewid" : "ca5520ca32c6104961484f490807058d",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportRoleConfigEditView.json",
     "psappsbitemid" : "68ca918b2e48a3e4480f8578c1a75ba7",
+    "itemtype" : "APPVIEW"
+  }, {
+    "psappviewname" : "SysUserDashboardView",
+    "psappsbitemname" : "人员数据看板视图",
+    "itemtag2" : "c2bd1c1a43ffe7afae2e3e1d52d504a5",
+    "psappviewid" : "db6ace5ab2ed236b9b207d83486c8221",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserDashboardView.json",
+    "psappsbitemid" : "444e7fe95c2b3b7b55616e8ec3e4ac5e",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "TaskSubTaskNewView",
@@ -2686,14 +2702,6 @@
     "psappsbitemid" : "4b08b4805165d2cebd1cc23e67894c8c",
     "itemtype" : "APPVIEW"
   }, {
-    "psappviewname" : "SysEmployeeEditViewBasicInfo",
-    "psappsbitemname" : "人员编辑视图",
-    "itemtag2" : "bcb861b892a8bec1230a4983ae1340ca",
-    "psappviewid" : "4eec8bab9a7a03f86c72ec576cc7a70a",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeEditViewBasicInfo.json",
-    "psappsbitemid" : "ddfb3d5478d9f36ea447197ac3a6e8de",
-    "itemtype" : "APPVIEW"
-  }, {
     "psappviewname" : "ProductSumUsr2GridView",
     "psappsbitemname" : "产品计划数和需求数实体表格视图",
     "itemtag2" : "b7c0b46f71bf42b166128d9b61d8c8f4",
@@ -3035,14 +3043,6 @@
     "psappviewid" : "92828782339ab18470626ac28292615a",
     "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserYearWorkStatsEditView.json",
     "psappsbitemid" : "f796a5c909ce1b227bf97bc79146a9ac",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "SysEmployeeDashboardView",
-    "psappsbitemname" : "人员数据看板视图",
-    "itemtag2" : "e06c86e5345b0680dfb2c5f17da7c248",
-    "psappviewid" : "e1d5f010f5462cd529bf9d820bc3d518",
-    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeDashboardView.json",
-    "psappsbitemid" : "d01e71eb088ce1bef31bfdcf5df25de8",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "CaseCaseFavorite",
@@ -12680,27 +12680,27 @@
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "人员编辑视图",
-    "psappsbitemrsid" : "7091b55242850b1ec3472259f28c8ae4",
+    "psappsbitemrsid" : "caf59f8bdada77e4153c579993df6ada",
     "ppsappsbitemname" : "人员数据看板视图",
-    "ppsappsbitemid" : "d01e71eb088ce1bef31bfdcf5df25de8",
-    "cpsappsbitemid" : "ddfb3d5478d9f36ea447197ac3a6e8de",
+    "ppsappsbitemid" : "444e7fe95c2b3b7b55616e8ec3e4ac5e",
+    "cpsappsbitemid" : "c62a2427bcae477cc0e3974002055f9f",
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "我的工作",
-    "psappsbitemrsid" : "5e9a09e62f153cdbfa6bf1bbf6791d21",
+    "psappsbitemrsid" : "c56e01f89fca34fe5ffc33879b928fd5",
     "ppsappsbitemname" : "人员数据看板视图",
-    "ppsappsbitemid" : "d01e71eb088ce1bef31bfdcf5df25de8",
+    "ppsappsbitemid" : "444e7fe95c2b3b7b55616e8ec3e4ac5e",
     "cpsappsbitemid" : "9734a39861beb333997e4676214191cb",
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "人员数据看板视图",
-    "psappsbitemrsid" : "6c8e698cf40d14b8f413b0eb861b2113",
+    "psappsbitemrsid" : "592ff583a84ac850c9c4df46bca829f5",
     "ppsappsbitemname" : "我的地盘",
     "rstag" : "EXPITEM:tabviewpanel14",
     "ppsappsbitemid" : "5d856752050dfb580a23d6f7618a3092",
-    "cpsappsbitemid" : "d01e71eb088ce1bef31bfdcf5df25de8",
+    "cpsappsbitemid" : "444e7fe95c2b3b7b55616e8ec3e4ac5e",
     "psappsbitemrsname" : "[个人信息]导航视图",
     "rstype" : "APPVIEWEMBED"
   }, {

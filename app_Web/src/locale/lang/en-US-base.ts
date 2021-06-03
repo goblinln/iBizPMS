@@ -104,6 +104,7 @@ import ibzcase_en_US from '@locale/lanres/entities/ibz-case/ibz-case_en_US';
 import systeammember_en_US from '@locale/lanres/entities/sys-team-member/sys-team-member_en_US';
 import pssystemdbcfg_en_US from '@locale/lanres/entities/pssystem-dbcfg/pssystem-dbcfg_en_US';
 import ibzproproductusertask_en_US from '@locale/lanres/entities/ibzpro-product-user-task/ibzpro-product-user-task_en_US';
+import mytask_en_US from '@locale/lanres/entities/my-task/my-task_en_US';
 import sysupdatefeatures_en_US from '@locale/lanres/entities/sys-update-features/sys-update-features_en_US';
 import casestats_en_US from '@locale/lanres/entities/case-stats/case-stats_en_US';
 import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee_en_US';
@@ -524,6 +525,7 @@ function getAppLocale(){
             'systeammember': systeammember_en_US(),
             'pssystemdbcfg': pssystemdbcfg_en_US(),
             'ibzproproductusertask': ibzproproductusertask_en_US(),
+            'mytask': mytask_en_US(),
             'sysupdatefeatures': sysupdatefeatures_en_US(),
             'casestats': casestats_en_US(),
             'sysemployee': sysemployee_en_US(),

@@ -2687,6 +2687,21 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'sysaccounts/:sysaccount?/views/editviewbasicinfo',
+                    meta: {
+                        caption: 'entities.sysaccount.views.editviewbasicinfo.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'editviewbasicinfo' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/views/calendarview',
                     meta: {
                         caption: 'entities.sysaccount.views.calendarview.caption',
@@ -2815,6 +2830,21 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'sysaccounts', parameterName: 'sysaccount' },
                             { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'sysaccount',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
                         ],
                         resource:'sysaccount',
                         requireAuth: true,
@@ -38636,6 +38666,19 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/sysusereditviewbasicinfo',
+                    meta: {
+                        caption: 'entities.sysaccount.views.editviewbasicinfo.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysusereditviewbasicinfo' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/doclibundoneprojecttreeexpview',
                     meta: {
                         caption: 'entities.doclib.views.undoneprojecttreeexpview.caption',
@@ -45820,6 +45863,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'ibzmonthlymyreceivededitview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/sysuserdashboardview',
+                    meta: {
+                        caption: 'entities.sysaccount.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'sysuserdashboardview' },
                         ],
                         requireAuth: true,
                     },

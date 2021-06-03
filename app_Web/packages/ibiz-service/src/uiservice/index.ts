@@ -104,6 +104,7 @@ export * from './ibz-case/ibz-case-ui-service';
 export * from './sys-team-member/sys-team-member-ui-service';
 export * from './pssystem-dbcfg/pssystem-dbcfg-ui-service';
 export * from './ibzpro-product-user-task/ibzpro-product-user-task-ui-service';
+export * from './my-task/my-task-ui-service';
 export * from './sys-update-features/sys-update-features-ui-service';
 export * from './case-stats/case-stats-ui-service';
 export * from './sys-employee/sys-employee-ui-service';

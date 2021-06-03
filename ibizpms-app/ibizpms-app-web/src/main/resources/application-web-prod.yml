@@ -491,6 +491,10 @@ zuul:
       path: /ibzproproductusertasks/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    mytask:
+      path: /mytasks/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     sys_update_features:
       path: /sysupdatefeatures/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

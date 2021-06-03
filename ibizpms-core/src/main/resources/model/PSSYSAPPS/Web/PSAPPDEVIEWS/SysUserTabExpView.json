@@ -50,7 +50,7 @@
       "realTitle" : "人员数据看板视图",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeDashboardView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserDashboardView.json",
         "viewType" : "DEPORTALVIEW"
       }
     }, {
@@ -343,7 +343,7 @@
                       "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
                       "getItemPSLayoutPanel" : {
                         "getAllPSPanelFields" : [ {
-                          "id" : "username"
+                          "id" : "personname"
                         }, {
                           "id" : "mytasks"
                         }, {
@@ -404,10 +404,10 @@
                             "getPSPanelItems" : [ {
                               "itemStyle" : "DEFAULT",
                               "itemType" : "FIELD",
-                              "name" : "username",
+                              "name" : "personname",
                               "getPSEditor" : {
                                 "editorType" : "SPAN",
-                                "name" : "username",
+                                "name" : "personname",
                                 "editable" : false,
                                 "enableLinkView" : false
                               },
@@ -418,7 +418,7 @@
                               "getPSSysCss" : {
                                 "cssName" : "panelitem-20px"
                               },
-                              "viewFieldName" : "username",
+                              "viewFieldName" : "personname",
                               "hidden" : false,
                               "showCaption" : false
                             } ],
@@ -924,6 +924,9 @@
                         "id" : "LIST"
                       },
                       "getPSDEListDataItems" : [ {
+                        "dataType" : 25,
+                        "name" : "personname"
+                      }, {
                         "dataType" : 9,
                         "name" : "mystorys"
                       }, {
@@ -8372,7 +8375,7 @@
       "controlType" : "TABVIEWPANEL",
       "getEmbeddedPSAppDEView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeDashboardView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysUserDashboardView.json",
         "viewType" : "DEPORTALVIEW"
       },
       "name" : "tabviewpanel14",

@@ -105,6 +105,7 @@ export * from './ibz-case/ibz-case.service';
 export * from './sys-team-member/sys-team-member.service';
 export * from './pssystem-dbcfg/pssystem-dbcfg.service';
 export * from './ibzpro-product-user-task/ibzpro-product-user-task.service';
+export * from './my-task/my-task.service';
 export * from './sys-update-features/sys-update-features.service';
 export * from './case-stats/case-stats.service';
 export * from './sys-employee/sys-employee.service';

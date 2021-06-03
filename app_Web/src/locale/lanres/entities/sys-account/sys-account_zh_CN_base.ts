@@ -62,6 +62,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("修改密码",null),
 				title: commonLogic.appcommonhandle("系统用户编辑视图",null),
 			},
+			'editviewbasicinfo': {
+				caption: commonLogic.appcommonhandle("系统用户",null),
+				title: commonLogic.appcommonhandle("人员编辑视图",null),
+			},
 			'calendarview': {
 				caption: commonLogic.appcommonhandle("系统用户",null),
 				title: commonLogic.appcommonhandle("我的地盘日历视图",null),
@@ -98,6 +102,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("我的地盘",null),
 				title: commonLogic.appcommonhandle("我的地盘",null),
 			},
+			'dashboardview': {
+				caption: commonLogic.appcommonhandle("系统用户",null),
+				title: commonLogic.appcommonhandle("人员数据看板视图",null),
+			},
 		},
 		changepassword_form: {
 			details: {
@@ -114,6 +122,33 @@ function getLocaleResourceBase(){
 				'newpassword': commonLogic.appcommonhandle("新密码",null), 
 				'repeatpassword': commonLogic.appcommonhandle("重复密码",null), 
 				'userid': commonLogic.appcommonhandle("用户标识",null), 
+			},
+			uiactions: {
+			},
+		},
+		personalinfomain_form: {
+			details: {
+				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
+				'grouppanel3': commonLogic.appcommonhandle("分组面板",null), 
+				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
+				'group1': commonLogic.appcommonhandle("人员基本信息",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("用户标识",null), 
+				'srfmajortext': commonLogic.appcommonhandle("用户姓名",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'loginname': commonLogic.appcommonhandle("登录名",null), 
+				'personname': commonLogic.appcommonhandle("用户姓名",null), 
+				'sex': commonLogic.appcommonhandle("性别",null), 
+				'mdeptname': commonLogic.appcommonhandle("主部门名称",null), 
+				'userid': commonLogic.appcommonhandle("用户标识",null), 
+				'phone': commonLogic.appcommonhandle("联系方式",null), 
+				'email': commonLogic.appcommonhandle("邮件",null), 
+				'addr': commonLogic.appcommonhandle("地址",null), 
+				'avatar': commonLogic.appcommonhandle("社交账号",null), 
 			},
 			uiactions: {
 			},
