@@ -25,6 +25,7 @@ public interface DocMapper extends BaseMapper<Doc> {
     List<Doc> selectDocLibDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     List<Doc> selectDocModuleDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     List<Doc> selectDocStatus(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectLastedModify(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     List<Doc> selectModuleDocChild(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     List<Doc> selectMyCreateOrUpdateDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     List<Doc> selectMyFavourite(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
@@ -39,6 +40,7 @@ public interface DocMapper extends BaseMapper<Doc> {
     Page<Doc> searchDocLibDoc(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     Page<Doc> searchDocModuleDoc(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     Page<Doc> searchDocStatus(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    Page<Doc> searchLastedModify(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     Page<Doc> searchModuleDocChild(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     Page<Doc> searchMyCreateOrUpdateDoc(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     Page<Doc> searchMyFavourite(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);

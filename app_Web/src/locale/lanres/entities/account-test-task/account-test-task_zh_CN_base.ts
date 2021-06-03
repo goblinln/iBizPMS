@@ -39,6 +39,65 @@ function getLocaleResourceBase(){
 		'updateman': commonLogic.appcommonhandle("更新人",null),
 		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 	},
+		views: {
+			'myygridview': {
+				caption: commonLogic.appcommonhandle("测试版本",null),
+				title: commonLogic.appcommonhandle("测试单表格视图",null),
+			},
+			'mydgridview': {
+				caption: commonLogic.appcommonhandle("测试版本",null),
+				title: commonLogic.appcommonhandle("测试单表格视图",null),
+			},
+		},
+		main_grid: {
+			columns: {
+				'id': commonLogic.appcommonhandle("编号",null),
+				'name': commonLogic.appcommonhandle("名称",null),
+				'productname': commonLogic.appcommonhandle("产品",null),
+				'projecttname': commonLogic.appcommonhandle("项目",null),
+				'buildname': commonLogic.appcommonhandle("版本",null),
+				'owner': commonLogic.appcommonhandle("负责人",null),
+				'begin': commonLogic.appcommonhandle("开始日期",null),
+				'end': commonLogic.appcommonhandle("结束日期",null),
+				'status': commonLogic.appcommonhandle("当前状态",null),
+				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+		exportColumns: {
+				'testtasksn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
+				'name': commonLogic.appcommonhandle("名称",null),
+				'productname': commonLogic.appcommonhandle("产品",null),
+				'projecttname': commonLogic.appcommonhandle("项目",null),
+				'product': commonLogic.appcommonhandle("所属产品",null),
+				'project': commonLogic.appcommonhandle("所属项目",null),
+				'build': commonLogic.appcommonhandle("版本",null),
+				'buildname': commonLogic.appcommonhandle("版本",null),
+				'owner': commonLogic.appcommonhandle("负责人",null),
+				'begin': commonLogic.appcommonhandle("开始日期",null),
+				'end': commonLogic.appcommonhandle("结束日期",null),
+				'status': commonLogic.appcommonhandle("当前状态",null),
+		},
+			uiactions: {
+				accounttesttask_linkcase: commonLogic.appcommonhandle("关联用例",null),
+				accounttesttask_testreportr: commonLogic.appcommonhandle("测试报告",null),
+				accounttesttask_openinfoview: commonLogic.appcommonhandle("概况",null),
+				accounttesttask_editedit: commonLogic.appcommonhandle("编辑",null),
+				accounttesttask_delete: commonLogic.appcommonhandle("删除",null),
+			},
+		},
+		mydgridviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("过滤",null),
+				tip: commonLogic.appcommonhandle("过滤",null),
+			},
+		},
+		myygridviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("过滤",null),
+				tip: commonLogic.appcommonhandle("过滤",null),
+			},
+		},
 	};
 	return data;
 }

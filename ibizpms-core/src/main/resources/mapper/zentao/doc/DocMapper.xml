@@ -194,6 +194,13 @@
          )t1
      </select>
 
+    <!--数据集合[LastedModify]-->
+	 <select id="searchLastedModify"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext"  resultMap="DocResultMap">
+         select t1.* from (
+                <include refid="LastedModify" />
+         )t1
+     </select>
+
     <!--数据集合[ModuleDocChild]-->
 	 <select id="searchModuleDocChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext"  resultMap="DocResultMap">
          select t1.* from (
@@ -333,6 +340,21 @@
 	
 	<select id="selectDocStatus"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="DocStatus" />
+	</select>
+
+    <!--数据查询[LastedModify]-->
+    <sql id="LastedModify" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, 'doc' AS `DOCQTYPE`, t1.`DOCSN`, t1.`EDITEDBY`, t1.`EDITEDDATE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`KEYWORDS`, t1.`LIB`, t31.`NAME` AS `LIBNAME`, t1.`MODULE`, t41.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY`, t1.`VERSION`, t1.`VIEWS` FROM `zt_doc` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_doclib` t31 ON t1.`LIB` = t31.`ID`  LEFT JOIN `zt_module` t41 ON t1.`MODULE` = t41.`ID`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectLastedModify"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="LastedModify" />
 	</select>
 
     <!--数据查询[ModuleDocChild]-->

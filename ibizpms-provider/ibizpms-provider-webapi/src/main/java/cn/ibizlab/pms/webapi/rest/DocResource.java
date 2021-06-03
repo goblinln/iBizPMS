@@ -295,6 +295,18 @@ public class DocResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_DOC', 'READ')")
+	@ApiOperation(value = "获取最新更新（与我相关）", tags = {"文档" } ,notes = "获取最新更新（与我相关）")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchlastedmodify")
+	public ResponseEntity<List<DocDTO>> fetchlastedmodify(@RequestBody DocSearchContext context) {
+        Page<Doc> domains = docService.searchLastedModify(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
 	@ApiOperation(value = "获取文件夹文档（子目录）", tags = {"文档" } ,notes = "获取文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmoduledocchild")
 	public ResponseEntity<List<DocDTO>> fetchmoduledocchild(@RequestBody DocSearchContext context) {
@@ -582,6 +594,19 @@ public class DocResource {
 	public ResponseEntity<List<DocDTO>> fetchDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
         context.setN_lib_eq(doclib_id);
         Page<Doc> domains = docService.searchDocStatus(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档库获取最新更新（与我相关）", tags = {"文档" } ,notes = "根据文档库获取最新更新（与我相关）")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchlastedmodify")
+	public ResponseEntity<List<DocDTO>> fetchLastedModifyByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchLastedModify(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -883,6 +908,19 @@ public class DocResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品文档库获取最新更新（与我相关）", tags = {"文档" } ,notes = "根据产品文档库获取最新更新（与我相关）")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchlastedmodify")
+	public ResponseEntity<List<DocDTO>> fetchLastedModifyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchLastedModify(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品文档库获取文件夹文档（子目录）", tags = {"文档" } ,notes = "根据产品文档库获取文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmoduledocchild")
 	public ResponseEntity<List<DocDTO>> fetchModuleDocChildByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
@@ -1168,6 +1206,19 @@ public class DocResource {
 	public ResponseEntity<List<DocDTO>> fetchDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
         context.setN_lib_eq(doclib_id);
         Page<Doc> domains = docService.searchDocStatus(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据项目文档库获取最新更新（与我相关）", tags = {"文档" } ,notes = "根据项目文档库获取最新更新（与我相关）")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchlastedmodify")
+	public ResponseEntity<List<DocDTO>> fetchLastedModifyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchLastedModify(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

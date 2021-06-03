@@ -88,6 +88,9 @@ public class DocAspect {
         else if (action.equals("searchDocStatus")) {
             return getDataEntityRuntime().aroundDataSet("DocStatus", point);
         }
+        else if (action.equals("searchLastedModify")) {
+            return getDataEntityRuntime().aroundDataSet("LastedModify", point);
+        }
         else if (action.equals("searchModuleDocChild")) {
             return getDataEntityRuntime().aroundDataSet("ModuleDocChild", point);
         }

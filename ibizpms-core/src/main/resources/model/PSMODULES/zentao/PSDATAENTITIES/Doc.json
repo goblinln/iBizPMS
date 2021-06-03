@@ -224,6 +224,19 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "LastedModify",
+    "logicName" : "最新更新（与我相关）",
+    "name" : "LastedModify"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
         "customCond" : "( t1.`MODULE` = ${srfwebcontext('srfparentkey','{\"defname\":\"MODULE\",\"dename\":\"ZT_DOC\"}')} )",
@@ -390,6 +403,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "DocStatus"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "LastedModify",
+    "logicName" : "最新更新（与我相关）",
+    "name" : "LastedModify",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "LastedModify"
     } ],
     "enableBackend" : true,
     "enableFront" : true

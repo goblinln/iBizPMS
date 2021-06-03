@@ -101,6 +101,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("执行结果",null),
 				title: commonLogic.appcommonhandle("执行结果",null),
 			},
+			'redirectview': {
+				caption: commonLogic.appcommonhandle("测试用例",null),
+				title: commonLogic.appcommonhandle("case数据重定向视图",null),
+			},
 			'modulechartview9': {
 				caption: commonLogic.appcommonhandle("模块",null),
 				title: commonLogic.appcommonhandle("测试用例图表视图（模块）",null),

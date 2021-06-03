@@ -421,6 +421,20 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return this.condCache.get('view');
     }
     /**
+     * FetchMyFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountBugService
+     */
+    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
+        }
+        return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -449,20 +463,6 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmy`, _data);
         }
         return this.http.post(`/accountbugs/fetchmy`, _data);
-    }
-    /**
-     * FetchMyFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountBugService
-     */
-    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
-        }
-        return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
     }
     /**
      * FetchAccount

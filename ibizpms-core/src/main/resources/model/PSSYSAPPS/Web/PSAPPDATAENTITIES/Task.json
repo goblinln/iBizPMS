@@ -31,39 +31,63 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Create",
+    "codeName" : "Activate",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Activate",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "Activate"
     },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
+    "builtinMethod" : false
   }, {
-    "codeName" : "Restart",
+    "codeName" : "TaskNFavorites",
     "methodType" : "DEACTION",
-    "name" : "Restart",
+    "name" : "TaskNFavorites",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RESTART"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Restart"
+      "id" : "TaskNFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ConfirmStoryChange",
+    "methodType" : "DEACTION",
+    "name" : "ConfirmStoryChange",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ConfirmStoryChange"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AssignTo"
     },
     "builtinMethod" : false
   }, {
@@ -84,71 +108,37 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Activate",
+    "codeName" : "Restart",
     "methodType" : "DEACTION",
-    "name" : "Activate",
+    "name" : "Restart",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ACTIVATE"
+      "id" : "RESTART"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Activate"
+      "id" : "Restart"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Cancel",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Cancel",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "CANCEL"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CLOSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
+      "id" : "Cancel"
     },
     "builtinMethod" : false
   }, {
@@ -170,6 +160,25 @@
     "builtinMethod" : false
   }, {
     "batchActionMode" : 1,
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -188,33 +197,33 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "TaskNFavorites",
+    "codeName" : "TaskFavorites",
     "methodType" : "DEACTION",
-    "name" : "TaskNFavorites",
+    "name" : "TaskFavorites",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "TaskNFavorites"
+      "id" : "TaskFavorites"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "AssignTo",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "AssignTo",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ASSIGNTO"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "AssignTo"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -235,6 +244,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -252,46 +278,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Cancel",
+    "codeName" : "Close",
     "methodType" : "DEACTION",
-    "name" : "Cancel",
+    "name" : "Close",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CANCEL"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Cancel"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskFavorites",
-    "methodType" : "DEACTION",
-    "name" : "TaskFavorites",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ConfirmStoryChange",
-    "methodType" : "DEACTION",
-    "name" : "ConfirmStoryChange",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ConfirmStoryChange"
+      "id" : "Close"
     },
     "builtinMethod" : false
   }, {
@@ -838,23 +838,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchReport",
-    "methodType" : "FETCH",
-    "name" : "FetchReportDS",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ReportDS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchReport"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchCurProjectTaskQuery",
     "methodType" : "FETCH",
     "name" : "FetchCurProjectTaskQuery",
@@ -886,6 +869,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchReport",
+    "methodType" : "FETCH",
+    "name" : "FetchReportDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ReportDS"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchReport"
     },
     "builtinMethod" : false
   }, {
@@ -1880,39 +1880,33 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Create",
+    "codeName" : "Activate",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Activate",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "Activate"
     },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
+    "builtinMethod" : false
   }, {
-    "codeName" : "Restart",
+    "codeName" : "TaskNFavorites",
     "methodType" : "DEACTION",
-    "name" : "Restart",
+    "name" : "TaskNFavorites",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RESTART"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Restart"
+      "id" : "TaskNFavorites"
     },
     "builtinMethod" : false
   }, {
@@ -1933,6 +1927,53 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ConfirmStoryChange",
+    "methodType" : "DEACTION",
+    "name" : "ConfirmStoryChange",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ConfirmStoryChange"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AssignTo"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurProjectTaskQuery",
+    "methodType" : "FETCH",
+    "name" : "FetchCurProjectTaskQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurProjectTaskQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurProjectTaskQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Finish",
     "methodType" : "DEACTION",
     "name" : "Finish",
@@ -1950,29 +1991,64 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Activate",
+    "codeName" : "Restart",
     "methodType" : "DEACTION",
-    "name" : "Activate",
+    "name" : "Restart",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ACTIVATE"
+      "id" : "RESTART"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Activate"
+      "id" : "Restart"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Cancel",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Cancel",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CANCEL"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Cancel"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Pause",
+    "methodType" : "DEACTION",
+    "name" : "Pause",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PAUSE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Pause"
+    },
+    "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1980,24 +2056,57 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Create"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
+      "id" : "Default"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CLOSE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Close"
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "TaskFavorites",
+    "methodType" : "DEACTION",
+    "name" : "TaskFavorites",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "TaskFavorites"
     },
     "builtinMethod" : false
   }, {
@@ -2035,106 +2144,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchCurProjectTaskQuery",
-    "methodType" : "FETCH",
-    "name" : "FetchCurProjectTaskQuery",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CurProjectTaskQuery"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurProjectTaskQuery"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Pause",
-    "methodType" : "DEACTION",
-    "name" : "Pause",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "PAUSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Pause"
-    },
-    "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "TaskNFavorites",
-    "methodType" : "DEACTION",
-    "name" : "TaskNFavorites",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskNFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AssignTo",
-    "methodType" : "DEACTION",
-    "name" : "AssignTo",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Start",
     "methodType" : "DEACTION",
     "name" : "Start",
@@ -2149,6 +2158,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Start"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -2169,46 +2195,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Cancel",
+    "codeName" : "Close",
     "methodType" : "DEACTION",
-    "name" : "Cancel",
+    "name" : "Close",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CANCEL"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Cancel"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "TaskFavorites",
-    "methodType" : "DEACTION",
-    "name" : "TaskFavorites",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TaskFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "ConfirmStoryChange",
-    "methodType" : "DEACTION",
-    "name" : "ConfirmStoryChange",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "ConfirmStoryChange"
+      "id" : "Close"
     },
     "builtinMethod" : false
   }, {

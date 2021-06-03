@@ -109,6 +109,10 @@ export class DocBaseService extends EntityBaseService<IDoc> {
         return this.condCache.get('docStatus');
     }
 
+    protected getLastedModifyCond() {
+        return this.condCache.get('lastedModify');
+    }
+
     protected getModuleDocChildCond() {
         if (!this.condCache.has('moduleDocChild')) {
             const strCond: any[] = ['AND', ['EQ', 'MODULE',{ type: 'WEBCONTEXT', value: 'srfparentkey'}]];
@@ -433,6 +437,20 @@ export class DocBaseService extends EntityBaseService<IDoc> {
             return this.http.post(`/doclibs/${_context.doclib}/docs/fetchdocstatus`, _data);
         }
         return this.http.post(`/docs/fetchdocstatus`, _data);
+    }
+    /**
+     * FetchLastedModify
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async FetchLastedModify(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        }
+        return this.http.post(`/docs/fetchlastedmodify`, _data);
     }
     /**
      * FetchModuleDocChild

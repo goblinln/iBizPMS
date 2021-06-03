@@ -867,23 +867,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMy",
-    "methodType" : "FETCH",
-    "name" : "FetchMy",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "My"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMy"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -898,6 +881,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "FetchMy",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMy"
     },
     "builtinMethod" : false
   }, {
@@ -1118,6 +1118,187 @@
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
     "builtinMethod" : true
+  } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "关联用例",
+    "codeName" : "LinkCase",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_LinkCase",
+    "name" : "关联用例",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "TASK",
+      "name" : "TASK",
+      "value" : "testtask",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "task",
+      "name" : "task",
+      "value" : "testtask",
+      "rawValue" : false
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf0c1@FontAwesome",
+      "cssClass" : "fa fa-link"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "LinkCase",
+    "uIActionType" : "DEUIACTION",
+    "id" : "LinkCase@TestTask"
+  }, {
+    "actionTarget" : "MULTIKEY",
+    "caption" : "测试报告",
+    "codeName" : "TestReportR",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_R.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_TestReportR",
+    "name" : "测试报告（单）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "TASKS",
+      "name" : "TASKS",
+      "value" : "id",
+      "rawValue" : false
+    }, {
+      "key" : "ID",
+      "name" : "ID",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "PROJECT",
+      "name" : "PROJECT",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "id",
+      "name" : "id",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "project",
+      "name" : "project",
+      "value" : "project",
+      "rawValue" : false
+    }, {
+      "key" : "tasks",
+      "name" : "tasks",
+      "value" : "id",
+      "rawValue" : false
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf024@FontAwesome",
+      "cssClass" : "fa fa-flag"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "TestReportR",
+    "uIActionType" : "DEUIACTION",
+    "id" : "TestReportR@TestTask"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "概况",
+    "codeName" : "OpenInfoView",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_OpenInfoView",
+    "name" : "打开概况视图",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf18d@FontAwesome",
+      "cssClass" : "fa fa-stack-exchange"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "OpenInfoView",
+    "uIActionType" : "DEUIACTION",
+    "closeEditView" : true,
+    "closePopupView" : true,
+    "reloadData" : true,
+    "id" : "OpenInfoView@TestTask"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "编辑",
+    "codeName" : "EditEdit",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_Edit.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "TestTask_EditEdit",
+    "name" : "编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "EditEdit",
+    "uIActionType" : "DEUIACTION",
+    "id" : "EditEdit@TestTask"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "删除",
+    "codeName" : "Delete",
+    "confirmMsg" : "您确认要删除该测试单吗？",
+    "fullCodeName" : "TestTask_Delete",
+    "name" : "删除",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf00d@FontAwesome",
+      "cssClass" : "fa fa-remove"
+    },
+    "refreshMode" : 1,
+    "successMsg" : "已删除",
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Delete",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "Delete@TestTask"
   } ],
   "getAllPSDEMainStates" : [ {
     "codeName" : "blocked",

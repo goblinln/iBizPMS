@@ -72,15 +72,15 @@
       "getOpenDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       },
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       } ],
       "viewLogicType" : "APP_OPENDATA",
@@ -104,12 +104,11 @@
     }
   }, {
     "name" : "EDITDATA",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "功能测试",
+    "realTitle" : "case数据重定向视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -222,7 +221,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchDefault"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -340,6 +339,12 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "title",
       "excelCaption" : "用例标题",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+        "viewType" : "DEREDIRECTVIEW"
+      },
+      "linkValueItem" : "srfkey",
       "name" : "title",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -352,6 +357,7 @@
       },
       "width" : 500,
       "widthUnit" : "STAR",
+      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",

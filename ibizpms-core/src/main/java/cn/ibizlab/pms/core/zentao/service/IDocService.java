@@ -51,6 +51,7 @@ public interface IDocService extends IService<Doc> {
     List<Doc> selectDocLibDoc(DocSearchContext context);
     List<Doc> selectDocModuleDoc(DocSearchContext context);
     List<Doc> selectDocStatus(DocSearchContext context);
+    List<Doc> selectLastedModify(DocSearchContext context);
     List<Doc> selectModuleDocChild(DocSearchContext context);
     List<Doc> selectMyCreateOrUpdateDoc(DocSearchContext context);
     List<Doc> selectMyFavourite(DocSearchContext context);
@@ -65,6 +66,7 @@ public interface IDocService extends IService<Doc> {
     Page<Doc> searchDocLibDoc(DocSearchContext context);
     Page<Doc> searchDocModuleDoc(DocSearchContext context);
     Page<Doc> searchDocStatus(DocSearchContext context);
+    Page<Doc> searchLastedModify(DocSearchContext context);
     Page<Doc> searchModuleDocChild(DocSearchContext context);
     Page<Doc> searchMyCreateOrUpdateDoc(DocSearchContext context);
     Page<Doc> searchMyFavourite(DocSearchContext context);

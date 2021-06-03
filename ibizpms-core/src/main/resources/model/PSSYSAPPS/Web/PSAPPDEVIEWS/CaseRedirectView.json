@@ -1,0 +1,84 @@
+{
+  "accUserMode" : 2,
+  "caption" : "测试用例",
+  "codeName" : "CaseRedirectView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+  "funcViewMode" : "REDIRECTVIEW",
+  "name" : "CaseRedirectView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+  },
+  "getPSDEViewCodeName" : "RedirectView",
+  "getPSDEViewId" : "5cadb0b29c2f812837b7b30bca106493",
+  "getPSSysImage" : {
+    "glyph" : "xf006@FontAwesome",
+    "cssClass" : "fa fa-star-o"
+  },
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEREDIRECTVIEW_STYLE2",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "getRedirectPSAppViewRefs" : [ {
+    "name" : "ZT_CASE:EDITVIEW",
+    "realTitle" : "功能测试编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  }, {
+    "name" : "EDITVIEW",
+    "realTitle" : "功能测试编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
+      "viewType" : "DEEDITVIEW"
+    }
+  } ],
+  "title" : "case数据重定向视图",
+  "viewStyle" : "STYLE2",
+  "viewType" : "DEREDIRECTVIEW",
+  "enableCustomGetDataAction" : false,
+  "enableDP" : true,
+  "enableWorkflow" : true,
+  "redirectView" : true,
+  "showCaptionBar" : true,
+  "modelid" : "47e0ac9436f855fbd0f81a779ee45f81",
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "TestCases",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    },
+    "name" : "TEST__TEST_CASE",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
+}

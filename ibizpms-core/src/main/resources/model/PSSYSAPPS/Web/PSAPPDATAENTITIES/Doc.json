@@ -334,6 +334,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchLastedModify",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "LastedModify"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchLastedModify"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchModuleDocChild",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -970,6 +986,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDocStatus"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchLastedModify",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "LastedModify"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchLastedModify"
     },
     "builtinMethod" : false
   }, {

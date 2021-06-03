@@ -131,6 +131,8 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return docService.searchDocModuleDoc(searchContext);    
         if (iPSDEDataSet.getName().equals("DocStatus"))
             return docService.searchDocStatus(searchContext);    
+        if (iPSDEDataSet.getName().equals("LastedModify"))
+            return docService.searchLastedModify(searchContext);    
         if (iPSDEDataSet.getName().equals("ModuleDocChild"))
             return docService.searchModuleDocChild(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateOrUpdateDoc"))
@@ -161,6 +163,8 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return docService.selectDocModuleDoc(searchContext);
         if (iPSDataQuery.getName().equals("DocStatus"))
             return docService.selectDocStatus(searchContext);
+        if (iPSDataQuery.getName().equals("LastedModify"))
+            return docService.selectLastedModify(searchContext);
         if (iPSDataQuery.getName().equals("ModuleDocChild"))
             return docService.selectModuleDocChild(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateOrUpdateDoc"))

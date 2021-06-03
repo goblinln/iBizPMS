@@ -80,6 +80,7 @@ export class TestTaskUIServiceBase extends UIServiceBase {
      * @memberof  TestTaskUIServiceBase
      */  
     protected initViewFuncMap(){
+        this.allViewFuncMap.set('REDIRECTVIEW:','REDIRECTVIEW');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
@@ -93,9 +94,7 @@ export class TestTaskUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
-        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
     }

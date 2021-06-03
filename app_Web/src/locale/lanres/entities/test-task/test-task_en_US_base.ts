@@ -40,6 +40,10 @@ function getLocaleResourceBase(){
 		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 	},
 		views: {
+			'redirectview': {
+				caption: commonLogic.appcommonhandle("测试版本",null),
+				title: commonLogic.appcommonhandle("testtask数据重定向视图",null),
+			},
 			'editview_edit': {
 				caption: commonLogic.appcommonhandle("测试版本",null),
 				title: commonLogic.appcommonhandle("测试单编辑视图",null),
@@ -80,10 +84,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("测试版本",null),
 				title: commonLogic.appcommonhandle("测试版本编辑视图",null),
 			},
-			'myygridview': {
-				caption: commonLogic.appcommonhandle("测试版本",null),
-				title: commonLogic.appcommonhandle("测试单表格视图",null),
-			},
 			'closeoptionview': {
 				caption: commonLogic.appcommonhandle("关闭",null),
 				title: commonLogic.appcommonhandle("关闭",null),
@@ -97,10 +97,6 @@ function getLocaleResourceBase(){
 				title: commonLogic.appcommonhandle("测试版本编辑视图",null),
 			},
 			'gridview': {
-				caption: commonLogic.appcommonhandle("测试版本",null),
-				title: commonLogic.appcommonhandle("测试单表格视图",null),
-			},
-			'mydgridview': {
 				caption: commonLogic.appcommonhandle("测试版本",null),
 				title: commonLogic.appcommonhandle("测试单表格视图",null),
 			},
@@ -533,18 +529,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Export {0} Data To Excel",null),
 			},
 			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("Filter",null),
-				tip: commonLogic.appcommonhandle("Filter",null),
-			},
-		},
-		mydgridviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("Filter",null),
-				tip: commonLogic.appcommonhandle("Filter",null),
-			},
-		},
-		myygridviewtoolbar_toolbar: {
-			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("Filter",null),
 				tip: commonLogic.appcommonhandle("Filter",null),
 			},

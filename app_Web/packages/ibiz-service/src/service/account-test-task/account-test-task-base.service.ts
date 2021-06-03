@@ -101,18 +101,20 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
         return this.condCache.get('view');
     }
     /**
-     * FetchMy
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountTestTaskService
      */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchmy`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accounttesttask) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttesttasks/${_context.accounttesttask}`);
+            return res;
         }
-        return this.http.post(`/accounttesttasks/fetchmy`, _data);
+        const res = await this.http.get(`/accounttesttasks/${_context.accounttesttask}`);
+        return res;
     }
     /**
      * FetchAccount
@@ -129,20 +131,18 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
         return this.http.post(`/accounttesttasks/fetchaccount`, _data);
     }
     /**
-     * Get
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountTestTaskService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accounttesttask) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttesttasks/${_context.accounttesttask}`);
-            return res;
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttesttasks/fetchmy`, _data);
         }
-        const res = await this.http.get(`/accounttesttasks/${_context.accounttesttask}`);
-        return res;
+        return this.http.post(`/accounttesttasks/fetchmy`, _data);
     }
     /**
      * GetUserConcat

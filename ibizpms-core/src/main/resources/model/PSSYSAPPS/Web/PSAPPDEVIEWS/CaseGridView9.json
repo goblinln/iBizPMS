@@ -238,6 +238,12 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "title",
       "excelCaption" : "用例标题",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+        "viewType" : "DEREDIRECTVIEW"
+      },
+      "linkValueItem" : "srfkey",
       "name" : "title",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -246,6 +252,7 @@
       },
       "width" : 500,
       "widthUnit" : "STAR",
+      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",
