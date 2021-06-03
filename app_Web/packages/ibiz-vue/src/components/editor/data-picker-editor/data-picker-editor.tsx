@@ -2,7 +2,7 @@ import { ModelTool, Util } from 'ibiz-core';
 import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
 import { EditorBase } from '../editor-base/editor-base';
 import { VueLifeCycleProcessing } from '../../../decorators';
-import { IPSAppCodeList, IPSAppDEView, IPSAppView, IPSCodeListEditor, IPSPickerEditor } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppDEView, IPSAppView, IPSCodeListEditor, IPSDEFormItem, IPSPickerEditor } from '@ibiz/dynamic-model-api';
 
 /**
  * 自动完成编辑器
@@ -105,7 +105,7 @@ export default class DataPickerEditor extends EditorBase {
                 this.customProps.formState = this.contextState;
                 this.customProps.emptyText = placeHolder;
                 this.customProps.viewModelData = pickupAppView || undefined;
-                this.customProps.refreshitems = [];
+                this.customProps.refreshitems = (this.editorInstance.getParentPSModelObject() as IPSDEFormItem).getResetItemNames();
                 break;
             // 地址框（选择）
             case 'ADDRESSPICKUP':

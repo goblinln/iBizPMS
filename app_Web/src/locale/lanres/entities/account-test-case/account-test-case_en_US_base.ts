@@ -86,7 +86,7 @@ function getLocaleResourceBase(){
 				title: commonLogic.appcommonhandle("测试用例表格视图",null),
 			},
 		},
-		maingrid_grid: {
+		mygrid_grid: {
 			columns: {
 				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
@@ -100,7 +100,6 @@ function getLocaleResourceBase(){
 				'tobugcnt': commonLogic.appcommonhandle("B",null),
 				'resultcnt': commonLogic.appcommonhandle("R",null),
 				'casesteps': commonLogic.appcommonhandle("S",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
@@ -123,15 +122,6 @@ function getLocaleResourceBase(){
 				'color': commonLogic.appcommonhandle("标题颜色",null),
 		},
 			uiactions: {
-			accounttestcase_confirmstorychange: commonLogic.appcommonhandle("确认",null),
-			accounttestcase_opentestrunresultview: commonLogic.appcommonhandle("结果",null),
-			accounttestcase_execute: commonLogic.appcommonhandle("执行",null),
-			accounttestcase_mainedit: commonLogic.appcommonhandle("编辑",null),
-			refresh: commonLogic.appcommonhandle("刷新",null),
-			accounttestcase_newbugbycaseresult: commonLogic.appcommonhandle("转Bug",null),
-			copy: commonLogic.appcommonhandle("Copy",null),
-			accounttestcase_casefavorite: commonLogic.appcommonhandle("收藏",null),
-			accounttestcase_casenfavorite: commonLogic.appcommonhandle("取消收藏",null),
 			},
 		},
 		main2_grid: {

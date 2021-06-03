@@ -7,6 +7,6 @@
   "logicName" : "Create",
   "name" : "Create",
   "orderValue" : 1,
-  "batchAction" : true,
-  "builtinAction" : true
+  "builtinAction" : true,
+  "enableBatchAction" : true
 }

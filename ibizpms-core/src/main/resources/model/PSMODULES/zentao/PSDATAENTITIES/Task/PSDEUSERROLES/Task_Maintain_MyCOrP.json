@@ -13,20 +13,6 @@
       "id" : "ZTProject__XQCHANGE"
     }
   }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    }
-  }, {
-    "dataAccessAction" : "START",
-    "name" : "START",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__START"
-    }
-  }, {
     "dataAccessAction" : "CLOSE",
     "name" : "CLOSE",
     "getPSDEOPPriv" : {
@@ -62,20 +48,6 @@
       "id" : "ZTProject__CONSUM"
     }
   }, {
-    "dataAccessAction" : "ASSIGNTO",
-    "name" : "ASSIGNTO",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    }
-  }, {
-    "dataAccessAction" : "RESTART",
-    "name" : "RESTART",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "RESTART"
-    }
-  }, {
     "dataAccessAction" : "SUBTASKS",
     "name" : "SUBTASKS",
     "getPSDEOPPriv" : {
@@ -97,20 +69,6 @@
       "id" : "TOBUG"
     }
   }, {
-    "dataAccessAction" : "ACTIVATE",
-    "name" : "ACTIVATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__ACTIVATE"
-    }
-  }, {
-    "dataAccessAction" : "PAUSE",
-    "name" : "PAUSE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__PAUSE"
-    }
-  }, {
     "dataAccessAction" : "FAVORITES",
     "name" : "FAVORITES",
     "getPSDEOPPriv" : {
@@ -130,13 +88,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "FJTASK"
-    }
-  }, {
-    "dataAccessAction" : "FINISH",
-    "name" : "FINISH",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__FINISH"
     }
   } ],
   "roleTag" : "Task_Maintain_MyCOrP",

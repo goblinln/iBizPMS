@@ -88,6 +88,7 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectDefault(TaskSearchContext context);
     List<Task> selectDefaultRow(TaskSearchContext context);
     List<Task> selectESBulk(TaskSearchContext context);
+    List<Task> selectMultipleTaskAction(TaskSearchContext context);
     List<Task> selectMy(TaskSearchContext context);
     List<Task> selectMyAgentTask(TaskSearchContext context);
     List<Task> selectMyAllTask(TaskSearchContext context);
@@ -96,6 +97,7 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectMyCompleteTaskMobMonthly(TaskSearchContext context);
     List<Task> selectMyCompleteTaskMonthlyZS(TaskSearchContext context);
     List<Task> selectMyCompleteTaskZS(TaskSearchContext context);
+    List<Task> selectMyCreate(TaskSearchContext context);
     List<Task> selectMyCreateOrPartake(TaskSearchContext context);
     List<Task> selectMyFavorites(TaskSearchContext context);
     List<Task> selectMyPlansTaskMobMonthly(TaskSearchContext context);
@@ -135,6 +137,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchDefault(TaskSearchContext context);
     Page<Task> searchDefaultRow(TaskSearchContext context);
     Page<Task> searchESBulk(TaskSearchContext context);
+    Page<Task> searchMultipleTaskAction(TaskSearchContext context);
     Page<Task> searchMy(TaskSearchContext context);
     Page<Task> searchMyAgentTask(TaskSearchContext context);
     Page<Task> searchMyAllTask(TaskSearchContext context);
@@ -143,6 +146,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchMyCompleteTaskMobMonthly(TaskSearchContext context);
     Page<Task> searchMyCompleteTaskMonthlyZS(TaskSearchContext context);
     Page<Task> searchMyCompleteTaskZS(TaskSearchContext context);
+    Page<Task> searchMyCreate(TaskSearchContext context);
     Page<Task> searchMyCreateOrPartake(TaskSearchContext context);
     Page<Task> searchMyFavorites(TaskSearchContext context);
     Page<Task> searchMyPlansTaskMobMonthly(TaskSearchContext context);

@@ -63,6 +63,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -77,7 +78,8 @@
       "modelref" : true,
       "id" : "COMPANY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -275,6 +277,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -289,7 +292,8 @@
       "modelref" : true,
       "id" : "COMPANY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",

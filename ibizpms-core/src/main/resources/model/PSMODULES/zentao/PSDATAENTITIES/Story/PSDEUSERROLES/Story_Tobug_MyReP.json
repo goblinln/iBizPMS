@@ -1,10 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Tobug_MyReP.json",
   "name" : "需求转Bug（我相关产品）（跟随角色）",
-  "getPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "MyReProduct"
-  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "TOBUG",
     "name" : "TOBUG",
@@ -14,7 +10,5 @@
     }
   } ],
   "roleTag" : "Story_Tobug_MyReP",
-  "userCat" : "CAT1",
-  "userDRAction" : "READ",
-  "systemReserved" : true
+  "userDRAction" : "READ"
 }

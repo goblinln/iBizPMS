@@ -125,6 +125,18 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
         return this.condCache.get('eSBulk');
     }
 
+    protected getMultipleTaskActionCond() {
+        if (!this.condCache.has('multipleTaskAction')) {
+            const strCond: any[] = ['AND', ['OR', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'LASTEDITEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CLOSEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'FINISHEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CANCELEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'ASSIGNEDTO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('multipleTaskAction', cond);
+            }
+        }
+        return this.condCache.get('multipleTaskAction');
+    }
+
     protected getMyCond() {
         return this.condCache.get('my');
     }
@@ -155,6 +167,18 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
 
     protected getMyCompleteTaskZSCond() {
         return this.condCache.get('myCompleteTaskZS');
+    }
+
+    protected getMyCreateCond() {
+        if (!this.condCache.has('myCreate')) {
+            const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreate', cond);
+            }
+        }
+        return this.condCache.get('myCreate');
     }
 
     protected getMyCreateOrPartakeCond() {
@@ -277,20 +301,6 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
         return this.condCache.get('view');
     }
     /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountTaskService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchaccount`, _data);
-        }
-        return this.http.post(`/accounttasks/fetchaccount`, _data);
-    }
-    /**
      * FetchMy
      *
      * @param {*} [_context={}]
@@ -305,6 +315,20 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
         return this.http.post(`/accounttasks/fetchmy`, _data);
     }
     /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountTaskService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchaccount`, _data);
+        }
+        return this.http.post(`/accounttasks/fetchaccount`, _data);
+    }
+    /**
      * FetchMyFavorites
      *
      * @param {*} [_context={}]
@@ -317,6 +341,22 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmyfavorites`, _data);
         }
         return this.http.post(`/accounttasks/fetchmyfavorites`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountTaskService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accounttask) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttasks/${_context.accounttask}`);
+            return res;
+        }
+        const res = await this.http.get(`/accounttasks/${_context.accounttask}`);
+        return res;
     }
     /**
      * GetUserConcat

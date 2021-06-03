@@ -1,0 +1,19 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Delete_Create.json",
+  "name" : "任务删除（我创建的）（默认角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyCreate"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  } ],
+  "roleTag" : "Task_Delete_Create",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

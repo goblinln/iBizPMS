@@ -14,6 +14,5 @@
     }
   } ],
   "roleTag" : "Case_Read_MyReP",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userDRAction" : "READ"
 }

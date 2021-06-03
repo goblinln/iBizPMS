@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read_MyReP.json",
-  "name" : "任务查看（我相关的项目）（默认角色）",
+  "name" : "任务查看（我相关的项目）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "MyReProject"
@@ -14,6 +14,5 @@
     }
   } ],
   "roleTag" : "Task_Read_MyReP",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userDRAction" : "READ"
 }

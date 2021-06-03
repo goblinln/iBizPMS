@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -42,7 +43,8 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -114,6 +116,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -126,8 +129,10 @@
       "id" : "DELETE"
     },
     "userCat" : "CAT1",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -140,8 +145,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -154,7 +161,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -526,6 +534,7 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -537,7 +546,8 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -609,6 +619,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -621,8 +632,10 @@
       "id" : "DELETE"
     },
     "userCat" : "CAT1",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -635,8 +648,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -649,7 +664,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",

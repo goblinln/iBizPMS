@@ -10,5 +10,5 @@
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDELOGICS/RemoveModule.json"
   },
-  "batchAction" : true
+  "enableBatchAction" : true
 }

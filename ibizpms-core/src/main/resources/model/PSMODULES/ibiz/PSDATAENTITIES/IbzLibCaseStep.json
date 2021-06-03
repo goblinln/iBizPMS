@@ -70,8 +70,8 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -82,8 +82,8 @@
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "tempDataMode" : 2,
-    "batchAction" : true,
     "builtinAction" : true,
+    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "DELETE",
@@ -95,8 +95,8 @@
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "tempDataMode" : 1,
-    "batchAction" : true,
     "builtinAction" : true,
+    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "READ",

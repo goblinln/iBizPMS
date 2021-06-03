@@ -6,6 +6,6 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Save.json",
   "logicName" : "Save",
   "name" : "Save",
-  "batchAction" : true,
-  "builtinAction" : true
+  "builtinAction" : true,
+  "enableBatchAction" : true
 }

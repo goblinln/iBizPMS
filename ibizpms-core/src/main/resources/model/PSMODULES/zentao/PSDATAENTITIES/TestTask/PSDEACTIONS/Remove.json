@@ -8,6 +8,6 @@
   "name" : "Remove",
   "orderValue" : 21,
   "userCat" : "CAT1",
-  "batchAction" : true,
-  "builtinAction" : true
+  "builtinAction" : true,
+  "enableBatchAction" : true
 }

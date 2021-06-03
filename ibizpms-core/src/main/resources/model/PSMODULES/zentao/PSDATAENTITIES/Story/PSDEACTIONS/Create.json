@@ -9,6 +9,6 @@
   "orderValue" : 1,
   "userCat" : "CAT1",
   "userTag4" : "create",
-  "batchAction" : true,
-  "builtinAction" : true
+  "builtinAction" : true,
+  "enableBatchAction" : true
 }

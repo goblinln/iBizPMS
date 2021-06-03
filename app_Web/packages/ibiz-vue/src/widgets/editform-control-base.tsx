@@ -1058,9 +1058,13 @@ export class EditFormControlBase extends FormControlBase {
                 } else {
                     const tempContext: any = Util.deepCopy(this.context);
                     const data: any = Util.deepCopy(this.viewparams);
-                    if (formdetail.paramViewParamJO) {
-                        let result: any = Util.computedNavData(this.data, tempContext, data, formdetail.paramViewParamJO);
-                        Object.assign(data, result);
+                    if (formdetail?.getPSNavigateContexts() && (formdetail.getPSNavigateContexts().length >0)) {
+                        let _context: any = Util.computedNavData(this.data, tempContext, data, formdetail.getPSNavigateContexts());
+                        Object.assign(tempContext, _context);
+                    }
+                    if(formdetail?.getPSNavigateParams() && (formdetail.getPSNavigateParams().length >0)){
+                        let _param: any = Util.computedNavData(this.data, tempContext, data, formdetail.getPSNavigateParams());
+                        Object.assign(data, _param);
                     }
                     if (pickupview.openMode.indexOf('DRAWER') !== -1) {
                         const view: any = {

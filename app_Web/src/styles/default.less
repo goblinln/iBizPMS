@@ -413,7 +413,7 @@
 .view-default.view-container.decalendarexpview {
   padding: 0 8px;
   >.ivu-card >.ivu-card-body >.content-container  {
-    >.treeexpbar, >.gridexpbar, >.calendarexpbar, >.listexpbar {
+    >.expbarcontrol {
       >.ivu-split-horizontal {
         >.left-pane {
           padding: 0px;
@@ -422,6 +422,9 @@
           border-radius: 4px;
           >div {
             padding: 0 10px 10px 10px;
+          }
+          .container-header >.search-container {
+            padding-top: 10px;
           }
         }
         >.right-pane {
@@ -438,9 +441,14 @@
       }
     }
   }
-  >.ivu-card.view-no-caption {
-      >.content-container >.treeexpbar >.ivu-split-horizontal >.left-pane >div {
-        padding-top: 10px;
+  >.ivu-card.view-no-caption >.ivu-card-body {
+      >.content-container >.expbarcontrol >.ivu-split-horizontal >.left-pane  {
+        >div {
+          padding-top: 10px;
+        }
+        .container-header >.search-container {
+          padding-top: 0px;
+        }
       }
   }
 }

@@ -7,5 +7,5 @@
   "logicName" : "测试单关联测试用例",
   "name" : "linkCase",
   "userCat" : "CAT1",
-  "batchAction" : true
+  "enableBatchAction" : true
 }

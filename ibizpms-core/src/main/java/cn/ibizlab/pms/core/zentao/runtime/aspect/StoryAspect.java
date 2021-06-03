@@ -217,6 +217,9 @@ public class StoryAspect {
         else if (action.equals("searchMyAgentStory")) {
             return getDataEntityRuntime().aroundDataSet("MyAgentStory", point);
         }
+        else if (action.equals("searchMyCreate")) {
+            return getDataEntityRuntime().aroundDataSet("MyCreate", point);
+        }
         else if (action.equals("searchMyCreateOrPartake")) {
             return getDataEntityRuntime().aroundDataSet("MyCreateOrPartake", point);
         }

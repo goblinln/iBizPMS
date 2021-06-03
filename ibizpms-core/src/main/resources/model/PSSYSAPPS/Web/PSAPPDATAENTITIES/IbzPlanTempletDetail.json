@@ -63,6 +63,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -77,7 +78,8 @@
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -195,6 +197,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -207,8 +210,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -221,7 +226,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
@@ -416,6 +422,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -430,7 +437,8 @@
       "modelref" : true,
       "id" : "IBZPLANTEMPLETDETAIL__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -564,6 +572,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -576,8 +585,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -590,7 +601,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",

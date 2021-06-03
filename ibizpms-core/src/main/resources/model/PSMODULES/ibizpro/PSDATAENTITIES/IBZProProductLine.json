@@ -26,8 +26,8 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -62,8 +62,8 @@
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {

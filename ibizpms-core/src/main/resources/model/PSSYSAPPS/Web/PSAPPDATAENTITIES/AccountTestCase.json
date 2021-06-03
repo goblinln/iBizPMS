@@ -31,6 +31,23 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -117,6 +134,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -130,8 +148,10 @@
     },
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -144,8 +164,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -158,20 +180,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
@@ -318,6 +328,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
     "name" : "linkCase",
@@ -326,7 +337,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/LinkCase.json"
     },
     "userCat" : "CAT1",
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "MobLinkCase",
     "methodType" : "DEACTION",
@@ -356,6 +368,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -367,7 +380,8 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "TestRunCase",
     "methodType" : "DEACTION",
@@ -383,6 +397,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "TestsuitelinkCase",
     "methodType" : "DEACTION",
     "name" : "testsuitelinkCase",
@@ -391,7 +406,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json"
     },
     "userCat" : "CAT1",
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
@@ -600,6 +616,23 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "FetchAccount",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyFavorite",
     "methodType" : "FETCH",
     "name" : "FetchMyFavorites",
@@ -631,23 +664,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMy"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAccount",
-    "methodType" : "FETCH",
-    "name" : "FetchAccount",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Account"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -1294,6 +1310,23 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "FetchAccount",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyFavorite",
     "methodType" : "FETCH",
     "name" : "FetchMyFavorites",
@@ -1328,12 +1361,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAccount",
-    "methodType" : "FETCH",
-    "name" : "FetchAccount",
-    "getPSDEDataSet" : {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "Account"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1341,7 +1374,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -1431,6 +1464,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -1444,8 +1478,10 @@
     },
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -1458,8 +1494,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -1472,20 +1510,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetTemp",
     "methodType" : "DEACTION",
@@ -1632,6 +1658,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "LinkCase",
     "methodType" : "DEACTION",
     "name" : "linkCase",
@@ -1640,7 +1667,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/LinkCase.json"
     },
     "userCat" : "CAT1",
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "MobLinkCase",
     "methodType" : "DEACTION",
@@ -1670,6 +1698,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -1681,7 +1710,8 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "TestRunCase",
     "methodType" : "DEACTION",
@@ -1697,6 +1727,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "TestsuitelinkCase",
     "methodType" : "DEACTION",
     "name" : "testsuitelinkCase",
@@ -1705,7 +1736,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json"
     },
     "userCat" : "CAT1",
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
@@ -2236,227 +2268,6 @@
     "methodType" : "FILTERACTION",
     "name" : "FILTERFETCH",
     "builtinMethod" : true
-  } ],
-  "getAllPSAppDEUIActions" : [ {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "收藏",
-    "codeName" : "caseFavorite",
-    "dataAccessAction" : "NFAVORITE",
-    "fullCodeName" : "Case_caseFavorite",
-    "name" : "收藏",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "OPENEDBY",
-      "name" : "OPENEDBY",
-      "value" : "srfloginname",
-      "rawValue" : false
-    }, {
-      "key" : "SRFLOGINNAME",
-      "name" : "SRFLOGINNAME",
-      "value" : "srfloginname",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "srfloginname",
-      "name" : "srfloginname",
-      "value" : "srfloginname",
-      "rawValue" : false
-    }, {
-      "key" : "openedby",
-      "name" : "openedby",
-      "value" : "srfloginname",
-      "rawValue" : false
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf006@FontAwesome",
-      "cssClass" : "fa fa-star-o"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "caseFavorite",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "caseFavorite@Case"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "取消收藏",
-    "codeName" : "CaseNFavorite",
-    "dataAccessAction" : "FAVORITE",
-    "fullCodeName" : "Case_CaseNFavorite",
-    "name" : "取消收藏",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf005@FontAwesome",
-      "cssClass" : "fa fa-star"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "CaseNFavorite",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "CaseNFavorite@Case"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "结果",
-    "codeName" : "OpenTestRunResultView",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Case_OpenTestRunResultView",
-    "name" : "打开结果视图",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf16c@FontAwesome",
-      "cssClass" : "fa fa-stack-overflow"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "OpenTestRunResultView",
-    "uIActionType" : "DEUIACTION",
-    "id" : "OpenTestRunResultView@Case"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "确认",
-    "codeName" : "confirmstorychange",
-    "dataAccessAction" : "CONFIRMCHANGE",
-    "fullCodeName" : "Case_confirmstorychange",
-    "name" : "确认",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Confirmstorychange"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf046@FontAwesome",
-      "cssClass" : "fa fa-check-square-o"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "confirmstorychange",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "confirmstorychange@Case"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "编辑",
-    "codeName" : "MainEdit",
-    "dataAccessAction" : "CASEEDIT",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Case_MainEdit",
-    "name" : "主信息编辑",
-    "getNextPSUIAction" : {
-      "modelref" : true,
-      "id" : "Refresh"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf044@FontAwesome",
-      "cssClass" : "fa fa-edit"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "MainEdit",
-    "uIActionType" : "DEUIACTION",
-    "id" : "MainEdit@Case"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "转Bug",
-    "codeName" : "NewBugByCaseResult",
-    "dataAccessAction" : "TOBUG",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Case_NewBugByCaseResult",
-    "name" : "转Bug",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "TASK",
-      "name" : "TASK",
-      "value" : "task",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "task",
-      "name" : "task",
-      "value" : "task",
-      "rawValue" : false
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf188@FontAwesome",
-      "cssClass" : "fa fa-bug"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "NewBugByCaseResult",
-    "uIActionType" : "DEUIACTION",
-    "closeEditView" : true,
-    "closePopupView" : true,
-    "id" : "NewBugByCaseResult@Case"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "执行",
-    "codeName" : "Execute",
-    "dataAccessAction" : "RUNCASE",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Case_Execute",
-    "name" : "执行测试",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "Execute",
-    "uIActionType" : "DEUIACTION",
-    "id" : "Execute@Case"
   } ],
   "getAllPSDEMainStates" : [ {
     "codeName" : "blocked_blocked_0",

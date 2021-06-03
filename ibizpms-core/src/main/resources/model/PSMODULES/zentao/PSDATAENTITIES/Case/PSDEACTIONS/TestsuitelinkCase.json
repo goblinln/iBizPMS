@@ -7,5 +7,5 @@
   "logicName" : "套件关联",
   "name" : "testsuitelinkCase",
   "userCat" : "CAT1",
-  "batchAction" : true
+  "enableBatchAction" : true
 }

@@ -177,6 +177,18 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         return this.condCache.get('myAgentStory');
     }
 
+    protected getMyCreateCond() {
+        if (!this.condCache.has('myCreate')) {
+            const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreate', cond);
+            }
+        }
+        return this.condCache.get('myCreate');
+    }
+
     protected getMyCreateOrPartakeCond() {
         if (!this.condCache.has('myCreateOrPartake')) {
             const strCond: any[] = ['AND', ['OR', ['EQ', 'LASTEDITEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CLOSEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'REVIEWEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'ASSIGNEDTO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
@@ -323,6 +335,22 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
 
     protected getViewCond() {
         return this.condCache.get('view');
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountStoryService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accountstory) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountstories/${_context.accountstory}`);
+            return res;
+        }
+        const res = await this.http.get(`/accountstories/${_context.accountstory}`);
+        return res;
     }
     /**
      * FetchMyFavorites

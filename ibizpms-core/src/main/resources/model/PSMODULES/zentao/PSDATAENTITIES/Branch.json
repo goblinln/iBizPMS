@@ -27,8 +27,8 @@
     "name" : "Remove",
     "orderValue" : 21,
     "userCat" : "CAT1",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -63,8 +63,8 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",

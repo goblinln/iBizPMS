@@ -677,6 +677,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     public List<Story> selectMyAgentStory(StorySearchContext context){
         return baseMapper.selectMyAgentStory(context, context.getSelectCond());
     }
+    public List<Story> selectMyCreate(StorySearchContext context){
+        return baseMapper.selectMyCreate(context, context.getSelectCond());
+    }
     public List<Story> selectMyCreateOrPartake(StorySearchContext context){
         return baseMapper.selectMyCreateOrPartake(context, context.getSelectCond());
     }
@@ -862,6 +865,15 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     public Page<Story> searchMyAgentStory(StorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMyAgentStory(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我创建的（权限）
+     */
+    @Override
+    public Page<Story> searchMyCreate(StorySearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMyCreate(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

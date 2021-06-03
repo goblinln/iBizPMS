@@ -27,8 +27,8 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",

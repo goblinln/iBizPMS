@@ -129,6 +129,22 @@ export class AccountTestTaskBaseService extends EntityBaseService<IAccountTestTa
         return this.http.post(`/accounttesttasks/fetchaccount`, _data);
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountTestTaskService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accounttesttask) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttesttasks/${_context.accounttesttask}`);
+            return res;
+        }
+        const res = await this.http.get(`/accounttesttasks/${_context.accounttesttask}`);
+        return res;
+    }
+    /**
      * GetUserConcat
      *
      * @param {*} [_context={}]

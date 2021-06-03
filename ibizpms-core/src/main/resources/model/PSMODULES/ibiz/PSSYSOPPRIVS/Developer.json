@@ -113,16 +113,6 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
-    "name" : "研发人员-ZT_CASE[测试用例转Bug（我相关的产品）（系统使用）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_ToBug_MyReP.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-    }
-  }, {
     "name" : "研发人员-ZT_PROJECT[项目文档库管理（公开项目）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -441,6 +431,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "研发人员-ZT_TASK[任务维护（多人任务）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Mutiple.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     }
   }, {
     "name" : "研发人员-ZT_TASK[当前组织（创建）]",

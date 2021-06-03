@@ -76,8 +76,8 @@
     "orderValue" : 21,
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -88,8 +88,8 @@
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "tempDataMode" : 2,
-    "batchAction" : true,
     "builtinAction" : true,
+    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "DELETE",
@@ -101,8 +101,8 @@
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "tempDataMode" : 1,
-    "batchAction" : true,
     "builtinAction" : true,
+    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "READ",
@@ -242,7 +242,7 @@
     "logicName" : "测试单关联测试用例",
     "name" : "linkCase",
     "userCat" : "CAT1",
-    "batchAction" : true
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
@@ -278,8 +278,8 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
@@ -308,7 +308,7 @@
     "logicName" : "套件关联",
     "name" : "testsuitelinkCase",
     "userCat" : "CAT1",
-    "batchAction" : true
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
@@ -14231,9 +14231,7 @@
       }
     } ],
     "roleTag" : "Case_Maintain_MyReP",
-    "userCat" : "CAT1",
-    "userDRAction" : "READ",
-    "systemReserved" : true
+    "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Manage_COU.json",
     "name" : "测试用例管理（创建或更新）（系统使用）",
@@ -14421,8 +14419,7 @@
       }
     } ],
     "roleTag" : "Case_Read_MyReP",
-    "userDRAction" : "READ",
-    "defaultMode" : true
+    "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_ToBug_COU.json",
     "name" : "测试用例转Bug（创建或更新）（系统使用）",
@@ -14458,9 +14455,7 @@
       }
     } ],
     "roleTag" : "Case_ToBug_MyReP",
-    "userCat" : "CAT1",
-    "userDRAction" : "READ",
-    "systemReserved" : true
+    "userDRAction" : "READ"
   } ],
   "codeName" : "Case",
   "dEType" : 1,

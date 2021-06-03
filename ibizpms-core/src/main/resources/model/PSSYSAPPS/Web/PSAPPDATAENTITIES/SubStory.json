@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -45,7 +46,8 @@
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__CREATE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
@@ -63,6 +65,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -77,7 +80,8 @@
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -655,6 +659,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -669,7 +674,8 @@
       "modelref" : true,
       "id" : "Save"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
@@ -1457,6 +1463,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCreate",
+    "methodType" : "FETCH",
+    "name" : "MyCreate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreate"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyCreateOrPartake",
     "methodType" : "FETCH",
     "name" : "MyCreateOrPartake",
@@ -2023,6 +2038,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2037,7 +2053,8 @@
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__CREATE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
@@ -2055,6 +2072,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2069,7 +2087,8 @@
       "modelref" : true,
       "id" : "SUBSTORY__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -2647,6 +2666,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2661,7 +2681,8 @@
       "modelref" : true,
       "id" : "Save"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
@@ -3287,6 +3308,15 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreate",
+    "methodType" : "FETCH",
+    "name" : "MyCreate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreate"
     },
     "builtinMethod" : false
   }, {

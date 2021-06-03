@@ -31,6 +31,7 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -44,7 +45,8 @@
     },
     "userCat" : "CAT1",
     "userTag4" : "create",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -117,6 +119,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -130,8 +133,10 @@
     },
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -144,8 +149,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -158,7 +165,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -522,6 +530,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -533,7 +542,8 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
@@ -870,6 +880,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMultipleTaskAction",
+    "methodType" : "FETCH",
+    "name" : "MultipleTaskAction",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MultipleTaskAction"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "My",
@@ -939,6 +958,15 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCompleteTaskZS"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreate",
+    "methodType" : "FETCH",
+    "name" : "MyCreate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreate"
     },
     "builtinMethod" : false
   }, {
@@ -1753,6 +1781,7 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
+    "batchActionMode" : 1,
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -1766,7 +1795,8 @@
     },
     "userCat" : "CAT1",
     "userTag4" : "create",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -1839,6 +1869,7 @@
     "tempDataMode" : 1,
     "builtinMethod" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
     "name" : "Remove",
@@ -1852,8 +1883,10 @@
     },
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTemp",
     "methodType" : "DEACTION",
     "name" : "RemoveTemp",
@@ -1866,8 +1899,10 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
+    "batchActionMode" : 1,
     "codeName" : "RemoveTempMajor",
     "methodType" : "DEACTION",
     "name" : "RemoveTempMajor",
@@ -1880,7 +1915,8 @@
       "id" : "DELETE"
     },
     "tempDataMode" : 1,
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -2244,6 +2280,7 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -2255,7 +2292,8 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "SendMessage",
     "methodType" : "DEACTION",
@@ -2577,6 +2615,25 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMultipleTaskAction",
+    "methodType" : "FETCH",
+    "name" : "MultipleTaskAction",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MultipleTaskAction"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempMultipleTaskAction",
+    "methodType" : "FETCHTEMP",
+    "name" : "MultipleTaskAction",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MultipleTaskAction"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "My",
@@ -2725,6 +2782,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyCompleteTaskZS"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreate",
+    "methodType" : "FETCH",
+    "name" : "MyCreate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempMyCreate",
+    "methodType" : "FETCHTEMP",
+    "name" : "MyCreate",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreate"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false

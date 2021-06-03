@@ -8,7 +8,7 @@
   "name" : "RemoveTempMajor",
   "orderValue" : 23,
   "tempDataMode" : 1,
-  "batchAction" : true,
   "builtinAction" : true,
+  "enableBatchAction" : true,
   "enableTempData" : true
 }

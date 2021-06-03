@@ -133,7 +133,5 @@
     }
   } ],
   "roleTag" : "Case_Maintain_MyReP",
-  "userCat" : "CAT1",
-  "userDRAction" : "READ",
-  "systemReserved" : true
+  "userDRAction" : "READ"
 }

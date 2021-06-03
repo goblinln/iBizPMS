@@ -114,7 +114,6 @@ function getLocaleResourceBase(){
 				'openeddate': commonLogic.appcommonhandle("创建日期",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
 				'resolution': commonLogic.appcommonhandle("方案",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
@@ -136,13 +135,6 @@ function getLocaleResourceBase(){
 				'projectname': commonLogic.appcommonhandle("项目",null),
 		},
 			uiactions: {
-				accountbug_confirmbug: commonLogic.appcommonhandle("确认",null),
-				accountbug_resolvebug: commonLogic.appcommonhandle("解决",null),
-				accountbug_closebug: commonLogic.appcommonhandle("关闭",null),
-				accountbug_mainedit: commonLogic.appcommonhandle("编辑",null),
-				copy: commonLogic.appcommonhandle("拷贝",null),
-				accountbug_bugfavorites: commonLogic.appcommonhandle("收藏",null),
-				accountbug_bugnfavorites: commonLogic.appcommonhandle("取消收藏",null),
 			},
 		},
 		main2_grid: {
@@ -170,7 +162,6 @@ function getLocaleResourceBase(){
 				'openeddate': commonLogic.appcommonhandle("创建日期",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
 				'resolution': commonLogic.appcommonhandle("方案",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
@@ -192,13 +183,6 @@ function getLocaleResourceBase(){
 				'projectname': commonLogic.appcommonhandle("项目",null),
 		},
 			uiactions: {
-				accountbug_confirmbug: commonLogic.appcommonhandle("确认",null),
-				accountbug_resolvebug: commonLogic.appcommonhandle("解决",null),
-				accountbug_closebug: commonLogic.appcommonhandle("关闭",null),
-				accountbug_mainedit: commonLogic.appcommonhandle("编辑",null),
-				copy: commonLogic.appcommonhandle("拷贝",null),
-				accountbug_bugfavorites: commonLogic.appcommonhandle("收藏",null),
-				accountbug_bugnfavorites: commonLogic.appcommonhandle("取消收藏",null),
 			},
 		},
 		myfavoritegridviewtoolbar_toolbar: {

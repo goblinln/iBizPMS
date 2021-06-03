@@ -177,6 +177,18 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.condCache.get('myAgentStory');
     }
 
+    protected getMyCreateCond() {
+        if (!this.condCache.has('myCreate')) {
+            const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreate', cond);
+            }
+        }
+        return this.condCache.get('myCreate');
+    }
+
     protected getMyCreateOrPartakeCond() {
         if (!this.condCache.has('myCreateOrPartake')) {
             const strCond: any[] = ['AND', ['OR', ['EQ', 'LASTEDITEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CLOSEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'REVIEWEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'ASSIGNEDTO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];

@@ -89,13 +89,6 @@
       "modelref" : true,
       "id" : "CLOSE"
     }
-  }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "Story_Maintain_MyCOrP_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    }
   } ],
   "roleTag" : "Story_Maintain_MyCOrP",
   "userCat" : "CAT1",

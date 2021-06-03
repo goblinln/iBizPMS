@@ -147,7 +147,7 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
             <split
                 ref={`${this.appDeCodeName}-${this.controlInstance.codeName?.toLowerCase()}`}
                 id={this.controlInstance?.codeName?.toLowerCase()}
-                class={[`app-tree-exp-bar`, this.renderOptions?.controlClassNames]}
+                class={['expbarcontrol', `app-tree-exp-bar`, this.renderOptions?.controlClassNames]}
                 v-model={this.split}
                 mode={this.sideBarlayout == 'LEFT' ? 'horizontal' : 'vertical'}
                 on-on-move-start={()=>{this.dragstate = true}}

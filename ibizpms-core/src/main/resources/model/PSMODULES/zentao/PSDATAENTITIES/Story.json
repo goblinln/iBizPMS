@@ -10,8 +10,8 @@
     "orderValue" : 1,
     "userCat" : "CAT1",
     "userTag4" : "create",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
@@ -33,8 +33,8 @@
     "orderValue" : 21,
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
@@ -348,8 +348,8 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
@@ -669,6 +669,24 @@
     "logicName" : "我代理的需求",
     "name" : "MyAgentStory",
     "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_STORY\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyCreate",
+    "logicName" : "我创建的（权限）",
+    "name" : "MyCreate",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1143,6 +1161,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyAgentStory"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MyCreate",
+    "logicName" : "我创建的（权限）",
+    "name" : "MyCreate",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCreate"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -12578,6 +12606,24 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Delete_MyCreate.json",
+    "name" : "需求删除（我创建）（默认）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreate"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "Story_Delete_MyCreate",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain.json",
     "name" : "需求维护",
@@ -12703,13 +12749,6 @@
         "modelref" : true,
         "id" : "CLOSE"
       }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "Story_Maintain_MyCOrP_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
     } ],
     "roleTag" : "Story_Maintain_MyCOrP",
     "userCat" : "CAT1",
@@ -12718,10 +12757,6 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyReP.json",
     "name" : "需求维护（我相关产品）（跟随角色）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyReProduct"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "FAVORITES",
       "name" : "Story_Maintain_MyCOrP_Favorites",
@@ -12816,8 +12851,7 @@
     } ],
     "roleTag" : "Story_Maintain_MyReP",
     "userCat" : "CAT1",
-    "userDRAction" : "READ",
-    "systemReserved" : true
+    "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Manage.json",
@@ -12862,9 +12896,7 @@
       }
     } ],
     "roleTag" : "Story_Read_MyReP",
-    "userCat" : "CAT1",
-    "userDRAction" : "READ",
-    "systemReserved" : true
+    "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_ToBug_MyCOrP.json",
     "name" : "需求转Bug（我创建或参与）（跟随角色）",
@@ -12887,10 +12919,6 @@
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Tobug_MyReP.json",
     "name" : "需求转Bug（我相关产品）（跟随角色）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyReProduct"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "TOBUG",
       "name" : "TOBUG",
@@ -12900,9 +12928,7 @@
       }
     } ],
     "roleTag" : "Story_Tobug_MyReP",
-    "userCat" : "CAT1",
-    "userDRAction" : "READ",
-    "systemReserved" : true
+    "userDRAction" : "READ"
   } ],
   "codeName" : "Story",
   "dEType" : 1,

@@ -794,7 +794,7 @@ export class ExpBarControlBase extends MainControlBase {
             <split
                 ref={`${this.appDeCodeName}-${this.controlInstance.codeName?.toLowerCase()}`}
                 id={this.controlInstance.codeName?.toLowerCase()}
-                class={[`app-${this.$xDataControl.controlType?.toLowerCase()}-exp-bar`, this.renderOptions?.controlClassNames]}
+                class={['expbarcontrol', `app-${this.$xDataControl.controlType?.toLowerCase()}-exp-bar`, this.renderOptions?.controlClassNames]}
                 v-model={this.split}
                 mode={this.sideBarlayout == 'LEFT' ? 'horizontal' : 'vertical'}
                 on-on-move-start={() => { this.dragstate = true; }}

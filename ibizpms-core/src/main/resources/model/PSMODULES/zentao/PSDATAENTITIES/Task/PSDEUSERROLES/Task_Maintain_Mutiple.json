@@ -1,0 +1,55 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Mutiple.json",
+  "name" : "任务维护（多人任务）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MultipleTaskAction"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "RESTART",
+    "name" : "RESTART",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    }
+  }, {
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "ACTIVATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__ACTIVATE"
+    }
+  }, {
+    "dataAccessAction" : "FINISH",
+    "name" : "FINISH",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__FINISH"
+    }
+  }, {
+    "dataAccessAction" : "PAUSE",
+    "name" : "PAUSE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__PAUSE"
+    }
+  }, {
+    "dataAccessAction" : "START",
+    "name" : "START",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__START"
+    }
+  }, {
+    "dataAccessAction" : "ASSIGNTO",
+    "name" : "AAIGNTO",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    }
+  } ],
+  "roleTag" : "Task_Maintain_Mutiple",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ",
+  "systemReserved" : true
+}

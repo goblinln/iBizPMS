@@ -10,8 +10,8 @@
     "orderValue" : 1,
     "userCat" : "CAT1",
     "userTag4" : "create",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
@@ -78,8 +78,8 @@
     "orderValue" : 21,
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
@@ -90,8 +90,8 @@
     "name" : "RemoveTemp",
     "orderValue" : 22,
     "tempDataMode" : 2,
-    "batchAction" : true,
     "builtinAction" : true,
+    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "DELETE",
@@ -103,8 +103,8 @@
     "name" : "RemoveTempMajor",
     "orderValue" : 23,
     "tempDataMode" : 1,
-    "batchAction" : true,
     "builtinAction" : true,
+    "enableBatchAction" : true,
     "enableTempData" : true
   }, {
     "actionMode" : "READ",
@@ -427,8 +427,8 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
@@ -755,6 +755,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`FINISHEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"FINISHEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CANCELEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CANCELEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_TASK\"}')} )  AND  ((exists(select 1 from zt_team t where t.type = 'task' and t.root = t1.id) and t1.assignedTo = #{srf.sessioncontext.srfloginname})  or not EXISTS(select 1 from zt_team t where t.type = 'task' and t.root = t1.id)) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MultipleTaskAction",
+    "logicName" : "多人任务（权限）",
+    "name" : "MultipleTaskAction",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "(t1.assignedTo = #{srf.sessioncontext.srfloginname} or t1.openedBy = #{srf.sessioncontext.srfloginname} or t1.finishedBy = #{srf.sessioncontext.srfloginname} or t1.closedBy = #{srf.sessioncontext.srfloginname} or t1.canceledBy = #{srf.sessioncontext.srfloginname})",
         "name" : "查询条件"
       } ]
@@ -893,6 +911,24 @@
     "logicName" : "我完成的任务（汇报）",
     "name" : "MyCompleteTaskZS",
     "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_TASK\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyCreate",
+    "logicName" : "我创建的（权限）",
+    "name" : "MyCreate",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1477,6 +1513,17 @@
     "enableFront" : true,
     "enableTempData" : true
   }, {
+    "codeName" : "MultipleTaskAction",
+    "logicName" : "多人任务（权限）",
+    "name" : "MultipleTaskAction",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MultipleTaskAction"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
     "codeName" : "My",
     "logicName" : "我的数据",
     "name" : "My",
@@ -1560,6 +1607,17 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyCompleteTaskZS"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "MyCreate",
+    "logicName" : "我创建的（权限）",
+    "name" : "MyCreate",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCreate"
     } ],
     "enableBackend" : true,
     "enableFront" : true,
@@ -23844,11 +23902,83 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Delete_Create.json",
+    "name" : "任务删除（我创建的）（默认角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreate"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "Task_Delete_Create",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json",
     "name" : "任务维护",
     "roleTag" : "Task_Maintain",
     "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Mutiple.json",
+    "name" : "任务维护（多人任务）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MultipleTaskAction"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "RESTART",
+      "name" : "RESTART",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "RESTART"
+      }
+    }, {
+      "dataAccessAction" : "ACTIVATE",
+      "name" : "ACTIVATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProject__ACTIVATE"
+      }
+    }, {
+      "dataAccessAction" : "FINISH",
+      "name" : "FINISH",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProject__FINISH"
+      }
+    }, {
+      "dataAccessAction" : "PAUSE",
+      "name" : "PAUSE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProject__PAUSE"
+      }
+    }, {
+      "dataAccessAction" : "START",
+      "name" : "START",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProject__START"
+      }
+    }, {
+      "dataAccessAction" : "ASSIGNTO",
+      "name" : "AAIGNTO",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ASSIGNTO"
+      }
+    } ],
+    "roleTag" : "Task_Maintain_Mutiple",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ",
+    "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_MyCOrP.json",
     "name" : "任务维护（我创建或参与）（跟随角色）",
@@ -23862,20 +23992,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ZTProject__XQCHANGE"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
-      "dataAccessAction" : "START",
-      "name" : "START",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProject__START"
       }
     }, {
       "dataAccessAction" : "CLOSE",
@@ -23913,20 +24029,6 @@
         "id" : "ZTProject__CONSUM"
       }
     }, {
-      "dataAccessAction" : "ASSIGNTO",
-      "name" : "ASSIGNTO",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ASSIGNTO"
-      }
-    }, {
-      "dataAccessAction" : "RESTART",
-      "name" : "RESTART",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "RESTART"
-      }
-    }, {
       "dataAccessAction" : "SUBTASKS",
       "name" : "SUBTASKS",
       "getPSDEOPPriv" : {
@@ -23946,20 +24048,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "TOBUG"
-      }
-    }, {
-      "dataAccessAction" : "ACTIVATE",
-      "name" : "ACTIVATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProject__ACTIVATE"
-      }
-    }, {
-      "dataAccessAction" : "PAUSE",
-      "name" : "PAUSE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProject__PAUSE"
       }
     }, {
       "dataAccessAction" : "FAVORITES",
@@ -23982,13 +24070,6 @@
         "modelref" : true,
         "id" : "FJTASK"
       }
-    }, {
-      "dataAccessAction" : "FINISH",
-      "name" : "FINISH",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProject__FINISH"
-      }
     } ],
     "roleTag" : "Task_Maintain_MyCOrP",
     "userCat" : "CAT1",
@@ -23996,7 +24077,7 @@
     "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_MyReP.json",
-    "name" : "任务维护（我相关项目）（跟随角色）",
+    "name" : "任务维护（我相关项目）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyReProject"
@@ -24136,9 +24217,7 @@
       }
     } ],
     "roleTag" : "Task_Maintain_MyReP",
-    "userCat" : "CAT1",
-    "userDRAction" : "READ",
-    "systemReserved" : true
+    "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json",
@@ -24166,7 +24245,7 @@
     "systemReserved" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read_MyReP.json",
-    "name" : "任务查看（我相关的项目）（默认角色）",
+    "name" : "任务查看（我相关的项目）",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyReProject"
@@ -24180,8 +24259,7 @@
       }
     } ],
     "roleTag" : "Task_Read_MyReP",
-    "userDRAction" : "READ",
-    "defaultMode" : true
+    "userDRAction" : "READ"
   } ],
   "codeName" : "Task",
   "dEType" : 1,

@@ -149,6 +149,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentStory"))
             return storyService.searchMyAgentStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreate"))
+            return storyService.searchMyCreate(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
             return storyService.searchMyCreateOrPartake(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCurOpenedStory"))
@@ -219,6 +221,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentStory"))
             return storyService.selectMyAgentStory(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreate"))
+            return storyService.selectMyCreate(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
             return storyService.selectMyCreateOrPartake(searchContext);
         if (iPSDataQuery.getName().equals("MyCurOpenedStory"))

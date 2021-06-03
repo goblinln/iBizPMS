@@ -6,6 +6,6 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEACTIONS/Save.json",
   "logicName" : "Save",
   "name" : "Save",
-  "batchAction" : true,
-  "builtinAction" : true
+  "builtinAction" : true,
+  "enableBatchAction" : true
 }

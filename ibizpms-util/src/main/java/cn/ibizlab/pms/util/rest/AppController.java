@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
@@ -104,6 +105,26 @@ public class AppController {
             throw new BadRequestAlertException("获取配置失败，参数缺失", "IBZConfig", configType);
         }
         return ResponseEntity.ok(ibzConfigService.getConfig(configType, targetType, userId));
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/configs/share/{id}")
+    public ResponseEntity<JSONObject> getShareConfig(@PathVariable("id") String id) {
+        JSONObject jo = ibzConfigService.getShareConfig(id);
+        if (jo == null) {
+            throw new BadRequestAlertException("无效的共享配置数据", "IBZConfig", id);
+        }
+        return ResponseEntity.ok(jo);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/configs/share/{configType}/{targetType}")
+    public ResponseEntity<String> shareConfig(@PathVariable("configType") String configType, @PathVariable("targetType") String targetType) {
+        String userId = AuthenticationUser.getAuthenticationUser().getUserid();
+        if (StringUtils.isEmpty(userId)) {
+            throw new BadRequestAlertException("分享配置失败，参数缺失", "IBZConfig", configType);
+        }
+        String id = IdWorker.getIdStr();
+        ibzConfigService.saveShareConfig(id, configType, targetType, userId);
+        return ResponseEntity.ok(id);
     }
 
     /**

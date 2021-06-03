@@ -147,6 +147,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchDefaultRow(searchContext);    
         if (iPSDEDataSet.getName().equals("ESBulk"))
             return taskService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("MultipleTaskAction"))
+            return taskService.searchMultipleTaskAction(searchContext);    
         if (iPSDEDataSet.getName().equals("My"))
             return taskService.searchMy(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentTask"))
@@ -163,6 +165,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchMyCompleteTaskMonthlyZS(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCompleteTaskZS"))
             return taskService.searchMyCompleteTaskZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreate"))
+            return taskService.searchMyCreate(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
             return taskService.searchMyCreateOrPartake(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorites"))
@@ -239,6 +243,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectDefaultRow(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
             return taskService.selectESBulk(searchContext);
+        if (iPSDataQuery.getName().equals("MultipleTaskAction"))
+            return taskService.selectMultipleTaskAction(searchContext);
         if (iPSDataQuery.getName().equals("My"))
             return taskService.selectMy(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentTask"))
@@ -255,6 +261,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectMyCompleteTaskMonthlyZS(searchContext);
         if (iPSDataQuery.getName().equals("MyCompleteTaskZS"))
             return taskService.selectMyCompleteTaskZS(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreate"))
+            return taskService.selectMyCreate(searchContext);
         if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
             return taskService.selectMyCreateOrPartake(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))

@@ -199,6 +199,9 @@ public class TaskAspect {
         else if (action.equals("searchESBulk")) {
             return getDataEntityRuntime().aroundDataSet("ESBulk", point);
         }
+        else if (action.equals("searchMultipleTaskAction")) {
+            return getDataEntityRuntime().aroundDataSet("MultipleTaskAction", point);
+        }
         else if (action.equals("searchMy")) {
             return getDataEntityRuntime().aroundDataSet("My", point);
         }
@@ -222,6 +225,9 @@ public class TaskAspect {
         }
         else if (action.equals("searchMyCompleteTaskZS")) {
             return getDataEntityRuntime().aroundDataSet("MyCompleteTaskZS", point);
+        }
+        else if (action.equals("searchMyCreate")) {
+            return getDataEntityRuntime().aroundDataSet("MyCreate", point);
         }
         else if (action.equals("searchMyCreateOrPartake")) {
             return getDataEntityRuntime().aroundDataSet("MyCreateOrPartake", point);

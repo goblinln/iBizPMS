@@ -33,6 +33,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     List<Task> selectDefault(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectDefaultRow(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectESBulk(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectMultipleTaskAction(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMy(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyAgentTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyAllTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -41,6 +42,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     List<Task> selectMyCompleteTaskMobMonthly(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyCompleteTaskMonthlyZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyCompleteTaskZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectMyCreate(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyCreateOrPartake(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyFavorites(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectMyPlansTaskMobMonthly(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -80,6 +82,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     Page<Task> searchDefault(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchDefaultRow(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchESBulk(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    Page<Task> searchMultipleTaskAction(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMy(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyAgentTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyAllTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -88,6 +91,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     Page<Task> searchMyCompleteTaskMobMonthly(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyCompleteTaskMonthlyZS(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyCompleteTaskZS(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    Page<Task> searchMyCreate(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyCreateOrPartake(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyFavorites(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchMyPlansTaskMobMonthly(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);

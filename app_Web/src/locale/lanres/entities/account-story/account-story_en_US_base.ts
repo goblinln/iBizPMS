@@ -112,7 +112,6 @@ function getLocaleResourceBase(){
 				'status': commonLogic.appcommonhandle("状态",null),
 				'stage': commonLogic.appcommonhandle("阶段",null),
 				'modulename': commonLogic.appcommonhandle("所属模块名称",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
@@ -134,14 +133,6 @@ function getLocaleResourceBase(){
 				'color': commonLogic.appcommonhandle("标题颜色",null),
 		},
 			uiactions: {
-			accountstory_changestorydetail: commonLogic.appcommonhandle("变更",null),
-			accountstory_reviewstory: commonLogic.appcommonhandle("评审",null),
-			accountstory_closestory: commonLogic.appcommonhandle("关闭",null),
-			accountstory_openbaseinfoeditview: commonLogic.appcommonhandle("编辑",null),
-			accountstory_opencasecreateview: commonLogic.appcommonhandle("建用例",null),
-			accountstory_substory: commonLogic.appcommonhandle("需求细分",null),
-			accountstory_storyfavorites: commonLogic.appcommonhandle("收藏",null),
-			accountstory_storynfavorites: commonLogic.appcommonhandle("取消收藏",null),
 			},
 		},
 		main9_grid: {
@@ -168,7 +159,6 @@ function getLocaleResourceBase(){
 				'status': commonLogic.appcommonhandle("状态",null),
 				'stage': commonLogic.appcommonhandle("阶段",null),
 				'modulename': commonLogic.appcommonhandle("所属模块名称",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
@@ -190,15 +180,6 @@ function getLocaleResourceBase(){
 				'color': commonLogic.appcommonhandle("标题颜色",null),
 		},
 			uiactions: {
-			accountstory_storytobug: commonLogic.appcommonhandle("提缺陷",null),
-			accountstory_changestorydetail: commonLogic.appcommonhandle("变更",null),
-			accountstory_reviewstory: commonLogic.appcommonhandle("评审",null),
-			accountstory_closestory: commonLogic.appcommonhandle("关闭",null),
-			accountstory_opencasecreateview: commonLogic.appcommonhandle("建用例",null),
-			accountstory_substory: commonLogic.appcommonhandle("需求细分",null),
-			copy: commonLogic.appcommonhandle("Copy",null),
-			accountstory_storyfavorites: commonLogic.appcommonhandle("收藏",null),
-			accountstory_storynfavorites: commonLogic.appcommonhandle("取消收藏",null),
 			},
 		},
 		myfavoritesgridviewtoolbar_toolbar: {

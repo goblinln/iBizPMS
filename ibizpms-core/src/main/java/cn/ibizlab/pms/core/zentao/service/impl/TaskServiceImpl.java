@@ -635,6 +635,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     public List<Task> selectESBulk(TaskSearchContext context){
         return baseMapper.selectESBulk(context, context.getSelectCond());
     }
+    public List<Task> selectMultipleTaskAction(TaskSearchContext context){
+        return baseMapper.selectMultipleTaskAction(context, context.getSelectCond());
+    }
     public List<Task> selectMy(TaskSearchContext context){
         return baseMapper.selectMy(context, context.getSelectCond());
     }
@@ -658,6 +661,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     }
     public List<Task> selectMyCompleteTaskZS(TaskSearchContext context){
         return baseMapper.selectMyCompleteTaskZS(context, context.getSelectCond());
+    }
+    public List<Task> selectMyCreate(TaskSearchContext context){
+        return baseMapper.selectMyCreate(context, context.getSelectCond());
     }
     public List<Task> selectMyCreateOrPartake(TaskSearchContext context){
         return baseMapper.selectMyCreateOrPartake(context, context.getSelectCond());
@@ -860,6 +866,15 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     }
 
     /**
+     * 查询集合 多人任务（权限）
+     */
+    @Override
+    public Page<Task> searchMultipleTaskAction(TaskSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchMultipleTaskAction(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 我的数据
      */
     @Override
@@ -928,6 +943,15 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     public Page<Task> searchMyCompleteTaskZS(TaskSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchMyCompleteTaskZS(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我创建的（权限）
+     */
+    @Override
+    public Page<Task> searchMyCreate(TaskSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchMyCreate(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

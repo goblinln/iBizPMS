@@ -88,6 +88,12 @@ export class SearchFormControlBase extends EditFormControlBase {
      */
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         this.isExpandSearchForm = newVal?.isExpandSearchForm;
+        //搜索表单绘制之后关闭清空数据
+        if (!this.isExpandSearchForm && this.controlIsLoaded) {
+            Object.keys(this.data).forEach((key: any) => {
+                this.data[key] = null;
+            });
+        }
         super.onDynamicPropsChange(newVal, oldVal);
     }
 

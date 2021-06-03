@@ -32,8 +32,8 @@
     "orderValue" : 21,
     "userCat" : "CAT1",
     "userTag4" : "remove",
-    "batchAction" : true,
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",

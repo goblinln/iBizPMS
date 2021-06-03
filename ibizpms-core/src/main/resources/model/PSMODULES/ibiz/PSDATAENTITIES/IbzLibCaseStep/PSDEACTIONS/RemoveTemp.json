@@ -8,7 +8,7 @@
   "name" : "RemoveTemp",
   "orderValue" : 22,
   "tempDataMode" : 2,
-  "batchAction" : true,
   "builtinAction" : true,
+  "enableBatchAction" : true,
   "enableTempData" : true
 }

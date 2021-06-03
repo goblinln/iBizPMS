@@ -105,6 +105,10 @@ export class SearchBarControlBase extends MDControlBase {
      */
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         this.isExpandSearchForm = newVal.isExpandSearchForm;
+        //搜索栏绘制之后关闭清空数据
+        if (!this.isExpandSearchForm && this.controlIsLoaded) {
+            this.filterItems = [];
+        }
         super.onDynamicPropsChange(newVal, oldVal);
     }
 

@@ -20,8 +20,8 @@ export class AppDefaultDeRedirectViewLayout extends AppDefaultViewLayout {
         return (
             <card class={cardClass} disHover={true} bordered={false}>
                 <div class="context-container">
-                    <img src="./assets/img/500.png" />
-                    <div class="context">跳转中......</div>
+                    <img src="./assets/img/redirect.svg" />
+                    <div class="context">页面跳转中~</div>
                 </div>
             </card>
         );
