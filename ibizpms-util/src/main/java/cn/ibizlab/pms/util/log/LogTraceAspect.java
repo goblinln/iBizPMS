@@ -28,7 +28,7 @@ import static cn.ibizlab.pms.util.log.LogMessage.*;
 @Aspect
 @Component
 @ConditionalOnExpression("${pms.trace:false}")
-public class LogAspect {
+public class LogTraceAspect {
 
     //切入标记为@IBIZLog的类及非私有方法，适用于类、方法。
     @Around("@annotation(cn.ibizlab.pms.util.log.IBIZTraceLog) || @within(cn.ibizlab.pms.util.log.IBIZTraceLog)")
