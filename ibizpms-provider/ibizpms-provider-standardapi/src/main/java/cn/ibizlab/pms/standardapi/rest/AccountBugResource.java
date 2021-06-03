@@ -53,10 +53,10 @@ public class AccountBugResource {
     public AccountBugMapping accountbugMapping;
 
     @PreAuthorize("quickTest('ZT_BUG', 'READ')")
-	@ApiOperation(value = "获取我的收藏", tags = {"Bug" } ,notes = "获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/accountbugs/fetchmyfavorites")
-	public ResponseEntity<List<AccountBugDTO>> fetchmyfavorites(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchMyFavorites(context) ;
+	@ApiOperation(value = "获取我的数据", tags = {"Bug" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accountbugs/fetchmy")
+	public ResponseEntity<List<AccountBugDTO>> fetchmy(@RequestBody BugSearchContext context) {
+        Page<Bug> domains = bugService.searchMy(context) ;
         List<AccountBugDTO> list = accountbugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -64,22 +64,11 @@ public class AccountBugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', #accountbug_id, 'READ')")
-    @ApiOperation(value = "获取Bug", tags = {"Bug" },  notes = "获取Bug")
-	@RequestMapping(method = RequestMethod.GET, value = "/accountbugs/{accountbug_id}")
-    public ResponseEntity<AccountBugDTO> get(@PathVariable("accountbug_id") Long accountbug_id) {
-        Bug domain = bugService.get(accountbug_id);
-        AccountBugDTO dto = accountbugMapping.toDto(domain);
-        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(accountbug_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('ZT_BUG', 'READ')")
-	@ApiOperation(value = "获取我的数据", tags = {"Bug" } ,notes = "获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accountbugs/fetchmy")
-	public ResponseEntity<List<AccountBugDTO>> fetchmy(@RequestBody BugSearchContext context) {
-        Page<Bug> domains = bugService.searchMy(context) ;
+	@ApiOperation(value = "获取我的收藏", tags = {"Bug" } ,notes = "获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/accountbugs/fetchmyfavorites")
+	public ResponseEntity<List<AccountBugDTO>> fetchmyfavorites(@RequestBody BugSearchContext context) {
+        Page<Bug> domains = bugService.searchMyFavorites(context) ;
         List<AccountBugDTO> list = accountbugMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -99,6 +88,17 @@ public class AccountBugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('ZT_BUG', #accountbug_id, 'READ')")
+    @ApiOperation(value = "获取Bug", tags = {"Bug" },  notes = "获取Bug")
+	@RequestMapping(method = RequestMethod.GET, value = "/accountbugs/{accountbug_id}")
+    public ResponseEntity<AccountBugDTO> get(@PathVariable("accountbug_id") Long accountbug_id) {
+        Bug domain = bugService.get(accountbug_id);
+        AccountBugDTO dto = accountbugMapping.toDto(domain);
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(accountbug_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/accountbugs/{accountbug_id}/{action}")
@@ -109,11 +109,11 @@ public class AccountBugResource {
     }
 
     @PreAuthorize("quickTest('ZT_BUG', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"Bug" } ,notes = "根据系统用户获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountbugs/fetchmyfavorites")
-	public ResponseEntity<List<AccountBugDTO>> fetchMyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody BugSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"Bug" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountbugs/fetchmy")
+	public ResponseEntity<List<AccountBugDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody BugSearchContext context) {
         
-        Page<Bug> domains = bugService.searchMyFavorites(context) ;
+        Page<Bug> domains = bugService.searchMy(context) ;
         List<AccountBugDTO> list = accountbugMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -122,20 +122,11 @@ public class AccountBugResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_BUG', 'READ')")
-    @ApiOperation(value = "根据系统用户获取Bug", tags = {"Bug" },  notes = "根据系统用户获取Bug")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountbugs/{accountbug_id}")
-    public ResponseEntity<AccountBugDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountbug_id") Long accountbug_id) {
-        Bug domain = bugService.get(accountbug_id);
-        AccountBugDTO dto = accountbugMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_BUG', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"Bug" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountbugs/fetchmy")
-	public ResponseEntity<List<AccountBugDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody BugSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"Bug" } ,notes = "根据系统用户获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountbugs/fetchmyfavorites")
+	public ResponseEntity<List<AccountBugDTO>> fetchMyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody BugSearchContext context) {
         
-        Page<Bug> domains = bugService.searchMy(context) ;
+        Page<Bug> domains = bugService.searchMyFavorites(context) ;
         List<AccountBugDTO> list = accountbugMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -156,5 +147,14 @@ public class AccountBugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('ZT_BUG', 'READ')")
+    @ApiOperation(value = "根据系统用户获取Bug", tags = {"Bug" },  notes = "根据系统用户获取Bug")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountbugs/{accountbug_id}")
+    public ResponseEntity<AccountBugDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountbug_id") Long accountbug_id) {
+        Bug domain = bugService.get(accountbug_id);
+        AccountBugDTO dto = accountbugMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 }
 
