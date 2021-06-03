@@ -2432,7 +2432,6 @@
                 "name" : "u9797c2b",
                 "getPSUIAction" : {
                   "getCapPSLanguageRes" : {
-                    "codeName" : "Auto223",
                     "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
                   },
                   "caption" : "返回",
@@ -2445,7 +2444,6 @@
                   },
                   "timeout" : 60000,
                   "getTooltipPSLanguageRes" : {
-                    "codeName" : "Auto92",
                     "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
                   },
                   "uIActionMode" : "SYS",

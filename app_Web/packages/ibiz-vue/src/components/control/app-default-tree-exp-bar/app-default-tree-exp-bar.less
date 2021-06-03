@@ -73,8 +73,45 @@
             padding-bottom: 10px;
         }
         .left-pane.ivu-split-pane {
+            >div .tree-exp-content {
+                padding: 0;
+            }
             .has-search {
-                padding-top: 10px;
+                margin-top: 10px;
+            }
+            .container-header >.search-container{
+                padding-bottom: 10px;
+                border-bottom: 1px solid #E4E4E4;
+            }
+            .treeview {
+                >.context-menu-container >.el-tree {
+                    .el-tree-node >.el-tree-node__content {
+                        height: 32px;
+                        &:hover {
+                            background-color: #f0f7ff;
+                            color: #57A3FD;
+                        }
+                        >.context-menu-component .tree-node {
+                            font-size: 12px;
+                            font-weight: 400;
+                            .icon {
+                                padding-right: 6px;
+                            }
+                            >i{
+                                padding-right: 7px;
+                            }
+                        }
+                    }
+                    //选中节点
+                    .el-tree-node.is-current >.el-tree-node__content {
+                        background-color: #f0f7ff;
+                        color: #57A3FD;
+                    }
+                    //子节点图标
+                    .el-tree-node >.el-tree-node__children >.el-tree-node >.el-tree-node__content >.context-menu-component .tree-node .icon{
+                        padding-left: 2px;
+                    }
+                }
             }
         }
     }

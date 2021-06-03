@@ -267,6 +267,14 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         //自定义代码
         return et;
     }
+    @Override
+    @Transactional
+    public boolean linkCaseBatch(List<Case> etList) {
+        for(Case et : etList) {
+            linkCase(et);
+        }
+        return true;
+    }
 
     @Override
     @Transactional
@@ -372,6 +380,14 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     public Case testsuitelinkCase(Case et) {
         //自定义代码
         return et;
+    }
+    @Override
+    @Transactional
+    public boolean testsuitelinkCaseBatch(List<Case> etList) {
+        for(Case et : etList) {
+            testsuitelinkCase(et);
+        }
+        return true;
     }
 
     @Override

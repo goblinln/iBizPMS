@@ -1359,7 +1359,6 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto275",
         "lanResTag" : "TBB.TEXT.*.NEW"
       },
       "caption" : "新建",
@@ -1377,7 +1376,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto275",
           "lanResTag" : "TBB.TEXT.*.NEW"
         },
         "caption" : "新建",
@@ -1390,7 +1388,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto44",
           "lanResTag" : "TBB.TOOLTIP.*.NEW"
         },
         "uIActionMode" : "SYS",
@@ -1399,14 +1396,12 @@
       },
       "tooltip" : "新建",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto44",
         "lanResTag" : "TBB.TOOLTIP.*.NEW"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto159",
         "lanResTag" : "TBB.TEXT.*.REMOVE"
       },
       "caption" : "删除",
@@ -1425,7 +1420,6 @@
       "getPSUIAction" : {
         "actionTarget" : "MULTIKEY",
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto159",
           "lanResTag" : "TBB.TEXT.*.REMOVE"
         },
         "caption" : "删除",
@@ -1438,7 +1432,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto286",
           "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
         },
         "uIActionMode" : "SYS",
@@ -1447,7 +1440,6 @@
       },
       "tooltip" : "删除",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto286",
         "lanResTag" : "TBB.TOOLTIP.*.REMOVE"
       },
       "showCaption" : true,
@@ -1493,7 +1485,6 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto268",
         "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
@@ -1511,7 +1502,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto268",
           "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
@@ -1524,7 +1514,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto27",
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
@@ -1533,7 +1522,6 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto27",
         "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
@@ -1544,7 +1532,6 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto229",
         "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
@@ -1562,7 +1549,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto229",
           "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
@@ -1575,7 +1561,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto122",
           "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
@@ -1585,7 +1570,6 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto122",
         "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,
@@ -2649,7 +2633,6 @@
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "getCapPSLanguageRes" : {
-              "codeName" : "Auto83",
               "lanResTag" : "TBB.TEXT.*.COPY"
             },
             "caption" : "拷贝",
@@ -2662,7 +2645,6 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
-              "codeName" : "Auto243",
               "lanResTag" : "TBB.TOOLTIP.*.COPY"
             },
             "uIActionMode" : "SYS",

@@ -1,9 +1,11 @@
 {
   "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
+  "batchActionMode" : 1,
   "codeName" : "TestsuitelinkCase",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json",
   "logicName" : "套件关联",
   "name" : "testsuitelinkCase",
-  "userCat" : "CAT1"
+  "userCat" : "CAT1",
+  "batchAction" : true
 }

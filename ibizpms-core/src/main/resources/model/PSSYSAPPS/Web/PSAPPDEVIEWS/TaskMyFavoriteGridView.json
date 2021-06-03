@@ -7,7 +7,7 @@
   "name" : "TaskMyFavoriteGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -164,7 +164,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -202,7 +202,6 @@
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto268",
         "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
@@ -220,7 +219,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto268",
           "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
@@ -233,7 +231,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto27",
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
@@ -242,14 +239,12 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto27",
         "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto229",
         "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
@@ -267,7 +262,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto229",
           "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
@@ -280,7 +274,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto122",
           "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
@@ -290,7 +283,6 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto122",
         "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,
@@ -304,7 +296,7 @@
     "codeName" : "MyFavoriteMain",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSGRIDS/MyFavoriteMain.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask/PSGRIDS/MyFavoriteMain.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -319,7 +311,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -431,7 +423,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "MoreChild@Task"
@@ -443,7 +435,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "TaskToBug@Task"
@@ -455,7 +447,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "confirmStoryChange@Task"
@@ -467,7 +459,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "StartTask@Task"
@@ -479,7 +471,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "CloseTask@Task"
@@ -491,7 +483,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "DoneTask@Task"
@@ -503,7 +495,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "MainEdit@Task"
@@ -515,7 +507,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "NewSubTask@Task"
@@ -535,7 +527,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "TaskFavorites@Task"
@@ -547,7 +539,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "TaskNFavorites@Task"
@@ -559,7 +551,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "CheckForward@Task"
@@ -571,7 +563,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "modelref" : true,
         "id" : "AssignTask@Task"
@@ -591,7 +583,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -602,7 +594,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         }
       }, {
         "actionName" : "Remove",
@@ -615,7 +607,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         }
       }, {
         "actionName" : "Get",
@@ -628,7 +620,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -641,7 +633,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         }
       }, {
         "actionName" : "Create",
@@ -654,7 +646,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -757,12 +749,6 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "name",
       "excelCaption" : "任务名称",
-      "getLinkPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-        "viewType" : "DEPORTALVIEW"
-      },
-      "linkValueItem" : "srfkey",
       "name" : "name",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -775,7 +761,6 @@
       },
       "width" : 500,
       "widthUnit" : "STAR",
-      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",
@@ -960,7 +945,7 @@
             "name" : "子任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "N_PARENT_EQ",
@@ -1006,7 +991,7 @@
             "name" : "提缺陷",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "MAILTO",
@@ -1160,7 +1145,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf002@FontAwesome",
@@ -1197,7 +1182,7 @@
             "name" : "开始任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "TASK",
@@ -1241,7 +1226,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf011@FontAwesome",
@@ -1275,7 +1260,7 @@
             "name" : "完成任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "TASK",
@@ -1315,7 +1300,7 @@
             "name" : "主信息编辑",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
@@ -1349,7 +1334,7 @@
             "name" : "批量新建子任务",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "PROJECT",
@@ -1391,7 +1376,6 @@
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "getCapPSLanguageRes" : {
-              "codeName" : "Auto83",
               "lanResTag" : "TBB.TEXT.*.COPY"
             },
             "caption" : "拷贝",
@@ -1404,7 +1388,6 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
-              "codeName" : "Auto243",
               "lanResTag" : "TBB.TOOLTIP.*.COPY"
             },
             "uIActionMode" : "SYS",
@@ -1424,13 +1407,9 @@
             "dataAccessAction" : "NFAVORITES",
             "fullCodeName" : "Task_TaskFavorites",
             "name" : "收藏",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "TaskFavorites"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
@@ -1458,13 +1437,9 @@
             "dataAccessAction" : "FAVORITES",
             "fullCodeName" : "Task_TaskNFavorites",
             "name" : "取消收藏",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "TaskNFavorites"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
@@ -1711,7 +1686,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -1733,11 +1708,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask/PSSEARCHBARS/Custom.json",
     "logicName" : "任务自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -2901,7 +2876,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2929,21 +2904,17 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Tasks",
+    "codeName" : "AccountTasks",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
     },
-    "name" : "PROJECT__PROJECT_TASK",
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
+    "name" : "ACCOUNT__TASK",
     "rSMode" : 2,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,

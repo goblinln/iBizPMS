@@ -123,23 +123,6 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "CountMyWork",
-    "methodType" : "FETCH",
-    "name" : "FetchMyWork",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWork"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CountMyWork"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "CountMyContribution",
     "methodType" : "FETCH",
     "name" : "FetchPersonInfo",
@@ -154,6 +137,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CountMyContribution"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CountMyWork",
+    "methodType" : "FETCH",
+    "name" : "FetchMyWork",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyWork"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CountMyWork"
     },
     "builtinMethod" : false
   }, {
@@ -475,23 +475,6 @@
     "stdDataType" : 9
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "CountMyWork",
-    "methodType" : "FETCH",
-    "name" : "FetchMyWork",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWork"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CountMyWork"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -523,6 +506,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CountMyContribution"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CountMyWork",
+    "methodType" : "FETCH",
+    "name" : "FetchMyWork",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyWork"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CountMyWork"
     },
     "builtinMethod" : false
   }, {

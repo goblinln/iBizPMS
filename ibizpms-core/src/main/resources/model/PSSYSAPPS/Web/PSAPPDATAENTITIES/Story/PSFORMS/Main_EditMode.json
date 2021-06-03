@@ -1729,7 +1729,6 @@
                     "getPSUIAction" : {
                       "actionTarget" : "SINGLEKEY",
                       "getCapPSLanguageRes" : {
-                        "codeName" : "Auto83",
                         "lanResTag" : "TBB.TEXT.*.COPY"
                       },
                       "caption" : "拷贝",
@@ -1742,7 +1741,6 @@
                       },
                       "timeout" : 60000,
                       "getTooltipPSLanguageRes" : {
-                        "codeName" : "Auto243",
                         "lanResTag" : "TBB.TOOLTIP.*.COPY"
                       },
                       "uIActionMode" : "SYS",
@@ -4470,7 +4468,6 @@
         "getPSDEFormDetails" : [ {
           "actionType" : "UIACTION",
           "getCapPSLanguageRes" : {
-            "codeName" : "Auto97",
             "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
           },
           "caption" : "保存",
@@ -4493,7 +4490,6 @@
           },
           "getPSUIAction" : {
             "getCapPSLanguageRes" : {
-              "codeName" : "Auto97",
               "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
             },
             "caption" : "保存并关闭",
@@ -4505,7 +4501,6 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
-              "codeName" : "Auto43",
               "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
             },
             "uIActionMode" : "SYS",
@@ -4517,7 +4512,6 @@
         }, {
           "actionType" : "UIACTION",
           "getCapPSLanguageRes" : {
-            "codeName" : "Auto223",
             "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
           },
           "caption" : "返回",
@@ -4540,7 +4534,6 @@
           },
           "getPSUIAction" : {
             "getCapPSLanguageRes" : {
-              "codeName" : "Auto223",
               "lanResTag" : "TBB.TEXT.EDITVIEW.CLOSE"
             },
             "caption" : "返回",
@@ -4553,7 +4546,6 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
-              "codeName" : "Auto92",
               "lanResTag" : "TBB.TOOLTIP.EDITVIEW.CLOSE"
             },
             "uIActionMode" : "SYS",

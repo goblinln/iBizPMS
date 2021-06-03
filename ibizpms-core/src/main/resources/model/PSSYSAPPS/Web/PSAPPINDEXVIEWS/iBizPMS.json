@@ -389,6 +389,9 @@
       "getPSAppMenuItems" : [ {
         "accUserMode" : 4,
         "accessKey" : "PRODUCTLEFT",
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "MENUITEM.CAPTION.MENUITEM.CAPTION.LEFT_PRODUCT"
+        },
         "caption" : "产品",
         "itemType" : "MENUITEM",
         "name" : "menuitem4",
@@ -410,7 +413,6 @@
         },
         "tooltip" : "产品",
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto291",
           "lanResTag" : "MENUITEM.CAPTION.MENUITEM.CAPTION.LEFT_PRODUCT"
         }
       }, {

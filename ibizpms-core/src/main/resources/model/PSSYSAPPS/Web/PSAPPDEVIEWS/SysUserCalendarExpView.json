@@ -177,7 +177,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         },
         "getPSLayoutPanel" : {
           "getAllPSPanelFields" : [ {
@@ -475,7 +475,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTask.json"
         },
         "getPSLayoutPanel" : {
           "getAllPSPanelFields" : [ {
@@ -1051,7 +1051,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
         },
         "getPSLayoutPanel" : {
           "getAllPSPanelFields" : [ {
@@ -1197,7 +1197,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountStory.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCT",

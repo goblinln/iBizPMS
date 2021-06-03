@@ -43,6 +43,7 @@ public interface ICaseService extends IService<Case> {
     Case getByTestTask(Case et);
     Case getTestTaskCntRun(Case et);
     Case linkCase(Case et);
+    boolean linkCaseBatch(List<Case> etList);
     Case mobLinkCase(Case et);
     Case runCase(Case et);
     Case runCases(Case et);
@@ -51,6 +52,7 @@ public interface ICaseService extends IService<Case> {
     Case testRunCase(Case et);
     Case testRunCases(Case et);
     Case testsuitelinkCase(Case et);
+    boolean testsuitelinkCaseBatch(List<Case> etList);
     Case unlinkCase(Case et);
     Case unlinkCases(Case et);
     Case unlinkSuiteCase(Case et);

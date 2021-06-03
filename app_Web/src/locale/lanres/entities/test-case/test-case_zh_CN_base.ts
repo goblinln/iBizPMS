@@ -109,10 +109,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("相关用例",null),
 				title: commonLogic.appcommonhandle("相关用例",null),
 			},
-			'casefavorite': {
-				caption: commonLogic.appcommonhandle("测试用例",null),
-				title: commonLogic.appcommonhandle("case我得收藏",null),
-			},
 			'tobugeditview': {
 				caption: commonLogic.appcommonhandle("转BUG",null),
 				title: commonLogic.appcommonhandle("转BUG",null),
@@ -912,20 +908,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("",null),
 			},
 			'deuiaction2_togglefilter': {
-				caption: commonLogic.appcommonhandle("过滤",null),
-				tip: commonLogic.appcommonhandle("过滤",null),
-			},
-		},
-		casefavoritetoolbar_toolbar: {
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("导出",null),
-				tip: commonLogic.appcommonhandle("导出",null),
-			},
-			'deuiaction4': {
 				caption: commonLogic.appcommonhandle("过滤",null),
 				tip: commonLogic.appcommonhandle("过滤",null),
 			},

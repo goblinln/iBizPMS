@@ -150,7 +150,6 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto8",
         "lanResTag" : "TBB.TEXT.*.SAVE"
       },
       "caption" : "保存",
@@ -168,7 +167,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto8",
           "lanResTag" : "TBB.TEXT.*.SAVE"
         },
         "caption" : "保存",
@@ -182,7 +180,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto261",
           "lanResTag" : "TBB.TOOLTIP.*.SAVE"
         },
         "uIActionMode" : "SYS",
@@ -191,14 +188,12 @@
       },
       "tooltip" : "保存",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto261",
         "lanResTag" : "TBB.TOOLTIP.*.SAVE"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto68",
         "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW"
       },
       "caption" : "保存并新建",
@@ -215,7 +210,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto68",
           "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDNEW"
         },
         "caption" : "保存并新建",
@@ -228,7 +222,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto82",
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW"
         },
         "uIActionMode" : "SYS",
@@ -237,14 +230,12 @@
       },
       "tooltip" : "保存并新建",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto82",
         "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDNEW"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto97",
         "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
       },
       "caption" : "保存并关闭",
@@ -261,7 +252,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto97",
           "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
         },
         "caption" : "保存并关闭",
@@ -273,7 +263,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto43",
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
         },
         "uIActionMode" : "SYS",
@@ -282,14 +271,12 @@
       },
       "tooltip" : "保存并关闭",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto43",
         "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto101",
         "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
       },
       "caption" : "删除",
@@ -308,7 +295,6 @@
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto101",
           "lanResTag" : "TBB.TEXT.EDITVIEW.REMOVEANDCLOSE"
         },
         "caption" : "删除",
@@ -322,7 +308,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto191",
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
         },
         "uIActionMode" : "SYS",
@@ -331,7 +316,6 @@
       },
       "tooltip" : "删除",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto191",
         "lanResTag" : "TBB.TOOLTIP.EDITVIEW.REMOVEANDCLOSE"
       },
       "showCaption" : true,

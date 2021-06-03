@@ -236,11 +236,13 @@
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
+    "batchActionMode" : 1,
     "codeName" : "LinkCase",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/LinkCase.json",
     "logicName" : "测试单关联测试用例",
     "name" : "linkCase",
-    "userCat" : "CAT1"
+    "userCat" : "CAT1",
+    "batchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
@@ -300,11 +302,13 @@
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
+    "batchActionMode" : 1,
     "codeName" : "TestsuitelinkCase",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json",
     "logicName" : "套件关联",
     "name" : "testsuitelinkCase",
-    "userCat" : "CAT1"
+    "userCat" : "CAT1",
+    "batchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",

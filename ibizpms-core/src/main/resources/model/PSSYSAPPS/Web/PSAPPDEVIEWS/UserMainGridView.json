@@ -323,7 +323,6 @@
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto268",
         "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
@@ -341,7 +340,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto268",
           "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
@@ -354,7 +352,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto27",
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
@@ -363,7 +360,6 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto27",
         "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,

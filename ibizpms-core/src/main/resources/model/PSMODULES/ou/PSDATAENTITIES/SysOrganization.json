@@ -154,7 +154,6 @@
     "defaultValueType" : "PARAM",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto103",
       "lanResTag" : "CTRL.WFSERVICE.ERR000012"
     },
     "length" : 100,
@@ -209,7 +208,6 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto270",
       "lanResTag" : "DEF.LNAME.*.UPDATEMAN"
     },
     "length" : 100,
@@ -380,7 +378,6 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto25",
       "lanResTag" : "TBB.TEXT.*.CANCELWF"
     },
     "length" : 100,
@@ -454,7 +451,6 @@
     "dataType" : "INT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto98",
       "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT"
     },
     "logicName" : "排序",
@@ -607,7 +603,6 @@
     "dataType" : "YESNO",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto79",
       "lanResTag" : "CTRL.WFSERVICE.ERR000015"
     },
     "logicName" : "逻辑有效",
@@ -646,7 +641,6 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto176",
       "lanResTag" : "TBB.TOOLTIP.*.PRINT"
     },
     "logicName" : "创建时间",
@@ -686,7 +680,6 @@
     "dataType" : "DATETIME",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto189",
       "lanResTag" : "OTHER.LIST.MYWF.COL.ACTOR.CAPTION"
     },
     "logicName" : "最后修改时间",

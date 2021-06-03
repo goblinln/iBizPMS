@@ -259,7 +259,6 @@
       "spanMode" : false
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto229",
         "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
@@ -277,7 +276,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto229",
           "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
@@ -290,7 +288,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto122",
           "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
@@ -300,7 +297,6 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto122",
         "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,

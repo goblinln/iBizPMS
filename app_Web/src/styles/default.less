@@ -405,6 +405,46 @@
   }
 }
 
+//导航视图样式调整
+.view-default.view-container.detreeexpview,
+.view-default.view-container.degridexpview,
+.view-default.view-container.delistexpview,
+.view-default.view-container.dedataviewexpview,
+.view-default.view-container.decalendarexpview {
+  padding: 0 8px;
+  >.ivu-card >.ivu-card-body >.content-container  {
+    >.treeexpbar, >.gridexpbar, >.calendarexpbar, >.listexpbar {
+      >.ivu-split-horizontal {
+        >.left-pane {
+          padding: 0px;
+          margin: 4px 10px 12px 4px;
+          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+          border-radius: 4px;
+          >div {
+            padding: 0 10px 10px 10px;
+          }
+        }
+        >.right-pane {
+          padding: 4px 10px 12px 16px;
+          >div {
+            box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+            border-radius: 4px;
+            padding: 0;
+            >.view-container.view-default {
+              padding: 0 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+  >.ivu-card.view-no-caption {
+      >.content-container >.treeexpbar >.ivu-split-horizontal >.left-pane >div {
+        padding-top: 10px;
+      }
+  }
+}
+
 /***    END:多数据视图属性布局    ***/
 
 @import './user.less';

@@ -7,7 +7,7 @@
   "name" : "BugMyFavoriteGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -165,7 +165,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -203,7 +203,6 @@
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto268",
         "lanResTag" : "TBB.TEXT.*.EXPORT"
       },
       "caption" : "导出",
@@ -221,7 +220,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto268",
           "lanResTag" : "TBB.TEXT.*.EXPORT"
         },
         "caption" : "导出",
@@ -234,7 +232,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto27",
           "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
         },
         "uIActionMode" : "SYS",
@@ -243,14 +240,12 @@
       },
       "tooltip" : "导出",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto27",
         "lanResTag" : "TBB.TOOLTIP.*.EXPORT"
       },
       "showCaption" : true,
       "showIcon" : true
     }, {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto229",
         "lanResTag" : "TBB.TEXT.*.FILTER"
       },
       "caption" : "过滤",
@@ -268,7 +263,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto229",
           "lanResTag" : "TBB.TEXT.*.FILTER"
         },
         "caption" : "过滤",
@@ -281,7 +275,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto122",
           "lanResTag" : "TBB.TOOLTIP.*.FILTER"
         },
         "uIActionMode" : "SYS",
@@ -291,7 +284,6 @@
       },
       "tooltip" : "过滤",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto122",
         "lanResTag" : "TBB.TOOLTIP.*.FILTER"
       },
       "enableToggleMode" : true,
@@ -305,7 +297,7 @@
     "codeName" : "FavoriteMain",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSGRIDS/FavoriteMain.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug/PSGRIDS/FavoriteMain.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -320,7 +312,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -384,7 +376,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         },
         "modelref" : true,
         "id" : "ConfirmBug@Bug"
@@ -396,7 +388,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         },
         "modelref" : true,
         "id" : "ResolveBug@Bug"
@@ -408,7 +400,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         },
         "modelref" : true,
         "id" : "CloseBug@Bug"
@@ -420,7 +412,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         },
         "modelref" : true,
         "id" : "MainEdit@Bug"
@@ -440,7 +432,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         },
         "modelref" : true,
         "id" : "BugFavorites@Bug"
@@ -452,7 +444,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         },
         "modelref" : true,
         "id" : "BugNFavorites@Bug"
@@ -472,7 +464,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -483,7 +475,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         }
       }, {
         "actionName" : "Remove",
@@ -496,7 +488,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         }
       }, {
         "actionName" : "Get",
@@ -509,7 +501,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -522,7 +514,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         }
       }, {
         "actionName" : "Create",
@@ -535,7 +527,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -816,7 +808,7 @@
             "name" : "确认bug",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf06e@FontAwesome",
@@ -851,7 +843,7 @@
             "name" : "解决bug",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf046@FontAwesome",
@@ -885,7 +877,7 @@
             "name" : "关闭bug",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf011@FontAwesome",
@@ -919,7 +911,7 @@
             "name" : "主信息编辑",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
@@ -940,7 +932,6 @@
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "getCapPSLanguageRes" : {
-              "codeName" : "Auto83",
               "lanResTag" : "TBB.TEXT.*.COPY"
             },
             "caption" : "拷贝",
@@ -953,7 +944,6 @@
             },
             "timeout" : 60000,
             "getTooltipPSLanguageRes" : {
-              "codeName" : "Auto243",
               "lanResTag" : "TBB.TOOLTIP.*.COPY"
             },
             "uIActionMode" : "SYS",
@@ -973,13 +963,9 @@
             "dataAccessAction" : "FAVORITES",
             "fullCodeName" : "Bug_BugFavorites",
             "name" : "收藏",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "BugFavorites"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf006@FontAwesome",
@@ -1007,13 +993,9 @@
             "dataAccessAction" : "NFAVORITES",
             "fullCodeName" : "Bug_BugNFavorites",
             "name" : "取消收藏",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "BugNFavorites"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
@@ -1306,7 +1288,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -1328,11 +1310,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug/PSSEARCHBARS/Custom.json",
     "logicName" : "Bug自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -2965,7 +2947,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2993,46 +2975,17 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Bugs",
+    "codeName" : "AccountBugs",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountBug.json"
     },
-    "name" : "TEST__TEST_BUG",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ], [ {
-    "actionRSMode" : 1,
-    "codeName" : "Bugs",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
-    },
-    "name" : "PROJECT__PROJECT_BUG",
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
+    "name" : "ACCOUNT__BUG",
     "rSMode" : 2,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,

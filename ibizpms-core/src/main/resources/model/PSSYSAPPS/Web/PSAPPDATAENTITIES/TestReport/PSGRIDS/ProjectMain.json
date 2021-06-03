@@ -112,7 +112,6 @@
     "getPSDEUIAction" : {
       "actionTarget" : "SINGLEKEY",
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto253",
         "lanResTag" : "TBB.TEXT.*.EDIT"
       },
       "caption" : "编辑",
@@ -125,7 +124,6 @@
       },
       "timeout" : 60000,
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto130",
         "lanResTag" : "TBB.TOOLTIP.*.EDIT"
       },
       "uIActionMode" : "SYS",

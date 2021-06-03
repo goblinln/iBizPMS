@@ -19,7 +19,6 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
-      "codeName" : "Auto103",
       "lanResTag" : "CTRL.WFSERVICE.ERR000012"
     },
     "caption" : "单位标识",
@@ -40,7 +39,6 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
-      "codeName" : "Auto25",
       "lanResTag" : "TBB.TEXT.*.CANCELWF"
     },
     "caption" : "单位简称",

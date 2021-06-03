@@ -2762,6 +2762,33 @@
     "id" : "StoryFavorites@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "caption" : "编辑",
+    "codeName" : "OpenBaseInfoEditView",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
+      "viewType" : "DEEDITVIEW9"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Story_OpenBaseInfoEditView",
+    "name" : "打开需求基本信息编辑",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountStory.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf044@FontAwesome",
+      "cssClass" : "fa fa-edit"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "OpenBaseInfoEditView",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "OpenBaseInfoEditView@Story"
+  }, {
+    "actionTarget" : "SINGLEKEY",
     "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseStory",

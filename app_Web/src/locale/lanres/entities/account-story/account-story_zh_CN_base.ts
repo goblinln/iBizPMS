@@ -86,6 +86,10 @@ function getLocaleResourceBase(){
 		'planname': commonLogic.appcommonhandle("所属计划",null),
 	},
 		views: {
+			'myfavoritesgridview': {
+				caption: commonLogic.appcommonhandle("需求",null),
+				title: commonLogic.appcommonhandle("story表格视图",null),
+			},
 			'gridview9_assignedtome': {
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("需求表格视图",null),
@@ -93,6 +97,51 @@ function getLocaleResourceBase(){
 			'mainmygridview': {
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("story表格视图",null),
+			},
+		},
+		myfavoritemain_grid: {
+			columns: {
+				'id': commonLogic.appcommonhandle("编号",null),
+				'pri': commonLogic.appcommonhandle("P",null),
+				'prodoctname': commonLogic.appcommonhandle("产品名称",null),
+				'title': commonLogic.appcommonhandle("需求名称",null),
+				'planname': commonLogic.appcommonhandle("计划",null),
+				'openedby': commonLogic.appcommonhandle("创建",null),
+				'assignedto': commonLogic.appcommonhandle("指派",null),
+				'estimate': commonLogic.appcommonhandle("预计",null),
+				'status': commonLogic.appcommonhandle("状态",null),
+				'stage': commonLogic.appcommonhandle("阶段",null),
+				'modulename': commonLogic.appcommonhandle("所属模块名称",null),
+				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+		exportColumns: {
+				'storysn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
+				'pri': commonLogic.appcommonhandle("P",null),
+				'title': commonLogic.appcommonhandle("需求名称",null),
+				'plan': commonLogic.appcommonhandle("计划",null),
+				'planname': commonLogic.appcommonhandle("计划",null),
+				'openedby': commonLogic.appcommonhandle("创建",null),
+				'assignedto': commonLogic.appcommonhandle("指派",null),
+				'estimate': commonLogic.appcommonhandle("预计",null),
+				'status': commonLogic.appcommonhandle("状态",null),
+				'stage': commonLogic.appcommonhandle("阶段",null),
+				'modulename': commonLogic.appcommonhandle("所属模块名称",null),
+				'module': commonLogic.appcommonhandle("所属模块",null),
+				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
+				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
+				'color': commonLogic.appcommonhandle("标题颜色",null),
+		},
+			uiactions: {
+				accountstory_changestorydetail: commonLogic.appcommonhandle("变更",null),
+				accountstory_reviewstory: commonLogic.appcommonhandle("评审",null),
+				accountstory_closestory: commonLogic.appcommonhandle("关闭",null),
+				accountstory_openbaseinfoeditview: commonLogic.appcommonhandle("编辑",null),
+				accountstory_opencasecreateview: commonLogic.appcommonhandle("建用例",null),
+				accountstory_substory: commonLogic.appcommonhandle("需求细分",null),
+				accountstory_storyfavorites: commonLogic.appcommonhandle("收藏",null),
+				accountstory_storynfavorites: commonLogic.appcommonhandle("取消收藏",null),
 			},
 		},
 		main9_grid: {
@@ -150,6 +199,20 @@ function getLocaleResourceBase(){
 				copy: commonLogic.appcommonhandle("拷贝",null),
 				accountstory_storyfavorites: commonLogic.appcommonhandle("收藏",null),
 				accountstory_storynfavorites: commonLogic.appcommonhandle("取消收藏",null),
+			},
+		},
+		myfavoritesgridviewtoolbar_toolbar: {
+			'deuiaction2': {
+				caption: commonLogic.appcommonhandle("刷新",null),
+				tip: commonLogic.appcommonhandle("刷新",null),
+			},
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("导出",null),
+				tip: commonLogic.appcommonhandle("导出",null),
+			},
+			'deuiaction4': {
+				caption: commonLogic.appcommonhandle("过滤",null),
+				tip: commonLogic.appcommonhandle("过滤",null),
 			},
 		},
 		mainmygridviewtoolbar_toolbar: {

@@ -41,7 +41,6 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "getCapPSLanguageRes" : {
-      "codeName" : "Auto25",
       "lanResTag" : "TBB.TEXT.*.CANCELWF"
     },
     "caption" : "单位简称",

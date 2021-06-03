@@ -868,7 +868,6 @@
     },
     "getPSDEToolbarItems" : [ {
       "getCapPSLanguageRes" : {
-        "codeName" : "Auto97",
         "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
       },
       "caption" : "保存",
@@ -885,7 +884,6 @@
       },
       "getPSUIAction" : {
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto97",
           "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE"
         },
         "caption" : "保存并关闭",
@@ -897,7 +895,6 @@
         },
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
-          "codeName" : "Auto43",
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
         },
         "uIActionMode" : "SYS",
@@ -906,7 +903,6 @@
       },
       "tooltip" : "保存",
       "getTooltipPSLanguageRes" : {
-        "codeName" : "Auto43",
         "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE"
       },
       "showCaption" : false,

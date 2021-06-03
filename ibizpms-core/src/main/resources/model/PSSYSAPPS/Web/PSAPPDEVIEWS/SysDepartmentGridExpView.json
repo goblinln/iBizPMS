@@ -182,7 +182,6 @@
         "align" : "LEFT",
         "cLConvertMode" : "NONE",
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto208",
           "lanResTag" : "COMMON.DATATYPE.DECIMAL"
         },
         "caption" : "部门标识",
@@ -203,7 +202,6 @@
         "align" : "LEFT",
         "cLConvertMode" : "NONE",
         "getCapPSLanguageRes" : {
-          "codeName" : "Auto50",
           "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT"
         },
         "caption" : "部门名称",

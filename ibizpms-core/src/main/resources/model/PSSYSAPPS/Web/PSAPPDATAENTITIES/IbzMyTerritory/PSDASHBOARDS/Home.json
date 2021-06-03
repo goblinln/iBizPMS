@@ -1099,7 +1099,6 @@
                     },
                     "getPSDEToolbarItems" : [ {
                       "getCapPSLanguageRes" : {
-                        "codeName" : "Auto275",
                         "lanResTag" : "TBB.TEXT.*.NEW"
                       },
                       "caption" : "新建",
@@ -1117,7 +1116,6 @@
                       },
                       "getPSUIAction" : {
                         "getCapPSLanguageRes" : {
-                          "codeName" : "Auto275",
                           "lanResTag" : "TBB.TEXT.*.NEW"
                         },
                         "caption" : "新建",
@@ -1130,7 +1128,6 @@
                         },
                         "timeout" : 60000,
                         "getTooltipPSLanguageRes" : {
-                          "codeName" : "Auto44",
                           "lanResTag" : "TBB.TOOLTIP.*.NEW"
                         },
                         "uIActionMode" : "SYS",
@@ -1139,7 +1136,6 @@
                       },
                       "tooltip" : "新建",
                       "getTooltipPSLanguageRes" : {
-                        "codeName" : "Auto44",
                         "lanResTag" : "TBB.TOOLTIP.*.NEW"
                       },
                       "showCaption" : true,
@@ -1761,7 +1757,6 @@
                     },
                     "getPSDEToolbarItems" : [ {
                       "getCapPSLanguageRes" : {
-                        "codeName" : "Auto275",
                         "lanResTag" : "TBB.TEXT.*.NEW"
                       },
                       "caption" : "新建",
@@ -1779,7 +1774,6 @@
                       },
                       "getPSUIAction" : {
                         "getCapPSLanguageRes" : {
-                          "codeName" : "Auto275",
                           "lanResTag" : "TBB.TEXT.*.NEW"
                         },
                         "caption" : "新建",
@@ -1792,7 +1786,6 @@
                         },
                         "timeout" : 60000,
                         "getTooltipPSLanguageRes" : {
-                          "codeName" : "Auto44",
                           "lanResTag" : "TBB.TOOLTIP.*.NEW"
                         },
                         "uIActionMode" : "SYS",
@@ -1801,7 +1794,6 @@
                       },
                       "tooltip" : "新建",
                       "getTooltipPSLanguageRes" : {
-                        "codeName" : "Auto44",
                         "lanResTag" : "TBB.TOOLTIP.*.NEW"
                       },
                       "showCaption" : true,

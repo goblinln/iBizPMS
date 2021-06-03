@@ -93,7 +93,6 @@ export class StoryUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');

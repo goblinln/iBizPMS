@@ -151,7 +151,6 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto208",
       "lanResTag" : "COMMON.DATATYPE.DECIMAL"
     },
     "length" : 100,
@@ -204,7 +203,6 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto163",
       "lanResTag" : "CONTROL.UPLOADER.CANCEL.TIPS"
     },
     "length" : 100,
@@ -263,7 +261,6 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto50",
       "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT"
     },
     "length" : 100,
@@ -442,7 +439,6 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto267",
       "lanResTag" : "PAGE.COMMON.EDITVIEW.DERGROUP.OTHER"
     },
     "length" : 100,
@@ -482,7 +478,6 @@
     "dataType" : "INT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto224",
       "lanResTag" : "TBB.TEXT.*.ROLLBACKWF"
     },
     "logicName" : "部门级别",
@@ -567,7 +562,6 @@
     "dataType" : "INT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto98",
       "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT"
     },
     "logicName" : "排序",
@@ -616,7 +610,6 @@
     "dataType" : "TEXT",
     "importOrder" : 1000,
     "getLNPSLanguageRes" : {
-      "codeName" : "Auto150",
       "lanResTag" : "PAGE.COMMON.CUSTOMSPDESIGNER.LOGIC"
     },
     "length" : 100,

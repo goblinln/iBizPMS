@@ -196,10 +196,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("相关Bug",null),
 				title: commonLogic.appcommonhandle("相关Bug",null),
 			},
-			'myfavoritegridview': {
-				caption: commonLogic.appcommonhandle("Bug",null),
-				title: commonLogic.appcommonhandle("bug表格视图",null),
-			},
 			'releasesubgridview_undone': {
 				caption: commonLogic.appcommonhandle("Bug",null),
 				title: commonLogic.appcommonhandle("bug表格视图",null),
@@ -1264,50 +1260,6 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		favoritemain_grid: {
-			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
-				'pri': commonLogic.appcommonhandle("P",null),
-				'confirmed': commonLogic.appcommonhandle("确认",null),
-				'productname': commonLogic.appcommonhandle("产品",null),
-				'projectname': commonLogic.appcommonhandle("项目",null),
-				'title': commonLogic.appcommonhandle("Bug标题",null),
-				'status': commonLogic.appcommonhandle("Bug状态",null),
-				'openedby': commonLogic.appcommonhandle("由谁创建",null),
-				'openeddate': commonLogic.appcommonhandle("创建日期",null),
-				'assignedto': commonLogic.appcommonhandle("指派给",null),
-				'resolution': commonLogic.appcommonhandle("方案",null),
-				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
-				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-		exportColumns: {
-				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("编号",null),
-				'pri': commonLogic.appcommonhandle("P",null),
-				'confirmed': commonLogic.appcommonhandle("确认",null),
-				'title': commonLogic.appcommonhandle("Bug标题",null),
-				'status': commonLogic.appcommonhandle("Bug状态",null),
-				'openedby': commonLogic.appcommonhandle("由谁创建",null),
-				'openeddate': commonLogic.appcommonhandle("创建日期",null),
-				'assignedto': commonLogic.appcommonhandle("指派给",null),
-				'resolution': commonLogic.appcommonhandle("方案",null),
-				'lastediteddate': commonLogic.appcommonhandle("修改日期",null),
-				'activateddate': commonLogic.appcommonhandle("激活日期",null),
-				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
-				'productname': commonLogic.appcommonhandle("产品",null),
-				'projectname': commonLogic.appcommonhandle("项目",null),
-		},
-			uiactions: {
-				bug_confirmbug: commonLogic.appcommonhandle("确认",null),
-				bug_resolvebug: commonLogic.appcommonhandle("解决",null),
-				bug_closebug: commonLogic.appcommonhandle("关闭",null),
-				bug_mainedit: commonLogic.appcommonhandle("编辑",null),
-				copy: commonLogic.appcommonhandle("拷贝",null),
-				bug_bugfavorites: commonLogic.appcommonhandle("收藏",null),
-				bug_bugnfavorites: commonLogic.appcommonhandle("取消收藏",null),
-			},
-		},
 		bugseverity_project_chart: {
 			nodata:commonLogic.appcommonhandle("无",null),
 		},
@@ -1570,20 +1522,6 @@ function getLocaleResourceBase(){
 		},
 		testbugsgridviewtoolbar_toolbar: {
 			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("过滤",null),
-				tip: commonLogic.appcommonhandle("过滤",null),
-			},
-		},
-		myfavoritegridviewtoolbar_toolbar: {
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("导出",null),
-				tip: commonLogic.appcommonhandle("导出",null),
-			},
-			'deuiaction4': {
 				caption: commonLogic.appcommonhandle("过滤",null),
 				tip: commonLogic.appcommonhandle("过滤",null),
 			},

@@ -77,6 +77,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("功能测试",null),
 				title: commonLogic.appcommonhandle("功能测试",null),
 			},
+			'casefavorite': {
+				caption: commonLogic.appcommonhandle("测试用例",null),
+				title: commonLogic.appcommonhandle("case我得收藏",null),
+			},
 			'gridview9': {
 				caption: commonLogic.appcommonhandle("测试用例",null),
 				title: commonLogic.appcommonhandle("测试用例表格视图",null),
@@ -138,6 +142,20 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
+			},
+		},
+		casefavoritetoolbar_toolbar: {
+			'deuiaction2': {
+				caption: commonLogic.appcommonhandle("刷新",null),
+				tip: commonLogic.appcommonhandle("刷新",null),
+			},
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("导出",null),
+				tip: commonLogic.appcommonhandle("导出",null),
+			},
+			'deuiaction4': {
+				caption: commonLogic.appcommonhandle("过滤",null),
+				tip: commonLogic.appcommonhandle("过滤",null),
 			},
 		},
 		mainmygridviewtoolbar_toolbar: {
