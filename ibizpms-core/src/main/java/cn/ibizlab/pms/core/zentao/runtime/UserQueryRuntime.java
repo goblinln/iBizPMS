@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("UserQueryRuntime")
 @Slf4j
-public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IUserQueryRuntime {
 
     @Autowired
     IUserQueryService userqueryService;

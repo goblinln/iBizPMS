@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("PSDEFieldRuntime")
 @Slf4j
-public class PSDEFieldRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class PSDEFieldRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IPSDEFieldRuntime {
 
     @Autowired
     IPSDEFieldService psdefieldService;

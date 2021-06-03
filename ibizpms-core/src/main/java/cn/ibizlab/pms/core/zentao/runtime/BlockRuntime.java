@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("BlockRuntime")
 @Slf4j
-public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IBlockRuntime {
 
     @Autowired
     IBlockService blockService;

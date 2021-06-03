@@ -342,6 +342,32 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.condCache.get('view');
     }
     /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchaccount`, _data);
+        }
+        if (_context.sysaccount && _context.product && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchaccount`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/stories/fetchaccount`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchaccount`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchaccount`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Change
      *
      * @param {*} [_context={}]
@@ -369,6 +395,37 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.sysaccount && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/change`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * AssignTo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+        }
+        if (_context.sysaccount && _context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/assignto`, _data);
+        }
+        if (_context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
+        }
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
+        }
+        if (_context.sysaccount && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/assignto`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -460,37 +517,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}`, _data);
-        }
-        if (_context.sysaccount && _context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}`, _data);
-        }
-        if (_context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/stories/${_context.story}`, _data);
-        }
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
-        }
-        if (_context.sysaccount && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * StoryNFavorites
      *
      * @param {*} [_context={}]
@@ -522,6 +548,37 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}`, _data);
+        }
+        if (_context.sysaccount && _context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}`, _data);
+        }
+        if (_context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/stories/${_context.story}`, _data);
+        }
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
+        }
+        if (_context.sysaccount && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * FetchMyFavorites
      *
      * @param {*} [_context={}]
@@ -544,6 +601,146 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         }
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchmyfavorites`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchmy`, _data);
+        }
+        if (_context.sysaccount && _context.product && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchmy`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/stories/fetchmy`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchmy`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchmy`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && _context.story) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}`);
+            return res;
+        }
+        if (_context.sysaccount && _context.product && _context.story) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}`);
+            return res;
+        }
+        if (_context.project && _context.story) {
+            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}`);
+            return res;
+        }
+        if (_context.product && _context.story) {
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
+            return res;
+        }
+        if (_context.sysaccount && _context.story) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchdefault`, _data);
+        }
+        if (_context.sysaccount && _context.product && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchdefault`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/stories/fetchdefault`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Review
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/review`, _data);
+        }
+        if (_context.sysaccount && _context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/review`, _data);
+        }
+        if (_context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/review`, _data);
+        }
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
+        }
+        if (_context.sysaccount && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/review`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchStoryRelated
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+        }
+        if (_context.sysaccount && _context.product && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchstoryrelated`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/stories/fetchstoryrelated`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchstoryrelated`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -605,28 +802,59 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchAccount
+     * Activate
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof StoryService
      */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+        }
+        if (_context.sysaccount && _context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/activate`, _data);
+        }
+        if (_context.project && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/activate`, _data);
+        }
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/activate`, _data);
+        }
+        if (_context.sysaccount && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/activate`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProjectStories
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchProjectStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.project && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchaccount`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchprojectstories`, _data);
         }
         if (_context.sysaccount && _context.product && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchaccount`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchprojectstories`, _data);
         }
         if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchaccount`, _data);
+            return this.http.post(`/projects/${_context.project}/stories/fetchprojectstories`, _data);
         }
         if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchaccount`, _data);
+            return this.http.post(`/products/${_context.product}/stories/fetchprojectstories`, _data);
         }
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchaccount`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchprojectstories`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -672,89 +900,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchdefault`, _data);
-        }
-        if (_context.sysaccount && _context.product && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchdefault`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchdefault`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchdefault`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Activate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Activate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/activate`, _data);
-        }
-        if (_context.sysaccount && _context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/activate`, _data);
-        }
-        if (_context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/activate`, _data);
-        }
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/activate`, _data);
-        }
-        if (_context.sysaccount && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/activate`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchmy`, _data);
-        }
-        if (_context.sysaccount && _context.product && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchmy`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchmy`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchmy`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchmy`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Close
      *
      * @param {*} [_context={}]
@@ -782,151 +927,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.sysaccount && _context.story) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/close`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Review
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Review(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/review`, _data);
-        }
-        if (_context.sysaccount && _context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/review`, _data);
-        }
-        if (_context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/review`, _data);
-        }
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
-        }
-        if (_context.sysaccount && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/review`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchProjectStories
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async FetchProjectStories(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchprojectstories`, _data);
-        }
-        if (_context.sysaccount && _context.product && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchprojectstories`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchprojectstories`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchprojectstories`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchprojectstories`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * AssignTo
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
-        }
-        if (_context.sysaccount && _context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}/assignto`, _data);
-        }
-        if (_context.project && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/assignto`, _data);
-        }
-        if (_context.product && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
-        }
-        if (_context.sysaccount && _context.story) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}/assignto`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && _context.story) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/${_context.story}`);
-            return res;
-        }
-        if (_context.sysaccount && _context.product && _context.story) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/${_context.story}`);
-            return res;
-        }
-        if (_context.project && _context.story) {
-            const res = await this.http.get(`/projects/${_context.project}/stories/${_context.story}`);
-            return res;
-        }
-        if (_context.product && _context.story) {
-            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
-            return res;
-        }
-        if (_context.sysaccount && _context.story) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/stories/${_context.story}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchStoryRelated
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof StoryService
-     */
-    async FetchStoryRelated(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.project && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/fetchstoryrelated`, _data);
-        }
-        if (_context.sysaccount && _context.product && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/fetchstoryrelated`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/stories/fetchstoryrelated`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/fetchstoryrelated`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -973,6 +973,72 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if(_context.sysaccount && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/changebatch`,_data);
+        }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * AssignToBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.sysaccount && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/assigntobatch`,_data);
+        }
+        if(_context.sysaccount && _context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/assigntobatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/stories/assigntobatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
+        }
+        if(_context.sysaccount && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/assigntobatch`,_data);
+        }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * ReviewBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.sysaccount && _context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/reviewbatch`,_data);
+        }
+        if(_context.sysaccount && _context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/reviewbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/stories/reviewbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
+        }
+        if(_context.sysaccount && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/reviewbatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -1039,72 +1105,6 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if(_context.sysaccount && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/closebatch`,_data);
-        }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * ReviewBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof StoryServiceBase
-     */
-    public async ReviewBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.sysaccount && _context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/reviewbatch`,_data);
-        }
-        if(_context.sysaccount && _context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/reviewbatch`,_data);
-        }
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/reviewbatch`,_data);
-        }
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
-        }
-        if(_context.sysaccount && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/reviewbatch`,_data);
-        }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * AssignToBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof StoryServiceBase
-     */
-    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.sysaccount && _context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/projects/${_context.project}/stories/assigntobatch`,_data);
-        }
-        if(_context.sysaccount && _context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/products/${_context.product}/stories/assigntobatch`,_data);
-        }
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/stories/assigntobatch`,_data);
-        }
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
-        }
-        if(_context.sysaccount && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/stories/assigntobatch`,_data);
         }
         return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

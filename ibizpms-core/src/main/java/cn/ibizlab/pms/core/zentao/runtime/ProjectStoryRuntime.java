@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("ProjectStoryRuntime")
 @Slf4j
-public class ProjectStoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class ProjectStoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IProjectStoryRuntime {
 
     @Autowired
     IProjectStoryService projectstoryService;

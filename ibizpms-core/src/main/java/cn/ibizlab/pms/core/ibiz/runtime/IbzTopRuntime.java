@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("IbzTopRuntime")
 @Slf4j
-public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IIbzTopRuntime {
 
     @Autowired
     IIbzTopService ibztopService;

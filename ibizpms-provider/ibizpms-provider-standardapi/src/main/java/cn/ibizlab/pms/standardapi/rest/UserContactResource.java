@@ -71,6 +71,19 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
+    @ApiOperation(value = "根据系统用户更新用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户更新用户联系方式")
+	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
+    public ResponseEntity<UserContactDTO> updateBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
+        UserContact domain = usercontactMapping.toDomain(usercontactdto);
+        
+        domain.setId(usercontact_id);
+		usercontactService.update(domain);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
 	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usercontacts/fetchaccount")
@@ -94,19 +107,6 @@ public class UserContactResource {
 		usercontactService.create(domain);
         UserContactDTO dto = usercontactMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
-    @ApiOperation(value = "根据系统用户更新用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户更新用户联系方式")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
-    public ResponseEntity<UserContactDTO> updateBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
-        UserContact domain = usercontactMapping.toDomain(usercontactdto);
-        
-        domain.setId(usercontact_id);
-		usercontactService.update(domain);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

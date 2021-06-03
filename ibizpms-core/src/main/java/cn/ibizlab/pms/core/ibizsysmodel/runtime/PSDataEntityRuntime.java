@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("PSDataEntityRuntime")
 @Slf4j
-public class PSDataEntityRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class PSDataEntityRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IPSDataEntityRuntime {
 
     @Autowired
     IPSDataEntityService psdataentityService;

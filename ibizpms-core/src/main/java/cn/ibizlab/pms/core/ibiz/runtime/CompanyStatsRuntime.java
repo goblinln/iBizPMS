@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("CompanyStatsRuntime")
 @Slf4j
-public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements ICompanyStatsRuntime {
 
     @Autowired
     ICompanyStatsService companystatsService;

@@ -41,12 +41,9 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-
-@Aspect
-@org.springframework.core.annotation.Order(100)
 @Component("UserViewRuntime")
 @Slf4j
-public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IUserViewRuntime {
 
     @Autowired
     IUserViewService userviewService;
