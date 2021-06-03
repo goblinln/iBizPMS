@@ -181,6 +181,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 2,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -191,7 +192,8 @@
       "modelref" : true,
       "id" : "Save"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "UnCollect",
     "methodType" : "DEACTION",
@@ -680,6 +682,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 2,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -690,7 +693,8 @@
       "modelref" : true,
       "id" : "Save"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "UnCollect",
     "methodType" : "DEACTION",

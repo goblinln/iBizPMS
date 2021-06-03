@@ -133,11 +133,13 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 2,
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
