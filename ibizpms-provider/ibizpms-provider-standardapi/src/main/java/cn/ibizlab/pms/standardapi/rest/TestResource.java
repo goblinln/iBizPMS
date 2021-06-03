@@ -52,16 +52,32 @@ public class TestResource {
     @Lazy
     public TestMapping testMapping;
 
+    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
+	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/fetchcurdefault")
+	public ResponseEntity<List<TestDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchCurDefault(context) ;
+        List<TestDTO> list = testMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
-    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/tests/{test_id}")
-    public ResponseEntity<TestDTO> get(@PathVariable("test_id") Long test_id) {
-        Product domain = productService.get(test_id);
-        TestDTO dto = testMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(test_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/producttop")
+    public ResponseEntity<TestDTO> productTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
+        Product domain = testMapping.toDomain(testdto);
+        domain.setId(test_id);
+        domain = productService.productTop(domain);
+        testdto = testMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        testdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testdto);
     }
+
 
     @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
     @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
@@ -78,32 +94,16 @@ public class TestResource {
 
 
     @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
-    @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/producttop")
-    public ResponseEntity<TestDTO> productTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
-        Product domain = testMapping.toDomain(testdto);
-        domain.setId(test_id);
-        domain = productService.productTop(domain);
-        testdto = testMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        testdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testdto);
+    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/tests/{test_id}")
+    public ResponseEntity<TestDTO> get(@PathVariable("test_id") Long test_id) {
+        Product domain = productService.get(test_id);
+        TestDTO dto = testMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(test_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
-	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/fetchcurdefault")
-	public ResponseEntity<List<TestDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchCurDefault(context) ;
-        List<TestDTO> list = testMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/{action}")
