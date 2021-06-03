@@ -52,7 +52,7 @@ public class IbzproProjectUserTaskResource {
     @Lazy
     public IbzproProjectUserTaskMapping ibzproprojectusertaskMapping;
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'CREATE')")
     @ApiOperation(value = "新建项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "新建项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks")
     @Transactional
@@ -67,7 +67,7 @@ public class IbzproProjectUserTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ibzproprojectusertask_id, 'UPDATE')")
+    @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'UPDATE')")
     @ApiOperation(value = "更新项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "更新项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class IbzproProjectUserTaskResource {
     }
 
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ibzproprojectusertask_id, 'DELETE')")
+    @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'DELETE')")
     @ApiOperation(value = "删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "删除项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.remove(ibzproprojectusertask_id));
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'DELETE')")
     @ApiOperation(value = "批量删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量删除项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.test(#ibzproprojectusertask_id, 'READ')")
+    @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'READ')")
     @ApiOperation(value = "获取项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "获取项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
     public ResponseEntity<IbzproProjectUserTaskDTO> get(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
@@ -110,7 +110,7 @@ public class IbzproProjectUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'CREATE')")
     @ApiOperation(value = "获取项目汇报用户任务草稿", tags = {"项目汇报用户任务" },  notes = "获取项目汇报用户任务草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectusertasks/getdraft")
     public ResponseEntity<IbzproProjectUserTaskDTO> getDraft(IbzproProjectUserTaskDTO dto) {
@@ -118,7 +118,7 @@ public class IbzproProjectUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskMapping.toDto(ibzproprojectusertaskService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'CREATE')")
     @ApiOperation(value = "检查项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "检查项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
@@ -138,7 +138,7 @@ public class IbzproProjectUserTaskResource {
     }
 
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"项目汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchdefault")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchdefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -150,7 +150,7 @@ public class IbzproProjectUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectdailytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectdailytask(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -162,7 +162,7 @@ public class IbzproProjectUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectmonthlytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectmonthlytask(@RequestBody IbzproProjectUserTaskSearchContext context) {
@@ -174,7 +174,7 @@ public class IbzproProjectUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取项目周报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目周报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectweeklytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectweeklytask(@RequestBody IbzproProjectUserTaskSearchContext context) {

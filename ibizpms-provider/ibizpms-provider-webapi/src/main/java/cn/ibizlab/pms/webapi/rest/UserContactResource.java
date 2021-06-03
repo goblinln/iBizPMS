@@ -52,7 +52,7 @@ public class UserContactResource {
     @Lazy
     public UserContactMapping usercontactMapping;
 
-    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
     @ApiOperation(value = "新建用户联系方式", tags = {"用户联系方式" },  notes = "新建用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts")
     @Transactional
@@ -65,7 +65,7 @@ public class UserContactResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
     @Transactional
@@ -80,14 +80,14 @@ public class UserContactResource {
     }
 
 
-    @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/{usercontact_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("usercontact_id") Long usercontact_id) {
          return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
     }
 
-    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
     @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -95,7 +95,7 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@UserContactRuntime.test(#usercontact_id, 'NONE')")
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
     public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
@@ -106,7 +106,7 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
     @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/getdraft")
     public ResponseEntity<UserContactDTO> getDraft(UserContactDTO dto) {
@@ -114,7 +114,7 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserContactRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
     @ApiOperation(value = "检查用户联系方式", tags = {"用户联系方式" },  notes = "检查用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserContactDTO usercontactdto) {
@@ -134,7 +134,7 @@ public class UserContactResource {
     }
 
 
-    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
 	@ApiOperation(value = "获取指定用户数据", tags = {"用户联系方式" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchaccount")
 	public ResponseEntity<List<UserContactDTO>> fetchaccount(@RequestBody UserContactSearchContext context) {
@@ -147,7 +147,7 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
 	@ApiOperation(value = "获取抄送联系人", tags = {"用户联系方式" } ,notes = "获取抄送联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchcurusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchcurusercontact(@RequestBody UserContactSearchContext context) {
@@ -159,7 +159,7 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户联系方式" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchdefault")
 	public ResponseEntity<List<UserContactDTO>> fetchdefault(@RequestBody UserContactSearchContext context) {
@@ -171,7 +171,7 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserContactRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
 	@ApiOperation(value = "获取我的数据", tags = {"用户联系方式" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmy")
 	public ResponseEntity<List<UserContactDTO>> fetchmy(@RequestBody UserContactSearchContext context) {
@@ -184,7 +184,7 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserContactRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
 	@ApiOperation(value = "获取我的联系人", tags = {"用户联系方式" } ,notes = "获取我的联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmyusercontact")
 	public ResponseEntity<List<UserContactDTO>> fetchmyusercontact(@RequestBody UserContactSearchContext context) {

@@ -52,7 +52,7 @@ public class IbzReportRoleConfigResource {
     @Lazy
     public IbzReportRoleConfigMapping ibzreportroleconfigMapping;
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
     @ApiOperation(value = "新建汇报角色配置", tags = {"汇报角色配置" },  notes = "新建汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs")
     @Transactional
@@ -68,7 +68,7 @@ public class IbzReportRoleConfigResource {
     }
 
     @VersionCheck(entity = "ibzreportroleconfig" , versionfield = "updatedate")
-    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'UPDATE')")
     @ApiOperation(value = "更新汇报角色配置", tags = {"汇报角色配置" },  notes = "更新汇报角色配置")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     @Transactional
@@ -85,14 +85,14 @@ public class IbzReportRoleConfigResource {
     }
 
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'DELETE')")
     @ApiOperation(value = "删除汇报角色配置", tags = {"汇报角色配置" },  notes = "删除汇报角色配置")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.remove(ibzreportroleconfig_id));
     }
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'DELETE')")
     @ApiOperation(value = "批量删除汇报角色配置", tags = {"汇报角色配置" },  notes = "批量删除汇报角色配置")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class IbzReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.test(#ibzreportroleconfig_id, 'READ')")
+    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'READ')")
     @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
     public ResponseEntity<IbzReportRoleConfigDTO> get(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
@@ -111,7 +111,7 @@ public class IbzReportRoleConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
     @ApiOperation(value = "获取汇报角色配置草稿", tags = {"汇报角色配置" },  notes = "获取汇报角色配置草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportroleconfigs/getdraft")
     public ResponseEntity<IbzReportRoleConfigDTO> getDraft(IbzReportRoleConfigDTO dto) {
@@ -119,7 +119,7 @@ public class IbzReportRoleConfigResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigMapping.toDto(ibzreportroleconfigService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
     @ApiOperation(value = "检查汇报角色配置", tags = {"汇报角色配置" },  notes = "检查汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
@@ -139,7 +139,7 @@ public class IbzReportRoleConfigResource {
     }
 
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportroleconfigs/fetchdefault")
 	public ResponseEntity<List<IbzReportRoleConfigDTO>> fetchdefault(@RequestBody IbzReportRoleConfigSearchContext context) {

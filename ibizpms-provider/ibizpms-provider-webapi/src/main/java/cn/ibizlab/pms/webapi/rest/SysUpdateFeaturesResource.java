@@ -52,7 +52,7 @@ public class SysUpdateFeaturesResource {
     @Lazy
     public SysUpdateFeaturesMapping sysupdatefeaturesMapping;
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'CREATE')")
     @ApiOperation(value = "新建系统更新功能", tags = {"系统更新功能" },  notes = "新建系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures")
     @Transactional
@@ -68,7 +68,7 @@ public class SysUpdateFeaturesResource {
     }
 
     @VersionCheck(entity = "sysupdatefeatures" , versionfield = "updatedate")
-    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id, 'UPDATE')")
+    @PreAuthorize("test('SYS_UPDATE_FEATURES', #sysupdatefeatures_id, 'UPDATE')")
     @ApiOperation(value = "更新系统更新功能", tags = {"系统更新功能" },  notes = "更新系统更新功能")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatefeatures/{sysupdatefeatures_id}")
     @Transactional
@@ -85,14 +85,14 @@ public class SysUpdateFeaturesResource {
     }
 
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id, 'DELETE')")
+    @PreAuthorize("test('SYS_UPDATE_FEATURES', #sysupdatefeatures_id, 'DELETE')")
     @ApiOperation(value = "删除系统更新功能", tags = {"系统更新功能" },  notes = "删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'DELETE')")
     @ApiOperation(value = "批量删除系统更新功能", tags = {"系统更新功能" },  notes = "批量删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.test(#sysupdatefeatures_id, 'READ')")
+    @PreAuthorize("test('SYS_UPDATE_FEATURES', #sysupdatefeatures_id, 'READ')")
     @ApiOperation(value = "获取系统更新功能", tags = {"系统更新功能" },  notes = "获取系统更新功能")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> get(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
@@ -111,7 +111,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'CREATE')")
     @ApiOperation(value = "获取系统更新功能草稿", tags = {"系统更新功能" },  notes = "获取系统更新功能草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatefeatures/getdraft")
     public ResponseEntity<SysUpdateFeaturesDTO> getDraft(SysUpdateFeaturesDTO dto) {
@@ -119,7 +119,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesMapping.toDto(sysupdatefeaturesService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'CREATE')")
     @ApiOperation(value = "检查系统更新功能", tags = {"系统更新功能" },  notes = "检查系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -139,7 +139,7 @@ public class SysUpdateFeaturesResource {
     }
 
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统更新功能" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatefeatures/fetchdefault")
 	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchdefault(@RequestBody SysUpdateFeaturesSearchContext context) {
@@ -160,7 +160,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesdto);
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'CREATE')")
     @ApiOperation(value = "根据更新日志建立系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志建立系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures")
     public ResponseEntity<SysUpdateFeaturesDTO> createBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -173,7 +173,7 @@ public class SysUpdateFeaturesResource {
 
 
     @VersionCheck(entity = "sysupdatefeatures" , versionfield = "updatedate")
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('UPDATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'UPDATE')")
     @ApiOperation(value = "根据更新日志更新系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志更新系统更新功能")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> updateBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -186,14 +186,14 @@ public class SysUpdateFeaturesResource {
     }
 
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'DELETE')")
     @ApiOperation(value = "根据更新日志删除系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<Boolean> removeBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.remove(sysupdatefeatures_id));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'DELETE')")
     @ApiOperation(value = "根据更新日志批量删除系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志批量删除系统更新功能")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/batch")
     public ResponseEntity<Boolean> removeBatchBySysUpdateLog(@RequestBody List<String> ids) {
@@ -201,7 +201,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'READ')")
     @ApiOperation(value = "根据更新日志获取系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志获取系统更新功能")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/{sysupdatefeatures_id}")
     public ResponseEntity<SysUpdateFeaturesDTO> getBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
@@ -210,7 +210,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'CREATE')")
     @ApiOperation(value = "根据更新日志获取系统更新功能草稿", tags = {"系统更新功能" },  notes = "根据更新日志获取系统更新功能草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/getdraft")
     public ResponseEntity<SysUpdateFeaturesDTO> getDraftBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, SysUpdateFeaturesDTO dto) {
@@ -219,7 +219,7 @@ public class SysUpdateFeaturesResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesMapping.toDto(sysupdatefeaturesService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'CREATE')")
     @ApiOperation(value = "根据更新日志检查系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志检查系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/checkkey")
     public ResponseEntity<Boolean> checkKeyBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -237,7 +237,7 @@ public class SysUpdateFeaturesResource {
     }
 
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'READ')")
 	@ApiOperation(value = "根据更新日志获取数据集", tags = {"系统更新功能" } ,notes = "根据更新日志获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/fetchdefault")
 	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchDefaultBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id,@RequestBody SysUpdateFeaturesSearchContext context) {

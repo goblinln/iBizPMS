@@ -52,7 +52,7 @@ public class CompanyStatsResource {
     @Lazy
     public CompanyStatsMapping companystatsMapping;
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'CREATE')")
     @ApiOperation(value = "新建公司动态汇总", tags = {"公司动态汇总" },  notes = "新建公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats")
     @Transactional
@@ -67,7 +67,7 @@ public class CompanyStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.test(#companystats_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'UPDATE')")
     @ApiOperation(value = "更新公司动态汇总", tags = {"公司动态汇总" },  notes = "更新公司动态汇总")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companystats/{companystats_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class CompanyStatsResource {
     }
 
 
-    @PreAuthorize("@CompanyStatsRuntime.test(#companystats_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'DELETE')")
     @ApiOperation(value = "删除公司动态汇总", tags = {"公司动态汇总" },  notes = "删除公司动态汇总")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/{companystats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("companystats_id") Long companystats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(companystatsService.remove(companystats_id));
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'DELETE')")
     @ApiOperation(value = "批量删除公司动态汇总", tags = {"公司动态汇总" },  notes = "批量删除公司动态汇总")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.test(#companystats_id, 'READ')")
+    @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'READ')")
     @ApiOperation(value = "获取公司动态汇总", tags = {"公司动态汇总" },  notes = "获取公司动态汇总")
 	@RequestMapping(method = RequestMethod.GET, value = "/companystats/{companystats_id}")
     public ResponseEntity<CompanyStatsDTO> get(@PathVariable("companystats_id") Long companystats_id) {
@@ -110,7 +110,7 @@ public class CompanyStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'CREATE')")
     @ApiOperation(value = "获取公司动态汇总草稿", tags = {"公司动态汇总" },  notes = "获取公司动态汇总草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/companystats/getdraft")
     public ResponseEntity<CompanyStatsDTO> getDraft(CompanyStatsDTO dto) {
@@ -118,7 +118,7 @@ public class CompanyStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(companystatsMapping.toDto(companystatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'CREATE')")
     @ApiOperation(value = "检查公司动态汇总", tags = {"公司动态汇总" },  notes = "检查公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CompanyStatsDTO companystatsdto) {
@@ -138,7 +138,7 @@ public class CompanyStatsResource {
     }
 
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'NONE')")
 	@ApiOperation(value = "获取公司动态统计", tags = {"公司动态汇总" } ,notes = "获取公司动态统计")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/fetchcompanydynamicstats")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchcompanydynamicstats(@RequestBody CompanyStatsSearchContext context) {
@@ -150,7 +150,7 @@ public class CompanyStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"公司动态汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/companystats/fetchdefault")
 	public ResponseEntity<List<CompanyStatsDTO>> fetchdefault(@RequestBody CompanyStatsSearchContext context) {

@@ -52,7 +52,7 @@ public class SysUpdateLogResource {
     @Lazy
     public SysUpdateLogMapping sysupdatelogMapping;
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_LOG', 'CREATE')")
     @ApiOperation(value = "新建更新日志", tags = {"更新日志" },  notes = "新建更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs")
     @Transactional
@@ -68,7 +68,7 @@ public class SysUpdateLogResource {
     }
 
     @VersionCheck(entity = "sysupdatelog" , versionfield = "updatedate")
-    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id, 'UPDATE')")
+    @PreAuthorize("test('SYS_UPDATE_LOG', #sysupdatelog_id, 'UPDATE')")
     @ApiOperation(value = "更新更新日志", tags = {"更新日志" },  notes = "更新更新日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}")
     @Transactional
@@ -85,14 +85,14 @@ public class SysUpdateLogResource {
     }
 
 
-    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id, 'DELETE')")
+    @PreAuthorize("test('SYS_UPDATE_LOG', #sysupdatelog_id, 'DELETE')")
     @ApiOperation(value = "删除更新日志", tags = {"更新日志" },  notes = "删除更新日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/{sysupdatelog_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
          return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.remove(sysupdatelog_id));
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_LOG', 'DELETE')")
     @ApiOperation(value = "批量删除更新日志", tags = {"更新日志" },  notes = "批量删除更新日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysupdatelogs/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class SysUpdateLogResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id, 'READ')")
+    @PreAuthorize("test('SYS_UPDATE_LOG', #sysupdatelog_id, 'READ')")
     @ApiOperation(value = "获取更新日志", tags = {"更新日志" },  notes = "获取更新日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/{sysupdatelog_id}")
     public ResponseEntity<SysUpdateLogDTO> get(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
@@ -111,7 +111,7 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_LOG', 'CREATE')")
     @ApiOperation(value = "获取更新日志草稿", tags = {"更新日志" },  notes = "获取更新日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysupdatelogs/getdraft")
     public ResponseEntity<SysUpdateLogDTO> getDraft(SysUpdateLogDTO dto) {
@@ -119,14 +119,14 @@ public class SysUpdateLogResource {
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogMapping.toDto(sysupdatelogService.getDraft(domain)));
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_LOG', 'CREATE')")
     @ApiOperation(value = "检查更新日志", tags = {"更新日志" },  notes = "检查更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUpdateLogDTO sysupdatelogdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysupdatelogService.checkKey(sysupdatelogMapping.toDomain(sysupdatelogdto)));
     }
 
-    @PreAuthorize("@SysUpdateLogRuntime.test(#sysupdatelog_id, 'READ')")
+    @PreAuthorize("test('SYS_UPDATE_LOG', #sysupdatelog_id, 'READ')")
     @ApiOperation(value = "获取最新更新信息", tags = {"更新日志" },  notes = "获取最新更新信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysupdatelogs/{sysupdatelog_id}/getlastupdateinfo")
     public ResponseEntity<SysUpdateLogDTO> getLastUpdateInfo(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateLogDTO sysupdatelogdto) {
@@ -153,7 +153,7 @@ public class SysUpdateLogResource {
     }
 
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('SYS_UPDATE_LOG', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"更新日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/fetchdefault")
 	public ResponseEntity<List<SysUpdateLogDTO>> fetchdefault(@RequestBody SysUpdateLogSearchContext context) {

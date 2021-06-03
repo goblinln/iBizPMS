@@ -52,7 +52,7 @@ public class IBZProProductLineResource {
     @Lazy
     public IBZProProductLineMapping ibzproproductlineMapping;
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'CREATE')")
     @ApiOperation(value = "新建产品线", tags = {"产品线" },  notes = "新建产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines")
     @Transactional
@@ -67,7 +67,7 @@ public class IBZProProductLineResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id, 'UPDATE')")
+    @PreAuthorize("test('IBZPRO_PRODUCTLINE', #ibzproproductline_id, 'UPDATE')")
     @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductlines/{ibzproproductline_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class IBZProProductLineResource {
     }
 
 
-    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id, 'DELETE')")
+    @PreAuthorize("test('IBZPRO_PRODUCTLINE', #ibzproproductline_id, 'DELETE')")
     @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductlines/{ibzproproductline_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproproductline_id") Long ibzproproductline_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineService.remove(ibzproproductline_id));
     }
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'DELETE')")
     @ApiOperation(value = "批量删除产品线", tags = {"产品线" },  notes = "批量删除产品线")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductlines/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IBZProProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IBZProProductLineRuntime.test(#ibzproproductline_id, 'READ')")
+    @PreAuthorize("test('IBZPRO_PRODUCTLINE', #ibzproproductline_id, 'READ')")
     @ApiOperation(value = "获取产品线", tags = {"产品线" },  notes = "获取产品线")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductlines/{ibzproproductline_id}")
     public ResponseEntity<IBZProProductLineDTO> get(@PathVariable("ibzproproductline_id") Long ibzproproductline_id) {
@@ -110,7 +110,7 @@ public class IBZProProductLineResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'CREATE')")
     @ApiOperation(value = "获取产品线草稿", tags = {"产品线" },  notes = "获取产品线草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductlines/getdraft")
     public ResponseEntity<IBZProProductLineDTO> getDraft(IBZProProductLineDTO dto) {
@@ -118,7 +118,7 @@ public class IBZProProductLineResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineMapping.toDto(ibzproproductlineService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'CREATE')")
     @ApiOperation(value = "检查产品线", tags = {"产品线" },  notes = "检查产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProductLineDTO ibzproproductlinedto) {
@@ -134,7 +134,7 @@ public class IBZProProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品线" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductlines/fetchdefault")
 	public ResponseEntity<List<IBZProProductLineDTO>> fetchdefault(@RequestBody IBZProProductLineSearchContext context) {

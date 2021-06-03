@@ -52,7 +52,7 @@ public class ModuleResource {
     @Lazy
     public ModuleMapping moduleMapping;
 
-    @PreAuthorize("@ModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'CREATE')")
     @ApiOperation(value = "新建模块", tags = {"模块" },  notes = "新建模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules")
     @Transactional
@@ -67,7 +67,7 @@ public class ModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_MODULE', #module_id, 'UPDATE')")
     @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class ModuleResource {
     }
 
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id, 'DELETE')")
+    @PreAuthorize("test('ZT_MODULE', #module_id, 'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/modules/{module_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("module_id") Long module_id) {
          return ResponseEntity.status(HttpStatus.OK).body(moduleService.remove(module_id));
     }
 
-    @PreAuthorize("@ModuleRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'DELETE')")
     @ApiOperation(value = "批量删除模块", tags = {"模块" },  notes = "批量删除模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/modules/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ModuleRuntime.test(#module_id, 'READ')")
+    @PreAuthorize("test('ZT_MODULE', #module_id, 'READ')")
     @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/modules/{module_id}")
     public ResponseEntity<ModuleDTO> get(@PathVariable("module_id") Long module_id) {
@@ -110,7 +110,7 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'CREATE')")
     @ApiOperation(value = "获取模块草稿", tags = {"模块" },  notes = "获取模块草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/modules/getdraft")
     public ResponseEntity<ModuleDTO> getDraft(ModuleDTO dto) {
@@ -118,7 +118,7 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(moduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'CREATE')")
     @ApiOperation(value = "检查模块", tags = {"模块" },  notes = "检查模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ModuleDTO moduledto) {
@@ -152,7 +152,7 @@ public class ModuleResource {
     }
 
 
-    @PreAuthorize("@ModuleRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'NONE')")
 	@ApiOperation(value = "获取BugModule", tags = {"模块" } ,notes = "获取BugModule")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchbugmodule(@RequestBody ModuleSearchContext context) {
@@ -164,7 +164,7 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"模块" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodulecodelist")
 	public ResponseEntity<List<ModuleDTO>> fetchbugmodulecodelist(@RequestBody ModuleSearchContext context) {
@@ -177,7 +177,7 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchdefault")
 	public ResponseEntity<List<ModuleDTO>> fetchdefault(@RequestBody ModuleSearchContext context) {
@@ -190,7 +190,7 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'READ')")
 	@ApiOperation(value = "获取文档目录", tags = {"模块" } ,notes = "获取文档目录")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchdocmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchdocmodule(@RequestBody ModuleSearchContext context) {
@@ -203,7 +203,7 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'READ')")
 	@ApiOperation(value = "获取产品线", tags = {"模块" } ,notes = "获取产品线")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchline")
 	public ResponseEntity<List<ModuleDTO>> fetchline(@RequestBody ModuleSearchContext context) {
@@ -216,7 +216,7 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'READ')")
 	@ApiOperation(value = "获取需求模块", tags = {"模块" } ,notes = "获取需求模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchstorymodule")
 	public ResponseEntity<List<ModuleDTO>> fetchstorymodule(@RequestBody ModuleSearchContext context) {
@@ -229,7 +229,7 @@ public class ModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'READ')")
 	@ApiOperation(value = "获取任务模块", tags = {"模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchtaskmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchtaskmodule(@RequestBody ModuleSearchContext context) {

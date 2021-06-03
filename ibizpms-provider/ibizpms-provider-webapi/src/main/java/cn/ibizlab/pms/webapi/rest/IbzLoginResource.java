@@ -52,7 +52,7 @@ public class IbzLoginResource {
     @Lazy
     public IbzLoginMapping ibzloginMapping;
 
-    @PreAuthorize("@IbiLoginRuntime.test(#ibzlogin_id, 'READ')")
+    @PreAuthorize("test('IBZ_LOGIN', #ibzlogin_id, 'READ')")
     @ApiOperation(value = "获取ZT账户登录信息", tags = {"实体" },  notes = "获取ZT账户登录信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/{ibzlogin_id}/getuser")
     public ResponseEntity<IbzLoginDTO> getUser(@PathVariable("ibzlogin_id") Long ibzlogin_id, IbzLoginDTO ibzlogindto) {

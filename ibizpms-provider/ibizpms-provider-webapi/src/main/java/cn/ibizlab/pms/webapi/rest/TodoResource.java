@@ -52,7 +52,7 @@ public class TodoResource {
     @Lazy
     public TodoMapping todoMapping;
 
-    @PreAuthorize("@TodoRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_TODO', 'CREATE')")
     @ApiOperation(value = "新建待办", tags = {"待办" },  notes = "新建待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos")
     @Transactional
@@ -67,7 +67,7 @@ public class TodoResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'UPDATE')")
     @ApiOperation(value = "更新待办", tags = {"待办" },  notes = "更新待办")
 	@RequestMapping(method = RequestMethod.PUT, value = "/todos/{todo_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'DELETE')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'DELETE')")
     @ApiOperation(value = "删除待办", tags = {"待办" },  notes = "删除待办")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/todos/{todo_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("todo_id") Long todo_id) {
          return ResponseEntity.status(HttpStatus.OK).body(todoService.remove(todo_id));
     }
 
-    @PreAuthorize("@TodoRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_TODO', 'DELETE')")
     @ApiOperation(value = "批量删除待办", tags = {"待办" },  notes = "批量删除待办")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/todos/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class TodoResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'READ')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'READ')")
     @ApiOperation(value = "获取待办", tags = {"待办" },  notes = "获取待办")
 	@RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}")
     public ResponseEntity<TodoDTO> get(@PathVariable("todo_id") Long todo_id) {
@@ -110,7 +110,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TodoRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_TODO', 'CREATE')")
     @ApiOperation(value = "获取待办草稿", tags = {"待办" },  notes = "获取待办草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/todos/getdraft")
     public ResponseEntity<TodoDTO> getDraft(TodoDTO dto) {
@@ -118,7 +118,7 @@ public class TodoResource {
         return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'ACTIVATE')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'ACTIVATE')")
     @ApiOperation(value = "Activate", tags = {"待办" },  notes = "Activate")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/activate")
     public ResponseEntity<TodoDTO> activate(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -132,7 +132,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'ASSIGNTO')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'ASSIGNTO')")
     @ApiOperation(value = "AssignTo", tags = {"待办" },  notes = "AssignTo")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/assignto")
     public ResponseEntity<TodoDTO> assignTo(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -146,14 +146,14 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_TODO', 'CREATE')")
     @ApiOperation(value = "检查待办", tags = {"待办" },  notes = "检查待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TodoDTO tododto) {
         return  ResponseEntity.status(HttpStatus.OK).body(todoService.checkKey(todoMapping.toDomain(tododto)));
     }
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'CLOSE')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'CLOSE')")
     @ApiOperation(value = "Close", tags = {"待办" },  notes = "Close")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/close")
     public ResponseEntity<TodoDTO> close(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -167,7 +167,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'READ')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'READ')")
     @ApiOperation(value = "定时创建周期", tags = {"待办" },  notes = "定时创建周期")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/createcycle")
     public ResponseEntity<TodoDTO> createCycle(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -181,7 +181,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'FINISH')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'FINISH')")
     @ApiOperation(value = "Finish", tags = {"待办" },  notes = "Finish")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/finish")
     public ResponseEntity<TodoDTO> finish(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -208,7 +208,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'MANAGE')")
     @ApiOperation(value = "行为", tags = {"待办" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/sendmessage")
     public ResponseEntity<TodoDTO> sendMessage(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -222,7 +222,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'MANAGE')")
     @ApiOperation(value = "发送消息前置处理", tags = {"待办" },  notes = "发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/sendmsgpreprocess")
     public ResponseEntity<TodoDTO> sendMsgPreProcess(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -236,7 +236,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.test(#todo_id, 'START')")
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'START')")
     @ApiOperation(value = "开始", tags = {"待办" },  notes = "开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/{todo_id}/start")
     public ResponseEntity<TodoDTO> start(@PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
@@ -250,7 +250,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TODO', 'READ')")
 	@ApiOperation(value = "获取指定用户数据", tags = {"待办" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchaccount")
 	public ResponseEntity<List<TodoDTO>> fetchaccount(@RequestBody TodoSearchContext context) {
@@ -263,7 +263,7 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TODO', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"待办" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchdefault")
 	public ResponseEntity<List<TodoDTO>> fetchdefault(@RequestBody TodoSearchContext context) {
@@ -276,7 +276,7 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TODO', 'READ')")
 	@ApiOperation(value = "获取我的数据", tags = {"待办" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmy")
 	public ResponseEntity<List<TodoDTO>> fetchmy(@RequestBody TodoSearchContext context) {
@@ -289,7 +289,7 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TODO', 'READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodo")
 	public ResponseEntity<List<TodoDTO>> fetchmytodo(@RequestBody TodoSearchContext context) {
@@ -302,7 +302,7 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TODO', 'READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodopc")
 	public ResponseEntity<List<TodoDTO>> fetchmytodopc(@RequestBody TodoSearchContext context) {
@@ -315,7 +315,7 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TodoRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TODO', 'READ')")
 	@ApiOperation(value = "获取MyUpcoming", tags = {"待办" } ,notes = "获取MyUpcoming")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmyupcoming")
 	public ResponseEntity<List<TodoDTO>> fetchmyupcoming(@RequestBody TodoSearchContext context) {

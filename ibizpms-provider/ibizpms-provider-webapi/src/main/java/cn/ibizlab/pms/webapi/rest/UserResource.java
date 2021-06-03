@@ -52,7 +52,7 @@ public class UserResource {
     @Lazy
     public UserMapping userMapping;
 
-    @PreAuthorize("@UserRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USER', 'CREATE')")
     @ApiOperation(value = "新建用户", tags = {"用户" },  notes = "新建用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users")
     @Transactional
@@ -67,7 +67,7 @@ public class UserResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserRuntime.test(#user_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_USER', #user_id, 'UPDATE')")
     @ApiOperation(value = "更新用户", tags = {"用户" },  notes = "更新用户")
 	@RequestMapping(method = RequestMethod.PUT, value = "/users/{user_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class UserResource {
     }
 
 
-    @PreAuthorize("@UserRuntime.test(#user_id, 'DELETE')")
+    @PreAuthorize("test('ZT_USER', #user_id, 'DELETE')")
     @ApiOperation(value = "删除用户", tags = {"用户" },  notes = "删除用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/users/{user_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("user_id") Long user_id) {
          return ResponseEntity.status(HttpStatus.OK).body(userService.remove(user_id));
     }
 
-    @PreAuthorize("@UserRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_USER', 'DELETE')")
     @ApiOperation(value = "批量删除用户", tags = {"用户" },  notes = "批量删除用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/users/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@UserRuntime.test(#user_id, 'READ')")
+    @PreAuthorize("test('ZT_USER', #user_id, 'READ')")
     @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}")
     public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
@@ -110,7 +110,7 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USER', 'CREATE')")
     @ApiOperation(value = "获取用户草稿", tags = {"用户" },  notes = "获取用户草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/getdraft")
     public ResponseEntity<UserDTO> getDraft(UserDTO dto) {
@@ -118,14 +118,14 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(userService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USER', 'CREATE')")
     @ApiOperation(value = "检查用户", tags = {"用户" },  notes = "检查用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserDTO userdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(userService.checkKey(userMapping.toDomain(userdto)));
     }
 
-    @PreAuthorize("@UserRuntime.test(#user_id, 'READ')")
+    @PreAuthorize("test('ZT_USER', #user_id, 'READ')")
     @ApiOperation(value = "根据代码账户查询用户信息", tags = {"用户" },  notes = "根据代码账户查询用户信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}/getbycommiter")
     public ResponseEntity<UserDTO> getByCommiter(@PathVariable("user_id") Long user_id, UserDTO userdto) {
@@ -166,7 +166,7 @@ public class UserResource {
     }
 
 
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USER', 'READ')")
 	@ApiOperation(value = "获取Bug用户", tags = {"用户" } ,notes = "获取Bug用户")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchbuguser")
 	public ResponseEntity<List<UserDTO>> fetchbuguser(@RequestBody UserSearchContext context) {
@@ -179,7 +179,7 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USER', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchdefault")
 	public ResponseEntity<List<UserDTO>> fetchdefault(@RequestBody UserSearchContext context) {
@@ -192,7 +192,7 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USER', 'READ')")
 	@ApiOperation(value = "获取根据源代码账户获取登录名", tags = {"用户" } ,notes = "获取根据源代码账户获取登录名")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchgetbycommiter")
 	public ResponseEntity<List<UserDTO>> fetchgetbycommiter(@RequestBody UserSearchContext context) {
@@ -205,7 +205,7 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USER', 'READ')")
 	@ApiOperation(value = "获取项目团队管理", tags = {"用户" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamm")
 	public ResponseEntity<List<UserDTO>> fetchprojectteamm(@RequestBody UserSearchContext context) {
@@ -218,7 +218,7 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USER', 'READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamuser")
 	public ResponseEntity<List<UserDTO>> fetchprojectteamuser(@RequestBody UserSearchContext context) {
@@ -231,7 +231,7 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USER', 'READ')")
 	@ApiOperation(value = "获取项目团队成员", tags = {"用户" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchprojectteamusertask")
 	public ResponseEntity<List<UserDTO>> fetchprojectteamusertask(@RequestBody UserSearchContext context) {
@@ -244,7 +244,7 @@ public class UserResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USER', 'READ')")
 	@ApiOperation(value = "获取TASKTEAM", tags = {"用户" } ,notes = "获取TASKTEAM")
     @RequestMapping(method= RequestMethod.POST , value="/users/fetchtaskteam")
 	public ResponseEntity<List<UserDTO>> fetchtaskteam(@RequestBody UserSearchContext context) {

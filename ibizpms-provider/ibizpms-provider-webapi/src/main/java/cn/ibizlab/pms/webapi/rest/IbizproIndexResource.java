@@ -52,7 +52,7 @@ public class IbizproIndexResource {
     @Lazy
     public IbizproIndexMapping ibizproindexMapping;
 
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'CREATE')")
     @ApiOperation(value = "新建索引检索", tags = {"索引检索" },  notes = "新建索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices")
     @Transactional
@@ -67,7 +67,7 @@ public class IbizproIndexResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id, 'UPDATE')")
+    @PreAuthorize("test('IBIZPRO_INDEX', #ibizproindex_id, 'UPDATE')")
     @ApiOperation(value = "更新索引检索", tags = {"索引检索" },  notes = "更新索引检索")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproindices/{ibizproindex_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class IbizproIndexResource {
     }
 
 
-    @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id, 'DELETE')")
+    @PreAuthorize("test('IBIZPRO_INDEX', #ibizproindex_id, 'DELETE')")
     @ApiOperation(value = "删除索引检索", tags = {"索引检索" },  notes = "删除索引检索")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproindices/{ibizproindex_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproindex_id") Long ibizproindex_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.remove(ibizproindex_id));
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'DELETE')")
     @ApiOperation(value = "批量删除索引检索", tags = {"索引检索" },  notes = "批量删除索引检索")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproindices/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbizproIndexResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.test(#ibizproindex_id, 'READ')")
+    @PreAuthorize("test('IBIZPRO_INDEX', #ibizproindex_id, 'READ')")
     @ApiOperation(value = "获取索引检索", tags = {"索引检索" },  notes = "获取索引检索")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproindices/{ibizproindex_id}")
     public ResponseEntity<IbizproIndexDTO> get(@PathVariable("ibizproindex_id") Long ibizproindex_id) {
@@ -110,7 +110,7 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'CREATE')")
     @ApiOperation(value = "获取索引检索草稿", tags = {"索引检索" },  notes = "获取索引检索草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproindices/getdraft")
     public ResponseEntity<IbizproIndexDTO> getDraft(IbizproIndexDTO dto) {
@@ -118,7 +118,7 @@ public class IbizproIndexResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproindexMapping.toDto(ibizproindexService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'CREATE')")
     @ApiOperation(value = "检查索引检索", tags = {"索引检索" },  notes = "检查索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproIndexDTO ibizproindexdto) {
@@ -138,7 +138,7 @@ public class IbizproIndexResource {
     }
 
 
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"索引检索" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchdefault")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchdefault(@RequestBody IbizproIndexSearchContext context) {
@@ -151,7 +151,7 @@ public class IbizproIndexResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'READ')")
 	@ApiOperation(value = "获取全文检索", tags = {"索引检索" } ,notes = "获取全文检索")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchesquery")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchesquery(@RequestBody IbizproIndexSearchContext context) {
@@ -164,7 +164,7 @@ public class IbizproIndexResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'READ')")
 	@ApiOperation(value = "获取数据集2", tags = {"索引检索" } ,notes = "获取数据集2")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproindices/fetchindexder")
 	public ResponseEntity<List<IbizproIndexDTO>> fetchindexder(@RequestBody IbizproIndexSearchContext context) {

@@ -638,7 +638,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @param action
      * @return
      */
-    public boolean test(String PDEName, Serializable PKey, String Paction) throws Exception {
+    public boolean test(String PDEName, Serializable PKey, String Paction, String action) throws Exception {
         this.prepare();
         try {
             IDataEntityRuntime pDataEntityRuntime = getSystemRuntime().getDataEntityRuntime(PDEName);

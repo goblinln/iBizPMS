@@ -52,7 +52,7 @@ public class IbzWeeklyResource {
     @Lazy
     public IbzWeeklyMapping ibzweeklyMapping;
 
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
     @ApiOperation(value = "新建周报", tags = {"周报" },  notes = "新建周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies")
     @Transactional
@@ -66,7 +66,7 @@ public class IbzWeeklyResource {
     }
 
     @VersionCheck(entity = "ibzweekly" , versionfield = "updatedate")
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "更新周报", tags = {"周报" },  notes = "更新周报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/{ibzweekly_id}")
     @Transactional
@@ -81,14 +81,14 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "删除周报", tags = {"周报" },  notes = "删除周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/{ibzweekly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyService.remove(ibzweekly_id));
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
     @ApiOperation(value = "批量删除周报", tags = {"周报" },  notes = "批量删除周报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzweeklies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -96,7 +96,7 @@ public class IbzWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}")
     public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
@@ -107,7 +107,7 @@ public class IbzWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
     @ApiOperation(value = "获取周报草稿", tags = {"周报" },  notes = "获取周报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/getdraft")
     public ResponseEntity<IbzWeeklyDTO> getDraft(IbzWeeklyDTO dto) {
@@ -115,14 +115,14 @@ public class IbzWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'CREATE')")
     @ApiOperation(value = "检查周报", tags = {"周报" },  notes = "检查周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzWeeklyDTO ibzweeklydto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzweeklyService.checkKey(ibzweeklyMapping.toDomain(ibzweeklydto)));
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "定时生成每周周报", tags = {"周报" },  notes = "定时生成每周周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/createeveryweekreport")
     public ResponseEntity<IbzWeeklyDTO> createEveryWeekReport(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
@@ -136,7 +136,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "获取上周周报的下周计划", tags = {"周报" },  notes = "获取上周周报的下周计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/creategetlastweekplanandwork")
     public ResponseEntity<IbzWeeklyDTO> createGetLastWeekPlanAndWork(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
@@ -150,7 +150,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "编辑获取上周计划完成任务和本周已完成任务", tags = {"周报" },  notes = "编辑获取上周计划完成任务和本周已完成任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/editgetlastweektaskandcomtask")
     public ResponseEntity<IbzWeeklyDTO> editGetLastWeekTaskAndComTask(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
@@ -164,7 +164,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"周报" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/haveread")
     public ResponseEntity<IbzWeeklyDTO> haveRead(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
@@ -178,7 +178,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "判断本周是否创建过周报", tags = {"周报" },  notes = "判断本周是否创建过周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/jugthisweekcreateweekly")
     public ResponseEntity<IbzWeeklyDTO> jugThisWeekCreateWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
@@ -192,7 +192,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "定时推送待阅提醒用户周报提交", tags = {"周报" },  notes = "定时推送待阅提醒用户周报提交")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/pushuserweekly")
     public ResponseEntity<IbzWeeklyDTO> pushUserWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
@@ -219,7 +219,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id, 'NONE')")
+    @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "提交", tags = {"周报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/{ibzweekly_id}/submit")
     public ResponseEntity<IbzWeeklyDTO> submit(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
@@ -233,7 +233,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchdefault")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchdefault(@RequestBody IbzWeeklySearchContext context) {
@@ -245,7 +245,7 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
 	@ApiOperation(value = "获取我的周报", tags = {"周报" } ,notes = "获取我的周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchmynotsubmit")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchmynotsubmit(@RequestBody IbzWeeklySearchContext context) {
@@ -257,7 +257,7 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
 	@ApiOperation(value = "获取我收到的周报", tags = {"周报" } ,notes = "获取我收到的周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchmyweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchmyweekly(@RequestBody IbzWeeklySearchContext context) {
@@ -269,7 +269,7 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
 	@ApiOperation(value = "获取产品团队成员周报", tags = {"周报" } ,notes = "获取产品团队成员周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchproductteammemberweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchproductteammemberweekly(@RequestBody IbzWeeklySearchContext context) {
@@ -281,7 +281,7 @@ public class IbzWeeklyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
 	@ApiOperation(value = "获取项目周报", tags = {"周报" } ,notes = "获取项目周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchprojectweekly")
 	public ResponseEntity<List<IbzWeeklyDTO>> fetchprojectweekly(@RequestBody IbzWeeklySearchContext context) {

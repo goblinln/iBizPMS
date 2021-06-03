@@ -58,7 +58,7 @@ public class IbzPlanTempletResource {
     @Autowired
     private IIbzPlanTempletDetailService ibzplantempletdetailService;
 
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'CREATE')")
     @ApiOperation(value = "新建计划模板", tags = {"计划模板" },  notes = "新建计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets")
     @Transactional
@@ -74,7 +74,7 @@ public class IbzPlanTempletResource {
     }
 
     @VersionCheck(entity = "ibzplantemplet" , versionfield = "updatedate")
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_PLANTEMPLET', #ibzplantemplet_id, 'UPDATE')")
     @ApiOperation(value = "更新计划模板", tags = {"计划模板" },  notes = "更新计划模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzplantemplets/{ibzplantemplet_id}")
     @Transactional
@@ -91,14 +91,14 @@ public class IbzPlanTempletResource {
     }
 
 
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_PLANTEMPLET', #ibzplantemplet_id, 'DELETE')")
     @ApiOperation(value = "删除计划模板", tags = {"计划模板" },  notes = "删除计划模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/{ibzplantemplet_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.remove(ibzplantemplet_id));
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'DELETE')")
     @ApiOperation(value = "批量删除计划模板", tags = {"计划模板" },  notes = "批量删除计划模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzplantemplets/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -106,7 +106,7 @@ public class IbzPlanTempletResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id, 'READ')")
+    @PreAuthorize("test('IBZ_PLANTEMPLET', #ibzplantemplet_id, 'READ')")
     @ApiOperation(value = "获取计划模板", tags = {"计划模板" },  notes = "获取计划模板")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/{ibzplantemplet_id}")
     public ResponseEntity<IbzPlanTempletDTO> get(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
@@ -117,7 +117,7 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'CREATE')")
     @ApiOperation(value = "获取计划模板草稿", tags = {"计划模板" },  notes = "获取计划模板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/getdraft")
     public ResponseEntity<IbzPlanTempletDTO> getDraft(IbzPlanTempletDTO dto) {
@@ -125,14 +125,14 @@ public class IbzPlanTempletResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletMapping.toDto(ibzplantempletService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'CREATE')")
     @ApiOperation(value = "检查计划模板", tags = {"计划模板" },  notes = "检查计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzplantempletService.checkKey(ibzplantempletMapping.toDomain(ibzplantempletdto)));
     }
 
-    @PreAuthorize("@IbzPlanTempletRuntime.test(#ibzplantemplet_id, 'READ')")
+    @PreAuthorize("test('IBZ_PLANTEMPLET', #ibzplantemplet_id, 'READ')")
     @ApiOperation(value = "获取计划", tags = {"计划模板" },  notes = "获取计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzplantemplets/{ibzplantemplet_id}/getplan")
     public ResponseEntity<IbzPlanTempletDTO> getPlan(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id, IbzPlanTempletDTO ibzplantempletdto) {
@@ -159,7 +159,7 @@ public class IbzPlanTempletResource {
     }
 
 
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'READ')")
 	@ApiOperation(value = "获取CurUserTemplet", tags = {"计划模板" } ,notes = "获取CurUserTemplet")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/fetchcurusertemplet")
 	public ResponseEntity<List<IbzPlanTempletDTO>> fetchcurusertemplet(@RequestBody IbzPlanTempletSearchContext context) {
@@ -172,7 +172,7 @@ public class IbzPlanTempletResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"计划模板" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzplantemplets/fetchdefault")
 	public ResponseEntity<List<IbzPlanTempletDTO>> fetchdefault(@RequestBody IbzPlanTempletSearchContext context) {

@@ -52,7 +52,7 @@ public class ProjectTeamResource {
     @Lazy
     public ProjectTeamMapping projectteamMapping;
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'CREATE')")
     @ApiOperation(value = "新建项目团队", tags = {"项目团队" },  notes = "新建项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams")
     @Transactional
@@ -67,7 +67,7 @@ public class ProjectTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', #projectteam_id, 'UPDATE')")
     @ApiOperation(value = "更新项目团队", tags = {"项目团队" },  notes = "更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectteams/{projectteam_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', #projectteam_id, 'DELETE')")
     @ApiOperation(value = "删除项目团队", tags = {"项目团队" },  notes = "删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/{projectteam_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projectteam_id") Long projectteam_id) {
          return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'DELETE')")
     @ApiOperation(value = "批量删除项目团队", tags = {"项目团队" },  notes = "批量删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectteams/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.test(#projectteam_id, 'READ')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', #projectteam_id, 'READ')")
     @ApiOperation(value = "获取项目团队", tags = {"项目团队" },  notes = "获取项目团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> get(@PathVariable("projectteam_id") Long projectteam_id) {
@@ -110,7 +110,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'CREATE')")
     @ApiOperation(value = "获取项目团队草稿", tags = {"项目团队" },  notes = "获取项目团队草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/getdraft")
     public ResponseEntity<ProjectTeamDTO> getDraft(ProjectTeamDTO dto) {
@@ -118,7 +118,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'CREATE')")
     @ApiOperation(value = "检查项目团队", tags = {"项目团队" },  notes = "检查项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectTeamDTO projectteamdto) {
@@ -140,7 +140,7 @@ public class ProjectTeamResource {
 
 
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'CREATE')")
     @ApiOperation(value = "批量保存项目团队", tags = {"项目团队" },  notes = "批量保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectteams/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -148,7 +148,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目团队" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchdefault(@RequestBody ProjectTeamSearchContext context) {
@@ -160,7 +160,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'READ')")
 	@ApiOperation(value = "获取项目成员（项目经理）", tags = {"项目团队" } ,notes = "获取项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchprojectteampm")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchprojectteampm(@RequestBody ProjectTeamSearchContext context) {
@@ -172,7 +172,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'READ')")
 	@ApiOperation(value = "获取行编辑查询", tags = {"项目团队" } ,notes = "获取行编辑查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchroweditdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchroweditdefault(@RequestBody ProjectTeamSearchContext context) {
@@ -184,7 +184,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'READ')")
 	@ApiOperation(value = "获取指定团队", tags = {"项目团队" } ,notes = "获取指定团队")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchspecifyteam")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchspecifyteam(@RequestBody ProjectTeamSearchContext context) {
@@ -196,7 +196,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"项目团队" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchtaskcntestimateconsumedleft")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchtaskcntestimateconsumedleft(@RequestBody ProjectTeamSearchContext context) {
@@ -217,7 +217,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'CREATE', 'DENY')")
     @ApiOperation(value = "根据项目建立项目团队", tags = {"项目团队" },  notes = "根据项目建立项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams")
     public ResponseEntity<ProjectTeamDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -229,7 +229,7 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'UPDATE', #projectteam_id, 'DENY')")
     @ApiOperation(value = "根据项目更新项目团队", tags = {"项目团队" },  notes = "根据项目更新项目团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -242,14 +242,14 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'DELETE', #projectteam_id, 'DENY')")
     @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'DELETE', 'DENY')")
     @ApiOperation(value = "根据项目批量删除项目团队", tags = {"项目团队" },  notes = "根据项目批量删除项目团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -257,7 +257,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'READ', #projectteam_id, 'DENY')")
     @ApiOperation(value = "根据项目获取项目团队", tags = {"项目团队" },  notes = "根据项目获取项目团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}")
     public ResponseEntity<ProjectTeamDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
@@ -266,7 +266,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'CREATE', 'DENY')")
     @ApiOperation(value = "根据项目获取项目团队草稿", tags = {"项目团队" },  notes = "根据项目获取项目团队草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/getdraft")
     public ResponseEntity<ProjectTeamDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectTeamDTO dto) {
@@ -275,7 +275,7 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectteamMapping.toDto(projectteamService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'CREATE', 'DENY')")
     @ApiOperation(value = "根据项目检查项目团队", tags = {"项目团队" },  notes = "根据项目检查项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectTeamDTO projectteamdto) {
@@ -295,7 +295,7 @@ public class ProjectTeamResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'CREATE')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'CREATE', 'DENY')")
     @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
     public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
@@ -307,7 +307,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"项目团队" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
@@ -320,7 +320,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取项目成员（项目经理）", tags = {"项目团队" } ,notes = "根据项目获取项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchprojectteampm")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamPmByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
@@ -333,7 +333,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取行编辑查询", tags = {"项目团队" } ,notes = "根据项目获取行编辑查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchroweditdefault")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchRowEditDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
@@ -346,7 +346,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取指定团队", tags = {"项目团队" } ,notes = "根据项目获取指定团队")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchspecifyteam")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchSpecifyTeamByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {
@@ -359,7 +359,7 @@ public class ProjectTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取数据查询", tags = {"项目团队" } ,notes = "根据项目获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectteams/fetchtaskcntestimateconsumedleft")
 	public ResponseEntity<List<ProjectTeamDTO>> fetchTaskCntEstimateConsumedLeftByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectTeamSearchContext context) {

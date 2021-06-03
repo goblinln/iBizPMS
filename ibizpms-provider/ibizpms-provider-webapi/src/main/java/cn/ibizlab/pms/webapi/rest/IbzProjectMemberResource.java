@@ -52,7 +52,7 @@ public class IbzProjectMemberResource {
     @Lazy
     public IbzProjectMemberMapping ibzprojectmemberMapping;
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMEMBER', 'CREATE')")
     @ApiOperation(value = "新建项目相关成员", tags = {"项目相关成员" },  notes = "新建项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers")
     @Transactional
@@ -67,7 +67,7 @@ public class IbzProjectMemberResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_PROJECTMEMBER', #ibzprojectmember_id, 'UPDATE')")
     @ApiOperation(value = "更新项目相关成员", tags = {"项目相关成员" },  notes = "更新项目相关成员")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class IbzProjectMemberResource {
     }
 
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_PROJECTMEMBER', #ibzprojectmember_id, 'DELETE')")
     @ApiOperation(value = "删除项目相关成员", tags = {"项目相关成员" },  notes = "删除项目相关成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.remove(ibzprojectmember_id));
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMEMBER', 'DELETE')")
     @ApiOperation(value = "批量删除项目相关成员", tags = {"项目相关成员" },  notes = "批量删除项目相关成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprojectmembers/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.test(#ibzprojectmember_id, 'NONE')")
+    @PreAuthorize("test('IBZ_PROJECTMEMBER', #ibzprojectmember_id, 'NONE')")
     @ApiOperation(value = "获取项目相关成员", tags = {"项目相关成员" },  notes = "获取项目相关成员")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprojectmembers/{ibzprojectmember_id}")
     public ResponseEntity<IbzProjectMemberDTO> get(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
@@ -110,7 +110,7 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMEMBER', 'CREATE')")
     @ApiOperation(value = "获取项目相关成员草稿", tags = {"项目相关成员" },  notes = "获取项目相关成员草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzprojectmembers/getdraft")
     public ResponseEntity<IbzProjectMemberDTO> getDraft(IbzProjectMemberDTO dto) {
@@ -118,7 +118,7 @@ public class IbzProjectMemberResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberMapping.toDto(ibzprojectmemberService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMEMBER', 'CREATE')")
     @ApiOperation(value = "检查项目相关成员", tags = {"项目相关成员" },  notes = "检查项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {
@@ -138,7 +138,7 @@ public class IbzProjectMemberResource {
     }
 
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMEMBER', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目相关成员" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/fetchdefault")
 	public ResponseEntity<List<IbzProjectMemberDTO>> fetchdefault(@RequestBody IbzProjectMemberSearchContext context) {

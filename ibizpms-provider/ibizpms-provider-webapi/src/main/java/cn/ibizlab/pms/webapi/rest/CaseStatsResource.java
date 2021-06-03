@@ -52,7 +52,7 @@ public class CaseStatsResource {
     @Lazy
     public CaseStatsMapping casestatsMapping;
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'CREATE')")
     @ApiOperation(value = "新建测试用例统计", tags = {"测试用例统计" },  notes = "新建测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats")
     @Transactional
@@ -67,7 +67,7 @@ public class CaseStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'UPDATE')")
     @ApiOperation(value = "更新测试用例统计", tags = {"测试用例统计" },  notes = "更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/{casestats_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class CaseStatsResource {
     }
 
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'DELETE')")
     @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'DELETE')")
     @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.test(#casestats_id, 'READ')")
+    @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'READ')")
     @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
     public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
@@ -110,7 +110,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'CREATE')")
     @ApiOperation(value = "获取测试用例统计草稿", tags = {"测试用例统计" },  notes = "获取测试用例统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/casestats/getdraft")
     public ResponseEntity<CaseStatsDTO> getDraft(CaseStatsDTO dto) {
@@ -118,7 +118,7 @@ public class CaseStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(casestatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'CREATE')")
     @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {
@@ -138,7 +138,7 @@ public class CaseStatsResource {
     }
 
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchdefault")
 	public ResponseEntity<List<CaseStatsDTO>> fetchdefault(@RequestBody CaseStatsSearchContext context) {
@@ -150,7 +150,7 @@ public class CaseStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@CaseStatsRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'NONE')")
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchtestcasestats")
 	public ResponseEntity<List<CaseStatsDTO>> fetchtestcasestats(@RequestBody CaseStatsSearchContext context) {

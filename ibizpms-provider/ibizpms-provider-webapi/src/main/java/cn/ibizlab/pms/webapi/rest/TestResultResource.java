@@ -52,7 +52,7 @@ public class TestResultResource {
     @Lazy
     public TestResultMapping testresultMapping;
 
-    @PreAuthorize("@TestResultRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'CREATE')")
     @ApiOperation(value = "新建测试结果", tags = {"测试结果" },  notes = "新建测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/testresults")
     @Transactional
@@ -67,7 +67,7 @@ public class TestResultResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'UPDATE')")
     @ApiOperation(value = "更新测试结果", tags = {"测试结果" },  notes = "更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testresults/{testresult_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class TestResultResource {
     }
 
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id, 'DELETE')")
+    @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'DELETE')")
     @ApiOperation(value = "删除测试结果", tags = {"测试结果" },  notes = "删除测试结果")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/{testresult_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testresult_id") Long testresult_id) {
          return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
     }
 
-    @PreAuthorize("@TestResultRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'DELETE')")
     @ApiOperation(value = "批量删除测试结果", tags = {"测试结果" },  notes = "批量删除测试结果")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestResultRuntime.test(#testresult_id, 'READ')")
+    @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'READ')")
     @ApiOperation(value = "获取测试结果", tags = {"测试结果" },  notes = "获取测试结果")
 	@RequestMapping(method = RequestMethod.GET, value = "/testresults/{testresult_id}")
     public ResponseEntity<TestResultDTO> get(@PathVariable("testresult_id") Long testresult_id) {
@@ -110,7 +110,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestResultRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'CREATE')")
     @ApiOperation(value = "获取测试结果草稿", tags = {"测试结果" },  notes = "获取测试结果草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testresults/getdraft")
     public ResponseEntity<TestResultDTO> getDraft(TestResultDTO dto) {
@@ -118,7 +118,7 @@ public class TestResultResource {
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestResultRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'CREATE')")
     @ApiOperation(value = "检查测试结果", tags = {"测试结果" },  notes = "检查测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/testresults/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestResultDTO testresultdto) {
@@ -138,7 +138,7 @@ public class TestResultResource {
     }
 
 
-    @PreAuthorize("@TestResultRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'READ')")
 	@ApiOperation(value = "获取CurTestRun", tags = {"测试结果" } ,notes = "获取CurTestRun")
     @RequestMapping(method= RequestMethod.POST , value="/testresults/fetchcurtestrun")
 	public ResponseEntity<List<TestResultDTO>> fetchcurtestrun(@RequestBody TestResultSearchContext context) {
@@ -150,7 +150,7 @@ public class TestResultResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TestResultRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试结果" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testresults/fetchdefault")
 	public ResponseEntity<List<TestResultDTO>> fetchdefault(@RequestBody TestResultSearchContext context) {

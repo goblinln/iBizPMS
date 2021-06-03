@@ -52,7 +52,7 @@ public class ProjectStatsResource {
     @Lazy
     public ProjectStatsMapping projectstatsMapping;
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'CREATE')")
     @ApiOperation(value = "新建项目统计", tags = {"项目统计" },  notes = "新建项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats")
     @Transactional
@@ -67,7 +67,7 @@ public class ProjectStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_PROJECTSTATS', #projectstats_id, 'UPDATE')")
     @ApiOperation(value = "更新项目统计", tags = {"项目统计" },  notes = "更新项目统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectstats/{projectstats_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class ProjectStatsResource {
     }
 
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_PROJECTSTATS', #projectstats_id, 'DELETE')")
     @ApiOperation(value = "删除项目统计", tags = {"项目统计" },  notes = "删除项目统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/{projectstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projectstats_id") Long projectstats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(projectstatsService.remove(projectstats_id));
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'DELETE')")
     @ApiOperation(value = "批量删除项目统计", tags = {"项目统计" },  notes = "批量删除项目统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projectstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class ProjectStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'NONE')")
+    @PreAuthorize("test('IBZ_PROJECTSTATS', #projectstats_id, 'NONE')")
     @ApiOperation(value = "获取项目统计", tags = {"项目统计" },  notes = "获取项目统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/{projectstats_id}")
     public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {
@@ -110,7 +110,7 @@ public class ProjectStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'CREATE')")
     @ApiOperation(value = "获取项目统计草稿", tags = {"项目统计" },  notes = "获取项目统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectstats/getdraft")
     public ResponseEntity<ProjectStatsDTO> getDraft(ProjectStatsDTO dto) {
@@ -118,14 +118,14 @@ public class ProjectStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsMapping.toDto(projectstatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'CREATE')")
     @ApiOperation(value = "检查项目统计", tags = {"项目统计" },  notes = "检查项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectStatsDTO projectstatsdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(projectstatsService.checkKey(projectstatsMapping.toDomain(projectstatsdto)));
     }
 
-    @PreAuthorize("@ProjectStatsRuntime.test(#projectstats_id, 'NONE')")
+    @PreAuthorize("test('IBZ_PROJECTSTATS', #projectstats_id, 'NONE')")
     @ApiOperation(value = "项目质量表聚合逻辑", tags = {"项目统计" },  notes = "项目质量表聚合逻辑")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/{projectstats_id}/projectqualitysum")
     public ResponseEntity<ProjectStatsDTO> projectQualitySum(@PathVariable("projectstats_id") Long projectstats_id, @RequestBody ProjectStatsDTO projectstatsdto) {
@@ -152,7 +152,7 @@ public class ProjectStatsResource {
     }
 
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目统计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchdefault")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchdefault(@RequestBody ProjectStatsSearchContext context) {
@@ -165,7 +165,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取未关闭产品", tags = {"项目统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchnoopenproduct")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchnoopenproduct(@RequestBody ProjectStatsSearchContext context) {
@@ -178,7 +178,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目bug类型统计", tags = {"项目统计" } ,notes = "获取项目bug类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectbugtype")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectbugtype(@RequestBody ProjectStatsSearchContext context) {
@@ -191,7 +191,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目投入统计", tags = {"项目统计" } ,notes = "获取项目投入统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectinputstats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectinputstats(@RequestBody ProjectStatsSearchContext context) {
@@ -204,7 +204,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目进度", tags = {"项目统计" } ,notes = "获取项目进度")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectprogress")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectprogress(@RequestBody ProjectStatsSearchContext context) {
@@ -217,7 +217,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目质量", tags = {"项目统计" } ,notes = "获取项目质量")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectquality")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectquality(@RequestBody ProjectStatsSearchContext context) {
@@ -230,7 +230,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目需求阶段统计", tags = {"项目统计" } ,notes = "获取项目需求阶段统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectstorystagestats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectstorystagestats(@RequestBody ProjectStatsSearchContext context) {
@@ -243,7 +243,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目需求状态统计", tags = {"项目统计" } ,notes = "获取项目需求状态统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojectstorystatusstats")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojectstorystatusstats(@RequestBody ProjectStatsSearchContext context) {
@@ -256,7 +256,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目任务统计(任务状态)", tags = {"项目统计" } ,notes = "获取项目任务统计(任务状态)")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojecttaskcountbytaskstatus")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojecttaskcountbytaskstatus(@RequestBody ProjectStatsSearchContext context) {
@@ -269,7 +269,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取项目任务类型统计", tags = {"项目统计" } ,notes = "获取项目任务类型统计")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchprojecttaskcountbytype")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchprojecttaskcountbytype(@RequestBody ProjectStatsSearchContext context) {
@@ -282,7 +282,7 @@ public class ProjectStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'READ')")
 	@ApiOperation(value = "获取任务工时消耗剩余查询", tags = {"项目统计" } ,notes = "获取任务工时消耗剩余查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectstats/fetchtasktime")
 	public ResponseEntity<List<ProjectStatsDTO>> fetchtasktime(@RequestBody ProjectStatsSearchContext context) {

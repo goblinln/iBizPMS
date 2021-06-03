@@ -52,7 +52,7 @@ public class IbzMyTerritoryResource {
     @Lazy
     public IbzMyTerritoryMapping ibzmyterritoryMapping;
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'CREATE')")
     @ApiOperation(value = "新建我的地盘", tags = {"我的地盘" },  notes = "新建我的地盘")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories")
     @Transactional
@@ -67,7 +67,7 @@ public class IbzMyTerritoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_MYTERRITORY', #ibzmyterritory_id, 'UPDATE')")
     @ApiOperation(value = "更新我的地盘", tags = {"我的地盘" },  notes = "更新我的地盘")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmyterritories/{ibzmyterritory_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class IbzMyTerritoryResource {
     }
 
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_MYTERRITORY', #ibzmyterritory_id, 'DELETE')")
     @ApiOperation(value = "删除我的地盘", tags = {"我的地盘" },  notes = "删除我的地盘")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmyterritories/{ibzmyterritory_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzmyterritory_id") Long ibzmyterritory_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryService.remove(ibzmyterritory_id));
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'DELETE')")
     @ApiOperation(value = "批量删除我的地盘", tags = {"我的地盘" },  notes = "批量删除我的地盘")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzmyterritories/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbzMyTerritoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.test(#ibzmyterritory_id, 'READ')")
+    @PreAuthorize("test('IBZ_MYTERRITORY', #ibzmyterritory_id, 'READ')")
     @ApiOperation(value = "获取我的地盘", tags = {"我的地盘" },  notes = "获取我的地盘")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzmyterritories/{ibzmyterritory_id}")
     public ResponseEntity<IbzMyTerritoryDTO> get(@PathVariable("ibzmyterritory_id") Long ibzmyterritory_id) {
@@ -110,7 +110,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'CREATE')")
     @ApiOperation(value = "获取我的地盘草稿", tags = {"我的地盘" },  notes = "获取我的地盘草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzmyterritories/getdraft")
     public ResponseEntity<IbzMyTerritoryDTO> getDraft(IbzMyTerritoryDTO dto) {
@@ -118,7 +118,7 @@ public class IbzMyTerritoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryMapping.toDto(ibzmyterritoryService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'CREATE')")
     @ApiOperation(value = "检查我的地盘", tags = {"我的地盘" },  notes = "检查我的地盘")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {
@@ -171,7 +171,7 @@ public class IbzMyTerritoryResource {
     }
 
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'NONE')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"我的地盘" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchdefault")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchdefault(@RequestBody IbzMyTerritorySearchContext context) {
@@ -183,7 +183,7 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'NONE')")
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmywork")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmywork(@RequestBody IbzMyTerritorySearchContext context) {
@@ -195,7 +195,7 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'NONE')")
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkmob")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmyworkmob(@RequestBody IbzMyTerritorySearchContext context) {
@@ -207,7 +207,7 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'NONE')")
 	@ApiOperation(value = "获取我的工作（项目经理）", tags = {"我的地盘" } ,notes = "获取我的工作（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkpm")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmyworkpm(@RequestBody IbzMyTerritorySearchContext context) {
@@ -219,7 +219,7 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'NONE')")
 	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"我的地盘" } ,notes = "获取个人信息-个人贡献")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchpersoninfo")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchpersoninfo(@RequestBody IbzMyTerritorySearchContext context) {
@@ -231,7 +231,7 @@ public class IbzMyTerritoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'NONE')")
 	@ApiOperation(value = "获取欢迎", tags = {"我的地盘" } ,notes = "获取欢迎")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchwelcome")
 	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchwelcome(@RequestBody IbzMyTerritorySearchContext context) {

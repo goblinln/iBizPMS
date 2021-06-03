@@ -52,7 +52,7 @@ public class taskestimatestatsResource {
     @Lazy
     public taskestimatestatsMapping taskestimatestatsMapping;
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'CREATE')")
     @ApiOperation(value = "新建任务工时统计", tags = {"任务工时统计" },  notes = "新建任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats")
     @Transactional
@@ -67,7 +67,7 @@ public class taskestimatestatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id, 'UPDATE')")
+    @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'UPDATE')")
     @ApiOperation(value = "更新任务工时统计", tags = {"任务工时统计" },  notes = "更新任务工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimatestats/{taskestimatestats_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class taskestimatestatsResource {
     }
 
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id, 'DELETE')")
+    @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'DELETE')")
     @ApiOperation(value = "删除任务工时统计", tags = {"任务工时统计" },  notes = "删除任务工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.remove(taskestimatestats_id));
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'DELETE')")
     @ApiOperation(value = "批量删除任务工时统计", tags = {"任务工时统计" },  notes = "批量删除任务工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class taskestimatestatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.test(#taskestimatestats_id, 'READ')")
+    @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'READ')")
     @ApiOperation(value = "获取任务工时统计", tags = {"任务工时统计" },  notes = "获取任务工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/{taskestimatestats_id}")
     public ResponseEntity<taskestimatestatsDTO> get(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
@@ -110,7 +110,7 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'CREATE')")
     @ApiOperation(value = "获取任务工时统计草稿", tags = {"任务工时统计" },  notes = "获取任务工时统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/getdraft")
     public ResponseEntity<taskestimatestatsDTO> getDraft(taskestimatestatsDTO dto) {
@@ -118,7 +118,7 @@ public class taskestimatestatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsMapping.toDto(taskestimatestatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'CREATE')")
     @ApiOperation(value = "检查任务工时统计", tags = {"任务工时统计" },  notes = "检查任务工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {
@@ -138,7 +138,7 @@ public class taskestimatestatsResource {
     }
 
 
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'READ')")
 	@ApiOperation(value = "获取日志月", tags = {"任务工时统计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchactionmonth")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchactionmonth(@RequestBody TaskEstimateStatsSearchContext context) {
@@ -151,7 +151,7 @@ public class taskestimatestatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务工时统计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchactionyear")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchactionyear(@RequestBody TaskEstimateStatsSearchContext context) {
@@ -164,7 +164,7 @@ public class taskestimatestatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"任务工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchdefault")
 	public ResponseEntity<List<taskestimatestatsDTO>> fetchdefault(@RequestBody TaskEstimateStatsSearchContext context) {

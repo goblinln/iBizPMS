@@ -52,7 +52,7 @@ public class IbzproProductUserTaskResource {
     @Lazy
     public IbzproProductUserTaskMapping ibzproproductusertaskMapping;
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'CREATE')")
     @ApiOperation(value = "新建产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "新建产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks")
     @Transactional
@@ -67,7 +67,7 @@ public class IbzproProductUserTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.test(#ibzproproductusertask_id, 'UPDATE')")
+    @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'UPDATE')")
     @ApiOperation(value = "更新产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "更新产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class IbzproProductUserTaskResource {
     }
 
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.test(#ibzproproductusertask_id, 'DELETE')")
+    @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'DELETE')")
     @ApiOperation(value = "删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "删除产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskService.remove(ibzproproductusertask_id));
     }
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'DELETE')")
     @ApiOperation(value = "批量删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "批量删除产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class IbzproProductUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.test(#ibzproproductusertask_id, 'READ')")
+    @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'READ')")
     @ApiOperation(value = "获取产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "获取产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
     public ResponseEntity<IbzproProductUserTaskDTO> get(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
@@ -110,7 +110,7 @@ public class IbzproProductUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'CREATE')")
     @ApiOperation(value = "获取产品汇报用户任务草稿", tags = {"产品汇报用户任务" },  notes = "获取产品汇报用户任务草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductusertasks/getdraft")
     public ResponseEntity<IbzproProductUserTaskDTO> getDraft(IbzproProductUserTaskDTO dto) {
@@ -118,7 +118,7 @@ public class IbzproProductUserTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskMapping.toDto(ibzproproductusertaskService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'CREATE')")
     @ApiOperation(value = "检查产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "检查产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProductUserTaskDTO ibzproproductusertaskdto) {
@@ -138,7 +138,7 @@ public class IbzproProductUserTaskResource {
     }
 
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"产品汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchdefault")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchdefault(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -150,7 +150,7 @@ public class IbzproProductUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductdailyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductdailyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -162,7 +162,7 @@ public class IbzproProductUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductmonthlyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductmonthlyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
@@ -174,7 +174,7 @@ public class IbzproProductUserTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'NONE')")
 	@ApiOperation(value = "获取产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductweeklyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductweeklyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {

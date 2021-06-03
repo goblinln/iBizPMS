@@ -52,7 +52,7 @@ public class UserTplResource {
     @Lazy
     public UserTplMapping usertplMapping;
 
-    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'CREATE')")
     @ApiOperation(value = "新建用户模板", tags = {"用户模板" },  notes = "新建用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls")
     @Transactional
@@ -67,7 +67,7 @@ public class UserTplResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'UPDATE')")
     @ApiOperation(value = "更新用户模板", tags = {"用户模板" },  notes = "更新用户模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usertpls/{usertpl_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class UserTplResource {
     }
 
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id, 'DELETE')")
+    @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'DELETE')")
     @ApiOperation(value = "删除用户模板", tags = {"用户模板" },  notes = "删除用户模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/{usertpl_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("usertpl_id") Long usertpl_id) {
          return ResponseEntity.status(HttpStatus.OK).body(usertplService.remove(usertpl_id));
     }
 
-    @PreAuthorize("@UserTplRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'DELETE')")
     @ApiOperation(value = "批量删除用户模板", tags = {"用户模板" },  notes = "批量删除用户模板")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@UserTplRuntime.test(#usertpl_id, 'READ')")
+    @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'READ')")
     @ApiOperation(value = "获取用户模板", tags = {"用户模板" },  notes = "获取用户模板")
 	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/{usertpl_id}")
     public ResponseEntity<UserTplDTO> get(@PathVariable("usertpl_id") Long usertpl_id) {
@@ -110,7 +110,7 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'CREATE')")
     @ApiOperation(value = "获取用户模板草稿", tags = {"用户模板" },  notes = "获取用户模板草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/getdraft")
     public ResponseEntity<UserTplDTO> getDraft(UserTplDTO dto) {
@@ -118,7 +118,7 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserTplRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'CREATE')")
     @ApiOperation(value = "检查用户模板", tags = {"用户模板" },  notes = "检查用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserTplDTO usertpldto) {
@@ -152,7 +152,7 @@ public class UserTplResource {
     }
 
 
-    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'READ')")
 	@ApiOperation(value = "获取指定用户数据", tags = {"用户模板" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchaccount")
 	public ResponseEntity<List<UserTplDTO>> fetchaccount(@RequestBody UserTplSearchContext context) {
@@ -165,7 +165,7 @@ public class UserTplResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户模板" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchdefault")
 	public ResponseEntity<List<UserTplDTO>> fetchdefault(@RequestBody UserTplSearchContext context) {
@@ -178,7 +178,7 @@ public class UserTplResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'READ')")
 	@ApiOperation(value = "获取我的数据", tags = {"用户模板" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchmy")
 	public ResponseEntity<List<UserTplDTO>> fetchmy(@RequestBody UserTplSearchContext context) {
@@ -191,7 +191,7 @@ public class UserTplResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserTplRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'READ')")
 	@ApiOperation(value = "获取我的模板", tags = {"用户模板" } ,notes = "获取我的模板")
     @RequestMapping(method= RequestMethod.POST , value="/usertpls/fetchmyusertpl")
 	public ResponseEntity<List<UserTplDTO>> fetchmyusertpl(@RequestBody UserTplSearchContext context) {

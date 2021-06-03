@@ -52,7 +52,7 @@ public class TaskStatsResource {
     @Lazy
     public TaskStatsMapping taskstatsMapping;
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'CREATE')")
     @ApiOperation(value = "新建任务统计", tags = {"任务统计" },  notes = "新建任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats")
     @Transactional
@@ -67,7 +67,7 @@ public class TaskStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskStatsRuntime.test(#taskstats_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'UPDATE')")
     @ApiOperation(value = "更新任务统计", tags = {"任务统计" },  notes = "更新任务统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskstats/{taskstats_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class TaskStatsResource {
     }
 
 
-    @PreAuthorize("@TaskStatsRuntime.test(#taskstats_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'DELETE')")
     @ApiOperation(value = "删除任务统计", tags = {"任务统计" },  notes = "删除任务统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/{taskstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("taskstats_id") Long taskstats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
     }
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'DELETE')")
     @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskStatsRuntime.test(#taskstats_id, 'READ')")
+    @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'READ')")
     @ApiOperation(value = "获取任务统计", tags = {"任务统计" },  notes = "获取任务统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/{taskstats_id}")
     public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
@@ -110,7 +110,7 @@ public class TaskStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'CREATE')")
     @ApiOperation(value = "获取任务统计草稿", tags = {"任务统计" },  notes = "获取任务统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/getdraft")
     public ResponseEntity<TaskStatsDTO> getDraft(TaskStatsDTO dto) {
@@ -118,7 +118,7 @@ public class TaskStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskstatsMapping.toDto(taskstatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'CREATE')")
     @ApiOperation(value = "检查任务统计", tags = {"任务统计" },  notes = "检查任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TaskStatsDTO taskstatsdto) {
@@ -138,7 +138,7 @@ public class TaskStatsResource {
     }
 
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"任务统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchdefault")
 	public ResponseEntity<List<TaskStatsDTO>> fetchdefault(@RequestBody TaskStatsSearchContext context) {
@@ -150,7 +150,7 @@ public class TaskStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TaskStatsRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'NONE')")
 	@ApiOperation(value = "获取任务完成汇总表", tags = {"任务统计" } ,notes = "获取任务完成汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchtaskfinishhuizong")
 	public ResponseEntity<List<TaskStatsDTO>> fetchtaskfinishhuizong(@RequestBody TaskStatsSearchContext context) {
@@ -162,7 +162,7 @@ public class TaskStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TaskStatsRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'NONE')")
 	@ApiOperation(value = "获取用户完成任务统计", tags = {"任务统计" } ,notes = "获取用户完成任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchuserfinishtasksum")
 	public ResponseEntity<List<TaskStatsDTO>> fetchuserfinishtasksum(@RequestBody TaskStatsSearchContext context) {

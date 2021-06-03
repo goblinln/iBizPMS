@@ -52,7 +52,7 @@ public class BuildResource {
     @Lazy
     public BuildMapping buildMapping;
 
-    @PreAuthorize("@BuildRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'CREATE')")
     @ApiOperation(value = "新建版本", tags = {"版本" },  notes = "新建版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds")
     @Transactional
@@ -68,7 +68,7 @@ public class BuildResource {
     }
 
     @VersionCheck(entity = "build" , versionfield = "updatedate")
-    @PreAuthorize("@BuildRuntime.test(#build_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_BUILD', #build_id, 'UPDATE')")
     @ApiOperation(value = "更新版本", tags = {"版本" },  notes = "更新版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/builds/{build_id}")
     @Transactional
@@ -85,14 +85,14 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.test(#build_id, 'DELETE')")
+    @PreAuthorize("test('ZT_BUILD', #build_id, 'DELETE')")
     @ApiOperation(value = "删除版本", tags = {"版本" },  notes = "删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/builds/{build_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("build_id") Long build_id) {
          return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DELETE')")
     @ApiOperation(value = "批量删除版本", tags = {"版本" },  notes = "批量删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/builds/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -100,7 +100,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BuildRuntime.test(#build_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', #build_id, 'READ')")
     @ApiOperation(value = "获取版本", tags = {"版本" },  notes = "获取版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/builds/{build_id}")
     public ResponseEntity<BuildDTO> get(@PathVariable("build_id") Long build_id) {
@@ -111,7 +111,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'CREATE')")
     @ApiOperation(value = "获取版本草稿", tags = {"版本" },  notes = "获取版本草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraft(BuildDTO dto) {
@@ -119,7 +119,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'CREATE')")
     @ApiOperation(value = "检查版本", tags = {"版本" },  notes = "检查版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody BuildDTO builddto) {
@@ -223,7 +223,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'READ')")
 	@ApiOperation(value = "获取Bug产品版本", tags = {"版本" } ,notes = "获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchbugproductbuild")
 	public ResponseEntity<List<BuildDTO>> fetchbugproductbuild(@RequestBody BuildSearchContext context) {
@@ -235,7 +235,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'NONE')")
 	@ApiOperation(value = "获取Bug产品或者项目版本", tags = {"版本" } ,notes = "获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<BuildDTO>> fetchbugproductorprojectbuild(@RequestBody BuildSearchContext context) {
@@ -247,7 +247,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'READ')")
 	@ApiOperation(value = "获取产品版本", tags = {"版本" } ,notes = "获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchcurproduct")
 	public ResponseEntity<List<BuildDTO>> fetchcurproduct(@RequestBody BuildSearchContext context) {
@@ -259,7 +259,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchdefault")
 	public ResponseEntity<List<BuildDTO>> fetchdefault(@RequestBody BuildSearchContext context) {
@@ -271,7 +271,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'READ')")
 	@ApiOperation(value = "获取产品版本", tags = {"版本" } ,notes = "获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchproductbuildds")
 	public ResponseEntity<List<BuildDTO>> fetchproductbuildds(@RequestBody BuildSearchContext context) {
@@ -283,7 +283,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'NONE')")
 	@ApiOperation(value = "获取测试版本", tags = {"版本" } ,notes = "获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchtestbuild(@RequestBody BuildSearchContext context) {
@@ -295,7 +295,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'READ')")
 	@ApiOperation(value = "获取测试轮次", tags = {"版本" } ,notes = "获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestrounds")
 	public ResponseEntity<List<BuildDTO>> fetchtestrounds(@RequestBody BuildSearchContext context) {
@@ -307,7 +307,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'READ')")
 	@ApiOperation(value = "获取更新日志", tags = {"版本" } ,notes = "获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchupdatelog")
 	public ResponseEntity<List<BuildDTO>> fetchupdatelog(@RequestBody BuildSearchContext context) {
@@ -328,7 +328,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品建立版本", tags = {"版本" },  notes = "根据产品建立版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds")
     public ResponseEntity<BuildDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
@@ -341,7 +341,7 @@ public class BuildResource {
 
 
     @VersionCheck(entity = "build" , versionfield = "updatedate")
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', #build_id, 'DENY')")
     @ApiOperation(value = "根据产品更新版本", tags = {"版本" },  notes = "根据产品更新版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -354,14 +354,14 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', #build_id, 'DENY')")
     @ApiOperation(value = "根据产品删除版本", tags = {"版本" },  notes = "根据产品删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品批量删除版本", tags = {"版本" },  notes = "根据产品批量删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/builds/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -369,7 +369,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'READ', #build_id, 'DENY')")
     @ApiOperation(value = "根据产品获取版本", tags = {"版本" },  notes = "根据产品获取版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
@@ -378,7 +378,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品获取版本草稿", tags = {"版本" },  notes = "根据产品获取版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, BuildDTO dto) {
@@ -387,7 +387,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品检查版本", tags = {"版本" },  notes = "根据产品检查版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
@@ -477,7 +477,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取Bug产品版本", tags = {"版本" } ,notes = "根据产品获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchbugproductbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBugProductBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -490,7 +490,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'NONE')")
 	@ApiOperation(value = "根据产品获取Bug产品或者项目版本", tags = {"版本" } ,notes = "根据产品获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBugProductOrProjectBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -503,7 +503,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取产品版本", tags = {"版本" } ,notes = "根据产品获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchcurproduct")
 	public ResponseEntity<List<BuildDTO>> fetchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -516,7 +516,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchdefault")
 	public ResponseEntity<List<BuildDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -529,7 +529,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取产品版本", tags = {"版本" } ,notes = "根据产品获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchproductbuildds")
 	public ResponseEntity<List<BuildDTO>> fetchProductBuildDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -542,7 +542,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'NONE')")
 	@ApiOperation(value = "根据产品获取测试版本", tags = {"版本" } ,notes = "根据产品获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchTestBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -555,7 +555,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取测试轮次", tags = {"版本" } ,notes = "根据产品获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchtestrounds")
 	public ResponseEntity<List<BuildDTO>> fetchTestRoundsByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -568,7 +568,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取更新日志", tags = {"版本" } ,notes = "根据产品获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchupdatelog")
 	public ResponseEntity<List<BuildDTO>> fetchUpdateLogByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
@@ -582,7 +582,7 @@ public class BuildResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据项目建立版本", tags = {"版本" },  notes = "根据项目建立版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds")
     public ResponseEntity<BuildDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
@@ -595,7 +595,7 @@ public class BuildResource {
 
 
     @VersionCheck(entity = "build" , versionfield = "updatedate")
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', #build_id, 'DENY')")
     @ApiOperation(value = "根据项目更新版本", tags = {"版本" },  notes = "根据项目更新版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -608,14 +608,14 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', #build_id, 'DENY')")
     @ApiOperation(value = "根据项目删除版本", tags = {"版本" },  notes = "根据项目删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(buildService.remove(build_id));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据项目批量删除版本", tags = {"版本" },  notes = "根据项目批量删除版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/builds/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -623,7 +623,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'READ', #build_id, 'DENY')")
     @ApiOperation(value = "根据项目获取版本", tags = {"版本" },  notes = "根据项目获取版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
@@ -632,7 +632,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据项目获取版本草稿", tags = {"版本" },  notes = "根据项目获取版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraftByProject(@PathVariable("project_id") Long project_id, BuildDTO dto) {
@@ -641,7 +641,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'BUILDMANAGE')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', 'DENY')")
     @ApiOperation(value = "根据项目检查版本", tags = {"版本" },  notes = "根据项目检查版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
@@ -731,7 +731,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取Bug产品版本", tags = {"版本" } ,notes = "根据项目获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchbugproductbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBugProductBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -744,7 +744,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'NONE')")
 	@ApiOperation(value = "根据项目获取Bug产品或者项目版本", tags = {"版本" } ,notes = "根据项目获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchbugproductorprojectbuild")
 	public ResponseEntity<List<BuildDTO>> fetchBugProductOrProjectBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -757,7 +757,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取产品版本", tags = {"版本" } ,notes = "根据项目获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchcurproduct")
 	public ResponseEntity<List<BuildDTO>> fetchCurProductByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -770,7 +770,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchdefault")
 	public ResponseEntity<List<BuildDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -783,7 +783,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取产品版本", tags = {"版本" } ,notes = "根据项目获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchproductbuildds")
 	public ResponseEntity<List<BuildDTO>> fetchProductBuildDSByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -796,7 +796,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@BuildRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'NONE')")
 	@ApiOperation(value = "根据项目获取测试版本", tags = {"版本" } ,notes = "根据项目获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchtestbuild")
 	public ResponseEntity<List<BuildDTO>> fetchTestBuildByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -809,7 +809,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取测试轮次", tags = {"版本" } ,notes = "根据项目获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchtestrounds")
 	public ResponseEntity<List<BuildDTO>> fetchTestRoundsByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {
@@ -822,7 +822,7 @@ public class BuildResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_BUILD', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取更新日志", tags = {"版本" } ,notes = "根据项目获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/fetchupdatelog")
 	public ResponseEntity<List<BuildDTO>> fetchUpdateLogByProject(@PathVariable("project_id") Long project_id,@RequestBody BuildSearchContext context) {

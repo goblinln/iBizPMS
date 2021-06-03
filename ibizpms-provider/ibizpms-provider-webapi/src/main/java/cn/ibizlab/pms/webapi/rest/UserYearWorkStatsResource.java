@@ -52,7 +52,7 @@ public class UserYearWorkStatsResource {
     @Lazy
     public UserYearWorkStatsMapping useryearworkstatsMapping;
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'CREATE')")
     @ApiOperation(value = "新建用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "新建用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats")
     @Transactional
@@ -67,7 +67,7 @@ public class UserYearWorkStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'UPDATE')")
     @ApiOperation(value = "更新用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "更新用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'DELETE')")
     @ApiOperation(value = "删除用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "删除用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/useryearworkstats/{useryearworkstats_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
          return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsService.remove(useryearworkstats_id));
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'DELETE')")
     @ApiOperation(value = "批量删除用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "批量删除用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/useryearworkstats/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class UserYearWorkStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}")
     public ResponseEntity<UserYearWorkStatsDTO> get(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
@@ -110,7 +110,7 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'CREATE')")
     @ApiOperation(value = "获取用户年度工作内容统计草稿", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/getdraft")
     public ResponseEntity<UserYearWorkStatsDTO> getDraft(UserYearWorkStatsDTO dto) {
@@ -118,14 +118,14 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsMapping.toDto(useryearworkstatsService.getDraft(domain)));
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'CREATE')")
     @ApiOperation(value = "检查用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "检查用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsService.checkKey(useryearworkstatsMapping.toDomain(useryearworkstatsdto)));
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取研发人员相关数据", tags = {"用户年度工作内容统计" },  notes = "获取研发人员相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getdevinfomation")
     public ResponseEntity<UserYearWorkStatsDTO> getDevInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -139,7 +139,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取产品经理相关数据", tags = {"用户年度工作内容统计" },  notes = "获取产品经理相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getpoinfomation")
     public ResponseEntity<UserYearWorkStatsDTO> getPoInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -153,7 +153,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取测试人员相关数据", tags = {"用户年度工作内容统计" },  notes = "获取测试人员相关数据")
 	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}/getqainfomation")
     public ResponseEntity<UserYearWorkStatsDTO> getQaInfomation(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -167,7 +167,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取用户所选年度的动作", tags = {"用户年度工作内容统计" },  notes = "获取用户所选年度的动作")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}/getuseryearaction")
     public ResponseEntity<UserYearWorkStatsDTO> getUserYearAction(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -194,7 +194,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id, 'READ')")
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
     @ApiOperation(value = "更新标题", tags = {"用户年度工作内容统计" },  notes = "更新标题")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}/updatetitlebyyear")
     public ResponseEntity<UserYearWorkStatsDTO> updateTitleByYear(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -208,7 +208,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"用户年度工作内容统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchdefault")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchdefault(@RequestBody UserYearWorkStatsSearchContext context) {
@@ -221,7 +221,7 @@ public class UserYearWorkStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'READ')")
 	@ApiOperation(value = "获取月完成任务数及累计工时和解决Bug数", tags = {"用户年度工作内容统计" } ,notes = "获取月完成任务数及累计工时和解决Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthfinishtaskandbug")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchmonthfinishtaskandbug(@RequestBody UserYearWorkStatsSearchContext context) {
@@ -234,7 +234,7 @@ public class UserYearWorkStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'READ')")
 	@ApiOperation(value = "获取月创建Bug数和创建用例数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建Bug数和创建用例数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthopenedbugandcase")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchmonthopenedbugandcase(@RequestBody UserYearWorkStatsSearchContext context) {
@@ -247,7 +247,7 @@ public class UserYearWorkStatsResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'READ')")
 	@ApiOperation(value = "获取月创建需求数", tags = {"用户年度工作内容统计" } ,notes = "获取月创建需求数")
     @RequestMapping(method= RequestMethod.POST , value="/useryearworkstats/fetchmonthopenedstory")
 	public ResponseEntity<List<UserYearWorkStatsDTO>> fetchmonthopenedstory(@RequestBody UserYearWorkStatsSearchContext context) {

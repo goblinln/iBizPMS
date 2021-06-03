@@ -52,7 +52,7 @@ public class IbizproProjectDailyResource {
     @Lazy
     public IbizproProjectDailyMapping ibizproprojectdailyMapping;
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
     @ApiOperation(value = "新建项目日报", tags = {"项目日报" },  notes = "新建项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies")
     @Transactional
@@ -68,7 +68,7 @@ public class IbizproProjectDailyResource {
     }
 
     @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
-    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id, 'UPDATE')")
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'UPDATE')")
     @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
     @Transactional
@@ -85,14 +85,14 @@ public class IbizproProjectDailyResource {
     }
 
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id, 'DELETE')")
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'DELETE')")
     @ApiOperation(value = "删除项目日报", tags = {"项目日报" },  notes = "删除项目日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.remove(ibizproprojectdaily_id));
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DELETE')")
     @ApiOperation(value = "批量删除项目日报", tags = {"项目日报" },  notes = "批量删除项目日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -100,7 +100,7 @@ public class IbizproProjectDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.test(#ibizproprojectdaily_id, 'NONE')")
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'NONE')")
     @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
     public ResponseEntity<IbizproProjectDailyDTO> get(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
@@ -111,7 +111,7 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
     @ApiOperation(value = "获取项目日报草稿", tags = {"项目日报" },  notes = "获取项目日报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/getdraft")
     public ResponseEntity<IbizproProjectDailyDTO> getDraft(IbizproProjectDailyDTO dto) {
@@ -119,7 +119,7 @@ public class IbizproProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
     @ApiOperation(value = "检查项目日报", tags = {"项目日报" },  notes = "检查项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
@@ -153,7 +153,7 @@ public class IbizproProjectDailyResource {
     }
 
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectdailies/fetchdefault")
 	public ResponseEntity<List<IbizproProjectDailyDTO>> fetchdefault(@RequestBody IbizproProjectDailySearchContext context) {

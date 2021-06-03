@@ -53,7 +53,7 @@ public class ProjectProductResource {
     public ProjectProductMapping projectproductMapping;
 
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
     @ApiOperation(value = "根据产品建立项目产品", tags = {"项目产品" },  notes = "根据产品建立项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts")
     public ResponseEntity<ProjectProductDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -66,7 +66,7 @@ public class ProjectProductResource {
 
 
     @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
-    @PreAuthorize("@ProjectProductRuntime.quickTest('UPDATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'UPDATE')")
     @ApiOperation(value = "根据产品更新项目产品", tags = {"项目产品" },  notes = "根据产品更新项目产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -79,14 +79,14 @@ public class ProjectProductResource {
     }
 
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DELETE')")
     @ApiOperation(value = "根据产品删除项目产品", tags = {"项目产品" },  notes = "根据产品删除项目产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(projectproductService.remove(projectproduct_id));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DELETE')")
     @ApiOperation(value = "根据产品批量删除项目产品", tags = {"项目产品" },  notes = "根据产品批量删除项目产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/projectproducts/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<String> ids) {
@@ -94,7 +94,7 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', #projectproduct_id, 'DENY')")
     @ApiOperation(value = "根据产品获取项目产品", tags = {"项目产品" },  notes = "根据产品获取项目产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
@@ -103,7 +103,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
     @ApiOperation(value = "根据产品获取项目产品草稿", tags = {"项目产品" },  notes = "根据产品获取项目产品草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projectproducts/getdraft")
     public ResponseEntity<ProjectProductDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProjectProductDTO dto) {
@@ -112,7 +112,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
     @ApiOperation(value = "根据产品检查项目产品", tags = {"项目产品" },  notes = "根据产品检查项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -130,7 +130,7 @@ public class ProjectProductResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"项目产品" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projectproducts/fetchdefault")
 	public ResponseEntity<List<ProjectProductDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
@@ -143,7 +143,7 @@ public class ProjectProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取关联计划", tags = {"项目产品" } ,notes = "根据产品获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projectproducts/fetchrelationplan")
 	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
@@ -157,7 +157,7 @@ public class ProjectProductResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
     @ApiOperation(value = "根据项目建立项目产品", tags = {"项目产品" },  notes = "根据项目建立项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts")
     public ResponseEntity<ProjectProductDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -170,7 +170,7 @@ public class ProjectProductResource {
 
 
     @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
-    @PreAuthorize("@ProjectProductRuntime.quickTest('UPDATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'UPDATE')")
     @ApiOperation(value = "根据项目更新项目产品", tags = {"项目产品" },  notes = "根据项目更新项目产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -183,14 +183,14 @@ public class ProjectProductResource {
     }
 
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DELETE')")
     @ApiOperation(value = "根据项目删除项目产品", tags = {"项目产品" },  notes = "根据项目删除项目产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(projectproductService.remove(projectproduct_id));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DELETE')")
     @ApiOperation(value = "根据项目批量删除项目产品", tags = {"项目产品" },  notes = "根据项目批量删除项目产品")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectproducts/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<String> ids) {
@@ -198,7 +198,7 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', #projectproduct_id, 'DENY')")
     @ApiOperation(value = "根据项目获取项目产品", tags = {"项目产品" },  notes = "根据项目获取项目产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
@@ -207,7 +207,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
     @ApiOperation(value = "根据项目获取项目产品草稿", tags = {"项目产品" },  notes = "根据项目获取项目产品草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectproducts/getdraft")
     public ResponseEntity<ProjectProductDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectProductDTO dto) {
@@ -216,7 +216,7 @@ public class ProjectProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
     @ApiOperation(value = "根据项目检查项目产品", tags = {"项目产品" },  notes = "根据项目检查项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -234,7 +234,7 @@ public class ProjectProductResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"项目产品" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectproducts/fetchdefault")
 	public ResponseEntity<List<ProjectProductDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
@@ -247,7 +247,7 @@ public class ProjectProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id, 'READ')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据项目获取关联计划", tags = {"项目产品" } ,notes = "根据项目获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectproducts/fetchrelationplan")
 	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {

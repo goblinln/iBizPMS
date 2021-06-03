@@ -52,7 +52,7 @@ public class DeptResource {
     @Lazy
     public DeptMapping deptMapping;
 
-    @PreAuthorize("@DeptRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_DEPT', 'CREATE')")
     @ApiOperation(value = "新建部门", tags = {"部门" },  notes = "新建部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/depts")
     @Transactional
@@ -67,7 +67,7 @@ public class DeptResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_DEPT', #dept_id, 'UPDATE')")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/depts/{dept_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class DeptResource {
     }
 
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id, 'DELETE')")
+    @PreAuthorize("test('ZT_DEPT', #dept_id, 'DELETE')")
     @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/{dept_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("dept_id") Long dept_id) {
          return ResponseEntity.status(HttpStatus.OK).body(deptService.remove(dept_id));
     }
 
-    @PreAuthorize("@DeptRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_DEPT', 'DELETE')")
     @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class DeptResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@DeptRuntime.test(#dept_id, 'READ')")
+    @PreAuthorize("test('ZT_DEPT', #dept_id, 'READ')")
     @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
 	@RequestMapping(method = RequestMethod.GET, value = "/depts/{dept_id}")
     public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
@@ -110,7 +110,7 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@DeptRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_DEPT', 'CREATE')")
     @ApiOperation(value = "获取部门草稿", tags = {"部门" },  notes = "获取部门草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/depts/getdraft")
     public ResponseEntity<DeptDTO> getDraft(DeptDTO dto) {
@@ -118,7 +118,7 @@ public class DeptResource {
         return ResponseEntity.status(HttpStatus.OK).body(deptMapping.toDto(deptService.getDraft(domain)));
     }
 
-    @PreAuthorize("@DeptRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_DEPT', 'CREATE')")
     @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/depts/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody DeptDTO deptdto) {
@@ -138,7 +138,7 @@ public class DeptResource {
     }
 
 
-    @PreAuthorize("@DeptRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_DEPT', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"部门" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/depts/fetchdefault")
 	public ResponseEntity<List<DeptDTO>> fetchdefault(@RequestBody DeptSearchContext context) {
@@ -151,7 +151,7 @@ public class DeptResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@DeptRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_DEPT', 'READ')")
 	@ApiOperation(value = "获取根部门", tags = {"部门" } ,notes = "获取根部门")
     @RequestMapping(method= RequestMethod.POST , value="/depts/fetchroot")
 	public ResponseEntity<List<DeptDTO>> fetchroot(@RequestBody DeptSearchContext context) {

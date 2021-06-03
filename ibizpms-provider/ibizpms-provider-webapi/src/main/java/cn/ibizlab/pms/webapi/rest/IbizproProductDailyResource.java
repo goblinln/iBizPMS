@@ -52,7 +52,7 @@ public class IbizproProductDailyResource {
     @Lazy
     public IbizproProductDailyMapping ibizproproductdailyMapping;
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'CREATE')")
     @ApiOperation(value = "新建产品日报", tags = {"产品日报" },  notes = "新建产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies")
     @Transactional
@@ -68,7 +68,7 @@ public class IbizproProductDailyResource {
     }
 
     @VersionCheck(entity = "ibizproproductdaily" , versionfield = "updatedate")
-    @PreAuthorize("@IbizproProductDailyRuntime.test(#ibizproproductdaily_id, 'UPDATE')")
+    @PreAuthorize("test('IBIZPRO_PRODUCTDAILY', #ibizproproductdaily_id, 'UPDATE')")
     @ApiOperation(value = "更新产品日报", tags = {"产品日报" },  notes = "更新产品日报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
     @Transactional
@@ -85,14 +85,14 @@ public class IbizproProductDailyResource {
     }
 
 
-    @PreAuthorize("@IbizproProductDailyRuntime.test(#ibizproproductdaily_id, 'DELETE')")
+    @PreAuthorize("test('IBIZPRO_PRODUCTDAILY', #ibizproproductdaily_id, 'DELETE')")
     @ApiOperation(value = "删除产品日报", tags = {"产品日报" },  notes = "删除产品日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.remove(ibizproproductdaily_id));
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DELETE')")
     @ApiOperation(value = "批量删除产品日报", tags = {"产品日报" },  notes = "批量删除产品日报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductdailies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -100,7 +100,7 @@ public class IbizproProductDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.test(#ibizproproductdaily_id, 'NONE')")
+    @PreAuthorize("test('IBIZPRO_PRODUCTDAILY', #ibizproproductdaily_id, 'NONE')")
     @ApiOperation(value = "获取产品日报", tags = {"产品日报" },  notes = "获取产品日报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
     public ResponseEntity<IbizproProductDailyDTO> get(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
@@ -111,7 +111,7 @@ public class IbizproProductDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'CREATE')")
     @ApiOperation(value = "获取产品日报草稿", tags = {"产品日报" },  notes = "获取产品日报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductdailies/getdraft")
     public ResponseEntity<IbizproProductDailyDTO> getDraft(IbizproProductDailyDTO dto) {
@@ -119,7 +119,7 @@ public class IbizproProductDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyMapping.toDto(ibizproproductdailyService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'CREATE')")
     @ApiOperation(value = "检查产品日报", tags = {"产品日报" },  notes = "检查产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProductDailyDTO ibizproproductdailydto) {
@@ -167,7 +167,7 @@ public class IbizproProductDailyResource {
     }
 
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"产品日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchdefault")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchdefault(@RequestBody IbizproProductDailySearchContext context) {
@@ -179,7 +179,7 @@ public class IbizproProductDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'NONE')")
 	@ApiOperation(value = "获取产品日报", tags = {"产品日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchproductdaily")
 	public ResponseEntity<List<IbizproProductDailyDTO>> fetchproductdaily(@RequestBody IbizproProductDailySearchContext context) {

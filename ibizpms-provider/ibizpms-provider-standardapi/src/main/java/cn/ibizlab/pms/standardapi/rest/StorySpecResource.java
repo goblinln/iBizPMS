@@ -54,7 +54,7 @@ public class StorySpecResource {
 
 
 
-    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_STORYSPEC', 'READ')")
 	@ApiOperation(value = "根据系统用户需求获取版本", tags = {"需求描述" } ,notes = "根据系统用户需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersionBySysUserStory(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
@@ -69,7 +69,7 @@ public class StorySpecResource {
 	}
 
 
-    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_STORYSPEC', 'READ')")
 	@ApiOperation(value = "根据产品需求获取版本", tags = {"需求描述" } ,notes = "根据产品需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
@@ -84,7 +84,7 @@ public class StorySpecResource {
 	}
 
 
-    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_STORYSPEC', 'READ')")
 	@ApiOperation(value = "根据项目需求获取版本", tags = {"需求描述" } ,notes = "根据项目需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersionByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
@@ -100,7 +100,7 @@ public class StorySpecResource {
 
 
 
-    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_STORYSPEC', 'READ')")
 	@ApiOperation(value = "根据系统用户产品需求获取版本", tags = {"需求描述" } ,notes = "根据系统用户产品需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersionBySysUserProductStory(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
@@ -116,7 +116,7 @@ public class StorySpecResource {
 
 
 
-    @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_STORYSPEC', 'READ')")
 	@ApiOperation(value = "根据系统用户项目需求获取版本", tags = {"需求描述" } ,notes = "根据系统用户项目需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersionBySysUserProjectStory(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {

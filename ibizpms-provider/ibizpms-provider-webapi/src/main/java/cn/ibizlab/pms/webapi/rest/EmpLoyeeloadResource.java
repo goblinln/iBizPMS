@@ -52,7 +52,7 @@ public class EmpLoyeeloadResource {
     @Lazy
     public EmpLoyeeloadMapping employeeloadMapping;
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'CREATE')")
     @ApiOperation(value = "新建员工负载表", tags = {"员工负载表" },  notes = "新建员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads")
     @Transactional
@@ -67,7 +67,7 @@ public class EmpLoyeeloadResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'UPDATE')")
     @ApiOperation(value = "更新员工负载表", tags = {"员工负载表" },  notes = "更新员工负载表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/employeeloads/{employeeload_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class EmpLoyeeloadResource {
     }
 
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'DELETE')")
     @ApiOperation(value = "删除员工负载表", tags = {"员工负载表" },  notes = "删除员工负载表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("employeeload_id") Long employeeload_id) {
          return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.remove(employeeload_id));
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'DELETE')")
     @ApiOperation(value = "批量删除员工负载表", tags = {"员工负载表" },  notes = "批量删除员工负载表")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.test(#employeeload_id, 'READ')")
+    @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'READ')")
     @ApiOperation(value = "获取员工负载表", tags = {"员工负载表" },  notes = "获取员工负载表")
 	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/{employeeload_id}")
     public ResponseEntity<EmpLoyeeloadDTO> get(@PathVariable("employeeload_id") Long employeeload_id) {
@@ -110,7 +110,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'CREATE')")
     @ApiOperation(value = "获取员工负载表草稿", tags = {"员工负载表" },  notes = "获取员工负载表草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/getdraft")
     public ResponseEntity<EmpLoyeeloadDTO> getDraft(EmpLoyeeloadDTO dto) {
@@ -118,7 +118,7 @@ public class EmpLoyeeloadResource {
         return ResponseEntity.status(HttpStatus.OK).body(employeeloadMapping.toDto(employeeloadService.getDraft(domain)));
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'CREATE')")
     @ApiOperation(value = "检查员工负载表", tags = {"员工负载表" },  notes = "检查员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
@@ -138,7 +138,7 @@ public class EmpLoyeeloadResource {
     }
 
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"员工负载表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchdefault")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchdefault(@RequestBody EmpLoyeeloadSearchContext context) {
@@ -150,7 +150,7 @@ public class EmpLoyeeloadResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('NONE')")
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'NONE')")
 	@ApiOperation(value = "获取获取员工负载表", tags = {"员工负载表" } ,notes = "获取获取员工负载表")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchgetwoerkload")
 	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchgetwoerkload(@RequestBody EmpLoyeeloadSearchContext context) {

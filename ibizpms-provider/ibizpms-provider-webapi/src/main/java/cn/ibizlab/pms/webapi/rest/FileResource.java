@@ -52,7 +52,7 @@ public class FileResource {
     @Lazy
     public FileMapping fileMapping;
 
-    @PreAuthorize("@FileRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_FILE', 'CREATE')")
     @ApiOperation(value = "新建附件", tags = {"附件" },  notes = "新建附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files")
     @Transactional
@@ -67,7 +67,7 @@ public class FileResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@FileRuntime.test(#file_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_FILE', #file_id, 'UPDATE')")
     @ApiOperation(value = "更新附件", tags = {"附件" },  notes = "更新附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.test(#file_id, 'DELETE')")
+    @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "删除附件", tags = {"附件" },  notes = "删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/files/{file_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("file_id") Long file_id) {
          return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
     }
 
-    @PreAuthorize("@FileRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
     @ApiOperation(value = "批量删除附件", tags = {"附件" },  notes = "批量删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/files/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@FileRuntime.test(#file_id, 'READ')")
+    @PreAuthorize("test('ZT_FILE', #file_id, 'READ')")
     @ApiOperation(value = "获取附件", tags = {"附件" },  notes = "获取附件")
 	@RequestMapping(method = RequestMethod.GET, value = "/files/{file_id}")
     public ResponseEntity<FileDTO> get(@PathVariable("file_id") Long file_id) {
@@ -110,7 +110,7 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@FileRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_FILE', 'CREATE')")
     @ApiOperation(value = "获取附件草稿", tags = {"附件" },  notes = "获取附件草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/files/getdraft")
     public ResponseEntity<FileDTO> getDraft(FileDTO dto) {
@@ -118,7 +118,7 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(fileMapping.toDto(fileService.getDraft(domain)));
     }
 
-    @PreAuthorize("@FileRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_FILE', 'CREATE')")
     @ApiOperation(value = "检查附件", tags = {"附件" },  notes = "检查附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody FileDTO filedto) {
@@ -138,7 +138,7 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.test(#file_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_FILE', #file_id, 'UPDATE')")
     @ApiOperation(value = "更新文件", tags = {"附件" },  notes = "更新文件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}/updateobjectid")
     public ResponseEntity<FileDTO> updateObjectID(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {
@@ -152,7 +152,7 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.test(#file_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_FILE', #file_id, 'UPDATE')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}/updateobjectidforpmsee")
     public ResponseEntity<FileDTO> updateObjectIDForPmsEe(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {
@@ -166,7 +166,7 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"附件" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchdefault")
 	public ResponseEntity<List<FileDTO>> fetchdefault(@RequestBody FileSearchContext context) {
@@ -179,7 +179,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchdoclibfile")
 	public ResponseEntity<List<FileDTO>> fetchdoclibfile(@RequestBody FileSearchContext context) {
@@ -192,7 +192,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchproductdoclibfile")
 	public ResponseEntity<List<FileDTO>> fetchproductdoclibfile(@RequestBody FileSearchContext context) {
@@ -205,7 +205,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"附件" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchtype(@RequestBody FileSearchContext context) {
@@ -218,7 +218,7 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
 	@ApiOperation(value = "获取查询附件", tags = {"附件" } ,notes = "获取查询附件")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtypenotbysrfparentkey")
 	public ResponseEntity<List<FileDTO>> fetchtypenotbysrfparentkey(@RequestBody FileSearchContext context) {

@@ -52,7 +52,7 @@ public class GroupResource {
     @Lazy
     public GroupMapping groupMapping;
 
-    @PreAuthorize("@GroupRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_GROUP', 'CREATE')")
     @ApiOperation(value = "新建群组", tags = {"群组" },  notes = "新建群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups")
     @Transactional
@@ -67,7 +67,7 @@ public class GroupResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@GroupRuntime.test(#group_id, 'UPDATE')")
+    @PreAuthorize("test('ZT_GROUP', #group_id, 'UPDATE')")
     @ApiOperation(value = "更新群组", tags = {"群组" },  notes = "更新群组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/groups/{group_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class GroupResource {
     }
 
 
-    @PreAuthorize("@GroupRuntime.test(#group_id, 'DELETE')")
+    @PreAuthorize("test('ZT_GROUP', #group_id, 'DELETE')")
     @ApiOperation(value = "删除群组", tags = {"群组" },  notes = "删除群组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/{group_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("group_id") Long group_id) {
          return ResponseEntity.status(HttpStatus.OK).body(groupService.remove(group_id));
     }
 
-    @PreAuthorize("@GroupRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('ZT_GROUP', 'DELETE')")
     @ApiOperation(value = "批量删除群组", tags = {"群组" },  notes = "批量删除群组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@GroupRuntime.test(#group_id, 'READ')")
+    @PreAuthorize("test('ZT_GROUP', #group_id, 'READ')")
     @ApiOperation(value = "获取群组", tags = {"群组" },  notes = "获取群组")
 	@RequestMapping(method = RequestMethod.GET, value = "/groups/{group_id}")
     public ResponseEntity<GroupDTO> get(@PathVariable("group_id") Long group_id) {
@@ -110,7 +110,7 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@GroupRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_GROUP', 'CREATE')")
     @ApiOperation(value = "获取群组草稿", tags = {"群组" },  notes = "获取群组草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/groups/getdraft")
     public ResponseEntity<GroupDTO> getDraft(GroupDTO dto) {
@@ -118,7 +118,7 @@ public class GroupResource {
         return ResponseEntity.status(HttpStatus.OK).body(groupMapping.toDto(groupService.getDraft(domain)));
     }
 
-    @PreAuthorize("@GroupRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('ZT_GROUP', 'CREATE')")
     @ApiOperation(value = "检查群组", tags = {"群组" },  notes = "检查群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody GroupDTO groupdto) {
@@ -138,7 +138,7 @@ public class GroupResource {
     }
 
 
-    @PreAuthorize("@GroupRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('ZT_GROUP', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"群组" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/groups/fetchdefault")
 	public ResponseEntity<List<GroupDTO>> fetchdefault(@RequestBody GroupSearchContext context) {

@@ -52,7 +52,7 @@ public class ProjectTaskestimateResource {
     @Lazy
     public ProjectTaskestimateMapping projecttaskestimateMapping;
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('PROJECTTASKESTIMATE', 'CREATE')")
     @ApiOperation(value = "新建项目工时统计", tags = {"项目工时统计" },  notes = "新建项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates")
     @Transactional
@@ -67,7 +67,7 @@ public class ProjectTaskestimateResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id, 'UPDATE')")
+    @PreAuthorize("test('PROJECTTASKESTIMATE', #projecttaskestimate_id, 'UPDATE')")
     @ApiOperation(value = "更新项目工时统计", tags = {"项目工时统计" },  notes = "更新项目工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projecttaskestimates/{projecttaskestimate_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class ProjectTaskestimateResource {
     }
 
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id, 'DELETE')")
+    @PreAuthorize("test('PROJECTTASKESTIMATE', #projecttaskestimate_id, 'DELETE')")
     @ApiOperation(value = "删除项目工时统计", tags = {"项目工时统计" },  notes = "删除项目工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projecttaskestimates/{projecttaskestimate_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id) {
          return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateService.remove(projecttaskestimate_id));
     }
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('PROJECTTASKESTIMATE', 'DELETE')")
     @ApiOperation(value = "批量删除项目工时统计", tags = {"项目工时统计" },  notes = "批量删除项目工时统计")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projecttaskestimates/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -99,7 +99,7 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.test(#projecttaskestimate_id, 'READ')")
+    @PreAuthorize("test('PROJECTTASKESTIMATE', #projecttaskestimate_id, 'READ')")
     @ApiOperation(value = "获取项目工时统计", tags = {"项目工时统计" },  notes = "获取项目工时统计")
 	@RequestMapping(method = RequestMethod.GET, value = "/projecttaskestimates/{projecttaskestimate_id}")
     public ResponseEntity<ProjectTaskestimateDTO> get(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id) {
@@ -110,7 +110,7 @@ public class ProjectTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('PROJECTTASKESTIMATE', 'CREATE')")
     @ApiOperation(value = "获取项目工时统计草稿", tags = {"项目工时统计" },  notes = "获取项目工时统计草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/projecttaskestimates/getdraft")
     public ResponseEntity<ProjectTaskestimateDTO> getDraft(ProjectTaskestimateDTO dto) {
@@ -118,7 +118,7 @@ public class ProjectTaskestimateResource {
         return ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateMapping.toDto(projecttaskestimateService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('PROJECTTASKESTIMATE', 'CREATE')")
     @ApiOperation(value = "检查项目工时统计", tags = {"项目工时统计" },  notes = "检查项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ProjectTaskestimateDTO projecttaskestimatedto) {
@@ -138,7 +138,7 @@ public class ProjectTaskestimateResource {
     }
 
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('PROJECTTASKESTIMATE', 'READ')")
 	@ApiOperation(value = "获取用户月工时详情", tags = {"项目工时统计" } ,notes = "获取用户月工时详情")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/fetchaccountdetail")
 	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchaccountdetail(@RequestBody ProjectTaskestimateSearchContext context) {
@@ -151,7 +151,7 @@ public class ProjectTaskestimateResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('PROJECTTASKESTIMATE', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/fetchdefault")
 	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchdefault(@RequestBody ProjectTaskestimateSearchContext context) {

@@ -52,7 +52,7 @@ public class TestModuleResource {
     @Lazy
     public TestModuleMapping testmoduleMapping;
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'CREATE')")
     @ApiOperation(value = "新建测试模块", tags = {"测试模块" },  notes = "新建测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules")
     @Transactional
@@ -67,7 +67,7 @@ public class TestModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', #testmodule_id, 'UPDATE')")
     @ApiOperation(value = "更新测试模块", tags = {"测试模块" },  notes = "更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/{testmodule_id}")
     @Transactional
@@ -84,14 +84,14 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', #testmodule_id, 'DELETE')")
     @ApiOperation(value = "删除测试模块", tags = {"测试模块" },  notes = "删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testmodules/{testmodule_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("testmodule_id") Long testmodule_id) {
          return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'DELETE')")
     @ApiOperation(value = "批量删除测试模块", tags = {"测试模块" },  notes = "批量删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testmodules/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -99,7 +99,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', #testmodule_id, 'READ')")
     @ApiOperation(value = "获取测试模块", tags = {"测试模块" },  notes = "获取测试模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> get(@PathVariable("testmodule_id") Long testmodule_id) {
@@ -110,7 +110,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'CREATE')")
     @ApiOperation(value = "获取测试模块草稿", tags = {"测试模块" },  notes = "获取测试模块草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/testmodules/getdraft")
     public ResponseEntity<TestModuleDTO> getDraft(TestModuleDTO dto) {
@@ -118,7 +118,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(testmoduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'CREATE')")
     @ApiOperation(value = "检查测试模块", tags = {"测试模块" },  notes = "检查测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody TestModuleDTO testmoduledto) {
@@ -139,7 +139,7 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@TestModuleRuntime.test(#testmodule_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', #testmodule_id, 'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"测试模块" },  notes = "删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testmodules/{testmodule_id}/removemodule")
     public ResponseEntity<TestModuleDTO> removeModule(@PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -162,7 +162,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"测试模块" } ,notes = "获取BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchbypath")
 	public ResponseEntity<List<TestModuleDTO>> fetchbypath(@RequestBody TestModuleSearchContext context) {
@@ -174,7 +174,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchdefault")
 	public ResponseEntity<List<TestModuleDTO>> fetchdefault(@RequestBody TestModuleSearchContext context) {
@@ -186,7 +186,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'READ')")
 	@ApiOperation(value = "获取父模块", tags = {"测试模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchparentmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchparentmodule(@RequestBody TestModuleSearchContext context) {
@@ -198,7 +198,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'READ')")
 	@ApiOperation(value = "获取根模块", tags = {"测试模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchroot")
 	public ResponseEntity<List<TestModuleDTO>> fetchroot(@RequestBody TestModuleSearchContext context) {
@@ -210,7 +210,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'READ')")
 	@ApiOperation(value = "获取根模块_无分支", tags = {"测试模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchroot_nobranch")
 	public ResponseEntity<List<TestModuleDTO>> fetchroot_nobranch(@RequestBody TestModuleSearchContext context) {
@@ -222,7 +222,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'READ')")
 	@ApiOperation(value = "获取TestModule", tags = {"测试模块" } ,notes = "获取TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchtestmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchtestmodule(@RequestBody TestModuleSearchContext context) {
@@ -243,7 +243,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品建立测试模块", tags = {"测试模块" },  notes = "根据产品建立测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules")
     public ResponseEntity<TestModuleDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -255,7 +255,7 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', #testmodule_id, 'DENY')")
     @ApiOperation(value = "根据产品更新测试模块", tags = {"测试模块" },  notes = "根据产品更新测试模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -268,14 +268,14 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', #testmodule_id, 'DENY')")
     @ApiOperation(value = "根据产品删除测试模块", tags = {"测试模块" },  notes = "根据产品删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testmoduleService.remove(testmodule_id));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品批量删除测试模块", tags = {"测试模块" },  notes = "根据产品批量删除测试模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testmodules/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -283,7 +283,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', #testmodule_id, 'DENY')")
     @ApiOperation(value = "根据产品获取测试模块", tags = {"测试模块" },  notes = "根据产品获取测试模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testmodules/{testmodule_id}")
     public ResponseEntity<TestModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
@@ -292,7 +292,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品获取测试模块草稿", tags = {"测试模块" },  notes = "根据产品获取测试模块草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testmodules/getdraft")
     public ResponseEntity<TestModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestModuleDTO dto) {
@@ -301,7 +301,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduleMapping.toDto(testmoduleService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', 'DENY')")
     @ApiOperation(value = "根据产品检查测试模块", tags = {"测试模块" },  notes = "根据产品检查测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -320,7 +320,7 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'TESTMODULEMANAGE')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', #testmodule_id, 'DENY')")
     @ApiOperation(value = "根据产品删除模块", tags = {"测试模块" },  notes = "根据产品删除模块")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testmodules/{testmodule_id}/removemodule")
     public ResponseEntity<TestModuleDTO> removeModuleByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -345,7 +345,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取BYPATH", tags = {"测试模块" } ,notes = "根据产品获取BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchbypath")
 	public ResponseEntity<List<TestModuleDTO>> fetchByPathByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
@@ -358,7 +358,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试模块" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchdefault")
 	public ResponseEntity<List<TestModuleDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
@@ -371,7 +371,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取父模块", tags = {"测试模块" } ,notes = "根据产品获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchparentmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchParentModuleByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
@@ -384,7 +384,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取根模块", tags = {"测试模块" } ,notes = "根据产品获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchroot")
 	public ResponseEntity<List<TestModuleDTO>> fetchRootByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
@@ -397,7 +397,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取根模块_无分支", tags = {"测试模块" } ,notes = "根据产品获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchroot_nobranch")
 	public ResponseEntity<List<TestModuleDTO>> fetchRoot_NoBranchByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {
@@ -410,7 +410,7 @@ public class TestModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id, 'READ')")
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
 	@ApiOperation(value = "根据产品获取TestModule", tags = {"测试模块" } ,notes = "根据产品获取TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testmodules/fetchtestmodule")
 	public ResponseEntity<List<TestModuleDTO>> fetchTestModuleByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestModuleSearchContext context) {

@@ -52,7 +52,7 @@ public class IbzReportResource {
     @Lazy
     public IbzReportMapping ibzreportMapping;
 
-    @PreAuthorize("@IbzReportRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_REPORT', 'CREATE')")
     @ApiOperation(value = "新建汇报汇总", tags = {"汇报汇总" },  notes = "新建汇报汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports")
     @Transactional
@@ -68,7 +68,7 @@ public class IbzReportResource {
     }
 
     @VersionCheck(entity = "ibzreport" , versionfield = "updatedate")
-    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id, 'UPDATE')")
+    @PreAuthorize("test('IBZ_REPORT', #ibzreport_id, 'UPDATE')")
     @ApiOperation(value = "更新汇报汇总", tags = {"汇报汇总" },  notes = "更新汇报汇总")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreports/{ibzreport_id}")
     @Transactional
@@ -85,14 +85,14 @@ public class IbzReportResource {
     }
 
 
-    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id, 'DELETE')")
+    @PreAuthorize("test('IBZ_REPORT', #ibzreport_id, 'DELETE')")
     @ApiOperation(value = "删除汇报汇总", tags = {"汇报汇总" },  notes = "删除汇报汇总")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreports/{ibzreport_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzreport_id") Long ibzreport_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzreportService.remove(ibzreport_id));
     }
 
-    @PreAuthorize("@IbzReportRuntime.quickTest('DELETE')")
+    @PreAuthorize("quickTest('IBZ_REPORT', 'DELETE')")
     @ApiOperation(value = "批量删除汇报汇总", tags = {"汇报汇总" },  notes = "批量删除汇报汇总")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreports/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
@@ -100,7 +100,7 @@ public class IbzReportResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id, 'NONE')")
+    @PreAuthorize("test('IBZ_REPORT', #ibzreport_id, 'NONE')")
     @ApiOperation(value = "获取汇报汇总", tags = {"汇报汇总" },  notes = "获取汇报汇总")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreports/{ibzreport_id}")
     public ResponseEntity<IbzReportDTO> get(@PathVariable("ibzreport_id") Long ibzreport_id) {
@@ -111,7 +111,7 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbzReportRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_REPORT', 'CREATE')")
     @ApiOperation(value = "获取汇报汇总草稿", tags = {"汇报汇总" },  notes = "获取汇报汇总草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzreports/getdraft")
     public ResponseEntity<IbzReportDTO> getDraft(IbzReportDTO dto) {
@@ -119,14 +119,14 @@ public class IbzReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportMapping.toDto(ibzreportService.getDraft(domain)));
     }
 
-    @PreAuthorize("@IbzReportRuntime.quickTest('CREATE')")
+    @PreAuthorize("quickTest('IBZ_REPORT', 'CREATE')")
     @ApiOperation(value = "检查汇报汇总", tags = {"汇报汇总" },  notes = "检查汇报汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IbzReportDTO ibzreportdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzreportService.checkKey(ibzreportMapping.toDomain(ibzreportdto)));
     }
 
-    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id, 'NONE')")
+    @PreAuthorize("test('IBZ_REPORT', #ibzreport_id, 'NONE')")
     @ApiOperation(value = "我未提交的（计数器）", tags = {"汇报汇总" },  notes = "我未提交的（计数器）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/{ibzreport_id}/myreportinotsubmit")
     public ResponseEntity<IbzReportDTO> myReportINotSubmit(@PathVariable("ibzreport_id") Long ibzreport_id, @RequestBody IbzReportDTO ibzreportdto) {
@@ -140,7 +140,7 @@ public class IbzReportResource {
     }
 
 
-    @PreAuthorize("@IbzReportRuntime.test(#ibzreport_id, 'NONE')")
+    @PreAuthorize("test('IBZ_REPORT', #ibzreport_id, 'NONE')")
     @ApiOperation(value = "我收到的汇报（计数器）", tags = {"汇报汇总" },  notes = "我收到的汇报（计数器）")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreports/{ibzreport_id}/reportireceived")
     public ResponseEntity<IbzReportDTO> reportIReceived(@PathVariable("ibzreport_id") Long ibzreport_id, @RequestBody IbzReportDTO ibzreportdto) {
@@ -167,7 +167,7 @@ public class IbzReportResource {
     }
 
 
-    @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_REPORT', 'READ')")
 	@ApiOperation(value = "获取汇报汇总", tags = {"汇报汇总" } ,notes = "获取汇报汇总")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchallreport")
 	public ResponseEntity<List<IbzReportDTO>> fetchallreport(@RequestBody IbzReportSearchContext context) {
@@ -180,7 +180,7 @@ public class IbzReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_REPORT', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报汇总" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchdefault")
 	public ResponseEntity<List<IbzReportDTO>> fetchdefault(@RequestBody IbzReportSearchContext context) {
@@ -193,7 +193,7 @@ public class IbzReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("@IbzReportRuntime.quickTest('READ')")
+    @PreAuthorize("quickTest('IBZ_REPORT', 'READ')")
 	@ApiOperation(value = "获取汇报汇总（我收到的）", tags = {"汇报汇总" } ,notes = "获取汇报汇总（我收到的）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreports/fetchmyreallreport")
 	public ResponseEntity<List<IbzReportDTO>> fetchmyreallreport(@RequestBody IbzReportSearchContext context) {
