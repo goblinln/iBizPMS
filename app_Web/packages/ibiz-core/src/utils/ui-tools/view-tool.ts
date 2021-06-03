@@ -263,7 +263,7 @@ export class ViewTool {
             let dataActionResult: any;
             if (_item && _item['dataAccessAction']) {
                 if (Object.is(_item['actionTarget'], "NONE") || Object.is(_item['actionTarget'], "")) {
-                    dataActionResult = UIService.getAllOPPrivs(undefined,_item['dataAccessAction']);
+                    dataActionResult = UIService.getAllOPPrivs(undefined, _item['dataAccessAction']);
                 } else {
                     if (data && Object.keys(data).length > 0) {
                         dataActionResult = UIService.getAllOPPrivs(data, _item['dataAccessAction']);
@@ -315,7 +315,7 @@ export class ViewTool {
             const _item = ActionModel[key];
             let dataActionResult: any;
             if (Object.is(_item['actiontarget'], "NONE") || Object.is(_item['actiontarget'], "")) {
-                dataActionResult = UIService.getAllOPPrivs(undefined,_item['dataaccaction']);
+                dataActionResult = UIService.getAllOPPrivs(undefined, _item['dataaccaction']);
             } else {
                 if (_item && _item['dataaccaction'] && UIService.isEnableDEMainState) {
                     if (data && Object.keys(data).length > 0) {
@@ -344,5 +344,31 @@ export class ViewTool {
             result.push(dataActionResult);
         }
         return result;
+    }
+
+    /**
+     * 计算重定向上下文
+     *
+     * @static
+     * @param {*} [tempContext] 上下文
+     * @param {*} [data] 传入数据
+     * @param {*} [redirectAppEntity] 应用实体对象
+     * @memberof ViewTool
+     */
+    public static calcRedirectContext(tempContext: any, data: any, redirectAppEntity: any) {
+        if (redirectAppEntity && redirectAppEntity.getMinorPSAppDERSs() && ((redirectAppEntity.getMinorPSAppDERSs() as []).length > 0)) {
+            redirectAppEntity.getMinorPSAppDERSs()?.forEach((item: any) => {
+                const parentPSAppDEFieldCodeName: string = item.M.getParentPSAppDEField?.codeName;
+                if (parentPSAppDEFieldCodeName) {
+                    const curData: any = data;
+                    if (curData && curData[parentPSAppDEFieldCodeName.toLowerCase()]) {
+                        const majorAppEntity: any = item.getMajorPSAppDataEntity();
+                        if (!tempContext[majorAppEntity.codeName.toLowerCase()]) {
+                            Object.assign(tempContext, { [majorAppEntity.codeName.toLowerCase()]: curData[parentPSAppDEFieldCodeName.toLowerCase()] });
+                        }
+                    }
+                }
+            })
+        }
     }
 }

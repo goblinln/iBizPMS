@@ -352,7 +352,7 @@ export class AppFormService extends ControlServiceBase {
             }
             result.then((response) => {
                 this.setRemoteCopyData(response);
-                if (this.controlInstance.controlType != 'SEARCHFORM') {
+                if (response.data && (this.controlInstance.controlType != 'SEARCHFORM')) {
                     response.data[this.appDeKeyFieldName.toLowerCase()] = PrimaryKey;
                 }
                 this.handleResponse(action, response, true);

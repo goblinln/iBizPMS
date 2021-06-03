@@ -344,31 +344,9 @@ export class UIServiceBase {
         if (curData && Object.keys(curData).length > 0) {
             Object.assign(returnData, { 'srfdata': curData });
         }
-        // 计算临时上下文
-        let tempContext: any = {};
-        if (this.entityModel && this.entityModel.getMinorPSAppDERSs() && ((this.entityModel.getMinorPSAppDERSs() as IPSAppDERS[]).length > 0)) {
-            this.entityModel.getMinorPSAppDERSs()?.forEach((item: IPSAppDERS) => {
-                const parentPSAppDEFieldCodeName:string = item.M.getParentPSAppDEField?.codeName;
-                if (parentPSAppDEFieldCodeName) {
-                    if(curData[parentPSAppDEFieldCodeName.toLowerCase()]){
-                        const majorAppEntity:IPSAppDataEntity | null = item.getMajorPSAppDataEntity();
-                        if(!context[(majorAppEntity as IPSAppDataEntity).codeName.toLowerCase()]){
-                            Object.assign(tempContext, { [(majorAppEntity as IPSAppDataEntity).codeName.toLowerCase()]: curData[parentPSAppDEFieldCodeName.toLowerCase()] });
-                        }
-                    }
-                }
-            })
-        }
-        if (tempContext && Object.keys(tempContext).length > 0) {
-            Object.assign(returnData, { 'srftempcontext': tempContext });
-        }
-        // 设置临时组织标识（用于获取多实例）
-        if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
-            Object.assign(returnData, { 'srfsandboxtag': curData[this.tempOrgIdDEField] });
-        }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;
-
+        
         let bDataInWF: boolean = false;
         let bWFMode: any = false;
         // 计算数据模式
@@ -379,6 +357,12 @@ export class UIServiceBase {
             (enableWorkflowParam && enableWorkflowParam.enableWorkflow)
         ) {
             bDataInWF = true;
+        }
+        if (bDataInWF) {
+            // 设置临时组织标识（用于工作流获取多实例）
+            if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
+                Object.assign(returnData, { 'srfsandboxtag': curData[this.tempOrgIdDEField] });
+            }
         }
         let strPDTViewParam: string = await this.getDESDDEViewPDTParam(curData, bDataInWF, bWFMode);
         //若不是当前数据模式，处理strPDTViewParam，todo

@@ -105,7 +105,7 @@ export class MainViewBase extends ViewBase {
      * @readonly
      * @memberof MainViewBase
      */
-    get deName(){
+    get deName() {
         return (this.viewInstance?.getPSAppDataEntity() as any)?.getPSDEName() || '';
     }
 
@@ -160,7 +160,7 @@ export class MainViewBase extends ViewBase {
                     visabled: true,
                     itemType: item.itemType,
                     dataaccaction: '',
-                    actionLevel:(item as any).actionLevel
+                    actionLevel: (item as any).actionLevel
                 };
                 items.forEach((_item: any) => {
                     models.push(this.initToolBarItems(_item));
@@ -187,7 +187,7 @@ export class MainViewBase extends ViewBase {
             showIcon: item.showIcon,
             class: css ? css.cssName : '',
             getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
-            actionLevel:(item as any).actionLevel
+            actionLevel: (item as any).actionLevel
         };
         return tempModel;
     }
@@ -263,7 +263,7 @@ export class MainViewBase extends ViewBase {
                 isViewLoading={this.viewLoadingService?.isLoading}
                 toolbarModels={this.toolbarModels}
                 on-item-click={(data: any, $event: any) => {
-                    debounce(this.handleItemClick,[data, $event],this);
+                    debounce(this.handleItemClick, [data, $event], this);
                 }}
             ></view-toolbar>
         );
@@ -406,7 +406,7 @@ export class MainViewBase extends ViewBase {
                 callback(result, xData);
             });
         } else {
-            this.$warning(openView.title + this.$t('app.nosupport.unopen'),'openTargtView');
+            this.$warning(openView.title + this.$t('app.nosupport.unopen'), 'openTargtView');
         }
     }
 
@@ -537,13 +537,15 @@ export class MainViewBase extends ViewBase {
                 ) {
                     return;
                 }
-                Object.assign(params,this.viewparams);
-                this.appUIService
-                    .getRDAppView(
-                        tempContext,
-                        args[0][(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string)?.toLowerCase()],
-                        params,
-                    )
+                Object.assign(params, this.viewparams);
+                const redirectUIService: any = await UIServiceRegister.getInstance().getService(this.context, (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase());
+                const redirectAppEntity: IPSAppDataEntity | null = targetRedirectView.getPSAppDataEntity();
+                ViewTool.calcRedirectContext(tempContext, fullargs[0], redirectAppEntity);
+                redirectUIService.getRDAppView(
+                    tempContext,
+                    args[0][(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string)?.toLowerCase()],
+                    params,
+                )
                     .then(async (result: any) => {
                         if (!result) {
                             return;
@@ -585,9 +587,6 @@ export class MainViewBase extends ViewBase {
                         };
                         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
                             if (targetOpenView.getPSAppDataEntity()) {
-                                if(returnContext && (Object.keys(returnContext).length > 0)){
-                                    Object.assign(tempContext, returnContext);
-                                }
                                 deResParameters = Util.formatAppDERSPath(
                                     tempContext,
                                     (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
@@ -625,9 +624,6 @@ export class MainViewBase extends ViewBase {
                             }
                             if (targetOpenView && targetOpenView.modelPath) {
                                 Object.assign(tempContext, { viewpath: targetOpenView.modelPath });
-                            }
-                            if (returnContext && (Object.keys(returnContext).length > 0)) {
-                                Object.assign(tempContext, returnContext);
                             }
                         }
                         this.openTargtView(
@@ -667,7 +663,7 @@ export class MainViewBase extends ViewBase {
                 );
             }
         } else {
-            this.$warning(this.$t('app.nosupport.unassign'),'opendata');
+            this.$warning(this.$t('app.nosupport.unassign'), 'opendata');
         }
     }
 
@@ -770,7 +766,7 @@ export class MainViewBase extends ViewBase {
                     !minorPSAppDERSs ||
                     minorPSAppDERSs.length < 2
                 ) {
-                    this.$warning(this.$t('app.warn.nton'),'newdata');
+                    this.$warning(this.$t('app.warn.nton'), 'newdata');
                     return;
                 }
                 let openViewModel: IPSAppUILogicRefView | undefined = batchAddPSAppViews.find(
@@ -809,9 +805,9 @@ export class MainViewBase extends ViewBase {
                         return;
                     }
                     let requestParam: Array<any> = [];
-                    const getActiveField:Function = (path:string) =>{
-                        const activeAppDER = minorPSAppDERSs.find((item:IPSAppDERS) =>{
-                            return (item.getMajorPSAppDataEntity() as IPSAppDataEntity).modelPath == path; 
+                    const getActiveField: Function = (path: string) => {
+                        const activeAppDER = minorPSAppDERSs.find((item: IPSAppDERS) => {
+                            return (item.getMajorPSAppDataEntity() as IPSAppDataEntity).modelPath == path;
                         })
                         return activeAppDER?.getParentPSAppDEField();
                     }
@@ -829,7 +825,7 @@ export class MainViewBase extends ViewBase {
                         .createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true)
                         .then((response: any) => {
                             if (!response || response.status !== 200) {
-                                this.$throw(this.$t('app.warn.batcherror'),'newdata');
+                                this.$throw(this.$t('app.warn.batcherror'), 'newdata');
                                 return;
                             }
                             if (!xData || !(xData.refresh instanceof Function)) {
@@ -1004,13 +1000,13 @@ export class MainViewBase extends ViewBase {
                         callback(result, xData);
                     });
                 } else {
-                    this.$warning(`${dataview.title}${this.$t('app.nosupport.unopen')}`,'newdata');
+                    this.$warning(`${dataview.title}${this.$t('app.nosupport.unopen')}`, 'newdata');
                 }
             } else {
-                this.$warning(this.$t('app.nosupport.unassign'),'newdata');
+                this.$warning(this.$t('app.nosupport.unassign'), 'newdata');
             }
         } else {
-            this.$warning(this.$t('app.nosupport.unassign'),'newdata');
+            this.$warning(this.$t('app.nosupport.unassign'), 'newdata');
         }
     }
 }

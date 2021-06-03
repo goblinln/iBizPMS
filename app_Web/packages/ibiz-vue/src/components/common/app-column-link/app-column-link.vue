@@ -7,8 +7,9 @@
 <script lang="ts">
 import { Vue, Component,Prop } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import { Util } from 'ibiz-core';
+import { ModelTool, Util, ViewTool } from 'ibiz-core';
 import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef, IPSNavigateContext } from '@ibiz/dynamic-model-api';
+import { UIServiceRegister } from 'ibiz-service';
 /**
  * 表格列链接
  */
@@ -32,7 +33,7 @@ export default class AppColumnLink extends Vue {
      */
     @Prop() public linkview?: any;
 
-        /**
+    /**
      * 局部上下文导航参数
      * 
      * @type {any}
@@ -109,7 +110,7 @@ export default class AppColumnLink extends Vue {
         let _context = data.context;
         let _param = data.param;
         Object.assign(_context, { [this.deKeyField]: this.data[this.valueitem] });
-        const view = JSON.parse(JSON.stringify(this.linkview));
+        const view = Util.deepCopy(this.linkview);
         const viewname2: string = this.$util.srfFilePath2(view.viewname);
         view.viewname = viewname2;
         if (view.isRedirectView) {
@@ -221,11 +222,13 @@ export default class AppColumnLink extends Vue {
         if ( targetRedirectView.getRedirectPSAppViewRefs() && targetRedirectView.getRedirectPSAppViewRefs()?.length === 0 ) {
             return;
         }
-        let result = await this.appUIService.getRDAppView(context,this.data[this.deKeyField], params);
+        const redirectUIService: any = await UIServiceRegister.getInstance().getService(context, (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase());
+        const redirectAppEntity: IPSAppDataEntity | null = targetRedirectView.getPSAppDataEntity();
+        ViewTool.calcRedirectContext(context,this.data,redirectAppEntity);
+        let result = await redirectUIService.getRDAppView(context,this.data[this.deKeyField], params);
         if (!result) {
             return;
         }
-        const returnContext: any = result.srftempcontext;
         let targetOpenViewRef: | IPSAppViewRef | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
             return item.name === result.param.split(':')[0];
         });
@@ -257,9 +260,6 @@ export default class AppColumnLink extends Vue {
         };
         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
             if (targetOpenView.getPSAppDataEntity()) {
-                if (returnContext && (Object.keys(returnContext).length > 0)) {
-                    Object.assign(context, returnContext);
-                }
                 view.deResParameters = Util.formatAppDERSPath(
                     context,
                     (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
@@ -297,9 +297,6 @@ export default class AppColumnLink extends Vue {
             }
             if (targetOpenView && targetOpenView.modelPath) {
                 Object.assign(context, { viewpath: targetOpenView.modelPath });
-            }
-            if (returnContext && (Object.keys(returnContext).length > 0)) {
-                Object.assign(context, returnContext);
             }
         }
         if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
