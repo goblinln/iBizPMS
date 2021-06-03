@@ -49,7 +49,7 @@ export const settingConfig = {
     //   position: "center",
     //   sort: "300",
     //   entext:'Universal',
-    // },
+    // }, 
     {
       name: "accessibility",
       isEnable: true,
