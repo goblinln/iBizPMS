@@ -66,12 +66,16 @@
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfdatacontext('account','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERCONTACT\"}')} )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "Account",
     "logicName" : "指定用户数据",
-    "name" : "Account",
-    "customCode" : true
+    "name" : "Account"
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -98,12 +102,16 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACCOUNT` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ACCOUNT\",\"dename\":\"ZT_USERCONTACT\"}')} )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "My",
     "logicName" : "我的数据",
-    "name" : "My",
-    "customCode" : true
+    "name" : "My"
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
