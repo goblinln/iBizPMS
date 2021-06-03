@@ -59,6 +59,18 @@ public class TestCaseResource {
     private ICaseStepService casestepService;
 
 
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases")
+    public ResponseEntity<TestCaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        domain.setProduct(product_id);
+		caseService.create(domain);
+        TestCaseDTO dto = testcaseMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'RUNCASE')")
     @ApiOperation(value = "根据产品runCases", tags = {"测试用例" },  notes = "根据产品runCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/runcases")
@@ -71,34 +83,30 @@ public class TestCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'DELETE')")
-    @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{testcase_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(testcase_id));
-    }
-
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'DELETE')")
-    @ApiOperation(value = "根据产品批量删除测试用例", tags = {"测试用例" },  notes = "根据产品批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        caseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @VersionCheck(entity = "case" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
-	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testcases/{testcase_id}")
-    public ResponseEntity<TestCaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试单关联用例")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchnotcurtesttask")
+	public ResponseEntity<List<TestCaseDTO>> fetchNotCurTestTaskByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Case> domains = caseService.searchNotCurTestTask(context) ;
+        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'FAVORITE')")
+    @ApiOperation(value = "根据产品行为", tags = {"测试用例" },  notes = "根据产品行为")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/casefavorite")
+    public ResponseEntity<TestCaseDTO> caseFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
         Case domain = testcaseMapping.toDomain(testcasedto);
         domain.setProduct(product_id);
         domain.setId(testcase_id);
-		caseService.update(domain);
-        TestCaseDTO dto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        domain = caseService.caseFavorite(domain) ;
+        testcasedto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
-
 
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试用例" } ,notes = "根据产品获取DEFAULT")
@@ -126,56 +134,6 @@ public class TestCaseResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品获取测试单关联用例", tags = {"测试用例" } ,notes = "根据产品获取测试单关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchnotcurtesttask")
-	public ResponseEntity<List<TestCaseDTO>> fetchNotCurTestTaskByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Case> domains = caseService.searchNotCurTestTask(context) ;
-        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"测试用例" } ,notes = "根据产品获取套件关联用例")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchcursuite")
-	public ResponseEntity<List<TestCaseDTO>> fetchCurSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Case> domains = caseService.searchCurSuite(context) ;
-        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'FAVORITE')")
-    @ApiOperation(value = "根据产品行为", tags = {"测试用例" },  notes = "根据产品行为")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/casefavorite")
-    public ResponseEntity<TestCaseDTO> caseFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        domain.setProduct(product_id);
-        domain.setId(testcase_id);
-        domain = caseService.caseFavorite(domain) ;
-        testcasedto = testcaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
-    }
-
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases")
-    public ResponseEntity<TestCaseDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestCaseDTO testcasedto) {
-        Case domain = testcaseMapping.toDomain(testcasedto);
-        domain.setProduct(product_id);
-		caseService.create(domain);
-        TestCaseDTO dto = testcaseMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("@CaseRuntime.quickTest('DENY')")
     @ApiOperation(value = "根据产品套件关联", tags = {"测试用例" },  notes = "根据产品套件关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/testsuitelinkcase")
@@ -195,6 +153,19 @@ public class TestCaseResource {
         boolean result = caseService.testsuitelinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品获取套件关联用例", tags = {"测试用例" } ,notes = "根据产品获取套件关联用例")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/fetchcursuite")
+	public ResponseEntity<List<TestCaseDTO>> fetchCurSuiteByProduct(@PathVariable("product_id") Long product_id,@RequestBody CaseSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Case> domains = caseService.searchCurSuite(context) ;
+        List<TestCaseDTO> list = testcaseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'TESRUNCASE')")
     @ApiOperation(value = "根据产品testRunCases", tags = {"测试用例" },  notes = "根据产品testRunCases")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/testruncases")
@@ -248,6 +219,35 @@ public class TestCaseResource {
         Case domain = caseService.get(testcase_id);
         TestCaseDTO dto = testcaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @VersionCheck(entity = "case" , versionfield = "lastediteddate")
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/testcases/{testcase_id}")
+    public ResponseEntity<TestCaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
+        Case domain = testcaseMapping.toDomain(testcasedto);
+        domain.setProduct(product_id);
+        domain.setId(testcase_id);
+		caseService.update(domain);
+        TestCaseDTO dto = testcaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'DELETE')")
+    @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{testcase_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(testcase_id));
+    }
+
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'DELETE')")
+    @ApiOperation(value = "根据产品批量删除测试用例", tags = {"测试用例" },  notes = "根据产品批量删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        caseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
 }
