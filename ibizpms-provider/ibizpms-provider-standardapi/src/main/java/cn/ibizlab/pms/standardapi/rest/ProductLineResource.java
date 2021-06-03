@@ -52,28 +52,6 @@ public class ProductLineResource {
     @Lazy
     public ProductLineMapping productlineMapping;
 
-
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('DENY')")
-    @ApiOperation(value = "批量保存产品线", tags = {"产品线" },  notes = "批量保存产品线")
-	@RequestMapping(method = RequestMethod.POST, value = "/productlines/savebatch")
-    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
-        ibzproproductlineService.saveBatch(productlineMapping.toDomain(productlinedtos));
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'READ')")
-	@ApiOperation(value = "获取数据集", tags = {"产品线" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/productlines/fetchdefault")
-	public ResponseEntity<List<ProductLineDTO>> fetchdefault(@RequestBody IBZProProductLineSearchContext context) {
-        ibzproproductlineRuntime.addAuthorityConditions(context,"READ");
-        Page<IBZProProductLine> domains = ibzproproductlineService.searchDefault(context) ;
-        List<ProductLineDTO> list = productlineMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('IBZPRO_PRODUCTLINE', #productline_id, 'UPDATE')")
     @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")
@@ -106,14 +84,6 @@ public class ProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'CREATE')")
-    @ApiOperation(value = "获取产品线草稿", tags = {"产品线" },  notes = "获取产品线草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/productlines/getdraft")
-    public ResponseEntity<ProductLineDTO> getDraft(ProductLineDTO dto) {
-        IBZProProductLine domain = productlineMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(ibzproproductlineService.getDraft(domain)));
-    }
-
     @PreAuthorize("test('IBZPRO_PRODUCTLINE', #productline_id, 'READ')")
     @ApiOperation(value = "获取产品线", tags = {"产品线" },  notes = "获取产品线")
 	@RequestMapping(method = RequestMethod.GET, value = "/productlines/{productline_id}")
@@ -123,6 +93,23 @@ public class ProductLineResource {
         Map<String,Integer> opprivs = ibzproproductlineRuntime.getOPPrivs(productline_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'CREATE')")
+    @ApiOperation(value = "获取产品线草稿", tags = {"产品线" },  notes = "获取产品线草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/productlines/getdraft")
+    public ResponseEntity<ProductLineDTO> getDraft(ProductLineDTO dto) {
+        IBZProProductLine domain = productlineMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productlineMapping.toDto(ibzproproductlineService.getDraft(domain)));
+    }
+
+
+    @PreAuthorize("@IBZProProductLineRuntime.quickTest('DENY')")
+    @ApiOperation(value = "批量保存产品线", tags = {"产品线" },  notes = "批量保存产品线")
+	@RequestMapping(method = RequestMethod.POST, value = "/productlines/savebatch")
+    public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
+        ibzproproductlineService.saveBatch(productlineMapping.toDomain(productlinedtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'CREATE')")
@@ -140,6 +127,19 @@ public class ProductLineResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'READ')")
+	@ApiOperation(value = "获取数据集", tags = {"产品线" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productlines/fetchdefault")
+	public ResponseEntity<List<ProductLineDTO>> fetchdefault(@RequestBody IBZProProductLineSearchContext context) {
+        ibzproproductlineRuntime.addAuthorityConditions(context,"READ");
+        Page<IBZProProductLine> domains = ibzproproductlineService.searchDefault(context) ;
+        List<ProductLineDTO> list = productlineMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/productlines/{productline_id}/{action}")
