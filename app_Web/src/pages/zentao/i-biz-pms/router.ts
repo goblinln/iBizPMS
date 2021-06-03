@@ -8824,6 +8824,23 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'stories/:story?/views/redirectview',
+                    meta: {
+                        caption: 'entities.story.views.redirectview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'redirectview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/stories/:story?/views/gridview9_myassignedtome',
                     meta: {
                         caption: 'entities.story.views.gridview9_myassignedtome.caption',

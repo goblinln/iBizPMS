@@ -94,15 +94,15 @@
       "getOpenDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-          "viewType" : "DEPORTALVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       },
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-          "viewType" : "DEPORTALVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       } ],
       "viewLogicType" : "APP_OPENDATA",
@@ -126,12 +126,11 @@
     }
   }, {
     "name" : "EDITDATA",
-    "realOpenMode" : "DRAWER_TOP",
-    "realTitle" : "需求数据看板视图",
+    "realTitle" : "story数据重定向视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-      "viewType" : "DEPORTALVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {
@@ -652,6 +651,12 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "title",
       "excelCaption" : "需求名称",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+        "viewType" : "DEREDIRECTVIEW"
+      },
+      "linkValueItem" : "srfkey",
       "name" : "title",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -664,6 +669,7 @@
       },
       "width" : 500,
       "widthUnit" : "STAR",
+      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",

@@ -286,6 +286,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("story表格视图",null),
 			},
+			'redirectview': {
+				caption: commonLogic.appcommonhandle("需求",null),
+				title: commonLogic.appcommonhandle("story数据重定向视图",null),
+			},
 			'gridview9_myassignedtome': {
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("需求表格视图",null),

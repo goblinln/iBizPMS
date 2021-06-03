@@ -52,20 +52,6 @@ public class TestResource {
     @Lazy
     public TestMapping testMapping;
 
-    @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
-    @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/producttop")
-    public ResponseEntity<TestDTO> productTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
-        Product domain = testMapping.toDomain(testdto);
-        domain.setId(test_id);
-        domain = productService.productTop(domain);
-        testdto = testMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        testdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testdto);
-    }
-
-
     @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/tests/fetchcurdefault")
@@ -103,6 +89,20 @@ public class TestResource {
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
+    @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
+    @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/producttop")
+    public ResponseEntity<TestDTO> productTop(@PathVariable("test_id") Long test_id, @RequestBody TestDTO testdto) {
+        Product domain = testMapping.toDomain(testdto);
+        domain.setId(test_id);
+        domain = productService.productTop(domain);
+        testdto = testMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        testdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testdto);
+    }
+
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

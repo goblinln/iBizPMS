@@ -2247,6 +2247,14 @@
     "psappsbitemid" : "44dad782d192f6922093768b2c96361a",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "StoryRedirectView",
+    "psappsbitemname" : "story数据重定向视图",
+    "itemtag2" : "479693fdcf894850fd0156bebe81a65b",
+    "psappviewid" : "e0e2767cf1643cbc081e08b330649e42",
+    "itemtag" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+    "psappsbitemid" : "29035b14086317c7782aafc9154ee9eb",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "TaskPauseTaskView",
     "psappsbitemname" : "暂停任务",
     "itemtag2" : "12f26dacfc9ba43a26028119393c0b98",
@@ -14940,12 +14948,12 @@
     "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "需求数据看板视图",
-    "psappsbitemrsid" : "62d3ad6fb528909b35ab855bddd6a714",
+    "cpsappsbitemname" : "story数据重定向视图",
+    "psappsbitemrsid" : "4e8009397f7cb9d061c8aaf864c658fe",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "a89dbc58de8cb4dadfcd9b2d1bb08c8a",
-    "cpsappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
+    "cpsappsbitemid" : "29035b14086317c7782aafc9154ee9eb",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {

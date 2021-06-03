@@ -749,6 +749,12 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "name",
       "excelCaption" : "任务名称",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+        "viewType" : "DEREDIRECTVIEW"
+      },
+      "linkValueItem" : "srfkey",
       "name" : "name",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -761,6 +767,7 @@
       },
       "width" : 500,
       "widthUnit" : "STAR",
+      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",
