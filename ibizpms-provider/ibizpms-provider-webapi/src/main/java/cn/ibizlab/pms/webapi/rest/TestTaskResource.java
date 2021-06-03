@@ -306,7 +306,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品建立测试版本", tags = {"测试版本" },  notes = "根据产品建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks")
     public ResponseEntity<TestTaskDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -319,7 +319,7 @@ public class TestTaskResource {
 
 
     @VersionCheck(entity = "testtask" , versionfield = "updatedate")
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', #testtask_id, 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', #testtask_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新测试版本", tags = {"测试版本" },  notes = "根据产品更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -332,14 +332,14 @@ public class TestTaskResource {
     }
 
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', #testtask_id, 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', #testtask_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除测试版本", tags = {"测试版本" },  notes = "根据产品删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'DELETE')")
     @ApiOperation(value = "根据产品批量删除测试版本", tags = {"测试版本" },  notes = "根据产品批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -347,7 +347,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', #testtask_id, 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', #testtask_id, 'READ')")
     @ApiOperation(value = "根据产品获取测试版本", tags = {"测试版本" },  notes = "根据产品获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -356,7 +356,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品获取测试版本草稿", tags = {"测试版本" },  notes = "根据产品获取测试版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/getdraft")
     public ResponseEntity<TestTaskDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestTaskDTO dto) {
@@ -389,7 +389,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品检查测试版本", tags = {"测试版本" },  notes = "根据产品检查测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -467,7 +467,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"测试版本" } ,notes = "根据产品获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchaccount")
 	public ResponseEntity<List<TestTaskDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
@@ -480,7 +480,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
@@ -493,7 +493,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取我的数据", tags = {"测试版本" } ,notes = "根据产品获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchmy")
 	public ResponseEntity<List<TestTaskDTO>> fetchMyByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
@@ -506,7 +506,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取我的测试单", tags = {"测试版本" } ,notes = "根据产品获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
@@ -519,7 +519,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取项目测试单", tags = {"测试版本" } ,notes = "根据产品获取项目测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchprojecttesttaskds")
 	public ResponseEntity<List<TestTaskDTO>> fetchProjectTestTaskDSByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
@@ -533,7 +533,7 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目建立测试版本", tags = {"测试版本" },  notes = "根据项目建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks")
     public ResponseEntity<TestTaskDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -546,7 +546,7 @@ public class TestTaskResource {
 
 
     @VersionCheck(entity = "testtask" , versionfield = "updatedate")
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'UPDATE')")
     @ApiOperation(value = "根据项目更新测试版本", tags = {"测试版本" },  notes = "根据项目更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -559,14 +559,14 @@ public class TestTaskResource {
     }
 
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'DELETE')")
     @ApiOperation(value = "根据项目批量删除测试版本", tags = {"测试版本" },  notes = "根据项目批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -574,7 +574,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', #testtask_id, 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', #testtask_id, 'READ')")
     @ApiOperation(value = "根据项目获取测试版本", tags = {"测试版本" },  notes = "根据项目获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -583,7 +583,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目获取测试版本草稿", tags = {"测试版本" },  notes = "根据项目获取测试版本草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/getdraft")
     public ResponseEntity<TestTaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TestTaskDTO dto) {
@@ -616,7 +616,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目检查测试版本", tags = {"测试版本" },  notes = "根据项目检查测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/checkkey")
     public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -694,7 +694,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"测试版本" } ,notes = "根据项目获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchaccount")
 	public ResponseEntity<List<TestTaskDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
@@ -707,7 +707,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
@@ -720,7 +720,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的数据", tags = {"测试版本" } ,notes = "根据项目获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchmy")
 	public ResponseEntity<List<TestTaskDTO>> fetchMyByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
@@ -733,7 +733,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的测试单", tags = {"测试版本" } ,notes = "根据项目获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchMyTestTaskPcByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
@@ -746,7 +746,7 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取项目测试单", tags = {"测试版本" } ,notes = "根据项目获取项目测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchprojecttesttaskds")
 	public ResponseEntity<List<TestTaskDTO>> fetchProjectTestTaskDSByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {

@@ -66,7 +66,7 @@ public class ProductBranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbranches/fetchcurproduct")
 	public ResponseEntity<List<ProductBranchDTO>> fetchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
@@ -79,7 +79,7 @@ public class ProductBranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productbranches/fetchdefault")
 	public ResponseEntity<List<ProductBranchDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
@@ -92,7 +92,7 @@ public class ProductBranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches")
     public ResponseEntity<ProductBranchDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
@@ -104,7 +104,7 @@ public class ProductBranchResource {
     }
 
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'UPDATE', #productbranch_id, 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'UPDATE', #productbranch_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<ProductBranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id, @RequestBody ProductBranchDTO productbranchdto) {
@@ -117,7 +117,7 @@ public class ProductBranchResource {
     }
 
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品获取产品的分支和平台信息草稿", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbranches/getdraft")
     public ResponseEntity<ProductBranchDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductBranchDTO dto) {
@@ -126,7 +126,7 @@ public class ProductBranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(productbranchMapping.toDto(branchService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', #productbranch_id, 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', #productbranch_id, 'READ')")
     @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<ProductBranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
@@ -135,14 +135,14 @@ public class ProductBranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', #productbranch_id, 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', #productbranch_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(productbranch_id));
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据产品批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量删除产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -165,7 +165,7 @@ public class ProductBranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据系统用户产品获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/productbranches/fetchcurproduct")
 	public ResponseEntity<List<ProductBranchDTO>> fetchCurProductBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
@@ -178,7 +178,7 @@ public class ProductBranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据系统用户产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/productbranches/fetchdefault")
 	public ResponseEntity<List<ProductBranchDTO>> fetchDefaultBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
@@ -191,7 +191,7 @@ public class ProductBranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品建立产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productbranches")
     public ResponseEntity<ProductBranchDTO> createBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
@@ -203,7 +203,7 @@ public class ProductBranchResource {
     }
 
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'UPDATE', #productbranch_id, 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'UPDATE', #productbranch_id, 'UPDATE')")
     @ApiOperation(value = "根据系统用户产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品更新产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<ProductBranchDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id, @RequestBody ProductBranchDTO productbranchdto) {
@@ -216,7 +216,7 @@ public class ProductBranchResource {
     }
 
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户产品获取产品的分支和平台信息草稿", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品获取产品的分支和平台信息草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productbranches/getdraft")
     public ResponseEntity<ProductBranchDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductBranchDTO dto) {
@@ -225,7 +225,7 @@ public class ProductBranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(productbranchMapping.toDto(branchService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', #productbranch_id, 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', #productbranch_id, 'READ')")
     @ApiOperation(value = "根据系统用户产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品获取产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<ProductBranchDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
@@ -234,14 +234,14 @@ public class ProductBranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', #productbranch_id, 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', #productbranch_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品删除产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productbranches/{productbranch_id}")
     public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(productbranch_id));
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', 'DENY')")
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据系统用户产品批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据系统用户产品批量删除产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productbranches/batch")
     public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {

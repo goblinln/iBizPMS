@@ -299,7 +299,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"需求" } ,notes = "根据产品获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchaccount")
 	public ResponseEntity<List<StoryDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -312,7 +312,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'CHANGE')")
     @ApiOperation(value = "根据产品变更", tags = {"需求" },  notes = "根据产品变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/change")
     public ResponseEntity<StoryDTO> changeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -324,7 +324,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'ASSIGNTO')")
     @ApiOperation(value = "根据产品指派", tags = {"需求" },  notes = "根据产品指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/assignto")
     public ResponseEntity<StoryDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -336,14 +336,14 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', #story_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除需求", tags = {"需求" },  notes = "根据产品删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据产品批量删除需求", tags = {"需求" },  notes = "根据产品批量删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -351,7 +351,7 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品建立需求", tags = {"需求" },  notes = "根据产品建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories")
     public ResponseEntity<StoryDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody StoryDTO storydto) {
@@ -362,7 +362,7 @@ public class StoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品批量建立需求", tags = {"需求" },  notes = "根据产品批量建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<StoryDTO> storydtos) {
@@ -374,7 +374,7 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'NFAVORITES')")
     @ApiOperation(value = "根据产品取消收藏", tags = {"需求" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storynfavorites")
     public ResponseEntity<StoryDTO> storyNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -387,7 +387,7 @@ public class StoryResource {
     }
 
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'UPDATE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'UPDATE', #story_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新需求", tags = {"需求" },  notes = "根据产品更新需求")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -400,7 +400,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"需求" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchmyfavorites")
 	public ResponseEntity<List<StoryDTO>> fetchMyFavoritesByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -413,7 +413,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取我的数据", tags = {"需求" } ,notes = "根据产品获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchmy")
 	public ResponseEntity<List<StoryDTO>> fetchMyByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -426,7 +426,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'READ')")
     @ApiOperation(value = "根据产品获取需求", tags = {"需求" },  notes = "根据产品获取需求")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
@@ -435,7 +435,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"需求" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchdefault")
 	public ResponseEntity<List<StoryDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -448,7 +448,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'REVIEW')")
     @ApiOperation(value = "根据产品评审", tags = {"需求" },  notes = "根据产品评审")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/review")
     public ResponseEntity<StoryDTO> reviewByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -460,7 +460,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据产品获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchstoryrelated")
 	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -473,7 +473,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取数据查询", tags = {"需求" } ,notes = "根据产品获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchparentdefault")
 	public ResponseEntity<List<StoryDTO>> fetchParentDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -486,7 +486,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'FAVORITES')")
     @ApiOperation(value = "根据产品需求收藏", tags = {"需求" },  notes = "根据产品需求收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storyfavorites")
     public ResponseEntity<StoryDTO> storyFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -498,7 +498,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'ACTIVATE')")
     @ApiOperation(value = "根据产品激活", tags = {"需求" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/activate")
     public ResponseEntity<StoryDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -510,7 +510,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取项目相关需求", tags = {"需求" } ,notes = "根据产品获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/fetchprojectstories")
 	public ResponseEntity<List<StoryDTO>> fetchProjectStoriesByProduct(@PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -523,7 +523,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品获取需求草稿", tags = {"需求" },  notes = "根据产品获取需求草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/getdraft")
     public ResponseEntity<StoryDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, StoryDTO dto) {
@@ -532,7 +532,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'CLOSE')")
     @ApiOperation(value = "根据产品关闭", tags = {"需求" },  notes = "根据产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/close")
     public ResponseEntity<StoryDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -545,7 +545,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"需求" } ,notes = "根据项目获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchaccount")
 	public ResponseEntity<List<StoryDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -597,7 +597,7 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目建立需求", tags = {"需求" },  notes = "根据项目建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories")
     public ResponseEntity<StoryDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody StoryDTO storydto) {
@@ -608,7 +608,7 @@ public class StoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目批量建立需求", tags = {"需求" },  notes = "根据项目批量建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/stories/batch")
     public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<StoryDTO> storydtos) {
@@ -646,7 +646,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"需求" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchmyfavorites")
 	public ResponseEntity<List<StoryDTO>> fetchMyFavoritesByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -659,7 +659,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的数据", tags = {"需求" } ,notes = "根据项目获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchmy")
 	public ResponseEntity<List<StoryDTO>> fetchMyByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -672,7 +672,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', #story_id, 'READ')")
     @ApiOperation(value = "根据项目获取需求", tags = {"需求" },  notes = "根据项目获取需求")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
@@ -681,7 +681,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"需求" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchdefault")
 	public ResponseEntity<List<StoryDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -706,7 +706,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据项目获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchstoryrelated")
 	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -719,7 +719,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取数据查询", tags = {"需求" } ,notes = "根据项目获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchparentdefault")
 	public ResponseEntity<List<StoryDTO>> fetchParentDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -756,7 +756,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取项目相关需求", tags = {"需求" } ,notes = "根据项目获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/fetchprojectstories")
 	public ResponseEntity<List<StoryDTO>> fetchProjectStoriesByProject(@PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -769,7 +769,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目获取需求草稿", tags = {"需求" },  notes = "根据项目获取需求草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/stories/getdraft")
     public ResponseEntity<StoryDTO> getDraftByProject(@PathVariable("project_id") Long project_id, StoryDTO dto) {
@@ -792,7 +792,7 @@ public class StoryResource {
 
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户产品获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/fetchaccount")
 	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -805,7 +805,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'CHANGE')")
     @ApiOperation(value = "根据系统用户产品变更", tags = {"需求" },  notes = "根据系统用户产品变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/change")
     public ResponseEntity<StoryDTO> changeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -817,7 +817,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'ASSIGNTO')")
     @ApiOperation(value = "根据系统用户产品指派", tags = {"需求" },  notes = "根据系统用户产品指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/assignto")
     public ResponseEntity<StoryDTO> assignToBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -829,14 +829,14 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', #story_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户产品删除需求", tags = {"需求" },  notes = "根据系统用户产品删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}")
     public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据系统用户产品批量删除需求", tags = {"需求" },  notes = "根据系统用户产品批量删除需求")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/batch")
     public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {
@@ -844,7 +844,7 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户产品建立需求", tags = {"需求" },  notes = "根据系统用户产品建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories")
     public ResponseEntity<StoryDTO> createBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody StoryDTO storydto) {
@@ -855,7 +855,7 @@ public class StoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户产品批量建立需求", tags = {"需求" },  notes = "根据系统用户产品批量建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/batch")
     public ResponseEntity<Boolean> createBatchBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody List<StoryDTO> storydtos) {
@@ -867,7 +867,7 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'NFAVORITES')")
     @ApiOperation(value = "根据系统用户产品取消收藏", tags = {"需求" },  notes = "根据系统用户产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/storynfavorites")
     public ResponseEntity<StoryDTO> storyNFavoritesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -880,7 +880,7 @@ public class StoryResource {
     }
 
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'UPDATE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'UPDATE', #story_id, 'UPDATE')")
     @ApiOperation(value = "根据系统用户产品更新需求", tags = {"需求" },  notes = "根据系统用户产品更新需求")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -893,7 +893,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取我的收藏", tags = {"需求" } ,notes = "根据系统用户产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/fetchmyfavorites")
 	public ResponseEntity<List<StoryDTO>> fetchMyFavoritesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -906,7 +906,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取我的数据", tags = {"需求" } ,notes = "根据系统用户产品获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/fetchmy")
 	public ResponseEntity<List<StoryDTO>> fetchMyBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -919,7 +919,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'READ')")
     @ApiOperation(value = "根据系统用户产品获取需求", tags = {"需求" },  notes = "根据系统用户产品获取需求")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
@@ -928,7 +928,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/fetchdefault")
 	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -941,7 +941,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'REVIEW')")
     @ApiOperation(value = "根据系统用户产品评审", tags = {"需求" },  notes = "根据系统用户产品评审")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/review")
     public ResponseEntity<StoryDTO> reviewBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -953,7 +953,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户产品获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/fetchstoryrelated")
 	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -966,7 +966,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取数据查询", tags = {"需求" } ,notes = "根据系统用户产品获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/fetchparentdefault")
 	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -979,7 +979,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'FAVORITES')")
     @ApiOperation(value = "根据系统用户产品需求收藏", tags = {"需求" },  notes = "根据系统用户产品需求收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/storyfavorites")
     public ResponseEntity<StoryDTO> storyFavoritesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -991,7 +991,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'ACTIVATE')")
     @ApiOperation(value = "根据系统用户产品激活", tags = {"需求" },  notes = "根据系统用户产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/activate")
     public ResponseEntity<StoryDTO> activateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -1003,7 +1003,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取项目相关需求", tags = {"需求" } ,notes = "根据系统用户产品获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/stories/fetchprojectstories")
 	public ResponseEntity<List<StoryDTO>> fetchProjectStoriesBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody StorySearchContext context) {
@@ -1016,7 +1016,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户产品获取需求草稿", tags = {"需求" },  notes = "根据系统用户产品获取需求草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/getdraft")
     public ResponseEntity<StoryDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, StoryDTO dto) {
@@ -1025,7 +1025,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'CLOSE')")
     @ApiOperation(value = "根据系统用户产品关闭", tags = {"需求" },  notes = "根据系统用户产品关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/stories/{story_id}/close")
     public ResponseEntity<StoryDTO> closeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -1039,7 +1039,7 @@ public class StoryResource {
 
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户项目获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/fetchaccount")
 	public ResponseEntity<List<StoryDTO>> fetchAccountBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -1091,7 +1091,7 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
     @ApiOperation(value = "根据系统用户项目建立需求", tags = {"需求" },  notes = "根据系统用户项目建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/stories")
     public ResponseEntity<StoryDTO> createBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody StoryDTO storydto) {
@@ -1102,7 +1102,7 @@ public class StoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
     @ApiOperation(value = "根据系统用户项目批量建立需求", tags = {"需求" },  notes = "根据系统用户项目批量建立需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/stories/batch")
     public ResponseEntity<Boolean> createBatchBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody List<StoryDTO> storydtos) {
@@ -1140,7 +1140,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取我的收藏", tags = {"需求" } ,notes = "根据系统用户项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/fetchmyfavorites")
 	public ResponseEntity<List<StoryDTO>> fetchMyFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -1153,7 +1153,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取我的数据", tags = {"需求" } ,notes = "根据系统用户项目获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/fetchmy")
 	public ResponseEntity<List<StoryDTO>> fetchMyBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -1166,7 +1166,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', #story_id, 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', #story_id, 'READ')")
     @ApiOperation(value = "根据系统用户项目获取需求", tags = {"需求" },  notes = "根据系统用户项目获取需求")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/stories/{story_id}")
     public ResponseEntity<StoryDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
@@ -1175,7 +1175,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取DEFAULT", tags = {"需求" } ,notes = "根据系统用户项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/fetchdefault")
 	public ResponseEntity<List<StoryDTO>> fetchDefaultBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -1200,7 +1200,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取获取产品发布相关需求", tags = {"需求" } ,notes = "根据系统用户项目获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/fetchstoryrelated")
 	public ResponseEntity<List<StoryDTO>> fetchStoryRelatedBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -1213,7 +1213,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取数据查询", tags = {"需求" } ,notes = "根据系统用户项目获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/fetchparentdefault")
 	public ResponseEntity<List<StoryDTO>> fetchParentDefaultBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -1250,7 +1250,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取项目相关需求", tags = {"需求" } ,notes = "根据系统用户项目获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/stories/fetchprojectstories")
 	public ResponseEntity<List<StoryDTO>> fetchProjectStoriesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody StorySearchContext context) {
@@ -1263,7 +1263,7 @@ public class StoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
     @ApiOperation(value = "根据系统用户项目获取需求草稿", tags = {"需求" },  notes = "根据系统用户项目获取需求草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/stories/getdraft")
     public ResponseEntity<StoryDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, StoryDTO dto) {

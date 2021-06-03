@@ -263,7 +263,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取项目BUG", tags = {"Bug" } ,notes = "根据项目获取项目BUG")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/fetchprojectbug")
 	public ResponseEntity<List<BugDTO>> fetchProjectBugByProject(@PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -276,7 +276,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的收藏", tags = {"Bug" } ,notes = "根据项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/fetchmyfavorites")
 	public ResponseEntity<List<BugDTO>> fetchMyFavoritesByProject(@PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -289,7 +289,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目建立Bug", tags = {"Bug" },  notes = "根据项目建立Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs")
     public ResponseEntity<BugDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody BugDTO bugdto) {
@@ -301,7 +301,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'CONFIRM')")
     @ApiOperation(value = "根据项目确认", tags = {"Bug" },  notes = "根据项目确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/confirm")
     public ResponseEntity<BugDTO> confirmByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -313,7 +313,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'ASSIGNTO')")
     @ApiOperation(value = "根据项目指派", tags = {"Bug" },  notes = "根据项目指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -325,7 +325,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目获取Bug草稿", tags = {"Bug" },  notes = "根据项目获取Bug草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/bugs/getdraft")
     public ResponseEntity<BugDTO> getDraftByProject(@PathVariable("project_id") Long project_id, BugDTO dto) {
@@ -334,7 +334,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'FAVORITES')")
     @ApiOperation(value = "根据项目Bug收藏", tags = {"Bug" },  notes = "根据项目Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/bugfavorites")
     public ResponseEntity<BugDTO> bugFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -346,7 +346,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'ACTIVATE')")
     @ApiOperation(value = "根据项目激活", tags = {"Bug" },  notes = "根据项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -358,7 +358,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RESOLVE')")
     @ApiOperation(value = "根据项目解决", tags = {"Bug" },  notes = "根据项目解决")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/resolve")
     public ResponseEntity<BugDTO> resolveByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -371,7 +371,7 @@ public class BugResource {
     }
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'UPDATE')")
     @ApiOperation(value = "根据项目更新Bug", tags = {"Bug" },  notes = "根据项目更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -384,7 +384,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"Bug" } ,notes = "根据项目获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/fetchaccount")
 	public ResponseEntity<List<BugDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -397,14 +397,14 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除Bug", tags = {"Bug" },  notes = "根据项目删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(bug_id));
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DELETE')")
     @ApiOperation(value = "根据项目批量删除Bug", tags = {"Bug" },  notes = "根据项目批量删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/bugs/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -412,7 +412,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取我的数据", tags = {"Bug" } ,notes = "根据项目获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/fetchmy")
 	public ResponseEntity<List<BugDTO>> fetchMyByProject(@PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -425,7 +425,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"Bug" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/fetchdefault")
 	public ResponseEntity<List<BugDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -438,7 +438,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取产品BUG", tags = {"Bug" } ,notes = "根据项目获取产品BUG")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/fetchproductbug")
 	public ResponseEntity<List<BugDTO>> fetchProductBugByProject(@PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -451,7 +451,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'NFAVORITES')")
     @ApiOperation(value = "根据项目取消收藏", tags = {"Bug" },  notes = "根据项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/bugnfavorites")
     public ResponseEntity<BugDTO> bugNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -463,7 +463,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'READ')")
     @ApiOperation(value = "根据项目获取Bug", tags = {"Bug" },  notes = "根据项目获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
@@ -473,7 +473,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取项目BUG", tags = {"Bug" } ,notes = "根据产品获取项目BUG")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/fetchprojectbug")
 	public ResponseEntity<List<BugDTO>> fetchProjectBugByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -486,7 +486,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取我的收藏", tags = {"Bug" } ,notes = "根据产品获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/fetchmyfavorites")
 	public ResponseEntity<List<BugDTO>> fetchMyFavoritesByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -499,7 +499,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品建立Bug", tags = {"Bug" },  notes = "根据产品建立Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs")
     public ResponseEntity<BugDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugDTO bugdto) {
@@ -511,7 +511,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'CONFIRM')")
     @ApiOperation(value = "根据产品确认", tags = {"Bug" },  notes = "根据产品确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/confirm")
     public ResponseEntity<BugDTO> confirmByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -523,7 +523,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'ASSIGNTO')")
     @ApiOperation(value = "根据产品指派", tags = {"Bug" },  notes = "根据产品指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -535,7 +535,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品获取Bug草稿", tags = {"Bug" },  notes = "根据产品获取Bug草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/bugs/getdraft")
     public ResponseEntity<BugDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, BugDTO dto) {
@@ -544,7 +544,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'FAVORITES')")
     @ApiOperation(value = "根据产品Bug收藏", tags = {"Bug" },  notes = "根据产品Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/bugfavorites")
     public ResponseEntity<BugDTO> bugFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -556,7 +556,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'ACTIVATE')")
     @ApiOperation(value = "根据产品激活", tags = {"Bug" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -568,7 +568,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'RESOLVE')")
     @ApiOperation(value = "根据产品解决", tags = {"Bug" },  notes = "根据产品解决")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/resolve")
     public ResponseEntity<BugDTO> resolveByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -581,7 +581,7 @@ public class BugResource {
     }
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新Bug", tags = {"Bug" },  notes = "根据产品更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -594,7 +594,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"Bug" } ,notes = "根据产品获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/fetchaccount")
 	public ResponseEntity<List<BugDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -607,14 +607,14 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除Bug", tags = {"Bug" },  notes = "根据产品删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(bug_id));
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'DELETE')")
     @ApiOperation(value = "根据产品批量删除Bug", tags = {"Bug" },  notes = "根据产品批量删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/bugs/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -622,7 +622,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取我的数据", tags = {"Bug" } ,notes = "根据产品获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/fetchmy")
 	public ResponseEntity<List<BugDTO>> fetchMyByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -635,7 +635,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"Bug" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/fetchdefault")
 	public ResponseEntity<List<BugDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -648,7 +648,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取产品BUG", tags = {"Bug" } ,notes = "根据产品获取产品BUG")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/fetchproductbug")
 	public ResponseEntity<List<BugDTO>> fetchProductBugByProduct(@PathVariable("product_id") Long product_id,@RequestBody BugSearchContext context) {
@@ -661,7 +661,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'NFAVORITES')")
     @ApiOperation(value = "根据产品取消收藏", tags = {"Bug" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/bugnfavorites")
     public ResponseEntity<BugDTO> bugNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -673,7 +673,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', #bug_id, 'READ')")
     @ApiOperation(value = "根据产品获取Bug", tags = {"Bug" },  notes = "根据产品获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id) {
@@ -684,7 +684,7 @@ public class BugResource {
 
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取项目BUG", tags = {"Bug" } ,notes = "根据系统用户项目获取项目BUG")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/fetchprojectbug")
 	public ResponseEntity<List<BugDTO>> fetchProjectBugBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -697,7 +697,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取我的收藏", tags = {"Bug" } ,notes = "根据系统用户项目获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/fetchmyfavorites")
 	public ResponseEntity<List<BugDTO>> fetchMyFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -710,7 +710,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据系统用户项目建立Bug", tags = {"Bug" },  notes = "根据系统用户项目建立Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs")
     public ResponseEntity<BugDTO> createBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody BugDTO bugdto) {
@@ -722,7 +722,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'CONFIRM')")
     @ApiOperation(value = "根据系统用户项目确认", tags = {"Bug" },  notes = "根据系统用户项目确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/confirm")
     public ResponseEntity<BugDTO> confirmBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -734,7 +734,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'ASSIGNTO')")
     @ApiOperation(value = "根据系统用户项目指派", tags = {"Bug" },  notes = "根据系统用户项目指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -746,7 +746,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据系统用户项目获取Bug草稿", tags = {"Bug" },  notes = "根据系统用户项目获取Bug草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/getdraft")
     public ResponseEntity<BugDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, BugDTO dto) {
@@ -755,7 +755,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'FAVORITES')")
     @ApiOperation(value = "根据系统用户项目Bug收藏", tags = {"Bug" },  notes = "根据系统用户项目Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/bugfavorites")
     public ResponseEntity<BugDTO> bugFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -767,7 +767,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'ACTIVATE')")
     @ApiOperation(value = "根据系统用户项目激活", tags = {"Bug" },  notes = "根据系统用户项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -779,7 +779,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'RESOLVE')")
     @ApiOperation(value = "根据系统用户项目解决", tags = {"Bug" },  notes = "根据系统用户项目解决")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/resolve")
     public ResponseEntity<BugDTO> resolveBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -792,7 +792,7 @@ public class BugResource {
     }
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'UPDATE')")
     @ApiOperation(value = "根据系统用户项目更新Bug", tags = {"Bug" },  notes = "根据系统用户项目更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -805,7 +805,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取指定用户数据", tags = {"Bug" } ,notes = "根据系统用户项目获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/fetchaccount")
 	public ResponseEntity<List<BugDTO>> fetchAccountBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -818,14 +818,14 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户项目删除Bug", tags = {"Bug" },  notes = "根据系统用户项目删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<Boolean> removeBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(bugService.remove(bug_id));
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'DELETE')")
     @ApiOperation(value = "根据系统用户项目批量删除Bug", tags = {"Bug" },  notes = "根据系统用户项目批量删除Bug")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/batch")
     public ResponseEntity<Boolean> removeBatchBySysUserProject(@RequestBody List<Long> ids) {
@@ -833,7 +833,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取我的数据", tags = {"Bug" } ,notes = "根据系统用户项目获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/fetchmy")
 	public ResponseEntity<List<BugDTO>> fetchMyBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -846,7 +846,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取DEFAULT", tags = {"Bug" } ,notes = "根据系统用户项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/fetchdefault")
 	public ResponseEntity<List<BugDTO>> fetchDefaultBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -859,7 +859,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取产品BUG", tags = {"Bug" } ,notes = "根据系统用户项目获取产品BUG")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/fetchproductbug")
 	public ResponseEntity<List<BugDTO>> fetchProductBugBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BugSearchContext context) {
@@ -872,7 +872,7 @@ public class BugResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'NFAVORITES')")
     @ApiOperation(value = "根据系统用户项目取消收藏", tags = {"Bug" },  notes = "根据系统用户项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}/bugnfavorites")
     public ResponseEntity<BugDTO> bugNFavoritesBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -884,7 +884,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'DENY')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'READ')")
     @ApiOperation(value = "根据系统用户项目获取Bug", tags = {"Bug" },  notes = "根据系统用户项目获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {

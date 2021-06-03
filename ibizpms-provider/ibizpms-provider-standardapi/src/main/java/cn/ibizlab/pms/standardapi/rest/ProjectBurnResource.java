@@ -53,7 +53,7 @@ public class ProjectBurnResource {
     public ProjectBurnMapping projectburnMapping;
 
 
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据项目获取燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectburns/fetchestimate")
 	public ResponseEntity<List<ProjectBurnDTO>> fetchEstimateByProject(@PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
@@ -66,7 +66,7 @@ public class ProjectBurnResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'MANAGE', #projectburn_id, 'DENY')")
+    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'MANAGE', #projectburn_id, 'MANAGE')")
     @ApiOperation(value = "根据项目更新燃尽图", tags = {"burn" },  notes = "根据项目更新燃尽图")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
     public ResponseEntity<ProjectBurnDTO> computeBurnByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectburn_id") String projectburn_id, @RequestBody ProjectBurnDTO projectburndto) {
@@ -80,7 +80,7 @@ public class ProjectBurnResource {
 
 
 
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据系统用户项目获取燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/projectburns/fetchestimate")
 	public ResponseEntity<List<ProjectBurnDTO>> fetchEstimateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
@@ -93,7 +93,7 @@ public class ProjectBurnResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'MANAGE', #projectburn_id, 'DENY')")
+    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'MANAGE', #projectburn_id, 'MANAGE')")
     @ApiOperation(value = "根据系统用户项目更新燃尽图", tags = {"burn" },  notes = "根据系统用户项目更新燃尽图")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
     public ResponseEntity<ProjectBurnDTO> computeBurnBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("projectburn_id") String projectburn_id, @RequestBody ProjectBurnDTO projectburndto) {

@@ -53,7 +53,7 @@ public class TaskTeamResource {
     public TaskTeamMapping taskteamMapping;
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据任务建立任务团队", tags = {"任务团队" },  notes = "根据任务建立任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams")
     public ResponseEntity<TaskTeamDTO> createByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -65,7 +65,7 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'UPDATE', #taskteam_id, 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'UPDATE', #taskteam_id, 'UPDATE')")
     @ApiOperation(value = "根据任务更新任务团队", tags = {"任务团队" },  notes = "根据任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -78,14 +78,14 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'DELETE', #taskteam_id, 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'DELETE', #taskteam_id, 'DELETE')")
     @ApiOperation(value = "根据任务删除任务团队", tags = {"任务团队" },  notes = "根据任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskteamService.remove(taskteam_id));
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'DELETE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据任务批量删除任务团队", tags = {"任务团队" },  notes = "根据任务批量删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}/taskteams/batch")
     public ResponseEntity<Boolean> removeBatchByTask(@RequestBody List<Long> ids) {
@@ -93,7 +93,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'READ', #taskteam_id, 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'READ', #taskteam_id, 'READ')")
     @ApiOperation(value = "根据任务获取任务团队", tags = {"任务团队" },  notes = "根据任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -102,7 +102,7 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据任务获取任务团队草稿", tags = {"任务团队" },  notes = "根据任务获取任务团队草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskteams/getdraft")
     public ResponseEntity<TaskTeamDTO> getDraftByTask(@PathVariable("task_id") Long task_id, TaskTeamDTO dto) {
@@ -111,7 +111,7 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(taskteamService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据任务检查任务团队", tags = {"任务团队" },  notes = "根据任务检查任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams/checkkey")
     public ResponseEntity<Boolean> checkKeyByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -129,7 +129,7 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'READ', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/taskteams/fetchdefault")
 	public ResponseEntity<List<TaskTeamDTO>> fetchDefaultByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {
@@ -144,7 +144,7 @@ public class TaskTeamResource {
 	}
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目任务建立任务团队", tags = {"任务团队" },  notes = "根据项目任务建立任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams")
     public ResponseEntity<TaskTeamDTO> createByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -156,7 +156,7 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #taskteam_id, 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #taskteam_id, 'UPDATE')")
     @ApiOperation(value = "根据项目任务更新任务团队", tags = {"任务团队" },  notes = "根据项目任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -169,14 +169,14 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #taskteam_id, 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #taskteam_id, 'DELETE')")
     @ApiOperation(value = "根据项目任务删除任务团队", tags = {"任务团队" },  notes = "根据项目任务删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<Boolean> removeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(taskteamService.remove(taskteam_id));
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'DELETE')")
     @ApiOperation(value = "根据项目任务批量删除任务团队", tags = {"任务团队" },  notes = "根据项目任务批量删除任务团队")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/taskteams/batch")
     public ResponseEntity<Boolean> removeBatchByProjectTask(@RequestBody List<Long> ids) {
@@ -184,7 +184,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', #taskteam_id, 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', #taskteam_id, 'READ')")
     @ApiOperation(value = "根据项目任务获取任务团队", tags = {"任务团队" },  notes = "根据项目任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -193,7 +193,7 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目任务获取任务团队草稿", tags = {"任务团队" },  notes = "根据项目任务获取任务团队草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskteams/getdraft")
     public ResponseEntity<TaskTeamDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, TaskTeamDTO dto) {
@@ -202,7 +202,7 @@ public class TaskTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(taskteamService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目任务检查任务团队", tags = {"任务团队" },  notes = "根据项目任务检查任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams/checkkey")
     public ResponseEntity<Boolean> checkKeyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -220,7 +220,7 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目任务获取DEFAULT", tags = {"任务团队" } ,notes = "根据项目任务获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/taskteams/fetchdefault")
 	public ResponseEntity<List<TaskTeamDTO>> fetchDefaultByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskTeamSearchContext context) {

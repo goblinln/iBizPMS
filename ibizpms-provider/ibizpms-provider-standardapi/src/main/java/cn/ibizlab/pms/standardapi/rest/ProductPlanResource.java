@@ -53,14 +53,14 @@ public class ProductPlanResource {
     public ProductPlanMapping productplanMapping;
 
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', #productplan_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除产品计划", tags = {"产品计划" },  notes = "根据产品删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据产品批量删除产品计划", tags = {"产品计划" },  notes = "根据产品批量删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -68,7 +68,7 @@ public class ProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取项目计划列表", tags = {"产品计划" } ,notes = "根据产品获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchprojectplan")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
@@ -81,7 +81,7 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'LINKSTORY')")
     @ApiOperation(value = "根据产品关联需求", tags = {"产品计划" },  notes = "根据产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/linkstory")
     public ResponseEntity<ProductPlanDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -93,7 +93,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据产品获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/fetchproductquery")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
@@ -106,7 +106,7 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'UPDATE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'UPDATE', #productplan_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新产品计划", tags = {"产品计划" },  notes = "根据产品更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}")
     public ResponseEntity<ProductPlanDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -119,7 +119,7 @@ public class ProductPlanResource {
     }
 
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', #productplan_id, 'CREATE')")
     @ApiOperation(value = "根据产品导入计划模板", tags = {"产品计划" },  notes = "根据产品导入计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/importplantemplet")
     public ResponseEntity<ProductPlanDTO> importPlanTempletByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -131,7 +131,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', #productplan_id, 'READ')")
     @ApiOperation(value = "根据产品获取产品计划", tags = {"产品计划" },  notes = "根据产品获取产品计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}")
     public ResponseEntity<ProductPlanDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
@@ -140,7 +140,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品建立产品计划", tags = {"产品计划" },  notes = "根据产品建立产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans")
     public ResponseEntity<ProductPlanDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductPlanDTO productplandto) {
@@ -164,7 +164,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'LINKBUG')")
     @ApiOperation(value = "根据产品关联Bug", tags = {"产品计划" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/linkbug")
     public ResponseEntity<ProductPlanDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -188,7 +188,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品获取产品计划草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/getdraft")
     public ResponseEntity<ProductPlanDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
@@ -213,7 +213,7 @@ public class ProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取项目计划列表", tags = {"产品计划" } ,notes = "根据项目获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/fetchprojectplan")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
@@ -238,7 +238,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取产品默认查询", tags = {"产品计划" } ,notes = "根据项目获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/fetchproductquery")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryByProject(@PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
@@ -276,7 +276,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', #productplan_id, 'READ')")
     @ApiOperation(value = "根据项目获取产品计划", tags = {"产品计划" },  notes = "根据项目获取产品计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/{productplan_id}")
     public ResponseEntity<ProductPlanDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {
@@ -344,14 +344,14 @@ public class ProductPlanResource {
 
 
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', #productplan_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户产品删除产品计划", tags = {"产品计划" },  notes = "根据系统用户产品删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
     public ResponseEntity<Boolean> removeBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(productplanService.remove(productplan_id));
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
     @ApiOperation(value = "根据系统用户产品批量删除产品计划", tags = {"产品计划" },  notes = "根据系统用户产品批量删除产品计划")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/batch")
     public ResponseEntity<Boolean> removeBatchBySysUserProduct(@RequestBody List<Long> ids) {
@@ -359,7 +359,7 @@ public class ProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取项目计划列表", tags = {"产品计划" } ,notes = "根据系统用户产品获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/productplans/fetchprojectplan")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
@@ -372,7 +372,7 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'LINKSTORY')")
     @ApiOperation(value = "根据系统用户产品关联需求", tags = {"产品计划" },  notes = "根据系统用户产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/linkstory")
     public ResponseEntity<ProductPlanDTO> linkStoryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -384,7 +384,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户产品获取产品默认查询", tags = {"产品计划" } ,notes = "根据系统用户产品获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/products/{product_id}/productplans/fetchproductquery")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id,@RequestBody ProductPlanSearchContext context) {
@@ -397,7 +397,7 @@ public class ProductPlanResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'UPDATE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'UPDATE', #productplan_id, 'UPDATE')")
     @ApiOperation(value = "根据系统用户产品更新产品计划", tags = {"产品计划" },  notes = "根据系统用户产品更新产品计划")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
     public ResponseEntity<ProductPlanDTO> updateBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -410,7 +410,7 @@ public class ProductPlanResource {
     }
 
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', #productplan_id, 'CREATE')")
     @ApiOperation(value = "根据系统用户产品导入计划模板", tags = {"产品计划" },  notes = "根据系统用户产品导入计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/importplantemplet")
     public ResponseEntity<ProductPlanDTO> importPlanTempletBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -422,7 +422,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', #productplan_id, 'READ')")
     @ApiOperation(value = "根据系统用户产品获取产品计划", tags = {"产品计划" },  notes = "根据系统用户产品获取产品计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}")
     public ResponseEntity<ProductPlanDTO> getBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
@@ -431,7 +431,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户产品建立产品计划", tags = {"产品计划" },  notes = "根据系统用户产品建立产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans")
     public ResponseEntity<ProductPlanDTO> createBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @RequestBody ProductPlanDTO productplandto) {
@@ -455,7 +455,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'MANAGE', #productplan_id, 'LINKBUG')")
     @ApiOperation(value = "根据系统用户产品关联Bug", tags = {"产品计划" },  notes = "根据系统用户产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/{productplan_id}/linkbug")
     public ResponseEntity<ProductPlanDTO> linkBugBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
@@ -479,7 +479,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据系统用户产品获取产品计划草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/products/{product_id}/productplans/getdraft")
     public ResponseEntity<ProductPlanDTO> getDraftBySysUserProduct(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
@@ -505,7 +505,7 @@ public class ProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取项目计划列表", tags = {"产品计划" } ,notes = "根据系统用户项目获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/productplans/fetchprojectplan")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlanBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
@@ -530,7 +530,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户项目获取产品默认查询", tags = {"产品计划" } ,notes = "根据系统用户项目获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/productplans/fetchproductquery")
 	public ResponseEntity<List<ProductPlanDTO>> fetchProductQueryBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody ProductPlanSearchContext context) {
@@ -568,7 +568,7 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', #productplan_id, 'DENY')")
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PROJECT', #project_id, 'READ', #productplan_id, 'READ')")
     @ApiOperation(value = "根据系统用户项目获取产品计划", tags = {"产品计划" },  notes = "根据系统用户项目获取产品计划")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/productplans/{productplan_id}")
     public ResponseEntity<ProductPlanDTO> getBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id) {

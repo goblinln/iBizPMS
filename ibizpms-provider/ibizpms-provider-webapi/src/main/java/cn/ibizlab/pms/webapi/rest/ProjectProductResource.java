@@ -94,7 +94,7 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', #projectproduct_id, 'DENY')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', #projectproduct_id, 'READ')")
     @ApiOperation(value = "根据产品获取项目产品", tags = {"项目产品" },  notes = "根据产品获取项目产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
@@ -130,7 +130,7 @@ public class ProjectProductResource {
     }
 
 
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"项目产品" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projectproducts/fetchdefault")
 	public ResponseEntity<List<ProjectProductDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
@@ -143,7 +143,7 @@ public class ProjectProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取关联计划", tags = {"项目产品" } ,notes = "根据产品获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/projectproducts/fetchrelationplan")
 	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlanByProduct(@PathVariable("product_id") Long product_id,@RequestBody ProjectProductSearchContext context) {
@@ -198,7 +198,7 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', #projectproduct_id, 'DENY')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', #projectproduct_id, 'READ')")
     @ApiOperation(value = "根据项目获取项目产品", tags = {"项目产品" },  notes = "根据项目获取项目产品")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
     public ResponseEntity<ProjectProductDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
@@ -234,7 +234,7 @@ public class ProjectProductResource {
     }
 
 
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"项目产品" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectproducts/fetchdefault")
 	public ResponseEntity<List<ProjectProductDTO>> fetchDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
@@ -247,7 +247,7 @@ public class ProjectProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', 'DENY')")
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取关联计划", tags = {"项目产品" } ,notes = "根据项目获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectproducts/fetchrelationplan")
 	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlanByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectProductSearchContext context) {
