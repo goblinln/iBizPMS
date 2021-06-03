@@ -1,7 +1,7 @@
 package cn.ibizlab.pms.core.zentao.runtime;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
-import cn.ibizlab.pms.core.sample.runtime.ICronRuntime;
+import cn.ibizlab.pms.core.zentao.runtime.ICronRuntime;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
-@Component("CronRuntime")
 @Slf4j
-public class CronAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class CronAspect {
 
      @Autowired
     ICronRuntime cronRuntime;
@@ -26,7 +25,7 @@ public class CronAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.CronServiceImpl.*(..))")
     @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
+        if (!getDataEntityRuntime().isRtmodel()) {
             return point.proceed();
         }
         String action = point.getSignature().getName();

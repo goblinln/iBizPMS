@@ -1,7 +1,7 @@
 package cn.ibizlab.pms.core.zentao.runtime;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
-import cn.ibizlab.pms.core.sample.runtime.IUserContactRuntime;
+import cn.ibizlab.pms.core.zentao.runtime.IUserContactRuntime;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
-@Component("UserContactRuntime")
 @Slf4j
-public class UserContactAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class UserContactAspect {
 
      @Autowired
     IUserContactRuntime userContactRuntime;
@@ -26,7 +25,7 @@ public class UserContactAspect extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.UserContactServiceImpl.*(..))")
     @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
+        if (!getDataEntityRuntime().isRtmodel()) {
             return point.proceed();
         }
         String action = point.getSignature().getName();

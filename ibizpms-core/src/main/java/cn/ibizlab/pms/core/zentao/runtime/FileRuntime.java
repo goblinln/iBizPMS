@@ -307,61 +307,6 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public void removeByForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.FileServiceImpl.*(..))")
-    @Transactional
-    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
-            return point.proceed();
-        }
-        String action = point.getSignature().getName();
-        if (action.equals("create")) {
-            return aroundAction("Create", point);
-        }
-        else if (action.equals("update")) {
-            return aroundAction("Update", point);
-        }
-        else if (action.equals("remove")) {
-            return aroundAction("Remove", point);
-        }
-        else if (action.equals("get")) {
-            return aroundAction("Get", point);
-        }
-        else if (action.equals("getDraft")) {
-            return aroundAction("GetDraft", point);
-        }
-        else if (action.equals("checkKey")) {
-            return aroundAction("CheckKey", point);
-        }
-        else if (action.equals("save")) {
-            return aroundAction("Save", point);
-        }
-        else if (action.equals("updateObjectID")) {
-            return aroundAction("updateObjectID", point);
-        }
-        else if (action.equals("updateObjectIDForPmsEe")) {
-            return aroundAction("updateObjectIDForPmsEe", point);
-        }
-        else if (action.equals("searchDefault")) {
-            return aroundDataSet("DEFAULT", point);
-        }
-        else if (action.equals("searchDocLibFile")) {
-            return aroundDataSet("DocLibFile", point);
-        }
-        else if (action.equals("searchMySubmitFile")) {
-            return aroundDataSet("MySubmitFile", point);
-        }
-        else if (action.equals("searchProductDocLibFile")) {
-            return aroundDataSet("ProductDocLibFile", point);
-        }
-        else if (action.equals("searchType")) {
-            return aroundDataSet("Type", point);
-        }
-        else if (action.equals("searchTypeNotBySrfparentkey")) {
-            return aroundDataSet("TypeNotBySrfparentkey", point);
-        }
-        return point.proceed();
-    }
-
     @Override
     protected void onWFRegister(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
     }

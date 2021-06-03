@@ -1,7 +1,7 @@
 package cn.ibizlab.pms.core.zentao.runtime;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
-import cn.ibizlab.pms.core.sample.runtime.IImConferenceactionRuntime;
+import cn.ibizlab.pms.core.zentao.runtime.IImConferenceactionRuntime;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
-@Component("ImConferenceactionRuntime")
 @Slf4j
-public class ImConferenceactionAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class ImConferenceactionAspect {
 
      @Autowired
     IImConferenceactionRuntime imConferenceactionRuntime;
@@ -26,7 +25,7 @@ public class ImConferenceactionAspect extends cn.ibizlab.pms.core.runtime.System
     @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ImConferenceactionServiceImpl.*(..))")
     @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
+        if (!getDataEntityRuntime().isRtmodel()) {
             return point.proceed();
         }
         String action = point.getSignature().getName();

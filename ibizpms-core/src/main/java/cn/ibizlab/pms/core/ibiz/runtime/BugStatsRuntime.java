@@ -307,64 +307,6 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     public void removeByForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.BugStatsServiceImpl.*(..))")
-    @Transactional
-    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
-            return point.proceed();
-        }
-        String action = point.getSignature().getName();
-        if (action.equals("create")) {
-            return aroundAction("Create", point);
-        }
-        else if (action.equals("update")) {
-            return aroundAction("Update", point);
-        }
-        else if (action.equals("remove")) {
-            return aroundAction("Remove", point);
-        }
-        else if (action.equals("get")) {
-            return aroundAction("Get", point);
-        }
-        else if (action.equals("getDraft")) {
-            return aroundAction("GetDraft", point);
-        }
-        else if (action.equals("checkKey")) {
-            return aroundAction("CheckKey", point);
-        }
-        else if (action.equals("save")) {
-            return aroundAction("Save", point);
-        }
-        else if (action.equals("searchBugCountInResolution")) {
-            return aroundDataSet("BugCountInResolution", point);
-        }
-        else if (action.equals("searchBugResolvedBy")) {
-            return aroundDataSet("BugResolvedBy", point);
-        }
-        else if (action.equals("searchBugResolvedGird")) {
-            return aroundDataSet("BugResolvedGird", point);
-        }
-        else if (action.equals("searchBugassignedTo")) {
-            return aroundDataSet("BugassignedTo", point);
-        }
-        else if (action.equals("searchDefault")) {
-            return aroundDataSet("DEFAULT", point);
-        }
-        else if (action.equals("searchProductBugResolutionStats")) {
-            return aroundDataSet("ProductBugResolutionStats", point);
-        }
-        else if (action.equals("searchProductBugStatusSum")) {
-            return aroundDataSet("ProductBugStatusSum", point);
-        }
-        else if (action.equals("searchProductCreateBug")) {
-            return aroundDataSet("ProductCreateBug", point);
-        }
-        else if (action.equals("searchProjectBugStatusCount")) {
-            return aroundDataSet("ProjectBugStatusCount", point);
-        }
-        return point.proceed();
-    }
-
     @Override
     protected void onWFRegister(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
     }

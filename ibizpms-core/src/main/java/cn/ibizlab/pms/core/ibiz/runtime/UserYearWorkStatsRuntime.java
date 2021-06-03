@@ -317,64 +317,6 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     public void removeByForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.UserYearWorkStatsServiceImpl.*(..))")
-    @Transactional
-    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
-            return point.proceed();
-        }
-        String action = point.getSignature().getName();
-        if (action.equals("create")) {
-            return aroundAction("Create", point);
-        }
-        else if (action.equals("update")) {
-            return aroundAction("Update", point);
-        }
-        else if (action.equals("remove")) {
-            return aroundAction("Remove", point);
-        }
-        else if (action.equals("get")) {
-            return aroundAction("Get", point);
-        }
-        else if (action.equals("getDraft")) {
-            return aroundAction("GetDraft", point);
-        }
-        else if (action.equals("checkKey")) {
-            return aroundAction("CheckKey", point);
-        }
-        else if (action.equals("getDevInfomation")) {
-            return aroundAction("GetDevInfomation", point);
-        }
-        else if (action.equals("getPoInfomation")) {
-            return aroundAction("GetPoInfomation", point);
-        }
-        else if (action.equals("getQaInfomation")) {
-            return aroundAction("GetQaInfomation", point);
-        }
-        else if (action.equals("getUserYearAction")) {
-            return aroundAction("GetUserYearAction", point);
-        }
-        else if (action.equals("save")) {
-            return aroundAction("Save", point);
-        }
-        else if (action.equals("updateTitleByYear")) {
-            return aroundAction("UpdateTitleByYear", point);
-        }
-        else if (action.equals("searchDefault")) {
-            return aroundDataSet("DEFAULT", point);
-        }
-        else if (action.equals("searchMonthFinishTaskAndBug")) {
-            return aroundDataSet("MonthFinishTaskAndBug", point);
-        }
-        else if (action.equals("searchMonthOpenedBugAndCase")) {
-            return aroundDataSet("MonthOpenedBugAndCase", point);
-        }
-        else if (action.equals("searchMonthOpenedStory")) {
-            return aroundDataSet("MonthOpenedStory", point);
-        }
-        return point.proceed();
-    }
-
     @Override
     protected void onWFRegister(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
     }

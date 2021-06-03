@@ -293,55 +293,6 @@ public class IBIZProMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     public void removeByForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.ibizplugin.service.impl.IBIZProMessageServiceImpl.*(..))")
-    @Transactional
-    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
-            return point.proceed();
-        }
-        String action = point.getSignature().getName();
-        if (action.equals("create")) {
-            return aroundAction("Create", point);
-        }
-        else if (action.equals("update")) {
-            return aroundAction("Update", point);
-        }
-        else if (action.equals("remove")) {
-            return aroundAction("Remove", point);
-        }
-        else if (action.equals("get")) {
-            return aroundAction("Get", point);
-        }
-        else if (action.equals("getDraft")) {
-            return aroundAction("GetDraft", point);
-        }
-        else if (action.equals("checkKey")) {
-            return aroundAction("CheckKey", point);
-        }
-        else if (action.equals("markDone")) {
-            return aroundAction("MarkDone", point);
-        }
-        else if (action.equals("markRead")) {
-            return aroundAction("MarkRead", point);
-        }
-        else if (action.equals("save")) {
-            return aroundAction("Save", point);
-        }
-        else if (action.equals("send")) {
-            return aroundAction("Send", point);
-        }
-        else if (action.equals("searchDefault")) {
-            return aroundDataSet("DEFAULT", point);
-        }
-        else if (action.equals("searchUserAllMessages")) {
-            return aroundDataSet("UserAllMessages", point);
-        }
-        else if (action.equals("searchUserUnreadMessages")) {
-            return aroundDataSet("UserUnreadMessages", point);
-        }
-        return point.proceed();
-    }
-
     @Override
     protected void onWFRegister(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
     }

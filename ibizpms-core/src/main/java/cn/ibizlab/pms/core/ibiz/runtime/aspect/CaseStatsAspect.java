@@ -1,7 +1,7 @@
 package cn.ibizlab.pms.core.ibiz.runtime;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
-import cn.ibizlab.pms.core.sample.runtime.ICaseStatsRuntime;
+import cn.ibizlab.pms.core.ibiz.runtime.ICaseStatsRuntime;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
-@Component("CaseStatsRuntime")
 @Slf4j
-public class CaseStatsAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class CaseStatsAspect {
 
      @Autowired
     ICaseStatsRuntime caseStatsRuntime;
@@ -26,7 +25,7 @@ public class CaseStatsAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.CaseStatsServiceImpl.*(..))")
     @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
+        if (!getDataEntityRuntime().isRtmodel()) {
             return point.proceed();
         }
         String action = point.getSignature().getName();

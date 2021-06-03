@@ -1,7 +1,7 @@
 package cn.ibizlab.pms.core.zentao.runtime;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
-import cn.ibizlab.pms.core.sample.runtime.IImChatRuntime;
+import cn.ibizlab.pms.core.zentao.runtime.IImChatRuntime;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
-@Component("ImChatRuntime")
 @Slf4j
-public class ImChatAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class ImChatAspect {
 
      @Autowired
     IImChatRuntime imChatRuntime;
@@ -26,7 +25,7 @@ public class ImChatAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.ImChatServiceImpl.*(..))")
     @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
+        if (!getDataEntityRuntime().isRtmodel()) {
             return point.proceed();
         }
         String action = point.getSignature().getName();

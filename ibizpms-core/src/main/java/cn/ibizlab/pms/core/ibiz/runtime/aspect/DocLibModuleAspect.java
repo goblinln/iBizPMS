@@ -1,7 +1,7 @@
 package cn.ibizlab.pms.core.ibiz.runtime;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
-import cn.ibizlab.pms.core.sample.runtime.IDocLibModuleRuntime;
+import cn.ibizlab.pms.core.ibiz.runtime.IDocLibModuleRuntime;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
-@Component("DocLibModuleRuntime")
 @Slf4j
-public class DocLibModuleAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class DocLibModuleAspect {
 
      @Autowired
     IDocLibModuleRuntime docLibModuleRuntime;
@@ -26,7 +25,7 @@ public class DocLibModuleAspect extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Around("execution(* cn.ibizlab.pms.core.ibiz.service.impl.DocLibModuleServiceImpl.*(..))")
     @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
+        if (!getDataEntityRuntime().isRtmodel()) {
             return point.proceed();
         }
         String action = point.getSignature().getName();

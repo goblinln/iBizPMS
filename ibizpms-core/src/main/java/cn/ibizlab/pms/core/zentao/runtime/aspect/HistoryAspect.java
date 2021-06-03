@@ -1,7 +1,7 @@
 package cn.ibizlab.pms.core.zentao.runtime;
 
 import cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime;
-import cn.ibizlab.pms.core.sample.runtime.IHistoryRuntime;
+import cn.ibizlab.pms.core.zentao.runtime.IHistoryRuntime;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Aspect
 @org.springframework.core.annotation.Order(100)
-@Component("HistoryRuntime")
 @Slf4j
-public class HistoryAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {
+public class HistoryAspect {
 
      @Autowired
     IHistoryRuntime historyRuntime;
@@ -26,7 +25,7 @@ public class HistoryAspect extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.HistoryServiceImpl.*(..))")
     @Transactional
     public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
+        if (!getDataEntityRuntime().isRtmodel()) {
             return point.proceed();
         }
         String action = point.getSignature().getName();

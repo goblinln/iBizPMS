@@ -311,64 +311,6 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public void removeByForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
     }
 
-    @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.UserServiceImpl.*(..))")
-    @Transactional
-    public Object aroundMethod(ProceedingJoinPoint point) throws Throwable {
-        if (!this.isRtmodel()) {
-            return point.proceed();
-        }
-        String action = point.getSignature().getName();
-        if (action.equals("create")) {
-            return aroundAction("Create", point);
-        }
-        else if (action.equals("update")) {
-            return aroundAction("Update", point);
-        }
-        else if (action.equals("remove")) {
-            return aroundAction("Remove", point);
-        }
-        else if (action.equals("get")) {
-            return aroundAction("Get", point);
-        }
-        else if (action.equals("getDraft")) {
-            return aroundAction("GetDraft", point);
-        }
-        else if (action.equals("checkKey")) {
-            return aroundAction("CheckKey", point);
-        }
-        else if (action.equals("getByCommiter")) {
-            return aroundAction(action, point);
-        }
-        else if (action.equals("save")) {
-            return aroundAction("Save", point);
-        }
-        else if (action.equals("syncAccount")) {
-            return aroundAction("SyncAccount", point);
-        }
-        else if (action.equals("searchBugUser")) {
-            return aroundDataSet("BugUser", point);
-        }
-        else if (action.equals("searchDefault")) {
-            return aroundDataSet("DEFAULT", point);
-        }
-        else if (action.equals("searchGetByCommiter")) {
-            return aroundDataSet("getByCommiter", point);
-        }
-        else if (action.equals("searchProjectTeamM")) {
-            return aroundDataSet("ProjectTeamM", point);
-        }
-        else if (action.equals("searchProjectTeamUser")) {
-            return aroundDataSet("ProjectTeamUser", point);
-        }
-        else if (action.equals("searchProjectTeamUserTask")) {
-            return aroundDataSet("ProjectTeamUserTask", point);
-        }
-        else if (action.equals("searchTaskTeam")) {
-            return aroundDataSet("TASKTEAM", point);
-        }
-        return point.proceed();
-    }
-
     @Override
     protected void onWFRegister(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
     }
