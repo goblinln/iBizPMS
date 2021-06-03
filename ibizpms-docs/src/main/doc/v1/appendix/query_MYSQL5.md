@@ -107,10 +107,10 @@ SELECT YEAR
 	Right(100 + day ( t1.date ), 2) AS `day`,
 	t1.account,
 	t1.date,
-	ROUND( sum( t1.consumed ), 2 ) AS consumed,
-	ROUND( sum( t1.EVALUATIONCOST ), 2 ) AS EVALUATIONCOST,
-	ROUND( sum( t1.INPUTCOST ), 2 ) AS INPUTCOST,
-	ROUND( sum( t1.EVALUATIONTIME ), 2 ) AS EVALUATIONTIME
+	IFNULL(ROUND( sum( t1.consumed ), 2 ),0) AS consumed,
+        IFNULL(ROUND( sum( t1.EVALUATIONCOST ), 2 ),0) AS EVALUATIONCOST,
+        IFNULL(ROUND( sum( t1.INPUTCOST ), 2 ),0) AS INPUTCOST,
+        IFNULL(ROUND( sum( t1.EVALUATIONTIME ), 2 ),0) AS EVALUATIONTIME 
 FROM
 	`zt_taskestimate` t1
 	LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`
