@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_OpenBy.json",
-  "name" : "BUG维护（我创建或参与）（跟随角色）",
+  "name" : "BUG维护（我创建或参与）（系统使用）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "MyCreateOrPartake"

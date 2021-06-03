@@ -475,23 +475,6 @@
     "stdDataType" : 9
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "CountMyContribution",
-    "methodType" : "FETCH",
-    "name" : "FetchPersonInfo",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PersonInfo"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CountMyContribution"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -506,6 +489,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CountMyContribution",
+    "methodType" : "FETCH",
+    "name" : "FetchPersonInfo",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PersonInfo"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CountMyContribution"
     },
     "builtinMethod" : false
   }, {
