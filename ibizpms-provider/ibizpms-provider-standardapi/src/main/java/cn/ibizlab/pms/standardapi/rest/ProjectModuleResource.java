@@ -62,25 +62,14 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据项目获取任务模块草稿", tags = {"任务模块" },  notes = "根据项目获取任务模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/getdraft")
-    public ResponseEntity<ProjectModuleDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectModuleDTO dto) {
-        ProjectModule domain = projectmoduleMapping.toDomain(dto);
-        domain.setRoot(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(projectmoduleService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'UPDATE', #projectmodule_id, 'UPDATE')")
-    @ApiOperation(value = "根据项目更新任务模块", tags = {"任务模块" },  notes = "根据项目更新任务模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
-    public ResponseEntity<ProjectModuleDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
+    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
-        domain.setId(projectmodule_id);
-		projectmoduleService.update(domain);
-        ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
 
@@ -112,14 +101,16 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
-    public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'UPDATE', #projectmodule_id, 'UPDATE')")
+    @ApiOperation(value = "根据项目更新任务模块", tags = {"任务模块" },  notes = "根据项目更新任务模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}")
+    public ResponseEntity<ProjectModuleDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
-        projectmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
+        domain.setId(projectmodule_id);
+		projectmoduleService.update(domain);
+        ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 
@@ -135,6 +126,15 @@ public class ProjectModuleResource {
     }
 
 
+    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据项目获取任务模块草稿", tags = {"任务模块" },  notes = "根据项目获取任务模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/getdraft")
+    public ResponseEntity<ProjectModuleDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ProjectModuleDTO dto) {
+        ProjectModule domain = projectmoduleMapping.toDomain(dto);
+        domain.setRoot(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(projectmoduleService.getDraft(domain)));
+    }
+
 
 
     @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'READ', #projectmodule_id, 'READ')")
@@ -146,25 +146,14 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据系统用户项目获取任务模块草稿", tags = {"任务模块" },  notes = "根据系统用户项目获取任务模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectmodules/getdraft")
-    public ResponseEntity<ProjectModuleDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, ProjectModuleDTO dto) {
-        ProjectModule domain = projectmoduleMapping.toDomain(dto);
-        domain.setRoot(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(projectmoduleService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'UPDATE', #projectmodule_id, 'UPDATE')")
-    @ApiOperation(value = "根据系统用户项目更新任务模块", tags = {"任务模块" },  notes = "根据系统用户项目更新任务模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectmodules/{projectmodule_id}")
-    public ResponseEntity<ProjectModuleDTO> updateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @ApiOperation(value = "根据系统用户项目保存任务模块", tags = {"任务模块" },  notes = "根据系统用户项目保存任务模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectmodules/save")
+    public ResponseEntity<ProjectModuleDTO> saveBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
-        domain.setId(projectmodule_id);
-		projectmoduleService.update(domain);
-        ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        projectmoduleService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
     }
 
 
@@ -196,14 +185,16 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
-    @ApiOperation(value = "根据系统用户项目保存任务模块", tags = {"任务模块" },  notes = "根据系统用户项目保存任务模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectmodules/save")
-    public ResponseEntity<ProjectModuleDTO> saveBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {
+    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'UPDATE', #projectmodule_id, 'UPDATE')")
+    @ApiOperation(value = "根据系统用户项目更新任务模块", tags = {"任务模块" },  notes = "根据系统用户项目更新任务模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectmodules/{projectmodule_id}")
+    public ResponseEntity<ProjectModuleDTO> updateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
         ProjectModule domain = projectmoduleMapping.toDomain(projectmoduledto);
         domain.setRoot(project_id);
-        projectmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(domain));
+        domain.setId(projectmodule_id);
+		projectmoduleService.update(domain);
+        ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 
@@ -218,6 +209,15 @@ public class ProjectModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("test('IBZ_PROJECTMODULE', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据系统用户项目获取任务模块草稿", tags = {"任务模块" },  notes = "根据系统用户项目获取任务模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectmodules/getdraft")
+    public ResponseEntity<ProjectModuleDTO> getDraftBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, ProjectModuleDTO dto) {
+        ProjectModule domain = projectmoduleMapping.toDomain(dto);
+        domain.setRoot(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmoduleMapping.toDto(projectmoduleService.getDraft(domain)));
+    }
 
 }
 

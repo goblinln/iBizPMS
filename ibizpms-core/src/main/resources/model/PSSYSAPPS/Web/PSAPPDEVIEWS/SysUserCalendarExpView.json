@@ -427,6 +427,12 @@
           "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38",
           "modeltype" : "PSSYSVIEWPANEL"
         },
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
         "getTextPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
@@ -709,6 +715,12 @@
           "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
           "modeltype" : "PSSYSVIEWPANEL"
         },
+        "getPSNavigateContexts" : [ {
+          "key" : "PROJECT",
+          "name" : "PROJECT",
+          "value" : "project",
+          "rawValue" : false
+        } ],
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"
@@ -1192,6 +1204,12 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         },
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
         "getTextPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"

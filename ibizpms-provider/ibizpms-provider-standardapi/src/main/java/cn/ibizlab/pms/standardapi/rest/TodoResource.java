@@ -53,13 +53,16 @@ public class TodoResource {
     public TodoMapping todoMapping;
 
 
-    @PreAuthorize("quickTest('ZT_TODO','CREATE')")
-    @ApiOperation(value = "根据系统用户获取待办草稿", tags = {"待办" },  notes = "根据系统用户获取待办草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/getdraft")
-    public ResponseEntity<TodoDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TodoDTO dto) {
-        Todo domain = todoMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'START')")
+    @ApiOperation(value = "根据系统用户开始", tags = {"待办" },  notes = "根据系统用户开始")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/start")
+    public ResponseEntity<TodoDTO> startBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
+        Todo domain = todoMapping.toDomain(tododto);
         
-        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
+        domain.setId(todo_id);
+        domain = todoService.start(domain) ;
+        tododto = todoMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
 
     @PreAuthorize("quickTest('ZT_TODO','READ')")
@@ -76,6 +79,20 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('ZT_TODO','CREATE')")
+    @ApiOperation(value = "根据系统用户建立待办", tags = {"待办" },  notes = "根据系统用户建立待办")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/todos")
+    public ResponseEntity<TodoDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody TodoDTO tododto) {
+        Todo domain = todoMapping.toDomain(tododto);
+        
+		todoService.create(domain);
+        if(!todoRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        TodoDTO dto = todoMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("test('ZT_TODO', #todo_id, 'READ')")
     @ApiOperation(value = "根据系统用户获取待办", tags = {"待办" },  notes = "根据系统用户获取待办")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}")
@@ -83,6 +100,33 @@ public class TodoResource {
         Todo domain = todoService.get(todo_id);
         TodoDTO dto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'DELETE')")
+    @ApiOperation(value = "根据系统用户删除待办", tags = {"待办" },  notes = "根据系统用户删除待办")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}")
+    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(todoService.remove(todo_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_TODO','DELETE')")
+    @ApiOperation(value = "根据系统用户批量删除待办", tags = {"待办" },  notes = "根据系统用户批量删除待办")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/todos/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
+        todoService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("test('ZT_TODO', #todo_id, 'FINISH')")
+    @ApiOperation(value = "根据系统用户Finish", tags = {"待办" },  notes = "根据系统用户Finish")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/finish")
+    public ResponseEntity<TodoDTO> finishBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
+        Todo domain = todoMapping.toDomain(tododto);
+        
+        domain.setId(todo_id);
+        domain = todoService.finish(domain) ;
+        tododto = todoMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
 
     @PreAuthorize("test('ZT_TODO', #todo_id, 'UPDATE')")
@@ -100,20 +144,6 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_TODO','CREATE')")
-    @ApiOperation(value = "根据系统用户建立待办", tags = {"待办" },  notes = "根据系统用户建立待办")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/todos")
-    public ResponseEntity<TodoDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody TodoDTO tododto) {
-        Todo domain = todoMapping.toDomain(tododto);
-        
-		todoService.create(domain);
-        if(!todoRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        TodoDTO dto = todoMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("quickTest('ZT_TODO','READ')")
 	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"待办" } ,notes = "根据系统用户获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/fetchaccount")
@@ -128,43 +158,13 @@ public class TodoResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TODO', #todo_id, 'START')")
-    @ApiOperation(value = "根据系统用户开始", tags = {"待办" },  notes = "根据系统用户开始")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/start")
-    public ResponseEntity<TodoDTO> startBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
-        Todo domain = todoMapping.toDomain(tododto);
+    @PreAuthorize("quickTest('ZT_TODO','CREATE')")
+    @ApiOperation(value = "根据系统用户获取待办草稿", tags = {"待办" },  notes = "根据系统用户获取待办草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/getdraft")
+    public ResponseEntity<TodoDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TodoDTO dto) {
+        Todo domain = todoMapping.toDomain(dto);
         
-        domain.setId(todo_id);
-        domain = todoService.start(domain) ;
-        tododto = todoMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(tododto);
-    }
-
-    @PreAuthorize("test('ZT_TODO', #todo_id, 'FINISH')")
-    @ApiOperation(value = "根据系统用户Finish", tags = {"待办" },  notes = "根据系统用户Finish")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/finish")
-    public ResponseEntity<TodoDTO> finishBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, @RequestBody TodoDTO tododto) {
-        Todo domain = todoMapping.toDomain(tododto);
-        
-        domain.setId(todo_id);
-        domain = todoService.finish(domain) ;
-        tododto = todoMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(tododto);
-    }
-
-    @PreAuthorize("test('ZT_TODO', #todo_id, 'DELETE')")
-    @ApiOperation(value = "根据系统用户删除待办", tags = {"待办" },  notes = "根据系统用户删除待办")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}")
-    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(todoService.remove(todo_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_TODO','DELETE')")
-    @ApiOperation(value = "根据系统用户批量删除待办", tags = {"待办" },  notes = "根据系统用户批量删除待办")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/todos/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
-        todoService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
+        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
     }
 
 }
