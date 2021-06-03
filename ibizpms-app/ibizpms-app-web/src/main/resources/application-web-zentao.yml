@@ -21,7 +21,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     sys_user:
-      path: /accounts/**
+      path: /sysaccounts/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
 #    dingtalktoken:
