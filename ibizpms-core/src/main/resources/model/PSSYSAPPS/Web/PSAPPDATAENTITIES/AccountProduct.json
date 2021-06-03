@@ -1,0 +1,1568 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "create",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "update",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "remove",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "WizardCreate",
+    "methodType" : "DEACTION",
+    "name" : "WizardCreate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/WizardCreate.json"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "FetchAccount",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "FetchMy",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMy"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAllList",
+    "methodType" : "FETCH",
+    "name" : "AllList",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllList"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAllProduct",
+    "methodType" : "FETCH",
+    "name" : "AllProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCheckNameOrCode",
+    "methodType" : "FETCH",
+    "name" : "CheckNameOrCode",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CheckNameOrCode"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurDefault",
+    "methodType" : "FETCH",
+    "name" : "CurDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurProject",
+    "methodType" : "FETCH",
+    "name" : "CURPROJECT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurUer",
+    "methodType" : "FETCH",
+    "name" : "CurUer",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurUer"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDeveloperQuery",
+    "methodType" : "FETCH",
+    "name" : "DeveloperQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchESBulk",
+    "methodType" : "FETCH",
+    "name" : "ESBulk",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ESBulk"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchOpenQuery",
+    "methodType" : "FETCH",
+    "name" : "OpenQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductManagerQuery",
+    "methodType" : "FETCH",
+    "name" : "ProductManagerQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductPM",
+    "methodType" : "FETCH",
+    "name" : "ProductPM",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductPM"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductTeam",
+    "methodType" : "FETCH",
+    "name" : "ProductTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryCurProject",
+    "methodType" : "FETCH",
+    "name" : "StoryCURPROJECT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryCurProject"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "OrgId",
+    "logicName" : "组织标识",
+    "name" : "ORGID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Istop",
+    "logicName" : "是否置顶",
+    "name" : "ISTOP",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Comment",
+    "logicName" : "备注",
+    "name" : "COMMENT",
+    "stdDataType" : 21,
+    "stringLength" : 1048576
+  }, {
+    "codeName" : "QD",
+    "logicName" : "测试负责人",
+    "name" : "QD",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Productclass",
+    "logicName" : "产品分类",
+    "name" : "PRODUCTCLASS",
+    "stdDataType" : 25,
+    "stringLength" : 10
+  }, {
+    "codeName" : "UnconfirmBugCnt",
+    "logicName" : "未确认Bug数",
+    "name" : "UNCONFIRMBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Acl",
+    "logicName" : "访问控制",
+    "name" : "ACL",
+    "stdDataType" : 25,
+    "stringLength" : 7
+  }, {
+    "codeName" : "Name",
+    "logicName" : "产品名称",
+    "name" : "NAME",
+    "stdDataType" : 25,
+    "stringLength" : 90,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Mobimage",
+    "logicName" : "移动端图片",
+    "name" : "MOBIMAGE",
+    "stdDataType" : 25,
+    "stringLength" : 4000
+  }, {
+    "codeName" : "Testtaskcnt",
+    "logicName" : "测试单数",
+    "name" : "TESTTASKCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Testsuitecnt",
+    "logicName" : "套件数",
+    "name" : "TESTSUITECNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "ProductPlanCnt",
+    "logicName" : "计划总数",
+    "name" : "PRODUCTPLANCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Id",
+    "logicName" : "编号",
+    "name" : "ID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "name" : "DELETED",
+    "stdDataType" : 25,
+    "stringLength" : 1
+  }, {
+    "codeName" : "ClosedStoryCnt",
+    "logicName" : "已关闭需求",
+    "name" : "CLOSEDSTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "RelatedBUGCNT",
+    "logicName" : "相关Bug数",
+    "name" : "RELATEDBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Whitelist",
+    "logicName" : "分组白名单",
+    "name" : "WHITELIST",
+    "stdDataType" : 21,
+    "stringLength" : 65535
+  }, {
+    "codeName" : "MdeptId",
+    "logicName" : "部门标识",
+    "name" : "MDEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "ReleaseCnt",
+    "logicName" : "发布总数",
+    "name" : "RELEASECNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "RD",
+    "logicName" : "发布负责人",
+    "name" : "RD",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Popk",
+    "logicName" : "产品负责人（选择）",
+    "name" : "POPK",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "NotClosedBugCnt",
+    "logicName" : "未关闭Bug数",
+    "name" : "NOTCLOSEDBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Supproreport",
+    "logicName" : "支持产品汇报",
+    "name" : "SUPPROREPORT",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "name" : "ORDER",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Type",
+    "logicName" : "产品类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "MdeptName",
+    "logicName" : "归属部门名",
+    "name" : "MDEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "PO",
+    "logicName" : "产品负责人",
+    "name" : "PO",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Qdpk",
+    "logicName" : "测试负责人（选择）",
+    "name" : "QDPK",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "Desc",
+    "logicName" : "产品描述\t",
+    "name" : "DESC",
+    "stdDataType" : 21,
+    "stringLength" : 65535
+  }, {
+    "codeName" : "Status",
+    "logicName" : "状态",
+    "name" : "STATUS",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Changedstorycnt",
+    "logicName" : "已变更需求",
+    "name" : "CHANGEDSTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "ActiveBugCnt",
+    "logicName" : "未解决Bug数",
+    "name" : "ACTIVEBUGCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "CreatedBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Rdpk",
+    "logicName" : "发布负责人（选择）",
+    "name" : "RDPK",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreatedVersion",
+    "logicName" : "当前系统版本",
+    "name" : "CREATEDVERSION",
+    "stdDataType" : 25,
+    "stringLength" : 20
+  }, {
+    "codeName" : "Draftstorycnt",
+    "logicName" : "草稿需求",
+    "name" : "DRAFTSTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Doccnt",
+    "logicName" : "文档数",
+    "name" : "DOCCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Casecnt",
+    "logicName" : "用例数",
+    "name" : "CASECNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Relatedprojects",
+    "logicName" : "关联项目数",
+    "name" : "RELATEDPROJECTS",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "IBIZ_ID",
+    "logicName" : "IBIZ标识",
+    "name" : "IBIZ_ID",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "SubStatus",
+    "logicName" : "子状态",
+    "name" : "SUBSTATUS",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Code",
+    "logicName" : "产品代号",
+    "name" : "CODE",
+    "stdDataType" : 25,
+    "stringLength" : 45,
+    "enableQuickSearch" : true
+  }, {
+    "codeName" : "Srfcount",
+    "logicName" : "属性",
+    "name" : "SRFCOUNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Order1",
+    "logicName" : "排序",
+    "name" : "ORDER1",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Buildcnt",
+    "logicName" : "BUILD数",
+    "name" : "BUILDCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CreatedDate",
+    "logicName" : "创建日期",
+    "name" : "CREATEDDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Noticeusers",
+    "logicName" : "消息通知用户",
+    "name" : "NOTICEUSERS",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "ActiveStoryCnt",
+    "logicName" : "激活需求数",
+    "name" : "ACTIVESTORYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Productsn",
+    "logicName" : "产品编号",
+    "name" : "PRODUCTSN",
+    "stdDataType" : 1,
+    "enableQuickSearch" : true
+  }, {
+    "codeName" : "Line",
+    "logicName" : "id",
+    "name" : "LINE",
+    "stdDataType" : 1
+  }, {
+    "codeName" : "LineName",
+    "logicName" : "产品线",
+    "name" : "LINENAME",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  } ],
+  "getAllPSAppDELogics" : [ {
+    "codeName" : "CancelProductTop",
+    "defaultParamName" : "Default",
+    "logicName" : "取消置顶",
+    "name" : "取消置顶",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接8487",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Rawsqlcall1",
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "删除置顶",
+      "getPSDELogicNodeParams" : [ {
+        "name" : "Default[ID]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "ProductTop",
+    "defaultParamName" : "Default",
+    "logicName" : "置顶",
+    "name" : "置顶",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Rawsqlcall1",
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ibzTop"
+      },
+      "logicNodeType" : "RAWSQLCALL",
+      "name" : "获取置顶最大排序值",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接9397",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "name" : "用户全局对象[srfloginname]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Deaction1",
+      "getDstPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop/PSDEACTIONS/Create.json"
+      },
+      "getDstPSDELogicParam" : {
+        "modelref" : true,
+        "id" : "ibzTop"
+      },
+      "getDstPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzTop.json"
+      },
+      "logicNodeType" : "DEACTION",
+      "name" : "save置顶",
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接7552",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
+      } ],
+      "parallelOutput" : true
+    }, {
+      "codeName" : "Prepareparam1",
+      "logicNodeType" : "PREPAREPARAM",
+      "name" : "设置置顶数据",
+      "getPSDELogicLinks" : [ {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "name" : "连接4446",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "defaultLink" : false
+      } ],
+      "getPSDELogicNodeParams" : [ {
+        "dstFieldName" : "OBJECTID",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ibzTop"
+        },
+        "name" : "Default[ID] ==> ibzTop[OBJECTID]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "ID",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
+      }, {
+        "dstFieldName" : "ACCOUNT",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ibzTop"
+        },
+        "name" : "用户全局对象[srfloginname] ==> ibzTop[ACCOUNT]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcFieldName" : "srfloginname",
+        "srcValueType" : "SESSION"
+      }, {
+        "dstFieldName" : "TYPE",
+        "getDstPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "ibzTop"
+        },
+        "name" : "直接值[product] ==> ibzTop[TYPE]",
+        "paramAction" : "SETPARAMVALUE",
+        "srcValue" : "product",
+        "srcValueType" : "SRCVALUE"
+      } ],
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "ibzTop",
+      "name" : "置顶",
+      "default" : false,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : true
+    }, {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : true
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "FetchAccount",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMy",
+    "methodType" : "FETCH",
+    "name" : "FetchMy",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "My"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMy"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "create",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "update",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "userCat" : "CAT1",
+    "userTag4" : "remove",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    },
+    "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "WizardCreate",
+    "methodType" : "DEACTION",
+    "name" : "WizardCreate",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/WizardCreate.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAllList",
+    "methodType" : "FETCH",
+    "name" : "AllList",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllList"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAllProduct",
+    "methodType" : "FETCH",
+    "name" : "AllProduct",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCheckNameOrCode",
+    "methodType" : "FETCH",
+    "name" : "CheckNameOrCode",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CheckNameOrCode"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurDefault",
+    "methodType" : "FETCH",
+    "name" : "CurDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurProject",
+    "methodType" : "FETCH",
+    "name" : "CURPROJECT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurUer",
+    "methodType" : "FETCH",
+    "name" : "CurUer",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurUer"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDeveloperQuery",
+    "methodType" : "FETCH",
+    "name" : "DeveloperQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchESBulk",
+    "methodType" : "FETCH",
+    "name" : "ESBulk",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ESBulk"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchOpenQuery",
+    "methodType" : "FETCH",
+    "name" : "OpenQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductManagerQuery",
+    "methodType" : "FETCH",
+    "name" : "ProductManagerQuery",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductManagerQuery"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductPM",
+    "methodType" : "FETCH",
+    "name" : "ProductPM",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductPM"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductTeam",
+    "methodType" : "FETCH",
+    "name" : "ProductTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryCurProject",
+    "methodType" : "FETCH",
+    "name" : "StoryCURPROJECT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryCurProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "codeName" : "closed_0",
+    "enterStateMode" : "ANY",
+    "logicName" : "关闭_未置顶",
+    "mSTag" : "closed__0",
+    "name" : "关闭_未置顶",
+    "getPSDEMainStateActions" : [ {
+      "name" : "MobProductTestCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "ProductTop",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "TOP",
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      }
+    }, {
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "管理",
+        "name" : "MANAGE"
+      }
+    } ],
+    "state2Value" : "0",
+    "stateValue" : "closed",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  }, {
+    "codeName" : "closed_1",
+    "enterStateMode" : "ANY",
+    "logicName" : "关闭_已置顶",
+    "mSTag" : "closed__1",
+    "name" : "关闭_已置顶",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "CancelProductTop",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductTestCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "管理",
+        "name" : "MANAGE"
+      }
+    }, {
+      "name" : "NOTOP",
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      }
+    } ],
+    "state2Value" : "1",
+    "stateValue" : "closed",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  }, {
+    "codeName" : "normal_0",
+    "enterStateMode" : "ANY",
+    "logicName" : "正常_未置顶",
+    "mSTag" : "normal__0",
+    "name" : "正常_未置顶",
+    "getPSDEMainStateActions" : [ {
+      "name" : "ProductTop",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductTestCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "TOP",
+      "getPSDEOPPriv" : {
+        "logicName" : "置顶",
+        "name" : "TOP"
+      }
+    } ],
+    "state2Value" : "0",
+    "stateValue" : "normal",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  }, {
+    "codeName" : "normal_1",
+    "enterStateMode" : "ANY",
+    "logicName" : "正常_已置顶",
+    "mSTag" : "normal__1",
+    "name" : "正常_已置顶",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "CancelProductTop",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductTestCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "NOTOP",
+      "getPSDEOPPriv" : {
+        "logicName" : "未置顶",
+        "name" : "NOTOP"
+      }
+    } ],
+    "state2Value" : "1",
+    "stateValue" : "normal",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加产品线",
+    "name" : "ADDLINE"
+  }, {
+    "logicName" : "Bug管理",
+    "name" : "BUGMANAGE"
+  }, {
+    "logicName" : "版本管理",
+    "name" : "BUILDMANAGE"
+  }, {
+    "logicName" : "功能测试管理",
+    "name" : "CASEMANAGE"
+  }, {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "组群管理",
+    "name" : "GROUPMANAGE"
+  }, {
+    "logicName" : "管理",
+    "name" : "MANAGE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "测试模块管理",
+    "name" : "TESTMODULEMANAGE"
+  }, {
+    "logicName" : "测试报告管理",
+    "name" : "TESTREPORTMANAGE"
+  }, {
+    "logicName" : "测试套件管理",
+    "name" : "TESTSUITEMANAGE"
+  }, {
+    "logicName" : "测试版本管理",
+    "name" : "TESTTASKMANAGE"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "AccountProduct",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProduct.json",
+  "enableUIActions" : 15,
+  "logicName" : "用户产品",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "AccountProducts",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProduct.json"
+    },
+    "name" : "ACCOUNT__PRODUCT",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ],
+  "name" : "ACCOUNTPRODUCT",
+  "getPSDEName" : "ZT_PRODUCT",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDESERVICEAPIS/AccountProduct.json"
+  },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "NAME",
+    "codeName" : "Name"
+  }, {
+    "name" : "CODE",
+    "codeName" : "Code"
+  }, {
+    "name" : "PRODUCTSN",
+    "codeName" : "Productsn"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : false,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

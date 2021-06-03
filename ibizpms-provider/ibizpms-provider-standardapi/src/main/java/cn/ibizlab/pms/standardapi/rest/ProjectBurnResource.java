@@ -78,32 +78,5 @@ public class ProjectBurnResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'MANAGE', #projectburn_id, 'MANAGE')")
-    @ApiOperation(value = "根据系统用户项目更新燃尽图", tags = {"burn" },  notes = "根据系统用户项目更新燃尽图")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/projects/{project_id}/projectburns/{projectburn_id}/computeburn")
-    public ResponseEntity<ProjectBurnDTO> computeBurnBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id, @PathVariable("projectburn_id") String projectburn_id, @RequestBody ProjectBurnDTO projectburndto) {
-        Burn domain = projectburnMapping.toDomain(projectburndto);
-        domain.setProject(project_id);
-        domain.setId(projectburn_id);
-        domain = burnService.computeBurn(domain) ;
-        projectburndto = projectburnMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(projectburndto);
-    }
-
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户项目获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "根据系统用户项目获取燃尽图预计（含周末）")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/projects/{project_id}/projectburns/fetchestimate")
-	public ResponseEntity<List<ProjectBurnDTO>> fetchEstimateBySysUserProject(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("project_id") Long project_id,@RequestBody BurnSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<Burn> domains = burnService.searchEstimate(context) ;
-        List<ProjectBurnDTO> list = projectburnMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 

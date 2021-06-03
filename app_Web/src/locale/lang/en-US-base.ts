@@ -1,7 +1,9 @@
 import productplan_en_US from '@locale/lanres/entities/product-plan/product-plan_en_US';
+import accounttesttask_en_US from '@locale/lanres/entities/account-test-task/account-test-task_en_US';
 import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
 import sysaccount_en_US from '@locale/lanres/entities/sys-account/sys-account_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
+import accounttestcase_en_US from '@locale/lanres/entities/account-test-case/account-test-case_en_US';
 import projectburn_en_US from '@locale/lanres/entities/project-burn/project-burn_en_US';
 import test_en_US from '@locale/lanres/entities/test/test_en_US';
 import storyspec_en_US from '@locale/lanres/entities/story-spec/story-spec_en_US';
@@ -20,15 +22,20 @@ import productteam_en_US from '@locale/lanres/entities/product-team/product-team
 import testmodule_en_US from '@locale/lanres/entities/test-module/test-module_en_US';
 import productlife_en_US from '@locale/lanres/entities/product-life/product-life_en_US';
 import usercontact_en_US from '@locale/lanres/entities/user-contact/user-contact_en_US';
+import accountbug_en_US from '@locale/lanres/entities/account-bug/account-bug_en_US';
+import accountproject_en_US from '@locale/lanres/entities/account-project/account-project_en_US';
 import task_en_US from '@locale/lanres/entities/task/task_en_US';
 import build_en_US from '@locale/lanres/entities/build/build_en_US';
 import testreult_en_US from '@locale/lanres/entities/test-reult/test-reult_en_US';
 import testsuite_en_US from '@locale/lanres/entities/test-suite/test-suite_en_US';
+import accountproduct_en_US from '@locale/lanres/entities/account-product/account-product_en_US';
 import projectteam_en_US from '@locale/lanres/entities/project-team/project-team_en_US';
 import testtask_en_US from '@locale/lanres/entities/test-task/test-task_en_US';
 import testreport_en_US from '@locale/lanres/entities/test-report/test-report_en_US';
+import accountstory_en_US from '@locale/lanres/entities/account-story/account-story_en_US';
 import bug_en_US from '@locale/lanres/entities/bug/bug_en_US';
 import projectmodule_en_US from '@locale/lanres/entities/project-module/project-module_en_US';
+import accounttask_en_US from '@locale/lanres/entities/account-task/account-task_en_US';
 import productrelease_en_US from '@locale/lanres/entities/product-release/product-release_en_US';
 import dynadashboard_en_US from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_en_US';
 import productline_en_US from '@locale/lanres/entities/product-line/product-line_en_US';
@@ -104,7 +111,6 @@ import ibzcase_en_US from '@locale/lanres/entities/ibz-case/ibz-case_en_US';
 import systeammember_en_US from '@locale/lanres/entities/sys-team-member/sys-team-member_en_US';
 import pssystemdbcfg_en_US from '@locale/lanres/entities/pssystem-dbcfg/pssystem-dbcfg_en_US';
 import ibzproproductusertask_en_US from '@locale/lanres/entities/ibzpro-product-user-task/ibzpro-product-user-task_en_US';
-import mytask_en_US from '@locale/lanres/entities/my-task/my-task_en_US';
 import sysupdatefeatures_en_US from '@locale/lanres/entities/sys-update-features/sys-update-features_en_US';
 import casestats_en_US from '@locale/lanres/entities/case-stats/case-stats_en_US';
 import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee_en_US';
@@ -420,9 +426,11 @@ function getAppLocale(){
         },
         entities: {
             'productplan': productplan_en_US(),
+            'accounttesttask': accounttesttask_en_US(),
             'testcase': testcase_en_US(),
             'sysaccount': sysaccount_en_US(),
             'product': product_en_US(),
+            'accounttestcase': accounttestcase_en_US(),
             'projectburn': projectburn_en_US(),
             'test': test_en_US(),
             'storyspec': storyspec_en_US(),
@@ -441,15 +449,20 @@ function getAppLocale(){
             'testmodule': testmodule_en_US(),
             'productlife': productlife_en_US(),
             'usercontact': usercontact_en_US(),
+            'accountbug': accountbug_en_US(),
+            'accountproject': accountproject_en_US(),
             'task': task_en_US(),
             'build': build_en_US(),
             'testreult': testreult_en_US(),
             'testsuite': testsuite_en_US(),
+            'accountproduct': accountproduct_en_US(),
             'projectteam': projectteam_en_US(),
             'testtask': testtask_en_US(),
             'testreport': testreport_en_US(),
+            'accountstory': accountstory_en_US(),
             'bug': bug_en_US(),
             'projectmodule': projectmodule_en_US(),
+            'accounttask': accounttask_en_US(),
             'productrelease': productrelease_en_US(),
             'dynadashboard': dynadashboard_en_US(),
             'productline': productline_en_US(),
@@ -525,7 +538,6 @@ function getAppLocale(){
             'systeammember': systeammember_en_US(),
             'pssystemdbcfg': pssystemdbcfg_en_US(),
             'ibzproproductusertask': ibzproproductusertask_en_US(),
-            'mytask': mytask_en_US(),
             'sysupdatefeatures': sysupdatefeatures_en_US(),
             'casestats': casestats_en_US(),
             'sysemployee': sysemployee_en_US(),

@@ -3639,29 +3639,7 @@
                 "rowEditDefault" : false,
                 "showCaptionBar" : false,
                 "modelid" : "aa9214c2a8a4216cc83f9f24c106f41c",
-                "modeltype" : "PSAPPDEVIEW",
-                "getPSAppDERSPaths" : [ [ {
-                  "actionRSMode" : 1,
-                  "codeName" : "Projects",
-                  "dataRSMode" : 0,
-                  "getMajorPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-                  },
-                  "getMinorPSAppDataEntity" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-                  },
-                  "name" : "ACCOUNT__PROJECT",
-                  "rSMode" : 2,
-                  "enableCreateDataRS" : false,
-                  "enableDEAction" : true,
-                  "enableDEDataSet" : true,
-                  "enableGetDataRS" : false,
-                  "enableSelect" : true,
-                  "enableSelectDataRS" : false,
-                  "enableUpdateDataRS" : false
-                } ] ]
+                "modeltype" : "PSAPPDEVIEW"
               },
               "portletType" : "VIEW",
               "title" : "未完成项目",

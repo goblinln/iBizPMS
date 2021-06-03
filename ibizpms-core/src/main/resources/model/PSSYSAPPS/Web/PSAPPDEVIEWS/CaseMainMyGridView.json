@@ -7,7 +7,7 @@
   "name" : "CaseMainMyGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -128,7 +128,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -190,7 +190,7 @@
     "codeName" : "MainGrid",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase/PSGRIDS/MainGrid.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase/PSGRIDS/MainGrid.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -205,7 +205,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -277,7 +277,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         },
         "modelref" : true,
         "id" : "confirmstorychange@Case"
@@ -289,7 +289,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         },
         "modelref" : true,
         "id" : "OpenTestRunResultView@Case"
@@ -301,7 +301,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         },
         "modelref" : true,
         "id" : "Execute@Case"
@@ -313,7 +313,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         },
         "modelref" : true,
         "id" : "MainEdit@Case"
@@ -325,7 +325,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         },
         "modelref" : true,
         "id" : "NewBugByCaseResult@Case"
@@ -345,7 +345,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         },
         "modelref" : true,
         "id" : "caseFavorite@Case"
@@ -357,7 +357,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         },
         "modelref" : true,
         "id" : "CaseNFavorite@Case"
@@ -377,7 +377,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -388,7 +388,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         }
       }, {
         "actionName" : "Remove",
@@ -401,7 +401,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         }
       }, {
         "actionName" : "Get",
@@ -414,7 +414,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -427,7 +427,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         }
       }, {
         "actionName" : "Create",
@@ -440,7 +440,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -502,12 +502,6 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "title",
       "excelCaption" : "用例标题",
-      "getLinkPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-        "viewType" : "DEPORTALVIEW"
-      },
-      "linkValueItem" : "srfkey",
       "name" : "title",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -520,7 +514,6 @@
       },
       "width" : 500,
       "widthUnit" : "STAR",
-      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",
@@ -721,7 +714,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf046@FontAwesome",
@@ -756,7 +749,7 @@
             "name" : "打开结果视图",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf16c@FontAwesome",
@@ -789,7 +782,7 @@
             "name" : "执行测试",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf01d@FontAwesome",
@@ -826,7 +819,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf044@FontAwesome",
@@ -863,7 +856,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "TASK",
@@ -931,13 +924,9 @@
             "dataAccessAction" : "NFAVORITE",
             "fullCodeName" : "Case_caseFavorite",
             "name" : "收藏",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "CaseFavorite"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "OPENEDBY",
@@ -987,13 +976,9 @@
             "dataAccessAction" : "FAVORITE",
             "fullCodeName" : "Case_CaseNFavorite",
             "name" : "取消收藏",
-            "getPSAppDEMethod" : {
-              "modelref" : true,
-              "id" : "CaseNFavorite"
-            },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf005@FontAwesome",
@@ -1240,7 +1225,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -1262,11 +1247,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase/PSSEARCHBARS/Custom.json",
     "logicName" : "测试用例自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -2110,7 +2095,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -2133,32 +2118,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "TestCases",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
-    },
-    "name" : "TEST__TEST_CASE",
-    "getParentPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ], [ {
-    "actionRSMode" : 1,
-    "codeName" : "TestCases",
+    "codeName" : "AccountTestCases",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -2166,7 +2126,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
     },
     "name" : "ACCOUNT__TEST_CASE",
     "rSMode" : 2,

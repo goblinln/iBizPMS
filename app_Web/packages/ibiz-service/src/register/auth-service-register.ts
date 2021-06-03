@@ -54,9 +54,11 @@ export class AuthServiceRegister{
      */
     protected init(): void {
                 AuthServiceRegister.allAuthServiceMap.set('productplan', () => import('../authservice/product-plan/product-plan-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('accounttesttask', () => import('../authservice/account-test-task/account-test-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testcase', () => import('../authservice/test-case/test-case-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysaccount', () => import('../authservice/sys-account/sys-account-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('product', () => import('../authservice/product/product-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('accounttestcase', () => import('../authservice/account-test-case/account-test-case-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectburn', () => import('../authservice/project-burn/project-burn-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('test', () => import('../authservice/test/test-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('storyspec', () => import('../authservice/story-spec/story-spec-auth-service'));
@@ -75,15 +77,20 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('testmodule', () => import('../authservice/test-module/test-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productlife', () => import('../authservice/product-life/product-life-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('usercontact', () => import('../authservice/user-contact/user-contact-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('accountbug', () => import('../authservice/account-bug/account-bug-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('accountproject', () => import('../authservice/account-project/account-project-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('task', () => import('../authservice/task/task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('build', () => import('../authservice/build/build-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testreult', () => import('../authservice/test-reult/test-reult-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testsuite', () => import('../authservice/test-suite/test-suite-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('accountproduct', () => import('../authservice/account-product/account-product-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectteam', () => import('../authservice/project-team/project-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testtask', () => import('../authservice/test-task/test-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testreport', () => import('../authservice/test-report/test-report-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('accountstory', () => import('../authservice/account-story/account-story-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('bug', () => import('../authservice/bug/bug-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectmodule', () => import('../authservice/project-module/project-module-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('accounttask', () => import('../authservice/account-task/account-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productrelease', () => import('../authservice/product-release/product-release-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('dynadashboard', () => import('../authservice/dyna-dashboard/dyna-dashboard-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productline', () => import('../authservice/product-line/product-line-auth-service'));
@@ -159,7 +166,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('systeammember', () => import('../authservice/sys-team-member/sys-team-member-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('pssystemdbcfg', () => import('../authservice/pssystem-dbcfg/pssystem-dbcfg-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzproproductusertask', () => import('../authservice/ibzpro-product-user-task/ibzpro-product-user-task-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('mytask', () => import('../authservice/my-task/my-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysupdatefeatures', () => import('../authservice/sys-update-features/sys-update-features-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('casestats', () => import('../authservice/case-stats/case-stats-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysemployee', () => import('../authservice/sys-employee/sys-employee-auth-service'));

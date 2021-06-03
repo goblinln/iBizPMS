@@ -301,7 +301,6 @@ export class WizardPanelControlBase extends MainControlBase {
             this.onControlResponse('doFinish', response);
             if (response && response.status === 200) {
                 const data = response.data;
-                this.$success(this.$t('app.commonwords.startsuccess') as string,'doFinish');
                 this.ctrlEvent({
                     controlname: this.controlInstance.name,
                     action: 'finish',

@@ -71,6 +71,10 @@ zuul:
       path: /productplans/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    accounttesttask:
+      path: /accounttesttasks/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_case:
       path: /testcases/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -81,6 +85,10 @@ zuul:
       stripPrefix: false
     zt_product:
       path: /products/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    accountcase:
+      path: /accounttestcases/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_burn:
@@ -155,6 +163,14 @@ zuul:
       path: /usercontacts/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    accountbug:
+      path: /accountbugs/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    accountproject:
+      path: /accountprojects/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_task:
       path: /tasks/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -171,6 +187,10 @@ zuul:
       path: /testsuites/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    accountproduct:
+      path: /accountproducts/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     ibz_projectteam:
       path: /projectteams/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -183,12 +203,20 @@ zuul:
       path: /testreports/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    accountstory:
+      path: /accountstories/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_bug:
       path: /bugs/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectmodule:
       path: /projectmodules/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    accounttask:
+      path: /accounttasks/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_release:
@@ -489,10 +517,6 @@ zuul:
       stripPrefix: false
     ibizpro_productusertask:
       path: /ibzproproductusertasks/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    mytask:
-      path: /mytasks/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     sys_update_features:

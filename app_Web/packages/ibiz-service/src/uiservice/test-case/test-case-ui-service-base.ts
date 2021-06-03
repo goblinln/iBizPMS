@@ -115,9 +115,6 @@ export class TestCaseUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
     }
 

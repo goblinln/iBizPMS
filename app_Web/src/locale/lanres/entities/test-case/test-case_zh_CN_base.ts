@@ -81,10 +81,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("功能测试",null),
 				title: commonLogic.appcommonhandle("功能测试",null),
 			},
-			'mainmygridview': {
-				caption: commonLogic.appcommonhandle("功能测试",null),
-				title: commonLogic.appcommonhandle("功能测试",null),
-			},
 			'curtesttaskgridview': {
 				caption: commonLogic.appcommonhandle("功能测试",null),
 				title: commonLogic.appcommonhandle("功能测试",null),
@@ -92,10 +88,6 @@ function getLocaleResourceBase(){
 			'tobugtesteditview': {
 				caption: commonLogic.appcommonhandle("转BUG",null),
 				title: commonLogic.appcommonhandle("转BUG",null),
-			},
-			'mainmynewgridview': {
-				caption: commonLogic.appcommonhandle("功能测试",null),
-				title: commonLogic.appcommonhandle("功能测试",null),
 			},
 			'moduleentrygridview': {
 				caption: commonLogic.appcommonhandle("测试结果条目",null),
@@ -204,10 +196,6 @@ function getLocaleResourceBase(){
 			'maindetaileditview9': {
 				caption: commonLogic.appcommonhandle("测试用例",null),
 				title: commonLogic.appcommonhandle("测试用例编辑视图",null),
-			},
-			'gridview9': {
-				caption: commonLogic.appcommonhandle("测试用例",null),
-				title: commonLogic.appcommonhandle("测试用例表格视图",null),
 			},
 			'runresultchartview9': {
 				caption: commonLogic.appcommonhandle("执行结果",null),
@@ -938,18 +926,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("导出",null),
 			},
 			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("过滤",null),
-				tip: commonLogic.appcommonhandle("过滤",null),
-			},
-		},
-		mainmygridviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("过滤",null),
-				tip: commonLogic.appcommonhandle("过滤",null),
-			},
-		},
-		mainmynewgridviewtoolbar_toolbar: {
-			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("过滤",null),
 				tip: commonLogic.appcommonhandle("过滤",null),
 			},

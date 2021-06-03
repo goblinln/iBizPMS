@@ -7,7 +7,7 @@
   "name" : "ProjectMainMyGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -120,12 +120,6 @@
       "editMode" : true
     }
   } ],
-  "getPSAppViewNavContexts" : [ {
-    "key" : "SYSACCOUNT",
-    "name" : "SYSACCOUNT",
-    "value" : "srfuserid",
-    "rawValue" : false
-  } ],
   "getPSAppViewNavParams" : [ {
     "key" : "srfloginname",
     "name" : "srfloginname",
@@ -160,7 +154,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
       },
       "modelref" : true,
       "id" : "Create@Project"
@@ -197,7 +191,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -231,7 +225,7 @@
         "name" : "新建",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
         },
         "getPSSysImage" : {
           "glyph" : "xf067@FontAwesome",
@@ -383,7 +377,7 @@
     "codeName" : "MainMy",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSGRIDS/MainMy.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject/PSGRIDS/MainMy.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -398,7 +392,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -412,7 +406,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -423,7 +417,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
         }
       }, {
         "actionName" : "Remove",
@@ -436,7 +430,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
         }
       }, {
         "actionName" : "Get",
@@ -449,7 +443,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -462,7 +456,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
         }
       }, {
         "actionName" : "Create",
@@ -475,7 +469,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -529,12 +523,6 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "name",
       "excelCaption" : "项目名称",
-      "getLinkPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
-        "viewType" : "DETABEXPVIEW"
-      },
-      "linkValueItem" : "srfkey",
       "name" : "name",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -543,7 +531,6 @@
       },
       "width" : 1,
       "widthUnit" : "STAR",
-      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",
@@ -789,7 +776,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -811,11 +798,11 @@
   }, {
     "codeName" : "Custom",
     "controlType" : "SEARCHBAR",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project/PSSEARCHBARS/Custom.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject/PSSEARCHBARS/Custom.json",
     "logicName" : "项目自定义搜索栏",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
     },
     "getPSControlParam" : {
       "id" : "SEARCHBAR"
@@ -1511,7 +1498,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1539,7 +1526,7 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "Projects",
+    "codeName" : "AccountProjects",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
@@ -1547,7 +1534,7 @@
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountProject.json"
     },
     "name" : "ACCOUNT__PROJECT",
     "rSMode" : 2,

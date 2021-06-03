@@ -483,29 +483,7 @@
       "rowEditDefault" : false,
       "showCaptionBar" : true,
       "modelid" : "3b346aee2b79b7b6b59bc870b4c67f72",
-      "modeltype" : "PSAPPDEVIEW",
-      "getPSAppDERSPaths" : [ [ {
-        "actionRSMode" : 1,
-        "codeName" : "Projects",
-        "dataRSMode" : 0,
-        "getMajorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-        },
-        "getMinorPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-        },
-        "name" : "ACCOUNT__PROJECT",
-        "rSMode" : 2,
-        "enableCreateDataRS" : false,
-        "enableDEAction" : true,
-        "enableDEDataSet" : true,
-        "enableGetDataRS" : false,
-        "enableSelect" : true,
-        "enableSelectDataRS" : false,
-        "enableUpdateDataRS" : false
-      } ] ]
+      "modeltype" : "PSAPPDEVIEW"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -538,27 +516,5 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "modelid" : "5a8a29268a7563b62fc0160233958830",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "Projects",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "name" : "ACCOUNT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

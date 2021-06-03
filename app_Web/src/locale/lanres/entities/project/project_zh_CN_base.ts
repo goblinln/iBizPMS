@@ -157,10 +157,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("项目",null),
 				title: commonLogic.appcommonhandle("项目数据看板视图",null),
 			},
-			'mainmygridview': {
-				caption: commonLogic.appcommonhandle("项目",null),
-				title: commonLogic.appcommonhandle("项目",null),
-			},
 			'editview_suspend': {
 				caption: commonLogic.appcommonhandle("项目",null),
 				title: commonLogic.appcommonhandle("项目",null),
@@ -519,22 +515,6 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		mainmy_grid: {
-			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
-				'code': commonLogic.appcommonhandle("项目代号",null),
-				'name': commonLogic.appcommonhandle("项目名称",null),
-				'begin': commonLogic.appcommonhandle("开始时间",null),
-				'end': commonLogic.appcommonhandle("结束日期",null),
-				'status': commonLogic.appcommonhandle("项目状态",null),
-				'role': commonLogic.appcommonhandle("角色",null),
-				'join': commonLogic.appcommonhandle("加盟日",null),
-				'hours': commonLogic.appcommonhandle("可用工时/天",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
-			},
-		},
 		moreundoneproject_grid: {
 			columns: {
 				'name': commonLogic.appcommonhandle("项目名称",null),
@@ -688,24 +668,6 @@ function getLocaleResourceBase(){
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("取消置顶",null),
 				tip: commonLogic.appcommonhandle("取消置顶",null),
-			},
-		},
-		mainmygridviewtoolbar_toolbar: {
-			'deuiaction3_create': {
-				caption: commonLogic.appcommonhandle("新建",null),
-				tip: commonLogic.appcommonhandle("新建",null),
-			},
-			'deuiaction2': {
-				caption: commonLogic.appcommonhandle("刷新",null),
-				tip: commonLogic.appcommonhandle("刷新",null),
-			},
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("导出",null),
-				tip: commonLogic.appcommonhandle("导出",null),
-			},
-			'deuiaction4': {
-				caption: commonLogic.appcommonhandle("过滤",null),
-				tip: commonLogic.appcommonhandle("过滤",null),
 			},
 		},
 		moreundoneprogridviewtoolbar_toolbar: {

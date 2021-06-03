@@ -92,9 +92,6 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
         if (_context.test && _context.testcase && true) {
             return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
         }
-        if (_context.sysaccount && _context.testcase && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
-        }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

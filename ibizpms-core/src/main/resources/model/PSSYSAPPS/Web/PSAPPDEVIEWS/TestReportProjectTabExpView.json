@@ -1354,52 +1354,6 @@
         "modeltype" : "PSAPPDEVIEW",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
-          "codeName" : "Projects",
-          "dataRSMode" : 0,
-          "getMajorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-          },
-          "getMinorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-          },
-          "name" : "ACCOUNT__PROJECT",
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
-        }, {
-          "actionRSMode" : 1,
-          "codeName" : "TestReports",
-          "dataRSMode" : 0,
-          "getMajorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-          },
-          "getMinorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-          },
-          "name" : "PROJECT__TEST_REPORT",
-          "getParentPSAppDEField" : {
-            "name" : "PROJECT",
-            "codeName" : "Project"
-          },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
-        } ], [ {
-          "actionRSMode" : 1,
           "codeName" : "TestReports",
           "dataRSMode" : 0,
           "getMajorPSAppDataEntity" : {
@@ -1638,52 +1592,6 @@
   "modelid" : "2dda1b4d7b8bacd3d921f0f0108f2fa1",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "Projects",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "name" : "ACCOUNT__PROJECT",
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  }, {
-    "actionRSMode" : 1,
-    "codeName" : "TestReports",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
-    "name" : "PROJECT__TEST_REPORT",
-    "getParentPSAppDEField" : {
-      "name" : "PROJECT",
-      "codeName" : "Project"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ], [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",
     "dataRSMode" : 0,

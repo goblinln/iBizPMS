@@ -35,7 +35,7 @@
       "codeName" : "Id"
     },
     "itemStyle" : "DEFAULT",
-    "itemType" : "Bug",
+    "itemType" : "ACCOUNTBUG",
     "maxSize" : -1,
     "name" : "Bug",
     "getNavPSAppView" : {
@@ -289,7 +289,7 @@
         "showCaption" : false
       } ],
       "mobilePanel" : true,
-      "name" : "buglayoutpanel",
+      "name" : "accountbuglayoutpanel",
       "modelid" : "15ac73e6dfc7a5d8c85fcba439f3ac38",
       "modeltype" : "PSSYSVIEWPANEL"
     },
@@ -307,7 +307,8 @@
       "name" : "TITLE",
       "codeName" : "Title"
     },
-    "enableQuickCreate" : false
+    "enableQuickCreate" : false,
+    "id" : "ACCOUNTBUG"
   }, {
     "bKColor" : "rgba(247, 110, 154, 1)",
     "getBeginTimePSAppDEField" : {
@@ -332,7 +333,7 @@
       "codeName" : "Id"
     },
     "itemStyle" : "DEFAULT",
-    "itemType" : "MYTASK",
+    "itemType" : "ACCOUNTTASK",
     "maxSize" : -1,
     "name" : "任务",
     "getNavPSAppView" : {
@@ -577,7 +578,7 @@
         "showCaption" : true
       } ],
       "mobilePanel" : true,
-      "name" : "mytasklayoutpanel",
+      "name" : "accounttasklayoutpanel",
       "modelid" : "881c273f0a3edb62a7fded4f04b338fe",
       "modeltype" : "PSSYSVIEWPANEL"
     },
@@ -596,7 +597,7 @@
       "codeName" : "Name"
     },
     "enableQuickCreate" : false,
-    "id" : "MYTASK"
+    "id" : "ACCOUNTTASK"
   }, {
     "bKColor" : "rgba(255, 166, 0, 1)",
     "getBeginTimePSAppDEField" : {
@@ -908,7 +909,7 @@
       "codeName" : "Id"
     },
     "itemStyle" : "DEFAULT",
-    "itemType" : "testtask",
+    "itemType" : "ACCOUNTTESTTASK",
     "maxSize" : -1,
     "name" : "测试单",
     "getNavPSAppView" : {
@@ -1017,7 +1018,7 @@
         "showCaption" : true
       } ],
       "mobilePanel" : true,
-      "name" : "testtasklayoutpanel",
+      "name" : "accounttesttasklayoutpanel",
       "modelid" : "7f1e8cfe65f600cd812168d377dfae3e",
       "modeltype" : "PSSYSVIEWPANEL"
     },
@@ -1030,7 +1031,7 @@
       "codeName" : "Name"
     },
     "enableQuickCreate" : false,
-    "id" : "testtask"
+    "id" : "ACCOUNTTESTTASK"
   }, {
     "bKColor" : "rgba(85, 0, 255, 0.95)",
     "getBeginTimePSAppDEField" : {
@@ -1054,7 +1055,7 @@
       "codeName" : "Id"
     },
     "itemStyle" : "DEFAULT",
-    "itemType" : "Story",
+    "itemType" : "ACCOUNTSTORY",
     "maxSize" : -1,
     "name" : "需求",
     "getNavPSAppView" : {
@@ -1085,7 +1086,7 @@
       "codeName" : "Title"
     },
     "enableQuickCreate" : false,
-    "id" : "Story"
+    "id" : "ACCOUNTSTORY"
   } ],
   "enableGroup" : false,
   "modelid" : "58F99BEF-1182-45D5-888A-347E622A9A8A",
