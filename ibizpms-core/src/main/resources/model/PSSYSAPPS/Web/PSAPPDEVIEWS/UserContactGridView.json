@@ -485,7 +485,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchMyUSERCONTACT"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

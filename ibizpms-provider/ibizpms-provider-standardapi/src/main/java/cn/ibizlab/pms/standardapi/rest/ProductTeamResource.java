@@ -66,40 +66,6 @@ public class ProductTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品批量保存产品团队", tags = {"产品团队" },  notes = "根据产品批量保存产品团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProductTeamDTO> productteamdtos) {
-        List<PRODUCTTEAM> domainlist=productteamMapping.toDomain(productteamdtos);
-        for(PRODUCTTEAM domain:domainlist){
-             domain.setRoot(product_id);
-        }
-        productteamService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'READ', #productteam_id, 'READ')")
-    @ApiOperation(value = "根据产品获取产品团队", tags = {"产品团队" },  notes = "根据产品获取产品团队")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/{productteam_id}")
-    public ResponseEntity<ProductTeamDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
-        PRODUCTTEAM domain = productteamService.get(productteam_id);
-        ProductTeamDTO dto = productteamMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品建立产品团队", tags = {"产品团队" },  notes = "根据产品建立产品团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams")
-    public ResponseEntity<ProductTeamDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductTeamDTO productteamdto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
-        domain.setRoot(product_id);
-		productteamService.create(domain);
-        ProductTeamDTO dto = productteamMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取产品团队成员信息", tags = {"产品团队" } ,notes = "根据产品获取产品团队成员信息")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productteams/fetchproductteaminfo")
@@ -132,6 +98,40 @@ public class ProductTeamResource {
 		productteamService.update(domain);
         ProductTeamDTO dto = productteamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+
+    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品批量保存产品团队", tags = {"产品团队" },  notes = "根据产品批量保存产品团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProductTeamDTO> productteamdtos) {
+        List<PRODUCTTEAM> domainlist=productteamMapping.toDomain(productteamdtos);
+        for(PRODUCTTEAM domain:domainlist){
+             domain.setRoot(product_id);
+        }
+        productteamService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'READ', #productteam_id, 'READ')")
+    @ApiOperation(value = "根据产品获取产品团队", tags = {"产品团队" },  notes = "根据产品获取产品团队")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/{productteam_id}")
+    public ResponseEntity<ProductTeamDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
+        PRODUCTTEAM domain = productteamService.get(productteam_id);
+        ProductTeamDTO dto = productteamMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品建立产品团队", tags = {"产品团队" },  notes = "根据产品建立产品团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams")
+    public ResponseEntity<ProductTeamDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductTeamDTO productteamdto) {
+        PRODUCTTEAM domain = productteamMapping.toDomain(productteamdto);
+        domain.setRoot(product_id);
+		productteamService.create(domain);
+        ProductTeamDTO dto = productteamMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

@@ -2333,6 +2333,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'sysaccounts/:sysaccount?/usertpls/:usertpl?/views/gridview',
+                    meta: {
+                        caption: 'entities.usertpl.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'usertpls', parameterName: 'usertpl' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'usertpl',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'usertpls/:usertpl?/views/gridview',
                     meta: {
                         caption: 'entities.usertpl.views.gridview.caption',
@@ -2346,6 +2362,22 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/usertpls/:usertpl?/views/editview',
+                    meta: {
+                        caption: 'entities.usertpl.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'usertpls', parameterName: 'usertpl' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'usertpl',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'usertpls/:usertpl?/views/editview',

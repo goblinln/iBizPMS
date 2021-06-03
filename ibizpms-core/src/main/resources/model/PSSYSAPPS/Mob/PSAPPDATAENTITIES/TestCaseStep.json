@@ -276,6 +276,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchVersions",
+    "methodType" : "FETCH",
+    "name" : "FetchVersions",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Versions"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchVersions"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurTest",
     "methodType" : "FETCH",
     "name" : "CurTest",
@@ -309,15 +326,6 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Version"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchVersions",
-    "methodType" : "FETCH",
-    "name" : "Versions",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Versions"
     },
     "builtinMethod" : false
   } ],
@@ -447,6 +455,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchVersions",
+    "methodType" : "FETCH",
+    "name" : "FetchVersions",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Versions"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchVersions"
     },
     "builtinMethod" : false
   }, {
@@ -761,15 +786,6 @@
       "id" : "Version"
     },
     "tempDataMode" : 2,
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchVersions",
-    "methodType" : "FETCH",
-    "name" : "Versions",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Versions"
-    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchTempVersions",

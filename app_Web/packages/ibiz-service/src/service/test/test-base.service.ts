@@ -182,15 +182,15 @@ export class TestBaseService extends EntityBaseService<ITest> {
         return this.condCache.get('view');
     }
     /**
-     * TestTop
+     * FetchCurDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestService
      */
-    async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/${_context.test}/testtop`, _data);
+    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/tests/fetchcurdefault`, _data);
     }
     /**
      * CancelTestTop
@@ -216,14 +216,14 @@ export class TestBaseService extends EntityBaseService<ITest> {
         return res;
     }
     /**
-     * FetchCurDefault
+     * TestTop
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestService
      */
-    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/fetchcurdefault`, _data);
+    async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/tests/${_context.test}/testtop`, _data);
     }
 }

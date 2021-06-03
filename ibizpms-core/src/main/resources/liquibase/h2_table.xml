@@ -3327,7 +3327,7 @@
 
 
     <!--输出实体[ZT_USERCONTACT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_usercontact-35-128">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_usercontact-37-128">
         <createTable tableName="zt_usercontact">
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>

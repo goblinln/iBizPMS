@@ -67,5 +67,18 @@ public class TestCaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'READ')")
+	@ApiOperation(value = "根据产品测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据产品测试用例获取版本1")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/fetchversions")
+	public ResponseEntity<List<TestCaseStepDTO>> fetchVersionsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
+        context.setN_case_eq(case_id);
+        Page<CaseStep> domains = casestepService.searchVersions(context) ;
+        List<TestCaseStepDTO> list = testcasestepMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 
