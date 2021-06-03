@@ -41,7 +41,7 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-@Component("PSSystemDBCfgRuntime")
+@Component
 @Slf4j
 public class PSSystemDBCfgRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IPSSystemDBCfgRuntime {
 

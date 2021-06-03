@@ -41,7 +41,7 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-@Component("SysUserRuntime")
+@Component
 @Slf4j
 public class SysUserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements ISysUserRuntime {
 

@@ -41,7 +41,7 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-@Component("UserGroupRuntime")
+@Component
 @Slf4j
 public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IUserGroupRuntime {
 

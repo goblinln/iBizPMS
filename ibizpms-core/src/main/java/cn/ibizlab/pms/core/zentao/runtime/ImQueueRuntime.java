@@ -41,7 +41,7 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-@Component("ImQueueRuntime")
+@Component
 @Slf4j
 public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IImQueueRuntime {
 

@@ -41,7 +41,7 @@ import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 
-@Component("PSDEFieldRuntime")
+@Component
 @Slf4j
 public class PSDEFieldRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime implements IPSDEFieldRuntime {
 
