@@ -51,15 +51,7 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
     },
     "getPSAppViewRefs" : [ {
-      "name" : "EXPITEM:todo",
-      "realTitle" : "待办编辑视图（日历导航）",
-      "getRefPSAppView" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCalendarEditView.json",
-        "viewType" : "DEEDITVIEW"
-      }
-    }, {
-      "name" : "EXPITEM:reportly",
+      "name" : "EXPITEM:ACCOUNTREPORTLY",
       "realTitle" : "汇报编辑视图",
       "getRefPSAppView" : {
         "modelref" : true,
@@ -83,11 +75,11 @@
         "viewType" : "DEEDITVIEW"
       }
     }, {
-      "name" : "EXPITEM:daily",
-      "realTitle" : "日报编辑视图(日历显示)",
+      "name" : "EXPITEM:ACCOUNTTODO",
+      "realTitle" : "待办编辑视图（日历导航）",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoCalendarEditView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCalendarEditView.json",
         "viewType" : "DEEDITVIEW"
       }
     }, {
@@ -104,6 +96,14 @@
       "getRefPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCalendarEditView.json",
+        "viewType" : "DEEDITVIEW"
+      }
+    }, {
+      "name" : "EXPITEM:ACCOUNTDAILY",
+      "realTitle" : "日报编辑视图(日历显示)",
+      "getRefPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoCalendarEditView.json",
         "viewType" : "DEEDITVIEW"
       }
     } ],
@@ -427,6 +427,27 @@
           "value" : "product",
           "rawValue" : false
         } ],
+        "getPSNavigateParams" : [ {
+          "key" : "n_deadline_noteq",
+          "name" : "n_deadline_noteq",
+          "value" : "0000-00-00",
+          "rawValue" : true
+        }, {
+          "key" : "n_assigneddate_noteq",
+          "name" : "n_assigneddate_noteq",
+          "value" : "0000-00-00 00:00:00",
+          "rawValue" : true
+        }, {
+          "key" : "n_assigneddate_isnotnull",
+          "name" : "n_assigneddate_isnotnull",
+          "value" : "2021-01-01 00:00:00",
+          "rawValue" : true
+        }, {
+          "key" : "n_deadline_isnotnull",
+          "name" : "n_deadline_isnotnull",
+          "value" : "2021-01-01",
+          "rawValue" : true
+        } ],
         "getTextPSAppDEField" : {
           "name" : "TITLE",
           "codeName" : "Title"
@@ -745,7 +766,7 @@
           "codeName" : "Id"
         },
         "itemStyle" : "DEFAULT",
-        "itemType" : "todo",
+        "itemType" : "ACCOUNTTODO",
         "maxSize" : -1,
         "name" : "待办",
         "getNavPSAppView" : {
@@ -913,7 +934,7 @@
             "showCaption" : true
           } ],
           "mobilePanel" : true,
-          "name" : "todolayoutpanel",
+          "name" : "accounttodolayoutpanel",
           "modelid" : "56cea33453c4faf6de453b9018cdbba3",
           "modeltype" : "PSSYSVIEWPANEL"
         },
@@ -926,7 +947,7 @@
           "codeName" : "Name"
         },
         "enableQuickCreate" : false,
-        "id" : "todo"
+        "id" : "ACCOUNTTODO"
       }, {
         "bKColor" : "rgba(60, 255, 0, 1)",
         "getBeginTimePSAppDEField" : {
@@ -947,7 +968,7 @@
           "codeName" : "IbzDailyId"
         },
         "itemStyle" : "DEFAULT",
-        "itemType" : "daily",
+        "itemType" : "ACCOUNTDAILY",
         "maxSize" : -1,
         "name" : "日报",
         "getNavPSAppView" : {
@@ -972,7 +993,7 @@
           "codeName" : "IbzDailyName"
         },
         "enableQuickCreate" : false,
-        "id" : "daily"
+        "id" : "ACCOUNTDAILY"
       }, {
         "bKColor" : "rgba(137, 2, 20, 1)",
         "getBeginTimePSAppDEField" : {
@@ -992,7 +1013,7 @@
           "codeName" : "IbzReportlyId"
         },
         "itemStyle" : "DEFAULT",
-        "itemType" : "reportly",
+        "itemType" : "ACCOUNTREPORTLY",
         "maxSize" : -1,
         "name" : "汇报",
         "getNavPSAppView" : {
@@ -1017,7 +1038,7 @@
           "codeName" : "IbzReportlyName"
         },
         "enableQuickCreate" : false,
-        "id" : "reportly"
+        "id" : "ACCOUNTREPORTLY"
       }, {
         "bKColor" : "rgba(95, 132, 245, 1)",
         "getBeginTimePSAppDEField" : {
@@ -1150,6 +1171,17 @@
           "modelid" : "7f1e8cfe65f600cd812168d377dfae3e",
           "modeltype" : "PSSYSVIEWPANEL"
         },
+        "getPSNavigateContexts" : [ {
+          "key" : "PROJECT",
+          "name" : "PROJECT",
+          "value" : "project",
+          "rawValue" : false
+        }, {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
         "getTextPSAppDEField" : {
           "name" : "NAME",
           "codeName" : "Name"

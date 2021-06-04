@@ -41,14 +41,26 @@
 		<if test="srf.n_assigneddate_gtandeq != null ">
 			<![CDATA[ AND  t1.`ASSIGNEDDATE` >= #{srf.n_assigneddate_gtandeq,jdbcType=TIMESTAMP} ]]>
         </if>
+		<if test="srf.n_assigneddate_isnotnull != null ">
+			<![CDATA[ AND  t1.`ASSIGNEDDATE` IS NOT NULL ]]>
+        </if>
+		<if test="srf.n_assigneddate_noteq != null ">
+			<![CDATA[ AND  t1.`ASSIGNEDDATE` <> #{srf.n_assigneddate_noteq,jdbcType=TIMESTAMP} ]]>
+        </if>
 		<if test="srf.n_deadline_gtandeq != null ">
 			<![CDATA[ AND  t1.`DEADLINE` >= #{srf.n_deadline_gtandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_deadline_isnotnull != null ">
+			<![CDATA[ AND  t1.`DEADLINE` IS NOT NULL ]]>
         </if>
 		<if test="srf.n_deadline_lt != null ">
 			<![CDATA[ AND  t1.`DEADLINE` < #{srf.n_deadline_lt,jdbcType=TIMESTAMP} ]]>
         </if>
 		<if test="srf.n_deadline_ltandeq != null ">
 			<![CDATA[ AND  t1.`DEADLINE` <= #{srf.n_deadline_ltandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_deadline_noteq != null ">
+			<![CDATA[ AND  t1.`DEADLINE` <> #{srf.n_deadline_noteq,jdbcType=TIMESTAMP} ]]>
         </if>
 		<if test="srf.n_color_eq != null ">
 			<![CDATA[ AND  t1.`COLOR` = #{srf.n_color_eq,jdbcType=VARCHAR} ]]>

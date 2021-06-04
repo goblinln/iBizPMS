@@ -2858,6 +2858,16 @@
       "name" : "N_ASSIGNEDDATE_GTANDEQ",
       "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
+    }, {
+      "codeName" : "N_ASSIGNEDDATE_ISNOTNULL",
+      "name" : "N_ASSIGNEDDATE_ISNOTNULL",
+      "stdDataType" : 5,
+      "valueOP" : "ISNOTNULL"
+    }, {
+      "codeName" : "N_ASSIGNEDDATE_NOTEQ",
+      "name" : "N_ASSIGNEDDATE_NOTEQ",
+      "stdDataType" : 5,
+      "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2899,6 +2909,11 @@
       "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     }, {
+      "codeName" : "N_DEADLINE_ISNOTNULL",
+      "name" : "N_DEADLINE_ISNOTNULL",
+      "stdDataType" : 5,
+      "valueOP" : "ISNOTNULL"
+    }, {
       "codeName" : "N_DEADLINE_LT",
       "name" : "N_DEADLINE_LT",
       "stdDataType" : 5,
@@ -2908,6 +2923,11 @@
       "name" : "N_DEADLINE_LTANDEQ",
       "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
+    }, {
+      "codeName" : "N_DEADLINE_NOTEQ",
+      "name" : "N_DEADLINE_NOTEQ",
+      "stdDataType" : 5,
+      "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
