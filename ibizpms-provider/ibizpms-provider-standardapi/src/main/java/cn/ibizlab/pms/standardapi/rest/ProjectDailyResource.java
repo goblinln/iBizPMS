@@ -71,6 +71,24 @@ public class ProjectDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
     }
 
+    @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #projectdaily_id, 'UPDATE')")
+    @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projectdailies/{projectdaily_id}")
+    @Transactional
+    public ResponseEntity<ProjectDailyDTO> update(@PathVariable("projectdaily_id") String projectdaily_id, @RequestBody ProjectDailyDTO projectdailydto) {
+		IbizproProjectDaily domain  = projectdailyMapping.toDomain(projectdailydto);
+        domain.setIbizproprojectdailyid(projectdaily_id);
+		ibizproprojectdailyService.update(domain );
+        if(!ibizproprojectdailyRuntime.test(projectdaily_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(projectdaily_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
     @ApiOperation(value = "新建项目日报", tags = {"项目日报" },  notes = "新建项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectdailies")
@@ -109,24 +127,6 @@ public class ProjectDailyResource {
         Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
         projectdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdailydto);
-    }
-
-
-    @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
-    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #projectdaily_id, 'UPDATE')")
-    @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projectdailies/{projectdaily_id}")
-    @Transactional
-    public ResponseEntity<ProjectDailyDTO> update(@PathVariable("projectdaily_id") String projectdaily_id, @RequestBody ProjectDailyDTO projectdailydto) {
-		IbizproProjectDaily domain  = projectdailyMapping.toDomain(projectdailydto);
-        domain.setIbizproprojectdailyid(projectdaily_id);
-		ibizproprojectdailyService.update(domain );
-        if(!ibizproprojectdailyRuntime.test(projectdaily_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(projectdaily_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

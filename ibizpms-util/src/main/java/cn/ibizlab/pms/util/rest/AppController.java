@@ -122,7 +122,7 @@ public class AppController {
         if (StringUtils.isEmpty(userId)) {
             throw new BadRequestAlertException("分享配置失败，参数缺失", "IBZConfig", configType);
         }
-        String id = IdWorker.getIdStr();
+        String id = IdWorker.get32UUID();
         ibzConfigService.saveShareConfig(id, configType, targetType, userId);
         return ResponseEntity.ok(id);
     }

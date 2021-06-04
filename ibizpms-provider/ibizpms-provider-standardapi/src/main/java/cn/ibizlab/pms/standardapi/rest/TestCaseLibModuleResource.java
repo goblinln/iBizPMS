@@ -53,5 +53,19 @@ public class TestCaseLibModuleResource {
     public TestCaseLibModuleMapping testcaselibmoduleMapping;
 
 
+    @PreAuthorize("quickTest('IBZ_LIBMODULE','READ')")
+	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/testcaselibmodules/fetchdefault")
+	public ResponseEntity<List<TestCaseLibModuleDTO>> fetchDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibModuleSearchContext context) {
+        context.setN_root_eq(ibzlib_id);
+        ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
+        List<TestCaseLibModuleDTO> list = testcaselibmoduleMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

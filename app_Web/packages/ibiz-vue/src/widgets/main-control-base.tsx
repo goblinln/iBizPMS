@@ -63,7 +63,7 @@ export class MainControlBase extends ControlBase {
      * 开始加载
      */
     public ctrlBeginLoading() {
-        this.ctrlLoadingService.beginLoading(this.controlId);
+        this.ctrlLoadingService.beginLoading(this.controlInstance);
     }
 
     /**
