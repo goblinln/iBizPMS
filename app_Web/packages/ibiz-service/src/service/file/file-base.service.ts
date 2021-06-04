@@ -120,11 +120,47 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && _context.testreult && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchproject`, _data);
+        }
+        if (_context.test && _context.testcase && _context.testcasestep && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchproject`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchproject`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchproject`, _data);
+        }
         if (_context.project && _context.story && true) {
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchproject`, _data);
         }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchproject`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchproject`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchproject`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproject`, _data);
+        }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchproject`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchproject`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/files/fetchproject`, _data);
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/files/fetchproject`, _data);
@@ -140,11 +176,47 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && _context.testreult && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testcase && _context.testcasestep && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchproduct`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchproduct`, _data);
+        }
         if (_context.project && _context.story && true) {
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchproduct`, _data);
         }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchproduct`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchproduct`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchproduct`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchproduct`, _data);
+        }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchproduct`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchproduct`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/files/fetchproduct`, _data);
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/files/fetchproduct`, _data);
@@ -160,11 +232,47 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && _context.testreult && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.testcase && _context.testcasestep && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchtype`, _data);
+        }
         if (_context.project && _context.story && true) {
             return this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchtype`, _data);
         }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchtype`, _data);
+        }
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchtype`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/files/fetchtype`, _data);
         }
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/files/fetchtype`, _data);
@@ -180,11 +288,47 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @memberof FileService
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && _context.testreult && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/${_context.file}`);
+        }
+        if (_context.test && _context.testcase && _context.testcasestep && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/${_context.file}`);
+        }
+        if (_context.test && _context.testcase && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/files/${_context.file}`);
+        }
+        if (_context.test && _context.bug && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/bugs/${_context.bug}/files/${_context.file}`);
+        }
         if (_context.project && _context.story && _context.file) {
             return this.http.delete(`/projects/${_context.project}/stories/${_context.story}/files/${_context.file}`);
         }
+        if (_context.project && _context.task && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/files/${_context.file}`);
+        }
+        if (_context.project && _context.build && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}/files/${_context.file}`);
+        }
+        if (_context.project && _context.bug && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/bugs/${_context.bug}/files/${_context.file}`);
+        }
+        if (_context.project && _context.productplan && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/productplans/${_context.productplan}/files/${_context.file}`);
+        }
         if (_context.product && _context.story && _context.file) {
             return this.http.delete(`/products/${_context.product}/stories/${_context.story}/files/${_context.file}`);
+        }
+        if (_context.product && _context.productrelease && _context.file) {
+            return this.http.delete(`/products/${_context.product}/productreleases/${_context.productrelease}/files/${_context.file}`);
+        }
+        if (_context.product && _context.productplan && _context.file) {
+            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/files/${_context.file}`);
+        }
+        if (_context.product && _context.build && _context.file) {
+            return this.http.delete(`/products/${_context.product}/builds/${_context.build}/files/${_context.file}`);
+        }
+        if (_context.project && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/files/${_context.file}`);
         }
         if (_context.product && _context.file) {
             return this.http.delete(`/products/${_context.product}/files/${_context.file}`);

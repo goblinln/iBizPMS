@@ -49,6 +49,17 @@ public class SysAccountResource {
     @Lazy
     public SysAccountMapping sysaccountMapping;
 
+	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"系统用户" } ,notes = "获取个人信息-个人贡献")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmycontribution")
+	public ResponseEntity<List<SysAccountDTO>> countmycontribution(@RequestBody SysUserSearchContext context) {
+        Page<SysUser> domains = sysuserService.searchPersonInfo(context) ;
+        List<SysAccountDTO> list = sysaccountMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 	@ApiOperation(value = "获取我的工作", tags = {"系统用户" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmywork")
 	public ResponseEntity<List<SysAccountDTO>> countmywork(@RequestBody SysUserSearchContext context) {
@@ -68,17 +79,6 @@ public class SysAccountResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"系统用户" } ,notes = "获取个人信息-个人贡献")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmycontribution")
-	public ResponseEntity<List<SysAccountDTO>> countmycontribution(@RequestBody SysUserSearchContext context) {
-        Page<SysUser> domains = sysuserService.searchPersonInfo(context) ;
-        List<SysAccountDTO> list = sysaccountMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysaccount_id}/{action}")
