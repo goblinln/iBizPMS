@@ -52,6 +52,19 @@ public class UserContactResource {
     @Lazy
     public UserContactMapping usercontactMapping;
 
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
+    @ApiOperation(value = "新建用户联系方式", tags = {"用户联系方式" },  notes = "新建用户联系方式")
+	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts")
+    @Transactional
+    public ResponseEntity<UserContactDTO> create(@Validated @RequestBody UserContactDTO usercontactdto) {
+        UserContact domain = usercontactMapping.toDomain(usercontactdto);
+		usercontactService.create(domain);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
     @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/getdraft")
@@ -127,19 +140,6 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
-    @ApiOperation(value = "新建用户联系方式", tags = {"用户联系方式" },  notes = "新建用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts")
-    @Transactional
-    public ResponseEntity<UserContactDTO> create(@Validated @RequestBody UserContactDTO usercontactdto) {
-        UserContact domain = usercontactMapping.toDomain(usercontactdto);
-		usercontactService.create(domain);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/usercontacts/{usercontact_id}/{action}")
@@ -148,6 +148,18 @@ public class UserContactResource {
         usercontactdto = usercontactMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(usercontactdto);
     }
+
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
+    @ApiOperation(value = "根据系统用户建立用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户建立用户联系方式")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/usercontacts")
+    public ResponseEntity<UserContactDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody UserContactDTO usercontactdto) {
+        UserContact domain = usercontactMapping.toDomain(usercontactdto);
+        
+		usercontactService.create(domain);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
     @ApiOperation(value = "根据系统用户获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式草稿")
@@ -223,17 +235,5 @@ public class UserContactResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
-    @ApiOperation(value = "根据系统用户建立用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户建立用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/usercontacts")
-    public ResponseEntity<UserContactDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody UserContactDTO usercontactdto) {
-        UserContact domain = usercontactMapping.toDomain(usercontactdto);
-        
-		usercontactService.create(domain);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
 }
 

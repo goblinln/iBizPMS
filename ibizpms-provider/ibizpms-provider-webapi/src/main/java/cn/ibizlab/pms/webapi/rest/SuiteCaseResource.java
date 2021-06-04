@@ -125,7 +125,7 @@ public class SuiteCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
-    @PreAuthorize("@SuiteCaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_SUITECASE', 'DENY')")
     @ApiOperation(value = "保存套件用例", tags = {"套件用例" },  notes = "保存套件用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/save")
     public ResponseEntity<SuiteCaseDTO> save(@RequestBody SuiteCaseDTO suitecasedto) {

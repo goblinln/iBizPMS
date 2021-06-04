@@ -174,7 +174,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "确认需求变更", tags = {"测试用例" },  notes = "确认需求变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/confirmstorychange")
     public ResponseEntity<CaseDTO> confirmstorychange(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -216,7 +216,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "测试单关联测试用例", tags = {"测试用例" },  notes = "测试单关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/linkcase")
     public ResponseEntity<CaseDTO> linkCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -229,7 +229,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "批量处理[测试单关联测试用例]", tags = {"测试用例" },  notes = "批量处理[测试单关联测试用例]")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/linkcasebatch")
     public ResponseEntity<Boolean> linkCaseBatch(@RequestBody List<CaseDTO> casedtos) {
@@ -328,7 +328,7 @@ public class CaseResource {
     }
 
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "套件关联", tags = {"测试用例" },  notes = "套件关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testsuitelinkcase")
     public ResponseEntity<CaseDTO> testsuitelinkCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -341,7 +341,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "批量处理[套件关联]", tags = {"测试用例" },  notes = "批量处理[套件关联]")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/testsuitelinkcasebatch")
     public ResponseEntity<Boolean> testsuitelinkCaseBatch(@RequestBody List<CaseDTO> casedtos) {
@@ -805,7 +805,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "根据产品确认需求变更", tags = {"测试用例" },  notes = "根据产品确认需求变更")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/confirmstorychange")
     public ResponseEntity<CaseDTO> confirmstorychangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -841,7 +841,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "根据产品测试单关联测试用例", tags = {"测试用例" },  notes = "根据产品测试单关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/linkcase")
     public ResponseEntity<CaseDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -942,7 +942,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
-    @PreAuthorize("@CaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASE', 'DENY')")
     @ApiOperation(value = "根据产品套件关联", tags = {"测试用例" },  notes = "根据产品套件关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testsuitelinkcase")
     public ResponseEntity<CaseDTO> testsuitelinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {

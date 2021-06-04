@@ -196,7 +196,7 @@ public class ProductResource {
     }
 
 
-    @PreAuthorize("@ProductRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCT', 'DENY')")
     @ApiOperation(value = "保存产品", tags = {"产品" },  notes = "保存产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/save")
     public ResponseEntity<ProductDTO> save(@RequestBody ProductDTO productdto) {

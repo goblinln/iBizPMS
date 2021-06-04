@@ -139,7 +139,7 @@ public class UserResource {
     }
 
 
-    @PreAuthorize("@UserRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_USER', 'DENY')")
     @ApiOperation(value = "保存用户", tags = {"用户" },  notes = "保存用户")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/save")
     public ResponseEntity<UserDTO> save(@RequestBody UserDTO userdto) {
@@ -152,7 +152,7 @@ public class UserResource {
     }
 
 
-    @PreAuthorize("@UserRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_USER', 'DENY')")
     @ApiOperation(value = "同步账号", tags = {"用户" },  notes = "同步账号")
 	@RequestMapping(method = RequestMethod.POST, value = "/users/{user_id}/syncaccount")
     public ResponseEntity<UserDTO> syncAccount(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {

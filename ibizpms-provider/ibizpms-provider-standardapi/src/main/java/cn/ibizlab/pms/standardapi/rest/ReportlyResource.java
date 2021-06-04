@@ -52,14 +52,6 @@ public class ReportlyResource {
     @Lazy
     public ReportlyMapping reportlyMapping;
 
-    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
-    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
-    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
-        IbzReportly domain = reportlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
-    }
-
     @VersionCheck(entity = "ibzreportly" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
     @ApiOperation(value = "更新汇报", tags = {"汇报" },  notes = "更新汇报")
@@ -112,6 +104,14 @@ public class ReportlyResource {
         Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
+    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
+    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
+        IbzReportly domain = reportlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('IBZ_REPORTLY', 'NONE')")

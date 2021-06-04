@@ -125,7 +125,7 @@ public class CompanyStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(companystatsService.checkKey(companystatsMapping.toDomain(companystatsdto)));
     }
 
-    @PreAuthorize("@CompanyStatsRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'DENY')")
     @ApiOperation(value = "保存公司动态汇总", tags = {"公司动态汇总" },  notes = "保存公司动态汇总")
 	@RequestMapping(method = RequestMethod.POST, value = "/companystats/save")
     public ResponseEntity<CompanyStatsDTO> save(@RequestBody CompanyStatsDTO companystatsdto) {

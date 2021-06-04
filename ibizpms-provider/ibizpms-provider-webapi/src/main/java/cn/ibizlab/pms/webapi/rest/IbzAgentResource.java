@@ -126,7 +126,7 @@ public class IbzAgentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzagentService.checkKey(ibzagentMapping.toDomain(ibzagentdto)));
     }
 
-    @PreAuthorize("@IbzAgentRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_AGENT', 'DENY')")
     @ApiOperation(value = "保存代理", tags = {"代理" },  notes = "保存代理")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/save")
     public ResponseEntity<IbzAgentDTO> save(@RequestBody IbzAgentDTO ibzagentdto) {

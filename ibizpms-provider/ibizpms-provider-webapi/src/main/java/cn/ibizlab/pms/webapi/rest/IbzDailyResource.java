@@ -206,7 +206,7 @@ public class IbzDailyResource {
     }
 
 
-    @PreAuthorize("@IbzDailyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DAILY', 'DENY')")
     @ApiOperation(value = "保存日报", tags = {"日报" },  notes = "保存日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/save")
     public ResponseEntity<IbzDailyDTO> save(@RequestBody IbzDailyDTO ibzdailydto) {

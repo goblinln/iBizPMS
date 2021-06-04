@@ -140,7 +140,7 @@ public class IbizproProjectMonthlyResource {
     }
 
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'DENY')")
     @ApiOperation(value = "保存项目月报", tags = {"项目月报" },  notes = "保存项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/save")
     public ResponseEntity<IbizproProjectMonthlyDTO> save(@RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {
@@ -153,7 +153,7 @@ public class IbizproProjectMonthlyResource {
     }
 
 
-    @PreAuthorize("@IbizproProjectMonthlyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'DENY')")
     @ApiOperation(value = "汇总项目月报", tags = {"项目月报" },  notes = "汇总项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectmonthlies/{ibizproprojectmonthly_id}/sumprojectmonthly")
     public ResponseEntity<IbizproProjectMonthlyDTO> sumProjectMonthly(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id, @RequestBody IbizproProjectMonthlyDTO ibizproprojectmonthlydto) {

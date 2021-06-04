@@ -136,7 +136,7 @@ public class IbizproProjectWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbizproProjectWeeklyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZPRO_PROJECTWEEKLY', 'DENY')")
     @ApiOperation(value = "保存项目周报", tags = {"项目周报" },  notes = "保存项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectweeklies/save")
     public ResponseEntity<IbizproProjectWeeklyDTO> save(@RequestBody IbizproProjectWeeklyDTO ibizproprojectweeklydto) {

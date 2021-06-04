@@ -125,7 +125,7 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.checkKey(projectmoduleMapping.toDomain(projectmoduledto)));
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMODULE', 'DENY')")
     @ApiOperation(value = "重建模块路径", tags = {"任务模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/fix")
     public ResponseEntity<ProjectModuleDTO> fix(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -153,7 +153,7 @@ public class ProjectModuleResource {
     }
 
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMODULE', 'DENY')")
     @ApiOperation(value = "保存任务模块", tags = {"任务模块" },  notes = "保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/save")
     public ResponseEntity<ProjectModuleDTO> save(@RequestBody ProjectModuleDTO projectmoduledto) {
@@ -324,7 +324,7 @@ public class ProjectModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectmoduleService.checkKey(projectmoduleMapping.toDomain(projectmoduledto)));
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMODULE', 'DENY')")
     @ApiOperation(value = "根据项目重建模块路径", tags = {"任务模块" },  notes = "根据项目重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/fix")
     public ResponseEntity<ProjectModuleDTO> fixByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody ProjectModuleDTO projectmoduledto) {
@@ -348,7 +348,7 @@ public class ProjectModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMODULE', 'DENY')")
     @ApiOperation(value = "根据项目保存任务模块", tags = {"任务模块" },  notes = "根据项目保存任务模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/save")
     public ResponseEntity<ProjectModuleDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleDTO projectmoduledto) {

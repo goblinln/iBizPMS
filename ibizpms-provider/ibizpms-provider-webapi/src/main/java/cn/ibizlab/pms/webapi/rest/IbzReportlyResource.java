@@ -136,7 +136,7 @@ public class IbzReportlyResource {
     }
 
 
-    @PreAuthorize("@IbzReportlyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_REPORTLY', 'DENY')")
     @ApiOperation(value = "保存汇报", tags = {"汇报" },  notes = "保存汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/save")
     public ResponseEntity<IbzReportlyDTO> save(@RequestBody IbzReportlyDTO ibzreportlydto) {

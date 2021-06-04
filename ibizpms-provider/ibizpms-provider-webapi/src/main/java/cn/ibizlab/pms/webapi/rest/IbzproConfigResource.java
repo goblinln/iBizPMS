@@ -140,7 +140,7 @@ public class IbzproConfigResource {
     }
 
 
-    @PreAuthorize("@IbzproConfigRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZPRO_CONFIG', 'DENY')")
     @ApiOperation(value = "保存系统配置表", tags = {"系统配置表" },  notes = "保存系统配置表")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproconfigs/save")
     public ResponseEntity<IbzproConfigDTO> save(@RequestBody IbzproConfigDTO ibzproconfigdto) {

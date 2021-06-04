@@ -195,7 +195,7 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOC', 'DENY')")
     @ApiOperation(value = "保存文档", tags = {"文档" },  notes = "保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/save")
     public ResponseEntity<DocDTO> save(@RequestBody DocDTO docdto) {
@@ -500,7 +500,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOC', 'DENY')")
     @ApiOperation(value = "根据文档库保存文档", tags = {"文档" },  notes = "根据文档库保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/save")
     public ResponseEntity<DocDTO> saveByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -806,7 +806,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOC', 'DENY')")
     @ApiOperation(value = "根据产品文档库保存文档", tags = {"文档" },  notes = "根据产品文档库保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/save")
     public ResponseEntity<DocDTO> saveByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
@@ -1112,7 +1112,7 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
-    @PreAuthorize("@DocRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOC', 'DENY')")
     @ApiOperation(value = "根据项目文档库保存文档", tags = {"文档" },  notes = "根据项目文档库保存文档")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/save")
     public ResponseEntity<DocDTO> saveByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {

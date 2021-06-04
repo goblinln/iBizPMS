@@ -117,7 +117,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productmoduleService.checkKey(productmoduleMapping.toDomain(productmoduledto)));
     }
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTMODULE', 'DENY')")
     @ApiOperation(value = "重建模块路径", tags = {"需求模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/productmodules/{productmodule_id}/fix")
     public ResponseEntity<ProductModuleDTO> fix(@PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
@@ -132,7 +132,7 @@ public class ProductModuleResource {
 
 
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTMODULE', 'DENY')")
     @ApiOperation(value = "批量保存需求模块", tags = {"需求模块" },  notes = "批量保存需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/productmodules/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductModuleDTO> productmoduledtos) {
@@ -140,7 +140,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTMODULE', 'DENY')")
     @ApiOperation(value = "同步Ibz平台模块", tags = {"需求模块" },  notes = "同步Ibz平台模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/productmodules/{productmodule_id}/syncfromibiz")
     public ResponseEntity<ProductModuleDTO> syncFromIBIZ(@PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
@@ -291,7 +291,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productmoduleService.checkKey(productmoduleMapping.toDomain(productmoduledto)));
     }
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTMODULE', 'DENY')")
     @ApiOperation(value = "根据产品重建模块路径", tags = {"需求模块" },  notes = "根据产品重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/{productmodule_id}/fix")
     public ResponseEntity<ProductModuleDTO> fixByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
@@ -304,7 +304,7 @@ public class ProductModuleResource {
     }
 
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTMODULE', 'DENY')")
     @ApiOperation(value = "根据产品批量保存需求模块", tags = {"需求模块" },  notes = "根据产品批量保存需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProductModuleDTO> productmoduledtos) {
@@ -316,7 +316,7 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTMODULE', 'DENY')")
     @ApiOperation(value = "根据产品同步Ibz平台模块", tags = {"需求模块" },  notes = "根据产品同步Ibz平台模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules/{productmodule_id}/syncfromibiz")
     public ResponseEntity<ProductModuleDTO> syncFromIBIZByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {

@@ -53,6 +53,15 @@ public class ActionResource {
     public ActionMapping actionMapping;
 
 
+    @PreAuthorize("quickTest('ZT_ACTION', 'CREATE')")
+    @ApiOperation(value = "根据系统用户获取系统日志草稿", tags = {"系统日志" },  notes = "根据系统用户获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, ActionDTO dto) {
+        Action domain = actionMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
+    }
+
     @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
 	@ApiOperation(value = "根据系统用户获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchproduct")
@@ -166,15 +175,15 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_ACTION', 'CREATE')")
-    @ApiOperation(value = "根据系统用户获取系统日志草稿", tags = {"系统日志" },  notes = "根据系统用户获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, ActionDTO dto) {
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        
+        domain.setObjectid(product_id);domain.setObjecttype("product");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品获取ProductTrends")
@@ -289,15 +298,15 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ActionDTO dto) {
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据项目获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(product_id);domain.setObjecttype("product");
+        domain.setObjectid(project_id);domain.setObjecttype("project");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目获取ProductTrends")
@@ -412,15 +421,15 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据项目获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProject(@PathVariable("project_id") Long project_id, ActionDTO dto) {
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据测试套件获取系统日志草稿", tags = {"系统日志" },  notes = "根据测试套件获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(project_id);domain.setObjecttype("project");
+        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据测试套件获取ProductTrends", tags = {"系统日志" } ,notes = "根据测试套件获取ProductTrends")
@@ -535,15 +544,15 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据测试套件获取系统日志草稿", tags = {"系统日志" },  notes = "根据测试套件获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, ActionDTO dto) {
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据待办获取系统日志草稿", tags = {"系统日志" },  notes = "根据待办获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByTodo(@PathVariable("todo_id") Long todo_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
+        domain.setObjectid(todo_id);domain.setObjecttype("todo");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据待办获取ProductTrends", tags = {"系统日志" } ,notes = "根据待办获取ProductTrends")
@@ -658,16 +667,16 @@ public class ActionResource {
     }
 
 
+
+
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据待办获取系统日志草稿", tags = {"系统日志" },  notes = "根据待办获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByTodo(@PathVariable("todo_id") Long todo_id, ActionDTO dto) {
+    @ApiOperation(value = "根据系统用户待办获取系统日志草稿", tags = {"系统日志" },  notes = "根据系统用户待办获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
         domain.setObjectid(todo_id);domain.setObjecttype("todo");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户待办获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户待办获取ProductTrends")
@@ -782,16 +791,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据系统用户待办获取系统日志草稿", tags = {"系统日志" },  notes = "根据系统用户待办获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品版本获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(todo_id);domain.setObjecttype("todo");
+        domain.setObjectid(build_id);domain.setObjecttype("Build");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品版本获取ProductTrends")
@@ -906,16 +915,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品版本获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品产品计划获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品产品计划获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(build_id);domain.setObjecttype("Build");
+        domain.setObjectid(productplan_id);domain.setObjecttype("productplan");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品产品计划获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品产品计划获取ProductTrends")
@@ -1030,16 +1039,16 @@ public class ActionResource {
     }
 
 
+
+
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品产品计划获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品产品计划获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, ActionDTO dto) {
+    @ApiOperation(value = "根据产品需求获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品需求获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(productplan_id);domain.setObjecttype("productplan");
+        domain.setObjectid(story_id);domain.setObjecttype("story");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品需求获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品需求获取ProductTrends")
@@ -1154,16 +1163,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品需求获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品需求获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, ActionDTO dto) {
+
+
+    @PreAuthorize("quickTest('ZT_ACTION', 'CREATE')")
+    @ApiOperation(value = "根据项目产品计划获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目产品计划获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/{productplan_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(story_id);domain.setObjecttype("story");
+        domain.setObjectid(productplan_id);domain.setObjecttype("productplan");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目产品计划获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目产品计划获取ProductTrends")
@@ -1278,16 +1287,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_ACTION', 'CREATE')")
-    @ApiOperation(value = "根据项目产品计划获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目产品计划获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/{productplan_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目Bug获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目Bug获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/bugs/{bug_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(productplan_id);domain.setObjecttype("productplan");
+        domain.setObjectid(bug_id);domain.setObjecttype("bug");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目Bug获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目Bug获取ProductTrends")
@@ -1402,16 +1411,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目Bug获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目Bug获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/bugs/{bug_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目版本获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(bug_id);domain.setObjecttype("bug");
+        domain.setObjectid(build_id);domain.setObjecttype("Build");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目版本获取ProductTrends")
@@ -1526,16 +1535,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目版本获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目任务获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目任务获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(build_id);domain.setObjecttype("Build");
+        domain.setObjectid(task_id);domain.setObjecttype("task");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目任务获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目任务获取ProductTrends")
@@ -1650,16 +1659,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目任务获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目任务获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目需求获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目需求获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/stories/{story_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(task_id);domain.setObjecttype("task");
+        domain.setObjectid(story_id);domain.setObjecttype("story");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目需求获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目需求获取ProductTrends")
@@ -1774,16 +1783,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目需求获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目需求获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/stories/{story_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据项目测试报告获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目测试报告获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/{testreport_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(story_id);domain.setObjecttype("story");
+        domain.setObjectid(testreport_id);domain.setObjecttype("testreport");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目测试报告获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目测试报告获取ProductTrends")
@@ -1898,16 +1907,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据项目测试报告获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目测试报告获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/{testreport_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目测试版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目测试版本获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(testreport_id);domain.setObjecttype("testreport");
+        domain.setObjectid(testtask_id);domain.setObjecttype("testtask");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目测试版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目测试版本获取ProductTrends")
@@ -2022,16 +2031,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目测试版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目测试版本获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品Bug获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品Bug获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/bugs/{bug_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(testtask_id);domain.setObjecttype("testtask");
+        domain.setObjectid(bug_id);domain.setObjecttype("bug");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品Bug获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品Bug获取ProductTrends")
@@ -2146,16 +2155,16 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品Bug获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品Bug获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/bugs/{bug_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, ActionDTO dto) {
+
+
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品测试报告获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品测试报告获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/{testreport_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, ActionDTO dto) {
         Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(bug_id);domain.setObjecttype("bug");
+        domain.setObjectid(testreport_id);domain.setObjecttype("testreport");
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
-
-
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品测试报告获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品测试报告获取ProductTrends")
@@ -2269,15 +2278,6 @@ public class ActionResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品测试报告获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品测试报告获取系统日志草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/{testreport_id}/actions/getdraft")
-    public ResponseEntity<ActionDTO> getDraftByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, ActionDTO dto) {
-        Action domain = actionMapping.toDomain(dto);
-        domain.setObjectid(testreport_id);domain.setObjecttype("testreport");
-        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
-    }
 
 }
 

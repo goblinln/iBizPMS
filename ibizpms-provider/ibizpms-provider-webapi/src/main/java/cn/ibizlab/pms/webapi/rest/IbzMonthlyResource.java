@@ -192,7 +192,7 @@ public class IbzMonthlyResource {
     }
 
 
-    @PreAuthorize("@IbzMonthlyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_MONTHLY', 'DENY')")
     @ApiOperation(value = "保存月报", tags = {"月报" },  notes = "保存月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmonthlies/save")
     public ResponseEntity<IbzMonthlyDTO> save(@RequestBody IbzMonthlyDTO ibzmonthlydto) {

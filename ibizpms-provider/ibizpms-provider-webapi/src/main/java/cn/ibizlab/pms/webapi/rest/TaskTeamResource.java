@@ -118,7 +118,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskteamService.checkKey(taskteamMapping.toDomain(taskteamdto)));
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TASKTEAM', 'DENY')")
     @ApiOperation(value = "根据任务保存任务团队", tags = {"任务团队" },  notes = "根据任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams/save")
     public ResponseEntity<TaskTeamDTO> saveByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -209,7 +209,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskteamService.checkKey(taskteamMapping.toDomain(taskteamdto)));
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TASKTEAM', 'DENY')")
     @ApiOperation(value = "根据项目任务保存任务团队", tags = {"任务团队" },  notes = "根据项目任务保存任务团队")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams/save")
     public ResponseEntity<TaskTeamDTO> saveByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {

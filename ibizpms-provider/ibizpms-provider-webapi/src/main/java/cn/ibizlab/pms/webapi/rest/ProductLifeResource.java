@@ -126,7 +126,7 @@ public class ProductLifeResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productlifeService.checkKey(productlifeMapping.toDomain(productlifedto)));
     }
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTLIFE', 'DENY')")
     @ApiOperation(value = "保存产品生命周期", tags = {"产品生命周期" },  notes = "保存产品生命周期")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlives/save")
     public ResponseEntity<ProductLifeDTO> save(@RequestBody ProductLifeDTO productlifedto) {

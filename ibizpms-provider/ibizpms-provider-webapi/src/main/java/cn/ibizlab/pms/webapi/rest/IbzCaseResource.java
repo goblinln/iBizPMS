@@ -131,7 +131,7 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.checkKey(ibzcaseMapping.toDomain(ibzcasedto)));
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_CASE', 'DENY')")
     @ApiOperation(value = "保存测试用例", tags = {"测试用例" },  notes = "保存测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases/save")
     public ResponseEntity<IbzCaseDTO> save(@RequestBody IbzCaseDTO ibzcasedto) {
@@ -235,7 +235,7 @@ public class IbzCaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseService.checkKey(ibzcaseMapping.toDomain(ibzcasedto)));
     }
 
-    @PreAuthorize("@IbzCaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_CASE', 'DENY')")
     @ApiOperation(value = "根据用例库保存测试用例", tags = {"测试用例" },  notes = "根据用例库保存测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzcases/save")
     public ResponseEntity<IbzCaseDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzCaseDTO ibzcasedto) {

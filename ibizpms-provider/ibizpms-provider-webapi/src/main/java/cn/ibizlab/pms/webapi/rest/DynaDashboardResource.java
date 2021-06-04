@@ -126,7 +126,7 @@ public class DynaDashboardResource {
         return  ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.checkKey(dynadashboardMapping.toDomain(dynadashboarddto)));
     }
 
-    @PreAuthorize("@DynaDashboardRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('DYNADASHBOARD', 'DENY')")
     @ApiOperation(value = "保存动态数据看板", tags = {"动态数据看板" },  notes = "保存动态数据看板")
 	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/save")
     public ResponseEntity<DynaDashboardDTO> save(@RequestBody DynaDashboardDTO dynadashboarddto) {

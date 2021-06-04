@@ -181,7 +181,7 @@ public class UserYearWorkStatsResource {
     }
 
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'DENY')")
     @ApiOperation(value = "保存用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "保存用户年度工作内容统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/useryearworkstats/save")
     public ResponseEntity<UserYearWorkStatsDTO> save(@RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {

@@ -139,7 +139,7 @@ public class ProjectStatsResource {
     }
 
 
-    @PreAuthorize("@ProjectStatsRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTSTATS', 'DENY')")
     @ApiOperation(value = "保存项目统计", tags = {"项目统计" },  notes = "保存项目统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectstats/save")
     public ResponseEntity<ProjectStatsDTO> save(@RequestBody ProjectStatsDTO projectstatsdto) {

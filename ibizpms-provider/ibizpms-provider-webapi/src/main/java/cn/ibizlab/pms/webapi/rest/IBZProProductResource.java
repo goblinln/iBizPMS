@@ -125,7 +125,7 @@ public class IBZProProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.checkKey(ibzproproductMapping.toDomain(ibzproproductdto)));
     }
 
-    @PreAuthorize("@IBZProProductRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZPRO_PRODUCT', 'DENY')")
     @ApiOperation(value = "保存平台产品", tags = {"平台产品" },  notes = "保存平台产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/save")
     public ResponseEntity<IBZProProductDTO> save(@RequestBody IBZProProductDTO ibzproproductdto) {

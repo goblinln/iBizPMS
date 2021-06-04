@@ -125,7 +125,7 @@ public class IbizproIndexResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproindexService.checkKey(ibizproindexMapping.toDomain(ibizproindexdto)));
     }
 
-    @PreAuthorize("@IbizproIndexRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_INDEX', 'DENY')")
     @ApiOperation(value = "保存索引检索", tags = {"索引检索" },  notes = "保存索引检索")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproindices/save")
     public ResponseEntity<IbizproIndexDTO> save(@RequestBody IbizproIndexDTO ibizproindexdto) {

@@ -139,7 +139,7 @@ public class DocLibResource {
     }
 
 
-    @PreAuthorize("@DocLibRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCLIB', 'DENY')")
     @ApiOperation(value = "保存文档库", tags = {"文档库" },  notes = "保存文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/save")
     public ResponseEntity<DocLibDTO> save(@RequestBody DocLibDTO doclibdto) {
@@ -360,7 +360,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
-    @PreAuthorize("@DocLibRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCLIB', 'DENY')")
     @ApiOperation(value = "根据产品保存文档库", tags = {"文档库" },  notes = "根据产品保存文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/save")
     public ResponseEntity<DocLibDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody DocLibDTO doclibdto) {
@@ -578,7 +578,7 @@ public class DocLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
-    @PreAuthorize("@DocLibRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCLIB', 'DENY')")
     @ApiOperation(value = "根据项目保存文档库", tags = {"文档库" },  notes = "根据项目保存文档库")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/save")
     public ResponseEntity<DocLibDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody DocLibDTO doclibdto) {

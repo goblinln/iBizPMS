@@ -206,7 +206,7 @@ public class IbzWeeklyResource {
     }
 
 
-    @PreAuthorize("@IbzWeeklyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'DENY')")
     @ApiOperation(value = "保存周报", tags = {"周报" },  notes = "保存周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzweeklies/save")
     public ResponseEntity<IbzWeeklyDTO> save(@RequestBody IbzWeeklyDTO ibzweeklydto) {

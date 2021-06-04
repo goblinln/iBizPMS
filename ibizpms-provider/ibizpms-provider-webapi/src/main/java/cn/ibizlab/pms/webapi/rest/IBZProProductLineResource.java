@@ -126,7 +126,7 @@ public class IBZProProductLineResource {
     }
 
 
-    @PreAuthorize("@IBZProProductLineRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'DENY')")
     @ApiOperation(value = "批量保存产品线", tags = {"产品线" },  notes = "批量保存产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductlines/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZProProductLineDTO> ibzproproductlinedtos) {

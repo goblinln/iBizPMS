@@ -136,7 +136,7 @@ public class IbizproProductMonthlyResource {
     }
 
 
-    @PreAuthorize("@IbizproProductMonthlyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTMONTHLY', 'DENY')")
     @ApiOperation(value = "保存产品月报", tags = {"产品月报" },  notes = "保存产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/save")
     public ResponseEntity<IbizproProductMonthlyDTO> save(@RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {

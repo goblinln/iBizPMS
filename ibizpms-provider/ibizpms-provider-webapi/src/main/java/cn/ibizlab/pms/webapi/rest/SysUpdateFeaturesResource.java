@@ -126,7 +126,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.checkKey(sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto)));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'DENY')")
     @ApiOperation(value = "保存系统更新功能", tags = {"系统更新功能" },  notes = "保存系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatefeatures/save")
     public ResponseEntity<SysUpdateFeaturesDTO> save(@RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {
@@ -226,7 +226,7 @@ public class SysUpdateFeaturesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(sysupdatefeaturesService.checkKey(sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto)));
     }
 
-    @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('SYS_UPDATE_FEATURES', 'DENY')")
     @ApiOperation(value = "根据更新日志保存系统更新功能", tags = {"系统更新功能" },  notes = "根据更新日志保存系统更新功能")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/{sysupdatelog_id}/sysupdatefeatures/save")
     public ResponseEntity<SysUpdateFeaturesDTO> saveBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @RequestBody SysUpdateFeaturesDTO sysupdatefeaturesdto) {

@@ -125,7 +125,7 @@ public class EmpLoyeeloadResource {
         return  ResponseEntity.status(HttpStatus.OK).body(employeeloadService.checkKey(employeeloadMapping.toDomain(employeeloaddto)));
     }
 
-    @PreAuthorize("@EmpLoyeeloadRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'DENY')")
     @ApiOperation(value = "保存员工负载表", tags = {"员工负载表" },  notes = "保存员工负载表")
 	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/save")
     public ResponseEntity<EmpLoyeeloadDTO> save(@RequestBody EmpLoyeeloadDTO employeeloaddto) {

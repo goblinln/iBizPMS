@@ -126,7 +126,7 @@ public class IbizproProjectDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.checkKey(ibizproprojectdailyMapping.toDomain(ibizproprojectdailydto)));
     }
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DENY')")
     @ApiOperation(value = "保存项目日报", tags = {"项目日报" },  notes = "保存项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/save")
     public ResponseEntity<IbizproProjectDailyDTO> save(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
@@ -139,7 +139,7 @@ public class IbizproProjectDailyResource {
     }
 
 
-    @PreAuthorize("@IbizproProjectDailyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DENY')")
     @ApiOperation(value = "汇总项目日报", tags = {"项目日报" },  notes = "汇总项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}/sumprojectdaily")
     public ResponseEntity<IbizproProjectDailyDTO> sumProjectDaily(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id, @RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {

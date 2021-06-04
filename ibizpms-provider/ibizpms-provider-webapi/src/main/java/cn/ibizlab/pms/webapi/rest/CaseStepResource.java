@@ -125,7 +125,7 @@ public class CaseStepResource {
         return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
-    @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'DENY')")
     @ApiOperation(value = "保存用例步骤", tags = {"用例步骤" },  notes = "保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/save")
     public ResponseEntity<CaseStepDTO> save(@RequestBody CaseStepDTO casestepdto) {
@@ -284,7 +284,7 @@ public class CaseStepResource {
         return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
-    @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'DENY')")
     @ApiOperation(value = "根据测试用例保存用例步骤", tags = {"用例步骤" },  notes = "根据测试用例保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casesteps/save")
     public ResponseEntity<CaseStepDTO> saveByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
@@ -440,7 +440,7 @@ public class CaseStepResource {
         return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
-    @PreAuthorize("@CaseStepRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'DENY')")
     @ApiOperation(value = "根据产品测试用例保存用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例保存用例步骤")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casesteps/save")
     public ResponseEntity<CaseStepDTO> saveByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {

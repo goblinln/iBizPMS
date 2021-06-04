@@ -125,7 +125,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
     @ApiOperation(value = "保存用例库模块", tags = {"用例库模块" },  notes = "保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/save")
     public ResponseEntity<IbzLibModuleDTO> save(@RequestBody IbzLibModuleDTO ibzlibmoduledto) {
@@ -242,7 +242,7 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
-    @PreAuthorize("@IbzLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
     @ApiOperation(value = "根据用例库保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库保存用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/save")
     public ResponseEntity<IbzLibModuleDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {

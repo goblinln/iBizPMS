@@ -126,7 +126,7 @@ public class IbizproProductDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibizproproductdailyService.checkKey(ibizproproductdailyMapping.toDomain(ibizproproductdailydto)));
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DENY')")
     @ApiOperation(value = "手动生成产品日报", tags = {"产品日报" },  notes = "手动生成产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/{ibizproproductdaily_id}/manualcreatedaily")
     public ResponseEntity<IbizproProductDailyDTO> manualCreateDaily(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id, @RequestBody IbizproProductDailyDTO ibizproproductdailydto) {
@@ -140,7 +140,7 @@ public class IbizproProductDailyResource {
     }
 
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DENY')")
     @ApiOperation(value = "保存产品日报", tags = {"产品日报" },  notes = "保存产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/save")
     public ResponseEntity<IbizproProductDailyDTO> save(@RequestBody IbizproProductDailyDTO ibizproproductdailydto) {
@@ -153,7 +153,7 @@ public class IbizproProductDailyResource {
     }
 
 
-    @PreAuthorize("@IbizproProductDailyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DENY')")
     @ApiOperation(value = "汇总产品日报", tags = {"产品日报" },  notes = "汇总产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductdailies/{ibizproproductdaily_id}/statsproductdaily")
     public ResponseEntity<IbizproProductDailyDTO> statsProductDaily(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id, @RequestBody IbizproProductDailyDTO ibizproproductdailydto) {

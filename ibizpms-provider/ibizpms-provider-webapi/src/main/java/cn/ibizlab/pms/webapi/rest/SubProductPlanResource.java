@@ -111,7 +111,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划批关联BUG", tags = {"产品计划" },  notes = "根据产品计划批关联BUG")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchlinkbug")
     public ResponseEntity<SubProductPlanDTO> batchLinkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -123,7 +123,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划批关联需求", tags = {"产品计划" },  notes = "根据产品计划批关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchlinkstory")
     public ResponseEntity<SubProductPlanDTO> batchLinkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -135,7 +135,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划批量解除关联Bug", tags = {"产品计划" },  notes = "根据产品计划批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkbug")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -147,7 +147,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划批量解除关联需求", tags = {"产品计划" },  notes = "根据产品计划批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkstory")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -166,7 +166,7 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productplanService.checkKey(subproductplanMapping.toDomain(subproductplandto)));
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划EE激活计划", tags = {"产品计划" },  notes = "根据产品计划EE激活计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eeactiveplan")
     public ResponseEntity<SubProductPlanDTO> eeActivePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -178,7 +178,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划EE取消计划", tags = {"产品计划" },  notes = "根据产品计划EE取消计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecancelplan")
     public ResponseEntity<SubProductPlanDTO> eeCancelPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -190,7 +190,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划EE关闭计划", tags = {"产品计划" },  notes = "根据产品计划EE关闭计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecloseplan")
     public ResponseEntity<SubProductPlanDTO> eeClosePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -202,7 +202,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划EE完成计划", tags = {"产品计划" },  notes = "根据产品计划EE完成计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eefinishplan")
     public ResponseEntity<SubProductPlanDTO> eeFinishPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -214,7 +214,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划EE暂停计划", tags = {"产品计划" },  notes = "根据产品计划EE暂停计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eepauseplan")
     public ResponseEntity<SubProductPlanDTO> eePausePlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -226,7 +226,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划继续计划", tags = {"产品计划" },  notes = "根据产品计划继续计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eerestartplan")
     public ResponseEntity<SubProductPlanDTO> eeRestartPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -238,7 +238,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划EE开始计划", tags = {"产品计划" },  notes = "根据产品计划EE开始计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eestartplan")
     public ResponseEntity<SubProductPlanDTO> eeStartPlanByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -298,7 +298,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划关联任务", tags = {"产品计划" },  notes = "根据产品计划关联任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linktask")
     public ResponseEntity<SubProductPlanDTO> linkTaskByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -310,7 +310,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划移动端产品计划计数器", tags = {"产品计划" },  notes = "根据产品计划移动端产品计划计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/mobproductplancounter")
     public ResponseEntity<SubProductPlanDTO> mobProductPlanCounterByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -322,7 +322,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划保存产品计划", tags = {"产品计划" },  notes = "根据产品计划保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/save")
     public ResponseEntity<SubProductPlanDTO> saveByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -333,7 +333,7 @@ public class SubProductPlanResource {
     }
 
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划解除关联Bug", tags = {"产品计划" },  notes = "根据产品计划解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkbug")
     public ResponseEntity<SubProductPlanDTO> unlinkBugByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -345,7 +345,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划解除关联需求", tags = {"产品计划" },  notes = "根据产品计划解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkstory")
     public ResponseEntity<SubProductPlanDTO> unlinkStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -573,7 +573,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划批关联BUG", tags = {"产品计划" },  notes = "根据产品产品计划批关联BUG")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchlinkbug")
     public ResponseEntity<SubProductPlanDTO> batchLinkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -585,7 +585,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划批关联需求", tags = {"产品计划" },  notes = "根据产品产品计划批关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchlinkstory")
     public ResponseEntity<SubProductPlanDTO> batchLinkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -597,7 +597,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划批量解除关联Bug", tags = {"产品计划" },  notes = "根据产品产品计划批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkbug")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -609,7 +609,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划批量解除关联需求", tags = {"产品计划" },  notes = "根据产品产品计划批量解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/batchunlinkstory")
     public ResponseEntity<SubProductPlanDTO> batchUnlinkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -628,7 +628,7 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productplanService.checkKey(subproductplanMapping.toDomain(subproductplandto)));
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划EE激活计划", tags = {"产品计划" },  notes = "根据产品产品计划EE激活计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eeactiveplan")
     public ResponseEntity<SubProductPlanDTO> eeActivePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -640,7 +640,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划EE取消计划", tags = {"产品计划" },  notes = "根据产品产品计划EE取消计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecancelplan")
     public ResponseEntity<SubProductPlanDTO> eeCancelPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -652,7 +652,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划EE关闭计划", tags = {"产品计划" },  notes = "根据产品产品计划EE关闭计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eecloseplan")
     public ResponseEntity<SubProductPlanDTO> eeClosePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -664,7 +664,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划EE完成计划", tags = {"产品计划" },  notes = "根据产品产品计划EE完成计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eefinishplan")
     public ResponseEntity<SubProductPlanDTO> eeFinishPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -676,7 +676,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划EE暂停计划", tags = {"产品计划" },  notes = "根据产品产品计划EE暂停计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eepauseplan")
     public ResponseEntity<SubProductPlanDTO> eePausePlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -688,7 +688,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划继续计划", tags = {"产品计划" },  notes = "根据产品产品计划继续计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eerestartplan")
     public ResponseEntity<SubProductPlanDTO> eeRestartPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -700,7 +700,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划EE开始计划", tags = {"产品计划" },  notes = "根据产品产品计划EE开始计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/eestartplan")
     public ResponseEntity<SubProductPlanDTO> eeStartPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -760,7 +760,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划关联任务", tags = {"产品计划" },  notes = "根据产品产品计划关联任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/linktask")
     public ResponseEntity<SubProductPlanDTO> linkTaskByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -772,7 +772,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划移动端产品计划计数器", tags = {"产品计划" },  notes = "根据产品产品计划移动端产品计划计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/mobproductplancounter")
     public ResponseEntity<SubProductPlanDTO> mobProductPlanCounterByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -784,7 +784,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划保存产品计划", tags = {"产品计划" },  notes = "根据产品产品计划保存产品计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/save")
     public ResponseEntity<SubProductPlanDTO> saveByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -795,7 +795,7 @@ public class SubProductPlanResource {
     }
 
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划解除关联Bug", tags = {"产品计划" },  notes = "根据产品产品计划解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkbug")
     public ResponseEntity<SubProductPlanDTO> unlinkBugByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
@@ -807,7 +807,7 @@ public class SubProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划解除关联需求", tags = {"产品计划" },  notes = "根据产品产品计划解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}/unlinkstory")
     public ResponseEntity<SubProductPlanDTO> unlinkStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {

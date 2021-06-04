@@ -125,7 +125,7 @@ public class CaseStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
-    @PreAuthorize("@CaseStatsRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'DENY')")
     @ApiOperation(value = "保存测试用例统计", tags = {"测试用例统计" },  notes = "保存测试用例统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/casestats/save")
     public ResponseEntity<CaseStatsDTO> save(@RequestBody CaseStatsDTO casestatsdto) {

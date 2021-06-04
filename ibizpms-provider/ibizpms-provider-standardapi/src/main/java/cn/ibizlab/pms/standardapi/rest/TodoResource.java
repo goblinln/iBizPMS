@@ -52,6 +52,14 @@ public class TodoResource {
     @Lazy
     public TodoMapping todoMapping;
 
+    @PreAuthorize("quickTest('ZT_TODO', 'CREATE')")
+    @ApiOperation(value = "获取待办草稿", tags = {"待办" },  notes = "获取待办草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/todos/getdraft")
+    public ResponseEntity<TodoDTO> getDraft(TodoDTO dto) {
+        Todo domain = todoMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
+    }
+
     @PreAuthorize("quickTest('ZT_TODO', 'READ')")
 	@ApiOperation(value = "获取我的数据", tags = {"待办" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmy")
@@ -140,14 +148,6 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_TODO', 'CREATE')")
-    @ApiOperation(value = "获取待办草稿", tags = {"待办" },  notes = "获取待办草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/todos/getdraft")
-    public ResponseEntity<TodoDTO> getDraft(TodoDTO dto) {
-        Todo domain = todoMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
-    }
-
     @PreAuthorize("test('ZT_TODO', #todo_id, 'READ')")
     @ApiOperation(value = "获取待办", tags = {"待办" },  notes = "获取待办")
 	@RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}")
@@ -179,6 +179,15 @@ public class TodoResource {
         Todo domain = todoService.dynamicCall(todo_id, action, todoMapping.toDomain(tododto));
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
+    }
+
+    @PreAuthorize("quickTest('ZT_TODO','CREATE')")
+    @ApiOperation(value = "根据系统用户获取待办草稿", tags = {"待办" },  notes = "根据系统用户获取待办草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/getdraft")
+    public ResponseEntity<TodoDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TodoDTO dto) {
+        Todo domain = todoMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('ZT_TODO','READ')")
@@ -261,15 +270,6 @@ public class TodoResource {
         domain = todoService.finish(domain) ;
         tododto = todoMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
-    }
-
-    @PreAuthorize("quickTest('ZT_TODO','CREATE')")
-    @ApiOperation(value = "根据系统用户获取待办草稿", tags = {"待办" },  notes = "根据系统用户获取待办草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/getdraft")
-    public ResponseEntity<TodoDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, TodoDTO dto) {
-        Todo domain = todoMapping.toDomain(dto);
-        
-        return ResponseEntity.status(HttpStatus.OK).body(todoMapping.toDto(todoService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_TODO', #todo_id, 'READ')")

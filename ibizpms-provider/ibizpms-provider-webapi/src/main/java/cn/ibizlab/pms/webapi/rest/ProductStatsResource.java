@@ -139,7 +139,7 @@ public class ProductStatsResource {
     }
 
 
-    @PreAuthorize("@ProductStatsRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTSTATS', 'DENY')")
     @ApiOperation(value = "保存产品统计", tags = {"产品统计" },  notes = "保存产品统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/productstats/save")
     public ResponseEntity<ProductStatsDTO> save(@RequestBody ProductStatsDTO productstatsdto) {

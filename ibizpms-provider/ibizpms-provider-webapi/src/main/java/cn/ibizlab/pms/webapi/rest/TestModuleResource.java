@@ -125,7 +125,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testmoduleService.checkKey(testmoduleMapping.toDomain(testmoduledto)));
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'DENY')")
     @ApiOperation(value = "重建模块路径", tags = {"测试模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/{testmodule_id}/fix")
     public ResponseEntity<TestModuleDTO> fix(@PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -154,7 +154,7 @@ public class TestModuleResource {
 
 
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'DENY')")
     @ApiOperation(value = "批量保存测试模块", tags = {"测试模块" },  notes = "批量保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testmodules/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestModuleDTO> testmoduledtos) {
@@ -308,7 +308,7 @@ public class TestModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testmoduleService.checkKey(testmoduleMapping.toDomain(testmoduledto)));
     }
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'DENY')")
     @ApiOperation(value = "根据产品重建模块路径", tags = {"测试模块" },  notes = "根据产品重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/{testmodule_id}/fix")
     public ResponseEntity<TestModuleDTO> fixByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id, @RequestBody TestModuleDTO testmoduledto) {
@@ -333,7 +333,7 @@ public class TestModuleResource {
     }
 
 
-    @PreAuthorize("@TestModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TESTMODULE', 'DENY')")
     @ApiOperation(value = "根据产品批量保存测试模块", tags = {"测试模块" },  notes = "根据产品批量保存测试模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testmodules/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestModuleDTO> testmoduledtos) {

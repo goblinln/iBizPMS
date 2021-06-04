@@ -125,7 +125,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCCONTENT', 'DENY')")
     @ApiOperation(value = "保存文档内容", tags = {"文档内容" },  notes = "保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doccontents/save")
     public ResponseEntity<DocContentDTO> save(@RequestBody DocContentDTO doccontentdto) {
@@ -236,7 +236,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCCONTENT', 'DENY')")
     @ApiOperation(value = "根据文档保存文档内容", tags = {"文档内容" },  notes = "根据文档保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/doccontents/save")
     public ResponseEntity<DocContentDTO> saveByDoc(@PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
@@ -340,7 +340,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCCONTENT', 'DENY')")
     @ApiOperation(value = "根据文档库文档保存文档内容", tags = {"文档内容" },  notes = "根据文档库文档保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/doccontents/save")
     public ResponseEntity<DocContentDTO> saveByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
@@ -445,7 +445,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCCONTENT', 'DENY')")
     @ApiOperation(value = "根据产品文档库文档保存文档内容", tags = {"文档内容" },  notes = "根据产品文档库文档保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/save")
     public ResponseEntity<DocContentDTO> saveByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {
@@ -550,7 +550,7 @@ public class DocContentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doccontentService.checkKey(doccontentMapping.toDomain(doccontentdto)));
     }
 
-    @PreAuthorize("@DocContentRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DOCCONTENT', 'DENY')")
     @ApiOperation(value = "根据项目文档库文档保存文档内容", tags = {"文档内容" },  notes = "根据项目文档库文档保存文档内容")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/doccontents/save")
     public ResponseEntity<DocContentDTO> saveByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocContentDTO doccontentdto) {

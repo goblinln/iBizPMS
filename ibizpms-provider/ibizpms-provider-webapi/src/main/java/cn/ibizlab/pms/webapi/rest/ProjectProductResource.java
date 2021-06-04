@@ -119,7 +119,7 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectproductService.checkKey(projectproductMapping.toDomain(projectproductdto)));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DENY')")
     @ApiOperation(value = "根据产品保存项目产品", tags = {"项目产品" },  notes = "根据产品保存项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/save")
     public ResponseEntity<ProjectProductDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
@@ -223,7 +223,7 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectproductService.checkKey(projectproductMapping.toDomain(projectproductdto)));
     }
 
-    @PreAuthorize("@ProjectProductRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DENY')")
     @ApiOperation(value = "根据项目保存项目产品", tags = {"项目产品" },  notes = "根据项目保存项目产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/save")
     public ResponseEntity<ProjectProductDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {

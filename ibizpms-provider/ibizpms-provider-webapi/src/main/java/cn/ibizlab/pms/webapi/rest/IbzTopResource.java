@@ -126,7 +126,7 @@ public class IbzTopResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibztopService.checkKey(ibztopMapping.toDomain(ibztopdto)));
     }
 
-    @PreAuthorize("@IbzTopRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TOP', 'DENY')")
     @ApiOperation(value = "保存置顶", tags = {"置顶" },  notes = "保存置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/save")
     public ResponseEntity<IbzTopDTO> save(@RequestBody IbzTopDTO ibztopdto) {

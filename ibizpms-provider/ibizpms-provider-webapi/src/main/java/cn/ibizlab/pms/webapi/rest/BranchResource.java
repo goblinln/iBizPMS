@@ -126,7 +126,7 @@ public class BranchResource {
     }
 
 
-    @PreAuthorize("@BranchRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BRANCH', 'DENY')")
     @ApiOperation(value = "批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/branches/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<BranchDTO> branchdtos) {
@@ -134,7 +134,7 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BranchRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BRANCH', 'DENY')")
     @ApiOperation(value = "排序", tags = {"产品的分支和平台信息" },  notes = "排序")
 	@RequestMapping(method = RequestMethod.POST, value = "/branches/{branch_id}/sort")
     public ResponseEntity<BranchDTO> sort(@PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
@@ -247,7 +247,7 @@ public class BranchResource {
     }
 
 
-    @PreAuthorize("@BranchRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BRANCH', 'DENY')")
     @ApiOperation(value = "根据产品批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量保存产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BranchDTO> branchdtos) {
@@ -259,7 +259,7 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BranchRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BRANCH', 'DENY')")
     @ApiOperation(value = "根据产品排序", tags = {"产品的分支和平台信息" },  notes = "根据产品排序")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/{branch_id}/sort")
     public ResponseEntity<BranchDTO> sortByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {

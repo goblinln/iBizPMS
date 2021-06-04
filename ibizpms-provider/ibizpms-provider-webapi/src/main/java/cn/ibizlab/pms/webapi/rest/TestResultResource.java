@@ -125,7 +125,7 @@ public class TestResultResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
-    @PreAuthorize("@TestResultRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'DENY')")
     @ApiOperation(value = "保存测试结果", tags = {"测试结果" },  notes = "保存测试结果")
 	@RequestMapping(method = RequestMethod.POST, value = "/testresults/save")
     public ResponseEntity<TestResultDTO> save(@RequestBody TestResultDTO testresultdto) {

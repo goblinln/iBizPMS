@@ -139,7 +139,7 @@ public class DocLibModuleResource {
     }
 
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "取消收藏", tags = {"文档库分类" },  notes = "取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavorite(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -153,7 +153,7 @@ public class DocLibModuleResource {
     }
 
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "收藏", tags = {"文档库分类" },  notes = "收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavorite(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -167,7 +167,7 @@ public class DocLibModuleResource {
     }
 
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "重建模块路径", tags = {"文档库分类" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fix(@PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -182,7 +182,7 @@ public class DocLibModuleResource {
 
 
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "批量保存文档库分类", tags = {"文档库分类" },  notes = "批量保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibmodules/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
@@ -410,7 +410,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据文档库取消收藏", tags = {"文档库分类" },  notes = "根据文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -422,7 +422,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据文档库收藏", tags = {"文档库分类" },  notes = "根据文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -434,7 +434,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据文档库重建模块路径", tags = {"文档库分类" },  notes = "根据文档库重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -447,7 +447,7 @@ public class DocLibModuleResource {
     }
 
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据文档库批量保存文档库分类", tags = {"文档库分类" },  notes = "根据文档库批量保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/doclibmodules/savebatch")
     public ResponseEntity<Boolean> saveBatchByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
@@ -680,7 +680,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据产品文档库取消收藏", tags = {"文档库分类" },  notes = "根据产品文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -692,7 +692,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据产品文档库收藏", tags = {"文档库分类" },  notes = "根据产品文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -704,7 +704,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据产品文档库重建模块路径", tags = {"文档库分类" },  notes = "根据产品文档库重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -717,7 +717,7 @@ public class DocLibModuleResource {
     }
 
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据产品文档库批量保存文档库分类", tags = {"文档库分类" },  notes = "根据产品文档库批量保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/doclibmodules/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {
@@ -950,7 +950,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据项目文档库取消收藏", tags = {"文档库分类" },  notes = "根据项目文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulenfavorite")
     public ResponseEntity<DocLibModuleDTO> docLibModuleNFavoriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -962,7 +962,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据项目文档库收藏", tags = {"文档库分类" },  notes = "根据项目文档库收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/doclibmodulefavorite")
     public ResponseEntity<DocLibModuleDTO> doclibModuleFavoriteByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -974,7 +974,7 @@ public class DocLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(doclibmoduledto);
     }
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据项目文档库重建模块路径", tags = {"文档库分类" },  notes = "根据项目文档库重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/{doclibmodule_id}/fix")
     public ResponseEntity<DocLibModuleDTO> fixByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doclibmodule_id") Long doclibmodule_id, @RequestBody DocLibModuleDTO doclibmoduledto) {
@@ -987,7 +987,7 @@ public class DocLibModuleResource {
     }
 
 
-    @PreAuthorize("@DocLibModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_DOCLIBMODULE', 'DENY')")
     @ApiOperation(value = "根据项目文档库批量保存文档库分类", tags = {"文档库分类" },  notes = "根据项目文档库批量保存文档库分类")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/doclibmodules/savebatch")
     public ResponseEntity<Boolean> saveBatchByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody List<DocLibModuleDTO> doclibmoduledtos) {

@@ -125,7 +125,7 @@ public class ProjectTaskestimateResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projecttaskestimateService.checkKey(projecttaskestimateMapping.toDomain(projecttaskestimatedto)));
     }
 
-    @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('PROJECTTASKESTIMATE', 'DENY')")
     @ApiOperation(value = "保存项目工时统计", tags = {"项目工时统计" },  notes = "保存项目工时统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/projecttaskestimates/save")
     public ResponseEntity<ProjectTaskestimateDTO> save(@RequestBody ProjectTaskestimateDTO projecttaskestimatedto) {

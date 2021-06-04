@@ -126,7 +126,7 @@ public class IbzReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.checkKey(ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto)));
     }
 
-    @PreAuthorize("@IbzReportRoleConfigRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'DENY')")
     @ApiOperation(value = "保存汇报角色配置", tags = {"汇报角色配置" },  notes = "保存汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/save")
     public ResponseEntity<IbzReportRoleConfigDTO> save(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {

@@ -126,7 +126,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")
     @ApiOperation(value = "关联测试", tags = {"测试套件" },  notes = "关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/linkcase")
     public ResponseEntity<TestSuiteDTO> linkCase(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -154,7 +154,7 @@ public class TestSuiteResource {
     }
 
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")
     @ApiOperation(value = "保存测试套件", tags = {"测试套件" },  notes = "保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/save")
     public ResponseEntity<TestSuiteDTO> save(@RequestBody TestSuiteDTO testsuitedto) {
@@ -167,7 +167,7 @@ public class TestSuiteResource {
     }
 
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")
     @ApiOperation(value = "未关联测试", tags = {"测试套件" },  notes = "未关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/unlinkcase")
     public ResponseEntity<TestSuiteDTO> unlinkCase(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -280,7 +280,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")
     @ApiOperation(value = "根据产品关联测试", tags = {"测试套件" },  notes = "根据产品关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/linkcase")
     public ResponseEntity<TestSuiteDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -304,7 +304,7 @@ public class TestSuiteResource {
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")
     @ApiOperation(value = "根据产品保存测试套件", tags = {"测试套件" },  notes = "根据产品保存测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/save")
     public ResponseEntity<TestSuiteDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -315,7 +315,7 @@ public class TestSuiteResource {
     }
 
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")
     @ApiOperation(value = "根据产品未关联测试", tags = {"测试套件" },  notes = "根据产品未关联测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/unlinkcase")
     public ResponseEntity<TestSuiteDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {

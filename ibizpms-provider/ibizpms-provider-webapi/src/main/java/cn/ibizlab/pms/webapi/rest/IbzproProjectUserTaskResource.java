@@ -125,7 +125,7 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.checkKey(ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto)));
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'DENY')")
     @ApiOperation(value = "保存项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "保存项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/save")
     public ResponseEntity<IbzproProjectUserTaskDTO> save(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {

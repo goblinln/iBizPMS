@@ -66,7 +66,7 @@ public class IbzLoginResource {
     }
 
 
-    @PreAuthorize("@IbiLoginRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_LOGIN', 'DENY')")
     @ApiOperation(value = "ZT登录", tags = {"实体" },  notes = "ZT登录")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/{ibzlogin_id}/ztlogin")
     public ResponseEntity<IbzLoginDTO> ztlogin(@PathVariable("ibzlogin_id") Long ibzlogin_id, @RequestBody IbzLoginDTO ibzlogindto) {

@@ -125,7 +125,7 @@ public class TestRunResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTRUN', 'DENY')")
     @ApiOperation(value = "保存测试运行", tags = {"测试运行" },  notes = "保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testruns/save")
     public ResponseEntity<TestRunDTO> save(@RequestBody TestRunDTO testrundto) {
@@ -229,7 +229,7 @@ public class TestRunResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTRUN', 'DENY')")
     @ApiOperation(value = "根据测试版本保存测试运行", tags = {"测试运行" },  notes = "根据测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/testtasks/{testtask_id}/testruns/save")
     public ResponseEntity<TestRunDTO> saveByTestTask(@PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -325,7 +325,7 @@ public class TestRunResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTRUN', 'DENY')")
     @ApiOperation(value = "根据产品测试版本保存测试运行", tags = {"测试运行" },  notes = "根据产品测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/{testtask_id}/testruns/save")
     public ResponseEntity<TestRunDTO> saveByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {
@@ -421,7 +421,7 @@ public class TestRunResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testrunService.checkKey(testrunMapping.toDomain(testrundto)));
     }
 
-    @PreAuthorize("@TestRunRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTRUN', 'DENY')")
     @ApiOperation(value = "根据项目测试版本保存测试运行", tags = {"测试运行" },  notes = "根据项目测试版本保存测试运行")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/testruns/save")
     public ResponseEntity<TestRunDTO> saveByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestRunDTO testrundto) {

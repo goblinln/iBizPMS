@@ -140,7 +140,7 @@ public class SysUpdateLogResource {
     }
 
 
-    @PreAuthorize("@SysUpdateLogRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('SYS_UPDATE_LOG', 'DENY')")
     @ApiOperation(value = "保存更新日志", tags = {"更新日志" },  notes = "保存更新日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysupdatelogs/save")
     public ResponseEntity<SysUpdateLogDTO> save(@RequestBody SysUpdateLogDTO sysupdatelogdto) {

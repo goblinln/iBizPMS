@@ -125,7 +125,7 @@ public class BugStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugstatsService.checkKey(bugstatsMapping.toDomain(bugstatsdto)));
     }
 
-    @PreAuthorize("@BugStatsRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_BUGSTATS', 'DENY')")
     @ApiOperation(value = "保存Bug统计", tags = {"Bug统计" },  notes = "保存Bug统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/save")
     public ResponseEntity<BugStatsDTO> save(@RequestBody BugStatsDTO bugstatsdto) {

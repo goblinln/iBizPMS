@@ -195,7 +195,7 @@ public class TodoResource {
     }
 
 
-    @PreAuthorize("@TodoRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TODO', 'DENY')")
     @ApiOperation(value = "保存待办", tags = {"待办" },  notes = "保存待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/todos/save")
     public ResponseEntity<TodoDTO> save(@RequestBody TodoDTO tododto) {

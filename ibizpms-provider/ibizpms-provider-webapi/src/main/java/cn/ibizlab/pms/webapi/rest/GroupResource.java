@@ -125,7 +125,7 @@ public class GroupResource {
         return  ResponseEntity.status(HttpStatus.OK).body(groupService.checkKey(groupMapping.toDomain(groupdto)));
     }
 
-    @PreAuthorize("@GroupRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_GROUP', 'DENY')")
     @ApiOperation(value = "保存群组", tags = {"群组" },  notes = "保存群组")
 	@RequestMapping(method = RequestMethod.POST, value = "/groups/save")
     public ResponseEntity<GroupDTO> save(@RequestBody GroupDTO groupdto) {

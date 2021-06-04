@@ -125,7 +125,7 @@ public class CompanyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(companyService.checkKey(companyMapping.toDomain(companydto)));
     }
 
-    @PreAuthorize("@CompanyRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_COMPANY', 'DENY')")
     @ApiOperation(value = "保存公司", tags = {"公司" },  notes = "保存公司")
 	@RequestMapping(method = RequestMethod.POST, value = "/companies/save")
     public ResponseEntity<CompanyDTO> save(@RequestBody CompanyDTO companydto) {

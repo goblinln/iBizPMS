@@ -125,7 +125,7 @@ public class TaskStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(taskstatsService.checkKey(taskstatsMapping.toDomain(taskstatsdto)));
     }
 
-    @PreAuthorize("@TaskStatsRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'DENY')")
     @ApiOperation(value = "保存任务统计", tags = {"任务统计" },  notes = "保存任务统计")
 	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/save")
     public ResponseEntity<TaskStatsDTO> save(@RequestBody TaskStatsDTO taskstatsdto) {

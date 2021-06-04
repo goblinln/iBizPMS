@@ -237,7 +237,7 @@ public class ReleaseResource {
     }
 
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_RELEASE', 'DENY')")
     @ApiOperation(value = "一键发布", tags = {"发布" },  notes = "一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/oneclickrelease")
     public ResponseEntity<ReleaseDTO> oneClickRelease(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -252,7 +252,7 @@ public class ReleaseResource {
 
 
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_RELEASE', 'DENY')")
     @ApiOperation(value = "批量保存发布", tags = {"发布" },  notes = "批量保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ReleaseDTO> releasedtos) {
@@ -288,7 +288,7 @@ public class ReleaseResource {
     }
 
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_RELEASE', 'DENY')")
     @ApiOperation(value = "解除关联需求", tags = {"发布" },  notes = "解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/unlinkstory")
     public ResponseEntity<ReleaseDTO> unlinkStory(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -496,7 +496,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_RELEASE', 'DENY')")
     @ApiOperation(value = "根据产品一键发布", tags = {"发布" },  notes = "根据产品一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/oneclickrelease")
     public ResponseEntity<ReleaseDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -509,7 +509,7 @@ public class ReleaseResource {
     }
 
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_RELEASE', 'DENY')")
     @ApiOperation(value = "根据产品批量保存发布", tags = {"发布" },  notes = "根据产品批量保存发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ReleaseDTO> releasedtos) {
@@ -545,7 +545,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
-    @PreAuthorize("@ReleaseRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_RELEASE', 'DENY')")
     @ApiOperation(value = "根据产品解除关联需求", tags = {"发布" },  notes = "根据产品解除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/unlinkstory")
     public ResponseEntity<ReleaseDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {

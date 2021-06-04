@@ -146,7 +146,7 @@ public class IbzPlanTempletResource {
     }
 
 
-    @PreAuthorize("@IbzPlanTempletRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'DENY')")
     @ApiOperation(value = "保存计划模板", tags = {"计划模板" },  notes = "保存计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets/save")
     public ResponseEntity<IbzPlanTempletDTO> save(@RequestBody IbzPlanTempletDTO ibzplantempletdto) {

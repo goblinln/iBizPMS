@@ -294,6 +294,11 @@
       "modeltype" : "PSSYSVIEWPANEL"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "BUG",
+      "name" : "BUG",
+      "value" : "accountbug",
+      "rawValue" : false
+    }, {
       "key" : "PRODUCT",
       "name" : "PRODUCT",
       "value" : "product",
@@ -604,6 +609,11 @@
       "modeltype" : "PSSYSVIEWPANEL"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "TASK",
+      "name" : "TASK",
+      "value" : "accounttask",
+      "rawValue" : false
+    }, {
       "key" : "PROJECT",
       "name" : "PROJECT",
       "value" : "project",
@@ -1104,6 +1114,11 @@
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountStory.json"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "STORY",
+      "name" : "STORY",
+      "value" : "accountstory",
+      "rawValue" : false
+    }, {
       "key" : "PRODUCT",
       "name" : "PRODUCT",
       "value" : "product",

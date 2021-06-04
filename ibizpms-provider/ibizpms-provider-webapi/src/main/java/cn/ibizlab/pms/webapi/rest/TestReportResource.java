@@ -237,7 +237,7 @@ public class TestReportResource {
     }
 
 
-    @PreAuthorize("@TestReportRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTREPORT', 'DENY')")
     @ApiOperation(value = "保存测试报告", tags = {"测试报告" },  notes = "保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/testreports/save")
     public ResponseEntity<TestReportDTO> save(@RequestBody TestReportDTO testreportdto) {
@@ -432,7 +432,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
-    @PreAuthorize("@TestReportRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTREPORT', 'DENY')")
     @ApiOperation(value = "根据产品保存测试报告", tags = {"测试报告" },  notes = "根据产品保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testreports/save")
     public ResponseEntity<TestReportDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
@@ -618,7 +618,7 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
-    @PreAuthorize("@TestReportRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TESTREPORT', 'DENY')")
     @ApiOperation(value = "根据项目保存测试报告", tags = {"测试报告" },  notes = "根据项目保存测试报告")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/save")
     public ResponseEntity<TestReportDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportDTO testreportdto) {

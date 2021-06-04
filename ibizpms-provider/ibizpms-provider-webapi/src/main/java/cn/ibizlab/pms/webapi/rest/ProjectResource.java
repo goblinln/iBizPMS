@@ -187,7 +187,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")
     @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/importplanstories")
     public ResponseEntity<ProjectDTO> importPlanStories(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -201,7 +201,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")
     @ApiOperation(value = "关联产品", tags = {"项目" },  notes = "关联产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkproduct")
     public ResponseEntity<ProjectDTO> linkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
@@ -327,7 +327,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")
     @ApiOperation(value = "保存项目", tags = {"项目" },  notes = "保存项目")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/save")
     public ResponseEntity<ProjectDTO> save(@RequestBody ProjectDTO projectdto) {
@@ -382,7 +382,7 @@ public class ProjectResource {
     }
 
 
-    @PreAuthorize("@ProjectRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")
     @ApiOperation(value = "解除关联产品", tags = {"项目" },  notes = "解除关联产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/unlinkproduct")
     public ResponseEntity<ProjectDTO> unlinkProduct(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {

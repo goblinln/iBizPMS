@@ -125,7 +125,7 @@ public class IbzProjectMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzprojectmemberService.checkKey(ibzprojectmemberMapping.toDomain(ibzprojectmemberdto)));
     }
 
-    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTMEMBER', 'DENY')")
     @ApiOperation(value = "保存项目相关成员", tags = {"项目相关成员" },  notes = "保存项目相关成员")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/save")
     public ResponseEntity<IbzProjectMemberDTO> save(@RequestBody IbzProjectMemberDTO ibzprojectmemberdto) {

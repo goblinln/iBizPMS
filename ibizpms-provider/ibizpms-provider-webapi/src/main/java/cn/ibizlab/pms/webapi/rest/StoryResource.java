@@ -643,7 +643,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "设置需求阶段", tags = {"需求" },  notes = "设置需求阶段")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/setstage")
     public ResponseEntity<StoryDTO> setStage(@PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -685,7 +685,7 @@ public class StoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "同步Ibz平台实体", tags = {"需求" },  notes = "同步Ibz平台实体")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/syncfromibiz")
     public ResponseEntity<StoryDTO> syncFromIbiz(@PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -1601,7 +1601,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "根据产品设置需求阶段", tags = {"需求" },  notes = "根据产品设置需求阶段")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/setstage")
     public ResponseEntity<StoryDTO> setStageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -1637,7 +1637,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "根据产品同步Ibz平台实体", tags = {"需求" },  notes = "根据产品同步Ibz平台实体")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/syncfromibiz")
     public ResponseEntity<StoryDTO> syncFromIbizByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {

@@ -126,7 +126,7 @@ public class IbzLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibService.checkKey(ibzlibMapping.toDomain(ibzlibdto)));
     }
 
-    @PreAuthorize("@IbzLibRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_LIB', 'DENY')")
     @ApiOperation(value = "保存用例库", tags = {"用例库" },  notes = "保存用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/save")
     public ResponseEntity<IbzLibDTO> save(@RequestBody IbzLibDTO ibzlibdto) {

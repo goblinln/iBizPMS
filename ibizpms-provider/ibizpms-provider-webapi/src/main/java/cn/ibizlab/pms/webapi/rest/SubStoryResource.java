@@ -643,7 +643,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "设置需求阶段", tags = {"需求" },  notes = "设置需求阶段")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/setstage")
     public ResponseEntity<SubStoryDTO> setStage(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -685,7 +685,7 @@ public class SubStoryResource {
     }
 
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "同步Ibz平台实体", tags = {"需求" },  notes = "同步Ibz平台实体")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/syncfromibiz")
     public ResponseEntity<SubStoryDTO> syncFromIbiz(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -1601,7 +1601,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "根据需求设置需求阶段", tags = {"需求" },  notes = "根据需求设置需求阶段")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/{substory_id}/setstage")
     public ResponseEntity<SubStoryDTO> setStageByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -1637,7 +1637,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "根据需求同步Ibz平台实体", tags = {"需求" },  notes = "根据需求同步Ibz平台实体")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/{substory_id}/syncfromibiz")
     public ResponseEntity<SubStoryDTO> syncFromIbizByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -2572,7 +2572,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "根据产品需求设置需求阶段", tags = {"需求" },  notes = "根据产品需求设置需求阶段")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/setstage")
     public ResponseEntity<SubStoryDTO> setStageByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
@@ -2608,7 +2608,7 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
-    @PreAuthorize("@StoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_STORY', 'DENY')")
     @ApiOperation(value = "根据产品需求同步Ibz平台实体", tags = {"需求" },  notes = "根据产品需求同步Ibz平台实体")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/syncfromibiz")
     public ResponseEntity<SubStoryDTO> syncFromIbizByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {

@@ -139,7 +139,7 @@ public class BurnResource {
     }
 
 
-    @PreAuthorize("@BurnRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BURN', 'DENY')")
     @ApiOperation(value = "保存burn", tags = {"burn" },  notes = "保存burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/burns/save")
     public ResponseEntity<BurnDTO> save(@RequestBody BurnDTO burndto) {
@@ -262,7 +262,7 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
 
-    @PreAuthorize("@BurnRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BURN', 'DENY')")
     @ApiOperation(value = "根据项目保存burn", tags = {"burn" },  notes = "根据项目保存burn")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/burns/save")
     public ResponseEntity<BurnDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BurnDTO burndto) {

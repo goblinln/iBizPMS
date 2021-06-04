@@ -125,7 +125,7 @@ public class FileResource {
         return  ResponseEntity.status(HttpStatus.OK).body(fileService.checkKey(fileMapping.toDomain(filedto)));
     }
 
-    @PreAuthorize("@FileRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_FILE', 'DENY')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.POST, value = "/files/save")
     public ResponseEntity<FileDTO> save(@RequestBody FileDTO filedto) {

@@ -125,7 +125,7 @@ public class ProductSumResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productsumService.checkKey(productsumMapping.toDomain(productsumdto)));
     }
 
-    @PreAuthorize("@ProductSumRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTSUM', 'DENY')")
     @ApiOperation(value = "保存产品汇总表", tags = {"产品汇总表" },  notes = "保存产品汇总表")
 	@RequestMapping(method = RequestMethod.POST, value = "/productsums/save")
     public ResponseEntity<ProductSumDTO> save(@RequestBody ProductSumDTO productsumdto) {

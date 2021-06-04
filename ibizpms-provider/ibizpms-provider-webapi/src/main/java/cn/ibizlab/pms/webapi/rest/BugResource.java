@@ -147,7 +147,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "批量解除关联Bug", tags = {"Bug" },  notes = "批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/batchunlinkbug")
     public ResponseEntity<BugDTO> batchUnlinkBug(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -189,7 +189,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "版本批量解除关联Bug", tags = {"Bug" },  notes = "版本批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/buildbatchunlinkbug")
     public ResponseEntity<BugDTO> buildBatchUnlinkBug(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -364,7 +364,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "保存Bug", tags = {"Bug" },  notes = "保存Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/save")
     public ResponseEntity<BugDTO> save(@RequestBody BugDTO bugdto) {
@@ -377,7 +377,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "行为", tags = {"Bug" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/sendmessage")
     public ResponseEntity<BugDTO> sendMessage(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -391,7 +391,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "发送消息前置处理", tags = {"Bug" },  notes = "发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/sendmsgpreprocess")
     public ResponseEntity<BugDTO> sendMsgPreProcess(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -405,7 +405,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "TestScript", tags = {"Bug" },  notes = "TestScript")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/testscript")
     public ResponseEntity<BugDTO> testScript(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -997,7 +997,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "根据产品批量解除关联Bug", tags = {"Bug" },  notes = "根据产品批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/batchunlinkbug")
     public ResponseEntity<BugDTO> batchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1033,7 +1033,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "根据产品版本批量解除关联Bug", tags = {"Bug" },  notes = "根据产品版本批量解除关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/buildbatchunlinkbug")
     public ResponseEntity<BugDTO> buildBatchUnlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1184,7 +1184,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "根据产品保存Bug", tags = {"Bug" },  notes = "根据产品保存Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/save")
     public ResponseEntity<BugDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BugDTO bugdto) {
@@ -1195,7 +1195,7 @@ public class BugResource {
     }
 
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "根据产品行为", tags = {"Bug" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/sendmessage")
     public ResponseEntity<BugDTO> sendMessageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1207,7 +1207,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "根据产品发送消息前置处理", tags = {"Bug" },  notes = "根据产品发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/sendmsgpreprocess")
     public ResponseEntity<BugDTO> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1219,7 +1219,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUG', 'DENY')")
     @ApiOperation(value = "根据产品TestScript", tags = {"Bug" },  notes = "根据产品TestScript")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/testscript")
     public ResponseEntity<BugDTO> testScriptByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {

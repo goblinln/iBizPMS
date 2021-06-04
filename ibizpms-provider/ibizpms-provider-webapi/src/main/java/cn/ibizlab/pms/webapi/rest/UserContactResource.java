@@ -121,7 +121,7 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(usercontactService.checkKey(usercontactMapping.toDomain(usercontactdto)));
     }
 
-    @PreAuthorize("@UserContactRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'DENY')")
     @ApiOperation(value = "保存用户联系方式", tags = {"用户联系方式" },  notes = "保存用户联系方式")
 	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/save")
     public ResponseEntity<UserContactDTO> save(@RequestBody UserContactDTO usercontactdto) {

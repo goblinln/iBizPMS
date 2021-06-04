@@ -201,7 +201,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "计算开始时间和完成时间", tags = {"任务" },  notes = "计算开始时间和完成时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/computebeginandend")
     public ResponseEntity<TaskDTO> computeBeginAndEnd(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -215,7 +215,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "更新父任务时间", tags = {"任务" },  notes = "更新父任务时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/computehours4multiple")
     public ResponseEntity<TaskDTO> computeHours4Multiple(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -229,7 +229,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "更新工作时间", tags = {"任务" },  notes = "更新工作时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHours(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -243,7 +243,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "需求变更确认", tags = {"任务" },  notes = "需求变更确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/confirmstorychange")
     public ResponseEntity<TaskDTO> confirmStoryChange(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -285,7 +285,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "删除任务", tags = {"任务" },  notes = "删除任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/delete")
     public ResponseEntity<TaskDTO> delete(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -299,7 +299,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "删除工时", tags = {"任务" },  notes = "删除工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/deleteestimate")
     public ResponseEntity<TaskDTO> deleteEstimate(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -313,7 +313,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "编辑工时", tags = {"任务" },  notes = "编辑工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/editestimate")
     public ResponseEntity<TaskDTO> editEstimate(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -397,7 +397,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "关联计划", tags = {"任务" },  notes = "关联计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/linkplan")
     public ResponseEntity<TaskDTO> linkPlan(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -453,7 +453,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "继续任务时填入预计剩余为0设置为进行中", tags = {"任务" },  notes = "继续任务时填入预计剩余为0设置为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/recordtimzeroleftaftercontinue")
     public ResponseEntity<TaskDTO> recordTimZeroLeftAfterContinue(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -467,7 +467,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "预计剩余为0进行中", tags = {"任务" },  notes = "预计剩余为0进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/recordtimatezeroleft")
     public ResponseEntity<TaskDTO> recordTimateZeroLeft(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -481,7 +481,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "开始任务时填入预计剩余为0设为进行中", tags = {"任务" },  notes = "开始任务时填入预计剩余为0设为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/recordtimatezeroleftafterstart")
     public ResponseEntity<TaskDTO> recordTimateZeroLeftAfterStart(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -529,7 +529,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "行为", tags = {"任务" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/sendmessage")
     public ResponseEntity<TaskDTO> sendMessage(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -543,7 +543,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "发送消息前置处理", tags = {"任务" },  notes = "发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/sendmsgpreprocess")
     public ResponseEntity<TaskDTO> sendMsgPreProcess(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -571,7 +571,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "任务收藏", tags = {"任务" },  notes = "任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskfavorites")
     public ResponseEntity<TaskDTO> taskFavorites(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -585,7 +585,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "检查多人任务操作权限", tags = {"任务" },  notes = "检查多人任务操作权限")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskforward")
     public ResponseEntity<TaskDTO> taskForward(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -599,7 +599,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "任务收藏", tags = {"任务" },  notes = "任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/tasknfavorites")
     public ResponseEntity<TaskDTO> taskNFavorites(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1303,7 +1303,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目计算开始时间和完成时间", tags = {"任务" },  notes = "根据项目计算开始时间和完成时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/computebeginandend")
     public ResponseEntity<TaskDTO> computeBeginAndEndByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1315,7 +1315,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目更新父任务时间", tags = {"任务" },  notes = "根据项目更新父任务时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/computehours4multiple")
     public ResponseEntity<TaskDTO> computeHours4MultipleByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1327,7 +1327,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目更新工作时间", tags = {"任务" },  notes = "根据项目更新工作时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1339,7 +1339,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目需求变更确认", tags = {"任务" },  notes = "根据项目需求变更确认")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/confirmstorychange")
     public ResponseEntity<TaskDTO> confirmStoryChangeByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1375,7 +1375,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/delete")
     public ResponseEntity<TaskDTO> deleteByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1387,7 +1387,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目删除工时", tags = {"任务" },  notes = "根据项目删除工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/deleteestimate")
     public ResponseEntity<TaskDTO> deleteEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1399,7 +1399,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目编辑工时", tags = {"任务" },  notes = "根据项目编辑工时")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/editestimate")
     public ResponseEntity<TaskDTO> editEstimateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1471,7 +1471,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目关联计划", tags = {"任务" },  notes = "根据项目关联计划")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/linkplan")
     public ResponseEntity<TaskDTO> linkPlanByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1519,7 +1519,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目继续任务时填入预计剩余为0设置为进行中", tags = {"任务" },  notes = "根据项目继续任务时填入预计剩余为0设置为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/recordtimzeroleftaftercontinue")
     public ResponseEntity<TaskDTO> recordTimZeroLeftAfterContinueByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1531,7 +1531,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目预计剩余为0进行中", tags = {"任务" },  notes = "根据项目预计剩余为0进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/recordtimatezeroleft")
     public ResponseEntity<TaskDTO> recordTimateZeroLeftByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1543,7 +1543,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目开始任务时填入预计剩余为0设为进行中", tags = {"任务" },  notes = "根据项目开始任务时填入预计剩余为0设为进行中")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/recordtimatezeroleftafterstart")
     public ResponseEntity<TaskDTO> recordTimateZeroLeftAfterStartByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1589,7 +1589,7 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目行为", tags = {"任务" },  notes = "根据项目行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/sendmessage")
     public ResponseEntity<TaskDTO> sendMessageByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1601,7 +1601,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目发送消息前置处理", tags = {"任务" },  notes = "根据项目发送消息前置处理")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/sendmsgpreprocess")
     public ResponseEntity<TaskDTO> sendMsgPreProcessByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1625,7 +1625,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskfavorites")
     public ResponseEntity<TaskDTO> taskFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1637,7 +1637,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目检查多人任务操作权限", tags = {"任务" },  notes = "根据项目检查多人任务操作权限")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskforward")
     public ResponseEntity<TaskDTO> taskForwardByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1649,7 +1649,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("@TaskRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
     @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/tasknfavorites")
     public ResponseEntity<TaskDTO> taskNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {

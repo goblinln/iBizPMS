@@ -125,7 +125,7 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(moduleService.checkKey(moduleMapping.toDomain(moduledto)));
     }
 
-    @PreAuthorize("@ModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'DENY')")
     @ApiOperation(value = "重建模块路径", tags = {"模块" },  notes = "重建模块路径")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/{module_id}/fix")
     public ResponseEntity<ModuleDTO> fix(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
@@ -139,7 +139,7 @@ public class ModuleResource {
     }
 
 
-    @PreAuthorize("@ModuleRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_MODULE', 'DENY')")
     @ApiOperation(value = "保存模块", tags = {"模块" },  notes = "保存模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/modules/save")
     public ResponseEntity<ModuleDTO> save(@RequestBody ModuleDTO moduledto) {

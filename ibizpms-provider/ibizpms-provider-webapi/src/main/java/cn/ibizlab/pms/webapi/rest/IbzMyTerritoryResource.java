@@ -125,7 +125,7 @@ public class IbzMyTerritoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzmyterritoryService.checkKey(ibzmyterritoryMapping.toDomain(ibzmyterritorydto)));
     }
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'DENY')")
     @ApiOperation(value = "移动端菜单计数器", tags = {"我的地盘" },  notes = "移动端菜单计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/mobmenucount")
     public ResponseEntity<IbzMyTerritoryDTO> mobMenuCount() {
@@ -136,7 +136,7 @@ public class IbzMyTerritoryResource {
     }
 
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'DENY')")
     @ApiOperation(value = "我的收藏计数器", tags = {"我的地盘" },  notes = "我的收藏计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/myfavoritecount")
     public ResponseEntity<IbzMyTerritoryDTO> myFavoriteCount() {
@@ -147,7 +147,7 @@ public class IbzMyTerritoryResource {
     }
 
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'DENY')")
     @ApiOperation(value = "我的地盘移动端计数器", tags = {"我的地盘" },  notes = "我的地盘移动端计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/myterritorycount")
     public ResponseEntity<IbzMyTerritoryDTO> myTerritoryCount() {
@@ -158,7 +158,7 @@ public class IbzMyTerritoryResource {
     }
 
 
-    @PreAuthorize("@IbzMyTerritoryRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_MYTERRITORY', 'DENY')")
     @ApiOperation(value = "保存我的地盘", tags = {"我的地盘" },  notes = "保存我的地盘")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzmyterritories/save")
     public ResponseEntity<IbzMyTerritoryDTO> save(@RequestBody IbzMyTerritoryDTO ibzmyterritorydto) {

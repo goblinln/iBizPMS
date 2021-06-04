@@ -125,7 +125,7 @@ public class DeptResource {
         return  ResponseEntity.status(HttpStatus.OK).body(deptService.checkKey(deptMapping.toDomain(deptdto)));
     }
 
-    @PreAuthorize("@DeptRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_DEPT', 'DENY')")
     @ApiOperation(value = "保存部门", tags = {"部门" },  notes = "保存部门")
 	@RequestMapping(method = RequestMethod.POST, value = "/depts/save")
     public ResponseEntity<DeptDTO> save(@RequestBody DeptDTO deptdto) {

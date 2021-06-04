@@ -125,7 +125,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectteamService.checkKey(projectteamMapping.toDomain(projectteamdto)));
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'DENY')")
     @ApiOperation(value = "获取成员角色", tags = {"项目团队" },  notes = "获取成员角色")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectteams/{projectteam_id}/getuserrole")
     public ResponseEntity<ProjectTeamDTO> getUserRole(@PathVariable("projectteam_id") Long projectteam_id, ProjectTeamDTO projectteamdto) {
@@ -282,7 +282,7 @@ public class ProjectTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(projectteamService.checkKey(projectteamMapping.toDomain(projectteamdto)));
     }
 
-    @PreAuthorize("@ProjectTeamRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PROJECTTEAM', 'DENY')")
     @ApiOperation(value = "根据项目获取成员角色", tags = {"项目团队" },  notes = "根据项目获取成员角色")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}/getuserrole")
     public ResponseEntity<ProjectTeamDTO> getUserRoleByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id, ProjectTeamDTO projectteamdto) {

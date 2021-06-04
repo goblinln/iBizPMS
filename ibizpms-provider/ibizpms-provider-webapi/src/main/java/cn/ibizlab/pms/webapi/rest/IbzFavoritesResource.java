@@ -126,7 +126,7 @@ public class IbzFavoritesResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzfavoritesService.checkKey(ibzfavoritesMapping.toDomain(ibzfavoritesdto)));
     }
 
-    @PreAuthorize("@IbzFavoritesRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_FAVORITES', 'DENY')")
     @ApiOperation(value = "保存收藏", tags = {"收藏" },  notes = "保存收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzfavorites/save")
     public ResponseEntity<IbzFavoritesDTO> save(@RequestBody IbzFavoritesDTO ibzfavoritesdto) {

@@ -125,7 +125,7 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(usertplService.checkKey(usertplMapping.toDomain(usertpldto)));
     }
 
-    @PreAuthorize("@UserTplRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'DENY')")
     @ApiOperation(value = "删除", tags = {"用户模板" },  notes = "删除")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/{usertpl_id}/hasdeleted")
     public ResponseEntity<UserTplDTO> hasDeleted(@PathVariable("usertpl_id") Long usertpl_id, @RequestBody UserTplDTO usertpldto) {
@@ -139,7 +139,7 @@ public class UserTplResource {
     }
 
 
-    @PreAuthorize("@UserTplRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_USERTPL', 'DENY')")
     @ApiOperation(value = "保存用户模板", tags = {"用户模板" },  notes = "保存用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/save")
     public ResponseEntity<UserTplDTO> save(@RequestBody UserTplDTO usertpldto) {

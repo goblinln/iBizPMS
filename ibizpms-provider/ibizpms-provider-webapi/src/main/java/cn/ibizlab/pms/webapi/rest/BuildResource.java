@@ -126,7 +126,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(buildService.checkKey(buildMapping.toDomain(builddto)));
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "关联Bug", tags = {"版本" },  notes = "关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBug(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -140,7 +140,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "关联需求", tags = {"版本" },  notes = "关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStory(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -154,7 +154,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "移动端项目版本计数器", tags = {"版本" },  notes = "移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounter(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -168,7 +168,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "一键发布", tags = {"版本" },  notes = "一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickRelease(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -182,7 +182,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "保存版本", tags = {"版本" },  notes = "保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/save")
     public ResponseEntity<BuildDTO> save(@RequestBody BuildDTO builddto) {
@@ -195,7 +195,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "移除Bug关联", tags = {"版本" },  notes = "移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBug(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -209,7 +209,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "移除关联需求", tags = {"版本" },  notes = "移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStory(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -394,7 +394,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(buildService.checkKey(buildMapping.toDomain(builddto)));
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据产品关联Bug", tags = {"版本" },  notes = "根据产品关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -406,7 +406,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据产品关联需求", tags = {"版本" },  notes = "根据产品关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -418,7 +418,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据产品移动端项目版本计数器", tags = {"版本" },  notes = "根据产品移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -430,7 +430,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据产品一键发布", tags = {"版本" },  notes = "根据产品一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -442,7 +442,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据产品保存版本", tags = {"版本" },  notes = "根据产品保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/save")
     public ResponseEntity<BuildDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
@@ -453,7 +453,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据产品移除Bug关联", tags = {"版本" },  notes = "根据产品移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -465,7 +465,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据产品移除关联需求", tags = {"版本" },  notes = "根据产品移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -648,7 +648,7 @@ public class BuildResource {
         return  ResponseEntity.status(HttpStatus.OK).body(buildService.checkKey(buildMapping.toDomain(builddto)));
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据项目关联Bug", tags = {"版本" },  notes = "根据项目关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -660,7 +660,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据项目关联需求", tags = {"版本" },  notes = "根据项目关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -672,7 +672,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据项目移动端项目版本计数器", tags = {"版本" },  notes = "根据项目移动端项目版本计数器")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/builds/{build_id}/mobprojectbuildcounter")
     public ResponseEntity<BuildDTO> mobProjectBuildCounterByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -684,7 +684,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据项目一键发布", tags = {"版本" },  notes = "根据项目一键发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/oneclickrelease")
     public ResponseEntity<BuildDTO> oneClickReleaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -696,7 +696,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据项目保存版本", tags = {"版本" },  notes = "根据项目保存版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/save")
     public ResponseEntity<BuildDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody BuildDTO builddto) {
@@ -707,7 +707,7 @@ public class BuildResource {
     }
 
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据项目移除Bug关联", tags = {"版本" },  notes = "根据项目移除Bug关联")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBugByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
@@ -719,7 +719,7 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
-    @PreAuthorize("@BuildRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('ZT_BUILD', 'DENY')")
     @ApiOperation(value = "根据项目移除关联需求", tags = {"版本" },  notes = "根据项目移除关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {

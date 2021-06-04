@@ -125,7 +125,7 @@ public class PRODUCTTEAMResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productteamService.checkKey(productteamMapping.toDomain(productteamdto)));
     }
 
-    @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTTEAM', 'DENY')")
     @ApiOperation(value = "PmsEe团队管理过滤", tags = {"产品团队" },  notes = "PmsEe团队管理过滤")
 	@RequestMapping(method = RequestMethod.POST, value = "/productteams/{productteam_id}/productteamguolv")
     public ResponseEntity<PRODUCTTEAMDTO> productTeamGuoLv(@PathVariable("productteam_id") Long productteam_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
@@ -282,7 +282,7 @@ public class PRODUCTTEAMResource {
         return  ResponseEntity.status(HttpStatus.OK).body(productteamService.checkKey(productteamMapping.toDomain(productteamdto)));
     }
 
-    @PreAuthorize("@PRODUCTTEAMRuntime.quickTest('DENY')")
+    @PreAuthorize("quickTest('IBZ_PRODUCTTEAM', 'DENY')")
     @ApiOperation(value = "根据产品PmsEe团队管理过滤", tags = {"产品团队" },  notes = "根据产品PmsEe团队管理过滤")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/{productteam_id}/productteamguolv")
     public ResponseEntity<PRODUCTTEAMDTO> productTeamGuoLvByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id, @RequestBody PRODUCTTEAMDTO productteamdto) {
