@@ -41,6 +41,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "SYSACCOUNT",
+    "name" : "SYSACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  } ],
   "getPSControls" : [ {
     "codeName" : "CustomTreeExpViewtreeexpbar",
     "controlType" : "TREEEXPBAR",

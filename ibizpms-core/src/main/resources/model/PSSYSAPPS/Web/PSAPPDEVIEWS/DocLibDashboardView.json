@@ -17,6 +17,12 @@
       "paramType" : "CTRL"
     } ]
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "SYSACCOUNT",
+    "name" : "SYSACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  } ],
   "getPSControls" : [ {
     "codeName" : "Main",
     "controlType" : "DASHBOARD",
