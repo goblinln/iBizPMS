@@ -405,7 +405,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchMyProject"
+          "id" : "FetchMy"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
