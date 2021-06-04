@@ -31,91 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "CaseFavorite",
-    "methodType" : "DEACTION",
-    "name" : "CaseFavorite",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseFavorite.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FAVORITE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CaseFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CaseNFavorite",
-    "methodType" : "DEACTION",
-    "name" : "CaseNFavorite",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseNFavorite.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NFAVORITE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CaseNFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -150,6 +65,40 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "TestRunCases",
+    "methodType" : "DEACTION",
+    "name" : "testRunCases",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCases.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TESRUNCASE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "TestRunCases"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CaseNFavorite",
+    "methodType" : "DEACTION",
+    "name" : "CaseNFavorite",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseNFavorite.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CaseNFavorite"
+    },
+    "builtinMethod" : false
+  }, {
     "batchActionMode" : 1,
     "codeName" : "testsuitelinkCase",
     "methodType" : "DEACTION",
@@ -165,20 +114,20 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "TestRunCases",
+    "codeName" : "CaseFavorite",
     "methodType" : "DEACTION",
-    "name" : "testRunCases",
+    "name" : "CaseFavorite",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCases.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseFavorite.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "TESRUNCASE"
+      "id" : "FAVORITE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "TestRunCases"
+      "id" : "CaseFavorite"
     },
     "builtinMethod" : false
   }, {
@@ -200,6 +149,57 @@
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -697,12 +697,12 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchCurTestTask",
+    "codeName" : "FetchNotCurTestTask",
     "methodType" : "FETCH",
-    "name" : "FetchCurTestTask",
+    "name" : "FetchNotCurTestTask",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "CurTestTask"
+      "id" : "NotCurTestTask"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -710,7 +710,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchCurTestTask"
+      "id" : "FetchNotCurTestTask"
     },
     "builtinMethod" : false
   }, {
@@ -748,6 +748,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurTestTask",
+    "methodType" : "FETCH",
+    "name" : "FetchCurTestTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurTestTask"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurTestTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurSuite",
     "methodType" : "FETCH",
     "name" : "FetchCurSuite",
@@ -762,23 +779,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCurSuite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchNotCurTestTask",
-    "methodType" : "FETCH",
-    "name" : "FetchNotCurTestTask",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "NotCurTestTask"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchNotCurTestTask"
     },
     "builtinMethod" : false
   }, {
@@ -1407,80 +1407,12 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "CaseFavorite",
-    "methodType" : "DEACTION",
-    "name" : "CaseFavorite",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseFavorite.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FAVORITE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CaseFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "CaseNFavorite",
-    "methodType" : "DEACTION",
-    "name" : "CaseNFavorite",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseNFavorite.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NFAVORITE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CaseNFavorite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchCurTestTask",
+    "codeName" : "FetchNotCurTestTask",
     "methodType" : "FETCH",
-    "name" : "FetchCurTestTask",
+    "name" : "FetchNotCurTestTask",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "CurTestTask"
+      "id" : "NotCurTestTask"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1488,24 +1420,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchCurTestTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
+      "id" : "FetchNotCurTestTask"
     },
     "builtinMethod" : false
   }, {
@@ -1543,21 +1458,6 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 1,
-    "codeName" : "testsuitelinkCase",
-    "methodType" : "DEACTION",
-    "name" : "testsuitelinkCase",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "testsuitelinkCase"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
     "codeName" : "TestRunCases",
     "methodType" : "DEACTION",
     "name" : "testRunCases",
@@ -1572,6 +1472,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestRunCases"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CaseNFavorite",
+    "methodType" : "DEACTION",
+    "name" : "CaseNFavorite",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseNFavorite.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CaseNFavorite"
     },
     "builtinMethod" : false
   }, {
@@ -1592,6 +1509,21 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
+    "codeName" : "testsuitelinkCase",
+    "methodType" : "DEACTION",
+    "name" : "testsuitelinkCase",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestsuitelinkCase.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "testsuitelinkCase"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -1606,6 +1538,40 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CaseFavorite",
+    "methodType" : "DEACTION",
+    "name" : "CaseFavorite",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseFavorite.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CaseFavorite"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurTestTask",
+    "methodType" : "FETCH",
+    "name" : "FetchCurTestTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurTestTask"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurTestTask"
     },
     "builtinMethod" : false
   }, {
@@ -1628,6 +1594,23 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurSuite",
     "methodType" : "FETCH",
     "name" : "FetchCurSuite",
@@ -1645,20 +1628,37 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchNotCurTestTask",
-    "methodType" : "FETCH",
-    "name" : "FetchNotCurTestTask",
-    "getPSDEDataSet" : {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "NotCurTestTask"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchNotCurTestTask"
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {

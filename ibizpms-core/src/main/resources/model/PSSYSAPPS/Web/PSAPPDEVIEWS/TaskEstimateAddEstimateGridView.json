@@ -4,7 +4,9 @@
   "codeName" : "TaskEstimateAddEstimateGridView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateAddEstimateGridView.json",
   "gridRowActiveMode" : 2,
+  "height" : 400,
   "name" : "TaskEstimateAddEstimateGridView",
+  "openMode" : "POPUPMODAL",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
@@ -658,6 +660,7 @@
   "title" : "任务预计表格视图（记录工时）",
   "viewStyle" : "STYLE2",
   "viewType" : "DEGRIDVIEW",
+  "width" : 800,
   "xDataControlName" : "grid",
   "enableDP" : true,
   "enableExport" : true,

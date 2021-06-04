@@ -182,15 +182,16 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
-     * Remove
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/products/${_context.product}`);
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/products/${_context.product}`, _data);
     }
     /**
      * FetchCurProject
@@ -202,6 +203,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/products/fetchcurproject`, _data);
+    }
+    /**
+     * CancelProductTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
     }
     /**
      * FetchCurDefault
@@ -226,55 +238,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/${_context.product}/close`, _data);
     }
     /**
-     * CancelProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/products/${_context.product}`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/products/${_context.product}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/products/getdraft`, _data);
-        return res;
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -291,6 +254,43 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/products`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/products/${_context.product}`);
+        return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/products/${_context.product}`);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/products/getdraft`, _data);
+        return res;
     }
     /**
      * ProductTop

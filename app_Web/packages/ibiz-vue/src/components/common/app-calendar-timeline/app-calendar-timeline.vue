@@ -153,11 +153,27 @@ export default class AppClaendarTimeline extends Vue{
     /**
      * 日程事件
      * 
-     * 
+     * @memberof AppClaendarTimeline
      */
     @Prop()
     public events!: any;
 
+	/**
+     * 应用上下文
+     * 
+     * @memberof AppClaendarTimeline
+     */
+    @Prop()
+    public context!: any;
+
+    /**
+     * 视图参数
+     * 
+     * @memberof AppClaendarTimeline
+     */
+    @Prop()
+    public viewparams!: any;
+    
     /**
      * 分组属性
      *

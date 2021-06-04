@@ -233,7 +233,7 @@ export class AppTreeService extends ControlServiceBase {
             // 静态节点
             if (nodeJson.treeNodeType == 'STATIC') {
                 // 快速搜索过滤
-                if (nodeJson.enableQuickSearch && filter.srfnodefilter && !Object.is(filter.srfnodefilter, "") && (nodeJson as IPSDETreeStaticNode)?.text?.toUpperCase().indexOf(filter.srfnodefilter.toUpperCase()) != -1) {
+                if (nodeJson.enableQuickSearch && filter.srfnodefilter && !Object.is(filter.srfnodefilter, "") && (nodeJson as IPSDETreeStaticNode)?.text?.toUpperCase().indexOf(filter.srfnodefilter.toUpperCase()) == -1) {
                     return resolve(list);
                 }
                 const treeNode: any = {

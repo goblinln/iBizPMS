@@ -15,37 +15,22 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Update",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "Create"
     },
     "builtinMethod" : false
-  }, {
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "batchActionMode" : 1,
     "codeName" : "Remove",
@@ -66,20 +51,20 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "Create",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -116,6 +101,21 @@
       "id" : "GetDraft"
     },
     "builtinMethod" : false
+  }, {
+    "batchActionMode" : 2,
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -308,6 +308,23 @@
     "stringLength" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -324,38 +341,6 @@
       "id" : "FetchDefault"
     },
     "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "batchActionMode" : 1,
     "codeName" : "Remove",
@@ -376,20 +361,20 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "Create",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -426,6 +411,21 @@
       "id" : "GetDraft"
     },
     "builtinMethod" : false
+  }, {
+    "batchActionMode" : 2,
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",

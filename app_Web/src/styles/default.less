@@ -414,6 +414,7 @@
   padding: 0 8px;
   >.ivu-card >.ivu-card-body >.content-container  {
     >.expbarcontrol {
+      //水平布局
       >.ivu-split-horizontal {
         >.left-pane {
           padding: 0px;
@@ -439,15 +440,41 @@
           }
         }
       }
+      //垂直布局
+      >.ivu-split-vertical {
+        >.top-pane {
+          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+          border-radius: 4px;
+          margin: 0 4px 10px 4px;
+          >div {
+            padding: 0 10px 10px 10px;
+          }
+        }
+        >.bottom-pane {
+          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+          border-radius: 4px;
+          margin: 16px 4px 4px 4px;
+          >div {
+            padding: 0 10px 10px 10px;
+          }
+        }
+      }
     }
   }
   >.ivu-card.view-no-caption >.ivu-card-body {
-      >.content-container >.expbarcontrol >.ivu-split-horizontal >.left-pane  {
-        >div {
-          padding-top: 10px;
+      >.content-container >.expbarcontrol {
+        >.ivu-split-horizontal >.left-pane  {
+          >div {
+            padding-top: 10px;
+          }
+          .container-header >.search-container {
+            padding-top: 0px;
+          }
         }
-        .container-header >.search-container {
-          padding-top: 0px;
+        >.ivu-split-vertical >.top-pane {
+          >div {
+            padding-top: 10px
+          }
         }
       }
   }

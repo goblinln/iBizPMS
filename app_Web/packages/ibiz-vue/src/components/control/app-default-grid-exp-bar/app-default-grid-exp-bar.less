@@ -109,21 +109,25 @@
                         padding-right: 20px;
                     }
                 }
+                //有标题无搜索
                 .grid-exp-bar-content {
-                    height: calc(100% - 40px);
+                    height: calc(100% - 51px);
                     overflow: auto;
                     margin-bottom: 10px;
                 }
-                .grid-exp-bar-content .has-search {
-                    height: calc(100% - 88px);
+                //有标题有搜索
+                .grid-exp-bar-content.has-search {
+                    height: calc(100% - 98px);
                 }
+                //无标题无搜索
                 .grid-exp-bar-content2 {
                     height: 100%;
                     overflow: auto;
                     flex-grow: 1;
                 }
-                .grid-exp-bar-content2 .has-search {
-                    height: calc(100% - 38px);
+                //无标题有搜索
+                .grid-exp-bar-content2.has-search {
+                    height: calc(100% - 48px);
                 }
             }
         }

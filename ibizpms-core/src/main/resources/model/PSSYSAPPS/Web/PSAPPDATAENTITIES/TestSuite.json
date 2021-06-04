@@ -31,25 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -64,6 +45,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -84,22 +82,24 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
@@ -340,24 +340,22 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
+    "codeName" : "FetchPublicTestSuite",
+    "methodType" : "FETCH",
+    "name" : "FetchPublicTestSuite",
+    "getPSDEDataSet" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Remove.json"
+      "id" : "PublicTestSuite"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
+      "id" : "FetchPublicTestSuite"
     },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
+    "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
@@ -373,6 +371,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -393,39 +408,24 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchPublicTestSuite",
-    "methodType" : "FETCH",
-    "name" : "FetchPublicTestSuite",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PublicTestSuite"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPublicTestSuite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",

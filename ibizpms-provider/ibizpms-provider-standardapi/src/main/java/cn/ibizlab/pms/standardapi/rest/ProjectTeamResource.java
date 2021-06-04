@@ -65,34 +65,6 @@ public class ProjectTeamResource {
     }
 
 
-
-    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
-        List<ProjectTeam> domainlist=projectteamMapping.toDomain(projectteamdtos);
-        for(ProjectTeam domain:domainlist){
-             domain.setRoot(project_id);
-        }
-        projectteamService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'DELETE', #projectteam_id, 'DELETE')")
-    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
-    }
-
-    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'DELETE', 'DELETE')")
-    @ApiOperation(value = "根据项目批量删除项目团队", tags = {"项目团队" },  notes = "根据项目批量删除项目团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        projectteamService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'READ', #projectteam_id, 'READ')")
     @ApiOperation(value = "根据项目获取项目团队", tags = {"项目团队" },  notes = "根据项目获取项目团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectteams/{projectteam_id}")
@@ -149,6 +121,34 @@ public class ProjectTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'DELETE', #projectteam_id, 'DELETE')")
+    @ApiOperation(value = "根据项目删除项目团队", tags = {"项目团队" },  notes = "根据项目删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/{projectteam_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(projectteamService.remove(projectteam_id));
+    }
+
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'DELETE', 'DELETE')")
+    @ApiOperation(value = "根据项目批量删除项目团队", tags = {"项目团队" },  notes = "根据项目批量删除项目团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/projectteams/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        projectteamService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+
+    @PreAuthorize("test('IBZ_PROJECTTEAM', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据项目批量保存项目团队", tags = {"项目团队" },  notes = "根据项目批量保存项目团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectteams/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<ProjectTeamDTO> projectteamdtos) {
+        List<ProjectTeam> domainlist=projectteamMapping.toDomain(projectteamdtos);
+        for(ProjectTeam domain:domainlist){
+             domain.setRoot(project_id);
+        }
+        projectteamService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
 }
 

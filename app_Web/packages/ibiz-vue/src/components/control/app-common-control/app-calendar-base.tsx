@@ -108,6 +108,8 @@ export class AppCalendarBase extends CalendarControlBase{
                 <app-calendar-timeline
                     ref="appCalendarTimeline"
                     ctrlParams={this.ctrlParams}
+                    context={Util.deepCopy(this.context)}
+                    viewparams={Util.deepCopy(this.viewparams)}
                     on-eventClick={(tempEvent: any) => {
                         debounce(this.onEventClick,[tempEvent,true],this);
                     }}

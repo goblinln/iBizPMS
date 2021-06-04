@@ -112,24 +112,25 @@
                         padding-right: 20px;
                     }
                 }
+                //有标题无搜索
                 .dataview-exp-bar-content {
-                    // <#--  计算高度  -->
-                    // <#if ctrl.isShowTitleBar() && ctrl.isEnableSearch()>
-                    // height: calc(100% - 88px);
-                    // <#elseif ctrl.isShowTitleBar() && !ctrl.isEnableSearch()>
-                    // height: calc(100% - 40px);
-                    // <#elseif !ctrl.isShowTitleBar() && ctrl.isEnableSearch()>
-                    // height: calc(100% - 38px);
-                    // <#else>
-                    // height: 100%;
-                    // </#if>
+                    height: calc(100% - 51px);
                     overflow: auto;
                     margin-bottom: 10px;
                 }
+                //有标题有搜索
+                .dataview-exp-bar-content.has-search {
+                    height: calc(100% - 98px);
+                }
+                //无标题无搜索
                 .dataview-exp-bar-content2 {
                     height: 100%;
                     overflow: auto;
                     flex-grow: 1;
+                }
+                //无标题有搜索
+                .dataview-exp-bar-content2.has-search {
+                    height: calc(100% - 48px);
                 }
             }
         }

@@ -124,66 +124,6 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.condCache.get('view');
     }
     /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/usercontacts`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.usercontact) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
-            return res;
-        }
-        const res = await this.http.get(`/usercontacts/${_context.usercontact}`);
-        return res;
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.usercontact) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -216,6 +156,66 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
         }
         return this.http.post(`/usercontacts/fetchaccount`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.usercontact) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
+            return res;
+        }
+        const res = await this.http.get(`/usercontacts/${_context.usercontact}`);
+        return res;
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/usercontacts`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.usercontact) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
     }
     /**
      * Remove
