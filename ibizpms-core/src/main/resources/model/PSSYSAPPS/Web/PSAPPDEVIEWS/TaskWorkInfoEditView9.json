@@ -670,7 +670,7 @@
                 "name" : "fetch",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "FetchTaskRelatedBug"
+                  "id" : "FetchProjectBug"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1061,6 +1061,18 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "getPSNavigateContexts" : [ {
+          "key" : "PROJECT",
+          "name" : "PROJECT",
+          "value" : "project",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "n_task_eq",
+          "name" : "n_task_eq",
+          "value" : "task",
+          "rawValue" : false
+        } ],
         "parentDataJO" : {
           "srfparentdename" : "ZT_TASK",
           "SRFPARENTTYPE" : "CUSTOM"

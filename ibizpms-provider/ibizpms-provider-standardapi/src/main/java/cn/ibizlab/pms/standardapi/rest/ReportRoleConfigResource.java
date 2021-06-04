@@ -52,6 +52,21 @@ public class ReportRoleConfigResource {
     @Lazy
     public ReportRoleConfigMapping reportroleconfigMapping;
 
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
+    @ApiOperation(value = "新建汇报角色配置", tags = {"汇报角色配置" },  notes = "新建汇报角色配置")
+	@RequestMapping(method = RequestMethod.POST, value = "/reportroleconfigs")
+    @Transactional
+    public ResponseEntity<ReportRoleConfigDTO> create(@Validated @RequestBody ReportRoleConfigDTO reportroleconfigdto) {
+        IbzReportRoleConfig domain = reportroleconfigMapping.toDomain(reportroleconfigdto);
+		ibzreportroleconfigService.create(domain);
+        if(!ibzreportroleconfigRuntime.test(domain.getIbzreportroleconfigid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ReportRoleConfigDTO dto = reportroleconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/reportroleconfigs/fetchdefault")
@@ -83,6 +98,14 @@ public class ReportRoleConfigResource {
     }
 
 
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
+    @ApiOperation(value = "获取汇报角色配置草稿", tags = {"汇报角色配置" },  notes = "获取汇报角色配置草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/getdraft")
+    public ResponseEntity<ReportRoleConfigDTO> getDraft(ReportRoleConfigDTO dto) {
+        IbzReportRoleConfig domain = reportroleconfigMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(reportroleconfigMapping.toDto(ibzreportroleconfigService.getDraft(domain)));
+    }
+
     @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #reportroleconfig_id, 'READ')")
     @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
 	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/{reportroleconfig_id}")
@@ -92,29 +115,6 @@ public class ReportRoleConfigResource {
         Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(reportroleconfig_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
-    @ApiOperation(value = "获取汇报角色配置草稿", tags = {"汇报角色配置" },  notes = "获取汇报角色配置草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/getdraft")
-    public ResponseEntity<ReportRoleConfigDTO> getDraft(ReportRoleConfigDTO dto) {
-        IbzReportRoleConfig domain = reportroleconfigMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(reportroleconfigMapping.toDto(ibzreportroleconfigService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
-    @ApiOperation(value = "新建汇报角色配置", tags = {"汇报角色配置" },  notes = "新建汇报角色配置")
-	@RequestMapping(method = RequestMethod.POST, value = "/reportroleconfigs")
-    @Transactional
-    public ResponseEntity<ReportRoleConfigDTO> create(@Validated @RequestBody ReportRoleConfigDTO reportroleconfigdto) {
-        IbzReportRoleConfig domain = reportroleconfigMapping.toDomain(reportroleconfigdto);
-		ibzreportroleconfigService.create(domain);
-        if(!ibzreportroleconfigRuntime.test(domain.getIbzreportroleconfigid(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ReportRoleConfigDTO dto = reportroleconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #reportroleconfig_id, 'DELETE')")

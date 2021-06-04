@@ -53,6 +53,19 @@ public class AccountProductResource {
     public AccountProductMapping accountproductMapping;
 
     @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
+	@ApiOperation(value = "获取用户数据", tags = {"产品" } ,notes = "获取用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accountproducts/fetchaccount")
+	public ResponseEntity<List<AccountProductDTO>> fetchaccount(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchAccount(context) ;
+        List<AccountProductDTO> list = accountproductMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
 	@ApiOperation(value = "获取我的数据", tags = {"产品" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/accountproducts/fetchmy")
 	public ResponseEntity<List<AccountProductDTO>> fetchmy(@RequestBody ProductSearchContext context) {
@@ -76,19 +89,6 @@ public class AccountProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
-	@ApiOperation(value = "获取用户数据", tags = {"产品" } ,notes = "获取用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accountproducts/fetchaccount")
-	public ResponseEntity<List<AccountProductDTO>> fetchaccount(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchAccount(context) ;
-        List<AccountProductDTO> list = accountproductMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/accountproducts/{accountproduct_id}/{action}")
@@ -98,6 +98,20 @@ public class AccountProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(accountproductdto);
     }
 
+    @PreAuthorize("quickTest('ZT_PRODUCT','READ')")
+	@ApiOperation(value = "根据系统用户获取用户数据", tags = {"产品" } ,notes = "根据系统用户获取用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountproducts/fetchaccount")
+	public ResponseEntity<List<AccountProductDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ProductSearchContext context) {
+        
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchAccount(context) ;
+        List<AccountProductDTO> list = accountproductMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("quickTest('ZT_PRODUCT','READ')")
 	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"产品" } ,notes = "根据系统用户获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountproducts/fetchmy")
@@ -121,19 +135,5 @@ public class AccountProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCT','READ')")
-	@ApiOperation(value = "根据系统用户获取用户数据", tags = {"产品" } ,notes = "根据系统用户获取用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountproducts/fetchaccount")
-	public ResponseEntity<List<AccountProductDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ProductSearchContext context) {
-        
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchAccount(context) ;
-        List<AccountProductDTO> list = accountproductMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 

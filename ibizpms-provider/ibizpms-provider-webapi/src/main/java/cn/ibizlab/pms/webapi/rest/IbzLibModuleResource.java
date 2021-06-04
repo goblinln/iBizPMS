@@ -125,18 +125,14 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
-    @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
-    @ApiOperation(value = "保存用例库模块", tags = {"用例库模块" },  notes = "保存用例库模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/save")
-    public ResponseEntity<IbzLibModuleDTO> save(@RequestBody IbzLibModuleDTO ibzlibmoduledto) {
-        IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
-        ibzlibmoduleService.save(domain);
-        IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
+    @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
+    @ApiOperation(value = "批量保存用例库模块", tags = {"用例库模块" },  notes = "批量保存用例库模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibmodules/savebatch")
+    public ResponseEntity<Boolean> saveBatch(@RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
+        ibzlibmoduleService.saveBatch(ibzlibmoduleMapping.toDomain(ibzlibmoduledtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("quickTest('IBZ_LIBMODULE', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库模块" } ,notes = "获取DEFAULT")
@@ -242,16 +238,18 @@ public class IbzLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.checkKey(ibzlibmoduleMapping.toDomain(ibzlibmoduledto)));
     }
 
-    @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
-    @ApiOperation(value = "根据用例库保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库保存用例库模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/save")
-    public ResponseEntity<IbzLibModuleDTO> saveByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody IbzLibModuleDTO ibzlibmoduledto) {
-        IbzLibModule domain = ibzlibmoduleMapping.toDomain(ibzlibmoduledto);
-        domain.setRoot(ibzlib_id);
-        ibzlibmoduleService.save(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleMapping.toDto(domain));
-    }
 
+    @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
+    @ApiOperation(value = "根据用例库批量保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量保存用例库模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzlibs/{ibzlib_id}/ibzlibmodules/savebatch")
+    public ResponseEntity<Boolean> saveBatchByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody List<IbzLibModuleDTO> ibzlibmoduledtos) {
+        List<IbzLibModule> domainlist=ibzlibmoduleMapping.toDomain(ibzlibmoduledtos);
+        for(IbzLibModule domain:domainlist){
+             domain.setRoot(ibzlib_id);
+        }
+        ibzlibmoduleService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("quickTest('IBZ_LIBMODULE','READ')")
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")

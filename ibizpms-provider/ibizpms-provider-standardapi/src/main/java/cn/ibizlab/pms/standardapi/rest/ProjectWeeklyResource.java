@@ -73,6 +73,30 @@ public class ProjectWeeklyResource {
     }
 
     @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
+    @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectweeklies/{projectweekly_id}")
+    public ResponseEntity<ProjectWeeklyDTO> get(@PathVariable("projectweekly_id") String projectweekly_id) {
+        IbizproProjectWeekly domain = ibizproprojectweeklyService.get(projectweekly_id);
+        ProjectWeeklyDTO dto = projectweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(projectweekly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('IBZPRO_PROJECTWEEKLY', 'NONE')")
+    @ApiOperation(value = "新建项目周报", tags = {"项目周报" },  notes = "新建项目周报")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectweeklies")
+    @Transactional
+    public ResponseEntity<ProjectWeeklyDTO> create(@Validated @RequestBody ProjectWeeklyDTO projectweeklydto) {
+        IbizproProjectWeekly domain = projectweeklyMapping.toDomain(projectweeklydto);
+		ibizproprojectweeklyService.create(domain);
+        ProjectWeeklyDTO dto = projectweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(domain.getProjectweeklyid());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
     @ApiOperation(value = "定时推送项目周报", tags = {"项目周报" },  notes = "定时推送项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectweeklies/{projectweekly_id}/pushsumprojectweekly")
     public ResponseEntity<ProjectWeeklyDTO> pushSumProjectWeekly(@PathVariable("projectweekly_id") String projectweekly_id, @RequestBody ProjectWeeklyDTO projectweeklydto) {
@@ -101,30 +125,6 @@ public class ProjectWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
-    @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectweeklies/{projectweekly_id}")
-    public ResponseEntity<ProjectWeeklyDTO> get(@PathVariable("projectweekly_id") String projectweekly_id) {
-        IbizproProjectWeekly domain = ibizproprojectweeklyService.get(projectweekly_id);
-        ProjectWeeklyDTO dto = projectweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(projectweekly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('IBZPRO_PROJECTWEEKLY', 'NONE')")
-    @ApiOperation(value = "新建项目周报", tags = {"项目周报" },  notes = "新建项目周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectweeklies")
-    @Transactional
-    public ResponseEntity<ProjectWeeklyDTO> create(@Validated @RequestBody ProjectWeeklyDTO projectweeklydto) {
-        IbizproProjectWeekly domain = projectweeklyMapping.toDomain(projectweeklydto);
-		ibizproprojectweeklyService.create(domain);
-        ProjectWeeklyDTO dto = projectweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(domain.getProjectweeklyid());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

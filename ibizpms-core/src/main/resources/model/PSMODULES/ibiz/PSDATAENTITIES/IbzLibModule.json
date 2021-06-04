@@ -81,11 +81,13 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 2,
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
