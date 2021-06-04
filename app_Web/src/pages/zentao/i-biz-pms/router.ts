@@ -2249,6 +2249,81 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'testcaselibs/:testcaselib?/views/tabexpview',
+                    meta: {
+                        caption: 'entities.testcaselib.views.tabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'testcaselib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/views/editview9',
+                    meta: {
+                        caption: 'entities.testcaselib.views.editview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'views', parameterName: 'editview9' },
+                        ],
+                        resource:'testcaselib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/views/openlibview',
+                    meta: {
+                        caption: 'entities.testcaselib.views.openlibview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'views', parameterName: 'openlibview' },
+                        ],
+                        resource:'testcaselib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/views/gridview',
+                    meta: {
+                        caption: 'entities.testcaselib.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'testcaselib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/views/editview',
+                    meta: {
+                        caption: 'entities.testcaselib.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'testcaselib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/accounttestcases/:accounttestcase?/views/mainmygridview',
                     meta: {
                         caption: 'entities.accounttestcase.views.mainmygridview.caption',
@@ -11087,6 +11162,130 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'activiteview' },
                         ],
                         resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/testcaselibmodules/:testcaselibmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'testcaselibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testcaselibmodules/:testcaselibmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'testcaselibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/testcaselibmodules/:testcaselibmodule?/views/casetreeexpview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.casetreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'casetreeexpview' },
+                        ],
+                        resource:'testcaselibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testcaselibmodules/:testcaselibmodule?/views/casetreeexpview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.casetreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'casetreeexpview' },
+                        ],
+                        resource:'testcaselibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/testcaselibmodules/:testcaselibmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'testcaselibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testcaselibmodules/:testcaselibmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'testcaselibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testcaselibs/:testcaselib?/testcaselibmodules/:testcaselibmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibs', parameterName: 'testcaselib' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'testcaselibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'testcaselibmodules/:testcaselibmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.testcaselibmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testcaselibmodules', parameterName: 'testcaselibmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'testcaselibmodule',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -22827,6 +23026,141 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'ibzcases/:ibzcase?/views/opencaseview',
+                    meta: {
+                        caption: 'entities.ibzcase.views.opencaseview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'opencaseview' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/neweditview',
+                    meta: {
+                        caption: 'entities.ibzcase.views.neweditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'neweditview' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/gridview',
+                    meta: {
+                        caption: 'entities.ibzcase.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/newediteditview9',
+                    meta: {
+                        caption: 'entities.ibzcase.views.newediteditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'newediteditview9' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/editeditview',
+                    meta: {
+                        caption: 'entities.ibzcase.views.editeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'editeditview' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/editview',
+                    meta: {
+                        caption: 'entities.ibzcase.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/infoeditview9',
+                    meta: {
+                        caption: 'entities.ibzcase.views.infoeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'infoeditview9' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.ibzcase.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzcases/:ibzcase?/views/maineditview9',
+                    meta: {
+                        caption: 'entities.ibzcase.views.maineditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
+                            { pathName: 'views', parameterName: 'maineditview9' },
+                        ],
+                        resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/accounttasks/:accounttask?/views/myfavoritegridview',
                     meta: {
                         caption: 'entities.accounttask.views.myfavoritegridview.caption',
@@ -23457,39 +23791,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/ibzlibcasesteps/:ibzlibcasesteps?/views/infogridview9',
-                    meta: {
-                        caption: 'entities.ibzlibcasesteps.views.infogridview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'ibzlibcasesteps', parameterName: 'ibzlibcasesteps' },
-                            { pathName: 'views', parameterName: 'infogridview9' },
-                        ],
-                        resource:'ibzlibcasesteps',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/ibzlibcasesteps/:ibzlibcasesteps?/views/infogridview9',
-                    meta: {
-                        caption: 'entities.ibzlibcasesteps.views.infogridview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'ibzlibcasesteps', parameterName: 'ibzlibcasesteps' },
-                            { pathName: 'views', parameterName: 'infogridview9' },
-                        ],
-                        resource:'ibzlibcasesteps',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'ibzlibcasesteps/:ibzlibcasesteps?/views/infogridview9',
                     meta: {
                         caption: 'entities.ibzlibcasesteps.views.infogridview9.caption',
@@ -23500,81 +23801,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'infogridview9' },
                         ],
                         resource:'ibzlibcasesteps',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/views/tabexpview',
-                    meta: {
-                        caption: 'entities.ibzlib.views.tabexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'views', parameterName: 'tabexpview' },
-                        ],
-                        resource:'ibzlib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/views/editview9',
-                    meta: {
-                        caption: 'entities.ibzlib.views.editview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'views', parameterName: 'editview9' },
-                        ],
-                        resource:'ibzlib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/views/openlibview',
-                    meta: {
-                        caption: 'entities.ibzlib.views.openlibview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'views', parameterName: 'openlibview' },
-                        ],
-                        resource:'ibzlib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/views/gridview',
-                    meta: {
-                        caption: 'entities.ibzlib.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzlib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/views/editview',
-                    meta: {
-                        caption: 'entities.ibzlib.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzlib',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -24585,39 +24811,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/ibzlibcasesteptmps/:ibzlibcasesteptmp?/views/gridview9',
-                    meta: {
-                        caption: 'entities.ibzlibcasesteptmp.views.gridview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'ibzlibcasesteptmps', parameterName: 'ibzlibcasesteptmp' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'ibzlibcasesteptmp',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/ibzlibcasesteptmps/:ibzlibcasesteptmp?/views/gridview9',
-                    meta: {
-                        caption: 'entities.ibzlibcasesteptmp.views.gridview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'ibzlibcasesteptmps', parameterName: 'ibzlibcasesteptmp' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'ibzlibcasesteptmp',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
                     path: 'ibzlibcasesteptmps/:ibzlibcasesteptmp?/views/gridview9',
                     meta: {
                         caption: 'entities.ibzlibcasesteptmp.views.gridview9.caption',
@@ -24628,130 +24821,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridview9' },
                         ],
                         resource:'ibzlibcasesteptmp',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzlibmodules/:ibzlibmodule?/views/gridview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzlibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzlibmodules/:ibzlibmodule?/views/gridview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzlibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzlibmodules/:ibzlibmodule?/views/casetreeexpview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.casetreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'casetreeexpview' },
-                        ],
-                        resource:'ibzlibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzlibmodules/:ibzlibmodule?/views/casetreeexpview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.casetreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'casetreeexpview' },
-                        ],
-                        resource:'ibzlibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzlibmodules/:ibzlibmodule?/views/treeexpview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.treeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'ibzlibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzlibmodules/:ibzlibmodule?/views/treeexpview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.treeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'ibzlibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzlibmodules/:ibzlibmodule?/views/editview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzlibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzlibmodules/:ibzlibmodule?/views/editview',
-                    meta: {
-                        caption: 'entities.ibzlibmodule.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibmodules', parameterName: 'ibzlibmodule' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzlibmodule',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -26469,285 +26538,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'projectweeklygridview' },
                         ],
                         resource:'ibzproprojectusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/opencaseview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.opencaseview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'opencaseview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/opencaseview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.opencaseview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'opencaseview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/neweditview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.neweditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'neweditview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/neweditview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.neweditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'neweditview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/gridview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/gridview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/newediteditview9',
-                    meta: {
-                        caption: 'entities.ibzcase.views.newediteditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'newediteditview9' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/newediteditview9',
-                    meta: {
-                        caption: 'entities.ibzcase.views.newediteditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'newediteditview9' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/editeditview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.editeditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'editeditview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/editeditview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.editeditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'editeditview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/editview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/editview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/infoeditview9',
-                    meta: {
-                        caption: 'entities.ibzcase.views.infoeditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'infoeditview9' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/infoeditview9',
-                    meta: {
-                        caption: 'entities.ibzcase.views.infoeditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'infoeditview9' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/dashboardview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.dashboardview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/dashboardview',
-                    meta: {
-                        caption: 'entities.ibzcase.views.dashboardview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzlibs/:ibzlib?/ibzcases/:ibzcase?/views/maineditview9',
-                    meta: {
-                        caption: 'entities.ibzcase.views.maineditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzlibs', parameterName: 'ibzlib' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'maineditview9' },
-                        ],
-                        resource:'ibzcase',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'ibzcases/:ibzcase?/views/maineditview9',
-                    meta: {
-                        caption: 'entities.ibzcase.views.maineditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzcases', parameterName: 'ibzcase' },
-                            { pathName: 'views', parameterName: 'maineditview9' },
-                        ],
-                        resource:'ibzcase',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -29074,7 +28864,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibtabexpview',
                     meta: {
-                        caption: 'entities.ibzlib.views.tabexpview.caption',
+                        caption: 'entities.testcaselib.views.tabexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -30712,7 +30502,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibmodulegridview',
                     meta: {
-                        caption: 'entities.ibzlibmodule.views.gridview.caption',
+                        caption: 'entities.testcaselibmodule.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -32506,7 +32296,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibmodulecasetreeexpview',
                     meta: {
-                        caption: 'entities.ibzlibmodule.views.casetreeexpview.caption',
+                        caption: 'entities.testcaselibmodule.views.casetreeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -32519,7 +32309,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibeditview9',
                     meta: {
-                        caption: 'entities.ibzlib.views.editview9.caption',
+                        caption: 'entities.testcaselib.views.editview9.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -32819,7 +32609,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibopenlibview',
                     meta: {
-                        caption: 'entities.ibzlib.views.openlibview.caption',
+                        caption: 'entities.testcaselib.views.openlibview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -33164,7 +32954,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibgridview',
                     meta: {
-                        caption: 'entities.ibzlib.views.gridview.caption',
+                        caption: 'entities.testcaselib.views.gridview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -34181,7 +33971,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibmoduletreeexpview',
                     meta: {
-                        caption: 'entities.ibzlibmodule.views.treeexpview.caption',
+                        caption: 'entities.testcaselibmodule.views.treeexpview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -35377,7 +35167,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibmoduleeditview',
                     meta: {
-                        caption: 'entities.ibzlibmodule.views.editview.caption',
+                        caption: 'entities.testcaselibmodule.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
@@ -35507,7 +35297,7 @@ const router = new Router({
                 {
                     path: 'views/ibzlibeditview',
                     meta: {
-                        caption: 'entities.ibzlib.views.editview.caption',
+                        caption: 'entities.testcaselib.views.editview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },

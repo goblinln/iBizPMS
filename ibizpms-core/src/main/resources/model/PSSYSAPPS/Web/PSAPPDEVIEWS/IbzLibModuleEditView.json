@@ -7,7 +7,7 @@
   "name" : "IbzLibModuleEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -50,7 +50,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -106,7 +106,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule/PSFORMS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule/PSFORMS/Main.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -123,7 +123,7 @@
     "logicName" : "主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -137,7 +137,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -146,7 +146,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         }
       }, {
         "actionName" : "Remove",
@@ -159,7 +159,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -172,7 +172,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         }
       }, {
         "actionName" : "Get",
@@ -185,7 +185,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         }
       }, {
         "actionName" : "Create",
@@ -198,7 +198,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -344,7 +344,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -361,17 +361,17 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "IbzLibModules",
+    "codeName" : "TestCaseLibModules",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
-    "name" : "用例库模块",
+    "name" : "TEST_CASE_LIB__TEST_CASE_LIB_MODULE",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

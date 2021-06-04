@@ -75,7 +75,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
       },
       "dropDownView" : false,
       "enableAC" : true,
@@ -124,7 +124,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
       },
       "dropDownView" : false,
       "enableAC" : true,
@@ -173,7 +173,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
       },
       "dropDownView" : false,
       "enableAC" : true,
@@ -222,7 +222,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
       },
       "dropDownView" : false,
       "enableAC" : true,

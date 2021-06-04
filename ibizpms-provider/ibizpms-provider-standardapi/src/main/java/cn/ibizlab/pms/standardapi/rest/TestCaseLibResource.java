@@ -52,32 +52,19 @@ public class TestCaseLibResource {
     @Lazy
     public TestCaseLibMapping testcaselibMapping;
 
-    @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'READ')")
-    @ApiOperation(value = "获取用例库", tags = {"用例库" },  notes = "获取用例库")
-	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{testcaselib_id}")
-    public ResponseEntity<TestCaseLibDTO> get(@PathVariable("testcaselib_id") Long testcaselib_id) {
-        IbzLib domain = ibzlibService.get(testcaselib_id);
-        TestCaseLibDTO dto = testcaselibMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzlibRuntime.getOPPrivs(testcaselib_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
-    @ApiOperation(value = "新建用例库", tags = {"用例库" },  notes = "新建用例库")
-	@RequestMapping(method = RequestMethod.POST, value = "/testcaselibs")
-    @Transactional
-    public ResponseEntity<TestCaseLibDTO> create(@Validated @RequestBody TestCaseLibDTO testcaselibdto) {
-        IbzLib domain = testcaselibMapping.toDomain(testcaselibdto);
-		ibzlibService.create(domain);
-        if(!ibzlibRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        TestCaseLibDTO dto = testcaselibMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzlibRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
+    @PreAuthorize("quickTest('IBZ_LIB', 'READ')")
+	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/fetchdefault")
+	public ResponseEntity<List<TestCaseLibDTO>> fetchdefault(@RequestBody IbzLibSearchContext context) {
+        ibzlibRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
+        List<TestCaseLibDTO> list = testcaselibMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @VersionCheck(entity = "ibzlib" , versionfield = "lastediteddate")
     @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'UPDATE')")
     @ApiOperation(value = "更新用例库", tags = {"用例库" },  notes = "更新用例库")
@@ -119,6 +106,32 @@ public class TestCaseLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'READ')")
+    @ApiOperation(value = "获取用例库", tags = {"用例库" },  notes = "获取用例库")
+	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{testcaselib_id}")
+    public ResponseEntity<TestCaseLibDTO> get(@PathVariable("testcaselib_id") Long testcaselib_id) {
+        IbzLib domain = ibzlibService.get(testcaselib_id);
+        TestCaseLibDTO dto = testcaselibMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzlibRuntime.getOPPrivs(testcaselib_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
+    @ApiOperation(value = "新建用例库", tags = {"用例库" },  notes = "新建用例库")
+	@RequestMapping(method = RequestMethod.POST, value = "/testcaselibs")
+    @Transactional
+    public ResponseEntity<TestCaseLibDTO> create(@Validated @RequestBody TestCaseLibDTO testcaselibdto) {
+        IbzLib domain = testcaselibMapping.toDomain(testcaselibdto);
+		ibzlibService.create(domain);
+        if(!ibzlibRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        TestCaseLibDTO dto = testcaselibMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzlibRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
     @ApiOperation(value = "检查用例库", tags = {"用例库" },  notes = "检查用例库")
 	@RequestMapping(method = RequestMethod.POST, value = "/testcaselibs/checkkey")
@@ -139,19 +152,6 @@ public class TestCaseLibResource {
     }
 
 
-    @PreAuthorize("quickTest('IBZ_LIB', 'READ')")
-	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/fetchdefault")
-	public ResponseEntity<List<TestCaseLibDTO>> fetchdefault(@RequestBody IbzLibSearchContext context) {
-        ibzlibRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
-        List<TestCaseLibDTO> list = testcaselibMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/testcaselibs/{testcaselib_id}/{action}")

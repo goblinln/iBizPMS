@@ -215,7 +215,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
         },
         "valueItemName" : "lib",
         "dropDownView" : false,
@@ -307,7 +307,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "N_ROOT_EQ",
@@ -1070,83 +1070,7 @@
         "rowEditDefault" : true,
         "showCaptionBar" : true,
         "modelid" : "09ce67f87a5aab546496ec48bc5a77d7",
-        "modeltype" : "PSAPPDEVIEW",
-        "getPSAppDERSPaths" : [ [ {
-          "actionRSMode" : 1,
-          "codeName" : "IbzCases",
-          "dataRSMode" : 0,
-          "getMajorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
-          },
-          "getMinorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
-          },
-          "name" : "用例库用例",
-          "getParentPSAppDEField" : {
-            "name" : "LIB",
-            "codeName" : "Lib"
-          },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
-        }, {
-          "actionRSMode" : 1,
-          "codeName" : "IbzLibCaseStepss",
-          "dataRSMode" : 0,
-          "getMajorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
-          },
-          "getMinorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibCaseStepTmp.json"
-          },
-          "name" : "用例库用例步骤（嵌套）",
-          "getParentPSAppDEField" : {
-            "name" : "CASE",
-            "codeName" : "IBizCase"
-          },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
-        } ], [ {
-          "actionRSMode" : 1,
-          "codeName" : "IbzLibCaseStepss",
-          "dataRSMode" : 0,
-          "getMajorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
-          },
-          "getMinorPSAppDataEntity" : {
-            "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibCaseStepTmp.json"
-          },
-          "name" : "用例库用例步骤（嵌套）",
-          "getParentPSAppDEField" : {
-            "name" : "CASE",
-            "codeName" : "IBizCase"
-          },
-          "rSMode" : 2,
-          "enableCreateDataRS" : false,
-          "enableDEAction" : true,
-          "enableDEDataSet" : true,
-          "enableGetDataRS" : false,
-          "enableSelect" : true,
-          "enableSelectDataRS" : false,
-          "enableUpdateDataRS" : false
-        } ] ]
+        "modeltype" : "PSAPPDEVIEW"
       },
       "getPSLayoutPos" : {
         "colLG" : 24,

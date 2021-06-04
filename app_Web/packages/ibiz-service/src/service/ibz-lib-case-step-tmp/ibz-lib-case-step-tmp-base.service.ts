@@ -23,7 +23,6 @@ export class IbzLibCaseStepTmpBaseService extends EntityBaseService<IIbzLibCaseS
     protected APPDETEXT = 'expect';
     protected quickSearchFields = ['expect',];
     protected selectContextParam = {
-        ibzcase: 'ibizcase',
     };
 
     newEntity(data: IIbzLibCaseStepTmp): IbzLibCaseStepTmp {
@@ -40,14 +39,6 @@ export class IbzLibCaseStepTmpBaseService extends EntityBaseService<IIbzLibCaseS
 
     async getLocal(context: IContext, srfKey: string): Promise<IIbzLibCaseStepTmp> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.ibizcase && entity.ibizcase !== '') {
-            const s = await ___ibz___.gs.getIbzCaseService();
-            const data = await s.getLocal2(context, entity.ibizcase);
-            if (data) {
-                entity.ibizcase = data.id;
-                entity.ibzcase = data;
-            }
-        }
         return entity!;
     }
 
@@ -56,14 +47,6 @@ export class IbzLibCaseStepTmpBaseService extends EntityBaseService<IIbzLibCaseS
     }
 
     async getDraftLocal(_context: IContext, entity: IIbzLibCaseStepTmp = {}): Promise<IIbzLibCaseStepTmp> {
-        if (_context.ibzcase && _context.ibzcase !== '') {
-            const s = await ___ibz___.gs.getIbzCaseService();
-            const data = await s.getLocal2(_context, _context.ibzcase);
-            if (data) {
-                entity.ibizcase = data.id;
-                entity.ibzcase = data;
-            }
-        }
         return new IbzLibCaseStepTmp(entity);
     }
 

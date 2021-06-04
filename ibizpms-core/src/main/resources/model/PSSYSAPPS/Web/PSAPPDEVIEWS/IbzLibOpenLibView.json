@@ -6,7 +6,7 @@
   "name" : "IbzLibOpenLibView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -31,12 +31,12 @@
   "getPSControls" : [ {
     "codeName" : "Main",
     "controlType" : "DASHBOARD",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib/PSDASHBOARDS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib/PSDASHBOARDS/Main.json",
     "hookEventNames" : [ "LOAD" ],
     "logicName" : "主信息",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
     },
     "getPSControlHandler" : {
       "enableDEFieldPrivilege" : false,
@@ -57,7 +57,7 @@
       "name" : "dashboard_container1",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
       },
       "getPSControlHandler" : {
         "enableDEFieldPrivilege" : false,
@@ -81,7 +81,7 @@
         "name" : "dashboard_container2",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
         },
         "getPSControlHandler" : {
           "enableDEFieldPrivilege" : false,
@@ -106,7 +106,7 @@
           "name" : "dashboard_sysportlet1",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
           },
           "getPSControlHandler" : {
             "enableDEFieldPrivilege" : false,
@@ -130,7 +130,7 @@
             "name" : "IbzLibEditView9",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -158,7 +158,7 @@
                 "modelref" : true,
                 "id" : "create"
               },
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib/PSFORMS/Desc.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib/PSFORMS/Desc.json",
               "getGetDraftFromPSControlAction" : {
                 "modelref" : true,
                 "id" : "loaddraftfrom"
@@ -175,7 +175,7 @@
               "logicName" : "描述",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -189,7 +189,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                   }
                 }, {
                   "actionName" : "GETDRAFTFROM",
@@ -198,7 +198,7 @@
                   "name" : "loaddraftfrom",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -211,7 +211,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                   }
                 }, {
                   "actionName" : "GetDraft",
@@ -224,7 +224,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -237,7 +237,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -250,7 +250,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                   }
                 } ],
                 "enableDEFieldPrivilege" : false,
@@ -2015,7 +2015,7 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
@@ -2045,7 +2045,7 @@
         "name" : "dashboard_container3",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
         },
         "getPSControlHandler" : {
           "enableDEFieldPrivilege" : false,
@@ -2072,7 +2072,7 @@
           "name" : "dashboard_sysportlet2",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
           },
           "getPSAppViewLogics" : [ {
             "logicTrigger" : "CUSTOM",
@@ -2111,7 +2111,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
               },
               "modelref" : true,
               "id" : "EditlibCz@IbzLib"
@@ -2123,7 +2123,7 @@
             "getPSUIAction" : {
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
               },
               "modelref" : true,
               "id" : "DeleteCz@IbzLib"
@@ -2190,7 +2190,7 @@
                 "name" : "编辑（操作栏）",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                 },
                 "getPSSysImage" : {
                   "glyph" : "xf044@FontAwesome",
@@ -2220,7 +2220,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
                 },
                 "getPSSysImage" : {
                   "glyph" : "xf00d@FontAwesome",
@@ -2270,7 +2270,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

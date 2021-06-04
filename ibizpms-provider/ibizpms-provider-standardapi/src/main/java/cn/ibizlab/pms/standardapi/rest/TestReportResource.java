@@ -53,6 +53,18 @@ public class TestReportResource {
     public TestReportMapping testreportMapping;
 
 
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据项目建立测试报告", tags = {"测试报告" },  notes = "根据项目建立测试报告")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports")
+    public ResponseEntity<TestReportDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
+        domain.setProject(project_id);
+		testreportService.create(domain);
+        TestReportDTO dto = testreportMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）（单测试）")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskr")
@@ -65,13 +77,16 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据项目获取测试报告草稿", tags = {"测试报告" },  notes = "根据项目获取测试报告草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/getdraft")
-    public ResponseEntity<TestReportDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TestReportDTO dto) {
-        TestReport domain = testreportMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据项目根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据项目根据起始时间获取概况信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotaskovbytime")
+    public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(testreportService.getDraft(domain)));
+        domain.setId(testreport_id);
+        domain = testreportService.getInfoTaskOvByTime(domain) ;
+        testreportdto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
@@ -87,39 +102,6 @@ public class TestReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据项目获取测试报告", tags = {"测试报告" },  notes = "根据项目获取测试报告")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/{testreport_id}")
-    public ResponseEntity<TestReportDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
-        TestReport domain = testreportService.get(testreport_id);
-        TestReportDTO dto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据项目建立测试报告", tags = {"测试报告" },  notes = "根据项目建立测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports")
-    public ResponseEntity<TestReportDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProject(project_id);
-		testreportService.create(domain);
-        TestReportDTO dto = testreportMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据项目根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据项目根据起始时间获取概况信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotaskovbytime")
-    public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProject(project_id);
-        domain.setId(testreport_id);
-        domain = testreportService.getInfoTaskOvByTime(domain) ;
-        testreportdto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
-    }
-
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'DELETE', #testreport_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除测试报告", tags = {"测试报告" },  notes = "根据项目删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testreports/{testreport_id}")
@@ -133,30 +115,6 @@ public class TestReportResource {
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
         testreportService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）（测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttasks")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskSByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProject(project_id);
-        domain.setId(testreport_id);
-        domain = testreportService.getInfoTestTaskS(domain) ;
-        testreportdto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
-    }
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskproject")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProject(project_id);
-        domain.setId(testreport_id);
-        domain = testreportService.getInfoTestTaskProject(domain) ;
-        testreportdto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
@@ -184,6 +142,60 @@ public class TestReportResource {
     }
 
 
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据项目获取测试报告草稿", tags = {"测试报告" },  notes = "根据项目获取测试报告草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/getdraft")
+    public ResponseEntity<TestReportDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TestReportDTO dto) {
+        TestReport domain = testreportMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(testreportService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据项目获取测试报告", tags = {"测试报告" },  notes = "根据项目获取测试报告")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/{testreport_id}")
+    public ResponseEntity<TestReportDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id) {
+        TestReport domain = testreportService.get(testreport_id);
+        TestReportDTO dto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttaskproject")
+    public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
+        domain.setProject(project_id);
+        domain.setId(testreport_id);
+        domain = testreportService.getInfoTestTaskProject(domain) ;
+        testreportdto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
+    }
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PROJECT', #project_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据项目根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据项目根据测试单获取相应信息（项目报告）（测试）")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testreports/{testreport_id}/getinfotesttasks")
+    public ResponseEntity<TestReportDTO> getInfoTestTaskSByProject(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
+        domain.setProject(project_id);
+        domain.setId(testreport_id);
+        domain = testreportService.getInfoTestTaskS(domain) ;
+        testreportdto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
+    }
+
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品建立测试报告", tags = {"测试报告" },  notes = "根据产品建立测试报告")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports")
+    public ResponseEntity<TestReportDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
+        domain.setProduct(product_id);
+		testreportService.create(domain);
+        TestReportDTO dto = testreportMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
     @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（单测试）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）（单测试）")
@@ -197,13 +209,16 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取测试报告草稿", tags = {"测试报告" },  notes = "根据产品获取测试报告草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/getdraft")
-    public ResponseEntity<TestReportDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestReportDTO dto) {
-        TestReport domain = testreportMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据产品根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据产品根据起始时间获取概况信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotaskovbytime")
+    public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
         domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(testreportService.getDraft(domain)));
+        domain.setId(testreport_id);
+        domain = testreportService.getInfoTaskOvByTime(domain) ;
+        testreportdto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
@@ -219,39 +234,6 @@ public class TestReportResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据产品获取测试报告", tags = {"测试报告" },  notes = "根据产品获取测试报告")
-	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/{testreport_id}")
-    public ResponseEntity<TestReportDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {
-        TestReport domain = testreportService.get(testreport_id);
-        TestReportDTO dto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品建立测试报告", tags = {"测试报告" },  notes = "根据产品建立测试报告")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports")
-    public ResponseEntity<TestReportDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProduct(product_id);
-		testreportService.create(domain);
-        TestReportDTO dto = testreportMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据产品根据起始时间获取概况信息", tags = {"测试报告" },  notes = "根据产品根据起始时间获取概况信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotaskovbytime")
-    public ResponseEntity<TestReportDTO> getInfoTaskOvByTimeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProduct(product_id);
-        domain.setId(testreport_id);
-        domain = testreportService.getInfoTaskOvByTime(domain) ;
-        testreportdto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
-    }
-
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', #testreport_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除测试报告", tags = {"测试报告" },  notes = "根据产品删除测试报告")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testreports/{testreport_id}")
@@ -265,30 +247,6 @@ public class TestReportResource {
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
         testreportService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）（测试）")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotesttasks")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskSByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProduct(product_id);
-        domain.setId(testreport_id);
-        domain = testreportService.getInfoTestTaskS(domain) ;
-        testreportdto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
-    }
-
-    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
-    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotesttaskproject")
-    public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
-        TestReport domain = testreportMapping.toDomain(testreportdto);
-        domain.setProduct(product_id);
-        domain.setId(testreport_id);
-        domain = testreportService.getInfoTestTaskProject(domain) ;
-        testreportdto = testreportMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
     }
 
     @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
@@ -315,6 +273,48 @@ public class TestReportResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取测试报告草稿", tags = {"测试报告" },  notes = "根据产品获取测试报告草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/getdraft")
+    public ResponseEntity<TestReportDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestReportDTO dto) {
+        TestReport domain = testreportMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportMapping.toDto(testreportService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据产品获取测试报告", tags = {"测试报告" },  notes = "根据产品获取测试报告")
+	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/{testreport_id}")
+    public ResponseEntity<TestReportDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id) {
+        TestReport domain = testreportService.get(testreport_id);
+        TestReportDTO dto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotesttaskproject")
+    public ResponseEntity<TestReportDTO> getInfoTestTaskProjectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
+        domain.setProduct(product_id);
+        domain.setId(testreport_id);
+        domain = testreportService.getInfoTestTaskProject(domain) ;
+        testreportdto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
+    }
+
+    @PreAuthorize("test('ZT_TESTREPORT', 'ZT_PRODUCT', #product_id, 'READ', #testreport_id, 'READ')")
+    @ApiOperation(value = "根据产品根据测试单获取相应信息（项目报告）（测试）", tags = {"测试报告" },  notes = "根据产品根据测试单获取相应信息（项目报告）（测试）")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testreports/{testreport_id}/getinfotesttasks")
+    public ResponseEntity<TestReportDTO> getInfoTestTaskSByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @RequestBody TestReportDTO testreportdto) {
+        TestReport domain = testreportMapping.toDomain(testreportdto);
+        domain.setProduct(product_id);
+        domain.setId(testreport_id);
+        domain = testreportService.getInfoTestTaskS(domain) ;
+        testreportdto = testreportMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testreportdto);
+    }
 
 }
 

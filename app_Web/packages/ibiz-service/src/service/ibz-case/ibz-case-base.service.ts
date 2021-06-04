@@ -22,7 +22,6 @@ export class IbzCaseBaseService extends EntityBaseService<IIbzCase> {
     protected APPDETEXT = 'title';
     protected quickSearchFields = ['title',];
     protected selectContextParam = {
-        ibzlib: 'lib',
     };
 
     newEntity(data: IIbzCase): IbzCase {
@@ -39,14 +38,6 @@ export class IbzCaseBaseService extends EntityBaseService<IIbzCase> {
 
     async getLocal(context: IContext, srfKey: string): Promise<IIbzCase> {
         const entity = this.cache.get(context, srfKey);
-        if (entity && entity.lib && entity.lib !== '') {
-            const s = await ___ibz___.gs.getIbzLibService();
-            const data = await s.getLocal2(context, entity.lib);
-            if (data) {
-                entity.libname = data.name;
-                entity.lib = data.id;
-            }
-        }
         return entity!;
     }
 
@@ -55,14 +46,6 @@ export class IbzCaseBaseService extends EntityBaseService<IIbzCase> {
     }
 
     async getDraftLocal(_context: IContext, entity: IIbzCase = {}): Promise<IIbzCase> {
-        if (_context.ibzlib && _context.ibzlib !== '') {
-            const s = await ___ibz___.gs.getIbzLibService();
-            const data = await s.getLocal2(_context, _context.ibzlib);
-            if (data) {
-                entity.libname = data.name;
-                entity.lib = data.id;
-            }
-        }
         return new IbzCase(entity);
     }
 
@@ -81,139 +64,5 @@ export class IbzCaseBaseService extends EntityBaseService<IIbzCase> {
             entity = result.data;
         }
         return new HttpResponse(entity);
-    }
-    /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzCaseService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzlib && _context.ibzcase) {
-            return this.http.get(`/ibzlibs/${_context.ibzlib}/ibzcases/${_context.ibzcase}/select`);
-        }
-        return this.http.get(`/ibzcases/${_context.ibzcase}/select`);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzCaseService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzlib && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/ibzcases`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/ibzcases`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzCaseService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzlib && _context.ibzcase) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzlibs/${_context.ibzlib}/ibzcases/${_context.ibzcase}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzcases/${_context.ibzcase}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzCaseService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzlib && _context.ibzcase) {
-            return this.http.delete(`/ibzlibs/${_context.ibzlib}/ibzcases/${_context.ibzcase}`);
-        }
-        return this.http.delete(`/ibzcases/${_context.ibzcase}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzCaseService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzlib && _context.ibzcase) {
-            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/ibzcases/${_context.ibzcase}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        const res = await this.http.get(`/ibzcases/${_context.ibzcase}`);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzCaseService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzlib && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzlibs/${_context.ibzlib}/ibzcases/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/ibzcases/getdraft`, _data);
-        if (res.ok && res.status === 200) {
-            await this.fillMinor(_context, res.data);
-        }
-        return res;
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzCaseService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.ibzlib && true) {
-            return this.http.post(`/ibzlibs/${_context.ibzlib}/ibzcases/fetchdefault`, _data);
-        }
-        return this.http.post(`/ibzcases/fetchdefault`, _data);
     }
 }

@@ -161,20 +161,6 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductBranchService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productbranch) {
-            return this.http.delete(`/products/${_context.product}/productbranches/${_context.productbranch}`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -185,6 +171,20 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productbranches/fetchdefault`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductBranchService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productbranch) {
+            return this.http.delete(`/products/${_context.product}/productbranches/${_context.productbranch}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

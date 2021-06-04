@@ -53,31 +53,6 @@ public class ProductReleaseResource {
     public ProductReleaseMapping productreleaseMapping;
 
 
-    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'MANAGE', #productrelease_id, 'ACTIVATE')")
-    @ApiOperation(value = "根据产品状态变更（激活）", tags = {"发布" },  notes = "根据产品状态变更（激活）")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{productrelease_id}/activate")
-    public ResponseEntity<ProductReleaseDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productrelease_id") Long productrelease_id, @RequestBody ProductReleaseDTO productreleasedto) {
-        Release domain = productreleaseMapping.toDomain(productreleasedto);
-        domain.setProduct(product_id);
-        domain.setId(productrelease_id);
-        domain = releaseService.activate(domain) ;
-        productreleasedto = productreleaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productreleasedto);
-    }
-
-    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"发布" } ,notes = "根据产品获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/fetchdefault")
-	public ResponseEntity<List<ProductReleaseDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ReleaseSearchContext context) {
-        context.setN_product_eq(product_id);
-        Page<Release> domains = releaseService.searchDefault(context) ;
-        List<ProductReleaseDTO> list = productreleaseMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'READ', #productrelease_id, 'READ')")
     @ApiOperation(value = "根据产品获取发布", tags = {"发布" },  notes = "根据产品获取发布")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productreleases/{productrelease_id}")
@@ -144,18 +119,17 @@ public class ProductReleaseResource {
     }
 
 
-    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'UPDATE', #productrelease_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新发布", tags = {"发布" },  notes = "根据产品更新发布")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productreleases/{productrelease_id}")
-    public ResponseEntity<ProductReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productrelease_id") Long productrelease_id, @RequestBody ProductReleaseDTO productreleasedto) {
+    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'READ', #productrelease_id, 'READ')")
+    @ApiOperation(value = "根据产品关联Bug（遗留Bug）", tags = {"发布" },  notes = "根据产品关联Bug（遗留Bug）")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{productrelease_id}/linkbugbyleftbug")
+    public ResponseEntity<ProductReleaseDTO> linkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productrelease_id") Long productrelease_id, @RequestBody ProductReleaseDTO productreleasedto) {
         Release domain = productreleaseMapping.toDomain(productreleasedto);
         domain.setProduct(product_id);
         domain.setId(productrelease_id);
-		releaseService.update(domain);
-        ProductReleaseDTO dto = productreleaseMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+        domain = releaseService.linkBugbyLeftBug(domain) ;
+        productreleasedto = productreleaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productreleasedto);
     }
-
 
     @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'MANAGE', #productrelease_id, 'LINKSTORY')")
     @ApiOperation(value = "根据产品关联需求", tags = {"发布" },  notes = "根据产品关联需求")
@@ -169,17 +143,43 @@ public class ProductReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(productreleasedto);
     }
 
-    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'READ', #productrelease_id, 'READ')")
-    @ApiOperation(value = "根据产品关联Bug（遗留Bug）", tags = {"发布" },  notes = "根据产品关联Bug（遗留Bug）")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{productrelease_id}/linkbugbyleftbug")
-    public ResponseEntity<ProductReleaseDTO> linkBugbyLeftBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productrelease_id") Long productrelease_id, @RequestBody ProductReleaseDTO productreleasedto) {
+    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"发布" } ,notes = "根据产品获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/fetchdefault")
+	public ResponseEntity<List<ProductReleaseDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody ReleaseSearchContext context) {
+        context.setN_product_eq(product_id);
+        Page<Release> domains = releaseService.searchDefault(context) ;
+        List<ProductReleaseDTO> list = productreleaseMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'MANAGE', #productrelease_id, 'ACTIVATE')")
+    @ApiOperation(value = "根据产品状态变更（激活）", tags = {"发布" },  notes = "根据产品状态变更（激活）")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productreleases/{productrelease_id}/activate")
+    public ResponseEntity<ProductReleaseDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productrelease_id") Long productrelease_id, @RequestBody ProductReleaseDTO productreleasedto) {
         Release domain = productreleaseMapping.toDomain(productreleasedto);
         domain.setProduct(product_id);
         domain.setId(productrelease_id);
-        domain = releaseService.linkBugbyLeftBug(domain) ;
+        domain = releaseService.activate(domain) ;
         productreleasedto = productreleaseMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productreleasedto);
     }
+
+    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'UPDATE', #productrelease_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新发布", tags = {"发布" },  notes = "根据产品更新发布")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productreleases/{productrelease_id}")
+    public ResponseEntity<ProductReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productrelease_id") Long productrelease_id, @RequestBody ProductReleaseDTO productreleasedto) {
+        Release domain = productreleaseMapping.toDomain(productreleasedto);
+        domain.setProduct(product_id);
+        domain.setId(productrelease_id);
+		releaseService.update(domain);
+        ProductReleaseDTO dto = productreleaseMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'DELETE', #productrelease_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除发布", tags = {"发布" },  notes = "根据产品删除发布")

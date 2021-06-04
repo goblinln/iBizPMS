@@ -4,6 +4,7 @@ import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
 import sysaccount_zh_CN from '@locale/lanres/entities/sys-account/sys-account_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
 import file_zh_CN from '@locale/lanres/entities/file/file_zh_CN';
+import testcaselib_zh_CN from '@locale/lanres/entities/test-case-lib/test-case-lib_zh_CN';
 import accounttestcase_zh_CN from '@locale/lanres/entities/account-test-case/account-test-case_zh_CN';
 import projectburn_zh_CN from '@locale/lanres/entities/project-burn/project-burn_zh_CN';
 import test_zh_CN from '@locale/lanres/entities/test/test_zh_CN';
@@ -16,6 +17,7 @@ import taskestimate_zh_CN from '@locale/lanres/entities/task-estimate/task-estim
 import story_zh_CN from '@locale/lanres/entities/story/story_zh_CN';
 import todo_zh_CN from '@locale/lanres/entities/todo/todo_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
+import testcaselibmodule_zh_CN from '@locale/lanres/entities/test-case-lib-module/test-case-lib-module_zh_CN';
 import project_zh_CN from '@locale/lanres/entities/project/project_zh_CN';
 import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
 import doclib_zh_CN from '@locale/lanres/entities/doc-lib/doc-lib_zh_CN';
@@ -39,6 +41,7 @@ import doc_zh_CN from '@locale/lanres/entities/doc/doc_zh_CN';
 import accountstory_zh_CN from '@locale/lanres/entities/account-story/account-story_zh_CN';
 import bug_zh_CN from '@locale/lanres/entities/bug/bug_zh_CN';
 import projectmodule_zh_CN from '@locale/lanres/entities/project-module/project-module_zh_CN';
+import ibzcase_zh_CN from '@locale/lanres/entities/ibz-case/ibz-case_zh_CN';
 import accounttask_zh_CN from '@locale/lanres/entities/account-task/account-task_zh_CN';
 import productrelease_zh_CN from '@locale/lanres/entities/product-release/product-release_zh_CN';
 import dynadashboard_zh_CN from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_zh_CN';
@@ -50,7 +53,6 @@ import ibzagent_zh_CN from '@locale/lanres/entities/ibz-agent/ibz-agent_zh_CN';
 import ibzprostorymodule_zh_CN from '@locale/lanres/entities/ibzpro-story-module/ibzpro-story-module_zh_CN';
 import productsum_zh_CN from '@locale/lanres/entities/product-sum/product-sum_zh_CN';
 import ibzlibcasesteps_zh_CN from '@locale/lanres/entities/ibz-lib-casesteps/ibz-lib-casesteps_zh_CN';
-import ibzlib_zh_CN from '@locale/lanres/entities/ibz-lib/ibz-lib_zh_CN';
 import ibzdaily_zh_CN from '@locale/lanres/entities/ibz-daily/ibz-daily_zh_CN';
 import suitecase_zh_CN from '@locale/lanres/entities/suite-case/suite-case_zh_CN';
 import employeeload_zh_CN from '@locale/lanres/entities/emp-loyeeload/emp-loyeeload_zh_CN';
@@ -73,7 +75,6 @@ import company_zh_CN from '@locale/lanres/entities/company/company_zh_CN';
 import systeam_zh_CN from '@locale/lanres/entities/sys-team/sys-team_zh_CN';
 import taskestimatestats_zh_CN from '@locale/lanres/entities/taskestimatestats/taskestimatestats_zh_CN';
 import ibzlibcasesteptmp_zh_CN from '@locale/lanres/entities/ibz-lib-case-step-tmp/ibz-lib-case-step-tmp_zh_CN';
-import ibzlibmodule_zh_CN from '@locale/lanres/entities/ibz-lib-module/ibz-lib-module_zh_CN';
 import ibizproproductweekly_zh_CN from '@locale/lanres/entities/ibizpro-product-weekly/ibizpro-product-weekly_zh_CN';
 import useryearworkstats_zh_CN from '@locale/lanres/entities/user-year-work-stats/user-year-work-stats_zh_CN';
 import sysorganization_zh_CN from '@locale/lanres/entities/sys-organization/sys-organization_zh_CN';
@@ -106,7 +107,6 @@ import sysupdatelog_zh_CN from '@locale/lanres/entities/sys-update-log/sys-updat
 import ibzweekly_zh_CN from '@locale/lanres/entities/ibzweekly/ibzweekly_zh_CN';
 import pssysapp_zh_CN from '@locale/lanres/entities/pssys-app/pssys-app_zh_CN';
 import ibzproprojectusertask_zh_CN from '@locale/lanres/entities/ibzpro-project-user-task/ibzpro-project-user-task_zh_CN';
-import ibzcase_zh_CN from '@locale/lanres/entities/ibz-case/ibz-case_zh_CN';
 import systeammember_zh_CN from '@locale/lanres/entities/sys-team-member/sys-team-member_zh_CN';
 import pssystemdbcfg_zh_CN from '@locale/lanres/entities/pssystem-dbcfg/pssystem-dbcfg_zh_CN';
 import ibzproproductusertask_zh_CN from '@locale/lanres/entities/ibzpro-product-user-task/ibzpro-product-user-task_zh_CN';
@@ -428,6 +428,7 @@ function getAppLocale(){
             'sysaccount': sysaccount_zh_CN(),
             'product': product_zh_CN(),
             'file': file_zh_CN(),
+            'testcaselib': testcaselib_zh_CN(),
             'accounttestcase': accounttestcase_zh_CN(),
             'projectburn': projectburn_zh_CN(),
             'test': test_zh_CN(),
@@ -440,6 +441,7 @@ function getAppLocale(){
             'story': story_zh_CN(),
             'todo': todo_zh_CN(),
             'dynafilter': dynafilter_zh_CN(),
+            'testcaselibmodule': testcaselibmodule_zh_CN(),
             'project': project_zh_CN(),
             'history': history_zh_CN(),
             'doclib': doclib_zh_CN(),
@@ -463,6 +465,7 @@ function getAppLocale(){
             'accountstory': accountstory_zh_CN(),
             'bug': bug_zh_CN(),
             'projectmodule': projectmodule_zh_CN(),
+            'ibzcase': ibzcase_zh_CN(),
             'accounttask': accounttask_zh_CN(),
             'productrelease': productrelease_zh_CN(),
             'dynadashboard': dynadashboard_zh_CN(),
@@ -474,7 +477,6 @@ function getAppLocale(){
             'ibzprostorymodule': ibzprostorymodule_zh_CN(),
             'productsum': productsum_zh_CN(),
             'ibzlibcasesteps': ibzlibcasesteps_zh_CN(),
-            'ibzlib': ibzlib_zh_CN(),
             'ibzdaily': ibzdaily_zh_CN(),
             'suitecase': suitecase_zh_CN(),
             'employeeload': employeeload_zh_CN(),
@@ -497,7 +499,6 @@ function getAppLocale(){
             'systeam': systeam_zh_CN(),
             'taskestimatestats': taskestimatestats_zh_CN(),
             'ibzlibcasesteptmp': ibzlibcasesteptmp_zh_CN(),
-            'ibzlibmodule': ibzlibmodule_zh_CN(),
             'ibizproproductweekly': ibizproproductweekly_zh_CN(),
             'useryearworkstats': useryearworkstats_zh_CN(),
             'sysorganization': sysorganization_zh_CN(),
@@ -530,7 +531,6 @@ function getAppLocale(){
             'ibzweekly': ibzweekly_zh_CN(),
             'pssysapp': pssysapp_zh_CN(),
             'ibzproprojectusertask': ibzproprojectusertask_zh_CN(),
-            'ibzcase': ibzcase_zh_CN(),
             'systeammember': systeammember_zh_CN(),
             'pssystemdbcfg': pssystemdbcfg_zh_CN(),
             'ibzproproductusertask': ibzproproductusertask_zh_CN(),

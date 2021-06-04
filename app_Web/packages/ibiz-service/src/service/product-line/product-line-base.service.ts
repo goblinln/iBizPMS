@@ -96,6 +96,29 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.condCache.get('view');
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productlines/fetchdefault`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productlines/${_context.productline}`, _data);
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -122,28 +145,6 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return res;
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productlines/${_context.productline}`);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlines/fetchdefault`, _data);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -162,15 +163,14 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.http.post(`/productlines`, _data);
     }
     /**
-     * Update
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLineService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productlines/${_context.productline}`, _data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/productlines/${_context.productline}`);
     }
 }

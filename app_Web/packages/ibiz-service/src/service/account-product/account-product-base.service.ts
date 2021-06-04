@@ -182,6 +182,22 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
         return this.condCache.get('view');
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountProductService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accountproduct) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountproducts/${_context.accountproduct}`);
+            return res;
+        }
+        const res = await this.http.get(`/accountproducts/${_context.accountproduct}`);
+        return res;
+    }
+    /**
      * FetchAccount
      *
      * @param {*} [_context={}]
@@ -208,21 +224,5 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchmy`, _data);
         }
         return this.http.post(`/accountproducts/fetchmy`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountProductService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accountproduct) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountproducts/${_context.accountproduct}`);
-            return res;
-        }
-        const res = await this.http.get(`/accountproducts/${_context.accountproduct}`);
-        return res;
     }
 }

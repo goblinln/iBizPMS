@@ -1672,7 +1672,7 @@
 
 
     <!--输出实体[IBZ_LIB]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_lib-14-52">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_lib-16-52">
         <createTable tableName="zt_testsuite">
                 <column name="DESC" remarks="" type="TEXT(65535)">
                 </column>

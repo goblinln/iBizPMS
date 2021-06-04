@@ -71,6 +71,15 @@ export class GlobalService {
         return (await import('./file/file.service')).default.getInstance();
     }
     /**
+     * 用例库服务
+     *
+     * @return {TestCaseLib}
+     * @memberof GlobalService
+     */
+    async getTestCaseLibService() {
+        return (await import('./test-case-lib/test-case-lib.service')).default.getInstance();
+    }
+    /**
      * 用户测试用例服务
      *
      * @return {AccountTestCase}
@@ -177,6 +186,15 @@ export class GlobalService {
      */
     async getDynaFilterService() {
         return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
+    }
+    /**
+     * 用例库模块服务
+     *
+     * @return {TestCaseLibModule}
+     * @memberof GlobalService
+     */
+    async getTestCaseLibModuleService() {
+        return (await import('./test-case-lib-module/test-case-lib-module.service')).default.getInstance();
     }
     /**
      * 项目服务
@@ -386,6 +404,15 @@ export class GlobalService {
         return (await import('./project-module/project-module.service')).default.getInstance();
     }
     /**
+     * 用例库用例服务
+     *
+     * @return {IbzCase}
+     * @memberof GlobalService
+     */
+    async getIbzCaseService() {
+        return (await import('./ibz-case/ibz-case.service')).default.getInstance();
+    }
+    /**
      * 用户任务服务
      *
      * @return {AccountTask}
@@ -483,15 +510,6 @@ export class GlobalService {
      */
     async getIbzLibCasestepsService() {
         return (await import('./ibz-lib-casesteps/ibz-lib-casesteps.service')).default.getInstance();
-    }
-    /**
-     * 用例库服务
-     *
-     * @return {IbzLib}
-     * @memberof GlobalService
-     */
-    async getIbzLibService() {
-        return (await import('./ibz-lib/ibz-lib.service')).default.getInstance();
     }
     /**
      * 日报服务
@@ -690,15 +708,6 @@ export class GlobalService {
      */
     async getIbzLibCaseStepTmpService() {
         return (await import('./ibz-lib-case-step-tmp/ibz-lib-case-step-tmp.service')).default.getInstance();
-    }
-    /**
-     * 用例库模块服务
-     *
-     * @return {IbzLibModule}
-     * @memberof GlobalService
-     */
-    async getIbzLibModuleService() {
-        return (await import('./ibz-lib-module/ibz-lib-module.service')).default.getInstance();
     }
     /**
      * 产品周报服务
@@ -987,15 +996,6 @@ export class GlobalService {
      */
     async getIbzproProjectUserTaskService() {
         return (await import('./ibzpro-project-user-task/ibzpro-project-user-task.service')).default.getInstance();
-    }
-    /**
-     * 用例库用例服务
-     *
-     * @return {IbzCase}
-     * @memberof GlobalService
-     */
-    async getIbzCaseService() {
-        return (await import('./ibz-case/ibz-case.service')).default.getInstance();
     }
     /**
      * 组成员服务

@@ -6,7 +6,7 @@
   "name" : "IbzLibModuleCaseTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -48,7 +48,7 @@
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:LibRoot",
@@ -97,7 +97,7 @@
         "modelref" : true,
         "id" : "create"
       },
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule/PSTREEVIEWS/TreeLibExp.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule/PSTREEVIEWS/TreeLibExp.json",
       "getFetchPSControlAction" : {
         "modelref" : true,
         "id" : "fetch"
@@ -110,7 +110,7 @@
       "logicName" : "用例库导航",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
       },
       "getPSControlHandler" : {
         "getPSHandlerActions" : [ {
@@ -124,14 +124,14 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
           }
         }, {
           "actionType" : "DEDATASET",
           "name" : "fetch",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
           }
         }, {
           "actionName" : "Remove",
@@ -144,7 +144,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
           }
         }, {
           "actionName" : "Get",
@@ -157,7 +157,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
           }
         }, {
           "actionName" : "Create",
@@ -170,7 +170,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
           }
         } ],
         "userDRAction" : "READ",
@@ -267,7 +267,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         },
         "getTextPSAppDEField" : {
           "name" : "NAME",
@@ -335,7 +335,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         },
         "textFormat" : "子节点",
         "getTextPSAppDEField" : {
@@ -371,7 +371,7 @@
         "nodeType" : "ALL",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "SRFPARENTKEY",
@@ -437,7 +437,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -455,17 +455,17 @@
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
-    "codeName" : "IbzLibModules",
+    "codeName" : "TestCaseLibModules",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
     },
     "getMinorPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
     },
-    "name" : "用例库模块",
+    "name" : "TEST_CASE_LIB__TEST_CASE_LIB_MODULE",
     "getParentPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

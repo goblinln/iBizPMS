@@ -180,7 +180,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
           },
           "valueItemName" : "lib",
           "dropDownView" : false,

@@ -53,12 +53,12 @@ public class MonthlyResource {
     public MonthlyMapping monthlyMapping;
 
     @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
-    @ApiOperation(value = "已读", tags = {"月报" },  notes = "已读")
-	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/haveread")
-    public ResponseEntity<MonthlyDTO> haveRead(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
+    @ApiOperation(value = "定时生成用户月报", tags = {"月报" },  notes = "定时生成用户月报")
+	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/createusermonthly")
+    public ResponseEntity<MonthlyDTO> createUserMonthly(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
         IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
         domain.setIbzmonthlyid(monthly_id);
-        domain = ibzmonthlyService.haveRead(domain);
+        domain = ibzmonthlyService.createUserMonthly(domain);
         monthlydto = monthlyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         monthlydto.setSrfopprivs(opprivs);
@@ -78,6 +78,20 @@ public class MonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
+    @ApiOperation(value = "定时推送待阅提醒用户月报", tags = {"月报" },  notes = "定时推送待阅提醒用户月报")
+	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/pushusermonthly")
+    public ResponseEntity<MonthlyDTO> pushUserMonthly(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
+        IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
+        domain.setIbzmonthlyid(monthly_id);
+        domain = ibzmonthlyService.pushUserMonthly(domain);
+        monthlydto = monthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        monthlydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(monthlydto);
+    }
+
+
     @PreAuthorize("quickTest('IBZ_MONTHLY', 'NONE')")
     @ApiOperation(value = "新建月报", tags = {"月报" },  notes = "新建月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/monthlies")
@@ -107,20 +121,6 @@ public class MonthlyResource {
     }
 
 
-    @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
-    @ApiOperation(value = "定时推送待阅提醒用户月报", tags = {"月报" },  notes = "定时推送待阅提醒用户月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/pushusermonthly")
-    public ResponseEntity<MonthlyDTO> pushUserMonthly(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
-        IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
-        domain.setIbzmonthlyid(monthly_id);
-        domain = ibzmonthlyService.pushUserMonthly(domain);
-        monthlydto = monthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
-        monthlydto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(monthlydto);
-    }
-
-
     @PreAuthorize("quickTest('IBZ_MONTHLY', 'NONE')")
     @ApiOperation(value = "获取月报草稿", tags = {"月报" },  notes = "获取月报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/monthlies/getdraft")
@@ -144,20 +144,6 @@ public class MonthlyResource {
 
 
     @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
-    @ApiOperation(value = "定时生成用户月报", tags = {"月报" },  notes = "定时生成用户月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/createusermonthly")
-    public ResponseEntity<MonthlyDTO> createUserMonthly(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
-        IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
-        domain.setIbzmonthlyid(monthly_id);
-        domain = ibzmonthlyService.createUserMonthly(domain);
-        monthlydto = monthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
-        monthlydto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(monthlydto);
-    }
-
-
-    @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
     @ApiOperation(value = "获取月报", tags = {"月报" },  notes = "获取月报")
 	@RequestMapping(method = RequestMethod.GET, value = "/monthlies/{monthly_id}")
     public ResponseEntity<MonthlyDTO> get(@PathVariable("monthly_id") Long monthly_id) {
@@ -167,6 +153,20 @@ public class MonthlyResource {
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
+    @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
+    @ApiOperation(value = "已读", tags = {"月报" },  notes = "已读")
+	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/haveread")
+    public ResponseEntity<MonthlyDTO> haveRead(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
+        IbzMonthly domain = monthlyMapping.toDomain(monthlydto);
+        domain.setIbzmonthlyid(monthly_id);
+        domain = ibzmonthlyService.haveRead(domain);
+        monthlydto = monthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        monthlydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(monthlydto);
+    }
+
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

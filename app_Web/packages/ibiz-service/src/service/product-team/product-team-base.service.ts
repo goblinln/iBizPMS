@@ -123,6 +123,34 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         return this.condCache.get('view');
     }
     /**
+     * FetchSpecifyTeam
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductTeamService
+     */
+    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductTeamService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productteam) {
+            return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -134,20 +162,6 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         if (_context.product && _context.productteam) {
             const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}`);
             return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchSpecifyTeam
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductTeamService
-     */
-    async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -215,20 +229,6 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         if (_context.product && _context.productteam) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/productteams/${_context.productteam}`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductTeamService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productteam) {
-            return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

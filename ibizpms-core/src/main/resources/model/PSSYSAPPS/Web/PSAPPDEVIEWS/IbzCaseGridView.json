@@ -904,7 +904,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
         },
         "dropDownView" : false,
         "enableAC" : true,
@@ -953,7 +953,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLib.json"
         },
         "dropDownView" : false,
         "enableAC" : true,
@@ -1002,7 +1002,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         },
         "dropDownView" : false,
         "enableAC" : true,
@@ -1051,7 +1051,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibModule.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCaseLibModule.json"
         },
         "dropDownView" : false,
         "enableAC" : true,
@@ -1265,31 +1265,5 @@
   "rowEditDefault" : false,
   "showCaptionBar" : true,
   "modelid" : "409176d44884e69d4999342ec4c14176",
-  "modeltype" : "PSAPPDEVIEW",
-  "getPSAppDERSPaths" : [ [ {
-    "actionRSMode" : 1,
-    "codeName" : "IbzCases",
-    "dataRSMode" : 0,
-    "getMajorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLib.json"
-    },
-    "getMinorPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
-    },
-    "name" : "用例库用例",
-    "getParentPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
-    },
-    "rSMode" : 2,
-    "enableCreateDataRS" : false,
-    "enableDEAction" : true,
-    "enableDEDataSet" : true,
-    "enableGetDataRS" : false,
-    "enableSelect" : true,
-    "enableSelectDataRS" : false,
-    "enableUpdateDataRS" : false
-  } ] ]
+  "modeltype" : "PSAPPDEVIEW"
 }

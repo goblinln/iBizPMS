@@ -91,6 +91,10 @@ zuul:
       path: /files/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    ibz_lib:
+      path: /testcaselibs/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     accountcase:
       path: /accounttestcases/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -137,6 +141,10 @@ zuul:
       stripPrefix: false
     dynafilter:
       path: /dynafilters/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
+    ibz_libmodule:
+      path: /testcaselibmodules/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
     zt_project:
@@ -231,6 +239,10 @@ zuul:
       path: /projectmodules/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    ibz_case:
+      path: /ibzcases/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     accounttask:
       path: /accounttasks/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -273,10 +285,6 @@ zuul:
       stripPrefix: false
     ibz_libcasesteps:
       path: /ibzlibcasesteps/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    ibz_lib:
-      path: /ibzlibs/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibz_daily:
@@ -365,10 +373,6 @@ zuul:
       stripPrefix: false
     ibz_libcasestepstmp:
       path: /ibzlibcasesteptmps/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    ibz_libmodule:
-      path: /ibzlibmodules/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibizpro_productweekly:
@@ -497,10 +501,6 @@ zuul:
       stripPrefix: false
     ibizpro_projectusertask:
       path: /ibzproprojectusertasks/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    ibz_case:
-      path: /ibzcases/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     sys_teammember:
