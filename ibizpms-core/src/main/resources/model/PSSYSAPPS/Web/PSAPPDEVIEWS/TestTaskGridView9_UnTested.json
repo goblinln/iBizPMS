@@ -61,15 +61,15 @@
       "getOpenDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       },
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       } ],
       "viewLogicType" : "APP_OPENDATA",
@@ -93,12 +93,11 @@
     }
   }, {
     "name" : "EDITDATA",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "测试单编辑视图",
+    "realTitle" : "testtask数据重定向视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
     }
   } ],
   "getPSControls" : [ {

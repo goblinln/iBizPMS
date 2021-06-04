@@ -4504,8 +4504,8 @@
                     } ],
                     "getRefPSAppView" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-                      "viewType" : "DEPORTALVIEW"
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugRedirectView.json",
+                      "viewType" : "DEREDIRECTVIEW"
                     }
                   },
                   "getPSAppUILogicRefViews" : [ {
@@ -4533,8 +4533,8 @@
                     } ],
                     "getRefPSAppView" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-                      "viewType" : "DEPORTALVIEW"
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugRedirectView.json",
+                      "viewType" : "DEREDIRECTVIEW"
                     }
                   } ],
                   "viewLogicType" : "APP_OPENDATA",
@@ -4585,12 +4585,11 @@
                   "value" : "project",
                   "rawValue" : false
                 } ],
-                "realOpenMode" : "DRAWER_TOP",
-                "realTitle" : "Bug数据看板视图",
+                "realTitle" : "bug数据重定向视图",
                 "getRefPSAppView" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-                  "viewType" : "DEPORTALVIEW"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugRedirectView.json",
+                  "viewType" : "DEREDIRECTVIEW"
                 }
               } ],
               "getPSControls" : [ {
@@ -5195,15 +5194,15 @@
                   "getOpenDataPSAppView" : {
                     "getRefPSAppView" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-                      "viewType" : "DEPORTALVIEW"
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+                      "viewType" : "DEREDIRECTVIEW"
                     }
                   },
                   "getPSAppUILogicRefViews" : [ {
                     "getRefPSAppView" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-                      "viewType" : "DEPORTALVIEW"
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+                      "viewType" : "DEREDIRECTVIEW"
                     }
                   } ],
                   "viewLogicType" : "APP_OPENDATA",
@@ -5234,11 +5233,11 @@
                 "name" : "EDITDATA",
                 "openMode" : "DRAWER_TOP",
                 "realOpenMode" : "DRAWER_TOP",
-                "realTitle" : "需求数据看板视图",
+                "realTitle" : "story数据重定向视图",
                 "getRefPSAppView" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
-                  "viewType" : "DEPORTALVIEW"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRedirectView.json",
+                  "viewType" : "DEREDIRECTVIEW"
                 }
               } ],
               "getPSControls" : [ {
@@ -5794,15 +5793,15 @@
                   "getOpenDataPSAppView" : {
                     "getRefPSAppView" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-                      "viewType" : "DEPORTALVIEW"
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+                      "viewType" : "DEREDIRECTVIEW"
                     }
                   },
                   "getPSAppUILogicRefViews" : [ {
                     "getRefPSAppView" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-                      "viewType" : "DEPORTALVIEW"
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+                      "viewType" : "DEREDIRECTVIEW"
                     }
                   } ],
                   "viewLogicType" : "APP_OPENDATA",
@@ -5831,12 +5830,11 @@
                 }
               }, {
                 "name" : "EDITDATA",
-                "realOpenMode" : "DRAWER_TOP",
-                "realTitle" : "任务主数据看板视图",
+                "realTitle" : "task数据重定向视图",
                 "getRefPSAppView" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainDashboardView.json",
-                  "viewType" : "DEPORTALVIEW"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRedirectView.json",
+                  "viewType" : "DEREDIRECTVIEW"
                 }
               } ],
               "getPSControls" : [ {
