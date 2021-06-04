@@ -1633,6 +1633,18 @@
                               "colMD" : 24,
                               "layout" : "TABLE_24COL"
                             },
+                            "getPSNavigateContexts" : [ {
+                              "key" : "TEST",
+                              "name" : "TEST",
+                              "value" : "product",
+                              "rawValue" : false
+                            } ],
+                            "getPSNavigateParams" : [ {
+                              "key" : "n_story_eq",
+                              "name" : "n_story_eq",
+                              "value" : "story",
+                              "rawValue" : false
+                            } ],
                             "parentDataJO" : {
                               "srfparentdefname" : "STORY",
                               "srfparentdename" : "ZT_STORY",

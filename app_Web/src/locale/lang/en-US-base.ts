@@ -3,6 +3,7 @@ import accounttesttask_en_US from '@locale/lanres/entities/account-test-task/acc
 import testcase_en_US from '@locale/lanres/entities/test-case/test-case_en_US';
 import sysaccount_en_US from '@locale/lanres/entities/sys-account/sys-account_en_US';
 import product_en_US from '@locale/lanres/entities/product/product_en_US';
+import taskteam_en_US from '@locale/lanres/entities/task-team/task-team_en_US';
 import file_en_US from '@locale/lanres/entities/file/file_en_US';
 import testcaselib_en_US from '@locale/lanres/entities/test-case-lib/test-case-lib_en_US';
 import accounttestcase_en_US from '@locale/lanres/entities/account-test-case/account-test-case_en_US';
@@ -48,7 +49,6 @@ import dynadashboard_en_US from '@locale/lanres/entities/dyna-dashboard/dyna-das
 import productline_en_US from '@locale/lanres/entities/product-line/product-line_en_US';
 import ibzreportroleconfig_en_US from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_en_US';
 import ibzcasestep_en_US from '@locale/lanres/entities/ibzcase-step/ibzcase-step_en_US';
-import taskteam_en_US from '@locale/lanres/entities/task-team/task-team_en_US';
 import ibzagent_en_US from '@locale/lanres/entities/ibz-agent/ibz-agent_en_US';
 import ibzprostorymodule_en_US from '@locale/lanres/entities/ibzpro-story-module/ibzpro-story-module_en_US';
 import productsum_en_US from '@locale/lanres/entities/product-sum/product-sum_en_US';
@@ -429,6 +429,7 @@ function getAppLocale(){
             'testcase': testcase_en_US(),
             'sysaccount': sysaccount_en_US(),
             'product': product_en_US(),
+            'taskteam': taskteam_en_US(),
             'file': file_en_US(),
             'testcaselib': testcaselib_en_US(),
             'accounttestcase': accounttestcase_en_US(),
@@ -474,7 +475,6 @@ function getAppLocale(){
             'productline': productline_en_US(),
             'ibzreportroleconfig': ibzreportroleconfig_en_US(),
             'ibzcasestep': ibzcasestep_en_US(),
-            'taskteam': taskteam_en_US(),
             'ibzagent': ibzagent_en_US(),
             'ibzprostorymodule': ibzprostorymodule_en_US(),
             'productsum': productsum_en_US(),

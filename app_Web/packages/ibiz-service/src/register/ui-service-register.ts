@@ -59,6 +59,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('testcase', () => import('../uiservice/test-case/test-case-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysaccount', () => import('../uiservice/sys-account/sys-account-ui-service'));
         UIServiceRegister.allUIServiceMap.set('product', () => import('../uiservice/product/product-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('taskteam', () => import('../uiservice/task-team/task-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('file', () => import('../uiservice/file/file-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testcaselib', () => import('../uiservice/test-case-lib/test-case-lib-ui-service'));
         UIServiceRegister.allUIServiceMap.set('accounttestcase', () => import('../uiservice/account-test-case/account-test-case-ui-service'));
@@ -104,7 +105,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('productline', () => import('../uiservice/product-line/product-line-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzreportroleconfig', () => import('../uiservice/ibz-report-role-config/ibz-report-role-config-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzcasestep', () => import('../uiservice/ibzcase-step/ibzcase-step-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('taskteam', () => import('../uiservice/task-team/task-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzagent', () => import('../uiservice/ibz-agent/ibz-agent-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzprostorymodule', () => import('../uiservice/ibzpro-story-module/ibzpro-story-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productsum', () => import('../uiservice/product-sum/product-sum-ui-service'));

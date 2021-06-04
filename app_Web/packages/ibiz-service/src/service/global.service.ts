@@ -62,6 +62,15 @@ export class GlobalService {
         return (await import('./product/product.service')).default.getInstance();
     }
     /**
+     * 任务团队服务
+     *
+     * @return {TaskTeam}
+     * @memberof GlobalService
+     */
+    async getTaskTeamService() {
+        return (await import('./task-team/task-team.service')).default.getInstance();
+    }
+    /**
      * 附件服务
      *
      * @return {File}
@@ -465,15 +474,6 @@ export class GlobalService {
      */
     async getIBZCaseStepService() {
         return (await import('./ibzcase-step/ibzcase-step.service')).default.getInstance();
-    }
-    /**
-     * 任务团队服务
-     *
-     * @return {TaskTeam}
-     * @memberof GlobalService
-     */
-    async getTaskTeamService() {
-        return (await import('./task-team/task-team.service')).default.getInstance();
     }
     /**
      * 代理服务

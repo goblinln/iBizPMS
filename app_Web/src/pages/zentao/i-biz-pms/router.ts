@@ -2189,6 +2189,21 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'taskteams/:taskteam?/views/gridview9_look',
+                    meta: {
+                        caption: 'entities.taskteam.views.gridview9_look.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'taskteams', parameterName: 'taskteam' },
+                            { pathName: 'views', parameterName: 'gridview9_look' },
+                        ],
+                        resource:'taskteam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'files/:file?/views/productgridview',
                     meta: {
                         caption: 'entities.file.views.productgridview.caption',
@@ -23546,21 +23561,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'maingridview9_editmode' },
                         ],
                         resource:'ibzcasestep',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'taskteams/:taskteam?/views/gridview9_look',
-                    meta: {
-                        caption: 'entities.taskteam.views.gridview9_look.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'taskteams', parameterName: 'taskteam' },
-                            { pathName: 'views', parameterName: 'gridview9_look' },
-                        ],
-                        resource:'taskteam',
                         requireAuth: true,
                     },
                     component: AppViewShell

@@ -3,6 +3,7 @@ import accounttesttask_zh_CN from '@locale/lanres/entities/account-test-task/acc
 import testcase_zh_CN from '@locale/lanres/entities/test-case/test-case_zh_CN';
 import sysaccount_zh_CN from '@locale/lanres/entities/sys-account/sys-account_zh_CN';
 import product_zh_CN from '@locale/lanres/entities/product/product_zh_CN';
+import taskteam_zh_CN from '@locale/lanres/entities/task-team/task-team_zh_CN';
 import file_zh_CN from '@locale/lanres/entities/file/file_zh_CN';
 import testcaselib_zh_CN from '@locale/lanres/entities/test-case-lib/test-case-lib_zh_CN';
 import accounttestcase_zh_CN from '@locale/lanres/entities/account-test-case/account-test-case_zh_CN';
@@ -48,7 +49,6 @@ import dynadashboard_zh_CN from '@locale/lanres/entities/dyna-dashboard/dyna-das
 import productline_zh_CN from '@locale/lanres/entities/product-line/product-line_zh_CN';
 import ibzreportroleconfig_zh_CN from '@locale/lanres/entities/ibz-report-role-config/ibz-report-role-config_zh_CN';
 import ibzcasestep_zh_CN from '@locale/lanres/entities/ibzcase-step/ibzcase-step_zh_CN';
-import taskteam_zh_CN from '@locale/lanres/entities/task-team/task-team_zh_CN';
 import ibzagent_zh_CN from '@locale/lanres/entities/ibz-agent/ibz-agent_zh_CN';
 import ibzprostorymodule_zh_CN from '@locale/lanres/entities/ibzpro-story-module/ibzpro-story-module_zh_CN';
 import productsum_zh_CN from '@locale/lanres/entities/product-sum/product-sum_zh_CN';
@@ -427,6 +427,7 @@ function getAppLocale(){
             'testcase': testcase_zh_CN(),
             'sysaccount': sysaccount_zh_CN(),
             'product': product_zh_CN(),
+            'taskteam': taskteam_zh_CN(),
             'file': file_zh_CN(),
             'testcaselib': testcaselib_zh_CN(),
             'accounttestcase': accounttestcase_zh_CN(),
@@ -472,7 +473,6 @@ function getAppLocale(){
             'productline': productline_zh_CN(),
             'ibzreportroleconfig': ibzreportroleconfig_zh_CN(),
             'ibzcasestep': ibzcasestep_zh_CN(),
-            'taskteam': taskteam_zh_CN(),
             'ibzagent': ibzagent_zh_CN(),
             'ibzprostorymodule': ibzprostorymodule_zh_CN(),
             'productsum': productsum_zh_CN(),

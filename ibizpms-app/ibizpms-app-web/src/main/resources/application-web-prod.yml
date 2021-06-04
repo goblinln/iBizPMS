@@ -87,6 +87,10 @@ zuul:
       path: /products/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
       stripPrefix: false
+    zt_taskteam:
+      path: /taskteams/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      stripPrefix: false
     zt_file:
       path: /files/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
@@ -265,10 +269,6 @@ zuul:
       stripPrefix: false
     ibz_casestep:
       path: /ibzcasesteps/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
-    zt_taskteam:
-      path: /taskteams/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
     ibz_agent:
