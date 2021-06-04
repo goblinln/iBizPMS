@@ -1,4 +1,4 @@
-import { SysEmployeeService } from "../service";
+import { EmployeeService } from "../service";
 /**
  * 代码表--用户真实名称（任务多人团队）
  *
@@ -90,10 +90,10 @@ export default class UserRealNameTaskMTeam {
     /**
      * 人员应用实体服务对象
      *
-     * @type {SysEmployeeService}
+     * @type {EmployeeService}
      * @memberof UserRealNameTaskMTeam
      */
-    public sysemployeeService: SysEmployeeService = new SysEmployeeService();
+    public employeeService: EmployeeService = new EmployeeService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class UserRealNameTaskMTeam {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.sysemployeeService.FetchTaskMTeam(context, data);
+            const promise: Promise<any> = this.employeeService.FetchTaskMTeam(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

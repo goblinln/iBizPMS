@@ -53,10 +53,10 @@ public class AccountTestCaseResource {
     public AccountTestCaseMapping accounttestcaseMapping;
 
     @PreAuthorize("quickTest('ZT_CASE', 'READ')")
-	@ApiOperation(value = "获取我的收藏", tags = {"测试用例" } ,notes = "获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/accounttestcases/fetchmyfavorite")
-	public ResponseEntity<List<AccountTestCaseDTO>> fetchmyfavorite(@RequestBody CaseSearchContext context) {
-        Page<Case> domains = caseService.searchMyFavorites(context) ;
+	@ApiOperation(value = "获取指定用户数据", tags = {"测试用例" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttestcases/fetchaccount")
+	public ResponseEntity<List<AccountTestCaseDTO>> fetchaccount(@RequestBody CaseSearchContext context) {
+        Page<Case> domains = caseService.searchAccount(context) ;
         List<AccountTestCaseDTO> list = accounttestcaseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -88,10 +88,10 @@ public class AccountTestCaseResource {
     }
 
     @PreAuthorize("quickTest('ZT_CASE', 'READ')")
-	@ApiOperation(value = "获取指定用户数据", tags = {"测试用例" } ,notes = "获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounttestcases/fetchaccount")
-	public ResponseEntity<List<AccountTestCaseDTO>> fetchaccount(@RequestBody CaseSearchContext context) {
-        Page<Case> domains = caseService.searchAccount(context) ;
+	@ApiOperation(value = "获取我的收藏", tags = {"测试用例" } ,notes = "获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttestcases/fetchmyfavorite")
+	public ResponseEntity<List<AccountTestCaseDTO>> fetchmyfavorite(@RequestBody CaseSearchContext context) {
+        Page<Case> domains = caseService.searchMyFavorites(context) ;
         List<AccountTestCaseDTO> list = accounttestcaseMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -109,11 +109,11 @@ public class AccountTestCaseResource {
     }
 
     @PreAuthorize("quickTest('ZT_CASE', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"测试用例" } ,notes = "根据系统用户获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttestcases/fetchmyfavorite")
-	public ResponseEntity<List<AccountTestCaseDTO>> fetchMyFavoriteBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"测试用例" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttestcases/fetchaccount")
+	public ResponseEntity<List<AccountTestCaseDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
         
-        Page<Case> domains = caseService.searchMyFavorites(context) ;
+        Page<Case> domains = caseService.searchAccount(context) ;
         List<AccountTestCaseDTO> list = accounttestcaseMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -144,11 +144,11 @@ public class AccountTestCaseResource {
     }
 
     @PreAuthorize("quickTest('ZT_CASE', 'READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"测试用例" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttestcases/fetchaccount")
-	public ResponseEntity<List<AccountTestCaseDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"测试用例" } ,notes = "根据系统用户获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttestcases/fetchmyfavorite")
+	public ResponseEntity<List<AccountTestCaseDTO>> fetchMyFavoriteBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody CaseSearchContext context) {
         
-        Page<Case> domains = caseService.searchAccount(context) ;
+        Page<Case> domains = caseService.searchMyFavorites(context) ;
         List<AccountTestCaseDTO> list = accounttestcaseMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

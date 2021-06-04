@@ -182,18 +182,20 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
         return this.condCache.get('view');
     }
     /**
-     * FetchMy
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountProductService
      */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchmy`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accountproduct) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountproducts/${_context.accountproduct}`);
+            return res;
         }
-        return this.http.post(`/accountproducts/fetchmy`, _data);
+        const res = await this.http.get(`/accountproducts/${_context.accountproduct}`);
+        return res;
     }
     /**
      * FetchAccount
@@ -210,19 +212,17 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
         return this.http.post(`/accountproducts/fetchaccount`, _data);
     }
     /**
-     * Get
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountProductService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accountproduct) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountproducts/${_context.accountproduct}`);
-            return res;
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchmy`, _data);
         }
-        const res = await this.http.get(`/accountproducts/${_context.accountproduct}`);
-        return res;
+        return this.http.post(`/accountproducts/fetchmy`, _data);
     }
 }

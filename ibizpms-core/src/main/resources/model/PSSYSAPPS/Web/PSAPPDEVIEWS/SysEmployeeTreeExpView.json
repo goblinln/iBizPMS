@@ -6,7 +6,7 @@
   "name" : "SysEmployeeTreeExpView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -48,7 +48,7 @@
     "name" : "treeexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:post",
@@ -199,7 +199,7 @@
         "modelref" : true,
         "id" : "create"
       },
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSTREEVIEWS/EmpTreeMenuZS.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee/PSTREEVIEWS/EmpTreeMenuZS.json",
       "getFetchPSControlAction" : {
         "modelref" : true,
         "id" : "fetch"
@@ -212,7 +212,7 @@
       "logicName" : "人员_PC端菜单栏展示",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
       },
       "getPSControlHandler" : {
         "getPSHandlerActions" : [ {
@@ -226,14 +226,14 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionType" : "DEDATASET",
           "name" : "fetch",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionName" : "Remove",
@@ -246,7 +246,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionName" : "Get",
@@ -259,7 +259,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionName" : "Create",
@@ -272,7 +272,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         } ],
         "userDRAction" : "READ",
@@ -664,7 +664,7 @@
         "nodeType" : "project",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "text" : "项目团队",
         "treeNodeType" : "STATIC",
@@ -696,7 +696,7 @@
         "nodeType" : "post",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "text" : "岗位",
         "treeNodeType" : "STATIC",
@@ -941,7 +941,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "textFormat" : "联系用户",
         "getTextPSAppDEField" : {
@@ -1000,7 +1000,7 @@
         "nodeType" : "OrgEmp",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "text" : "组织人员",
         "treeNodeType" : "STATIC",
@@ -1040,7 +1040,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "textFormat" : "项目人员",
         "getTextPSAppDEField" : {
@@ -1133,7 +1133,7 @@
         "nodeType" : "ConcatList",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "text" : "联系人",
         "treeNodeType" : "STATIC",
@@ -1235,7 +1235,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "getTextPSAppDEField" : {
           "name" : "PERSONNAME",
@@ -1327,7 +1327,7 @@
         "nodeType" : "Team",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "text" : "团队",
         "treeNodeType" : "STATIC",
@@ -1381,7 +1381,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

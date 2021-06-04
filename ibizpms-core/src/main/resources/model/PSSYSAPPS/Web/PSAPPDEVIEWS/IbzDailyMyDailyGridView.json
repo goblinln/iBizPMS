@@ -7,7 +7,7 @@
   "name" : "IbzDailyMyDailyGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -77,7 +77,7 @@
     "codeName" : "MyMain",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily/PSGRIDS/MyMain.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily/PSGRIDS/MyMain.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -92,7 +92,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -108,7 +108,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         },
         "modelref" : true,
         "id" : "HaveRead@IbzDaily"
@@ -128,7 +128,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -139,7 +139,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Remove",
@@ -152,7 +152,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Get",
@@ -165,7 +165,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -178,7 +178,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         }
       }, {
         "actionName" : "Create",
@@ -191,7 +191,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -248,7 +248,7 @@
         "name" : "已读",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
         },
         "timeout" : 60000,
         "uIActionMode" : "FRONT",
@@ -445,7 +445,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -474,7 +474,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

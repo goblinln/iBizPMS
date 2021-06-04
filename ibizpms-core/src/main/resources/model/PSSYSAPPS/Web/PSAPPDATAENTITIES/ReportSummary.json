@@ -1,0 +1,736 @@
+{
+  "getAllPSAppDEACModes" : [ {
+    "codeName" : "Default",
+    "logicName" : "DEFAULT",
+    "name" : "DEFAULT",
+    "getPSDEACModeDataItems" : [ {
+      "dataType" : 25,
+      "name" : "value",
+      "getPSAppDEField" : {
+        "name" : "IBZ_DAILYID",
+        "codeName" : "IbzDailyId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "IBZ_DAILYNAME",
+        "codeName" : "IbzDailyName"
+      }
+    } ],
+    "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "getValuePSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "defaultMode" : true,
+    "enablePagingBar" : false
+  } ],
+  "getAllPSAppDEActions" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchAll",
+    "methodType" : "FETCH",
+    "name" : "FetchAllReport",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllReport"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAll"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReAllReport",
+    "methodType" : "FETCH",
+    "name" : "MyReAllReport",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReAllReport"
+    },
+    "builtinMethod" : false
+  } ],
+  "getAllPSAppDEFields" : [ {
+    "codeName" : "UpdateManName",
+    "logicName" : "更新人名称",
+    "name" : "UPDATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Mailto",
+    "logicName" : "抄送给",
+    "name" : "MAILTO",
+    "stdDataType" : 25,
+    "stringLength" : 2000
+  }, {
+    "codeName" : "IbzDailyId",
+    "logicName" : "汇报标识",
+    "name" : "IBZ_DAILYID",
+    "stdDataType" : 1,
+    "keyField" : true
+  }, {
+    "codeName" : "Reportlycnt",
+    "logicName" : "未读汇报数",
+    "name" : "REPORTLYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Worktoday",
+    "logicName" : "工作",
+    "name" : "WORKTODAY",
+    "stdDataType" : 21,
+    "stringLength" : 1048576
+  }, {
+    "codeName" : "MonthlyCnt",
+    "logicName" : "未读月报数",
+    "name" : "MONTHLYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Dailycnt",
+    "logicName" : "未读日报数",
+    "name" : "DAILYCNT",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "Todaytask",
+    "logicName" : "完成任务",
+    "name" : "TODAYTASK",
+    "stdDataType" : 25,
+    "stringLength" : 2000
+  }, {
+    "codeName" : "Account",
+    "logicName" : "用户",
+    "name" : "ACCOUNT",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 200
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "IbzDailyName",
+    "logicName" : "汇报名称",
+    "name" : "IBZ_DAILYNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
+    "codeName" : "Reportto",
+    "logicName" : "汇报给",
+    "name" : "REPORTTO",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Submittime",
+    "logicName" : "提交时间",
+    "name" : "SUBMITTIME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Files",
+    "logicName" : "附件",
+    "name" : "FILES",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CreateManName",
+    "logicName" : "建立人名称",
+    "name" : "CREATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Planstomorrow",
+    "logicName" : "计划",
+    "name" : "PLANSTOMORROW",
+    "stdDataType" : 21,
+    "stringLength" : 1048576
+  }, {
+    "codeName" : "Reportstatus",
+    "logicName" : "状态",
+    "name" : "REPORTSTATUS",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Date",
+    "logicName" : "日期",
+    "name" : "DATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "Issubmit",
+    "logicName" : "是否提交",
+    "name" : "ISSUBMIT",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "Comment",
+    "logicName" : "其他事项",
+    "name" : "COMMENT",
+    "stdDataType" : 21,
+    "stringLength" : 1048576
+  }, {
+    "codeName" : "Tomorrowplanstask",
+    "logicName" : "计划任务",
+    "name" : "TOMORROWPLANSTASK",
+    "stdDataType" : 25,
+    "stringLength" : 2000
+  } ],
+  "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchAll",
+    "methodType" : "FETCH",
+    "name" : "FetchAllReport",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "AllReport"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAll"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "builtinMethod" : true,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "name" : "CheckKey",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Save.json"
+    },
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "DEFAULT",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReAllReport",
+    "methodType" : "FETCH",
+    "name" : "MyReAllReport",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReAllReport"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterSearch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGet",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGET",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterCreate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERCREATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterGetDraft",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERGETDRAFT",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterRemove",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERREMOVE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterFetch",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERFETCH",
+    "builtinMethod" : true
+  } ],
+  "getAllPSAppPortletCats" : [ {
+    "codeName" : "Home",
+    "name" : "首页",
+    "ungroup" : false
+  } ],
+  "getAllPSDEMainStates" : [ {
+    "codeName" : "daily",
+    "enterStateMode" : "ANY",
+    "logicName" : "日报",
+    "mSTag" : "daily",
+    "name" : "日报",
+    "getPSDEMainStateActions" : [ {
+      "name" : "ReportIReceived",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MyReportINotSubmit",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "MONTHLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "月报",
+        "name" : "MONTHLY"
+      }
+    }, {
+      "name" : "WEEKLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "周报",
+        "name" : "WEEKLY"
+      }
+    }, {
+      "name" : "REPORTLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "汇报",
+        "name" : "REPORTLY"
+      }
+    } ],
+    "stateValue" : "daily",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  }, {
+    "codeName" : "monthly",
+    "enterStateMode" : "ANY",
+    "logicName" : "月报",
+    "mSTag" : "monthly",
+    "name" : "月报",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MyReportINotSubmit",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "ReportIReceived",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "WEEKLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "周报",
+        "name" : "WEEKLY"
+      }
+    }, {
+      "name" : "REPORTLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "汇报",
+        "name" : "REPORTLY"
+      }
+    }, {
+      "name" : "DAILY",
+      "getPSDEOPPriv" : {
+        "logicName" : "日报",
+        "name" : "DAILY"
+      }
+    } ],
+    "stateValue" : "monthly",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  }, {
+    "codeName" : "reportly",
+    "enterStateMode" : "ANY",
+    "logicName" : "汇报",
+    "mSTag" : "reportly",
+    "name" : "汇报",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MyReportINotSubmit",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "ReportIReceived",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "DAILY",
+      "getPSDEOPPriv" : {
+        "logicName" : "日报",
+        "name" : "DAILY"
+      }
+    }, {
+      "name" : "MONTHLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "月报",
+        "name" : "MONTHLY"
+      }
+    }, {
+      "name" : "WEEKLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "周报",
+        "name" : "WEEKLY"
+      }
+    } ],
+    "stateValue" : "reportly",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  }, {
+    "codeName" : "weekly",
+    "enterStateMode" : "ANY",
+    "logicName" : "周报",
+    "mSTag" : "weekly",
+    "name" : "周报",
+    "getPSDEMainStateActions" : [ {
+      "name" : "MyReportINotSubmit",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/MyReportINotSubmit.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "ReportIReceived",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDEACTIONS/ReportIReceived.json"
+      },
+      "allowMode" : true
+    } ],
+    "getPSDEMainStateOPPrivs" : [ {
+      "name" : "REPORTLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "汇报",
+        "name" : "REPORTLY"
+      }
+    }, {
+      "name" : "MONTHLY",
+      "getPSDEOPPriv" : {
+        "logicName" : "月报",
+        "name" : "MONTHLY"
+      }
+    }, {
+      "name" : "DAILY",
+      "getPSDEOPPriv" : {
+        "logicName" : "日报",
+        "name" : "DAILY"
+      }
+    } ],
+    "stateValue" : "weekly",
+    "viewActions" : 0,
+    "wFStateMode" : 0,
+    "actionAllowMode" : true,
+    "allowMode" : true,
+    "default" : false,
+    "enableViewActions" : false,
+    "fieldAllowMode" : false,
+    "oPPrivAllowMode" : false
+  } ],
+  "getAllPSDEOPPrivs" : [ {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  } ],
+  "codeName" : "ReportSummary",
+  "dataAccCtrlArch" : 1,
+  "dataAccCtrlMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json",
+  "enableUIActions" : 15,
+  "logicName" : "汇报",
+  "name" : "IBZ_REPORT",
+  "getPSDEName" : "IBZ_REPORT",
+  "getPSDEServiceAPI" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDESERVICEAPIS/ReportSummary.json"
+  },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "IBZ_DAILYNAME",
+    "codeName" : "IbzDailyName"
+  } ],
+  "storageMode" : 0,
+  "defaultMode" : true,
+  "enableFilterActions" : true,
+  "enableUICreate" : true,
+  "enableUIModify" : true,
+  "enableUIRemove" : true,
+  "enableWFActions" : false,
+  "major" : true
+}

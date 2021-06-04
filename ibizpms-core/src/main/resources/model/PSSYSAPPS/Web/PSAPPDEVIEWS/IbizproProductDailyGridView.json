@@ -8,7 +8,7 @@
   "name" : "IbizproProductDailyGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -151,7 +151,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
       },
       "modelref" : true,
       "id" : "ManualCreateDaily@IbizproProductDaily"
@@ -188,7 +188,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -216,11 +216,11 @@
         "name" : "生成产品日报",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "ManualCreateDaily"
+          "id" : "AutoCreate"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "IBIZPROPRODUCTDAILY",
@@ -324,7 +324,7 @@
     "codeName" : "Main",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily/PSGRIDS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily/PSGRIDS/Main.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -339,7 +339,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -353,7 +353,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -364,7 +364,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
         }
       }, {
         "actionName" : "Remove",
@@ -377,7 +377,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
         }
       }, {
         "actionName" : "Get",
@@ -390,7 +390,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -403,7 +403,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
         }
       }, {
         "actionName" : "Create",
@@ -416,7 +416,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -675,7 +675,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -704,7 +704,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductDaily.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

@@ -864,7 +864,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
     },
     "getTextPSAppDEField" : {
       "name" : "IBZ_DAILYNAME",
@@ -909,7 +909,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReportly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Reportly.json"
     },
     "getTextPSAppDEField" : {
       "name" : "IBZ_REPORTLYNAME",

@@ -571,7 +571,11 @@ export class AppGridBase extends GridControlBase {
      */
     public renderColumnFilter() {
         if (this.viewStyle == 'DEFAULT') {
-              return <poptip transfer ref='pageColumn' placement='bottom-end' class='page-column' on-on-popper-show={()=>this.showPoptip(true)} on-on-popper-hide={()=>this.showPoptip(false)} popper-class="view-default"> 
+            let ifShow = !!this.allColumnsInstance.find((item: IPSDEGridColumn)=> item.columnType == 'UAGRIDCOLUMN' && item.columnStyle == 'EXPAND');
+            if(!ifShow){
+                return
+            }
+            return <poptip transfer ref='pageColumn' placement='bottom-end' class='page-column' on-on-popper-show={()=>this.showPoptip(true)} on-on-popper-hide={()=>this.showPoptip(false)} popper-class="view-default"> 
                 <icon type="md-options" />
                 <div slot='content'>
                     <draggable value={this.allColumns} animation={300} handle='.handle-icon' on-change={({ moved }: any) => {
@@ -673,7 +677,7 @@ export class AppGridBase extends GridControlBase {
                       {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
                     </div>}
                     {this.controlInstance?.enablePagingBar ? this.renderPagingBar(h) : ''}
-                    {this.items?.length > 0 && this.controlInstance?.enableColFilter ? this.renderColumnFilter() : null}
+                    {this.items?.length > 0 ? this.renderColumnFilter() : null}
                 </i-form>
             </div>
         );

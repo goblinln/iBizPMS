@@ -100,7 +100,7 @@
       } ]
     } ],
     "codeName" : "ProductTeamM",
-    "logicName" : "项目团队管理",
+    "logicName" : "产品团队管理",
     "name" : "ProductTeamM"
   }, {
     "getAllPSDEDataQueryCodes" : [ {

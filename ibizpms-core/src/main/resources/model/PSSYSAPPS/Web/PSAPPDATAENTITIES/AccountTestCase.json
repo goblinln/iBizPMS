@@ -616,12 +616,12 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchMyFavorite",
+    "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "FetchMyFavorites",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyFavorites"
+      "id" : "Account"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -629,7 +629,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyFavorite"
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -650,12 +650,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAccount",
+    "codeName" : "FetchMyFavorite",
     "methodType" : "FETCH",
-    "name" : "FetchAccount",
+    "name" : "FetchMyFavorites",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Account"
+      "id" : "MyFavorites"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -663,7 +663,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "FetchMyFavorite"
     },
     "builtinMethod" : false
   }, {
@@ -1310,12 +1310,12 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchMyFavorite",
+    "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "FetchMyFavorites",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyFavorites"
+      "id" : "Account"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1323,7 +1323,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyFavorite"
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -1361,12 +1361,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAccount",
+    "codeName" : "FetchMyFavorite",
     "methodType" : "FETCH",
-    "name" : "FetchAccount",
+    "name" : "FetchMyFavorites",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Account"
+      "id" : "MyFavorites"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1374,7 +1374,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "FetchMyFavorite"
     },
     "builtinMethod" : false
   }, {

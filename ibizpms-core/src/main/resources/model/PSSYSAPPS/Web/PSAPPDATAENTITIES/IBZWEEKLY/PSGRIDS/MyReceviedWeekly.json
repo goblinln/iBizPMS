@@ -87,7 +87,7 @@
       "name" : "已读",
       "getPSAppDEMethod" : {
         "modelref" : true,
-        "id" : "HaveRead"
+        "id" : "Read"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,

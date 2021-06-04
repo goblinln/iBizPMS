@@ -72,7 +72,7 @@
         "name" : "IbizproProjectDailyGridView",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
         },
         "getPSAppViewEngines" : [ {
           "engineCat" : "VIEW",
@@ -218,7 +218,7 @@
           "getPSUIAction" : {
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
             },
             "modelref" : true,
             "id" : "ManualCreateDaily@IbizproProjectDaily"
@@ -255,7 +255,7 @@
           "name" : "toolbar",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
           },
           "getPSControlParam" : {
             "id" : "TOOLBAR"
@@ -283,11 +283,11 @@
               "name" : "生成项目日报",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "SumProjectDaily"
+                "id" : "Summary"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               },
               "getPSNavigateContexts" : [ {
                 "key" : "ISMANUAL",
@@ -442,7 +442,7 @@
           "codeName" : "Main",
           "columnEnableLink" : 2,
           "controlType" : "GRID",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily/PSGRIDS/Main.json",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily/PSGRIDS/Main.json",
           "getFetchPSControlAction" : {
             "modelref" : true,
             "id" : "fetch"
@@ -457,7 +457,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
           },
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
@@ -471,7 +471,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
               "actionType" : "DEDATASET",
@@ -482,7 +482,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
               "actionName" : "Remove",
@@ -495,7 +495,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
               "actionName" : "Get",
@@ -508,7 +508,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
               "actionName" : "GetDraft",
@@ -521,7 +521,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
               "actionName" : "Create",
@@ -534,7 +534,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             } ],
             "userDRAction" : "READ",
@@ -793,7 +793,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
             }
           },
           "sortMode" : "REMOTE",
@@ -815,12 +815,12 @@
         }, {
           "codeName" : "Default",
           "controlType" : "SEARCHFORM",
-          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily/PSSEARCHFORMS/Default.json",
+          "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily/PSSEARCHFORMS/Default.json",
           "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
           "logicName" : "默认搜索表单",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
           },
           "getPSControlHandler" : {
             "getPSHandlerActions" : [ {
@@ -832,7 +832,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
               "actionType" : "FILTERACTION",
@@ -843,7 +843,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             }, {
               "actionType" : "FILTERACTION",
@@ -854,7 +854,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
               }
             } ],
             "enableDEFieldPrivilege" : false,
@@ -900,7 +900,7 @@
           "name" : "layoutpanel",
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProjectDaily.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectDaily.json"
           },
           "getPSControlParam" : { },
           "layoutPanel" : true,

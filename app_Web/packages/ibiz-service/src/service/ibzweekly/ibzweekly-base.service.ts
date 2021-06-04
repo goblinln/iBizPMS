@@ -66,15 +66,50 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZWEEKLYService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzweeklies/${_context.ibzweekly}/select`);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}`);
+        return res;
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/fetchdefault`, _data);
+    }
+    /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/autocreate`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzweeklies/${_context.ibzweekly}`, _data);
     }
     /**
      * Create
@@ -95,41 +130,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return this.http.post(`/ibzweeklies`, _data);
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzweeklies/${_context.ibzweekly}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzweeklies/${_context.ibzweekly}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}`);
-        return res;
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -144,70 +144,15 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return res;
     }
     /**
-     * CreateEveryWeekReport
+     * Read
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZWEEKLYService
      */
-    async CreateEveryWeekReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/createeveryweekreport`, _data);
-    }
-    /**
-     * CreateGetLastWeekPlanAndWork
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async CreateGetLastWeekPlanAndWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/creategetlastweekplanandwork`, _data);
-    }
-    /**
-     * EditGetLastWeekTaskAndComTask
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async EditGetLastWeekTaskAndComTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/editgetlastweektaskandcomtask`, _data);
-    }
-    /**
-     * HaveRead
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async HaveRead(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/haveread`, _data);
-    }
-    /**
-     * JugThisWeekCreateWeekly
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async JugThisWeekCreateWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/jugthisweekcreateweekly`, _data);
-    }
-    /**
-     * PushUserWeekly
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async PushUserWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/pushuserweekly`, _data);
+    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/read`, _data);
     }
     /**
      * Submit
@@ -221,63 +166,19 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/submit`, _data);
     }
     /**
-     * FetchDefault
+     * Notice
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZWEEKLYService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/fetchdefault`, _data);
-    }
-    /**
-     * FetchMyNotSubmit
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async FetchMyNotSubmit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/fetchmynotsubmit`, _data);
-    }
-    /**
-     * FetchMyWeekly
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async FetchMyWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/fetchmyweekly`, _data);
-    }
-    /**
-     * FetchProductTeamMemberWeekly
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async FetchProductTeamMemberWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/fetchproductteammemberweekly`, _data);
-    }
-    /**
-     * FetchProjectWeekly
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async FetchProjectWeekly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/fetchprojectweekly`, _data);
+    async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/notice`, _data);
     }
 
     /**
-     * CreateEveryWeekReportBatch接口方法
+     * AutoCreateBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -285,13 +186,13 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async CreateEveryWeekReportBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/createeveryweekreportbatch`,_data);
+        return this.http.post(`/ibzweeklies/autocreatebatch`,_data);
     }
 
     /**
-     * CreateGetLastWeekPlanAndWorkBatch接口方法
+     * ReadBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -299,65 +200,9 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async CreateGetLastWeekPlanAndWorkBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/creategetlastweekplanandworkbatch`,_data);
-    }
-
-    /**
-     * EditGetLastWeekTaskAndComTaskBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async EditGetLastWeekTaskAndComTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/editgetlastweektaskandcomtaskbatch`,_data);
-    }
-
-    /**
-     * HaveReadBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/havereadbatch`,_data);
-    }
-
-    /**
-     * JugThisWeekCreateWeeklyBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async JugThisWeekCreateWeeklyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/jugthisweekcreateweeklybatch`,_data);
-    }
-
-    /**
-     * PushUserWeeklyBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async PushUserWeeklyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/pushuserweeklybatch`,_data);
+        return this.http.post(`/ibzweeklies/readbatch`,_data);
     }
 
     /**
@@ -372,5 +217,19 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzweeklies/submitbatch`,_data);
+    }
+
+    /**
+     * NoticeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZWEEKLYServiceBase
+     */
+    public async NoticeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzweeklies/noticebatch`,_data);
     }
 }

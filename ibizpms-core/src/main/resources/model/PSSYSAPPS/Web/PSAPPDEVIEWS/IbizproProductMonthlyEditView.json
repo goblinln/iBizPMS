@@ -8,7 +8,7 @@
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -30,7 +30,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly/PSFORMS/MainInfo.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly/PSFORMS/MainInfo.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -47,7 +47,7 @@
     "logicName" : "主信息表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -61,7 +61,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -70,7 +70,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -83,7 +83,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -96,7 +96,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
         }
       }, {
         "actionName" : "Get",
@@ -109,7 +109,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
         }
       }, {
         "actionName" : "Create",
@@ -122,7 +122,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -5637,7 +5637,7 @@
             "name" : "IbzMonthlyProductMonthlyGridView",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -5709,7 +5709,7 @@
               "codeName" : "ProductMonthlyMain",
               "columnEnableLink" : 2,
               "controlType" : "GRID",
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly/PSGRIDS/ProductMonthlyMain.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly/PSGRIDS/ProductMonthlyMain.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -5724,7 +5724,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
               },
               "getPSAppViewLogics" : [ {
                 "logicTrigger" : "CUSTOM",
@@ -5740,7 +5740,7 @@
                 "getPSUIAction" : {
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   },
                   "modelref" : true,
                   "id" : "ProjectMonthly@IbzMonthly"
@@ -5760,7 +5760,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
@@ -5771,7 +5771,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -5784,7 +5784,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -5797,7 +5797,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   }
                 }, {
                   "actionName" : "GetDraft",
@@ -5810,7 +5810,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -5823,7 +5823,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -5863,7 +5863,7 @@
                   "name" : "项目月报查看详情",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                   },
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
@@ -6032,7 +6032,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
                 }
               },
               "sortMode" : "REMOTE",
@@ -6061,7 +6061,7 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
@@ -6164,7 +6164,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductMonthly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

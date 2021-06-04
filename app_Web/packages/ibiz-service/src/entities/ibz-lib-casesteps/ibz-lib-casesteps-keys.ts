@@ -1,11 +1,8 @@
 export default [
-    'reals',
     'expect',
-    'desc',
+    'type',
     'files',
     'id',
-    'type',
-    'version',
-    'parent',
-    'ibizcase',
+    'desc',
+    'reals',
 ];

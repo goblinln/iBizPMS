@@ -7,7 +7,7 @@
   "name" : "IbzMonthlyMainMonthlyGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -110,7 +110,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
       },
       "modelref" : true,
       "id" : "Create@IbzMonthly"
@@ -133,7 +133,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -166,7 +166,7 @@
         "name" : "新建",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "DATE",
@@ -246,7 +246,7 @@
     "codeName" : "Main",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly/PSGRIDS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly/PSGRIDS/Main.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -261,7 +261,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -285,7 +285,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         },
         "modelref" : true,
         "id" : "Edit@IbzMonthly"
@@ -297,7 +297,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         },
         "modelref" : true,
         "id" : "Submit@IbzMonthly"
@@ -317,7 +317,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -328,7 +328,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -341,7 +341,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Get",
@@ -354,7 +354,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -367,7 +367,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Create",
@@ -380,7 +380,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -506,7 +506,7 @@
             "name" : "修改",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "DATE",
@@ -550,7 +550,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
             },
             "getPSSysImage" : {
               "glyph" : "xf00c@FontAwesome",
@@ -671,7 +671,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -693,12 +693,12 @@
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly/PSSEARCHFORMS/Default.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly/PSSEARCHFORMS/Default.json",
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -710,7 +710,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -721,7 +721,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -732,7 +732,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -778,7 +778,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

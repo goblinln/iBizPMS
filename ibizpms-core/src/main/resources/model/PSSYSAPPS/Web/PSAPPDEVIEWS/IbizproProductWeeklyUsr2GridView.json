@@ -7,7 +7,7 @@
   "name" : "IbizproProductWeeklyUsr2GridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -153,7 +153,7 @@
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
       },
       "modelref" : true,
       "id" : "CreateProductReport@IbizproProductWeekly"
@@ -190,7 +190,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -213,11 +213,11 @@
         "name" : "生成周报",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "SumProductWeekly"
+          "id" : "Summary"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         },
         "getPSNavigateContexts" : [ {
           "key" : "IBIZPROPRODUCTWEEKLY",
@@ -373,7 +373,7 @@
     "codeName" : "Main",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly/PSGRIDS/Main.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly/PSGRIDS/Main.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -388,7 +388,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -402,7 +402,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -413,7 +413,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -426,7 +426,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       }, {
         "actionName" : "Get",
@@ -439,7 +439,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -452,7 +452,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       }, {
         "actionName" : "Create",
@@ -465,7 +465,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -727,7 +727,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -749,12 +749,12 @@
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly/PSSEARCHFORMS/Default.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly/PSSEARCHFORMS/Default.json",
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -766,7 +766,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -777,7 +777,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -788,7 +788,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -834,7 +834,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductWeekly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

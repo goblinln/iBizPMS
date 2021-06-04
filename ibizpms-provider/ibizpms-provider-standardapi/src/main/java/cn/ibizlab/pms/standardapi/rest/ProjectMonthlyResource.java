@@ -60,19 +60,28 @@ public class ProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
     }
 
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"项目月报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/projectmonthlies/fetchdefault")
+	public ResponseEntity<List<ProjectMonthlyDTO>> fetchdefault(@RequestBody IbizproProjectMonthlySearchContext context) {
+        Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(context) ;
+        List<ProjectMonthlyDTO> list = projectmonthlyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'NONE')")
-    @ApiOperation(value = "手动生成项目月报", tags = {"项目月报" },  notes = "手动生成项目月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies/{projectmonthly_id}/manualcreatemonthly")
-    public ResponseEntity<ProjectMonthlyDTO> manualCreateMonthly(@PathVariable("projectmonthly_id") String projectmonthly_id, @RequestBody ProjectMonthlyDTO projectmonthlydto) {
-        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(projectmonthlydto);
-        domain.setIbizproprojectmonthlyid(projectmonthly_id);
-        domain = ibizproprojectmonthlyService.manualCreateMonthly(domain);
-        projectmonthlydto = projectmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(domain.getIbizproprojectmonthlyid());
-        projectmonthlydto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmonthlydto);
+    @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectmonthlies/{projectmonthly_id}")
+    public ResponseEntity<ProjectMonthlyDTO> get(@PathVariable("projectmonthly_id") String projectmonthly_id) {
+        IbizproProjectMonthly domain = ibizproprojectmonthlyService.get(projectmonthly_id);
+        ProjectMonthlyDTO dto = projectmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(projectmonthly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @VersionCheck(entity = "ibizproprojectmonthly" , versionfield = "updatedate")
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'UPDATE')")
@@ -92,18 +101,6 @@ public class ProjectMonthlyResource {
     }
 
 
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"项目月报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmonthlies/fetchdefault")
-	public ResponseEntity<List<ProjectMonthlyDTO>> fetchdefault(@RequestBody IbizproProjectMonthlySearchContext context) {
-        Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(context) ;
-        List<ProjectMonthlyDTO> list = projectmonthlyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
     @ApiOperation(value = "新建项目月报", tags = {"项目月报" },  notes = "新建项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies")
@@ -120,15 +117,18 @@ public class ProjectMonthlyResource {
     }
 
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'NONE')")
-    @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectmonthlies/{projectmonthly_id}")
-    public ResponseEntity<ProjectMonthlyDTO> get(@PathVariable("projectmonthly_id") String projectmonthly_id) {
-        IbizproProjectMonthly domain = ibizproprojectmonthlyService.get(projectmonthly_id);
-        ProjectMonthlyDTO dto = projectmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(projectmonthly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "手动生成项目月报", tags = {"项目月报" },  notes = "手动生成项目月报")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies/{projectmonthly_id}/manualcreatemonthly")
+    public ResponseEntity<ProjectMonthlyDTO> manualCreateMonthly(@PathVariable("projectmonthly_id") String projectmonthly_id, @RequestBody ProjectMonthlyDTO projectmonthlydto) {
+        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(projectmonthlydto);
+        domain.setIbizproprojectmonthlyid(projectmonthly_id);
+        domain = ibizproprojectmonthlyService.manualCreateMonthly(domain);
+        projectmonthlydto = projectmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(domain.getIbizproprojectmonthlyid());
+        projectmonthlydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmonthlydto);
     }
+
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

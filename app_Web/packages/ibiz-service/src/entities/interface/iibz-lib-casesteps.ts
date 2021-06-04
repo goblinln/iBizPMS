@@ -9,17 +9,15 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IIbzLibCasesteps extends IEntityBase {
     /**
-     * 实际情况
-     */
-    reals?: any;
-    /**
      * 预期
      */
     expect?: any;
     /**
-     * 步骤
+     * 类型
+     *
+     * @type {('step' | 'group' | 'item')} step: 步骤, group: 分组, item: 分组步骤
      */
-    desc?: any;
+    type?: 'step' | 'group' | 'item';
     /**
      * 附件
      */
@@ -29,21 +27,11 @@ export interface IIbzLibCasesteps extends IEntityBase {
      */
     id?: any;
     /**
-     * 类型
-     *
-     * @type {('step' | 'group' | 'item')} step: 步骤, group: 分组, item: 分组步骤
+     * 步骤
      */
-    type?: 'step' | 'group' | 'item';
+    desc?: any;
     /**
-     * 版本
+     * 实际情况
      */
-    version?: any;
-    /**
-     * 编号
-     */
-    parent?: any;
-    /**
-     * 用例编号
-     */
-    ibizcase?: any;
+    reals?: any;
 }

@@ -164,11 +164,17 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.sysaccount && _context.doc && _context.action && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
+        if (_context.ibzweekly && _context.action && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.todo && _context.action && true) {
             return this.http.post(`/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.testsuite && _context.action && true) {
             return this.http.post(`/testsuites/${_context.testsuite}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.reportly && _context.action && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.project && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -176,11 +182,17 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.action && true) {
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
+        if (_context.monthly && _context.action && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.doc && _context.action && true) {
             return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.doclib && _context.action && true) {
             return this.http.post(`/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.daily && _context.action && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.sysaccount && _context.action && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}/histories/fetchdefault`, _data);

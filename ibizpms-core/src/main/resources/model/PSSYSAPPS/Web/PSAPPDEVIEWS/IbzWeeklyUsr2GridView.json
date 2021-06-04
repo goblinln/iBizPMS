@@ -200,7 +200,7 @@
         "name" : "生成周报",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "CreateEveryWeekReport"
+          "id" : "AutoCreate"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

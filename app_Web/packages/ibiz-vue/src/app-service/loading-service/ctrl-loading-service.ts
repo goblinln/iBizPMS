@@ -58,8 +58,8 @@ export class CtrlLoadingService {
      * @public
      * @memberof CtrlLoadingService
      */
-    public beginLoading(controlInstance: any) {
-        const selection: any = document.querySelector(this.calcCtrlId(controlInstance));
+    public beginLoading(controlId: string) {
+        const selection: any = document.querySelector(`#${controlId}`);
         if (!selection || this.isLoading) {
             return;
         }

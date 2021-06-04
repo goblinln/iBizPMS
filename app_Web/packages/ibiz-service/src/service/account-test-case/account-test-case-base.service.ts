@@ -313,18 +313,18 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
         return this.condCache.get('view');
     }
     /**
-     * FetchMyFavorite
+     * FetchAccount
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountTestCaseService
      */
-    async FetchMyFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
         }
-        return this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
+        return this.http.post(`/accounttestcases/fetchaccount`, _data);
     }
     /**
      * FetchMy
@@ -357,17 +357,17 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
         return res;
     }
     /**
-     * FetchAccount
+     * FetchMyFavorite
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountTestCaseService
      */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMyFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
         }
-        return this.http.post(`/accounttestcases/fetchaccount`, _data);
+        return this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
     }
 }

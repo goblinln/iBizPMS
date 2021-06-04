@@ -16,7 +16,7 @@
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
   },
   "getTextPSAppDEField" : {
     "name" : "PERSONNAME",

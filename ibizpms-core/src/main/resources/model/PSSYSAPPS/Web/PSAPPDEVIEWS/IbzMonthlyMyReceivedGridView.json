@@ -7,7 +7,7 @@
   "name" : "IbzMonthlyMyReceivedGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -79,7 +79,7 @@
     "codeName" : "MyReceived",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly/PSGRIDS/MyReceived.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly/PSGRIDS/MyReceived.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -94,7 +94,7 @@
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
@@ -110,7 +110,7 @@
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         },
         "modelref" : true,
         "id" : "HaveRead@IbzMonthly"
@@ -130,7 +130,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -141,7 +141,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -154,7 +154,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Get",
@@ -167,7 +167,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -180,7 +180,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       }, {
         "actionName" : "Create",
@@ -193,7 +193,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -250,7 +250,7 @@
         "name" : "已读",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
         },
         "refreshMode" : 1,
         "timeout" : 60000,
@@ -449,7 +449,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -478,7 +478,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

@@ -6,7 +6,7 @@
   "name" : "SysEmployeeGridExpViewProjectMember",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -48,7 +48,7 @@
     "name" : "gridexpbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSAppViewRefs" : [ {
       "name" : "EXPITEM:DEFAULT",
@@ -74,7 +74,7 @@
       "codeName" : "ExpMainProjectMember",
       "columnEnableLink" : 2,
       "controlType" : "GRID",
-      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSGRIDS/ExpMainProjectMember.json",
+      "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee/PSGRIDS/ExpMainProjectMember.json",
       "getFetchPSControlAction" : {
         "modelref" : true,
         "id" : "fetch"
@@ -89,7 +89,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
       },
       "getPSControlHandler" : {
         "getPSHandlerActions" : [ {
@@ -103,7 +103,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionType" : "DEDATASET",
@@ -114,7 +114,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionName" : "Remove",
@@ -127,7 +127,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionName" : "Get",
@@ -140,7 +140,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionName" : "GetDraft",
@@ -153,7 +153,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         }, {
           "actionName" : "Create",
@@ -166,7 +166,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         } ],
         "userDRAction" : "READ",
@@ -316,7 +316,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         }
       },
       "sortMode" : "REMOTE",
@@ -353,7 +353,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

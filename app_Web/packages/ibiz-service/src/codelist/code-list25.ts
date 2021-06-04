@@ -1,4 +1,4 @@
-import { SysEmployeeService } from "../service";
+import { EmployeeService } from "../service";
 /**
  * 代码表--真实用户（产品管理）
  *
@@ -90,10 +90,10 @@ export default class CodeList25 {
     /**
      * 人员应用实体服务对象
      *
-     * @type {SysEmployeeService}
+     * @type {EmployeeService}
      * @memberof CodeList25
      */
-    public sysemployeeService: SysEmployeeService = new SysEmployeeService();
+    public employeeService: EmployeeService = new EmployeeService();
 
 
     /**
@@ -134,7 +134,7 @@ export default class CodeList25 {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.sysemployeeService.FetchProductTeamM(context, data);
+            const promise: Promise<any> = this.employeeService.FetchProductTeamM(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

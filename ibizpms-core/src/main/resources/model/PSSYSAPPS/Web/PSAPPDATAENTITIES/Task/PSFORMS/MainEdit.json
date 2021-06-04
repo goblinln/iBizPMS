@@ -2137,6 +2137,27 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "WEEKLY__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
               },
               "getMinorPSAppDataEntity" : {
@@ -2165,6 +2186,27 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "name" : "TEST_SUITE__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Reportly.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "REPORTLY__ACTION",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,
@@ -2221,6 +2263,27 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "MONTHLY__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
               },
               "getMinorPSAppDataEntity" : {
@@ -2249,6 +2312,27 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "name" : "DOC_LIB__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "DAILY__ACTION",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,
@@ -2996,7 +3080,7 @@
               "name" : "TaskTeamGridView9_Edit",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
               },
               "getPSAppViewEngines" : [ {
                 "engineCat" : "VIEW",
@@ -3081,7 +3165,7 @@
                 "name" : "toolbar",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                 },
                 "getPSControlParam" : {
                   "id" : "TOOLBAR"
@@ -3136,10 +3220,10 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                   }
                 },
-                "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam/PSGRIDS/MainEdit.json",
+                "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested/PSGRIDS/MainEdit.json",
                 "getFetchPSControlAction" : {
                   "modelref" : true,
                   "id" : "fetch"
@@ -3155,7 +3239,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                   }
                 },
                 "getGetPSControlAction" : {
@@ -3169,7 +3253,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                   }
                 },
                 "groupMode" : "NONE",
@@ -3182,7 +3266,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                 },
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
@@ -3196,7 +3280,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                     }
                   }, {
                     "actionType" : "DEDATASET",
@@ -3207,7 +3291,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                     }
                   }, {
                     "actionName" : "RemoveTemp",
@@ -3220,7 +3304,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                     }
                   }, {
                     "actionName" : "GetTemp",
@@ -3233,7 +3317,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                     }
                   }, {
                     "actionName" : "GetDraftTemp",
@@ -3246,7 +3330,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                     }
                   }, {
                     "actionName" : "CreateTemp",
@@ -3259,7 +3343,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                     }
                   } ],
                   "userDRAction" : "READ",
@@ -3675,7 +3759,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                   }
                 },
                 "sortMode" : "REMOTE",
@@ -3690,7 +3774,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                   }
                 },
                 "hasWFDataItems" : false,
@@ -3718,7 +3802,7 @@
                 "name" : "layoutpanel",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZTaskTeam.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeamNested.json"
                 },
                 "getPSControlParam" : { },
                 "layoutPanel" : true,

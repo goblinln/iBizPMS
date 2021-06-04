@@ -93,10 +93,11 @@ export class AppPivotTable extends AppGridBase {
         let tempViewParams:any = parentdata.viewparams?parentdata.viewparams:{};
         Object.assign(tempViewParams,JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(arg,{viewparams:tempViewParams});
-        this.ctrlBeginLoading();
-        const post: Promise<any> = this.service.search(this.fetchAction,JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
+        const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
         post.then(async (response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'load');
                 return;

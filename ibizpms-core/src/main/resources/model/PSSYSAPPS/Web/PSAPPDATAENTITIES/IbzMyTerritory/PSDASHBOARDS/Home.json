@@ -1919,7 +1919,7 @@
               "name" : "dashboard_sysportlet12",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
               },
               "getPSControlHandler" : {
                 "enableDEFieldPrivilege" : false,
@@ -1941,7 +1941,7 @@
                 "name" : "IbzReportMyTabExpView",
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                 },
                 "getPSAppViewEngines" : [ {
                   "engineCat" : "VIEW",
@@ -1977,7 +1977,7 @@
                   } ],
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                   },
                   "getPSAppViewRefs" : [ {
                     "name" : "EXPITEM:tabviewpanel",
@@ -2025,7 +2025,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                     },
                     "getPSControlParam" : {
                       "id" : "TABVIEWPANEL"
@@ -2041,7 +2041,7 @@
                       "name" : "IbzDailyMyDailyGridView",
                       "getPSAppDataEntity" : {
                         "modelref" : true,
-                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                       },
                       "getPSAppViewEngines" : [ {
                         "engineCat" : "VIEW",
@@ -2111,7 +2111,7 @@
                         "codeName" : "MyMain",
                         "columnEnableLink" : 2,
                         "controlType" : "GRID",
-                        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily/PSGRIDS/MyMain.json",
+                        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily/PSGRIDS/MyMain.json",
                         "getFetchPSControlAction" : {
                           "modelref" : true,
                           "id" : "fetch"
@@ -2126,7 +2126,7 @@
                         },
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                         },
                         "getPSAppViewLogics" : [ {
                           "logicTrigger" : "CUSTOM",
@@ -2142,7 +2142,7 @@
                           "getPSUIAction" : {
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             },
                             "modelref" : true,
                             "id" : "HaveRead@IbzDaily"
@@ -2162,7 +2162,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             }
                           }, {
                             "actionType" : "DEDATASET",
@@ -2173,7 +2173,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             }
                           }, {
                             "actionName" : "Remove",
@@ -2186,7 +2186,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             }
                           }, {
                             "actionName" : "Get",
@@ -2199,7 +2199,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             }
                           }, {
                             "actionName" : "GetDraft",
@@ -2212,7 +2212,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             }
                           }, {
                             "actionName" : "Create",
@@ -2225,7 +2225,7 @@
                             },
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             }
                           } ],
                           "userDRAction" : "READ",
@@ -2282,7 +2282,7 @@
                             "name" : "已读",
                             "getPSAppDataEntity" : {
                               "modelref" : true,
-                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                             },
                             "timeout" : 60000,
                             "uIActionMode" : "FRONT",
@@ -2479,7 +2479,7 @@
                           },
                           "getPSAppDataEntity" : {
                             "modelref" : true,
-                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                           }
                         },
                         "sortMode" : "REMOTE",
@@ -2508,7 +2508,7 @@
                         "name" : "layoutpanel",
                         "getPSAppDataEntity" : {
                           "modelref" : true,
-                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzDaily.json"
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
                         },
                         "getPSControlParam" : { },
                         "layoutPanel" : true,
@@ -2546,7 +2546,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                     },
                     "getPSControlParam" : {
                       "id" : "TABVIEWPANEL2"
@@ -2570,7 +2570,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                     },
                     "getPSControlParam" : {
                       "id" : "TABVIEWPANEL3"
@@ -2594,7 +2594,7 @@
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                     },
                     "getPSControlParam" : {
                       "id" : "TABVIEWPANEL4"
@@ -2624,7 +2624,7 @@
                   "name" : "layoutpanel",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzReport.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ReportSummary.json"
                   },
                   "getPSControlParam" : { },
                   "layoutPanel" : true,
@@ -3927,6 +3927,27 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "WEEKLY__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
               },
               "getMinorPSAppDataEntity" : {
@@ -3955,6 +3976,27 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "name" : "TEST_SUITE__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Reportly.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "REPORTLY__ACTION",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,
@@ -4011,6 +4053,27 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "MONTHLY__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
               },
               "getMinorPSAppDataEntity" : {
@@ -4039,6 +4102,27 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "name" : "DOC_LIB__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "DAILY__ACTION",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,

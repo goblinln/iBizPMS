@@ -479,10 +479,6 @@
                 "excelCaption" : "用例编号",
                 "name" : "case",
                 "noPrivDisplayMode" : 1,
-                "getPSAppDEField" : {
-                  "name" : "CASE",
-                  "codeName" : "IBizCase"
-                },
                 "width" : 100,
                 "widthUnit" : "PX",
                 "enableSort" : true,
@@ -497,10 +493,6 @@
                 "excelCaption" : "步骤",
                 "name" : "desc",
                 "noPrivDisplayMode" : 1,
-                "getPSAppDEField" : {
-                  "name" : "DESC",
-                  "codeName" : "Desc"
-                },
                 "width" : 100,
                 "widthUnit" : "PX",
                 "enableSort" : false
@@ -514,10 +506,6 @@
                 "excelCaption" : "预期",
                 "name" : "expect",
                 "noPrivDisplayMode" : 1,
-                "getPSAppDEField" : {
-                  "name" : "EXPECT",
-                  "codeName" : "Expect"
-                },
                 "width" : 100,
                 "widthUnit" : "PX",
                 "enableSort" : false
@@ -535,10 +523,6 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json"
                 },
-                "getPSAppDEField" : {
-                  "name" : "TYPE",
-                  "codeName" : "Type"
-                },
                 "width" : 100,
                 "widthUnit" : "PX",
                 "enableSort" : true,
@@ -546,61 +530,23 @@
               } ],
               "getPSDEGridDataItems" : [ {
                 "dataType" : 21,
-                "name" : "expect",
-                "getPSAppDEField" : {
-                  "name" : "EXPECT",
-                  "codeName" : "Expect"
-                }
+                "name" : "expect"
               }, {
                 "dataType" : 21,
-                "name" : "desc",
-                "getPSAppDEField" : {
-                  "name" : "DESC",
-                  "codeName" : "Desc"
-                }
+                "name" : "desc"
               }, {
                 "dataType" : 1,
-                "name" : "parent",
-                "getPSAppDEField" : {
-                  "name" : "PARENT",
-                  "codeName" : "Parent"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "case",
-                "getPSAppDEField" : {
-                  "name" : "CASE",
-                  "codeName" : "IBizCase"
-                }
+                "name" : "case"
               }, {
                 "dataType" : 25,
-                "name" : "type",
-                "getPSAppDEField" : {
-                  "name" : "TYPE",
-                  "codeName" : "Type"
-                }
-              }, {
-                "dataType" : 21,
-                "name" : "srfmajortext",
-                "getPSAppDEField" : {
-                  "name" : "EXPECT",
-                  "codeName" : "Expect"
-                }
+                "name" : "type"
               }, {
                 "dataType" : 1,
                 "name" : "srfdataaccaction",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                },
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
-                "name" : "srfkey",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
+                "name" : "srfkey"
               } ],
               "getPSDEGridEditItems" : [ {
                 "caption" : "编号",
@@ -608,10 +554,6 @@
                 "enableCond" : 0,
                 "ignoreInput" : 0,
                 "name" : "srfkey",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                },
                 "getPSEditor" : {
                   "editorType" : "HIDDEN",
                   "name" : "srfkey"

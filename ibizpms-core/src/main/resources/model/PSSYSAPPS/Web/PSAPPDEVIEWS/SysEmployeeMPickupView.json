@@ -7,7 +7,7 @@
   "name" : "SysEmployeeMPickupView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -30,7 +30,7 @@
       "name" : "SysEmployeePickupGridView",
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
       },
       "getPSAppViewEngines" : [ {
         "engineCat" : "VIEW",
@@ -49,7 +49,7 @@
         "codeName" : "Main",
         "columnEnableLink" : 2,
         "controlType" : "GRID",
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSGRIDS/Main.json",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee/PSGRIDS/Main.json",
         "getFetchPSControlAction" : {
           "modelref" : true,
           "id" : "fetch"
@@ -59,7 +59,7 @@
         "logicName" : "主表格",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
@@ -73,7 +73,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           }, {
             "actionType" : "DEDATASET",
@@ -84,7 +84,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           }, {
             "actionName" : "Remove",
@@ -97,7 +97,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           }, {
             "actionName" : "Get",
@@ -110,7 +110,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           }, {
             "actionName" : "GetDraft",
@@ -123,7 +123,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           }, {
             "actionName" : "Create",
@@ -136,7 +136,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           } ],
           "userDRAction" : "READ",
@@ -358,7 +358,7 @@
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+            "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
           }
         },
         "sortMode" : "REMOTE",
@@ -380,12 +380,12 @@
       }, {
         "codeName" : "Default",
         "controlType" : "SEARCHFORM",
-        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee/PSSEARCHFORMS/Default.json",
+        "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee/PSSEARCHFORMS/Default.json",
         "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
         "logicName" : "默认搜索表单",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "getPSControlHandler" : {
           "getPSHandlerActions" : [ {
@@ -397,7 +397,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           }, {
             "actionType" : "FILTERACTION",
@@ -408,7 +408,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           }, {
             "actionType" : "FILTERACTION",
@@ -419,7 +419,7 @@
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
             }
           } ],
           "enableDEFieldPrivilege" : false,
@@ -465,7 +465,7 @@
         "name" : "layoutpanel",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
         },
         "getPSControlParam" : { },
         "layoutPanel" : true,
@@ -492,7 +492,7 @@
     "name" : "pickupviewpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSControlParam" : {
       "id" : "PICKUPVIEWPANEL"
@@ -507,7 +507,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysEmployee.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Employee.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

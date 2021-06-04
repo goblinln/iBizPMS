@@ -611,10 +611,6 @@
                           "excelCaption" : "用例编号",
                           "name" : "case",
                           "noPrivDisplayMode" : 1,
-                          "getPSAppDEField" : {
-                            "name" : "CASE",
-                            "codeName" : "IBizCase"
-                          },
                           "width" : 100,
                           "widthUnit" : "PX",
                           "enableSort" : true,
@@ -629,10 +625,6 @@
                           "excelCaption" : "步骤",
                           "name" : "desc",
                           "noPrivDisplayMode" : 1,
-                          "getPSAppDEField" : {
-                            "name" : "DESC",
-                            "codeName" : "Desc"
-                          },
                           "width" : 100,
                           "widthUnit" : "PX",
                           "enableSort" : false
@@ -646,10 +638,6 @@
                           "excelCaption" : "预期",
                           "name" : "expect",
                           "noPrivDisplayMode" : 1,
-                          "getPSAppDEField" : {
-                            "name" : "EXPECT",
-                            "codeName" : "Expect"
-                          },
                           "width" : 100,
                           "widthUnit" : "PX",
                           "enableSort" : false
@@ -667,10 +655,6 @@
                             "modelref" : true,
                             "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Casestep__type.json"
                           },
-                          "getPSAppDEField" : {
-                            "name" : "TYPE",
-                            "codeName" : "Type"
-                          },
                           "width" : 100,
                           "widthUnit" : "PX",
                           "enableSort" : true,
@@ -678,61 +662,23 @@
                         } ],
                         "getPSDEGridDataItems" : [ {
                           "dataType" : 21,
-                          "name" : "expect",
-                          "getPSAppDEField" : {
-                            "name" : "EXPECT",
-                            "codeName" : "Expect"
-                          }
+                          "name" : "expect"
                         }, {
                           "dataType" : 21,
-                          "name" : "desc",
-                          "getPSAppDEField" : {
-                            "name" : "DESC",
-                            "codeName" : "Desc"
-                          }
+                          "name" : "desc"
                         }, {
                           "dataType" : 1,
-                          "name" : "parent",
-                          "getPSAppDEField" : {
-                            "name" : "PARENT",
-                            "codeName" : "Parent"
-                          }
-                        }, {
-                          "dataType" : 1,
-                          "name" : "case",
-                          "getPSAppDEField" : {
-                            "name" : "CASE",
-                            "codeName" : "IBizCase"
-                          }
+                          "name" : "case"
                         }, {
                           "dataType" : 25,
-                          "name" : "type",
-                          "getPSAppDEField" : {
-                            "name" : "TYPE",
-                            "codeName" : "Type"
-                          }
-                        }, {
-                          "dataType" : 21,
-                          "name" : "srfmajortext",
-                          "getPSAppDEField" : {
-                            "name" : "EXPECT",
-                            "codeName" : "Expect"
-                          }
+                          "name" : "type"
                         }, {
                           "dataType" : 1,
                           "name" : "srfdataaccaction",
-                          "getPSAppDEField" : {
-                            "name" : "ID",
-                            "codeName" : "Id"
-                          },
                           "dataAccessAction" : true
                         }, {
                           "dataType" : 1,
-                          "name" : "srfkey",
-                          "getPSAppDEField" : {
-                            "name" : "ID",
-                            "codeName" : "Id"
-                          }
+                          "name" : "srfkey"
                         } ],
                         "getPSDEGridEditItems" : [ {
                           "caption" : "编号",
@@ -740,10 +686,6 @@
                           "enableCond" : 0,
                           "ignoreInput" : 0,
                           "name" : "srfkey",
-                          "getPSAppDEField" : {
-                            "name" : "ID",
-                            "codeName" : "Id"
-                          },
                           "getPSEditor" : {
                             "editorType" : "HIDDEN",
                             "name" : "srfkey"
@@ -3954,6 +3896,27 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "WEEKLY__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
               },
               "getMinorPSAppDataEntity" : {
@@ -3982,6 +3945,27 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "name" : "TEST_SUITE__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Reportly.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "REPORTLY__ACTION",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,
@@ -4038,6 +4022,27 @@
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Monthly.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "MONTHLY__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Doc.json"
               },
               "getMinorPSAppDataEntity" : {
@@ -4066,6 +4071,27 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
               },
               "name" : "DOC_LIB__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "DAILY__ACTION",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,

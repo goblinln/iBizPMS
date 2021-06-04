@@ -634,12 +634,12 @@
   "dataAccCtrlMode" : 1,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzLibCaseStepTmp.json",
   "enableUIActions" : 15,
-  "logicName" : "用例库用例步骤",
+  "logicName" : "测试用例库测试用例步骤（嵌套）",
   "name" : "IBZ_LIBCASESTEPSTMP",
   "getPSDEName" : "IBZ_LIBCASESTEPS",
   "getPSDEServiceAPI" : {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDESERVICEAPIS/IbzLibCaseStepTmp.json"
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibCaseSteps/PSDESERVICEAPIS/TestCaseLibCaseStepNested.json"
   },
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "EXPECT",
