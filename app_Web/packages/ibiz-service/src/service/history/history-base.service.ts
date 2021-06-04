@@ -107,6 +107,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
      * @memberof HistoryService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.test && _context.testreport && _context.action && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
@@ -134,6 +140,9 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.project && _context.productplan && _context.action && true) {
             return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
+        if (_context.project && _context.doclib && _context.action && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.product && _context.story && _context.action && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
@@ -143,8 +152,17 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.product && _context.build && _context.action && true) {
             return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
+        if (_context.product && _context.doclib && _context.action && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.doclib && _context.doc && _context.action && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
         if (_context.sysaccount && _context.todo && _context.action && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.sysaccount && _context.doc && _context.action && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.todo && _context.action && true) {
             return this.http.post(`/todos/${_context.todo}/actions/${_context.action}/histories/fetchdefault`, _data);
@@ -157,6 +175,12 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         }
         if (_context.product && _context.action && true) {
             return this.http.post(`/products/${_context.product}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.doc && _context.action && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/${_context.action}/histories/fetchdefault`, _data);
+        }
+        if (_context.doclib && _context.action && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
         if (_context.sysaccount && _context.action && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}/histories/fetchdefault`, _data);

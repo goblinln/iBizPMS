@@ -94,15 +94,15 @@
       "getOpenDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       },
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+          "viewType" : "DEREDIRECTVIEW"
         }
       } ],
       "viewLogicType" : "APP_OPENDATA",
@@ -125,11 +125,11 @@
     }
   }, {
     "name" : "EDITDATA",
-    "realTitle" : "功能测试编辑视图",
+    "realTitle" : "case数据重定向视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
     }
   } ],
   "getPSAppViewUIActions" : [ {

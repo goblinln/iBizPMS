@@ -14036,12 +14036,12 @@
     "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "Bug数据看板视图",
-    "psappsbitemrsid" : "af2a821e80240d1d93ebc97dc5c56572",
+    "cpsappsbitemname" : "bug数据重定向视图",
+    "psappsbitemrsid" : "dd6f7ec9d8952a99295f38de8912ce50",
     "ppsappsbitemname" : "bug表格视图",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "e222eaf17d9e8281e27aeddf4e3c800b",
-    "cpsappsbitemid" : "73b74b7549922ba8efcebf832ebcbb0e",
+    "cpsappsbitemid" : "55a500c933f0cad500d61d959dd499b6",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {
@@ -14087,13 +14087,13 @@
     "psappsbitemrsname" : "新建视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "功能测试编辑视图",
-    "psappsbitemrsid" : "dd5b0683074adc87288ddf0593b36bc8",
+    "cpsappsbitemname" : "case数据重定向视图",
+    "psappsbitemrsid" : "bd365590342445192d7526fc63725d0a",
     "ppsappsbitemname" : "case我得收藏",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "02adca4df41916907502b900001e09dc",
-    "cpsappsbitemid" : "ee0fa6a0a9feb36ca122f47037b72dae",
-    "psappsbitemrsname" : "编辑视图",
+    "cpsappsbitemid" : "1a4f34c6762f2473a466559be6190d17",
+    "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {
     "cpsappsbitemname" : "case我得收藏",
@@ -14146,12 +14146,12 @@
     "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "需求数据看板视图",
-    "psappsbitemrsid" : "680d530b33627c8b82394c2541f63e0c",
+    "cpsappsbitemname" : "story数据重定向视图",
+    "psappsbitemrsid" : "b88c438cde50efae53f5980a3aae9e8c",
     "ppsappsbitemname" : "story表格视图",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "68d6748b2a30d473632612389a7f0330",
-    "cpsappsbitemid" : "49d180b79e583c15948ac861644a9c4f",
+    "cpsappsbitemid" : "29035b14086317c7782aafc9154ee9eb",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {
@@ -14215,12 +14215,12 @@
     "psappsbitemrsname" : "新建数据视图",
     "rstype" : "APPVIEWREF"
   }, {
-    "cpsappsbitemname" : "任务主数据看板视图",
-    "psappsbitemrsid" : "1f0d125b81cc7a29b41c314cd088492f",
+    "cpsappsbitemname" : "task数据重定向视图",
+    "psappsbitemrsid" : "4a397703589e28c2c4940739d7566edb",
     "ppsappsbitemname" : "task表格视图",
     "rstag" : "EDITDATA",
     "ppsappsbitemid" : "b4f52cafec5600db899aed465c84ec7b",
-    "cpsappsbitemid" : "3cf747fd6c829d00993c3989ff9b1e38",
+    "cpsappsbitemid" : "c3920aaca3f577015b8c6d6f31c13df5",
     "psappsbitemrsname" : "编辑数据视图",
     "rstype" : "APPVIEWREF"
   }, {

@@ -327,18 +327,18 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 25,
-    "name" : "openedby",
-    "getPSAppDEField" : {
-      "name" : "OPENEDBY",
-      "codeName" : "OpenedBy"
-    }
-  }, {
     "dataType" : 1,
     "name" : "duplicatebug",
     "getPSAppDEField" : {
       "name" : "DUPLICATEBUG",
       "codeName" : "DuplicateBug"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "openedby",
+    "getPSAppDEField" : {
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
     }
   }, {
     "dataType" : 1,
