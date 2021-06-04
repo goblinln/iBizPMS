@@ -46,8 +46,8 @@
         "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "product",
@@ -67,8 +67,8 @@
         "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "case",
@@ -95,8 +95,8 @@
         "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "product",
@@ -116,8 +116,8 @@
         "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "case",
@@ -185,15 +185,15 @@
         "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       } ],
       "getPSAppUILogicRefViews" : [ {
@@ -234,15 +234,15 @@
         "refMode" : "story",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       }, {
         "refMode" : "bug",
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       } ],
       "viewLogicType" : "APP_OPENDATA",
@@ -260,12 +260,12 @@
     }
   }, {
     "name" : "NEWDATA:story",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "需求",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "NEWDATA:product",
@@ -313,12 +313,12 @@
     }
   }, {
     "name" : "NEWDATA:bug",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "Bug",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "EDITDATA:project",
@@ -331,12 +331,12 @@
     }
   }, {
     "name" : "EDITDATA:story",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "需求",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "NEWDATA:case",
@@ -356,12 +356,12 @@
     }
   }, {
     "name" : "EDITDATA:bug",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "Bug",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "EDITDATA",

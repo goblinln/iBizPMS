@@ -3,6 +3,7 @@
   "caption" : "Bug",
   "codeName" : "BugMainDashboardView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+  "funcViewMode" : "EDITVIEW",
   "height" : 850,
   "name" : "BugMainDashboardView",
   "openMode" : "DRAWER_TOP",

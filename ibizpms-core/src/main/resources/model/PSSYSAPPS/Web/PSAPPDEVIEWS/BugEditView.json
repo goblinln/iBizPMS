@@ -3,7 +3,6 @@
   "caption" : "Bug",
   "codeName" : "BugEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-  "funcViewMode" : "EDITVIEW",
   "name" : "BugEditView",
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {

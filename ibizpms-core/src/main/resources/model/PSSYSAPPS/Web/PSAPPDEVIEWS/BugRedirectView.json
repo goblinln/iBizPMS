@@ -30,21 +30,21 @@
   },
   "getRedirectPSAppViewRefs" : [ {
     "name" : "EDITVIEW",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "Bug",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "ZT_BUG:EDITVIEW",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "Bug",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "Bug数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   } ],
   "title" : "bug数据重定向视图",

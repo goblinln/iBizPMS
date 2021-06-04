@@ -3,7 +3,6 @@
   "caption" : "需求",
   "codeName" : "StoryEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-  "funcViewMode" : "EDITVIEW",
   "name" : "StoryEditView",
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {

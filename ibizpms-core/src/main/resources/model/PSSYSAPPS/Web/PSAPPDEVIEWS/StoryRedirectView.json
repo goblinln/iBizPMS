@@ -30,21 +30,21 @@
   },
   "getRedirectPSAppViewRefs" : [ {
     "name" : "EDITVIEW",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "需求",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "ZT_STORY:EDITVIEW",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "需求",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "需求数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   } ],
   "title" : "story数据重定向视图",

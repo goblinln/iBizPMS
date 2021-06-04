@@ -176,6 +176,129 @@ public class ActionResource {
                 .body(list);
 	}
 
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据日报获取项目动态(项目相关所有)")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchproject")
+	public ResponseEntity<List<ActionDTO>> fetchProjectByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchProjectTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', #action_id, 'READ')")
+    @ApiOperation(value = "根据日报获取系统日志", tags = {"系统日志" },  notes = "根据日报获取系统日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/dailies/{ibzdaily_id}/actions/{action_id}")
+    public ResponseEntity<ActionDTO> getByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("action_id") Long action_id) {
+        Action domain = actionService.get(action_id);
+        ActionDTO dto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据日报建立系统日志", tags = {"系统日志" },  notes = "根据日报建立系统日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/dailies/{ibzdaily_id}/actions")
+    public ResponseEntity<ActionDTO> createByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setObjectid(ibzdaily_id);domain.setObjecttype("daily");
+		actionService.create(domain);
+        ActionDTO dto = actionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取ProductTrends", tags = {"系统日志" } ,notes = "根据日报获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @VersionCheck(entity = "action" , versionfield = "updatedate")
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'UPDATE', #action_id, 'UPDATE')")
+    @ApiOperation(value = "根据日报更新系统日志", tags = {"系统日志" },  notes = "根据日报更新系统日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/dailies/{ibzdaily_id}/actions/{action_id}")
+    public ResponseEntity<ActionDTO> updateByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setObjectid(ibzdaily_id);domain.setObjecttype("daily");
+        domain.setId(action_id);
+		actionService.update(domain);
+        ActionDTO dto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据日报获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchMyTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据日报获取系统日志草稿", tags = {"系统日志" },  notes = "根据日报获取系统日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/dailies/{ibzdaily_id}/actions/getdraft")
+    public ResponseEntity<ActionDTO> getDraftByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, ActionDTO dto) {
+        Action domain = actionMapping.toDomain(dto);
+        domain.setObjectid(ibzdaily_id);domain.setObjecttype("daily");
+        return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取指定用户数据", tags = {"系统日志" } ,notes = "根据日报获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchAccount(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取Type", tags = {"系统日志" } ,notes = "根据日报获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取我的数据", tags = {"系统日志" } ,notes = "根据日报获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchmy")
+	public ResponseEntity<List<ActionDTO>> fetchMyByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchMy(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchproject")
