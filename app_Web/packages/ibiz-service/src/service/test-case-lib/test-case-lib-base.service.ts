@@ -84,17 +84,6 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         return this.condCache.get('view');
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseLibService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testcaselibs/fetchdefault`, _data);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -113,16 +102,27 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         return this.http.post(`/testcaselibs`, _data);
     }
     /**
-     * Update
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseLibService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/testcaselibs/${_context.testcaselib}`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/testcaselibs/${_context.testcaselib}`);
+        return res;
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseLibService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/testcaselibs/fetchdefault`, _data);
     }
     /**
      * GetDraft
@@ -150,15 +150,15 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         return this.http.delete(`/testcaselibs/${_context.testcaselib}`);
     }
     /**
-     * Get
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseLibService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/testcaselibs/${_context.testcaselib}`);
-        return res;
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/testcaselibs/${_context.testcaselib}`, _data);
     }
 }

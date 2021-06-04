@@ -646,6 +646,14 @@
                   "codeName" : "Spec"
                 }
               }, {
+                "id" : "product",
+                "hidden" : true,
+                "dataType" : 1,
+                "getPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                }
+              }, {
                 "id" : "verify",
                 "dataType" : 21,
                 "getPSAppDEField" : {
@@ -984,6 +992,35 @@
                           },
                           "needSave" : false,
                           "refreshItemsSetParamOnly" : false,
+                          "showCaption" : true
+                        }, {
+                          "caption" : "所属产品",
+                          "codeName" : "product",
+                          "dataType" : 1,
+                          "detailStyle" : "DEFAULT",
+                          "detailType" : "FORMITEM",
+                          "enableCond" : 3,
+                          "ignoreInput" : 0,
+                          "labelPos" : "LEFT",
+                          "labelWidth" : 100,
+                          "name" : "product",
+                          "noPrivDisplayMode" : 1,
+                          "getPSAppDEField" : {
+                            "name" : "PRODUCT",
+                            "codeName" : "Product"
+                          },
+                          "getPSEditor" : {
+                            "editorType" : "HIDDEN",
+                            "name" : "product"
+                          },
+                          "getPSLayoutPos" : {
+                            "colMD" : 24,
+                            "layout" : "TABLE_24COL"
+                          },
+                          "allowEmpty" : true,
+                          "emptyCaption" : false,
+                          "hidden" : true,
+                          "inputTipClosable" : false,
                           "showCaption" : true
                         } ],
                         "getPSLayout" : {
@@ -1545,6 +1582,7 @@
                             "srfparentmode" : "DER1N_ZT_CASE_ZT_STORY_STORY",
                             "SRFDER1NID" : "DER1N_ZT_CASE_ZT_STORY_STORY"
                           },
+                          "refreshItems" : "product",
                           "needSave" : false,
                           "refreshItemsSetParamOnly" : false,
                           "showCaption" : true

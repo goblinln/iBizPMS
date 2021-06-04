@@ -644,6 +644,7 @@ function getLocaleResourceBase(){
 				'srfdeid': commonLogic.appcommonhandle("",null), 
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
 				'spec': commonLogic.appcommonhandle("需求描述",null), 
+				'product': commonLogic.appcommonhandle("所属产品",null), 
 				'verify': commonLogic.appcommonhandle("验收标准",null), 
 				'id': commonLogic.appcommonhandle("编号",null), 
 			},
