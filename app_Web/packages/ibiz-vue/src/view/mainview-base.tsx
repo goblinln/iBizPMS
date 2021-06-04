@@ -475,7 +475,7 @@ export class MainViewBase extends ViewBase {
             let parameters: any[] = [];
             const openView: IPSAppView | null = openViewRef.getRefPSAppView();
             if (!openView) return;
-            await openView.fill();
+            await openView.fill(true);
             if (openView.getPSAppDataEntity()) {
                 // 处理视图关系参数 （只是路由打开模式才计算）
                 if (!openView.openMode || openView.openMode == 'INDEXVIEWTAB' || openView.openMode == 'POPUPAPP') {
@@ -578,7 +578,7 @@ export class MainViewBase extends ViewBase {
                         if (!targetOpenView) {
                             return;
                         }
-                        await targetOpenView.fill();
+                        await targetOpenView.fill(true);
                         const view: any = {
                             viewname: Util.srfFilePath2(targetOpenView.codeName),
                             height: targetOpenView.height,
