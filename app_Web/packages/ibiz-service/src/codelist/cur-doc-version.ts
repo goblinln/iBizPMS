@@ -1,4 +1,3 @@
-import { DocContentService } from "../service";
 /**
  * 代码表--当前文档版本（动态）
  *
@@ -85,69 +84,20 @@ export default class CurDocVersion {
      * @memberof CurDocVersion
      */
     public queryParamNames:any ={
-        sort: 'version,desc'
     }
 
-    /**
-     * 文档内容应用实体服务对象
-     *
-     * @type {DocContentService}
-     * @memberof CurDocVersion
-     */
-    public doccontentService: DocContentService = new DocContentService();
 
-
-    /**
-     * 处理数据
-     *
-     * @public
-     * @param {any[]} items
-     * @returns {any[]}
-     * @memberof CurDocVersion
-     */
-    public doItems(items: any[]): any[] {
-        let _items: any[] = [];
-        if(items && items instanceof Array && items.length >0){
-            items.forEach((item: any) => {
-                let itemdata:any = {};
-                Object.assign(itemdata,{id:item.version});
-                Object.assign(itemdata,{value:item.version});
-                Object.assign(itemdata,{text:item.title});
-                Object.assign(itemdata,{label:item.title});
-                
-                
-                
-                _items.push(itemdata);
-            });
-        }
-        return _items;
-    }
 
     /**
      * 获取数据项
      *
-     * @param {*} context
      * @param {*} data
      * @param {boolean} [isloading]
      * @returns {Promise<any>}
      * @memberof CurDocVersion
      */
-    public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
-        return new Promise((resolve, reject) => {
-            data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.doccontentService.FetchCurVersion(context, data);
-            promise.then((response: any) => {
-                if (response && response.status === 200) {
-                    const data =  response.data;
-                    resolve(this.doItems(data));
-                } else {
-                    resolve([]);
-                }
-            }).catch((response: any) => {
-                console.error(response);
-                reject(response);
-            });
-        });
+    public getItems(data: any={}, isloading?: boolean): Promise<any> {
+        return Promise.reject([]);
     }
 
     /**

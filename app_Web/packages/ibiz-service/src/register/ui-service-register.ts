@@ -59,6 +59,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('testcase', () => import('../uiservice/test-case/test-case-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysaccount', () => import('../uiservice/sys-account/sys-account-ui-service'));
         UIServiceRegister.allUIServiceMap.set('product', () => import('../uiservice/product/product-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('file', () => import('../uiservice/file/file-ui-service'));
         UIServiceRegister.allUIServiceMap.set('accounttestcase', () => import('../uiservice/account-test-case/account-test-case-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectburn', () => import('../uiservice/project-burn/project-burn-ui-service'));
         UIServiceRegister.allUIServiceMap.set('test', () => import('../uiservice/test/test-ui-service'));
@@ -73,9 +74,11 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
         UIServiceRegister.allUIServiceMap.set('project', () => import('../uiservice/project/project-ui-service'));
         UIServiceRegister.allUIServiceMap.set('history', () => import('../uiservice/history/history-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('doclib', () => import('../uiservice/doc-lib/doc-lib-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productmodule', () => import('../uiservice/product-module/product-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productteam', () => import('../uiservice/product-team/product-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testmodule', () => import('../uiservice/test-module/test-module-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('doclibmodule', () => import('../uiservice/doc-lib-module/doc-lib-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productlife', () => import('../uiservice/product-life/product-life-ui-service'));
         UIServiceRegister.allUIServiceMap.set('usercontact', () => import('../uiservice/user-contact/user-contact-ui-service'));
         UIServiceRegister.allUIServiceMap.set('accountbug', () => import('../uiservice/account-bug/account-bug-ui-service'));
@@ -88,6 +91,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('projectteam', () => import('../uiservice/project-team/project-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testtask', () => import('../uiservice/test-task/test-task-ui-service'));
         UIServiceRegister.allUIServiceMap.set('testreport', () => import('../uiservice/test-report/test-report-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('doc', () => import('../uiservice/doc/doc-ui-service'));
         UIServiceRegister.allUIServiceMap.set('accountstory', () => import('../uiservice/account-story/account-story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('bug', () => import('../uiservice/bug/bug-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectmodule', () => import('../uiservice/project-module/project-module-ui-service'));
@@ -98,7 +102,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzreportroleconfig', () => import('../uiservice/ibz-report-role-config/ibz-report-role-config-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzcasestep', () => import('../uiservice/ibzcase-step/ibzcase-step-ui-service'));
         UIServiceRegister.allUIServiceMap.set('taskteam', () => import('../uiservice/task-team/task-team-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('file', () => import('../uiservice/file/file-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzagent', () => import('../uiservice/ibz-agent/ibz-agent-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzprostorymodule', () => import('../uiservice/ibzpro-story-module/ibzpro-story-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productsum', () => import('../uiservice/product-sum/product-sum-ui-service'));
@@ -107,7 +110,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzdaily', () => import('../uiservice/ibz-daily/ibz-daily-ui-service'));
         UIServiceRegister.allUIServiceMap.set('suitecase', () => import('../uiservice/suite-case/suite-case-ui-service'));
         UIServiceRegister.allUIServiceMap.set('employeeload', () => import('../uiservice/emp-loyeeload/emp-loyeeload-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('doccontent', () => import('../uiservice/doc-content/doc-content-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzreport', () => import('../uiservice/ibz-report/ibz-report-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibztaskestimate', () => import('../uiservice/ibztask-estimate/ibztask-estimate-ui-service'));
         UIServiceRegister.allUIServiceMap.set('syspost', () => import('../uiservice/sys-post/sys-post-ui-service'));
@@ -137,14 +139,12 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('subtask', () => import('../uiservice/sub-task/sub-task-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibizproprojectmonthly', () => import('../uiservice/ibizpro-project-monthly/ibizpro-project-monthly-ui-service'));
         UIServiceRegister.allUIServiceMap.set('user', () => import('../uiservice/user/user-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('doclib', () => import('../uiservice/doc-lib/doc-lib-ui-service'));
         UIServiceRegister.allUIServiceMap.set('companystats', () => import('../uiservice/company-stats/company-stats-ui-service'));
         UIServiceRegister.allUIServiceMap.set('substory', () => import('../uiservice/sub-story/sub-story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibizproprojectdaily', () => import('../uiservice/ibizpro-project-daily/ibizpro-project-daily-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzplantemplet', () => import('../uiservice/ibz-plan-templet/ibz-plan-templet-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysuserrole', () => import('../uiservice/sys-user-role/sys-user-role-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibizprokeyword', () => import('../uiservice/ibizpro-keyword/ibizpro-keyword-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('doclibmodule', () => import('../uiservice/doc-lib-module/doc-lib-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibizproproductdaily', () => import('../uiservice/ibizpro-product-daily/ibizpro-product-daily-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysrole', () => import('../uiservice/sys-role/sys-role-ui-service'));
         UIServiceRegister.allUIServiceMap.set('plantempletdetail', () => import('../uiservice/plan-templet-detail/plan-templet-detail-ui-service'));
@@ -159,7 +159,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzmonthly', () => import('../uiservice/ibz-monthly/ibz-monthly-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzmyterritory', () => import('../uiservice/ibz-my-territory/ibz-my-territory-ui-service'));
         UIServiceRegister.allUIServiceMap.set('sysupdatelog', () => import('../uiservice/sys-update-log/sys-update-log-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('doc', () => import('../uiservice/doc/doc-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzweekly', () => import('../uiservice/ibzweekly/ibzweekly-ui-service'));
         UIServiceRegister.allUIServiceMap.set('pssysapp', () => import('../uiservice/pssys-app/pssys-app-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproprojectusertask', () => import('../uiservice/ibzpro-project-user-task/ibzpro-project-user-task-ui-service'));

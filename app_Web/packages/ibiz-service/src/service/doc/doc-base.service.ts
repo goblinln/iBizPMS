@@ -157,18 +157,267 @@ export class DocBaseService extends EntityBaseService<IDoc> {
         return this.condCache.get('view');
     }
     /**
-     * Select
+     * FetchMyFavourites
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DocService
      */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-            return this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/select`);
+    async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
         }
-        return this.http.get(`/docs/${_context.doc}/select`);
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchmyfavourites`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchmyfavourites`, _data);
+        }
+        return this.http.post(`/docs/fetchmyfavourites`, _data);
+    }
+    /**
+     * FetchLastedModify
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async FetchLastedModify(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchlastedmodify`, _data);
+        }
+        return this.http.post(`/docs/fetchlastedmodify`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc) {
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
+        }
+        if (_context.product && _context.doclib && _context.doc) {
+            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
+        }
+        if (_context.doclib && _context.doc) {
+            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}`);
+            return res;
+        }
+        if (_context.sysaccount && _context.doc) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`);
+            return res;
+        }
+        const res = await this.http.get(`/docs/${_context.doc}`);
+        return res;
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchmy`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchmy`, _data);
+        }
+        return this.http.post(`/docs/fetchmy`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        }
+        if (_context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
+        }
+        if (_context.sysaccount && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`, _data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/docs/${_context.doc}`, _data);
+    }
+    /**
+     * UnCollect
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        }
+        if (_context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
+        }
+        if (_context.sysaccount && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/uncollect`, _data);
+        }
+        return this.http.post(`/docs/${_context.doc}/uncollect`, _data);
+    }
+    /**
+     * Collect
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        }
+        if (_context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
+        }
+        if (_context.sysaccount && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/collect`, _data);
+        }
+        return this.http.post(`/docs/${_context.doc}/collect`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/getdraft`, _data);
+            return res;
+        }
+        if (_context.doclib && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/getdraft`, _data);
+            return res;
+        }
+        if (_context.sysaccount && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/docs/getdraft`, _data);
+        return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc) {
+            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        }
+        if (_context.product && _context.doclib && _context.doc) {
+            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        }
+        if (_context.doclib && _context.doc) {
+            return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}`);
+        }
+        if (_context.sysaccount && _context.doc) {
+            return this.http.delete(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}`);
+        }
+        return this.http.delete(`/docs/${_context.doc}`);
+    }
+    /**
+     * FetchRootDoc
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocService
+     */
+    async FetchRootDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/fetchrootdoc`, _data);
+        }
+        return this.http.post(`/docs/fetchrootdoc`, _data);
     }
     /**
      * Create
@@ -179,6 +428,26 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs`, _data);
+        }
         if (_context.doclib && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -188,6 +457,16 @@ export class DocBaseService extends EntityBaseService<IDoc> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/doclibs/${_context.doclib}/docs`, _data);
+        }
+        if (_context.sysaccount && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
         if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -199,102 +478,6 @@ export class DocBaseService extends EntityBaseService<IDoc> {
         return this.http.post(`/docs`, _data);
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}`, _data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/docs/${_context.doc}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-            return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}`);
-        }
-        return this.http.delete(`/docs/${_context.doc}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}`);
-            return res;
-        }
-        const res = await this.http.get(`/docs/${_context.doc}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/doclibs/${_context.doclib}/docs/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/docs/getdraft`, _data);
-        return res;
-    }
-    /**
-     * ByVersionUpdateContext
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async ByVersionUpdateContext(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/byversionupdatecontext`, _data);
-        }
-        return this.http.put(`/docs/${_context.doc}/byversionupdatecontext`, _data);
-    }
-    /**
-     * Collect
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async Collect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/collect`, _data);
-        }
-        return this.http.post(`/docs/${_context.doc}/collect`, _data);
-    }
-    /**
      * GetDocStatus
      *
      * @param {*} [_context={}]
@@ -303,228 +486,27 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocService
      */
     async GetDocStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.get(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+        }
         if (_context.doclib && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
+            return this.http.get(`/doclibs/${_context.doclib}/docs/${_context.doc}/getdocstatus`, _data);
         }
-        return this.http.put(`/docs/${_context.doc}/getdocstatus`, _data);
-    }
-    /**
-     * OnlyCollectDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async OnlyCollectDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
+        if (_context.sysaccount && _context.doc) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/onlycollectdoc`, _data);
+            return this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/getdocstatus`, _data);
         }
-        return this.http.post(`/docs/${_context.doc}/onlycollectdoc`, _data);
-    }
-    /**
-     * OnlyUnCollectDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async OnlyUnCollectDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/onlyuncollectdoc`, _data);
-        }
-        return this.http.post(`/docs/${_context.doc}/onlyuncollectdoc`, _data);
-    }
-    /**
-     * UnCollect
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && _context.doc) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/uncollect`, _data);
-        }
-        return this.http.post(`/docs/${_context.doc}/uncollect`, _data);
-    }
-    /**
-     * FetchChildDocLibDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchChildDocLibDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchchilddoclibdoc`, _data);
-        }
-        return this.http.post(`/docs/fetchchilddoclibdoc`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchdefault`, _data);
-        }
-        return this.http.post(`/docs/fetchdefault`, _data);
-    }
-    /**
-     * FetchDocLibAndDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchDocLibAndDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchdoclibanddoc`, _data);
-        }
-        return this.http.post(`/docs/fetchdoclibanddoc`, _data);
-    }
-    /**
-     * FetchDocLibDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchDocLibDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchdoclibdoc`, _data);
-        }
-        return this.http.post(`/docs/fetchdoclibdoc`, _data);
-    }
-    /**
-     * FetchDocModuleDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchDocModuleDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchdocmoduledoc`, _data);
-        }
-        return this.http.post(`/docs/fetchdocmoduledoc`, _data);
-    }
-    /**
-     * FetchDocStatus
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchDocStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchdocstatus`, _data);
-        }
-        return this.http.post(`/docs/fetchdocstatus`, _data);
-    }
-    /**
-     * FetchLastedModify
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchLastedModify(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchlastedmodify`, _data);
-        }
-        return this.http.post(`/docs/fetchlastedmodify`, _data);
-    }
-    /**
-     * FetchModuleDocChild
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchModuleDocChild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchmoduledocchild`, _data);
-        }
-        return this.http.post(`/docs/fetchmoduledocchild`, _data);
-    }
-    /**
-     * FetchMyFavourite
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchMyFavourite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchmyfavourite`, _data);
-        }
-        return this.http.post(`/docs/fetchmyfavourite`, _data);
-    }
-    /**
-     * FetchMyFavouritesOnlyDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchMyFavouritesOnlyDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchmyfavouritesonlydoc`, _data);
-        }
-        return this.http.post(`/docs/fetchmyfavouritesonlydoc`, _data);
-    }
-    /**
-     * FetchNotRootDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchNotRootDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchnotrootdoc`, _data);
-        }
-        return this.http.post(`/docs/fetchnotrootdoc`, _data);
-    }
-    /**
-     * FetchRootDoc
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocService
-     */
-    async FetchRootDoc(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/fetchrootdoc`, _data);
-        }
-        return this.http.post(`/docs/fetchrootdoc`, _data);
+        return this.http.get(`/docs/${_context.doc}/getdocstatus`, _data);
     }
 
     /**
-     * ByVersionUpdateContextBatch接口方法
+     * UnCollectBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -532,13 +514,25 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async ByVersionUpdateContextBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+        }
+        if(_context.product && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+        }
         if(_context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/byversionupdatecontextbatch`,_data);
+            return this.http.post(`/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
+        }
+        if(_context.sysaccount && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/uncollectbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/docs/byversionupdatecontextbatch`,_data);
+        return this.http.post(`/docs/uncollectbatch`,_data);
     }
 
     /**
@@ -551,9 +545,21 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocServiceBase
      */
     public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+        }
+        if(_context.product && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+        }
         if(_context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/doclibs/${_context.doclib}/docs/collectbatch`,_data);
+        }
+        if(_context.sysaccount && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/collectbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/docs/collectbatch`,_data);
@@ -569,65 +575,23 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @memberof DocServiceBase
      */
     public async GetDocStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+        }
+        if(_context.product && _context.doclib && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
+        }
         if(_context.doclib && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/doclibs/${_context.doclib}/docs/getdocstatusbatch`,_data);
         }
+        if(_context.sysaccount && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/getdocstatusbatch`,_data);
+        }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/docs/getdocstatusbatch`,_data);
-    }
-
-    /**
-     * OnlyCollectDocBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async OnlyCollectDocBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.doclib && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/onlycollectdocbatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/docs/onlycollectdocbatch`,_data);
-    }
-
-    /**
-     * OnlyUnCollectDocBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async OnlyUnCollectDocBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.doclib && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/onlyuncollectdocbatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/docs/onlyuncollectdocbatch`,_data);
-    }
-
-    /**
-     * UnCollectBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocServiceBase
-     */
-    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.doclib && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/doclibs/${_context.doclib}/docs/uncollectbatch`,_data);
-        }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/docs/uncollectbatch`,_data);
     }
 }

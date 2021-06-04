@@ -2389,7 +2389,7 @@
       "nodeType" : "DocLibModule",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchRootModuleMuLu"
+        "id" : "FetchDir"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -2666,7 +2666,7 @@
       "nodeType" : "ChildDocLibModule",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchAllDoclibModule"
+        "id" : "FetchAllDir"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -3221,7 +3221,7 @@
       "nodeType" : "DocLib",
       "getPSAppDEDataSet" : {
         "modelref" : true,
-        "id" : "FetchByProjectNotFiles"
+        "id" : "FetchByProject"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -3832,5 +3832,56 @@
   "enableFilter" : false,
   "showCaptionBar" : false,
   "modelid" : "6a15e6815011030492acf5fa6d8dd3af",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "DocLibs",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+    },
+    "name" : "PROJECT__DOC_LIB",
+    "getParentPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "DocLibs",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/DocLib.json"
+    },
+    "name" : "PRODUCT__DOC_LIB",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

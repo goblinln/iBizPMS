@@ -1815,7 +1815,7 @@
     "nodeType" : "RootModule",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchRootModuleMuLu"
+      "id" : "FetchDir"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -2091,7 +2091,7 @@
     "nodeType" : "ChildModule",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchAllDoclibModule"
+      "id" : "FetchAllDir"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

@@ -2965,6 +2965,12 @@
                         "editMode" : true
                       }
                     } ],
+                    "getPSAppViewNavContexts" : [ {
+                      "key" : "SYSACCOUNT",
+                      "name" : "SYSACCOUNT",
+                      "value" : "srfuserid",
+                      "rawValue" : false
+                    } ],
                     "getPSAppViewRefs" : [ {
                       "name" : "NEWDATA",
                       "realOpenMode" : "POPUPMODAL",

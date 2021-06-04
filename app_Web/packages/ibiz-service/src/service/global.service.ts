@@ -62,6 +62,15 @@ export class GlobalService {
         return (await import('./product/product.service')).default.getInstance();
     }
     /**
+     * 附件服务
+     *
+     * @return {File}
+     * @memberof GlobalService
+     */
+    async getFileService() {
+        return (await import('./file/file.service')).default.getInstance();
+    }
+    /**
      * 用户测试用例服务
      *
      * @return {AccountTestCase}
@@ -188,6 +197,15 @@ export class GlobalService {
         return (await import('./history/history.service')).default.getInstance();
     }
     /**
+     * 文档库服务
+     *
+     * @return {DocLib}
+     * @memberof GlobalService
+     */
+    async getDocLibService() {
+        return (await import('./doc-lib/doc-lib.service')).default.getInstance();
+    }
+    /**
      * 需求模块服务
      *
      * @return {ProductModule}
@@ -213,6 +231,15 @@ export class GlobalService {
      */
     async getTestModuleService() {
         return (await import('./test-module/test-module.service')).default.getInstance();
+    }
+    /**
+     * 文档库分类服务
+     *
+     * @return {DocLibModule}
+     * @memberof GlobalService
+     */
+    async getDocLibModuleService() {
+        return (await import('./doc-lib-module/doc-lib-module.service')).default.getInstance();
     }
     /**
      * 产品生命周期服务
@@ -323,6 +350,15 @@ export class GlobalService {
         return (await import('./test-report/test-report.service')).default.getInstance();
     }
     /**
+     * 文档服务
+     *
+     * @return {Doc}
+     * @memberof GlobalService
+     */
+    async getDocService() {
+        return (await import('./doc/doc.service')).default.getInstance();
+    }
+    /**
      * 用户需求服务
      *
      * @return {AccountStory}
@@ -413,15 +449,6 @@ export class GlobalService {
         return (await import('./task-team/task-team.service')).default.getInstance();
     }
     /**
-     * 附件服务
-     *
-     * @return {File}
-     * @memberof GlobalService
-     */
-    async getFileService() {
-        return (await import('./file/file.service')).default.getInstance();
-    }
-    /**
      * 代理服务
      *
      * @return {IbzAgent}
@@ -492,15 +519,6 @@ export class GlobalService {
      */
     async getEmpLoyeeloadService() {
         return (await import('./emp-loyeeload/emp-loyeeload.service')).default.getInstance();
-    }
-    /**
-     * 文档内容服务
-     *
-     * @return {DocContent}
-     * @memberof GlobalService
-     */
-    async getDocContentService() {
-        return (await import('./doc-content/doc-content.service')).default.getInstance();
     }
     /**
      * 汇报服务
@@ -764,15 +782,6 @@ export class GlobalService {
         return (await import('./user/user.service')).default.getInstance();
     }
     /**
-     * 文档库服务
-     *
-     * @return {DocLib}
-     * @memberof GlobalService
-     */
-    async getDocLibService() {
-        return (await import('./doc-lib/doc-lib.service')).default.getInstance();
-    }
-    /**
      * 公司动态汇总服务
      *
      * @return {CompanyStats}
@@ -825,15 +834,6 @@ export class GlobalService {
      */
     async getIBIZProKeywordService() {
         return (await import('./ibizpro-keyword/ibizpro-keyword.service')).default.getInstance();
-    }
-    /**
-     * 文档库分类服务
-     *
-     * @return {DocLibModule}
-     * @memberof GlobalService
-     */
-    async getDocLibModuleService() {
-        return (await import('./doc-lib-module/doc-lib-module.service')).default.getInstance();
     }
     /**
      * 产品日报服务
@@ -960,15 +960,6 @@ export class GlobalService {
      */
     async getSysUpdateLogService() {
         return (await import('./sys-update-log/sys-update-log.service')).default.getInstance();
-    }
-    /**
-     * 文档服务
-     *
-     * @return {Doc}
-     * @memberof GlobalService
-     */
-    async getDocService() {
-        return (await import('./doc/doc.service')).default.getInstance();
     }
     /**
      * 周报服务

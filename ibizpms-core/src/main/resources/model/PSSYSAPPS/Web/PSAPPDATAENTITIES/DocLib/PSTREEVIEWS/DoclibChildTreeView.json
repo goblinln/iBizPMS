@@ -2115,7 +2115,7 @@
     "nodeType" : "ChildModule",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchAllDoclibModule"
+      "id" : "FetchAllDir"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

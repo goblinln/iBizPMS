@@ -2189,6 +2189,66 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'files/:file?/views/productgridview',
+                    meta: {
+                        caption: 'entities.file.views.productgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'productgridview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'files/:file?/views/projectgridviewfile',
+                    meta: {
+                        caption: 'entities.file.views.projectgridviewfile.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'projectgridviewfile' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'files/:file?/views/editview',
+                    meta: {
+                        caption: 'entities.file.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'files/:file?/views/listview9',
+                    meta: {
+                        caption: 'entities.file.views.listview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'listview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/accounttestcases/:accounttestcase?/views/mainmygridview',
                     meta: {
                         caption: 'entities.accounttestcase.views.mainmygridview.caption',
@@ -9966,6 +10026,1181 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/doclibs/:doclib?/views/usr2treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr2treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr2treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/usr2treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr2treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr2treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/usr2treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr2treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr2treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/producttreeviewcust',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeviewcust.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeviewcust' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/producttreeviewcust',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeviewcust.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeviewcust' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/producttreeviewcust',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeviewcust.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeviewcust' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doclib.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doclib.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doclib.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/pickupview',
+                    meta: {
+                        caption: 'entities.doclib.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/pickupview',
+                    meta: {
+                        caption: 'entities.doclib.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/pickupview',
+                    meta: {
+                        caption: 'entities.doclib.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/undoneprojecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.undoneprojecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'undoneprojecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/undoneprojecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.undoneprojecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'undoneprojecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/undoneprojecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.undoneprojecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'undoneprojecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/editview',
+                    meta: {
+                        caption: 'entities.doclib.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/editview',
+                    meta: {
+                        caption: 'entities.doclib.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/editview',
+                    meta: {
+                        caption: 'entities.doclib.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/gridview',
+                    meta: {
+                        caption: 'entities.doclib.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/gridview',
+                    meta: {
+                        caption: 'entities.doclib.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/gridview',
+                    meta: {
+                        caption: 'entities.doclib.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/customdoclibroottreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.customdoclibroottreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customdoclibroottreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/customdoclibroottreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.customdoclibroottreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customdoclibroottreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/customdoclibroottreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.customdoclibroottreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customdoclibroottreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/projecttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.projecttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projecttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/projecttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.projecttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projecttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/projecttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.projecttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projecttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/byprojecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.byprojecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'byprojecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/byprojecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.byprojecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'byprojecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/byprojecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.byprojecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'byprojecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/libtabexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.libtabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'libtabexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/libtabexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.libtabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'libtabexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/libtabexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.libtabexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'libtabexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/usr2editview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr2editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr2editview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/usr2editview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr2editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr2editview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/usr2editview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr2editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr2editview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/undoneprojectgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.undoneprojectgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'undoneprojectgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/undoneprojectgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.undoneprojectgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'undoneprojectgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/undoneprojectgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.undoneprojectgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'undoneprojectgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/productgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.productgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'productgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/productgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.productgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'productgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/productgridview',
+                    meta: {
+                        caption: 'entities.doclib.views.productgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'productgridview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/treeviewproductroot',
+                    meta: {
+                        caption: 'entities.doclib.views.treeviewproductroot.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'treeviewproductroot' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/treeviewproductroot',
+                    meta: {
+                        caption: 'entities.doclib.views.treeviewproductroot.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'treeviewproductroot' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/treeviewproductroot',
+                    meta: {
+                        caption: 'entities.doclib.views.treeviewproductroot.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'treeviewproductroot' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/productgridexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.productgridexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'productgridexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/productgridexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.productgridexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'productgridexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/productgridexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.productgridexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'productgridexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/usr3treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr3treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr3treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/usr3treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr3treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr3treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/usr3treeview',
+                    meta: {
+                        caption: 'entities.doclib.views.usr3treeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'usr3treeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/producttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/producttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/producttreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/customtreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.customtreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customtreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/customtreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.customtreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customtreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/customtreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.customtreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customtreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/producttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/producttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/producttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.producttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'producttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/customdoclibchildtreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.customdoclibchildtreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customdoclibchildtreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/customdoclibchildtreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.customdoclibchildtreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customdoclibchildtreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/customdoclibchildtreeview',
+                    meta: {
+                        caption: 'entities.doclib.views.customdoclibchildtreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'customdoclibchildtreeview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/projecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.projecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/projecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.projecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/projecttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.projecttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'projecttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/views/byproducttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.byproducttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'byproducttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/views/byproducttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.byproducttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'byproducttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/views/byproducttreeexpview',
+                    meta: {
+                        caption: 'entities.doclib.views.byproducttreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'views', parameterName: 'byproducttreeexpview' },
+                        ],
+                        resource:'doclib',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/productmodules/:productmodule?/views/gridviewbranch',
                     meta: {
                         caption: 'entities.productmodule.views.gridviewbranch.caption',
@@ -10457,6 +11692,671 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridviewmain' },
                         ],
                         resource:'testmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/usr2gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.usr2gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/usr2gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.usr2gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/usr2gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.usr2gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/usr2gridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.usr2gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/pickupgridview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editviewmain',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editviewmain.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editviewmain' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editviewmain',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editviewmain.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editviewmain' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editviewmain',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editviewmain.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editviewmain' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/editviewmain',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editviewmain.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editviewmain' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/redirectview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.redirectview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'redirectview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview2',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview2.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview2' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview2',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview2.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview2' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview2',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview2.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview2' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/editview2',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview2.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview2' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/pickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.pickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/editview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/mpickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.mpickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'mpickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/mpickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.mpickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'mpickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/mpickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.mpickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'mpickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/mpickupview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.mpickupview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'mpickupview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/childweihuitreeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.childweihuitreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'childweihuitreeexpview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/childweihuitreeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.childweihuitreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'childweihuitreeexpview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/childweihuitreeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.childweihuitreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'childweihuitreeexpview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/childweihuitreeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.childweihuitreeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'childweihuitreeexpview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/doclibmodules/:doclibmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'doclibmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibmodules/:doclibmodule?/views/treeexpview',
+                    meta: {
+                        caption: 'entities.doclibmodule.views.treeexpview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'doclibmodule',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -14918,6 +16818,1707 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/basiceditview9',
+                    meta: {
+                        caption: 'entities.doc.views.basiceditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'basiceditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/basiceditview9',
+                    meta: {
+                        caption: 'entities.doc.views.basiceditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'basiceditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/basiceditview9',
+                    meta: {
+                        caption: 'entities.doc.views.basiceditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'basiceditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/basiceditview9',
+                    meta: {
+                        caption: 'entities.doc.views.basiceditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'basiceditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/basiceditview9',
+                    meta: {
+                        caption: 'entities.doc.views.basiceditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'basiceditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/myfavouritegridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/myfavouritegridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/myfavouritegridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/myfavouritegridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/myfavouritegridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/myfavouritepartgridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritepartgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritepartgridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/myfavouritepartgridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritepartgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritepartgridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/myfavouritepartgridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritepartgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritepartgridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/myfavouritepartgridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritepartgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritepartgridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/myfavouritepartgridview',
+                    meta: {
+                        caption: 'entities.doc.views.myfavouritepartgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'myfavouritepartgridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/recentmoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.recentmoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'recentmoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/recentmoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.recentmoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'recentmoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/recentmoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.recentmoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'recentmoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/recentmoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.recentmoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'recentmoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/recentmoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.recentmoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'recentmoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/modulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.modulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'modulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/modulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.modulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'modulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/modulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.modulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'modulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/modulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.modulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'modulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/modulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.modulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'modulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/gridview',
+                    meta: {
+                        caption: 'entities.doc.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/gridview',
+                    meta: {
+                        caption: 'entities.doc.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/gridview',
+                    meta: {
+                        caption: 'entities.doc.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/gridview',
+                    meta: {
+                        caption: 'entities.doc.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/gridview',
+                    meta: {
+                        caption: 'entities.doc.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/docmodulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.docmodulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docmodulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/docmodulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.docmodulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docmodulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/docmodulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.docmodulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docmodulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/docmodulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.docmodulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docmodulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/docmodulegridview',
+                    meta: {
+                        caption: 'entities.doc.views.docmodulegridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docmodulegridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/mianbeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.mianbeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mianbeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/mianbeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.mianbeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mianbeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/mianbeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.mianbeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mianbeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/mianbeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.mianbeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mianbeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/mianbeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.mianbeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mianbeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/moremyfavouritestreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremyfavouritestreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremyfavouritestreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/moremyfavouritestreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremyfavouritestreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremyfavouritestreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/moremyfavouritestreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremyfavouritestreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremyfavouritestreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/moremyfavouritestreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremyfavouritestreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremyfavouritestreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/moremyfavouritestreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremyfavouritestreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremyfavouritestreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/gridview10',
+                    meta: {
+                        caption: 'entities.doc.views.gridview10.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview10' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/gridview10',
+                    meta: {
+                        caption: 'entities.doc.views.gridview10.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview10' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/gridview10',
+                    meta: {
+                        caption: 'entities.doc.views.gridview10.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview10' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/gridview10',
+                    meta: {
+                        caption: 'entities.doc.views.gridview10.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview10' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/gridview10',
+                    meta: {
+                        caption: 'entities.doc.views.gridview10.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview10' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/keditview9',
+                    meta: {
+                        caption: 'entities.doc.views.keditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'keditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/keditview9',
+                    meta: {
+                        caption: 'entities.doc.views.keditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'keditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/keditview9',
+                    meta: {
+                        caption: 'entities.doc.views.keditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'keditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/keditview9',
+                    meta: {
+                        caption: 'entities.doc.views.keditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'keditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/keditview9',
+                    meta: {
+                        caption: 'entities.doc.views.keditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'keditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doc.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doc.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doc.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doc.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/dashboardview',
+                    meta: {
+                        caption: 'entities.doc.views.dashboardview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/docsumeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.docsumeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docsumeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/docsumeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.docsumeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docsumeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/docsumeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.docsumeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docsumeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/docsumeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.docsumeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docsumeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/docsumeditview9',
+                    meta: {
+                        caption: 'entities.doc.views.docsumeditview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docsumeditview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/gridviewlookdoc',
+                    meta: {
+                        caption: 'entities.doc.views.gridviewlookdoc.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridviewlookdoc' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/gridviewlookdoc',
+                    meta: {
+                        caption: 'entities.doc.views.gridviewlookdoc.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridviewlookdoc' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/gridviewlookdoc',
+                    meta: {
+                        caption: 'entities.doc.views.gridviewlookdoc.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridviewlookdoc' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/gridviewlookdoc',
+                    meta: {
+                        caption: 'entities.doc.views.gridviewlookdoc.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridviewlookdoc' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/gridviewlookdoc',
+                    meta: {
+                        caption: 'entities.doc.views.gridviewlookdoc.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridviewlookdoc' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/editview',
+                    meta: {
+                        caption: 'entities.doc.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/editview',
+                    meta: {
+                        caption: 'entities.doc.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/editview',
+                    meta: {
+                        caption: 'entities.doc.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/editview',
+                    meta: {
+                        caption: 'entities.doc.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/editview',
+                    meta: {
+                        caption: 'entities.doc.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/mymoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.mymoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mymoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/mymoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.mymoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mymoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/mymoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.mymoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mymoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/mymoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.mymoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mymoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/mymoregridview',
+                    meta: {
+                        caption: 'entities.doc.views.mymoregridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'mymoregridview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/gridview9',
+                    meta: {
+                        caption: 'entities.doc.views.gridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/gridview9',
+                    meta: {
+                        caption: 'entities.doc.views.gridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/gridview9',
+                    meta: {
+                        caption: 'entities.doc.views.gridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/gridview9',
+                    meta: {
+                        caption: 'entities.doc.views.gridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/gridview9',
+                    meta: {
+                        caption: 'entities.doc.views.gridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/docstatuseditview',
+                    meta: {
+                        caption: 'entities.doc.views.docstatuseditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docstatuseditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/docstatuseditview',
+                    meta: {
+                        caption: 'entities.doc.views.docstatuseditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docstatuseditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/docstatuseditview',
+                    meta: {
+                        caption: 'entities.doc.views.docstatuseditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docstatuseditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/docstatuseditview',
+                    meta: {
+                        caption: 'entities.doc.views.docstatuseditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docstatuseditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/docstatuseditview',
+                    meta: {
+                        caption: 'entities.doc.views.docstatuseditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'docstatuseditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/moremydoctreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremydoctreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremydoctreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/moremydoctreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremydoctreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremydoctreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/moremydoctreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremydoctreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremydoctreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/moremydoctreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremydoctreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremydoctreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/moremydoctreeview',
+                    meta: {
+                        caption: 'entities.doc.views.moremydoctreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'moremydoctreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/createeditview',
+                    meta: {
+                        caption: 'entities.doc.views.createeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'createeditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/createeditview',
+                    meta: {
+                        caption: 'entities.doc.views.createeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'createeditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/createeditview',
+                    meta: {
+                        caption: 'entities.doc.views.createeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'createeditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/createeditview',
+                    meta: {
+                        caption: 'entities.doc.views.createeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'createeditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/createeditview',
+                    meta: {
+                        caption: 'entities.doc.views.createeditview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'createeditview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/doclibs/:doclib?/docs/:doc?/views/morerecentupdatetreeview',
+                    meta: {
+                        caption: 'entities.doc.views.morerecentupdatetreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'morerecentupdatetreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/doclibs/:doclib?/docs/:doc?/views/morerecentupdatetreeview',
+                    meta: {
+                        caption: 'entities.doc.views.morerecentupdatetreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'morerecentupdatetreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'doclibs/:doclib?/docs/:doc?/views/morerecentupdatetreeview',
+                    meta: {
+                        caption: 'entities.doc.views.morerecentupdatetreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'doclibs', parameterName: 'doclib' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'morerecentupdatetreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysaccounts/:sysaccount?/docs/:doc?/views/morerecentupdatetreeview',
+                    meta: {
+                        caption: 'entities.doc.views.morerecentupdatetreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'morerecentupdatetreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'docs/:doc?/views/morerecentupdatetreeview',
+                    meta: {
+                        caption: 'entities.doc.views.morerecentupdatetreeview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'docs', parameterName: 'doc' },
+                            { pathName: 'views', parameterName: 'morerecentupdatetreeview' },
+                        ],
+                        resource:'doc',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/accountstories/:accountstory?/views/myfavoritesgridview',
                     meta: {
                         caption: 'entities.accountstory.views.myfavoritesgridview.caption',
@@ -18135,66 +21736,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'files/:file?/views/productgridview',
-                    meta: {
-                        caption: 'entities.file.views.productgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'files', parameterName: 'file' },
-                            { pathName: 'views', parameterName: 'productgridview' },
-                        ],
-                        resource:'file',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'files/:file?/views/projectgridviewfile',
-                    meta: {
-                        caption: 'entities.file.views.projectgridviewfile.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'files', parameterName: 'file' },
-                            { pathName: 'views', parameterName: 'projectgridviewfile' },
-                        ],
-                        resource:'file',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'files/:file?/views/editview',
-                    meta: {
-                        caption: 'entities.file.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'files', parameterName: 'file' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'file',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'files/:file?/views/listview9',
-                    meta: {
-                        caption: 'entities.file.views.listview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'files', parameterName: 'file' },
-                            { pathName: 'views', parameterName: 'listview9' },
-                        ],
-                        resource:'file',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'ibzagents/:ibzagent?/views/createeditview',
                     meta: {
                         caption: 'entities.ibzagent.views.createeditview.caption',
@@ -20204,381 +23745,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'doclibs/:doclib?/views/usr2treeview',
-                    meta: {
-                        caption: 'entities.doclib.views.usr2treeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'usr2treeview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/producttreeviewcust',
-                    meta: {
-                        caption: 'entities.doclib.views.producttreeviewcust.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'producttreeviewcust' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/dashboardview',
-                    meta: {
-                        caption: 'entities.doclib.views.dashboardview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/pickupview',
-                    meta: {
-                        caption: 'entities.doclib.views.pickupview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/undoneprojecttreeexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.undoneprojecttreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'undoneprojecttreeexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/editview',
-                    meta: {
-                        caption: 'entities.doclib.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.doclib.views.pickupgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/gridview',
-                    meta: {
-                        caption: 'entities.doclib.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/customdoclibroottreeview',
-                    meta: {
-                        caption: 'entities.doclib.views.customdoclibroottreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'customdoclibroottreeview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/projecttreeview',
-                    meta: {
-                        caption: 'entities.doclib.views.projecttreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'projecttreeview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/byprojecttreeexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.byprojecttreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'byprojecttreeexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/libtabexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.libtabexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'libtabexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/usr2editview',
-                    meta: {
-                        caption: 'entities.doclib.views.usr2editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'usr2editview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/undoneprojectgridview',
-                    meta: {
-                        caption: 'entities.doclib.views.undoneprojectgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'undoneprojectgridview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/productgridview',
-                    meta: {
-                        caption: 'entities.doclib.views.productgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'productgridview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/treeview',
-                    meta: {
-                        caption: 'entities.doclib.views.treeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'treeview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/treeviewproductroot',
-                    meta: {
-                        caption: 'entities.doclib.views.treeviewproductroot.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'treeviewproductroot' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/productgridexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.productgridexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'productgridexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/usr3treeview',
-                    meta: {
-                        caption: 'entities.doclib.views.usr3treeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'usr3treeview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/producttreeview',
-                    meta: {
-                        caption: 'entities.doclib.views.producttreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'producttreeview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/customtreeexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.customtreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'customtreeexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/producttreeexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.producttreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'producttreeexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/customdoclibchildtreeview',
-                    meta: {
-                        caption: 'entities.doclib.views.customdoclibchildtreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'customdoclibchildtreeview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/projecttreeexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.projecttreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'projecttreeexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/views/byproducttreeexpview',
-                    meta: {
-                        caption: 'entities.doclib.views.byproducttreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'views', parameterName: 'byproducttreeexpview' },
-                        ],
-                        resource:'doclib',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'companystats/:companystats?/views/companydynamicstatsgridview',
                     meta: {
                         caption: 'entities.companystats.views.companydynamicstatsgridview.caption',
@@ -20711,331 +23877,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'ibizprokeyword',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/gridview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/gridview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/usr2gridview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.usr2gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/usr2gridview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.usr2gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.pickupgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/pickupgridview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.pickupgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editviewmain',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.editviewmain.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'editviewmain' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/editviewmain',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.editviewmain.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'editviewmain' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/redirectview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.redirectview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'redirectview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview2',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.editview2.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'editview2' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/editview2',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.editview2.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'editview2' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/pickupview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.pickupview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/pickupview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.pickupview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/editview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/editview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/mpickupview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.mpickupview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'mpickupview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/mpickupview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.mpickupview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'mpickupview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/childweihuitreeexpview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.childweihuitreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'childweihuitreeexpview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/childweihuitreeexpview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.childweihuitreeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'childweihuitreeexpview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/doclibmodules/:doclibmodule?/views/treeexpview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.treeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'doclibmodule',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'doclibmodules/:doclibmodule?/views/treeexpview',
-                    meta: {
-                        caption: 'entities.doclibmodule.views.treeexpview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibmodules', parameterName: 'doclibmodule' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'doclibmodule',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -21937,657 +24778,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'infoeditview' },
                         ],
                         resource:'sysupdatelog',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/basiceditview9',
-                    meta: {
-                        caption: 'entities.doc.views.basiceditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'basiceditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/basiceditview9',
-                    meta: {
-                        caption: 'entities.doc.views.basiceditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'basiceditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/myfavouritegridview',
-                    meta: {
-                        caption: 'entities.doc.views.myfavouritegridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'myfavouritegridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/myfavouritegridview',
-                    meta: {
-                        caption: 'entities.doc.views.myfavouritegridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'myfavouritegridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/myfavouritepartgridview',
-                    meta: {
-                        caption: 'entities.doc.views.myfavouritepartgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'myfavouritepartgridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/myfavouritepartgridview',
-                    meta: {
-                        caption: 'entities.doc.views.myfavouritepartgridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'myfavouritepartgridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/recentmoregridview',
-                    meta: {
-                        caption: 'entities.doc.views.recentmoregridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'recentmoregridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/recentmoregridview',
-                    meta: {
-                        caption: 'entities.doc.views.recentmoregridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'recentmoregridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/modulegridview',
-                    meta: {
-                        caption: 'entities.doc.views.modulegridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'modulegridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/modulegridview',
-                    meta: {
-                        caption: 'entities.doc.views.modulegridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'modulegridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/gridview',
-                    meta: {
-                        caption: 'entities.doc.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/gridview',
-                    meta: {
-                        caption: 'entities.doc.views.gridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/docmodulegridview',
-                    meta: {
-                        caption: 'entities.doc.views.docmodulegridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'docmodulegridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/docmodulegridview',
-                    meta: {
-                        caption: 'entities.doc.views.docmodulegridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'docmodulegridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/mianbeditview9',
-                    meta: {
-                        caption: 'entities.doc.views.mianbeditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'mianbeditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/mianbeditview9',
-                    meta: {
-                        caption: 'entities.doc.views.mianbeditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'mianbeditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/moremyfavouritestreeview',
-                    meta: {
-                        caption: 'entities.doc.views.moremyfavouritestreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'moremyfavouritestreeview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/moremyfavouritestreeview',
-                    meta: {
-                        caption: 'entities.doc.views.moremyfavouritestreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'moremyfavouritestreeview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/gridview10',
-                    meta: {
-                        caption: 'entities.doc.views.gridview10.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridview10' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/gridview10',
-                    meta: {
-                        caption: 'entities.doc.views.gridview10.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridview10' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/keditview9',
-                    meta: {
-                        caption: 'entities.doc.views.keditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'keditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/keditview9',
-                    meta: {
-                        caption: 'entities.doc.views.keditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'keditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/dashboardview',
-                    meta: {
-                        caption: 'entities.doc.views.dashboardview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/dashboardview',
-                    meta: {
-                        caption: 'entities.doc.views.dashboardview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/docsumeditview9',
-                    meta: {
-                        caption: 'entities.doc.views.docsumeditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'docsumeditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/docsumeditview9',
-                    meta: {
-                        caption: 'entities.doc.views.docsumeditview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'docsumeditview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/gridviewlookdoc',
-                    meta: {
-                        caption: 'entities.doc.views.gridviewlookdoc.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridviewlookdoc' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/gridviewlookdoc',
-                    meta: {
-                        caption: 'entities.doc.views.gridviewlookdoc.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridviewlookdoc' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/editview',
-                    meta: {
-                        caption: 'entities.doc.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/editview',
-                    meta: {
-                        caption: 'entities.doc.views.editview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/mymoregridview',
-                    meta: {
-                        caption: 'entities.doc.views.mymoregridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'mymoregridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/mymoregridview',
-                    meta: {
-                        caption: 'entities.doc.views.mymoregridview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'mymoregridview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/gridview9',
-                    meta: {
-                        caption: 'entities.doc.views.gridview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/gridview9',
-                    meta: {
-                        caption: 'entities.doc.views.gridview9.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/docstatuseditview',
-                    meta: {
-                        caption: 'entities.doc.views.docstatuseditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'docstatuseditview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/docstatuseditview',
-                    meta: {
-                        caption: 'entities.doc.views.docstatuseditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'docstatuseditview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/moremydoctreeview',
-                    meta: {
-                        caption: 'entities.doc.views.moremydoctreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'moremydoctreeview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/moremydoctreeview',
-                    meta: {
-                        caption: 'entities.doc.views.moremydoctreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'moremydoctreeview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/createeditview',
-                    meta: {
-                        caption: 'entities.doc.views.createeditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'createeditview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/createeditview',
-                    meta: {
-                        caption: 'entities.doc.views.createeditview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'createeditview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'doclibs/:doclib?/docs/:doc?/views/morerecentupdatetreeview',
-                    meta: {
-                        caption: 'entities.doc.views.morerecentupdatetreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'doclibs', parameterName: 'doclib' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'morerecentupdatetreeview' },
-                        ],
-                        resource:'doc',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'docs/:doc?/views/morerecentupdatetreeview',
-                    meta: {
-                        caption: 'entities.doc.views.morerecentupdatetreeview.caption',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'docs', parameterName: 'doc' },
-                            { pathName: 'views', parameterName: 'morerecentupdatetreeview' },
-                        ],
-                        resource:'doc',
                         requireAuth: true,
                     },
                     component: AppViewShell

@@ -58,6 +58,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('testcase', () => import('../authservice/test-case/test-case-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysaccount', () => import('../authservice/sys-account/sys-account-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('product', () => import('../authservice/product/product-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('file', () => import('../authservice/file/file-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('accounttestcase', () => import('../authservice/account-test-case/account-test-case-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectburn', () => import('../authservice/project-burn/project-burn-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('test', () => import('../authservice/test/test-auth-service'));
@@ -72,9 +73,11 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('project', () => import('../authservice/project/project-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('history', () => import('../authservice/history/history-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('doclib', () => import('../authservice/doc-lib/doc-lib-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productmodule', () => import('../authservice/product-module/product-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productteam', () => import('../authservice/product-team/product-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testmodule', () => import('../authservice/test-module/test-module-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('doclibmodule', () => import('../authservice/doc-lib-module/doc-lib-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productlife', () => import('../authservice/product-life/product-life-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('usercontact', () => import('../authservice/user-contact/user-contact-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('accountbug', () => import('../authservice/account-bug/account-bug-auth-service'));
@@ -87,6 +90,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('projectteam', () => import('../authservice/project-team/project-team-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testtask', () => import('../authservice/test-task/test-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('testreport', () => import('../authservice/test-report/test-report-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('doc', () => import('../authservice/doc/doc-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('accountstory', () => import('../authservice/account-story/account-story-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('bug', () => import('../authservice/bug/bug-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectmodule', () => import('../authservice/project-module/project-module-auth-service'));
@@ -97,7 +101,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('ibzreportroleconfig', () => import('../authservice/ibz-report-role-config/ibz-report-role-config-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzcasestep', () => import('../authservice/ibzcase-step/ibzcase-step-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('taskteam', () => import('../authservice/task-team/task-team-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('file', () => import('../authservice/file/file-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzagent', () => import('../authservice/ibz-agent/ibz-agent-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzprostorymodule', () => import('../authservice/ibzpro-story-module/ibzpro-story-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('productsum', () => import('../authservice/product-sum/product-sum-auth-service'));
@@ -106,7 +109,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('ibzdaily', () => import('../authservice/ibz-daily/ibz-daily-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('suitecase', () => import('../authservice/suite-case/suite-case-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('employeeload', () => import('../authservice/emp-loyeeload/emp-loyeeload-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('doccontent', () => import('../authservice/doc-content/doc-content-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzreport', () => import('../authservice/ibz-report/ibz-report-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibztaskestimate', () => import('../authservice/ibztask-estimate/ibztask-estimate-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('syspost', () => import('../authservice/sys-post/sys-post-auth-service'));
@@ -136,14 +138,12 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('subtask', () => import('../authservice/sub-task/sub-task-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibizproprojectmonthly', () => import('../authservice/ibizpro-project-monthly/ibizpro-project-monthly-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('user', () => import('../authservice/user/user-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('doclib', () => import('../authservice/doc-lib/doc-lib-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('companystats', () => import('../authservice/company-stats/company-stats-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('substory', () => import('../authservice/sub-story/sub-story-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibizproprojectdaily', () => import('../authservice/ibizpro-project-daily/ibizpro-project-daily-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzplantemplet', () => import('../authservice/ibz-plan-templet/ibz-plan-templet-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysuserrole', () => import('../authservice/sys-user-role/sys-user-role-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibizprokeyword', () => import('../authservice/ibizpro-keyword/ibizpro-keyword-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('doclibmodule', () => import('../authservice/doc-lib-module/doc-lib-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibizproproductdaily', () => import('../authservice/ibizpro-product-daily/ibizpro-product-daily-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysrole', () => import('../authservice/sys-role/sys-role-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('plantempletdetail', () => import('../authservice/plan-templet-detail/plan-templet-detail-auth-service'));
@@ -158,7 +158,6 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('ibzmonthly', () => import('../authservice/ibz-monthly/ibz-monthly-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzmyterritory', () => import('../authservice/ibz-my-territory/ibz-my-territory-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('sysupdatelog', () => import('../authservice/sys-update-log/sys-update-log-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('doc', () => import('../authservice/doc/doc-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzweekly', () => import('../authservice/ibzweekly/ibzweekly-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('pssysapp', () => import('../authservice/pssys-app/pssys-app-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzproprojectusertask', () => import('../authservice/ibzpro-project-user-task/ibzpro-project-user-task-auth-service'));

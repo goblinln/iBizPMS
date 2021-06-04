@@ -2117,7 +2117,7 @@
     "nodeType" : "ChildDocLibModule",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchAllDoclibModule"
+      "id" : "FetchAllDir"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -2420,7 +2420,7 @@
     "nodeType" : "docLib",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchByProductNotFiles"
+      "id" : "FetchByProduct"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -2696,7 +2696,7 @@
     "nodeType" : "DocLibModule",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchRootModuleMuLu"
+      "id" : "FetchDir"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
