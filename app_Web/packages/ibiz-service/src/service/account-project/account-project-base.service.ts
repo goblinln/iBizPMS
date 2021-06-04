@@ -185,20 +185,18 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         return this.condCache.get('view');
     }
     /**
-     * Get
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountProjectService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accountproject) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountprojects/${_context.accountproject}`);
-            return res;
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
         }
-        const res = await this.http.get(`/accountprojects/${_context.accountproject}`);
-        return res;
+        return this.http.post(`/accountprojects/fetchmy`, _data);
     }
     /**
      * FetchAccount
@@ -215,17 +213,19 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         return this.http.post(`/accountprojects/fetchaccount`, _data);
     }
     /**
-     * FetchMy
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountProjectService
      */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accountproject) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountprojects/${_context.accountproject}`);
+            return res;
         }
-        return this.http.post(`/accountprojects/fetchmy`, _data);
+        const res = await this.http.get(`/accountprojects/${_context.accountproject}`);
+        return res;
     }
 }

@@ -673,7 +673,7 @@
     "nodeType" : "ContActUser",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchContActList"
+      "id" : "FetchContact"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

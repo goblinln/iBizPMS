@@ -685,8 +685,8 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
             for (UAADEAuthority uaadeAuthority : authorities) {
                 //未设置权限能力范围 拒绝操作
-                if ((StringUtils.isBlank(this.getOrgIdField()) || uaadeAuthority.getEnableorgdr() == null || uaadeAuthority.getEnableorgdr() == 0 || (uaadeAuthority.getEnableorgdr() == 1 && (uaadeAuthority.getOrgdr() == null || uaadeAuthority.getOrgdr() == 0)))
-                        && (StringUtils.isBlank(this.getDeptIdField()) || uaadeAuthority.getEnabledeptdr() != null || uaadeAuthority.getEnabledeptdr() == 0 || (uaadeAuthority.getEnabledeptdr() == 1 && (uaadeAuthority.getDeptdr() == null || uaadeAuthority.getDeptdr() == 0)))
+                if ((StringUtils.isBlank(this.getOrgIdField()) || (StringUtils.isNotBlank(this.getOrgIdField()) && ((uaadeAuthority.getEnableorgdr() == null || uaadeAuthority.getEnableorgdr() == 0) || (uaadeAuthority.getEnableorgdr() == 1 && (uaadeAuthority.getOrgdr() == null || uaadeAuthority.getOrgdr() == 0)))))
+                        && (StringUtils.isBlank(this.getDeptIdField()) || (StringUtils.isNotBlank(this.getDeptIdField()) && ((uaadeAuthority.getEnabledeptdr() == null || uaadeAuthority.getEnabledeptdr() == 0) || (uaadeAuthority.getEnabledeptdr() == 1 && (uaadeAuthority.getDeptdr() == null || uaadeAuthority.getDeptdr() == 0)))))
                         && (StringUtils.isBlank(uaadeAuthority.getBscope()))
                 ) {
                     Consumer<QueryWrapper> denyDataCondition = dataCondition -> {
@@ -763,7 +763,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                 //当前
                 if (StringUtils.isNotBlank(this.getDeptIdField()) && (DataRanges.SECTOR_CURRENT & uaadeAuthority.getDeptdr()) > 0) {
                     Consumer<QueryWrapper> dept = deptQw -> {
-                        deptQw.eq(this.getDeptIdField(), curUser.getOrgid());
+                        deptQw.eq(this.getDeptIdField(), curUser.getDeptid());
                     };
                     authorityCondition.or(dept);
                 }

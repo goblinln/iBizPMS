@@ -132,7 +132,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchContActList"
+          "id" : "FetchContact"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

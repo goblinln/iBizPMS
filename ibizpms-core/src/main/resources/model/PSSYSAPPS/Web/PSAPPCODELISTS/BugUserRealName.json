@@ -13,7 +13,7 @@
   "orMode" : "STR",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchBugUser"
+    "id" : "FetchBug"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

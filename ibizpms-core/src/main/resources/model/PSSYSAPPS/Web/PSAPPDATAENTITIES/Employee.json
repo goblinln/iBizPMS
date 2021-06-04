@@ -125,6 +125,23 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchProduct",
+    "methodType" : "FETCH",
+    "name" : "FetchProductTeamM",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTeamM"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProduct"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -142,39 +159,88 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchBugUser",
+    "codeName" : "FetchProject",
     "methodType" : "FETCH",
-    "name" : "BugUser",
+    "name" : "FetchProjectTeamM",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "BugUser"
+      "id" : "ProjectTeamM"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchContActList",
+    "codeName" : "FetchTask",
     "methodType" : "FETCH",
-    "name" : "ContActList",
+    "name" : "FetchTaskTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskMulti",
+    "methodType" : "FETCH",
+    "name" : "FetchTaskMTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskMTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskMulti"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchContact",
+    "methodType" : "FETCH",
+    "name" : "FetchContActList",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ContActList"
     },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProductTeamM",
-    "methodType" : "FETCH",
-    "name" : "ProductTeamM",
-    "getPSDEDataSet" : {
+    "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ProductTeamM"
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchContact"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProjectTeamM",
+    "codeName" : "FetchBug",
     "methodType" : "FETCH",
-    "name" : "ProjectTeamM",
+    "name" : "FetchBugUser",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "ProjectTeamM"
+      "id" : "BugUser"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchBug"
     },
     "builtinMethod" : false
   }, {
@@ -229,24 +295,6 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "StoryProductTeamPK"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskMTeam",
-    "methodType" : "FETCH",
-    "name" : "TaskMTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskMTeam"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskTeam",
-    "methodType" : "FETCH",
-    "name" : "TASKTEAM",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskTeam"
     },
     "builtinMethod" : false
   } ],
@@ -439,6 +487,23 @@
     "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchProduct",
+    "methodType" : "FETCH",
+    "name" : "FetchProductTeamM",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductTeamM"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProduct"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -470,6 +535,91 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProject",
+    "methodType" : "FETCH",
+    "name" : "FetchProjectTeamM",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTeamM"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTask",
+    "methodType" : "FETCH",
+    "name" : "FetchTaskTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTaskMulti",
+    "methodType" : "FETCH",
+    "name" : "FetchTaskMTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskMTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskMulti"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchContact",
+    "methodType" : "FETCH",
+    "name" : "FetchContActList",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ContActList"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchContact"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBug",
+    "methodType" : "FETCH",
+    "name" : "FetchBugUser",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugUser"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchBug"
     },
     "builtinMethod" : false
   }, {
@@ -549,42 +699,6 @@
     },
     "builtinMethod" : true
   }, {
-    "codeName" : "FetchBugUser",
-    "methodType" : "FETCH",
-    "name" : "BugUser",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BugUser"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchContActList",
-    "methodType" : "FETCH",
-    "name" : "ContActList",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ContActList"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProductTeamM",
-    "methodType" : "FETCH",
-    "name" : "ProductTeamM",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductTeamM"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectTeamM",
-    "methodType" : "FETCH",
-    "name" : "ProjectTeamM",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTeamM"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchProjectTeamMProduct",
     "methodType" : "FETCH",
     "name" : "ProjectTeamMProduct",
@@ -636,24 +750,6 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "StoryProductTeamPK"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskMTeam",
-    "methodType" : "FETCH",
-    "name" : "TaskMTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskMTeam"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTaskTeam",
-    "methodType" : "FETCH",
-    "name" : "TASKTEAM",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskTeam"
     },
     "builtinMethod" : false
   }, {
@@ -733,5 +829,5 @@
   "enableUIModify" : true,
   "enableUIRemove" : true,
   "enableWFActions" : false,
-  "major" : false
+  "major" : true
 }
