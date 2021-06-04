@@ -1,4 +1,5 @@
-import { Vue, Component, Prop, Inject, Watch, Emit } from 'vue-property-decorator';
+import { Util } from 'ibiz-core';
+import { Vue, Component, Prop, Watch, Emit } from 'vue-property-decorator';
 import { AppComponentService } from '../../../app-service/common-service/app-component-service';
 
 /**
@@ -99,7 +100,10 @@ export class AppControlShell extends Vue {
         if (!this.controlComponentName) {
             return;
         }
-        const controlId = `${this.staticProps?.modelData?.getPSAppDataEntity?.()?.codeName + this.staticProps?.modelData?.codeName}control`;
+        const controlId = `${this.staticProps?.modelData?.codeName}` + Util.createUUID();
+        Object.assign(this.staticProps,{
+            controlId: controlId,
+        })
         return this.$createElement(this.controlComponentName, {
             props: { staticProps: this.staticProps, dynamicProps: this.dynamicProps },
             ref: 'ctrl',

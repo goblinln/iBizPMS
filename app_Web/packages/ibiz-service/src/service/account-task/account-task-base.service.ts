@@ -301,20 +301,6 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountTaskService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmy`, _data);
-        }
-        return this.http.post(`/accounttasks/fetchmy`, _data);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -329,6 +315,20 @@ export class AccountTaskBaseService extends EntityBaseService<IAccountTask> {
         }
         const res = await this.http.get(`/accounttasks/${_context.accounttask}`);
         return res;
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountTaskService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttasks/fetchmy`, _data);
+        }
+        return this.http.post(`/accounttasks/fetchmy`, _data);
     }
     /**
      * FetchAccount

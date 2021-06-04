@@ -2745,6 +2745,11 @@
               "name" : "ID",
               "value" : "story",
               "rawValue" : false
+            }, {
+              "key" : "PROJECT",
+              "name" : "PROJECT",
+              "value" : "project",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
               "key" : "id",

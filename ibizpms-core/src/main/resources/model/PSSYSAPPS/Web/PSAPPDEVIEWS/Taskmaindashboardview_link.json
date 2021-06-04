@@ -354,6 +354,14 @@
                   "codeName" : "Story"
                 }
               }, {
+                "id" : "project",
+                "hidden" : true,
+                "dataType" : 1,
+                "getPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                }
+              }, {
                 "id" : "id",
                 "dataType" : 1,
                 "getPSAppDEField" : {
@@ -444,6 +452,35 @@
                     "getPSEditor" : {
                       "editorType" : "HIDDEN",
                       "name" : "story"
+                    },
+                    "getPSLayoutPos" : {
+                      "colMD" : 24,
+                      "layout" : "TABLE_24COL"
+                    },
+                    "allowEmpty" : true,
+                    "emptyCaption" : false,
+                    "hidden" : true,
+                    "inputTipClosable" : false,
+                    "showCaption" : true
+                  }, {
+                    "caption" : "所属项目",
+                    "codeName" : "project",
+                    "dataType" : 1,
+                    "detailStyle" : "DEFAULT",
+                    "detailType" : "FORMITEM",
+                    "enableCond" : 3,
+                    "ignoreInput" : 0,
+                    "labelPos" : "LEFT",
+                    "labelWidth" : 100,
+                    "name" : "project",
+                    "noPrivDisplayMode" : 1,
+                    "getPSAppDEField" : {
+                      "name" : "PROJECT",
+                      "codeName" : "Project"
+                    },
+                    "getPSEditor" : {
+                      "editorType" : "HIDDEN",
+                      "name" : "project"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -1897,6 +1934,11 @@
                         "name" : "ID",
                         "value" : "story",
                         "rawValue" : false
+                      }, {
+                        "key" : "PROJECT",
+                        "name" : "PROJECT",
+                        "value" : "project",
+                        "rawValue" : false
                       } ],
                       "getPSNavigateParams" : [ {
                         "key" : "id",
@@ -1913,6 +1955,7 @@
                         "srfparentdename" : "ZT_TASK",
                         "SRFPARENTTYPE" : "CUSTOM"
                       },
+                      "refreshItems" : "project",
                       "needSave" : false,
                       "refreshItemsSetParamOnly" : false,
                       "showCaption" : true

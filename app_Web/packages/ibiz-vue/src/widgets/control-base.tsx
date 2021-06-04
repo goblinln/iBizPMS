@@ -170,6 +170,13 @@ export class ControlBase extends Vue implements ControlInterface {
     public isControlLoaded: boolean = false;
 
     /**
+     * 部件ID
+     * 
+     * @memberof ControlBase
+     */   
+    public controlId: string = '';
+
+    /**
      * 部件事件抛出方法
      *
      * @param {{ controlname: string; action: string; data: any }} { controlname, action, data }
@@ -370,6 +377,7 @@ export class ControlBase extends Vue implements ControlInterface {
         this.controlInstance = this.staticProps.modelData;
         this.viewState = this.staticProps.viewState;
         this.viewtag = this.staticProps.viewtag;
+        this.controlId = this.staticProps.controlId;
         this.ctrlModelInit().then((res: any) => {
             this.ctrlInit();
             this.controlIsLoaded = true;

@@ -121,23 +121,6 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchRoadMapYear",
-    "methodType" : "FETCH",
-    "name" : "FetchRoadMapYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RoadMapYear"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRoadMapYear"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchRoadmap",
     "methodType" : "FETCH",
     "name" : "FetchGetRoadmap",
@@ -152,6 +135,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRoadmap"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRoadMapYear",
+    "methodType" : "FETCH",
+    "name" : "FetchRoadMapYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RoadMapYear"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRoadMapYear"
     },
     "builtinMethod" : false
   }, {
@@ -260,23 +260,6 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchRoadMapYear",
-    "methodType" : "FETCH",
-    "name" : "FetchRoadMapYear",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RoadMapYear"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchRoadMapYear"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchRoadmap",
     "methodType" : "FETCH",
     "name" : "FetchGetRoadmap",
@@ -291,6 +274,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchRoadmap"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchRoadMapYear",
+    "methodType" : "FETCH",
+    "name" : "FetchRoadMapYear",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RoadMapYear"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchRoadMapYear"
     },
     "builtinMethod" : false
   }, {

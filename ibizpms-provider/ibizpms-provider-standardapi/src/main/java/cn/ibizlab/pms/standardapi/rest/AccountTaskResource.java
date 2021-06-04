@@ -52,18 +52,6 @@ public class AccountTaskResource {
     @Lazy
     public AccountTaskMapping accounttaskMapping;
 
-    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-	@ApiOperation(value = "获取我的数据", tags = {"任务" } ,notes = "获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounttasks/fetchmy")
-	public ResponseEntity<List<AccountTaskDTO>> fetchmy(@RequestBody TaskSearchContext context) {
-        Page<Task> domains = taskService.searchMy(context) ;
-        List<AccountTaskDTO> list = accounttaskMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_TASK', #accounttask_id, 'READ')")
     @ApiOperation(value = "获取任务", tags = {"任务" },  notes = "获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/accounttasks/{accounttask_id}")
@@ -75,6 +63,18 @@ public class AccountTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
+	@ApiOperation(value = "获取我的收藏", tags = {"任务" } ,notes = "获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttasks/fetchmyfavorites")
+	public ResponseEntity<List<AccountTaskDTO>> fetchmyfavorites(@RequestBody TaskSearchContext context) {
+        Page<Task> domains = taskService.searchMyFavorites(context) ;
+        List<AccountTaskDTO> list = accounttaskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
 	@ApiOperation(value = "获取指定用户数据", tags = {"任务" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/accounttasks/fetchaccount")
@@ -88,10 +88,10 @@ public class AccountTaskResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-	@ApiOperation(value = "获取我的收藏", tags = {"任务" } ,notes = "获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/accounttasks/fetchmyfavorites")
-	public ResponseEntity<List<AccountTaskDTO>> fetchmyfavorites(@RequestBody TaskSearchContext context) {
-        Page<Task> domains = taskService.searchMyFavorites(context) ;
+	@ApiOperation(value = "获取我的数据", tags = {"任务" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttasks/fetchmy")
+	public ResponseEntity<List<AccountTaskDTO>> fetchmy(@RequestBody TaskSearchContext context) {
+        Page<Task> domains = taskService.searchMy(context) ;
         List<AccountTaskDTO> list = accounttaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -109,19 +109,6 @@ public class AccountTaskResource {
     }
 
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"任务" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttasks/fetchmy")
-	public ResponseEntity<List<AccountTaskDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
-        
-        Page<Task> domains = taskService.searchMy(context) ;
-        List<AccountTaskDTO> list = accounttaskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
     @ApiOperation(value = "根据系统用户获取任务", tags = {"任务" },  notes = "根据系统用户获取任务")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accounttasks/{accounttask_id}")
     public ResponseEntity<AccountTaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accounttask_id") Long accounttask_id) {
@@ -130,6 +117,19 @@ public class AccountTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
+	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"任务" } ,notes = "根据系统用户获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttasks/fetchmyfavorites")
+	public ResponseEntity<List<AccountTaskDTO>> fetchMyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
+        
+        Page<Task> domains = taskService.searchMyFavorites(context) ;
+        List<AccountTaskDTO> list = accounttaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
 	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"任务" } ,notes = "根据系统用户获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttasks/fetchaccount")
@@ -144,11 +144,11 @@ public class AccountTaskResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"任务" } ,notes = "根据系统用户获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttasks/fetchmyfavorites")
-	public ResponseEntity<List<AccountTaskDTO>> fetchMyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"任务" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttasks/fetchmy")
+	public ResponseEntity<List<AccountTaskDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
         
-        Page<Task> domains = taskService.searchMyFavorites(context) ;
+        Page<Task> domains = taskService.searchMy(context) ;
         List<AccountTaskDTO> list = accounttaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
