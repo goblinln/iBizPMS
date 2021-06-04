@@ -1164,7 +1164,117 @@
                                       "enableFilter" : false,
                                       "showCaptionBar" : false,
                                       "modelid" : "d940bfd96f6087050755b99a3b6bab0a",
-                                      "modeltype" : "PSAPPDEVIEW"
+                                      "modeltype" : "PSAPPDEVIEW",
+                                      "getPSAppDERSPaths" : [ [ {
+                                        "actionRSMode" : 1,
+                                        "codeName" : "Stories",
+                                        "dataRSMode" : 0,
+                                        "getMajorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                                        },
+                                        "getMinorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                                        },
+                                        "name" : "PROJECT__STORY",
+                                        "rSMode" : 2,
+                                        "enableCreateDataRS" : false,
+                                        "enableDEAction" : true,
+                                        "enableDEDataSet" : true,
+                                        "enableGetDataRS" : false,
+                                        "enableSelect" : true,
+                                        "enableSelectDataRS" : false,
+                                        "enableUpdateDataRS" : false
+                                      }, {
+                                        "actionRSMode" : 1,
+                                        "codeName" : "Files",
+                                        "dataRSMode" : 0,
+                                        "getMajorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                                        },
+                                        "getMinorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+                                        },
+                                        "name" : "STORY__FILE",
+                                        "rSMode" : 2,
+                                        "enableCreateDataRS" : false,
+                                        "enableDEAction" : true,
+                                        "enableDEDataSet" : true,
+                                        "enableGetDataRS" : false,
+                                        "enableSelect" : true,
+                                        "enableSelectDataRS" : false,
+                                        "enableUpdateDataRS" : false
+                                      } ], [ {
+                                        "actionRSMode" : 1,
+                                        "codeName" : "Stories",
+                                        "dataRSMode" : 0,
+                                        "getMajorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                                        },
+                                        "getMinorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                                        },
+                                        "name" : "PRODUCT__PRODUCT_STORY",
+                                        "getParentPSAppDEField" : {
+                                          "name" : "PRODUCT",
+                                          "codeName" : "Product"
+                                        },
+                                        "rSMode" : 2,
+                                        "enableCreateDataRS" : false,
+                                        "enableDEAction" : true,
+                                        "enableDEDataSet" : true,
+                                        "enableGetDataRS" : false,
+                                        "enableSelect" : true,
+                                        "enableSelectDataRS" : false,
+                                        "enableUpdateDataRS" : false
+                                      }, {
+                                        "actionRSMode" : 1,
+                                        "codeName" : "Files",
+                                        "dataRSMode" : 0,
+                                        "getMajorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                                        },
+                                        "getMinorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+                                        },
+                                        "name" : "STORY__FILE",
+                                        "rSMode" : 2,
+                                        "enableCreateDataRS" : false,
+                                        "enableDEAction" : true,
+                                        "enableDEDataSet" : true,
+                                        "enableGetDataRS" : false,
+                                        "enableSelect" : true,
+                                        "enableSelectDataRS" : false,
+                                        "enableUpdateDataRS" : false
+                                      } ], [ {
+                                        "actionRSMode" : 1,
+                                        "codeName" : "Files",
+                                        "dataRSMode" : 0,
+                                        "getMajorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                                        },
+                                        "getMinorPSAppDataEntity" : {
+                                          "modelref" : true,
+                                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+                                        },
+                                        "name" : "PRODUCT__FILE",
+                                        "rSMode" : 2,
+                                        "enableCreateDataRS" : false,
+                                        "enableDEAction" : true,
+                                        "enableDEDataSet" : true,
+                                        "enableGetDataRS" : false,
+                                        "enableSelect" : true,
+                                        "enableSelectDataRS" : false,
+                                        "enableUpdateDataRS" : false
+                                      } ] ]
                                     },
                                     "getPSLayoutPos" : {
                                       "colMD" : 24,
@@ -2215,7 +2325,117 @@
                       "enableFilter" : false,
                       "showCaptionBar" : false,
                       "modelid" : "d940bfd96f6087050755b99a3b6bab0a",
-                      "modeltype" : "PSAPPDEVIEW"
+                      "modeltype" : "PSAPPDEVIEW",
+                      "getPSAppDERSPaths" : [ [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "Stories",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                        },
+                        "name" : "PROJECT__STORY",
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      }, {
+                        "actionRSMode" : 1,
+                        "codeName" : "Files",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+                        },
+                        "name" : "STORY__FILE",
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ], [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "Stories",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                        },
+                        "name" : "PRODUCT__PRODUCT_STORY",
+                        "getParentPSAppDEField" : {
+                          "name" : "PRODUCT",
+                          "codeName" : "Product"
+                        },
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      }, {
+                        "actionRSMode" : 1,
+                        "codeName" : "Files",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+                        },
+                        "name" : "STORY__FILE",
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ], [ {
+                        "actionRSMode" : 1,
+                        "codeName" : "Files",
+                        "dataRSMode" : 0,
+                        "getMajorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+                        },
+                        "getMinorPSAppDataEntity" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+                        },
+                        "name" : "PRODUCT__FILE",
+                        "rSMode" : 2,
+                        "enableCreateDataRS" : false,
+                        "enableDEAction" : true,
+                        "enableDEDataSet" : true,
+                        "enableGetDataRS" : false,
+                        "enableSelect" : true,
+                        "enableSelectDataRS" : false,
+                        "enableUpdateDataRS" : false
+                      } ] ]
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,

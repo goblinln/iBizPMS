@@ -3244,6 +3244,25 @@
     "removeActionType" : 0,
     "removeOrder" : -1,
     "typeValue" : "testtask"
+  }, {
+    "codeName" : "testtask",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTTASK.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_TESTTASK",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "testtask"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ZTBuild",

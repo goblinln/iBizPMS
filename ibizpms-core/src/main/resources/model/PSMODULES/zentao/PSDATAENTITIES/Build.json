@@ -2566,6 +2566,25 @@
     "removeActionType" : 0,
     "removeOrder" : -1,
     "typeValue" : "Build"
+  }, {
+    "codeName" : "build",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_BUILD.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_BUILD",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "build"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ZTBranch",

@@ -3849,6 +3849,12 @@
      "code_name":"Bug",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_BUG"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_BUG",
+     "relation_type":"DERCUSTOM",
+     "code_name":"bug",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_BUG"
     }
     ],
     "parentEntitys":[
@@ -5057,6 +5063,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"Build",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_BUILD"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_BUILD",
+     "relation_type":"DERCUSTOM",
+     "code_name":"build",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_BUILD"
     }
     ],
@@ -6335,6 +6347,12 @@
      "code_name":"Case",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_CASE"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_CASE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"case",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_CASE"
     }
     ],
     "parentEntitys":[
@@ -6882,6 +6900,12 @@
      "relation_type":"DER1N",
      "code_name":"IBizParent",
      "entity_name":"ZT_CASESTEP",
+     "ref_entity_name":"ZT_CASESTEP"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_CASESTEP",
+     "relation_type":"DERCUSTOM",
+     "code_name":"stepresult",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_CASESTEP"
     }
     ],
@@ -8617,6 +8641,12 @@
      "code_name":"Doc",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_DOC"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_DOC",
+     "relation_type":"DERCUSTOM",
+     "code_name":"doc",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_DOC"
     }
     ],
     "parentEntitys":[
@@ -9342,6 +9372,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"doclib",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_DOCLIB"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_DOCLIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"doclib",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_DOCLIB"
     }
     ],
@@ -11086,6 +11122,7 @@
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":30,
+    "predefined":"PARENTTYPE",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -11272,6 +11309,138 @@
     }
     ],
     "parentEntitys":[
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_DAILY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"daily",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"IBZ_DAILY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_LIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"caselib",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"IBZ_LIB"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_MONTHLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"monthly",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"IBZ_MONTHLY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_REPORTLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"reportly",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"IBZ_REPORTLY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_WEEKLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"weekly",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"IBZ_WEEKLY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_BUG",
+     "relation_type":"DERCUSTOM",
+     "code_name":"bug",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_BUG"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_BUILD",
+     "relation_type":"DERCUSTOM",
+     "code_name":"build",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_BUILD"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_CASE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"case",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_CASE"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_CASESTEP",
+     "relation_type":"DERCUSTOM",
+     "code_name":"stepresult",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_CASESTEP"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_DOC",
+     "relation_type":"DERCUSTOM",
+     "code_name":"doc",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_DOC"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_DOCLIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"doclib",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_DOCLIB"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"product",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_PRODUCT"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_PRODUCTPLAN",
+     "relation_type":"DERCUSTOM",
+     "code_name":"productplan",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_PRODUCTPLAN"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"project",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_RELEASE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"release",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_RELEASE"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_STORY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"story",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_STORY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"task",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TASK"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTREPORT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"testreport",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TESTREPORT"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTRESULT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"caseresult",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TESTRESULT"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTSUITE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"testsuite",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TESTSUITE"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTTASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"testtask",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TESTTASK"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TODO",
+     "relation_type":"DERCUSTOM",
+     "code_name":"todo",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TODO"
+    }
     ]
  }
     ,
@@ -16831,6 +17000,12 @@
      "code_name":"Daily",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"IBZ_DAILY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_DAILY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"daily",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"IBZ_DAILY"
     }
     ],
     "parentEntitys":[
@@ -17160,6 +17335,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"IbzLib",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_LIB"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_LIB",
+     "relation_type":"DERCUSTOM",
+     "code_name":"caselib",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"IBZ_LIB"
     }
     ],
@@ -18151,6 +18332,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"Monthly",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_MONTHLY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_MONTHLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"monthly",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"IBZ_MONTHLY"
     }
     ],
@@ -21186,6 +21373,12 @@
      "code_name":"Reportly",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"IBZ_REPORTLY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_REPORTLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"reportly",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"IBZ_REPORTLY"
     }
     ],
     "parentEntitys":[
@@ -21708,6 +21901,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"Weekly",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"IBZ_WEEKLY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_IBZ_WEEKLY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"weekly",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"IBZ_WEEKLY"
     }
     ],
@@ -33893,6 +34092,12 @@
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_PRODUCT"
     },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_PRODUCT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"product",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_PRODUCT"
+    },
     {"name":"DERCUSTOM_ZT_PROJECT_ZT_PRODUCT",
      "relation_type":"DERCUSTOM",
      "code_name":"Product",
@@ -35285,6 +35490,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"ProductPlan",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PRODUCTPLAN"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_PRODUCTPLAN",
+     "relation_type":"DERCUSTOM",
+     "code_name":"productplan",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_PRODUCTPLAN"
     }
     ],
@@ -37779,6 +37990,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"Project",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_PROJECT"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_PROJECT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"project",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_PROJECT"
     },
     {"name":"DERCUSTOM_ZT_PRODUCTPLAN_ZT_PROJECT",
@@ -42536,6 +42753,12 @@
      "code_name":"Release",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_RELEASE"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_RELEASE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"release",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_RELEASE"
     }
     ],
     "parentEntitys":[
@@ -44531,6 +44754,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"Story",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_STORY"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_STORY",
+     "relation_type":"DERCUSTOM",
+     "code_name":"story",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_STORY"
     }
     ],
@@ -49593,6 +49822,12 @@
      "code_name":"Task",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_TASK"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"task",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TASK"
     }
     ],
     "parentEntitys":[
@@ -50979,7 +51214,7 @@
     "field_logic_name":"用户",
     "entity_name":"IBZ_TASKTEAM",
     "field_type":"TEXT",
-    "dict":"UserRealNameProject",
+    "dict":"UserRealName",
     "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",
@@ -52382,6 +52617,12 @@
      "code_name":"TestReport",
      "entity_name":"ZT_ACTION",
      "ref_entity_name":"ZT_TESTREPORT"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTREPORT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"testreport",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TESTREPORT"
     }
     ],
     "parentEntitys":[
@@ -52821,6 +53062,12 @@
     }
     ],
     "subEntitys":[
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTRESULT",
+     "relation_type":"DERCUSTOM",
+     "code_name":"caseresult",
+     "entity_name":"ZT_FILE",
+     "ref_entity_name":"ZT_TESTRESULT"
+    }
     ],
     "parentEntitys":[
     {"name":"DER1N_ZT_TESTRESULT_ZT_CASE_CASE",
@@ -53392,6 +53639,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"testsuite",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TESTSUITE"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTSUITE",
+     "relation_type":"DERCUSTOM",
+     "code_name":"testsuite",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_TESTSUITE"
     }
     ],
@@ -53965,6 +54218,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"TestTask",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TESTTASK"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TESTTASK",
+     "relation_type":"DERCUSTOM",
+     "code_name":"testtask",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_TESTTASK"
     }
     ],
@@ -54593,6 +54852,12 @@
      "relation_type":"DERCUSTOM",
      "code_name":"ToDo",
      "entity_name":"ZT_ACTION",
+     "ref_entity_name":"ZT_TODO"
+    },
+    {"name":"DERCUSTOM_ZT_FILE_ZT_TODO",
+     "relation_type":"DERCUSTOM",
+     "code_name":"todo",
+     "entity_name":"ZT_FILE",
      "ref_entity_name":"ZT_TODO"
     }
     ],

@@ -1,0 +1,20 @@
+{
+  "codeName" : "daily",
+  "dERSubType" : "DER1N",
+  "dERType" : "DERCUSTOM",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_DAILY.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+  },
+  "masterRS" : 0,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+  },
+  "name" : "DERCUSTOM_ZT_FILE_IBZ_DAILY",
+  "orderValue" : 100,
+  "removeActionType" : 0,
+  "removeOrder" : -1,
+  "typeValue" : "daily"
+}

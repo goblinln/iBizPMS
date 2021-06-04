@@ -10,9 +10,6 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeamProduct.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
   }, {
     "modelref" : true,
@@ -23,9 +20,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/Burninterval.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/RealNameProjectM.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/MyPlanTask.json"

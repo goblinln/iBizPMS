@@ -124,6 +124,20 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         return this.condCache.get('view');
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserTplService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.usertpl) {
+            return this.http.delete(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * FetchAccount
      *
      * @param {*} [_context={}]
@@ -153,16 +167,17 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Remove
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof UserTplService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && _context.usertpl) {
-            return this.http.delete(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -177,6 +192,23 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
     async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls/fetchmy`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserTplService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usertpls/getdraft`, _data);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -198,38 +230,6 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/sysaccounts/${_context.sysaccount}/usertpls`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserTplService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.usertpl) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usertpls/${_context.usertpl}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserTplService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usertpls/getdraft`, _data);
-            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

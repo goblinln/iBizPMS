@@ -9,7 +9,7 @@
   "orMode" : "STR",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchStoryProductTeamPK"
+    "id" : "FetchProduct"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

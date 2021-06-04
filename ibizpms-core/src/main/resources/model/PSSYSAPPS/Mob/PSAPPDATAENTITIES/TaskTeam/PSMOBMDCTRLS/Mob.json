@@ -36,7 +36,7 @@
     "dataType" : 25,
     "getFrontPSCodeList" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameProject.json"
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
     },
     "name" : "account"
   }, {

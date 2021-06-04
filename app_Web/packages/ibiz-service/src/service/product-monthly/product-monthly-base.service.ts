@@ -66,6 +66,29 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return new HttpResponse(entity);
     }
     /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productmonthlies/${_context.productmonthly}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -91,41 +114,6 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return res;
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productmonthlies/${_context.productmonthly}`);
-        return res;
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productmonthlies/${_context.productmonthly}`, _data);
-    }
-    /**
-     * AutoCreate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -142,6 +130,18 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
             delete _data.srffrontuf;
         }
         return this.http.post(`/productmonthlies`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/productmonthlies/${_context.productmonthly}`);
+        return res;
     }
 
     /**

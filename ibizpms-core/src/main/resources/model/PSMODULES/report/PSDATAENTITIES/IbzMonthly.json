@@ -1640,6 +1640,25 @@
     "removeActionType" : 0,
     "removeOrder" : -1,
     "typeValue" : "monthly"
+  }, {
+    "codeName" : "monthly",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_MONTHLY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_IBZ_MONTHLY",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "monthly"
   } ],
   "name" : "IBZ_MONTHLY",
   "saaSDCIdColumnName" : "SRFDCID",

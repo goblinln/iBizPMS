@@ -651,6 +651,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/File__object_type.json"
     },
+    "predefinedType" : "PARENTTYPE",
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -1336,6 +1337,425 @@
     "pickupDEFName" : "FILE",
     "removeActionType" : -1,
     "removeOrder" : 0
+  } ],
+  "getMinorPSDERs" : [ {
+    "codeName" : "daily",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_DAILY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_IBZ_DAILY",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "daily"
+  }, {
+    "codeName" : "caselib",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_LIB.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLib.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_IBZ_LIB",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "caselib"
+  }, {
+    "codeName" : "monthly",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_MONTHLY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_IBZ_MONTHLY",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "monthly"
+  }, {
+    "codeName" : "reportly",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_REPORTLY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_IBZ_REPORTLY",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "reportly"
+  }, {
+    "codeName" : "weekly",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_WEEKLY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_IBZ_WEEKLY",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "weekly"
+  }, {
+    "codeName" : "bug",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_BUG.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_BUG",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "bug"
+  }, {
+    "codeName" : "build",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_BUILD.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_BUILD",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "build"
+  }, {
+    "codeName" : "case",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_CASE.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_CASE",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "case"
+  }, {
+    "codeName" : "stepresult",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_CASESTEP.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_CASESTEP",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "stepresult"
+  }, {
+    "codeName" : "doc",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_DOC.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_DOC",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "doc"
+  }, {
+    "codeName" : "doclib",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_DOCLIB.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_DOCLIB",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "doclib"
+  }, {
+    "codeName" : "product",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PRODUCT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_PRODUCT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "product"
+  }, {
+    "codeName" : "productplan",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PRODUCTPLAN.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_PRODUCTPLAN",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "productplan"
+  }, {
+    "codeName" : "project",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PROJECT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_PROJECT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "project"
+  }, {
+    "codeName" : "release",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_RELEASE.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_RELEASE",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "release"
+  }, {
+    "codeName" : "story",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_STORY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_STORY",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "story"
+  }, {
+    "codeName" : "task",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TASK.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_TASK",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "task"
+  }, {
+    "codeName" : "testreport",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTREPORT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_TESTREPORT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "testreport"
+  }, {
+    "codeName" : "caseresult",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTRESULT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_TESTRESULT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "caseresult"
+  }, {
+    "codeName" : "testsuite",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTSUITE.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_TESTSUITE",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "testsuite"
+  }, {
+    "codeName" : "testtask",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTTASK.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_TESTTASK",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "testtask"
+  }, {
+    "codeName" : "todo",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TODO.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_TODO",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "todo"
   } ],
   "name" : "ZT_FILE",
   "saaSDCIdColumnName" : "SRFDCID",

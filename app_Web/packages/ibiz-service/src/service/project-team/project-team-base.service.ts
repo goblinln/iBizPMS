@@ -135,20 +135,6 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.condCache.get('view');
     }
     /**
-     * FetchCntEst
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -216,17 +202,16 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
+     * FetchCntEst
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
-            return res;
+    async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -241,6 +226,21 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     async FetchSpecifyTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+            const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
+            return res;
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

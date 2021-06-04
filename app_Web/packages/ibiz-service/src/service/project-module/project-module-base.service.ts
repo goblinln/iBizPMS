@@ -157,20 +157,6 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         return this.condCache.get('view');
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule) {
-            return this.http.delete(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -188,17 +174,31 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectModuleService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/fetchdefault`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -224,31 +224,31 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchDefault
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectModuleService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectmodules/fetchdefault`, _data);
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectModuleService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectmodule) {
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
-            return res;
+            return this.http.delete(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

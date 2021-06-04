@@ -53,18 +53,6 @@ public class TestModuleResource {
     public TestModuleMapping testmoduleMapping;
 
 
-    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品建立测试模块", tags = {"测试模块" },  notes = "根据产品建立测试模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testmodules")
-    public ResponseEntity<TestModuleDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
-        TestModule domain = testmoduleMapping.toDomain(testmoduledto);
-        domain.setRoot(product_id);
-		testmoduleService.create(domain);
-        TestModuleDTO dto = testmoduleMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
 
     @PreAuthorize("quickTest('IBZ_TESTMODULE', 'DENY')")
     @ApiOperation(value = "根据产品批量保存测试模块", tags = {"测试模块" },  notes = "根据产品批量保存测试模块")
@@ -76,15 +64,6 @@ public class TestModuleResource {
         }
         testmoduleService.saveBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', #testmodule_id, 'READ')")
-    @ApiOperation(value = "根据产品获取测试模块", tags = {"测试模块" },  notes = "根据产品获取测试模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testmodules/{testmodule_id}")
-    public ResponseEntity<TestModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
-        TestModule domain = testmoduleService.get(testmodule_id);
-        TestModuleDTO dto = testmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', #testmodule_id, 'UPDATE')")
@@ -99,6 +78,27 @@ public class TestModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品建立测试模块", tags = {"测试模块" },  notes = "根据产品建立测试模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testmodules")
+    public ResponseEntity<TestModuleDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestModuleDTO testmoduledto) {
+        TestModule domain = testmoduleMapping.toDomain(testmoduledto);
+        domain.setRoot(product_id);
+		testmoduleService.create(domain);
+        TestModuleDTO dto = testmoduleMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'READ', #testmodule_id, 'READ')")
+    @ApiOperation(value = "根据产品获取测试模块", tags = {"测试模块" },  notes = "根据产品获取测试模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testmodules/{testmodule_id}")
+    public ResponseEntity<TestModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testmodule_id") Long testmodule_id) {
+        TestModule domain = testmoduleService.get(testmodule_id);
+        TestModuleDTO dto = testmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
     @PreAuthorize("test('IBZ_TESTMODULE', 'ZT_PRODUCT', #product_id, 'TESTMODULEMANAGE', #testmodule_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除测试模块", tags = {"测试模块" },  notes = "根据产品删除测试模块")

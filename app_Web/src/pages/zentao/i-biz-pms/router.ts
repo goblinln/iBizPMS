@@ -2268,6 +2268,56 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/stories/:story?/files/:file?/views/productgridview',
+                    meta: {
+                        caption: 'entities.file.views.productgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'productgridview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/files/:file?/views/productgridview',
+                    meta: {
+                        caption: 'entities.file.views.productgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'productgridview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/files/:file?/views/productgridview',
+                    meta: {
+                        caption: 'entities.file.views.productgridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'productgridview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'files/:file?/views/productgridview',
                     meta: {
                         caption: 'entities.file.views.productgridview.caption',
@@ -2281,6 +2331,56 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/files/:file?/views/projectgridviewfile',
+                    meta: {
+                        caption: 'entities.file.views.projectgridviewfile.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'projectgridviewfile' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/files/:file?/views/projectgridviewfile',
+                    meta: {
+                        caption: 'entities.file.views.projectgridviewfile.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'projectgridviewfile' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/files/:file?/views/projectgridviewfile',
+                    meta: {
+                        caption: 'entities.file.views.projectgridviewfile.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'projectgridviewfile' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'files/:file?/views/projectgridviewfile',
@@ -2298,6 +2398,56 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/stories/:story?/files/:file?/views/editview',
+                    meta: {
+                        caption: 'entities.file.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/files/:file?/views/editview',
+                    meta: {
+                        caption: 'entities.file.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/files/:file?/views/editview',
+                    meta: {
+                        caption: 'entities.file.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'files/:file?/views/editview',
                     meta: {
                         caption: 'entities.file.views.editview.caption',
@@ -2311,6 +2461,56 @@ const router = new Router({
                         requireAuth: true,
                     },
                     component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/files/:file?/views/listview9',
+                    meta: {
+                        caption: 'entities.file.views.listview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'listview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/files/:file?/views/listview9',
+                    meta: {
+                        caption: 'entities.file.views.listview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'listview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/files/:file?/views/listview9',
+                    meta: {
+                        caption: 'entities.file.views.listview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'files', parameterName: 'file' },
+                            { pathName: 'views', parameterName: 'listview9' },
+                        ],
+                        resource:'file',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
                     },
                     {
                     path: 'files/:file?/views/listview9',
@@ -37637,6 +37837,14 @@ const router = new Router({
         {
             path: '/500',
             component: () => import('@components/500/500.vue')
+        },
+        {
+            path: '/appsharepage',
+            meta: {
+                caption: '应用分享页',
+                requireAuth: true,
+            },
+            component: () => import('@components/app-share-page/app-share-page.vue')
         },
         {
             path: '*',

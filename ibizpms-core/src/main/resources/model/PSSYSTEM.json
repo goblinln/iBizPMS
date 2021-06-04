@@ -137,9 +137,6 @@
     "path" : "PSMODULES/zentao/PSCODELISTS/Testsuite__type.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeamProduct.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
   }, {
     "modelref" : true,
@@ -168,9 +165,6 @@
   }, {
     "modelref" : true,
     "path" : "PSCODELISTS/CodeList65.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/RealNameProjectM.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/MyPlanTask.json"
@@ -378,9 +372,6 @@
   }, {
     "modelref" : true,
     "path" : "PSCODELISTS/CodeList102.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameTask.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Im_messagestatus__status.json"
@@ -2628,9 +2619,6 @@
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json"
     }, {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeamProduct.json"
-    }, {
-      "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
     }, {
       "modelref" : true,
@@ -2641,9 +2629,6 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/Burninterval.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/RealNameProjectM.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/MyPlanTask.json"
@@ -3079,9 +3064,6 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/User__clientStatus.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameTask.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Im_messagestatus__status.json"

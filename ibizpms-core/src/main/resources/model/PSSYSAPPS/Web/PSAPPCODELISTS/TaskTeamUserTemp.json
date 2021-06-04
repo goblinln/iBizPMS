@@ -12,7 +12,7 @@
   "orMode" : "STR",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchProjectTeamTaskUserTemp"
+    "id" : "FetchTaskMulti"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

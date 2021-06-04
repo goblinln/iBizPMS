@@ -134,7 +134,7 @@ export default class UserRealNameProject {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.employeeService.FetchProjectTeamUser(context, data);
+            const promise: Promise<any> = this.employeeService.FetchProject(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

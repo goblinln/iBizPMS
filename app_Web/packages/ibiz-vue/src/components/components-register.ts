@@ -1,6 +1,7 @@
 // 注册插件
 import Vue from 'vue';
 // 预置组件
+import draggable from "vuedraggable";
 import InputBox from './common/input-box/input-box.vue';
 import AppKeepAlive from './common/app-keep-alive/app-keep-alive.vue'
 import AppLang from './common/app-lang/app-lang.vue'
@@ -113,6 +114,7 @@ import AppCommonMicrocom from './common/app-common-microcom/app-common-microcom.
 import AppCalendarTimeline from './common/app-calendar-timeline/app-calendar-timeline.vue';
 import AppCustomTheme from './common/app-custom-theme/app-custom-theme.vue';
 import AppWFOpinion from './common/app-wf-opinion/app-wf-opinion.vue';
+import { AppDefaultGridColumn } from './common/app-grid-column/app-grid-column';
 
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
@@ -353,6 +355,9 @@ export const ComponentsRegister = {
         v.component('text-file-upload', TextFileUpload);
         v.component('app-custom-theme', AppCustomTheme);
         v.component('app-wf-opinion', AppWFOpinion);
+        v.component('app-grid-column', AppDefaultGridColumn);
+        v.component('draggable',draggable);
+
         // 视图组件
         v.component('app-view-shell', AppViewShell);
         v.component('app-default-indexview', AppDefaultIndexView);

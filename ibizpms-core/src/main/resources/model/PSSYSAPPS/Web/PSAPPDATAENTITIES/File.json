@@ -31,6 +31,25 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -56,22 +75,6 @@
       "id" : "UPDATE"
     },
     "builtinMethod" : true
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : true,
-    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -140,6 +143,57 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchProject",
+    "methodType" : "FETCH",
+    "name" : "FetchDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProduct",
+    "methodType" : "FETCH",
+    "name" : "FetchProductDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductDocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchType",
+    "methodType" : "FETCH",
+    "name" : "FetchType",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Type"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchType"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "DEFAULT",
@@ -149,39 +203,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchDocLibFile",
-    "methodType" : "FETCH",
-    "name" : "DocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibFile"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchMySubmitFile",
     "methodType" : "FETCH",
     "name" : "MySubmitFile",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MySubmitFile"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProductDocLibFile",
-    "methodType" : "FETCH",
-    "name" : "ProductDocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductDocLibFile"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchType",
-    "methodType" : "FETCH",
-    "name" : "Type",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Type"
     },
     "builtinMethod" : false
   }, {
@@ -314,6 +341,76 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "FetchProject",
+    "methodType" : "FETCH",
+    "name" : "FetchDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProduct",
+    "methodType" : "FETCH",
+    "name" : "FetchProductDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductDocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchType",
+    "methodType" : "FETCH",
+    "name" : "FetchType",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Type"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchType"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -339,22 +436,6 @@
       "id" : "UPDATE"
     },
     "builtinMethod" : true
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "userCat" : "CAT1",
-    "builtinMethod" : true,
-    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -431,39 +512,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchDocLibFile",
-    "methodType" : "FETCH",
-    "name" : "DocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibFile"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchMySubmitFile",
     "methodType" : "FETCH",
     "name" : "MySubmitFile",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MySubmitFile"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProductDocLibFile",
-    "methodType" : "FETCH",
-    "name" : "ProductDocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductDocLibFile"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchType",
-    "methodType" : "FETCH",
-    "name" : "Type",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Type"
     },
     "builtinMethod" : false
   }, {
@@ -640,6 +694,49 @@
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json",
   "enableUIActions" : 15,
   "logicName" : "附件",
+  "getMinorPSAppDERSs" : [ {
+    "actionRSMode" : 1,
+    "codeName" : "Files",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+    },
+    "name" : "PRODUCT__FILE",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  }, {
+    "actionRSMode" : 1,
+    "codeName" : "Files",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
+    },
+    "name" : "STORY__FILE",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ],
   "name" : "ZT_FILE",
   "getPSDEName" : "ZT_FILE",
   "getPSDEServiceAPI" : {

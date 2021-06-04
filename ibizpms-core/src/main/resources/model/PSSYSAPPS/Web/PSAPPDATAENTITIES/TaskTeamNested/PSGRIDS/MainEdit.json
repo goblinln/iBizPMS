@@ -74,7 +74,7 @@
     "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameTask.json"
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
     },
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
@@ -358,7 +358,7 @@
       "name" : "account",
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameTask.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
       },
       "getPSNavigateContexts" : [ {
         "key" : "PROJECT",

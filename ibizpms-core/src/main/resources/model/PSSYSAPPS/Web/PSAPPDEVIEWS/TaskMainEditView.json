@@ -3155,6 +3155,7 @@
                 "SRFNAVCTX.multiple" : "%multiple%",
                 "SRFNAVPARAM.srfsessionkey" : "%srfsessionkey%",
                 "SRFNAVPARAM.multiple" : "%multiple%",
+                "SRFNAVPARAM.type" : "projectteamtaskusertemp",
                 "SRFNAVPARAM.project" : "%project%",
                 "SRFNAVCTX.srfsessionkey" : "%srfsessionkey%"
               },
@@ -3190,6 +3191,11 @@
                 "name" : "srfsessionkey",
                 "value" : "srfsessionkey",
                 "rawValue" : false
+              }, {
+                "key" : "type",
+                "name" : "type",
+                "value" : "projectteamtaskusertemp",
+                "rawValue" : true
               }, {
                 "key" : "multiple",
                 "name" : "multiple",
@@ -3564,7 +3570,7 @@
                     "noPrivDisplayMode" : 1,
                     "getPSAppCodeList" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameTask.json"
+                      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
                     },
                     "getPSAppDEField" : {
                       "name" : "ACCOUNT",
@@ -3848,7 +3854,7 @@
                       "name" : "account",
                       "getPSAppCodeList" : {
                         "modelref" : true,
-                        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameTask.json"
+                        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProject.json"
                       },
                       "getPSNavigateContexts" : [ {
                         "key" : "PROJECT",

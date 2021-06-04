@@ -38,7 +38,20 @@
             border-top-left-radius: 0px;
             margin: 4px 0px 0px -1px;
             height: 28px;
-            color: #999999;
+            background: var(--button-background-color);
+            color: var(--button-font-color);
+            border-color: var(--button-font-color-light);
+            &:hover {
+              background: var(--button-background-color-bright);
+              color: var(--button-font-color-bright);
+              border-color: var(--button-font-color-bright);
+            }
+            &:disabled, &:disabled:hover {
+              background: var(--button-background-color-light);
+              color: var(--button-font-color-light);
+              border-color: var(--button-font-color-light);
+              cursor: no-drop;
+            }
             .ivu-icon{
               font-size: 14px;
             }

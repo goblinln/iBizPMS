@@ -31,6 +31,38 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "batchActionMode" : 2,
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -48,21 +80,6 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -77,23 +94,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -340,6 +340,38 @@
     "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
+    "batchActionMode" : 2,
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -357,21 +389,6 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -386,23 +403,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
     },
     "builtinMethod" : false
   }, {

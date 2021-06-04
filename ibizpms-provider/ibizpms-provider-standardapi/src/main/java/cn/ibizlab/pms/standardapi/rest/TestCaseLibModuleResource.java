@@ -76,20 +76,21 @@ public class TestCaseLibModuleResource {
     }
 
 
-    @PreAuthorize("quickTest('IBZ_LIBMODULE','READ')")
-	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/testcaselibmodules/fetchdefault")
-	public ResponseEntity<List<TestCaseLibModuleDTO>> fetchDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibModuleSearchContext context) {
-        context.setN_root_eq(ibzlib_id);
-        ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
-        List<TestCaseLibModuleDTO> list = testcaselibmoduleMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'UPDATE')")
+    @ApiOperation(value = "根据用例库更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库更新用例库模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
+    public ResponseEntity<TestCaseLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id, @RequestBody TestCaseLibModuleDTO testcaselibmoduledto) {
+        IbzLibModule domain = testcaselibmoduleMapping.toDomain(testcaselibmoduledto);
+        domain.setRoot(ibzlib_id);
+        domain.setId(testcaselibmodule_id);
+		ibzlibmoduleService.update(domain);
+        if(!ibzlibmoduleRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
+        TestCaseLibModuleDTO dto = testcaselibmoduleMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
 
     @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
     @ApiOperation(value = "根据用例库批量保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量保存用例库模块")
@@ -112,21 +113,6 @@ public class TestCaseLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'UPDATE')")
-    @ApiOperation(value = "根据用例库更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库更新用例库模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
-    public ResponseEntity<TestCaseLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id, @RequestBody TestCaseLibModuleDTO testcaselibmoduledto) {
-        IbzLibModule domain = testcaselibmoduleMapping.toDomain(testcaselibmoduledto);
-        domain.setRoot(ibzlib_id);
-        domain.setId(testcaselibmodule_id);
-		ibzlibmoduleService.update(domain);
-        if(!ibzlibmoduleRuntime.test(domain.getId(),"UPDATE"))
-            throw new RuntimeException("无权限操作");
-        TestCaseLibModuleDTO dto = testcaselibmoduleMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'DELETE')")
     @ApiOperation(value = "根据用例库删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
@@ -142,5 +128,19 @@ public class TestCaseLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("quickTest('IBZ_LIBMODULE','READ')")
+	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/testcaselibmodules/fetchdefault")
+	public ResponseEntity<List<TestCaseLibModuleDTO>> fetchDefaultByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody IbzLibModuleSearchContext context) {
+        context.setN_root_eq(ibzlib_id);
+        ibzlibmoduleRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(context) ;
+        List<TestCaseLibModuleDTO> list = testcaselibmoduleMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

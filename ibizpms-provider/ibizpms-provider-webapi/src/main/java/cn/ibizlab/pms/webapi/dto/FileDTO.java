@@ -259,14 +259,6 @@ public class FileDTO extends DTOBase implements Serializable {
     }
 
     /**
-     * 设置 [OBJECTTYPE]
-     */
-    public void setObjecttype(String  objecttype){
-        this.objecttype = objecttype ;
-        this.modify("objecttype",objecttype);
-    }
-
-    /**
      * 设置 [TITLE]
      */
     public void setTitle(String  title){

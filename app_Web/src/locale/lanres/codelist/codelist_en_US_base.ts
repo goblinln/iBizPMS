@@ -1160,16 +1160,10 @@ function getLocaleResourceBase(){
       'RunSQL': {
           "empty": commonLogic.appcommonhandle("",null),
       },
-      'UserRealNameTask': {
-          "empty": commonLogic.appcommonhandle("",null),
-      },
       'CaseQuickpacketMy': {
           "TOME": commonLogic.appcommonhandle("给我的用例",null),
           "ICREATE": commonLogic.appcommonhandle("我建的用例",null),
           "empty": commonLogic.appcommonhandle("",null)
-      },
-      'ProjectTeamProduct': {
-          "empty": commonLogic.appcommonhandle("",null),
       },
       'TaskTeamUserTemp': {
           "empty": commonLogic.appcommonhandle("",null),

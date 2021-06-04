@@ -57,8 +57,8 @@
             <el-button type="primary" size="small" @click="previewTheme">{{$t('components.apptheme.preview')}}</el-button>
             <el-button type="primary" size="small" @click="saveThemeOptions">{{$t('components.apptheme.save')}}</el-button>
             <el-button type="primary" size="small" @click="reset">{{$t('components.apptheme.reset')}}</el-button>
+            <el-button type="primary" size="small" @click="share">分享</el-button>
         </el-drawer>
-        
     </div>
 </template>
 
@@ -66,7 +66,8 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { appConfig } from '@/config/appConfig';
 import { themeConfig } from '@/config/themeConfig';
-import { AppServiceBase } from 'ibiz-core';
+import { AppServiceBase, textCopy, Util } from 'ibiz-core';
+import qs from 'qs';
 
 @Component({})
 export default class AppCustomTheme extends Vue {
@@ -78,6 +79,22 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     @Prop({ default: 'DEFAULT' }) public viewStyle!: string;
+
+    /**
+     * 系统-应用标识
+     * 
+     * @type {string}
+     * @memberof AppCustomTheme
+     */
+    public AppTag: any;
+
+    /**
+     * 主题配置标识
+     * 
+     * @type {string}
+     * @memberof AppCustomTheme
+     */
+    public themeOptionId: string = '';
 
     /**
      * 主题css变量配置
@@ -166,31 +183,35 @@ export default class AppCustomTheme extends Vue {
      */
     public created() {
         this.store = AppServiceBase.getInstance().getAppStore();
+        this.AppTag = `${this.Environment.SysName}-${this.Environment.AppName}`;
         this.themeTypes = themeConfig.types;
         if (this.themeTypes.length > 0) {
             this.activeSetting = this.themeTypes[0].value;
         }
-        this.initThemeOptions().then((options: any) => {
-            this.selectTheme = this.getSelectTheme();
-            this.initFontFamily(options);
-            const themeOptions = options && options.cssValue ? options.cssValue : localStorage.getItem('theme-options');
-            if (themeOptions !== null && themeOptions !== undefined && themeOptions !== '') {
-                this.themeOptions = JSON.parse(themeOptions);
-                this.previewTheme();
-            } else {
-                this.handleThemeOptions(this.selectTheme).then(() => {
-                    this.previewTheme();
-                });
-            }
-        });
+        if (this.isShare()) {
+            this.getShareThemeOptions(this.themeOptionId).then((options: any) => {
+                if (options) {
+                    this.initThemeOptions(options);
+                    this.saveThemeOptions(true);
+                } else {
+                    this.getUserThemeOption().then((options: any) => {
+                        this.initThemeOptions(options);
+                    });
+                }
+            });
+        } else {
+            this.getUserThemeOption().then((options: any) => {
+                this.initThemeOptions(options);
+            });
+        }
     }
 
     /**
-     * 初始化主题配置
+     * 获取用户主题配置
      * 
      * @memberof AppCustomTheme
      */
-    public async initThemeOptions() {
+    public async getUserThemeOption() {
         try {
             const response = await this.$http.get(`configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`);
             if (response.status && response.status == 200) {
@@ -199,6 +220,44 @@ export default class AppCustomTheme extends Vue {
             return null;
         } catch {
             return null;
+        }
+    }
+
+    /**
+     * 获取分享主题配置
+     * 
+     * @memberof AppCustomTheme
+     */
+    public async getShareThemeOptions(themeOptionId: any) {
+        try {
+            const res = await this.$http.get(`/configs/share/${themeOptionId}`);
+            if (res.status == 200 && res.data && res.data.model) {
+                return res.data.model;
+            } else {
+                return null;
+            }
+        } catch (error: any) {
+            this.$throw('获取分享主题配置失败');
+            return null;
+        }
+    }
+
+    /**
+     * 初始化主题配置
+     * 
+     * @memberof AppCustomTheme
+     */
+    public initThemeOptions(options: any) {
+        this.selectTheme = this.getSelectTheme();
+        this.initFontFamily(options);
+        const themeOptions = options && options.cssValue ? options.cssValue : localStorage.getItem(`${this.AppTag}-theme-options`);
+        if (themeOptions !== null && themeOptions !== undefined && themeOptions !== '') {
+            this.themeOptions = JSON.parse(themeOptions);
+            this.previewTheme();
+        } else {
+            this.handleThemeOptions(this.selectTheme).then(() => {
+                this.previewTheme();
+            });
         }
     }
 
@@ -299,7 +358,7 @@ export default class AppCustomTheme extends Vue {
                 this.store.commit('setCurrentSelectFont', this.selectFont);
             }
         }
-        localStorage.setItem('theme-options', JSON.stringify(this.themeOptions));
+        localStorage.setItem(`${this.AppTag}-theme-options`, JSON.stringify(this.themeOptions));
     }
 
     /**
@@ -340,7 +399,7 @@ export default class AppCustomTheme extends Vue {
      */
     public drawerOpen() {
         this.selectTheme = this.getSelectTheme();
-        const themeOptions = localStorage.getItem('theme-options');
+        const themeOptions = localStorage.getItem(`${this.AppTag}-theme-options`);
         if (themeOptions) {
             this.themeOptions = JSON.parse(themeOptions);
         } else {
@@ -353,13 +412,14 @@ export default class AppCustomTheme extends Vue {
      * 
      * @memberof AppCustomTheme
      */
-    public saveThemeOptions() {
+    public saveThemeOptions(isShare: boolean = false) {
         if (this.themeOptions) {
-            this.$http.put(`/configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`, 
+            this.$http.put(`/configs/${this.AppTag}/theme-setting`, 
                 { model: { cssValue: JSON.stringify(this.themeOptions), fontFamily: this.selectFont } }).then((res: any) => {
                 if (res) {
                     const _this: any = this;
-                    _this.$success(this.$t('components.apptheme.success'),'saveThemeOptions');
+                    const message = isShare ? '已应用分享主题' : this.$t('components.apptheme.success');
+                    _this.$success(message,'saveThemeOptions');
                     this.previewTheme();
                 }
             });
@@ -374,11 +434,115 @@ export default class AppCustomTheme extends Vue {
     public reset() {
         if (this.selectTheme) {
             this.handleThemeOptions(this.selectTheme).then(() => {
-                this.$http.put(`/configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`, { }).then((res: any) => {
+                this.$http.put(`/configs/${this.AppTag}/theme-setting`, { }).then((res: any) => {
                     this.previewTheme();
                 });
             })
         }
+    }
+
+    /**
+     * 分享主题
+     * 
+     * @memberof AppCustomTheme
+     */
+    public share() {
+        try {
+            this.$http.get(`/configs/share/${this.AppTag}/theme-setting`).then((res: any) => {
+                if (res.status == 200 && res.data) {
+                    const shareUrl = this.generateShareUrl(res.data);
+                    const _this: any = this;
+                    const h = this.$createElement('el-input', {
+                        props: {
+                            value: shareUrl,
+                            disabled: true,
+                            size: 'small'
+                        }
+                    })
+                    _this.$alert(h, '已创建分享链接', {
+                        confirmButtonText: '复制',
+                        customClass: 'share-theme-box',
+                        callback: (action: any) => {
+                            _this.copyShareUrl(action, shareUrl);
+                        }
+                    })
+                } else {
+                    this.$throw('生成分享链接失败');
+                }
+            })
+        } catch(error: any) {
+            this.$throw('生成分享链接失败');
+        }
+    }
+
+    /**
+     * 生成分享链接
+     * 
+     * @memberof AppCustomTheme
+     */
+    public generateShareUrl(themeOptionId: any) {
+        const href: string = window.location.href;
+        const baseStr = window.btoa(`applyThemeOption=true&themeOptionId=${themeOptionId}`);
+        const param = `#/appsharepage?theme=${baseStr}`;
+        return href.replace(/#\/\S*/, param);
+    }
+
+    /**
+     * 拷贝分享链接
+     * 
+     * @memberof AppCustomTheme
+     */
+    public copyShareUrl(action: string, shareUrl: any) {
+        if (action == 'cancel') {
+            return;
+        }
+        textCopy.copy(shareUrl);
+        this.$success('复制分享链接成功', 'saveShareThemeUrlSuccess');
+    }
+
+    /**
+     * 处理链接参数
+     * 
+     * @memberof AppCustomTheme
+     */
+    public parseViewParam(urlStr: string): any {
+        let tempViewParam: any = {};
+        const tempViewparam: any = urlStr.slice(urlStr.lastIndexOf('?') + 1);
+        const viewparamArray: Array<string> = decodeURIComponent(tempViewparam).split(';');
+        if (viewparamArray.length > 0) {
+            viewparamArray.forEach((item: any) => {
+                Object.assign(tempViewParam, qs.parse(item));
+            });
+        }
+        return tempViewParam;
+    }
+
+    /**
+     * 是否是分享链接打开
+     * 
+     * @memberof AppCustomTheme
+     */
+    public isShare(): boolean {
+        const urlParams = this.parseViewParam(window.location.href);
+        if (Object.keys(urlParams).length == 0) {
+            return false;
+        }
+        if (urlParams.hasOwnProperty('theme') && urlParams['theme']) {
+            try {
+                const tempParam: any = this.parseViewParam(window.atob(urlParams['theme']));
+                if (tempParam.hasOwnProperty('applyThemeOption')
+                    && tempParam['applyThemeOption'] == 'true'
+                    && tempParam.hasOwnProperty('themeOptionId')
+                    && tempParam['themeOptionId'] != ''
+                    && tempParam['themeOptionId'] != null) {
+                        this.themeOptionId = tempParam['themeOptionId'];
+                        return true;
+                }
+            } catch (error: any) {
+                return false;
+            }
+        }
+        return false;
     }
 
     /**
@@ -387,7 +551,7 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     public destroyed() {
-        localStorage.removeItem('theme-options');
+        localStorage.removeItem(`${this.AppTag}-theme-options`);
     }
 
 }

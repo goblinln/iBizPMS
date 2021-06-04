@@ -13229,6 +13229,25 @@
     "removeActionType" : 0,
     "removeOrder" : -1,
     "typeValue" : "story"
+  }, {
+    "codeName" : "story",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_STORY.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_STORY",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "story"
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "IBZProductModule",

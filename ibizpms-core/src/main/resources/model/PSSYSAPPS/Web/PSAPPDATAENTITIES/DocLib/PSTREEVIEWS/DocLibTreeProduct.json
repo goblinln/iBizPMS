@@ -2973,7 +2973,7 @@
     "nodeType" : "File",
     "getPSAppDEDataSet" : {
       "modelref" : true,
-      "id" : "FetchProductDocLibFile"
+      "id" : "FetchProduct"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

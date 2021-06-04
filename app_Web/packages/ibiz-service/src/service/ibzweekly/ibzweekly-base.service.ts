@@ -66,16 +66,15 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return new HttpResponse(entity);
     }
     /**
-     * Update
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZWEEKLYService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzweeklies/${_context.ibzweekly}`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/fetchdefault`, _data);
     }
     /**
      * AutoCreate
@@ -87,17 +86,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/autocreate`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/fetchdefault`, _data);
     }
     /**
      * GetDraft
@@ -124,6 +112,29 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}`);
         return res;
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzweeklies/${_context.ibzweekly}`, _data);
+    }
+    /**
+     * Read
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/read`, _data);
     }
     /**
      * Create
@@ -165,17 +176,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/notice`, _data);
     }
-    /**
-     * Read
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/read`, _data);
-    }
 
     /**
      * AutoCreateBatch接口方法
@@ -189,6 +189,20 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzweeklies/autocreatebatch`,_data);
+    }
+
+    /**
+     * ReadBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZWEEKLYServiceBase
+     */
+    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzweeklies/readbatch`,_data);
     }
 
     /**
@@ -217,19 +231,5 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     public async NoticeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzweeklies/noticebatch`,_data);
-    }
-
-    /**
-     * ReadBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/readbatch`,_data);
     }
 }

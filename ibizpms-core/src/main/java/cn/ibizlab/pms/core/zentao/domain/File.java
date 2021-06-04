@@ -108,6 +108,7 @@ public class File extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
+    @DEField(preType = DEPredefinedFieldType.PARENTTYPE)
     @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
@@ -244,14 +245,6 @@ public class File extends EntityMP implements Serializable {
     public void setExtension(String extension) {
         this.extension = extension;
         this.modify("extension", extension);
-    }
-
-    /**
-     * 设置 [对象类型]
-     */
-    public void setObjecttype(String objecttype) {
-        this.objecttype = objecttype;
-        this.modify("objecttype", objecttype);
     }
 
     /**

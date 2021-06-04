@@ -793,7 +793,6 @@ public class StaticDict {
     }
 
 
-
     /**
      * 代码表[ZT_ACTION__READ]
      */
@@ -1032,7 +1031,6 @@ public class StaticDict {
             this.text = text;
         }
     }
-
 
 
 
@@ -2493,7 +2491,6 @@ public class StaticDict {
             this.text = text;
         }
     }
-
 
 
     /**

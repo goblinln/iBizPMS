@@ -107,7 +107,7 @@
     "noPrivDisplayMode" : 1,
     "getPSAppCodeList" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeamProduct.json"
+      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json"
     },
     "getPSAppDEField" : {
       "name" : "ACCOUNT",
@@ -491,13 +491,14 @@
     "getPSEditor" : {
       "editorParams" : {
         "SRFNAVPARAM.account" : "%account%",
+        "SRFNAVPARAM.type" : "projectteammproduct",
         "SRFNAVCTX.account" : "%account%"
       },
       "editorType" : "DROPDOWNLIST",
       "name" : "account",
       "getPSAppCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProjectTeamProduct.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CodeList25.json"
       },
       "getPSNavigateContexts" : [ {
         "key" : "ACCOUNT",
@@ -510,6 +511,11 @@
         "name" : "account",
         "value" : "account",
         "rawValue" : false
+      }, {
+        "key" : "type",
+        "name" : "type",
+        "value" : "projectteammproduct",
+        "rawValue" : true
       } ],
       "singleSelect" : true
     },

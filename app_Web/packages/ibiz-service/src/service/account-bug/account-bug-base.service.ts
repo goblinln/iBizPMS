@@ -421,20 +421,6 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return this.condCache.get('view');
     }
     /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountBugService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
-        }
-        return this.http.post(`/accountbugs/fetchaccount`, _data);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -449,6 +435,20 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         }
         const res = await this.http.get(`/accountbugs/${_context.accountbug}`);
         return res;
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountBugService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
+        }
+        return this.http.post(`/accountbugs/fetchaccount`, _data);
     }
     /**
      * FetchMy

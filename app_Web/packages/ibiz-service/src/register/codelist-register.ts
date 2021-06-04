@@ -71,8 +71,6 @@ export class CodeListRegister extends ServiceRegisterBase  {
         this.allService.set('BugModule', () => import('../codelist/bug-module'));
         this.allService.set('RealDept', () => import('../codelist/real-dept'));
         this.allService.set('RunSQL', () => import('../codelist/run-sql'));
-        this.allService.set('UserRealNameTask', () => import('../codelist/user-real-name-task'));
-        this.allService.set('ProjectTeamProduct', () => import('../codelist/project-team-product'));
         this.allService.set('TaskTeamUserTemp', () => import('../codelist/task-team-user-temp'));
         this.allService.set('BackendBuild', () => import('../codelist/backend-build'));
         this.allService.set('AllTask', () => import('../codelist/all-task'));

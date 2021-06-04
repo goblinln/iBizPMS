@@ -157,9 +157,6 @@
     "path" : "PSMODULES/zentao/PSCODELISTS/User__clientStatus.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameTask.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Im_messagestatus__status.json"
   }, {
     "modelref" : true,

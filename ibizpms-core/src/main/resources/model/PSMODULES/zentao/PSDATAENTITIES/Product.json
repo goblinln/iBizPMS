@@ -5595,6 +5595,25 @@
     "removeOrder" : -1,
     "typeValue" : "product"
   }, {
+    "codeName" : "product",
+    "dERSubType" : "DER1N",
+    "dERType" : "DERCUSTOM",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PRODUCT.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    },
+    "name" : "DERCUSTOM_ZT_FILE_ZT_PRODUCT",
+    "orderValue" : 100,
+    "removeActionType" : 0,
+    "removeOrder" : -1,
+    "typeValue" : "product"
+  }, {
     "codeName" : "Product",
     "dERType" : "DERCUSTOM",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDERS/DERCUSTOM_ZT_PROJECT_ZT_PRODUCT.json",
