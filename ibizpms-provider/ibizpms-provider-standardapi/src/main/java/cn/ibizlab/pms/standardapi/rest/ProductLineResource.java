@@ -52,21 +52,6 @@ public class ProductLineResource {
     @Lazy
     public ProductLineMapping productlineMapping;
 
-    @PreAuthorize("test('IBZPRO_PRODUCTLINE', #productline_id, 'DELETE')")
-    @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("productline_id") Long productline_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineService.remove(productline_id));
-    }
-
-    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'DELETE')")
-    @ApiOperation(value = "批量删除产品线", tags = {"产品线" },  notes = "批量删除产品线")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproproductlineService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品线" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productlines/fetchdefault")
@@ -103,6 +88,21 @@ public class ProductLineResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/productlines/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
         ibzproproductlineService.saveBatch(productlineMapping.toDomain(productlinedtos));
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("test('IBZPRO_PRODUCTLINE', #productline_id, 'DELETE')")
+    @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("productline_id") Long productline_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductlineService.remove(productline_id));
+    }
+
+    @PreAuthorize("quickTest('IBZPRO_PRODUCTLINE', 'DELETE')")
+    @ApiOperation(value = "批量删除产品线", tags = {"产品线" },  notes = "批量删除产品线")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproproductlineService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 

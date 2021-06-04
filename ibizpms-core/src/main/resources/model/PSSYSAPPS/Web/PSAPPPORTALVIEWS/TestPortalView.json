@@ -468,7 +468,7 @@
             "name" : "TestTaskGridView9_UnTested",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -567,7 +567,7 @@
               "codeName" : "Main2",
               "columnEnableLink" : 2,
               "controlType" : "GRID",
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask/PSGRIDS/Main2.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask/PSGRIDS/Main2.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -582,7 +582,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -596,18 +596,18 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
                   "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "FetchDefault"
+                    "id" : "FetchAccount"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -620,7 +620,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -633,7 +633,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 }, {
                   "actionName" : "GetDraft",
@@ -646,7 +646,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -659,7 +659,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -722,8 +722,8 @@
                 "excelCaption" : "名称",
                 "getLinkPSAppView" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
-                  "viewType" : "DETABEXPVIEW"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskRedirectView.json",
+                  "viewType" : "DEREDIRECTVIEW"
                 },
                 "linkValueItem" : "srfkey",
                 "name" : "name",
@@ -940,7 +940,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
                 }
               },
               "sortMode" : "REMOTE",
@@ -973,7 +973,7 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
@@ -994,21 +994,17 @@
             "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
-              "codeName" : "TestTasks",
+              "codeName" : "AccountTestTasks",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestTask.json"
               },
-              "name" : "PROJECT__TEST_TASK",
-              "getParentPSAppDEField" : {
-                "name" : "PROJECT",
-                "codeName" : "Project"
-              },
+              "name" : "ACCOUNT__TEST_TASK",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,
@@ -1794,7 +1790,7 @@
             "name" : "CaseGridView9_MeCretae",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -1892,7 +1888,7 @@
               "codeName" : "Main2",
               "columnEnableLink" : 2,
               "controlType" : "GRID",
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase/PSGRIDS/Main2.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase/PSGRIDS/Main2.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -1907,7 +1903,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -1921,7 +1917,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
@@ -1932,7 +1928,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -1945,7 +1941,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -1958,7 +1954,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 }, {
                   "actionName" : "GetDraft",
@@ -1971,7 +1967,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -1984,7 +1980,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -2027,8 +2023,8 @@
                 "excelCaption" : "用例标题",
                 "getLinkPSAppView" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-                  "viewType" : "DEPORTALVIEW"
+                  "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseRedirectView.json",
+                  "viewType" : "DEREDIRECTVIEW"
                 },
                 "linkValueItem" : "srfkey",
                 "name" : "title",
@@ -2118,17 +2114,17 @@
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
-                "name" : "product",
-                "getPSAppDEField" : {
-                  "name" : "PRODUCT",
-                  "codeName" : "Product"
-                }
-              }, {
-                "dataType" : 1,
                 "name" : "id",
                 "getPSAppDEField" : {
                   "name" : "ID",
                   "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "product",
+                "getPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
                 }
               }, {
                 "dataType" : 1,
@@ -2208,7 +2204,7 @@
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
                 }
               },
               "sortMode" : "REMOTE",
@@ -2241,7 +2237,7 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
@@ -2262,21 +2258,17 @@
             "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
-              "codeName" : "TestCases",
+              "codeName" : "AccountTestCases",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysAccount.json"
               },
               "getMinorPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestCase.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/AccountTestCase.json"
               },
-              "name" : "TEST__TEST_CASE",
-              "getParentPSAppDEField" : {
-                "name" : "PRODUCT",
-                "codeName" : "Product"
-              },
+              "name" : "ACCOUNT__TEST_CASE",
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,

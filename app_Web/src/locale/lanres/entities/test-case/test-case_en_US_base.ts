@@ -201,10 +201,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("执行结果",null),
 				title: commonLogic.appcommonhandle("测试用例图表视图（执行结果）",null),
 			},
-			'gridview9_mecretae': {
-				caption: commonLogic.appcommonhandle("测试用例",null),
-				title: commonLogic.appcommonhandle("测试用例表格视图",null),
-			},
 			'reportlinkgridview': {
 				caption: commonLogic.appcommonhandle("关联用例",null),
 				title: commonLogic.appcommonhandle("测试用例表格视图（报告关联用例）",null),
@@ -740,16 +736,6 @@ function getLocaleResourceBase(){
 			testcase_unlinksuitecase: commonLogic.appcommonhandle("移除",null),
 			testcase_opentestrunresultview: commonLogic.appcommonhandle("结果",null),
 			testcase_execute: commonLogic.appcommonhandle("执行",null),
-			},
-		},
-		main2_grid: {
-			columns: {
-				'pri': commonLogic.appcommonhandle("P",null),
-				'title': commonLogic.appcommonhandle("用例标题",null),
-				'status1': commonLogic.appcommonhandle("状态",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
 			},
 		},
 		caseresultentry_grid: {

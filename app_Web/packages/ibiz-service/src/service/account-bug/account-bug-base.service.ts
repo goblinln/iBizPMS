@@ -421,20 +421,18 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return this.condCache.get('view');
     }
     /**
-     * Get
+     * FetchAccount
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountBugService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accountbug) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountbugs/${_context.accountbug}`);
-            return res;
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
         }
-        const res = await this.http.get(`/accountbugs/${_context.accountbug}`);
-        return res;
+        return this.http.post(`/accountbugs/fetchaccount`, _data);
     }
     /**
      * FetchMy
@@ -465,18 +463,20 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
     }
     /**
-     * FetchAccount
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountBugService
      */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accountbug) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountbugs/${_context.accountbug}`);
+            return res;
         }
-        return this.http.post(`/accountbugs/fetchaccount`, _data);
+        const res = await this.http.get(`/accountbugs/${_context.accountbug}`);
+        return res;
     }
     /**
      * GetUserConcat

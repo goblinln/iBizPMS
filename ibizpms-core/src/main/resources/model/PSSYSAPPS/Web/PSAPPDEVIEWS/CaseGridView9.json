@@ -331,17 +331,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       }
     }, {
       "dataType" : 1,

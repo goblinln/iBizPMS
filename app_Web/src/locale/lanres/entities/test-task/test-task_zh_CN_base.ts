@@ -104,10 +104,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("测试版本",null),
 				title: commonLogic.appcommonhandle("提交测试",null),
 			},
-			'gridview9_untested': {
-				caption: commonLogic.appcommonhandle("测试版本",null),
-				title: commonLogic.appcommonhandle("测试版本表格视图",null),
-			},
 		},
 		buildsubmit_form: {
 			details: {
@@ -449,20 +445,6 @@ function getLocaleResourceBase(){
 				testtask_openinfoview: commonLogic.appcommonhandle("概况",null),
 				testtask_editedit: commonLogic.appcommonhandle("编辑",null),
 				testtask_delete: commonLogic.appcommonhandle("删除",null),
-			},
-		},
-		main2_grid: {
-			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
-				'productname': commonLogic.appcommonhandle("产品",null),
-				'name': commonLogic.appcommonhandle("名称",null),
-				'projecttname': commonLogic.appcommonhandle("项目",null),
-				'build': commonLogic.appcommonhandle("版本",null),
-				'begin': commonLogic.appcommonhandle("开始日期",null),
-				'end': commonLogic.appcommonhandle("结束日期",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
 			},
 		},
 		editview_committesttoolbar_toolbar: {

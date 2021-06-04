@@ -858,23 +858,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchCurDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchCurDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "CurDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCurDefault"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "CancelTestTop",
     "methodType" : "DEACTION",
     "name" : "CancelProductTop",
@@ -923,6 +906,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TestTop"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCurDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchCurDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefault"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefault"
     },
     "builtinMethod" : false
   }, {

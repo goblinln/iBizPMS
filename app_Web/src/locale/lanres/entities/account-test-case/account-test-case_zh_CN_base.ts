@@ -85,6 +85,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("测试用例",null),
 				title: commonLogic.appcommonhandle("测试用例表格视图",null),
 			},
+			'gridview9_mecretae': {
+				caption: commonLogic.appcommonhandle("测试用例",null),
+				title: commonLogic.appcommonhandle("测试用例表格视图",null),
+			},
 		},
 		mygrid_grid: {
 			columns: {

@@ -84,6 +84,7 @@ export class AccountTestCaseUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
     }
 
 }

@@ -48,6 +48,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("测试版本",null),
 				title: commonLogic.appcommonhandle("测试单表格视图",null),
 			},
+			'gridview9_untested': {
+				caption: commonLogic.appcommonhandle("测试版本",null),
+				title: commonLogic.appcommonhandle("测试版本表格视图",null),
+			},
 		},
 		main_grid: {
 			columns: {
@@ -84,6 +88,20 @@ function getLocaleResourceBase(){
 				accounttesttask_openinfoview: commonLogic.appcommonhandle("概况",null),
 				accounttesttask_editedit: commonLogic.appcommonhandle("编辑",null),
 				accounttesttask_delete: commonLogic.appcommonhandle("删除",null),
+			},
+		},
+		main2_grid: {
+			columns: {
+				'id': commonLogic.appcommonhandle("编号",null),
+				'productname': commonLogic.appcommonhandle("产品",null),
+				'name': commonLogic.appcommonhandle("名称",null),
+				'projecttname': commonLogic.appcommonhandle("项目",null),
+				'build': commonLogic.appcommonhandle("版本",null),
+				'begin': commonLogic.appcommonhandle("开始日期",null),
+				'end': commonLogic.appcommonhandle("结束日期",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
 			},
 		},
 		mydgridviewtoolbar_toolbar: {
