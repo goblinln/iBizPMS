@@ -50,6 +50,13 @@ public class WFInstance extends EntityMP implements Serializable {
     @JSONField(name = "entityid")
     @JsonProperty("entityid")
     private String entityid;
+
+    /**
+     * 创建人
+     */
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    private String createman;
 }
 
 

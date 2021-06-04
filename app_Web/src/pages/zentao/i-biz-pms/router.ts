@@ -6229,6 +6229,38 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/addestimategridview',
+                    meta: {
+                        caption: 'entities.taskestimate.views.addestimategridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
+                            { pathName: 'views', parameterName: 'addestimategridview' },
+                        ],
+                        resource:'taskestimate',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'taskestimates/:taskestimate?/views/addestimategridview',
+                    meta: {
+                        caption: 'entities.taskestimate.views.addestimategridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'taskestimates', parameterName: 'taskestimate' },
+                            { pathName: 'views', parameterName: 'addestimategridview' },
+                        ],
+                        resource:'taskestimate',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/tasks/:task?/taskestimates/:taskestimate?/views/editgridview9',
                     meta: {
                         caption: 'entities.taskestimate.views.editgridview9.caption',
@@ -26740,6 +26772,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'testtaskstartoptionview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/taskestimateaddestimategridview',
+                    meta: {
+                        caption: 'entities.taskestimate.views.addestimategridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'taskestimateaddestimategridview' },
                         ],
                         requireAuth: true,
                     },

@@ -1,0 +1,384 @@
+{
+  "aggMode" : "NONE",
+  "codeName" : "RecordEstimate",
+  "columnEnableLink" : 2,
+  "controlType" : "GRID",
+  "getCreatePSControlAction" : {
+    "actionName" : "Create",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "CREATE",
+    "name" : "create",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+    }
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate/PSGRIDS/RecordEstimate.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetDraftPSControlAction" : {
+    "actionName" : "GetDraft",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "CREATE",
+    "name" : "loaddraft",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+    }
+  },
+  "getGetPSControlAction" : {
+    "actionName" : "Get",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "READ",
+    "name" : "load",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+    }
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
+  "logicName" : "记录工时（行编辑）",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+  },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "日期",
+    "codeName" : "date",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "date",
+    "excelCaption" : "日期",
+    "name" : "date",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "valueFormat" : "YYYY-MM-DD",
+    "width" : 150,
+    "widthUnit" : "PX",
+    "enableRowEdit" : true,
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "总计消耗",
+    "codeName" : "consumed",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "consumed",
+    "excelCaption" : "总计消耗",
+    "name" : "consumed",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableRowEdit" : true,
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "预计剩余",
+    "codeName" : "left",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "left",
+    "excelCaption" : "预计剩余",
+    "name" : "left",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableRowEdit" : true,
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "备注",
+    "codeName" : "work",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "work",
+    "excelCaption" : "备注",
+    "name" : "work",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
+    },
+    "width" : 100,
+    "widthUnit" : "STAR",
+    "enableRowEdit" : true,
+    "enableSort" : false
+  } ],
+  "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 21,
+    "name" : "work",
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "consumed",
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "task",
+    "getPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "account",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    }
+  }, {
+    "dataType" : 7,
+    "name" : "left",
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    }
+  }, {
+    "format" : "YYYY-MM-DD",
+    "dataType" : 5,
+    "name" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "srfdataaccaction",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  } ],
+  "getPSDEGridEditItems" : [ {
+    "caption" : "编号",
+    "codeName" : "id",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "id"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "备注",
+    "codeName" : "work",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "work",
+    "getPSAppDEField" : {
+      "name" : "WORK",
+      "codeName" : "Work"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTAREA",
+      "maxLength" : 65535,
+      "name" : "work"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "总计消耗",
+    "codeName" : "consumed",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "consumed",
+    "getPSAppDEField" : {
+      "name" : "CONSUMED",
+      "codeName" : "Consumed"
+    },
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "name" : "consumed",
+      "precision" : 2
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "任务",
+    "codeName" : "task",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "task",
+    "getPSAppDEField" : {
+      "name" : "TASK",
+      "codeName" : "Task"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "task"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "用户",
+    "codeName" : "account",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "account",
+    "getPSAppDEField" : {
+      "name" : "ACCOUNT",
+      "codeName" : "Account"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "maxLength" : 30,
+      "name" : "account"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "预计剩余",
+    "codeName" : "left",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "left",
+    "getPSAppDEField" : {
+      "name" : "LEFT",
+      "codeName" : "Left"
+    },
+    "getPSEditor" : {
+      "editorType" : "NUMBER",
+      "name" : "left",
+      "precision" : 2
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "日期",
+    "codeName" : "date",
+    "enableCond" : 3,
+    "ignoreInput" : 0,
+    "name" : "date",
+    "getPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "getPSEditor" : {
+      "dateTimeFormat" : "YYYY-MM-DD",
+      "editorParams" : {
+        "TIMEFMT" : "YYYY-MM-DD"
+      },
+      "editorType" : "DATEPICKEREX_NOTIME",
+      "name" : "date"
+    },
+    "allowEmpty" : true
+  }, {
+    "caption" : "编号",
+    "codeName" : "srfkey",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "HIDDEN",
+      "name" : "srfkey"
+    },
+    "allowEmpty" : true
+  } ],
+  "getPSSysPFPlugin" : {
+    "pluginType" : "GRID_RENDER",
+    "pluginCode" : "saveBatch"
+  },
+  "pagingSize" : 100,
+  "getRemovePSControlAction" : {
+    "actionName" : "Remove",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "DELETE",
+    "name" : "remove",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+    }
+  },
+  "sortMode" : "REMOTE",
+  "getUpdatePSControlAction" : {
+    "actionName" : "Update",
+    "actionType" : "DEACTION",
+    "dataAccessAction" : "UPDATE",
+    "name" : "update",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskEstimate.json"
+    }
+  },
+  "hasWFDataItems" : false,
+  "enableColFilter" : false,
+  "enableCustomized" : true,
+  "enableGroup" : false,
+  "enablePagingBar" : false,
+  "enableRowEdit" : true,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : true,
+  "forceFit" : false,
+  "hideHeader" : false,
+  "noSort" : false,
+  "singleSelect" : true,
+  "modelid" : "A45C77A2-210F-4AFC-8A38-885540C2D22D",
+  "modeltype" : "PSDEGRID"
+}

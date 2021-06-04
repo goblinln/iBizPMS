@@ -182,11 +182,13 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json",
     "logicName" : "Save",
     "name" : "Save",
-    "builtinAction" : true
+    "builtinAction" : true,
+    "enableBatchAction" : true
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
@@ -556,6 +558,12 @@
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

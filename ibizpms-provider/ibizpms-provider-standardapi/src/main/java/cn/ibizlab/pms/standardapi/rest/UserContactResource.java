@@ -65,6 +65,38 @@ public class UserContactResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
+	@ApiOperation(value = "获取指定用户数据", tags = {"用户联系方式" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchaccount")
+	public ResponseEntity<List<UserContactDTO>> fetchaccount(@RequestBody UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
+        Page<UserContact> domains = usercontactService.searchAccount(context) ;
+        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
+    @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/getdraft")
+    public ResponseEntity<UserContactDTO> getDraft(UserContactDTO dto) {
+        UserContact domain = usercontactMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
+    @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
+	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
+    public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
+        UserContact domain = usercontactService.get(usercontact_id);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
@@ -79,14 +111,6 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
-    @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/getdraft")
-    public ResponseEntity<UserContactDTO> getDraft(UserContactDTO dto) {
-        UserContact domain = usercontactMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
 	@ApiOperation(value = "获取我的数据", tags = {"用户联系方式" } ,notes = "获取我的数据")
@@ -116,30 +140,6 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
-    @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
-	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
-    public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
-        UserContact domain = usercontactService.get(usercontact_id);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
-	@ApiOperation(value = "获取指定用户数据", tags = {"用户联系方式" } ,notes = "获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchaccount")
-	public ResponseEntity<List<UserContactDTO>> fetchaccount(@RequestBody UserContactSearchContext context) {
-        usercontactRuntime.addAuthorityConditions(context,"READ");
-        Page<UserContact> domains = usercontactService.searchAccount(context) ;
-        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/usercontacts/{usercontact_id}/{action}")
@@ -161,6 +161,38 @@ public class UserContactResource {
     }
 
 
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usercontacts/fetchaccount")
+	public ResponseEntity<List<UserContactDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
+        
+        usercontactRuntime.addAuthorityConditions(context,"READ");
+        Page<UserContact> domains = usercontactService.searchAccount(context) ;
+        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
+    @ApiOperation(value = "根据系统用户获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usercontacts/getdraft")
+    public ResponseEntity<UserContactDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserContactDTO dto) {
+        UserContact domain = usercontactMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
+    @ApiOperation(value = "根据系统用户获取用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
+    public ResponseEntity<UserContactDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
+        UserContact domain = usercontactService.get(usercontact_id);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "根据系统用户更新用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
@@ -173,15 +205,6 @@ public class UserContactResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
-    @ApiOperation(value = "根据系统用户获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usercontacts/getdraft")
-    public ResponseEntity<UserContactDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserContactDTO dto) {
-        UserContact domain = usercontactMapping.toDomain(dto);
-        
-        return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
 	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取我的数据")
@@ -212,28 +235,5 @@ public class UserContactResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
-    @ApiOperation(value = "根据系统用户获取用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户获取用户联系方式")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
-    public ResponseEntity<UserContactDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
-        UserContact domain = usercontactService.get(usercontact_id);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usercontacts/fetchaccount")
-	public ResponseEntity<List<UserContactDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
-        
-        usercontactRuntime.addAuthorityConditions(context,"READ");
-        Page<UserContact> domains = usercontactService.searchAccount(context) ;
-        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 

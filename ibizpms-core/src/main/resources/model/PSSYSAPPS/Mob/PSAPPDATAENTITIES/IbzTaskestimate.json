@@ -272,6 +272,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -279,7 +280,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchActionMonth",
@@ -775,6 +777,7 @@
     },
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -782,7 +785,8 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Save.json"
     },
-    "builtinMethod" : true
+    "builtinMethod" : true,
+    "enableBatchAction" : true
   }, {
     "codeName" : "FetchActionMonth",
     "methodType" : "FETCH",

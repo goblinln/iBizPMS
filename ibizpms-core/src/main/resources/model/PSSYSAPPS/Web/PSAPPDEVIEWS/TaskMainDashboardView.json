@@ -4757,10 +4757,10 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "APPVIEWUIACTION",
-              "name" : "dashboard_sysportlet2_uaf82b8f_click",
+              "name" : "dashboard_sysportlet2_ud37690f_click",
               "getPSAppViewUIAction" : {
                 "modelref" : true,
-                "id" : "工时"
+                "id" : "工时（行编辑）"
               }
             }, {
               "logicTrigger" : "CUSTOM",
@@ -4903,14 +4903,14 @@
               "uIActionTarget" : "SINGLEKEY",
               "xDataControlName" : "dashboard_sysportlet2"
             }, {
-              "name" : "工时",
+              "name" : "工时（行编辑）",
               "getPSUIAction" : {
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                 },
                 "modelref" : true,
-                "id" : "WorkHours@Task"
+                "id" : "RowWorkHours@Task"
               },
               "uIActionTarget" : "SINGLEKEY",
               "xDataControlName" : "dashboard_sysportlet2"
@@ -5255,39 +5255,33 @@
                 "showIcon" : true
               }, {
                 "detailType" : "DEUIACTION",
-                "name" : "uaf82b8f",
+                "name" : "ud37690f",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "工时",
-                  "codeName" : "WorkHours",
+                  "codeName" : "RowWorkHours",
                   "dataAccessAction" : "RECORDESTIMATE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskWorkHoursView.json",
-                    "viewType" : "DEOPTVIEW"
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEstimateAddEstimateGridView.json",
+                    "viewType" : "DEGRIDVIEW"
                   },
                   "frontProcessType" : "WIZARD",
-                  "fullCodeName" : "Task_WorkHours",
-                  "name" : "工时",
+                  "fullCodeName" : "Task_RowWorkHours",
+                  "name" : "工时（行编辑）",
                   "getPSAppDataEntity" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
                   },
-                  "getPSNavigateContexts" : [ {
-                    "key" : "PROJECT",
-                    "name" : "PROJECT",
-                    "value" : "project",
-                    "rawValue" : false
-                  } ],
                   "getPSSysImage" : {
                     "glyph" : "xf017@FontAwesome",
                     "cssClass" : "fa fa-clock-o"
                   },
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
-                  "uIActionTag" : "WorkHours",
+                  "uIActionTag" : "RowWorkHours",
                   "uIActionType" : "DEUIACTION",
-                  "id" : "WorkHours@Task"
+                  "id" : "RowWorkHours@Task"
                 },
                 "addSeparator" : false,
                 "showCaption" : true,

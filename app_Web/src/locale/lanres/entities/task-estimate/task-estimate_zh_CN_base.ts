@@ -41,6 +41,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("工时",null),
 				title: commonLogic.appcommonhandle("任务预计表格视图",null),
 			},
+			'addestimategridview': {
+				caption: commonLogic.appcommonhandle("记录工时",null),
+				title: commonLogic.appcommonhandle("任务预计表格视图（记录工时）",null),
+			},
 			'editgridview9': {
 				caption: commonLogic.appcommonhandle("工时",null),
 				title: commonLogic.appcommonhandle("任务预计表格视图",null),
@@ -94,6 +98,27 @@ function getLocaleResourceBase(){
 			uiactions: {
 				taskestimate_edit: commonLogic.appcommonhandle("编辑",null),
 				remove: commonLogic.appcommonhandle("删除",null),
+			},
+		},
+		recordestimate_grid: {
+			columns: {
+				'date': commonLogic.appcommonhandle("日期",null),
+				'consumed': commonLogic.appcommonhandle("总计消耗",null),
+				'left': commonLogic.appcommonhandle("预计剩余",null),
+				'work': commonLogic.appcommonhandle("备注",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
+			},
+		},
+		addestimategridviewtoolbar_toolbar: {
+			'deuiaction2': {
+				caption: commonLogic.appcommonhandle("新建行",null),
+				tip: commonLogic.appcommonhandle("新建行",null),
+			},
+			'deuiaction3': {
+				caption: commonLogic.appcommonhandle("保存行",null),
+				tip: commonLogic.appcommonhandle("保存行",null),
 			},
 		},
 	};

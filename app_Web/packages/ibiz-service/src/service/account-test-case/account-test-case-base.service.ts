@@ -313,34 +313,6 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
         return this.condCache.get('view');
     }
     /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountTestCaseService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
-        }
-        return this.http.post(`/accounttestcases/fetchaccount`, _data);
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountTestCaseService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
-        }
-        return this.http.post(`/accounttestcases/fetchmy`, _data);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -369,5 +341,33 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
         }
         return this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountTestCaseService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
+        }
+        return this.http.post(`/accounttestcases/fetchmy`, _data);
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountTestCaseService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchaccount`, _data);
+        }
+        return this.http.post(`/accounttestcases/fetchaccount`, _data);
     }
 }
