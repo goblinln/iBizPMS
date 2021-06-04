@@ -1930,16 +1930,56 @@
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "RECORDESTIMATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTtask__CREATE"
+  }, {
+    "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "删除",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "RECORDESTIMATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTtask__DELETE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "任务-读取",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "RECORDESTIMATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    },
+    "name" : "READ",
+    "id" : "ZTtask__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "RECORDESTIMATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTtask__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

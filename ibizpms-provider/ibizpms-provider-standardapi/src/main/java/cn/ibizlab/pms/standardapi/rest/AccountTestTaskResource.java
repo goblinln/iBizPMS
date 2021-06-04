@@ -53,10 +53,10 @@ public class AccountTestTaskResource {
     public AccountTestTaskMapping accounttesttaskMapping;
 
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
-	@ApiOperation(value = "获取指定用户数据", tags = {"测试版本" } ,notes = "获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounttesttasks/fetchaccount")
-	public ResponseEntity<List<AccountTestTaskDTO>> fetchaccount(@RequestBody TestTaskSearchContext context) {
-        Page<TestTask> domains = testtaskService.searchAccount(context) ;
+	@ApiOperation(value = "获取我的数据", tags = {"测试版本" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttesttasks/fetchmy")
+	public ResponseEntity<List<AccountTestTaskDTO>> fetchmy(@RequestBody TestTaskSearchContext context) {
+        Page<TestTask> domains = testtaskService.searchMy(context) ;
         List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -76,10 +76,10 @@ public class AccountTestTaskResource {
     }
 
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
-	@ApiOperation(value = "获取我的数据", tags = {"测试版本" } ,notes = "获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounttesttasks/fetchmy")
-	public ResponseEntity<List<AccountTestTaskDTO>> fetchmy(@RequestBody TestTaskSearchContext context) {
-        Page<TestTask> domains = testtaskService.searchMy(context) ;
+	@ApiOperation(value = "获取指定用户数据", tags = {"测试版本" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttesttasks/fetchaccount")
+	public ResponseEntity<List<AccountTestTaskDTO>> fetchaccount(@RequestBody TestTaskSearchContext context) {
+        Page<TestTask> domains = testtaskService.searchAccount(context) ;
         List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -97,11 +97,11 @@ public class AccountTestTaskResource {
     }
 
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"测试版本" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttesttasks/fetchaccount")
-	public ResponseEntity<List<AccountTestTaskDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TestTaskSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"测试版本" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttesttasks/fetchmy")
+	public ResponseEntity<List<AccountTestTaskDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TestTaskSearchContext context) {
         
-        Page<TestTask> domains = testtaskService.searchAccount(context) ;
+        Page<TestTask> domains = testtaskService.searchMy(context) ;
         List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -119,11 +119,11 @@ public class AccountTestTaskResource {
     }
 
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"测试版本" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttesttasks/fetchmy")
-	public ResponseEntity<List<AccountTestTaskDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TestTaskSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"测试版本" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttesttasks/fetchaccount")
+	public ResponseEntity<List<AccountTestTaskDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TestTaskSearchContext context) {
         
-        Page<TestTask> domains = testtaskService.searchMy(context) ;
+        Page<TestTask> domains = testtaskService.searchAccount(context) ;
         List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 服务DTO对象[TestCaseLibDTO]
  */
 @Data
-@ApiModel("用例库")
+@ApiModel("测试用例库")
 @JsonFilter(value = "dtofieldfilter")
 public class TestCaseLibDTO extends DTOBase implements Serializable {
 

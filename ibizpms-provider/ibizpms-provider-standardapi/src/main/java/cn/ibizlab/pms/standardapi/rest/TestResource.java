@@ -66,6 +66,19 @@ public class TestResource {
     }
 
 
+    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
+	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/fetchcurdefault")
+	public ResponseEntity<List<TestDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchCurDefault(context) ;
+        List<TestDTO> list = testMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_PRODUCT', #test_id, 'READ')")
     @ApiOperation(value = "取消置顶", tags = {"产品" },  notes = "取消置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/cancelproducttop")
@@ -91,19 +104,6 @@ public class TestResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
-	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/fetchcurdefault")
-	public ResponseEntity<List<TestDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchCurDefault(context) ;
-        List<TestDTO> list = testMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/tests/{test_id}/{action}")

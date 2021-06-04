@@ -66,19 +66,26 @@ public class ProductTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'DELETE', #productteam_id, 'DELETE')")
-    @ApiOperation(value = "根据产品删除产品团队", tags = {"产品团队" },  notes = "根据产品删除产品团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/{productteam_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(productteamService.remove(productteam_id));
+
+    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品批量保存产品团队", tags = {"产品团队" },  notes = "根据产品批量保存产品团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProductTeamDTO> productteamdtos) {
+        List<PRODUCTTEAM> domainlist=productteamMapping.toDomain(productteamdtos);
+        for(PRODUCTTEAM domain:domainlist){
+             domain.setRoot(product_id);
+        }
+        productteamService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
-    @ApiOperation(value = "根据产品批量删除产品团队", tags = {"产品团队" },  notes = "根据产品批量删除产品团队")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        productteamService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据产品获取产品团队草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/getdraft")
+    public ResponseEntity<ProductTeamDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductTeamDTO dto) {
+        PRODUCTTEAM domain = productteamMapping.toDomain(dto);
+        domain.setRoot(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(productteamService.getDraft(domain)));
     }
 
     @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'UPDATE', #productteam_id, 'UPDATE')")
@@ -93,6 +100,21 @@ public class ProductTeamResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'DELETE', #productteam_id, 'DELETE')")
+    @ApiOperation(value = "根据产品删除产品团队", tags = {"产品团队" },  notes = "根据产品删除产品团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/{productteam_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productteamService.remove(productteam_id));
+    }
+
+    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
+    @ApiOperation(value = "根据产品批量删除产品团队", tags = {"产品团队" },  notes = "根据产品批量删除产品团队")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productteams/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        productteamService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
     @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'READ', #productteam_id, 'READ')")
     @ApiOperation(value = "根据产品获取产品团队", tags = {"产品团队" },  notes = "根据产品获取产品团队")
@@ -128,27 +150,5 @@ public class ProductTeamResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品批量保存产品团队", tags = {"产品团队" },  notes = "根据产品批量保存产品团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productteams/savebatch")
-    public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<ProductTeamDTO> productteamdtos) {
-        List<PRODUCTTEAM> domainlist=productteamMapping.toDomain(productteamdtos);
-        for(PRODUCTTEAM domain:domainlist){
-             domain.setRoot(product_id);
-        }
-        productteamService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_PRODUCTTEAM', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取产品团队草稿", tags = {"产品团队" },  notes = "根据产品获取产品团队草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productteams/getdraft")
-    public ResponseEntity<ProductTeamDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductTeamDTO dto) {
-        PRODUCTTEAM domain = productteamMapping.toDomain(dto);
-        domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productteamMapping.toDto(productteamService.getDraft(domain)));
-    }
-
 }
 
