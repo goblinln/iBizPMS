@@ -539,8 +539,9 @@ export class MainViewBase extends ViewBase {
                 }
                 Object.assign(params, this.viewparams);
                 const redirectUIService: any = await UIServiceRegister.getInstance().getService(this.context, (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase());
+                await redirectUIService.loaded();
                 const redirectAppEntity: IPSAppDataEntity | null = targetRedirectView.getPSAppDataEntity();
-                ViewTool.calcRedirectContext(tempContext, fullargs[0], redirectAppEntity);
+                await ViewTool.calcRedirectContext(tempContext, fullargs[0], redirectAppEntity);
                 redirectUIService.getRDAppView(
                     tempContext,
                     args[0][(ModelTool.getViewAppEntityCodeName(this.viewInstance) as string)?.toLowerCase()],

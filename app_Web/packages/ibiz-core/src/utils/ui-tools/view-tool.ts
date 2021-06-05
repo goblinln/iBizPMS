@@ -355,20 +355,22 @@ export class ViewTool {
      * @param {*} [redirectAppEntity] 应用实体对象
      * @memberof ViewTool
      */
-    public static calcRedirectContext(tempContext: any, data: any, redirectAppEntity: any) {
+     public static async calcRedirectContext(tempContext: any, data: any, redirectAppEntity: any) {
         if (redirectAppEntity && redirectAppEntity.getMinorPSAppDERSs() && ((redirectAppEntity.getMinorPSAppDERSs() as []).length > 0)) {
-            redirectAppEntity.getMinorPSAppDERSs()?.forEach((item: any) => {
+            for (const item of redirectAppEntity.getMinorPSAppDERSs()) {
                 const parentPSAppDEFieldCodeName: string = item.M.getParentPSAppDEField?.codeName;
                 if (parentPSAppDEFieldCodeName) {
                     const curData: any = data;
                     if (curData && curData[parentPSAppDEFieldCodeName.toLowerCase()]) {
                         const majorAppEntity: any = item.getMajorPSAppDataEntity();
+                        await majorAppEntity.fill();
                         if (!tempContext[majorAppEntity.codeName.toLowerCase()]) {
                             Object.assign(tempContext, { [majorAppEntity.codeName.toLowerCase()]: curData[parentPSAppDEFieldCodeName.toLowerCase()] });
                         }
                     }
                 }
-            })
+            }
         }
     }
+    
 }

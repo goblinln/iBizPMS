@@ -223,8 +223,9 @@ export default class AppColumnLink extends Vue {
             return;
         }
         const redirectUIService: any = await UIServiceRegister.getInstance().getService(context, (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase());
+        await redirectUIService.loaded();
         const redirectAppEntity: IPSAppDataEntity | null = targetRedirectView.getPSAppDataEntity();
-        ViewTool.calcRedirectContext(context,this.data,redirectAppEntity);
+        await ViewTool.calcRedirectContext(context,this.data,redirectAppEntity);
         let result = await redirectUIService.getRDAppView(context,this.data[this.deKeyField], params);
         if (!result) {
             return;

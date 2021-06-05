@@ -1,8 +1,9 @@
 import { Watch } from 'vue-property-decorator';
-import { Util, CodeListServiceBase, ViewTool } from 'ibiz-core';
+import { Util, CodeListServiceBase, ViewTool, ModelTool } from 'ibiz-core';
 import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppUILogicRefView, IPSAppUIOpenDataLogic, IPSAppView, IPSAppViewLogic, IPSAppViewRef, IPSDEGantt, IPSDETreeColumn, IPSDETreeNode, IPSDETreeNodeDataItem, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
 import { MDControlBase } from './md-control-base';
 import { AppGanttService } from '../ctrl-service';
+import { UIServiceRegister } from 'ibiz-service';
 import { Subject } from 'rxjs';
 
 export class GanttControlBase extends MDControlBase {
@@ -509,8 +510,11 @@ export class GanttControlBase extends MDControlBase {
                 ) {
                     return;
                 }
-                this.appUIService
-                    .getRDAppView(
+                const redirectUIService: any = await UIServiceRegister.getInstance().getService(this.context, (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase());
+                await redirectUIService.loaded();
+                const redirectAppEntity: IPSAppDataEntity | null = targetRedirectView.getPSAppDataEntity();
+                await ViewTool.calcRedirectContext(tempContext, fullargs[0], redirectAppEntity);
+                redirectUIService.getRDAppView(
                         tempContext,
                         args[0][this.appDeCodeName.toLowerCase()],
                         params,
@@ -519,7 +523,6 @@ export class GanttControlBase extends MDControlBase {
                         if (!result) {
                             return;
                         }
-                        const returnContext: any = result.srftempcontext;
                         let targetOpenViewRef:
                             | IPSAppViewRef
                             | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
@@ -556,9 +559,6 @@ export class GanttControlBase extends MDControlBase {
                         };
                         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
                             if (targetOpenView.getPSAppDataEntity()) {
-                                if(returnContext && (Object.keys(returnContext).length > 0)){
-                                    Object.assign(tempContext, returnContext);
-                                }
                                 deResParameters = Util.formatAppDERSPath(
                                     tempContext,
                                     (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
@@ -596,9 +596,6 @@ export class GanttControlBase extends MDControlBase {
                             }
                             if (targetOpenView && targetOpenView.modelPath) {
                                 Object.assign(tempContext, { viewpath: targetOpenView.modelPath });
-                            }
-                            if(returnContext && (Object.keys(returnContext).length > 0)){
-                                Object.assign(tempContext, returnContext);
                             }
                         }
                         this.openTargtView(targetOpenView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
