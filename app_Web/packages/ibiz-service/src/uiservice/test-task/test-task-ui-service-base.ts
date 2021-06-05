@@ -84,10 +84,10 @@ export class TestTaskUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');

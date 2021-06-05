@@ -35,15 +35,15 @@
       "getNewDataPSAppView" : {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       },
       "getPSAppUILogicRefViews" : [ {
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-          "viewType" : "DEEDITVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
+          "viewType" : "DEPORTALVIEW"
         }
       } ],
       "viewLogicType" : "APP_NEWDATA",
@@ -84,12 +84,12 @@
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
-    "realOpenMode" : "DRAWER_RIGHT",
-    "realTitle" : "测试单编辑视图",
+    "realOpenMode" : "DRAWER_TOP",
+    "realTitle" : "测试版本数据看板视图",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-      "viewType" : "DEEDITVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
+      "viewType" : "DEPORTALVIEW"
     }
   }, {
     "name" : "EDITDATA",

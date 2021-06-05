@@ -433,27 +433,6 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		main_form: {
-			details: {
-				'group1': commonLogic.appcommonhandle("case基本信息",null), 
-				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
-				'group2': commonLogic.appcommonhandle("操作信息",null), 
-				'formpage2': commonLogic.appcommonhandle("其它",null), 
-				'srfupdatedate': commonLogic.appcommonhandle("修改日期",null), 
-				'srforikey': commonLogic.appcommonhandle("",null), 
-				'srfkey': commonLogic.appcommonhandle("用例编号",null), 
-				'srfmajortext': commonLogic.appcommonhandle("用例标题",null), 
-				'srftempmode': commonLogic.appcommonhandle("",null), 
-				'srfuf': commonLogic.appcommonhandle("",null), 
-				'srfdeid': commonLogic.appcommonhandle("",null), 
-				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'title': commonLogic.appcommonhandle("用例标题",null), 
-				'color': commonLogic.appcommonhandle("标题颜色",null), 
-				'id': commonLogic.appcommonhandle("用例编号",null), 
-			},
-			uiactions: {
-			},
-		},
 		maintesttask_form: {
 			details: {
 				'grouppanel4': commonLogic.appcommonhandle("分组面板",null), 
@@ -531,6 +510,27 @@ function getLocaleResourceBase(){
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
 				'resultcnt': commonLogic.appcommonhandle("共执行",null), 
 				'resultfalicnt': commonLogic.appcommonhandle("失败",null), 
+				'id': commonLogic.appcommonhandle("用例编号",null), 
+			},
+			uiactions: {
+			},
+		},
+		main_form: {
+			details: {
+				'group1': commonLogic.appcommonhandle("case基本信息",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'group2': commonLogic.appcommonhandle("操作信息",null), 
+				'formpage2': commonLogic.appcommonhandle("其它",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("修改日期",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("用例编号",null), 
+				'srfmajortext': commonLogic.appcommonhandle("用例标题",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'title': commonLogic.appcommonhandle("用例标题",null), 
+				'color': commonLogic.appcommonhandle("标题颜色",null), 
 				'id': commonLogic.appcommonhandle("用例编号",null), 
 			},
 			uiactions: {
@@ -804,12 +804,6 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("保存并关闭",null),
 			},
 		},
-		editviewtoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("保存并关闭",null),
-				tip: commonLogic.appcommonhandle("保存并关闭",null),
-			},
-		},
 		linkcasegridviewtoolbar_toolbar: {
 			'deuiaction1_linkcase': {
 				caption: commonLogic.appcommonhandle("保存",null),
@@ -900,6 +894,12 @@ function getLocaleResourceBase(){
 			'deuiaction2_togglefilter': {
 				caption: commonLogic.appcommonhandle("过滤",null),
 				tip: commonLogic.appcommonhandle("过滤",null),
+			},
+		},
+		editviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("保存并关闭",null),
+				tip: commonLogic.appcommonhandle("保存并关闭",null),
 			},
 		},
 		gridviewtoolbar_toolbar: {

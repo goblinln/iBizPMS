@@ -80,7 +80,7 @@ export class TestCaseUIServiceBase extends UIServiceBase {
      * @memberof  TestCaseUIServiceBase
      */  
     protected initViewFuncMap(){
-        this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
+        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
@@ -107,7 +107,7 @@ export class TestCaseUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
-        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');

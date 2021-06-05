@@ -138,19 +138,23 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.http.delete(`/usercontacts/${_context.usercontact}`);
     }
     /**
-     * Get
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof UserContactService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.usercontact) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/getdraft`, _data);
             return res;
         }
-        const res = await this.http.get(`/usercontacts/${_context.usercontact}`);
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/usercontacts/getdraft`, _data);
         return res;
     }
     /**
@@ -170,23 +174,19 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
     }
     /**
-     * GetDraft
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof UserContactService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/getdraft`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.usercontact) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
             return res;
         }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/usercontacts/getdraft`, _data);
+        const res = await this.http.get(`/usercontacts/${_context.usercontact}`);
         return res;
     }
     /**

@@ -31,20 +31,33 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "GetDraft",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AutoCreate",
+    "methodType" : "DEACTION",
+    "name" : "ManualCreateDaily",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/ManualCreateDaily.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AutoCreate"
     },
     "builtinMethod" : false
   }, {
@@ -65,6 +78,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -79,36 +109,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AutoCreate",
-    "methodType" : "DEACTION",
-    "name" : "ManualCreateDaily",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/ManualCreateDaily.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AutoCreate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -262,20 +262,33 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "GetDraft",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AutoCreate",
+    "methodType" : "DEACTION",
+    "name" : "ManualCreateDaily",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/ManualCreateDaily.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AutoCreate"
     },
     "builtinMethod" : false
   }, {
@@ -296,20 +309,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "Default"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -330,25 +343,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "AutoCreate",
-    "methodType" : "DEACTION",
-    "name" : "ManualCreateDaily",
-    "getPSDEAction" : {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/ManualCreateDaily.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AutoCreate"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/Get.json"
+      "id" : "Default"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -356,7 +356,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {

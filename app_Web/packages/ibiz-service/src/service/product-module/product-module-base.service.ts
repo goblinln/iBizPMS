@@ -175,6 +175,21 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productmodule) {
+            const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}`);
+            return res;
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -207,35 +222,6 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productmodule) {
-            const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}`);
-            return res;
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductModuleService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && _context.productmodule) {
-            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
-        }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -253,6 +239,20 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/productmodules`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductModuleService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productmodule) {
+            return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

@@ -182,39 +182,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
-     * FetchCurProject
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurproject`, _data);
-    }
-    /**
-     * Close
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/close`, _data);
-    }
-    /**
-     * FetchCurDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurdefault`, _data);
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -227,15 +194,26 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.put(`/products/${_context.product}`, _data);
     }
     /**
-     * Remove
+     * FetchCurProject
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/products/${_context.product}`);
+    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurproject`, _data);
+    }
+    /**
+     * FetchCurDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurdefault`, _data);
     }
     /**
      * GetDraft
@@ -252,17 +230,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return res;
     }
     /**
-     * CancelProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
-    }
-    /**
      * ProductTop
      *
      * @param {*} [_context={}]
@@ -272,6 +239,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async ProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/products/${_context.product}/producttop`, _data);
+    }
+    /**
+     * CancelProductTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
     }
     /**
      * Get
@@ -302,6 +280,28 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/products`, _data);
+    }
+    /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/close`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/products/${_context.product}`);
     }
 
     /**

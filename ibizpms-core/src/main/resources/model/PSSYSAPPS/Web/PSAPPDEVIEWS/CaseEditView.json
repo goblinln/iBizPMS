@@ -3,7 +3,6 @@
   "caption" : "测试用例",
   "codeName" : "CaseEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseEditView.json",
-  "funcViewMode" : "EDITVIEW",
   "name" : "CaseEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,

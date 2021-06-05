@@ -3,6 +3,7 @@
   "caption" : "功能测试",
   "codeName" : "CaseMainDashboardView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
+  "funcViewMode" : "EDITVIEW",
   "height" : 850,
   "name" : "CaseMainDashboardView",
   "openMode" : "DRAWER_TOP",

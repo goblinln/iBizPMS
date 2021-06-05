@@ -3,6 +3,7 @@
   "caption" : "测试版本",
   "codeName" : "TestTaskMainDashboardView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
+  "funcViewMode" : "EDITVIEW",
   "name" : "TestTaskMainDashboardView",
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {

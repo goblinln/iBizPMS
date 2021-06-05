@@ -31,12 +31,12 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Update",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -44,41 +44,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Read",
-    "methodType" : "DEACTION",
-    "name" : "haveRead",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Read"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Submit",
-    "methodType" : "DEACTION",
-    "name" : "submit",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Submit"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -99,12 +65,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
+    "codeName" : "Submit",
     "methodType" : "DEACTION",
-    "name" : "Get",
+    "name" : "submit",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -112,16 +78,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
+      "id" : "Submit"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -129,24 +95,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Notice",
-    "methodType" : "DEACTION",
-    "name" : "pushUserWeekly",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Notice"
+      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -164,6 +113,57 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Read",
+    "methodType" : "DEACTION",
+    "name" : "haveRead",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Read"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Notice",
+    "methodType" : "DEACTION",
+    "name" : "pushUserWeekly",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Notice"
     },
     "builtinMethod" : false
   }, {
@@ -506,12 +506,12 @@
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Update",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -519,16 +519,16 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Read",
+    "codeName" : "AutoCreate",
     "methodType" : "DEACTION",
-    "name" : "haveRead",
+    "name" : "createEveryWeekReport",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -536,7 +536,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Read"
+      "id" : "AutoCreate"
     },
     "builtinMethod" : false
   }, {
@@ -574,12 +574,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "AutoCreate",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "createEveryWeekReport",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -587,7 +587,41 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "AutoCreate"
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Read",
+    "methodType" : "DEACTION",
+    "name" : "haveRead",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Read"
     },
     "builtinMethod" : false
   }, {
@@ -608,23 +642,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Notice",
     "methodType" : "DEACTION",
     "name" : "pushUserWeekly",
@@ -639,23 +656,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Notice"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
