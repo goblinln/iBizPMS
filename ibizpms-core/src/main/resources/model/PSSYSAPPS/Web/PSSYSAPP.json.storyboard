@@ -6013,14 +6013,6 @@
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
-    "cpsappsbitemname" : "相关用例",
-    "psappsbitemrsid" : "fdacba5ea815d5307e89dc6efc6dadd7",
-    "ppsappsbitemname" : "关联需求",
-    "ppsappsbitemid" : "2ee6bff29d9f04451936d040850565fc",
-    "cpsappsbitemid" : "59fe22e33be4df1fc264d3c992c93ba4",
-    "psappsbitemrsname" : "嵌入视图",
-    "rstype" : "APPVIEWEMBED"
-  }, {
     "cpsappsbitemname" : "关联需求",
     "psappsbitemrsid" : "8be871d9e0a9718c4bd84e0351cb8a28",
     "ppsappsbitemname" : "任务编辑视图",

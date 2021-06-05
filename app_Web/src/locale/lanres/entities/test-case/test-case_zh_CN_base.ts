@@ -548,15 +548,6 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		storyrelated_grid: {
-			columns: {
-				'pri': commonLogic.appcommonhandle("P",null),
-				'title': commonLogic.appcommonhandle("用例标题",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
-			},
-		},
 		testmaingrid_grid: {
 			columns: {
 				'id': commonLogic.appcommonhandle("编号",null),
@@ -635,6 +626,15 @@ function getLocaleResourceBase(){
 				'resultcnt': commonLogic.appcommonhandle("R",null),
 				'casesteps': commonLogic.appcommonhandle("S",null),
 				'lastrunresult1': commonLogic.appcommonhandle("测试用例结果",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
+			},
+		},
+		storyrelated_grid: {
+			columns: {
+				'pri': commonLogic.appcommonhandle("P",null),
+				'title': commonLogic.appcommonhandle("用例标题",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {

@@ -52,17 +52,6 @@ public class AccountTaskResource {
     @Lazy
     public AccountTaskMapping accounttaskMapping;
 
-    @PreAuthorize("test('ZT_TASK', #accounttask_id, 'READ')")
-    @ApiOperation(value = "获取任务", tags = {"任务" },  notes = "获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounttasks/{accounttask_id}")
-    public ResponseEntity<AccountTaskDTO> get(@PathVariable("accounttask_id") Long accounttask_id) {
-        Task domain = taskService.get(accounttask_id);
-        AccountTaskDTO dto = accounttaskMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(accounttask_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
 	@ApiOperation(value = "获取指定用户数据", tags = {"任务" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/accounttasks/fetchaccount")
@@ -75,6 +64,17 @@ public class AccountTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('ZT_TASK', #accounttask_id, 'READ')")
+    @ApiOperation(value = "获取任务", tags = {"任务" },  notes = "获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounttasks/{accounttask_id}")
+    public ResponseEntity<AccountTaskDTO> get(@PathVariable("accounttask_id") Long accounttask_id) {
+        Task domain = taskService.get(accounttask_id);
+        AccountTaskDTO dto = accounttaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskRuntime.getOPPrivs(accounttask_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"任务" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/accounttasks/fetchmyfavorites")
@@ -109,15 +109,6 @@ public class AccountTaskResource {
     }
 
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
-    @ApiOperation(value = "根据系统用户获取任务", tags = {"任务" },  notes = "根据系统用户获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accounttasks/{accounttask_id}")
-    public ResponseEntity<AccountTaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accounttask_id") Long accounttask_id) {
-        Task domain = taskService.get(accounttask_id);
-        AccountTaskDTO dto = accounttaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
 	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"任务" } ,notes = "根据系统用户获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttasks/fetchaccount")
 	public ResponseEntity<List<AccountTaskDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TaskSearchContext context) {
@@ -130,6 +121,15 @@ public class AccountTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('ZT_TASK', 'READ')")
+    @ApiOperation(value = "根据系统用户获取任务", tags = {"任务" },  notes = "根据系统用户获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accounttasks/{accounttask_id}")
+    public ResponseEntity<AccountTaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accounttask_id") Long accounttask_id) {
+        Task domain = taskService.get(accounttask_id);
+        AccountTaskDTO dto = accounttaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('ZT_TASK', 'READ')")
 	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"任务" } ,notes = "根据系统用户获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttasks/fetchmyfavorites")

@@ -52,12 +52,17 @@ public class ReportlyResource {
     @Lazy
     public ReportlyMapping reportlyMapping;
 
-    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
-    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
-    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
-        IbzReportly domain = reportlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
+    @PreAuthorize("quickTest('IBZ_REPORTLY', 'NONE')")
+    @ApiOperation(value = "新建汇报", tags = {"汇报" },  notes = "新建汇报")
+	@RequestMapping(method = RequestMethod.POST, value = "/reportlies")
+    @Transactional
+    public ResponseEntity<ReportlyDTO> create(@Validated @RequestBody ReportlyDTO reportlydto) {
+        IbzReportly domain = reportlyMapping.toDomain(reportlydto);
+		ibzreportlyService.create(domain);
+        ReportlyDTO dto = reportlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
@@ -71,6 +76,22 @@ public class ReportlyResource {
         Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
         reportlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(reportlydto);
+    }
+
+
+    @VersionCheck(entity = "ibzreportly" , versionfield = "updatedate")
+    @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
+    @ApiOperation(value = "更新汇报", tags = {"汇报" },  notes = "更新汇报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/reportlies/{reportly_id}")
+    @Transactional
+    public ResponseEntity<ReportlyDTO> update(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
+		IbzReportly domain  = reportlyMapping.toDomain(reportlydto);
+        domain.setIbzreportlyid(reportly_id);
+		ibzreportlyService.update(domain );
+		ReportlyDTO dto = reportlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(reportly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 
@@ -89,16 +110,23 @@ public class ReportlyResource {
 
 
     @PreAuthorize("quickTest('IBZ_REPORTLY', 'NONE')")
-    @ApiOperation(value = "新建汇报", tags = {"汇报" },  notes = "新建汇报")
-	@RequestMapping(method = RequestMethod.POST, value = "/reportlies")
-    @Transactional
-    public ResponseEntity<ReportlyDTO> create(@Validated @RequestBody ReportlyDTO reportlydto) {
-        IbzReportly domain = reportlyMapping.toDomain(reportlydto);
-		ibzreportlyService.create(domain);
-        ReportlyDTO dto = reportlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
+	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/fetchdefault")
+	public ResponseEntity<List<ReportlyDTO>> fetchdefault(@RequestBody IbzReportlySearchContext context) {
+        Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
+        List<ReportlyDTO> list = reportlyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
+    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
+    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
+        IbzReportly domain = reportlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
     }
 
     @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
@@ -111,34 +139,6 @@ public class ReportlyResource {
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @PreAuthorize("quickTest('IBZ_REPORTLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/fetchdefault")
-	public ResponseEntity<List<ReportlyDTO>> fetchdefault(@RequestBody IbzReportlySearchContext context) {
-        Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
-        List<ReportlyDTO> list = reportlyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @VersionCheck(entity = "ibzreportly" , versionfield = "updatedate")
-    @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
-    @ApiOperation(value = "更新汇报", tags = {"汇报" },  notes = "更新汇报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/reportlies/{reportly_id}")
-    @Transactional
-    public ResponseEntity<ReportlyDTO> update(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
-		IbzReportly domain  = reportlyMapping.toDomain(reportlydto);
-        domain.setIbzreportlyid(reportly_id);
-		ibzreportlyService.update(domain );
-		ReportlyDTO dto = reportlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(reportly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

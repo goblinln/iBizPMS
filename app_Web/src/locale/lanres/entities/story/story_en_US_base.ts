@@ -629,8 +629,6 @@ function getLocaleResourceBase(){
 				'_druipart2': commonLogic.appcommonhandle("",null), 
 				'_grouppanel1': commonLogic.appcommonhandle("附件",null), 
 				'grouppanel11': commonLogic.appcommonhandle("需求描述",null), 
-				'druipart1': commonLogic.appcommonhandle("",null), 
-				'grouppanel1': commonLogic.appcommonhandle("相关用例",null), 
 				'grouppanel21': commonLogic.appcommonhandle("验收标准",null), 
 				'group11': commonLogic.appcommonhandle("需求描述信息",null), 
 				'grouppanel31': commonLogic.appcommonhandle("需求描述",null), 
