@@ -1,4 +1,4 @@
-import { IPSCalendarExpBar, IPSDECalendar, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
+import { IPSCalendarExpBar, IPSDERBase, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
 import { IPSAppDataEntity } from '@ibiz/dynamic-model-api/dist/types/app/dataentity/ipsapp-data-entity';
 import { Util } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
@@ -42,7 +42,7 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
     /**
      * 初始化日历导航部件实例
      *
-     * @memberof AppDefaultCalendarExpBar
+     * @memberof CalendarExpBarControlBase
      */
     public async ctrlModelInit() {
         await super.ctrlModelInit();
@@ -52,7 +52,7 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
     /**
      * 初始化数据部件配置
      *
-     * @memberof AppDefaultCalendarExpBar
+     * @memberof CalendarExpBarControlBase
      */
     public async handleXDataCtrlOptions() {
         await super.handleXDataCtrlOptions();
@@ -70,15 +70,15 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
         let navFilter = {};
         let navPSDer = {};
         if (calendarItems && calendarItems.length > 0) {
-            calendarItems.forEach((item: any) => {
+            calendarItems.forEach((item: IPSSysCalendarItem) => {
                 const viewName = {
-                    [item.itemType]: item.getNavPSAppView ? item.getNavPSAppView?.dynaModelFilePath : "",
+                    [item.itemType]: item.getNavPSAppView() ? item.getNavPSAppView()?.modelPath : "",
                 };
                 Object.assign(navViewName, viewName);
                 const param = {
                     [item.itemType]: {
-                        navigateContext: this.initNavParam(item.getPSNavigateContexts),
-                        navigateParams: this.initNavParam(item.getPSNavigateParams),
+                        navigateContext: this.initNavParam(item.getPSNavigateContexts()),
+                        navigateParams: this.initNavParam(item.getPSNavigateParams()),
                     }
                 }
                 Object.assign(navParam, param);
@@ -87,7 +87,7 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
                 }
                 Object.assign(navFilter, filter);
                 const psDer = {
-                    [item.itemType]: item.getNavPSDER ? "n_" + item.getNavPSDER?.getPSPickupDEField?.codeName?.toLowerCase() + "_eq" : "",
+                    [item.itemType]: item.getNavPSDER() ? "n_" + (item.getNavPSDER() as IPSDERBase).minorCodeName?.toLowerCase() + "_eq" : "",
                 }
                 Object.assign(navPSDer, psDer);
             })
@@ -205,11 +205,11 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
                 Object.assign(tempViewParam, { [this.navPSDer[arg.itemType]]: arg[calendarItemEntity.codeName?.toLowerCase()] });
             }
             if (this.navParam && this.navParam[arg.itemType] && this.navParam[arg.itemType].navigateContext && Object.keys(this.navParam[arg.itemType].navigateContext).length > 0) {
-                let _context: any = Util.computedNavData(arg, tempContext, tempViewParam, this.navParam[arg.itemType].navigateContext);
+                let _context: any = Util.computedNavData(arg.curdata, tempContext, tempViewParam, this.navParam[arg.itemType].navigateContext);
                 Object.assign(tempContext, _context);
             }
             if (this.navParam && this.navParam[arg.itemType] && this.navParam[arg.itemType].navigateParams && Object.keys(this.navParam[arg.itemType].navigateParams).length > 0) {
-                let _params: any = Util.computedNavData(arg, tempContext, tempViewParam, this.navParam[arg.itemType].navigateParams);
+                let _params: any = Util.computedNavData(arg.curdata, tempContext, tempViewParam, this.navParam[arg.itemType].navigateParams);
                 Object.assign(tempViewParam, _params);
             }
             if (calendarItem.getNavPSAppView()) {
@@ -219,9 +219,6 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
             }
         }
         this.selection = {};
-        if (this.navViewName[arg.itemType]) {
-            Object.assign(tempContext, { viewpath: this.navViewName[arg.itemType] })
-        }
         Object.assign(this.selection, { view: { viewname: 'app-view-shell' }, context: tempContext, viewparam: tempViewParam });
         this.calcToolbarItemState(false);
         this.$emit("ctrl-event", { controlname: this.controlInstance.name, action: "selectionchange", data: args });

@@ -1,4 +1,4 @@
-import { ControlServiceBase } from 'ibiz-core';
+import { ControlServiceBase, Util } from 'ibiz-core';
 import { AppCalendarModel } from 'ibiz-vue';
 import { GlobalService } from 'ibiz-service';
 import { IPSAppDataEntity, IPSAppDEDataSet, IPSDECalendar, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
@@ -6,9 +6,9 @@ import { IPSAppDataEntity, IPSAppDEDataSet, IPSDECalendar, IPSSysCalendar, IPSSy
 export class AppCalendarService extends ControlServiceBase {
 
     /**
-    * 表单实例对象
+    * 日历实例对象
     *
-    * @memberof MainModel
+    * @memberof AppCalendarService
     */
    public controlInstance !: IPSDECalendar;
 
@@ -16,25 +16,17 @@ export class AppCalendarService extends ControlServiceBase {
     * 数据服务对象
     *
     * @type {any}
-    * @memberof AppFormService
+    * @memberof AppCalendarService
     */
    public appEntityService!: any;
 
    private $itemEntityServiceMap: Map<string, any> = new Map();
 
    /**
-    * 远端数据
-    *
-    * @type {*}
-    * @memberof AppFormService
-    */
-   private remoteCopyData: any = {};
-
-   /**
     * 初始化服务参数
     *
     * @type {boolean}
-    * @memberof AppFormService
+    * @memberof AppCalendarService
     */
    public async initServiceParam(opts: any) {
        this.controlInstance = opts;
@@ -42,10 +34,10 @@ export class AppCalendarService extends ControlServiceBase {
    }
 
    /**
-    * Creates an instance of AppFormService.
+    * Creates an instance of AppCalendarService.
     * 
     * @param {*} [opts={}]
-    * @memberof AppFormService
+    * @memberof AppCalendarService
     */
    constructor(opts: any = {}) {
        super(opts);
@@ -106,7 +98,7 @@ export class AppCalendarService extends ControlServiceBase {
      * @param {*} [data={}]
      * @param {boolean} [isloading]
      * @returns {Promise<any>}
-     * @memberof ${srfclassname('${ctrl.codeName}')}Service
+     * @memberof AppCalendarService
      */
     public async search(action: string, context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let _this = this;
@@ -139,6 +131,7 @@ export class AppCalendarService extends ControlServiceBase {
                         _response.data[index].color = _this.eventsConfig[resIndex].color;
                         _response.data[index].textColor = _this.eventsConfig[resIndex].textColor;
                         _response.data[index].itemType = _this.eventsConfig[resIndex].itemType;
+                        _response.data[index].curdata = Util.deepCopy(item);
                     });
                     _this.handleResponse(action, _response,false,_this.eventsConfig[resIndex]?.itemType);
                     _data.push(..._response.data);
@@ -165,7 +158,7 @@ export class AppCalendarService extends ControlServiceBase {
      * @param {*} [data={}]
      * @param {boolean} [isloading]
      * @returns {Promise<any>}
-     * @memberof ${srfclassname('${ctrl.codeName}')}Service
+     * @memberof AppCalendarService
      */
     public update(itemType: string, context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
@@ -199,7 +192,7 @@ export class AppCalendarService extends ControlServiceBase {
      * 
      * @param action 行为 
      * @param data 数据
-     * @memberof ControlService
+     * @memberof AppCalendarService
      */
     public handleRequestData(action: string,context:any ={},data: any = {},isMerge:boolean = false,itemType:string=""){
         let model: AppCalendarModel = this.getMode();
@@ -212,7 +205,7 @@ export class AppCalendarService extends ControlServiceBase {
      *
      * @param {string} action
      * @param {*} response
-     * @memberof ControlService
+     * @memberof AppCalendarService
      */
     public async handleResponse(action: string, response: any,isCreate:boolean = false,itemType:string=""){
         let model: AppCalendarModel = this.getMode();

@@ -6,51 +6,54 @@ export class AppCalendarModel {
     /**
     * 日历实例对象
     *
-    * @memberof AppGridModel
+    * @memberof AppCalendarModel
     */
     public calendarInstance !: IPSDECalendar;
 
     /**
-	 * 日历项类型
-	 *
-	 * @returns {string}
-	 * @memberof AppGridModel
-	 */
+     * 日历项类型
+     *
+     * @returns {string}
+     * @memberof AppCalendarModel
+     */
     public itemType: string = '';
 
     /**
-    * Creates an instance of AppGridModel.
+    * Creates an instance of AppCalendarModel.
     * 
     * @param {*} [opts={}]
-    * @memberof AppGridModel
+    * @memberof AppCalendarModel
     */
     constructor(opts: any) {
         this.calendarInstance = opts;
     }
-    
+
     public getDataItems(): any[] {
         let modelArray: any[] = [
             // 前端新增修改标识，新增为"0",修改为"1"或未设值
             {
-            name: 'srffrontuf',
-            prop: 'srffrontuf',
-            dataType: 'TEXT',
+                name: 'srffrontuf',
+                prop: 'srffrontuf',
+                dataType: 'TEXT',
             },
             {
-            name: 'color',
+                name: 'color',
             },
             {
-            name: 'textColor',
+                name: 'textColor',
             },
             {
-            name: 'itemType',
+                name: 'curdata',
             },
             {
-            name: 'query',
-            prop: 'query',
+                name: 'itemType',
+            },
+            {
+                name: 'query',
+                prop: 'query',
             },
         ];
-        if(!this.itemType) {
+        if (!this.itemType) {
             return modelArray;
         }
         //日历项实体映射
@@ -58,7 +61,7 @@ export class AppCalendarModel {
         const item: IPSSysCalendarItem = calendarItems?.find((_item: IPSSysCalendarItem) => {
             return _item.itemType == this.itemType;
         }) as IPSSysCalendarItem;
-        if(item) {
+        if (item) {
             const entity = item.getPSAppDataEntity() as IPSAppDataEntity;
             const idField: IPSAppDEField = item.getIdPSAppDEField() as IPSAppDEField;
             const beginField: IPSAppDEField = item.getBeginTimePSAppDEField() as IPSAppDEField;
@@ -70,11 +73,11 @@ export class AppCalendarModel {
             let tempArr: any[] = [{
                 name: entity?.codeName?.toLowerCase(),
                 prop: idField?.codeName ? idField.codeName.toLowerCase()
-                        : ((ModelTool.getAppEntityKeyField(entity) as IPSAppDEField)?.codeName || '').toLowerCase()
+                    : ((ModelTool.getAppEntityKeyField(entity) as IPSAppDEField)?.codeName || '').toLowerCase()
             }, {
                 name: 'title',
                 prop: textField?.codeName ? textField.codeName.toLowerCase()
-                        : ((ModelTool.getAppEntityKeyField(entity) as IPSAppDEField)?.codeName || '').toLowerCase()
+                    : ((ModelTool.getAppEntityKeyField(entity) as IPSAppDEField)?.codeName || '').toLowerCase()
             }, {
                 name: 'start',
                 prop: beginField?.codeName ? beginField.codeName.toLowerCase() : beginField?.name?.toLowerCase()

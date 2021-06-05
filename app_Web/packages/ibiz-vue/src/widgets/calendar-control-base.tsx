@@ -500,7 +500,7 @@ export class CalendarControlBase extends MDControlBase{
         let handleEvents = ()=>{
             if(_this.isSelectFirstDefault){
                 // 模拟$event数据
-                let tempEvent = JSON.parse(JSON.stringify(_this.events.length > 0?_this.events[0]:{}));
+                let tempEvent = Util.deepCopy(_this.events.length > 0?_this.events[0]:{});
                 _this.onEventClick(tempEvent,true);
                 if(_this.events.length > 0){
                     _this.events[0].className = "select-first-event";
