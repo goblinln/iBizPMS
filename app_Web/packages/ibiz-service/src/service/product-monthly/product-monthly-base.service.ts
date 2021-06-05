@@ -66,6 +66,17 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return new HttpResponse(entity);
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productmonthlies/fetchdefault`, _data);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -82,6 +93,20 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
             delete _data.srffrontuf;
         }
         return this.http.post(`/productmonthlies`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/productmonthlies/getdraft`, _data);
+        return res;
     }
     /**
      * Update
@@ -117,31 +142,6 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productmonthlies/getdraft`, _data);
-        return res;
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/fetchdefault`, _data);
     }
 
     /**

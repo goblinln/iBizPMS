@@ -70,6 +70,17 @@ public class ReportRoleConfigResource {
     }
 
 
+    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #reportroleconfig_id, 'READ')")
+    @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/{reportroleconfig_id}")
+    public ResponseEntity<ReportRoleConfigDTO> get(@PathVariable("reportroleconfig_id") String reportroleconfig_id) {
+        IbzReportRoleConfig domain = ibzreportroleconfigService.get(reportroleconfig_id);
+        ReportRoleConfigDTO dto = reportroleconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(reportroleconfig_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
     @ApiOperation(value = "新建汇报角色配置", tags = {"汇报角色配置" },  notes = "新建汇报角色配置")
 	@RequestMapping(method = RequestMethod.POST, value = "/reportroleconfigs")
@@ -85,17 +96,19 @@ public class ReportRoleConfigResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #reportroleconfig_id, 'READ')")
-    @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/{reportroleconfig_id}")
-    public ResponseEntity<ReportRoleConfigDTO> get(@PathVariable("reportroleconfig_id") String reportroleconfig_id) {
-        IbzReportRoleConfig domain = ibzreportroleconfigService.get(reportroleconfig_id);
-        ReportRoleConfigDTO dto = reportroleconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(reportroleconfig_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'READ')")
+	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/reportroleconfigs/fetchdefault")
+	public ResponseEntity<List<ReportRoleConfigDTO>> fetchdefault(@RequestBody IbzReportRoleConfigSearchContext context) {
+        ibzreportroleconfigRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzReportRoleConfig> domains = ibzreportroleconfigService.searchDefault(context) ;
+        List<ReportRoleConfigDTO> list = reportroleconfigMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #reportroleconfig_id, 'DELETE')")
     @ApiOperation(value = "删除汇报角色配置", tags = {"汇报角色配置" },  notes = "删除汇报角色配置")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/reportroleconfigs/{reportroleconfig_id}")
@@ -111,19 +124,6 @@ public class ReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'READ')")
-	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/reportroleconfigs/fetchdefault")
-	public ResponseEntity<List<ReportRoleConfigDTO>> fetchdefault(@RequestBody IbzReportRoleConfigSearchContext context) {
-        ibzreportroleconfigRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzReportRoleConfig> domains = ibzreportroleconfigService.searchDefault(context) ;
-        List<ReportRoleConfigDTO> list = reportroleconfigMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
     @ApiOperation(value = "获取汇报角色配置草稿", tags = {"汇报角色配置" },  notes = "获取汇报角色配置草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/getdraft")

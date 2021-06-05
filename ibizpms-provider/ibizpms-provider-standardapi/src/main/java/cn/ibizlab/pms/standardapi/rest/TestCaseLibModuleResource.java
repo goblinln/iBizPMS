@@ -90,15 +90,6 @@ public class TestCaseLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
-    @ApiOperation(value = "根据用例库获取用例库模块草稿", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/getdraft")
-    public ResponseEntity<TestCaseLibModuleDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, TestCaseLibModuleDTO dto) {
-        IbzLibModule domain = testcaselibmoduleMapping.toDomain(dto);
-        domain.setRoot(ibzlib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaselibmoduleMapping.toDto(ibzlibmoduleService.getDraft(domain)));
-    }
-
 
     @PreAuthorize("quickTest('IBZ_LIBMODULE', 'DENY')")
     @ApiOperation(value = "根据用例库批量保存用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量保存用例库模块")
@@ -126,6 +117,15 @@ public class TestCaseLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
+    @ApiOperation(value = "根据用例库获取用例库模块草稿", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/getdraft")
+    public ResponseEntity<TestCaseLibModuleDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, TestCaseLibModuleDTO dto) {
+        IbzLibModule domain = testcaselibmoduleMapping.toDomain(dto);
+        domain.setRoot(ibzlib_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testcaselibmoduleMapping.toDto(ibzlibmoduleService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'DELETE')")
     @ApiOperation(value = "根据用例库删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库删除用例库模块")

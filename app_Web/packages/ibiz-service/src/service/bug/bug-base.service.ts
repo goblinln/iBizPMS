@@ -455,24 +455,6 @@ export class BugBaseService extends EntityBaseService<IBug> {
         return this.condCache.get('view');
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BugService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.bug) {
-            return this.http.delete(`/tests/${_context.test}/bugs/${_context.bug}`);
-        }
-        if (_context.project && _context.bug) {
-            return this.http.delete(`/projects/${_context.project}/bugs/${_context.bug}`);
-        }
-    this.log.warn([`[Bug]>>>[Remove函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -529,21 +511,43 @@ export class BugBaseService extends EntityBaseService<IBug> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchProductBug
+     * BugNFavorites
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BugService
      */
-    async FetchProductBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/fetchproductbug`, _data);
+    async BugNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/bugnfavorites`, _data);
         }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/fetchproductbug`, _data);
+        if (_context.project && _context.bug) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/bugnfavorites`, _data);
         }
-    this.log.warn([`[Bug]>>>[FetchProductBug函数]异常`]);
+    this.log.warn([`[Bug]>>>[BugNFavorites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.bug) {
+            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}`);
+            return res;
+        }
+        if (_context.project && _context.bug) {
+            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}`);
+            return res;
+        }
+    this.log.warn([`[Bug]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -587,23 +591,23 @@ export class BugBaseService extends EntityBaseService<IBug> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * BugNFavorites
+     * Resolve
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BugService
      */
-    async BugNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Resolve(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/bugnfavorites`, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/resolve`, _data);
         }
         if (_context.project && _context.bug) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/bugnfavorites`, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/resolve`, _data);
         }
-    this.log.warn([`[Bug]>>>[BugNFavorites函数]异常`]);
+    this.log.warn([`[Bug]>>>[Resolve函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -665,26 +669,6 @@ export class BugBaseService extends EntityBaseService<IBug> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BugService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.bug) {
-            const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}`);
-            return res;
-        }
-        if (_context.project && _context.bug) {
-            const res = await this.http.get(`/projects/${_context.project}/bugs/${_context.bug}`);
-            return res;
-        }
-    this.log.warn([`[Bug]>>>[Get函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * AssignTo
      *
      * @param {*} [_context={}]
@@ -723,23 +707,39 @@ export class BugBaseService extends EntityBaseService<IBug> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Resolve
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BugService
      */
-    async Resolve(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.bug) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/resolve`, _data);
+            return this.http.delete(`/tests/${_context.test}/bugs/${_context.bug}`);
         }
         if (_context.project && _context.bug) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/resolve`, _data);
+            return this.http.delete(`/projects/${_context.project}/bugs/${_context.bug}`);
         }
-    this.log.warn([`[Bug]>>>[Resolve函数]异常`]);
+    this.log.warn([`[Bug]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProductBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async FetchProductBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/fetchproductbug`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/fetchproductbug`, _data);
+        }
+    this.log.warn([`[Bug]>>>[FetchProductBug函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -801,28 +801,6 @@ export class BugBaseService extends EntityBaseService<IBug> {
     }
 
     /**
-     * AssignToBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BugServiceBase
-     */
-    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.test && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/tests/${_context.test}/bugs/assigntobatch`,_data);
-        }
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/bugs/assigntobatch`,_data);
-        }
-        this.log.warn([`[Bug]>>>[AssignToBatch函数]异常`]);
-        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
      * ResolveBatch接口方法
      *
      * @param {*} [context={}]
@@ -841,6 +819,28 @@ export class BugBaseService extends EntityBaseService<IBug> {
             return this.http.post(`/projects/${_context.project}/bugs/resolvebatch`,_data);
         }
         this.log.warn([`[Bug]>>>[ResolveBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * AssignToBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/bugs/assigntobatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/assigntobatch`,_data);
+        }
+        this.log.warn([`[Bug]>>>[AssignToBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }
