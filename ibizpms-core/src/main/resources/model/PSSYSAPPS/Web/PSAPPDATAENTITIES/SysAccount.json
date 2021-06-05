@@ -494,23 +494,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CountMyWork",
-    "methodType" : "FETCH",
-    "name" : "FetchMyWork",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyWork"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "CountMyWork"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -525,6 +508,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CountMyWork",
+    "methodType" : "FETCH",
+    "name" : "FetchMyWork",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyWork"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CountMyWork"
     },
     "builtinMethod" : false
   }, {

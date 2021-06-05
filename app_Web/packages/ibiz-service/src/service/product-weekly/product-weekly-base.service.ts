@@ -121,6 +121,17 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
         return res;
     }
     /**
+     * Summary
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductWeeklyService
+     */
+    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -131,17 +142,6 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/productweeklies/${_context.productweekly}`);
         return res;
-    }
-    /**
-     * Summary
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductWeeklyService
-     */
-    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
     }
 
     /**
