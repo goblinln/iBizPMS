@@ -54,7 +54,7 @@ public class TestCaseStepResource {
 
 
 
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'READ')")
+    @PreAuthorize("test('ZT_CASESTEP', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品测试用例获取DEFAULT", tags = {"用例步骤" } ,notes = "根据产品测试用例获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/fetchdefault")
 	public ResponseEntity<List<TestCaseStepDTO>> fetchDefaultByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {
@@ -67,7 +67,7 @@ public class TestCaseStepResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'READ')")
+    @PreAuthorize("test('ZT_CASESTEP', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品测试用例获取版本1", tags = {"用例步骤" } ,notes = "根据产品测试用例获取版本1")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/fetchversions")
 	public ResponseEntity<List<TestCaseStepDTO>> fetchVersionsByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody CaseStepSearchContext context) {

@@ -1238,6 +1238,16 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "测试用例-读取",
+    "mapPSDEName" : "ZT_CASE",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json"
+    },
+    "name" : "READ",
+    "id" : "ZTCase__READ"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
