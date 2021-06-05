@@ -370,7 +370,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/change`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Change函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -401,7 +402,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             }
             return this.http.post(`/products/${_context.product}/stories`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -418,7 +420,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && _context.story) {
             return this.http.delete(`/products/${_context.product}/stories/${_context.story}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -435,7 +438,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/stories/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Close
@@ -454,7 +458,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/close`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Close函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Review
@@ -473,7 +478,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/review`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Review函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * StoryFavorites
@@ -492,7 +498,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyfavorites`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[StoryFavorites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchProjectStories
@@ -509,7 +516,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/stories/fetchprojectstories`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchProjectStories函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchParentDefault
@@ -526,7 +534,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/stories/fetchparentdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchParentDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * AssignTo
@@ -545,7 +554,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/assignto`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[AssignTo函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * StoryNFavorites
@@ -564,7 +574,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/storynfavorites`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[StoryNFavorites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Activate
@@ -583,7 +594,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/activate`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Activate函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -602,7 +614,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchStoryRelated
@@ -619,7 +632,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/stories/fetchstoryrelated`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[FetchStoryRelated函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -642,7 +656,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             const res = await this.http.get(`/products/${_context.product}/stories/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -661,7 +676,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/stories/${_context.story}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Story]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetUserConcat
@@ -695,7 +711,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/changebatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ChangeBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -716,7 +733,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/closebatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[CloseBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -737,7 +755,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/reviewbatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ReviewBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -758,7 +777,8 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/assigntobatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[AssignToBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -779,6 +799,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/stories/activatebatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Story]>>>[ActivateBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

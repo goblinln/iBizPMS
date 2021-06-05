@@ -92,7 +92,8 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
         if (_context.test && _context.testcase && true) {
             return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestCaseStep]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchVersions
@@ -106,6 +107,7 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
         if (_context.test && _context.testcase && true) {
             return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestCaseStep]>>>[FetchVersions函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

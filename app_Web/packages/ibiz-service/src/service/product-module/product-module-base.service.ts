@@ -173,7 +173,8 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/productmodules/${_context.productmodule}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -194,7 +195,8 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             }
             return this.http.post(`/products/${_context.product}/productmodules`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -208,7 +210,8 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productmodules/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -223,7 +226,8 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             const res = await this.http.get(`/products/${_context.product}/productmodules/${_context.productmodule}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -237,7 +241,8 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         if (_context.product && _context.productmodule) {
             return this.http.delete(`/products/${_context.product}/productmodules/${_context.productmodule}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -254,6 +259,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
             const res = await this.http.get(`/products/${_context.product}/productmodules/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductModule]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

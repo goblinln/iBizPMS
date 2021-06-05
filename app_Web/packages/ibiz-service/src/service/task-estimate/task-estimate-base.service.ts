@@ -147,7 +147,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TaskEstimate]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -164,7 +165,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TaskEstimate]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -178,7 +180,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         if (_context.project && _context.task && true) {
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TaskEstimate]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -199,7 +202,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             }
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TaskEstimate]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -213,7 +217,8 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         if (_context.project && _context.task && _context.taskestimate) {
             return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TaskEstimate]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -228,6 +233,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/${_context.taskestimate}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TaskEstimate]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

@@ -197,6 +197,7 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         if (_context.sysaccount && _context.action && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}/histories/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[History]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

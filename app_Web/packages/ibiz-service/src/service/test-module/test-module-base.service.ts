@@ -171,7 +171,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             }
             return this.http.post(`/tests/${_context.test}/testmodules`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestModule]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -186,7 +187,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             const res = await this.http.get(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestModule]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -203,7 +205,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             const res = await this.http.get(`/tests/${_context.test}/testmodules/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestModule]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -217,7 +220,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         if (_context.test && true) {
             return this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestModule]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -232,7 +236,8 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestModule]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -246,6 +251,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         if (_context.test && _context.testmodule) {
             return this.http.delete(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestModule]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

@@ -103,7 +103,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -126,7 +127,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             const res = await this.http.get(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDir
@@ -146,7 +148,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         if (_context.doclib && true) {
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchdir`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[FetchDir函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -187,7 +190,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             }
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Collect
@@ -210,7 +214,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/collect`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[Collect函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -230,7 +235,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         if (_context.doclib && _context.doclibmodule) {
             return this.http.delete(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * UnCollect
@@ -253,7 +259,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/${_context.doclibmodule}/uncollect`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[UnCollect函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchAllDir
@@ -273,7 +280,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         if (_context.doclib && true) {
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchalldir`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[FetchAllDir函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchMyFavourites
@@ -293,7 +301,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         if (_context.doclib && true) {
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/fetchmyfavourites`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[FetchMyFavourites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -322,7 +331,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
             const res = await this.http.get(`/doclibs/${_context.doclib}/doclibmodules/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[DocLibModule]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -347,7 +357,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/collectbatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[DocLibModule]>>>[CollectBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -372,6 +383,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/doclibs/${_context.doclib}/doclibmodules/uncollectbatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[DocLibModule]>>>[UnCollectBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

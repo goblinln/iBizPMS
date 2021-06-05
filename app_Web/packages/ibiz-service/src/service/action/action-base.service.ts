@@ -268,7 +268,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchMyTrends
@@ -369,7 +370,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmytrends`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[FetchMyTrends函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchAccount
@@ -470,7 +472,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchaccount`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[FetchAccount函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -661,7 +664,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/actions/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchMain
@@ -762,7 +766,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmain`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[FetchMain函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -1073,7 +1078,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchProject
@@ -1174,7 +1180,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproject`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[FetchProject函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchMy
@@ -1275,7 +1282,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmy`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[FetchMy函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -1406,7 +1414,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchProduct
@@ -1507,6 +1516,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproduct`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Action]>>>[FetchProduct函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

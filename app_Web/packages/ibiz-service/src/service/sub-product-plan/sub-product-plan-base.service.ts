@@ -162,7 +162,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async BatchLinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[BatchLinkBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -175,7 +176,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async BatchLinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[BatchLinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -188,7 +190,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async BatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[BatchUnlinkBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -201,7 +204,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[BatchUnlinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -214,7 +218,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async EeActivePlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[EeActivePlanBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -227,7 +232,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async EeCancelPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[EeCancelPlanBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -240,7 +246,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async EeClosePlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[EeClosePlanBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -253,7 +260,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async EeFinishPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[EeFinishPlanBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -266,7 +274,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async EePausePlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[EePausePlanBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -279,7 +288,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async EeRestartPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[EeRestartPlanBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -292,7 +302,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async EeStartPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[EeStartPlanBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -305,7 +316,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async ImportPlanTempletBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[ImportPlanTempletBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -318,7 +330,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[LinkBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -331,7 +344,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[LinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -344,7 +358,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async LinkTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[LinkTaskBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -357,7 +372,8 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[UnlinkBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -370,6 +386,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @memberof SubProductPlanServiceBase
      */
     public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[SubProductPlan]>>>[UnlinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

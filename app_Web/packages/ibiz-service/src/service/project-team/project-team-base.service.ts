@@ -146,7 +146,8 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         if (_context.project && _context.projectteam) {
             return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -167,7 +168,8 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             }
             return this.http.post(`/projects/${_context.project}/projectteams`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchCntEst
@@ -181,7 +183,8 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[FetchCntEst函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -196,7 +199,8 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             const res = await this.http.get(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchSpecifyTeam
@@ -210,7 +214,8 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectteams/fetchspecifyteam`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[FetchSpecifyTeam函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -227,7 +232,8 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -242,6 +248,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectTeam]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

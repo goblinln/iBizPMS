@@ -129,7 +129,8 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
             const res = await this.http.get(`/products/${_context.product}/productbranches/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductBranch]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -143,7 +144,8 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
         if (_context.product && _context.productbranch) {
             return this.http.delete(`/products/${_context.product}/productbranches/${_context.productbranch}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductBranch]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -158,7 +160,8 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
             const res = await this.http.get(`/products/${_context.product}/productbranches/${_context.productbranch}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductBranch]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -179,7 +182,8 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
             }
             return this.http.post(`/products/${_context.product}/productbranches`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductBranch]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchCurProduct
@@ -193,7 +197,8 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productbranches/fetchcurproduct`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductBranch]>>>[FetchCurProduct函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -207,7 +212,8 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productbranches/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductBranch]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -222,6 +228,7 @@ export class ProductBranchBaseService extends EntityBaseService<IProductBranch> 
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/productbranches/${_context.productbranch}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductBranch]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

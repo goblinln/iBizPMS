@@ -93,7 +93,8 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/projectburns/${_context.projectburn}/computeburn`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectBurn]>>>[ComputeBurn函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchEstimate
@@ -107,7 +108,8 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/projectburns/fetchestimate`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProjectBurn]>>>[FetchEstimate函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -124,6 +126,7 @@ export class ProjectBurnBaseService extends EntityBaseService<IProjectBurn> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/projectburns/computeburnbatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[ProjectBurn]>>>[ComputeBurnBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

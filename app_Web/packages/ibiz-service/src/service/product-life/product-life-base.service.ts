@@ -92,7 +92,8 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductLife]>>>[FetchRoadMapYear函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchRoadmap
@@ -106,6 +107,7 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductLife]>>>[FetchRoadmap函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

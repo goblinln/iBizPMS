@@ -134,7 +134,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         if (_context.product && _context.productteam) {
             return this.http.delete(`/products/${_context.product}/productteams/${_context.productteam}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductTeam]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchSpecifyTeam
@@ -148,7 +149,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productteams/fetchspecifyteam`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductTeam]>>>[FetchSpecifyTeam函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -163,7 +165,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
             const res = await this.http.get(`/products/${_context.product}/productteams/${_context.productteam}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductTeam]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -184,7 +187,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
             }
             return this.http.post(`/products/${_context.product}/productteams`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductTeam]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchProductTeamInfo
@@ -198,7 +202,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productteams/fetchproductteaminfo`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductTeam]>>>[FetchProductTeamInfo函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -215,7 +220,8 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
             const res = await this.http.get(`/products/${_context.product}/productteams/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductTeam]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -230,6 +236,7 @@ export class ProductTeamBaseService extends EntityBaseService<IProductTeam> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/productteams/${_context.productteam}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductTeam]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

@@ -95,6 +95,7 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
         if (_context.product && _context.story && true) {
             return this.http.post(`/products/${_context.product}/stories/${_context.story}/storyspecs/fetchversion`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[StorySpec]>>>[FetchVersion函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

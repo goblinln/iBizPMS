@@ -120,7 +120,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             const res = await this.http.get(`/projects/${_context.project}/testreports/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -139,7 +140,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             const res = await this.http.get(`/projects/${_context.project}/testreports/${_context.testreport}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * InitTestTaskReportMulti
@@ -158,7 +160,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreportmulti`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[InitTestTaskReportMulti函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -175,7 +178,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/testreports/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * LoadTestReportBasic
@@ -194,7 +198,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/loadtestreportbasic`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[LoadTestReportBasic函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -213,7 +218,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/testreports/${_context.testreport}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * InitProjectDuringReport
@@ -232,7 +238,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/initprojectduringreport`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[InitProjectDuringReport函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * InitProjectReport
@@ -251,7 +258,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/initprojectreport`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[InitProjectReport函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -268,7 +276,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         if (_context.project && _context.testreport) {
             return this.http.delete(`/projects/${_context.project}/testreports/${_context.testreport}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * InitTestTaskReport
@@ -287,7 +296,8 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/inittesttaskreport`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[InitTestTaskReport函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -318,6 +328,7 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             }
             return this.http.post(`/projects/${_context.project}/testreports`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[TestReport]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

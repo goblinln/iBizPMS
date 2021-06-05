@@ -129,7 +129,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkstory`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[LinkStory函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * LinkBugbyLeftBug
@@ -144,7 +145,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/linkbugbyleftbug`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[LinkBugbyLeftBug函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Terminate
@@ -159,7 +161,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/terminate`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[Terminate函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Get
@@ -174,7 +177,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
             const res = await this.http.get(`/products/${_context.product}/productreleases/${_context.productrelease}`);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[Get函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Create
@@ -195,7 +199,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
             }
             return this.http.post(`/products/${_context.product}/productreleases`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[Create函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * FetchDefault
@@ -209,7 +214,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && true) {
             return this.http.post(`/products/${_context.product}/productreleases/fetchdefault`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * UnlinkStory
@@ -224,7 +230,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/unlinkstory`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[UnlinkStory函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * UnlinkBug
@@ -239,7 +246,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/unlinkbug`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[UnlinkBug函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Remove
@@ -253,7 +261,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         if (_context.product && _context.productrelease) {
             return this.http.delete(`/products/${_context.product}/productreleases/${_context.productrelease}`);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Activate
@@ -268,7 +277,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/activate`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[Activate函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * Update
@@ -283,7 +293,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/productreleases/${_context.productrelease}`, _data);
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
      * GetDraft
@@ -300,7 +311,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
             const res = await this.http.get(`/products/${_context.product}/productreleases/getdraft`, _data);
             return res;
         }
-    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[ProductRelease]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -317,7 +329,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/linkstorybatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[ProductRelease]>>>[LinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -334,7 +347,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/linkbugbyleftbugbatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[ProductRelease]>>>[LinkBugbyLeftBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -351,7 +365,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/terminatebatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[ProductRelease]>>>[TerminateBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -368,7 +383,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/unlinkstorybatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[ProductRelease]>>>[UnlinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -385,7 +401,8 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/unlinkbugbatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[ProductRelease]>>>[UnlinkBugBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -402,6 +419,7 @@ export class ProductReleaseBaseService extends EntityBaseService<IProductRelease
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/products/${_context.product}/productreleases/activatebatch`,_data);
         }
-        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[ProductRelease]>>>[ActivateBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }
