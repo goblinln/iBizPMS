@@ -66,17 +66,6 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
         return new HttpResponse(entity);
     }
     /**
-     * AutoCreate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectMonthlyService
-     */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectmonthlies/${_context.projectmonthly}/autocreate`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -102,6 +91,18 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
         return this.http.post(`/projectmonthlies/fetchdefault`, _data);
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectMonthlyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/projectmonthlies/${_context.projectmonthly}`);
+        return res;
+    }
+    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -112,6 +113,17 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/projectmonthlies/${_context.projectmonthly}`, _data);
+    }
+    /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectMonthlyService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projectmonthlies/${_context.projectmonthly}/autocreate`, _data);
     }
     /**
      * Create
@@ -130,18 +142,6 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
             delete _data.srffrontuf;
         }
         return this.http.post(`/projectmonthlies`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectMonthlyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/projectmonthlies/${_context.projectmonthly}`);
-        return res;
     }
 
     /**

@@ -77,6 +77,24 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return this.http.post(`/productmonthlies/fetchdefault`, _data);
     }
     /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/productmonthlies`, _data);
+    }
+    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -101,6 +119,17 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return res;
     }
     /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -113,35 +142,6 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/productmonthlies/getdraft`, _data);
         return res;
-    }
-    /**
-     * AutoCreate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/productmonthlies`, _data);
     }
 
     /**
