@@ -52,37 +52,6 @@ public class TestCaseLibResource {
     @Lazy
     public TestCaseLibMapping testcaselibMapping;
 
-    @VersionCheck(entity = "ibzlib" , versionfield = "lastediteddate")
-    @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'UPDATE')")
-    @ApiOperation(value = "更新用例库", tags = {"用例库" },  notes = "更新用例库")
-	@RequestMapping(method = RequestMethod.PUT, value = "/testcaselibs/{testcaselib_id}")
-    @Transactional
-    public ResponseEntity<TestCaseLibDTO> update(@PathVariable("testcaselib_id") Long testcaselib_id, @RequestBody TestCaseLibDTO testcaselibdto) {
-		IbzLib domain  = testcaselibMapping.toDomain(testcaselibdto);
-        domain.setId(testcaselib_id);
-		ibzlibService.update(domain );
-        if(!ibzlibRuntime.test(testcaselib_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		TestCaseLibDTO dto = testcaselibMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzlibRuntime.getOPPrivs(testcaselib_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("quickTest('IBZ_LIB', 'READ')")
-	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")
-    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/fetchdefault")
-	public ResponseEntity<List<TestCaseLibDTO>> fetchdefault(@RequestBody IbzLibSearchContext context) {
-        ibzlibRuntime.addAuthorityConditions(context,"READ");
-        Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
-        List<TestCaseLibDTO> list = testcaselibMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'DELETE')")
     @ApiOperation(value = "删除用例库", tags = {"用例库" },  notes = "删除用例库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{testcaselib_id}")
@@ -131,6 +100,37 @@ public class TestCaseLibResource {
         IbzLib domain = testcaselibMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(testcaselibMapping.toDto(ibzlibService.getDraft(domain)));
     }
+
+    @PreAuthorize("quickTest('IBZ_LIB', 'READ')")
+	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")
+    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/fetchdefault")
+	public ResponseEntity<List<TestCaseLibDTO>> fetchdefault(@RequestBody IbzLibSearchContext context) {
+        ibzlibRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
+        List<TestCaseLibDTO> list = testcaselibMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @VersionCheck(entity = "ibzlib" , versionfield = "lastediteddate")
+    @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'UPDATE')")
+    @ApiOperation(value = "更新用例库", tags = {"用例库" },  notes = "更新用例库")
+	@RequestMapping(method = RequestMethod.PUT, value = "/testcaselibs/{testcaselib_id}")
+    @Transactional
+    public ResponseEntity<TestCaseLibDTO> update(@PathVariable("testcaselib_id") Long testcaselib_id, @RequestBody TestCaseLibDTO testcaselibdto) {
+		IbzLib domain  = testcaselibMapping.toDomain(testcaselibdto);
+        domain.setId(testcaselib_id);
+		ibzlibService.update(domain );
+        if(!ibzlibRuntime.test(testcaselib_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		TestCaseLibDTO dto = testcaselibMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzlibRuntime.getOPPrivs(testcaselib_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

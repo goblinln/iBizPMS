@@ -31,23 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -62,6 +45,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -164,12 +164,12 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchMobType",
+    "codeName" : "FetchQueryUserYEAR",
     "methodType" : "FETCH",
-    "name" : "FetchMobType",
+    "name" : "FetchQueryUserYEAR",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MobType"
+      "id" : "QueryUserYEAR"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -177,7 +177,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMobType"
+      "id" : "FetchQueryUserYEAR"
     },
     "builtinMethod" : false
   }, {
@@ -212,23 +212,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchQueryUserYEAR",
-    "methodType" : "FETCH",
-    "name" : "FetchQueryUserYEAR",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "QueryUserYEAR"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchQueryUserYEAR"
     },
     "builtinMethod" : false
   }, {
@@ -280,6 +263,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTrends"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMobType",
+    "methodType" : "FETCH",
+    "name" : "FetchMobType",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MobType"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMobType"
     },
     "builtinMethod" : false
   }, {
@@ -501,29 +501,12 @@
     "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMobType",
+    "codeName" : "FetchQueryUserYEAR",
     "methodType" : "FETCH",
-    "name" : "FetchMobType",
+    "name" : "FetchQueryUserYEAR",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MobType"
+      "id" : "QueryUserYEAR"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -531,7 +514,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMobType"
+      "id" : "FetchQueryUserYEAR"
     },
     "builtinMethod" : false
   }, {
@@ -549,6 +532,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -583,23 +583,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchQueryUserYEAR",
-    "methodType" : "FETCH",
-    "name" : "FetchQueryUserYEAR",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "QueryUserYEAR"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchQueryUserYEAR"
     },
     "builtinMethod" : false
   }, {
@@ -685,6 +668,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyTrends"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMobType",
+    "methodType" : "FETCH",
+    "name" : "FetchMobType",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MobType"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMobType"
     },
     "builtinMethod" : false
   }, {

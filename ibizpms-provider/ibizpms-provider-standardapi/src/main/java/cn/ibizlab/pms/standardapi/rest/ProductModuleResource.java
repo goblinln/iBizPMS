@@ -67,15 +67,6 @@ public class ProductModuleResource {
 
 
     @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取需求模块草稿", tags = {"需求模块" },  notes = "根据产品获取需求模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/getdraft")
-    public ResponseEntity<ProductModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductModuleDTO dto) {
-        ProductModule domain = productmoduleMapping.toDomain(dto);
-        domain.setRoot(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品建立需求模块", tags = {"需求模块" },  notes = "根据产品建立需求模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productmodules")
     public ResponseEntity<ProductModuleDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductModuleDTO productmoduledto) {
@@ -135,6 +126,15 @@ public class ProductModuleResource {
         }
         productmoduleService.saveBatch(domainlist);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取需求模块草稿", tags = {"需求模块" },  notes = "根据产品获取需求模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/getdraft")
+    public ResponseEntity<ProductModuleDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductModuleDTO dto) {
+        ProductModule domain = productmoduleMapping.toDomain(dto);
+        domain.setRoot(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productmoduleMapping.toDto(productmoduleService.getDraft(domain)));
     }
 
 }

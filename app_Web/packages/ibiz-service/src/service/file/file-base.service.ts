@@ -225,119 +225,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
         return this.http.post(`/files/fetchtype`, _data);
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof FileService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testcase && _context.testreult && _context.file) {
-            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/${_context.file}`);
-        }
-        if (_context.test && _context.testcase && _context.testcasestep && _context.file) {
-            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/${_context.file}`);
-        }
-        if (_context.project && _context.doclib && _context.doc && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
-        }
-        if (_context.product && _context.doclib && _context.doc && _context.file) {
-            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
-        }
-        if (_context.test && _context.testreport && _context.file) {
-            return this.http.delete(`/tests/${_context.test}/testreports/${_context.testreport}/files/${_context.file}`);
-        }
-        if (_context.test && _context.testcase && _context.file) {
-            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/files/${_context.file}`);
-        }
-        if (_context.test && _context.bug && _context.file) {
-            return this.http.delete(`/tests/${_context.test}/bugs/${_context.bug}/files/${_context.file}`);
-        }
-        if (_context.project && _context.testtask && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}/files/${_context.file}`);
-        }
-        if (_context.project && _context.testreport && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/testreports/${_context.testreport}/files/${_context.file}`);
-        }
-        if (_context.project && _context.story && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/stories/${_context.story}/files/${_context.file}`);
-        }
-        if (_context.project && _context.task && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/files/${_context.file}`);
-        }
-        if (_context.project && _context.build && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}/files/${_context.file}`);
-        }
-        if (_context.project && _context.bug && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/bugs/${_context.bug}/files/${_context.file}`);
-        }
-        if (_context.project && _context.productplan && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/productplans/${_context.productplan}/files/${_context.file}`);
-        }
-        if (_context.project && _context.doclib && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/files/${_context.file}`);
-        }
-        if (_context.product && _context.story && _context.file) {
-            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/files/${_context.file}`);
-        }
-        if (_context.product && _context.productrelease && _context.file) {
-            return this.http.delete(`/products/${_context.product}/productreleases/${_context.productrelease}/files/${_context.file}`);
-        }
-        if (_context.product && _context.productplan && _context.file) {
-            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/files/${_context.file}`);
-        }
-        if (_context.product && _context.build && _context.file) {
-            return this.http.delete(`/products/${_context.product}/builds/${_context.build}/files/${_context.file}`);
-        }
-        if (_context.product && _context.doclib && _context.file) {
-            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/files/${_context.file}`);
-        }
-        if (_context.doclib && _context.doc && _context.file) {
-            return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
-        }
-        if (_context.sysaccount && _context.todo && _context.file) {
-            return this.http.delete(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/files/${_context.file}`);
-        }
-        if (_context.sysaccount && _context.doc && _context.file) {
-            return this.http.delete(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/${_context.file}`);
-        }
-        if (_context.ibzweekly && _context.file) {
-            return this.http.delete(`/ibzweeklies/${_context.ibzweekly}/files/${_context.file}`);
-        }
-        if (_context.todo && _context.file) {
-            return this.http.delete(`/todos/${_context.todo}/files/${_context.file}`);
-        }
-        if (_context.testsuite && _context.file) {
-            return this.http.delete(`/testsuites/${_context.testsuite}/files/${_context.file}`);
-        }
-        if (_context.testcaselib && _context.file) {
-            return this.http.delete(`/testcaselibs/${_context.testcaselib}/files/${_context.file}`);
-        }
-        if (_context.reportly && _context.file) {
-            return this.http.delete(`/reportlies/${_context.reportly}/files/${_context.file}`);
-        }
-        if (_context.project && _context.file) {
-            return this.http.delete(`/projects/${_context.project}/files/${_context.file}`);
-        }
-        if (_context.product && _context.file) {
-            return this.http.delete(`/products/${_context.product}/files/${_context.file}`);
-        }
-        if (_context.monthly && _context.file) {
-            return this.http.delete(`/monthlies/${_context.monthly}/files/${_context.file}`);
-        }
-        if (_context.doc && _context.file) {
-            return this.http.delete(`/docs/${_context.doc}/files/${_context.file}`);
-        }
-        if (_context.doclib && _context.file) {
-            return this.http.delete(`/doclibs/${_context.doclib}/files/${_context.file}`);
-        }
-        if (_context.daily && _context.file) {
-            return this.http.delete(`/dailies/${_context.daily}/files/${_context.file}`);
-        }
-        return this.http.delete(`/files/${_context.file}`);
-    }
-    /**
      * FetchProject
      *
      * @param {*} [_context={}]
@@ -562,5 +449,118 @@ export class FileBaseService extends EntityBaseService<IFile> {
             return this.http.post(`/dailies/${_context.daily}/files/fetchproduct`, _data);
         }
         return this.http.post(`/files/fetchproduct`, _data);
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof FileService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && _context.testreult && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/${_context.file}`);
+        }
+        if (_context.test && _context.testcase && _context.testcasestep && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/${_context.file}`);
+        }
+        if (_context.project && _context.doclib && _context.doc && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
+        }
+        if (_context.product && _context.doclib && _context.doc && _context.file) {
+            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
+        }
+        if (_context.test && _context.testreport && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testreports/${_context.testreport}/files/${_context.file}`);
+        }
+        if (_context.test && _context.testcase && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testcases/${_context.testcase}/files/${_context.file}`);
+        }
+        if (_context.test && _context.bug && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/bugs/${_context.bug}/files/${_context.file}`);
+        }
+        if (_context.project && _context.testtask && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}/files/${_context.file}`);
+        }
+        if (_context.project && _context.testreport && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/testreports/${_context.testreport}/files/${_context.file}`);
+        }
+        if (_context.project && _context.story && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/stories/${_context.story}/files/${_context.file}`);
+        }
+        if (_context.project && _context.task && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}/files/${_context.file}`);
+        }
+        if (_context.project && _context.build && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}/files/${_context.file}`);
+        }
+        if (_context.project && _context.bug && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/bugs/${_context.bug}/files/${_context.file}`);
+        }
+        if (_context.project && _context.productplan && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/productplans/${_context.productplan}/files/${_context.file}`);
+        }
+        if (_context.project && _context.doclib && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}/files/${_context.file}`);
+        }
+        if (_context.product && _context.story && _context.file) {
+            return this.http.delete(`/products/${_context.product}/stories/${_context.story}/files/${_context.file}`);
+        }
+        if (_context.product && _context.productrelease && _context.file) {
+            return this.http.delete(`/products/${_context.product}/productreleases/${_context.productrelease}/files/${_context.file}`);
+        }
+        if (_context.product && _context.productplan && _context.file) {
+            return this.http.delete(`/products/${_context.product}/productplans/${_context.productplan}/files/${_context.file}`);
+        }
+        if (_context.product && _context.build && _context.file) {
+            return this.http.delete(`/products/${_context.product}/builds/${_context.build}/files/${_context.file}`);
+        }
+        if (_context.product && _context.doclib && _context.file) {
+            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/files/${_context.file}`);
+        }
+        if (_context.doclib && _context.doc && _context.file) {
+            return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
+        }
+        if (_context.sysaccount && _context.todo && _context.file) {
+            return this.http.delete(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/files/${_context.file}`);
+        }
+        if (_context.sysaccount && _context.doc && _context.file) {
+            return this.http.delete(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/${_context.file}`);
+        }
+        if (_context.ibzweekly && _context.file) {
+            return this.http.delete(`/ibzweeklies/${_context.ibzweekly}/files/${_context.file}`);
+        }
+        if (_context.todo && _context.file) {
+            return this.http.delete(`/todos/${_context.todo}/files/${_context.file}`);
+        }
+        if (_context.testsuite && _context.file) {
+            return this.http.delete(`/testsuites/${_context.testsuite}/files/${_context.file}`);
+        }
+        if (_context.testcaselib && _context.file) {
+            return this.http.delete(`/testcaselibs/${_context.testcaselib}/files/${_context.file}`);
+        }
+        if (_context.reportly && _context.file) {
+            return this.http.delete(`/reportlies/${_context.reportly}/files/${_context.file}`);
+        }
+        if (_context.project && _context.file) {
+            return this.http.delete(`/projects/${_context.project}/files/${_context.file}`);
+        }
+        if (_context.product && _context.file) {
+            return this.http.delete(`/products/${_context.product}/files/${_context.file}`);
+        }
+        if (_context.monthly && _context.file) {
+            return this.http.delete(`/monthlies/${_context.monthly}/files/${_context.file}`);
+        }
+        if (_context.doc && _context.file) {
+            return this.http.delete(`/docs/${_context.doc}/files/${_context.file}`);
+        }
+        if (_context.doclib && _context.file) {
+            return this.http.delete(`/doclibs/${_context.doclib}/files/${_context.file}`);
+        }
+        if (_context.daily && _context.file) {
+            return this.http.delete(`/dailies/${_context.daily}/files/${_context.file}`);
+        }
+        return this.http.delete(`/files/${_context.file}`);
     }
 }

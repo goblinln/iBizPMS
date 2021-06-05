@@ -52,17 +52,6 @@ public class AccountStoryResource {
     @Lazy
     public AccountStoryMapping accountstoryMapping;
 
-    @PreAuthorize("test('ZT_STORY', #accountstory_id, 'READ')")
-    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/accountstories/{accountstory_id}")
-    public ResponseEntity<AccountStoryDTO> get(@PathVariable("accountstory_id") Long accountstory_id) {
-        Story domain = storyService.get(accountstory_id);
-        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(accountstory_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"需求" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchmyfavorites")
@@ -99,6 +88,17 @@ public class AccountStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('ZT_STORY', #accountstory_id, 'READ')")
+    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/accountstories/{accountstory_id}")
+    public ResponseEntity<AccountStoryDTO> get(@PathVariable("accountstory_id") Long accountstory_id) {
+        Story domain = storyService.get(accountstory_id);
+        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(accountstory_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/accountstories/{accountstory_id}/{action}")
@@ -106,15 +106,6 @@ public class AccountStoryResource {
         Story domain = storyService.dynamicCall(accountstory_id, action, accountstoryMapping.toDomain(accountstorydto));
         accountstorydto = accountstoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(accountstorydto);
-    }
-
-    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-    @ApiOperation(value = "根据系统用户获取需求", tags = {"需求" },  notes = "根据系统用户获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountstories/{accountstory_id}")
-    public ResponseEntity<AccountStoryDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountstory_id") Long accountstory_id) {
-        Story domain = storyService.get(accountstory_id);
-        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
@@ -156,5 +147,14 @@ public class AccountStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
+    @ApiOperation(value = "根据系统用户获取需求", tags = {"需求" },  notes = "根据系统用户获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountstories/{accountstory_id}")
+    public ResponseEntity<AccountStoryDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountstory_id") Long accountstory_id) {
+        Story domain = storyService.get(accountstory_id);
+        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 }
 
