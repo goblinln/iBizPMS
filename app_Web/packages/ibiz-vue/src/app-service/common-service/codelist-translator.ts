@@ -80,7 +80,7 @@ export class CodeListTranslator {
         let texts: any[] = []
         selectedItems.forEach((item: any)=>{
             if(codeList.codeListType == 'STATIC'){
-                texts.push(this.getLocaleText(`codelist.${codeList.codeName}.${item.value}`, _this, item.text));
+                texts.push(item.text);
             }else{
                 texts.push(item.text);
                 // todo 动态代码表多语言
@@ -119,8 +119,8 @@ export class CodeListTranslator {
      * @param {*} _this 上下文索引
      * @memberof CodeListTranslator
      */
-    private getEmptyText(codeList: any, _this: any){
-        return this.getLocaleText(`codelist.${codeList.codeName}.empty`,_this, codeList.emptyText);
+    private getEmptyText(codeList: IPSAppCodeList, _this: any){
+        return this.getLocaleText(codeList.getEmptyTextPSLanguageRes?.()?.lanResTag,_this, codeList.emptyText);
     }
 
 
@@ -132,7 +132,7 @@ export class CodeListTranslator {
      * @param {string} defaultText 默认文本，多语言失效时使用
      * @memberof CodeListTranslator
      */
-    private getLocaleText(localeTag: string, _this: any, defaultText: string){
+    private getLocaleText(localeTag: string | undefined , _this: any, defaultText: string){
         if(!Util.isEmpty(_this.$t) && typeof _this.$t === 'function' && !Util.isEmpty(localeTag)){
             let localText = _this.$t(localeTag);
             if(!Util.isEmpty(localText)){

@@ -1,3 +1,4 @@
+export { appPopup } from './app-popup/app-popup';
 export { AppDrawer } from './app-drawer/app-drawer';
 export { AppModal } from './app-modal/app-modal';
 export { AppPopover } from './app-popover/app-popover';

@@ -66,31 +66,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return new HttpResponse(entity);
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/ibzweeklies/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Submit
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/submit`, _data);
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -114,6 +89,42 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/read`, _data);
     }
     /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/autocreate`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/fetchdefault`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/ibzweeklies/getdraft`, _data);
+        return res;
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -130,6 +141,17 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzweeklies`, _data);
+    }
+    /**
+     * Submit
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/submit`, _data);
     }
     /**
      * Get
@@ -154,27 +176,33 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/notice`, _data);
     }
+
     /**
-     * FetchDefault
+     * ReadBatch接口方法
      *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZWEEKLYServiceBase
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/fetchdefault`, _data);
+    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzweeklies/readbatch`,_data);
     }
+
     /**
-     * AutoCreate
+     * AutoCreateBatch接口方法
      *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZWEEKLYServiceBase
      */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/autocreate`, _data);
+    public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzweeklies/autocreatebatch`,_data);
     }
 
     /**
@@ -192,20 +220,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     }
 
     /**
-     * ReadBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/readbatch`,_data);
-    }
-
-    /**
      * NoticeBatch接口方法
      *
      * @param {*} [context={}]
@@ -217,19 +231,5 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     public async NoticeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/ibzweeklies/noticebatch`,_data);
-    }
-
-    /**
-     * AutoCreateBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/autocreatebatch`,_data);
     }
 }

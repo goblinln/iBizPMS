@@ -13,6 +13,7 @@ import {
 import { ModelTool, StringUtil, UIActionTool, Util } from 'ibiz-core';
 import { Subject } from 'rxjs';
 import { AppGlobalService } from '../app-service';
+import { appPopup } from '../utils';
 
 export class AppFrontAction {
     /**
@@ -56,9 +57,9 @@ export class AppFrontAction {
     ) {
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonwords.nosupportsingle'),'AppFrontAction');
+            actionContext.$throw(actionContext.$t('app.commonwords.nosupportsingle'), 'AppFrontAction');
         } else if (Object.is(actionTarget, 'MULTIDATA')) {
-            actionContext.$throw(actionContext.$t('app.commonwords.nosupportmultile'),'AppFrontAction');
+            actionContext.$throw(actionContext.$t('app.commonwords.nosupportmultile'), 'AppFrontAction');
         } else {
             // 处理数据
             let data: any = {};
@@ -81,9 +82,9 @@ export class AppFrontAction {
                 const majorKey = (ModelTool.getAppEntityMajorField(
                     this.actionModel.getPSAppDataEntity(),
                 ) as IPSAppDEField)?.codeName.toLowerCase();
-                if(_args[0]?.[key]){
+                if (_args[0]?.[key]) {
                     Object.assign(context, { [entityName!]: `%${key}%` });
-                }else{
+                } else {
                     Object.assign(context, { [entityName!]: `%${entityName}%` });
                 }
                 Object.assign(params, { [key!]: `%${key}%` });
@@ -175,7 +176,10 @@ export class AppFrontAction {
             Object.is(this.actionModel.frontProcessType, 'WIZARD')
         ) {
             if (!this.actionModel.getFrontPSAppView()) {
-                actionContext.$warning(`${this.actionModel.caption}${actionContext.$t('app.warn.unopenview')}`,'oPenView');
+                actionContext.$warning(
+                    `${this.actionModel.caption}${actionContext.$t('app.warn.unopenview')}`,
+                    'oPenView',
+                );
                 return;
             }
             await frontPSAppView?.fill(true);
@@ -240,7 +244,7 @@ export class AppFrontAction {
                 }
                 // 后续界面行为
                 if (this.actionModel.M?.getNextPSUIAction) {
-                    getPSUIActionByModelObject(this.actionModel).then((nextUIaction:any)=>{
+                    getPSUIActionByModelObject(this.actionModel).then((nextUIaction: any) => {
                         if (nextUIaction.getPSAppDataEntity()) {
                             let [tag, appDeName] = (actionModel.getNextPSUIAction() as IPSAppDEUIAction).id.split('@');
                             if (deUIService) {
@@ -268,7 +272,7 @@ export class AppFrontAction {
                                 undefined,
                             );
                         }
-                    })
+                    });
                 }
             };
             // 打开重定向视图
@@ -350,6 +354,25 @@ export class AppFrontAction {
                     openViewNextLogic(this.actionModel, actionContext, xData, result.datas);
                     return result.datas;
                 });
+            } else if (frontPSAppView.openMode === 'POPUP') {
+                const view: any = {
+                    viewname: 'app-view-shell',
+                    height: frontPSAppView.height,
+                    width: frontPSAppView.width,
+                    title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
+                    placement: frontPSAppView.openMode,
+                };
+                const container = appPopup.openDrawer(
+                    view,
+                    Util.getViewProps(context, data),
+                );
+                container.subscribe((result: any) => {
+                    if (!result || !Object.is(result.ret, 'OK')) {
+                        return;
+                    }
+                    openViewNextLogic(this.actionModel, actionContext, xData, result.datas);
+                    return result.datas;
+                });
             } else if (frontPSAppView.openMode == 'POPOVER') {
                 const view: any = {
                     viewname: 'app-view-shell',
@@ -367,11 +390,17 @@ export class AppFrontAction {
                     return result.datas;
                 });
             } else {
-                actionContext.$warning(`${frontPSAppView.title}${actionContext.$t('app.nosupport.unopen')}`,'oPenView');
+                actionContext.$warning(
+                    `${frontPSAppView.title}${actionContext.$t('app.nosupport.unopen')}`,
+                    'oPenView',
+                );
             }
             // 用户自定义
         } else {
-            actionContext.$warning(`${this.actionModel.caption}${actionContext.$t('app.nosupport.uncustom')}`,'oPenView');
+            actionContext.$warning(
+                `${this.actionModel.caption}${actionContext.$t('app.nosupport.uncustom')}`,
+                'oPenView',
+            );
         }
     }
 }

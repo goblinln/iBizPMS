@@ -223,7 +223,7 @@ export class NewDynamicTimeLine extends AppListBase {
                 }
                 const data2 = this.actionObjectType.find(code => Object.is(code.value, item.objecttype));
                 if (data2) {
-                    item.objectTypeText = "codelist.Action__object_type." + data2.value;
+                    item.objectTypeText = data2.text;
                 }
                 //根据列数据模型处理列表项代码表
                 this.listItemCodelist(item);
@@ -292,7 +292,7 @@ export class NewDynamicTimeLine extends AppListBase {
                     {item.dateText}
                 </div>
                 <div class="timeline-content">
-                    {item.data.actor}&nbsp;{item.data.actionText}&nbsp;{item.data.objectTypeText ? this.$t(item.data.objectTypeText) : ""}
+                    {item.data.actor}&nbsp;{item.data.actionText}&nbsp;{item.data.objectTypeText}
                 </div>
             </li>;
         })}</ul>;

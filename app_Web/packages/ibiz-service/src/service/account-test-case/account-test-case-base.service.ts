@@ -327,6 +327,20 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
         return this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
     }
     /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountTestCaseService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
+        }
+        return this.http.post(`/accounttestcases/fetchmy`, _data);
+    }
+    /**
      * FetchAccount
      *
      * @param {*} [_context={}]
@@ -355,19 +369,5 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
         }
         const res = await this.http.get(`/accounttestcases/${_context.accounttestcase}`);
         return res;
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountTestCaseService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmy`, _data);
-        }
-        return this.http.post(`/accounttestcases/fetchmy`, _data);
     }
 }

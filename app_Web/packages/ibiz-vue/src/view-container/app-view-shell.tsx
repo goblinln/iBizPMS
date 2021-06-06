@@ -1,5 +1,5 @@
 import { isNilOrEmpty } from 'qx-util';
-import { Component, Emit, Prop, Inject } from 'vue-property-decorator';
+import { Component, Emit, Prop } from 'vue-property-decorator';
 import { ViewContainerBase } from './view-container-base';
 
 /**
@@ -11,18 +11,27 @@ import { ViewContainerBase } from './view-container-base';
  */
 @Component({})
 export class AppViewShell extends ViewContainerBase {
-
     /**
-    * 数据变化
-    *
-    * @param {*} val
-    * @returns {*}
-    * @memberof AppViewShell
-    */
+     * 数据变化
+     *
+     * @param {*} val
+     * @returns {*}
+     * @memberof AppViewShell
+     */
     @Emit()
     public viewDatasChange(val: any): any {
         return val;
     }
+
+    /**
+     * 模态打开传递控制器
+     *
+     * @author chitanda
+     * @date 2021-06-06 16:06:18
+     * @type {*}
+     */
+    @Prop()
+    modal: any;
 
     /**
      * 视图静态参数
@@ -56,18 +65,17 @@ export class AppViewShell extends ViewContainerBase {
      * @memberof AppViewShell
      */
     public render(h: any) {
-        if(isNilOrEmpty(this.viewContainerName)){
+        if (isNilOrEmpty(this.viewContainerName)) {
             return;
         }
         return h(this.viewContainerName, {
-            props: { dynamicProps: this.dynamicProps, staticProps: this.viewContext },
+            props: { modal: this.modal, dynamicProps: this.dynamicProps, staticProps: this.viewContext },
             on: {
-                'view-event': this.handleViewEvent.bind(this)
+                'view-event': this.handleViewEvent.bind(this),
             },
             domProps: {
-                id: `${this.modeldata?.codeName}`
-            }
-        })
+                id: `${this.modeldata?.codeName}`,
+            },
+        });
     }
-
 }
