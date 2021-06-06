@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
-import cn.ibizlab.util.filter.SearchContextBase;
+import cn.ibizlab.pms.util.filter.SearchContextBase;
 import net.ibizsys.runtime.ISystemRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
