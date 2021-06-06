@@ -48,6 +48,19 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Summary",
+    "methodType" : "DEACTION",
+    "name" : "SumProjectDaily",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Summary"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -65,36 +78,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Summary",
-    "methodType" : "DEACTION",
-    "name" : "SumProjectDaily",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Summary"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -109,6 +92,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -255,6 +255,23 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -272,20 +289,16 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "codeName" : "Summary",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "SumProjectDaily",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "Summary"
     },
     "builtinMethod" : false
   }, {
@@ -306,36 +319,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Summary",
-    "methodType" : "DEACTION",
-    "name" : "SumProjectDaily",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/SumProjectDaily.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Summary"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -350,6 +333,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {

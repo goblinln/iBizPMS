@@ -53,55 +53,19 @@ public class TestTaskResource {
     public TestTaskMapping testtaskMapping;
 
 
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据项目开始", tags = {"测试版本" },  notes = "根据项目开始")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/start")
-    public ResponseEntity<TestTaskDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProject(project_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.start(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'DELETE')")
+    @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
+    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取项目测试单", tags = {"测试版本" } ,notes = "根据项目获取项目测试单")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchprojecttesttask")
-	public ResponseEntity<List<TestTaskDTO>> fetchProjectTestTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
-        context.setN_project_eq(project_id);
-        Page<TestTask> domains = testtaskService.searchProjectTestTaskDS(context) ;
-        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @VersionCheck(entity = "testtask" , versionfield = "updatedate")
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'UPDATE')")
-    @ApiOperation(value = "根据项目更新测试版本", tags = {"测试版本" },  notes = "根据项目更新测试版本")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
-    public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProject(project_id);
-        domain.setId(testtask_id);
-		testtaskService.update(domain);
-        TestTaskDTO dto = testtaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据项目激活", tags = {"测试版本" },  notes = "根据项目激活")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/activate")
-    public ResponseEntity<TestTaskDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProject(project_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.activate(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'DELETE')")
+    @ApiOperation(value = "根据项目批量删除测试版本", tags = {"测试版本" },  notes = "根据项目批量删除测试版本")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/batch")
+    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
+        testtaskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', #testtask_id, 'READ')")
@@ -171,6 +135,57 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目获取项目测试单", tags = {"测试版本" } ,notes = "根据项目获取项目测试单")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchprojecttesttask")
+	public ResponseEntity<List<TestTaskDTO>> fetchProjectTestTaskByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
+        context.setN_project_eq(project_id);
+        Page<TestTask> domains = testtaskService.searchProjectTestTaskDS(context) ;
+        List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @VersionCheck(entity = "testtask" , versionfield = "updatedate")
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'UPDATE')")
+    @ApiOperation(value = "根据项目更新测试版本", tags = {"测试版本" },  notes = "根据项目更新测试版本")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
+    public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProject(project_id);
+        domain.setId(testtask_id);
+		testtaskService.update(domain);
+        TestTaskDTO dto = testtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/linkcase")
+    public ResponseEntity<TestTaskDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProject(project_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.linkCase(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    }
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据项目开始", tags = {"测试版本" },  notes = "根据项目开始")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/start")
+    public ResponseEntity<TestTaskDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProject(project_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.start(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    }
+
     @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
     @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/unlinkcase")
@@ -183,29 +198,14 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'DELETE')")
-    @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
-    public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
-    }
-
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'DELETE')")
-    @ApiOperation(value = "根据项目批量删除测试版本", tags = {"测试版本" },  notes = "根据项目批量删除测试版本")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/batch")
-    public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
-        testtaskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/linkcase")
-    public ResponseEntity<TestTaskDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+    @ApiOperation(value = "根据项目激活", tags = {"测试版本" },  notes = "根据项目激活")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/activate")
+    public ResponseEntity<TestTaskDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
         TestTask domain = testtaskMapping.toDomain(testtaskdto);
         domain.setProject(project_id);
         domain.setId(testtask_id);
-        domain = testtaskService.linkCase(domain) ;
+        domain = testtaskService.activate(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }

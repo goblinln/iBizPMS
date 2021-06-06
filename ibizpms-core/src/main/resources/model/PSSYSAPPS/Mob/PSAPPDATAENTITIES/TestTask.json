@@ -31,48 +31,24 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Start",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Start",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Start.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Activate",
-    "methodType" : "DEACTION",
-    "name" : "Activate",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Activate.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -151,6 +127,49 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LinkCase",
+    "methodType" : "DEACTION",
+    "name" : "linkCase",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkCase"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Start.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
@@ -164,35 +183,16 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Activate",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Activate",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Activate.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "LinkCase",
-    "methodType" : "DEACTION",
-    "name" : "linkCase",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkCase"
+      "id" : "Activate"
     },
     "builtinMethod" : false
   }, {
@@ -554,23 +554,6 @@
     "ignoreError" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchProjectTestTask",
-    "methodType" : "FETCH",
-    "name" : "FetchProjectTestTaskDS",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTestTaskDS"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectTestTask"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -585,6 +568,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectTestTask",
+    "methodType" : "FETCH",
+    "name" : "FetchProjectTestTaskDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTestTaskDS"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTestTask"
     },
     "builtinMethod" : false
   }, {
@@ -881,65 +881,24 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Start",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Start",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Start.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectTestTask",
-    "methodType" : "FETCH",
-    "name" : "FetchProjectTestTaskDS",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectTestTaskDS"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProjectTestTask"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Activate",
-    "methodType" : "DEACTION",
-    "name" : "Activate",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Activate.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Activate"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -1035,6 +994,66 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchProjectTestTask",
+    "methodType" : "FETCH",
+    "name" : "FetchProjectTestTaskDS",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectTestTaskDS"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectTestTask"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LinkCase",
+    "methodType" : "DEACTION",
+    "name" : "linkCase",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkCase"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Start.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "UnlinkCase",
     "methodType" : "DEACTION",
     "name" : "unlinkCase",
@@ -1048,35 +1067,16 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Activate",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Activate",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Activate.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "LinkCase",
-    "methodType" : "DEACTION",
-    "name" : "linkCase",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkCase"
+      "id" : "Activate"
     },
     "builtinMethod" : false
   }, {

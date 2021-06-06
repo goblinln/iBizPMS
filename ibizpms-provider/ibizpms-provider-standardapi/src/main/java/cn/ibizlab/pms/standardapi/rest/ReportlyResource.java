@@ -69,12 +69,12 @@ public class ReportlyResource {
 
 
     @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
-    @ApiOperation(value = "提交", tags = {"汇报" },  notes = "提交")
-	@RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/submit")
-    public ResponseEntity<ReportlyDTO> submit(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
+    @ApiOperation(value = "已读", tags = {"汇报" },  notes = "已读")
+	@RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/haveread")
+    public ResponseEntity<ReportlyDTO> haveRead(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
         IbzReportly domain = reportlyMapping.toDomain(reportlydto);
         domain.setIbzreportlyid(reportly_id);
-        domain = ibzreportlyService.submit(domain);
+        domain = ibzreportlyService.haveRead(domain);
         reportlydto = reportlyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
         reportlydto.setSrfopprivs(opprivs);
@@ -83,12 +83,31 @@ public class ReportlyResource {
 
 
     @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
-    @ApiOperation(value = "已读", tags = {"汇报" },  notes = "已读")
-	@RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/haveread")
-    public ResponseEntity<ReportlyDTO> haveRead(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
+    @ApiOperation(value = "获取汇报", tags = {"汇报" },  notes = "获取汇报")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/{reportly_id}")
+    public ResponseEntity<ReportlyDTO> get(@PathVariable("reportly_id") Long reportly_id) {
+        IbzReportly domain = ibzreportlyService.get(reportly_id);
+        ReportlyDTO dto = reportlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(reportly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
+    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
+    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
+        IbzReportly domain = reportlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
+    @ApiOperation(value = "提交", tags = {"汇报" },  notes = "提交")
+	@RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/submit")
+    public ResponseEntity<ReportlyDTO> submit(@PathVariable("reportly_id") Long reportly_id, @RequestBody ReportlyDTO reportlydto) {
         IbzReportly domain = reportlyMapping.toDomain(reportlydto);
         domain.setIbzreportlyid(reportly_id);
-        domain = ibzreportlyService.haveRead(domain);
+        domain = ibzreportlyService.submit(domain);
         reportlydto = reportlyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(domain.getIbzreportlyid());
         reportlydto.setSrfopprivs(opprivs);
@@ -121,25 +140,6 @@ public class ReportlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
-    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
-    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
-        IbzReportly domain = reportlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
-    @ApiOperation(value = "获取汇报", tags = {"汇报" },  notes = "获取汇报")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/{reportly_id}")
-    public ResponseEntity<ReportlyDTO> get(@PathVariable("reportly_id") Long reportly_id) {
-        IbzReportly domain = ibzreportlyService.get(reportly_id);
-        ReportlyDTO dto = reportlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs(reportly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/{action}")

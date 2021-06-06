@@ -31,16 +31,20 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "LinkBug",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "linkBug",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkBug.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "LinkBug"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -54,19 +58,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkBug"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "LinkStory",
-    "methodType" : "DEACTION",
-    "name" : "LinkStory",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkStory.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
     },
     "builtinMethod" : false
   }, {
@@ -86,6 +77,25 @@
       "id" : "Create"
     },
     "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
@@ -117,20 +127,29 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
+    "codeName" : "LinkBug",
     "methodType" : "DEACTION",
-    "name" : "Get",
+    "name" : "linkBug",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkBug.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
+      "id" : "LinkBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LinkStory",
+    "methodType" : "DEACTION",
+    "name" : "LinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkStory.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkStory"
     },
     "builtinMethod" : false
   }, {
@@ -150,25 +169,6 @@
       "id" : "Update"
     },
     "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
@@ -598,16 +598,20 @@
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "LinkBug",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "linkBug",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkBug.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "LinkBug"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -621,19 +625,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkBug"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "LinkStory",
-    "methodType" : "DEACTION",
-    "name" : "LinkStory",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkStory.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
     },
     "builtinMethod" : false
   }, {
@@ -653,6 +644,25 @@
       "id" : "Create"
     },
     "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
@@ -718,20 +728,29 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
+    "codeName" : "LinkBug",
     "methodType" : "DEACTION",
-    "name" : "Get",
+    "name" : "linkBug",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkBug.json"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
+      "id" : "LinkBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LinkStory",
+    "methodType" : "DEACTION",
+    "name" : "LinkStory",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkStory.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LinkStory"
     },
     "builtinMethod" : false
   }, {
@@ -751,25 +770,6 @@
       "id" : "Update"
     },
     "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",

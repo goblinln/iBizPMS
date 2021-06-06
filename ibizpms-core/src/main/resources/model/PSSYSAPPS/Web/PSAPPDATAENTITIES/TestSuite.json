@@ -340,6 +340,23 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchPublicTestSuite",
+    "methodType" : "FETCH",
+    "name" : "FetchPublicTestSuite",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PublicTestSuite"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchPublicTestSuite"
+    },
+    "builtinMethod" : false
+  }, {
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -424,23 +441,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchPublicTestSuite",
-    "methodType" : "FETCH",
-    "name" : "FetchPublicTestSuite",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "PublicTestSuite"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchPublicTestSuite"
     },
     "builtinMethod" : false
   }, {

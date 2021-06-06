@@ -31,40 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Summary",
-    "methodType" : "DEACTION",
-    "name" : "SumProductWeekly",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Summary"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -99,6 +65,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Summary",
+    "methodType" : "DEACTION",
+    "name" : "SumProductWeekly",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Summary"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -113,6 +96,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -257,40 +257,6 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Summary",
-    "methodType" : "DEACTION",
-    "name" : "SumProductWeekly",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Summary"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -325,6 +291,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Summary",
+    "methodType" : "DEACTION",
+    "name" : "SumProductWeekly",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Summary"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -356,6 +339,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
+import cn.ibizlab.util.filter.SearchContextBase;
 import net.ibizsys.runtime.ISystemRuntime;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
@@ -54,7 +55,13 @@ public class WFCallbackDeamonJobHandler implements IJobsHandler {
                     if (!ObjectUtils.isEmpty(actionType) && !ObjectUtils.isEmpty(action)) {
                         for (IPSDEDataSet dataset:deruntime.getPSDataEntity().getAllPSDEDataSets()) {
                             if (action.equalsIgnoreCase(dataset.getCodeName())) {
-                                Page<? extends IEntityBase> dataSet = deruntime.searchDataSet(dataset, deruntime.createSearchContext());
+                                SearchContextBase ctx = (SearchContextBase) deruntime.createSearchContext();
+                                ctx.setSize(Integer.MAX_VALUE);
+                                Object activedata = arg.get("data");
+                                if(activedata instanceof Map){
+                                    ctx.setParams((Map)activedata);
+                                }
+                                Page<? extends IEntityBase> dataSet = deruntime.searchDataSet(dataset, ctx);
                                 if (!ObjectUtils.isEmpty(dataSet)) {
                                     callRS.put("content", dataSet.getContent());
                                     return JobsResponse.ok().setMsg(JSONObject.toJSONString(callRS));
