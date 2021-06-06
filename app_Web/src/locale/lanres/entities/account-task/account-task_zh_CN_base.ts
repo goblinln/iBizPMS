@@ -99,6 +99,10 @@ function getLocaleResourceBase(){
 		'updateman': commonLogic.appcommonhandle("更新人",null),
 	},
 		views: {
+			'gridview9_storyrelated': {
+				caption: commonLogic.appcommonhandle("相关任务",null),
+				title: commonLogic.appcommonhandle("任务表格视图",null),
+			},
 			'myfavoritegridview': {
 				caption: commonLogic.appcommonhandle("任务",null),
 				title: commonLogic.appcommonhandle("task表格视图",null),
@@ -110,6 +114,16 @@ function getLocaleResourceBase(){
 			'gridview9_assignedtome': {
 				caption: commonLogic.appcommonhandle("任务",null),
 				title: commonLogic.appcommonhandle("任务表格视图",null),
+			},
+		},
+		storyrelated_grid: {
+			columns: {
+				'id': commonLogic.appcommonhandle("编号",null),
+				'name': commonLogic.appcommonhandle("任务名称",null),
+				'projectname': commonLogic.appcommonhandle("所属项目",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
 			},
 		},
 		myfavoritemain_grid: {

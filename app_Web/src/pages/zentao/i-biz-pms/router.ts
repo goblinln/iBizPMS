@@ -18068,41 +18068,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'projects/:project?/tasks/:task?/views/gridview9_storyrelated',
-                    meta: {
-                        caption: 'entities.task.views.gridview9_storyrelated.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projects', parameterName: 'project' },
-                            { pathName: 'tasks', parameterName: 'task' },
-                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
-                        ],
-                        resource:'task',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'tasks/:task?/views/gridview9_storyrelated',
-                    meta: {
-                        caption: 'entities.task.views.gridview9_storyrelated.caption',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'tasks', parameterName: 'task' },
-                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
-                        ],
-                        resource:'task',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'projects/:project?/tasks/:task?/views/wheditview',
                     meta: {
                         caption: 'entities.task.views.wheditview.caption',
@@ -26963,6 +26928,41 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'sysaccounts/:sysaccount?/accounttasks/:accounttask?/views/gridview9_storyrelated',
+                    meta: {
+                        caption: 'entities.accounttask.views.gridview9_storyrelated.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysaccounts', parameterName: 'sysaccount' },
+                            { pathName: 'accounttasks', parameterName: 'accounttask' },
+                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
+                        ],
+                        resource:'accounttask',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'accounttasks/:accounttask?/views/gridview9_storyrelated',
+                    meta: {
+                        caption: 'entities.accounttask.views.gridview9_storyrelated.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'accounttasks', parameterName: 'accounttask' },
+                            { pathName: 'views', parameterName: 'gridview9_storyrelated' },
+                        ],
+                        resource:'accounttask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/accounttasks/:accounttask?/views/myfavoritegridview',
                     meta: {
                         caption: 'entities.accounttask.views.myfavoritegridview.caption',
@@ -30769,7 +30769,7 @@ const router = new Router({
                 {
                     path: 'views/taskgridview9_storyrelated',
                     meta: {
-                        caption: 'entities.task.views.gridview9_storyrelated.caption',
+                        caption: 'entities.accounttask.views.gridview9_storyrelated.caption',
                         info:'',
                         imgPath: '',
                         iconCls: 'fa fa-tasks',

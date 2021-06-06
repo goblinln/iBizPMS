@@ -143,12 +143,12 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchProject",
+    "codeName" : "FetchType",
     "methodType" : "FETCH",
-    "name" : "FetchDocLibFile",
+    "name" : "FetchType",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "DocLibFile"
+      "id" : "Type"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -156,7 +156,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProject"
+      "id" : "FetchType"
     },
     "builtinMethod" : false
   }, {
@@ -177,12 +177,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchType",
+    "codeName" : "FetchProject",
     "methodType" : "FETCH",
-    "name" : "FetchType",
+    "name" : "FetchDocLibFile",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Type"
+      "id" : "DocLibFile"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -190,7 +190,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchType"
+      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {
@@ -341,12 +341,12 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchProject",
+    "codeName" : "FetchType",
     "methodType" : "FETCH",
-    "name" : "FetchDocLibFile",
+    "name" : "FetchType",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "DocLibFile"
+      "id" : "Type"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -354,24 +354,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchProject"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProduct",
-    "methodType" : "FETCH",
-    "name" : "FetchProductDocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductDocLibFile"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProduct"
+      "id" : "FetchType"
     },
     "builtinMethod" : false
   }, {
@@ -394,12 +377,12 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "FetchType",
+    "codeName" : "FetchProduct",
     "methodType" : "FETCH",
-    "name" : "FetchType",
+    "name" : "FetchProductDocLibFile",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Type"
+      "id" : "ProductDocLibFile"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -407,7 +390,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchType"
+      "id" : "FetchProduct"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProject",
+    "methodType" : "FETCH",
+    "name" : "FetchDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
     },
     "builtinMethod" : false
   }, {

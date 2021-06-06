@@ -66,6 +66,20 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
         return new HttpResponse(entity);
     }
     /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectMonthlyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/projectmonthlies/getdraft`, _data);
+        return res;
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -89,6 +103,29 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
         return res;
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectMonthlyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/projectmonthlies/${_context.projectmonthly}`, _data);
+    }
+    /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectMonthlyService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projectmonthlies/${_context.projectmonthly}/autocreate`, _data);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -105,43 +142,6 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
             delete _data.srffrontuf;
         }
         return this.http.post(`/projectmonthlies`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectMonthlyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectmonthlies/${_context.projectmonthly}`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectMonthlyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/projectmonthlies/getdraft`, _data);
-        return res;
-    }
-    /**
-     * AutoCreate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectMonthlyService
-     */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectmonthlies/${_context.projectmonthly}/autocreate`, _data);
     }
 
     /**

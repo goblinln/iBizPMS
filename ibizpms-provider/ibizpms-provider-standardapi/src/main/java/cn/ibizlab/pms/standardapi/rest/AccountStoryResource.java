@@ -52,22 +52,11 @@ public class AccountStoryResource {
     @Lazy
     public AccountStoryMapping accountstoryMapping;
 
-    @PreAuthorize("test('ZT_STORY', #accountstory_id, 'READ')")
-    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/accountstories/{accountstory_id}")
-    public ResponseEntity<AccountStoryDTO> get(@PathVariable("accountstory_id") Long accountstory_id) {
-        Story domain = storyService.get(accountstory_id);
-        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(accountstory_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "获取指定用户数据", tags = {"需求" } ,notes = "获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchaccount")
-	public ResponseEntity<List<AccountStoryDTO>> fetchaccount(@RequestBody StorySearchContext context) {
-        Page<Story> domains = storyService.searchAccount(context) ;
+	@ApiOperation(value = "获取我的数据", tags = {"需求" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchmy")
+	public ResponseEntity<List<AccountStoryDTO>> fetchmy(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchMy(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -88,10 +77,10 @@ public class AccountStoryResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "获取我的数据", tags = {"需求" } ,notes = "获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchmy")
-	public ResponseEntity<List<AccountStoryDTO>> fetchmy(@RequestBody StorySearchContext context) {
-        Page<Story> domains = storyService.searchMy(context) ;
+	@ApiOperation(value = "获取指定用户数据", tags = {"需求" } ,notes = "获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchaccount")
+	public ResponseEntity<List<AccountStoryDTO>> fetchaccount(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchAccount(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -99,6 +88,17 @@ public class AccountStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('ZT_STORY', #accountstory_id, 'READ')")
+    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/accountstories/{accountstory_id}")
+    public ResponseEntity<AccountStoryDTO> get(@PathVariable("accountstory_id") Long accountstory_id) {
+        Story domain = storyService.get(accountstory_id);
+        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(accountstory_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/accountstories/{accountstory_id}/{action}")
@@ -109,20 +109,11 @@ public class AccountStoryResource {
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-    @ApiOperation(value = "根据系统用户获取需求", tags = {"需求" },  notes = "根据系统用户获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountstories/{accountstory_id}")
-    public ResponseEntity<AccountStoryDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountstory_id") Long accountstory_id) {
-        Story domain = storyService.get(accountstory_id);
-        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchaccount")
-	public ResponseEntity<List<AccountStoryDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"需求" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchmy")
+	public ResponseEntity<List<AccountStoryDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
         
-        Page<Story> domains = storyService.searchAccount(context) ;
+        Page<Story> domains = storyService.searchMy(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -144,11 +135,11 @@ public class AccountStoryResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"需求" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchmy")
-	public ResponseEntity<List<AccountStoryDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"需求" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchaccount")
+	public ResponseEntity<List<AccountStoryDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
         
-        Page<Story> domains = storyService.searchMy(context) ;
+        Page<Story> domains = storyService.searchAccount(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -156,5 +147,14 @@ public class AccountStoryResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
+    @ApiOperation(value = "根据系统用户获取需求", tags = {"需求" },  notes = "根据系统用户获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountstories/{accountstory_id}")
+    public ResponseEntity<AccountStoryDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountstory_id") Long accountstory_id) {
+        Story domain = storyService.get(accountstory_id);
+        AccountStoryDTO dto = accountstoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 }
 

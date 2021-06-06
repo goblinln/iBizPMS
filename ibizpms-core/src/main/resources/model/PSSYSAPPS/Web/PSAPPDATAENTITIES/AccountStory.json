@@ -783,12 +783,12 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchAccount",
+    "codeName" : "FetchMy",
     "methodType" : "FETCH",
-    "name" : "FetchAccount",
+    "name" : "FetchMy",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Account"
+      "id" : "My"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -796,7 +796,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "FetchMy"
     },
     "builtinMethod" : false
   }, {
@@ -817,12 +817,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMy",
+    "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "FetchMy",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "My"
+      "id" : "Account"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -830,7 +830,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMy"
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -1640,29 +1640,12 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchAccount",
+    "codeName" : "FetchMy",
     "methodType" : "FETCH",
-    "name" : "FetchAccount",
+    "name" : "FetchMy",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Account"
+      "id" : "My"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1670,7 +1653,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "FetchMy"
     },
     "builtinMethod" : false
   }, {
@@ -1691,12 +1674,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMy",
+    "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "FetchMy",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "My"
+      "id" : "Account"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1704,7 +1687,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMy"
+      "id" : "FetchAccount"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {

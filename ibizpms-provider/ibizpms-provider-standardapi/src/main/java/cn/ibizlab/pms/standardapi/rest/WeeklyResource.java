@@ -52,53 +52,6 @@ public class WeeklyResource {
     @Lazy
     public WeeklyMapping weeklyMapping;
 
-    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
-    @ApiOperation(value = "新建周报", tags = {"周报" },  notes = "新建周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/weeklies")
-    @Transactional
-    public ResponseEntity<WeeklyDTO> create(@Validated @RequestBody WeeklyDTO weeklydto) {
-        IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
-		ibzweeklyService.create(domain);
-        WeeklyDTO dto = weeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"周报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/weeklies/fetchdefault")
-	public ResponseEntity<List<WeeklyDTO>> fetchdefault(@RequestBody IbzWeeklySearchContext context) {
-        Page<IbzWeekly> domains = ibzweeklyService.searchDefault(context) ;
-        List<WeeklyDTO> list = weeklyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
-    @ApiOperation(value = "定时生成每周周报", tags = {"周报" },  notes = "定时生成每周周报")
-	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/createeveryweekreport")
-    public ResponseEntity<WeeklyDTO> createEveryWeekReport(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
-        IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
-        domain.setIbzweeklyid(weekly_id);
-        domain = ibzweeklyService.createEveryWeekReport(domain);
-        weeklydto = weeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
-        weeklydto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(weeklydto);
-    }
-
-
-    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
-    @ApiOperation(value = "获取周报草稿", tags = {"周报" },  notes = "获取周报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/weeklies/getdraft")
-    public ResponseEntity<WeeklyDTO> getDraft(WeeklyDTO dto) {
-        IbzWeekly domain = weeklyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(weeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
-    }
-
     @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
     @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
 	@RequestMapping(method = RequestMethod.GET, value = "/weeklies/{weekly_id}")
@@ -141,18 +94,31 @@ public class WeeklyResource {
 
 
     @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
-    @ApiOperation(value = "提交", tags = {"周报" },  notes = "提交")
-	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/submit")
-    public ResponseEntity<WeeklyDTO> submit(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
+    @ApiOperation(value = "定时生成每周周报", tags = {"周报" },  notes = "定时生成每周周报")
+	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/createeveryweekreport")
+    public ResponseEntity<WeeklyDTO> createEveryWeekReport(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
         IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
         domain.setIbzweeklyid(weekly_id);
-        domain = ibzweeklyService.submit(domain);
+        domain = ibzweeklyService.createEveryWeekReport(domain);
         weeklydto = weeklyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         weeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(weeklydto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
+    @ApiOperation(value = "新建周报", tags = {"周报" },  notes = "新建周报")
+	@RequestMapping(method = RequestMethod.POST, value = "/weeklies")
+    @Transactional
+    public ResponseEntity<WeeklyDTO> create(@Validated @RequestBody WeeklyDTO weeklydto) {
+        IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
+		ibzweeklyService.create(domain);
+        WeeklyDTO dto = weeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
     @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
     @ApiOperation(value = "定时推送待阅提醒用户周报提交", tags = {"周报" },  notes = "定时推送待阅提醒用户周报提交")
@@ -167,6 +133,40 @@ public class WeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(weeklydto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"周报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/weeklies/fetchdefault")
+	public ResponseEntity<List<WeeklyDTO>> fetchdefault(@RequestBody IbzWeeklySearchContext context) {
+        Page<IbzWeekly> domains = ibzweeklyService.searchDefault(context) ;
+        List<WeeklyDTO> list = weeklyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
+    @ApiOperation(value = "提交", tags = {"周报" },  notes = "提交")
+	@RequestMapping(method = RequestMethod.POST, value = "/weeklies/{weekly_id}/submit")
+    public ResponseEntity<WeeklyDTO> submit(@PathVariable("weekly_id") Long weekly_id, @RequestBody WeeklyDTO weeklydto) {
+        IbzWeekly domain = weeklyMapping.toDomain(weeklydto);
+        domain.setIbzweeklyid(weekly_id);
+        domain = ibzweeklyService.submit(domain);
+        weeklydto = weeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        weeklydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(weeklydto);
+    }
+
+
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
+    @ApiOperation(value = "获取周报草稿", tags = {"周报" },  notes = "获取周报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/weeklies/getdraft")
+    public ResponseEntity<WeeklyDTO> getDraft(WeeklyDTO dto) {
+        IbzWeekly domain = weeklyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(weeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
+    }
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

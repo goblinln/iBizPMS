@@ -111,10 +111,6 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("工时",null),
 				title: commonLogic.appcommonhandle("工时",null),
 			},
-			'gridview9_storyrelated': {
-				caption: commonLogic.appcommonhandle("相关任务",null),
-				title: commonLogic.appcommonhandle("任务表格视图",null),
-			},
 			'wheditview': {
 				caption: commonLogic.appcommonhandle("工时",null),
 				title: commonLogic.appcommonhandle("工时",null),
@@ -1192,16 +1188,6 @@ function getLocaleResourceBase(){
 				copy: commonLogic.appcommonhandle("拷贝",null),
 				task_taskfavorites: commonLogic.appcommonhandle("收藏",null),
 				task_tasknfavorites: commonLogic.appcommonhandle("取消收藏",null),
-			},
-		},
-		storyrelated_grid: {
-			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
-				'name': commonLogic.appcommonhandle("任务名称",null),
-				'projectname': commonLogic.appcommonhandle("所属项目",null),
-			},
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
 			},
 		},
 		completereportmainzs_grid: {
