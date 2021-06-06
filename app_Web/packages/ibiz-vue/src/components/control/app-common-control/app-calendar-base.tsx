@@ -231,7 +231,7 @@ export class AppCalendarBase extends CalendarControlBase{
           } else {
               return (
                   <div>
-                      <span class="app-data-empty">{this.$t('app.commonwords.nodata')}</span>
+                      <span class="app-data-empty">{this.$tl(this.controlInstance.getEmptyTextPSLanguageRes()?.lanResTag, this.$t('app.commonwords.nodata'))}</span>
                       <span class="quick-toobar">
                           {this.renderQuickToolbar()}
                       </span>

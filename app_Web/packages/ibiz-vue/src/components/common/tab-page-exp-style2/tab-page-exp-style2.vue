@@ -22,11 +22,7 @@
             >
               <div class="tag-text">
                 <div
-                  :title="
-                    item.info
-                      ? $t(item.caption) + ' - ' + item.info
-                      : $t(item.caption)
-                  "
+                  :title="translate(item)"
                   class="tag-caption-content"
                 >
                   <i
@@ -36,11 +32,7 @@
                     :class="item.meta.iconCls"
                   ></i>
                   <img v-else :src="item.meta.imgPath" class="text-icon" />
-                  &nbsp;{{
-                    item.info
-                      ? $t(item.caption) + " - " + item.info
-                      : $t(item.caption)
-                  }}
+                  &nbsp;{{ translate(item) }}
                 </div>
               </div>
             </Tag>
@@ -108,6 +100,13 @@ export default class TabPageExpStyle2 extends Vue {
    * @memberof TabPageExpStyle2
    */
   @Prop() public activeItem: any;
+
+  /**
+   * 模型服务对象
+   * 
+   * @memberof AppDefaultFormDetail
+   */
+  @Prop() public modelService?:any;
 
   /**
    * 监听激活菜单项变化
@@ -426,6 +425,16 @@ export default class TabPageExpStyle2 extends Vue {
   // 系统中有两个不同的tabPagExp但都注册了$tabPageExp，该方法防止页面调用$tabPageExp功能时报错
   public setCurPageCaption(opts: any) {
     this.navHistory.setCaption({ tag: opts.viewtag, info: opts.info });
+  }
+
+  /**
+   * 翻译分页标题
+   *
+   * @returns
+   * @memberof TabPageExpStyle2
+   */
+  public translate(item: any) {
+    return item.info ? this.$tl(item.meta.captionTag,item.caption) + ' - ' + item.info : this.$tl(item.meta.captionTag,item.caption)
   }
 }
 </script>

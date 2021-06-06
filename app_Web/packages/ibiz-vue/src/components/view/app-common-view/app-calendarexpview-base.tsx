@@ -1,5 +1,5 @@
 import { CalendarExpViewBase } from '../../../view';
-import { Prop,Watch } from 'vue-property-decorator';
+import { Prop, Watch } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
 import { AppLayoutService } from '../../../app-service';
 
@@ -35,12 +35,12 @@ export class AppCalendarExpViewBase extends CalendarExpViewBase {
      * @param {*} oldVal
      * @memberof AppCalendarExpViewBase
      */
-    @Watch('dynamicProps',{
+    @Watch('dynamicProps', {
         immediate: true,
     })
     public onDynamicPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-           super.onDynamicPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onDynamicPropsChange(newVal, oldVal);
         }
     }
 
@@ -53,8 +53,8 @@ export class AppCalendarExpViewBase extends CalendarExpViewBase {
         immediate: true,
     })
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-            super.onStaticPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onStaticPropsChange(newVal, oldVal);
         }
     }
 
@@ -63,7 +63,7 @@ export class AppCalendarExpViewBase extends CalendarExpViewBase {
      *
      * @memberof AppCalendarExpViewBase
      */
-    public destroyed(){
+    public destroyed() {
         this.viewDestroyed();
     }
 
@@ -78,7 +78,7 @@ export class AppCalendarExpViewBase extends CalendarExpViewBase {
         }
         const targetViewLayoutComponent: any = AppLayoutService.getLayoutComponent(`${this.viewInstance.viewType}-${this.viewInstance.viewStyle}`);
         return h(targetViewLayoutComponent, {
-            props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
+            props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderTopMessage(),
             this.renderToolBar(),

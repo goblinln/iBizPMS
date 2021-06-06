@@ -1,6 +1,7 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
 import { TreeExpBarControlBase } from '../../../widgets/tree-exp-bar-control-base';
+import { IPSAppDEField, IPSDETree, IPSDETreeNode, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
 
 /**
  * 树视图导航栏部件基类
@@ -116,12 +117,53 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
      * @memberof AppTreeExpBarBase
      */
     public renderTitleBar() {
+        const title = this.$tl((this.controlInstance as IPSTreeExpBar).getTitlePSLanguageRes()?.lanResTag, this.controlInstance?.title);
         return (
             <div class="tree-exp-bar-header">
                 <div class="tree-exp-bar-title">
                     <icon type="ios-home-outline"/>
-                    <span>{this.controlInstance?.title}</span>
+                    <span>{title}</span>
                 </div>
+            </div>
+        );
+    }
+
+     /**
+     * 绘制快速搜索
+     * 
+     * @memberof ExpBarControlBase
+     */
+      public renderSearch() {
+        const getQuickSearchPlaceholader = () => {
+            let placeholder: any = '';
+            let tree: any = this.controlInstance.getPSControls();
+            if (tree && tree.length > 0) {
+              tree.forEach((item: IPSDETree)=> {
+                const nodes: Array<IPSDETreeNode> =  item.getPSDETreeNodes() || [];
+                nodes.forEach((node: IPSDETreeNode) => {
+                  if (Object.is(node.treeNodeType,"DE")) {
+                    const entity = node.getPSAppDataEntity();
+                    const fields: Array<IPSAppDEField> = entity?.getQuickSearchPSAppDEFields() || [];
+                    fields.forEach((field: IPSAppDEField, index: number) => {
+                        const _field = entity?.findPSAppDEField(field.codeName);
+                        if (_field) {
+                            placeholder += (this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName) + (index === fields.length-1 ? '' : ', '))
+                        }
+                    })
+                  }
+                })
+              });
+            }
+            return placeholder;
+        }
+        return (
+            <div class="search-container">
+                <i-input
+                    search={true}
+                    on-on-change={($event: any) => { this.searchText = $event.target.value; }}
+                    placeholder={getQuickSearchPlaceholader()}
+                    on-on-search={() => this.onSearch()}>
+                </i-input>
             </div>
         );
     }

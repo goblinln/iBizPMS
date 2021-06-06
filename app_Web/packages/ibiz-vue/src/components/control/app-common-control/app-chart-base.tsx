@@ -93,7 +93,7 @@ export class AppChartBase extends ChartControlBase {
         return (
             <div class={chartClassName} >
                 {this.isNoData ?
-                    <div v-show="isNoData" class="chart-no-data"><i class="el-icon-data-analysis"></i>{this.$t('app.commonwords.nodata')}</div> :
+                    <div v-show="isNoData" class="chart-no-data"><i class="el-icon-data-analysis"></i>{this.$tl(this.controlInstance.getEmptyTextPSLanguageRes()?.lanResTag, this.$t('app.commonwords.nodata'))}</div> :
                     <div class="app-charts" style='height: 100%; padding: 6px 0' id={this.chartId}></div>}
             </div>
         )

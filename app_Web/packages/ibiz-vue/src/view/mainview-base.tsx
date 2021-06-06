@@ -20,6 +20,7 @@ import {
     IPSNavigateContext,
     IPSNavigateParam,
     IPSDEUIAction,
+    IPSLanguageRes,
 } from '@ibiz/dynamic-model-api';
 import { AppViewLogicService } from '../app-service';
 
@@ -155,7 +156,8 @@ export class MainViewBase extends ViewBase {
                 const tempModel: any = {
                     name: item.name,
                     showCaption: item.showCaption,
-                    caption: item.caption,
+                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
                     disabled: false,
                     visabled: true,
                     itemType: item.itemType,
@@ -176,8 +178,8 @@ export class MainViewBase extends ViewBase {
         const tempModel: any = {
             name: item.name,
             showCaption: item.showCaption,
-            tooltip: item.tooltip,
-            caption: item.caption,
+            caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+            tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
             disabled: false,
             visabled: true,
             itemType: item.itemType,
@@ -276,10 +278,10 @@ export class MainViewBase extends ViewBase {
      */
     public renderCaptionInfo() {
         let innerHTML: string = '';
-        if (this.model.dataInfo && this.viewInstance?.caption) {
-            innerHTML = this.viewInstance?.caption + '-' + this.model.dataInfo;
+        if (this.model.dataInfo && this.model.srfCaption) {
+            innerHTML = this.model.srfCaption + '-' + this.model.dataInfo;
         } else {
-            innerHTML = this.model.dataInfo || this.viewInstance?.caption;
+            innerHTML = this.model.dataInfo || this.model.srfCaption;
         }
         return this.$createElement('span', {
             slot: 'captionInfo',
@@ -584,7 +586,7 @@ export class MainViewBase extends ViewBase {
                             viewname: Util.srfFilePath2(targetOpenView.codeName),
                             height: targetOpenView.height,
                             width: targetOpenView.width,
-                            title: targetOpenView.title,
+                            title: this.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.caption),
                         };
                         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
                             if (targetOpenView.getPSAppDataEntity()) {
@@ -648,7 +650,7 @@ export class MainViewBase extends ViewBase {
                     viewname: 'app-view-shell',
                     height: openView.height,
                     width: openView.width,
-                    title: openView.title,
+                    title: this.$tl(openView.getCapPSLanguageRes()?.lanResTag, openView.caption),
                 };
                 this.openTargtView(
                     openView,
@@ -695,7 +697,7 @@ export class MainViewBase extends ViewBase {
                         viewname: 'app-view-shell',
                         height: wizardPSAppView.height,
                         width: wizardPSAppView.width,
-                        title: wizardPSAppView.title,
+                        title: this.$tl(wizardPSAppView.getCapPSLanguageRes()?.lanResTag, wizardPSAppView.caption),
                     };
                     const tempContext: any = JSON.parse(JSON.stringify(this.context));
                     if (wizardPSAppView && wizardPSAppView.modelPath) {
@@ -729,7 +731,7 @@ export class MainViewBase extends ViewBase {
                                     viewname: 'app-view-shell',
                                     height: targetNewDataAppView.height,
                                     width: targetNewDataAppView.width,
-                                    title: targetNewDataAppView.title,
+                                    title: this.$tl(targetNewDataAppView.getCapPSLanguageRes()?.lanResTag, targetNewDataAppView.caption),
                                 };
                                 if (targetNewDataAppView && targetNewDataAppView.modelPath) {
                                     Object.assign(tempContext, { viewpath: targetNewDataAppView.modelPath });
@@ -791,7 +793,7 @@ export class MainViewBase extends ViewBase {
                     viewname: 'app-view-shell',
                     height: openView.height,
                     width: openView.width,
-                    title: openView.title,
+                    title: this.$tl(openView.getCapPSLanguageRes()?.lanResTag, openView.caption),
                 };
                 let tempContext: any = Util.deepCopy(this.context);
                 if (openView && openView.modelPath) {
@@ -924,7 +926,7 @@ export class MainViewBase extends ViewBase {
                     viewname: 'app-view-shell',
                     height: dataview.height,
                     width: dataview.width,
-                    title: dataview.title,
+                    title: this.$tl(dataview.getCapPSLanguageRes()?.lanResTag, dataview.caption),
                 };
                 // 关闭视图回调
                 let callback: Function = (result: any, xData: any) => {

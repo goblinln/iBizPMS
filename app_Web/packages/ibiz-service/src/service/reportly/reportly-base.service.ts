@@ -66,15 +66,30 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
         return new HttpResponse(entity);
     }
     /**
-     * Submit
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ReportlyService
      */
-    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/reportlies/${_context.reportly}/submit`, _data);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/reportlies/getdraft`, _data);
+        return res;
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReportlyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/reportlies/${_context.reportly}`, _data);
     }
     /**
      * Read
@@ -98,6 +113,17 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/reportlies/${_context.reportly}`);
         return res;
+    }
+    /**
+     * Submit
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReportlyService
+     */
+    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/reportlies/${_context.reportly}/submit`, _data);
     }
     /**
      * Create
@@ -128,31 +154,19 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/reportlies/fetchdefault`, _data);
     }
+
     /**
-     * GetDraft
+     * ReadBatch接口方法
      *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReportlyService
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ReportlyServiceBase
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/reportlies/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReportlyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/reportlies/${_context.reportly}`, _data);
+        return this.http.post(`/reportlies/readbatch`,_data);
     }
 
     /**
@@ -167,19 +181,5 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
     public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/reportlies/submitbatch`,_data);
-    }
-
-    /**
-     * ReadBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof ReportlyServiceBase
-     */
-    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/reportlies/readbatch`,_data);
     }
 }

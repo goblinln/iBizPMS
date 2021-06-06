@@ -1,7 +1,7 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { debounce, Util } from 'ibiz-core'
 import { KanbanControlBase } from '../../../widgets';
-import { IPSUIActionGroup, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSUIAction, IPSUIActionGroup, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 实体看板部件基类
@@ -132,15 +132,18 @@ export class AppKanbanBase extends KanbanControlBase {
                 <div slot="content" class="group-action">
                     {
                         ActionGroup?.getPSUIActionGroupDetails()?.map((uiActionDetail: IPSUIActionGroupDetail) => {
-                            return (
-                                <div class="group-action-item">
-                                    <i-button long on-click={($event: any) => debounce(this.uiActionClick,[uiActionDetail, $event, group],this)}>
-                                        {uiActionDetail?.getPSUIAction()?.getPSSysImage()?.imagePath ? <img class="app-kanban-icon" src={uiActionDetail?.getPSUIAction()?.getPSSysImage()?.imagePath} /> : null}
-                                        {uiActionDetail?.getPSUIAction()?.getPSSysImage()?.cssClass ? <i class={[uiActionDetail?.getPSUIAction()?.getPSSysImage()?.cssClass, "app-kanban-icon"]}></i> : null}
-                                        <span class="caption">{uiActionDetail?.getPSUIAction()?.caption}</span>
-                                    </i-button>
-                                </div>
-                            )
+                            const uiAction = uiActionDetail.getPSUIAction() as IPSUIAction;
+                            if (uiAction) {
+                                return (
+                                    <div class="group-action-item">
+                                        <i-button long on-click={($event: any) => debounce(this.uiActionClick,[uiActionDetail, $event, group],this)}>
+                                            {uiAction.getPSSysImage()?.imagePath ? <img class="app-kanban-icon" src={uiAction.getPSSysImage()?.imagePath} /> : null}
+                                            {uiAction.getPSSysImage()?.cssClass ? <i class={[uiAction.getPSSysImage()?.cssClass, "app-kanban-icon"]}></i> : null}
+                                            <span class="caption">{this.$tl(uiAction.getCapPSLanguageRes()?.lanResTag, uiAction.caption)}</span>
+                                        </i-button>
+                                    </div>
+                                )
+                            }
                         })
                     }
                 </div>
@@ -197,7 +200,7 @@ export class AppKanbanBase extends KanbanControlBase {
                             }
                         </draggable> :
                         <div class="app-data-empty">
-                            <span>{this.$t('app.commonwords.nodata')}</span>
+                            <span>{this.$tl(this.controlInstance.getEmptyTextPSLanguageRes()?.lanResTag, this.$t('app.commonwords.nodata'))}</span>
                         </div>
                     }
                 </div> : null

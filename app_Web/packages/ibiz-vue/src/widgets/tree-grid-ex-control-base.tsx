@@ -85,7 +85,7 @@ export class TreeGridExControlBase extends MDControlBase {
                       const codelistJson = dataItem.getFrontPSCodeList();
                       await codelistJson?.fill();
                       if(codelistJson){
-                          let items = await this.codeListService.getDataItems({ type: codelistJson.codeListType, tag: codelistJson.codeName,data:codelistJson });
+                          let items = await this.codeListService.getDataItems({ type: codelistJson.codeListType, tag: codelistJson.codeName,data:codelistJson, context: this.context });
                           this.codeListData.set(dataItem.name,items);
                       }
                     }
@@ -335,7 +335,7 @@ export class TreeGridExControlBase extends MDControlBase {
                 column.widthUnit != 'STAR'
                 const props: any = {
                     'show-overflow-tooltip': true,
-                    "label": column.caption,
+                    "label": this.$tl(column.getCapPSLanguageRes()?.lanResTag,column.caption),
                     "align": column.align ? column.align.toLowerCase() : '',
                 }
                 if (column.widthUnit != 'STAR') {

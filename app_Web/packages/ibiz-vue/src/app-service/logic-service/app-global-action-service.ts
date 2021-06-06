@@ -175,7 +175,6 @@ export class AppGlobalService {
                 if (!response || response.status !== 200) {
                     return;
                 }
-                actionContext.$parent.$emit('viewdataschange', [{ ...response.data }]);
             });
         } else if (actionContext.save && actionContext.save instanceof Function) {
             actionContext.save();
@@ -228,10 +227,8 @@ export class AppGlobalService {
         }
         xData.saveAndNew().then((response: any) => {
             if (!response || response.status !== 200) {
-                actionContext.$parent.$emit('viewdataschange', JSON.stringify({ status: 'error', action: 'saveAndNew' }));
                 return;
             }
-            actionContext.$parent.$emit('viewdataschange', JSON.stringify({ status: 'success', action: 'saveAndNew', data: response.data }));
             if (xData.autoLoad instanceof Function) {
                 xData.autoLoad();
             }
@@ -487,7 +484,7 @@ export class AppGlobalService {
                             let tempContext: any = Util.deepCopy(_this.context);
                             let tempViewParam: any = { actionView: `WFSTART@${item['wfversion']}`, actionForm: item['process-form'] };
                             Object.assign(tempContext, { viewpath: targetOpenView.modelFilePath });
-                            const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: targetOpenView.title, height: targetOpenView.height, width: targetOpenView.width }, tempContext, tempViewParam);
+                            const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: actionContext.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.caption), height: targetOpenView.height, width: targetOpenView.width }, tempContext, tempViewParam);
                             appmodal.subscribe((result: any) => {
                                 if (!result || !Object.is(result.ret, 'OK')) {
                                     return;

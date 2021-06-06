@@ -365,7 +365,6 @@ export class MDViewEngine extends ViewEngine {
      */
     public selectionChange(args: any[]): void {
         if (this.view) {
-            // this.view.$emit('viewdataschange', args);
             this.emitViewEvent("viewdataschange", args);
         }
         if (this.getPropertyPanel()) {

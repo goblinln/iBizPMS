@@ -35,6 +35,7 @@ import { AppComponents } from '@/app-register';
 import { UserComponent } from '@/user-register';
 import store from '@/store';
 import router from './router';
+import { translate } from '@/locale/local-util';
 
 const win: any = window;
 win.axios = axios;
@@ -57,6 +58,9 @@ Vue.prototype.$warning = function(message: any, fnName?: string, param?: any) {
 };
 Vue.prototype.$info = function(message: any, fnName?: string, param?: any) {
     NoticeHandler.infoHandler(message, { param, caller: this, fnName });
+};
+Vue.prototype.$tl = function (key: string, value?: string) {
+  return translate(key,this,value);
 };
 
 Vue.config.productionTip = false;

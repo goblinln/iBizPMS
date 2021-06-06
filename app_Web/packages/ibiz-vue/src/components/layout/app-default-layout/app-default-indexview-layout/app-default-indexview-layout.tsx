@@ -2,7 +2,7 @@ import { AppDefaultViewLayout } from "../app-default-view-layout/app-default-vie
 import { Component } from 'vue-property-decorator';
 import { Util, AppServiceBase } from "ibiz-core";
 import { AppLoadingService } from "../../../../app-service/loading-service/app-loading-service";
-import { IPSAppIndexView } from "@ibiz/dynamic-model-api";
+import { IPSAppIndexView, IPSLanguageRes } from "@ibiz/dynamic-model-api";
 import './app-default-indexview-layout.less';
 
 @Component({})
@@ -144,7 +144,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                             <div class="page-logo-left">
                             {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <span class="page-logo-menuicon" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" />&nbsp;</span>: null}
                                 {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
-                                <span class="page-logo-title">{AppServiceBase.getInstance().getAppModelDataObject().name}</span>
+                                <span class="page-logo-title">{this.model.srfCaption}</span>
                                 {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag viewStyle={this.viewInstance.viewStyle} contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
                             </div>
                             {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
@@ -165,7 +165,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                         {this.$slots.default}
                     </sider>
                     <content class={contentClass} >
-                        {Object.is(this.viewInstance.viewStyle, 'DEFAULT') ? <tab-page-exp></tab-page-exp> : null}
+                    {Object.is(this.viewInstance.viewStyle, 'DEFAULT') ? <tab-page-exp modelService={this.modelService}></tab-page-exp> : null}
                         <app-keep-alive routerList={this.routerList}>
                             <router-view key={this.routerViewKey}></router-view>
                         </app-keep-alive>
@@ -187,7 +187,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     <div class="header-left">
                         <div class="page-logo">
                             {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
-                            <span style="display: inline-block;margin-left: 10px;font-size: 22px;">{AppServiceBase.getInstance().getAppModelDataObject().name}</span>
+                            <span style="display: inline-block;margin-left: 10px;font-size: 22px;">{this.model.srfCaption}</span>
                         </div>
                         <div style="margin-left: 50px;">
                             {this.$slots.default}
@@ -223,7 +223,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
         return (
             <card class={cardClass} disHover={true} bordered={false}>
                 <div slot='title' class='header-container' key='view-header'>
-                    <span class='caption-info'>{this.viewInstance.caption}</span>
+                    <span class='caption-info'>{this.model.srfCaption}</span>
                 </div>
                 <div class='content-container'>
                     {this.$slots.default}
@@ -267,7 +267,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     context={this.context}
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
-                    viewTitle={this.viewInstance.title} />
+                    viewTitle={this.model.srfCaption} />
                 { (Object.is(this.viewInstance.mainMenuAlign, "LEFT") || !this.viewInstance.mainMenuAlign) ? this.renderContentLeft() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "TOP") ? this.renderContentTop() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "CENTER") ? this.renderContentMiddle() : null}

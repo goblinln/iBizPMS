@@ -153,6 +153,22 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
         return this.condCache.get('view');
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestModuleService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testmodule) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
+        }
+    this.log.warn([`[TestModule]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -191,21 +207,6 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestModuleService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && true) {
-            return this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
-        }
-    this.log.warn([`[TestModule]>>>[FetchDefault函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -224,19 +225,18 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestModuleService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/tests/${_context.test}/testmodules/${_context.testmodule}`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/testmodules/fetchdefault`, _data);
         }
-    this.log.warn([`[TestModule]>>>[Update函数]异常`]);
+    this.log.warn([`[TestModule]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**

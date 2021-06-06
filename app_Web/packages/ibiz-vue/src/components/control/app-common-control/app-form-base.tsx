@@ -19,6 +19,7 @@ import {
     IPSFlexLayout,
     IPSFlexLayoutPos,
     IPSGridLayoutPos,
+    IPSLanguageRes,
     IPSLayout,
 } from '@ibiz/dynamic-model-api';
 
@@ -384,6 +385,7 @@ export class AppFormBase extends EditFormControlBase {
         if (sysCss?.cssName) {
             Object.assign(controlClassNames, { [sysCss.cssName]: true });
         }
+        let labelCaption: any = this.$tl((modelJson.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <div>
                 {badge}
@@ -399,7 +401,7 @@ export class AppFormBase extends EditFormControlBase {
                     ) : (
                         <menu-icon item={{ iconcls: uiAction?.getPSSysImage()?.cssClass }} />
                     )}
-                    {showCaption && <span>{caption}</span>}
+                    {showCaption && <span>{labelCaption}</span>}
                 </i-button>
             </div>
         );
@@ -430,6 +432,7 @@ export class AppFormBase extends EditFormControlBase {
                 detailsInstance={modelJson}
                 index={index}
                 data={this.data}
+                modelService={this.modelService}
                 rules={this.rules[modelJson.name]}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 context={Util.deepCopy(this.context)}
@@ -475,6 +478,7 @@ export class AppFormBase extends EditFormControlBase {
             <app-default-form-tab-panel
                 detailsInstance={modelJson}
                 index={index}
+                modelService={this.modelService}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
             >
@@ -495,6 +499,7 @@ export class AppFormBase extends EditFormControlBase {
     public renderTabPage(modelJson: IPSDEFormTabPage, index: number): any {
         return (
             <app-default-form-tab-page
+                modelService={this.modelService}
                 detailsInstance={modelJson}
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
@@ -515,6 +520,7 @@ export class AppFormBase extends EditFormControlBase {
         return (
             <app-default-group-panel
                 detailsInstance={modelJson}
+                modelService={this.modelService}
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
                 controlInstance={this.controlInstance}
@@ -542,6 +548,7 @@ export class AppFormBase extends EditFormControlBase {
         }
         return (
             <app-default-form-page
+                modelService={this.modelService}
                 detailsInstance={modelJson}
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}

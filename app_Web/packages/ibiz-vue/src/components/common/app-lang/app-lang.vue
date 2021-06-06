@@ -11,8 +11,7 @@
 </template>
 <script lang = 'ts'>
 import { Component, Vue } from 'vue-property-decorator';
-
-import { localList } from '@locale/local-list';
+import { localList } from '@/locale/local-util';
 
 @Component({})
 export default class AppLang extends Vue {
@@ -55,6 +54,7 @@ export default class AppLang extends Vue {
         const local: any = this.localList.find((_local: any) => Object.is(_local.type, $evnet));
         this.title = local.name;
         localStorage.setItem('local', $evnet);
+        window.location.reload();
     }
 
 }

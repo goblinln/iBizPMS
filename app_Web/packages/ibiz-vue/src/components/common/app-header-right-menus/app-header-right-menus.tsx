@@ -30,6 +30,13 @@ export class AppHeaderRightMenus extends Vue {
     public menus!: any[];
 
     /**
+     * 模型服务对象
+     * 
+     * @memberof AppStyle2DefaultLayout
+     */
+     @Prop() public modelService!:any;
+    
+    /**
      * 菜单项点击
      *
      * @param {*} item
@@ -150,11 +157,10 @@ export class AppHeaderRightMenus extends Vue {
         if (item.hidden) {
             return;
         }
-        const tooltip = item.localetag ? this.$t(item.localetag) : item.tooltip;
         return (
-            <menuItem title={tooltip} name={item.name}>
+            <menuItem title={this.$tl(item.tooltipTag, item.tooltip)} name={item.name}>
                 <menu-icon item={item} />
-                {item.caption}
+                {this.$tl(item.captionTag,item.caption)}
             </menuItem>
         );
     }
@@ -175,7 +181,7 @@ export class AppHeaderRightMenus extends Vue {
             <submenu name={item.name}>
                 <template slot="title">
                     <menu-icon item={item} />
-                    {item.caption}
+                    {this.$tl(item.captionTag,item.caption)}
                 </template>
                 {this.renderMenus(item.getPSAppMenuItems)}
             </submenu>

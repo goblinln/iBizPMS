@@ -56,8 +56,8 @@ export class TabExpViewBase extends MainViewBase {
                     this.model.dataInfo = _data[this.appDeMajorFieldName.toLowerCase()];
                     if (_this.$tabPageExp) {
                         _this.$tabPageExp.setCurPageCaption({
-                            caption: _this.$t(_this.model.srfCaption),
-                            title: _this.$t(_this.model.srfCaption),
+                            caption: _this.model.srfCaption,
+                            title: _this.model.srfCaption,
                             info: _this.model.dataInfo,
                             viewtag: this.viewtag
                         });

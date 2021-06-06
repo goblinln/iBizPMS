@@ -72,15 +72,15 @@ export class AppWFActionViewBase extends WFActionViewBase {
         }
         const targetViewLayoutComponent: any = AppLayoutService.getLayoutComponent(`${this.viewInstance.viewType}-${this.viewInstance.viewStyle}`);
         return h(targetViewLayoutComponent, {
-            props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
+            props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderToolBar(),
             this.renderMainContent(),
             <card slot="button" dis-hover bordered={false} class='footer'>
                 <row style=" text-align: right ">
-                <i-button type='primary' on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>确认</i-button>
+                <i-button type='primary' on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.$t('app.commonwords.ok')}</i-button>
                     &nbsp;&nbsp;
-                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>取消</i-button>
+                <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.$t('app.commonwords.cancel')}</i-button>
                 </row>
             </card>  
         ]);

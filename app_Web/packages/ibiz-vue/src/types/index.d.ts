@@ -17,6 +17,7 @@ declare module 'vue/types/vue' {
         $router:any,
         $util: any,
         $t: any,
+        $tl: Function,
         $message:ElMessage,
         $appmodal: any,
         $footerRenderService: FooterItemsService;

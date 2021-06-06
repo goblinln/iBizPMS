@@ -394,8 +394,8 @@ export class ChartControlBase extends MDControlBase {
             const _titleModel: IPSDEChartTitle | null = this.controlInstance.getPSDEChartTitle();
             const title = {
                 show: _titleModel?.showTitle,
-                text: _titleModel?.title,
-                subtext: _titleModel?.subTitle,
+                text: this.$tl(_titleModel?.getTitlePSLanguageRes()?.lanResTag, _titleModel?.title),
+                subtext: this.$tl(_titleModel?.getSubTitlePSLanguageRes()?.lanResTag, _titleModel?.subTitle),
             }
             Object.assign(opt, { title });
         }
@@ -448,7 +448,7 @@ export class ChartControlBase extends MDControlBase {
         const axis: IPSChartCoordinateSystemCartesian2D = (series.getPSChartCoordinateSystem() as IPSChartCoordinateSystemCartesian2D);
         return {
             id: series?.name?.toLowerCase(),
-            name: series.caption,
+            name: this.$tl(series.getCapPSLanguageRes()?.lanResTag, series.caption),
             type: series.eChartsType,
             xAxisIndex: (axis?.getPSChartGrid()?.getPSChartGridXAxis0() as any)?.getIndex() | 0,
             yAxisIndex: (axis?.getPSChartGrid()?.getPSChartGridYAxis0() as any)?.getIndex() | 0,
@@ -484,7 +484,7 @@ export class ChartControlBase extends MDControlBase {
             gridIndex: axis.index,
             position: axis.position,
             type: axis.eChartsType,
-            name: axis.caption,
+            name: this.$tl(axis.getCapPSLanguageRes()?.lanResTag, axis.caption),
         }
         // 填充用户自定义参数
         this.fillUserParam(axis, _axis, 'EC.')
@@ -1427,7 +1427,7 @@ export class ChartControlBase extends MDControlBase {
         return new Promise((resolve: any, reject: any) => {
             if (codeListObject.codeName && Object.is(codeListObject.codeListType, 'STATIC')) {
                 this.codeListService
-                    .getStaticItems(codeListObject.codeName)
+                    .getStaticItems(codeListObject.codeName, undefined, this.context)
                     .then((res: any) => {
                         resolve(res);
                     })

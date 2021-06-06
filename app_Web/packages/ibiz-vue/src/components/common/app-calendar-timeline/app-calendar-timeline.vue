@@ -173,7 +173,7 @@ export default class AppClaendarTimeline extends Vue{
      */
     @Prop()
     public viewparams!: any;
-    
+
     /**
      * 分组属性
      *
@@ -683,7 +683,7 @@ export default class AppClaendarTimeline extends Vue{
             });
         }
         if (Object.is(this.groupMode, 'CODELIST') && this.groupCodelist) {
-            let codelistItems: any = await this.codeListService.getDataItems(this.groupCodelist);
+            let codelistItems: any = await this.codeListService.getDataItems({...this.groupCodelist, context: this.context});
             if (codelistItems && codelistItems.length > 0) {
                 codelistItems.forEach((item: any) => {
                     data.push({

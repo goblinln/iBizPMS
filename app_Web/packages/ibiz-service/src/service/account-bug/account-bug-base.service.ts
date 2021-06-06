@@ -421,34 +421,6 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMyFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountBugService
-     */
-    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
-        }
-        return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
-    }
-    /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountBugService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
-        }
-        return this.http.post(`/accountbugs/fetchaccount`, _data);
-    }
-    /**
      * FetchMy
      *
      * @param {*} [_context={}]
@@ -477,6 +449,34 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         }
         const res = await this.http.get(`/accountbugs/${_context.accountbug}`);
         return res;
+    }
+    /**
+     * FetchMyFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountBugService
+     */
+    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
+        }
+        return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountBugService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
+        }
+        return this.http.post(`/accountbugs/fetchaccount`, _data);
     }
     /**
      * GetUserConcat

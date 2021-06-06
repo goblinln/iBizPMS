@@ -378,7 +378,8 @@ export class AppGanttService extends ControlServiceBase {
         const tempCodeList: any = {
             tag: codeList?.codeName,
             type: codeList?.codeListType,
-            data: codeList
+            data: codeList,
+            context: context
         };
         return new Promise((resolve: any, reject: any) => {
             this.codeListService.getDataItems(tempCodeList).then((codeListItems: Array<any>) => {

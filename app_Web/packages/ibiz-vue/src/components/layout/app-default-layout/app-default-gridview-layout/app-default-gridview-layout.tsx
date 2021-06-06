@@ -13,7 +13,7 @@ export class AppDefaultGridViewLayout extends AppDefaultViewLayout{
     public renderViewHeader() {
         return [
             <div class="caption-container">
-                {this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null}
+                {this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.model.srfCaption}</span> : null}
                 {this.$slots.quickGroupSearch}
             </div>,
             <div class="bar-container">

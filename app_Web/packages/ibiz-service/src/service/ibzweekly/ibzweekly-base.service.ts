@@ -66,16 +66,29 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return new HttpResponse(entity);
     }
     /**
-     * Get
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZWEEKLYService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}`);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/ibzweeklies/getdraft`, _data);
         return res;
+    }
+    /**
+     * Submit
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/submit`, _data);
     }
     /**
      * Update
@@ -101,17 +114,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return this.http.post(`/ibzweeklies/${_context.ibzweekly}/read`, _data);
     }
     /**
-     * AutoCreate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
-     */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/autocreate`, _data);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -128,6 +130,18 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzweeklies`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBZWEEKLYService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}`);
+        return res;
     }
     /**
      * Notice
@@ -152,29 +166,29 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
         return this.http.post(`/ibzweeklies/fetchdefault`, _data);
     }
     /**
-     * Submit
+     * AutoCreate
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof IBZWEEKLYService
      */
-    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/submit`, _data);
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/autocreate`, _data);
     }
+
     /**
-     * GetDraft
+     * SubmitBatch接口方法
      *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBZWEEKLYService
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZWEEKLYServiceBase
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/ibzweeklies/getdraft`, _data);
-        return res;
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzweeklies/submitbatch`,_data);
     }
 
     /**
@@ -192,20 +206,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     }
 
     /**
-     * AutoCreateBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof IBZWEEKLYServiceBase
-     */
-    public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/autocreatebatch`,_data);
-    }
-
-    /**
      * NoticeBatch接口方法
      *
      * @param {*} [context={}]
@@ -220,7 +220,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
     }
 
     /**
-     * SubmitBatch接口方法
+     * AutoCreateBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -228,8 +228,8 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/ibzweeklies/submitbatch`,_data);
+        return this.http.post(`/ibzweeklies/autocreatebatch`,_data);
     }
 }

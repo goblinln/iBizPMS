@@ -1,5 +1,5 @@
-import { ModelTool, Util } from 'ibiz-core';
-import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
+import { AppModelService, GetModelService, ModelTool, Util } from 'ibiz-core';
+import { Component, Prop } from 'vue-property-decorator';
 import { EditorBase } from '../editor-base/editor-base';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { IPSAppCodeList, IPSAppDEView, IPSAppView, IPSCodeListEditor, IPSDEFormItem, IPSPickerEditor } from '@ibiz/dynamic-model-api';
@@ -14,7 +14,7 @@ import { IPSAppCodeList, IPSAppDEView, IPSAppView, IPSCodeListEditor, IPSDEFormI
 @Component({})
 @VueLifeCycleProcessing()
 export default class DataPickerEditor extends EditorBase {
-    
+
     /**
      * 是否忽略表单项值变化
      *
@@ -32,17 +32,26 @@ export default class DataPickerEditor extends EditorBase {
     public codeList?: IPSAppCodeList | null;
 
     /**
+     * 模型服务
+     *
+     * @type {AppModelService}
+     * @memberof DataPickerEditor
+     */
+    public modelService !: AppModelService;
+
+    /**
      * 编辑器初始化
      *
      * @memberof DataPickerEditor
      */
     public async initEditor() {
         await super.initEditor();
+        await this.initModelService();
         // 加载链接视图和选择视图
         let pickupAppView: IPSAppView | null = (this.editorInstance as IPSPickerEditor)?.getPickupPSAppView?.();
         let linkAppView: IPSAppView | null = (this.editorInstance as IPSPickerEditor)?.getPickupPSAppView?.();
-        await ( pickupAppView as any)?.fill(true);
-        await ( linkAppView as any)?.fill(true);
+        await (pickupAppView as any)?.fill(true);
+        await (linkAppView as any)?.fill(true);
 
         this.codeList = (this.editorInstance as IPSCodeListEditor)?.getPSAppCodeList?.();
         const { placeHolder } = this.editorInstance;
@@ -130,7 +139,7 @@ export default class DataPickerEditor extends EditorBase {
         if (pickupAppView) {
             const view: any = {
                 viewname: 'app-view-shell',
-                title: pickupAppView.title,
+                title: this.$tl(pickupAppView.getCapPSLanguageRes()?.lanResTag, pickupAppView.title),
                 width: pickupAppView?.width,
                 height: pickupAppView?.height,
                 placement: pickupAppView?.openMode,
@@ -142,6 +151,16 @@ export default class DataPickerEditor extends EditorBase {
     }
 
     /**
+    * 初始化模型服务
+    *
+    * @memberof DataPickerEditor
+    */
+    public async initModelService() {
+        this.modelService = await GetModelService(this.context);
+    }
+
+
+    /**
      * 初始化链接视图相关参数
      *
      * @memberof DataPickerEditor
@@ -151,7 +170,7 @@ export default class DataPickerEditor extends EditorBase {
         if (linkAppView) {
             const view: any = {
                 viewname: 'app-view-shell',
-                title: linkAppView.title,
+                title: this.$tl(linkAppView.getCapPSLanguageRes()?.lanResTag, linkAppView.title),
                 width: linkAppView?.width,
                 height: linkAppView?.height,
                 placement: linkAppView?.openMode,
@@ -347,7 +366,7 @@ export default class DataPickerEditor extends EditorBase {
      * 
      * @memberof DataPickerEditor
      */
-    public renderCommonMicrocom(){
+    public renderCommonMicrocom() {
         let params: any = this.initSelectPickerParams();
         Object.is(params, {
             viewparams: this.viewparams
@@ -372,8 +391,8 @@ export default class DataPickerEditor extends EditorBase {
             valueitem: this.parentItem?.valueItemName || '',
             multiple: this.editorInstance.editorParams?.['multiple'] ? JSON.parse(this.editorInstance.editorParams['multiple'] as string) : false,
             url: this.editorInstance.editorParams?.['url'],
-            filter:this.editorInstance.editorParams?.['filter'],
-            fillMap: this.editorInstance.editorParams?.['fillMap'] ? eval('(' +this.editorInstance.editorParams['fillMap'] + ')') : { id: this.parentItem?.valueItemName || '', label: this.editorInstance.name },
+            filter: this.editorInstance.editorParams?.['filter'],
+            fillMap: this.editorInstance.editorParams?.['fillMap'] ? eval('(' + this.editorInstance.editorParams['fillMap'] + ')') : { id: this.parentItem?.valueItemName || '', label: this.editorInstance.name },
             disabled: this.disabled,
             data: this.contextData,
             context: this.context,
@@ -385,7 +404,7 @@ export default class DataPickerEditor extends EditorBase {
                 codelistType: this.codeList.codeListType,
                 renderMode: this.codeList.orMode,
                 valueSeparator: this.codeList.valueSeparator,
-                textSeparator:  this.codeList.textSeparator
+                textSeparator: this.codeList.textSeparator
             });
         }
         return params;

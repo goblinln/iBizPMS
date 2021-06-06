@@ -48,6 +48,13 @@ export class AppContentBottomExp extends Vue {
     public items!: any[];
 
     /**
+     * 模型服务对象
+     * 
+     * @memberof AppStyle2DefaultLayout
+     */
+     @Prop() public modelService!:any;
+
+    /**
      * 菜单数据
      * 
      * @memberof AppContentBottomExp
@@ -154,9 +161,9 @@ export class AppContentBottomExp extends Vue {
      */
     protected renderTitle(h: any, item: any): any {
         return (
-            <div title={item.tooltip} class="tab-exp-title">
+            <div title={this.$tl(item.tooltipTag, item.tooltip)} class="tab-exp-title">
                 <menu-icon item={item} />
-                {item.caption}
+                {this.$tl(item.captionTag, item.caption)}
             </div>
         );
     }

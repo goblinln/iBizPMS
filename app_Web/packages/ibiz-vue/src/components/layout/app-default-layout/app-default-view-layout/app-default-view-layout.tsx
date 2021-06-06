@@ -1,4 +1,4 @@
-import { IPSAppView } from '@ibiz/dynamic-model-api';
+import { IPSAppView, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { ModelTool, Util } from 'ibiz-core';
 import Vue from 'vue';
 import { Prop, Component } from 'vue-property-decorator';
@@ -36,11 +36,25 @@ export class AppDefaultViewLayout extends Vue {
     @Prop() public viewparams!: any;
 
     /**
+     * 模型服务对象
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+     @Prop() public modelService!:any;
+
+    /**
      * 是否展示视图工具栏
      * 
      * @memberof AppDefaultViewLayout
      */
     public viewIsshowToolbar: boolean = ModelTool.findPSControlByType("TOOLBAR", this.viewInstance.getPSControls()) ? true : false;
+
+    /**
+     * 视图模型数据
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+    @Prop() public model!: any;
 
     /**
      * 是否显示标题栏
@@ -63,7 +77,7 @@ export class AppDefaultViewLayout extends Vue {
      */
     public renderViewHeader(): any {
         return [
-            this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null,
+            this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.model.srfCaption}</span> : null,
             this.viewIsshowToolbar ? <div class='toolbar-container'>
                 {this.$slots.toolbar}
             </div> : null,
@@ -125,7 +139,7 @@ export class AppDefaultViewLayout extends Vue {
                     context={this.context}
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
-                    viewTitle={this.viewInstance.title} />
+                    viewTitle={this.model.srfCaption} />
                 { this.renderContent()}
             </div>
         );

@@ -90,6 +90,13 @@ export default class AppColumnLink extends Vue {
     @Prop() public appUIService!: any;
 
     /**
+    * 模型服务对象
+    * 
+    * @memberof AppStyle2DefaultLayout
+    */
+    @Prop() public modelService!:any;
+
+    /**
      * 打开链接视图
      *
      * @memberof AppColumnLink
@@ -255,7 +262,7 @@ export default class AppColumnLink extends Vue {
             viewname: Util.srfFilePath2(targetOpenView.codeName),
             height: targetOpenView.height,
             width: targetOpenView.width,
-            title: targetOpenView.title,
+            title: this.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.title),
             placement: targetOpenView.openMode ? targetOpenView.openMode : '',
             viewpath: targetOpenView.modelFilePath,
         };

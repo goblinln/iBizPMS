@@ -116,6 +116,7 @@ export class EditViewEngine extends ViewEngine {
         this.calcToolbarItemAuthState(this.transformData(arg));
         this.setDataCtrlData(arg,true);
         this.readTask(arg);
+        this.emitViewEvent('load', arg);
     }
 
     /**
@@ -147,7 +148,7 @@ export class EditViewEngine extends ViewEngine {
      */
     public onFormRemove(arg: any): void {
         this.emitViewEvent('remove', arg);
-        this.emitViewEvent('viewdataschange', JSON.stringify({ action: 'remove', status: 'success', data: arg }));
+        this.emitViewEvent('viewdataschange', arg);
     }
 
     /**
@@ -172,7 +173,6 @@ export class EditViewEngine extends ViewEngine {
      * @memberof IBizEditViewController
      */
     public doSave(): void {
-        // this.afterformsaveaction = '';
         this.saveData({});
     }
 
@@ -210,8 +210,8 @@ export class EditViewEngine extends ViewEngine {
             // 解决表格视图标题问题
             if (this.view.$tabPageExp && this.view.viewDefaultUsage) {
                 this.view.$tabPageExp.setCurPageCaption({
-                    caption: this.view.$t(viewModel.srfCaption),
-                    title: this.view.$t(viewModel.srfCaption),
+                    caption: viewModel.srfCaption,
+                    title: viewModel.srfCaption,
                     info: info,
                     viewtag: this.view.viewtag
                 }

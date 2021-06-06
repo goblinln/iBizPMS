@@ -16,14 +16,14 @@ export class AppDefaultEditViewLayout extends AppDefaultViewLayout {
                 this.viewIsshowToolbar ? [<div class="toptoolbar">{this.$slots.toolbar}</div>, <divider class="toptoolbar-divider" />] : null,
                 <div class='header-info-container'>
                     {
-                        this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null
+                        this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.model.srfCaption}</span> : null
                     }
                     <div class='dataInfo-container'>{this.$slots.datapanel}</div>
                 </div>,
             ]
         } else {
             return [
-                this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null,
+                this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.model.srfCaption}</span> : null,
                 this.viewIsshowToolbar ? <div class='toolbar-container'>
                     {this.$slots.toolbar}
                 </div> : null,

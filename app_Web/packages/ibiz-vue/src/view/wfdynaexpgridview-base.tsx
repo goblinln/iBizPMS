@@ -334,7 +334,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
             if(targetView){
                 let tempContext: any = Util.deepCopy(this.context);
                 let tempViewParam: any = { actionView: linkItem.sequenceflowview, actionForm: linkItem.sequenceflowform };
-                const appmodal = this.$appmodal.openModal({ viewname: Util.srfFilePath2(targetView.codeName), title: targetView.title, height: targetView.height, width: targetView.width }, tempContext, tempViewParam);
+                const appmodal = this.$appmodal.openModal({ viewname: Util.srfFilePath2(targetView.codeName), title: this.$tl(targetView.getCapPSLanguageRes()?.lanResTag, targetView.caption), height: targetView.height, width: targetView.width }, tempContext, tempViewParam);
                 appmodal.subscribe((result: any) => {
                     if (!result || !Object.is(result.ret, 'OK')) {
                         return;

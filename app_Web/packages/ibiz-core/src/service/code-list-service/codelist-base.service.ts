@@ -101,11 +101,36 @@ export class CodeListServiceBase {
     }
 
     /**
+     * 获取多语言翻译方法
+     *
+     * @param {*} context 运行上下文
+     * @return {*} 
+     * @memberof CodeListServiceBase
+     */
+    public async getTranslate(context: any){
+        let appModelService: AppModelService = await GetModelService(context);
+        let i18n = AppServiceBase.getInstance().getI18n();
+        return function(key: string, value?: string){
+            if (i18n.te(key)) {
+                return i18n.t(key);
+            } else {
+                if (appModelService) {
+                    const lanResource: any = appModelService.getPSLang(key);
+                    return lanResource ? lanResource : value ? value : key;
+                } else {
+                    return value ? value : key;
+                }
+            }
+        }
+    }
+
+    /**
      * 获取静态代码表
      *
      * @param {string} tag 代码表标识
      * @param {string} data 代码表数据
-     * @returns {Promise<any[]>}
+     * @param {*} [context] 上下文context
+     * @return {*} 
      * @memberof CodeListServiceBase
      */
     public async getStaticItems(tag: string, data?: any, context?: any) {
@@ -120,8 +145,9 @@ export class CodeListServiceBase {
                 })
             }
         }
+        let translate = await this.getTranslate(context);
         if (codelist && codelist.getPSCodeItems()) {
-            let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems(), undefined, codelist.codeItemValueNumber);
+            let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems(), undefined, codelist.codeItemValueNumber, translate);
             return items;
         }
         return []
@@ -133,10 +159,11 @@ export class CodeListServiceBase {
      * @param {*} items 代码表集合
      * @param {string} pValue 父代码项值
      * @param {boolean} [codeItemValueNumber=false] 是否是数值项
+     * @param {*} [translate] 多语言翻译
      * @return {*} 
      * @memberof CodeListServiceBase
      */
-    public formatStaticItems(items: any, pValue?: string, codeItemValueNumber: boolean = false) {
+    public formatStaticItems(items: any, pValue?: string, codeItemValueNumber: boolean = false, translate?: any) {
         let targetArray: Array<any> = [];
         items.forEach((element: IPSCodeItem) => {
             const codelistItem = {
@@ -146,6 +173,10 @@ export class CodeListServiceBase {
                 id: element.value,
                 color: element.color,
                 codename: element.codeName
+            }
+            if(translate && element?.getTextPSLanguageRes?.()?.lanResTag){
+                codelistItem.text = translate(element.getTextPSLanguageRes()?.lanResTag ,element.text)
+                codelistItem.label = translate(element.getTextPSLanguageRes()?.lanResTag ,element.text)
             }
             if (element.data) {
                 if ((element.data.indexOf("{") !== -1) && (element.data.indexOf("}") !== -1)) {
@@ -165,7 +196,7 @@ export class CodeListServiceBase {
             }
             targetArray.push(codelistItem);
             if ((element.getPSCodeItems() || []).length > 0) {
-                const children = this.formatStaticItems(element.getPSCodeItems(), element.value, codeItemValueNumber);
+                const children = this.formatStaticItems(element.getPSCodeItems(), element.value, codeItemValueNumber,translate);
                 targetArray.push(...children);
             }
         });

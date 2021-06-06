@@ -123,7 +123,7 @@ export class MDViewBase extends MainViewBase {
             if (!(this.quickGroupCodeList && this.quickGroupCodeList.codeName)) {
                 return;
             }
-            let res: any = await this.codeListService.getDataItems({ tag: this.quickGroupCodeList.codeName, type: this.quickGroupCodeList.codeListType, data: this.quickGroupCodeList });
+            let res: any = await this.codeListService.getDataItems({ tag: this.quickGroupCodeList.codeName, type: this.quickGroupCodeList.codeListType, data: this.quickGroupCodeList, context: this.context });
             this.quickGroupModel = this.handleDynamicData(JSON.parse(JSON.stringify(res)));
         } catch (error: any) {
             LogUtil.log(`----${this.quickGroupCodeList.codeName}----${this.$t('app.commonwords.codenotexist')}`);
@@ -259,7 +259,7 @@ export class MDViewBase extends MainViewBase {
             quickSearchFields.forEach((field: IPSAppDEField, index: number) => {
                 const _field: IPSAppDEField | null | undefined = (this.viewInstance as IPSAppDEMultiDataView).getPSAppDataEntity()?.findPSAppDEField(field.codeName);
                 if (_field) {
-                    this.placeholder += (_field.logicName + (index === quickSearchFields.length-1 ? '' : ', '))
+                    this.placeholder += (this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName) + (index === quickSearchFields.length-1 ? '' : ', '));
                 }
             })
         }

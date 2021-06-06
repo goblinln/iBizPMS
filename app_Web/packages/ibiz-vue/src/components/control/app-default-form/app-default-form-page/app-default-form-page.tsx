@@ -1,5 +1,5 @@
-import { IPSDEFormPage } from '@ibiz/dynamic-model-api';
-import { Vue, Component, Prop, Inject, Watch } from 'vue-property-decorator';
+import { IPSDEFormPage, IPSLanguageRes } from '@ibiz/dynamic-model-api';
+import { Component, Prop } from 'vue-property-decorator';
 import { AppDefaultFormDetail } from '../app-default-form-detail/app-default-form-detail';
 
 /**
@@ -31,9 +31,8 @@ export class AppDefaultFormPage extends AppDefaultFormDetail {
         const sysCss = this.detailsInstance.getLabelPSSysCss();
         const sysImg = this.detailsInstance.getPSSysImage();
         let labelClass = sysCss?.cssName ? 'caption ' + sysCss.cssName : 'caption';
-        let labelCaption: any = caption;
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         let labelIcon: any;
-        // todo 多语言标题
         if(sysImg){
             if(sysImg?.imagePath){
                 labelIcon = <img src={sysImg?.imagePath} style={{'margin-right' : '2px'}}></img>

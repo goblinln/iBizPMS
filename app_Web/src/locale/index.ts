@@ -21,7 +21,7 @@ let lang: string = localLang || 'zh-CN';
 
 vueApp.config.lang = lang
 
-// // vue-i18n 6.x+写法
+// vue-i18n 6.x+写法
 vueApp.locale = () => { };
 
 const i18n = new VueI18n({

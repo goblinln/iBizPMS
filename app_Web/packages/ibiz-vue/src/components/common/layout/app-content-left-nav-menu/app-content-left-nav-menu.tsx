@@ -57,6 +57,13 @@ export class AppContentLeftNavMenu extends Vue {
     public menus!: any[];
 
     /**
+     * 模型服务对象
+     * 
+     * @memberof AppStyle2DefaultLayout
+     */
+     @Prop() public modelService!:any;
+
+    /**
      * 监控菜单数据变更
      *
      * @memberof AppContentLeftNavMenu
@@ -232,7 +239,7 @@ export class AppContentLeftNavMenu extends Vue {
             <el-submenu index={item.name}>
                 <template slot="title">
                     <menu-icon item={item} />
-                    <span slot="title">{item.caption}</span>
+                    <span slot="title">{this.$tl(item.captionTag,item.caption)}</span>
                 </template>
                 {this.renderItems(item.getPSAppMenuItems)}
             </el-submenu>
@@ -251,7 +258,7 @@ export class AppContentLeftNavMenu extends Vue {
         return (
             <el-menu-item index={item.name}>
                 <menu-icon item={item} />
-                <span slot="title">{item.caption}</span>
+                <span slot="title">{this.$tl(item.captionTag,item.caption)}</span>
             </el-menu-item>
         );
     }

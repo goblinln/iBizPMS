@@ -34,6 +34,15 @@ export default class AppStudioAction extends Vue {
     viewparams!: any;
 
     /**
+     * 应用上下文
+     *
+     * @type {*}
+     * @memberof AppStudioAction
+     */
+    @Prop()
+    viewTitle!: string;
+
+    /**
      * 是否为开发环境
      *
      * @type {boolean}
@@ -127,11 +136,11 @@ export default class AppStudioAction extends Vue {
                     <div ref='border' class='app-studio-debug-bar-border'></div>
                     <div class='app-studio-debug-bar' on-mouseenter={this.mouseenter} on-mouseleave={this.mouseleave}>
                         <div class='app-studio-debug-info' title='点击拷贝视图名称' on-click={() => this.copy()}>
-                            {v.title}（{v.name}）
+                            {this.viewTitle}（{v.name}）
                         </div>
                         <div class='app-studio-debug-actions'>
                             <i-button type='text' ghost size='small' on-click={this.openPreview}>
-                                查看
+                                {this.$t('components.appstudioaction.view')}
                             </i-button>
                         </div>
                     </div>

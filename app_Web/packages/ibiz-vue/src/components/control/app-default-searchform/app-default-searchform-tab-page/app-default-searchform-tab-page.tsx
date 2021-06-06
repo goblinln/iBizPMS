@@ -1,4 +1,5 @@
-import { Vue, Component, Prop, Inject, Watch } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
+import { IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { AppDefaultSearchFormDetail } from '../app-default-searchform-detail/app-default-searchform-detail';
 
 /**
@@ -18,20 +19,21 @@ export class AppDefaultSearchFormTabPage extends AppDefaultSearchFormDetail {
      * @memberof AppDefaultSearchFormTabPage
      */
     public renderLabel() {
-        const { getLabelPSSysCss, getPSSysImage, caption } = this.detailsInstance;
-        let labelClass = getLabelPSSysCss?.cssName ? 'caption ' + getLabelPSSysCss.cssName : 'caption';
-        let labelContent = caption;
-        if(getPSSysImage){
-            if(getPSSysImage?.imagePath == ''){
-                labelContent = <i class={getPSSysImage?.cssClass} style={{'margin-right' : '2px'}}></i>
+        const { caption } = this.detailsInstance;
+        const sysCss = this.detailsInstance.getLabelPSSysCss();
+        const sysImg = this.detailsInstance.getPSSysImage();
+        let labelClass = sysCss?.cssName ? 'caption ' + sysCss.cssName : 'caption';
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
+        let labelIcon: any;
+        if(sysImg){
+            if(sysImg?.imagePath){
+                labelIcon = <img src={sysImg?.imagePath} style={{'margin-right' : '2px'}}></img>
             }else{
-                labelContent = <img src={getPSSysImage?.imagePath} style={{'margin-right' : '2px'}}></img>
+                labelIcon = <i class={sysImg?.cssClass} style={{'margin-right' : '2px'}}></i>
             }
-        }else{
-            // todo 多语言标题
         }
         return <span class={labelClass}>
-            {labelContent}
+            {labelIcon}{labelCaption}
         </span>
     }
 

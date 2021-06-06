@@ -27,10 +27,10 @@ export class GanttControlBase extends MDControlBase {
     public locale: string = 'zh-CN';
 
      /**
-     * 语言资源
+     * 语言资源 - zh-cn
      *
      * @public
-     * @type {any[]}
+     * @type {*}
      * @memberof GanttControlBase
      */   
     public localeZH: any =  {
@@ -41,6 +41,22 @@ export class GanttControlBase extends MDControlBase {
         "Display task list": "显示列表",
         "Before/After": "数据范围"
     };
+
+    /**
+     * 语言资源 - en-us
+     *
+     * @public
+     * @type {*}
+     * @memberof GanttControlBase
+     */   
+    public localeEN: any = {
+        weekdays: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        Now: "Now",
+        "X-Scale": "X-Scale",
+        "Display task list": "Display task list",
+        "Before/After": "Before/After"
+    }
 
     /**
      * 配置参数
@@ -122,13 +138,13 @@ export class GanttControlBase extends MDControlBase {
      * @memberof GanttControlBase
      */
     public initOptions() {
-        const treeColumns:any = this.controlInstance.getPSDETreeColumns();
+        const treeColumns: IPSDETreeColumn[] = this.controlInstance.getPSDETreeColumns() || [];
         if(treeColumns?.length>0) {
             let tempOptions: any[] = [];
             treeColumns.forEach((column: IPSDETreeColumn) => {
                 const name = column.name == "begin" ? "start" : column.name;
                 let option: any = {
-                    label: column?.caption,
+                    label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, column?.caption),
                     value: name,
                     render: (task: any) => {
                         if(column?.getRenderPSSysPFPlugin()){
@@ -190,7 +206,7 @@ export class GanttControlBase extends MDControlBase {
                         const codelistJson = dataItem.getFrontPSCodeList();
                         await codelistJson?.fill();
                         if(codelistJson){
-                            let items = await this.codeListService.getDataItems({ type: codelistJson.codeListType, tag: codelistJson.codeName,data:codelistJson });
+                            let items = await this.codeListService.getDataItems({ type: codelistJson.codeListType, tag: codelistJson.codeName,data:codelistJson, context: this.context });
                             this.codeListData.set(dataItem.name,items);
                         }
                     }
@@ -276,7 +292,7 @@ export class GanttControlBase extends MDControlBase {
         if(Object.is(this.locale, 'zh-CN')) {
             this.options.locale = this.localeZH
         }else{
-            this.options.locale = undefined;
+            this.options.locale = this.localeEN;
         }
     }
 
@@ -555,7 +571,7 @@ export class GanttControlBase extends MDControlBase {
                             viewname: Util.srfFilePath2(targetOpenView.codeName),
                             height: targetOpenView.height,
                             width: targetOpenView.width,
-                            title: targetOpenView.title,
+                            title: this.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.caption),
                         };
                         if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
                             if (targetOpenView.getPSAppDataEntity()) {
@@ -608,7 +624,7 @@ export class GanttControlBase extends MDControlBase {
                     viewname: 'app-view-shell',
                     height: openView.height,
                     width: openView.width,
-                    title: openView.title,
+                    title: this.$tl(openView.getCapPSLanguageRes()?.lanResTag, openView.caption),
                 };
                 this.openTargtView(openView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
             }

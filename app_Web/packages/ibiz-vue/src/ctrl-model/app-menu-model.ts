@@ -74,9 +74,15 @@ export class AppMenuModel {
         Object.assign(appMenuItem, { authtag: `${application.codeName}-${this.MenuInstance.codeName}-${menuItem.M.name}` });
         Object.assign(appMenuItem, { name: menuItem.M.name });
         Object.assign(appMenuItem, { caption: menuItem.caption });
+        if((menuItem  as any)?.getCapPSLanguageRes?.()?.lanResTag){
+            Object.assign(appMenuItem, { captionTag: (menuItem  as any).getCapPSLanguageRes()?.lanResTag });
+        }
         Object.assign(appMenuItem, { itemType: menuItem.itemType });
         Object.assign(appMenuItem, { counterid: menuItem.counterId });
         Object.assign(appMenuItem, { tooltip: menuItem.tooltip });
+        if(menuItem?.getTooltipPSLanguageRes?.()?.lanResTag){
+            Object.assign(appMenuItem, { tooltipTag: menuItem.getTooltipPSLanguageRes()?.lanResTag });
+        }
         Object.assign(appMenuItem, { expanded: menuItem.expanded });
         Object.assign(appMenuItem, { seperator: menuItem.seperator });
         Object.assign(appMenuItem, { hidden: menuItem.hidden });

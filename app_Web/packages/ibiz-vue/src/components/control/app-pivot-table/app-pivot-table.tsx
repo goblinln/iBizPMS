@@ -206,7 +206,7 @@ export class AppPivotTable extends AppGridBase {
         let _this = this;
         if(codelistColumns.length >0){
             for (const codelist of codelistColumns) {
-                let items = await _this.codeListService.getDataItems({ type: codelist.codelistType, tag: codelist.srfkey });
+                let items = await _this.codeListService.getDataItems({ type: codelist.codelistType, tag: codelist.srfkey, context: this.context });
                 data.forEach((row:any)=>{
                     row[codelist.name] = _this.getCodeListItemValue(items, row[codelist.name]);
                 });

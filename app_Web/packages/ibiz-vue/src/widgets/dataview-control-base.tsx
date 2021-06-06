@@ -253,7 +253,7 @@ export class DataViewControlBase extends MDControlBase {
         this.sortModel = [];
         this.controlInstance.getPSDEDataViewItems()?.forEach((cardViewItem: IPSDEDataViewItem) => {
             if (cardViewItem.enableSort) {
-                this.sortModel.push(cardViewItem.caption);
+              this.sortModel.push(this.$tl(cardViewItem.getCapPSLanguageRes()?.lanResTag, cardViewItem.caption));
             }
         });
     }
@@ -1219,7 +1219,7 @@ export class DataViewControlBase extends MDControlBase {
                                     ''
                                 )}
                                 <span>
-                                    {uiactionDetail.showCaption ? (uiaction?.caption ? uiaction.caption : '') : ''}
+                                {uiactionDetail.showCaption ? (this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction?.caption ? uiaction.caption : '')) : ''}
                                 </span>
                             </button>
                         );

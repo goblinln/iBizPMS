@@ -239,7 +239,7 @@ export class AppTreeService extends ControlServiceBase {
                 const treeNode: any = {
                     text: (nodeJson as IPSDETreeStaticNode)?.text,
                     nodeType: nodeJson.treeNodeType,
-                    // 多语言 todo
+                    lanResTag: nodeJson.getNamePSLanguageRes()?.lanResTag,
                     isUseLangRes: false,
                     srfappctx: context,
                     srfmajortext: (nodeJson as IPSDETreeStaticNode)?.text,

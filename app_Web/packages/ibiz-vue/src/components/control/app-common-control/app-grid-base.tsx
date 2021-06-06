@@ -8,6 +8,7 @@ import {
     IPSUIActionGroupDetail,
     IPSAppDEGridView,
     IPSDEToolbar,
+    IPSLanguageRes,
 } from '@ibiz/dynamic-model-api';
 import { debounce, ModelTool, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
@@ -271,7 +272,7 @@ export class AppGridBase extends GridControlBase {
         //参数
         let renderParams: any = {
             'column-key': name,
-            label: caption,
+            label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             align: 'center',
             'class-name':'default-ua-column'
         };
@@ -335,7 +336,7 @@ export class AppGridBase extends GridControlBase {
                                 }}
                             >
                                 {uiactionDetail.showIcon ? <menu-icon item={uiaction} /> : null}
-                                {uiactionDetail.showCaption ? <span class='caption'>{uiaction.caption}</span> : ''}
+                                {uiactionDetail.showCaption ? <span class='caption'>{this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption)}</span> : ''}
                             </i-button>
                         }
                     })}
@@ -356,7 +357,7 @@ export class AppGridBase extends GridControlBase {
         //参数
         let renderParams: any = {
             'column-key': name,
-            label: caption,
+            label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             align: align ? align.toLowerCase() : 'center',
         };
         if (widthUnit && widthUnit != 'STAR') {
@@ -374,7 +375,7 @@ export class AppGridBase extends GridControlBase {
                     return this.renderActionModel(column, scope);
                 },
                 header: () => {
-                    return <span class='column-header'>{column.caption}</span>;
+                    return <span class='column-header'>{this.$tl(column.getCapPSLanguageRes()?.lanResTag, column.caption)}</span>;
                 },
             },
         });
@@ -413,7 +414,7 @@ export class AppGridBase extends GridControlBase {
                                 return (
                                     <a
                                         class={columnClass}
-                                        title={uiaction.caption}
+                                        title={this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption)}
                                         disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                         on-click={($event: any) => {
                                           debounce(this.handleActionClick,[row, $event, _column, uiactionDetail],this);
@@ -446,7 +447,7 @@ export class AppGridBase extends GridControlBase {
                                         ) : (
                                             ''
                                         )}
-                                        {uiactionDetail.showCaption ? (uiaction?.caption ? uiaction.caption : '') : ''}
+                                        {uiactionDetail.showCaption ? this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption) : ''}
                                     </a>
                                 );
                             }
@@ -472,7 +473,7 @@ export class AppGridBase extends GridControlBase {
         ) as IPSDEGridEditItem;
         let renderParams: any = {
             'show-overflow-tooltip': true,
-            label: caption,
+            label: this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption),
             prop: name,
             align: align ? align.toLowerCase() : 'center',
             sortable: !this.controlInstance.noSort && enableSort ? 'custom' : false,
@@ -492,7 +493,7 @@ export class AppGridBase extends GridControlBase {
                 },
                 header: () => {
                   this.allColumnsInstance; // 别删，触发表格头刷新用
-                  return <span class='column-header'>{caption}</span>;
+                  return <span class='column-header'>{this.$tl(column.getCapPSLanguageRes()?.lanResTag, caption)}</span>;
                 },
             },
         });
@@ -652,6 +653,7 @@ export class AppGridBase extends GridControlBase {
                 columnInstance={item}
                 gridInstance={this.controlInstance}
                 context={this.context}
+                modelService={this.modelService}
                 viewparams={this.viewparams}
                 appUIService={this.appUIService}
                 on-uiAction={($event: any) => this.columnUIAction(scope.row, $event, item)}

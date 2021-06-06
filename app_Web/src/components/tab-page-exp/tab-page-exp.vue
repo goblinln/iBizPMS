@@ -15,7 +15,7 @@
         >
           <span slot="label"
             ><span class="ivu-tag-dot-inner"></span
-            >{{ getCaption(meta.caption, meta.info) }}</span
+            >{{ getCaption(meta.caption,meta.captionTag,meta.info) }}</span
           >
         </el-tab-pane>
       </el-tabs>
@@ -55,6 +55,13 @@ export default class TabPageExp extends Vue {
   ];
 
   /**
+   * 模型服务对象
+   * 
+   * @memberof TabPageExp
+   */
+  @Prop() public modelService!:any;
+
+  /**
    * 关闭tab页方法
    */
   public handlerClose(item: any) {
@@ -73,10 +80,10 @@ export default class TabPageExp extends Vue {
     Vue.prototype.$tabPageExp = this;
   }
 
-  public getCaption(caption: any, info: any): any {
+  public getCaption(caption: any, captionTag:any, info: any): any {
     return info && !Object.is(info, "")
-      ? `${this.$t(caption)} - ${info}`
-      : this.$t(caption);
+      ? `${this.$tl(captionTag,caption)} - ${info}`
+      : this.$tl(captionTag,caption);
   }
 
   /**

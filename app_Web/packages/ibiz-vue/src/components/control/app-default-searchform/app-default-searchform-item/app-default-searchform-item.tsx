@@ -1,6 +1,7 @@
 import { Subject } from 'rxjs';
-import { Vue, Component, Prop, Inject, Watch } from 'vue-property-decorator';
+import { Component, Prop } from 'vue-property-decorator';
 import { AppDefaultSearchFormDetail } from '../app-default-searchform-detail/app-default-searchform-detail';
+import { IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 /**
  * 表单UI组件
@@ -180,10 +181,11 @@ export class AppDefaultSearchFormItem extends AppDefaultSearchFormDetail {
         contentStyle += contentWidth && contentWidth != 0 ? `width:${contentWidth}px;` : '';
         contentStyle += contentHeight && contentHeight != 0 ? `height:${contentHeight}px;` : '';
         contentStyle += this.runtimeModel?.visible ? '' : 'display: none;';
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-item
                 name={name}
-                caption={caption}
+                caption={labelCaption}
                 isEmptyCaption={emptyCaption}
                 isShowCaption={showCaption}
                 labelWidth={labelWidth}

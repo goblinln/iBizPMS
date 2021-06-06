@@ -1478,7 +1478,7 @@ export class EditFormControlBase extends FormControlBase {
                                 let temp: any = {
                                     name: `${detail.name}_${actionDetail.name}`,
                                     tag: uiaction?.uIActionTag,
-                                    caption: uiaction?.caption || '',
+                                    caption: this.$tl(uiaction?.getCapPSLanguageRes()?.lanResTag, uiaction?.caption || ''),
                                     disabled: false,
                                     visabled: true,
                                     noprivdisplaymode: uiaction?.noPrivDisplayMode,

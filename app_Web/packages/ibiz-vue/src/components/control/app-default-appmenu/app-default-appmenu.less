@@ -301,35 +301,38 @@
 
 .view-default {
     .appmenu.app-tree-exp-bar {
-        .left-pane .el-tree-node {
-            >.el-tree-node__content  {
-                height: 32px;
-                .parent-treeitem  {
-                    .icon {
-                        padding-right: 10px;
-                    }
-                    .el-icon-arrow-right {
-                        position: absolute;
-                        right: 10px;
-                        line-height: 20px;
-                    }
-                    .el-icon-arrow-right.expanded {
-                        transform: rotate(90deg);
-                    }
-                }
-                .leaf-treeitem {
-                    padding-left: 4px;
-                }
-                >.el-tree-node__expand-icon {
-                    display: none;
-                }
-                &:hover {
-                    background-color: #f0f7ff;
-                    color: #57A3FD;
-                }
-            }
+        .left-pane,.right-pane {
+          .el-tree-node {
+              >.el-tree-node__content  {
+                  height: auto;
+                  .parent-treeitem  {
+                      .icon {
+                          padding-right: 10px;
+                      }
+                      .el-icon-arrow-right {
+                          position: absolute;
+                          right: 10px;
+                          line-height: 20px;
+                      }
+                      .el-icon-arrow-right.expanded {
+                          transform: rotate(90deg);
+                      }
+                  }
+                  .leaf-treeitem {
+                      padding-left: 4px;
+                  }
+                  >.el-tree-node__expand-icon {
+                      display: none;
+                  }
+                  &:hover {
+                      background-color: #f0f7ff;
+                      color: #57A3FD;
+                  }
+              }
+          }
         }
-        .left-pane.ivu-split-pane {
+        .left-pane,.right-pane {
+          .ivu-split-pane {
             padding: 4px 0px 6px 0;
             font-size: 12px;
             >div {
@@ -354,6 +357,7 @@
             .el-tree {
                 border-top: 1px solid #E4E4E4;
             }
+          }
         }
         .ivu-split-trigger-con {
             padding-top: 4px;

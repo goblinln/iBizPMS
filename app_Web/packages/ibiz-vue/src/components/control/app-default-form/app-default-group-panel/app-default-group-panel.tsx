@@ -1,7 +1,6 @@
-import { IPSDEFormGroupPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDEFormGroupPanel, IPSUIActionGroupDetail, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { debounce } from 'ibiz-core';
-import { Vue, Component, Prop, Inject, Watch } from 'vue-property-decorator';
-import { AppViewLogicService } from '../../../../app-service';
+import { Component, Prop } from 'vue-property-decorator';
 import { AppDefaultFormDetail } from '../app-default-form-detail/app-default-form-detail';
 
 /**
@@ -57,11 +56,11 @@ export class AppDefaultGroupPanel extends AppDefaultFormDetail {
         // 设置默认值
         let layoutMode = layout?.layout || 'TABLE_24COL';
         titleBarCloseMode = Number(titleBarCloseMode) || 0;
-        caption = caption || codeName;
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-group
                 layoutType={layoutMode}
-                caption={caption}
+                caption={labelCaption}
                 isShowCaption={showCaption}
                 uiStyle='DEFAULT'
                 titleBarCloseMode={titleBarCloseMode}

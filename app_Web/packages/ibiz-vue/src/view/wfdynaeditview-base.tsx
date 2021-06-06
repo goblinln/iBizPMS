@@ -1,4 +1,4 @@
-import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm } from '@ibiz/dynamic-model-api';
+import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService, LogUtil, debounce } from 'ibiz-core';
 import { AppCenterService } from '../app-service';
 import { MainViewBase } from './mainview-base';
@@ -185,7 +185,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                     </tab-pane>
                     {this.deDRTabPages.map((deDRTabPage: IPSDEDRTabPage) => {
                         return (
-                            <tab-pane tab={tabsName} label={deDRTabPage.caption}>
+                            <tab-pane tab={tabsName} label={this.$tl(deDRTabPage.getCapPSLanguageRes()?.lanResTag, deDRTabPage.caption)}>
                                 { this.$createElement('app-view-shell', {
                                     props: {
                                         staticProps: {
@@ -332,7 +332,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                     Object.assign(tempContext, { viewpath: targetViewRef?.getRefPSAppView?.path });
                     GetModelService(tempContext).then((modelService: AppModelService) => {
                         modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult: IPSAppView) => {
-                            const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: viewResult.title, height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
+                            const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: this.$tl(viewResult.getCapPSLanguageRes()?.lanResTag, viewResult.caption), height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
                             appmodal.subscribe((result: any) => {
                                 if (!result || !Object.is(result.ret, 'OK')) {
                                     return;
@@ -395,7 +395,7 @@ export class WFDynaEditViewBase extends MainViewBase {
         Object.assign(tempContext, { viewpath: targetViewRef?.getRefPSAppView?.path });
         GetModelService(tempContext).then((modelService: AppModelService) => {
             modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult: IPSAppView) => {
-                const appmodal = this.$appmodal.openModal({ viewname: 'app-view-shell', title: viewResult.title, height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
+                const appmodal = this.$appmodal.openModal({ viewname: 'app-view-shell', title: this.$tl(viewResult.getCapPSLanguageRes()?.lanResTag, viewResult.caption), height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
                 appmodal.subscribe((result: any) => {
                     if (!result || !Object.is(result.ret, 'OK')) {
                         return;

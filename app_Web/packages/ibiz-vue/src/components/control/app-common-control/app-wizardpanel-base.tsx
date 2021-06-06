@@ -1,7 +1,7 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { debounce, Util } from 'ibiz-core';
 import { WizardPanelControlBase } from '../../../widgets';
-import { IPSDEEditForm, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardStep } from '@ibiz/dynamic-model-api';
+import { IPSDEEditForm, IPSDEWizard, IPSDEWizardEditForm, IPSDEWizardStep, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 export class AppWizardPanelBase extends WizardPanelControlBase {
     
@@ -80,7 +80,8 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
             return (
                 <el-steps class="wizard-steps" active={this.wizardForms.indexOf(this.activeForm)} finish-status="success">
                     {wizardSteps.map((step: IPSDEWizardStep) => {
-                        return <el-step title={step.title}></el-step>
+                        const title = this.$tl((step.getTitlePSLanguageRes() as IPSLanguageRes)?.lanResTag, step.title);
+                        return <el-step title={title}></el-step>
                     })}
                 </el-steps>
             );
@@ -107,11 +108,18 @@ export class AppWizardPanelBase extends WizardPanelControlBase {
      * @memberof AppWizardPanelBase
      */
     public renderStepsFooter() {
+        const wizard = this.controlInstance.getPSDEWizard() as IPSDEWizard;
+        const finishCaption = wizard.finishCaption ? wizard.finishCaption : this.$t('app.wizardpanel.complete');
+        const nextCaption = wizard.nextCaption ? wizard.nextCaption : this.$t('app.wizardpanel.next');
+        const prevCaption =  wizard.prevCaption ? wizard.prevCaption : this.$t('app.wizardpanel.back');
+        const prev = this.$tl((wizard.getPrevCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, prevCaption);
+        const next = this.$tl((wizard.getNextCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, nextCaption);
+        const finish = this.$tl((wizard.getFinishCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, finishCaption);
         return (
             <footer class="app-wizard-footer">
-                {!this.isHidden('PREV') ? <i-button on-click={(...params: any[]) => debounce(this.onClickPrev,params,this)} type="primary">{this.$t('app.wizardpanel.back')}</i-button> : null}
-                {!this.isHidden('NEXT') ? <i-button on-click={(...params: any[]) => debounce(this.onClickNext,params,this)} type="primary">{this.$t('app.wizardpanel.next')}</i-button> : null}
-                {!this.isHidden('FINISH') ? <i-button on-click={(...params: any[]) => debounce(this.onClickFinish,params,this)} type="primary">{this.$t('app.wizardpanel.complete')}</i-button> : null}
+                {!this.isHidden('PREV') ? <i-button on-click={(...params: any[]) => debounce(this.onClickPrev,params,this)} type="primary">{prev}</i-button> : null}
+                {!this.isHidden('NEXT') ? <i-button on-click={(...params: any[]) => debounce(this.onClickNext,params,this)} type="primary">{next}</i-button> : null}
+                {!this.isHidden('FINISH') ? <i-button on-click={(...params: any[]) => debounce(this.onClickFinish,params,this)} type="primary">{finish}</i-button> : null}
             </footer>
         );
     }

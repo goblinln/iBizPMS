@@ -89,8 +89,8 @@ export default class AppUser extends Vue {
     public mounted() {
         let _user: any = {};
         if (this.$store.getters.getAppData()) {
-            if (this.$store.getters.getAppData().context && this.$store.getters.getAppData().context.srfusername) {
-                _user.name = this.$store.getters.getAppData().context.srfusername;
+            if (this.$store.getters.getAppData().context && this.$store.getters.getAppData().context.srfpersonname) {
+                _user.name = this.$store.getters.getAppData().context.srfpersonname;
             } else {
                 if (getCookie('ibzuaa-user')) {
                     let user: any = JSON.parse(getCookie('ibzuaa-user') as string);

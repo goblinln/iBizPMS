@@ -408,7 +408,7 @@ export class KanbanControlBase extends MDControlBase {
                     viewname: 'app-view-shell',
                     height: updateView.height,
                     width: updateView.width,
-                    title: updateView.title,
+                    title: this.$tl(updateView.getCapPSLanguageRes()?.lanResTag, updateView.caption),
                 };
                 const _context: any = JSON.parse(JSON.stringify(this.context));
                 const _param: any = JSON.parse(JSON.stringify(this.viewparams));
@@ -633,7 +633,7 @@ export class KanbanControlBase extends MDControlBase {
         }
         if (Object.is(this.groupMode, 'CODELIST') && this.groupCodeList) {
             this.groups = [];
-            let codelistItems: any = await this.codeListService.getDataItems(this.groupCodeList);
+            let codelistItems: any = await this.codeListService.getDataItems({...this.groupCodeList, context: this.context });
             this.allCodeList = Util.deepCopy(codelistItems);
             if (codelistItems && codelistItems.length > 0) {
                 codelistItems.forEach((item: any) => {

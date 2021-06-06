@@ -18,6 +18,7 @@ declare module "vue/types/vue" {
         $throw:any,
         $success: Function,
         $warning: Function,
+        $tl: Function,
         $info: Function,
         $util:any,
         $verify:any,
@@ -27,9 +28,9 @@ declare module "vue/types/vue" {
         $appmodal:any,
         $appdrawer:any,
         $apppopover:any,
-        $footerRenderService:FooterItemsService;
-        $topRenderService:TopItemsService;
-        $uiState:UIStateService;
+        $footerRenderService:FooterItemsService,
+        $topRenderService:TopItemsService,
+        $uiState:UIStateService,
     }
 }
 declare global {

@@ -1,7 +1,7 @@
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { debounce, LayoutTool, Util } from 'ibiz-core';
 import { DashboardControlBase } from '../../../widgets';
-import { IPSDBPortletPart } from '@ibiz/dynamic-model-api';
+import { IPSDBPortletPart, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 /**
  * 数据看板部件基类
@@ -97,12 +97,13 @@ export class AppDashboardBase extends DashboardControlBase {
             if (modelJson.getPSSysCss?.()?.cssName) {
                 Object.assign(controlClassNames, { [modelJson.getPSSysCss()?.cssName || '']: true });
             }
+            let labelCaption: any = this.$tl((modelJson.getTitlePSLanguageRes() as IPSLanguageRes)?.lanResTag, modelJson.title);
             return (
                 <div class='portlet-without-title'>
                     <card class={cardClass} bordered={false} dis-hover padding={cardPadding}>
                         {isShowTitle && [
                             <p slot='title'>
-                                {modelJson.title}
+                                {labelCaption}
                                 <span class='line'></span>
                             </p>,
                             <a slot='extra'></a>,

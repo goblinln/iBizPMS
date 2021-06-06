@@ -114,11 +114,11 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
     public render(h: any): any {
         const viewClassNames = this.initRenderClassNames();
         if (this.viewInstance && this.viewInstance.mainMenuAlign && Object.is(this.viewInstance.mainMenuAlign, "CENTER")) {
-            const { codeName, title } = this.viewInstance;
+            const { codeName } = this.viewInstance;
             return (<studio-view
                 style={{ 'font-family': this.selectFont }}
                 viewName={codeName?.toLowerCase()}
-                viewTitle={title}
+                viewTitle={this.model.srfCaption}
                 viewInstance={this.viewInstance}
                 viewparams={this.viewparams}
                 context={this.context}
@@ -142,7 +142,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
                             <template slot="header_left">
                                 <div class="title">
                                     {this.viewInstance.enableAppSwitch ? <span class="menuicon" style="cursor: pointer;" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" />&nbsp;</span> : null}
-                                    {this.viewInstance.caption}
+                                    {this.model.srfCaption}
                                 </div>
                             </template>
                             <template slot="header_right">

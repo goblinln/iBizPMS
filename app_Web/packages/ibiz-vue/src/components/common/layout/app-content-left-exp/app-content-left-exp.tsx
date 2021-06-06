@@ -41,6 +41,13 @@ export class AppContentLeftExp extends Vue {
     protected items!: any[];
 
     /**
+     * 模型服务对象
+     * 
+     * @memberof AppStyle2DefaultLayout
+     */
+     @Prop() public modelService!:any;
+
+    /**
      * 菜单部件服务
      * 
      * @memberof AppContentLeftExp
@@ -173,7 +180,7 @@ export class AppContentLeftExp extends Vue {
                         }
                         return (
                             <div
-                                title={item.tooltip}
+                                title={this.$tl(item.tooltipTag, item.tooltip)}
                                 on-click={() => this.itemClick(item, index)}
                                 class={{ 'action-item': true, active: this.activeIndex === index }}
                             >

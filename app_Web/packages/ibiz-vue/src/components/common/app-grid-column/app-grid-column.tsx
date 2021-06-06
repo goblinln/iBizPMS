@@ -62,6 +62,13 @@ export class AppDefaultGridColumn extends Vue {
     @Prop() public appUIService!: any;
 
     /**
+    * 模型服务对象
+    * 
+    * @memberof AppStyle2DefaultLayout
+    */
+    @Prop() public modelService!:any;
+
+    /**
      * 绘制
      * 
      * @memberof AppDefaultGridColumn
@@ -105,7 +112,7 @@ export class AppDefaultGridColumn extends Vue {
                 viewname: 'app-view-shell',
                 height: linkView.height,
                 width: linkView.width,
-                title: linkView.title,
+                title: this.$tl(linkView.getCapPSLanguageRes()?.lanResTag, linkView.title),
                 isRedirectView: linkView.redirectView ? true : false,
                 placement: linkView.openMode ? linkView.openMode : '',
                 viewpath: linkView.modelFilePath,
@@ -214,6 +221,7 @@ export class AppDefaultGridColumn extends Vue {
                 deKeyField={linkViewEntity && linkViewEntity.codeName ? linkViewEntity.codeName?.toLowerCase() : ""}
                 context={tempContext}
                 viewparams={tempViewParam}
+                modelService={this.modelService}
                 data={this.row}
                 linkview={view}
                 appUIService={this.appUIService}

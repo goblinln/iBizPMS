@@ -11,14 +11,14 @@ export class AppStyle2WFActionViewLayout extends AppStyle2DefaultLayout {
      * @memberof AppStyle2WFActionViewLayout
      */
     public render(h: any): any {
-        const { codeName, title } = this.viewInstance;
+        const { codeName } = this.viewInstance;
         const viewClassNames = this.initRenderClassNames();
         const styleMode: any = this.$uiState.layoutState.styleMode;
         if (Object.is('DEFAULT', styleMode)) {
             return (
                 <studio-view
                     viewName={codeName?.toLowerCase()}
-                    viewTitle={title}
+                    viewTitle={this.model.srfCaption}
                     viewInstance={this.viewInstance}
                     viewparams={this.viewparams}
                     context={this.context}
@@ -67,7 +67,7 @@ export class AppStyle2WFActionViewLayout extends AppStyle2DefaultLayout {
             return (
                 <studio-view-style2
                     viewName={codeName?.toLowerCase()}
-                    viewTitle={title}
+                    viewTitle={this.model.srfCaption}
                     viewInstance={this.viewInstance}
                     viewparams={this.viewparams}
                     context={this.context}

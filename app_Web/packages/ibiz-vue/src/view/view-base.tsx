@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { IPSAppCounterRef, IPSAppView, IPSAppDEView, IPSControl } from '@ibiz/dynamic-model-api';
+import { IPSAppCounterRef, IPSAppView, IPSAppDEView, IPSControl, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage, LogUtil, SandboxInstance } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
@@ -564,21 +564,9 @@ export class ViewBase extends Vue {
             return;
         }
         this.model = { dataInfo: '' };
-        if (this.context && this.context.srfdynainstid) {
-            this.model.srfCaption = this.viewInstance.caption;
-            this.model.srfTitle = this.viewInstance.title;
-            this.model.srfSubTitle = this.viewInstance.subCaption;
-        } else {
-            if (view?.getPSAppDataEntity()) {
-                this.model.srfCaption = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.caption`;
-                this.model.srfTitle = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.title`;
-                this.model.srfSubTitle = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.subtitle`;
-            } else {
-                this.model.srfCaption = `app.views.${view.codeName?.toLowerCase()}.caption`;
-                this.model.srfTitle = `app.views.${view.codeName?.toLowerCase()}.title`;
-                this.model.srfSubTitle = `app.views.${view.codeName?.toLowerCase()}.subtitle`;
-            }
-        }
+        Object.assign(this.model, { srfCaption: this.viewInstance.getCapPSLanguageRes() ? this.$tl((this.viewInstance.getCapPSLanguageRes() as IPSLanguageRes).lanResTag, this.viewInstance.caption) : this.viewInstance.caption });
+        Object.assign(this.model, { srfTitle: this.viewInstance.getTitlePSLanguageRes() ? this.$tl((this.viewInstance.getTitlePSLanguageRes() as IPSLanguageRes).lanResTag, this.viewInstance.title) : this.viewInstance.title });
+        Object.assign(this.model, { srfSubTitle: this.viewInstance.getSubCapPSLanguageRes() ? this.$tl((this.viewInstance.getSubCapPSLanguageRes() as IPSLanguageRes).lanResTag, this.viewInstance.subCaption) : this.viewInstance.subCaption });
     }
 
     /**
@@ -646,7 +634,7 @@ export class ViewBase extends Vue {
         this.$store.commit("loadingService/addViewLoadingService", this.viewLoadingService);
         // 视图初始化向导航栈里面加数据
         this.$nextTick(() => {
-            this.navDataService.addNavData({ title: this.$t(this.model.srfCaption), viewType: this.viewInstance.viewType, path: this.$route?.fullPath, viewmode: this.viewDefaultUsage, tag: this.viewInstance.codeName, key: null, data: {} });
+            this.navDataService.addNavData({ title: this.model.srfCaption, viewType: this.viewInstance.viewType, path: this.$route?.fullPath, viewmode: this.viewDefaultUsage, tag: this.viewInstance.codeName, key: null, data: {} });
         })
     }
 

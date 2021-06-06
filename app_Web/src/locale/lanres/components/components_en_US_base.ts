@@ -245,8 +245,8 @@ function getLocaleResourceBase(){
         appaddressselection: {
           loaddatafail: 'City data loading failed'
         },
-        appGroupSelect:{
-          groupSelect:'Group selection', 
+        appgroupselect:{
+          groupselect:'Group selection', 
         },
         appimageupload:{
           uploadfail:'Upload failed'
@@ -381,7 +381,9 @@ function getLocaleResourceBase(){
           nomore: 'No more',
           error: "Error loading data",
           geterror: "The tag content was not retrieved",
-          errorreturn: "Event trigger source has no value, force return"
+          errorreturn: "Event trigger source has no value, force return",
+          myTasksLabel:'ToDo',
+          myMsgsLabel:'Message',
         },
         diskFileUpload:{
           fileDrag: 'Drag the file here, or',

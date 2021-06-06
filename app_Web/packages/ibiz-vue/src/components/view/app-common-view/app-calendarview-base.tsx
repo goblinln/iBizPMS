@@ -10,7 +10,7 @@ import { CalendarViewBase } from '../../../view/calendarview-base';
  * @class AppCalendarViewBase
  * @extends {CalendarViewBase}
  */
-export class AppCalendarViewBase extends CalendarViewBase {  
+export class AppCalendarViewBase extends CalendarViewBase {
 
     /**
      * 视图动态参数
@@ -35,12 +35,12 @@ export class AppCalendarViewBase extends CalendarViewBase {
      * @param {*} oldVal
      * @memberof AppCalendarViewBase
      */
-    @Watch('dynamicProps',{
+    @Watch('dynamicProps', {
         immediate: true,
     })
     public onDynamicPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-           super.onDynamicPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onDynamicPropsChange(newVal, oldVal);
         }
     }
 
@@ -53,20 +53,20 @@ export class AppCalendarViewBase extends CalendarViewBase {
         immediate: true,
     })
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        if (newVal && !Util.isFieldsSame(newVal,oldVal)) {
-            super.onStaticPropsChange(newVal,oldVal);
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onStaticPropsChange(newVal, oldVal);
         }
     }
-    
+
     /**
      * 销毁视图回调
      *
      * @memberof AppCalendarViewBase
      */
-    public destroyed(){
+    public destroyed() {
         this.viewDestroyed();
     }
-    
+
     /**
      * 绘制
      * 
@@ -74,12 +74,12 @@ export class AppCalendarViewBase extends CalendarViewBase {
      * @memberof AppCalendarViewBase
      */
     public render(h: any) {
-        if(!this.viewIsLoaded){
+        if (!this.viewIsLoaded) {
             return null;
         }
         const targetViewLayoutComponent: any = AppLayoutService.getLayoutComponent(`${this.viewInstance?.viewType}-${this.viewInstance?.viewStyle}`);
         return h(targetViewLayoutComponent, {
-            props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
+            props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderTopMessage(),
             this.renderToolBar(),

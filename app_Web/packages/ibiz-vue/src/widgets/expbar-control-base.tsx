@@ -1,4 +1,4 @@
-import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControl, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControl, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { CodeListServiceBase, debounce, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
@@ -318,7 +318,7 @@ export class ExpBarControlBase extends MainControlBase {
             return;
         }
         try {
-            let res: any = await codeListService.getDataItems({ tag: quickGroupCodeList.codeName, type: quickGroupCodeList.codeListType, codeList: quickGroupCodeList });
+            let res: any = await codeListService.getDataItems({ tag: quickGroupCodeList.codeName, type: quickGroupCodeList.codeListType, codeList: quickGroupCodeList, context: this.context });
             this.quickGroupModel = [...this.handleDynamicData(JSON.parse(JSON.stringify(res)))];
         } catch (error: any) {
             LogUtil.log(`----${quickGroupCodeList.codeName}----${this.$t('app.commonwords.codenotexist')}`);
@@ -391,7 +391,18 @@ export class ExpBarControlBase extends MainControlBase {
         if (toolbar) {
             const toolbarItems: Array<IPSDEToolbarItem> = toolbar.getPSDEToolbarItems() || [];
             toolbarItems.forEach((item: IPSDEToolbarItem) => {
-                let itemModel: any = { name: item.name, showCaption: item.showCaption, showIcon: item.showIcon, tooltip: item.tooltip, iconcls: (item.getPSSysImage() as IPSSysImage)?.cssClass, icon: (item.getPSSysImage() as IPSSysImage)?.glyph, caption: item.caption, disabled: false, itemType: item.itemType, visabled: true };
+                let itemModel: any = {
+                    name: item.name,
+                    showCaption: item.showCaption,
+                    showIcon: item.showIcon,
+                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+                    iconcls: (item.getPSSysImage() as IPSSysImage)?.cssClass,
+                    icon: (item.getPSSysImage() as IPSSysImage)?.glyph,
+                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                    disabled: false,
+                    itemType: item.itemType,
+                    visabled: true
+                };
                 if (item.itemType && item.itemType == "DEUIACTION") {
                     const uiAction: IPSDEUIAction = (item as IPSDETBUIActionItem).getPSUIAction() as IPSDEUIAction;
                     Object.assign(itemModel, {
@@ -496,7 +507,7 @@ export class ExpBarControlBase extends MainControlBase {
             fields.forEach((field: IPSAppDEField, index: number) => {
                 const _field = entity.findPSAppDEField(field.codeName);
                 if (_field) {
-                    placeholder += `${_field.logicName ? _field.logicName : ''} ${index === fields.length - 1 ? '' : ', '}`;
+                  placeholder += (this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName) + (index === fields.length-1 ? '' : ', '))
                 }
             })
             return placeholder;
@@ -707,11 +718,12 @@ export class ExpBarControlBase extends MainControlBase {
      */
     public renderTitleBar() {
         const classStr: string = `${this.$xDataControl.controlType?.toLowerCase()}-exp-bar`;
+        const title = this.$tl(this.controlInstance.getTitlePSLanguageRes()?.lanResTag, this.controlInstance?.title);
         return (
             <div class={`${classStr}-header`}>
                 <div class={`${classStr}-title`}>
                     <icon type="ios-home-outline" />
-                    <span>{this.controlInstance?.title}</span>
+                    <span>{title}</span>
                 </div>
             </div>
         );

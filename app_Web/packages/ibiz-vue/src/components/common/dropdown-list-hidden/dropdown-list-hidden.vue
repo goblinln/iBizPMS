@@ -319,7 +319,7 @@ export default class DropDownListHidden extends Vue {
             // 参数处理
             let context = data.context;
             let viewparam = data.param;
-            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
+            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam}).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);
             }).catch((error: any) => {
                 LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);

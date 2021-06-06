@@ -1,4 +1,5 @@
-import { Vue, Component, Prop, Inject, Watch } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
+import { IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { AppDefaultSearchFormDetail } from '../app-default-searchform-detail/app-default-searchform-detail';
 
 /**
@@ -23,11 +24,11 @@ export class AppDefaultSearchFormTabPanel extends AppDefaultSearchFormDetail {
         // 设置默认值
         layoutmode = layoutmode || 'TABLE_24COL';
         titleBarCloseMode = Number(titleBarCloseMode) || 0;
-        caption = caption || codeName;
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-group
                 layoutType={layoutmode}
-                caption={caption}
+                caption={labelCaption}
                 isShowCaption={true}
                 uiStyle='DEFAULT'
                 titleBarCloseMode={titleBarCloseMode}

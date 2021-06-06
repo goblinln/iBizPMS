@@ -205,6 +205,9 @@ export class AppmenuBase extends AppMenuControlBase {
      * @memberof AppmenuBase
      */
     public menuTreeload(h: any, { node, data }: any) {
+        if (data.hidden) {
+          return null
+        }
         if (data.getPSAppMenuItems && data.getPSAppMenuItems.length > 0) {
             return (
                 <div class="parent-treeitem">
@@ -251,13 +254,13 @@ export class AppmenuBase extends AppMenuControlBase {
                     {(!menu.getPSSysImage && isFirst) ? <i class='fa fa-cogs app-menu-icon'></i> : null}
                     {
                         isFirst && this.collapseChange ?
-                            <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={menu.tooltip}>
-                                {menu.caption.slice(0, 1)}
+                            <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={this.$tl(menu.tooltipTag,menu.tooltip)}>
+                                {this.$tl(menu.captionTag,menu.caption).slice(0, 1)}
                             </span> : null
                     }
                     <template slot="title">
-                        <span class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={menu.tooltip}>
-                            {menu.caption}
+                        <span class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={this.$tl(menu.tooltipTag,menu.tooltip)}>
+                            {this.$tl(menu.captionTag,menu.caption)}
                         </span>
                         {
                             (this.counterdata && this.counterdata[menu.counterid] && this.counterdata[menu.counterid] > 0) ?
@@ -290,8 +293,8 @@ export class AppmenuBase extends AppMenuControlBase {
                         {menus.getPSSysImage?.imagePath ? <img class='app-menu-icon' src={menus.getPSSysImage.imagePath} /> : null}
                         {menus.getPSSysImage?.cssClass ? <i class={[menus.getPSSysImage.cssClass, 'app-menu-icon']}></i> : null}
                         {(!menus.getPSSysImage && isFirst) ? <i class='fa fa-cogs app-menu-icon'></i> : null}
-                        <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={menus.tooltip}>
-                            {this.collapseChange && isFirst ? menus.caption.slice(0, 1) : menus.caption}
+                        <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={this.$tl(menus.tooltipTag,menus.tooltip)}>
+                            {this.collapseChange && isFirst ? menus.caption.slice(0, 1) : this.$tl(menus.captionTag,menus.caption)}
                         </span>
                     </template>
                     {menus.getPSAppMenuItems.map((menu: any) => {
@@ -349,24 +352,24 @@ export class AppmenuBase extends AppMenuControlBase {
         return (
             <div class={{ 'app-middle-menu': true }}>
                 {this.menus.map((menu: any) => {
-                    return <card bordered={false} class={{ 'app-middle-menu-group': true }}>
+                    return <card bordered={false} v-show={!menu.hidden} class={{ 'app-middle-menu-group': true }}>
                         <p slot="title" class={{ 'app-middle-menu-header': true }}>
-                            {menu?.caption}
+                            {this.$tl(menu.captionTag,menu.caption)}
                         </p>
                         <div class={{ 'app-middle-menu-content': true }}>
                             {
                                 (menu.getPSAppMenuItems && menu.getPSAppMenuItems.length > 0) ? menu.getPSAppMenuItems.map((item: any) => {
-                                    return this.$createElement('card', {
+                                    return !item.hidden?this.$createElement('card', {
                                         class: 'app-middle-menu-item',
                                         nativeOn: {
                                             click: () => { debounce(this.click,[item],this) }
                                         },
                                         scopedSlots: {
                                             default: () => {
-                                                return item?.caption;
+                                                return this.$tl(item.captionTag,item.caption);
                                             }
                                         }
-                                    })
+                                    }):null
                                 }) : null
                             }
                         </div>
@@ -400,12 +403,17 @@ export class AppmenuBase extends AppMenuControlBase {
                     'node-key': 'name',
                     'filter-node-method': ((filter: any, data: any) => {
                         if (!filter) return true;
-                        return data.caption.indexOf(filter) !== -1;
+                        return this.$tl(data.captionTag,data.caption).indexOf(filter) !== -1;
                     })
                 },
                 ref: 'eltree',
                 on: {
                     'node-click': ((e: any) => debounce(this.menuTreeClick,[e],this))
+                },
+                scopedSlots:{
+                    default : ({node, data}:any)=>{
+                        return this.$tl(data.captionTag,data.caption);
+                    }
                 }
             })
         }
@@ -431,7 +439,7 @@ export class AppmenuBase extends AppMenuControlBase {
     public renderContent() {
         if(this.split == 0.85){
             return [
-                <div slot="right" style={{ height: '100%', padding: '6px 0' }}>
+                <div slot="right" style={{ height: '100%', padding: '6px 0 10px' }}>
                     <i-input
                         search={true}
                         class="index-search"
@@ -522,22 +530,22 @@ export class AppmenuBase extends AppMenuControlBase {
                             item.getPSAppMenuItems && item.getPSAppMenuItems.length > 0 ? (
                                 item.getPSAppMenuItems.getPSAppMenuItems &&
                                 item.getPSAppMenuItems.getPSAppMenuItems.length > 0 ? (
-                                    <el-submenu index={item.getPSAppMenuItems?.name}>
-                                        <template slot='title'>{item.getPSAppMenuItems.caption}</template>
+                                    <el-submenu v-show={!item.hidden} index={item.getPSAppMenuItems?.name}>
+                                        <template slot='title'>{this.$tl(item.getPSAppMenuItems.captionTag,item.getPSAppMenuItems.caption)}</template>
                                         {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
-                                            <el-menu-item index={item2?.name}>{item2.caption}</el-menu-item>
+                                            <el-menu-item v-show={!item2.hidden} index={item2?.name}>{this.$tl(item2.captionTag,item2.caption)}</el-menu-item>
                                         ))}
                                     </el-submenu>
                                 ) : (
-                                    <el-submenu index={item?.name}>
+                                    <el-submenu v-show={!item.hidden} index={item?.name}>
                                         <template slot='title'>{item.caption}</template>
                                         {item.getPSAppMenuItems.map((item1: any) => (
-                                            <el-menu-item index={item1?.name}>{item1.caption}</el-menu-item>
+                                            <el-menu-item v-show={!item1.hidden} index={item1?.name}>{this.$tl(item1.captionTag,item1.caption)}</el-menu-item>
                                         ))}
                                     </el-submenu>
                                 )
                             ) : (
-                                <el-menu-item index={item?.name}>{item.caption}</el-menu-item>
+                                <el-menu-item v-show={!item.hidden} index={item?.name}>{this.$tl(item.captionTag,item.caption)}</el-menu-item>
                             ),
                         )}
                     </el-menu>
@@ -566,22 +574,22 @@ export class AppmenuBase extends AppMenuControlBase {
                                 item.getPSAppMenuItems && item.getPSAppMenuItems.length > 0 ? (
                                     item.getPSAppMenuItems.getPSAppMenuItems &&
                                     item.getPSAppMenuItems.getPSAppMenuItems.length > 0 ? (
-                                        <el-submenu index={item.getPSAppMenuItems?.name}>
-                                            <template slot='title'>{item.getPSAppMenuItems.caption}</template>
+                                        <el-submenu v-show={!item.hidden} index={item.getPSAppMenuItems?.name}>
+                                            <template slot='title'>{this.$tl(item.getPSAppMenuItems.captionTag,item.getPSAppMenuItems.caption)}</template>
                                             {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
-                                                <el-menu-item index={item2?.name}>{item2.caption}</el-menu-item>
+                                                <el-menu-item v-show={!item2.hidden} index={item2?.name}>{this.$tl(item2.captionTag,item2.caption)}</el-menu-item>
                                             ))}
                                         </el-submenu>
                                     ) : (
-                                        <el-submenu index={item?.name}>
+                                        <el-submenu v-show={!item.hidden} index={item?.name}>
                                             <template slot='title'>{item.caption}</template>
                                             {item.getPSAppMenuItems.map((item1: any) => (
-                                                <el-menu-item index={item1?.name}>{item1.caption}</el-menu-item>
+                                                <el-menu-item v-show={!item1.hidden} index={item1?.name}>{this.$tl(item1.captionTag,item1.caption)}</el-menu-item>
                                             ))}
                                         </el-submenu>
                                     )
                                 ) : (
-                                    <el-menu-item index={item?.name}>{item.caption}</el-menu-item>
+                                    <el-menu-item v-show={!item.hidden} index={item?.name}>{this.$tl(item.captionTag,item.caption)}</el-menu-item>
                                 ),
                             )}
                         </el-menu>

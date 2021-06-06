@@ -1,7 +1,7 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { debounce, Util } from 'ibiz-core';
 import { PanelControlBase } from '../../../widgets';
-import { IPSCodeListEditor, IPSPanel, IPSSysPanelField } from '@ibiz/dynamic-model-api';
+import { IPSCodeListEditor, IPSPanel, IPSPanelItem, IPSPanelTabPage, IPSSysPanelField, IPSUIAction } from '@ibiz/dynamic-model-api';
 
 /**
  * 面板部件基类
@@ -300,18 +300,18 @@ export class AppPanelBase extends PanelControlBase {
             height: height && height > 0 ? height + 'px' : false,
         };
         const icon = modelJson.getPSSysImage();
-        const uiAction = modelJson.getPSUIAction();
+        const uiAction = modelJson.getPSUIAction() as IPSUIAction;
         const labelPSSysCss = modelJson?.getLabelPSSysCss?.();
         return (
             <app-panel-button
                 buttonStyle={buttonStyle}
-                caption={caption}
-                tooltip={tooltip}
+                caption={this.$tl(uiAction.getCapPSLanguageRes()?.lanResTag, caption)}
+                tooltip={this.$tl(uiAction.getTooltipPSLanguageRes()?.lanResTag, tooltip)}
                 icon={
                     icon?.cssClass
                         ? icon.cssClass
                         : uiAction?.getPSSysImage()?.cssClass
-                            ? uiAction.getPSSysImage().cssClass
+                            ? uiAction.getPSSysImage()?.cssClass
                             : null
                 }
                 showCaption={showCaption}
@@ -339,7 +339,7 @@ export class AppPanelBase extends PanelControlBase {
                 <app-panel-field
                     name={name}
                     labelPos={labelPos}
-                    caption={caption}
+                    caption={this.$tl(modelJson.getCapPSLanguageRes()?.lanResTag, caption)}
                     isEmptyCaption={!showCaption}
                     error={this.rules[editor.name]?.message}
                     data={this.data}
@@ -377,7 +377,6 @@ export class AppPanelBase extends PanelControlBase {
             rawItemHeight,
             contentType,
             htmlContent,
-            getPSSysImage,
             rawContent,
         } = modelJson;
         let sizeStyle: any = {};
@@ -404,7 +403,7 @@ export class AppPanelBase extends PanelControlBase {
                 sizeStyle={sizeStyle}
                 contentType={contentType}
                 htmlContent={htmlContent}
-                getPSSysImage={getPSSysImage?.cssClass}
+                getPSSysImage={modelJson.getPSSysImage()?.cssClass}
             >
                 {contentType === 'RAW' && tempNode}
             </app-rawitem>
@@ -442,13 +441,12 @@ export class AppPanelBase extends PanelControlBase {
      * @memberof AppPanelBase
      */
 
-    public renderTabPage(modelJson: any, index: number) {
-        let { caption, name, getPSPanelItems } = modelJson;
-        let label = caption ? caption : '分页';
+    public renderTabPage(modelJson: IPSPanelTabPage, index: number) {
+        let label = this.$tl(modelJson.getCapPSLanguageRes()?.lanResTag, modelJson.caption) || '分页';
+        const panelItems: IPSPanelItem[] = modelJson.getPSPanelItems() || [];
         return (
-            <el-tab-pane label={caption} name={name} class={this.renderDetailClass(modelJson)}>
-                {getPSPanelItems &&
-                    getPSPanelItems().map((item: any, index: number) => {
+            <el-tab-pane label={label} name={modelJson.name} class={this.renderDetailClass(modelJson)}>
+                {panelItems.map((item: IPSPanelItem, index: number) => {
                         return this.renderByDetailType(item, index);
                     })}
             </el-tab-pane>

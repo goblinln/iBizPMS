@@ -5,7 +5,7 @@ import {
     debounce,
 } from 'ibiz-core';
 import { SearchFormControlBase } from '../../../widgets';
-import { IPSAppDEUIAction, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormFormPart, IPSDEFormGroupPanel, IPSDEFormIFrame, IPSDEFormPage, IPSDEFormRawItem, IPSDEFormTabPage, IPSDEFormTabPanel, IPSDESearchFormItem, IPSEditor, IPSFlexLayout, IPSFlexLayoutPos, IPSGridLayoutPos, IPSLayout } from '@ibiz/dynamic-model-api';
+import { IPSAppDEUIAction, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormFormPart, IPSDEFormGroupPanel, IPSDEFormIFrame, IPSDEFormPage, IPSDEFormRawItem, IPSDEFormTabPage, IPSDEFormTabPanel, IPSDESearchFormItem, IPSEditor, IPSFlexLayout, IPSFlexLayoutPos, IPSGridLayoutPos, IPSLayout, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 /**
  * 搜索表单部件基类
@@ -339,6 +339,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
         if (sysCss?.cssName) {
             Object.assign(controlClassNames, { [sysCss.cssName]: true });
         }
+        let labelCaption: any = this.$tl((modelJson.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <div>
                 {badge}
@@ -348,7 +349,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                     ) : (
                         <menu-icon item={{ iconcls: uiAction?.getPSSysImage()?.cssClass }} />
                     )}
-                    {showCaption && <span>{caption}</span>}
+                    {showCaption && <span>{labelCaption}</span>}
                 </i-button>
             </div>
         );
@@ -365,6 +366,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
         return (
             <app-default-search-form-item
                 detailsInstance={modelJson}
+                modelService={this.modelService}
                 index={index}
                 data={this.data}
                 rules={this.rules[modelJson.name]}
@@ -408,6 +410,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
     public renderTabPanel(modelJson: any, index: number): any {
         return (
             <app-default-search-form-tab-panel
+                modelService={this.modelService}
                 detailsInstance={modelJson}
                 index={index}
                 controlInstance={this.controlInstance}>
@@ -424,7 +427,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
      */
     public renderTabPage(modelJson: IPSDEFormTabPage, index: number): any {
         return (
-            <app-default-search-form-tab-page 
+            <app-default-search-form-tab-page
+                modelService={this.modelService}
                 detailsInstance={modelJson}
                 index={index}
                 controlInstance={this.controlInstance}>
@@ -442,6 +446,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
     public renderGroupPanel(modelJson: IPSDEFormGroupPanel, index: number): any {
         return (
             <app-default-group-panel
+                modelService={this.modelService}
                 detailsInstance={modelJson}
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}
@@ -466,6 +471,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
         }
         return (
             <app-default-search-form-page
+                modelService={this.modelService}
                 detailsInstance={modelJson}
                 index={index}
                 runtimeModel={this.detailsModel[modelJson.name]}

@@ -13,12 +13,12 @@ export class AppStyle2MPickupViewLayout extends AppStyle2DefaultLayout {
      */
     public render() {
       
-      const { codeName, title } = this.viewInstance;
+      const { codeName } = this.viewInstance;
       const viewClassNames = this.initRenderClassNames();
       return (
           <studio-view
             viewName={codeName?.toLowerCase()}
-            viewTitle={title}
+            viewTitle={this.model.srfCaption}
             viewInstance={this.viewInstance}
             viewparams={this.viewparams}
             context={this.context}

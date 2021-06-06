@@ -3,7 +3,7 @@ import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase, LogUt
 import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
-import { IPSDEDataImport, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSDEUIActionGroupDetail, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDEDataImport, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSDEUIActionGroupDetail, IPSUIAction, IPSUIActionGroupDetail, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
 
 /**
@@ -1156,8 +1156,8 @@ export class GridControlBase extends MDControlBase {
                 //表格列
                 const column = {
                     name: columnInstance.name.toLowerCase(),
-                    label: columnInstance.caption,
-                    langtag: '',
+                    label: this.$tl(columnInstance.getCapPSLanguageRes()?.lanResTag, columnInstance.caption),
+                    langtag: columnInstance.getCapPSLanguageRes()?.lanResTag,
                     show: !columnInstance.hideDefault,
                     unit: columnInstance.widthUnit,
                     isEnableRowEdit: columnInstance.enableRowEdit,
@@ -1206,8 +1206,8 @@ export class GridControlBase extends MDControlBase {
                 items.forEach((item: any) => {
                     this.allExportColumns.push({
                         name: item.name.toLowerCase(),
-                        label: item.caption,
-                        langtag: "",
+                        label: this.$tl(item.getCapPSLanguageRes()?.lanResTag, item.caption),
+                        langtag: item.getCapPSLanguageRes()?.lanResTag,
                         show: true
                     })
                 })
@@ -1234,9 +1234,9 @@ export class GridControlBase extends MDControlBase {
             }
             const items: Array<IPSDEDataImportItem> = importData.getPSDEDataImportItems() || [];
             if (items.length > 0) {
-                items.forEach((item: any) => {
+                items.forEach((item: IPSDEDataImportItem) => {
                     const importItem: any ={
-                        headername: item.caption,
+                        headername: this.$tl(item.getCapPSLanguageRes()?.lanResTag, item.caption),
                         isuniqueitem: item.uniqueItem,
                     }
                     const codelist: IPSAppCodeList = item.getPSCodeList() as IPSAppCodeList;
@@ -1249,7 +1249,7 @@ export class GridControlBase extends MDControlBase {
                             }
                         })
                     }
-                    const appDeField: IPSAppDEField = item.getPSAppDEField() as IPSAppDEField;
+                    const appDeField: IPSAppDEField = (this.controlInstance.findPSDEGridColumn(item.codeName) as IPSDEGridFieldColumn)?.getPSAppDEField() as IPSAppDEField;
                     if (appDeField) {
                         Object.assign(importItem,{
                             name: appDeField.name,
@@ -1344,10 +1344,10 @@ export class GridControlBase extends MDControlBase {
         //其他
         let otherItems: Array<any> = [];
         if (this.codelistTag && this.codelistType) {
-            allGroup = await this.codeListService.getDataItems({ tag: this.codelistTag, type: this.codelistType, data: this.codelist });
+            allGroup = await this.codeListService.getDataItems({ tag: this.codelistTag, type: this.codelistType, data: this.codelist, context: this.context });
         }
         if (this.groupAppFieldCodelistTag && this.groupAppFieldCodelistType) {
-            allGroupField = await this.codeListService.getDataItems({ tag: this.groupAppFieldCodelistTag, type: this.groupAppFieldCodelistType, data: this.groupAppFieldCodelist });
+            allGroupField = await this.codeListService.getDataItems({ tag: this.groupAppFieldCodelistTag, type: this.groupAppFieldCodelistType, data: this.groupAppFieldCodelist, context: this.context });
         }
         if (!this.items || this.items.length == 0) {
             return;

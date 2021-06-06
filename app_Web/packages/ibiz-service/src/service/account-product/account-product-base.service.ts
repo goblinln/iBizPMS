@@ -196,20 +196,6 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
         return this.http.post(`/accountproducts/fetchmy`, _data);
     }
     /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountProductService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchaccount`, _data);
-        }
-        return this.http.post(`/accountproducts/fetchaccount`, _data);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -224,5 +210,19 @@ export class AccountProductBaseService extends EntityBaseService<IAccountProduct
         }
         const res = await this.http.get(`/accountproducts/${_context.accountproduct}`);
         return res;
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountProductService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountproducts/fetchaccount`, _data);
+        }
+        return this.http.post(`/accountproducts/fetchaccount`, _data);
     }
 }

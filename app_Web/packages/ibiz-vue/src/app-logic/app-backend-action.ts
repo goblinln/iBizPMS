@@ -256,7 +256,7 @@ export class AppBackEndAction {
                         viewname: 'app-view-shell',
                         height: frontPSAppView.height,
                         width: frontPSAppView.width,
-                        title: frontPSAppView.title,
+                        title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
                         placement: frontPSAppView.openMode,
                     };
                     if (frontPSAppView && frontPSAppView.modelPath) {
@@ -274,7 +274,7 @@ export class AppBackEndAction {
                         viewname: 'app-view-shell',
                         height: frontPSAppView.height,
                         width: frontPSAppView.width,
-                        title: frontPSAppView.title,
+                        title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
                     };
                     if (frontPSAppView && frontPSAppView.modelPath) {
                         Object.assign(context, { viewpath: frontPSAppView.modelPath });

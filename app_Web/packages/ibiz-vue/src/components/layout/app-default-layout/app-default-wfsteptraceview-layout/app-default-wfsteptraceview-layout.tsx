@@ -27,7 +27,7 @@ export class AppDefaultWfStepTraceViewLayout extends AppDefaultViewLayout {
                     context={this.context}
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
-                    viewTitle={this.viewInstance.title} />
+                    viewTitle={this.model.srfCaption} />
                  {this.$slots.default}
             </div>
         );

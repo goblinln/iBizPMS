@@ -9,7 +9,7 @@
         :filterable="filterable"
         @on-open-change="onClick"
         :placeholder="placeholder?placeholder:$t('components.dropdownlist.placeholder')">
-        <i-option v-for="(item, index) in items" :key="index" :disabled="item.disabled" :class="item.class" :value="item.value">{{($t('codelist.'+tag+'.'+item.value)!== ('codelist.'+tag+'.'+item.value))?$t('codelist.'+tag+'.'+item.value) : item.text}}</i-option>
+        <i-option v-for="(item, index) in items" :key="index" :disabled="item.disabled" :class="item.class" :value="item.value">{{item.text}}</i-option>
         </i-select>
         <ibiz-select-tree v-if="hasChildren" class="tree-dropdown-list" :disabled="disabled" :NodesData="items" v-model="currentVal" :multiple="false"></ibiz-select-tree>
     </div>
@@ -325,7 +325,7 @@ export default class DropDownList extends Vue {
             // 参数处理
             let context = data.context;
             let viewparam = data.param;
-            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
+            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam}).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);
             }).catch((error: any) => {
                 LogUtil.log(`----${this.tag}----${this.$t('app.commonwords.codenotexist')}`);

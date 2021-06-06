@@ -113,7 +113,7 @@ export class AppTabExpPanelBase extends TabExpPanelBase {
                                     'margin-right': '2px'
                                 }
                             }) : '',
-                        h('span', tabViewPanel.caption),
+                        h('span', this.$tl(tabViewPanel.getCapPSLanguageRes()?.lanResTag, tabViewPanel.caption)),
                         h('Badge', {
                             props: {
                                 count: viewPanelCount,

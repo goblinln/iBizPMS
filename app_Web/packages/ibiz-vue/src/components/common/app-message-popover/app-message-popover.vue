@@ -9,7 +9,7 @@
                 @hide="initTabCnt">
             <el-tabs :value="default_tab_pane" :stretch="true">
                 <!-- 待办　-->
-                <el-tab-pane :label="myTasks.length==0?myTasksLabel:(myTasksLabel+'('+myTasks.length+')')" name="first" style="height: 300px; overflow: auto" :draggable="false">
+                <el-tab-pane :label="this.$t('components.appmessagepopover.myTasksLabel') + ( myTasks.length==0 ? '':'('+myTasks.length+')')" name="first" style="height: 300px; overflow: auto" :draggable="false">
                     <template v-for="(myTask,index) in myTasks">
                         <template v-if="index < taskShowCnt">
                             <el-row  class="Row" :key="index" :draggable="false">
@@ -43,7 +43,7 @@
                     </template>
                 </el-tab-pane>
                 <!-- 消息 -->
-                <el-tab-pane :label="myMsgs.length==0?myMsgsLabel:(myMsgsLabel+'('+myMsgs.length+')')" name="second" :style="{height: '300px',overflow: 'auto'}" :draggable="false">
+                <el-tab-pane :label="this.$t('components.appmessagepopover.myMsgsLabel') + ( myMsgs.length==0 ? '':'('+myMsgs.length+')')" name="second" :style="{height: '300px',overflow: 'auto'}" :draggable="false">
                     <template v-for="(myMsg,index) in myMsgs">
                         <template v-if="index < msgShowCnt">
                             <el-row  class="Row" :key="index" :draggable="false">
@@ -97,14 +97,10 @@ export default class AppMessagePopover extends Vue {
     public default_tab_pane: any = "first";
     // 待办列表
     public myTasks: any = [];
-    // 待办面板标签
-    public myTasksLabel: any = "待办";
     //  待办面板显示条数
     public taskShowCnt:number = 0;
     // 消息列表
     public myMsgs: any = [];
-    // 消息面板标签
-    public myMsgsLabel: any = "消息";
     //  信息面板显示条数
     public msgShowCnt:number = 0;
     // 环境配置对象

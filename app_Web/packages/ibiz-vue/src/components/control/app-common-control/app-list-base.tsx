@@ -1,6 +1,7 @@
 import { Prop, Watch, Emit } from 'vue-property-decorator';
 import { debounce, ModelTool, Util } from 'ibiz-core';
 import { ListControlBase } from '../../../widgets';
+import { IPSDEListItem, IPSDEUIAction, IPSDEUIActionGroup, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 实体列表部件基类
@@ -120,7 +121,7 @@ export class AppListBase extends ListControlBase {
      * @returns {*}
      * @memberof AppListBase
      */
-    public renderListContent(item: any, listItem: any) {
+    public renderListContent(item: any, listItem: IPSDEListItem) {
         return [<div class='app-list-item-content'>
             <div class='item-icon'>
                 {item.srficon ? (
@@ -152,7 +153,7 @@ export class AppListBase extends ListControlBase {
      */
     public renderHaveItems() {
         return this.items.map((item: any, index: number) => {
-            let listItem: any = this.controlInstance.getPSDEListItems() && (this.controlInstance.getPSDEListItems() as any)?.length > 0 ? (this.controlInstance.getPSDEListItems() as any)[index] : null;
+            let listItem: IPSDEListItem = this.controlInstance.getPSDEListItems() && (this.controlInstance.getPSDEListItems() as any)?.length > 0 ? (this.controlInstance.getPSDEListItems() as any)[index] : null;
             return this.controlInstance.enableGroup ? this.renderHaveGroup(item, listItem) : this.renderNoGroup(item, listItem);
         })
     }
@@ -176,7 +177,7 @@ export class AppListBase extends ListControlBase {
      * @returns {*}
      * @memberof AppListBase
      */
-    public renderNoGroup(item: any, listItem: any) {
+    public renderNoGroup(item: any, listItem: IPSDEListItem) {
         return <div
             key={item.srfkey}
             class={['app-list-item', item.isselected === true ? 'isSelect' : ''].join(' ')}
@@ -193,7 +194,7 @@ export class AppListBase extends ListControlBase {
      * @returns {*}
      * @memberof AppListBase
      */
-    public renderHaveGroup(item: any, listItem: any) {
+    public renderHaveGroup(item: any, listItem: IPSDEListItem) {
         return <el-collapse>
             {this.groupData.map((item: any) => {
                 return [
@@ -226,14 +227,14 @@ export class AppListBase extends ListControlBase {
      * @param listItem
      * @memberof AppListBase
      */
-    public renderListItemAction(item: any, listItem: any) {
-        const { getPSDEUIActionGroup: UIActionGroup } = listItem;
-        return UIActionGroup && UIActionGroup?.getPSUIActionGroupDetails?.map((uiactionDetail: any, index: number) => {
-            const uiaction = uiactionDetail.getPSUIAction;
-            if (item[uiaction.uIActionTag].visabled) {
+    public renderListItemAction(item: any, listItem: IPSDEListItem) {
+        const UIActionGroupDetails: IPSUIActionGroupDetail[] = (listItem.getPSDEUIActionGroup() as IPSDEUIActionGroup)?.getPSUIActionGroupDetails() || [];
+        return UIActionGroupDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
+            const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
+            if (uiaction && item[uiaction.uIActionTag].visabled) {
                 return <a key={index} style='display: inline-block;margin: 0 12px;' disabled={item[uiaction.uIActionTag].disabled} on-click={($event: any) => { debounce(this.handleActionClick,[item, $event, listItem, uiactionDetail],this) }}>
-                    {uiactionDetail.showIcon ? <i class={uiaction?.iconCls} style='margin-right:2px;'></i> : ''}
-                    <span>{uiactionDetail.showCaption ? uiaction?.caption ? uiaction.caption : "" : ""}</span>
+                    {uiactionDetail.showIcon ? <i class={uiaction.getPSSysImage()?.cssClass} style='margin-right:2px;'></i> : ''}
+                    <span>{uiactionDetail.showCaption ? this.$tl(uiaction.getCapPSLanguageRes()?.lanResTag, uiaction.caption) : ""}</span>
                 </a>;
             }
         });

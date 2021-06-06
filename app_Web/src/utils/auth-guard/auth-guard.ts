@@ -6,6 +6,7 @@ import { Environment } from '@/environments/environment';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
 import i18n from '@/locale';
 import { clearCookie, getCookie, SyncSeriesHook } from 'qx-util';
+import { handleLocaleMap } from '@/locale/local-util';
 
 /**
  * AuthGuard net 对象
@@ -219,7 +220,7 @@ export class AuthGuard {
             } catch (error) {
                 return null;
             }
-        });
+        }, { lang: handleLocaleMap(i18n.locale) });
         AppServiceBase.getInstance().setAppModelDataObject(service.app);
         AppCenterService.getInstance(router.app.$store);
     }
@@ -267,10 +268,10 @@ export class AuthGuard {
      * @private
      * @memberof AuthGuard
      */
-     private clearAppData(store:any) {
+    private clearAppData(store: any) {
         // 清除user、token
-        clearCookie('ibzuaa-token',true);
-        clearCookie('ibzuaa-user',true);
+        clearCookie('ibzuaa-token', true);
+        clearCookie('ibzuaa-user', true);
         // 清除应用级数据
         localStorage.removeItem('localdata')
         store.commit('addAppData', {});

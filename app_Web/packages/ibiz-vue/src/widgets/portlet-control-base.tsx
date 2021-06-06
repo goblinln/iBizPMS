@@ -1,4 +1,4 @@
-import { IPSAppDEUIAction, IPSDBAppViewPortletPart, IPSDBPortletPart, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
+import { IPSAppDEUIAction, IPSDBAppViewPortletPart, IPSDBPortletPart, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSLanguageRes, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { MainControlBase } from "./main-control-base";
 
@@ -54,7 +54,22 @@ export class PortletControlBase extends MainControlBase {
         let targetToolbarItems: any[] = [];
         if (toolbar && toolbar.getPSDEToolbarItems()?.length) {
             toolbar.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
-                targetToolbarItems.push({ name: item.name, showCaption: item.showCaption, showIcon: item.showIcon, tooltip: item.tooltip, iconcls: item.getPSSysImage?.()?.cssClass, icon: item.getPSSysImage?.()?.imagePath, actiontarget: (item as IPSDETBUIActionItem).uIActionTarget, caption: item.caption, disabled: false, itemType: item.itemType, visabled: true, noprivdisplaymode: (item as IPSDETBUIActionItem).noPrivDisplayMode, dataaccaction: '', uiaction: {} });
+                targetToolbarItems.push({
+                        name: item.name,
+                        showCaption: item.showCaption,
+                        showIcon: item.showIcon,
+                        tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+                        iconcls: item.getPSSysImage?.()?.cssClass,
+                        icon: item.getPSSysImage?.()?.imagePath,
+                        actiontarget: (item as IPSDETBUIActionItem).uIActionTarget,
+                        caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                        disabled: false,
+                        itemType: item.itemType,
+                        visabled: true,
+                        noprivdisplaymode: (item as IPSDETBUIActionItem).noPrivDisplayMode,
+                        dataaccaction: '',
+                        uiaction: {}
+                    });
             })
         }
         this.toolbarModels = targetToolbarItems;
@@ -85,7 +100,7 @@ export class PortletControlBase extends MainControlBase {
                 if(appUIAction){
                     this.actionBarModelData[appUIAction.uIActionTag] = Object.assign(appUIAction, { 
                         viewlogicname: item.name,
-                        actionName: appUIAction?.caption, 
+                        actionName: this.$tl(appUIAction?.getCapPSLanguageRes()?.lanResTag ,appUIAction?.caption), 
                         icon: appUIAction?.getPSSysImage?.()?.cssClass,
                         // todo 计数器
                         // counterService: null,

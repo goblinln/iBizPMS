@@ -382,7 +382,9 @@ function getLocaleResourceBase(){
           nomore: '没有更多了',
           error: "加载数据错误",
           geterror: "未获取到标签内容",
-          errorreturn: "事件触发源无值，强制返回"
+          errorreturn: "事件触发源无值，强制返回",
+          myTasksLabel:'待办',
+          myMsgsLabel:'消息',
         },
         diskFileUpload:{
           fileDrag: '将文件拖到此处，或',

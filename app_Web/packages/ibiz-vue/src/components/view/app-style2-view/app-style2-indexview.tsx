@@ -194,6 +194,8 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                             <div class='action-item' title={item.tooltip} on-click={() => this.click(item)}>
                                 <menu-icon item={item} />
                                 {item.caption}
+                                {/* todo 菜单多语言*/}
+                                {/* this.$tl(item.captiontag,item.caption) */}
                             </div>
                         );
                     }),
@@ -208,6 +210,8 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                             <div class='action-item' title={item.tooltip} on-click={() => this.click(item)}>
                                 <menu-icon item={item} />
                                 {item.caption}
+                                {/* todo 菜单多语言*/}
+                                {/* this.$tl(item.captiontag,item.caption) */}
                             </div>
                         );
                     }),
@@ -222,6 +226,8 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                             <div class='action-item' title={item.tooltip} on-click={() => this.click(item)}>
                                 <menu-icon item={item} />
                                 {item.caption}
+                                {/* todo 菜单多语言*/}
+                                {/* this.$tl(item.captiontag,item.caption) */}
                             </div>
                         );
                     }),
@@ -270,6 +276,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                 service={this.service}
                 ctrlName={this.menuInstance?.codeName?.toLowerCase()}
                 items={this.left_exp?.getPSAppMenuItems}
+                modelService={this.modelService}
                 on-active-item-change={(activeItem: any) => { this.activeItem = activeItem; this.$forceUpdate(); }}/>
             : null        
         )
@@ -288,6 +295,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                 ref="leftNavMenu"
                 ctrlName={this.menuInstance?.codeName?.toLowerCase()}
                 menus={this.left_exp?.getPSAppMenuItems}
+                modelService={this.modelService}
                 on-menu-click={(item: any) => this.click(item)}/>
             : null        
         )
@@ -305,6 +313,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                 ref="headerMenus"
                 ctrlName={this.menuInstance?.codeName?.toLowerCase()}
                 menus={this.top_menus?.getPSAppMenuItems}
+                modelService={this.modelService}
                 on-menu-click={(item: any) => this.click(item)}/>
         )
     }
@@ -316,7 +325,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
      */
     public renderTabPageExp(){
         return (
-            <tab-page-exp-style2 slot="tabPageExp" ref="tabExp" activeItem={this.activeItem}></tab-page-exp-style2>
+            <tab-page-exp-style2 slot="tabPageExp" ref="tabExp" modelService={this.modelService} activeItem={this.activeItem}></tab-page-exp-style2>
         )
     }
 
@@ -333,6 +342,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                 ref="bootomExp"
                 service={this.service}
                 ctrlName={this.menuInstance?.codeName?.toLowerCase()}
+                modelService={this.modelService}
                 items={this.bottom_exp?.getPSAppMenuItems} />
             : null           
         )
@@ -359,7 +369,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
         }
         const targetViewLayoutComponent: any = AppLayoutService.getLayoutComponent(`${this.viewInstance?.viewType}-${this.viewInstance?.viewStyle}`);
         return h(targetViewLayoutComponent, {
-            props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context },
+            props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context },
         }, [
             this.renderLeftExp(),
             this.renderLeftNavMenu(),

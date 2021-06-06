@@ -33,6 +33,20 @@ export class AppStyle2DefaultLayout extends Vue {
     @Prop() public viewparams!: any;
 
     /**
+     * 模型服务对象
+     * 
+     * @memberof AppStyle2DefaultLayout
+     */
+    @Prop() public modelService!:any;
+
+    /**
+     * 视图模型数据
+     * 
+     * @memberof AppDefaultViewLayout
+     */
+     @Prop() public model!: any;
+
+    /**
      * 当前字体
      *
      * @memberof AppStyle2DefaultLayout
@@ -90,7 +104,7 @@ export class AppStyle2DefaultLayout extends Vue {
      * @memberof AppStyle2DefaultLayout
      */
     public renderViewCaption() {
-        const { viewSysImage, caption } = this.viewInstance;
+        const { viewSysImage } = this.viewInstance;
         if(this.showCaption) {
             return (
                 <div slot="title">
@@ -102,7 +116,7 @@ export class AppStyle2DefaultLayout extends Vue {
                             <span class="caption-image">
                                 <img src={viewSysImage.imagePath}></img>
                             </span> : null}
-                    <span class="caption-info">{this.$slots.captionInfo?this.$slots.captionInfo:caption}</span>
+                    <span class="caption-info">{this.$slots.captionInfo?this.$slots.captionInfo:this.model.srfCaption}</span>
                 </div>
             );
         }
@@ -114,7 +128,7 @@ export class AppStyle2DefaultLayout extends Vue {
      * @memberof AppStyle2DefaultLayout
      */
     public render(h: any): any {
-        const { codeName, title } = this.viewInstance;
+        const { codeName } = this.viewInstance;
         const viewClassNames = this.initRenderClassNames();
         const styleMode: any = this.$uiState.layoutState.styleMode;
         if (Object.is('DEFAULT', styleMode)) {
@@ -122,7 +136,7 @@ export class AppStyle2DefaultLayout extends Vue {
                 <studio-view
                     style={{ 'font-family': this.selectFont }}
                     viewName={codeName?.toLowerCase()}
-                    viewTitle={title}
+                    viewTitle={this.model.srfCaption}
                     viewInstance={this.viewInstance}
                     viewparams={this.viewparams}
                     context={this.context}
@@ -172,7 +186,7 @@ export class AppStyle2DefaultLayout extends Vue {
                 <studio-view-style2
                     style={{ 'font-family': this.selectFont }}
                     viewName={codeName?.toLowerCase()}
-                    viewTitle={title}
+                    viewTitle={this.model.srfCaption}
                     viewInstance={this.viewInstance}
                     viewparams={this.viewparams}
                     context={this.context}

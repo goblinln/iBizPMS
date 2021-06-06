@@ -78,7 +78,7 @@ export class AppFormPickupDataViewBase extends FormPickupDataViewBase {
         }
         const targetViewLayoutComponent: any = AppLayoutService.getLayoutComponent(`${this.viewInstance.viewType}-${this.viewInstance.viewStyle}`);
         return h(targetViewLayoutComponent, {
-            props: { viewInstance: this.viewInstance, viewparams: this.viewparams, context: this.context }
+            props: { viewInstance: this.viewInstance, model: this.model, modelService: this.modelService, viewparams: this.viewparams, context: this.context }
         }, [
             this.renderTopMessage(),
             this.renderBodyMessage(),

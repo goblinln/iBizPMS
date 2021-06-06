@@ -1,4 +1,4 @@
-import { IPSAppCounterRef, IPSDETabViewPanel, IPSSysImage } from '@ibiz/dynamic-model-api';
+import { IPSLanguageRes } from '@ibiz/dynamic-model-api';
 import { debounce, Util } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { DrtabControlBase } from '../../../widgets/drtab-control-base';
@@ -85,13 +85,13 @@ export class AppDrtabBase extends DrtabControlBase {
      */
     public renderDrView(tabPage: any){
         let viewData: any = Util.deepCopy(this.context);
-        viewData.viewpath = tabPage?.getPSAppView?.path;
         let viewParam = this.viewparams;
         return this.$createElement('app-view-shell', {
             props: { 
                 staticProps: {
                     viewDefaultUsage: false,
-                    appDeCodeName: this.appDeCodeName
+                    viewModelData: tabPage.getPSAppView(),
+                    appDeCodeName: this.appDeCodeName,
                 },
                 dynamicProps:{
                     viewdata: JSON.stringify(viewData), 
@@ -116,22 +116,22 @@ export class AppDrtabBase extends DrtabControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         const { codeName } = this.controlInstance
-        const tabPages = this.controlInstance.M.getPSDEDRTabPages;
+        const tabPages = this.controlInstance.getPSDEDRTabPages();
+        const editItemCaption = this.$tl((this.controlInstance.getEditItemCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, this.controlInstance.editItemCaption);
         return (
             <div class={{ ...controlClassNames, 'drtab': true }} >
                 <tabs animated={false} class="app-dr-tab" name={codeName} on-on-click={(...params: any[]) => debounce(this.tabPanelClick,params,this)}>
-                <tab-pane index={0} name='mainform' tab={codeName} label={this.controlInstance.M.editItemCaption?this.controlInstance.M.editItemCaption:'主表单'}>
+                    <tab-pane index={0} name='mainform' tab={codeName} label={editItemCaption}>
                         <div class='main-data'>
                             {this.$parent.$slots.mainform}
                         </div>
                     </tab-pane>
                     {tabPages?.length > 0 && tabPages.map((tabPage: any,index: number)=>{
-                        return <tab-pane index={index+1} name={tabPage.name} tab={codeName} label={tabPage.caption}>
+                        return <tab-pane index={index+1} name={tabPage.name} tab={codeName} label={this.$tl((tabPage.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, tabPage.caption)}>
                             {this.renderDrView(tabPage)}
                         </tab-pane> 
                     })}
                 </tabs>
-                
             </div>
         );
     }

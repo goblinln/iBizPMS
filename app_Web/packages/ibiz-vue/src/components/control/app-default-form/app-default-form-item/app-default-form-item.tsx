@@ -1,7 +1,7 @@
 import { Subject } from 'rxjs';
 import { Component, Prop} from 'vue-property-decorator';
 import { AppDefaultFormDetail } from '../app-default-form-detail/app-default-form-detail';
-import { IPSDEFormItemEx } from '@ibiz/dynamic-model-api';
+import { IPSDEFormItemEx, IPSLanguageRes } from '@ibiz/dynamic-model-api';
 
 /**
  * 表单UI组件
@@ -183,10 +183,11 @@ export class AppDefaultFormItem extends AppDefaultFormDetail {
         contentStyle += contentWidth && contentWidth != 0 ? `width:${contentWidth}px;` : '';
         contentStyle += contentHeight && contentHeight != 0 ? `height:${contentHeight}px;` : '';
         contentStyle += this.runtimeModel?.visible ? '' : 'display: none;';
+        let labelCaption: any = this.$tl((this.detailsInstance.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, caption);
         return (
             <app-form-item
                 name={name}
-                caption={caption}
+                caption={labelCaption}
                 isEmptyCaption={emptyCaption}
                 isShowCaption={showCaption}
                 labelWidth={labelWidth}

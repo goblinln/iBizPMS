@@ -321,7 +321,7 @@ export class AppFrontAction {
                     viewname: 'app-view-shell',
                     height: frontPSAppView.height,
                     width: frontPSAppView.width,
-                    title: frontPSAppView.title,
+                    title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
                 };
                 let container: Subject<any> = actionContext.$appmodal.openModal(view, context, data);
                 container.subscribe((result: any) => {
@@ -336,7 +336,7 @@ export class AppFrontAction {
                     viewname: 'app-view-shell',
                     height: frontPSAppView.height,
                     width: frontPSAppView.width,
-                    title: frontPSAppView.title,
+                    title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
                     placement: frontPSAppView.openMode,
                 };
                 let container: Subject<any> = actionContext.$appdrawer.openDrawer(
@@ -355,7 +355,7 @@ export class AppFrontAction {
                     viewname: 'app-view-shell',
                     height: frontPSAppView.height,
                     width: frontPSAppView.width,
-                    title: frontPSAppView.title,
+                    title: actionContext.$tl(frontPSAppView.getCapPSLanguageRes()?.lanResTag, frontPSAppView.caption),
                     placement: frontPSAppView.openMode,
                 };
                 let container: Subject<any> = actionContext.$apppopover.openPop($event, view, context, data);

@@ -3,7 +3,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { debounce, Util } from 'ibiz-core';
 import { PortletControlBase } from '../../../widgets';
 import { AppViewLogicService } from '../../../app-service';
-import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSDBSysPortletPart, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSLanguageRes, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 门户部件部件基类
@@ -270,13 +270,14 @@ export class AppPortletBase extends PortletControlBase {
      * @memberof AppPortletBase
      */
     public renderTitle() {
-        const {  portletType } = this.controlInstance;
+        const { portletType } = this.controlInstance;
         let image = this.controlInstance?.getPSSysImage?.();
+        let labelCaption: any = this.$tl((this.controlInstance.getTitlePSLanguageRes() as IPSLanguageRes)?.lanResTag, this.controlInstance.title);
         return [
             <p class='portlet-title'>
                 <span>
                     {image && <i class={image?.cssClass} />}
-                    {this.controlInstance.title}
+                    {labelCaption}
                 </span>
                 {portletType != 'ACTIONBAR' && this.renderUiAction()}
             </p>,
@@ -321,16 +322,18 @@ export class AppPortletBase extends PortletControlBase {
                 const { showCaption } = actionDetail;
                 let uiAction = actionDetail?.getPSUIAction?.();
                 let uiactionName = uiAction?.codeName?.toLowerCase() || actionDetail.name?.toLowerCase();
+                const caption = this.$tl(uiAction?.getCapPSLanguageRes()?.lanResTag, uiAction?.caption || uiAction?.name);
+                const tooltipCaption = this.$tl(uiAction?.getTooltipPSLanguageRes()?.lanResTag, uiAction?.caption || uiAction?.name);
                 // 显示内容
                 // todo 界面行为显示this.actionModel?.[uiactionName]?.visabled 
                 let contentElement = <a on-click={(e: any) => { debounce(this.handleActionClick,[e, actionDetail],this) }} v-show={true} >
                     {this.renderIcon(actionDetail)}
-                    {showCaption && (uiAction?.caption || uiAction?.name)}
+                    {showCaption ? caption : null}
                 </a>
                 if (showCaption) {
                     return <tooltip transfer={true} max-width={600}>
                         {contentElement}
-                        <div slot='content'>{uiAction?.caption || uiAction?.name}</div>
+                        <div slot='content'>{tooltipCaption}</div>
                     </tooltip>
                 } else {
                     return contentElement

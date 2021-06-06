@@ -127,7 +127,7 @@ export class AppTreeViewBase extends TreeControlBase {
         if (data.html) {
             textElement = <span domPropsInnerHTML={data.html}></span>;
         } else {
-            textElement = <span>{data.isUseLangRes ? this.$t(data.text) : data.text}</span>
+            textElement = <span>{Object.is(data.nodeType,"STATIC") ? this.$tl(data.lanResTag,data.text) : data.text}</span>
         }
 
         // 计数器 

@@ -337,20 +337,6 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountStoryService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmy`, _data);
-        }
-        return this.http.post(`/accountstories/fetchmy`, _data);
-    }
-    /**
      * FetchMyFavorites
      *
      * @param {*} [_context={}]
@@ -363,20 +349,6 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmyfavorites`, _data);
         }
         return this.http.post(`/accountstories/fetchmyfavorites`, _data);
-    }
-    /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountStoryService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchaccount`, _data);
-        }
-        return this.http.post(`/accountstories/fetchaccount`, _data);
     }
     /**
      * Get
@@ -393,6 +365,34 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         }
         const res = await this.http.get(`/accountstories/${_context.accountstory}`);
         return res;
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountStoryService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmy`, _data);
+        }
+        return this.http.post(`/accountstories/fetchmy`, _data);
+    }
+    /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountStoryService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchaccount`, _data);
+        }
+        return this.http.post(`/accountstories/fetchaccount`, _data);
     }
     /**
      * GetUserConcat
