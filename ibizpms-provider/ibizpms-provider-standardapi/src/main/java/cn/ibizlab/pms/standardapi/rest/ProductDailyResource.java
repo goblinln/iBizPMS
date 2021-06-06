@@ -53,6 +53,14 @@ public class ProductDailyResource {
     public ProductDailyMapping productdailyMapping;
 
     @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'CREATE')")
+    @ApiOperation(value = "获取产品日报草稿", tags = {"产品日报" },  notes = "获取产品日报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/productdailies/getdraft")
+    public ResponseEntity<ProductDailyDTO> getDraft(ProductDailyDTO dto) {
+        IbizproProductDaily domain = productdailyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productdailyMapping.toDto(ibizproproductdailyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'CREATE')")
     @ApiOperation(value = "新建产品日报", tags = {"产品日报" },  notes = "新建产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/productdailies")
     @Transactional
@@ -97,17 +105,6 @@ public class ProductDailyResource {
     }
 
 
-    @PreAuthorize("test('IBIZPRO_PRODUCTDAILY', #productdaily_id, 'NONE')")
-    @ApiOperation(value = "获取产品日报", tags = {"产品日报" },  notes = "获取产品日报")
-	@RequestMapping(method = RequestMethod.GET, value = "/productdailies/{productdaily_id}")
-    public ResponseEntity<ProductDailyDTO> get(@PathVariable("productdaily_id") Long productdaily_id) {
-        IbizproProductDaily domain = ibizproproductdailyService.get(productdaily_id);
-        ProductDailyDTO dto = productdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs(productdaily_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DENY')")
     @ApiOperation(value = "手动生成产品日报", tags = {"产品日报" },  notes = "手动生成产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/productdailies/{productdaily_id}/manualcreatedaily")
@@ -122,12 +119,15 @@ public class ProductDailyResource {
     }
 
 
-    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'CREATE')")
-    @ApiOperation(value = "获取产品日报草稿", tags = {"产品日报" },  notes = "获取产品日报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/productdailies/getdraft")
-    public ResponseEntity<ProductDailyDTO> getDraft(ProductDailyDTO dto) {
-        IbizproProductDaily domain = productdailyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productdailyMapping.toDto(ibizproproductdailyService.getDraft(domain)));
+    @PreAuthorize("test('IBIZPRO_PRODUCTDAILY', #productdaily_id, 'NONE')")
+    @ApiOperation(value = "获取产品日报", tags = {"产品日报" },  notes = "获取产品日报")
+	@RequestMapping(method = RequestMethod.GET, value = "/productdailies/{productdaily_id}")
+    public ResponseEntity<ProductDailyDTO> get(@PathVariable("productdaily_id") Long productdaily_id) {
+        IbizproProductDaily domain = ibizproproductdailyService.get(productdaily_id);
+        ProductDailyDTO dto = productdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs(productdaily_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

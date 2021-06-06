@@ -53,6 +53,21 @@ public class ProductBranchResource {
     public ProductBranchMapping productbranchMapping;
 
 
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', #productbranch_id, 'DELETE')")
+    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/{productbranch_id}")
+    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(productbranch_id));
+    }
+
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
+    @ApiOperation(value = "根据产品批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/batch")
+    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
+        branchService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
 
     @PreAuthorize("quickTest('ZT_BRANCH', 'DENY')")
     @ApiOperation(value = "根据产品批量保存产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量保存产品的分支和平台信息")
@@ -79,18 +94,6 @@ public class ProductBranchResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches")
-    public ResponseEntity<ProductBranchDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
-        Branch domain = productbranchMapping.toDomain(productbranchdto);
-        domain.setProduct(product_id);
-		branchService.create(domain);
-        ProductBranchDTO dto = productbranchMapping.toDto(domain);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'UPDATE', #productbranch_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productbranches/{productbranch_id}")
@@ -113,21 +116,6 @@ public class ProductBranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(productbranchMapping.toDto(branchService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', #productbranch_id, 'DELETE')")
-    @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/{productbranch_id}")
-    public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(productbranch_id));
-    }
-
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', 'DELETE')")
-    @ApiOperation(value = "根据产品批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品批量删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productbranches/batch")
-    public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
-        branchService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', #productbranch_id, 'READ')")
     @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productbranches/{productbranch_id}")
@@ -136,6 +124,18 @@ public class ProductBranchResource {
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品建立产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品建立产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productbranches")
+    public ResponseEntity<ProductBranchDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProductBranchDTO productbranchdto) {
+        Branch domain = productbranchMapping.toDomain(productbranchdto);
+        domain.setProduct(product_id);
+		branchService.create(domain);
+        ProductBranchDTO dto = productbranchMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取DEFAULT")

@@ -54,7 +54,7 @@ public class StorySpecResource {
 
 
 
-    @PreAuthorize("quickTest('ZT_STORYSPEC', 'READ')")
+    @PreAuthorize("test('ZT_STORYSPEC', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品需求获取版本", tags = {"需求描述" } ,notes = "根据产品需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {
@@ -69,7 +69,7 @@ public class StorySpecResource {
 	}
 
 
-    @PreAuthorize("quickTest('ZT_STORYSPEC', 'READ')")
+    @PreAuthorize("test('ZT_STORYSPEC', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目需求获取版本", tags = {"需求描述" } ,notes = "根据项目需求获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/storyspecs/fetchversion")
 	public ResponseEntity<List<StorySpecDTO>> fetchVersionByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody StorySpecSearchContext context) {

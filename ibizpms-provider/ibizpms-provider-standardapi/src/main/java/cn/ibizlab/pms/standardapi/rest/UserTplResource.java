@@ -106,6 +106,20 @@ public class UserTplResource {
         return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
     }
 
+    @PreAuthorize("quickTest('ZT_USERTPL','READ')")
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户模板" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usertpls/fetchmy")
+	public ResponseEntity<List<UserTplDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserTplSearchContext context) {
+        
+        usertplRuntime.addAuthorityConditions(context,"READ");
+        Page<UserTpl> domains = usertplService.searchMy(context) ;
+        List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'READ')")
     @ApiOperation(value = "根据系统用户获取用户模板", tags = {"用户模板" },  notes = "根据系统用户获取用户模板")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usertpls/{usertpl_id}")
@@ -129,19 +143,5 @@ public class UserTplResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_USERTPL','READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户模板" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usertpls/fetchmy")
-	public ResponseEntity<List<UserTplDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserTplSearchContext context) {
-        
-        usertplRuntime.addAuthorityConditions(context,"READ");
-        Page<UserTpl> domains = usertplService.searchMy(context) ;
-        List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 }
 
