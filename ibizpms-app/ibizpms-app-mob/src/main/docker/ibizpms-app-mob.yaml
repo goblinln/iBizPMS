@@ -22,7 +22,7 @@ services:
       - IBIZ_REF_SERVICE_IBZUAA-API=ibizrt4ebsx-rt4ebsx
       - ZUUL_ROUTES_DYNAMODEL_STRIPPREFIX=true
       - BDYNAMIC=true
-      - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-webapi
+      - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-standardapi
       - ZUUL_ROUTES_DYNAMODEL_PATH=/dynamodel/**
       - ZUUL_ROUTES_DYNAMODEL_URL=http://172.16.170.145
       - SERVER_SERVLET_CONTEXTPATH=/pms

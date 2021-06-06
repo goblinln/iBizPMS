@@ -55,7 +55,7 @@ spec:
         - name: BDYNAMIC
           value: "true"      
         - name: ZUUL_ROUTES_IBZEMP_SERVICEID
-          value: "ibizpms-webapi"      
+          value: "ibizpms-standardapi"      
         - name: ZUUL_ROUTES_DYNAMODEL_PATH
           value: "/dynamodel/**"      
         - name: ZUUL_ROUTES_DYNAMODEL_URL
