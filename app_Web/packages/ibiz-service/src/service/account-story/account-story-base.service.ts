@@ -353,6 +353,20 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         return res;
     }
     /**
+     * FetchAccount
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountStoryService
+     */
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchaccount`, _data);
+        }
+        return this.http.post(`/accountstories/fetchaccount`, _data);
+    }
+    /**
      * FetchMyFavorites
      *
      * @param {*} [_context={}]
@@ -379,20 +393,6 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmy`, _data);
         }
         return this.http.post(`/accountstories/fetchmy`, _data);
-    }
-    /**
-     * FetchAccount
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountStoryService
-     */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchaccount`, _data);
-        }
-        return this.http.post(`/accountstories/fetchaccount`, _data);
     }
     /**
      * GetUserConcat

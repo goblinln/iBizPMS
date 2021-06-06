@@ -49,32 +49,32 @@ public class EmployeeResource {
     @Lazy
     public EmployeeMapping employeeMapping;
 
-	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
-    @RequestMapping(method= RequestMethod.POST , value="/employees/fetchproject")
-	public ResponseEntity<List<EmployeeDTO>> fetchproject(@RequestBody SysEmployeeSearchContext context) {
-        Page<SysEmployee> domains = sysemployeeService.searchProjectTeamUser(context) ;
-        List<EmployeeDTO> list = employeeMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-	@ApiOperation(value = "获取Bug用户", tags = {"人员" } ,notes = "获取Bug用户")
-    @RequestMapping(method= RequestMethod.POST , value="/employees/fetchbug")
-	public ResponseEntity<List<EmployeeDTO>> fetchbug(@RequestBody SysEmployeeSearchContext context) {
-        Page<SysEmployee> domains = sysemployeeService.searchBugUser(context) ;
-        List<EmployeeDTO> list = employeeMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 	@ApiOperation(value = "获取联系人用户", tags = {"人员" } ,notes = "获取联系人用户")
     @RequestMapping(method= RequestMethod.POST , value="/employees/fetchcontact")
 	public ResponseEntity<List<EmployeeDTO>> fetchcontact(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchContActList(context) ;
+        List<EmployeeDTO> list = employeeMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+	@ApiOperation(value = "获取数据查询2", tags = {"人员" } ,notes = "获取数据查询2")
+    @RequestMapping(method= RequestMethod.POST , value="/employees/fetchtask")
+	public ResponseEntity<List<EmployeeDTO>> fetchtask(@RequestBody SysEmployeeSearchContext context) {
+        Page<SysEmployee> domains = sysemployeeService.searchTaskTeam(context) ;
+        List<EmployeeDTO> list = employeeMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
+    @RequestMapping(method= RequestMethod.POST , value="/employees/fetchproject")
+	public ResponseEntity<List<EmployeeDTO>> fetchproject(@RequestBody SysEmployeeSearchContext context) {
+        Page<SysEmployee> domains = sysemployeeService.searchProjectTeamUser(context) ;
         List<EmployeeDTO> list = employeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -112,10 +112,10 @@ public class EmployeeResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-	@ApiOperation(value = "获取数据查询2", tags = {"人员" } ,notes = "获取数据查询2")
-    @RequestMapping(method= RequestMethod.POST , value="/employees/fetchtask")
-	public ResponseEntity<List<EmployeeDTO>> fetchtask(@RequestBody SysEmployeeSearchContext context) {
-        Page<SysEmployee> domains = sysemployeeService.searchTaskTeam(context) ;
+	@ApiOperation(value = "获取Bug用户", tags = {"人员" } ,notes = "获取Bug用户")
+    @RequestMapping(method= RequestMethod.POST , value="/employees/fetchbug")
+	public ResponseEntity<List<EmployeeDTO>> fetchbug(@RequestBody SysEmployeeSearchContext context) {
+        Page<SysEmployee> domains = sysemployeeService.searchBugUser(context) ;
         List<EmployeeDTO> list = employeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

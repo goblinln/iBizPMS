@@ -9121,6 +9121,12 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "getPSNavigateContexts" : [ {
+                  "key" : "PRODUCT",
+                  "name" : "PRODUCT",
+                  "value" : "product",
+                  "rawValue" : false
+                } ],
                 "getPSNavigateParams" : [ {
                   "key" : "story",
                   "name" : "story",
@@ -10287,6 +10293,11 @@
                     "layout" : "TABLE_24COL"
                   },
                   "getPSNavigateContexts" : [ {
+                    "key" : "TEST",
+                    "name" : "TEST",
+                    "value" : "product",
+                    "rawValue" : false
+                  }, {
                     "key" : "FROMBUG",
                     "name" : "FROMBUG",
                     "value" : "frombug",
@@ -10870,6 +10881,12 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "getPSNavigateContexts" : [ {
+                    "key" : "TEST",
+                    "name" : "TEST",
+                    "value" : "product",
+                    "rawValue" : false
+                  } ],
                   "parentDataJO" : {
                     "srfparentdefname" : "TOSTORY",
                     "srfparentdename" : "ZT_STORY",

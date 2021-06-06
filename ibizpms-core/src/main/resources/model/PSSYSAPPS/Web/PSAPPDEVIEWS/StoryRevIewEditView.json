@@ -1766,6 +1766,12 @@
                 "colMD" : 24,
                 "layout" : "TABLE_24COL"
               },
+              "getPSNavigateContexts" : [ {
+                "key" : "TEST",
+                "name" : "TEST",
+                "value" : "product",
+                "rawValue" : false
+              } ],
               "parentDataJO" : {
                 "srfparentdefname" : "TOSTORY",
                 "srfparentdename" : "ZT_STORY",
