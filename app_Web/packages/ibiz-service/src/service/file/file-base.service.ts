@@ -180,6 +180,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchtype`, _data);
         }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchtype`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
         }
@@ -292,6 +295,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.product && _context.doclib && _context.file) {
             return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}/files/${_context.file}`);
+        }
+        if (_context.test && _context.testtask && _context.file) {
+            return this.http.delete(`/tests/${_context.test}/testtasks/${_context.testtask}/files/${_context.file}`);
         }
         if (_context.doclib && _context.doc && _context.file) {
             return this.http.delete(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/${_context.file}`);
@@ -406,6 +412,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchproduct`, _data);
         }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchproduct`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproduct`, _data);
         }
@@ -518,6 +527,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchproject`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchproject`, _data);
         }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchproject`, _data);

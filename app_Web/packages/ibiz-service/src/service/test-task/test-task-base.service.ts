@@ -25,6 +25,7 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
     protected APPDETEXT = 'name';
     protected quickSearchFields = ['name',];
     protected selectContextParam = {
+        test: 'product',
         project: 'project',
     };
 
@@ -42,6 +43,14 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
 
     async getLocal(context: IContext, srfKey: string): Promise<ITestTask> {
         const entity = this.cache.get(context, srfKey);
+        if (entity && entity.product && entity.product !== '') {
+            const s = await ___ibz___.gs.getTestService();
+            const data = await s.getLocal2(context, entity.product);
+            if (data) {
+                entity.productname = data.name;
+                entity.product = data.id;
+            }
+        }
         if (entity && entity.project && entity.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.project);
@@ -58,6 +67,14 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
     }
 
     async getDraftLocal(_context: IContext, entity: ITestTask = {}): Promise<ITestTask> {
+        if (_context.test && _context.test !== '') {
+            const s = await ___ibz___.gs.getTestService();
+            const data = await s.getLocal2(_context, _context.test);
+            if (data) {
+                entity.productname = data.name;
+                entity.product = data.id;
+            }
+        }
         if (_context.project && _context.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(_context, _context.project);
@@ -130,6 +147,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
             const res = await this.http.get(`/projects/${_context.project}/testtasks/${_context.testtask}`);
             return res;
         }
+        if (_context.test && _context.testtask) {
+            const res = await this.http.get(`/tests/${_context.test}/testtasks/${_context.testtask}`);
+            return res;
+        }
     this.log.warn([`[TestTask]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -144,6 +165,9 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.testtask) {
             return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}`);
+        }
+        if (_context.test && _context.testtask) {
+            return this.http.delete(`/tests/${_context.test}/testtasks/${_context.testtask}`);
         }
     this.log.warn([`[TestTask]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -161,6 +185,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/close`, _data);
         }
+        if (_context.test && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/close`, _data);
+        }
     this.log.warn([`[TestTask]>>>[Close函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -176,6 +204,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/block`, _data);
+        }
+        if (_context.test && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/block`, _data);
         }
     this.log.warn([`[TestTask]>>>[Block函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -195,6 +227,12 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
             const res = await this.http.get(`/projects/${_context.project}/testtasks/getdraft`, _data);
             return res;
         }
+        if (_context.test && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testtasks/getdraft`, _data);
+            return res;
+        }
     this.log.warn([`[TestTask]>>>[GetDraft函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -210,6 +248,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/linkcase`, _data);
+        }
+        if (_context.test && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/linkcase`, _data);
         }
     this.log.warn([`[TestTask]>>>[LinkCase函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -233,6 +275,16 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
             }
             return this.http.post(`/projects/${_context.project}/testtasks`, _data);
         }
+        if (_context.test && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/tests/${_context.test}/testtasks`, _data);
+        }
     this.log.warn([`[TestTask]>>>[Create函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -249,6 +301,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/start`, _data);
         }
+        if (_context.test && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/start`, _data);
+        }
     this.log.warn([`[TestTask]>>>[Start函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -264,6 +320,9 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/fetchdefault`, _data);
         }
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/fetchdefault`, _data);
+        }
     this.log.warn([`[TestTask]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -278,6 +337,9 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
     async FetchProjectTestTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/fetchprojecttesttask`, _data);
+        }
+        if (_context.test && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/fetchprojecttesttask`, _data);
         }
     this.log.warn([`[TestTask]>>>[FetchProjectTestTask函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -295,6 +357,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/projects/${_context.project}/testtasks/${_context.testtask}`, _data);
         }
+        if (_context.test && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/testtasks/${_context.testtask}`, _data);
+        }
     this.log.warn([`[TestTask]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -311,6 +377,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/unlinkcase`, _data);
         }
+        if (_context.test && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/unlinkcase`, _data);
+        }
     this.log.warn([`[TestTask]>>>[UnlinkCase函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -326,6 +396,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         if (_context.project && _context.testtask) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/activate`, _data);
+        }
+        if (_context.test && _context.testtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/activate`, _data);
         }
     this.log.warn([`[TestTask]>>>[Activate函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -358,6 +432,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/closebatch`,_data);
         }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/closebatch`,_data);
+        }
         this.log.warn([`[TestTask]>>>[CloseBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -375,6 +453,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/blockbatch`,_data);
+        }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/blockbatch`,_data);
         }
         this.log.warn([`[TestTask]>>>[BlockBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -394,6 +476,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/linkcasebatch`,_data);
         }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/linkcasebatch`,_data);
+        }
         this.log.warn([`[TestTask]>>>[LinkCaseBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -411,6 +497,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/startbatch`,_data);
+        }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/startbatch`,_data);
         }
         this.log.warn([`[TestTask]>>>[StartBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
@@ -430,6 +520,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);
         }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/unlinkcasebatch`,_data);
+        }
         this.log.warn([`[TestTask]>>>[UnlinkCaseBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
@@ -447,6 +541,10 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/projects/${_context.project}/testtasks/activatebatch`,_data);
+        }
+        if(_context.test && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tests/${_context.test}/testtasks/activatebatch`,_data);
         }
         this.log.warn([`[TestTask]>>>[ActivateBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });

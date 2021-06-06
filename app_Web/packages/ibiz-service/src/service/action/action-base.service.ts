@@ -212,6 +212,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`, _data);
         }
+        if (_context.test && _context.testtask && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/${_context.action}`, _data);
+        }
         if (_context.doclib && _context.doc && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/${_context.action}`, _data);
@@ -328,6 +332,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
         }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
         }
@@ -429,6 +436,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
         }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
@@ -532,6 +542,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchaccount`, _data);
         }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchaccount`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchaccount`, _data);
         }
@@ -633,6 +646,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmain`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmain`, _data);
         }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmain`, _data);
@@ -736,6 +752,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproject`, _data);
         }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproject`, _data);
+        }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproject`, _data);
         }
@@ -837,6 +856,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && true) {
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmy`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmy`, _data);
         }
         if (_context.doclib && _context.doc && true) {
             return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmy`, _data);
@@ -954,6 +976,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.product && _context.doclib && _context.action) {
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/${_context.action}`);
+            return res;
+        }
+        if (_context.test && _context.testtask && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/${_context.action}`);
             return res;
         }
         if (_context.doclib && _context.doc && _context.action) {
@@ -1118,6 +1144,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/products/${_context.product}/doclibs/${_context.doclib}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.test && _context.testtask && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/getdraft`, _data);
             return res;
         }
         if (_context.doclib && _context.doc && true) {
@@ -1375,6 +1407,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
                 delete _data.srffrontuf;
             }
             return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions`, _data);
         }
         if (_context.doclib && _context.doc && true) {
         _data = await this.obtainMinor(_context, _data);
