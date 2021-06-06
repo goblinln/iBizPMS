@@ -53,7 +53,7 @@ zuul:
 #      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
 #      stripPrefix: false
     ibzemp:
-      path: /sysemployees/**
+      path: /employees/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
 
 environment:

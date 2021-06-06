@@ -137,6 +137,9 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
     public Page<SysEmployee> searchProductTeamM(SysEmployeeSearchContext context) {
         log.info("SysEmployeeExService：searchProductTeamM");
         Map<String,Object> params = context.getParams();
+        if(params.get("type") != null && "projectteammproduct".equals(params.get("type"))) {
+            return this.searchProjectTeamMProduct(context);
+        }
         if(params.get("root") != null && !"0".equals(params.get("root"))) {
             // 产品团队
             context.setN_username_notin(getAccounts(StaticDict.Team__type.PRODUCT.getValue(), params.get("root"), params.get("account") != null ?  params.get("account").toString() : null));
@@ -188,6 +191,9 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
     public Page<SysEmployee> searchTaskMTeam(SysEmployeeSearchContext context) {
         log.info("SysEmployeeExService：searchTaskTeam");
         Map<String,Object> params = context.getParams();
+        if(params.get("type") != null && "projectteamtaskusertemp".equals(params.get("type"))) {
+            return this.searchProjectTeamTaskUserTemp(context);
+        }
         if((params.get("multiple") == null && params.get("project") != null) || (params.get("multiple") != null && "0".equals(params.get("multiple")))) {
             // 项目团队
             log.info("SysEmployeeExService：SysEmployeeExService-" + params.get("project").toString());
