@@ -74,10 +74,10 @@
       }
     }, {
       "name" : "EXPITEM:ALL",
-      "realTitle" : "bug表格视图",
+      "realTitle" : "功能测试",
       "getRefPSAppView" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView.json",
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
         "viewType" : "DEGRIDVIEW"
       }
     } ],
@@ -356,7 +356,7 @@
         "name" : "全部",
         "getNavPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView.json",
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
           "viewType" : "DEGRIDVIEW"
         },
         "nodeType" : "ALL",

@@ -194,7 +194,7 @@
     "name" : "全部",
     "getNavPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugGridView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
     "nodeType" : "ALL",
