@@ -57,7 +57,7 @@
             <el-button type="primary" size="small" @click="previewTheme">{{$t('components.apptheme.preview')}}</el-button>
             <el-button type="primary" size="small" @click="saveThemeOptions">{{$t('components.apptheme.save')}}</el-button>
             <el-button type="primary" size="small" @click="reset">{{$t('components.apptheme.reset')}}</el-button>
-            <el-button type="primary" size="small" @click="share">分享</el-button>
+            <el-button type="primary" size="small" @click="share">{{$t('components.apptheme.share')}}</el-button>
         </el-drawer>
     </div>
 </template>
@@ -79,7 +79,7 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     @Prop({ default: 'DEFAULT' }) public viewStyle!: string;
-
+    
     /**
      * 系统-应用标识
      * 
@@ -237,7 +237,7 @@ export default class AppCustomTheme extends Vue {
                 return null;
             }
         } catch (error: any) {
-            this.$throw('获取分享主题配置失败');
+            this.$throw(this.$t('components.apptheme.error.getshareurl'));
             return null;
         }
     }
@@ -418,8 +418,7 @@ export default class AppCustomTheme extends Vue {
                 { model: { cssValue: JSON.stringify(this.themeOptions), fontFamily: this.selectFont } }).then((res: any) => {
                 if (res) {
                     const _this: any = this;
-                    const message = isShare ? '已应用分享主题' : this.$t('components.apptheme.success');
-                    _this.$success(message,'saveThemeOptions');
+                    _this.$success(isShare ? this.$t('components.apptheme.applytheme') : this.$t('components.apptheme.success.savethemeoption'));
                     this.previewTheme();
                 }
             });
@@ -459,19 +458,19 @@ export default class AppCustomTheme extends Vue {
                             size: 'small'
                         }
                     })
-                    _this.$alert(h, '已创建分享链接', {
-                        confirmButtonText: '复制',
+                    _this.$alert(h, this.$t('components.apptheme.createurl'), {
+                        confirmButtonText: this.$t('components.apptheme.configbutton'),
                         customClass: 'share-theme-box',
                         callback: (action: any) => {
                             _this.copyShareUrl(action, shareUrl);
                         }
                     })
                 } else {
-                    this.$throw('生成分享链接失败');
+                    this.$throw(this.$t('components.apptheme.error.generateshareurl'));
                 }
             })
         } catch(error: any) {
-            this.$throw('生成分享链接失败');
+            this.$throw(this.$t('components.apptheme.error.generateshareurl'));
         }
     }
 
@@ -482,8 +481,10 @@ export default class AppCustomTheme extends Vue {
      */
     public generateShareUrl(themeOptionId: any) {
         const href: string = window.location.href;
+        const userName = this.$store.getters.getAppData().context?.srfusername;
+        console.log(userName);
         const baseStr = window.btoa(`applyThemeOption=true&themeOptionId=${themeOptionId}`);
-        const param = `#/appsharepage?theme=${baseStr}`;
+        const param = `#/appsharepage?theme=${baseStr}&shareUserName=${encodeURIComponent(userName)}`;
         return href.replace(/#\/\S*/, param);
     }
 
@@ -497,7 +498,7 @@ export default class AppCustomTheme extends Vue {
             return;
         }
         textCopy.copy(shareUrl);
-        this.$success('复制分享链接成功', 'saveShareThemeUrlSuccess');
+        this.$success(this.$t('components.apptheme.success.copyurl'), 'saveShareThemeUrlSuccess');
     }
 
     /**

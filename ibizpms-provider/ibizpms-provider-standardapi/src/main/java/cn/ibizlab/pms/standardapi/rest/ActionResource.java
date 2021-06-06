@@ -53,19 +53,6 @@ public class ActionResource {
     public ActionMapping actionMapping;
 
 
-    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
-        
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("quickTest('ZT_ACTION', 'CREATE')")
     @ApiOperation(value = "根据系统用户获取系统日志草稿", tags = {"系统日志" },  notes = "根据系统用户获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/actions/getdraft")
@@ -75,19 +62,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据系统用户获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
-        
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("quickTest('ZT_ACTION', 'UPDATE')")
     @ApiOperation(value = "根据系统用户更新系统日志", tags = {"系统日志" },  notes = "根据系统用户更新系统日志")
@@ -103,11 +77,11 @@ public class ActionResource {
 
 
     @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"系统日志" } ,notes = "根据系统用户获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据系统用户获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
         
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -116,11 +90,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户获取Type", tags = {"系统日志" } ,notes = "根据系统用户获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据系统用户获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
         
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
+	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"系统日志" } ,notes = "根据系统用户获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -140,6 +127,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
+	@ApiOperation(value = "根据系统用户获取Type", tags = {"系统日志" } ,notes = "根据系统用户获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody ActionSearchContext context) {
+        
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
 	@ApiOperation(value = "根据系统用户获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据系统用户获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/actions/fetchproject")
@@ -176,19 +176,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据日报获取ProductTrends", tags = {"系统日志" } ,notes = "根据日报获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据日报获取系统日志草稿", tags = {"系统日志" },  notes = "根据日报获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/dailies/{ibzdaily_id}/actions/getdraft")
@@ -198,19 +185,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据日报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据日报获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据日报更新系统日志", tags = {"系统日志" },  notes = "根据日报更新系统日志")
@@ -226,11 +200,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据日报获取指定用户数据", tags = {"系统日志" } ,notes = "根据日报获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据日报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据日报获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -239,11 +213,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据日报获取Type", tags = {"系统日志" } ,notes = "根据日报获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据日报获取ProductTrends", tags = {"系统日志" } ,notes = "根据日报获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取指定用户数据", tags = {"系统日志" } ,notes = "根据日报获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -263,6 +250,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据日报获取Type", tags = {"系统日志" } ,notes = "根据日报获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);context.setN_objecttype_eq("daily");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_DAILY', #ibzdaily_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据日报获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据日报获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/actions/fetchproject")
@@ -299,19 +299,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据文档库获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据文档库获取系统日志草稿", tags = {"系统日志" },  notes = "根据文档库获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/actions/getdraft")
@@ -321,19 +308,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据文档库获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据文档库更新系统日志", tags = {"系统日志" },  notes = "根据文档库更新系统日志")
@@ -349,11 +323,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据文档库获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据文档库获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -362,11 +336,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库获取Type", tags = {"系统日志" } ,notes = "根据文档库获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据文档库获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据文档库获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -386,6 +373,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档库获取Type", tags = {"系统日志" } ,notes = "根据文档库获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据文档库获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据文档库获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/actions/fetchproject")
@@ -422,19 +422,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据文档获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据文档获取系统日志草稿", tags = {"系统日志" },  notes = "根据文档获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/actions/getdraft")
@@ -444,19 +431,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据文档获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据文档更新系统日志", tags = {"系统日志" },  notes = "根据文档更新系统日志")
@@ -472,11 +446,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据文档获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据文档获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -485,11 +459,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档获取Type", tags = {"系统日志" } ,notes = "根据文档获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据文档获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据文档获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -509,6 +496,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档获取Type", tags = {"系统日志" } ,notes = "根据文档获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOC', #doc_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据文档获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据文档获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/actions/fetchproject")
@@ -545,19 +545,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据月报获取ProductTrends", tags = {"系统日志" } ,notes = "根据月报获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzmonthly_id);context.setN_objecttype_eq("monthly");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据月报获取系统日志草稿", tags = {"系统日志" },  notes = "根据月报获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/monthlies/{ibzmonthly_id}/actions/getdraft")
@@ -567,19 +554,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据月报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据月报获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzmonthly_id);context.setN_objecttype_eq("monthly");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据月报更新系统日志", tags = {"系统日志" },  notes = "根据月报更新系统日志")
@@ -595,11 +569,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据月报获取指定用户数据", tags = {"系统日志" } ,notes = "根据月报获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据月报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据月报获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzmonthly_id);context.setN_objecttype_eq("monthly");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -608,11 +582,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据月报获取Type", tags = {"系统日志" } ,notes = "根据月报获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据月报获取ProductTrends", tags = {"系统日志" } ,notes = "根据月报获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzmonthly_id);context.setN_objecttype_eq("monthly");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据月报获取指定用户数据", tags = {"系统日志" } ,notes = "根据月报获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzmonthly_id);context.setN_objecttype_eq("monthly");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -632,6 +619,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据月报获取Type", tags = {"系统日志" } ,notes = "根据月报获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzmonthly_id);context.setN_objecttype_eq("monthly");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_MONTHLY', #ibzmonthly_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据月报获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据月报获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/actions/fetchproject")
@@ -668,19 +668,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/actions/getdraft")
@@ -690,19 +677,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品更新系统日志", tags = {"系统日志" },  notes = "根据产品更新系统日志")
@@ -718,11 +692,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -731,11 +705,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品获取Type", tags = {"系统日志" } ,notes = "根据产品获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -755,6 +742,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品获取Type", tags = {"系统日志" } ,notes = "根据产品获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProduct(@PathVariable("product_id") Long product_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(product_id);context.setN_objecttype_eq("product");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/actions/fetchproject")
@@ -791,19 +791,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(project_id);context.setN_objecttype_eq("project");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据项目获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/actions/getdraft")
@@ -813,19 +800,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(project_id);context.setN_objecttype_eq("project");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目更新系统日志", tags = {"系统日志" },  notes = "根据项目更新系统日志")
@@ -841,11 +815,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(project_id);context.setN_objecttype_eq("project");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -854,11 +828,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目获取Type", tags = {"系统日志" } ,notes = "根据项目获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(project_id);context.setN_objecttype_eq("project");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(project_id);context.setN_objecttype_eq("project");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -878,6 +865,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目获取Type", tags = {"系统日志" } ,notes = "根据项目获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProject(@PathVariable("project_id") Long project_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(project_id);context.setN_objecttype_eq("project");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/actions/fetchproject")
@@ -914,19 +914,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据汇报获取ProductTrends", tags = {"系统日志" } ,notes = "根据汇报获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzreportly_id);context.setN_objecttype_eq("reportly");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据汇报获取系统日志草稿", tags = {"系统日志" },  notes = "根据汇报获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/reportlies/{ibzreportly_id}/actions/getdraft")
@@ -936,19 +923,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据汇报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据汇报获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzreportly_id);context.setN_objecttype_eq("reportly");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据汇报更新系统日志", tags = {"系统日志" },  notes = "根据汇报更新系统日志")
@@ -964,11 +938,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据汇报获取指定用户数据", tags = {"系统日志" } ,notes = "根据汇报获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据汇报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据汇报获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzreportly_id);context.setN_objecttype_eq("reportly");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -977,11 +951,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据汇报获取Type", tags = {"系统日志" } ,notes = "根据汇报获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据汇报获取ProductTrends", tags = {"系统日志" } ,notes = "根据汇报获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzreportly_id);context.setN_objecttype_eq("reportly");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据汇报获取指定用户数据", tags = {"系统日志" } ,notes = "根据汇报获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzreportly_id);context.setN_objecttype_eq("reportly");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1001,6 +988,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据汇报获取Type", tags = {"系统日志" } ,notes = "根据汇报获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzreportly_id);context.setN_objecttype_eq("reportly");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_REPORTLY', #ibzreportly_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据汇报获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据汇报获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/actions/fetchproject")
@@ -1037,19 +1037,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据测试套件获取ProductTrends", tags = {"系统日志" } ,notes = "根据测试套件获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据测试套件获取系统日志草稿", tags = {"系统日志" },  notes = "根据测试套件获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}/actions/getdraft")
@@ -1059,19 +1046,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据测试套件获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据测试套件获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据测试套件更新系统日志", tags = {"系统日志" },  notes = "根据测试套件更新系统日志")
@@ -1087,11 +1061,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据测试套件获取指定用户数据", tags = {"系统日志" } ,notes = "根据测试套件获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据测试套件获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据测试套件获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1100,11 +1074,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据测试套件获取Type", tags = {"系统日志" } ,notes = "根据测试套件获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据测试套件获取ProductTrends", tags = {"系统日志" } ,notes = "根据测试套件获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据测试套件获取指定用户数据", tags = {"系统日志" } ,notes = "根据测试套件获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1124,6 +1111,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据测试套件获取Type", tags = {"系统日志" } ,notes = "根据测试套件获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testsuite_id);context.setN_objecttype_eq("testsuite");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TESTSUITE', #testsuite_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据测试套件获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据测试套件获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/actions/fetchproject")
@@ -1160,19 +1160,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据待办获取ProductTrends", tags = {"系统日志" } ,notes = "根据待办获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据待办获取系统日志草稿", tags = {"系统日志" },  notes = "根据待办获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/todos/{todo_id}/actions/getdraft")
@@ -1182,19 +1169,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据待办获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据待办获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据待办更新系统日志", tags = {"系统日志" },  notes = "根据待办更新系统日志")
@@ -1210,11 +1184,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据待办获取指定用户数据", tags = {"系统日志" } ,notes = "根据待办获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据待办获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据待办获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1223,11 +1197,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据待办获取Type", tags = {"系统日志" } ,notes = "根据待办获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据待办获取ProductTrends", tags = {"系统日志" } ,notes = "根据待办获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据待办获取指定用户数据", tags = {"系统日志" } ,notes = "根据待办获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1247,6 +1234,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据待办获取Type", tags = {"系统日志" } ,notes = "根据待办获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据待办获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据待办获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/actions/fetchproject")
@@ -1283,19 +1283,6 @@ public class ActionResource {
     }
 
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据周报获取ProductTrends", tags = {"系统日志" } ,notes = "根据周报获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzweekly_id);context.setN_objecttype_eq("weekly");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据周报获取系统日志草稿", tags = {"系统日志" },  notes = "根据周报获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/weeklies/{ibzweekly_id}/actions/getdraft")
@@ -1305,19 +1292,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据周报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据周报获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(ibzweekly_id);context.setN_objecttype_eq("weekly");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据周报更新系统日志", tags = {"系统日志" },  notes = "根据周报更新系统日志")
@@ -1333,11 +1307,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据周报获取指定用户数据", tags = {"系统日志" } ,notes = "根据周报获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据周报获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据周报获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzweekly_id);context.setN_objecttype_eq("weekly");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1346,11 +1320,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据周报获取Type", tags = {"系统日志" } ,notes = "根据周报获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据周报获取ProductTrends", tags = {"系统日志" } ,notes = "根据周报获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(ibzweekly_id);context.setN_objecttype_eq("weekly");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据周报获取指定用户数据", tags = {"系统日志" } ,notes = "根据周报获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzweekly_id);context.setN_objecttype_eq("weekly");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1370,6 +1357,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据周报获取Type", tags = {"系统日志" } ,notes = "根据周报获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(ibzweekly_id);context.setN_objecttype_eq("weekly");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'IBZ_WEEKLY', #ibzweekly_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据周报获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据周报获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/actions/fetchproject")
@@ -1407,19 +1407,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户文档获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("quickTest('ZT_ACTION', 'CREATE')")
     @ApiOperation(value = "根据系统用户文档获取系统日志草稿", tags = {"系统日志" },  notes = "根据系统用户文档获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/getdraft")
@@ -1429,19 +1416,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据系统用户文档获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("quickTest('ZT_ACTION', 'UPDATE')")
     @ApiOperation(value = "根据系统用户文档更新系统日志", tags = {"系统日志" },  notes = "根据系统用户文档更新系统日志")
@@ -1457,11 +1431,11 @@ public class ActionResource {
 
 
     @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据系统用户文档获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据系统用户文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据系统用户文档获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1470,11 +1444,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
-	@ApiOperation(value = "根据系统用户文档获取Type", tags = {"系统日志" } ,notes = "根据系统用户文档获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据系统用户文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户文档获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
+	@ApiOperation(value = "根据系统用户文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据系统用户文档获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1494,6 +1481,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
+	@ApiOperation(value = "根据系统用户文档获取Type", tags = {"系统日志" } ,notes = "根据系统用户文档获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("quickTest('ZT_ACTION', 'READ')")
 	@ApiOperation(value = "根据系统用户文档获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据系统用户文档获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/actions/fetchproject")
@@ -1531,19 +1531,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户待办获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户待办获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据系统用户待办获取系统日志草稿", tags = {"系统日志" },  notes = "根据系统用户待办获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/getdraft")
@@ -1553,19 +1540,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户待办获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据系统用户待办获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据系统用户待办更新系统日志", tags = {"系统日志" },  notes = "根据系统用户待办更新系统日志")
@@ -1581,11 +1555,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户待办获取指定用户数据", tags = {"系统日志" } ,notes = "根据系统用户待办获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据系统用户待办获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据系统用户待办获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1594,11 +1568,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据系统用户待办获取Type", tags = {"系统日志" } ,notes = "根据系统用户待办获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据系统用户待办获取ProductTrends", tags = {"系统日志" } ,notes = "根据系统用户待办获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据系统用户待办获取指定用户数据", tags = {"系统日志" } ,notes = "根据系统用户待办获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1618,6 +1605,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据系统用户待办获取Type", tags = {"系统日志" } ,notes = "根据系统用户待办获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(todo_id);context.setN_objecttype_eq("todo");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_TODO', #todo_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据系统用户待办获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据系统用户待办获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/actions/fetchproject")
@@ -1655,19 +1655,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据文档库文档获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据文档库文档获取系统日志草稿", tags = {"系统日志" },  notes = "根据文档库文档获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}/actions/getdraft")
@@ -1677,19 +1664,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据文档库文档获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据文档库文档更新系统日志", tags = {"系统日志" },  notes = "根据文档库文档更新系统日志")
@@ -1705,11 +1679,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据文档库文档获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据文档库文档获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1718,11 +1692,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库文档获取Type", tags = {"系统日志" } ,notes = "根据文档库文档获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据文档库文档获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据文档库文档获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1742,6 +1729,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档库文档获取Type", tags = {"系统日志" } ,notes = "根据文档库文档获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据文档库文档获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据文档库文档获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproject")
@@ -1779,19 +1779,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品文档库获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品文档库获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品文档库获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/actions/getdraft")
@@ -1801,19 +1788,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品文档库获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品文档库更新系统日志", tags = {"系统日志" },  notes = "根据产品文档库更新系统日志")
@@ -1829,11 +1803,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品文档库获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品文档库获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1842,11 +1816,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库获取Type", tags = {"系统日志" } ,notes = "根据产品文档库获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品文档库获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品文档库获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1866,6 +1853,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品文档库获取Type", tags = {"系统日志" } ,notes = "根据产品文档库获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品文档库获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品文档库获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/actions/fetchproject")
@@ -1903,19 +1903,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品版本获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品版本获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/builds/{build_id}/actions/getdraft")
@@ -1925,19 +1912,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品版本获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品版本获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUILDMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品版本更新系统日志", tags = {"系统日志" },  notes = "根据产品版本更新系统日志")
@@ -1953,11 +1927,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品版本获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品版本获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品版本获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品版本获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1966,11 +1940,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品版本获取Type", tags = {"系统日志" } ,notes = "根据产品版本获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品版本获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品版本获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品版本获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -1990,6 +1977,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品版本获取Type", tags = {"系统日志" } ,notes = "根据产品版本获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品版本获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品版本获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/actions/fetchproject")
@@ -2027,19 +2027,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品产品计划获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品产品计划获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品产品计划获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品产品计划获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/actions/getdraft")
@@ -2049,19 +2036,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品产品计划获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品产品计划获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品产品计划更新系统日志", tags = {"系统日志" },  notes = "根据产品产品计划更新系统日志")
@@ -2077,11 +2051,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品产品计划获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品产品计划获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品产品计划获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品产品计划获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2090,11 +2064,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品产品计划获取Type", tags = {"系统日志" } ,notes = "根据产品产品计划获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品产品计划获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品产品计划获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品产品计划获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品产品计划获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2114,6 +2101,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品产品计划获取Type", tags = {"系统日志" } ,notes = "根据产品产品计划获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品产品计划获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品产品计划获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/actions/fetchproject")
@@ -2151,19 +2151,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品需求获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品需求获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品需求获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品需求获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/actions/getdraft")
@@ -2173,19 +2160,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品需求获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品需求获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品需求更新系统日志", tags = {"系统日志" },  notes = "根据产品需求更新系统日志")
@@ -2201,11 +2175,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品需求获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品需求获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品需求获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品需求获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2214,11 +2188,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品需求获取Type", tags = {"系统日志" } ,notes = "根据产品需求获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品需求获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品需求获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品需求获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品需求获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2238,6 +2225,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品需求获取Type", tags = {"系统日志" } ,notes = "根据产品需求获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品需求获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品需求获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/actions/fetchproject")
@@ -2275,19 +2275,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目文档库获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目文档库获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目文档库获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/actions/getdraft")
@@ -2297,19 +2284,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目文档库获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目文档库更新系统日志", tags = {"系统日志" },  notes = "根据项目文档库更新系统日志")
@@ -2325,11 +2299,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目文档库获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目文档库获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目文档库获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2338,11 +2312,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库获取Type", tags = {"系统日志" } ,notes = "根据项目文档库获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目文档库获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目文档库获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据项目文档库获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目文档库获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2362,6 +2349,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据项目文档库获取Type", tags = {"系统日志" } ,notes = "根据项目文档库获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doclib_id);context.setN_objecttype_eq("doclib");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
 	@ApiOperation(value = "根据项目文档库获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目文档库获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/actions/fetchproject")
@@ -2399,19 +2399,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目产品计划获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目产品计划获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("quickTest('ZT_ACTION', 'CREATE')")
     @ApiOperation(value = "根据项目产品计划获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目产品计划获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/productplans/{productplan_id}/actions/getdraft")
@@ -2421,19 +2408,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目产品计划获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目产品计划获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("quickTest('ZT_ACTION', 'UPDATE')")
     @ApiOperation(value = "根据项目产品计划更新系统日志", tags = {"系统日志" },  notes = "根据项目产品计划更新系统日志")
@@ -2449,11 +2423,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目产品计划获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目产品计划获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目产品计划获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目产品计划获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2462,11 +2436,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目产品计划获取Type", tags = {"系统日志" } ,notes = "根据项目产品计划获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目产品计划获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目产品计划获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目产品计划获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目产品计划获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2486,6 +2473,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目产品计划获取Type", tags = {"系统日志" } ,notes = "根据项目产品计划获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);context.setN_objecttype_eq("productplan");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目产品计划获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目产品计划获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/actions/fetchproject")
@@ -2523,19 +2523,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目Bug获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目Bug获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目Bug获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目Bug获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/bugs/{bug_id}/actions/getdraft")
@@ -2545,19 +2532,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目Bug获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目Bug获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目Bug更新系统日志", tags = {"系统日志" },  notes = "根据项目Bug更新系统日志")
@@ -2573,11 +2547,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目Bug获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目Bug获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目Bug获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目Bug获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2586,11 +2560,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目Bug获取Type", tags = {"系统日志" } ,notes = "根据项目Bug获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目Bug获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目Bug获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目Bug获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目Bug获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2610,6 +2597,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目Bug获取Type", tags = {"系统日志" } ,notes = "根据项目Bug获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目Bug获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目Bug获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/actions/fetchproject")
@@ -2647,19 +2647,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目版本获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目版本获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/builds/{build_id}/actions/getdraft")
@@ -2669,19 +2656,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目版本获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目版本获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'BUILDMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目版本更新系统日志", tags = {"系统日志" },  notes = "根据项目版本更新系统日志")
@@ -2697,11 +2671,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目版本获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目版本获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目版本获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目版本获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2710,11 +2684,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目版本获取Type", tags = {"系统日志" } ,notes = "根据项目版本获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目版本获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目版本获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目版本获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2734,6 +2721,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目版本获取Type", tags = {"系统日志" } ,notes = "根据项目版本获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(build_id);context.setN_objecttype_eq("Build");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目版本获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目版本获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/actions/fetchproject")
@@ -2771,19 +2771,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目任务获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目任务获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(task_id);context.setN_objecttype_eq("task");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目任务获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目任务获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/actions/getdraft")
@@ -2793,19 +2780,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目任务获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目任务获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(task_id);context.setN_objecttype_eq("task");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目任务更新系统日志", tags = {"系统日志" },  notes = "根据项目任务更新系统日志")
@@ -2821,11 +2795,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目任务获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目任务获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目任务获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目任务获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(task_id);context.setN_objecttype_eq("task");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2834,11 +2808,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目任务获取Type", tags = {"系统日志" } ,notes = "根据项目任务获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目任务获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目任务获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(task_id);context.setN_objecttype_eq("task");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目任务获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目任务获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(task_id);context.setN_objecttype_eq("task");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2858,6 +2845,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目任务获取Type", tags = {"系统日志" } ,notes = "根据项目任务获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(task_id);context.setN_objecttype_eq("task");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目任务获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目任务获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/actions/fetchproject")
@@ -2895,19 +2895,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目需求获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目需求获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'STORYMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目需求获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目需求获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/stories/{story_id}/actions/getdraft")
@@ -2917,19 +2904,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目需求获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目需求获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("quickTest('ZT_ACTION', 'UPDATE')")
     @ApiOperation(value = "根据项目需求更新系统日志", tags = {"系统日志" },  notes = "根据项目需求更新系统日志")
@@ -2945,11 +2919,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目需求获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目需求获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目需求获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目需求获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2958,11 +2932,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目需求获取Type", tags = {"系统日志" } ,notes = "根据项目需求获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目需求获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目需求获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目需求获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目需求获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -2982,6 +2969,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目需求获取Type", tags = {"系统日志" } ,notes = "根据项目需求获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(story_id);context.setN_objecttype_eq("story");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目需求获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目需求获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/actions/fetchproject")
@@ -3019,19 +3019,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试报告获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目测试报告获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据项目测试报告获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目测试报告获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testreports/{testreport_id}/actions/getdraft")
@@ -3041,19 +3028,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试报告获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目测试报告获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目测试报告更新系统日志", tags = {"系统日志" },  notes = "根据项目测试报告更新系统日志")
@@ -3069,11 +3043,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试报告获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目测试报告获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目测试报告获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目测试报告获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3082,11 +3056,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试报告获取Type", tags = {"系统日志" } ,notes = "根据项目测试报告获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目测试报告获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目测试报告获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目测试报告获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目测试报告获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3106,6 +3093,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目测试报告获取Type", tags = {"系统日志" } ,notes = "根据项目测试报告获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目测试报告获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目测试报告获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/actions/fetchproject")
@@ -3143,19 +3143,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目测试版本获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testtask_id);context.setN_objecttype_eq("testtask");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目测试版本获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目测试版本获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}/actions/getdraft")
@@ -3165,19 +3152,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试版本获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目测试版本获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testtask_id);context.setN_objecttype_eq("testtask");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目测试版本更新系统日志", tags = {"系统日志" },  notes = "根据项目测试版本更新系统日志")
@@ -3193,11 +3167,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试版本获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目测试版本获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目测试版本获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目测试版本获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testtask_id);context.setN_objecttype_eq("testtask");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3206,11 +3180,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据项目测试版本获取Type", tags = {"系统日志" } ,notes = "根据项目测试版本获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目测试版本获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目测试版本获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testtask_id);context.setN_objecttype_eq("testtask");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目测试版本获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目测试版本获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testtask_id);context.setN_objecttype_eq("testtask");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3230,6 +3217,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据项目测试版本获取Type", tags = {"系统日志" } ,notes = "根据项目测试版本获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testtask_id);context.setN_objecttype_eq("testtask");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据项目测试版本获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目测试版本获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/actions/fetchproject")
@@ -3267,19 +3267,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品Bug获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品Bug获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品Bug获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品Bug获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/bugs/{bug_id}/actions/getdraft")
@@ -3289,19 +3276,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品Bug获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品Bug获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品Bug更新系统日志", tags = {"系统日志" },  notes = "根据产品Bug更新系统日志")
@@ -3317,11 +3291,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品Bug获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品Bug获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品Bug获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品Bug获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3330,11 +3304,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品Bug获取Type", tags = {"系统日志" } ,notes = "根据产品Bug获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品Bug获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品Bug获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品Bug获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品Bug获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3354,6 +3341,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品Bug获取Type", tags = {"系统日志" } ,notes = "根据产品Bug获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(bug_id);context.setN_objecttype_eq("bug");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品Bug获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品Bug获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/actions/fetchproject")
@@ -3391,19 +3391,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品测试报告获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品测试报告获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品测试报告获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品测试报告获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testreports/{testreport_id}/actions/getdraft")
@@ -3413,19 +3400,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品测试报告获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品测试报告获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'TESTREPORTMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品测试报告更新系统日志", tags = {"系统日志" },  notes = "根据产品测试报告更新系统日志")
@@ -3441,11 +3415,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品测试报告获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品测试报告获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品测试报告获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品测试报告获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3454,11 +3428,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品测试报告获取Type", tags = {"系统日志" } ,notes = "根据产品测试报告获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品测试报告获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品测试报告获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品测试报告获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品测试报告获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3478,6 +3465,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品测试报告获取Type", tags = {"系统日志" } ,notes = "根据产品测试报告获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(testreport_id);context.setN_objecttype_eq("testreport");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品测试报告获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品测试报告获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/actions/fetchproject")
@@ -3516,19 +3516,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品文档库文档获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品文档库文档获取系统日志草稿", tags = {"系统日志" },  notes = "根据产品文档库文档获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/getdraft")
@@ -3538,19 +3525,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品文档库文档获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'UPDATE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据产品文档库文档更新系统日志", tags = {"系统日志" },  notes = "根据产品文档库文档更新系统日志")
@@ -3566,11 +3540,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品文档库文档获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据产品文档库文档获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3579,11 +3553,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库文档获取Type", tags = {"系统日志" } ,notes = "根据产品文档库文档获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据产品文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据产品文档库文档获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据产品文档库文档获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3603,6 +3590,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品文档库文档获取Type", tags = {"系统日志" } ,notes = "根据产品文档库文档获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
 	@ApiOperation(value = "根据产品文档库文档获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据产品文档库文档获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproject")
@@ -3641,19 +3641,6 @@ public class ActionResource {
 
 
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目文档库文档获取ProductTrends")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
-	public ResponseEntity<List<ActionDTO>> fetchProductByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchProductTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目文档库文档获取系统日志草稿", tags = {"系统日志" },  notes = "根据项目文档库文档获取系统日志草稿")
     @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/getdraft")
@@ -3663,19 +3650,6 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actionMapping.toDto(actionService.getDraft(domain)));
     }
 
-    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目文档库文档获取项目动态(我的)")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
-        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchMyTrends(context) ;
-        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @VersionCheck(entity = "action" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #action_id, 'UPDATE')")
     @ApiOperation(value = "根据项目文档库文档更新系统日志", tags = {"系统日志" },  notes = "根据项目文档库文档更新系统日志")
@@ -3691,11 +3665,11 @@ public class ActionResource {
 
 
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目文档库文档获取指定用户数据")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
-	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目文档库文档获取项目动态(我的)", tags = {"系统日志" } ,notes = "根据项目文档库文档获取项目动态(我的)")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmytrends")
+	public ResponseEntity<List<ActionDTO>> fetchMyTrendsByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchAccount(context) ;
+        Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3704,11 +3678,24 @@ public class ActionResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库文档获取Type", tags = {"系统日志" } ,notes = "根据项目文档库文档获取Type")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
-	public ResponseEntity<List<ActionDTO>> fetchMainByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+	@ApiOperation(value = "根据项目文档库文档获取ProductTrends", tags = {"系统日志" } ,notes = "根据项目文档库文档获取ProductTrends")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproduct")
+	public ResponseEntity<List<ActionDTO>> fetchProductByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
         context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
-        Page<Action> domains = actionService.searchType(context) ;
+        Page<Action> domains = actionService.searchProductTrends(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据项目文档库文档获取指定用户数据", tags = {"系统日志" } ,notes = "根据项目文档库文档获取指定用户数据")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchaccount")
+	public ResponseEntity<List<ActionDTO>> fetchAccountByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchAccount(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -3728,6 +3715,19 @@ public class ActionResource {
     }
 
 
+    @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据项目文档库文档获取Type", tags = {"系统日志" } ,notes = "根据项目文档库文档获取Type")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchmain")
+	public ResponseEntity<List<ActionDTO>> fetchMainByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody ActionSearchContext context) {
+        context.setN_objectid_eq(doc_id);context.setN_objecttype_eq("doc");
+        Page<Action> domains = actionService.searchType(context) ;
+        List<ActionDTO> list = actionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_ACTION', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
 	@ApiOperation(value = "根据项目文档库文档获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "根据项目文档库文档获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/actions/fetchproject")

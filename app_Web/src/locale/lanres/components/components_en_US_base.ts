@@ -216,7 +216,18 @@ function getLocaleResourceBase(){
           preview: "preview",
           save: "Save the configuration",
           reset: "reset",
-          success: "Save custom theme successfully"
+          success: {
+            savethemeoption: "Save custom theme successfully",
+            copyurl: 'Copy share url successfully'
+          },
+          share: "Share",
+          error: {
+            getshareurl: "Failed to get shared theme configuration",
+            generateshareurl: "Failed to generate share link"
+          },
+          configbutton: 'Copy',
+          createurl: 'Share link created',
+          applytheme: 'Share link created',
         },
         appformgroup: {
           hide: 'hide',
@@ -465,6 +476,11 @@ function getLocaleResourceBase(){
           confirm: "Make sure to close all interfaces?",
           close: "Close all views",
           toperror: "Upper-bay window opens view parameter conversion exception"
+        },
+        appsharepage: {
+          apply: 'Apply',
+          cancel: 'cancel',
+          invite: 'invite you to join the theme app!'
         }
     };
     return data;

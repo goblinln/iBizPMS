@@ -118,20 +118,6 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         return res;
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseLibService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/testcaselibs/getdraft`, _data);
-        return res;
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -148,6 +134,20 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/testcaselibs`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseLibService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/testcaselibs/getdraft`, _data);
+        return res;
     }
     /**
      * Update

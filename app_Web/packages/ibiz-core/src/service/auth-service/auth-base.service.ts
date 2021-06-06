@@ -185,7 +185,7 @@ export class AuthServiceBase {
     public getOPPsWithP(tempOPPriv: any, dataaccaction: string) {
         if (tempOPPriv && tempOPPriv['mapPSDEName'] && tempOPPriv['mapPSDEOPPrivName']) {
             if (this.getCurDeOPPrivs(`${this.context['srfparentdemapname']}-${this.context['srfparentkey']}`)) {
-                return (this.getCurDeOPPrivs(`${this.context['srfparentdemapname']}-${this.context['srfparentkey']}`)[dataaccaction] == 0) ? 0 : 1;
+                return (this.getCurDeOPPrivs(`${this.context['srfparentdemapname']}-${this.context['srfparentkey']}`)[tempOPPriv['mapPSDEOPPrivName']] == 0) ? 0 : 1;
             } else {
                 return 1;
             }
@@ -206,8 +206,8 @@ export class AuthServiceBase {
     public getOPPsWithPAO(tempOPPriv: any, dataaccaction: string, key: string) {
         if (tempOPPriv && tempOPPriv['mapPSDEName'] && tempOPPriv['mapPSDEOPPrivName']) {
             const parentOPPrivs: any = this.getCurDeOPPrivs(`${this.context['srfparentdemapname']}-${this.context['srfparentkey']}`);
-            if (parentOPPrivs && parentOPPrivs.hasOwnProperty(dataaccaction)) {
-                return (parentOPPrivs[dataaccaction] == 0) ? 0 : 1;
+            if (parentOPPrivs && parentOPPrivs.hasOwnProperty(tempOPPriv['mapPSDEOPPrivName'])) {
+                return (parentOPPrivs[tempOPPriv['mapPSDEOPPrivName']] == 0) ? 0 : 1;
             } else {
                 if (this.getCurDeOPPrivs(`${this.deName}-${key}`)) {
                     return (this.getCurDeOPPrivs(`${this.deName}-${key}`)[dataaccaction] == 0) ? 0 : 1;

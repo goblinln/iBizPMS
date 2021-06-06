@@ -1,13 +1,11 @@
 <template>
     <div class="app-share-page">
         <div class="content-container">
-            <span>是否应用主题</span>
+            <img src="@/assets/img/logo.png"/>
+            <span class="apply">{{ userName }} {{$t('components.appsharepage.invite')}}</span>
+            <button class="apply-button" @click='applyShareOptions'>{{ $t('components.appsharepage.apply') }}</button>
+            <button class="cancel-button" @click='cancel'>{{ $t('components.appsharepage.cancel') }}</button>
         </div>
-        <div class="button-container">
-            <button @click='applyShareOptions'>应用</button>
-            <button @click='cancel'>取消</button>
-        </div>
-            
     </div>
 </template>
 
@@ -19,12 +17,20 @@ import { Vue, Component } from 'vue-property-decorator';
 export default class AppSharePage extends Vue{
     
     /**
-     * vue生命周期 -- created
+     * 链接参数
      *
      * @type {*}
      * @memberof AppShareTheme
      */
     public urlParams: any = {};
+
+    /**
+     * 分享用户
+     *
+     * @type {*}
+     * @memberof AppShareTheme
+     */
+    public userName: any;
 
     /**
      * vue生命周期 -- created
@@ -33,6 +39,7 @@ export default class AppSharePage extends Vue{
      */
     public created() {
         this.urlParams = this.parseViewParam(window.location.href);
+        this.userName = decodeURIComponent(this.urlParams['shareUserName']);
     }
 
     /**

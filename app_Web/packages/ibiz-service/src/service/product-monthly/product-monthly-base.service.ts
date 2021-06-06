@@ -95,20 +95,6 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return this.http.post(`/productmonthlies`, _data);
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productmonthlies/getdraft`, _data);
-        return res;
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -142,6 +128,20 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/productmonthlies/getdraft`, _data);
+        return res;
     }
 
     /**

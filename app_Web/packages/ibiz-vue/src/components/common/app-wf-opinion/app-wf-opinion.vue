@@ -1,5 +1,5 @@
 <template>
-    <div :class="['app-wf-opinion', isShow ? 'is-show' : '']">
+    <div :class="['app-wf-opinion', isShow ? 'is-show' : '']" ref='wf-opinion'>
         <el-button v-if="!isShow" type="primary" size="small" @click="click">意见</el-button>
         <template>
             <div v-show="isShow" ref="wf-opinion-container" class="wf-opinion-container" :style="{ 'height': containerHeight + 'px' }">
@@ -115,7 +115,7 @@ export default class AppWFOpinion extends Vue {
      * @type {boolean}
      * @memberof AppWFOpinion
      */
-    public isShow: boolean = false;
+    public isShow: boolean = true;
 
     /**
      * 过滤选中项
@@ -148,6 +148,21 @@ export default class AppWFOpinion extends Vue {
      */
     public created() {
         this.handleFilterItems();
+    }
+
+    /**
+     * Vue生命周期 -- mounted
+     * 
+     * @memberof AppWFOpinion
+     */
+    public mounted() {
+        this.$nextTick(() => {
+            const dom: any = this.$refs['wf-opinion'];
+            if (dom && dom.parentNode) {
+                dom.parentNode.style.position = 'sticky';
+                dom.parentNode.style.bottom = '0px';
+            }
+        })
     }
 
     /**

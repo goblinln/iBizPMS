@@ -98,6 +98,18 @@ public class MonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("quickTest('IBZ_MONTHLY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"月报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/monthlies/fetchdefault")
+	public ResponseEntity<List<MonthlyDTO>> fetchdefault(@RequestBody IbzMonthlySearchContext context) {
+        Page<IbzMonthly> domains = ibzmonthlyService.searchDefault(context) ;
+        List<MonthlyDTO> list = monthlyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
     @ApiOperation(value = "提交", tags = {"月报" },  notes = "提交")
 	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/submit")
@@ -112,18 +124,22 @@ public class MonthlyResource {
     }
 
 
-    @PreAuthorize("quickTest('IBZ_MONTHLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"月报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/monthlies/fetchdefault")
-	public ResponseEntity<List<MonthlyDTO>> fetchdefault(@RequestBody IbzMonthlySearchContext context) {
-        Page<IbzMonthly> domains = ibzmonthlyService.searchDefault(context) ;
-        List<MonthlyDTO> list = monthlyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @VersionCheck(entity = "ibzmonthly" , versionfield = "updatedate")
+    @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
+    @ApiOperation(value = "更新月报", tags = {"月报" },  notes = "更新月报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/monthlies/{monthly_id}")
+    @Transactional
+    public ResponseEntity<MonthlyDTO> update(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
+		IbzMonthly domain  = monthlyMapping.toDomain(monthlydto);
+        domain.setIbzmonthlyid(monthly_id);
+		ibzmonthlyService.update(domain );
+		MonthlyDTO dto = monthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(monthly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
     @ApiOperation(value = "定时生成用户月报", tags = {"月报" },  notes = "定时生成用户月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/monthlies/{monthly_id}/createusermonthly")
@@ -149,22 +165,6 @@ public class MonthlyResource {
         Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         monthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(monthlydto);
-    }
-
-
-    @VersionCheck(entity = "ibzmonthly" , versionfield = "updatedate")
-    @PreAuthorize("test('IBZ_MONTHLY', #monthly_id, 'NONE')")
-    @ApiOperation(value = "更新月报", tags = {"月报" },  notes = "更新月报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/monthlies/{monthly_id}")
-    @Transactional
-    public ResponseEntity<MonthlyDTO> update(@PathVariable("monthly_id") Long monthly_id, @RequestBody MonthlyDTO monthlydto) {
-		IbzMonthly domain  = monthlyMapping.toDomain(monthlydto);
-        domain.setIbzmonthlyid(monthly_id);
-		ibzmonthlyService.update(domain );
-		MonthlyDTO dto = monthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(monthly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

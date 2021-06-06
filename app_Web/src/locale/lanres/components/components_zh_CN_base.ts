@@ -217,7 +217,18 @@ function getLocaleResourceBase(){
           preview: "预览",
           save: "保存配置",
           reset: "重置",
-          success: "保存自定义主题成功"
+          success: {
+            savethemeoption: "保存自定义主题成功",
+            copyurl: '复制分享链接成功'
+          },
+          share: "分享",
+          error: {
+            getshareurl: "获取分享主题配置失败",
+            generateshareurl: "生成分享链接失败"
+          },
+          configbutton: '复制',
+          createurl: '已创建分享链接',
+          applytheme: '已应用分享主题',
         },
         appformgroup: {
           hide: '隐藏字段',
@@ -466,6 +477,11 @@ function getLocaleResourceBase(){
           confirm: "确认关闭所有界面?",
           close: "关闭所有视图",
           toperror: "上飘窗打开视图参数转换异常"
+        },
+        appsharepage: {
+          apply: '应用',
+          cancel: '取消',
+          invite: '邀请您加入主题应用!'
         }
     };
     return data;

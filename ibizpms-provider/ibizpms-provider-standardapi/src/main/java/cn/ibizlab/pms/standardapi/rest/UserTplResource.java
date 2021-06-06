@@ -53,15 +53,6 @@ public class UserTplResource {
     public UserTplMapping usertplMapping;
 
 
-    @PreAuthorize("quickTest('ZT_USERTPL','CREATE')")
-    @ApiOperation(value = "根据系统用户获取用户模板草稿", tags = {"用户模板" },  notes = "根据系统用户获取用户模板草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usertpls/getdraft")
-    public ResponseEntity<UserTplDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserTplDTO dto) {
-        UserTpl domain = usertplMapping.toDomain(dto);
-        
-        return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
-    }
-
     @PreAuthorize("quickTest('ZT_USERTPL','READ')")
 	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户模板" } ,notes = "根据系统用户获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usertpls/fetchmy")
@@ -83,6 +74,15 @@ public class UserTplResource {
         UserTpl domain = usertplService.get(usertpl_id);
         UserTplDTO dto = usertplMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('ZT_USERTPL','CREATE')")
+    @ApiOperation(value = "根据系统用户获取用户模板草稿", tags = {"用户模板" },  notes = "根据系统用户获取用户模板草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usertpls/getdraft")
+    public ResponseEntity<UserTplDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserTplDTO dto) {
+        UserTpl domain = usertplMapping.toDomain(dto);
+        
+        return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'DELETE')")
