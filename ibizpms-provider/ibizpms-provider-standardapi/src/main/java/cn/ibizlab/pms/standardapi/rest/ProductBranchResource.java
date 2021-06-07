@@ -62,6 +62,8 @@ public class ProductBranchResource {
         domain.setId(productbranch_id);
 		branchService.update(domain);
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -81,6 +83,8 @@ public class ProductBranchResource {
     public ResponseEntity<ProductBranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productbranch_id") Long productbranch_id) {
         Branch domain = branchService.get(productbranch_id);
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -118,6 +122,8 @@ public class ProductBranchResource {
         domain.setProduct(product_id);
 		branchService.create(domain);
         ProductBranchDTO dto = productbranchMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

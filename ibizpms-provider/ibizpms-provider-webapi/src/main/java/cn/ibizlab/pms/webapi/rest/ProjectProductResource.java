@@ -61,6 +61,8 @@ public class ProjectProductResource {
         domain.setProduct(product_id);
 		projectproductService.create(domain);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectproductRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -75,6 +77,8 @@ public class ProjectProductResource {
         domain.setId(projectproduct_id);
 		projectproductService.update(domain);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectproductRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -100,6 +104,8 @@ public class ProjectProductResource {
     public ResponseEntity<ProjectProductDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
         ProjectProduct domain = projectproductService.get(projectproduct_id);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectproductRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -165,6 +171,8 @@ public class ProjectProductResource {
         domain.setProject(project_id);
 		projectproductService.create(domain);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectproductRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -179,6 +187,8 @@ public class ProjectProductResource {
         domain.setId(projectproduct_id);
 		projectproductService.update(domain);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectproductRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -204,6 +214,8 @@ public class ProjectProductResource {
     public ResponseEntity<ProjectProductDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
         ProjectProduct domain = projectproductService.get(projectproduct_id);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectproductRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

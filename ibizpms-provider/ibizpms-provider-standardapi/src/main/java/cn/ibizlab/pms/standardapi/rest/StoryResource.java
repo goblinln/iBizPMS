@@ -62,6 +62,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.close(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -74,6 +76,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -86,6 +90,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -95,6 +101,8 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
         Story domain = storyService.get(story_id);
         StoryDTO dto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -155,6 +163,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -194,6 +204,8 @@ public class StoryResource {
         domain.setProduct(product_id);
 		storyService.create(domain);
         StoryDTO dto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -219,6 +231,8 @@ public class StoryResource {
         domain.setId(story_id);
 		storyService.update(domain);
         StoryDTO dto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -232,6 +246,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.review(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -244,6 +260,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.change(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -256,6 +274,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.storyNFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -269,6 +289,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.close(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -281,6 +303,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.storyFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -293,6 +317,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.assignTo(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -302,6 +328,8 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id) {
         Story domain = storyService.get(story_id);
         StoryDTO dto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -362,6 +390,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.activate(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -401,6 +431,8 @@ public class StoryResource {
         
 		storyService.create(domain);
         StoryDTO dto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -426,6 +458,8 @@ public class StoryResource {
         domain.setId(story_id);
 		storyService.update(domain);
         StoryDTO dto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -439,6 +473,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.review(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -451,6 +487,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.change(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
@@ -463,6 +501,8 @@ public class StoryResource {
         domain.setId(story_id);
         domain = storyService.storyNFavorites(domain) ;
         storydto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 

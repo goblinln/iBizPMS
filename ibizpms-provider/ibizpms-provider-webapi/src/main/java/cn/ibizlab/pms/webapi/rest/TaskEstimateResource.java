@@ -280,6 +280,8 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
         TaskEstimate domain = taskestimateService.get(taskestimate_id);
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -291,6 +293,8 @@ public class TaskEstimateResource {
         domain.setTask(task_id);
 		taskestimateService.create(domain);
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -337,6 +341,8 @@ public class TaskEstimateResource {
         domain.setId(taskestimate_id);
 		taskestimateService.update(domain);
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -357,6 +363,8 @@ public class TaskEstimateResource {
         domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
 
@@ -483,6 +491,8 @@ public class TaskEstimateResource {
     public ResponseEntity<TaskEstimateDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskestimate_id") Long taskestimate_id) {
         TaskEstimate domain = taskestimateService.get(taskestimate_id);
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -494,6 +504,8 @@ public class TaskEstimateResource {
         domain.setTask(task_id);
 		taskestimateService.create(domain);
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -540,6 +552,8 @@ public class TaskEstimateResource {
         domain.setId(taskestimate_id);
 		taskestimateService.update(domain);
         TaskEstimateDTO dto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -560,6 +574,8 @@ public class TaskEstimateResource {
         domain.setId(taskestimate_id);
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
 

@@ -267,6 +267,8 @@ public class ProjectModuleResource {
         domain.setRoot(project_id);
 		projectmoduleService.create(domain);
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -280,6 +282,8 @@ public class ProjectModuleResource {
         domain.setId(projectmodule_id);
 		projectmoduleService.update(domain);
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -305,6 +309,8 @@ public class ProjectModuleResource {
     public ResponseEntity<ProjectModuleDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id) {
         ProjectModule domain = projectmoduleService.get(projectmodule_id);
         ProjectModuleDTO dto = projectmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -333,6 +339,8 @@ public class ProjectModuleResource {
         domain.setId(projectmodule_id);
         domain = projectmoduleService.fix(domain) ;
         projectmoduledto = projectmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectmoduleRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 
@@ -345,6 +353,8 @@ public class ProjectModuleResource {
         domain.setId(projectmodule_id);
         domain = projectmoduleService.removeModule(domain) ;
         projectmoduledto = projectmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectmoduleRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(projectmoduledto);
     }
 

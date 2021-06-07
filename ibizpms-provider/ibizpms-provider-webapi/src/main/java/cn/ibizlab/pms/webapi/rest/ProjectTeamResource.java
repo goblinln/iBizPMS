@@ -225,6 +225,8 @@ public class ProjectTeamResource {
         domain.setRoot(project_id);
 		projectteamService.create(domain);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -238,6 +240,8 @@ public class ProjectTeamResource {
         domain.setId(projectteam_id);
 		projectteamService.update(domain);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -263,6 +267,8 @@ public class ProjectTeamResource {
     public ResponseEntity<ProjectTeamDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
         ProjectTeam domain = projectteamService.get(projectteam_id);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -291,6 +297,8 @@ public class ProjectTeamResource {
         domain.setId(projectteam_id);
         domain = projectteamService.getUserRole(domain) ;
         projectteamdto = projectteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
 

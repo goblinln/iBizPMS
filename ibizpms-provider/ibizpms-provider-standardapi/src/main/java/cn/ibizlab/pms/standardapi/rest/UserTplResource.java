@@ -116,6 +116,8 @@ public class UserTplResource {
         if(!usertplRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         UserTplDTO dto = usertplMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = usertplRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -126,6 +128,8 @@ public class UserTplResource {
     public ResponseEntity<UserTplDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usertpl_id") Long usertpl_id) {
         UserTpl domain = usertplService.get(usertpl_id);
         UserTplDTO dto = usertplMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = usertplRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -139,6 +143,8 @@ public class UserTplResource {
         if(!usertplRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         UserTplDTO dto = usertplMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = usertplRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

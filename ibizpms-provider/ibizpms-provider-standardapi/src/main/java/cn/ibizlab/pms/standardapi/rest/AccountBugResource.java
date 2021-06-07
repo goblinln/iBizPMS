@@ -140,6 +140,8 @@ public class AccountBugResource {
     public ResponseEntity<AccountBugDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountbug_id") Long accountbug_id) {
         Bug domain = bugService.get(accountbug_id);
         AccountBugDTO dto = accountbugMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -59,6 +59,8 @@ public class ProductTeamResource {
     public ResponseEntity<ProductTeamDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
         PRODUCTTEAM domain = productteamService.get(productteam_id);
         ProductTeamDTO dto = productteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -70,6 +72,8 @@ public class ProductTeamResource {
         domain.setRoot(product_id);
 		productteamService.create(domain);
         ProductTeamDTO dto = productteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -133,6 +137,8 @@ public class ProductTeamResource {
         domain.setId(productteam_id);
 		productteamService.update(domain);
         ProductTeamDTO dto = productteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

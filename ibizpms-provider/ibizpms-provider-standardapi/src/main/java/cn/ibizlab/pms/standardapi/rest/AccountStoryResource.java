@@ -114,6 +114,8 @@ public class AccountStoryResource {
     public ResponseEntity<AccountStoryDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountstory_id") Long accountstory_id) {
         Story domain = storyService.get(accountstory_id);
         AccountStoryDTO dto = accountstoryMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

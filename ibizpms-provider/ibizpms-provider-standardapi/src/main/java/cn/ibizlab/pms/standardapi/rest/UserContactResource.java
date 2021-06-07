@@ -184,6 +184,8 @@ public class UserContactResource {
     public ResponseEntity<UserContactDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
         UserContact domain = usercontactService.get(usercontact_id);
         UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = usercontactRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -196,6 +198,8 @@ public class UserContactResource {
         domain.setId(usercontact_id);
 		usercontactService.update(domain);
         UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = usercontactRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -208,6 +212,8 @@ public class UserContactResource {
         
 		usercontactService.create(domain);
         UserContactDTO dto = usercontactMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = usercontactRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

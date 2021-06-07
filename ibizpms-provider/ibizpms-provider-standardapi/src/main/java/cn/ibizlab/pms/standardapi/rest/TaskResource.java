@@ -62,6 +62,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.close(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -74,6 +76,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.cancel(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -110,6 +114,8 @@ public class TaskResource {
     public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
         Task domain = taskService.get(task_id);
         TaskDTO dto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -135,6 +141,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.start(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -161,6 +169,8 @@ public class TaskResource {
         domain.setId(task_id);
 		taskService.update(domain);
         TaskDTO dto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -174,6 +184,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.pause(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -186,6 +198,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.activate(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -198,6 +212,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -210,6 +226,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.taskFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -222,6 +240,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.finish(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -234,6 +254,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.restart(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -245,6 +267,8 @@ public class TaskResource {
         domain.setProject(project_id);
 		taskService.create(domain);
         TaskDTO dto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -269,6 +293,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.assignTo(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
@@ -290,6 +316,8 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.confirmStoryChange(domain) ;
         taskdto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 

@@ -170,6 +170,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -185,6 +187,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -210,6 +214,8 @@ public class TestRunResource {
     public ResponseEntity<TestRunDTO> getByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun domain = testrunService.get(testrun_id);
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -266,6 +272,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -281,6 +289,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -306,6 +316,8 @@ public class TestRunResource {
     public ResponseEntity<TestRunDTO> getByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun domain = testrunService.get(testrun_id);
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -362,6 +374,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -377,6 +391,8 @@ public class TestRunResource {
         if(!testrunRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -402,6 +418,8 @@ public class TestRunResource {
     public ResponseEntity<TestRunDTO> getByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("testrun_id") Long testrun_id) {
         TestRun domain = testrunService.get(testrun_id);
         TestRunDTO dto = testrunMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testrunRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

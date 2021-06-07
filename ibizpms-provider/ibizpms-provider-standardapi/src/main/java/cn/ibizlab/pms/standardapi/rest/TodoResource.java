@@ -187,6 +187,8 @@ public class TodoResource {
     public ResponseEntity<TodoDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id) {
         Todo domain = todoService.get(todo_id);
         TodoDTO dto = todoMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = todoRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -214,6 +216,8 @@ public class TodoResource {
         if(!todoRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TodoDTO dto = todoMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = todoRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -267,6 +271,8 @@ public class TodoResource {
         if(!todoRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         TodoDTO dto = todoMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = todoRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -280,6 +286,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.finish(domain) ;
         tododto = todoMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = todoRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
 
@@ -292,6 +300,8 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.start(domain) ;
         tododto = todoMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = todoRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
 

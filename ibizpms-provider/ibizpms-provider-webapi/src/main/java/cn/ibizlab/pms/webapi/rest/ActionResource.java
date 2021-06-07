@@ -220,6 +220,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_BUG", bug_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -317,6 +319,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByBug(@PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_BUG", bug_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -328,6 +332,8 @@ public class ActionResource {
         domain.setObjectid(bug_id);domain.setObjecttype("bug");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_BUG", bug_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -356,6 +362,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -453,6 +461,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -464,6 +474,8 @@ public class ActionResource {
         domain.setObjectid(product_id);domain.setObjecttype("product");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -492,6 +504,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCTPLAN", productplan_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -589,6 +603,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCTPLAN", productplan_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -600,6 +616,8 @@ public class ActionResource {
         domain.setObjectid(productplan_id);domain.setObjecttype("productplan");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCTPLAN", productplan_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -628,6 +646,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -725,6 +745,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -736,6 +758,8 @@ public class ActionResource {
         domain.setObjectid(task_id);domain.setObjecttype("task");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -764,6 +788,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_RELEASE", release_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -861,6 +887,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByRelease(@PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_RELEASE", release_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -872,6 +900,8 @@ public class ActionResource {
         domain.setObjectid(release_id);domain.setObjecttype("release");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_RELEASE", release_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -900,6 +930,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_WEEKLY", ibzweekly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -997,6 +1029,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_WEEKLY", ibzweekly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1008,6 +1042,8 @@ public class ActionResource {
         domain.setObjectid(ibzweekly_id);domain.setObjecttype("weekly");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_WEEKLY", ibzweekly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1036,6 +1072,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TODO", todo_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1133,6 +1171,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByTodo(@PathVariable("todo_id") Long todo_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TODO", todo_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1144,6 +1184,8 @@ public class ActionResource {
         domain.setObjectid(todo_id);domain.setObjecttype("todo");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TODO", todo_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1172,6 +1214,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTREPORT", testreport_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1269,6 +1313,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByTestReport(@PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTREPORT", testreport_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1280,6 +1326,8 @@ public class ActionResource {
         domain.setObjectid(testreport_id);domain.setObjecttype("testreport");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTREPORT", testreport_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1308,6 +1356,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1405,6 +1455,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1416,6 +1468,8 @@ public class ActionResource {
         domain.setObjectid(doclib_id);domain.setObjecttype("doclib");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1444,6 +1498,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOC", doc_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1541,6 +1597,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOC", doc_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1552,6 +1610,8 @@ public class ActionResource {
         domain.setObjectid(doc_id);domain.setObjecttype("doc");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOC", doc_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1580,6 +1640,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_DAILY", ibzdaily_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1677,6 +1739,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_DAILY", ibzdaily_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1688,6 +1752,8 @@ public class ActionResource {
         domain.setObjectid(ibzdaily_id);domain.setObjecttype("daily");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_DAILY", ibzdaily_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1716,6 +1782,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_MONTHLY", ibzmonthly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1813,6 +1881,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_MONTHLY", ibzmonthly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1824,6 +1894,8 @@ public class ActionResource {
         domain.setObjectid(ibzmonthly_id);domain.setObjecttype("monthly");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_MONTHLY", ibzmonthly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1852,6 +1924,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_REPORTLY", ibzreportly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1949,6 +2023,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_REPORTLY", ibzreportly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1960,6 +2036,8 @@ public class ActionResource {
         domain.setObjectid(ibzreportly_id);domain.setObjecttype("reportly");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_REPORTLY", ibzreportly_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1988,6 +2066,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTTASK", testtask_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2085,6 +2165,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByTestTask(@PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTTASK", testtask_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2096,6 +2178,8 @@ public class ActionResource {
         domain.setObjectid(testtask_id);domain.setObjecttype("testtask");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTTASK", testtask_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2124,6 +2208,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTSUITE", testsuite_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2221,6 +2307,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByTestSuite(@PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTSUITE", testsuite_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2232,6 +2320,8 @@ public class ActionResource {
         domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_TESTSUITE", testsuite_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2260,6 +2350,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_CASE", case_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2357,6 +2449,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByCase(@PathVariable("case_id") Long case_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_CASE", case_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2368,6 +2462,8 @@ public class ActionResource {
         domain.setObjectid(case_id);domain.setObjecttype("case");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_CASE", case_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2396,6 +2492,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_BUILD", build_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2493,6 +2591,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByBuild(@PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_BUILD", build_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2504,6 +2604,8 @@ public class ActionResource {
         domain.setObjectid(build_id);domain.setObjecttype("Build");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_BUILD", build_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2532,6 +2634,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_LIB", ibzlib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2629,6 +2733,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_LIB", ibzlib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2640,6 +2746,8 @@ public class ActionResource {
         domain.setObjectid(ibzlib_id);domain.setObjecttype("caselib");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("IBZ_LIB", ibzlib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2668,6 +2776,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_STORY", story_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2765,6 +2875,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_STORY", story_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2776,6 +2888,8 @@ public class ActionResource {
         domain.setObjectid(story_id);domain.setObjecttype("story");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_STORY", story_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2804,6 +2918,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2901,6 +3017,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2912,6 +3030,8 @@ public class ActionResource {
         domain.setObjectid(project_id);domain.setObjecttype("project");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2941,6 +3061,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3038,6 +3160,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3049,6 +3173,8 @@ public class ActionResource {
         domain.setObjectid(doclib_id);domain.setObjecttype("doclib");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3078,6 +3204,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3175,6 +3303,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3186,6 +3316,8 @@ public class ActionResource {
         domain.setObjectid(bug_id);domain.setObjecttype("bug");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3215,6 +3347,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3312,6 +3446,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3323,6 +3459,8 @@ public class ActionResource {
         domain.setObjectid(release_id);domain.setObjecttype("release");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3352,6 +3490,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3449,6 +3589,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductTestSuite(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3460,6 +3602,8 @@ public class ActionResource {
         domain.setObjectid(testsuite_id);domain.setObjecttype("testsuite");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3489,6 +3633,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3586,6 +3732,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3597,6 +3745,8 @@ public class ActionResource {
         domain.setObjectid(testtask_id);domain.setObjecttype("testtask");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3626,6 +3776,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3723,6 +3875,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3734,6 +3888,8 @@ public class ActionResource {
         domain.setObjectid(testreport_id);domain.setObjecttype("testreport");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3763,6 +3919,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3860,6 +4018,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3871,6 +4031,8 @@ public class ActionResource {
         domain.setObjectid(build_id);domain.setObjecttype("Build");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3900,6 +4062,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -3997,6 +4161,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4008,6 +4174,8 @@ public class ActionResource {
         domain.setObjectid(case_id);domain.setObjecttype("case");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4037,6 +4205,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4134,6 +4304,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4145,6 +4317,8 @@ public class ActionResource {
         domain.setObjectid(productplan_id);domain.setObjecttype("productplan");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4174,6 +4348,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4271,6 +4447,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4282,6 +4460,8 @@ public class ActionResource {
         domain.setObjectid(story_id);domain.setObjecttype("story");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4311,6 +4491,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4408,6 +4590,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4419,6 +4603,8 @@ public class ActionResource {
         domain.setObjectid(doc_id);domain.setObjecttype("doc");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4448,6 +4634,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4545,6 +4733,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4556,6 +4746,8 @@ public class ActionResource {
         domain.setObjectid(doclib_id);domain.setObjecttype("doclib");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4585,6 +4777,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4682,6 +4876,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4693,6 +4889,8 @@ public class ActionResource {
         domain.setObjectid(task_id);domain.setObjecttype("task");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4722,6 +4920,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4819,6 +5019,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4830,6 +5032,8 @@ public class ActionResource {
         domain.setObjectid(testreport_id);domain.setObjecttype("testreport");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4859,6 +5063,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4956,6 +5162,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4967,6 +5175,8 @@ public class ActionResource {
         domain.setObjectid(testtask_id);domain.setObjecttype("testtask");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -4996,6 +5206,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5093,6 +5305,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5104,6 +5318,8 @@ public class ActionResource {
         domain.setObjectid(build_id);domain.setObjecttype("Build");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5134,6 +5350,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5231,6 +5449,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5242,6 +5462,8 @@ public class ActionResource {
         domain.setObjectid(doc_id);domain.setObjecttype("doc");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5272,6 +5494,8 @@ public class ActionResource {
         domain.setId(action_id);
 		actionService.update(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5369,6 +5593,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> getByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -5380,6 +5606,8 @@ public class ActionResource {
         domain.setObjectid(doc_id);domain.setObjecttype("doc");
 		actionService.create(domain);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = actionRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

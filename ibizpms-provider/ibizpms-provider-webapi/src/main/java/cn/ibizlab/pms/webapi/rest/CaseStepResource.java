@@ -227,6 +227,8 @@ public class CaseStepResource {
         domain.setIbizcase(case_id);
 		casestepService.create(domain);
         CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = casestepRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -240,6 +242,8 @@ public class CaseStepResource {
         domain.setId(casestep_id);
 		casestepService.update(domain);
         CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = casestepRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -265,6 +269,8 @@ public class CaseStepResource {
     public ResponseEntity<CaseStepDTO> getByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
         CaseStep domain = casestepService.get(casestep_id);
         CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = casestepRuntime.getOPPrivs("ZT_CASE", case_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -383,6 +389,8 @@ public class CaseStepResource {
         domain.setIbizcase(case_id);
 		casestepService.create(domain);
         CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = casestepRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -396,6 +404,8 @@ public class CaseStepResource {
         domain.setId(casestep_id);
 		casestepService.update(domain);
         CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = casestepRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -421,6 +431,8 @@ public class CaseStepResource {
     public ResponseEntity<CaseStepDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
         CaseStep domain = casestepService.get(casestep_id);
         CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = casestepRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

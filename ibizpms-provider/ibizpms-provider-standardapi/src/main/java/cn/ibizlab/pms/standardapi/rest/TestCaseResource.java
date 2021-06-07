@@ -69,6 +69,8 @@ public class TestCaseResource {
         domain.setId(testcase_id);
 		caseService.update(domain);
         TestCaseDTO dto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -91,6 +93,8 @@ public class TestCaseResource {
         domain.setId(testcase_id);
         domain = caseService.runCases(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -103,6 +107,8 @@ public class TestCaseResource {
         domain.setId(testcase_id);
         domain = caseService.testsuitelinkCase(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -122,6 +128,8 @@ public class TestCaseResource {
         domain.setId(testcase_id);
         domain = caseService.caseNFavorite(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -188,6 +196,8 @@ public class TestCaseResource {
         domain.setId(testcase_id);
         domain = caseService.caseFavorite(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -199,6 +209,8 @@ public class TestCaseResource {
         domain.setProduct(product_id);
 		caseService.create(domain);
         TestCaseDTO dto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -212,6 +224,8 @@ public class TestCaseResource {
         domain.setId(testcase_id);
         domain = caseService.testRunCases(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -234,6 +248,8 @@ public class TestCaseResource {
     public ResponseEntity<TestCaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id) {
         Case domain = caseService.get(testcase_id);
         TestCaseDTO dto = testcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

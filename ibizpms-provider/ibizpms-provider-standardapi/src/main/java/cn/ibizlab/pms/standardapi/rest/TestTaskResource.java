@@ -62,6 +62,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.close(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -88,6 +90,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
 		testtaskService.update(domain);
         TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -101,6 +105,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.activate(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -110,6 +116,8 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
         TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -135,6 +143,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.start(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -147,6 +157,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.block(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -168,6 +180,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.linkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -179,6 +193,8 @@ public class TestTaskResource {
         domain.setProduct(product_id);
 		testtaskService.create(domain);
         TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -207,6 +223,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -220,6 +238,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.close(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -246,6 +266,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
 		testtaskService.update(domain);
         TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -259,6 +281,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.activate(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -268,6 +292,8 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
         TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -293,6 +319,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.start(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -305,6 +333,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.block(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -326,6 +356,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.linkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -337,6 +369,8 @@ public class TestTaskResource {
         domain.setProject(project_id);
 		testtaskService.create(domain);
         TestTaskDTO dto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -365,6 +399,8 @@ public class TestTaskResource {
         domain.setId(testtask_id);
         domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 

@@ -118,6 +118,8 @@ public class AccountProjectResource {
     public ResponseEntity<AccountProjectDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountproject_id") Long accountproject_id) {
         Project domain = projectService.get(accountproject_id);
         AccountProjectDTO dto = accountprojectMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = projectRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

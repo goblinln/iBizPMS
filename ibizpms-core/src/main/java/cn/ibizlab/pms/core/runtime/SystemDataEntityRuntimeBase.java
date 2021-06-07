@@ -896,6 +896,56 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         return opprivsMap;
     }
 
+    /**
+     * 根据父数据获取数据全部能力
+     *
+     * @param PDEName
+     * @param pKey
+     * @param key
+     * @return
+     */
+    public Map<String, Integer> getOPPrivs(String PDEName, Serializable pKey, Serializable key) {
+        Map<String, Integer> opprivsMap = new HashMap<>();
+        //操作映射
+        List<IPSDEOPPriv> mspdeopPrivs = null;
+        try {
+            mspdeopPrivs = this.getPSDataEntity().getAllPSDEOPPrivs().stream().filter(oppriv -> StringUtils.isNotBlank(oppriv.getMapPSDEName()) && oppriv.getMapPSDEName().equals(PDEName)).collect(Collectors.toList());
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("根据[%s]数据获取数据全部能力发生错误：%s", PDEName, e.getMessage()), Errors.INTERNALERROR, this);
+        }
+        Map<String, String> opprivsPDEMaps = new HashMap<>();
+        mspdeopPrivs.stream().forEach(oppriv -> {
+            if (!opprivsPDEMaps.containsKey(oppriv.getName())) {
+                opprivsPDEMaps.put(oppriv.getName(), oppriv.getMapPSDEOPPrivName());
+            }
+        });
+
+        Map<String, Integer> opprivsPDEMapTest = new HashMap<>();
+        mspdeopPrivs.stream().forEach(oppriv -> {
+            if (!opprivsPDEMapTest.containsKey(oppriv.getMapPSDEOPPrivName())) {
+                opprivsPDEMapTest.put(oppriv.getMapPSDEOPPrivName(), 0);
+            }
+        });
+        try {
+            SystemDataEntityRuntime pDataEntityRuntime = (SystemDataEntityRuntime) this.getSystemRuntime().getDataEntityRuntime(PDEName);
+            opprivsPDEMapTest.entrySet().stream().forEach(opprivsrEntry -> {
+                if (pDataEntityRuntime.test(pKey, opprivsrEntry.getKey())) {
+                    opprivsrEntry.setValue(1);
+                }
+            });
+        } catch (Exception e) {
+            throw new DataEntityRuntimeException(String.format("测试父[%s]数据[%s]能力发生错误：%s", PDEName, pKey, e.getMessage()), Errors.INTERNALERROR, this);
+        }
+        allOPPrivs.entrySet().stream().forEach(opprivEntry -> {
+            if (!opprivsPDEMaps.containsKey(opprivEntry.getKey())) {
+                opprivsMap.put(opprivEntry.getKey(), 0);
+            } else {
+                opprivsMap.put(opprivEntry.getKey(), opprivsPDEMapTest.get(opprivsPDEMaps.get((opprivEntry.getKey()))));
+            }
+        });
+        return opprivsMap;
+    }
+
     public boolean isRtmodel() {
         return ((SystemRuntime) this.getSystemRuntime()).isRtmodel();
     }

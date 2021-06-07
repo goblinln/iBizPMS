@@ -140,6 +140,8 @@ public class AccountTestCaseResource {
     public ResponseEntity<AccountTestCaseDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accounttestcase_id") Long accounttestcase_id) {
         Case domain = caseService.get(accounttestcase_id);
         AccountTestCaseDTO dto = accounttestcaseMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

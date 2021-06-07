@@ -132,6 +132,8 @@ public class AccountProductResource {
     public ResponseEntity<AccountProductDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountproduct_id") Long accountproduct_id) {
         Product domain = productService.get(accountproduct_id);
         AccountProductDTO dto = accountproductMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = productRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

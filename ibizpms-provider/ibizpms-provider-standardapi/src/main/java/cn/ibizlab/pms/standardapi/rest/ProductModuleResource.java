@@ -72,6 +72,8 @@ public class ProductModuleResource {
     public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
         ProductModule domain = productmoduleService.get(productmodule_id);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -108,6 +110,8 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
 		productmoduleService.update(domain);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -120,6 +124,8 @@ public class ProductModuleResource {
         domain.setRoot(product_id);
 		productmoduleService.create(domain);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

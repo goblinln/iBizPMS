@@ -63,6 +63,8 @@ public class BuildResource {
         domain.setId(build_id);
 		buildService.update(domain);
         BuildDTO dto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -82,6 +84,8 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id) {
         Build domain = buildService.get(build_id);
         BuildDTO dto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -94,6 +98,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -105,6 +111,8 @@ public class BuildResource {
         domain.setProduct(product_id);
 		buildService.create(domain);
         BuildDTO dto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -144,6 +152,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -171,6 +181,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.unlinkStory(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -183,6 +195,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.linkBug(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -197,6 +211,8 @@ public class BuildResource {
         domain.setId(build_id);
 		buildService.update(domain);
         BuildDTO dto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -216,6 +232,8 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id) {
         Build domain = buildService.get(build_id);
         BuildDTO dto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -228,6 +246,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -239,6 +259,8 @@ public class BuildResource {
         domain.setProject(project_id);
 		buildService.create(domain);
         BuildDTO dto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -278,6 +300,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -305,6 +329,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.unlinkStory(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -317,6 +343,8 @@ public class BuildResource {
         domain.setId(build_id);
         domain = buildService.linkBug(domain) ;
         builddto = buildMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 

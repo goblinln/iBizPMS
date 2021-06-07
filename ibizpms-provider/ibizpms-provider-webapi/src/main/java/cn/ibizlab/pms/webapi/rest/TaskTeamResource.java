@@ -61,6 +61,8 @@ public class TaskTeamResource {
         domain.setRoot(task_id);
 		taskteamService.create(domain);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskteamRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -74,6 +76,8 @@ public class TaskTeamResource {
         domain.setId(taskteam_id);
 		taskteamService.update(domain);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskteamRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -99,6 +103,8 @@ public class TaskTeamResource {
     public ResponseEntity<TaskTeamDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
         TaskTeam domain = taskteamService.get(taskteam_id);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskteamRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -152,6 +158,8 @@ public class TaskTeamResource {
         domain.setRoot(task_id);
 		taskteamService.create(domain);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -165,6 +173,8 @@ public class TaskTeamResource {
         domain.setId(taskteam_id);
 		taskteamService.update(domain);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -190,6 +200,8 @@ public class TaskTeamResource {
     public ResponseEntity<TaskTeamDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
         TaskTeam domain = taskteamService.get(taskteam_id);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = taskteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

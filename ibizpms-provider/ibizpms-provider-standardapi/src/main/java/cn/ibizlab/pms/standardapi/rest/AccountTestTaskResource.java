@@ -128,6 +128,8 @@ public class AccountTestTaskResource {
     public ResponseEntity<AccountTestTaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accounttesttask_id") Long accounttesttask_id) {
         TestTask domain = testtaskService.get(accounttesttask_id);
         AccountTestTaskDTO dto = accounttesttaskMapping.toDto(domain);
+        Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
