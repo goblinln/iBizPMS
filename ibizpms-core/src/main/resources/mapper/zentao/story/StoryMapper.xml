@@ -831,7 +831,7 @@
 
     <!--数据查询[MyFavorites]-->
     <sql id="MyFavorites" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`,	 	t1.`COLOR`,	 	t1.`ESTIMATE`,	 	t1.`ID`, 	1 AS `ISFAVORITES`, 	t1.`MODULE`, 	t11.`NAME` AS `MODULENAME`,	 	t1.`OPENEDBY`,	 	t1.`PLAN`, 	t1.`PRI`, 	t31.`NAME` AS `PRODOCTNAME`, 	t1.`STAGE`, 	t1.`STATUS`,	 	t1.`TITLE`,	 	'' AS isChild , 	t1.STORYSN,         t1.product as product  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
+		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`,	 	t1.`COLOR`,	 	t1.`ESTIMATE`,	 	t1.`ID`, 	1 AS `ISFAVORITES`, 	t1.`MODULE`, 	t11.`NAME` AS `MODULENAME`,	 	t1.`OPENEDBY`,	 	t1.`PLAN`,         (select GROUP_CONCAT(t.title)  from zt_productplan t where t.deleted = '0' and t.id = t1.`PLAN`) AS `PLANNAME`, 	t1.`PRI`, 	t31.`NAME` AS `PRODOCTNAME`, 	t1.`STAGE`, 	t1.`STATUS`,	 	t1.`TITLE`,	 	'' AS isChild , 	t1.STORYSN,         t1.product as product  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>

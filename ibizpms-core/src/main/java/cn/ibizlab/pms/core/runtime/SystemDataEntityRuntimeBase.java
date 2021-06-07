@@ -31,6 +31,7 @@ import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCode;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
+import net.ibizsys.model.dataentity.priv.IPSDEOPPriv;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
 import net.ibizsys.model.dataentity.wf.IPSDEWF;
