@@ -148,6 +148,29 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         return this.condCache.get('view');
     }
     /**
+     * FetchProject
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchproject`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/employees/${_context.employee}`);
+        return res;
+    }
+    /**
      * FetchTask
      *
      * @param {*} [_context={}]
@@ -192,18 +215,6 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         return this.http.post(`/employees/fetchtaskmulti`, _data);
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/employees/${_context.employee}`);
-        return res;
-    }
-    /**
      * FetchProduct
      *
      * @param {*} [_context={}]
@@ -224,16 +235,5 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      */
     async FetchBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/employees/fetchbug`, _data);
-    }
-    /**
-     * FetchProject
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchproject`, _data);
     }
 }

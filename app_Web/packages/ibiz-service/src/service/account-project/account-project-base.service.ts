@@ -185,6 +185,20 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         return this.condCache.get('view');
     }
     /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountProjectService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
+        }
+        return this.http.post(`/accountprojects/fetchmy`, _data);
+    }
+    /**
      * FetchAccount
      *
      * @param {*} [_context={}]
@@ -213,19 +227,5 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         }
         const res = await this.http.get(`/accountprojects/${_context.accountproject}`);
         return res;
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountProjectService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
-        }
-        return this.http.post(`/accountprojects/fetchmy`, _data);
     }
 }

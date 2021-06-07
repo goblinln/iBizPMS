@@ -96,29 +96,6 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.condCache.get('view');
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productlines/fetchdefault`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productlines/${_context.productline}`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -133,16 +110,15 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return res;
     }
     /**
-     * Get
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductLineService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productlines/${_context.productline}`);
-        return res;
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productlines/fetchdefault`, _data);
     }
     /**
      * Remove
@@ -154,6 +130,18 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.delete(`/productlines/${_context.productline}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productlines/${_context.productline}`, _data);
     }
     /**
      * Create
@@ -172,5 +160,17 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/productlines`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/productlines/${_context.productline}`);
+        return res;
     }
 }
