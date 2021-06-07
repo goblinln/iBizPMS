@@ -276,6 +276,10 @@
         "name" : "NAME",
         "codeName" : "Name"
       },
+      "getPSSysPFPlugin" : {
+        "pluginType" : "GRID_COLRENDER",
+        "pluginCode" : "girdCounmColor"
+      },
       "width" : 500,
       "widthUnit" : "STAR",
       "enableLinkView" : true,
@@ -435,6 +439,13 @@
       "getPSAppDEField" : {
         "name" : "PLAN",
         "codeName" : "Plan"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "color",
+      "getPSAppDEField" : {
+        "name" : "COLOR",
+        "codeName" : "Color"
       }
     }, {
       "dataType" : 25,

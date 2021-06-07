@@ -64,10 +64,10 @@ public class AccountStoryResource {
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "获取我的数据", tags = {"需求" } ,notes = "获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchmy")
-	public ResponseEntity<List<AccountStoryDTO>> fetchmy(@RequestBody StorySearchContext context) {
-        Page<Story> domains = storyService.searchMy(context) ;
+	@ApiOperation(value = "获取我的收藏", tags = {"需求" } ,notes = "获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchmyfavorites")
+	public ResponseEntity<List<AccountStoryDTO>> fetchmyfavorites(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchMyFavorites(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -76,10 +76,10 @@ public class AccountStoryResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "获取我的收藏", tags = {"需求" } ,notes = "获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchmyfavorites")
-	public ResponseEntity<List<AccountStoryDTO>> fetchmyfavorites(@RequestBody StorySearchContext context) {
-        Page<Story> domains = storyService.searchMyFavorites(context) ;
+	@ApiOperation(value = "获取我的数据", tags = {"需求" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accountstories/fetchmy")
+	public ResponseEntity<List<AccountStoryDTO>> fetchmy(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchMy(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -120,11 +120,11 @@ public class AccountStoryResource {
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"需求" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchmy")
-	public ResponseEntity<List<AccountStoryDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"需求" } ,notes = "根据系统用户获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchmyfavorites")
+	public ResponseEntity<List<AccountStoryDTO>> fetchMyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
         
-        Page<Story> domains = storyService.searchMy(context) ;
+        Page<Story> domains = storyService.searchMyFavorites(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -133,11 +133,11 @@ public class AccountStoryResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"需求" } ,notes = "根据系统用户获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchmyfavorites")
-	public ResponseEntity<List<AccountStoryDTO>> fetchMyFavoritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"需求" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountstories/fetchmy")
+	public ResponseEntity<List<AccountStoryDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody StorySearchContext context) {
         
-        Page<Story> domains = storyService.searchMyFavorites(context) ;
+        Page<Story> domains = storyService.searchMy(context) ;
         List<AccountStoryDTO> list = accountstoryMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

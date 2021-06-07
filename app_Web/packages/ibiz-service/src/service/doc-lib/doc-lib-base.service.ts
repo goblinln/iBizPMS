@@ -178,6 +178,23 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.condCache.get('view');
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib) {
+            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}`);
+        }
+        if (_context.product && _context.doclib) {
+            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}`);
+        }
+        return this.http.delete(`/doclibs/${_context.doclib}`);
+    }
+    /**
      * FetchByProject
      *
      * @param {*} [_context={}]
@@ -212,42 +229,23 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.http.post(`/doclibs/fetchdefault`, _data);
     }
     /**
-     * Create
+     * UnCollect
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DocLibService
      */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
+    async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/projects/${_context.project}/doclibs`, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/uncollect`, _data);
         }
-        if (_context.product && true) {
+        if (_context.product && _context.doclib) {
         _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/products/${_context.product}/doclibs`, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/uncollect`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/doclibs`, _data);
+        return this.http.post(`/doclibs/${_context.doclib}/uncollect`, _data);
     }
     /**
      * FetchByProduct
@@ -386,62 +384,42 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.http.post(`/doclibs/fetchbycustom`, _data);
     }
     /**
-     * Remove
+     * Create
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DocLibService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib) {
-            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}`);
-        }
-        if (_context.product && _context.doclib) {
-            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}`);
-        }
-        return this.http.delete(`/doclibs/${_context.doclib}`);
-    }
-    /**
-     * UnCollect
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibService
-     */
-    async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib) {
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/uncollect`, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/projects/${_context.project}/doclibs`, _data);
         }
-        if (_context.product && _context.doclib) {
+        if (_context.product && true) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/uncollect`, _data);
-        }
-        return this.http.post(`/doclibs/${_context.doclib}/uncollect`, _data);
-    }
-
-    /**
-     * CollectBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibServiceBase
-     */
-    public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/collectbatch`,_data);
-        }
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/collectbatch`,_data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/products/${_context.product}/doclibs`, _data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/doclibs/collectbatch`,_data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/doclibs`, _data);
     }
 
     /**
@@ -464,5 +442,27 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/doclibs/uncollectbatch`,_data);
+    }
+
+    /**
+     * CollectBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibServiceBase
+     */
+    public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/collectbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/collectbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/doclibs/collectbatch`,_data);
     }
 }
