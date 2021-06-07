@@ -62,7 +62,7 @@ public class IbzproProjectUserTaskResource {
         if(!ibzproprojectusertaskRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class IbzproProjectUserTaskResource {
         if(!ibzproprojectusertaskRuntime.test(ibzproprojectusertask_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(ibzproprojectusertask_id);
+        Map<String, Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(ibzproprojectusertask_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class IbzproProjectUserTaskResource {
     public ResponseEntity<IbzproProjectUserTaskDTO> get(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
         IbzproProjectUserTask domain = ibzproprojectusertaskService.get(ibzproprojectusertask_id);
         IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(ibzproprojectusertask_id);
+        Map<String, Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(ibzproprojectusertask_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class IbzproProjectUserTaskResource {
         IbzproProjectUserTask domain = ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto);
         ibzproprojectusertaskService.save(domain);
         IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

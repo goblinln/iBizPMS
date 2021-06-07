@@ -62,7 +62,7 @@ public class DocContentResource {
         if(!doccontentRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String,Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class DocContentResource {
         if(!doccontentRuntime.test(doccontent_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String,Integer> opprivs = doccontentRuntime.getOPPrivs(doccontent_id);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(doccontent_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class DocContentResource {
     public ResponseEntity<DocContentDTO> get(@PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String,Integer> opprivs = doccontentRuntime.getOPPrivs(doccontent_id);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(doccontent_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class DocContentResource {
         DocContent domain = doccontentMapping.toDomain(doccontentdto);
         doccontentService.save(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String,Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -179,8 +179,8 @@ public class DocContentResource {
         domain.setDoc(doc_id);
 		doccontentService.create(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -194,8 +194,8 @@ public class DocContentResource {
         domain.setId(doccontent_id);
 		doccontentService.update(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -221,8 +221,8 @@ public class DocContentResource {
     public ResponseEntity<DocContentDTO> getByDoc(@PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -289,8 +289,8 @@ public class DocContentResource {
         domain.setDoc(doc_id);
 		doccontentService.create(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -304,8 +304,8 @@ public class DocContentResource {
         domain.setId(doccontent_id);
 		doccontentService.update(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -331,8 +331,8 @@ public class DocContentResource {
     public ResponseEntity<DocContentDTO> getByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -400,8 +400,8 @@ public class DocContentResource {
         domain.setDoc(doc_id);
 		doccontentService.create(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -415,8 +415,8 @@ public class DocContentResource {
         domain.setId(doccontent_id);
 		doccontentService.update(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -442,8 +442,8 @@ public class DocContentResource {
     public ResponseEntity<DocContentDTO> getByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -511,8 +511,8 @@ public class DocContentResource {
         domain.setDoc(doc_id);
 		doccontentService.create(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -526,8 +526,8 @@ public class DocContentResource {
         domain.setId(doccontent_id);
 		doccontentService.update(domain);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -553,8 +553,8 @@ public class DocContentResource {
     public ResponseEntity<DocContentDTO> getByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @PathVariable("doccontent_id") Long doccontent_id) {
         DocContent domain = doccontentService.get(doccontent_id);
         DocContentDTO dto = doccontentMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doccontentRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doccontentRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -62,7 +62,7 @@ public class UserTplResource {
         if(!usertplRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         UserTplDTO dto = usertplMapping.toDto(domain);
-        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class UserTplResource {
         if(!usertplRuntime.test(usertpl_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		UserTplDTO dto = usertplMapping.toDto(domain);
-        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(usertpl_id);
+        Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(usertpl_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class UserTplResource {
     public ResponseEntity<UserTplDTO> get(@PathVariable("usertpl_id") Long usertpl_id) {
         UserTpl domain = usertplService.get(usertpl_id);
         UserTplDTO dto = usertplMapping.toDto(domain);
-        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(usertpl_id);
+        Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(usertpl_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class UserTplResource {
         domain.setId(usertpl_id);
         domain = usertplService.hasDeleted(domain);
         usertpldto = usertplMapping.toDto(domain);
-        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
         usertpldto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(usertpldto);
     }
@@ -146,7 +146,7 @@ public class UserTplResource {
         UserTpl domain = usertplMapping.toDomain(usertpldto);
         usertplService.save(domain);
         UserTplDTO dto = usertplMapping.toDto(domain);
-        Map<String,Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

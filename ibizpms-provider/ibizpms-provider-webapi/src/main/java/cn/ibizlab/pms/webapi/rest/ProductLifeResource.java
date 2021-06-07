@@ -62,7 +62,7 @@ public class ProductLifeResource {
         if(!productlifeRuntime.test(domain.getProductlifeid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductLifeDTO dto = productlifeMapping.toDto(domain);
-        Map<String,Integer> opprivs = productlifeRuntime.getOPPrivs(domain.getProductlifeid());
+        Map<String, Integer> opprivs = productlifeRuntime.getOPPrivs(domain.getProductlifeid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class ProductLifeResource {
         if(!productlifeRuntime.test(productlife_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductLifeDTO dto = productlifeMapping.toDto(domain);
-        Map<String,Integer> opprivs = productlifeRuntime.getOPPrivs(productlife_id);
+        Map<String, Integer> opprivs = productlifeRuntime.getOPPrivs(productlife_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class ProductLifeResource {
     public ResponseEntity<ProductLifeDTO> get(@PathVariable("productlife_id") String productlife_id) {
         ProductLife domain = productlifeService.get(productlife_id);
         ProductLifeDTO dto = productlifeMapping.toDto(domain);
-        Map<String,Integer> opprivs = productlifeRuntime.getOPPrivs(productlife_id);
+        Map<String, Integer> opprivs = productlifeRuntime.getOPPrivs(productlife_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class ProductLifeResource {
         ProductLife domain = productlifeMapping.toDomain(productlifedto);
         productlifeService.save(domain);
         ProductLifeDTO dto = productlifeMapping.toDto(domain);
-        Map<String,Integer> opprivs = productlifeRuntime.getOPPrivs(domain.getProductlifeid());
+        Map<String, Integer> opprivs = productlifeRuntime.getOPPrivs(domain.getProductlifeid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

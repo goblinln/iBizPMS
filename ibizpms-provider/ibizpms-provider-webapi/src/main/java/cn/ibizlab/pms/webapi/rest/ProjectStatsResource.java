@@ -62,7 +62,7 @@ public class ProjectStatsResource {
         if(!projectstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class ProjectStatsResource {
         if(!projectstatsRuntime.test(projectstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(projectstats_id);
+        Map<String, Integer> opprivs = projectstatsRuntime.getOPPrivs(projectstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class ProjectStatsResource {
     public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {
         ProjectStats domain = projectstatsService.get(projectstats_id);
         ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(projectstats_id);
+        Map<String, Integer> opprivs = projectstatsRuntime.getOPPrivs(projectstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class ProjectStatsResource {
         domain.setId(projectstats_id);
         domain = projectstatsService.projectQualitySum(domain);
         projectstatsdto = projectstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
         projectstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectstatsdto);
     }
@@ -146,7 +146,7 @@ public class ProjectStatsResource {
         ProjectStats domain = projectstatsMapping.toDomain(projectstatsdto);
         projectstatsService.save(domain);
         ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

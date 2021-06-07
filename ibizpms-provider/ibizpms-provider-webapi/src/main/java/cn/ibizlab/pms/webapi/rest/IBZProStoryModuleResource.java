@@ -62,7 +62,7 @@ public class IBZProStoryModuleResource {
         if(!ibzprostorymoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class IBZProStoryModuleResource {
         if(!ibzprostorymoduleRuntime.test(ibzprostorymodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(ibzprostorymodule_id);
+        Map<String, Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(ibzprostorymodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class IBZProStoryModuleResource {
     public ResponseEntity<IBZProStoryModuleDTO> get(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id) {
         IBZProStoryModule domain = ibzprostorymoduleService.get(ibzprostorymodule_id);
         IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(ibzprostorymodule_id);
+        Map<String, Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(ibzprostorymodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class IBZProStoryModuleResource {
         IBZProStoryModule domain = ibzprostorymoduleMapping.toDomain(ibzprostorymoduledto);
         ibzprostorymoduleService.save(domain);
         IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -146,7 +146,7 @@ public class IBZProStoryModuleResource {
         domain.setId(ibzprostorymodule_id);
         domain = ibzprostorymoduleService.syncFromIBIZ(domain);
         ibzprostorymoduledto = ibzprostorymoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(domain.getId());
         ibzprostorymoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorymoduledto);
     }

@@ -68,7 +68,7 @@ public class IbzPlanTempletResource {
         if(!ibzplantempletRuntime.test(domain.getIbzplantempletid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
+        Map<String, Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -85,7 +85,7 @@ public class IbzPlanTempletResource {
         if(!ibzplantempletRuntime.test(ibzplantemplet_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(ibzplantemplet_id);
+        Map<String, Integer> opprivs = ibzplantempletRuntime.getOPPrivs(ibzplantemplet_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -112,7 +112,7 @@ public class IbzPlanTempletResource {
     public ResponseEntity<IbzPlanTempletDTO> get(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
         IbzPlanTemplet domain = ibzplantempletService.get(ibzplantemplet_id);
         IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(ibzplantemplet_id);
+        Map<String, Integer> opprivs = ibzplantempletRuntime.getOPPrivs(ibzplantemplet_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -140,7 +140,7 @@ public class IbzPlanTempletResource {
         domain.setIbzplantempletid(ibzplantemplet_id);
         domain = ibzplantempletService.getPlan(domain);
         ibzplantempletdto = ibzplantempletMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
+        Map<String, Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
         ibzplantempletdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzplantempletdto);
     }
@@ -153,7 +153,7 @@ public class IbzPlanTempletResource {
         IbzPlanTemplet domain = ibzplantempletMapping.toDomain(ibzplantempletdto);
         ibzplantempletService.save(domain);
         IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
+        Map<String, Integer> opprivs = ibzplantempletRuntime.getOPPrivs(domain.getIbzplantempletid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

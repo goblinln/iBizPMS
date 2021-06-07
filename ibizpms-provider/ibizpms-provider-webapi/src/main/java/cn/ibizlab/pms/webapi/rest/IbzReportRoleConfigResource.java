@@ -62,7 +62,7 @@ public class IbzReportRoleConfigResource {
         if(!ibzreportroleconfigRuntime.test(domain.getIbzreportroleconfigid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
+        Map<String, Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class IbzReportRoleConfigResource {
         if(!ibzreportroleconfigRuntime.test(ibzreportroleconfig_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(ibzreportroleconfig_id);
+        Map<String, Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(ibzreportroleconfig_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class IbzReportRoleConfigResource {
     public ResponseEntity<IbzReportRoleConfigDTO> get(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
         IbzReportRoleConfig domain = ibzreportroleconfigService.get(ibzreportroleconfig_id);
         IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(ibzreportroleconfig_id);
+        Map<String, Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(ibzreportroleconfig_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class IbzReportRoleConfigResource {
         IbzReportRoleConfig domain = ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto);
         ibzreportroleconfigService.save(domain);
         IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
+        Map<String, Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(domain.getIbzreportroleconfigid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

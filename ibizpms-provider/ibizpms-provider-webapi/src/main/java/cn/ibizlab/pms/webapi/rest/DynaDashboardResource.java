@@ -62,7 +62,7 @@ public class DynaDashboardResource {
         if(!dynadashboardRuntime.test(domain.getDynadashboardid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
-        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(domain.getDynadashboardid());
+        Map<String, Integer> opprivs = dynadashboardRuntime.getOPPrivs(domain.getDynadashboardid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class DynaDashboardResource {
         if(!dynadashboardRuntime.test(dynadashboard_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
-        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
+        Map<String, Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class DynaDashboardResource {
     public ResponseEntity<DynaDashboardDTO> get(@PathVariable("dynadashboard_id") String dynadashboard_id) {
         DynaDashboard domain = dynadashboardService.get(dynadashboard_id);
         DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
-        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
+        Map<String, Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class DynaDashboardResource {
         DynaDashboard domain = dynadashboardMapping.toDomain(dynadashboarddto);
         dynadashboardService.save(domain);
         DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
-        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(domain.getDynadashboardid());
+        Map<String, Integer> opprivs = dynadashboardRuntime.getOPPrivs(domain.getDynadashboardid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

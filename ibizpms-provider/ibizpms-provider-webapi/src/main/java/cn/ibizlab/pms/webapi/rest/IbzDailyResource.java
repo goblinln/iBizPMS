@@ -60,7 +60,7 @@ public class IbzDailyResource {
         IbzDaily domain = ibzdailyMapping.toDomain(ibzdailydto);
 		ibzdailyService.create(domain);
         IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -75,7 +75,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
 		ibzdailyService.update(domain );
 		IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(ibzdaily_id);
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(ibzdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -102,7 +102,7 @@ public class IbzDailyResource {
     public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
         IbzDaily domain = ibzdailyService.get(ibzdaily_id);
         IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(ibzdaily_id);
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(ibzdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -130,7 +130,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.createUserDaily(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
@@ -144,7 +144,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.getYeaterdayDailyPlansTaskEdit(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
@@ -158,7 +158,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.getYesterdayDailyPlansTask(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
@@ -172,7 +172,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.haveRead(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
@@ -186,7 +186,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.linkCompleteTask(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
@@ -200,7 +200,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.pushUserDaily(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
@@ -213,7 +213,7 @@ public class IbzDailyResource {
         IbzDaily domain = ibzdailyMapping.toDomain(ibzdailydto);
         ibzdailyService.save(domain);
         IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -227,7 +227,7 @@ public class IbzDailyResource {
         domain.setIbzdailyid(ibzdaily_id);
         domain = ibzdailyService.submit(domain);
         ibzdailydto = ibzdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }

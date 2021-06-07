@@ -62,7 +62,7 @@ public class AccountTaskestimateResource {
         if(!accounttaskestimateRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         AccountTaskestimateDTO dto = accounttaskestimateMapping.toDto(domain);
-        Map<String,Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class AccountTaskestimateResource {
         if(!accounttaskestimateRuntime.test(accounttaskestimate_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		AccountTaskestimateDTO dto = accounttaskestimateMapping.toDto(domain);
-        Map<String,Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(accounttaskestimate_id);
+        Map<String, Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(accounttaskestimate_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class AccountTaskestimateResource {
     public ResponseEntity<AccountTaskestimateDTO> get(@PathVariable("accounttaskestimate_id") String accounttaskestimate_id) {
         AccountTaskestimate domain = accounttaskestimateService.get(accounttaskestimate_id);
         AccountTaskestimateDTO dto = accounttaskestimateMapping.toDto(domain);
-        Map<String,Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(accounttaskestimate_id);
+        Map<String, Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(accounttaskestimate_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class AccountTaskestimateResource {
         AccountTaskestimate domain = accounttaskestimateMapping.toDomain(accounttaskestimatedto);
         accounttaskestimateService.save(domain);
         AccountTaskestimateDTO dto = accounttaskestimateMapping.toDto(domain);
-        Map<String,Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = accounttaskestimateRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

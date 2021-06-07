@@ -60,7 +60,7 @@ public class IbzWeeklyResource {
         IbzWeekly domain = ibzweeklyMapping.toDomain(ibzweeklydto);
 		ibzweeklyService.create(domain);
         IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -75,7 +75,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
 		ibzweeklyService.update(domain );
 		IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -102,7 +102,7 @@ public class IbzWeeklyResource {
     public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
         IbzWeekly domain = ibzweeklyService.get(ibzweekly_id);
         IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -130,7 +130,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.createEveryWeekReport(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
@@ -144,7 +144,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.createGetLastWeekPlanAndWork(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
@@ -158,7 +158,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.editGetLastWeekTaskAndComTask(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
@@ -172,7 +172,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.haveRead(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
@@ -186,7 +186,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.jugThisWeekCreateWeekly(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
@@ -200,7 +200,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.pushUserWeekly(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
@@ -213,7 +213,7 @@ public class IbzWeeklyResource {
         IbzWeekly domain = ibzweeklyMapping.toDomain(ibzweeklydto);
         ibzweeklyService.save(domain);
         IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -227,7 +227,7 @@ public class IbzWeeklyResource {
         domain.setIbzweeklyid(ibzweekly_id);
         domain = ibzweeklyService.submit(domain);
         ibzweeklydto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(domain.getIbzweeklyid());
         ibzweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }

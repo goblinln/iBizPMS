@@ -23,7 +23,7 @@ public class SysRoleFeignClientConfiguration {
     @Value("${ibiz.ref.service.ibzuaa-api.name:ibzuaa-api}")
     String serviceValue;
 
-    @Value("${ibiz.ref.service.ibzuaa-api.system:}")
+    @Value("${ibiz.ref.service.ibzuaa-api.system:f7ad7e05-9031-11eb-b882-00163e06e68c}")
     String serviceSystem;
 
     @Autowired

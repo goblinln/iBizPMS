@@ -62,7 +62,7 @@ public class UserYearWorkStatsResource {
         if(!useryearworkstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class UserYearWorkStatsResource {
         if(!useryearworkstatsRuntime.test(useryearworkstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class UserYearWorkStatsResource {
     public ResponseEntity<UserYearWorkStatsDTO> get(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
         UserYearWorkStats domain = useryearworkstatsService.get(useryearworkstats_id);
         UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getDevInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
@@ -147,7 +147,7 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getPoInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
@@ -161,7 +161,7 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getQaInfomation(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
@@ -175,7 +175,7 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.getUserYearAction(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
@@ -188,7 +188,7 @@ public class UserYearWorkStatsResource {
         UserYearWorkStats domain = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
         useryearworkstatsService.save(domain);
         UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -202,7 +202,7 @@ public class UserYearWorkStatsResource {
         domain.setId(useryearworkstats_id);
         domain = useryearworkstatsService.updateTitleByYear(domain);
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(domain.getId());
         useryearworkstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }

@@ -62,7 +62,7 @@ public class UserResource {
         if(!userRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         UserDTO dto = userMapping.toDto(domain);
-        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class UserResource {
         if(!userRuntime.test(user_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		UserDTO dto = userMapping.toDto(domain);
-        Map<String,Integer> opprivs = userRuntime.getOPPrivs(user_id);
+        Map<String, Integer> opprivs = userRuntime.getOPPrivs(user_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class UserResource {
     public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
         User domain = userService.get(user_id);
         UserDTO dto = userMapping.toDto(domain);
-        Map<String,Integer> opprivs = userRuntime.getOPPrivs(user_id);
+        Map<String, Integer> opprivs = userRuntime.getOPPrivs(user_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class UserResource {
         domain.setId(user_id);
         domain = userService.getByCommiter(domain);
         userdto = userMapping.toDto(domain);
-        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
         userdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
@@ -146,7 +146,7 @@ public class UserResource {
         User domain = userMapping.toDomain(userdto);
         userService.save(domain);
         UserDTO dto = userMapping.toDto(domain);
-        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -160,7 +160,7 @@ public class UserResource {
         domain.setId(user_id);
         domain = userService.syncAccount(domain);
         userdto = userMapping.toDto(domain);
-        Map<String,Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = userRuntime.getOPPrivs(domain.getId());
         userdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }

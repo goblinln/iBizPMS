@@ -62,7 +62,7 @@ public class IBZProProductResource {
         if(!ibzproproductRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproproductRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzproproductRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class IBZProProductResource {
         if(!ibzproproductRuntime.test(ibzproproduct_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproproductRuntime.getOPPrivs(ibzproproduct_id);
+        Map<String, Integer> opprivs = ibzproproductRuntime.getOPPrivs(ibzproproduct_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class IBZProProductResource {
     public ResponseEntity<IBZProProductDTO> get(@PathVariable("ibzproproduct_id") Long ibzproproduct_id) {
         IBZProProduct domain = ibzproproductService.get(ibzproproduct_id);
         IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproproductRuntime.getOPPrivs(ibzproproduct_id);
+        Map<String, Integer> opprivs = ibzproproductRuntime.getOPPrivs(ibzproproduct_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class IBZProProductResource {
         IBZProProduct domain = ibzproproductMapping.toDomain(ibzproproductdto);
         ibzproproductService.save(domain);
         IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproproductRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzproproductRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

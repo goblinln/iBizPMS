@@ -62,7 +62,7 @@ public class IbzFavoritesResource {
         if(!ibzfavoritesRuntime.test(domain.getIbzfavoritesid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(domain.getIbzfavoritesid());
+        Map<String, Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(domain.getIbzfavoritesid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class IbzFavoritesResource {
         if(!ibzfavoritesRuntime.test(ibzfavorites_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(ibzfavorites_id);
+        Map<String, Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(ibzfavorites_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class IbzFavoritesResource {
     public ResponseEntity<IbzFavoritesDTO> get(@PathVariable("ibzfavorites_id") String ibzfavorites_id) {
         IbzFavorites domain = ibzfavoritesService.get(ibzfavorites_id);
         IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(ibzfavorites_id);
+        Map<String, Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(ibzfavorites_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class IbzFavoritesResource {
         IbzFavorites domain = ibzfavoritesMapping.toDomain(ibzfavoritesdto);
         ibzfavoritesService.save(domain);
         IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(domain.getIbzfavoritesid());
+        Map<String, Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(domain.getIbzfavoritesid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

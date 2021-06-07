@@ -62,7 +62,7 @@ public class taskestimatestatsResource {
         if(!taskestimatestatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class taskestimatestatsResource {
         if(!taskestimatestatsRuntime.test(taskestimatestats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(taskestimatestats_id);
+        Map<String, Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(taskestimatestats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class taskestimatestatsResource {
     public ResponseEntity<taskestimatestatsDTO> get(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
         TaskEstimateStats domain = taskestimatestatsService.get(taskestimatestats_id);
         taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(taskestimatestats_id);
+        Map<String, Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(taskestimatestats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class taskestimatestatsResource {
         TaskEstimateStats domain = taskestimatestatsMapping.toDomain(taskestimatestatsdto);
         taskestimatestatsService.save(domain);
         taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

@@ -758,12 +758,12 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchMyFavorites",
+    "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "FetchMyFavorites",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyFavorites"
+      "id" : "Account"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -771,7 +771,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyFavorites"
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -792,12 +792,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAccount",
+    "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
-    "name" : "FetchAccount",
+    "name" : "FetchMyFavorites",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Account"
+      "id" : "MyFavorites"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -805,7 +805,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "FetchMyFavorites"
     },
     "builtinMethod" : false
   }, {
@@ -1809,29 +1809,12 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyFavorites",
+    "codeName" : "FetchAccount",
     "methodType" : "FETCH",
-    "name" : "FetchMyFavorites",
+    "name" : "FetchAccount",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyFavorites"
+      "id" : "Account"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1839,7 +1822,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyFavorites"
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -1860,12 +1843,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAccount",
+    "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
-    "name" : "FetchAccount",
+    "name" : "FetchMyFavorites",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "Account"
+      "id" : "MyFavorites"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1873,7 +1856,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "FetchMyFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {

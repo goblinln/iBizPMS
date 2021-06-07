@@ -62,7 +62,7 @@ public class ProductModuleResource {
         if(!productmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class ProductModuleResource {
         if(!productmoduleRuntime.test(productmodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class ProductModuleResource {
     public ResponseEntity<ProductModuleDTO> get(@PathVariable("productmodule_id") Long productmodule_id) {
         ProductModule domain = productmoduleService.get(productmodule_id);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -125,7 +125,7 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
         domain = productmoduleService.fix(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
         productmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
@@ -148,7 +148,7 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
         domain = productmoduleService.syncFromIBIZ(domain);
         productmoduledto = productmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());
         productmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
@@ -243,8 +243,8 @@ public class ProductModuleResource {
         domain.setRoot(product_id);
 		productmoduleService.create(domain);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -258,8 +258,8 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
 		productmoduleService.update(domain);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -285,8 +285,8 @@ public class ProductModuleResource {
     public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
         ProductModule domain = productmoduleService.get(productmodule_id);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -306,8 +306,8 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
         domain = productmoduleService.fix(domain) ;
         productmoduledto = productmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs(domain.getId());    
-        productmoduledto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());    
+        productmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 
@@ -333,8 +333,8 @@ public class ProductModuleResource {
         domain.setId(productmodule_id);
         domain = productmoduleService.syncFromIBIZ(domain) ;
         productmoduledto = productmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs(domain.getId());    
-        productmoduledto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(domain.getId());    
+        productmoduledto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 

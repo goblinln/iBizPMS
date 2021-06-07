@@ -68,7 +68,7 @@ public class IbzCaseResource {
         if(!ibzcaseRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -84,7 +84,7 @@ public class IbzCaseResource {
         if(!ibzcaseRuntime.test(ibzcase_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzcaseRuntime.getOPPrivs(ibzcase_id);
+        Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(ibzcase_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -111,7 +111,7 @@ public class IbzCaseResource {
     public ResponseEntity<IbzCaseDTO> get(@PathVariable("ibzcase_id") Long ibzcase_id) {
         IbzCase domain = ibzcaseService.get(ibzcase_id);
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzcaseRuntime.getOPPrivs(ibzcase_id);
+        Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(ibzcase_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -138,7 +138,7 @@ public class IbzCaseResource {
         IbzCase domain = ibzcaseMapping.toDomain(ibzcasedto);
         ibzcaseService.save(domain);
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -176,8 +176,8 @@ public class IbzCaseResource {
         if(!ibzcaseRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzcaseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -193,8 +193,8 @@ public class IbzCaseResource {
         if(!ibzcaseRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzcaseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -220,8 +220,8 @@ public class IbzCaseResource {
     public ResponseEntity<IbzCaseDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id) {
         IbzCase domain = ibzcaseService.get(ibzcase_id);
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzcaseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzcaseRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -60,7 +60,7 @@ public class IbizproProductMonthlyResource {
         IbizproProductMonthly domain = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
 		ibizproproductmonthlyService.create(domain);
         IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        Map<String, Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -75,7 +75,7 @@ public class IbizproProductMonthlyResource {
         domain.setIbizproproductmonthlyid(ibizproproductmonthly_id);
 		ibizproproductmonthlyService.update(domain );
 		IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(ibizproproductmonthly_id);
+        Map<String, Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(ibizproproductmonthly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -102,7 +102,7 @@ public class IbizproProductMonthlyResource {
     public ResponseEntity<IbizproProductMonthlyDTO> get(@PathVariable("ibizproproductmonthly_id") Long ibizproproductmonthly_id) {
         IbizproProductMonthly domain = ibizproproductmonthlyService.get(ibizproproductmonthly_id);
         IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(ibizproproductmonthly_id);
+        Map<String, Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(ibizproproductmonthly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -130,7 +130,7 @@ public class IbizproProductMonthlyResource {
         domain.setIbizproproductmonthlyid(ibizproproductmonthly_id);
         domain = ibizproproductmonthlyService.manualCreateMonthly(domain);
         ibizproproductmonthlydto = ibizproproductmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        Map<String, Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
         ibizproproductmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlydto);
     }
@@ -143,7 +143,7 @@ public class IbizproProductMonthlyResource {
         IbizproProductMonthly domain = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
         ibizproproductmonthlyService.save(domain);
         IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        Map<String, Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -157,7 +157,7 @@ public class IbizproProductMonthlyResource {
         domain.setIbizproproductmonthlyid(ibizproproductmonthly_id);
         domain = ibizproproductmonthlyService.statsProductMonthly(domain);
         ibizproproductmonthlydto = ibizproproductmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        Map<String, Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
         ibizproproductmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlydto);
     }

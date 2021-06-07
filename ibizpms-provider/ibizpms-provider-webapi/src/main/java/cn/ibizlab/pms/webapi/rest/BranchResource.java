@@ -62,7 +62,7 @@ public class BranchResource {
         if(!branchRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class BranchResource {
         if(!branchRuntime.test(branch_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class BranchResource {
     public ResponseEntity<BranchDTO> get(@PathVariable("branch_id") Long branch_id) {
         Branch domain = branchService.get(branch_id);
         BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -142,7 +142,7 @@ public class BranchResource {
         domain.setId(branch_id);
         domain = branchService.sort(domain);
         branchdto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());
         branchdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
@@ -189,8 +189,8 @@ public class BranchResource {
         domain.setProduct(product_id);
 		branchService.create(domain);
         BranchDTO dto = branchMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -204,8 +204,8 @@ public class BranchResource {
         domain.setId(branch_id);
 		branchService.update(domain);
         BranchDTO dto = branchMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -231,8 +231,8 @@ public class BranchResource {
     public ResponseEntity<BranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
         Branch domain = branchService.get(branch_id);
         BranchDTO dto = branchMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -274,8 +274,8 @@ public class BranchResource {
         domain.setId(branch_id);
         domain = branchService.sort(domain) ;
         branchdto = branchMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs(domain.getId());    
-        branchdto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs(domain.getId());    
+        branchdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
 

@@ -62,7 +62,7 @@ public class FileResource {
         if(!fileRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         FileDTO dto = fileMapping.toDto(domain);
-        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class FileResource {
         if(!fileRuntime.test(file_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		FileDTO dto = fileMapping.toDto(domain);
-        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(file_id);
+        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(file_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class FileResource {
     public ResponseEntity<FileDTO> get(@PathVariable("file_id") Long file_id) {
         File domain = fileService.get(file_id);
         FileDTO dto = fileMapping.toDto(domain);
-        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(file_id);
+        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(file_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class FileResource {
         File domain = fileMapping.toDomain(filedto);
         fileService.save(domain);
         FileDTO dto = fileMapping.toDto(domain);
-        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -146,7 +146,7 @@ public class FileResource {
         domain.setId(file_id);
         domain = fileService.updateObjectID(domain);
         filedto = fileMapping.toDto(domain);
-        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
         filedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
@@ -160,7 +160,7 @@ public class FileResource {
         domain.setId(file_id);
         domain = fileService.updateObjectIDForPmsEe(domain);
         filedto = fileMapping.toDto(domain);
-        Map<String,Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(domain.getId());
         filedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }

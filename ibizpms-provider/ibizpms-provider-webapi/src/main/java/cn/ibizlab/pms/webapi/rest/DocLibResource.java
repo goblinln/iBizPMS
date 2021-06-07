@@ -62,7 +62,7 @@ public class DocLibResource {
         if(!doclibRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class DocLibResource {
         if(!doclibRuntime.test(doclib_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(doclib_id);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs(doclib_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class DocLibResource {
     public ResponseEntity<DocLibDTO> get(@PathVariable("doclib_id") Long doclib_id) {
         DocLib domain = doclibService.get(doclib_id);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(doclib_id);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs(doclib_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.collect(domain);
         doclibdto = doclibMapping.toDto(domain);
-        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
         doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
@@ -146,7 +146,7 @@ public class DocLibResource {
         DocLib domain = doclibMapping.toDomain(doclibdto);
         doclibService.save(domain);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -160,7 +160,7 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.unCollect(domain);
         doclibdto = doclibMapping.toDto(domain);
-        Map<String,Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs(domain.getId());
         doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
@@ -291,8 +291,8 @@ public class DocLibResource {
         domain.setProduct(product_id);
 		doclibService.create(domain);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -306,8 +306,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
 		doclibService.update(domain);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -333,8 +333,8 @@ public class DocLibResource {
     public ResponseEntity<DocLibDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id) {
         DocLib domain = doclibService.get(doclib_id);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -363,8 +363,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.collect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        doclibdto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
@@ -388,8 +388,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.unCollect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        doclibdto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
@@ -519,8 +519,8 @@ public class DocLibResource {
         domain.setProject(project_id);
 		doclibService.create(domain);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -534,8 +534,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
 		doclibService.update(domain);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -561,8 +561,8 @@ public class DocLibResource {
     public ResponseEntity<DocLibDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id) {
         DocLib domain = doclibService.get(doclib_id);
         DocLibDTO dto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -591,8 +591,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.collect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        doclibdto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
@@ -616,8 +616,8 @@ public class DocLibResource {
         domain.setId(doclib_id);
         domain = doclibService.unCollect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        doclibdto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        doclibdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 

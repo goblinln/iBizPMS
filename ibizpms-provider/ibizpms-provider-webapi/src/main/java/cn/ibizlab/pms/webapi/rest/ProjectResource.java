@@ -68,7 +68,7 @@ public class ProjectResource {
         if(!projectRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProjectDTO dto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -84,7 +84,7 @@ public class ProjectResource {
         if(!projectRuntime.test(project_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProjectDTO dto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(project_id);
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(project_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -111,7 +111,7 @@ public class ProjectResource {
     public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
         Project domain = projectService.get(project_id);
         ProjectDTO dto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(project_id);
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(project_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.activate(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -146,7 +146,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.batchUnlinkStory(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -160,7 +160,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.cancelProjectTop(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -181,7 +181,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.close(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -195,7 +195,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.importPlanStories(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -209,7 +209,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.linkProduct(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -223,7 +223,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.linkStory(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -237,7 +237,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.manageMembers(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -251,7 +251,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.mobProjectCount(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -265,7 +265,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.pmsEeProjectAllTaskCount(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -279,7 +279,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.pmsEeProjectTodoTaskCount(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -293,7 +293,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.projectTaskQCnt(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -307,7 +307,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.projectTop(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -321,7 +321,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.putoff(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -334,7 +334,7 @@ public class ProjectResource {
         Project domain = projectMapping.toDomain(projectdto);
         projectService.save(domain);
         ProjectDTO dto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -348,7 +348,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.start(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -362,7 +362,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.suspend(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -376,7 +376,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.unlinkMember(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -390,7 +390,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.unlinkProduct(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -404,7 +404,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.unlinkStory(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
@@ -418,7 +418,7 @@ public class ProjectResource {
         domain.setId(project_id);
         domain = projectService.updateOrder(domain);
         projectdto = projectMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectRuntime.getOPPrivs(domain.getId());
         projectdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }

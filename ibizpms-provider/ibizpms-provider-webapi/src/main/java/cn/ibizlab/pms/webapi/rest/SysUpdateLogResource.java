@@ -62,7 +62,7 @@ public class SysUpdateLogResource {
         if(!sysupdatelogRuntime.test(domain.getSysupdatelogid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
+        Map<String, Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class SysUpdateLogResource {
         if(!sysupdatelogRuntime.test(sysupdatelog_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(sysupdatelog_id);
+        Map<String, Integer> opprivs = sysupdatelogRuntime.getOPPrivs(sysupdatelog_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class SysUpdateLogResource {
     public ResponseEntity<SysUpdateLogDTO> get(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
         SysUpdateLog domain = sysupdatelogService.get(sysupdatelog_id);
         SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(sysupdatelog_id);
+        Map<String, Integer> opprivs = sysupdatelogRuntime.getOPPrivs(sysupdatelog_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -134,7 +134,7 @@ public class SysUpdateLogResource {
         domain.setSysupdatelogid(sysupdatelog_id);
         domain = sysupdatelogService.getLastUpdateInfo(domain);
         sysupdatelogdto = sysupdatelogMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
+        Map<String, Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
         sysupdatelogdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(sysupdatelogdto);
     }
@@ -147,7 +147,7 @@ public class SysUpdateLogResource {
         SysUpdateLog domain = sysupdatelogMapping.toDomain(sysupdatelogdto);
         sysupdatelogService.save(domain);
         SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
+        Map<String, Integer> opprivs = sysupdatelogRuntime.getOPPrivs(domain.getSysupdatelogid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

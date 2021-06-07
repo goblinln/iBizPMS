@@ -62,7 +62,7 @@ public class SysUpdateFeaturesResource {
         if(!sysupdatefeaturesRuntime.test(domain.getSysupdatefeaturesid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());
+        Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class SysUpdateFeaturesResource {
         if(!sysupdatefeaturesRuntime.test(sysupdatefeatures_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(sysupdatefeatures_id);
+        Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(sysupdatefeatures_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class SysUpdateFeaturesResource {
     public ResponseEntity<SysUpdateFeaturesDTO> get(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
         SysUpdateFeatures domain = sysupdatefeaturesService.get(sysupdatefeatures_id);
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(sysupdatefeatures_id);
+        Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(sysupdatefeatures_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class SysUpdateFeaturesResource {
         SysUpdateFeatures domain = sysupdatefeaturesMapping.toDomain(sysupdatefeaturesdto);
         sysupdatefeaturesService.save(domain);
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());
+        Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -168,8 +168,8 @@ public class SysUpdateFeaturesResource {
         domain.setSysupdatelogid(sysupdatelog_id);
 		sysupdatefeaturesService.create(domain);
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -184,8 +184,8 @@ public class SysUpdateFeaturesResource {
         domain.setSysupdatefeaturesid(sysupdatefeatures_id);
 		sysupdatefeaturesService.update(domain);
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -211,8 +211,8 @@ public class SysUpdateFeaturesResource {
     public ResponseEntity<SysUpdateFeaturesDTO> getBySysUpdateLog(@PathVariable("sysupdatelog_id") String sysupdatelog_id, @PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
         SysUpdateFeatures domain = sysupdatefeaturesService.get(sysupdatefeatures_id);
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(domain.getSysupdatefeaturesid());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

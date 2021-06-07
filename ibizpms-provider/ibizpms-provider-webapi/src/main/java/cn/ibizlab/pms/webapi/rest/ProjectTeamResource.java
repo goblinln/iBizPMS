@@ -62,7 +62,7 @@ public class ProjectTeamResource {
         if(!projectteamRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class ProjectTeamResource {
         if(!projectteamRuntime.test(projectteam_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(projectteam_id);
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs(projectteam_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class ProjectTeamResource {
     public ResponseEntity<ProjectTeamDTO> get(@PathVariable("projectteam_id") Long projectteam_id) {
         ProjectTeam domain = projectteamService.get(projectteam_id);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(projectteam_id);
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs(projectteam_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class ProjectTeamResource {
         domain.setId(projectteam_id);
         domain = projectteamService.getUserRole(domain);
         projectteamdto = projectteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());
         projectteamdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
@@ -225,8 +225,8 @@ public class ProjectTeamResource {
         domain.setRoot(project_id);
 		projectteamService.create(domain);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -240,8 +240,8 @@ public class ProjectTeamResource {
         domain.setId(projectteam_id);
 		projectteamService.update(domain);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -267,8 +267,8 @@ public class ProjectTeamResource {
     public ResponseEntity<ProjectTeamDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectteam_id") Long projectteam_id) {
         ProjectTeam domain = projectteamService.get(projectteam_id);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -297,8 +297,8 @@ public class ProjectTeamResource {
         domain.setId(projectteam_id);
         domain = projectteamService.getUserRole(domain) ;
         projectteamdto = projectteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs(domain.getId());    
-        projectteamdto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = projectteamRuntime.getOPPrivs(domain.getId());    
+        projectteamdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
 

@@ -62,7 +62,7 @@ public class PRODUCTTEAMResource {
         if(!productteamRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class PRODUCTTEAMResource {
         if(!productteamRuntime.test(productteam_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(productteam_id);
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs(productteam_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class PRODUCTTEAMResource {
     public ResponseEntity<PRODUCTTEAMDTO> get(@PathVariable("productteam_id") Long productteam_id) {
         PRODUCTTEAM domain = productteamService.get(productteam_id);
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(productteam_id);
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs(productteam_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class PRODUCTTEAMResource {
         domain.setId(productteam_id);
         domain = productteamService.productTeamGuoLv(domain);
         productteamdto = productteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());
         productteamdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
@@ -225,8 +225,8 @@ public class PRODUCTTEAMResource {
         domain.setRoot(product_id);
 		productteamService.create(domain);
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -240,8 +240,8 @@ public class PRODUCTTEAMResource {
         domain.setId(productteam_id);
 		productteamService.update(domain);
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -267,8 +267,8 @@ public class PRODUCTTEAMResource {
     public ResponseEntity<PRODUCTTEAMDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productteam_id") Long productteam_id) {
         PRODUCTTEAM domain = productteamService.get(productteam_id);
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -297,8 +297,8 @@ public class PRODUCTTEAMResource {
         domain.setId(productteam_id);
         domain = productteamService.productTeamGuoLv(domain) ;
         productteamdto = productteamMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs(domain.getId());    
-        productteamdto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = productteamRuntime.getOPPrivs(domain.getId());    
+        productteamdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
 

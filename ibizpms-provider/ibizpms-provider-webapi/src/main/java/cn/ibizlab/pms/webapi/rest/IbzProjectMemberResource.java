@@ -62,7 +62,7 @@ public class IbzProjectMemberResource {
         if(!ibzprojectmemberRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class IbzProjectMemberResource {
         if(!ibzprojectmemberRuntime.test(ibzprojectmember_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(ibzprojectmember_id);
+        Map<String, Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(ibzprojectmember_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class IbzProjectMemberResource {
     public ResponseEntity<IbzProjectMemberDTO> get(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
         IbzProjectMember domain = ibzprojectmemberService.get(ibzprojectmember_id);
         IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(ibzprojectmember_id);
+        Map<String, Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(ibzprojectmember_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class IbzProjectMemberResource {
         IbzProjectMember domain = ibzprojectmemberMapping.toDomain(ibzprojectmemberdto);
         ibzprojectmemberService.save(domain);
         IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

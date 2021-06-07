@@ -62,7 +62,7 @@ public class CompanyStatsResource {
         if(!companystatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         CompanyStatsDTO dto = companystatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = companystatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class CompanyStatsResource {
         if(!companystatsRuntime.test(companystats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		CompanyStatsDTO dto = companystatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
+        Map<String, Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class CompanyStatsResource {
     public ResponseEntity<CompanyStatsDTO> get(@PathVariable("companystats_id") Long companystats_id) {
         CompanyStats domain = companystatsService.get(companystats_id);
         CompanyStatsDTO dto = companystatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
+        Map<String, Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class CompanyStatsResource {
         CompanyStats domain = companystatsMapping.toDomain(companystatsdto);
         companystatsService.save(domain);
         CompanyStatsDTO dto = companystatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = companystatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

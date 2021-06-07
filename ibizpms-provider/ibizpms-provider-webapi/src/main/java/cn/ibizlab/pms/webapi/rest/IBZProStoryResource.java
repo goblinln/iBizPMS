@@ -62,7 +62,7 @@ public class IBZProStoryResource {
         if(!ibzprostoryRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class IBZProStoryResource {
         if(!ibzprostoryRuntime.test(ibzprostory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(ibzprostory_id);
+        Map<String, Integer> opprivs = ibzprostoryRuntime.getOPPrivs(ibzprostory_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class IBZProStoryResource {
     public ResponseEntity<IBZProStoryDTO> get(@PathVariable("ibzprostory_id") Long ibzprostory_id) {
         IBZProStory domain = ibzprostoryService.get(ibzprostory_id);
         IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(ibzprostory_id);
+        Map<String, Integer> opprivs = ibzprostoryRuntime.getOPPrivs(ibzprostory_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class IBZProStoryResource {
         IBZProStory domain = ibzprostoryMapping.toDomain(ibzprostorydto);
         ibzprostoryService.save(domain);
         IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -146,7 +146,7 @@ public class IBZProStoryResource {
         domain.setId(ibzprostory_id);
         domain = ibzprostoryService.syncFromIBIZ(domain);
         ibzprostorydto = ibzprostoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzprostoryRuntime.getOPPrivs(domain.getId());
         ibzprostorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostorydto);
     }

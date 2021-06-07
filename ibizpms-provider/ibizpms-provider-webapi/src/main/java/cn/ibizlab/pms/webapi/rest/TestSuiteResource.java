@@ -62,7 +62,7 @@ public class TestSuiteResource {
         if(!testsuiteRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class TestSuiteResource {
         if(!testsuiteRuntime.test(testsuite_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(testsuite_id);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(testsuite_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class TestSuiteResource {
     public ResponseEntity<TestSuiteDTO> get(@PathVariable("testsuite_id") Long testsuite_id) {
         TestSuite domain = testsuiteService.get(testsuite_id);
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(testsuite_id);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(testsuite_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -134,7 +134,7 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.linkCase(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
-        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
         testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
@@ -148,7 +148,7 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.mobTestSuiteCount(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
-        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
         testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
@@ -161,7 +161,7 @@ public class TestSuiteResource {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
         testsuiteService.save(domain);
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -175,7 +175,7 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.unlinkCase(domain);
         testsuitedto = testsuiteMapping.toDto(domain);
-        Map<String,Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());
         testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
@@ -222,8 +222,8 @@ public class TestSuiteResource {
         domain.setProduct(product_id);
 		testsuiteService.create(domain);
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -238,8 +238,8 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
 		testsuiteService.update(domain);
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -265,8 +265,8 @@ public class TestSuiteResource {
     public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
         TestSuite domain = testsuiteService.get(testsuite_id);
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -295,8 +295,8 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.linkCase(domain) ;
         testsuitedto = testsuiteMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs(domain.getId());    
-        testsuitedto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());    
+        testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
@@ -309,8 +309,8 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.mobTestSuiteCount(domain) ;
         testsuitedto = testsuiteMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs(domain.getId());    
-        testsuitedto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());    
+        testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
@@ -334,8 +334,8 @@ public class TestSuiteResource {
         domain.setId(testsuite_id);
         domain = testsuiteService.unlinkCase(domain) ;
         testsuitedto = testsuiteMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs(domain.getId());    
-        testsuitedto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(domain.getId());    
+        testsuitedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 

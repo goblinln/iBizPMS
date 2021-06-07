@@ -62,7 +62,7 @@ public class IbzMyTerritoryResource {
         if(!ibzmyterritoryRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class IbzMyTerritoryResource {
         if(!ibzmyterritoryRuntime.test(ibzmyterritory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(ibzmyterritory_id);
+        Map<String, Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(ibzmyterritory_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class IbzMyTerritoryResource {
     public ResponseEntity<IbzMyTerritoryDTO> get(@PathVariable("ibzmyterritory_id") Long ibzmyterritory_id) {
         IbzMyTerritory domain = ibzmyterritoryService.get(ibzmyterritory_id);
         IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(ibzmyterritory_id);
+        Map<String, Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(ibzmyterritory_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -165,7 +165,7 @@ public class IbzMyTerritoryResource {
         IbzMyTerritory domain = ibzmyterritoryMapping.toDomain(ibzmyterritorydto);
         ibzmyterritoryService.save(domain);
         IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

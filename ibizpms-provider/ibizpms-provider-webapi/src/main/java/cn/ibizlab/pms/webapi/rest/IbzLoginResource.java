@@ -60,7 +60,7 @@ public class IbzLoginResource {
         domain.setId(ibzlogin_id);
         domain = ibiloginService.getUser(domain);
         ibzlogindto = ibzloginMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
         ibzlogindto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }
@@ -74,7 +74,7 @@ public class IbzLoginResource {
         domain.setId(ibzlogin_id);
         domain = ibiloginService.ztlogin(domain);
         ibzlogindto = ibzloginMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
         ibzlogindto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
     }

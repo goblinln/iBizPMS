@@ -60,7 +60,7 @@ public class UserContactResource {
         UserContact domain = usercontactMapping.toDomain(usercontactdto);
 		usercontactService.create(domain);
         UserContactDTO dto = usercontactMapping.toDto(domain);
-        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -74,7 +74,7 @@ public class UserContactResource {
         domain.setId(usercontact_id);
 		usercontactService.update(domain );
 		UserContactDTO dto = usercontactMapping.toDto(domain);
-        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
+        Map<String, Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -101,7 +101,7 @@ public class UserContactResource {
     public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
         UserContact domain = usercontactService.get(usercontact_id);
         UserContactDTO dto = usercontactMapping.toDto(domain);
-        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
+        Map<String, Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -128,7 +128,7 @@ public class UserContactResource {
         UserContact domain = usercontactMapping.toDomain(usercontactdto);
         usercontactService.save(domain);
         UserContactDTO dto = usercontactMapping.toDto(domain);
-        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = usercontactRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

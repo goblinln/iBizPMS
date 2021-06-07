@@ -62,7 +62,7 @@ public class DeptResource {
         if(!deptRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         DeptDTO dto = deptMapping.toDto(domain);
-        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = deptRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class DeptResource {
         if(!deptRuntime.test(dept_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		DeptDTO dto = deptMapping.toDto(domain);
-        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
+        Map<String, Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class DeptResource {
     public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
         Dept domain = deptService.get(dept_id);
         DeptDTO dto = deptMapping.toDto(domain);
-        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
+        Map<String, Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class DeptResource {
         Dept domain = deptMapping.toDomain(deptdto);
         deptService.save(domain);
         DeptDTO dto = deptMapping.toDto(domain);
-        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = deptRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

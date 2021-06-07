@@ -60,7 +60,7 @@ public class IbzMonthlyResource {
         IbzMonthly domain = ibzmonthlyMapping.toDomain(ibzmonthlydto);
 		ibzmonthlyService.create(domain);
         IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -75,7 +75,7 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
 		ibzmonthlyService.update(domain );
 		IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(ibzmonthly_id);
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(ibzmonthly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -102,7 +102,7 @@ public class IbzMonthlyResource {
     public ResponseEntity<IbzMonthlyDTO> get(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
         IbzMonthly domain = ibzmonthlyService.get(ibzmonthly_id);
         IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(ibzmonthly_id);
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(ibzmonthly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -130,7 +130,7 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.createGetInfo(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         ibzmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
@@ -144,7 +144,7 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.createUserMonthly(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         ibzmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
@@ -158,7 +158,7 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.editGetCompleteTask(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         ibzmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
@@ -172,7 +172,7 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.haveRead(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         ibzmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
@@ -186,7 +186,7 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.pushUserMonthly(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         ibzmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
@@ -199,7 +199,7 @@ public class IbzMonthlyResource {
         IbzMonthly domain = ibzmonthlyMapping.toDomain(ibzmonthlydto);
         ibzmonthlyService.save(domain);
         IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -213,7 +213,7 @@ public class IbzMonthlyResource {
         domain.setIbzmonthlyid(ibzmonthly_id);
         domain = ibzmonthlyService.submit(domain);
         ibzmonthlydto = ibzmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
+        Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(domain.getIbzmonthlyid());
         ibzmonthlydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }

@@ -20,7 +20,7 @@ import org.springframework.util.StringUtils;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-@Configuration
+//@Configuration
 public class LiquibaseConfiguration {
 
    /**

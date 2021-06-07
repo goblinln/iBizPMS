@@ -62,7 +62,7 @@ public class GroupResource {
         if(!groupRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         GroupDTO dto = groupMapping.toDto(domain);
-        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = groupRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class GroupResource {
         if(!groupRuntime.test(group_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		GroupDTO dto = groupMapping.toDto(domain);
-        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(group_id);
+        Map<String, Integer> opprivs = groupRuntime.getOPPrivs(group_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class GroupResource {
     public ResponseEntity<GroupDTO> get(@PathVariable("group_id") Long group_id) {
         Group domain = groupService.get(group_id);
         GroupDTO dto = groupMapping.toDto(domain);
-        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(group_id);
+        Map<String, Integer> opprivs = groupRuntime.getOPPrivs(group_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class GroupResource {
         Group domain = groupMapping.toDomain(groupdto);
         groupService.save(domain);
         GroupDTO dto = groupMapping.toDto(domain);
-        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = groupRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

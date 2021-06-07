@@ -62,7 +62,7 @@ public class SuiteCaseResource {
         if(!suitecaseRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = suitecaseRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = suitecaseRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class SuiteCaseResource {
         if(!suitecaseRuntime.test(suitecase_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = suitecaseRuntime.getOPPrivs(suitecase_id);
+        Map<String, Integer> opprivs = suitecaseRuntime.getOPPrivs(suitecase_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class SuiteCaseResource {
     public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
         SuiteCase domain = suitecaseService.get(suitecase_id);
         SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = suitecaseRuntime.getOPPrivs(suitecase_id);
+        Map<String, Integer> opprivs = suitecaseRuntime.getOPPrivs(suitecase_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class SuiteCaseResource {
         SuiteCase domain = suitecaseMapping.toDomain(suitecasedto);
         suitecaseService.save(domain);
         SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = suitecaseRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = suitecaseRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

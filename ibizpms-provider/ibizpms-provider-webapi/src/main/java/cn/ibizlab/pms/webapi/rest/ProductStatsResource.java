@@ -62,7 +62,7 @@ public class ProductStatsResource {
         if(!productstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductStatsDTO dto = productstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class ProductStatsResource {
         if(!productstatsRuntime.test(productstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductStatsDTO dto = productstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(productstats_id);
+        Map<String, Integer> opprivs = productstatsRuntime.getOPPrivs(productstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class ProductStatsResource {
     public ResponseEntity<ProductStatsDTO> get(@PathVariable("productstats_id") Long productstats_id) {
         ProductStats domain = productstatsService.get(productstats_id);
         ProductStatsDTO dto = productstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(productstats_id);
+        Map<String, Integer> opprivs = productstatsRuntime.getOPPrivs(productstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class ProductStatsResource {
         domain.setId(productstats_id);
         domain = productstatsService.getTestStats(domain);
         productstatsdto = productstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
         productstatsdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productstatsdto);
     }
@@ -146,7 +146,7 @@ public class ProductStatsResource {
         ProductStats domain = productstatsMapping.toDomain(productstatsdto);
         productstatsService.save(domain);
         ProductStatsDTO dto = productstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

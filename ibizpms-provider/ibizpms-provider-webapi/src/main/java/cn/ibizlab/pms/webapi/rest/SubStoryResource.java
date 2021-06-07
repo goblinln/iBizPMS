@@ -62,7 +62,7 @@ public class SubStoryResource {
         if(!storyRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -86,7 +86,7 @@ public class SubStoryResource {
         if(!storyRuntime.test(substory_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(substory_id);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(substory_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -113,7 +113,7 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> get(@PathVariable("substory_id") Long substory_id) {
         Story domain = storyService.get(substory_id);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(substory_id);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(substory_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -134,7 +134,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.activate(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -148,7 +148,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.allPush(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -162,7 +162,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.assignTo(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -176,7 +176,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchAssignTo(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -190,7 +190,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeBranch(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -204,7 +204,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeModule(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -218,7 +218,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangePlan(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -232,7 +232,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeStage(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -246,7 +246,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchClose(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -260,7 +260,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchReview(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -274,7 +274,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -288,7 +288,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.bugToStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -302,7 +302,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildBatchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -316,7 +316,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildLinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -330,7 +330,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -344,7 +344,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildUnlinkStorys(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -358,7 +358,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.change(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -379,7 +379,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.close(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -393,7 +393,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.createTasks(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -407,7 +407,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.getStorySpec(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -421,7 +421,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.getStorySpecs(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -435,7 +435,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.importPlanStories(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -449,7 +449,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.linkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -463,7 +463,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectBatchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -477,7 +477,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectLinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -491,7 +491,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -505,7 +505,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectUnlinkStorys(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -519,7 +519,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.push(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -533,7 +533,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseBatchUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -547,7 +547,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseLinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -561,7 +561,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseUnlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -575,7 +575,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.resetReviewedBy(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -589,7 +589,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.review(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -602,7 +602,7 @@ public class SubStoryResource {
         Story domain = substoryMapping.toDomain(substorydto);
         storyService.save(domain);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -623,7 +623,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.sendMessage(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -637,7 +637,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.sendMsgPreProcess(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -651,7 +651,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.setStage(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -665,7 +665,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.storyFavorites(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -679,7 +679,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.storyNFavorites(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -693,7 +693,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.syncFromIbiz(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -707,7 +707,7 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.unlinkStory(domain);
         substorydto = substoryMapping.toDto(domain);
-        Map<String,Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
@@ -1090,8 +1090,8 @@ public class SubStoryResource {
         domain.setParent(story_id);
 		storyService.create(domain);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1117,8 +1117,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
 		storyService.update(domain);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1144,8 +1144,8 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
         Story domain = storyService.get(substory_id);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -1167,8 +1167,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.activate(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1181,8 +1181,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.allPush(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1195,8 +1195,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.assignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1209,8 +1209,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchAssignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1223,8 +1223,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeBranch(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1237,8 +1237,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeModule(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1251,8 +1251,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangePlan(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1265,8 +1265,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeStage(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1279,8 +1279,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchClose(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1293,8 +1293,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchReview(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1307,8 +1307,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1321,8 +1321,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.bugToStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1335,8 +1335,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1349,8 +1349,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1363,8 +1363,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1377,8 +1377,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1391,8 +1391,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.change(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1412,8 +1412,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.close(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1426,8 +1426,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.createTasks(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1440,8 +1440,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.getStorySpec(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1454,8 +1454,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.getStorySpecs(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1468,8 +1468,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.importPlanStories(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1482,8 +1482,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.linkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1496,8 +1496,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1510,8 +1510,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1524,8 +1524,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1538,8 +1538,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1552,8 +1552,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.push(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1566,8 +1566,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1580,8 +1580,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1594,8 +1594,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1608,8 +1608,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.resetReviewedBy(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1622,8 +1622,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.review(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1658,8 +1658,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.sendMessage(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1672,8 +1672,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.sendMsgPreProcess(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1686,8 +1686,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.setStage(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1700,8 +1700,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.storyFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1714,8 +1714,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.storyNFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1728,8 +1728,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.syncFromIbiz(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -1742,8 +1742,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.unlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2147,8 +2147,8 @@ public class SubStoryResource {
         domain.setParent(story_id);
 		storyService.create(domain);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2174,8 +2174,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
 		storyService.update(domain);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2201,8 +2201,8 @@ public class SubStoryResource {
     public ResponseEntity<SubStoryDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
         Story domain = storyService.get(substory_id);
         SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -2224,8 +2224,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.activate(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2238,8 +2238,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.allPush(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2252,8 +2252,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.assignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2266,8 +2266,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchAssignTo(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2280,8 +2280,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeBranch(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2294,8 +2294,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeModule(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2308,8 +2308,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangePlan(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2322,8 +2322,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchChangeStage(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2336,8 +2336,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchClose(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2350,8 +2350,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchReview(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2364,8 +2364,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.batchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2378,8 +2378,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.bugToStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2392,8 +2392,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2406,8 +2406,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2420,8 +2420,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2434,8 +2434,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.buildUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2448,8 +2448,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.change(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2469,8 +2469,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.close(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2483,8 +2483,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.createTasks(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2497,8 +2497,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.getStorySpec(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2511,8 +2511,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.getStorySpecs(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2525,8 +2525,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.importPlanStories(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2539,8 +2539,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.linkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2553,8 +2553,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2567,8 +2567,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2581,8 +2581,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2595,8 +2595,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.projectUnlinkStorys(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2609,8 +2609,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.push(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2623,8 +2623,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseBatchUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2637,8 +2637,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseLinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2651,8 +2651,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.releaseUnlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2665,8 +2665,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.resetReviewedBy(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2679,8 +2679,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.review(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2715,8 +2715,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.sendMessage(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2729,8 +2729,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.sendMsgPreProcess(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2743,8 +2743,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.setStage(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2757,8 +2757,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.storyFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2771,8 +2771,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.storyNFavorites(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2785,8 +2785,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.syncFromIbiz(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
@@ -2799,8 +2799,8 @@ public class SubStoryResource {
         domain.setId(substory_id);
         domain = storyService.unlinkStory(domain) ;
         substorydto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = storyRuntime.getOPPrivs(domain.getId());    
-        substorydto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
+        substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 

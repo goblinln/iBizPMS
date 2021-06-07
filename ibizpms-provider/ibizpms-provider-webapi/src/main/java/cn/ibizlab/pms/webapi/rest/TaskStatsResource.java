@@ -62,7 +62,7 @@ public class TaskStatsResource {
         if(!taskstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TaskStatsDTO dto = taskstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = taskstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class TaskStatsResource {
         if(!taskstatsRuntime.test(taskstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TaskStatsDTO dto = taskstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs(taskstats_id);
+        Map<String, Integer> opprivs = taskstatsRuntime.getOPPrivs(taskstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class TaskStatsResource {
     public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
         TaskStats domain = taskstatsService.get(taskstats_id);
         TaskStatsDTO dto = taskstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs(taskstats_id);
+        Map<String, Integer> opprivs = taskstatsRuntime.getOPPrivs(taskstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class TaskStatsResource {
         TaskStats domain = taskstatsMapping.toDomain(taskstatsdto);
         taskstatsService.save(domain);
         TaskStatsDTO dto = taskstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = taskstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

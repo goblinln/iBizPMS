@@ -62,7 +62,7 @@ public class IbzAgentResource {
         if(!ibzagentRuntime.test(domain.getIbzagentid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzAgentDTO dto = ibzagentMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs(domain.getIbzagentid());
+        Map<String, Integer> opprivs = ibzagentRuntime.getOPPrivs(domain.getIbzagentid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class IbzAgentResource {
         if(!ibzagentRuntime.test(ibzagent_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzAgentDTO dto = ibzagentMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs(ibzagent_id);
+        Map<String, Integer> opprivs = ibzagentRuntime.getOPPrivs(ibzagent_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class IbzAgentResource {
     public ResponseEntity<IbzAgentDTO> get(@PathVariable("ibzagent_id") Long ibzagent_id) {
         IbzAgent domain = ibzagentService.get(ibzagent_id);
         IbzAgentDTO dto = ibzagentMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs(ibzagent_id);
+        Map<String, Integer> opprivs = ibzagentRuntime.getOPPrivs(ibzagent_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class IbzAgentResource {
         IbzAgent domain = ibzagentMapping.toDomain(ibzagentdto);
         ibzagentService.save(domain);
         IbzAgentDTO dto = ibzagentMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs(domain.getIbzagentid());
+        Map<String, Integer> opprivs = ibzagentRuntime.getOPPrivs(domain.getIbzagentid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

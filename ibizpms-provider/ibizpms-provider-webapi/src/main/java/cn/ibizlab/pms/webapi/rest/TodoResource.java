@@ -62,7 +62,7 @@ public class TodoResource {
         if(!todoRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         TodoDTO dto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class TodoResource {
         if(!todoRuntime.test(todo_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		TodoDTO dto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(todo_id);
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(todo_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class TodoResource {
     public ResponseEntity<TodoDTO> get(@PathVariable("todo_id") Long todo_id) {
         Todo domain = todoService.get(todo_id);
         TodoDTO dto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(todo_id);
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(todo_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -126,7 +126,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.activate(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
@@ -140,7 +140,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.assignTo(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
@@ -161,7 +161,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.close(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
@@ -175,7 +175,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.createCycle(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
@@ -189,7 +189,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.finish(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
@@ -202,7 +202,7 @@ public class TodoResource {
         Todo domain = todoMapping.toDomain(tododto);
         todoService.save(domain);
         TodoDTO dto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -216,7 +216,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.sendMessage(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
@@ -230,7 +230,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.sendMsgPreProcess(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
@@ -244,7 +244,7 @@ public class TodoResource {
         domain.setId(todo_id);
         domain = todoService.start(domain);
         tododto = todoMapping.toDto(domain);
-        Map<String,Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = todoRuntime.getOPPrivs(domain.getId());
         tododto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }

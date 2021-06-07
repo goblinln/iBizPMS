@@ -62,7 +62,7 @@ public class IbzReportResource {
         if(!ibzreportRuntime.test(domain.getIbzdailyid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzReportDTO dto = ibzreportMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class IbzReportResource {
         if(!ibzreportRuntime.test(ibzreport_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzReportDTO dto = ibzreportMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(ibzreport_id);
+        Map<String, Integer> opprivs = ibzreportRuntime.getOPPrivs(ibzreport_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class IbzReportResource {
     public ResponseEntity<IbzReportDTO> get(@PathVariable("ibzreport_id") Long ibzreport_id) {
         IbzReport domain = ibzreportService.get(ibzreport_id);
         IbzReportDTO dto = ibzreportMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(ibzreport_id);
+        Map<String, Integer> opprivs = ibzreportRuntime.getOPPrivs(ibzreport_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -134,7 +134,7 @@ public class IbzReportResource {
         domain.setIbzdailyid(ibzreport_id);
         domain = ibzreportService.myReportINotSubmit(domain);
         ibzreportdto = ibzreportMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzreportdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
@@ -148,7 +148,7 @@ public class IbzReportResource {
         domain.setIbzdailyid(ibzreport_id);
         domain = ibzreportService.reportIReceived(domain);
         ibzreportdto = ibzreportMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
         ibzreportdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportdto);
     }
@@ -161,7 +161,7 @@ public class IbzReportResource {
         IbzReport domain = ibzreportMapping.toDomain(ibzreportdto);
         ibzreportService.save(domain);
         IbzReportDTO dto = ibzreportMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
+        Map<String, Integer> opprivs = ibzreportRuntime.getOPPrivs(domain.getIbzdailyid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

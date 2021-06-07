@@ -62,7 +62,7 @@ public class EmpLoyeeloadResource {
         if(!employeeloadRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
-        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = employeeloadRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class EmpLoyeeloadResource {
         if(!employeeloadRuntime.test(employeeload_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
-        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs(employeeload_id);
+        Map<String, Integer> opprivs = employeeloadRuntime.getOPPrivs(employeeload_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class EmpLoyeeloadResource {
     public ResponseEntity<EmpLoyeeloadDTO> get(@PathVariable("employeeload_id") Long employeeload_id) {
         EmpLoyeeload domain = employeeloadService.get(employeeload_id);
         EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
-        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs(employeeload_id);
+        Map<String, Integer> opprivs = employeeloadRuntime.getOPPrivs(employeeload_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class EmpLoyeeloadResource {
         EmpLoyeeload domain = employeeloadMapping.toDomain(employeeloaddto);
         employeeloadService.save(domain);
         EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
-        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = employeeloadRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

@@ -63,8 +63,8 @@ public class IbzLibCaseStepsResource {
         if(!ibzlibcasestepsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -80,8 +80,8 @@ public class IbzLibCaseStepsResource {
         if(!ibzlibcasestepsRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -107,8 +107,8 @@ public class IbzLibCaseStepsResource {
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzCase(@PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
         IbzLibCaseSteps domain = ibzlibcasestepsService.get(ibzlibcasesteps_id);
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -165,8 +165,8 @@ public class IbzLibCaseStepsResource {
         if(!ibzlibcasestepsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -182,8 +182,8 @@ public class IbzLibCaseStepsResource {
         if(!ibzlibcasestepsRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -209,8 +209,8 @@ public class IbzLibCaseStepsResource {
     public ResponseEntity<IbzLibCaseStepsDTO> getByIbzLibIbzCase(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzcase_id") Long ibzcase_id, @PathVariable("ibzlibcasesteps_id") Long ibzlibcasesteps_id) {
         IbzLibCaseSteps domain = ibzlibcasestepsService.get(ibzlibcasesteps_id);
         IbzLibCaseStepsDTO dto = ibzlibcasestepsMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibcasestepsRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -62,7 +62,7 @@ public class ProductSumResource {
         if(!productsumRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         ProductSumDTO dto = productsumMapping.toDto(domain);
-        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productsumRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class ProductSumResource {
         if(!productsumRuntime.test(productsum_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		ProductSumDTO dto = productsumMapping.toDto(domain);
-        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
+        Map<String, Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class ProductSumResource {
     public ResponseEntity<ProductSumDTO> get(@PathVariable("productsum_id") Long productsum_id) {
         ProductSum domain = productsumService.get(productsum_id);
         ProductSumDTO dto = productsumMapping.toDto(domain);
-        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
+        Map<String, Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class ProductSumResource {
         ProductSum domain = productsumMapping.toDomain(productsumdto);
         productsumService.save(domain);
         ProductSumDTO dto = productsumMapping.toDto(domain);
-        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = productsumRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

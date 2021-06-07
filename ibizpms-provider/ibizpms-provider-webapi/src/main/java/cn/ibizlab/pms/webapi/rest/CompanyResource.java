@@ -62,7 +62,7 @@ public class CompanyResource {
         if(!companyRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         CompanyDTO dto = companyMapping.toDto(domain);
-        Map<String,Integer> opprivs = companyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = companyRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class CompanyResource {
         if(!companyRuntime.test(company_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		CompanyDTO dto = companyMapping.toDto(domain);
-        Map<String,Integer> opprivs = companyRuntime.getOPPrivs(company_id);
+        Map<String, Integer> opprivs = companyRuntime.getOPPrivs(company_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class CompanyResource {
     public ResponseEntity<CompanyDTO> get(@PathVariable("company_id") Long company_id) {
         Company domain = companyService.get(company_id);
         CompanyDTO dto = companyMapping.toDto(domain);
-        Map<String,Integer> opprivs = companyRuntime.getOPPrivs(company_id);
+        Map<String, Integer> opprivs = companyRuntime.getOPPrivs(company_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class CompanyResource {
         Company domain = companyMapping.toDomain(companydto);
         companyService.save(domain);
         CompanyDTO dto = companyMapping.toDto(domain);
-        Map<String,Integer> opprivs = companyRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = companyRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

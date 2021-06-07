@@ -60,7 +60,7 @@ public class IbizproProductWeeklyResource {
         IbizproProductWeekly domain = ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto);
 		ibizproproductweeklyService.create(domain);
         IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
+        Map<String, Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -75,7 +75,7 @@ public class IbizproProductWeeklyResource {
         domain.setIbizproProductweeklyid(ibizproproductweekly_id);
 		ibizproproductweeklyService.update(domain );
 		IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(ibizproproductweekly_id);
+        Map<String, Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(ibizproproductweekly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -102,7 +102,7 @@ public class IbizproProductWeeklyResource {
     public ResponseEntity<IbizproProductWeeklyDTO> get(@PathVariable("ibizproproductweekly_id") Long ibizproproductweekly_id) {
         IbizproProductWeekly domain = ibizproproductweeklyService.get(ibizproproductweekly_id);
         IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(ibizproproductweekly_id);
+        Map<String, Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(ibizproproductweekly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -129,7 +129,7 @@ public class IbizproProductWeeklyResource {
         IbizproProductWeekly domain = ibizproproductweeklyMapping.toDomain(ibizproproductweeklydto);
         ibizproproductweeklyService.save(domain);
         IbizproProductWeeklyDTO dto = ibizproproductweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
+        Map<String, Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -143,7 +143,7 @@ public class IbizproProductWeeklyResource {
         domain.setIbizproProductweeklyid(ibizproproductweekly_id);
         domain = ibizproproductweeklyService.sumProductWeekly(domain);
         ibizproproductweeklydto = ibizproproductweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
+        Map<String, Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(domain.getIbizproProductweeklyid());
         ibizproproductweeklydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproproductweeklydto);
     }

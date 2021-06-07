@@ -62,7 +62,7 @@ public class IbzproConfigResource {
         if(!ibzproconfigRuntime.test(domain.getIbzproconfigid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
+        Map<String, Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class IbzproConfigResource {
         if(!ibzproconfigRuntime.test(ibzproconfig_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(ibzproconfig_id);
+        Map<String, Integer> opprivs = ibzproconfigRuntime.getOPPrivs(ibzproconfig_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class IbzproConfigResource {
     public ResponseEntity<IbzproConfigDTO> get(@PathVariable("ibzproconfig_id") String ibzproconfig_id) {
         IbzproConfig domain = ibzproconfigService.get(ibzproconfig_id);
         IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(ibzproconfig_id);
+        Map<String, Integer> opprivs = ibzproconfigRuntime.getOPPrivs(ibzproconfig_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -134,7 +134,7 @@ public class IbzproConfigResource {
         domain.setIbzproconfigid(ibzproconfig_id);
         domain = ibzproconfigService.getSystemConfig(domain);
         ibzproconfigdto = ibzproconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
+        Map<String, Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
         ibzproconfigdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproconfigdto);
     }
@@ -147,7 +147,7 @@ public class IbzproConfigResource {
         IbzproConfig domain = ibzproconfigMapping.toDomain(ibzproconfigdto);
         ibzproconfigService.save(domain);
         IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
+        Map<String, Integer> opprivs = ibzproconfigRuntime.getOPPrivs(domain.getIbzproconfigid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

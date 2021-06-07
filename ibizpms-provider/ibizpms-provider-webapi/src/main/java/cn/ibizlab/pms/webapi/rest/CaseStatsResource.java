@@ -62,7 +62,7 @@ public class CaseStatsResource {
         if(!casestatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         CaseStatsDTO dto = casestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = casestatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class CaseStatsResource {
         if(!casestatsRuntime.test(casestats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		CaseStatsDTO dto = casestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs(casestats_id);
+        Map<String, Integer> opprivs = casestatsRuntime.getOPPrivs(casestats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class CaseStatsResource {
     public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
         CaseStats domain = casestatsService.get(casestats_id);
         CaseStatsDTO dto = casestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs(casestats_id);
+        Map<String, Integer> opprivs = casestatsRuntime.getOPPrivs(casestats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class CaseStatsResource {
         CaseStats domain = casestatsMapping.toDomain(casestatsdto);
         casestatsService.save(domain);
         CaseStatsDTO dto = casestatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = casestatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

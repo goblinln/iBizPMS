@@ -60,8 +60,8 @@ public class TestReultResource {
     public ResponseEntity<TestReultDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testreult_id") Long testreult_id) {
         TestResult domain = testresultService.get(testreult_id);
         TestReultDTO dto = testreultMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = testresultRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = testresultRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -62,7 +62,7 @@ public class BugStatsResource {
         if(!bugstatsRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BugStatsDTO dto = bugstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = bugstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class BugStatsResource {
         if(!bugstatsRuntime.test(bugstats_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BugStatsDTO dto = bugstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
+        Map<String, Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class BugStatsResource {
     public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
         BugStats domain = bugstatsService.get(bugstats_id);
         BugStatsDTO dto = bugstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
+        Map<String, Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -132,7 +132,7 @@ public class BugStatsResource {
         BugStats domain = bugstatsMapping.toDomain(bugstatsdto);
         bugstatsService.save(domain);
         BugStatsDTO dto = bugstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = bugstatsRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

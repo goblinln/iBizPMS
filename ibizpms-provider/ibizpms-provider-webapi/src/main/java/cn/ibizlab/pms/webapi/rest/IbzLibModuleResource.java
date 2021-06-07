@@ -62,7 +62,7 @@ public class IbzLibModuleResource {
         if(!ibzlibmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class IbzLibModuleResource {
         if(!ibzlibmoduleRuntime.test(ibzlibmodule_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(ibzlibmodule_id);
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(ibzlibmodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class IbzLibModuleResource {
     public ResponseEntity<IbzLibModuleDTO> get(@PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
         IbzLibModule domain = ibzlibmoduleService.get(ibzlibmodule_id);
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(ibzlibmodule_id);
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(ibzlibmodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -179,8 +179,8 @@ public class IbzLibModuleResource {
         if(!ibzlibmoduleRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -196,8 +196,8 @@ public class IbzLibModuleResource {
         if(!ibzlibmoduleRuntime.test(domain.getId(),"UPDATE"))
             throw new RuntimeException("无权限操作");
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -223,8 +223,8 @@ public class IbzLibModuleResource {
     public ResponseEntity<IbzLibModuleDTO> getByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("ibzlibmodule_id") Long ibzlibmodule_id) {
         IbzLibModule domain = ibzlibmoduleService.get(ibzlibmodule_id);
         IbzLibModuleDTO dto = ibzlibmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

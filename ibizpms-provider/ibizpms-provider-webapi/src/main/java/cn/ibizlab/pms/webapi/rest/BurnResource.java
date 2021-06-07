@@ -62,7 +62,7 @@ public class BurnResource {
         if(!burnRuntime.test(domain.getId(),"CREATE"))
             throw new RuntimeException("无权限操作");
         BurnDTO dto = burnMapping.toDto(domain);
-        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -78,7 +78,7 @@ public class BurnResource {
         if(!burnRuntime.test(burn_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		BurnDTO dto = burnMapping.toDto(domain);
-        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(burn_id);
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs(burn_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -105,7 +105,7 @@ public class BurnResource {
     public ResponseEntity<BurnDTO> get(@PathVariable("burn_id") String burn_id) {
         Burn domain = burnService.get(burn_id);
         BurnDTO dto = burnMapping.toDto(domain);
-        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(burn_id);
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs(burn_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class BurnResource {
         domain.setId(burn_id);
         domain = burnService.computeBurn(domain);
         burndto = burnMapping.toDto(domain);
-        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
         burndto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
@@ -146,7 +146,7 @@ public class BurnResource {
         Burn domain = burnMapping.toDomain(burndto);
         burnService.save(domain);
         BurnDTO dto = burnMapping.toDto(domain);
-        Map<String,Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -193,8 +193,8 @@ public class BurnResource {
         domain.setProject(project_id);
 		burnService.create(domain);
         BurnDTO dto = burnMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -208,8 +208,8 @@ public class BurnResource {
         domain.setId(burn_id);
 		burnService.update(domain);
         BurnDTO dto = burnMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -235,8 +235,8 @@ public class BurnResource {
     public ResponseEntity<BurnDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
         Burn domain = burnService.get(burn_id);
         BurnDTO dto = burnMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
@@ -265,8 +265,8 @@ public class BurnResource {
         domain.setId(burn_id);
         domain = burnService.computeBurn(domain) ;
         burndto = burnMapping.toDto(domain);
-        Map<String, Integer> opprivsMap = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        burndto.setSrfopprivs(opprivsMap);
+        Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        burndto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
 

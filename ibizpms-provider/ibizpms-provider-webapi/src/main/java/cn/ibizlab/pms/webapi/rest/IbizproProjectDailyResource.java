@@ -62,7 +62,7 @@ public class IbizproProjectDailyResource {
         if(!ibizproprojectdailyRuntime.test(domain.getIbizproprojectdailyid(),"CREATE"))
             throw new RuntimeException("无权限操作");
         IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
+        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -79,7 +79,7 @@ public class IbizproProjectDailyResource {
         if(!ibizproprojectdailyRuntime.test(ibizproprojectdaily_id,"UPDATE"))
             throw new RuntimeException("无权限操作");
 		IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
+        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -106,7 +106,7 @@ public class IbizproProjectDailyResource {
     public ResponseEntity<IbizproProjectDailyDTO> get(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
         IbizproProjectDaily domain = ibizproprojectdailyService.get(ibizproprojectdaily_id);
         IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
+        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -133,7 +133,7 @@ public class IbizproProjectDailyResource {
         IbizproProjectDaily domain = ibizproprojectdailyMapping.toDomain(ibizproprojectdailydto);
         ibizproprojectdailyService.save(domain);
         IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
+        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
@@ -147,7 +147,7 @@ public class IbizproProjectDailyResource {
         domain.setIbizproprojectdailyid(ibizproprojectdaily_id);
         domain = ibizproprojectdailyService.sumProjectDaily(domain);
         ibizproprojectdailydto = ibizproprojectdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
+        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
         ibizproprojectdailydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailydto);
     }
