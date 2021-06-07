@@ -78,14 +78,6 @@ public class ReportRoleConfigResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
-    @ApiOperation(value = "获取汇报角色配置草稿", tags = {"汇报角色配置" },  notes = "获取汇报角色配置草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/getdraft")
-    public ResponseEntity<ReportRoleConfigDTO> getDraft(ReportRoleConfigDTO dto) {
-        IbzReportRoleConfig domain = reportroleconfigMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(reportroleconfigMapping.toDto(ibzreportroleconfigService.getDraft(domain)));
-    }
-
     @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'READ')")
 	@ApiOperation(value = "获取数据集", tags = {"汇报角色配置" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/reportroleconfigs/fetchdefault")
@@ -99,6 +91,14 @@ public class ReportRoleConfigResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
+    @ApiOperation(value = "获取汇报角色配置草稿", tags = {"汇报角色配置" },  notes = "获取汇报角色配置草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportroleconfigs/getdraft")
+    public ResponseEntity<ReportRoleConfigDTO> getDraft(ReportRoleConfigDTO dto) {
+        IbzReportRoleConfig domain = reportroleconfigMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(reportroleconfigMapping.toDto(ibzreportroleconfigService.getDraft(domain)));
+    }
+
     @VersionCheck(entity = "ibzreportroleconfig" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #reportroleconfig_id, 'UPDATE')")
     @ApiOperation(value = "更新汇报角色配置", tags = {"汇报角色配置" },  notes = "更新汇报角色配置")
