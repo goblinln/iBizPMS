@@ -479,10 +479,6 @@
         "glyph" : "xf0a4@FontAwesome",
         "cssClass" : "fa fa-hand-o-right"
       },
-      "getPSSysPFPlugin" : {
-        "pluginType" : "GRID_COLRENDER",
-        "pluginCode" : "TASKASSPlugin"
-      },
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true

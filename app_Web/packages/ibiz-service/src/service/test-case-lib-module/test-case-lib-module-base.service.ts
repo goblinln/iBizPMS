@@ -111,18 +111,18 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
         return this.condCache.get('view');
     }
     /**
-     * FetchDefault
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseLibModuleService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testcaselib && true) {
-            return this.http.post(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/fetchdefault`, _data);
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.testcaselib && _context.testcaselibmodule) {
+            return this.http.delete(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`);
         }
-    this.log.warn([`[TestCaseLibModule]>>>[FetchDefault函数]异常`]);
+    this.log.warn([`[TestCaseLibModule]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -139,22 +139,6 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
             return res;
         }
     this.log.warn([`[TestCaseLibModule]>>>[Get函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseLibModuleService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.testcaselib && _context.testcaselibmodule) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`, _data);
-        }
-    this.log.warn([`[TestCaseLibModule]>>>[Update函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -180,18 +164,34 @@ export class TestCaseLibModuleBaseService extends EntityBaseService<ITestCaseLib
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Remove
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestCaseLibModuleService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.testcaselib && _context.testcaselibmodule) {
-            return this.http.delete(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`);
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/${_context.testcaselibmodule}`, _data);
         }
-    this.log.warn([`[TestCaseLibModule]>>>[Remove函数]异常`]);
+    this.log.warn([`[TestCaseLibModule]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseLibModuleService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.testcaselib && true) {
+            return this.http.post(`/testcaselibs/${_context.testcaselib}/testcaselibmodules/fetchdefault`, _data);
+        }
+    this.log.warn([`[TestCaseLibModule]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**

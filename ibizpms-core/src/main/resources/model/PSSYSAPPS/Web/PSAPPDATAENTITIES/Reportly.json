@@ -31,12 +31,12 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Submit",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "Submit",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Submit.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -44,24 +44,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Submit"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -99,12 +99,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
+    "codeName" : "Submit",
     "methodType" : "DEACTION",
-    "name" : "Get",
+    "name" : "Submit",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Get.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Submit.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -112,24 +112,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
+      "id" : "Submit"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -387,12 +387,12 @@
     "stringLength" : 200
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "Default"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -400,41 +400,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchDefault"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Submit",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "Submit",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Submit.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Submit"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -472,12 +455,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
+    "codeName" : "Submit",
     "methodType" : "DEACTION",
-    "name" : "Get",
+    "name" : "Submit",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Get.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Submit.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -485,24 +468,41 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
+      "id" : "Submit"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {

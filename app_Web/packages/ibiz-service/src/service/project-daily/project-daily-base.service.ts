@@ -66,6 +66,30 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
         return new HttpResponse(entity);
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectDailyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/projectdailies/${_context.projectdaily}`);
+        return res;
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectDailyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/projectdailies/${_context.projectdaily}`, _data);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -78,6 +102,17 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/projectdailies/getdraft`, _data);
         return res;
+    }
+    /**
+     * Summary
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectDailyService
+     */
+    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projectdailies/${_context.projectdaily}/summary`, _data);
     }
     /**
      * Create
@@ -98,29 +133,6 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
         return this.http.post(`/projectdailies`, _data);
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectDailyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/projectdailies/${_context.projectdaily}`, _data);
-    }
-    /**
-     * Summary
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectDailyService
-     */
-    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectdailies/${_context.projectdaily}/summary`, _data);
-    }
-    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -130,18 +142,6 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projectdailies/fetchdefault`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectDailyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/projectdailies/${_context.projectdaily}`);
-        return res;
     }
 
     /**

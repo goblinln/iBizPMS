@@ -193,19 +193,18 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Get
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestModuleService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testmodule) {
-            const res = await this.http.get(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
-            return res;
+            return this.http.delete(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
         }
-    this.log.warn([`[TestModule]>>>[Get函数]异常`]);
+    this.log.warn([`[TestModule]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -224,18 +223,19 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Remove
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TestModuleService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.test && _context.testmodule) {
-            return this.http.delete(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+            const res = await this.http.get(`/tests/${_context.test}/testmodules/${_context.testmodule}`);
+            return res;
         }
-    this.log.warn([`[TestModule]>>>[Remove函数]异常`]);
+    this.log.warn([`[TestModule]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**

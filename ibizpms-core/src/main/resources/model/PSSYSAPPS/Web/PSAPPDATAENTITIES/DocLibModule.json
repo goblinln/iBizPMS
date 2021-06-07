@@ -31,38 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -80,21 +48,51 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Collect",
+    "methodType" : "DEACTION",
+    "name" : "Collect",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "COLLECT"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Collect"
+    },
+    "builtinMethod" : false
+  }, {
+    "batchActionMode" : 2,
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
@@ -133,39 +131,41 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Get",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Get"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Collect",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Collect",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "COLLECT"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Collect"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
@@ -181,6 +181,23 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
+    "codeName" : "FetchMyFavourites",
+    "methodType" : "FETCH",
+    "name" : "FetchMyFavourites",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyFavourites"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyFavourites"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDir",
     "methodType" : "FETCH",
     "name" : "FetchRootModuleMuLu",
@@ -212,23 +229,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchAllDir"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyFavourites",
-    "methodType" : "FETCH",
-    "name" : "FetchMyFavourites",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyFavourites"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchMyFavourites"
     },
     "builtinMethod" : false
   }, {
@@ -443,35 +443,20 @@
     "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "getPSDEAction" : {
+    "codeName" : "FetchMyFavourites",
+    "methodType" : "FETCH",
+    "name" : "FetchMyFavourites",
+    "getPSDEDataSet" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
+      "id" : "MyFavourites"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "FetchMyFavourites"
     },
     "builtinMethod" : false
   }, {
@@ -492,6 +477,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDir",
     "methodType" : "FETCH",
     "name" : "FetchRootModuleMuLu",
@@ -509,21 +511,34 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Collect",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Collect",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "COLLECT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
+      "id" : "Collect"
+    },
+    "builtinMethod" : false
+  }, {
+    "batchActionMode" : 2,
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Save.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
@@ -545,23 +560,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAllDir",
-    "methodType" : "FETCH",
-    "name" : "FetchAllDoclibModule",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "AllDoclibModule"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAllDir"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -579,29 +577,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyFavourites",
+    "codeName" : "FetchAllDir",
     "methodType" : "FETCH",
-    "name" : "FetchMyFavourites",
+    "name" : "FetchAllDoclibModule",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyFavourites"
+      "id" : "AllDoclibModule"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -609,26 +590,45 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyFavourites"
+      "id" : "FetchAllDir"
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Collect",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Collect",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Collect.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "COLLECT"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Collect"
+      "id" : "Create"
     },
     "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",

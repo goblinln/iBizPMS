@@ -81,21 +81,6 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseStepService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testcase && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
-        }
-    this.log.warn([`[TestCaseStep]>>>[FetchDefault函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchVersions
      *
      * @param {*} [_context={}]
@@ -108,6 +93,21 @@ export class TestCaseStepBaseService extends EntityBaseService<ITestCaseStep> {
             return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchversions`, _data);
         }
     this.log.warn([`[TestCaseStep]>>>[FetchVersions函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseStepService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/fetchdefault`, _data);
+        }
+    this.log.warn([`[TestCaseStep]>>>[FetchDefault函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }
