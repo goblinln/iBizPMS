@@ -160,6 +160,9 @@
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "DeptId",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "COMMON.DATATYPE.DECIMAL"
+    },
     "logicName" : "部门标识",
     "name" : "DEPTID",
     "stdDataType" : 25,
@@ -167,12 +170,18 @@
     "keyField" : true
   }, {
     "codeName" : "DeptCode",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CONTROL.UPLOADER.CANCEL.TIPS"
+    },
     "logicName" : "部门代码",
     "name" : "DEPTCODE",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "DeptName",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CONTROL.DATAGRIDROWCOUNTLIST.PAGEFMT"
+    },
     "logicName" : "部门名称",
     "name" : "DEPTNAME",
     "stdDataType" : 25,
@@ -193,12 +202,18 @@
     "stringLength" : 100
   }, {
     "codeName" : "ShortName",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "PAGE.COMMON.EDITVIEW.DERGROUP.OTHER"
+    },
     "logicName" : "部门简称",
     "name" : "SHORTNAME",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
     "codeName" : "DeptLevel",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "TBB.TEXT.*.ROLLBACKWF"
+    },
     "logicName" : "部门级别",
     "name" : "DEPTLEVEL",
     "stdDataType" : 9
@@ -210,11 +225,17 @@
     "stringLength" : 100
   }, {
     "codeName" : "ShowOrder",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT"
+    },
     "logicName" : "排序",
     "name" : "SHOWORDER",
     "stdDataType" : 9
   }, {
     "codeName" : "BCode",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "PAGE.COMMON.CUSTOMSPDESIGNER.LOGIC"
+    },
     "logicName" : "业务编码",
     "name" : "BCODE",
     "stdDataType" : 25,

@@ -18,7 +18,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSSubSysSADE] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSubSysSADE", fallback = PSSubSysSADEFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSubSysSADE", fallback = PSSubSysSADEFallback.class)
 public interface PSSubSysSADEFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssubsyssades/select")

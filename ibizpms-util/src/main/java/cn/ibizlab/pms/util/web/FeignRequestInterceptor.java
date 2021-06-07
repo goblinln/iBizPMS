@@ -26,7 +26,7 @@ public class FeignRequestInterceptor implements RequestInterceptor {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Value("${ibiz.deploysystemid:NONE}")
+    @Value("${ibiz.deploysystemid:default}")
     private String strDeploySystemId;
 
     @Override
@@ -36,9 +36,9 @@ public class FeignRequestInterceptor implements RequestInterceptor {
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         if(curUser != null){
             requestTemplate.header("personid", curUser.getPersonid());
-            requestTemplate.header("srfsystemid", curUser.getSrfsystemid());
             requestTemplate.header("srfdcid", curUser.getSrfdcid());
-            requestTemplate.header("srfdcsystemid", curUser.getSrfdcsystemid());
+            requestTemplate.header("srffromsystemid", curUser.getSrfsystemid());
+            requestTemplate.header("srffromdcsystemid", curUser.getSrfdcsystemid());
         }
         if (requestAttributes != null) {
             HttpServletRequest request = requestAttributes.getRequest();

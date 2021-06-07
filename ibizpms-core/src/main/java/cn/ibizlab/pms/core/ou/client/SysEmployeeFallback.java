@@ -1,142 +1,155 @@
 package cn.ibizlab.pms.core.ou.client;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collection;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.*;
-import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ou.domain.SysEmployee;
 import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
-import org.springframework.stereotype.Component;
+import com.alibaba.fastjson.JSONObject;
+import feign.FeignException;
+import feign.hystrix.FallbackFactory;
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.util.Errors;
+
+import org.springframework.data.domain.Page;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * 实体[SysEmployee] 服务对象接口
  */
-@Component
-public class SysEmployeeFallback implements SysEmployeeFeignClient {
+public class SysEmployeeFallback implements FallbackFactory<SysEmployeeFeignClient> {
 
-    public Page<SysEmployee> select() {
-        return null;
+    @Override
+    public SysEmployeeFeignClient create(Throwable cause) {
+        String errorMessage = "";
+        if (cause instanceof FeignException) {
+            FeignException ex = (FeignException) cause;
+            errorMessage = "[ibzou-api]调用异常，错误状态：" + ex.status() + "." + cause.getMessage();
+        } else {
+            errorMessage = "[ibzou-api]异常，错误：" + cause.getMessage();
+        }
+        String finalErrorMessage = errorMessage;
+        return new SysEmployeeFeignClient(){
+
+            public Page<SysEmployee> select() {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysEmployee create(SysEmployee sysemployee) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean createBatch(List<SysEmployee> sysemployees) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysEmployee update(String userid, SysEmployee sysemployee) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysEmployee> sysemployees) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean remove(String userid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean removeBatch(Collection<String> idList) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysEmployee get(String userid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public SysEmployee getDraft(SysEmployee entity){
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+            public Boolean checkKey(SysEmployee sysemployee) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Object saveEntity(SysEmployee sysemployee) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Boolean save(SysEmployee sysemployee) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean saveBatch(List<SysEmployee> sysemployees) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Page<SysEmployee> searchBugUser(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchContActList(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchDefault(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchProductTeamM(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchProjectTeamM(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchProjectTeamMProduct(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchProjectTeamTaskUserTemp(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchProjectTeamUser(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchProjectTeamUserTask(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchProjectteamPk(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchStoryProductTeamPK(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchTaskMTeam(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Page<SysEmployee> searchTaskTeam(SysEmployeeSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+        };
     }
-
-    public SysEmployee create(SysEmployee sysemployee) {
-        return null;
-    }
-    public Boolean createBatch(List<SysEmployee> sysemployees) {
-        return false;
-    }
-
-    public SysEmployee update(String userid, SysEmployee sysemployee) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysEmployee> sysemployees) {
-        return false;
-    }
-
-
-    public Boolean remove(String userid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
-        return false;
-    }
-
-    public SysEmployee get(String userid) {
-        return null;
-    }
-
-
-    public SysEmployee getDraft(SysEmployee entity){
-        return null;
-    }
-
-
-
-    public Boolean checkKey(SysEmployee sysemployee) {
-        return false;
-    }
-
-
-    public Object saveEntity(SysEmployee sysemployee) {
-        return null;
-    }
-
-    public Boolean save(SysEmployee sysemployee) {
-        return false;
-    }
-    public Boolean saveBatch(List<SysEmployee> sysemployees) {
-        return false;
-    }
-
-    public Page<SysEmployee> searchBugUser(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchContActList(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchDefault(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProductTeamM(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProjectTeamM(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProjectTeamMProduct(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProjectTeamTaskUserTemp(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProjectTeamUser(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProjectTeamUserTask(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchProjectteamPk(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchStoryProductTeamPK(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchTaskMTeam(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
-    public Page<SysEmployee> searchTaskTeam(SysEmployeeSearchContext context) {
-        return null;
-    }
-
-
 
 }

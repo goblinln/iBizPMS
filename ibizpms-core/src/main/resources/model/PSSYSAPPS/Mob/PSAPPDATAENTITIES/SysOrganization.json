@@ -160,6 +160,9 @@
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "OrgId",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CTRL.WFSERVICE.ERR000012"
+    },
     "logicName" : "单位标识",
     "name" : "ORGID",
     "stdDataType" : 25,
@@ -167,6 +170,9 @@
     "keyField" : true
   }, {
     "codeName" : "OrgCode",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "DEF.LNAME.*.UPDATEMAN"
+    },
     "logicName" : "单位代码",
     "name" : "ORGCODE",
     "stdDataType" : 25,
@@ -187,6 +193,9 @@
     "stringLength" : 100
   }, {
     "codeName" : "ShortName",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "TBB.TEXT.*.CANCELWF"
+    },
     "logicName" : "单位简称",
     "name" : "SHORTNAME",
     "stdDataType" : 25,
@@ -198,6 +207,9 @@
     "stdDataType" : 9
   }, {
     "codeName" : "ShowOrder",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "PAGE.COMMON.EDITVIEW.DER.AUDIT"
+    },
     "logicName" : "排序",
     "name" : "SHOWORDER",
     "stdDataType" : 9
@@ -215,17 +227,26 @@
     "stringLength" : 100
   }, {
     "codeName" : "Enable",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CTRL.WFSERVICE.ERR000015"
+    },
     "logicName" : "逻辑有效",
     "name" : "ENABLE",
     "stdDataType" : 9
   }, {
     "codeName" : "CreateDate",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "TBB.TOOLTIP.*.PRINT"
+    },
     "logicName" : "创建时间",
     "name" : "CREATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "UpdateDate",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "OTHER.LIST.MYWF.COL.ACTOR.CAPTION"
+    },
     "logicName" : "最后修改时间",
     "name" : "UPDATEDATE",
     "stdDataType" : 5,

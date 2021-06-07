@@ -81,21 +81,6 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchRoadMapYear
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLifeService
-     */
-    async FetchRoadMapYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
-        }
-    this.log.warn([`[ProductLife]>>>[FetchRoadMapYear函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchRoadmap
      *
      * @param {*} [_context={}]
@@ -108,6 +93,21 @@ export class ProductLifeBaseService extends EntityBaseService<IProductLife> {
             return this.http.post(`/products/${_context.product}/productlives/fetchroadmap`, _data);
         }
     this.log.warn([`[ProductLife]>>>[FetchRoadmap函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchRoadMapYear
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLifeService
+     */
+    async FetchRoadMapYear(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productlives/fetchroadmapyear`, _data);
+        }
+    this.log.warn([`[ProductLife]>>>[FetchRoadMapYear函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

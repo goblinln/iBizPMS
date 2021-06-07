@@ -510,11 +510,17 @@
     "stdDataType" : 9
   }, {
     "codeName" : "Enable",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CTRL.WFSERVICE.ERR000015"
+    },
     "logicName" : "逻辑有效",
     "name" : "ENABLE",
     "stdDataType" : 9
   }, {
     "codeName" : "CreateDate",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "TBB.TOOLTIP.*.PRINT"
+    },
     "logicName" : "创建时间",
     "name" : "CREATEDATE",
     "stdDataType" : 5,

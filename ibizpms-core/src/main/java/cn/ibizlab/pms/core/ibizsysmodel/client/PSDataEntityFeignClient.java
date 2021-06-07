@@ -18,7 +18,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSDataEntity] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSDataEntity", fallback = PSDataEntityFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSDataEntity", fallback = PSDataEntityFallback.class)
 public interface PSDataEntityFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/psdataentities/select")

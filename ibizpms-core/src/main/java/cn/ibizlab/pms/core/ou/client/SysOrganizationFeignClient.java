@@ -18,7 +18,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[SysOrganization] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysOrganization", fallback = SysOrganizationFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysOrganization", fallback = SysOrganizationFallback.class)
 public interface SysOrganizationFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/select")

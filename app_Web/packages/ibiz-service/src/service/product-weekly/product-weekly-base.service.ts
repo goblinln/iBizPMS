@@ -66,15 +66,18 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
         return new HttpResponse(entity);
     }
     /**
-     * Summary
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductWeeklyService
      */
-    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/productweeklies/getdraft`, _data);
+        return res;
     }
     /**
      * Get
@@ -87,6 +90,17 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/productweeklies/${_context.productweekly}`);
         return res;
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductWeeklyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productweeklies/fetchdefault`, _data);
     }
     /**
      * Update
@@ -119,29 +133,15 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
         return this.http.post(`/productweeklies`, _data);
     }
     /**
-     * FetchDefault
+     * Summary
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductWeeklyService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productweeklies/fetchdefault`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductWeeklyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productweeklies/getdraft`, _data);
-        return res;
+    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
     }
 
     /**

@@ -392,18 +392,18 @@
             "name" : "大于属性[BEGIN]",
             "paramType" : "ENTITYFIELD",
             "paramValue" : "BEGIN",
-            "ruleInfo" : "值不能小于属性[开始日期]"
+            "ruleInfo" : "值不能小于[开始日期]"
           } ],
-          "ruleInfo" : "值不能小于属性[开始日期]",
+          "ruleInfo" : "值不能小于[开始日期]",
           "keyCond" : true
         } ],
-        "ruleInfo" : "值不能小于属性[开始日期]"
+        "ruleInfo" : "值不能小于[开始日期]"
       },
       "getPSDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleInfo" : "值不能小于属性[开始日期]",
+      "ruleInfo" : "值不能小于[开始日期]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
@@ -448,18 +448,18 @@
             "name" : "小于属性[END]",
             "paramType" : "ENTITYFIELD",
             "paramValue" : "END",
-            "ruleInfo" : "值不能大于属性[结束日期]"
+            "ruleInfo" : "值不能大于[结束日期]"
           } ],
-          "ruleInfo" : "值不能大于属性[结束日期]",
+          "ruleInfo" : "值不能大于[结束日期]",
           "keyCond" : true
         } ],
-        "ruleInfo" : "值不能大于属性[结束日期]"
+        "ruleInfo" : "值不能大于[结束日期]"
       },
       "getPSDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "ruleInfo" : "值不能大于属性[结束日期]",
+      "ruleInfo" : "值不能大于[结束日期]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,

@@ -18,7 +18,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[PSSysSFPub] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysSFPub", fallback = PSSysSFPubFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi:ibizpssysmodelapi-sysmodelapi}", contextId = "PSSysSFPub", fallback = PSSysSFPubFallback.class)
 public interface PSSysSFPubFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/select")

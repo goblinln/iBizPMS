@@ -1,82 +1,95 @@
 package cn.ibizlab.pms.core.ou.client;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collection;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.*;
-import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ou.domain.SysTeam;
 import cn.ibizlab.pms.core.ou.filter.SysTeamSearchContext;
-import org.springframework.stereotype.Component;
+import com.alibaba.fastjson.JSONObject;
+import feign.FeignException;
+import feign.hystrix.FallbackFactory;
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.util.Errors;
+
+import org.springframework.data.domain.Page;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * 实体[SysTeam] 服务对象接口
  */
-@Component
-public class SysTeamFallback implements SysTeamFeignClient {
+public class SysTeamFallback implements FallbackFactory<SysTeamFeignClient> {
 
-    public Page<SysTeam> select() {
-        return null;
+    @Override
+    public SysTeamFeignClient create(Throwable cause) {
+        String errorMessage = "";
+        if (cause instanceof FeignException) {
+            FeignException ex = (FeignException) cause;
+            errorMessage = "[ibzou-api]调用异常，错误状态：" + ex.status() + "." + cause.getMessage();
+        } else {
+            errorMessage = "[ibzou-api]异常，错误：" + cause.getMessage();
+        }
+        String finalErrorMessage = errorMessage;
+        return new SysTeamFeignClient(){
+
+            public Page<SysTeam> select() {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysTeam create(SysTeam systeam) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean createBatch(List<SysTeam> systeams) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysTeam update(String teamid, SysTeam systeam) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysTeam> systeams) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean remove(String teamid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean removeBatch(Collection<String> idList) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysTeam get(String teamid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public SysTeam getDraft(SysTeam entity){
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+            public Boolean checkKey(SysTeam systeam) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Object saveEntity(SysTeam systeam) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Boolean save(SysTeam systeam) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean saveBatch(List<SysTeam> systeams) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Page<SysTeam> searchDefault(SysTeamSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+        };
     }
-
-    public SysTeam create(SysTeam systeam) {
-        return null;
-    }
-    public Boolean createBatch(List<SysTeam> systeams) {
-        return false;
-    }
-
-    public SysTeam update(String teamid, SysTeam systeam) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysTeam> systeams) {
-        return false;
-    }
-
-
-    public Boolean remove(String teamid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
-        return false;
-    }
-
-    public SysTeam get(String teamid) {
-        return null;
-    }
-
-
-    public SysTeam getDraft(SysTeam entity){
-        return null;
-    }
-
-
-
-    public Boolean checkKey(SysTeam systeam) {
-        return false;
-    }
-
-
-    public Object saveEntity(SysTeam systeam) {
-        return null;
-    }
-
-    public Boolean save(SysTeam systeam) {
-        return false;
-    }
-    public Boolean saveBatch(List<SysTeam> systeams) {
-        return false;
-    }
-
-    public Page<SysTeam> searchDefault(SysTeamSearchContext context) {
-        return null;
-    }
-
-
 
 }

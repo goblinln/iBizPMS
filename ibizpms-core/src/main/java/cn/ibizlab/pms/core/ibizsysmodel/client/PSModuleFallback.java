@@ -1,82 +1,95 @@
 package cn.ibizlab.pms.core.ibizsysmodel.client;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collection;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.*;
-import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSModule;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSModuleSearchContext;
-import org.springframework.stereotype.Component;
+import com.alibaba.fastjson.JSONObject;
+import feign.FeignException;
+import feign.hystrix.FallbackFactory;
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.util.Errors;
+
+import org.springframework.data.domain.Page;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * 实体[PSModule] 服务对象接口
  */
-@Component
-public class PSModuleFallback implements PSModuleFeignClient {
+public class PSModuleFallback implements FallbackFactory<PSModuleFeignClient> {
 
-    public Page<PSModule> select() {
-        return null;
+    @Override
+    public PSModuleFeignClient create(Throwable cause) {
+        String errorMessage = "";
+        if (cause instanceof FeignException) {
+            FeignException ex = (FeignException) cause;
+            errorMessage = "[iBiz平台系统模型接口]调用异常，错误状态：" + ex.status() + "." + cause.getMessage();
+        } else {
+            errorMessage = "[iBiz平台系统模型接口]异常，错误：" + cause.getMessage();
+        }
+        String finalErrorMessage = errorMessage;
+        return new PSModuleFeignClient(){
+
+            public Page<PSModule> select() {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public PSModule create(PSModule psmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean createBatch(List<PSModule> psmodules) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public PSModule update(String psmoduleid, PSModule psmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<PSModule> psmodules) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean remove(String psmoduleid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean removeBatch(Collection<String> idList) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public PSModule get(String psmoduleid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public PSModule getDraft(PSModule entity){
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+            public Boolean checkKey(PSModule psmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Object saveEntity(PSModule psmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Boolean save(PSModule psmodule) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean saveBatch(List<PSModule> psmodules) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Page<PSModule> searchDefault(PSModuleSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+        };
     }
-
-    public PSModule create(PSModule psmodule) {
-        return null;
-    }
-    public Boolean createBatch(List<PSModule> psmodules) {
-        return false;
-    }
-
-    public PSModule update(String psmoduleid, PSModule psmodule) {
-        return null;
-    }
-    public Boolean updateBatch(List<PSModule> psmodules) {
-        return false;
-    }
-
-
-    public Boolean remove(String psmoduleid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
-        return false;
-    }
-
-    public PSModule get(String psmoduleid) {
-        return null;
-    }
-
-
-    public PSModule getDraft(PSModule entity){
-        return null;
-    }
-
-
-
-    public Boolean checkKey(PSModule psmodule) {
-        return false;
-    }
-
-
-    public Object saveEntity(PSModule psmodule) {
-        return null;
-    }
-
-    public Boolean save(PSModule psmodule) {
-        return false;
-    }
-    public Boolean saveBatch(List<PSModule> psmodules) {
-        return false;
-    }
-
-    public Page<PSModule> searchDefault(PSModuleSearchContext context) {
-        return null;
-    }
-
-
 
 }

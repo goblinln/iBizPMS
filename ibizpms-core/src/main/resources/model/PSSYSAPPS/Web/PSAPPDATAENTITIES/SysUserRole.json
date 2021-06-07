@@ -160,6 +160,9 @@
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "UserRoleId",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "ERROR.STD.NOMAJORDATAENTITY"
+    },
     "logicName" : "用户角色关系标识",
     "name" : "SYS_USER_ROLEID",
     "stdDataType" : 25,
@@ -211,12 +214,18 @@
     "stringLength" : 100
   }, {
     "codeName" : "CreateDate",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "COMMON.CONDITION.ABSGT"
+    },
     "logicName" : "建立时间",
     "name" : "CREATEDATE",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "UpdateDate",
+    "getLNPSLanguageRes" : {
+      "lanResTag" : "CONTROL.PICTURE.UPLOAD.TEXT"
+    },
     "logicName" : "更新时间",
     "name" : "UPDATEDATE",
     "stdDataType" : 5,

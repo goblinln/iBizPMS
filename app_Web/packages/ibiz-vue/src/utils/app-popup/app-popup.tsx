@@ -1,6 +1,6 @@
 import { DrawerController, DrawerItem, DrawerContainer } from '@ibiz/drawer-vue';
 import { AppServiceBase } from 'ibiz-core';
-import { createUUID, isArray, notNilEmpty } from 'ibz-dynamic-core';
+import { createUUID, isArray, notNilEmpty } from 'qx-util';
 import { Subject, Observable } from 'rxjs';
 
 /**

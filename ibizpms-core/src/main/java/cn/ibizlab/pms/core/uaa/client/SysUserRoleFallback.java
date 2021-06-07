@@ -1,82 +1,95 @@
 package cn.ibizlab.pms.core.uaa.client;
 
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Collection;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.*;
-import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.uaa.domain.SysUserRole;
 import cn.ibizlab.pms.core.uaa.filter.SysUserRoleSearchContext;
-import org.springframework.stereotype.Component;
+import com.alibaba.fastjson.JSONObject;
+import feign.FeignException;
+import feign.hystrix.FallbackFactory;
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
+import net.ibizsys.runtime.util.Errors;
+
+import org.springframework.data.domain.Page;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * 实体[SysUserRole] 服务对象接口
  */
-@Component
-public class SysUserRoleFallback implements SysUserRoleFeignClient {
+public class SysUserRoleFallback implements FallbackFactory<SysUserRoleFeignClient> {
 
-    public Page<SysUserRole> select() {
-        return null;
+    @Override
+    public SysUserRoleFeignClient create(Throwable cause) {
+        String errorMessage = "";
+        if (cause instanceof FeignException) {
+            FeignException ex = (FeignException) cause;
+            errorMessage = "[ibzuaa-api]调用异常，错误状态：" + ex.status() + "." + cause.getMessage();
+        } else {
+            errorMessage = "[ibzuaa-api]异常，错误：" + cause.getMessage();
+        }
+        String finalErrorMessage = errorMessage;
+        return new SysUserRoleFeignClient(){
+
+            public Page<SysUserRole> select() {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysUserRole create(SysUserRole sysuserrole) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean createBatch(List<SysUserRole> sysuserroles) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysUserRole update(String userroleid, SysUserRole sysuserrole) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean updateBatch(List<SysUserRole> sysuserroles) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Boolean remove(String userroleid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean removeBatch(Collection<String> idList) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public SysUserRole get(String userroleid) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public SysUserRole getDraft(SysUserRole entity){
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+            public Boolean checkKey(SysUserRole sysuserrole) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+            public Object saveEntity(SysUserRole sysuserrole) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Boolean save(SysUserRole sysuserrole) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+            public Boolean saveBatch(List<SysUserRole> sysuserroles) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+            public Page<SysUserRole> searchDefault(SysUserRoleSearchContext context) {
+                throw new DataEntityRuntimeException(finalErrorMessage, Errors.INTERNALERROR, null);
+            }
+
+
+
+        };
     }
-
-    public SysUserRole create(SysUserRole sysuserrole) {
-        return null;
-    }
-    public Boolean createBatch(List<SysUserRole> sysuserroles) {
-        return false;
-    }
-
-    public SysUserRole update(String userroleid, SysUserRole sysuserrole) {
-        return null;
-    }
-    public Boolean updateBatch(List<SysUserRole> sysuserroles) {
-        return false;
-    }
-
-
-    public Boolean remove(String userroleid) {
-        return false;
-    }
-    public Boolean removeBatch(Collection<String> idList) {
-        return false;
-    }
-
-    public SysUserRole get(String userroleid) {
-        return null;
-    }
-
-
-    public SysUserRole getDraft(SysUserRole entity){
-        return null;
-    }
-
-
-
-    public Boolean checkKey(SysUserRole sysuserrole) {
-        return false;
-    }
-
-
-    public Object saveEntity(SysUserRole sysuserrole) {
-        return null;
-    }
-
-    public Boolean save(SysUserRole sysuserrole) {
-        return false;
-    }
-    public Boolean saveBatch(List<SysUserRole> sysuserroles) {
-        return false;
-    }
-
-    public Page<SysUserRole> searchDefault(SysUserRoleSearchContext context) {
-        return null;
-    }
-
-
 
 }

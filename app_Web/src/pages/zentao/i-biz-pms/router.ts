@@ -389,6 +389,38 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'ibzreportroleconfigs/:ibzreportroleconfig?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '汇报角色配置',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzreportroleconfigs', parameterName: 'ibzreportroleconfig' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzreportroleconfig',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzreportroleconfigs/:ibzreportroleconfig?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '汇报角色配置',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzreportroleconfigs', parameterName: 'ibzreportroleconfig' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzreportroleconfig',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'sysaccounts/:sysaccount?/accounttesttasks/:accounttesttask?/views/myygridview',
                     meta: {
                         captionTag: '',
@@ -4960,6 +4992,246 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'ibzagents/:ibzagent?/views/createeditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '代理编辑视图',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzagents', parameterName: 'ibzagent' },
+                            { pathName: 'views', parameterName: 'createeditview' },
+                        ],
+                        resource:'ibzagent',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzagents/:ibzagent?/views/maininfoeditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '代理',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzagents', parameterName: 'ibzagent' },
+                            { pathName: 'views', parameterName: 'maininfoeditview' },
+                        ],
+                        resource:'ibzagent',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzagents/:ibzagent?/views/maingridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '代理',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzagents', parameterName: 'ibzagent' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'ibzagent',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzprostorymodules/:ibzprostorymodule?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块（iBizSys）',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzprostorymodules', parameterName: 'ibzprostorymodule' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzprostorymodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzprostorymodules/:ibzprostorymodule?/views/optionview',
+                    meta: {
+                        captionTag: '',
+                        caption: '同步',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzprostorymodules', parameterName: 'ibzprostorymodule' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'ibzprostorymodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzprostorymodules/:ibzprostorymodule?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块（iBizSys）',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzprostorymodules', parameterName: 'ibzprostorymodule' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzprostorymodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/pochartview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'pochartview9' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/storyhourssumgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求工时汇总',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'storyhourssumgridview' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/usr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/usr3gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'usr3gridview' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/qachartview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'qachartview9' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/productbugtypesumusr4gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'productbugtypesumusr4gridview' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productsums/:productsum?/views/storysumgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求汇总',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productsums', parameterName: 'productsum' },
+                            { pathName: 'views', parameterName: 'storysumgridview' },
+                        ],
+                        resource:'productsum',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'ibzlibcasesteps/:ibzlibcasesteps?/views/infogridview9',
                     meta: {
                         captionTag: '',
@@ -5482,6 +5754,38 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'employeeloads/:employeeload?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '员工负载表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'employeeloads', parameterName: 'employeeload' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'employeeload',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'employeeloads/:employeeload?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '员工负载表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'employeeloads', parameterName: 'employeeload' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'employeeload',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'reportsummaries/:reportsummary?/views/mytabexpview',
                     meta: {
                         captionTag: '',
@@ -5493,6 +5797,70 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'mytabexpview' },
                         ],
                         resource:'reportsummary',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibztaskestimates/:ibztaskestimate?/views/gridview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '工时',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibztaskestimates', parameterName: 'ibztaskestimate' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'ibztaskestimate',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysposts/:syspost?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '岗位',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysposts', parameterName: 'syspost' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'syspost',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysposts/:syspost?/views/usr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '岗位',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysposts', parameterName: 'syspost' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'syspost',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysposts/:syspost?/views/gridexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '岗位',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysposts', parameterName: 'syspost' },
+                            { pathName: 'views', parameterName: 'gridexpview' },
+                        ],
+                        resource:'syspost',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -5564,6 +5932,38 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'taskstats/:taskstats?/views/userfinishtaskgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户完成任务汇总',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'taskstats', parameterName: 'taskstats' },
+                            { pathName: 'views', parameterName: 'userfinishtaskgridview' },
+                        ],
+                        resource:'taskstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'taskstats/:taskstats?/views/userfinishtasksumgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户完成任务汇总',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'taskstats', parameterName: 'taskstats' },
+                            { pathName: 'views', parameterName: 'userfinishtasksumgridview' },
+                        ],
+                        resource:'taskstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projectweeklies/:projectweekly?/views/gridview',
                     meta: {
                         captionTag: '',
@@ -5591,6 +5991,22 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'projectweekly',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzfavorites/:ibzfavorites?/views/tabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的收藏',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzfavorites', parameterName: 'ibzfavorites' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'ibzfavorites',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -5776,6 +6192,166 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'pickupgridview' },
                         ],
                         resource:'productbranch',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysdepartments/:sysdepartment?/views/gridexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '部门',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysdepartments', parameterName: 'sysdepartment' },
+                            { pathName: 'views', parameterName: 'gridexpview' },
+                        ],
+                        resource:'sysdepartment',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/allgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '所有产品',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'allgridview' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/usr2gridviewproductcomplete',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'usr2gridviewproductcomplete' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/gridview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/gridviewproducntinputtable',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'gridviewproducntinputtable' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/editview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'editview9' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'productstats/:productstats?/views/testeditview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productstats', parameterName: 'productstats' },
+                            { pathName: 'views', parameterName: 'testeditview9' },
+                        ],
+                        resource:'productstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzprojectmembers/:ibzprojectmember?/views/editview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '相关成员',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzprojectmembers', parameterName: 'ibzprojectmember' },
+                            { pathName: 'views', parameterName: 'editview9' },
+                        ],
+                        resource:'ibzprojectmember',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -11996,6 +12572,278 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'bugstats/:bugstats?/views/bugresolvedbygridview',
+                    meta: {
+                        captionTag: '',
+                        caption: 'Bug完成表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'bugresolvedbygridview' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/productbugresolutiongridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品Bug解决方案汇总',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'productbugresolutiongridview' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/bugresolvetion',
+                    meta: {
+                        captionTag: '',
+                        caption: 'Bug统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'bugresolvetion' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/bugresolvedbygridviewzuzhi',
+                    meta: {
+                        captionTag: '',
+                        caption: 'Bug完成表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'bugresolvedbygridviewzuzhi' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/usr2gridviewprojectbugstatuscount',
+                    meta: {
+                        captionTag: '',
+                        caption: 'bug状态统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'usr2gridviewprojectbugstatuscount' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/productbugstatusgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品Bug状态汇总',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'productbugstatusgridview' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: 'Bug创建表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/assigntogridview',
+                    meta: {
+                        captionTag: '',
+                        caption: 'Bug指派表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'assigntogridview' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'bugstats/:bugstats?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: 'Bug统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'bugstats', parameterName: 'bugstats' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'bugstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizproindices/:ibizproindex?/views/listview',
+                    meta: {
+                        captionTag: '',
+                        caption: '索引检索',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
+                            { pathName: 'views', parameterName: 'listview' },
+                        ],
+                        resource:'ibizproindex',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizproindices/:ibizproindex?/views/indexpickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '索引检索',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
+                            { pathName: 'views', parameterName: 'indexpickupview' },
+                        ],
+                        resource:'ibizproindex',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizproindices/:ibizproindex?/views/redirectview',
+                    meta: {
+                        captionTag: '',
+                        caption: '索引检索',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
+                            { pathName: 'views', parameterName: 'redirectview' },
+                        ],
+                        resource:'ibizproindex',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizproindices/:ibizproindex?/views/indexpickupdataview',
+                    meta: {
+                        captionTag: '',
+                        caption: '索引检索',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
+                            { pathName: 'views', parameterName: 'indexpickupdataview' },
+                        ],
+                        resource:'ibizproindex',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'groups/:group?/views/maingridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '群组',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'groups', parameterName: 'group' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'group',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'groups/:group?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '分组信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'groups', parameterName: 'group' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'group',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproproducts/:ibzproproduct?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '平台产品',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproducts', parameterName: 'ibzproproduct' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzproproduct',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproproducts/:ibzproproduct?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '平台产品',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproducts', parameterName: 'ibzproproduct' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzproproduct',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'tests/:test?/testcases/:testcase?/testcasesteps/:testcasestep?/views/gridview9',
                     meta: {
                         captionTag: '',
@@ -12059,6 +12907,310 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'maingridview9' },
                         ],
                         resource:'testcasestep',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'depts/:dept?/views/pickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '部门',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'depts', parameterName: 'dept' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'dept',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'depts/:dept?/views/infoeditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '部门信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'depts', parameterName: 'dept' },
+                            { pathName: 'views', parameterName: 'infoeditview' },
+                        ],
+                        resource:'dept',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'depts/:dept?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '部门信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'depts', parameterName: 'dept' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'dept',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'depts/:dept?/views/maingridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '部门',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'depts', parameterName: 'dept' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'dept',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'depts/:dept?/views/pickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '部门',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'depts', parameterName: 'dept' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'dept',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizprotags/:ibizprotag?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '标签',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizprotags', parameterName: 'ibizprotag' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibizprotag',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizprotags/:ibizprotag?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '标签',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizprotags', parameterName: 'ibizprotag' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibizprotag',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'companies/:company?/views/mainview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '公司',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'companies', parameterName: 'company' },
+                            { pathName: 'views', parameterName: 'mainview9' },
+                        ],
+                        resource:'company',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'companies/:company?/views/deptusertreeexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '公司',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'companies', parameterName: 'company' },
+                            { pathName: 'views', parameterName: 'deptusertreeexpview' },
+                        ],
+                        resource:'company',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'companies/:company?/views/depttreeexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '公司',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'companies', parameterName: 'company' },
+                            { pathName: 'views', parameterName: 'depttreeexpview' },
+                        ],
+                        resource:'company',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'companies/:company?/views/mainview',
+                    meta: {
+                        captionTag: '',
+                        caption: '公司信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'companies', parameterName: 'company' },
+                            { pathName: 'views', parameterName: 'mainview' },
+                        ],
+                        resource:'company',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'companies/:company?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '公司信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'companies', parameterName: 'company' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'company',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'companies/:company?/views/maintabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组织权限',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'companies', parameterName: 'company' },
+                            { pathName: 'views', parameterName: 'maintabexpview' },
+                        ],
+                        resource:'company',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeams/:systeam?/views/gridexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeams', parameterName: 'systeam' },
+                            { pathName: 'views', parameterName: 'gridexpview' },
+                        ],
+                        resource:'systeam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeams/:systeam?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeams', parameterName: 'systeam' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'systeam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeams/:systeam?/views/usr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeams', parameterName: 'systeam' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'systeam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeams/:systeam?/views/pickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeams', parameterName: 'systeam' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'systeam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeams/:systeam?/views/pickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeams', parameterName: 'systeam' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'systeam',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeams/:systeam?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeams', parameterName: 'systeam' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'systeam',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -15739,6 +16891,246 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'useryearworkstats/:useryearworkstats?/views/dashboardview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户年度工作内容统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'useryearworkstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'useryearworkstats/:useryearworkstats?/views/infoeditview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '基础信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
+                            { pathName: 'views', parameterName: 'infoeditview9' },
+                        ],
+                        resource:'useryearworkstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'useryearworkstats/:useryearworkstats?/views/podashboardview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户年度工作内容统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
+                            { pathName: 'views', parameterName: 'podashboardview' },
+                        ],
+                        resource:'useryearworkstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'useryearworkstats/:useryearworkstats?/views/qadashboardview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户年度工作内容统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
+                            { pathName: 'views', parameterName: 'qadashboardview' },
+                        ],
+                        resource:'useryearworkstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'useryearworkstats/:useryearworkstats?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户年度工作内容统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'useryearworkstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'useryearworkstats/:useryearworkstats?/views/titleeditview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '标题',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
+                            { pathName: 'views', parameterName: 'titleeditview9' },
+                        ],
+                        resource:'useryearworkstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysorganizations/:sysorganization?/views/gridexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '单位',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
+                            { pathName: 'views', parameterName: 'gridexpview' },
+                        ],
+                        resource:'sysorganization',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysorganizations/:sysorganization?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '单位',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'sysorganization',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysorganizations/:sysorganization?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '单位',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'sysorganization',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysorganizations/:sysorganization?/views/usr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '单位',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'sysorganization',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizproplugins/:ibizproplugin?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统插件',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizproplugins', parameterName: 'ibizproplugin' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibizproplugin',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizproplugins/:ibizproplugin?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统插件',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizproplugins', parameterName: 'ibizproplugin' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibizproplugin',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'subproductplans/:subproductplan?/views/subplaneditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '子计划',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'subproductplans', parameterName: 'subproductplan' },
+                            { pathName: 'views', parameterName: 'subplaneditview' },
+                        ],
+                        resource:'subproductplan',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'subproductplans/:subproductplan?/views/subplangridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '子计划',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'subproductplans', parameterName: 'subproductplan' },
+                            { pathName: 'views', parameterName: 'subplangridview' },
+                        ],
+                        resource:'subproductplan',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'subproductplans/:subproductplan?/views/subplancreateview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品计划',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'subproductplans', parameterName: 'subproductplan' },
+                            { pathName: 'views', parameterName: 'subplancreateview' },
+                        ],
+                        resource:'subproductplan',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/views/tasktreeexpview',
                     meta: {
                         captionTag: '',
@@ -16331,6 +17723,24 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'subtasks/:subtask?/views/subtasknewview',
+                    meta: {
+                        captionTag: '',
+                        caption: '子任务',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'subtasks', parameterName: 'subtask' },
+                            { pathName: 'views', parameterName: 'subtasknewview' },
+                        ],
+                        resource:'subtask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projectmonthlies/:projectmonthly?/views/gridview',
                     meta: {
                         captionTag: '',
@@ -16358,6 +17768,104 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'projectmonthly',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'users/:user?/views/infoeditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'users', parameterName: 'user' },
+                            { pathName: 'views', parameterName: 'infoeditview' },
+                        ],
+                        resource:'user',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'users/:user?/views/pickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'users', parameterName: 'user' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'user',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'users/:user?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户信息',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'users', parameterName: 'user' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'user',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'users/:user?/views/pickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'users', parameterName: 'user' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'user',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'users/:user?/views/treeexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-users',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'users', parameterName: 'user' },
+                            { pathName: 'views', parameterName: 'treeexpview' },
+                        ],
+                        resource:'user',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'users/:user?/views/maingridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'users', parameterName: 'user' },
+                            { pathName: 'views', parameterName: 'maingridview' },
+                        ],
+                        resource:'user',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -17613,6 +19121,22 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'companystats/:companystats?/views/companydynamicstatsgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '公司动态统计表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'companystats', parameterName: 'companystats' },
+                            { pathName: 'views', parameterName: 'companydynamicstatsgridview' },
+                        ],
+                        resource:'companystats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/productmodules/:productmodule?/views/gridviewbranch',
                     meta: {
                         captionTag: '',
@@ -18141,6 +19665,24 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'substories/:substory?/views/subgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求细分',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'substories', parameterName: 'substory' },
+                            { pathName: 'views', parameterName: 'subgridview' },
+                        ],
+                        resource:'substory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projectdailies/:projectdaily?/views/editview',
                     meta: {
                         captionTag: '',
@@ -18168,6 +19710,86 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
                         resource:'projectdaily',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzplantemplets/:ibzplantemplet?/views/optionview',
+                    meta: {
+                        captionTag: '',
+                        caption: '计划模板',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'ibzplantemplet',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzplantemplets/:ibzplantemplet?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '计划模板',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzplantemplet',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzplantemplets/:ibzplantemplet?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '计划模板',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzplantemplet',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizprokeywords/:ibizprokeyword?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '关键字',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizprokeywords', parameterName: 'ibizprokeyword' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibizprokeyword',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibizprokeywords/:ibizprokeyword?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '关键字',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibizprokeywords', parameterName: 'ibizprokeyword' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibizprokeyword',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -19281,6 +20903,39 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
                         resource:'productdaily',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzplantemplets/:ibzplantemplet?/plantempletdetails/:plantempletdetail?/views/gridview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '计划模板详情',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
+                            { pathName: 'plantempletdetails', parameterName: 'plantempletdetail' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'plantempletdetail',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'plantempletdetails/:plantempletdetail?/views/gridview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '计划模板详情',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'plantempletdetails', parameterName: 'plantempletdetail' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'plantempletdetail',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -21890,6 +23545,70 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'ibzproconfigs/:ibzproconfig?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统配置表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproconfigs', parameterName: 'ibzproconfig' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzproconfig',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproconfigs/:ibzproconfig?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统配置表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproconfigs', parameterName: 'ibzproconfig' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzproconfig',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzprostories/:ibzprostory?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzprostories', parameterName: 'ibzprostory' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzprostory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzprostories/:ibzprostory?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzprostories', parameterName: 'ibzprostory' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzprostory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'taskteamnesteds/:taskteamnested?/views/gridview9_edit',
                     meta: {
                         captionTag: '',
@@ -23899,6 +25618,230 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projectstats/:projectstats?/views/usr2gridviewtasktypecount',
+                    meta: {
+                        captionTag: '',
+                        caption: '任务类型统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'usr2gridviewtasktypecount' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/projectstorystagestatusgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目需求阶段统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'projectstorystagestatusgridview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/projectprogressusr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'projectprogressusr2gridview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/projectqualityusr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目质量表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'projectqualityusr2gridview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/usr2gridviewtaskstatuscount',
+                    meta: {
+                        captionTag: '',
+                        caption: '任务状态统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'usr2gridviewtaskstatuscount' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/projectinputstatsgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目投入统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'projectinputstatsgridview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/gridview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'gridview9' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/allgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '所有项目',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'allgridview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/projectstorystatusstatsgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目需求状态统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'projectstorystatusstatsgridview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/projectbugtypesumusr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'projectbugtypesumusr2gridview' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projectstats/:projectstats?/views/editview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectstats', parameterName: 'projectstats' },
+                            { pathName: 'views', parameterName: 'editview9' },
+                        ],
+                        resource:'projectstats',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testruns/:testrun?/views/meditview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '测试运行',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testruns', parameterName: 'testrun' },
+                            { pathName: 'views', parameterName: 'meditview9' },
+                        ],
+                        resource:'testrun',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'testruns/:testrun?/views/editview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '测试运行',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'testruns', parameterName: 'testrun' },
+                            { pathName: 'views', parameterName: 'editview9' },
+                        ],
+                        resource:'testrun',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'monthlies/:monthly?/views/editmonthlyeditview',
                     meta: {
                         captionTag: '',
@@ -24022,6 +25965,422 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'productmonthlygridview' },
                         ],
                         resource:'monthly',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/listview9personinfo',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的工作',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'listview9personinfo' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/productsumtreeexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'productsumtreeexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/listview',
+                    meta: {
+                        captionTag: '',
+                        caption: '欢迎',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'listview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/productreporttabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'productreporttabexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/testtreeexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '测试统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'testtreeexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/projectreporttabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'projectreporttabexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/usersumtreeexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用户汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'usersumtreeexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/usr3tabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的地盘',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'usr3tabexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的地盘',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/treeexpviewprojectstats',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目汇总表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'treeexpviewprojectstats' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/allreporttabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '汇报',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'allreporttabexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/dashboardview',
+                    meta: {
+                        captionTag: '',
+                        caption: '首页',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'dashboardview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/statstabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '统计',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'statstabexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/calendarview',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的地盘',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'calendarview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/calendarexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的地盘',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'calendarexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/reporttabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '个人',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'reporttabexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/listview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的工作',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'listview9' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/tabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的地盘',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/mywork',
+                    meta: {
+                        captionTag: '',
+                        caption: '我的工作',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'mywork' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzmyterritories/:ibzmyterritory?/views/employtreeexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '员工负载',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
+                            { pathName: 'views', parameterName: 'employtreeexpview' },
+                        ],
+                        resource:'ibzmyterritory',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '更新日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'sysupdatelog',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '更新日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'sysupdatelog',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/views/lasttabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '更新日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'views', parameterName: 'lasttabexpview' },
+                        ],
+                        resource:'sysupdatelog',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/views/lastgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '更新日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'views', parameterName: 'lastgridview' },
+                        ],
+                        resource:'sysupdatelog',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/views/tabexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '更新日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'views', parameterName: 'tabexpview' },
+                        ],
+                        resource:'sysupdatelog',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/views/infoeditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '更新日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'views', parameterName: 'infoeditview' },
+                        ],
+                        resource:'sysupdatelog',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -28949,6 +31308,70 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/monthlygridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目汇报用户任务',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
+                            { pathName: 'views', parameterName: 'monthlygridview' },
+                        ],
+                        resource:'ibzproprojectusertask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目汇报用户任务',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzproprojectusertask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目汇报用户任务',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzproprojectusertask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/projectweeklygridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '项目汇报用户任务',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
+                            { pathName: 'views', parameterName: 'projectweeklygridview' },
+                        ],
+                        resource:'ibzproprojectusertask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'ibzcases/:ibzcase?/views/opencaseview',
                     meta: {
                         captionTag: '',
@@ -29088,6 +31511,150 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'maineditview9' },
                         ],
                         resource:'ibzcase',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeammembers/:systeammember?/views/usr2gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组成员',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeammembers', parameterName: 'systeammember' },
+                            { pathName: 'views', parameterName: 'usr2gridview' },
+                        ],
+                        resource:'systeammember',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeammembers/:systeammember?/views/gridexpview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组成员',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeammembers', parameterName: 'systeammember' },
+                            { pathName: 'views', parameterName: 'gridexpview' },
+                        ],
+                        resource:'systeammember',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeammembers/:systeammember?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组成员',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeammembers', parameterName: 'systeammember' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'systeammember',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeammembers/:systeammember?/views/usr2gridviewpostmembers',
+                    meta: {
+                        captionTag: '',
+                        caption: '组成员',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeammembers', parameterName: 'systeammember' },
+                            { pathName: 'views', parameterName: 'usr2gridviewpostmembers' },
+                        ],
+                        resource:'systeammember',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeammembers/:systeammember?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '组成员',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeammembers', parameterName: 'systeammember' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'systeammember',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'systeammembers/:systeammember?/views/gridexpviewteam',
+                    meta: {
+                        captionTag: '',
+                        caption: '组成员',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'systeammembers', parameterName: 'systeammember' },
+                            { pathName: 'views', parameterName: 'gridexpviewteam' },
+                        ],
+                        resource:'systeammember',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproproductusertasks/:ibzproproductusertask?/views/productpartgridviewproductweekly',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品日报',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductusertasks', parameterName: 'ibzproproductusertask' },
+                            { pathName: 'views', parameterName: 'productpartgridviewproductweekly' },
+                        ],
+                        resource:'ibzproproductusertask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproproductusertasks/:ibzproproductusertask?/views/productdailypartgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品日报',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductusertasks', parameterName: 'ibzproproductusertask' },
+                            { pathName: 'views', parameterName: 'productdailypartgridview' },
+                        ],
+                        resource:'ibzproproductusertask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzproproductusertasks/:ibzproproductusertask?/views/productmonthlypartgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品日报',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductusertasks', parameterName: 'ibzproproductusertask' },
+                            { pathName: 'views', parameterName: 'productmonthlypartgridview' },
+                        ],
+                        resource:'ibzproproductusertask',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -29236,6 +31803,138 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridview9_assignedtome' },
                         ],
                         resource:'accounttask',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'sysupdatefeatures',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'sysupdatefeatures',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/lastgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'lastgridview' },
+                        ],
+                        resource:'sysupdatefeatures',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/lastgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'lastgridview' },
+                        ],
+                        resource:'sysupdatefeatures',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/infoeditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'infoeditview' },
+                        ],
+                        resource:'sysupdatefeatures',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/infoeditview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'infoeditview' },
+                        ],
+                        resource:'sysupdatefeatures',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'sysupdatefeatures',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/gridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统更新功能',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'sysupdatefeatures',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -29458,6 +32157,22 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'maintabexpview' },
                         ],
                         resource:'productrelease',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'casestats/:casestats?/views/testcasestatsgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '用例统计表',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'casestats', parameterName: 'casestats' },
+                            { pathName: 'views', parameterName: 'testcasestatsgridview' },
+                        ],
+                        resource:'casestats',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -29698,2721 +32413,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
                         resource:'productline',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzreportroleconfigs/:ibzreportroleconfig?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '汇报角色配置',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzreportroleconfigs', parameterName: 'ibzreportroleconfig' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzreportroleconfig',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzreportroleconfigs/:ibzreportroleconfig?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '汇报角色配置',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzreportroleconfigs', parameterName: 'ibzreportroleconfig' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzreportroleconfig',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzagents/:ibzagent?/views/createeditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '代理编辑视图',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzagents', parameterName: 'ibzagent' },
-                            { pathName: 'views', parameterName: 'createeditview' },
-                        ],
-                        resource:'ibzagent',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzagents/:ibzagent?/views/maininfoeditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '代理',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzagents', parameterName: 'ibzagent' },
-                            { pathName: 'views', parameterName: 'maininfoeditview' },
-                        ],
-                        resource:'ibzagent',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzagents/:ibzagent?/views/maingridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '代理',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzagents', parameterName: 'ibzagent' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'ibzagent',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzprostorymodules/:ibzprostorymodule?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求模块（iBizSys）',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzprostorymodules', parameterName: 'ibzprostorymodule' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzprostorymodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzprostorymodules/:ibzprostorymodule?/views/optionview',
-                    meta: {
-                        captionTag: '',
-                        caption: '同步',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzprostorymodules', parameterName: 'ibzprostorymodule' },
-                            { pathName: 'views', parameterName: 'optionview' },
-                        ],
-                        resource:'ibzprostorymodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzprostorymodules/:ibzprostorymodule?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求模块（iBizSys）',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzprostorymodules', parameterName: 'ibzprostorymodule' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzprostorymodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/pochartview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'pochartview9' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/storyhourssumgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求工时汇总',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'storyhourssumgridview' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/usr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/usr3gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'usr3gridview' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/qachartview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'qachartview9' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/productbugtypesumusr4gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'productbugtypesumusr4gridview' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productsums/:productsum?/views/storysumgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求汇总',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productsums', parameterName: 'productsum' },
-                            { pathName: 'views', parameterName: 'storysumgridview' },
-                        ],
-                        resource:'productsum',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'employeeloads/:employeeload?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '员工负载表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'employeeloads', parameterName: 'employeeload' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'employeeload',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'employeeloads/:employeeload?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '员工负载表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'employeeloads', parameterName: 'employeeload' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'employeeload',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibztaskestimates/:ibztaskestimate?/views/gridview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '工时',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibztaskestimates', parameterName: 'ibztaskestimate' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'ibztaskestimate',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysposts/:syspost?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '岗位',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysposts', parameterName: 'syspost' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'syspost',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysposts/:syspost?/views/usr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '岗位',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysposts', parameterName: 'syspost' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'syspost',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysposts/:syspost?/views/gridexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '岗位',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysposts', parameterName: 'syspost' },
-                            { pathName: 'views', parameterName: 'gridexpview' },
-                        ],
-                        resource:'syspost',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'taskstats/:taskstats?/views/userfinishtaskgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户完成任务汇总',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'taskstats', parameterName: 'taskstats' },
-                            { pathName: 'views', parameterName: 'userfinishtaskgridview' },
-                        ],
-                        resource:'taskstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'taskstats/:taskstats?/views/userfinishtasksumgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户完成任务汇总',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'taskstats', parameterName: 'taskstats' },
-                            { pathName: 'views', parameterName: 'userfinishtasksumgridview' },
-                        ],
-                        resource:'taskstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzfavorites/:ibzfavorites?/views/tabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的收藏',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzfavorites', parameterName: 'ibzfavorites' },
-                            { pathName: 'views', parameterName: 'tabexpview' },
-                        ],
-                        resource:'ibzfavorites',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysdepartments/:sysdepartment?/views/gridexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '部门',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysdepartments', parameterName: 'sysdepartment' },
-                            { pathName: 'views', parameterName: 'gridexpview' },
-                        ],
-                        resource:'sysdepartment',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/allgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '所有产品',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'allgridview' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/usr2gridviewproductcomplete',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'usr2gridviewproductcomplete' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/gridview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/gridviewproducntinputtable',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'gridviewproducntinputtable' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/editview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'editview9' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'productstats/:productstats?/views/testeditview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'productstats', parameterName: 'productstats' },
-                            { pathName: 'views', parameterName: 'testeditview9' },
-                        ],
-                        resource:'productstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzprojectmembers/:ibzprojectmember?/views/editview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '相关成员',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzprojectmembers', parameterName: 'ibzprojectmember' },
-                            { pathName: 'views', parameterName: 'editview9' },
-                        ],
-                        resource:'ibzprojectmember',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/bugresolvedbygridview',
-                    meta: {
-                        captionTag: '',
-                        caption: 'Bug完成表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'bugresolvedbygridview' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/productbugresolutiongridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品Bug解决方案汇总',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'productbugresolutiongridview' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/bugresolvetion',
-                    meta: {
-                        captionTag: '',
-                        caption: 'Bug统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'bugresolvetion' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/bugresolvedbygridviewzuzhi',
-                    meta: {
-                        captionTag: '',
-                        caption: 'Bug完成表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'bugresolvedbygridviewzuzhi' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/usr2gridviewprojectbugstatuscount',
-                    meta: {
-                        captionTag: '',
-                        caption: 'bug状态统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'usr2gridviewprojectbugstatuscount' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/productbugstatusgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品Bug状态汇总',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'productbugstatusgridview' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: 'Bug创建表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/assigntogridview',
-                    meta: {
-                        captionTag: '',
-                        caption: 'Bug指派表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'assigntogridview' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'bugstats/:bugstats?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: 'Bug统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'bugstats', parameterName: 'bugstats' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'bugstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizproindices/:ibizproindex?/views/listview',
-                    meta: {
-                        captionTag: '',
-                        caption: '索引检索',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
-                            { pathName: 'views', parameterName: 'listview' },
-                        ],
-                        resource:'ibizproindex',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizproindices/:ibizproindex?/views/indexpickupview',
-                    meta: {
-                        captionTag: '',
-                        caption: '索引检索',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
-                            { pathName: 'views', parameterName: 'indexpickupview' },
-                        ],
-                        resource:'ibizproindex',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizproindices/:ibizproindex?/views/redirectview',
-                    meta: {
-                        captionTag: '',
-                        caption: '索引检索',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
-                            { pathName: 'views', parameterName: 'redirectview' },
-                        ],
-                        resource:'ibizproindex',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizproindices/:ibizproindex?/views/indexpickupdataview',
-                    meta: {
-                        captionTag: '',
-                        caption: '索引检索',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizproindices', parameterName: 'ibizproindex' },
-                            { pathName: 'views', parameterName: 'indexpickupdataview' },
-                        ],
-                        resource:'ibizproindex',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'groups/:group?/views/maingridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '群组',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'groups', parameterName: 'group' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'group',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'groups/:group?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '分组信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'groups', parameterName: 'group' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'group',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproproducts/:ibzproproduct?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '平台产品',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproproducts', parameterName: 'ibzproproduct' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzproproduct',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproproducts/:ibzproproduct?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '平台产品',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproproducts', parameterName: 'ibzproproduct' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzproproduct',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'depts/:dept?/views/pickupview',
-                    meta: {
-                        captionTag: '',
-                        caption: '部门',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'depts', parameterName: 'dept' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'dept',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'depts/:dept?/views/infoeditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '部门信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'depts', parameterName: 'dept' },
-                            { pathName: 'views', parameterName: 'infoeditview' },
-                        ],
-                        resource:'dept',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'depts/:dept?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '部门信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'depts', parameterName: 'dept' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'dept',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'depts/:dept?/views/maingridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '部门',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'depts', parameterName: 'dept' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'dept',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'depts/:dept?/views/pickupgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '部门',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'depts', parameterName: 'dept' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'dept',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizprotags/:ibizprotag?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '标签',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizprotags', parameterName: 'ibizprotag' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibizprotag',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizprotags/:ibizprotag?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '标签',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizprotags', parameterName: 'ibizprotag' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibizprotag',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'companies/:company?/views/mainview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '公司',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'companies', parameterName: 'company' },
-                            { pathName: 'views', parameterName: 'mainview9' },
-                        ],
-                        resource:'company',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'companies/:company?/views/deptusertreeexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '公司',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'companies', parameterName: 'company' },
-                            { pathName: 'views', parameterName: 'deptusertreeexpview' },
-                        ],
-                        resource:'company',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'companies/:company?/views/depttreeexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '公司',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'companies', parameterName: 'company' },
-                            { pathName: 'views', parameterName: 'depttreeexpview' },
-                        ],
-                        resource:'company',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'companies/:company?/views/mainview',
-                    meta: {
-                        captionTag: '',
-                        caption: '公司信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'companies', parameterName: 'company' },
-                            { pathName: 'views', parameterName: 'mainview' },
-                        ],
-                        resource:'company',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'companies/:company?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '公司信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'companies', parameterName: 'company' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'company',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'companies/:company?/views/maintabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组织权限',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'companies', parameterName: 'company' },
-                            { pathName: 'views', parameterName: 'maintabexpview' },
-                        ],
-                        resource:'company',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeams/:systeam?/views/gridexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeams', parameterName: 'systeam' },
-                            { pathName: 'views', parameterName: 'gridexpview' },
-                        ],
-                        resource:'systeam',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeams/:systeam?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeams', parameterName: 'systeam' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'systeam',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeams/:systeam?/views/usr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeams', parameterName: 'systeam' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'systeam',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeams/:systeam?/views/pickupgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeams', parameterName: 'systeam' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'systeam',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeams/:systeam?/views/pickupview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeams', parameterName: 'systeam' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'systeam',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeams/:systeam?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeams', parameterName: 'systeam' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'systeam',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'useryearworkstats/:useryearworkstats?/views/dashboardview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户年度工作内容统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'useryearworkstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'useryearworkstats/:useryearworkstats?/views/infoeditview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '基础信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
-                            { pathName: 'views', parameterName: 'infoeditview9' },
-                        ],
-                        resource:'useryearworkstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'useryearworkstats/:useryearworkstats?/views/podashboardview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户年度工作内容统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
-                            { pathName: 'views', parameterName: 'podashboardview' },
-                        ],
-                        resource:'useryearworkstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'useryearworkstats/:useryearworkstats?/views/qadashboardview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户年度工作内容统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
-                            { pathName: 'views', parameterName: 'qadashboardview' },
-                        ],
-                        resource:'useryearworkstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'useryearworkstats/:useryearworkstats?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户年度工作内容统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'useryearworkstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'useryearworkstats/:useryearworkstats?/views/titleeditview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '标题',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'useryearworkstats', parameterName: 'useryearworkstats' },
-                            { pathName: 'views', parameterName: 'titleeditview9' },
-                        ],
-                        resource:'useryearworkstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysorganizations/:sysorganization?/views/gridexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '单位',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
-                            { pathName: 'views', parameterName: 'gridexpview' },
-                        ],
-                        resource:'sysorganization',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysorganizations/:sysorganization?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '单位',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'sysorganization',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysorganizations/:sysorganization?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '单位',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'sysorganization',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysorganizations/:sysorganization?/views/usr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '单位',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysorganizations', parameterName: 'sysorganization' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'sysorganization',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizproplugins/:ibizproplugin?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统插件',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizproplugins', parameterName: 'ibizproplugin' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibizproplugin',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizproplugins/:ibizproplugin?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统插件',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizproplugins', parameterName: 'ibizproplugin' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibizproplugin',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'subproductplans/:subproductplan?/views/subplaneditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '子计划',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'subproductplans', parameterName: 'subproductplan' },
-                            { pathName: 'views', parameterName: 'subplaneditview' },
-                        ],
-                        resource:'subproductplan',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'subproductplans/:subproductplan?/views/subplangridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '子计划',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'subproductplans', parameterName: 'subproductplan' },
-                            { pathName: 'views', parameterName: 'subplangridview' },
-                        ],
-                        resource:'subproductplan',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'subproductplans/:subproductplan?/views/subplancreateview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品计划',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'subproductplans', parameterName: 'subproductplan' },
-                            { pathName: 'views', parameterName: 'subplancreateview' },
-                        ],
-                        resource:'subproductplan',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'subtasks/:subtask?/views/subtasknewview',
-                    meta: {
-                        captionTag: '',
-                        caption: '子任务',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'subtasks', parameterName: 'subtask' },
-                            { pathName: 'views', parameterName: 'subtasknewview' },
-                        ],
-                        resource:'subtask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'users/:user?/views/infoeditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'users', parameterName: 'user' },
-                            { pathName: 'views', parameterName: 'infoeditview' },
-                        ],
-                        resource:'user',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'users/:user?/views/pickupview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'users', parameterName: 'user' },
-                            { pathName: 'views', parameterName: 'pickupview' },
-                        ],
-                        resource:'user',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'users/:user?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户信息',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'users', parameterName: 'user' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'user',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'users/:user?/views/pickupgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'users', parameterName: 'user' },
-                            { pathName: 'views', parameterName: 'pickupgridview' },
-                        ],
-                        resource:'user',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'users/:user?/views/treeexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-users',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'users', parameterName: 'user' },
-                            { pathName: 'views', parameterName: 'treeexpview' },
-                        ],
-                        resource:'user',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'users/:user?/views/maingridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'users', parameterName: 'user' },
-                            { pathName: 'views', parameterName: 'maingridview' },
-                        ],
-                        resource:'user',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'companystats/:companystats?/views/companydynamicstatsgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '公司动态统计表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'companystats', parameterName: 'companystats' },
-                            { pathName: 'views', parameterName: 'companydynamicstatsgridview' },
-                        ],
-                        resource:'companystats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'substories/:substory?/views/subgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求细分',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'substories', parameterName: 'substory' },
-                            { pathName: 'views', parameterName: 'subgridview' },
-                        ],
-                        resource:'substory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzplantemplets/:ibzplantemplet?/views/optionview',
-                    meta: {
-                        captionTag: '',
-                        caption: '计划模板',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
-                            { pathName: 'views', parameterName: 'optionview' },
-                        ],
-                        resource:'ibzplantemplet',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzplantemplets/:ibzplantemplet?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '计划模板',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzplantemplet',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzplantemplets/:ibzplantemplet?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '计划模板',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzplantemplet',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizprokeywords/:ibizprokeyword?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '关键字',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizprokeywords', parameterName: 'ibizprokeyword' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibizprokeyword',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibizprokeywords/:ibizprokeyword?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '关键字',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibizprokeywords', parameterName: 'ibizprokeyword' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibizprokeyword',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzplantemplets/:ibzplantemplet?/plantempletdetails/:plantempletdetail?/views/gridview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '计划模板详情',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzplantemplets', parameterName: 'ibzplantemplet' },
-                            { pathName: 'plantempletdetails', parameterName: 'plantempletdetail' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'plantempletdetail',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'plantempletdetails/:plantempletdetail?/views/gridview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '计划模板详情',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'plantempletdetails', parameterName: 'plantempletdetail' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'plantempletdetail',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproconfigs/:ibzproconfig?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统配置表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproconfigs', parameterName: 'ibzproconfig' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzproconfig',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproconfigs/:ibzproconfig?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统配置表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproconfigs', parameterName: 'ibzproconfig' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzproconfig',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzprostories/:ibzprostory?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzprostories', parameterName: 'ibzprostory' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzprostory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzprostories/:ibzprostory?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzprostories', parameterName: 'ibzprostory' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzprostory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/usr2gridviewtasktypecount',
-                    meta: {
-                        captionTag: '',
-                        caption: '任务类型统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'usr2gridviewtasktypecount' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/projectstorystagestatusgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目需求阶段统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'projectstorystagestatusgridview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/projectprogressusr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'projectprogressusr2gridview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/projectqualityusr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目质量表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'projectqualityusr2gridview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/usr2gridviewtaskstatuscount',
-                    meta: {
-                        captionTag: '',
-                        caption: '任务状态统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'usr2gridviewtaskstatuscount' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/projectinputstatsgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目投入统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'projectinputstatsgridview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/gridview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'gridview9' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/allgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '所有项目',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'allgridview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/projectstorystatusstatsgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目需求状态统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'projectstorystatusstatsgridview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/projectbugtypesumusr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'projectbugtypesumusr2gridview' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'projectstats/:projectstats?/views/editview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'projectstats', parameterName: 'projectstats' },
-                            { pathName: 'views', parameterName: 'editview9' },
-                        ],
-                        resource:'projectstats',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testruns/:testrun?/views/meditview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '测试运行',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testruns', parameterName: 'testrun' },
-                            { pathName: 'views', parameterName: 'meditview9' },
-                        ],
-                        resource:'testrun',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'testruns/:testrun?/views/editview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '测试运行',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'testruns', parameterName: 'testrun' },
-                            { pathName: 'views', parameterName: 'editview9' },
-                        ],
-                        resource:'testrun',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/listview9personinfo',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的工作',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'listview9personinfo' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/productsumtreeexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'productsumtreeexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/listview',
-                    meta: {
-                        captionTag: '',
-                        caption: '欢迎',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'listview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/productreporttabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'productreporttabexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/testtreeexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '测试统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'testtreeexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/projectreporttabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'projectreporttabexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/usersumtreeexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用户汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'usersumtreeexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/usr3tabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的地盘',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'usr3tabexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的地盘',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/treeexpviewprojectstats',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目汇总表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'treeexpviewprojectstats' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/allreporttabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '汇报',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'allreporttabexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/dashboardview',
-                    meta: {
-                        captionTag: '',
-                        caption: '首页',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'dashboardview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/statstabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '统计',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'statstabexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/calendarview',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的地盘',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'calendarview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/calendarexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的地盘',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'calendarexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/reporttabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '个人',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'reporttabexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/listview9',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的工作',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'listview9' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/tabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的地盘',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'tabexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/mywork',
-                    meta: {
-                        captionTag: '',
-                        caption: '我的工作',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'mywork' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzmyterritories/:ibzmyterritory?/views/employtreeexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '员工负载',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzmyterritories', parameterName: 'ibzmyterritory' },
-                            { pathName: 'views', parameterName: 'employtreeexpview' },
-                        ],
-                        resource:'ibzmyterritory',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '更新日志',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'sysupdatelog',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '更新日志',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'sysupdatelog',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/views/lasttabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '更新日志',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'views', parameterName: 'lasttabexpview' },
-                        ],
-                        resource:'sysupdatelog',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/views/lastgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '更新日志',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'views', parameterName: 'lastgridview' },
-                        ],
-                        resource:'sysupdatelog',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/views/tabexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '更新日志',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'views', parameterName: 'tabexpview' },
-                        ],
-                        resource:'sysupdatelog',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/views/infoeditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '更新日志',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'views', parameterName: 'infoeditview' },
-                        ],
-                        resource:'sysupdatelog',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/monthlygridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目汇报用户任务',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
-                            { pathName: 'views', parameterName: 'monthlygridview' },
-                        ],
-                        resource:'ibzproprojectusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目汇报用户任务',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'ibzproprojectusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目汇报用户任务',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'ibzproprojectusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproprojectusertasks/:ibzproprojectusertask?/views/projectweeklygridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '项目汇报用户任务',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproprojectusertasks', parameterName: 'ibzproprojectusertask' },
-                            { pathName: 'views', parameterName: 'projectweeklygridview' },
-                        ],
-                        resource:'ibzproprojectusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeammembers/:systeammember?/views/usr2gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组成员',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeammembers', parameterName: 'systeammember' },
-                            { pathName: 'views', parameterName: 'usr2gridview' },
-                        ],
-                        resource:'systeammember',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeammembers/:systeammember?/views/gridexpview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组成员',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeammembers', parameterName: 'systeammember' },
-                            { pathName: 'views', parameterName: 'gridexpview' },
-                        ],
-                        resource:'systeammember',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeammembers/:systeammember?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组成员',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeammembers', parameterName: 'systeammember' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'systeammember',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeammembers/:systeammember?/views/usr2gridviewpostmembers',
-                    meta: {
-                        captionTag: '',
-                        caption: '组成员',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeammembers', parameterName: 'systeammember' },
-                            { pathName: 'views', parameterName: 'usr2gridviewpostmembers' },
-                        ],
-                        resource:'systeammember',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeammembers/:systeammember?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '组成员',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeammembers', parameterName: 'systeammember' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'systeammember',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'systeammembers/:systeammember?/views/gridexpviewteam',
-                    meta: {
-                        captionTag: '',
-                        caption: '组成员',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'systeammembers', parameterName: 'systeammember' },
-                            { pathName: 'views', parameterName: 'gridexpviewteam' },
-                        ],
-                        resource:'systeammember',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproproductusertasks/:ibzproproductusertask?/views/productpartgridviewproductweekly',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品日报',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproproductusertasks', parameterName: 'ibzproproductusertask' },
-                            { pathName: 'views', parameterName: 'productpartgridviewproductweekly' },
-                        ],
-                        resource:'ibzproproductusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproproductusertasks/:ibzproproductusertask?/views/productdailypartgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品日报',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproproductusertasks', parameterName: 'ibzproproductusertask' },
-                            { pathName: 'views', parameterName: 'productdailypartgridview' },
-                        ],
-                        resource:'ibzproproductusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'ibzproproductusertasks/:ibzproproductusertask?/views/productmonthlypartgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品日报',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzproproductusertasks', parameterName: 'ibzproproductusertask' },
-                            { pathName: 'views', parameterName: 'productmonthlypartgridview' },
-                        ],
-                        resource:'ibzproproductusertask',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/editview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'editview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/lastgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'lastgridview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/lastgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'lastgridview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/infoeditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'infoeditview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/infoeditview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'infoeditview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'sysupdatelogs/:sysupdatelog?/sysupdatefeatures/:sysupdatefeatures?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatelogs', parameterName: 'sysupdatelog' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                        },
-                        component: AppViewShell,
-                    },
-                    {
-                    path: 'sysupdatefeatures/:sysupdatefeatures?/views/gridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '系统更新功能',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'sysupdatefeatures', parameterName: 'sysupdatefeatures' },
-                            { pathName: 'views', parameterName: 'gridview' },
-                        ],
-                        resource:'sysupdatefeatures',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'casestats/:casestats?/views/testcasestatsgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '用例统计表',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'casestats', parameterName: 'casestats' },
-                            { pathName: 'views', parameterName: 'testcasestatsgridview' },
-                        ],
-                        resource:'casestats',
                         requireAuth: true,
                     },
                     component: AppViewShell

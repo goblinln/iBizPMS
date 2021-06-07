@@ -18,7 +18,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 /**
  * 实体[IBIZProTag] 服务对象接口
  */
-@FeignClient(value = "${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}", contextId = "IBIZProTag", fallback = IBIZProTagFallback.class)
+//@FeignClient(value = "${ibiz.ref.service.pmspro-pluginserviceapi:pmspro-pluginserviceapi}", contextId = "IBIZProTag", fallback = IBIZProTagFallback.class)
 public interface IBIZProTagFeignClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/select")
