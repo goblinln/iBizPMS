@@ -140,6 +140,10 @@ export abstract class AccountBugBase extends EntityBase implements IAccountBug {
      */
     mailtoconact?: any;
     /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
      * 由谁创建
      */
     openedby?: any;
@@ -229,6 +233,10 @@ export abstract class AccountBugBase extends EntityBase implements IAccountBug {
      * BUG编号
      */
     bugsn?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
     /**
      * 归属组织
      */
@@ -377,14 +385,6 @@ export abstract class AccountBugBase extends EntityBase implements IAccountBug {
      * 测试单
      */
     testtask?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
 
     /**
      * 重置实体数据

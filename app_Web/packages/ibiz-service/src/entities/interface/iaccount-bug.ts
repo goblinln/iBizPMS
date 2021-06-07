@@ -115,6 +115,10 @@ export interface IAccountBug extends IEntityBase {
      */
     mailtoconact?: any;
     /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
      * 由谁创建
      */
     openedby?: any;
@@ -204,6 +208,10 @@ export interface IAccountBug extends IEntityBase {
      * BUG编号
      */
     bugsn?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
     /**
      * 归属组织
      */
@@ -352,12 +360,4 @@ export interface IAccountBug extends IEntityBase {
      * 测试单
      */
     testtask?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
 }

@@ -141,8 +141,8 @@
     "excelCaption" : "Bug标题",
     "getLinkPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugRedirectView.json",
+      "viewType" : "DEREDIRECTVIEW"
     },
     "linkValueItem" : "srfkey",
     "name" : "title",

@@ -46,6 +46,10 @@ export abstract class CompanyBase extends EntityBase implements ICompany {
      */
     deleted?: any;
     /**
+     * 公司编号
+     */
+    companysn?: any;
+    /**
      * 官网
      */
     website?: any;
@@ -79,10 +83,6 @@ export abstract class CompanyBase extends EntityBase implements ICompany {
      * 联系电话
      */
     phone?: any;
-    /**
-     * 公司编号
-     */
-    companysn?: any;
 
     /**
      * 重置实体数据

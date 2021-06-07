@@ -82,6 +82,10 @@ export abstract class IBZCaseStepBase extends EntityBase implements IIBZCaseStep
      */
     desc?: any;
     /**
+     * 用例步骤编号
+     */
+    casestepsn?: any;
+    /**
      * 预期
      */
     expect?: any;
@@ -109,10 +113,6 @@ export abstract class IBZCaseStepBase extends EntityBase implements IIBZCaseStep
      * 分组用例步骤的组编号
      */
     parent?: any;
-    /**
-     * 用例步骤编号
-     */
-    casestepsn?: any;
 
     /**
      * 重置实体数据

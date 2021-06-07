@@ -43,6 +43,10 @@ export interface IUserTpl extends IEntityBase {
      */
     account?: any;
     /**
+     * 用户模板编号
+     */
+    usertplsn?: any;
+    /**
      * 公开
      *
      * @type {('1' | '0')} 1: 是, 0: 否
@@ -56,8 +60,4 @@ export interface IUserTpl extends IEntityBase {
      * 归属部门
      */
     dept?: any;
-    /**
-     * 用户模板编号
-     */
-    usertplsn?: any;
 }

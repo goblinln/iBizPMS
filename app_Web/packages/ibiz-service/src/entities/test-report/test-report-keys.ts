@@ -10,6 +10,7 @@ export default [
     'createdby',
     'stories',
     'files',
+    'testreportsn',
     'comment',
     'tasks',
     'title',
@@ -29,5 +30,4 @@ export default [
     'productname',
     'product',
     'project',
-    'testreportsn',
 ];

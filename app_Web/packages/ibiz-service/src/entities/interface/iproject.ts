@@ -231,6 +231,10 @@ export interface IProject extends IEntityBase {
      */
     noticeusers?: any;
     /**
+     * 项目编号
+     */
+    projectsn?: any;
+    /**
      * statge
      *
      * @type {('1' | '2' | '3' | '4' | '5')} 1: 1, 2: 2, 3: 3, 4: 4, 5: 5
@@ -356,8 +360,4 @@ export interface IProject extends IEntityBase {
      * 父项目
      */
     parent?: any;
-    /**
-     * 项目编号
-     */
-    projectsn?: any;
 }

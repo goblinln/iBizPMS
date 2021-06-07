@@ -53,6 +53,10 @@ export interface ITestReport extends IEntityBase {
      */
     files?: any;
     /**
+     * 测试报告编号
+     */
+    testreportsn?: any;
+    /**
      * 备注
      */
     comment?: any;
@@ -130,8 +134,4 @@ export interface ITestReport extends IEntityBase {
      * 所属项目
      */
     project?: any;
-    /**
-     * 测试报告编号
-     */
-    testreportsn?: any;
 }

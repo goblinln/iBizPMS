@@ -158,6 +158,10 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      */
     stagedby?: any;
     /**
+     * 所属计划
+     */
+    planname?: any;
+    /**
      * 由谁创建
      */
     openedby?: any;
@@ -276,6 +280,10 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      */
     orgname?: any;
     /**
+     * 需求编号
+     */
+    storysn?: any;
+    /**
      * 验收标准
      */
     verify?: any;
@@ -371,14 +379,6 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      * 转Bug
      */
     tobug?: any;
-    /**
-     * 需求编号
-     */
-    storysn?: any;
-    /**
-     * 所属计划
-     */
-    planname?: any;
 
     /**
      * 重置实体数据

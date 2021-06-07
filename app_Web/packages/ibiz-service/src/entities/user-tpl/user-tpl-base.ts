@@ -68,6 +68,10 @@ export abstract class UserTplBase extends EntityBase implements IUserTpl {
      */
     account?: any;
     /**
+     * 用户模板编号
+     */
+    usertplsn?: any;
+    /**
      * 公开
      *
      * @type {('1' | '0')} 1: 是, 0: 否
@@ -81,10 +85,6 @@ export abstract class UserTplBase extends EntityBase implements IUserTpl {
      * 归属部门
      */
     dept?: any;
-    /**
-     * 用户模板编号
-     */
-    usertplsn?: any;
 
     /**
      * 重置实体数据

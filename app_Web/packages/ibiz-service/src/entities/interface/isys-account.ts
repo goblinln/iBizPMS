@@ -139,87 +139,87 @@ export interface ISysAccount extends IEntityBase {
      */
     superuser?: 'yes' | 'no';
     /**
-     * 原密码
-     */
-    originalpassword?: any;
-    /**
-     * 新密码
-     */
-    newpassword?: any;
-    /**
-     * 重复密码
-     */
-    repeatpassword?: any;
-    /**
-     * 过期项目数
-     */
-    eprojects?: any;
-    /**
-     * 项目成员
-     */
-    projectteamcnt?: any;
-    /**
-     * 我的待办数
-     */
-    mytodocnt?: any;
-    /**
-     * 我收藏的bugs
-     */
-    myfavoritebugs?: any;
-    /**
-     * 我的bugs
-     */
-    mybugs?: any;
-    /**
-     * 剩余里程碑
-     */
-    leftlcbcnt?: any;
-    /**
-     * 我的任务
-     */
-    mytasks?: any;
-    /**
      * 我的过期bug数
      */
     myebugs?: any;
-    /**
-     * 我的地盘
-     */
-    myterritorycnt?: any;
-    /**
-     * 我的收藏
-     */
-    myfavorites?: any;
-    /**
-     * 我的需求数
-     */
-    mystorys?: any;
-    /**
-     * 今日截止待办
-     */
-    mytodocntjz?: any;
-    /**
-     * 剩余里程碑（今日到期）
-     */
-    leftlcbjzcnt?: any;
-    /**
-     * 我的过期任务数
-     */
-    myetasks?: any;
-    /**
-     * 我收藏的需求数
-     */
-    myfavoritestorys?: any;
-    /**
-     * 我收藏的任务
-     */
-    myfavoritetasks?: any;
     /**
      * 未关闭产品数
      */
     products?: any;
     /**
+     * 我的需求数
+     */
+    mystorys?: any;
+    /**
      * 未关闭项目数
      */
     projects?: any;
+    /**
+     * 我的地盘
+     */
+    myterritorycnt?: any;
+    /**
+     * 原密码
+     */
+    originalpassword?: any;
+    /**
+     * 我的收藏
+     */
+    myfavorites?: any;
+    /**
+     * 我的过期任务数
+     */
+    myetasks?: any;
+    /**
+     * 新密码
+     */
+    newpassword?: any;
+    /**
+     * 过期项目数
+     */
+    eprojects?: any;
+    /**
+     * 我收藏的需求数
+     */
+    myfavoritestorys?: any;
+    /**
+     * 项目成员
+     */
+    projectteamcnt?: any;
+    /**
+     * 今日截止待办
+     */
+    mytodocntjz?: any;
+    /**
+     * 我的bugs
+     */
+    mybugs?: any;
+    /**
+     * 我的待办数
+     */
+    mytodocnt?: any;
+    /**
+     * 剩余里程碑
+     */
+    leftlcbcnt?: any;
+    /**
+     * 我收藏的bugs
+     */
+    myfavoritebugs?: any;
+    /**
+     * 重复密码
+     */
+    repeatpassword?: any;
+    /**
+     * 我的任务
+     */
+    mytasks?: any;
+    /**
+     * 我收藏的任务
+     */
+    myfavoritetasks?: any;
+    /**
+     * 剩余里程碑（今日到期）
+     */
+    leftlcbjzcnt?: any;
 }

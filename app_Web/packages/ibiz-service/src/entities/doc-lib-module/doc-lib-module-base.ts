@@ -34,6 +34,14 @@ export abstract class DocLibModuleBase extends EntityBase implements IDocLibModu
         this.name = val;
     }
     /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
      * 是否已收藏
      */
     isfavourites?: any;
@@ -57,6 +65,18 @@ export abstract class DocLibModuleBase extends EntityBase implements IDocLibModu
      * 查询类型
      */
     docqtype?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * owner
      */
@@ -90,6 +110,10 @@ export abstract class DocLibModuleBase extends EntityBase implements IDocLibModu
      */
     id?: any;
     /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
      * 逻辑删除标志
      */
     deleted?: any;
@@ -109,30 +133,6 @@ export abstract class DocLibModuleBase extends EntityBase implements IDocLibModu
      * 编号
      */
     root?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

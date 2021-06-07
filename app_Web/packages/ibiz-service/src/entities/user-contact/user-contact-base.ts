@@ -62,6 +62,10 @@ export abstract class UserContactBase extends EntityBase implements IUserContact
      */
     updateby?: any;
     /**
+     * 用户联系方式编号
+     */
+    usercontactsn?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -69,10 +73,6 @@ export abstract class UserContactBase extends EntityBase implements IUserContact
      * account
      */
     account?: any;
-    /**
-     * 用户联系方式编号
-     */
-    usercontactsn?: any;
 
     /**
      * 重置实体数据

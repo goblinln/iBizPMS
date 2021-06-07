@@ -78,6 +78,10 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      */
     files?: any;
     /**
+     * 测试报告编号
+     */
+    testreportsn?: any;
+    /**
      * 备注
      */
     comment?: any;
@@ -155,10 +159,6 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      * 所属项目
      */
     project?: any;
-    /**
-     * 测试报告编号
-     */
-    testreportsn?: any;
 
     /**
      * 重置实体数据

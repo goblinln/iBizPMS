@@ -57,6 +57,10 @@ export interface ITestCaseStep extends IEntityBase {
      */
     desc?: any;
     /**
+     * 用例步骤编号
+     */
+    casestepsn?: any;
+    /**
      * 预期
      */
     expect?: any;
@@ -84,8 +88,4 @@ export interface ITestCaseStep extends IEntityBase {
      * 分组用例步骤的组编号
      */
     parent?: any;
-    /**
-     * 用例步骤编号
-     */
-    casestepsn?: any;
 }

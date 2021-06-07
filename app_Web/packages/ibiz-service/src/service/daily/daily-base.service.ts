@@ -108,17 +108,6 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
         return this.condCache.get('view');
     }
     /**
-     * Submit
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DailyService
-     */
-    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/submit`, _data);
-    }
-    /**
      * Notice
      *
      * @param {*} [_context={}]
@@ -150,29 +139,6 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/dailies/${_context.daily}/read`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DailyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/dailies/${_context.daily}`);
-        return res;
-    }
-    /**
-     * AutoCreate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DailyService
-     */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
     }
     /**
      * Create
@@ -218,19 +184,39 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
         const res = await this.http.get(`/dailies/getdraft`, _data);
         return res;
     }
-
     /**
-     * SubmitBatch接口方法
+     * Submit
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DailyServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DailyService
      */
-    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/dailies/submitbatch`,_data);
+    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/dailies/${_context.daily}/submit`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DailyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/dailies/${_context.daily}`);
+        return res;
+    }
+    /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DailyService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
     }
 
     /**
@@ -259,6 +245,20 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
     public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/dailies/readbatch`,_data);
+    }
+
+    /**
+     * SubmitBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DailyServiceBase
+     */
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/dailies/submitbatch`,_data);
     }
 
     /**

@@ -27,6 +27,10 @@ export interface IProductRelease extends IEntityBase {
      */
     id?: any;
     /**
+     * 发布编号
+     */
+    releasesn?: any;
+    /**
      * 运行数据库
      */
     sqlid?: any;
@@ -140,8 +144,4 @@ export interface IProductRelease extends IEntityBase {
      * 平台/分支
      */
     branch?: any;
-    /**
-     * 发布编号
-     */
-    releasesn?: any;
 }

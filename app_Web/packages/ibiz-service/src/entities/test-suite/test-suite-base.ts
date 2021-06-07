@@ -58,6 +58,10 @@ export abstract class TestSuiteBase extends EntityBase implements ITestSuite {
      */
     addeddate?: any;
     /**
+     * 测试套件编号
+     */
+    testsuitesn?: any;
+    /**
      * 编号
      */
     id?: any;
@@ -95,10 +99,6 @@ export abstract class TestSuiteBase extends EntityBase implements ITestSuite {
      * 所属产品
      */
     product?: any;
-    /**
-     * 测试套件编号
-     */
-    testsuitesn?: any;
 
     /**
      * 重置实体数据

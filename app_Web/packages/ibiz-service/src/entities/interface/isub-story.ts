@@ -133,6 +133,10 @@ export interface ISubStory extends IEntityBase {
      */
     stagedby?: any;
     /**
+     * 所属计划
+     */
+    planname?: any;
+    /**
      * 由谁创建
      */
     openedby?: any;
@@ -251,6 +255,10 @@ export interface ISubStory extends IEntityBase {
      */
     orgname?: any;
     /**
+     * 需求编号
+     */
+    storysn?: any;
+    /**
      * 验收标准
      */
     verify?: any;
@@ -346,12 +354,4 @@ export interface ISubStory extends IEntityBase {
      * 转Bug
      */
     tobug?: any;
-    /**
-     * 需求编号
-     */
-    storysn?: any;
-    /**
-     * 所属计划
-     */
-    planname?: any;
 }

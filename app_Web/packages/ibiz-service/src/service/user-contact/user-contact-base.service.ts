@@ -124,32 +124,32 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.condCache.get('view');
     }
     /**
-     * FetchAccount
+     * Create
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof UserContactService
      */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts`, _data);
         }
-        return this.http.post(`/usercontacts/fetchaccount`, _data);
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
         }
-        return this.http.post(`/usercontacts/fetchmy`, _data);
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/usercontacts`, _data);
     }
     /**
      * Remove
@@ -198,32 +198,18 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
     }
     /**
-     * Create
+     * FetchAccount
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof UserContactService
      */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-        _data = await this.obtainMinor(_context, _data);
-            if (!_data.srffrontuf || _data.srffrontuf != 1) {
-                _data[this.APPDEKEY] = null;
-            }
-            if (_data.srffrontuf != null) {
-                delete _data.srffrontuf;
-            }
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/usercontacts`, _data);
+        return this.http.post(`/usercontacts/fetchaccount`, _data);
     }
     /**
      * GetDraft
@@ -244,5 +230,19 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/usercontacts/getdraft`, _data);
         return res;
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
+        }
+        return this.http.post(`/usercontacts/fetchmy`, _data);
     }
 }

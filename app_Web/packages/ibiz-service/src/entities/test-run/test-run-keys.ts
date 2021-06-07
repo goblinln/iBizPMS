@@ -2,6 +2,7 @@ export default [
     'deptname',
     'lastrunresult',
     'version',
+    'testrunsn',
     'lastrundate',
     'org',
     'updateby',
@@ -14,5 +15,4 @@ export default [
     'createby',
     'ibizcase',
     'task',
-    'testrunsn',
 ];

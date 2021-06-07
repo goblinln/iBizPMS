@@ -48,6 +48,10 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
      */
     version?: any;
     /**
+     * 测试运行编号
+     */
+    testrunsn?: any;
+    /**
      * 最后执行时间
      */
     lastrundate?: any;
@@ -97,10 +101,6 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
      * 测试单
      */
     task?: any;
-    /**
-     * 测试运行编号
-     */
-    testrunsn?: any;
 
     /**
      * 重置实体数据

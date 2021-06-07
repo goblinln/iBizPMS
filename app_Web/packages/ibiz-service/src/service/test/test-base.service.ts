@@ -24,7 +24,7 @@ export class TestBaseService extends EntityBaseService<ITest> {
     protected APPDENAMEPLURAL = 'Tests';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','code','productsn',];
+    protected quickSearchFields = ['name','productsn','code',];
     protected selectContextParam = {
     };
 
@@ -182,17 +182,6 @@ export class TestBaseService extends EntityBaseService<ITest> {
         return this.condCache.get('view');
     }
     /**
-     * TestTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestService
-     */
-    async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/tests/${_context.test}/testtop`, _data);
-    }
-    /**
      * CancelTestTop
      *
      * @param {*} [_context={}]
@@ -214,6 +203,17 @@ export class TestBaseService extends EntityBaseService<ITest> {
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/tests/${_context.test}`);
         return res;
+    }
+    /**
+     * TestTop
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestService
+     */
+    async TestTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/tests/${_context.test}/testtop`, _data);
     }
     /**
      * FetchCurDefault

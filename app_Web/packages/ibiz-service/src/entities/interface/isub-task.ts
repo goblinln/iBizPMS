@@ -103,6 +103,10 @@ export interface ISubTask extends IEntityBase {
      */
     replycount?: any;
     /**
+     * 建立人
+     */
+    createman?: any;
+    /**
      * 归属部门名
      */
     deptname?: any;
@@ -126,6 +130,10 @@ export interface ISubTask extends IEntityBase {
      * 相关需求最新版本
      */
     storyversionnew?: any;
+    /**
+     * 任务编号
+     */
+    tasksn?: any;
     /**
      * 本次消耗
      */
@@ -232,6 +240,10 @@ export interface ISubTask extends IEntityBase {
      * 延期
      */
     delay?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
     /**
      * 任务描述
      */
@@ -394,16 +406,4 @@ export interface ISubTask extends IEntityBase {
      * 来源Bug
      */
     frombug?: any;
-    /**
-     * 任务编号
-     */
-    tasksn?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
 }

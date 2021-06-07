@@ -5,11 +5,11 @@ export default [
     'ibiznew',
     'createby',
     'org',
+    'historysn',
     'old',
     'dept',
     'updateby',
     'deptname',
     'id',
     'action',
-    'historysn',
 ];

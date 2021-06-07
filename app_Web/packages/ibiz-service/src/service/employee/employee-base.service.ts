@@ -148,15 +148,15 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         return this.condCache.get('view');
     }
     /**
-     * FetchProject
+     * FetchContact
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof EmployeeService
      */
-    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchproject`, _data);
+    async FetchContact(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchcontact`, _data);
     }
     /**
      * FetchTaskMulti
@@ -168,6 +168,29 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      */
     async FetchTaskMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/employees/fetchtaskmulti`, _data);
+    }
+    /**
+     * FetchTask
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchtask`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/employees/${_context.employee}`);
+        return res;
     }
     /**
      * FetchProduct
@@ -192,6 +215,17 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         return this.http.post(`/employees/fetchbug`, _data);
     }
     /**
+     * FetchProject
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchproject`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -201,39 +235,5 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/employees/fetchdefault`, _data);
-    }
-    /**
-     * FetchTask
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchtask`, _data);
-    }
-    /**
-     * FetchContact
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchContact(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchcontact`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/employees/${_context.employee}`);
-        return res;
     }
 }

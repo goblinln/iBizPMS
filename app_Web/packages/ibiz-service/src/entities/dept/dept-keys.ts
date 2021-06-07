@@ -7,8 +7,8 @@ export default [
     'path',
     'position',
     'id',
+    'deptsn',
     'name',
     'parentname',
     'parent',
-    'deptsn',
 ];

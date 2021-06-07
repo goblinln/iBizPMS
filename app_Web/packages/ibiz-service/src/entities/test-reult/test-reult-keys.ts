@@ -10,6 +10,7 @@ export default [
     'updateby',
     'xml',
     'task',
+    'testresultsn',
     'duration',
     'date',
     'deptname',
@@ -24,5 +25,4 @@ export default [
     'ibizcase',
     'run',
     'compile',
-    'testresultsn',
 ];

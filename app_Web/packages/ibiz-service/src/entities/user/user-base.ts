@@ -106,6 +106,10 @@ export abstract class UserBase extends EntityBase implements IUser {
      */
     last?: any;
     /**
+     * 用户编号
+     */
+    usersn?: any;
+    /**
      * clientStatus
      *
      * @type {('online' | 'away' | 'busy' | 'offline')} online: online, away: away, busy: busy, offline: offline
@@ -173,10 +177,6 @@ export abstract class UserBase extends EntityBase implements IUser {
      * QQ
      */
     qq?: any;
-    /**
-     * 用户编号
-     */
-    usersn?: any;
 
     /**
      * 重置实体数据

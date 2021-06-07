@@ -128,6 +128,10 @@ export abstract class SubTaskBase extends EntityBase implements ISubTask {
      */
     replycount?: any;
     /**
+     * 建立人
+     */
+    createman?: any;
+    /**
      * 归属部门名
      */
     deptname?: any;
@@ -151,6 +155,10 @@ export abstract class SubTaskBase extends EntityBase implements ISubTask {
      * 相关需求最新版本
      */
     storyversionnew?: any;
+    /**
+     * 任务编号
+     */
+    tasksn?: any;
     /**
      * 本次消耗
      */
@@ -257,6 +265,10 @@ export abstract class SubTaskBase extends EntityBase implements ISubTask {
      * 延期
      */
     delay?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
     /**
      * 任务描述
      */
@@ -419,18 +431,6 @@ export abstract class SubTaskBase extends EntityBase implements ISubTask {
      * 来源Bug
      */
     frombug?: any;
-    /**
-     * 任务编号
-     */
-    tasksn?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
 
     /**
      * 重置实体数据

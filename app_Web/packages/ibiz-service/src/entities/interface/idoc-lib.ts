@@ -103,6 +103,10 @@ export interface IDocLib extends IEntityBase {
      */
     openeddate?: any;
     /**
+     * 文档库编号
+     */
+    doclibsn?: any;
+    /**
      * 排序
      */
     order?: any;
@@ -122,8 +126,4 @@ export interface IDocLib extends IEntityBase {
      * 产品库
      */
     product?: any;
-    /**
-     * 文档库编号
-     */
-    doclibsn?: any;
 }

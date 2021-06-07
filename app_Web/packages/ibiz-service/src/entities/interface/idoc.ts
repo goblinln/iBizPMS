@@ -65,6 +65,10 @@ export interface IDoc extends IEntityBase {
      */
     org?: any;
     /**
+     * 文档编号
+     */
+    docsn?: any;
+    /**
      * 文档类型
      *
      * @type {('text' | 'url')} text: 文档, url: 链接
@@ -172,8 +176,4 @@ export interface IDoc extends IEntityBase {
      * 所属分类
      */
     module?: any;
-    /**
-     * 文档编号
-     */
-    docsn?: any;
 }

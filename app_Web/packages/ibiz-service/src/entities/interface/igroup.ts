@@ -9,6 +9,10 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IGroup extends IEntityBase {
     /**
+     * 群组编号
+     */
+    groupsn?: any;
+    /**
      * acl
      */
     acl?: any;
@@ -28,8 +32,4 @@ export interface IGroup extends IEntityBase {
      * role
      */
     role?: any;
-    /**
-     * 群组编号
-     */
-    groupsn?: any;
 }

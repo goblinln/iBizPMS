@@ -38,21 +38,17 @@ export abstract class DynaFilterBase extends EntityBase implements IDynaFilter {
      */
     dynafilterid?: any;
     /**
-     * 动态搜索栏名称
+     * 组织部门标识
      */
-    dynafiltername?: any;
+    deptid?: any;
     /**
      * 更新人
      */
     updateman?: any;
     /**
-     * 建立时间
+     * 表单名称
      */
-    createdate?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
+    formname?: any;
     /**
      * 更新时间
      */
@@ -62,21 +58,25 @@ export abstract class DynaFilterBase extends EntityBase implements IDynaFilter {
      */
     orgid?: any;
     /**
-     * 组织部门标识
+     * 建立时间
      */
-    deptid?: any;
-    /**
-     * 表单名称
-     */
-    formname?: any;
+    createdate?: any;
     /**
      * 实体名称
      */
     dename?: any;
     /**
+     * 动态搜索栏名称
+     */
+    dynafiltername?: any;
+    /**
      * 数据
      */
     data?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
 
     /**
      * 重置实体数据

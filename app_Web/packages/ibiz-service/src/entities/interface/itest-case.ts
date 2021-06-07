@@ -31,6 +31,10 @@ export interface ITestCase extends IEntityBase {
      */
     openeddate?: any;
     /**
+     * 测试用例编号
+     */
+    casesn?: any;
+    /**
      * 结果
      *
      * @type {('n/a' | 'pass' | 'fail' | 'blocked')} n/a: 忽略, pass: 通过, fail: 失败, blocked: 阻塞
@@ -280,8 +284,4 @@ export interface ITestCase extends IEntityBase {
      * 所属模块
      */
     module?: any;
-    /**
-     * 测试用例编号
-     */
-    casesn?: any;
 }

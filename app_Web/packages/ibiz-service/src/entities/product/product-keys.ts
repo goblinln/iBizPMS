@@ -12,6 +12,7 @@ export default [
     'testtaskcnt',
     'testsuitecnt',
     'productplancnt',
+    'productsn',
     'id',
     'deleted',
     'closedstorycnt',
@@ -52,7 +53,6 @@ export default [
     'createddate',
     'noticeusers',
     'activestorycnt',
-    'productsn',
-    'line',
     'linename',
+    'line',
 ];

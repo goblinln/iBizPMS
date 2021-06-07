@@ -41,6 +41,10 @@ export interface IDept extends IEntityBase {
      */
     id?: any;
     /**
+     * 部门编号
+     */
+    deptsn?: any;
+    /**
      * 部门名称
      */
     name?: any;
@@ -52,8 +56,4 @@ export interface IDept extends IEntityBase {
      * parent
      */
     parent?: any;
-    /**
-     * 部门编号
-     */
-    deptsn?: any;
 }

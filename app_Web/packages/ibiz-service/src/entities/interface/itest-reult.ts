@@ -55,6 +55,10 @@ export interface ITestReult extends IEntityBase {
      */
     task?: any;
     /**
+     * 测试结果编号
+     */
+    testresultsn?: any;
+    /**
      * 持续时间
      */
     duration?: any;
@@ -110,8 +114,4 @@ export interface ITestReult extends IEntityBase {
      * 代码编译
      */
     compile?: any;
-    /**
-     * 测试结果编号
-     */
-    testresultsn?: any;
 }

@@ -34,6 +34,10 @@ export abstract class GroupBase extends EntityBase implements IGroup {
         this.name = val;
     }
     /**
+     * 群组编号
+     */
+    groupsn?: any;
+    /**
      * acl
      */
     acl?: any;
@@ -53,10 +57,6 @@ export abstract class GroupBase extends EntityBase implements IGroup {
      * role
      */
     role?: any;
-    /**
-     * 群组编号
-     */
-    groupsn?: any;
 
     /**
      * 重置实体数据

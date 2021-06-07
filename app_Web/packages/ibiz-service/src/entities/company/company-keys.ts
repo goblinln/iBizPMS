@@ -2,6 +2,7 @@ export default [
     'admins',
     'fax',
     'deleted',
+    'companysn',
     'website',
     'id',
     'zipcode',
@@ -10,5 +11,4 @@ export default [
     'name',
     'guest',
     'phone',
-    'companysn',
 ];

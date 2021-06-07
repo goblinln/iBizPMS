@@ -66,18 +66,6 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
         return new HttpResponse(entity);
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductDailyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productdailies/${_context.productdaily}`);
-        return res;
-    }
-    /**
      * AutoCreate
      *
      * @param {*} [_context={}]
@@ -87,6 +75,17 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
      */
     async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/productdailies/${_context.productdaily}/autocreate`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductDailyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productdailies/fetchdefault`, _data);
     }
     /**
      * Update
@@ -133,15 +132,16 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
         return this.http.post(`/productdailies`, _data);
     }
     /**
-     * FetchDefault
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductDailyService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productdailies/fetchdefault`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/productdailies/${_context.productdaily}`);
+        return res;
     }
 
     /**

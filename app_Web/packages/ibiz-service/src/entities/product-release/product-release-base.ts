@@ -52,6 +52,10 @@ export abstract class ProductReleaseBase extends EntityBase implements IProductR
      */
     id?: any;
     /**
+     * 发布编号
+     */
+    releasesn?: any;
+    /**
      * 运行数据库
      */
     sqlid?: any;
@@ -165,10 +169,6 @@ export abstract class ProductReleaseBase extends EntityBase implements IProductR
      * 平台/分支
      */
     branch?: any;
-    /**
-     * 发布编号
-     */
-    releasesn?: any;
 
     /**
      * 重置实体数据

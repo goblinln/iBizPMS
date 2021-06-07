@@ -4,6 +4,7 @@ export default [
     'color',
     'path',
     'openeddate',
+    'casesn',
     'lastrunresult',
     'modulename1',
     'linkcase',
@@ -62,5 +63,4 @@ export default [
     'product',
     'lib',
     'module',
-    'casesn',
 ];

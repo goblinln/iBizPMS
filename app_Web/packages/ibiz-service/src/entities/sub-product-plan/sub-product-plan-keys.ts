@@ -32,11 +32,11 @@ export default [
     'dept',
     'storycnt',
     'delta',
+    'productplansn',
     'finishedtaskscnt',
     'bugcnt',
     'parentname',
     'branch',
     'parent',
     'product',
-    'productplansn',
 ];

@@ -3,6 +3,7 @@ export default [
     'marker',
     'org',
     'id',
+    'releasesn',
     'sqlid',
     'leftbugs',
     'bugs',
@@ -30,5 +31,4 @@ export default [
     'product',
     'build',
     'branch',
-    'releasesn',
 ];

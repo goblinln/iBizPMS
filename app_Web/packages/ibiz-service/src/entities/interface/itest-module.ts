@@ -9,17 +9,41 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface ITestModule extends IEntityBase {
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 类型（story）
      */
     type?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
     /**
      * path
      */
     path?: any;
     /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
      * owner
      */
     owner?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 排序值
      */
@@ -72,28 +96,4 @@ export interface ITestModule extends IEntityBase {
      * id
      */
     parent?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 }

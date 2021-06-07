@@ -34,9 +34,21 @@ export abstract class ProjectModuleBase extends EntityBase implements IProjectMo
         this.name = val;
     }
     /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 简称
      */
     ibizshort?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 叶子模块
      */
@@ -45,6 +57,10 @@ export abstract class ProjectModuleBase extends EntityBase implements IProjectMo
      * 类型（task）
      */
     type?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 数据选择排序
      */
@@ -62,6 +78,10 @@ export abstract class ProjectModuleBase extends EntityBase implements IProjectMo
      */
     collector?: any;
     /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
      * grade
      */
     grade?: any;
@@ -77,6 +97,10 @@ export abstract class ProjectModuleBase extends EntityBase implements IProjectMo
      * id
      */
     id?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
     /**
      * owner
      */
@@ -101,30 +125,6 @@ export abstract class ProjectModuleBase extends EntityBase implements IProjectMo
      * id
      */
     parent?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 
     /**
      * 重置实体数据

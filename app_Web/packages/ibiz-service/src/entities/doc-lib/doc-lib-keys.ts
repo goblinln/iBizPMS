@@ -21,10 +21,10 @@ export default [
     'modulecnt',
     'createby',
     'openeddate',
+    'doclibsn',
     'order',
     'productname',
     'projectname',
     'project',
     'product',
-    'doclibsn',
 ];

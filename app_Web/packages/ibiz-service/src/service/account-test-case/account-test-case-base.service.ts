@@ -313,18 +313,20 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
         return this.condCache.get('view');
     }
     /**
-     * FetchMyFavorite
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountTestCaseService
      */
-    async FetchMyFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accounttestcase) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttestcases/${_context.accounttestcase}`);
+            return res;
         }
-        return this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
+        const res = await this.http.get(`/accounttestcases/${_context.accounttestcase}`);
+        return res;
     }
     /**
      * FetchMy
@@ -341,20 +343,18 @@ export class AccountTestCaseBaseService extends EntityBaseService<IAccountTestCa
         return this.http.post(`/accounttestcases/fetchmy`, _data);
     }
     /**
-     * Get
+     * FetchMyFavorite
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountTestCaseService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accounttestcase) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accounttestcases/${_context.accounttestcase}`);
-            return res;
+    async FetchMyFavorite(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accounttestcases/fetchmyfavorite`, _data);
         }
-        const res = await this.http.get(`/accounttestcases/${_context.accounttestcase}`);
-        return res;
+        return this.http.post(`/accounttestcases/fetchmyfavorite`, _data);
     }
     /**
      * FetchAccount

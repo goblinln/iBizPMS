@@ -17,6 +17,10 @@ export interface ITestCaseLibModule extends IEntityBase {
      */
     id?: any;
     /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
      * branch
      */
     branch?: any;
@@ -29,6 +33,10 @@ export interface ITestCaseLibModule extends IEntityBase {
      */
     type?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 简称
      */
     ibizshort?: any;
@@ -36,6 +44,10 @@ export interface ITestCaseLibModule extends IEntityBase {
      * grade
      */
     grade?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * collector
      */
@@ -57,6 +69,18 @@ export interface ITestCaseLibModule extends IEntityBase {
      */
     order?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
      * 上级模块
      */
     parentname?: any;
@@ -68,28 +92,4 @@ export interface ITestCaseLibModule extends IEntityBase {
      * id
      */
     parent?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

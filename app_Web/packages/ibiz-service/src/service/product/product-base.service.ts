@@ -24,7 +24,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
     protected APPDENAMEPLURAL = 'Products';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','code','productsn',];
+    protected quickSearchFields = ['name','productsn','code',];
     protected selectContextParam = {
     };
 
@@ -182,6 +182,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/products/${_context.product}`);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -207,6 +218,17 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/${_context.product}/producttop`, _data);
     }
     /**
+     * FetchCurDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurdefault`, _data);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -225,17 +247,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products`, _data);
     }
     /**
-     * FetchCurProject
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurproject`, _data);
-    }
-    /**
      * CancelProductTop
      *
      * @param {*} [_context={}]
@@ -247,38 +258,15 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
     }
     /**
-     * Close
+     * FetchCurProject
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/close`, _data);
-    }
-    /**
-     * FetchCurDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurdefault`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/products/${_context.product}`);
-        return res;
+    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurproject`, _data);
     }
     /**
      * Update
@@ -293,15 +281,27 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.put(`/products/${_context.product}`, _data);
     }
     /**
-     * Remove
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/products/${_context.product}`);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/products/${_context.product}`);
+        return res;
+    }
+    /**
+     * Close
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Close(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/close`, _data);
     }
 
     /**

@@ -42,6 +42,10 @@ export abstract class TestCaseLibModuleBase extends EntityBase implements ITestC
      */
     id?: any;
     /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
      * branch
      */
     branch?: any;
@@ -54,6 +58,10 @@ export abstract class TestCaseLibModuleBase extends EntityBase implements ITestC
      */
     type?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 简称
      */
     ibizshort?: any;
@@ -61,6 +69,10 @@ export abstract class TestCaseLibModuleBase extends EntityBase implements ITestC
      * grade
      */
     grade?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * collector
      */
@@ -82,6 +94,18 @@ export abstract class TestCaseLibModuleBase extends EntityBase implements ITestC
      */
     order?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
      * 上级模块
      */
     parentname?: any;
@@ -93,30 +117,6 @@ export abstract class TestCaseLibModuleBase extends EntityBase implements ITestC
      * id
      */
     parent?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

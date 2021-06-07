@@ -21,6 +21,10 @@ export interface ICompany extends IEntityBase {
      */
     deleted?: any;
     /**
+     * 公司编号
+     */
+    companysn?: any;
+    /**
      * 官网
      */
     website?: any;
@@ -54,8 +58,4 @@ export interface ICompany extends IEntityBase {
      * 联系电话
      */
     phone?: any;
-    /**
-     * 公司编号
-     */
-    companysn?: any;
 }

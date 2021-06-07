@@ -7,8 +7,8 @@ export default [
     'orgname',
     'type',
     'account',
+    'usertplsn',
     'ibizpublic',
     'updateby',
     'dept',
-    'usertplsn',
 ];

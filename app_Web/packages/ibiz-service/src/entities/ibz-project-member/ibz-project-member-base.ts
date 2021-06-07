@@ -46,6 +46,10 @@ export abstract class IbzProjectMemberBase extends EntityBase implements IIbzPro
      */
     qd?: any;
     /**
+     * 由谁取消
+     */
+    canceledby?: any;
+    /**
      * 全部成员
      */
     teamembers?: any;
@@ -74,17 +78,9 @@ export abstract class IbzProjectMemberBase extends EntityBase implements IIbzPro
      */
     pm?: any;
     /**
-     * 团队成员（五）
+     * 由谁关闭
      */
-    fifthmember?: any;
-    /**
-     * 团队成员（六）
-     */
-    sixthmember?: any;
-    /**
-     * 项目名称
-     */
-    name?: any;
+    closedby?: any;
     /**
      * 由谁创建
      */
@@ -96,17 +92,21 @@ export abstract class IbzProjectMemberBase extends EntityBase implements IIbzPro
      */
     acl?: 'open' | 'private' | 'custom';
     /**
-     * 由谁关闭
+     * 团队成员（五）
      */
-    closedby?: any;
-    /**
-     * 由谁取消
-     */
-    canceledby?: any;
+    fifthmember?: any;
     /**
      * 由谁更新
      */
     updateby?: any;
+    /**
+     * 团队成员（六）
+     */
+    sixthmember?: any;
+    /**
+     * 项目名称
+     */
+    name?: any;
 
     /**
      * 重置实体数据

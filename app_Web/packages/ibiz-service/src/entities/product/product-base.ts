@@ -88,6 +88,10 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      */
     productplancnt?: any;
     /**
+     * 产品编号
+     */
+    productsn?: any;
+    /**
      * 编号
      */
     id?: any;
@@ -254,17 +258,13 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      */
     activestorycnt?: any;
     /**
-     * 产品编号
+     * 产品线
      */
-    productsn?: any;
+    linename?: any;
     /**
      * id
      */
     line?: any;
-    /**
-     * 产品线
-     */
-    linename?: any;
 
     /**
      * 重置实体数据

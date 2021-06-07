@@ -42,9 +42,25 @@ export abstract class ProductTeamBase extends EntityBase implements IProductTeam
      */
     account?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 加盟日
      */
     join?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * 预计剩余
      */
@@ -70,6 +86,10 @@ export abstract class ProductTeamBase extends EntityBase implements IProductTeam
      */
     hours?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 任务数
      */
     taskcnt?: any;
@@ -87,6 +107,10 @@ export abstract class ProductTeamBase extends EntityBase implements IProductTeam
      * 可用工日
      */
     days?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
     /**
      * 编号
      */
@@ -113,30 +137,6 @@ export abstract class ProductTeamBase extends EntityBase implements IProductTeam
      * 产品编号
      */
     root?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

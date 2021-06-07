@@ -80,6 +80,10 @@ export abstract class TestReultBase extends EntityBase implements ITestReult {
      */
     task?: any;
     /**
+     * 测试结果编号
+     */
+    testresultsn?: any;
+    /**
      * 持续时间
      */
     duration?: any;
@@ -135,10 +139,6 @@ export abstract class TestReultBase extends EntityBase implements ITestReult {
      * 代码编译
      */
     compile?: any;
-    /**
-     * 测试结果编号
-     */
-    testresultsn?: any;
 
     /**
      * 重置实体数据

@@ -33,6 +33,10 @@ export interface IHistory extends IEntityBase {
      */
     org?: any;
     /**
+     * 操作历史编号
+     */
+    historysn?: any;
+    /**
      * 旧值
      */
     old?: any;
@@ -56,8 +60,4 @@ export interface IHistory extends IEntityBase {
      * 关联日志
      */
     action?: any;
-    /**
-     * 操作历史编号
-     */
-    historysn?: any;
 }

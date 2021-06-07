@@ -63,6 +63,10 @@ export interface IProduct extends IEntityBase {
      */
     productplancnt?: any;
     /**
+     * 产品编号
+     */
+    productsn?: any;
+    /**
      * 编号
      */
     id?: any;
@@ -229,15 +233,11 @@ export interface IProduct extends IEntityBase {
      */
     activestorycnt?: any;
     /**
-     * 产品编号
+     * 产品线
      */
-    productsn?: any;
+    linename?: any;
     /**
      * id
      */
     line?: any;
-    /**
-     * 产品线
-     */
-    linename?: any;
 }

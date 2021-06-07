@@ -5,6 +5,7 @@ export default [
     'name',
     'orgname',
     'addeddate',
+    'testsuitesn',
     'id',
     'deleted',
     'lasteditedby',
@@ -14,5 +15,4 @@ export default [
     'casecnt',
     'desc',
     'product',
-    'testsuitesn',
 ];

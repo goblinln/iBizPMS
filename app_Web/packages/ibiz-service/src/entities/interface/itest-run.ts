@@ -23,6 +23,10 @@ export interface ITestRun extends IEntityBase {
      */
     version?: any;
     /**
+     * 测试运行编号
+     */
+    testrunsn?: any;
+    /**
      * 最后执行时间
      */
     lastrundate?: any;
@@ -72,8 +76,4 @@ export interface ITestRun extends IEntityBase {
      * 测试单
      */
     task?: any;
-    /**
-     * 测试运行编号
-     */
-    testrunsn?: any;
 }

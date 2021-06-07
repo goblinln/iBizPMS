@@ -6,7 +6,7 @@ export default [
     'listname',
     'id',
     'updateby',
+    'usercontactsn',
     'dept',
     'account',
-    'usercontactsn',
 ];

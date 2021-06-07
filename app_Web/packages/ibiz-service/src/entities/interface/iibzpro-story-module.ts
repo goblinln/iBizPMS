@@ -9,9 +9,21 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IIBZProStoryModule extends IEntityBase {
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 级别
      */
     grade?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
     /**
      * collector
      */
@@ -21,11 +33,19 @@ export interface IIBZProStoryModule extends IEntityBase {
      */
     owner?: any;
     /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
      * 需求模块类型
      *
      * @type {('pmsStoryModule' | 'iBizSysModule' | 'iBizReqModule')} pmsStoryModule: PMS需求模块, iBizSysModule: iBiz系统模块, iBizReqModule: iBiz需求模块
      */
     ibiz_storytype?: 'pmsStoryModule' | 'iBizSysModule' | 'iBizReqModule';
+    /**
+     * 组织机构标识
+     */
+    orgid?: any;
     /**
      * id
      */
@@ -44,6 +64,10 @@ export interface IIBZProStoryModule extends IEntityBase {
      * 名称
      */
     name?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
     /**
      * 已删除
      */
@@ -68,28 +92,4 @@ export interface IIBZProStoryModule extends IEntityBase {
      * id
      */
     parent?: any;
-    /**
-     * 部门标识
-     */
-    mdeptid?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
-    /**
-     * 组织机构标识
-     */
-    orgid?: any;
-    /**
-     * 由谁创建
-     */
-    createby?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 由谁更新
-     */
-    updateby?: any;
 }

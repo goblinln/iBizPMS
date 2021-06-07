@@ -172,6 +172,10 @@ export abstract class ProductPlanBase extends EntityBase implements IProductPlan
      */
     delta?: '7' | '14' | '31' | '62' | '93' | '186' | '365';
     /**
+     * 产品计划编号
+     */
+    productplansn?: any;
+    /**
      * 完成任务数
      */
     finishedtaskscnt?: any;
@@ -195,10 +199,6 @@ export abstract class ProductPlanBase extends EntityBase implements IProductPlan
      * 产品
      */
     product?: any;
-    /**
-     * 产品计划编号
-     */
-    productplansn?: any;
 
     /**
      * 重置实体数据

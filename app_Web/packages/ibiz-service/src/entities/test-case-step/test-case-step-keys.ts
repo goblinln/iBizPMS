@@ -10,6 +10,7 @@ export default [
     'version',
     'id',
     'desc',
+    'casestepsn',
     'expect',
     'files',
     'updateby',
@@ -17,5 +18,4 @@ export default [
     'org',
     'ibizcase',
     'parent',
-    'casestepsn',
 ];

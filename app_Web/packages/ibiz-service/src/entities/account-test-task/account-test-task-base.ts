@@ -50,6 +50,10 @@ export abstract class AccountTestTaskBase extends EntityBase implements IAccount
      */
     ownerpk?: any;
     /**
+     * 更新时间
+     */
+    updatedate?: any;
+    /**
      * 抄送给
      */
     mailto?: any;
@@ -62,9 +66,17 @@ export abstract class AccountTestTaskBase extends EntityBase implements IAccount
      */
     mailtopk?: any;
     /**
+     * 建立人
+     */
+    createman?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
+    /**
+     * 建立时间
+     */
+    createdate?: any;
     /**
      * 归属组织
      */
@@ -110,6 +122,10 @@ export abstract class AccountTestTaskBase extends EntityBase implements IAccount
      */
     status?: 'wait' | 'doing' | 'done' | 'blocked';
     /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
      * 联系人
      */
     mailtoconact?: any;
@@ -129,6 +145,10 @@ export abstract class AccountTestTaskBase extends EntityBase implements IAccount
      * auto
      */
     auto?: any;
+    /**
+     * 测试版本编号
+     */
+    testtasksn?: any;
     /**
      * 名称
      */
@@ -157,26 +177,6 @@ export abstract class AccountTestTaskBase extends EntityBase implements IAccount
      * 所属项目
      */
     project?: any;
-    /**
-     * 测试版本编号
-     */
-    testtasksn?: any;
-    /**
-     * 建立人
-     */
-    createman?: any;
-    /**
-     * 建立时间
-     */
-    createdate?: any;
-    /**
-     * 更新人
-     */
-    updateman?: any;
-    /**
-     * 更新时间
-     */
-    updatedate?: any;
 
     /**
      * 重置实体数据

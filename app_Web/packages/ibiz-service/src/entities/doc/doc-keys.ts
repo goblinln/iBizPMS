@@ -13,6 +13,7 @@ export default [
     'deleted',
     'recentupdatecnt',
     'org',
+    'docsn',
     'type',
     'alldoccnt',
     'addeddate',
@@ -39,5 +40,4 @@ export default [
     'project',
     'product',
     'module',
-    'docsn',
 ];

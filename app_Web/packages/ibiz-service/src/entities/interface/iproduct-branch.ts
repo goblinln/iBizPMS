@@ -45,6 +45,10 @@ export interface IProductBranch extends IEntityBase {
      */
     org?: any;
     /**
+     * 产品的分支和平台信息编号
+     */
+    branchsn?: any;
+    /**
      * 归属部门名
      */
     deptname?: any;
@@ -52,8 +56,4 @@ export interface IProductBranch extends IEntityBase {
      * 所属产品
      */
     product?: any;
-    /**
-     * 产品的分支和平台信息编号
-     */
-    branchsn?: any;
 }

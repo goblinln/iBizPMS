@@ -70,6 +70,10 @@ export abstract class ProductBranchBase extends EntityBase implements IProductBr
      */
     org?: any;
     /**
+     * 产品的分支和平台信息编号
+     */
+    branchsn?: any;
+    /**
      * 归属部门名
      */
     deptname?: any;
@@ -77,10 +81,6 @@ export abstract class ProductBranchBase extends EntityBase implements IProductBr
      * 所属产品
      */
     product?: any;
-    /**
-     * 产品的分支和平台信息编号
-     */
-    branchsn?: any;
 
     /**
      * 重置实体数据
