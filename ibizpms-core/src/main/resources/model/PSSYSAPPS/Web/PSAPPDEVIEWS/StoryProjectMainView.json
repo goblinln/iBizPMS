@@ -1446,10 +1446,6 @@
                             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
                           },
                           "name" : "TEST__BUILD",
-                          "getParentPSAppDEField" : {
-                            "name" : "PRODUCT",
-                            "codeName" : "Product"
-                          },
                           "rSMode" : 2,
                           "enableCreateDataRS" : false,
                           "enableDEAction" : true,
@@ -4762,10 +4758,6 @@
                 "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
               },
               "name" : "TEST__BUILD",
-              "getParentPSAppDEField" : {
-                "name" : "PRODUCT",
-                "codeName" : "Product"
-              },
               "rSMode" : 2,
               "enableCreateDataRS" : false,
               "enableDEAction" : true,

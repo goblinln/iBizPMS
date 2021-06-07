@@ -354,7 +354,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/builds/{build_id}/linkstory")
     public ResponseEntity<BuildDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        
         domain.setId(build_id);
         domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
@@ -369,7 +369,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.PUT, value = "/tests/{product_id}/builds/{build_id}")
     public ResponseEntity<BuildDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        
         domain.setId(build_id);
 		buildService.update(domain);
         BuildDTO dto = buildMapping.toDto(domain);
@@ -384,7 +384,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/builds/{build_id}/unlinkstory")
     public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        
         domain.setId(build_id);
         domain = buildService.unlinkStory(domain) ;
         builddto = buildMapping.toDto(domain);
@@ -398,7 +398,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/builds")
     public ResponseEntity<BuildDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        
 		buildService.create(domain);
         BuildDTO dto = buildMapping.toDto(domain);
         Map<String, Integer> opprivs = buildRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
@@ -426,7 +426,7 @@ public class BuildResource {
 	@ApiOperation(value = "根据产品获取产品版本", tags = {"版本" } ,notes = "根据产品获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/builds/fetchproductbuild")
 	public ResponseEntity<List<BuildDTO>> fetchProductBuildByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
+        
         Page<Build> domains = buildService.searchProductBuildDS(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -439,7 +439,7 @@ public class BuildResource {
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/builds/fetchdefault")
 	public ResponseEntity<List<BuildDTO>> fetchDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody BuildSearchContext context) {
-        context.setN_product_eq(product_id);
+        
         Page<Build> domains = buildService.searchDefault(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -453,7 +453,7 @@ public class BuildResource {
     @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/builds/getdraft")
     public ResponseEntity<BuildDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, BuildDTO dto) {
         Build domain = buildMapping.toDomain(dto);
-        domain.setProduct(product_id);
+        
         return ResponseEntity.status(HttpStatus.OK).body(buildMapping.toDto(buildService.getDraft(domain)));
     }
 
@@ -462,7 +462,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/builds/{build_id}/linkbug")
     public ResponseEntity<BuildDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        
         domain.setId(build_id);
         domain = buildService.linkBug(domain) ;
         builddto = buildMapping.toDto(domain);
@@ -476,7 +476,7 @@ public class BuildResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/builds/{build_id}/unlinkbug")
     public ResponseEntity<BuildDTO> unlinkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
         Build domain = buildMapping.toDomain(builddto);
-        domain.setProduct(product_id);
+        
         domain.setId(build_id);
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
