@@ -133,27 +133,30 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
      * 
      * @memberof ExpBarControlBase
      */
-      public renderSearch() {
+    public renderSearch() {
         const getQuickSearchPlaceholader = () => {
             let placeholder: any = '';
-            let tree: any = this.controlInstance.getPSControls();
-            if (tree && tree.length > 0) {
-              tree.forEach((item: IPSDETree)=> {
-                const nodes: Array<IPSDETreeNode> =  item.getPSDETreeNodes() || [];
-                nodes.forEach((node: IPSDETreeNode) => {
-                  if (Object.is(node.treeNodeType,"DE")) {
-                    const entity = node.getPSAppDataEntity();
-                    const fields: Array<IPSAppDEField> = entity?.getQuickSearchPSAppDEFields() || [];
-                    fields.forEach((field: IPSAppDEField, index: number) => {
-                        const _field = entity?.findPSAppDEField(field.codeName);
-                        if (_field) {
-                            placeholder += (this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName) + (index === fields.length-1 ? '' : ', '))
+            const allTreeNodes = this.$xDataControl.getPSDETreeNodes() || [];
+            let placeholders: string[] = [];
+            if(allTreeNodes?.length>0 ) {
+                allTreeNodes.forEach((node: IPSDETreeNode) => {
+                    if (Object.is(node.treeNodeType,"DE")) {
+                        const quickSearchFields: Array<IPSAppDEField> = node.getPSAppDataEntity()?.getQuickSearchPSAppDEFields() || [];
+                        if (quickSearchFields.length > 0) {
+                            quickSearchFields.forEach((field: IPSAppDEField) => {
+                                const _field = node.getPSAppDataEntity()?.findPSAppDEField(field.codeName);
+                                if (_field) {
+                                    placeholders.push(this.$tl(_field.getLNPSLanguageRes()?.lanResTag, _field.logicName));
+                                }
+                            })
                         }
-                    })
-                  }
+                    }
                 })
-              });
             }
+            placeholders = [...new Set(placeholders)];
+            placeholders.forEach((_placeholder: string, index: number) => {
+                placeholder += _placeholder + (index == placeholders.length-1 ? '' : '，')
+            })
             return placeholder;
         }
         return (

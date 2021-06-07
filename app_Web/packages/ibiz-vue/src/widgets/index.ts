@@ -30,3 +30,4 @@ export { SearchBarControlBase } from './searchbar-control-base';
 export { ContextMenuBase } from './contextmenu-base';
 export { WizardPanelControlBase } from './wizardpanel-control-base';
 export { StateWizardPanelControlBase } from './statewizardpanel-control-base';
+export { MapControlBase } from './map-control-base';

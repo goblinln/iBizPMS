@@ -157,22 +157,6 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
         return this.condCache.get('view');
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectModuleService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectmodule) {
-            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
-            return res;
-        }
-    this.log.warn([`[ProjectModule]>>>[Get函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -256,6 +240,22 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
             return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`, _data);
         }
     this.log.warn([`[ProjectModule]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectModuleService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule) {
+            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}`);
+            return res;
+        }
+    this.log.warn([`[ProjectModule]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

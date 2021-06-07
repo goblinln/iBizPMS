@@ -12,3 +12,4 @@ export { AppTreeService } from './app-tree-service';
 export { AppTreeGridExService } from './app-treegridex-service';
 export { AppSearchBarService } from './app-searchbar-service';
 export { AppWizardPanelService } from './app-wizardpanel-service';
+export { AppMapService } from './app-map-service';

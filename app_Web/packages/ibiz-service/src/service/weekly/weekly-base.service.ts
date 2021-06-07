@@ -66,18 +66,6 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return new HttpResponse(entity);
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof WeeklyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/weeklies/${_context.weekly}`);
-        return res;
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -174,6 +162,18 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         _data[this.APPDENAME?.toLowerCase()] = undefined;
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/weeklies/getdraft`, _data);
+        return res;
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof WeeklyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/weeklies/${_context.weekly}`);
         return res;
     }
 

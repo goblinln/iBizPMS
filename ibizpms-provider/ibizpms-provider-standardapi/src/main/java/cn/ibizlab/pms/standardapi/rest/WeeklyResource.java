@@ -52,17 +52,6 @@ public class WeeklyResource {
     @Lazy
     public WeeklyMapping weeklyMapping;
 
-    @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
-    @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
-	@RequestMapping(method = RequestMethod.GET, value = "/weeklies/{weekly_id}")
-    public ResponseEntity<WeeklyDTO> get(@PathVariable("weekly_id") Long weekly_id) {
-        IbzWeekly domain = ibzweeklyService.get(weekly_id);
-        WeeklyDTO dto = weeklyMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(weekly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @VersionCheck(entity = "ibzweekly" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
     @ApiOperation(value = "更新周报", tags = {"周报" },  notes = "更新周报")
@@ -166,6 +155,17 @@ public class WeeklyResource {
     public ResponseEntity<WeeklyDTO> getDraft(WeeklyDTO dto) {
         IbzWeekly domain = weeklyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(weeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("test('IBZ_WEEKLY', #weekly_id, 'NONE')")
+    @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
+	@RequestMapping(method = RequestMethod.GET, value = "/weeklies/{weekly_id}")
+    public ResponseEntity<WeeklyDTO> get(@PathVariable("weekly_id") Long weekly_id) {
+        IbzWeekly domain = ibzweeklyService.get(weekly_id);
+        WeeklyDTO dto = weeklyMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(weekly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

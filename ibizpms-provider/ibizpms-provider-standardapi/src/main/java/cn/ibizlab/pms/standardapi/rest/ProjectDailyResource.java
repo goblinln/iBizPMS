@@ -52,21 +52,6 @@ public class ProjectDailyResource {
     @Lazy
     public ProjectDailyMapping projectdailyMapping;
 
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
-    @ApiOperation(value = "新建项目日报", tags = {"项目日报" },  notes = "新建项目日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectdailies")
-    @Transactional
-    public ResponseEntity<ProjectDailyDTO> create(@Validated @RequestBody ProjectDailyDTO projectdailydto) {
-        IbizproProjectDaily domain = projectdailyMapping.toDomain(projectdailydto);
-		ibizproprojectdailyService.create(domain);
-        if(!ibizproprojectdailyRuntime.test(domain.getIbizproprojectdailyid(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'NONE')")
 	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projectdailies/fetchdefault")
@@ -128,6 +113,21 @@ public class ProjectDailyResource {
     public ResponseEntity<ProjectDailyDTO> getDraft(ProjectDailyDTO dto) {
         IbizproProjectDaily domain = projectdailyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(projectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
+    @ApiOperation(value = "新建项目日报", tags = {"项目日报" },  notes = "新建项目日报")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectdailies")
+    @Transactional
+    public ResponseEntity<ProjectDailyDTO> create(@Validated @RequestBody ProjectDailyDTO projectdailydto) {
+        IbizproProjectDaily domain = projectdailyMapping.toDomain(projectdailydto);
+		ibizproprojectdailyService.create(domain);
+        if(!ibizproprojectdailyRuntime.test(domain.getIbizproprojectdailyid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(domain.getIbizproprojectdailyid());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

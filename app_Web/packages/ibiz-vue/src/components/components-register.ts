@@ -159,6 +159,7 @@ import { AppDefaultDeRedirectView } from './view/app-default-view/app-default-de
 import { AppDefaultWfStepTraceView } from './view/app-default-view/app-default-wfsteptraceview';
 import { AppDefaultWFDynaEditView3 } from './view/app-default-view/app-default-wfdynaeditview3';
 import { AppDefaultHtmlView } from './view/app-default-view/app-default-htmlview';
+import { AppDefaultMapView } from './view/app-default-view/app-default-mapview';
 import { AppStyle2IndexView } from './view/app-style2-view/app-style2-indexview';
 import { AppStyle2EditView } from './view/app-style2-view/app-style2-editview';
 import { AppStyle2EditView3 } from './view/app-style2-view/app-style2-editview3';
@@ -238,6 +239,7 @@ import { AppDefaultSearchBar } from './control/app-default-searchbar/app-default
 import { AppDefaultWizardPanel } from './control/app-default-wizard-panel/app-default-wizard-panel';
 import { AppDefaultStateWizardPanel } from './control/app-default-statewizard-panel/app-default-statewizard-panel';
 import { AppDefaultDrtab } from './control/app-default-drtab/app-default-drtab';
+import { AppDefaultMap } from './control/app-default-map/app-default-map';
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
@@ -401,6 +403,7 @@ export const ComponentsRegister = {
         v.component("app-default-deredirectview",AppDefaultDeRedirectView);
         v.component("app-default-wfsteptraceview",AppDefaultWfStepTraceView);
         v.component('app-default-htmlview', AppDefaultHtmlView);
+        v.component('app-default-mapview', AppDefaultMapView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
         v.component('app-style2-editview3', AppStyle2EditView3);
@@ -478,6 +481,7 @@ export const ComponentsRegister = {
         v.component('app-default-captionbar', AppDefaultCaptionBar);
         v.component('app-default-datainfobar', AppDefaultDataInfoBar);
         v.component('app-pivot-table', AppPivotTable);
+        v.component('app-default-map', AppDefaultMap);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);
     }

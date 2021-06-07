@@ -13,3 +13,4 @@ export { AppTreeModel } from './app-tree-model';
 export { AppSearchBarModel } from './app-searchbar-model';
 export { AppTreeGridExModel } from './app-treegridex-model';
 export { AppWizardPanelModel } from './app-wizardpanel-model';
+export { AppMapModel } from './app-map-model';

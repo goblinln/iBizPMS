@@ -91,6 +91,7 @@ export class AppComponentService {
         this.viewMap.set("APPWFSTEPTRACEVIEW_DEFAULT", 'app-default-wfsteptraceview');
         this.viewMap.set("DEEDITVIEW3_DEFAULT", 'app-default-editview3');
         this.viewMap.set("DEHTMLVIEW_DEFAULT", 'app-default-htmlview');
+        this.viewMap.set("DEMAPVIEW_DEFAULT", 'app-default-mapview');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');
@@ -200,6 +201,7 @@ export class AppComponentService {
         this.controlMap.set("WIZARDPANEL_DEFAULT", 'app-default-wizard-panel');
         this.controlMap.set("WIZARDPANEL_STATE", 'app-default-state-wizard-panel');
         this.controlMap.set("DRTAB_DEFAULT", 'app-default-drtab');
+        this.controlMap.set("MAP_DEFAULT", 'app-default-map');
         // 注册部件插件标识
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
         this.controlMap.set("CHART_RENDER_NEW", 'app-chart-render-new');

@@ -1234,7 +1234,7 @@ export class GridControlBase extends MDControlBase {
             }
             const items: Array<IPSDEDataImportItem> = importData.getPSDEDataImportItems() || [];
             if (items.length > 0) {
-                items.forEach((item: IPSDEDataImportItem) => {
+                items.forEach((item: any) => {
                     const importItem: any ={
                         headername: this.$tl(item.getCapPSLanguageRes()?.lanResTag, item.caption),
                         isuniqueitem: item.uniqueItem,
@@ -1249,10 +1249,10 @@ export class GridControlBase extends MDControlBase {
                             }
                         })
                     }
-                    const appDeField: IPSAppDEField = (this.controlInstance.findPSDEGridColumn(item.codeName) as IPSDEGridFieldColumn)?.getPSAppDEField() as IPSAppDEField;
+                    const appDeField: IPSAppDEField = item.getPSAppDEField() as IPSAppDEField;
                     if (appDeField) {
                         Object.assign(importItem,{
-                            name: appDeField.name,
+                            name: appDeField.codeName.toLowerCase(),
                         })
                     }
                     Object.assign(importDataModel.importData,{

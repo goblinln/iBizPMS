@@ -35,6 +35,7 @@ import { AppDefaultWizardViewLayout } from '../../components/layout/app-default-
 import { AppDefaultWFActionViewLayout } from '../../components/layout/app-default-layout/app-default-wfactionview-layout/app-default-wfactionview-layout';
 import { AppDefaultDeRedirectViewLayout } from '../../components/layout/app-default-layout/app-default-deredirectview-layout/app-default-deredirectview-layout';
 import { AppDefaultWfStepTraceViewLayout } from '../../components/layout/app-default-layout/app-default-wfsteptraceview-layout/app-default-wfsteptraceview-layout';
+import { AppDefaultMapViewLayout } from '../../components/layout/app-default-layout/app-default-mapview-layout/app-default-mapview-layout';
 import { AppStyle2IndexViewLayout } from '../../components/layout/app-style2-layout/app-style2-indexview-layout/app-style2-indexview-layout';
 import { AppStyle2GridViewLayout } from '../../components/layout/app-style2-layout/app-style2-gridview-layout/app-style2-gridview-layout';
 import { AppStyle2GridExpViewLayout } from '../../components/layout/app-style2-layout/app-style2-gridexpview-layout/app-style2-gridexpview-layout';
@@ -139,6 +140,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEWFACTIONVIEW-DEFAULT", AppDefaultWFActionViewLayout);
         this.layoutMap.set("DEREDIRECTVIEW-DEFAULT",AppDefaultDeRedirectViewLayout);
         this.layoutMap.set("APPWFSTEPTRACEVIEW-DEFAULT",AppDefaultWfStepTraceViewLayout);
+        this.layoutMap.set("DEMAPVIEW-DEFAULT",AppDefaultMapViewLayout);
         // todo 部件视图布局
         this.layoutMap.set("DEEDITVIEW9-DEFAULT", AppDefaultEditViewLayout);
         this.layoutMap.set("DEGRIDVIEW9-DEFAULT", AppDefaultGridViewLayout);
