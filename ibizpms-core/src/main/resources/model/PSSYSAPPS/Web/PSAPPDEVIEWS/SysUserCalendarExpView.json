@@ -41,6 +41,32 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_deadline_noteq",
+    "name" : "n_deadline_noteq",
+    "value" : "0000-00-00",
+    "rawValue" : true
+  }, {
+    "key" : "n_assigneddate_noteq",
+    "name" : "n_assigneddate_noteq",
+    "value" : "0000-00-00 00:00:00",
+    "rawValue" : true
+  }, {
+    "key" : "n_assigneddate_isnotnull",
+    "name" : "n_assigneddate_isnotnull",
+    "value" : "0000-00-00 00:00:00",
+    "rawValue" : true
+  }, {
+    "key" : "n_assignedto_eq",
+    "name" : "n_assignedto_eq",
+    "value" : "srfloginname",
+    "rawValue" : false
+  }, {
+    "key" : "n_deadline_isnotnull",
+    "name" : "n_deadline_isnotnull",
+    "value" : "0000-00-00",
+    "rawValue" : true
+  } ],
   "getPSControls" : [ {
     "codeName" : "CalendarExpViewcalendarexpbar",
     "controlType" : "CALENDAREXPBAR",

@@ -52,18 +52,6 @@ public class ProductDailyResource {
     @Lazy
     public ProductDailyMapping productdailyMapping;
 
-    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"产品日报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/productdailies/fetchdefault")
-	public ResponseEntity<List<ProductDailyDTO>> fetchdefault(@RequestBody IbizproProductDailySearchContext context) {
-        Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
-        List<ProductDailyDTO> list = productdailyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'CREATE')")
     @ApiOperation(value = "新建产品日报", tags = {"产品日报" },  notes = "新建产品日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/productdailies")
@@ -79,20 +67,18 @@ public class ProductDailyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DENY')")
-    @ApiOperation(value = "手动生成产品日报", tags = {"产品日报" },  notes = "手动生成产品日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/productdailies/{productdaily_id}/manualcreatedaily")
-    public ResponseEntity<ProductDailyDTO> manualCreateDaily(@PathVariable("productdaily_id") Long productdaily_id, @RequestBody ProductDailyDTO productdailydto) {
-        IbizproProductDaily domain = productdailyMapping.toDomain(productdailydto);
-        domain.setIbizproproductdailyid(productdaily_id);
-        domain = ibizproproductdailyService.manualCreateDaily(domain);
-        productdailydto = productdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs(domain.getIbizproproductdailyid());
-        productdailydto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(productdailydto);
-    }
-
-
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"产品日报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productdailies/fetchdefault")
+	public ResponseEntity<List<ProductDailyDTO>> fetchdefault(@RequestBody IbizproProductDailySearchContext context) {
+        Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
+        List<ProductDailyDTO> list = productdailyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @VersionCheck(entity = "ibizproproductdaily" , versionfield = "updatedate")
     @PreAuthorize("test('IBIZPRO_PRODUCTDAILY', #productdaily_id, 'UPDATE')")
     @ApiOperation(value = "更新产品日报", tags = {"产品日报" },  notes = "更新产品日报")
@@ -108,6 +94,20 @@ public class ProductDailyResource {
         Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs(productdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTDAILY', 'DENY')")
+    @ApiOperation(value = "手动生成产品日报", tags = {"产品日报" },  notes = "手动生成产品日报")
+	@RequestMapping(method = RequestMethod.POST, value = "/productdailies/{productdaily_id}/manualcreatedaily")
+    public ResponseEntity<ProductDailyDTO> manualCreateDaily(@PathVariable("productdaily_id") Long productdaily_id, @RequestBody ProductDailyDTO productdailydto) {
+        IbizproProductDaily domain = productdailyMapping.toDomain(productdailydto);
+        domain.setIbizproproductdailyid(productdaily_id);
+        domain = ibizproproductdailyService.manualCreateDaily(domain);
+        productdailydto = productdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs(domain.getIbizproproductdailyid());
+        productdailydto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(productdailydto);
     }
 
 

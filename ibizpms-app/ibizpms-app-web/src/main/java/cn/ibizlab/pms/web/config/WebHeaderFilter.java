@@ -12,7 +12,7 @@ import org.springframework.util.PathMatcher;
 
 @Component
 @Slf4j
-public class SampleHeaderFilter extends ZuulFilter {
+public class WebHeaderFilter extends ZuulFilter {
 
 	@Autowired
 	private Environment env;
