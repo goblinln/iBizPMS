@@ -43,6 +43,11 @@ public class IbzReportlySearchContext extends QueryWrapperContext<IbzReportly> {
         this.n_ibz_reportlyname_like = n_ibz_reportlyname_like;
     }
                 
+	private String n_reportto_eq;//[汇报给]
+	public void setN_reportto_eq(String n_reportto_eq) {
+        this.n_reportto_eq = n_reportto_eq;
+    }
+                
 	private String n_issubmit_eq;//[是否提交]
 	public void setN_issubmit_eq(String n_issubmit_eq) {
         this.n_issubmit_eq = n_issubmit_eq;

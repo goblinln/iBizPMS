@@ -677,6 +677,12 @@
       "queryCodeExp" : "t1.`REPORTTO`",
       "standardColumnName" : "`REPORTTO`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REPORTTO_EQ",
+      "name" : "N_REPORTTO_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",

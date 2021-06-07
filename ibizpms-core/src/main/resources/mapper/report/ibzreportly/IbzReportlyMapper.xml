@@ -21,6 +21,9 @@
             <bind name="bind_n_ibz_reportlyname_like" value="'%' + srf.n_ibz_reportlyname_like + '%'" />
             <![CDATA[ AND  t1.`IBZ_REPORTLYNAME` like #{bind_n_ibz_reportlyname_like,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_reportto_eq != null ">
+			<![CDATA[ AND  t1.`REPORTTO` = #{srf.n_reportto_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_issubmit_eq != null ">
 			<![CDATA[ AND  t1.`ISSUBMIT` = #{srf.n_issubmit_eq,jdbcType=VARCHAR} ]]>
         </if>

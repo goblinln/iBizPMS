@@ -62,6 +62,12 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_reportto_eq",
+    "name" : "n_reportto_eq",
+    "value" : "srfloginname",
+    "rawValue" : false
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA"
   }, {

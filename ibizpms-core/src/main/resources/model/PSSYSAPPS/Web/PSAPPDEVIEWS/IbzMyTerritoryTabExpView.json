@@ -2138,11 +2138,6 @@
                           "name" : "ibzreport",
                           "value" : "0",
                           "rawValue" : true
-                        }, {
-                          "key" : "n_reportto_eq",
-                          "name" : "n_reportto_eq",
-                          "value" : "srfloginname",
-                          "rawValue" : false
                         } ],
                         "getPSControls" : [ {
                           "codeName" : "MyTabExpViewtabexppanel",
@@ -2279,6 +2274,12 @@
                                   "viewLogicType" : "APP_OPENDATA",
                                   "editMode" : true
                                 }
+                              } ],
+                              "getPSAppViewNavParams" : [ {
+                                "key" : "n_reportto_eq",
+                                "name" : "n_reportto_eq",
+                                "value" : "srfloginname",
+                                "rawValue" : false
                               } ],
                               "getPSAppViewRefs" : [ {
                                 "name" : "EDITDATA",
