@@ -12,7 +12,7 @@ import { Util } from "ibiz-core";
  */
 export class GirdCounmColor {
 
-	/**
+    /**
      * 绘制部件项内容
      * @param h createElement函数
      * @param ctrlItemModel 部件项模型数据
@@ -21,7 +21,7 @@ export class GirdCounmColor {
      * 
      * @memberof GirdCounmColor
      */
-    public renderCtrlItem(h:any,ctrlItemModel:IPSDEGridFieldColumn,parentContainer:any,data:any){
+    public renderCtrlItem(h: any, ctrlItemModel: IPSDEGridFieldColumn, parentContainer: any, data: any) {
         const { name, caption, align, width, widthUnit } = ctrlItemModel;
         const linkView = ctrlItemModel.getLinkPSAppView() as IPSAppDEView;
         const entity = linkView?.getPSAppDataEntity() as IPSAppDataEntity;
@@ -46,24 +46,27 @@ export class GirdCounmColor {
             placement: linkView?.openMode ? linkView.openMode : '',
             viewpath: linkView?.modelFilePath
         }
+        Object.defineProperty(view, 'viewModel', { enumerable: false, writable: true, value: linkView });
+        const refresh = parentContainer.refresh ? parentContainer.refresh.bind(parentContainer) : () => { };
+        const linkViewEntity: IPSAppDataEntity | null = parentContainer.controlInstance.getPSAppDataEntity();
         this.handleLinkViewParams(linkView, view, entity, parentContainer.context);
         let tempContext: any = Util.deepCopy(parentContainer.context);
         if (linkView && linkView.modelFilePath) {
             Object.assign(tempContext, { viewpath: linkView.modelFilePath });
         }
         let tempViewParam: any = Util.deepCopy(parentContainer.viewparams);
-        const deKeyField = entity ? entity.codeName.toLowerCase() : ""
         return parentContainer.$createElement('el-table-column', {
             props: renderParams,
             scopedSlots: {
                 default: (scope: any) => {
                     return <app-column-link
-                        deKeyField={deKeyField}
+                        deKeyField={linkViewEntity && linkViewEntity.codeName ? linkViewEntity.codeName?.toLowerCase() : ""}
                         context={tempContext}
                         viewparams={tempViewParam}
                         linkview={view}
                         valueitem={ctrlItemModel.linkValueItem}
                         data={scope.row}
+                        on-refresh={refresh}
                     >
                         <span style={scope.row.color ? { color: scope.row.color } : null}>{scope.row[name]}</span>
                     </app-column-link>

@@ -719,7 +719,7 @@
       "widthUnit" : "PX",
       "enableSort" : true
     }, {
-      "align" : "RIGHT",
+      "align" : "CENTER",
       "caption" : "操作",
       "codeName" : "uagridcolumn1",
       "columnType" : "UAGRIDCOLUMN",
