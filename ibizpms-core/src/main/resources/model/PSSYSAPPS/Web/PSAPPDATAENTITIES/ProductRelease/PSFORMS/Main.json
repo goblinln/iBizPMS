@@ -1840,7 +1840,7 @@
             "dataRSMode" : 0,
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,
@@ -3627,7 +3627,7 @@
             "dataRSMode" : 0,
             "getMajorPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
             },
             "getMinorPSAppDataEntity" : {
               "modelref" : true,

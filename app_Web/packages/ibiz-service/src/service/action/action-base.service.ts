@@ -268,10 +268,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/getdraft`, _data);
             return res;
         }
-        if (_context.ibzweekly && true) {
+        if (_context.weekly && true) {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/getdraft`, _data);
+            const res = await this.http.get(`/weeklies/${_context.weekly}/actions/getdraft`, _data);
             return res;
         }
         if (_context.todo && true) {
@@ -406,8 +406,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproduct`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproduct`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchproduct`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/actions/fetchproduct`, _data);
@@ -531,9 +531,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}`, _data);
         }
-        if (_context.ibzweekly && _context.action) {
+        if (_context.weekly && _context.action) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`, _data);
+            return this.http.put(`/weeklies/${_context.weekly}/actions/${_context.action}`, _data);
         }
         if (_context.todo && _context.action) {
         _data = await this.obtainMinor(_context, _data);
@@ -647,8 +647,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmytrends`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchmytrends`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
@@ -752,8 +752,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchaccount`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchaccount`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchaccount`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/actions/fetchaccount`, _data);
@@ -857,8 +857,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmain`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmain`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchmain`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/actions/fetchmain`, _data);
@@ -1102,7 +1102,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions`, _data);
         }
-        if (_context.ibzweekly && true) {
+        if (_context.weekly && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
                 _data[this.APPDEKEY] = null;
@@ -1110,7 +1110,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             if (_data.srffrontuf != null) {
                 delete _data.srffrontuf;
             }
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions`, _data);
+            return this.http.post(`/weeklies/${_context.weekly}/actions`, _data);
         }
         if (_context.todo && true) {
         _data = await this.obtainMinor(_context, _data);
@@ -1284,8 +1284,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmy`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmy`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchmy`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/actions/fetchmy`, _data);
@@ -1389,8 +1389,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproject`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproject`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/actions/fetchproject`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/actions/fetchproject`, _data);
@@ -1514,8 +1514,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/${_context.action}`);
             return res;
         }
-        if (_context.ibzweekly && _context.action) {
-            const res = await this.http.get(`/ibzweeklies/${_context.ibzweekly}/actions/${_context.action}`);
+        if (_context.weekly && _context.action) {
+            const res = await this.http.get(`/weeklies/${_context.weekly}/actions/${_context.action}`);
             return res;
         }
         if (_context.todo && _context.action) {

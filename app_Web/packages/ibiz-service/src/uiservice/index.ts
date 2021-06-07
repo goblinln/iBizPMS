@@ -98,7 +98,7 @@ export * from './sys-update-log/sys-update-log-ui-service';
 export * from './doc/doc-ui-service';
 export * from './account-story/account-story-ui-service';
 export * from './bug/bug-ui-service';
-export * from './ibzweekly/ibzweekly-ui-service';
+export * from './weekly/weekly-ui-service';
 export * from './project-module/project-module-ui-service';
 export * from './pssys-app/pssys-app-ui-service';
 export * from './ibzpro-project-user-task/ibzpro-project-user-task-ui-service';

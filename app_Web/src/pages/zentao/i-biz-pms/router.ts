@@ -2872,14 +2872,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/files/:file?/views/productgridview',
+                    path: 'weeklies/:weekly?/files/:file?/views/productgridview',
                     meta: {
                         captionTag: '',
                         caption: '附件',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'files', parameterName: 'file' },
                             { pathName: 'views', parameterName: 'productgridview' },
                         ],
@@ -3511,14 +3511,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/files/:file?/views/projectgridviewfile',
+                    path: 'weeklies/:weekly?/files/:file?/views/projectgridviewfile',
                     meta: {
                         captionTag: '',
                         caption: '附件',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'files', parameterName: 'file' },
                             { pathName: 'views', parameterName: 'projectgridviewfile' },
                         ],
@@ -4150,14 +4150,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/files/:file?/views/editview',
+                    path: 'weeklies/:weekly?/files/:file?/views/editview',
                     meta: {
                         captionTag: '',
                         caption: '附件',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'files', parameterName: 'file' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -4789,14 +4789,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/files/:file?/views/listview9',
+                    path: 'weeklies/:weekly?/files/:file?/views/listview9',
                     meta: {
                         captionTag: '',
                         caption: '附件',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'files', parameterName: 'file' },
                             { pathName: 'views', parameterName: 'listview9' },
                         ],
@@ -6719,14 +6719,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/historylistview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/historylistview',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'historylistview' },
                         ],
@@ -7284,14 +7284,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/addcommenthistorylistview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/addcommenthistorylistview',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
                         ],
@@ -7849,14 +7849,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/alltrendslistview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/alltrendslistview',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'alltrendslistview' },
                         ],
@@ -8414,14 +8414,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/projecttrendslistview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/projecttrendslistview',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
                         ],
@@ -8979,14 +8979,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/projecttrendslistview9',
+                    path: 'weeklies/:weekly?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview9' },
                         ],
@@ -9544,14 +9544,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/producttrendslistview9',
+                    path: 'weeklies/:weekly?/actions/:action?/views/producttrendslistview9',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
                         ],
@@ -10109,14 +10109,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/myalltrendslistview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'myalltrendslistview' },
                         ],
@@ -10674,14 +10674,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/mytrendslistview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/mytrendslistview',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
                         ],
@@ -11239,14 +11239,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/optionview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/optionview',
                     meta: {
                         captionTag: '',
                         caption: '添加备注',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'optionview' },
                         ],
@@ -11804,14 +11804,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/producttrendslistview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/producttrendslistview',
                     meta: {
                         captionTag: '',
                         caption: '系统日志',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview' },
                         ],
@@ -12369,14 +12369,14 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/actions/:action?/views/editview',
+                    path: 'weeklies/:weekly?/actions/:action?/views/editview',
                     meta: {
                         captionTag: '',
                         caption: '备注',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
@@ -31065,145 +31065,145 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/editviewedit',
+                    path: 'weeklies/:weekly?/views/editviewedit',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'editviewedit' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/projectweeklygridview',
+                    path: 'weeklies/:weekly?/views/projectweeklygridview',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'projectweeklygridview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr2editview',
+                    path: 'weeklies/:weekly?/views/usr2editview',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr2editview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/editviewmainmyweekly',
+                    path: 'weeklies/:weekly?/views/editviewmainmyweekly',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'editviewmainmyweekly' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/editview',
+                    path: 'weeklies/:weekly?/views/editview',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/gridview',
+                    path: 'weeklies/:weekly?/views/gridview',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'gridview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/productweeklygridview',
+                    path: 'weeklies/:weekly?/views/productweeklygridview',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'productweeklygridview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr3gridview',
+                    path: 'weeklies/:weekly?/views/usr3gridview',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr3gridview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell
                     },
                     {
-                    path: 'ibzweeklies/:ibzweekly?/views/usr2gridview',
+                    path: 'weeklies/:weekly?/views/usr2gridview',
                     meta: {
                         captionTag: '',
                         caption: '周报',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'ibzweeklies', parameterName: 'ibzweekly' },
+                            { pathName: 'weeklies', parameterName: 'weekly' },
                             { pathName: 'views', parameterName: 'usr2gridview' },
                         ],
-                        resource:'ibzweekly',
+                        resource:'weekly',
                         requireAuth: true,
                     },
                     component: AppViewShell

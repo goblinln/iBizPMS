@@ -154,7 +154,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('doc', () => import('../uiservice/doc/doc-ui-service'));
         UIServiceRegister.allUIServiceMap.set('accountstory', () => import('../uiservice/account-story/account-story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('bug', () => import('../uiservice/bug/bug-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('ibzweekly', () => import('../uiservice/ibzweekly/ibzweekly-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('weekly', () => import('../uiservice/weekly/weekly-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectmodule', () => import('../uiservice/project-module/project-module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('pssysapp', () => import('../uiservice/pssys-app/pssys-app-ui-service'));
         UIServiceRegister.allUIServiceMap.set('ibzproprojectusertask', () => import('../uiservice/ibzpro-project-user-task/ibzpro-project-user-task-ui-service'));

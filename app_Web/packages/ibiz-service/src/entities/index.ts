@@ -99,7 +99,7 @@ export * from './sys-update-log/sys-update-log';
 export * from './doc/doc';
 export * from './account-story/account-story';
 export * from './bug/bug';
-export * from './ibzweekly/ibzweekly';
+export * from './weekly/weekly';
 export * from './project-module/project-module';
 export * from './pssys-app/pssys-app';
 export * from './ibzpro-project-user-task/ibzpro-project-user-task';

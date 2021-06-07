@@ -468,7 +468,7 @@ zuul:
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_weekly:
-      path: /ibzweeklies/**
+      path: /weeklies/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_projectmodule:

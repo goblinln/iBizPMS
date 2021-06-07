@@ -919,11 +919,11 @@ export class GlobalService {
     /**
      * 个人周报服务
      *
-     * @return {IBZWEEKLY}
+     * @return {Weekly}
      * @memberof GlobalService
      */
-    async getIBZWEEKLYService() {
-        return (await import('./ibzweekly/ibzweekly.service')).default.getInstance();
+    async getWeeklyService() {
+        return (await import('./weekly/weekly.service')).default.getInstance();
     }
     /**
      * 任务模块服务

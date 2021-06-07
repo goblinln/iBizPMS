@@ -192,8 +192,8 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchtype`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/files/fetchtype`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/files/fetchtype`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/files/fetchtype`, _data);
@@ -308,8 +308,8 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.sysaccount && _context.doc && _context.file) {
             return this.http.delete(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/${_context.file}`);
         }
-        if (_context.ibzweekly && _context.file) {
-            return this.http.delete(`/ibzweeklies/${_context.ibzweekly}/files/${_context.file}`);
+        if (_context.weekly && _context.file) {
+            return this.http.delete(`/weeklies/${_context.weekly}/files/${_context.file}`);
         }
         if (_context.todo && _context.file) {
             return this.http.delete(`/todos/${_context.todo}/files/${_context.file}`);
@@ -424,8 +424,8 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchproject`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/files/fetchproject`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/files/fetchproject`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/files/fetchproject`, _data);
@@ -540,8 +540,8 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.sysaccount && _context.doc && true) {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchproduct`, _data);
         }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/files/fetchproduct`, _data);
+        if (_context.weekly && true) {
+            return this.http.post(`/weeklies/${_context.weekly}/files/fetchproduct`, _data);
         }
         if (_context.todo && true) {
             return this.http.post(`/todos/${_context.todo}/files/fetchproduct`, _data);

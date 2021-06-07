@@ -7,7 +7,7 @@
   "name" : "IbzWeeklyProjectWeeklyGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -103,7 +103,7 @@
     "codeName" : "ProjectWeeklyMain",
     "columnEnableLink" : 2,
     "controlType" : "GRID",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY/PSGRIDS/ProjectWeeklyMain.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly/PSGRIDS/ProjectWeeklyMain.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -113,7 +113,7 @@
     "logicName" : "主表格（项目周报）",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -127,7 +127,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -138,7 +138,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Remove",
@@ -151,7 +151,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Get",
@@ -164,7 +164,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -177,7 +177,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionName" : "Create",
@@ -190,7 +190,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -384,7 +384,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -406,12 +406,12 @@
   }, {
     "codeName" : "Default",
     "controlType" : "SEARCHFORM",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY/PSSEARCHFORMS/Default.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly/PSSEARCHFORMS/Default.json",
     "hookEventNames" : [ "SAVE", "SEARCH", "LOAD" ],
     "logicName" : "默认搜索表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -423,7 +423,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -434,7 +434,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       }, {
         "actionType" : "FILTERACTION",
@@ -445,7 +445,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -491,7 +491,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Weekly.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,

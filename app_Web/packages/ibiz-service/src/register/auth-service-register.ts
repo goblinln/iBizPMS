@@ -153,7 +153,7 @@ export class AuthServiceRegister{
         AuthServiceRegister.allAuthServiceMap.set('doc', () => import('../authservice/doc/doc-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('accountstory', () => import('../authservice/account-story/account-story-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('bug', () => import('../authservice/bug/bug-auth-service'));
-        AuthServiceRegister.allAuthServiceMap.set('ibzweekly', () => import('../authservice/ibzweekly/ibzweekly-auth-service'));
+        AuthServiceRegister.allAuthServiceMap.set('weekly', () => import('../authservice/weekly/weekly-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('projectmodule', () => import('../authservice/project-module/project-module-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('pssysapp', () => import('../authservice/pssys-app/pssys-app-auth-service'));
         AuthServiceRegister.allAuthServiceMap.set('ibzproprojectusertask', () => import('../authservice/ibzpro-project-user-task/ibzpro-project-user-task-auth-service'));

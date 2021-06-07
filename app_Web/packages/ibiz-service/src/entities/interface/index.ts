@@ -98,7 +98,7 @@ export * from './isys-update-log';
 export * from './idoc';
 export * from './iaccount-story';
 export * from './ibug';
-export * from './iibzweekly';
+export * from './iweekly';
 export * from './iproject-module';
 export * from './ipssys-app';
 export * from './iibzpro-project-user-task';
