@@ -108,8 +108,12 @@ ibiz:
       lite: ibizrt4ebsx-rt4ebsx
       disk: ibizrt4ebsx-rt4ebsx
       wf: ibzwf-api
-      ibzou-api: ibizrt4ebsx-rt4ebsx
-      ibzuaa-api: ibizrt4ebsx-rt4ebsx
+      ibzou-api:
+        name: ibizrt4ebsx-rt4ebsx
+        system: f7ad7e05-9031-11eb-b882-00163e06e68c
+      ibzuaa-api:
+        name: ibizrt4ebsx-rt4ebsx
+        system: f7ad7e05-9031-11eb-b882-00163e06e68c
   saas: 
     column: SRFDCID
     sys-tables: ACT_RU_TASK,act_re_procdef,databasechangelog,databasechangeloglock,dual,DUAL
