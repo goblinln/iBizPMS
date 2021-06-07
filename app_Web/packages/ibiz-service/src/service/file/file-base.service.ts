@@ -112,6 +112,122 @@ export class FileBaseService extends EntityBaseService<IFile> {
         return this.condCache.get('view');
     }
     /**
+     * FetchType
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof FileService
+     */
+    async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.test && _context.testcase && _context.testreult && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.testcase && _context.testcasestep && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.testreport && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.testreport && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchtype`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.productrelease && true) {
+            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchtype`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchtype`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchtype`, _data);
+        }
+        if (_context.doclib && _context.doc && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
+        }
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/files/fetchtype`, _data);
+        }
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchtype`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/files/fetchtype`, _data);
+        }
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/files/fetchtype`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/files/fetchtype`, _data);
+        }
+        if (_context.testcaselib && true) {
+            return this.http.post(`/testcaselibs/${_context.testcaselib}/files/fetchtype`, _data);
+        }
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/files/fetchtype`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/files/fetchtype`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/files/fetchtype`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/files/fetchtype`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/files/fetchtype`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/files/fetchtype`, _data);
+        }
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/files/fetchtype`, _data);
+        }
+        return this.http.post(`/files/fetchtype`, _data);
+    }
+    /**
      * FetchProject
      *
      * @param {*} [_context={}]
@@ -458,121 +574,5 @@ export class FileBaseService extends EntityBaseService<IFile> {
             return this.http.delete(`/dailies/${_context.daily}/files/${_context.file}`);
         }
         return this.http.delete(`/files/${_context.file}`);
-    }
-    /**
-     * FetchType
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof FileService
-     */
-    async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.test && _context.testcase && _context.testreult && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testreults/${_context.testreult}/files/fetchtype`, _data);
-        }
-        if (_context.test && _context.testcase && _context.testcasestep && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/testcasesteps/${_context.testcasestep}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.doclib && _context.doc && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
-        }
-        if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/files/fetchtype`, _data);
-        }
-        if (_context.test && _context.testcase && true) {
-            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/files/fetchtype`, _data);
-        }
-        if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.productplan && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/files/fetchtype`, _data);
-        }
-        if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/files/fetchtype`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/files/fetchtype`, _data);
-        }
-        if (_context.product && _context.productrelease && true) {
-            return this.http.post(`/products/${_context.product}/productreleases/${_context.productrelease}/files/fetchtype`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/files/fetchtype`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/files/fetchtype`, _data);
-        }
-        if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/files/fetchtype`, _data);
-        }
-        if (_context.test && _context.testtask && true) {
-            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/files/fetchtype`, _data);
-        }
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/files/fetchtype`, _data);
-        }
-        if (_context.sysaccount && _context.todo && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/files/fetchtype`, _data);
-        }
-        if (_context.sysaccount && _context.doc && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/files/fetchtype`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/files/fetchtype`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/files/fetchtype`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/files/fetchtype`, _data);
-        }
-        if (_context.testcaselib && true) {
-            return this.http.post(`/testcaselibs/${_context.testcaselib}/files/fetchtype`, _data);
-        }
-        if (_context.reportly && true) {
-            return this.http.post(`/reportlies/${_context.reportly}/files/fetchtype`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/files/fetchtype`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/files/fetchtype`, _data);
-        }
-        if (_context.monthly && true) {
-            return this.http.post(`/monthlies/${_context.monthly}/files/fetchtype`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/files/fetchtype`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/files/fetchtype`, _data);
-        }
-        if (_context.daily && true) {
-            return this.http.post(`/dailies/${_context.daily}/files/fetchtype`, _data);
-        }
-        return this.http.post(`/files/fetchtype`, _data);
     }
 }

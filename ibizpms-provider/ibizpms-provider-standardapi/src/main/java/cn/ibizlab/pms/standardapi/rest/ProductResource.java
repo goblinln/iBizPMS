@@ -134,19 +134,6 @@ public class ProductResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
-	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurdefault")
-	public ResponseEntity<List<ProductDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
-        productRuntime.addAuthorityConditions(context,"READ");
-        Page<Product> domains = productService.searchCurDefault(context) ;
-        List<ProductDTO> list = productMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('ZT_PRODUCT', #product_id, 'READ')")
     @ApiOperation(value = "置顶", tags = {"产品" },  notes = "置顶")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/producttop")
@@ -161,6 +148,30 @@ public class ProductResource {
     }
 
 
+    @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
+	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurdefault")
+	public ResponseEntity<List<ProductDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
+        productRuntime.addAuthorityConditions(context,"READ");
+        Page<Product> domains = productService.searchCurDefault(context) ;
+        List<ProductDTO> list = productMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_PRODUCT', #product_id, 'READ')")
+    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
+    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
+        Product domain = productService.get(product_id);
+        ProductDTO dto = productMapping.toDto(domain);
+        Map<String, Integer> opprivs = productRuntime.getOPPrivs(product_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('ZT_PRODUCT', 'CREATE')")
     @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
 	@RequestMapping(method = RequestMethod.POST, value = "/products")
@@ -174,17 +185,6 @@ public class ProductResource {
         Map<String, Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('ZT_PRODUCT', #product_id, 'READ')")
-    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}")
-    public ResponseEntity<ProductDTO> get(@PathVariable("product_id") Long product_id) {
-        Product domain = productService.get(product_id);
-        ProductDTO dto = productMapping.toDto(domain);
-        Map<String, Integer> opprivs = productRuntime.getOPPrivs(product_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
 

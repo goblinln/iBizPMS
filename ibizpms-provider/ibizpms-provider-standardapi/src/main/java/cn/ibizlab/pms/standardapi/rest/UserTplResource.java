@@ -53,20 +53,15 @@ public class UserTplResource {
     public UserTplMapping usertplMapping;
 
 
-    @PreAuthorize("quickTest('ZT_USERTPL','READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户模板" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usertpls/fetchmy")
-	public ResponseEntity<List<UserTplDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserTplSearchContext context) {
+    @PreAuthorize("quickTest('ZT_USERTPL','CREATE')")
+    @ApiOperation(value = "根据系统用户获取用户模板草稿", tags = {"用户模板" },  notes = "根据系统用户获取用户模板草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usertpls/getdraft")
+    public ResponseEntity<UserTplDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserTplDTO dto) {
+        UserTpl domain = usertplMapping.toDomain(dto);
         
-        usertplRuntime.addAuthorityConditions(context,"READ");
-        Page<UserTpl> domains = usertplService.searchMy(context) ;
-        List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+        return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
+    }
+
     @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'READ')")
     @ApiOperation(value = "根据系统用户获取用户模板", tags = {"用户模板" },  notes = "根据系统用户获取用户模板")
 	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usertpls/{usertpl_id}")
@@ -76,15 +71,6 @@ public class UserTplResource {
         Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_USERTPL','CREATE')")
-    @ApiOperation(value = "根据系统用户获取用户模板草稿", tags = {"用户模板" },  notes = "根据系统用户获取用户模板草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/usertpls/getdraft")
-    public ResponseEntity<UserTplDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, UserTplDTO dto) {
-        UserTpl domain = usertplMapping.toDomain(dto);
-        
-        return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'DELETE')")
@@ -109,6 +95,20 @@ public class UserTplResource {
         
         usertplRuntime.addAuthorityConditions(context,"READ");
         Page<UserTpl> domains = usertplService.searchAccount(context) ;
+        List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_USERTPL','READ')")
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户模板" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usertpls/fetchmy")
+	public ResponseEntity<List<UserTplDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserTplSearchContext context) {
+        
+        usertplRuntime.addAuthorityConditions(context,"READ");
+        Page<UserTpl> domains = usertplService.searchMy(context) ;
         List<UserTplDTO> list = usertplMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

@@ -52,18 +52,6 @@ public class ProjectMonthlyResource {
     @Lazy
     public ProjectMonthlyMapping projectmonthlyMapping;
 
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"项目月报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/projectmonthlies/fetchdefault")
-	public ResponseEntity<List<ProjectMonthlyDTO>> fetchdefault(@RequestBody IbizproProjectMonthlySearchContext context) {
-        Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(context) ;
-        List<ProjectMonthlyDTO> list = projectmonthlyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'NONE')")
     @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectmonthlies/{projectmonthly_id}")
@@ -93,14 +81,6 @@ public class ProjectMonthlyResource {
     }
 
 
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
-    @ApiOperation(value = "获取项目月报草稿", tags = {"项目月报" },  notes = "获取项目月报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectmonthlies/getdraft")
-    public ResponseEntity<ProjectMonthlyDTO> getDraft(ProjectMonthlyDTO dto) {
-        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
-    }
-
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'NONE')")
     @ApiOperation(value = "手动生成项目月报", tags = {"项目月报" },  notes = "手动生成项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies/{projectmonthly_id}/manualcreatemonthly")
@@ -115,6 +95,18 @@ public class ProjectMonthlyResource {
     }
 
 
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"项目月报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/projectmonthlies/fetchdefault")
+	public ResponseEntity<List<ProjectMonthlyDTO>> fetchdefault(@RequestBody IbizproProjectMonthlySearchContext context) {
+        Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(context) ;
+        List<ProjectMonthlyDTO> list = projectmonthlyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
     @ApiOperation(value = "新建项目月报", tags = {"项目月报" },  notes = "新建项目月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies")
@@ -128,6 +120,14 @@ public class ProjectMonthlyResource {
         Map<String, Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(domain.getIbizproprojectmonthlyid());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
+    @ApiOperation(value = "获取项目月报草稿", tags = {"项目月报" },  notes = "获取项目月报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectmonthlies/getdraft")
+    public ResponseEntity<ProjectMonthlyDTO> getDraft(ProjectMonthlyDTO dto) {
+        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
     }
 
 
