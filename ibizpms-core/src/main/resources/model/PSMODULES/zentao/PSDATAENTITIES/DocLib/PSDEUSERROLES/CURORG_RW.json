@@ -3,20 +3,6 @@
   "name" : "当前组织（读写）",
   "orgDR" : 1,
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "MANAGE",
-    "name" : "MANAGE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "Zt_project__MANAGE"
-    }
-  }, {
-    "dataAccessAction" : "COLLECT",
-    "name" : "COLLECT",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "Zt_project__COLLECT"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "DELETE",
     "getPSDEOPPriv" : {
@@ -24,11 +10,11 @@
       "id" : "DELETE"
     }
   }, {
-    "dataAccessAction" : "UNCOLLECT",
-    "name" : "UNCOLLECT",
+    "dataAccessAction" : "MANAGE",
+    "name" : "MANAGE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__UNCOLLECT"
+      "id" : "Zt_project__MANAGE"
     }
   }, {
     "dataAccessAction" : "READ",
@@ -38,6 +24,20 @@
       "id" : "READ"
     }
   }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__CREATE"
+    }
+  }, {
+    "dataAccessAction" : "UNCOLLECT",
+    "name" : "UNCOLLECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__UNCOLLECT"
+    }
+  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "UPDATE",
     "getPSDEOPPriv" : {
@@ -45,11 +45,11 @@
       "id" : "UPDATE"
     }
   }, {
-    "dataAccessAction" : "CREATE",
-    "name" : "CREATE",
+    "dataAccessAction" : "COLLECT",
+    "name" : "COLLECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_project__CREATE"
+      "id" : "Zt_project__COLLECT"
     }
   } ],
   "roleTag" : "CURORG_RW",

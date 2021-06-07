@@ -46,42 +46,6 @@
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6511",
-      "getPSDELogicLinkGroupCond" : {
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "name" : "连接条件组",
-        "getPSDELogicLinkConds" : [ {
-          "condOP" : "ISNOTNULL",
-          "dstFieldName" : "STORY",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[STORY] 值不为空(NotNil)"
-        }, {
-          "condOP" : "NOTEQ",
-          "dstFieldName" : "STORY",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[STORY] 不等于(<>) (0)",
-          "paramValue" : "0"
-        } ]
-      },
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
         "id" : "Prepareparam1"
       },
       "name" : "连接4196",
@@ -113,6 +77,42 @@
             "logicType" : "SINGLE",
             "name" : "Default[STORY] 值为空(Nil)"
           } ]
+        } ]
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接6511",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "name" : "连接条件组",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "ISNOTNULL",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 值不为空(NotNil)"
+        }, {
+          "condOP" : "NOTEQ",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 不等于(<>) (0)",
+          "paramValue" : "0"
         } ]
       },
       "getSrcPSDELogicNode" : {

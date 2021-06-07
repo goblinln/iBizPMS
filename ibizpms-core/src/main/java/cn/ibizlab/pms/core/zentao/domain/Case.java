@@ -94,6 +94,14 @@ public class Case extends EntityMP implements Serializable {
     @ApiModelProperty("创建日期")
     private Timestamp openeddate;
     /**
+     * 测试用例编号
+     */
+    @TableField(value = "`CASESN`")
+    @JSONField(name = "casesn")
+    @JsonProperty("casesn")
+    @ApiModelProperty("测试用例编号")
+    private Long casesn;
+    /**
      * 结果
      */
     @DEField(defaultValue = "#EMPTY")
@@ -589,14 +597,6 @@ public class Case extends EntityMP implements Serializable {
     @JsonProperty("module")
     @ApiModelProperty("所属模块")
     private Long module;
-    /**
-     * 测试用例编号
-     */
-    @TableField(value = "`CASESN`")
-    @JSONField(name = "casesn")
-    @JsonProperty("casesn")
-    @ApiModelProperty("测试用例编号")
-    private Long casesn;
 
     /**
      * 
@@ -628,7 +628,7 @@ public class Case extends EntityMP implements Serializable {
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.pms.core.zentao.domain.Module ztmodule;
+    private cn.ibizlab.pms.core.ibiz.domain.TestModule ztmodule;
 
     /**
      * 
@@ -696,6 +696,14 @@ public class Case extends EntityMP implements Serializable {
     public void setPath(Integer path) {
         this.path = path;
         this.modify("path", path);
+    }
+
+    /**
+     * 设置 [测试用例编号]
+     */
+    public void setCasesn(Long casesn) {
+        this.casesn = casesn;
+        this.modify("casesn", casesn);
     }
 
     /**
@@ -972,14 +980,6 @@ public class Case extends EntityMP implements Serializable {
     public void setModule(Long module) {
         this.module = module;
         this.modify("module", module);
-    }
-
-    /**
-     * 设置 [测试用例编号]
-     */
-    public void setCasesn(Long casesn) {
-        this.casesn = casesn;
-        this.modify("casesn", casesn);
     }
 
 

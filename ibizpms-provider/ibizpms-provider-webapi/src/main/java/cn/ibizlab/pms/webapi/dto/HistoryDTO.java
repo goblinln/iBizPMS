@@ -95,6 +95,16 @@ public class HistoryDTO extends DTOBase implements Serializable {
     private String org;
 
     /**
+     * 属性 [HISTORYSN]
+     *
+     */
+    @JSONField(name = "historysn")
+    @JsonProperty("historysn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("操作历史编号")
+    private Long historysn;
+
+    /**
      * 属性 [OLD]
      *
      */
@@ -154,16 +164,6 @@ public class HistoryDTO extends DTOBase implements Serializable {
     @ApiModelProperty("关联日志")
     private Long action;
 
-    /**
-     * 属性 [HISTORYSN]
-     *
-     */
-    @JSONField(name = "historysn")
-    @JsonProperty("historysn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("操作历史编号")
-    private Long historysn;
-
 
     /**
      * 设置 [DIFF]
@@ -190,6 +190,14 @@ public class HistoryDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [HISTORYSN]
+     */
+    public void setHistorysn(Long  historysn){
+        this.historysn = historysn ;
+        this.modify("historysn",historysn);
+    }
+
+    /**
      * 设置 [OLD]
      */
     public void setOld(String  old){
@@ -203,14 +211,6 @@ public class HistoryDTO extends DTOBase implements Serializable {
     public void setAction(Long  action){
         this.action = action ;
         this.modify("action",action);
-    }
-
-    /**
-     * 设置 [HISTORYSN]
-     */
-    public void setHistorysn(Long  historysn){
-        this.historysn = historysn ;
-        this.modify("historysn",historysn);
     }
 
 

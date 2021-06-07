@@ -352,11 +352,11 @@
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
-            "id" : "FetchBugModule"
+            "id" : "FetchTestModule"
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Module.json"
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
           },
           "getPickupPSAppView" : {
             "modelref" : true,
@@ -810,6 +810,13 @@
       "dataType" : 25,
       "getFrontPSCodeList" : {
         "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__result.json"
+      },
+      "name" : "lastrunresult1"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__type.json"
       },
       "name" : "type"
@@ -836,13 +843,6 @@
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurCaseVersion.json"
       },
       "name" : "version"
-    }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__result.json"
-      },
-      "name" : "lastrunresult1"
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {

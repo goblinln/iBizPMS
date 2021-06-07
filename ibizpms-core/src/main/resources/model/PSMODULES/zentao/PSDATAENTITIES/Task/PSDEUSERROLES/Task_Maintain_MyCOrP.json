@@ -6,18 +6,11 @@
     "id" : "MyCreateOrPartake"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "XQCHANGE",
-    "name" : "XQCHANGE",
+    "dataAccessAction" : "TOBUG",
+    "name" : "TOBUG",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__XQCHANGE"
-    }
-  }, {
-    "dataAccessAction" : "CLOSE",
-    "name" : "CLOSE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__CLOSE"
+      "id" : "TOBUG"
     }
   }, {
     "dataAccessAction" : "NFAVORITES",
@@ -27,6 +20,13 @@
       "id" : "NFAVORITES"
     }
   }, {
+    "dataAccessAction" : "CANCEL",
+    "name" : "CANCEL",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__CANCEL"
+    }
+  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "UPDATE",
     "getPSDEOPPriv" : {
@@ -34,11 +34,11 @@
       "id" : "UPDATE"
     }
   }, {
-    "dataAccessAction" : "CANCEL",
-    "name" : "CANCEL",
+    "dataAccessAction" : "CLOSE",
+    "name" : "CLOSE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CANCEL"
+      "id" : "ZTProject__CLOSE"
     }
   }, {
     "dataAccessAction" : "CONSUM",
@@ -48,25 +48,11 @@
       "id" : "ZTProject__CONSUM"
     }
   }, {
-    "dataAccessAction" : "SUBTASKS",
-    "name" : "SUBTASKS",
+    "dataAccessAction" : "XQCHANGE",
+    "name" : "XQCHANGE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__SUBTASKS"
-    }
-  }, {
-    "dataAccessAction" : "RECORDESTIMATE",
-    "name" : "RECORDESTIMATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__RECORDESTIMATE"
-    }
-  }, {
-    "dataAccessAction" : "TOBUG",
-    "name" : "TOBUG",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "TOBUG"
+      "id" : "ZTProject__XQCHANGE"
     }
   }, {
     "dataAccessAction" : "FAVORITES",
@@ -76,11 +62,11 @@
       "id" : "FAVORITES"
     }
   }, {
-    "dataAccessAction" : "FORWARD",
-    "name" : "FORWARD",
+    "dataAccessAction" : "SUBTASKS",
+    "name" : "SUBTASKS",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__FORWARD"
+      "id" : "ZTProject__SUBTASKS"
     }
   }, {
     "dataAccessAction" : "FJTASK",
@@ -88,6 +74,20 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "FJTASK"
+    }
+  }, {
+    "dataAccessAction" : "FORWARD",
+    "name" : "FORWARD",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__FORWARD"
+    }
+  }, {
+    "dataAccessAction" : "RECORDESTIMATE",
+    "name" : "RECORDESTIMATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__RECORDESTIMATE"
     }
   } ],
   "roleTag" : "Task_Maintain_MyCOrP",

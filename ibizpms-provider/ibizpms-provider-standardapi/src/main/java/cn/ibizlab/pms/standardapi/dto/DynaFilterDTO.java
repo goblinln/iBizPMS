@@ -45,14 +45,14 @@ public class DynaFilterDTO extends DTOBase implements Serializable {
     private String dynafilterid;
 
     /**
-     * 属性 [DYNAFILTERNAME]
+     * 属性 [DEPTID]
      *
      */
-    @JSONField(name = "dynafiltername")
-    @JsonProperty("dynafiltername")
-    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
-    @ApiModelProperty("动态搜索栏名称")
-    private String dynafiltername;
+    @JSONField(name = "deptid")
+    @JsonProperty("deptid")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("组织部门标识")
+    private String deptid;
 
     /**
      * 属性 [UPDATEMAN]
@@ -65,24 +65,14 @@ public class DynaFilterDTO extends DTOBase implements Serializable {
     private String updateman;
 
     /**
-     * 属性 [CREATEDATE]
+     * 属性 [FORMNAME]
      *
      */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-
-    /**
-     * 属性 [CREATEMAN]
-     *
-     */
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("建立人")
-    private String createman;
+    @JSONField(name = "formname")
+    @JsonProperty("formname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("表单名称")
+    private String formname;
 
     /**
      * 属性 [UPDATEDATE]
@@ -105,24 +95,14 @@ public class DynaFilterDTO extends DTOBase implements Serializable {
     private String orgid;
 
     /**
-     * 属性 [DEPTID]
+     * 属性 [CREATEDATE]
      *
      */
-    @JSONField(name = "deptid")
-    @JsonProperty("deptid")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("组织部门标识")
-    private String deptid;
-
-    /**
-     * 属性 [FORMNAME]
-     *
-     */
-    @JSONField(name = "formname")
-    @JsonProperty("formname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("表单名称")
-    private String formname;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
 
     /**
      * 属性 [DENAME]
@@ -135,6 +115,16 @@ public class DynaFilterDTO extends DTOBase implements Serializable {
     private String dename;
 
     /**
+     * 属性 [DYNAFILTERNAME]
+     *
+     */
+    @JSONField(name = "dynafiltername")
+    @JsonProperty("dynafiltername")
+    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
+    @ApiModelProperty("动态搜索栏名称")
+    private String dynafiltername;
+
+    /**
      * 属性 [DATA]
      *
      */
@@ -144,14 +134,16 @@ public class DynaFilterDTO extends DTOBase implements Serializable {
     @ApiModelProperty("数据")
     private String data;
 
-
     /**
-     * 设置 [DYNAFILTERNAME]
+     * 属性 [CREATEMAN]
+     *
      */
-    public void setDynafiltername(String  dynafiltername){
-        this.dynafiltername = dynafiltername ;
-        this.modify("dynafiltername",dynafiltername);
-    }
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("建立人")
+    private String createman;
+
 
     /**
      * 设置 [FORMNAME]
@@ -167,6 +159,14 @@ public class DynaFilterDTO extends DTOBase implements Serializable {
     public void setDename(String  dename){
         this.dename = dename ;
         this.modify("dename",dename);
+    }
+
+    /**
+     * 设置 [DYNAFILTERNAME]
+     */
+    public void setDynafiltername(String  dynafiltername){
+        this.dynafiltername = dynafiltername ;
+        this.modify("dynafiltername",dynafiltername);
     }
 
     /**

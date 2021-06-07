@@ -555,12 +555,12 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchMyFavorites",
+    "codeName" : "FetchMy",
     "methodType" : "FETCH",
-    "name" : "FetchMyFavorites",
+    "name" : "FetchMy",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyFavorites"
+      "id" : "My"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -568,7 +568,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyFavorites"
+      "id" : "FetchMy"
     },
     "builtinMethod" : false
   }, {
@@ -589,12 +589,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMy",
+    "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
-    "name" : "FetchMy",
+    "name" : "FetchMyFavorites",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "My"
+      "id" : "MyFavorites"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -602,7 +602,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMy"
+      "id" : "FetchMyFavorites"
     },
     "builtinMethod" : false
   }, {
@@ -1078,6 +1078,12 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
     "codeName" : "OpenedBy",
     "logicName" : "由谁创建",
     "name" : "OPENEDBY",
@@ -1201,6 +1207,12 @@
     "logicName" : "BUG编号",
     "name" : "BUGSN",
     "stdDataType" : 1
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
   }, {
     "codeName" : "Org",
     "logicName" : "归属组织",
@@ -1404,18 +1416,6 @@
     "logicName" : "测试单",
     "name" : "TESTTASK",
     "stdDataType" : 1
-  }, {
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "name" : "UPDATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",
@@ -1476,12 +1476,12 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchMyFavorites",
+    "codeName" : "FetchMy",
     "methodType" : "FETCH",
-    "name" : "FetchMyFavorites",
+    "name" : "FetchMy",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyFavorites"
+      "id" : "My"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1489,7 +1489,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMyFavorites"
+      "id" : "FetchMy"
     },
     "builtinMethod" : false
   }, {
@@ -1527,12 +1527,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMy",
+    "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
-    "name" : "FetchMy",
+    "name" : "FetchMyFavorites",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "My"
+      "id" : "MyFavorites"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -1540,7 +1540,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchMy"
+      "id" : "FetchMyFavorites"
     },
     "builtinMethod" : false
   }, {

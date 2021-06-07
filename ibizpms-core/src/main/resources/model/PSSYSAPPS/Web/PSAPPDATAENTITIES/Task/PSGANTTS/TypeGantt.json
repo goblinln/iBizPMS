@@ -113,24 +113,6 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "TaskTypes"
-    },
-    "name" : "默认根节点 - 任务类型",
-    "getPSNavigateParams" : [ {
-      "key" : "size",
-      "name" : "size",
-      "value" : "20",
-      "rawValue" : true
-    } ],
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "Tasks"
     },
     "name" : "任务类型 - 任务",
@@ -183,6 +165,24 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "Tasks"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "TaskTypes"
+    },
+    "name" : "默认根节点 - 任务类型",
+    "getPSNavigateParams" : [ {
+      "key" : "size",
+      "name" : "size",
+      "value" : "20",
+      "rawValue" : true
+    } ],
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

@@ -6,11 +6,18 @@
     "id" : "MyCreateOrUpdateDoc"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "DELETE",
-    "name" : "DELETE",
+    "dataAccessAction" : "OCD",
+    "name" : "OCD",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "Zt_doclib__DELETE"
+      "id" : "Zt_doclib__OCD"
+    }
+  }, {
+    "dataAccessAction" : "COLLECT",
+    "name" : "COLLECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "COLLECT"
     }
   }, {
     "dataAccessAction" : "UNCOLLECT",
@@ -20,13 +27,6 @@
       "id" : "UNCOLLECT"
     }
   }, {
-    "dataAccessAction" : "OCD",
-    "name" : "OCD",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "Zt_doclib__OCD"
-    }
-  }, {
     "dataAccessAction" : "CREATE",
     "name" : "CREATE",
     "getPSDEOPPriv" : {
@@ -34,11 +34,11 @@
       "id" : "Zt_doclib__CREATE"
     }
   }, {
-    "dataAccessAction" : "COLLECT",
-    "name" : "COLLECT",
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "COLLECT"
+      "id" : "Zt_doclib__DELETE"
     }
   }, {
     "dataAccessAction" : "UPDATE",

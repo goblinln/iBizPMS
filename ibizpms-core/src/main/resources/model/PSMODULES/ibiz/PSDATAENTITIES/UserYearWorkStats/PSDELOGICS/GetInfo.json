@@ -74,33 +74,6 @@
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Deaction2"
-      },
-      "name" : "连接9228",
-      "getPSDELogicLinkGroupCond" : {
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "name" : "连接条件组",
-        "getPSDELogicLinkConds" : [ {
-          "condOP" : "EQ",
-          "dstFieldName" : "JUDGEROLE",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[JUDGEROLE] 等于(=) (dev)",
-          "paramValue" : "dev"
-        } ]
-      },
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
         "id" : "Deaction4"
       },
       "name" : "连接3532",
@@ -145,6 +118,33 @@
           "logicType" : "SINGLE",
           "name" : "Default[JUDGEROLE] 等于(=) (qa)",
           "paramValue" : "qa"
+        } ]
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction2"
+      },
+      "name" : "连接9228",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "name" : "连接条件组",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "EQ",
+          "dstFieldName" : "JUDGEROLE",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[JUDGEROLE] 等于(=) (dev)",
+          "paramValue" : "dev"
         } ]
       },
       "getSrcPSDELogicNode" : {

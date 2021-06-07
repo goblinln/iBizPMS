@@ -2793,6 +2793,54 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PLANNAME",
+      "dBType" : "MYSQL5",
+      "name" : "PLANNAME",
+      "standardColumnName" : "`PLANNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "PLANNAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "getPSDEField" : {
+        "name" : "PLANNAME",
+        "codeName" : "Planname"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Planname",
+    "dEFType" : 2,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "所属计划",
+    "name" : "PLANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "formulaDEField" : true,
+    "phisicalDEField" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "OPENEDBY",
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
@@ -4111,6 +4159,40 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "STORYSN",
+      "dBType" : "MYSQL5",
+      "name" : "STORYSN",
+      "standardColumnName" : "`STORYSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "STORYSN",
+        "codeName" : "Storysn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Storysn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "需求编号",
+    "name" : "STORYSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -5353,88 +5435,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "STORYSN",
-      "dBType" : "MYSQL5",
-      "name" : "STORYSN",
-      "standardColumnName" : "`STORYSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "STORYSN",
-        "codeName" : "Storysn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Storysn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "需求编号",
-    "name" : "STORYSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PLANNAME",
-      "dBType" : "MYSQL5",
-      "name" : "PLANNAME",
-      "standardColumnName" : "`PLANNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "PLANNAME",
-          "maxValue" : 200,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[200]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "PLANNAME",
-        "codeName" : "Planname"
-      },
-      "ruleInfo" : "内容长度必须小于等于[200]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Planname",
-    "dEFType" : 2,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 200,
-    "logicName" : "所属计划",
-    "name" : "PLANNAME",
-    "stdDataType" : 25,
-    "stringLength" : 200,
-    "valueFormat" : "%1$s",
-    "formulaDEField" : true,
-    "phisicalDEField" : false
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "ComputeIsLeaf",
@@ -12395,6 +12395,16 @@
     "name" : "CLOSE",
     "id" : "ZTProduct__CLOSE"
   }, {
+    "logicName" : "Project_Create",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "STORYMANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Project__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -12407,16 +12417,6 @@
     },
     "name" : "CREATE",
     "id" : "ZTProduct__CREATE"
-  }, {
-    "logicName" : "Project_Create",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "STORYMANAGE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DERCUSTOM_ZT_STORY_ZT_PROJECT.json"
-    },
-    "name" : "CREATE",
-    "id" : "Project__CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
@@ -12519,16 +12519,6 @@
     "name" : "PROJECTLINK",
     "id" : "ZTProduct__PROJECTLINK"
   }, {
-    "logicName" : "Product_Read",
-    "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
-    },
-    "name" : "READ",
-    "id" : "ZTProduct__READ"
-  }, {
     "logicName" : "Project_Read",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
@@ -12538,6 +12528,16 @@
     },
     "name" : "READ",
     "id" : "Project__READ"
+  }, {
+    "logicName" : "Product_Read",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProduct__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -12670,60 +12670,11 @@
       "id" : "MyCreateOrPartake"
     },
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "TOBUG",
-      "name" : "Story_Maintain_MyCOrP_TOBUG",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "TOBUG"
-      }
-    }, {
-      "dataAccessAction" : "FAVORITES",
-      "name" : "Story_Maintain_MyCOrP_Favorites",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "FAVORITES"
-      }
-    }, {
-      "dataAccessAction" : "ACTIVATE",
-      "name" : "Story_Maintain_MyCOrP_Activate",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ACTIVATE"
-      }
-    }, {
-      "dataAccessAction" : "CHANGE",
-      "name" : "Story_Maintain_MyCOrP_Change",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CHANGE"
-      }
-    }, {
       "dataAccessAction" : "CCASE",
       "name" : "Story_Maintain_MyCOrP_CCASE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CCASE"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Story_Maintain_MyCOrP_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "Story_Maintain_MyCOrP_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__READ"
-      }
-    }, {
-      "dataAccessAction" : "REVIEW",
-      "name" : "Story_Maintain_MyCOrP_Review",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "REVIEW"
       }
     }, {
       "dataAccessAction" : "ASSIGNTO",
@@ -12733,11 +12684,11 @@
         "id" : "ASSIGNTO"
       }
     }, {
-      "dataAccessAction" : "ISCHILD",
-      "name" : "Story_Maintain_MyCOrP_Ischild",
+      "dataAccessAction" : "ACTIVATE",
+      "name" : "Story_Maintain_MyCOrP_Activate",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "ISCHILD"
+        "id" : "ACTIVATE"
       }
     }, {
       "dataAccessAction" : "NFAVORITES",
@@ -12747,11 +12698,60 @@
         "id" : "NFAVORITES"
       }
     }, {
+      "dataAccessAction" : "CHANGE",
+      "name" : "Story_Maintain_MyCOrP_Change",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CHANGE"
+      }
+    }, {
+      "dataAccessAction" : "TOBUG",
+      "name" : "Story_Maintain_MyCOrP_TOBUG",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TOBUG"
+      }
+    }, {
       "dataAccessAction" : "CLOSE",
       "name" : "Story_Maintain_MyCOrP_Close",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CLOSE"
+      }
+    }, {
+      "dataAccessAction" : "ISCHILD",
+      "name" : "Story_Maintain_MyCOrP_Ischild",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ISCHILD"
+      }
+    }, {
+      "dataAccessAction" : "FAVORITES",
+      "name" : "Story_Maintain_MyCOrP_Favorites",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "FAVORITES"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "Story_Maintain_MyCOrP_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Story_Maintain_MyCOrP_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "REVIEW",
+      "name" : "Story_Maintain_MyCOrP_Review",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "REVIEW"
       }
     } ],
     "roleTag" : "Story_Maintain_MyCOrP",
@@ -12762,6 +12762,13 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyReP.json",
     "name" : "需求维护（我相关产品）（跟随角色）",
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CREATE",
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
       "dataAccessAction" : "FAVORITES",
       "name" : "Story_Maintain_MyCOrP_Favorites",
       "getPSDEOPPriv" : {
@@ -12809,13 +12816,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ZTProduct__ISCHILD"
-      }
-    }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
       }
     }, {
       "dataAccessAction" : "ACTIVATE",

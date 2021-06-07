@@ -58,6 +58,9 @@
     },
     "name" : "assignedto"
   }, {
+    "dataType" : 1,
+    "name" : "id"
+  }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {
       "modelref" : true,
@@ -78,9 +81,6 @@
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
     },
     "name" : "status"
-  }, {
-    "dataType" : 1,
-    "name" : "id"
   }, {
     "dataType" : 25,
     "name" : "srfkey",

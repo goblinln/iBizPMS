@@ -6,11 +6,11 @@
     "id" : "MyTestTaskPc"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "CREATE",
-    "name" : "CREATE",
+    "dataAccessAction" : "DELETE",
+    "name" : "DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "ZTProduct__DELETE"
     }
   }, {
     "dataAccessAction" : "MANAGE",
@@ -20,18 +20,18 @@
       "id" : "ZTProduct__MANAGE"
     }
   }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__CREATE"
+    }
+  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
-    }
-  }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__DELETE"
     }
   }, {
     "dataAccessAction" : "READ",

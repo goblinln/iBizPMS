@@ -1862,6 +1862,18 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
+      "id" : "DocLib"
+    },
+    "name" : "默认根节点 - 文档库",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
       "id" : "File"
     },
     "name" : "附件库 - 附件",
@@ -1875,12 +1887,46 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "DocLib"
+      "id" : "ChildDocLibModule"
     },
-    "name" : "默认根节点 - 文档库",
+    "name" : "文档库分类根模块 - 文档库分类和文档",
+    "parentFilter" : "parent",
+    "getParentPSAppDEField" : {
+      "name" : "PARENT",
+      "codeName" : "Parent"
+    },
+    "getParentPSDER1N" : {
+      "codeName" : "PDocLibModule",
+      "dERType" : "DER1N",
+      "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+      "logicName" : "父模块",
+      "getMajorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "masterOrder" : -1,
+      "masterRS" : 0,
+      "getMinorPSDataEntity" : {
+        "modelref" : true,
+        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+      },
+      "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
+      "orderValue" : 100,
+      "getPSPickupDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "getPSPickupTextDEField" : {
+        "name" : "MODULENAME",
+        "codeName" : "Modulename"
+      },
+      "pickupDEFName" : "PARENT",
+      "removeActionType" : -1,
+      "removeOrder" : 0
+    },
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "DocLibModule"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -1935,52 +1981,6 @@
       "modelref" : true,
       "id" : "ChildDocLibModule"
     },
-    "name" : "文档库分类根模块 - 文档库分类和文档",
-    "parentFilter" : "parent",
-    "getParentPSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    },
-    "getParentPSDER1N" : {
-      "codeName" : "PDocLibModule",
-      "dERType" : "DER1N",
-      "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
-      "logicName" : "父模块",
-      "getMajorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
-      "masterOrder" : -1,
-      "masterRS" : 0,
-      "getMinorPSDataEntity" : {
-        "modelref" : true,
-        "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-      },
-      "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
-      "orderValue" : 100,
-      "getPSPickupDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getPSPickupTextDEField" : {
-        "name" : "MODULENAME",
-        "codeName" : "Modulename"
-      },
-      "pickupDEFName" : "PARENT",
-      "removeActionType" : -1,
-      "removeOrder" : 0
-    },
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "DocLibModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ChildDocLibModule"
-    },
     "name" : "文档库分类和文档 - 文档库分类和文档",
     "parentFilter" : "parent",
     "getParentPSAppDEField" : {
@@ -2025,12 +2025,13 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "Files"
+      "id" : "ModuleDoc"
     },
-    "name" : "默认根节点 - 附件库",
+    "name" : "文档库子模块 - 分类下文档",
+    "parentFilter" : "module",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "ChildDocLibModule"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -2095,13 +2096,12 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ModuleDoc"
+      "id" : "Files"
     },
-    "name" : "文档库子模块 - 分类下文档",
-    "parentFilter" : "module",
+    "name" : "默认根节点 - 附件库",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildDocLibModule"
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

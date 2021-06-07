@@ -221,6 +221,8 @@
       }, {
         "name" : "members"
       }, {
+        "name" : "end"
+      }, {
         "name" : "overviews"
       }, {
         "name" : "stories"
@@ -232,8 +234,6 @@
         "name" : "begin"
       }, {
         "name" : "owner"
-      }, {
-        "name" : "end"
       }, {
         "name" : "objecttype"
       }, {

@@ -1024,9 +1024,6 @@
             "dataType" : 25,
             "name" : "title"
           }, {
-            "dataType" : 1,
-            "name" : "id"
-          }, {
             "dataType" : 9,
             "getFrontPSCodeList" : {
               "modelref" : true,
@@ -1050,6 +1047,9 @@
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__severity_mob.json"
             },
             "name" : "severity"
+          }, {
+            "dataType" : 1,
+            "name" : "id"
           }, {
             "dataType" : 25,
             "name" : "isfavorites"
@@ -1179,20 +1179,20 @@
           "getPSDEListItems" : [ {
             "align" : "LEFT",
             "cLConvertMode" : "FRONT",
-            "caption" : "严重程度",
-            "dataItemName" : "severity",
-            "itemType" : "TEXTITEM",
-            "name" : "SEVERITY",
+            "caption" : "优先级",
+            "dataItemName" : "pri",
+            "itemType" : "ACTIONITEM",
+            "name" : "PRI",
             "width" : 150,
             "widthString" : "150px",
             "enableSort" : true
           }, {
             "align" : "LEFT",
             "cLConvertMode" : "FRONT",
-            "caption" : "优先级",
-            "dataItemName" : "pri",
-            "itemType" : "ACTIONITEM",
-            "name" : "PRI",
+            "caption" : "严重程度",
+            "dataItemName" : "severity",
+            "itemType" : "TEXTITEM",
+            "name" : "SEVERITY",
             "width" : 150,
             "widthString" : "150px",
             "enableSort" : true

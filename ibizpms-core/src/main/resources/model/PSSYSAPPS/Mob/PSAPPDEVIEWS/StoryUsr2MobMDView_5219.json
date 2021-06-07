@@ -273,6 +273,9 @@
       "name" : "pri"
     }, {
       "dataType" : 25,
+      "name" : "ischild"
+    }, {
+      "dataType" : 25,
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__status.json"
@@ -285,9 +288,6 @@
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__stage.json"
       },
       "name" : "stage"
-    }, {
-      "dataType" : 25,
-      "name" : "ischild"
     }, {
       "dataType" : 25,
       "name" : "isfavorites"

@@ -47,6 +47,15 @@ public class TestModule extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 类型（story）
      */
     @DEField(defaultValue = "story")
@@ -55,6 +64,24 @@ public class TestModule extends EntityMP implements Serializable {
     @JsonProperty("type")
     @ApiModelProperty("类型（story）")
     private String type;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`MDEPTNAME`")
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
+    /**
+     * 部门标识
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`MDEPTID`")
+    @JSONField(name = "mdeptid")
+    @JsonProperty("mdeptid")
+    @ApiModelProperty("部门标识")
+    private String mdeptid;
     /**
      * path
      */
@@ -65,6 +92,15 @@ public class TestModule extends EntityMP implements Serializable {
     @ApiModelProperty("path")
     private String path;
     /**
+     * 组织机构标识
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORGID`")
+    @JSONField(name = "orgid")
+    @JsonProperty("orgid")
+    @ApiModelProperty("组织机构标识")
+    private String orgid;
+    /**
      * owner
      */
     @DEField(defaultValue = "/")
@@ -73,6 +109,24 @@ public class TestModule extends EntityMP implements Serializable {
     @JsonProperty("owner")
     @ApiModelProperty("owner")
     private String owner;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "`UPDATEBY`")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "`CREATEBY`")
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @ApiModelProperty("由谁创建")
+    private String createby;
     /**
      * 排序值
      */
@@ -187,60 +241,6 @@ public class TestModule extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("id")
     private Long parent;
-    /**
-     * 部门标识
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`MDEPTID`")
-    @JSONField(name = "mdeptid")
-    @JsonProperty("mdeptid")
-    @ApiModelProperty("部门标识")
-    private String mdeptid;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`MDEPTNAME`")
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
-    /**
-     * 组织机构标识
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORGID`")
-    @JSONField(name = "orgid")
-    @JsonProperty("orgid")
-    @ApiModelProperty("组织机构标识")
-    private String orgid;
-    /**
-     * 由谁创建
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEBY`")
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
     /**
      * 

@@ -10,18 +10,18 @@
       "id" : "ADDLINE"
     }
   }, {
-    "dataAccessAction" : "GROUPMANAGE",
-    "name" : "Product_Manage_GroupManage",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "GROUPMANAGE"
-    }
-  }, {
     "dataAccessAction" : "MANAGE",
     "name" : "Product_Manage_All_MANAGE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "MANAGE"
+    }
+  }, {
+    "dataAccessAction" : "GROUPMANAGE",
+    "name" : "Product_Manage_GroupManage",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "GROUPMANAGE"
     }
   } ],
   "roleTag" : "Product_Manage_All",

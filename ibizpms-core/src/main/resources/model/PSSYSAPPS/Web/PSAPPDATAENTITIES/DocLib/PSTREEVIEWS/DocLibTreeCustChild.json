@@ -708,18 +708,6 @@
       "modelref" : true,
       "id" : "Module"
     },
-    "name" : "文档分类 - 文档分类",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Module"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Module"
-    },
     "name" : "默认根节点 - 文档分类",
     "getParentPSDETreeNode" : {
       "modelref" : true,
@@ -730,12 +718,12 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "Doc"
+      "id" : "Module"
     },
-    "name" : "默认根节点 - 文档",
+    "name" : "文档分类 - 文档分类",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "Module"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -748,6 +736,18 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "Module"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Doc"
+    },
+    "name" : "默认根节点 - 文档",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

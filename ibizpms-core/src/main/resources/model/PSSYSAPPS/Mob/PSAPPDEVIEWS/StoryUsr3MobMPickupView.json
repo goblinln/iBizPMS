@@ -169,11 +169,11 @@
           },
           "name" : "status"
         }, {
-          "dataType" : 1,
-          "name" : "id"
-        }, {
           "dataType" : 25,
           "name" : "title"
+        }, {
+          "dataType" : 1,
+          "name" : "id"
         }, {
           "dataType" : 25,
           "getFrontPSCodeList" : {

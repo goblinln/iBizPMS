@@ -10,10 +10,10 @@
             <tns:metaData express="T(cn.ibizlab.pms.util.security.AuthenticationUser).getAuthenticationUser()" name="curuser" type="session"/>
         <tns:global identifier="productgetcurusersettopdefault" type="cn.ibizlab.pms.core.zentao.domain.Product" />
         </extensionElements>
-     <startEvent id="begin" isInterrupting="true"/>
      <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="productgetcurusersettoprawsqlcall1" id="rawsqlcall1" implementation="http://www.jboss.org/drools/rule" name="获取置顶标识"/>
      <endEvent id="rawsqlcall1_end" name="end"/>
      <sequenceFlow id="rawsqlcall1_end_line" sourceRef="rawsqlcall1" targetRef="rawsqlcall1_end"/>
+     <startEvent id="begin" isInterrupting="true"/>
      <sequenceFlow id="begin_rawsqlcall1" sourceRef="begin" targetRef="rawsqlcall1">
      </sequenceFlow>
     </process>

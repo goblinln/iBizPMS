@@ -1338,6 +1338,52 @@
                 "enableUpdateDataRS" : false
               } ], [ {
                 "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "TEST__BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUILD__ACTION",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ], [ {
+                "actionRSMode" : 1,
                 "codeName" : "TestTasks",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
@@ -2638,6 +2684,18 @@
               "editorType" : "PICKEREX_TRIGGER",
               "handlerType" : "PickupText",
               "name" : "modulename",
+              "getPSAppDEACMode" : {
+                "modelref" : true,
+                "id" : "Default"
+              },
+              "getPSAppDEDataSet" : {
+                "modelref" : true,
+                "id" : "FetchTestModule"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+              },
               "getPSNavigateContexts" : [ {
                 "key" : "N_BRANCH_EQ",
                 "name" : "N_BRANCH_EQ",
@@ -3441,7 +3499,7 @@
             },
             "getPSEditor" : {
               "editorParams" : {
-                "SRFNAVPARAM.product" : "%product%",
+                "SRFNAVPARAM.n_product_eq" : "%product%",
                 "AC" : "TRUE",
                 "TRIGGER" : "TRUE",
                 "SRFNAVCTX.product" : "%product%",
@@ -3456,7 +3514,7 @@
               },
               "getPSAppDEDataSet" : {
                 "modelref" : true,
-                "id" : "FetchBugProject"
+                "id" : "FetchCurProduct"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -3469,8 +3527,8 @@
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
-                "key" : "product",
-                "name" : "product",
+                "key" : "n_product_eq",
+                "name" : "n_product_eq",
                 "value" : "product",
                 "rawValue" : false
               } ],

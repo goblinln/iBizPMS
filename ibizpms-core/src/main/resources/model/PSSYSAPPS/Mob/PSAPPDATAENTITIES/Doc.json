@@ -523,6 +523,11 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "Docsn",
+    "logicName" : "文档编号",
+    "name" : "DOCSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Type",
     "logicName" : "文档类型",
     "name" : "TYPE",
@@ -667,11 +672,6 @@
     "codeName" : "Module",
     "logicName" : "所属分类",
     "name" : "MODULE",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Docsn",
-    "logicName" : "文档编号",
-    "name" : "DOCSN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

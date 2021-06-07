@@ -385,7 +385,7 @@
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_ua345ff9_click",
+      "name" : "grid_uagridcolumn1_u15d6276_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "todo开始"
@@ -729,7 +729,7 @@
         "name" : "todo行为组",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
-          "name" : "ua345ff9",
+          "name" : "u15d6276",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "noPrivDisplayMode" : 1,

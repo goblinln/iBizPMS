@@ -1625,7 +1625,7 @@
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "grid_uagridcolumn1_uaeba961_click",
+      "name" : "grid_uagridcolumn1_u95b496c_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "子任务"
@@ -2209,7 +2209,7 @@
         "name" : "默认表格操作栏",
         "getPSUIActionGroupDetails" : [ {
           "detailType" : "DEUIACTION",
-          "name" : "uaeba961",
+          "name" : "u95b496c",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
             "caption" : "子任务",
@@ -3001,7 +3001,7 @@
     "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "ChildTaskMoreGridView",
-  "getPSDEViewId" : "9D8B82FE-BC12-4C06-8F9D-C4646FCABA8F",
+  "getPSDEViewId" : "403f01f4bf141f781cbf7a31e467f5b1",
   "getPSSysImage" : {
     "glyph" : "xf0ae@FontAwesome",
     "cssClass" : "fa fa-tasks"
@@ -3032,7 +3032,7 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
-  "modelid" : "cda21542f04c1b12e11fdffb5d08c4fe",
+  "modelid" : "4e85ddfd5449c4f361abed1a7603de43",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,

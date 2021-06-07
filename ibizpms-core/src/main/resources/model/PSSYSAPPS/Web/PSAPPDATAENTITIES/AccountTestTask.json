@@ -609,6 +609,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
     "codeName" : "Mailto",
     "logicName" : "抄送给",
     "name" : "MAILTO",
@@ -626,11 +632,23 @@
     "stdDataType" : 25,
     "stringLength" : 65535
   }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
     "codeName" : "UpdateBy",
     "logicName" : "由谁更新",
     "name" : "UPDATEBY",
     "stdDataType" : 25,
     "stringLength" : 100
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "Org",
     "logicName" : "归属组织",
@@ -691,6 +709,12 @@
     "stdDataType" : 25,
     "stringLength" : 7
   }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
     "codeName" : "Mailtoconact",
     "logicName" : "联系人",
     "name" : "MAILTOCONACT",
@@ -720,6 +744,11 @@
     "name" : "AUTO",
     "stdDataType" : 25,
     "stringLength" : 10
+  }, {
+    "codeName" : "Testtasksn",
+    "logicName" : "测试版本编号",
+    "name" : "TESTTASKSN",
+    "stdDataType" : 1
   }, {
     "codeName" : "Name",
     "logicName" : "名称",
@@ -761,35 +790,6 @@
     "logicName" : "所属项目",
     "name" : "PROJECT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "Testtasksn",
-    "logicName" : "测试版本编号",
-    "name" : "TESTTASKSN",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "name" : "CREATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
-  }, {
-    "codeName" : "UpdateMan",
-    "logicName" : "更新人",
-    "name" : "UPDATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "UpdateDate",
-    "logicName" : "更新时间",
-    "name" : "UPDATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",

@@ -72,6 +72,16 @@ public class Action extends EntityMP implements Serializable {
     @ApiModelProperty("昨天")
     private String yesterday;
     /**
+     * 更新时间
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
+    @TableField(value = "`UPDATEDATE`")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
+    /**
      * 附加值
      */
     @TableField(value = "`EXTRA`")
@@ -87,6 +97,14 @@ public class Action extends EntityMP implements Serializable {
     @JsonProperty("files")
     @ApiModelProperty("文件")
     private String files;
+    /**
+     * 系统日志编号
+     */
+    @TableField(value = "`ACTIONSN`")
+    @JSONField(name = "actionsn")
+    @JsonProperty("actionsn")
+    @ApiModelProperty("系统日志编号")
+    private Long actionsn;
     /**
      * 上月
      */
@@ -180,6 +198,15 @@ public class Action extends EntityMP implements Serializable {
     @ApiModelProperty("备注")
     private String comment;
     /**
+     * 更新人
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @TableField(value = "`UPDATEMAN`")
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
+    private String updateman;
+    /**
      * 已读
      */
     @DEField(defaultValue = "0")
@@ -188,6 +215,15 @@ public class Action extends EntityMP implements Serializable {
     @JsonProperty("read")
     @ApiModelProperty("已读")
     private String read;
+    /**
+     * 建立人
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
     /**
      * 动作
      */
@@ -280,42 +316,6 @@ public class Action extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("项目")
     private Long project;
-    /**
-     * 系统日志编号
-     */
-    @TableField(value = "`ACTIONSN`")
-    @JSONField(name = "actionsn")
-    @JsonProperty("actionsn")
-    @ApiModelProperty("系统日志编号")
-    private Long actionsn;
-    /**
-     * 建立人
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
-    /**
-     * 更新时间
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
-    /**
-     * 更新人
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @ApiModelProperty("更新人")
-    private String updateman;
 
     /**
      * 项目相关操作
@@ -341,6 +341,14 @@ public class Action extends EntityMP implements Serializable {
     public void setExtra(String extra) {
         this.extra = extra;
         this.modify("extra", extra);
+    }
+
+    /**
+     * 设置 [系统日志编号]
+     */
+    public void setActionsn(Long actionsn) {
+        this.actionsn = actionsn;
+        this.modify("actionsn", actionsn);
     }
 
     /**
@@ -389,14 +397,6 @@ public class Action extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
-    }
-
-    /**
-     * 设置 [系统日志编号]
-     */
-    public void setActionsn(Long actionsn) {
-        this.actionsn = actionsn;
-        this.modify("actionsn", actionsn);
     }
 
 

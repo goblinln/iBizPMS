@@ -1100,8 +1100,12 @@
                   "id" : "MDCTRL"
                 },
                 "getPSDEListDataItems" : [ {
-                  "dataType" : 21,
-                  "name" : "comment"
+                  "dataType" : 25,
+                  "getFrontPSCodeList" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
+                  },
+                  "name" : "objecttype"
                 }, {
                   "dataType" : 25,
                   "getFrontPSCodeList" : {
@@ -1117,12 +1121,8 @@
                     "codeName" : "Action"
                   }
                 }, {
-                  "dataType" : 25,
-                  "getFrontPSCodeList" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
-                  },
-                  "name" : "objecttype"
+                  "dataType" : 21,
+                  "name" : "comment"
                 }, {
                   "dataType" : 25,
                   "name" : "item"
@@ -1621,6 +1621,31 @@
   "modelid" : "21b40e954d6fe878a6bdf52f176b2ed3",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Builds",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+    },
+    "name" : "TEST__BUILD",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
     "dataRSMode" : 0,

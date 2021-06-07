@@ -143,6 +143,14 @@ public class CaseStep extends EntityMP implements Serializable {
     @ApiModelProperty("步骤")
     private String desc;
     /**
+     * 用例步骤编号
+     */
+    @TableField(value = "`CASESTEPSN`")
+    @JSONField(name = "casestepsn")
+    @JsonProperty("casestepsn")
+    @ApiModelProperty("用例步骤编号")
+    private Long casestepsn;
+    /**
      * 预期
      */
     @DEField(defaultValue = "#EMPTY")
@@ -203,14 +211,6 @@ public class CaseStep extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("分组用例步骤的组编号")
     private Long parent;
-    /**
-     * 用例步骤编号
-     */
-    @TableField(value = "`CASESTEPSN`")
-    @JSONField(name = "casestepsn")
-    @JsonProperty("casestepsn")
-    @ApiModelProperty("用例步骤编号")
-    private Long casestepsn;
 
     /**
      * 
@@ -263,6 +263,14 @@ public class CaseStep extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [用例步骤编号]
+     */
+    public void setCasestepsn(Long casestepsn) {
+        this.casestepsn = casestepsn;
+        this.modify("casestepsn", casestepsn);
+    }
+
+    /**
      * 设置 [预期]
      */
     public void setExpect(String expect) {
@@ -284,14 +292,6 @@ public class CaseStep extends EntityMP implements Serializable {
     public void setParent(Long parent) {
         this.parent = parent;
         this.modify("parent", parent);
-    }
-
-    /**
-     * 设置 [用例步骤编号]
-     */
-    public void setCasestepsn(Long casestepsn) {
-        this.casestepsn = casestepsn;
-        this.modify("casestepsn", casestepsn);
     }
 
 

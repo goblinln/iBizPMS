@@ -116,6 +116,16 @@ public class UserTplDTO extends DTOBase implements Serializable {
     private String account;
 
     /**
+     * 属性 [USERTPLSN]
+     *
+     */
+    @JSONField(name = "usertplsn")
+    @JsonProperty("usertplsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("用户模板编号")
+    private Long usertplsn;
+
+    /**
      * 属性 [PUBLIC]
      *
      */
@@ -145,16 +155,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @ApiModelProperty("归属部门")
     private String dept;
 
-    /**
-     * 属性 [USERTPLSN]
-     *
-     */
-    @JSONField(name = "usertplsn")
-    @JsonProperty("usertplsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("用户模板编号")
-    private Long usertplsn;
-
 
     /**
      * 设置 [TITLE]
@@ -181,19 +181,19 @@ public class UserTplDTO extends DTOBase implements Serializable {
     }
 
     /**
-     * 设置 [PUBLIC]
-     */
-    public void setIbizpublic(String  ibizpublic){
-        this.ibizpublic = ibizpublic ;
-        this.modify("public",ibizpublic);
-    }
-
-    /**
      * 设置 [USERTPLSN]
      */
     public void setUsertplsn(Long  usertplsn){
         this.usertplsn = usertplsn ;
         this.modify("usertplsn",usertplsn);
+    }
+
+    /**
+     * 设置 [PUBLIC]
+     */
+    public void setIbizpublic(String  ibizpublic){
+        this.ibizpublic = ibizpublic ;
+        this.modify("public",ibizpublic);
     }
 
 

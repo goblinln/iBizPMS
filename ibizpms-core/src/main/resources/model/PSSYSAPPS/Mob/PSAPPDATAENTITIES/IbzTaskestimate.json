@@ -472,6 +472,11 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "TaskEstimatesn",
+    "logicName" : "任务预计编号",
+    "name" : "TASKESTIMATESN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Month",
     "logicName" : "月",
     "name" : "MONTH",
@@ -528,11 +533,6 @@
     "codeName" : "Task",
     "logicName" : "任务",
     "name" : "TASK",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "TaskEstimatesn",
-    "logicName" : "任务预计编号",
-    "name" : "TASKESTIMATESN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

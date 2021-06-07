@@ -209,6 +209,11 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "Testresultsn",
+    "logicName" : "测试结果编号",
+    "name" : "TESTRESULTSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Duration",
     "logicName" : "持续时间",
     "name" : "DURATION",
@@ -285,11 +290,6 @@
     "codeName" : "Compile",
     "logicName" : "代码编译",
     "name" : "COMPILE",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Testresultsn",
-    "logicName" : "测试结果编号",
-    "name" : "TESTRESULTSN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

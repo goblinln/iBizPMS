@@ -678,6 +678,44 @@
     "valueFormat" : "%1$s",
     "systemReserver" : true
   }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "predefinedType" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -719,6 +757,41 @@
     "valueFormat" : "%1$s",
     "phisicalDEField" : false,
     "uIAssistDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "BUILDSN",
+      "dBType" : "MYSQL5",
+      "name" : "BUILDSN",
+      "queryCodeExp" : "t1.`BUILDSN`",
+      "standardColumnName" : "`BUILDSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "BUILDSN",
+        "codeName" : "Buildsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Buildsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "版本编号",
+    "name" : "BUILDSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_RELEASETYPE_EQ",
@@ -771,6 +844,60 @@
     "valueFormat" : "%1$s",
     "phisicalDEField" : false,
     "uIAssistDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "BUILDERPK",
@@ -907,6 +1034,44 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "queryCodeExp" : "t1.`UPDATEDATE`",
+      "standardColumnName" : "`UPDATEDATE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "DESC",
@@ -1256,6 +1421,60 @@
     "stdDataType" : 25,
     "stringLength" : 255,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "queryCodeExp" : "t1.`UPDATEMAN`",
+      "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "FILEPATH",
@@ -1874,225 +2093,6 @@
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "BUILDSN",
-      "dBType" : "MYSQL5",
-      "name" : "BUILDSN",
-      "queryCodeExp" : "t1.`BUILDSN`",
-      "standardColumnName" : "`BUILDSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "BUILDSN",
-        "codeName" : "Buildsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Buildsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "版本编号",
-    "name" : "BUILDSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "name" : "CREATEMAN",
-      "queryCodeExp" : "t1.`CREATEMAN`",
-      "standardColumnName" : "`CREATEMAN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "CREATEMAN",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEMAN",
-        "codeName" : "CreateMan"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CreateMan",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSCODELISTS/SysOperator.json"
-    },
-    "predefinedType" : "CREATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEDATE",
-      "dBType" : "MYSQL5",
-      "name" : "CREATEDATE",
-      "queryCodeExp" : "t1.`CREATEDATE`",
-      "standardColumnName" : "`CREATEDATE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEDATE",
-        "codeName" : "CreateDate"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CreateDate",
-    "dEFType" : 1,
-    "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "建立时间",
-    "name" : "CREATEDATE",
-    "predefinedType" : "CREATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEMAN",
-      "queryCodeExp" : "t1.`UPDATEMAN`",
-      "standardColumnName" : "`UPDATEMAN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "UPDATEMAN",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEMAN",
-        "codeName" : "UpdateMan"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateMan",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "更新人",
-    "name" : "UPDATEMAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSCODELISTS/SysOperator.json"
-    },
-    "predefinedType" : "UPDATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEDATE",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEDATE",
-      "queryCodeExp" : "t1.`UPDATEDATE`",
-      "standardColumnName" : "`UPDATEDATE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEDATE",
-        "codeName" : "UpdateDate"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateDate",
-    "dEFType" : 1,
-    "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "更新时间",
-    "name" : "UPDATEDATE",
-    "predefinedType" : "UPDATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "allowEmpty" : false,
-    "systemReserver" : true
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "MobProjectBuildCounter",
@@ -2405,18 +2405,18 @@
         "id" : "UPDATE"
       }
     }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
       "dataAccessAction" : "READ",
       "name" : "READ",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
       }
     } ],
     "roleTag" : "CURDEPT_RW",
@@ -2443,18 +2443,18 @@
     "name" : "当前组织（读写）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
       }
     }, {
       "dataAccessAction" : "UPDATE",

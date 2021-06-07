@@ -6,34 +6,6 @@
     "id" : "MyCreateOrPartake"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "FAVORITES",
-    "name" : "FAVORITES",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__FAVORITES"
-    }
-  }, {
-    "dataAccessAction" : "PLANLINK",
-    "name" : "PLANLINK",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "PLANLINK"
-    }
-  }, {
-    "dataAccessAction" : "ASSIGNTO",
-    "name" : "ASSIGNTO",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__ASSIGNTO"
-    }
-  }, {
-    "dataAccessAction" : "BUILDLINK",
-    "name" : "BUILDLINK",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "BUILDLINK"
-    }
-  }, {
     "dataAccessAction" : "CONFIRM",
     "name" : "CONFIRM",
     "getPSDEOPPriv" : {
@@ -41,18 +13,18 @@
       "id" : "ZTProduct__CONFIRM"
     }
   }, {
-    "dataAccessAction" : "CLOSE",
-    "name" : "CLOSE",
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "ACTIVATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CLOSE"
+      "id" : "ZTProduct__ACTIVATE"
     }
   }, {
-    "dataAccessAction" : "RESOLVE",
-    "name" : "RESOLVE",
+    "dataAccessAction" : "ASSIGNTO",
+    "name" : "ASSIGNTO",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__RESOLVE"
+      "id" : "ZTProduct__ASSIGNTO"
     }
   }, {
     "dataAccessAction" : "RELEASELINK",
@@ -69,11 +41,39 @@
       "id" : "ZTProduct__NFAVORITES"
     }
   }, {
-    "dataAccessAction" : "ACTIVATE",
-    "name" : "ACTIVATE",
+    "dataAccessAction" : "RESOLVE",
+    "name" : "RESOLVE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__ACTIVATE"
+      "id" : "ZTProduct__RESOLVE"
+    }
+  }, {
+    "dataAccessAction" : "PLANLINK",
+    "name" : "PLANLINK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PLANLINK"
+    }
+  }, {
+    "dataAccessAction" : "BUILDLINK",
+    "name" : "BUILDLINK",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "BUILDLINK"
+    }
+  }, {
+    "dataAccessAction" : "FAVORITES",
+    "name" : "FAVORITES",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__FAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "CLOSE",
+    "name" : "CLOSE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
     }
   } ],
   "roleTag" : "Bug_Maintain_OpenBy",

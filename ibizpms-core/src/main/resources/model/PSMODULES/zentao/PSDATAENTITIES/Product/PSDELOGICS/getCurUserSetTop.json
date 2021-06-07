@@ -5,23 +5,6 @@
   "logicName" : "获取当前用户是否设置置顶",
   "name" : "获取当前用户是否设置置顶",
   "getPSDELogicNodes" : [ {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接668",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
-    "parallelOutput" : true
-  }, {
     "codeName" : "Rawsqlcall1",
     "getDstPSDELogicParam" : {
       "modelref" : true,
@@ -43,6 +26,23 @@
       "paramAction" : "SQLPARAM",
       "srcFieldName" : "srfloginname",
       "srcValueType" : "SESSION"
+    } ],
+    "parallelOutput" : true
+  }, {
+    "codeName" : "Begin",
+    "logicNodeType" : "BEGIN",
+    "name" : "开始",
+    "getPSDELogicLinks" : [ {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接668",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   } ],

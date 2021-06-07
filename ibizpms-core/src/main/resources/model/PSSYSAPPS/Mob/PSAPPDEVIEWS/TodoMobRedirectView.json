@@ -9,7 +9,7 @@
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
   },
   "getPSDEViewCodeName" : "MobRedirectView",
-  "getPSDEViewId" : "944DA28F-75D4-4345-A678-A5682C914540",
+  "getPSDEViewId" : "a4e75c5901c1ce6c9b4a3be404084ee3",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBREDIRECTVIEW",
@@ -48,6 +48,6 @@
   "enableWorkflow" : false,
   "redirectView" : true,
   "showCaptionBar" : true,
-  "modelid" : "25ae8db8702f1b4b13ff1cbd953004db",
+  "modelid" : "bff2e6aabf8c5a3b6c8467dc19c931fc",
   "modeltype" : "PSAPPDEVIEW"
 }

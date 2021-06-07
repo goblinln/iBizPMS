@@ -83,11 +83,6 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
         this.n_status_isnotnull = n_status_isnotnull;
     }
                 
-	private Long n_line_eq;//[id]
-	public void setN_line_eq(Long n_line_eq) {
-        this.n_line_eq = n_line_eq;
-    }
-                
 	private String n_linename_eq;//[产品线]
 	public void setN_linename_eq(String n_linename_eq) {
         this.n_linename_eq = n_linename_eq;
@@ -96,6 +91,11 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
 	private String n_linename_like;//[产品线]
 	public void setN_linename_like(String n_linename_like) {
         this.n_linename_like = n_linename_like;
+    }
+                
+	private Long n_line_eq;//[id]
+	public void setN_line_eq(Long n_line_eq) {
+        this.n_line_eq = n_line_eq;
     }
 
     /**
@@ -108,8 +108,8 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
                      wrapper.like("t1.`name`", query)
-                        .or().like("t1.`code`", query)
                         .or().like("t1.`productsn`", query)
+                        .or().like("t1.`code`", query)
             );
 		 }
 	}

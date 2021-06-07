@@ -28,39 +28,6 @@
     "checkMode" : 3,
     "name" : "表单项值规则",
     "getPSDEFValueRule" : {
-      "codeName" : "ValueRule6",
-      "name" : "任务名称不大于10",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "NAME",
-          "maxValue" : 100,
-          "name" : "[字符长度] 小于等于 100",
-          "ruleInfo" : "任务名称不大于10",
-          "includeMaxValue" : true,
-          "includeMinValue" : false
-        } ],
-        "ruleInfo" : "任务名称不大于10"
-      },
-      "getPSDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "ruleInfo" : "任务名称不大于10",
-      "checkDefault" : false,
-      "defaultMode" : false,
-      "enableBackend" : true,
-      "enableFront" : true
-    },
-    "getPSDEFormItemName" : "name",
-    "valueRuleType" : "DEFVALUERULE"
-  }, {
-    "checkMode" : 3,
-    "name" : "表单项值规则",
-    "getPSDEFValueRule" : {
       "codeName" : "ValueRule",
       "name" : "截至日期必须大于等于预计开始",
       "getPSDEFVRGroupCondition" : {
@@ -105,6 +72,39 @@
       "enableFront" : true
     },
     "getPSDEFormItemName" : "deadline",
+    "valueRuleType" : "DEFVALUERULE"
+  }, {
+    "checkMode" : 3,
+    "name" : "表单项值规则",
+    "getPSDEFValueRule" : {
+      "codeName" : "ValueRule6",
+      "name" : "任务名称不大于10",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "NAME",
+          "maxValue" : 100,
+          "name" : "[字符长度] 小于等于 100",
+          "ruleInfo" : "任务名称不大于10",
+          "includeMaxValue" : true,
+          "includeMinValue" : false
+        } ],
+        "ruleInfo" : "任务名称不大于10"
+      },
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "ruleInfo" : "任务名称不大于10",
+      "checkDefault" : false,
+      "defaultMode" : false,
+      "enableBackend" : true,
+      "enableFront" : true
+    },
+    "getPSDEFormItemName" : "name",
     "valueRuleType" : "DEFVALUERULE"
   } ],
   "getPSDEFormItems" : [ {
@@ -1927,8 +1927,12 @@
                 "id" : "MDCTRL"
               },
               "getPSDEListDataItems" : [ {
-                "dataType" : 21,
-                "name" : "comment"
+                "dataType" : 25,
+                "getFrontPSCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
+                },
+                "name" : "objecttype"
               }, {
                 "dataType" : 25,
                 "getFrontPSCodeList" : {
@@ -1944,12 +1948,8 @@
                   "codeName" : "Action"
                 }
               }, {
-                "dataType" : 25,
-                "getFrontPSCodeList" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
-                },
-                "name" : "objecttype"
+                "dataType" : 21,
+                "name" : "comment"
               }, {
                 "dataType" : 25,
                 "name" : "item"

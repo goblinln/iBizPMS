@@ -6,13 +6,6 @@
     "id" : "ProductManagerQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "DELETE",
-    "name" : "Product_Maintain_CreateBy_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    }
-  }, {
     "dataAccessAction" : "CREATE",
     "name" : "Product_Maintain_CreateBy_CREATE",
     "getPSDEOPPriv" : {
@@ -25,6 +18,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Product_Maintain_CreateBy_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
     }
   } ],
   "roleTag" : "Product_Maintain_CreateBy",

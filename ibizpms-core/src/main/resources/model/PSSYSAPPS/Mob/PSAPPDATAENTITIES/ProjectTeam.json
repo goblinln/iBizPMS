@@ -31,6 +31,40 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -65,22 +99,24 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Update",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "batchActionMode" : 2,
     "codeName" : "Save",
@@ -97,42 +133,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
@@ -374,23 +374,6 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchCntEst",
-    "methodType" : "FETCH",
-    "name" : "FetchTaskCntEstimateConsumedLeft",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskCntEstimateConsumedLeft"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchCntEst"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchSpecifyTeam",
     "methodType" : "FETCH",
     "name" : "FetchSpecifyTeam",
@@ -405,6 +388,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchSpecifyTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchCntEst",
+    "methodType" : "FETCH",
+    "name" : "FetchTaskCntEstimateConsumedLeft",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskCntEstimateConsumedLeft"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCntEst"
     },
     "builtinMethod" : false
   }, {
@@ -436,17 +436,35 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Role",
     "logicName" : "角色",
     "name" : "ROLE",
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Limited",
     "logicName" : "受限用户",
     "name" : "LIMITED",
     "stdDataType" : 25,
     "stringLength" : 8
+  }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Total",
     "logicName" : "总计可用",
@@ -459,10 +477,22 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Days",
     "logicName" : "可用工日",
     "name" : "DAYS",
     "stdDataType" : 9
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Exitdate",
     "logicName" : "退场时间",
@@ -486,6 +516,12 @@
     "name" : "ID",
     "stdDataType" : 1,
     "keyField" : true
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Consumed",
     "logicName" : "总计消耗",
@@ -542,78 +578,8 @@
     "logicName" : "项目编号",
     "name" : "ROOT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -631,25 +597,6 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 2,
-    "codeName" : "Save",
-    "methodType" : "DEACTION",
-    "name" : "Save",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Save.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Save"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "name" : "Create",
@@ -664,6 +611,57 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchSpecifyTeam",
+    "methodType" : "FETCH",
+    "name" : "FetchSpecifyTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "SpecifyTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchSpecifyTeam"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -703,22 +701,24 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "FetchSpecifyTeam",
-    "methodType" : "FETCH",
-    "name" : "FetchSpecifyTeam",
-    "getPSDEDataSet" : {
+    "batchActionMode" : 2,
+    "codeName" : "Save",
+    "methodType" : "DEACTION",
+    "name" : "Save",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "SpecifyTeam"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEACTIONS/Save.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchSpecifyTeam"
+      "id" : "Save"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",

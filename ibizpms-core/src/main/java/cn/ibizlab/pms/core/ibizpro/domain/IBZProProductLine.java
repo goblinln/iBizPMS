@@ -47,24 +47,6 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 组织机构标识
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORGID`")
-    @JSONField(name = "orgid")
-    @JsonProperty("orgid")
-    @ApiModelProperty("组织机构标识")
-    private String orgid;
-    /**
-     * 排序
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`ORDER`")
-    @JSONField(name = "order")
-    @JsonProperty("order")
-    @ApiModelProperty("排序")
-    private Integer order;
-    /**
      * id
      */
     @DEField(isKeyField = true)
@@ -73,15 +55,6 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     @JsonProperty("id")
     @ApiModelProperty("id")
     private Long id;
-    /**
-     * 简称
-     */
-    @DEField(defaultValue = "/")
-    @TableField(value = "`SHORT`")
-    @JSONField(name = "ibizshort")
-    @JsonProperty("ibizshort")
-    @ApiModelProperty("简称")
-    private String ibizshort;
     /**
      * 部门标识
      */
@@ -92,58 +65,14 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     @ApiModelProperty("部门标识")
     private String mdeptid;
     /**
-     * 由谁创建
+     * 组织机构标识
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEBY`")
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-    /**
-     * 类型
-     */
-    @DEField(defaultValue = "line")
-    @TableField(value = "`TYPE`")
-    @JSONField(name = "type")
-    @JsonProperty("type")
-    @ApiModelProperty("类型")
-    private String type;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`MDEPTNAME`")
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 产品线名称
-     */
-    @TableField(value = "`NAME`")
-    @JSONField(name = "name")
-    @JsonProperty("name")
-    @ApiModelProperty("产品线名称")
-    private String name;
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORGID`")
+    @JSONField(name = "orgid")
+    @JsonProperty("orgid")
+    @ApiModelProperty("组织机构标识")
+    private String orgid;
     /**
      * 已删除
      */
@@ -154,23 +83,86 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     @JsonProperty("deleted")
     @ApiModelProperty("已删除")
     private String deleted;
+    /**
+     * 产品线名称
+     */
+    @TableField(value = "`NAME`")
+    @JSONField(name = "name")
+    @JsonProperty("name")
+    @ApiModelProperty("产品线名称")
+    private String name;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`MDEPTNAME`")
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
+    /**
+     * 类型
+     */
+    @DEField(defaultValue = "line")
+    @TableField(value = "`TYPE`")
+    @JSONField(name = "type")
+    @JsonProperty("type")
+    @ApiModelProperty("类型")
+    private String type;
+    /**
+     * 简称
+     */
+    @DEField(defaultValue = "/")
+    @TableField(value = "`SHORT`")
+    @JSONField(name = "ibizshort")
+    @JsonProperty("ibizshort")
+    @ApiModelProperty("简称")
+    private String ibizshort;
+    /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "`CREATEBY`")
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+    /**
+     * 排序
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`ORDER`")
+    @JSONField(name = "order")
+    @JsonProperty("order")
+    @ApiModelProperty("排序")
+    private Integer order;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "`UPDATEBY`")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
 
 
 
     /**
-     * 设置 [排序]
+     * 设置 [产品线名称]
      */
-    public void setOrder(Integer order) {
-        this.order = order;
-        this.modify("order", order);
-    }
-
-    /**
-     * 设置 [简称]
-     */
-    public void setIbizshort(String ibizshort) {
-        this.ibizshort = ibizshort;
-        this.modify("short", ibizshort);
+    public void setName(String name) {
+        this.name = name;
+        this.modify("name", name);
     }
 
     /**
@@ -182,11 +174,19 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [产品线名称]
+     * 设置 [简称]
      */
-    public void setName(String name) {
-        this.name = name;
-        this.modify("name", name);
+    public void setIbizshort(String ibizshort) {
+        this.ibizshort = ibizshort;
+        this.modify("short", ibizshort);
+    }
+
+    /**
+     * 设置 [排序]
+     */
+    public void setOrder(Integer order) {
+        this.order = order;
+        this.modify("order", order);
     }
 
 

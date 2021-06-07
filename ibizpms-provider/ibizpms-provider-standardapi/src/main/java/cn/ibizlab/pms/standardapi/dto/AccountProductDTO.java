@@ -161,6 +161,16 @@ public class AccountProductDTO extends DTOBase implements Serializable {
     private Integer productplancnt;
 
     /**
+     * 属性 [PRODUCTSN]
+     *
+     */
+    @JSONField(name = "productsn")
+    @JsonProperty("productsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("产品编号")
+    private Long productsn;
+
+    /**
      * 属性 [ID]
      *
      */
@@ -546,14 +556,14 @@ public class AccountProductDTO extends DTOBase implements Serializable {
     private Integer activestorycnt;
 
     /**
-     * 属性 [PRODUCTSN]
+     * 属性 [LINENAME]
      *
      */
-    @JSONField(name = "productsn")
-    @JsonProperty("productsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("产品编号")
-    private Long productsn;
+    @JSONField(name = "linename")
+    @JsonProperty("linename")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("产品线")
+    private String linename;
 
     /**
      * 属性 [LINE]
@@ -564,16 +574,6 @@ public class AccountProductDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long line;
-
-    /**
-     * 属性 [LINENAME]
-     *
-     */
-    @JSONField(name = "linename")
-    @JsonProperty("linename")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("产品线")
-    private String linename;
 
 
     /**
@@ -606,6 +606,14 @@ public class AccountProductDTO extends DTOBase implements Serializable {
     public void setName(String  name){
         this.name = name ;
         this.modify("name",name);
+    }
+
+    /**
+     * 设置 [PRODUCTSN]
+     */
+    public void setProductsn(Long  productsn){
+        this.productsn = productsn ;
+        this.modify("productsn",productsn);
     }
 
     /**
@@ -702,14 +710,6 @@ public class AccountProductDTO extends DTOBase implements Serializable {
     public void setCode(String  code){
         this.code = code ;
         this.modify("code",code);
-    }
-
-    /**
-     * 设置 [PRODUCTSN]
-     */
-    public void setProductsn(Long  productsn){
-        this.productsn = productsn ;
-        this.modify("productsn",productsn);
     }
 
     /**

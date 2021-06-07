@@ -327,6 +327,11 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "ModuleSN",
+    "logicName" : "模块编号",
+    "name" : "MODULESN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "MdeptName",
     "logicName" : "归属部门名",
     "name" : "MDEPTNAME",
@@ -389,11 +394,6 @@
     "codeName" : "Parent",
     "logicName" : "上级模块",
     "name" : "PARENT",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "ModuleSN",
-    "logicName" : "模块编号",
-    "name" : "MODULESN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

@@ -590,15 +590,15 @@
             },
             "name" : "stage"
           }, {
+            "dataType" : 25,
+            "name" : "ischild"
+          }, {
             "dataType" : 9,
             "getFrontPSCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__pri.json"
             },
             "name" : "pri"
-          }, {
-            "dataType" : 25,
-            "name" : "ischild"
           }, {
             "dataType" : 25,
             "name" : "srfkey",
@@ -1893,13 +1893,16 @@
             "name" : "assignedto"
           }, {
             "dataType" : 25,
-            "name" : "tasktype"
+            "name" : "name"
           }, {
             "dataType" : 25,
-            "name" : "name"
+            "name" : "tasktype"
           }, {
             "dataType" : 7,
             "name" : "left"
+          }, {
+            "dataType" : 25,
+            "name" : "isfavorites"
           }, {
             "dataType" : 25,
             "getFrontPSCodeList" : {
@@ -1907,9 +1910,6 @@
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
             },
             "name" : "status1"
-          }, {
-            "dataType" : 25,
-            "name" : "isfavorites"
           }, {
             "dataType" : 25,
             "name" : "srfkey",
@@ -3289,6 +3289,13 @@
             "id" : "MDCTRL"
           },
           "getPSDEListDataItems" : [ {
+            "dataType" : 9,
+            "getFrontPSCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
+            },
+            "name" : "confirmed"
+          }, {
             "dataType" : 25,
             "name" : "title"
           }, {
@@ -3307,21 +3314,14 @@
             "name" : "status"
           }, {
             "dataType" : 25,
-            "name" : "isfavorites"
-          }, {
-            "dataType" : 9,
-            "getFrontPSCodeList" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
-            },
-            "name" : "confirmed"
-          }, {
-            "dataType" : 25,
             "getFrontPSCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
             },
             "name" : "assignedto"
+          }, {
+            "dataType" : 25,
+            "name" : "isfavorites"
           }, {
             "dataType" : 9,
             "getFrontPSCodeList" : {
@@ -4413,6 +4413,9 @@
             "name" : "pri"
           }, {
             "dataType" : 25,
+            "name" : "ischild"
+          }, {
+            "dataType" : 25,
             "getFrontPSCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameProductTeam.json"
@@ -4435,9 +4438,6 @@
           }, {
             "dataType" : 25,
             "name" : "isfavorites"
-          }, {
-            "dataType" : 25,
-            "name" : "ischild"
           }, {
             "dataType" : 25,
             "name" : "srfkey",
@@ -5669,6 +5669,13 @@
             "dataType" : 25,
             "getFrontPSCodeList" : {
               "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
+            },
+            "name" : "status1"
+          }, {
+            "dataType" : 25,
+            "getFrontPSCodeList" : {
+              "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
             },
             "name" : "assignedto"
@@ -5688,13 +5695,6 @@
           }, {
             "dataType" : 25,
             "name" : "name"
-          }, {
-            "dataType" : 25,
-            "getFrontPSCodeList" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
-            },
-            "name" : "status1"
           }, {
             "dataType" : 25,
             "getFrontPSCodeList" : {

@@ -35,25 +35,6 @@ public class ProductLineDTO extends DTOBase implements Serializable {
 	private static final long serialVersionUID = 1L;
 
     /**
-     * 属性 [ORGID]
-     *
-     */
-    @JSONField(name = "orgid")
-    @JsonProperty("orgid")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("组织机构标识")
-    private String orgid;
-
-    /**
-     * 属性 [ORDER]
-     *
-     */
-    @JSONField(name = "order")
-    @JsonProperty("order")
-    @ApiModelProperty("排序")
-    private Integer order;
-
-    /**
      * 属性 [ID]
      *
      */
@@ -62,16 +43,6 @@ public class ProductLineDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
-    /**
-     * 属性 [SHORT]
-     *
-     */
-    @JSONField(name = "ibizshort")
-    @JsonProperty("ibizshort")
-    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
-    @ApiModelProperty("简称")
-    private String ibizshort;
 
     /**
      * 属性 [MDEPTID]
@@ -84,54 +55,24 @@ public class ProductLineDTO extends DTOBase implements Serializable {
     private String mdeptid;
 
     /**
-     * 属性 [CREATEBY]
+     * 属性 [ORGID]
      *
      */
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁创建")
-    private String createby;
+    @JSONField(name = "orgid")
+    @JsonProperty("orgid")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("组织机构标识")
+    private String orgid;
 
     /**
-     * 属性 [TYPE]
+     * 属性 [DELETED]
      *
      */
-    @JSONField(name = "type")
-    @JsonProperty("type")
-    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
-    @ApiModelProperty("类型")
-    private String type;
-
-    /**
-     * 属性 [UPDATEBY]
-     *
-     */
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-
-    /**
-     * 属性 [MDEPTNAME]
-     *
-     */
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
+    @JSONField(name = "deleted")
+    @JsonProperty("deleted")
+    @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
+    @ApiModelProperty("已删除")
+    private String deleted;
 
     /**
      * 属性 [NAME]
@@ -145,30 +86,81 @@ public class ProductLineDTO extends DTOBase implements Serializable {
     private String name;
 
     /**
-     * 属性 [DELETED]
+     * 属性 [MDEPTNAME]
      *
      */
-    @JSONField(name = "deleted")
-    @JsonProperty("deleted")
-    @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
-    @ApiModelProperty("已删除")
-    private String deleted;
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
+
+    /**
+     * 属性 [TYPE]
+     *
+     */
+    @JSONField(name = "type")
+    @JsonProperty("type")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("类型")
+    private String type;
+
+    /**
+     * 属性 [SHORT]
+     *
+     */
+    @JSONField(name = "ibizshort")
+    @JsonProperty("ibizshort")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("简称")
+    private String ibizshort;
+
+    /**
+     * 属性 [CREATEBY]
+     *
+     */
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+
+    /**
+     * 属性 [ORDER]
+     *
+     */
+    @JSONField(name = "order")
+    @JsonProperty("order")
+    @ApiModelProperty("排序")
+    private Integer order;
+
+    /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+
+    /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
 
 
     /**
-     * 设置 [ORDER]
+     * 设置 [NAME]
      */
-    public void setOrder(Integer  order){
-        this.order = order ;
-        this.modify("order",order);
-    }
-
-    /**
-     * 设置 [SHORT]
-     */
-    public void setIbizshort(String  ibizshort){
-        this.ibizshort = ibizshort ;
-        this.modify("short",ibizshort);
+    public void setName(String  name){
+        this.name = name ;
+        this.modify("name",name);
     }
 
     /**
@@ -180,11 +172,19 @@ public class ProductLineDTO extends DTOBase implements Serializable {
     }
 
     /**
-     * 设置 [NAME]
+     * 设置 [SHORT]
      */
-    public void setName(String  name){
-        this.name = name ;
-        this.modify("name",name);
+    public void setIbizshort(String  ibizshort){
+        this.ibizshort = ibizshort ;
+        this.modify("short",ibizshort);
+    }
+
+    /**
+     * 设置 [ORDER]
+     */
+    public void setOrder(Integer  order){
+        this.order = order ;
+        this.modify("order",order);
     }
 
 

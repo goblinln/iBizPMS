@@ -144,6 +144,16 @@ public class TestReultDTO extends DTOBase implements Serializable {
     private String task;
 
     /**
+     * 属性 [TESTRESULTSN]
+     *
+     */
+    @JSONField(name = "testresultsn")
+    @JsonProperty("testresultsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试结果编号")
+    private Long testresultsn;
+
+    /**
      * 属性 [DURATION]
      *
      */
@@ -282,16 +292,6 @@ public class TestReultDTO extends DTOBase implements Serializable {
     @ApiModelProperty("代码编译")
     private Long compile;
 
-    /**
-     * 属性 [TESTRESULTSN]
-     *
-     */
-    @JSONField(name = "testresultsn")
-    @JsonProperty("testresultsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("测试结果编号")
-    private Long testresultsn;
-
 
     /**
      * 设置 [LASTRUNNER]
@@ -331,6 +331,14 @@ public class TestReultDTO extends DTOBase implements Serializable {
     public void setXml(String  xml){
         this.xml = xml ;
         this.modify("xml",xml);
+    }
+
+    /**
+     * 设置 [TESTRESULTSN]
+     */
+    public void setTestresultsn(Long  testresultsn){
+        this.testresultsn = testresultsn ;
+        this.modify("testresultsn",testresultsn);
     }
 
     /**
@@ -379,14 +387,6 @@ public class TestReultDTO extends DTOBase implements Serializable {
     public void setCompile(Long  compile){
         this.compile = compile ;
         this.modify("compile",compile);
-    }
-
-    /**
-     * 设置 [TESTRESULTSN]
-     */
-    public void setTestresultsn(Long  testresultsn){
-        this.testresultsn = testresultsn ;
-        this.modify("testresultsn",testresultsn);
     }
 
 

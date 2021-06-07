@@ -177,6 +177,11 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "Historysn",
+    "logicName" : "操作历史编号",
+    "name" : "HISTORYSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Old",
     "logicName" : "旧值",
     "name" : "OLD",
@@ -210,11 +215,6 @@
     "codeName" : "Action",
     "logicName" : "关联日志",
     "name" : "ACTION",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Historysn",
-    "logicName" : "操作历史编号",
-    "name" : "HISTORYSN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

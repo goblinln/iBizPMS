@@ -13,11 +13,6 @@
        }
         ,
        {
-            "unirescode":"PROJ_LINKSTORY_BUT",
-            "uniresname":"项目关联需求"
-       }
-        ,
-       {
             "unirescode":"CASE_DELETE_BUT",
             "uniresname":"测试用例删除"
        }
@@ -313,11 +308,6 @@
        }
         ,
        {
-            "unirescode":"BOTTOM_PRODUCTTEST_MENU",
-            "uniresname":"底部_测试资源_移动端"
-       }
-        ,
-       {
             "unirescode":"REPORTLY_EDIT_BUT",
             "uniresname":"汇报编辑"
        }
@@ -438,11 +428,6 @@
        }
         ,
        {
-            "unirescode":"BOTTOM_PROJECT_MENU",
-            "uniresname":"底部_项目资源_移动端"
-       }
-        ,
-       {
             "unirescode":"RELEASE_ACTIVE",
             "uniresname":"发布操作列（激活）"
        }
@@ -450,6 +435,11 @@
        {
             "unirescode":"PROJ_DELAY_BUT",
             "uniresname":"项目延期"
+       }
+        ,
+       {
+            "unirescode":"BOTTOM_MY_MENU",
+            "uniresname":"底部_我的资源_移动端"
        }
         ,
        {
@@ -475,6 +465,11 @@
        {
             "unirescode":"SYSTEMMANAGER_MENU",
             "uniresname":"系统管理"
+       }
+        ,
+       {
+            "unirescode":"PROJ_LINKSTORY_BUT",
+            "uniresname":"项目关联需求"
        }
         ,
        {
@@ -573,11 +568,6 @@
        }
         ,
        {
-            "unirescode":"PRODUCTLIN_BUT",
-            "uniresname":"产品线维护"
-       }
-        ,
-       {
             "unirescode":"BUG_NFAVOR_BUT",
             "uniresname":"Bug待收藏"
        }
@@ -618,11 +608,6 @@
        }
         ,
        {
-            "unirescode":"BOTTOM_PRODUCT_MENU",
-            "uniresname":"底部_产品资源_移动端"
-       }
-        ,
-       {
             "unirescode":"DOCLIBMODULE_NFAVOUR_BUT",
             "uniresname":"取消收藏文档库分类"
        }
@@ -648,13 +633,13 @@
        }
         ,
        {
-            "unirescode":"CASE_RUN_BUT",
-            "uniresname":"测试用例执行"
+            "unirescode":"BOTTOM_PROJECT_MENU",
+            "uniresname":"底部_项目资源_移动端"
        }
         ,
        {
-            "unirescode":"BOTTOM_MY_MENU",
-            "uniresname":"底部_我的资源_移动端"
+            "unirescode":"CASE_RUN_BUT",
+            "uniresname":"测试用例执行"
        }
         ,
        {
@@ -665,6 +650,11 @@
        {
             "unirescode":"TOP_USERCONCAT_MENU",
             "uniresname":"顶部_通讯录"
+       }
+        ,
+       {
+            "unirescode":"PRODUCTLIN_BUT",
+            "uniresname":"产品线维护"
        }
         ,
        {
@@ -725,6 +715,16 @@
        {
             "unirescode":"TASK_FORWARD_BUT",
             "uniresname":"任务转交"
+       }
+        ,
+       {
+            "unirescode":"BOTTOM_PRODUCTTEST_MENU",
+            "uniresname":"底部_测试资源_移动端"
+       }
+        ,
+       {
+            "unirescode":"BOTTOM_PRODUCT_MENU",
+            "uniresname":"底部_产品资源_移动端"
        }
         ,
        {

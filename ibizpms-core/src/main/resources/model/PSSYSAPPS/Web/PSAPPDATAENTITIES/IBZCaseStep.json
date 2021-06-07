@@ -384,6 +384,11 @@
     "stdDataType" : 21,
     "stringLength" : 65535
   }, {
+    "codeName" : "Casestepsn",
+    "logicName" : "用例步骤编号",
+    "name" : "CASESTEPSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Expect",
     "logicName" : "预期",
     "name" : "EXPECT",
@@ -423,11 +428,6 @@
     "codeName" : "Parent",
     "logicName" : "分组用例步骤的组编号",
     "name" : "PARENT",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Casestepsn",
-    "logicName" : "用例步骤编号",
-    "name" : "CASESTEPSN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

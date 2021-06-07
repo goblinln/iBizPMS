@@ -13,6 +13,36 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     }
   }, {
+    "name" : "公司领导-ZT_STORY[需求查看（我相关产品）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "公司领导-ZT_PRODUCT[产品查看（创建者或更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CreateBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "公司领导-ZT_TODO[待办维护（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
     "name" : "公司领导-ZT_PRODUCT[产品查看（公开）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -21,16 +51,6 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    }
-  }, {
-    "name" : "公司领导-ZT_PROJECT[项目查看（创建者或者更新者）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_OpenBy.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
     "name" : "公司领导-ZT_USERTPL[用户模板维护（我的模板或公开模板）]",
@@ -53,6 +73,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
+    "name" : "公司领导-ZT_PROJECT[项目查看（创建者或者更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_OpenBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
     "name" : "公司领导-ZT_PRODUCT[产品查看（参与者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -61,6 +91,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "公司领导-ZT_DOCLIB[当前组织（读写）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/CURORG_RW.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     }
   }, {
     "name" : "公司领导-ZT_CASE[测试用例查看（创建或更新）（系统使用）]",
@@ -81,46 +121,6 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-    }
-  }, {
-    "name" : "公司领导-ZT_TODO[待办维护（我的待办）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain_MyTodo.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-    }
-  }, {
-    "name" : "公司领导-ZT_DOCLIB[当前组织（读写）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/CURORG_RW.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-    }
-  }, {
-    "name" : "公司领导-ZT_STORY[需求查看（我相关产品）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read_MyReP.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-    }
-  }, {
-    "name" : "公司领导-ZT_PRODUCT[产品查看（创建者或更新者）（跟随角色）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CreateBy.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   } ],
   "getPSSysUserRoleReses" : [ {

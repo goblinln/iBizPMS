@@ -529,6 +529,18 @@
             "editorType" : "PICKEREX_TRIGGER",
             "handlerType" : "PickupText",
             "name" : "modulename",
+            "getPSAppDEACMode" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "getPSAppDEDataSet" : {
+              "modelref" : true,
+              "id" : "FetchTestModule"
+            },
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+            },
             "getPSNavigateContexts" : [ {
               "key" : "N_BRANCH_EQ",
               "name" : "N_BRANCH_EQ",
@@ -695,7 +707,7 @@
           },
           "getPSEditor" : {
             "editorParams" : {
-              "SRFNAVPARAM.product" : "%product%",
+              "SRFNAVPARAM.n_product_eq" : "%product%",
               "SRFNAVPARAM.size" : "1000",
               "AC" : "TRUE",
               "TRIGGER" : "TRUE",
@@ -711,7 +723,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchBugProject"
+              "id" : "FetchCurProduct"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -724,8 +736,8 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "product",
-              "name" : "product",
+              "key" : "n_product_eq",
+              "name" : "n_product_eq",
               "value" : "product",
               "rawValue" : false
             }, {

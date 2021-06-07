@@ -1803,6 +1803,63 @@
     "getPSDETreeNodeRSs" : [ {
       "getChildPSDETreeNode" : {
         "modelref" : true,
+        "id" : "docLib"
+      },
+      "name" : "默认根节点 - 文档库",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Doc"
+      },
+      "name" : "文档库 - 文档",
+      "parentFilter" : "lib",
+      "getParentPSAppDEField" : {
+        "name" : "LIB",
+        "codeName" : "Lib"
+      },
+      "getParentPSDER1N" : {
+        "codeName" : "Zt_doclib",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+        },
+        "masterOrder" : -1,
+        "masterRS" : 4,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+        },
+        "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB",
+        "orderValue" : 100,
+        "getPSPickupDEField" : {
+          "name" : "LIB",
+          "codeName" : "Lib"
+        },
+        "getPSPickupTextDEField" : {
+          "name" : "LIBNAME",
+          "codeName" : "Libname"
+        },
+        "pickupDEFName" : "LIB",
+        "removeActionType" : -1,
+        "removeOrder" : 0
+      },
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "docLib"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
         "id" : "Module"
       },
       "name" : "文档分类 - 文档分类",
@@ -1849,18 +1906,6 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "docLib"
-      },
-      "name" : "默认根节点 - 文档库",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ROOT"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
         "id" : "Module"
       },
       "name" : "根目录 - 文档分类",
@@ -1901,51 +1946,6 @@
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "RootModule"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Doc"
-      },
-      "name" : "文档库 - 文档",
-      "parentFilter" : "lib",
-      "getParentPSAppDEField" : {
-        "name" : "LIB",
-        "codeName" : "Lib"
-      },
-      "getParentPSDER1N" : {
-        "codeName" : "Zt_doclib",
-        "dERType" : "DER1N",
-        "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json",
-        "getMajorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-        },
-        "masterOrder" : -1,
-        "masterRS" : 4,
-        "getMinorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
-        },
-        "name" : "DER1N_ZT_DOC_ZT_DOCLIB_LIB",
-        "orderValue" : 100,
-        "getPSPickupDEField" : {
-          "name" : "LIB",
-          "codeName" : "Lib"
-        },
-        "getPSPickupTextDEField" : {
-          "name" : "LIBNAME",
-          "codeName" : "Libname"
-        },
-        "pickupDEFName" : "LIB",
-        "removeActionType" : -1,
-        "removeOrder" : 0
-      },
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "docLib"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -2000,11 +2000,11 @@
         "modelref" : true,
         "id" : "ModuleDoc"
       },
-      "name" : "文档分类 - 分类文档",
+      "name" : "根目录 - 分类文档",
       "parentFilter" : "module",
       "getParentPSDETreeNode" : {
         "modelref" : true,
-        "id" : "Module"
+        "id" : "RootModule"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -2013,11 +2013,11 @@
         "modelref" : true,
         "id" : "ModuleDoc"
       },
-      "name" : "根目录 - 分类文档",
+      "name" : "文档分类 - 分类文档",
       "parentFilter" : "module",
       "getParentPSDETreeNode" : {
         "modelref" : true,
-        "id" : "RootModule"
+        "id" : "Module"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3

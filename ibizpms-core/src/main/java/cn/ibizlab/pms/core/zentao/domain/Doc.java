@@ -167,6 +167,14 @@ public class Doc extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织")
     private String org;
     /**
+     * 文档编号
+     */
+    @TableField(value = "`DOCSN`")
+    @JSONField(name = "docsn")
+    @JsonProperty("docsn")
+    @ApiModelProperty("文档编号")
+    private Long docsn;
+    /**
      * 文档类型
      */
     @TableField(value = "`TYPE`")
@@ -383,14 +391,6 @@ public class Doc extends EntityMP implements Serializable {
     @JsonProperty("module")
     @ApiModelProperty("所属分类")
     private Long module;
-    /**
-     * 文档编号
-     */
-    @TableField(value = "`DOCSN`")
-    @JSONField(name = "docsn")
-    @JsonProperty("docsn")
-    @ApiModelProperty("文档编号")
-    private Long docsn;
 
     /**
      * 
@@ -493,6 +493,14 @@ public class Doc extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [文档编号]
+     */
+    public void setDocsn(Long docsn) {
+        this.docsn = docsn;
+        this.modify("docsn", docsn);
+    }
+
+    /**
      * 设置 [文档类型]
      */
     public void setType(String type) {
@@ -562,14 +570,6 @@ public class Doc extends EntityMP implements Serializable {
     public void setModule(Long module) {
         this.module = module;
         this.modify("module", module);
-    }
-
-    /**
-     * 设置 [文档编号]
-     */
-    public void setDocsn(Long docsn) {
-        this.docsn = docsn;
-        this.modify("docsn", docsn);
     }
 
 

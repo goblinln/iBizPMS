@@ -356,100 +356,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     private Integer superuser;
 
     /**
-     * 属性 [ORIGINALPASSWORD]
-     *
-     */
-    @JSONField(name = "originalpassword")
-    @JsonProperty("originalpassword")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("原密码")
-    private String originalpassword;
-
-    /**
-     * 属性 [NEWPASSWORD]
-     *
-     */
-    @JSONField(name = "newpassword")
-    @JsonProperty("newpassword")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("新密码")
-    private String newpassword;
-
-    /**
-     * 属性 [REPEATPASSWORD]
-     *
-     */
-    @JSONField(name = "repeatpassword")
-    @JsonProperty("repeatpassword")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("重复密码")
-    private String repeatpassword;
-
-    /**
-     * 属性 [EPROJECTS]
-     *
-     */
-    @JSONField(name = "eprojects")
-    @JsonProperty("eprojects")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("过期项目数")
-    private String eprojects;
-
-    /**
-     * 属性 [PROJECTTEAMCNT]
-     *
-     */
-    @JSONField(name = "projectteamcnt")
-    @JsonProperty("projectteamcnt")
-    @ApiModelProperty("项目成员")
-    private Integer projectteamcnt;
-
-    /**
-     * 属性 [MYTODOCNT]
-     *
-     */
-    @JSONField(name = "mytodocnt")
-    @JsonProperty("mytodocnt")
-    @ApiModelProperty("我的待办数")
-    private Integer mytodocnt;
-
-    /**
-     * 属性 [MYFAVORITEBUGS]
-     *
-     */
-    @JSONField(name = "myfavoritebugs")
-    @JsonProperty("myfavoritebugs")
-    @ApiModelProperty("我收藏的bugs")
-    private Integer myfavoritebugs;
-
-    /**
-     * 属性 [MYBUGS]
-     *
-     */
-    @JSONField(name = "mybugs")
-    @JsonProperty("mybugs")
-    @ApiModelProperty("我的bugs")
-    private Integer mybugs;
-
-    /**
-     * 属性 [LEFTLCBCNT]
-     *
-     */
-    @JSONField(name = "leftlcbcnt")
-    @JsonProperty("leftlcbcnt")
-    @ApiModelProperty("剩余里程碑")
-    private Integer leftlcbcnt;
-
-    /**
-     * 属性 [MYTASKS]
-     *
-     */
-    @JSONField(name = "mytasks")
-    @JsonProperty("mytasks")
-    @ApiModelProperty("我的任务")
-    private Integer mytasks;
-
-    /**
      * 属性 [MYEBUGS]
      *
      */
@@ -460,22 +366,13 @@ public class SysUserDTO extends DTOBase implements Serializable {
     private String myebugs;
 
     /**
-     * 属性 [MYTERRITORYCNT]
+     * 属性 [PRODUCTS]
      *
      */
-    @JSONField(name = "myterritorycnt")
-    @JsonProperty("myterritorycnt")
-    @ApiModelProperty("我的地盘")
-    private Integer myterritorycnt;
-
-    /**
-     * 属性 [MYFAVORITES]
-     *
-     */
-    @JSONField(name = "myfavorites")
-    @JsonProperty("myfavorites")
-    @ApiModelProperty("我的收藏")
-    private Integer myfavorites;
+    @JSONField(name = "products")
+    @JsonProperty("products")
+    @ApiModelProperty("未关闭产品数")
+    private Integer products;
 
     /**
      * 属性 [MYSTORYS]
@@ -487,24 +384,41 @@ public class SysUserDTO extends DTOBase implements Serializable {
     private Integer mystorys;
 
     /**
-     * 属性 [MYTODOCNTJZ]
+     * 属性 [PROJECTS]
      *
      */
-    @JSONField(name = "mytodocntjz")
-    @JsonProperty("mytodocntjz")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("今日截止待办")
-    private String mytodocntjz;
+    @JSONField(name = "projects")
+    @JsonProperty("projects")
+    @ApiModelProperty("未关闭项目数")
+    private Integer projects;
 
     /**
-     * 属性 [LEFTLCBJZCNT]
+     * 属性 [MYTERRITORYCNT]
      *
      */
-    @JSONField(name = "leftlcbjzcnt")
-    @JsonProperty("leftlcbjzcnt")
+    @JSONField(name = "myterritorycnt")
+    @JsonProperty("myterritorycnt")
+    @ApiModelProperty("我的地盘")
+    private Integer myterritorycnt;
+
+    /**
+     * 属性 [ORIGINALPASSWORD]
+     *
+     */
+    @JSONField(name = "originalpassword")
+    @JsonProperty("originalpassword")
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("剩余里程碑（今日到期）")
-    private String leftlcbjzcnt;
+    @ApiModelProperty("原密码")
+    private String originalpassword;
+
+    /**
+     * 属性 [MYFAVORITES]
+     *
+     */
+    @JSONField(name = "myfavorites")
+    @JsonProperty("myfavorites")
+    @ApiModelProperty("我的收藏")
+    private Integer myfavorites;
 
     /**
      * 属性 [MYETASKS]
@@ -517,6 +431,26 @@ public class SysUserDTO extends DTOBase implements Serializable {
     private String myetasks;
 
     /**
+     * 属性 [NEWPASSWORD]
+     *
+     */
+    @JSONField(name = "newpassword")
+    @JsonProperty("newpassword")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("新密码")
+    private String newpassword;
+
+    /**
+     * 属性 [EPROJECTS]
+     *
+     */
+    @JSONField(name = "eprojects")
+    @JsonProperty("eprojects")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("过期项目数")
+    private String eprojects;
+
+    /**
      * 属性 [MYFAVORITESTORYS]
      *
      */
@@ -524,6 +458,80 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavoritestorys")
     @ApiModelProperty("我收藏的需求数")
     private Integer myfavoritestorys;
+
+    /**
+     * 属性 [PROJECTTEAMCNT]
+     *
+     */
+    @JSONField(name = "projectteamcnt")
+    @JsonProperty("projectteamcnt")
+    @ApiModelProperty("项目成员")
+    private Integer projectteamcnt;
+
+    /**
+     * 属性 [MYTODOCNTJZ]
+     *
+     */
+    @JSONField(name = "mytodocntjz")
+    @JsonProperty("mytodocntjz")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("今日截止待办")
+    private String mytodocntjz;
+
+    /**
+     * 属性 [MYBUGS]
+     *
+     */
+    @JSONField(name = "mybugs")
+    @JsonProperty("mybugs")
+    @ApiModelProperty("我的bugs")
+    private Integer mybugs;
+
+    /**
+     * 属性 [MYTODOCNT]
+     *
+     */
+    @JSONField(name = "mytodocnt")
+    @JsonProperty("mytodocnt")
+    @ApiModelProperty("我的待办数")
+    private Integer mytodocnt;
+
+    /**
+     * 属性 [LEFTLCBCNT]
+     *
+     */
+    @JSONField(name = "leftlcbcnt")
+    @JsonProperty("leftlcbcnt")
+    @ApiModelProperty("剩余里程碑")
+    private Integer leftlcbcnt;
+
+    /**
+     * 属性 [MYFAVORITEBUGS]
+     *
+     */
+    @JSONField(name = "myfavoritebugs")
+    @JsonProperty("myfavoritebugs")
+    @ApiModelProperty("我收藏的bugs")
+    private Integer myfavoritebugs;
+
+    /**
+     * 属性 [REPEATPASSWORD]
+     *
+     */
+    @JSONField(name = "repeatpassword")
+    @JsonProperty("repeatpassword")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("重复密码")
+    private String repeatpassword;
+
+    /**
+     * 属性 [MYTASKS]
+     *
+     */
+    @JSONField(name = "mytasks")
+    @JsonProperty("mytasks")
+    @ApiModelProperty("我的任务")
+    private Integer mytasks;
 
     /**
      * 属性 [MYFAVORITETASKS]
@@ -535,22 +543,14 @@ public class SysUserDTO extends DTOBase implements Serializable {
     private Integer myfavoritetasks;
 
     /**
-     * 属性 [PRODUCTS]
+     * 属性 [LEFTLCBJZCNT]
      *
      */
-    @JSONField(name = "products")
-    @JsonProperty("products")
-    @ApiModelProperty("未关闭产品数")
-    private Integer products;
-
-    /**
-     * 属性 [PROJECTS]
-     *
-     */
-    @JSONField(name = "projects")
-    @JsonProperty("projects")
-    @ApiModelProperty("未关闭项目数")
-    private Integer projects;
+    @JSONField(name = "leftlcbjzcnt")
+    @JsonProperty("leftlcbjzcnt")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("剩余里程碑（今日到期）")
+    private String leftlcbjzcnt;
 
 
     /**

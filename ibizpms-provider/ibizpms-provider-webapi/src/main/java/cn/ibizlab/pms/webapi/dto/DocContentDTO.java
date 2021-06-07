@@ -135,6 +135,16 @@ public class DocContentDTO extends DTOBase implements Serializable {
     private Integer version;
 
     /**
+     * 属性 [DOCCONTENTSN]
+     *
+     */
+    @JSONField(name = "doccontentsn")
+    @JsonProperty("doccontentsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("文档内容编号")
+    private Long doccontentsn;
+
+    /**
      * 属性 [DIGEST]
      *
      */
@@ -173,16 +183,6 @@ public class DocContentDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("文档")
     private Long doc;
-
-    /**
-     * 属性 [DOCCONTENTSN]
-     *
-     */
-    @JSONField(name = "doccontentsn")
-    @JsonProperty("doccontentsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("文档内容编号")
-    private Long doccontentsn;
 
 
     /**
@@ -226,6 +226,14 @@ public class DocContentDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [DOCCONTENTSN]
+     */
+    public void setDoccontentsn(Long  doccontentsn){
+        this.doccontentsn = doccontentsn ;
+        this.modify("doccontentsn",doccontentsn);
+    }
+
+    /**
      * 设置 [DIGEST]
      */
     public void setDigest(String  digest){
@@ -239,14 +247,6 @@ public class DocContentDTO extends DTOBase implements Serializable {
     public void setDoc(Long  doc){
         this.doc = doc ;
         this.modify("doc",doc);
-    }
-
-    /**
-     * 设置 [DOCCONTENTSN]
-     */
-    public void setDoccontentsn(Long  doccontentsn){
-        this.doccontentsn = doccontentsn ;
-        this.modify("doccontentsn",doccontentsn);
     }
 
 

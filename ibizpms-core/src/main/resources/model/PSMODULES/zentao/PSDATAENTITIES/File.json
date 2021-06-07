@@ -867,6 +867,41 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "FILESN",
+      "dBType" : "MYSQL5",
+      "name" : "FILESN",
+      "queryCodeExp" : "t1.`FILESN`",
+      "standardColumnName" : "`FILESN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "FILESN",
+        "codeName" : "Filesn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Filesn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "附件编号",
+    "name" : "FILESN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ADDEDDATE",
       "dBType" : "MYSQL5",
       "name" : "ADDEDDATE",
@@ -1176,41 +1211,6 @@
     "name" : "EXTRA",
     "stdDataType" : 25,
     "stringLength" : 255,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "FILESN",
-      "dBType" : "MYSQL5",
-      "name" : "FILESN",
-      "queryCodeExp" : "t1.`FILESN`",
-      "standardColumnName" : "`FILESN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FILESN",
-        "codeName" : "Filesn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Filesn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "附件编号",
-    "name" : "FILESN",
-    "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {

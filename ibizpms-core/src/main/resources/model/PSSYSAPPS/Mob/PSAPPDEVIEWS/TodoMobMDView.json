@@ -326,7 +326,7 @@
     "getPSAppViewLogics" : [ {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
-      "name" : "mdctrl_u7658460_click",
+      "name" : "mdctrl_ub2dd8c8_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "todo开始（移动端）"
@@ -539,7 +539,7 @@
       "name" : "右滑行为组",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",
-        "name" : "u7658460",
+        "name" : "ub2dd8c8",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
           "caption" : "开始",

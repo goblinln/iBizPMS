@@ -114,6 +114,14 @@ public class Dept extends EntityMP implements Serializable {
     @ApiModelProperty("id")
     private Long id;
     /**
+     * 部门编号
+     */
+    @TableField(value = "`DEPTSN`")
+    @JSONField(name = "deptsn")
+    @JsonProperty("deptsn")
+    @ApiModelProperty("部门编号")
+    private Long deptsn;
+    /**
      * 部门名称
      */
     @TableField(value = "`NAME`")
@@ -137,14 +145,6 @@ public class Dept extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("parent")
     private Long parent;
-    /**
-     * 部门编号
-     */
-    @TableField(value = "`DEPTSN`")
-    @JSONField(name = "deptsn")
-    @JsonProperty("deptsn")
-    @ApiModelProperty("部门编号")
-    private Long deptsn;
 
     /**
      * 
@@ -205,6 +205,14 @@ public class Dept extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [部门编号]
+     */
+    public void setDeptsn(Long deptsn) {
+        this.deptsn = deptsn;
+        this.modify("deptsn", deptsn);
+    }
+
+    /**
      * 设置 [部门名称]
      */
     public void setName(String name) {
@@ -218,14 +226,6 @@ public class Dept extends EntityMP implements Serializable {
     public void setParent(Long parent) {
         this.parent = parent;
         this.modify("parent", parent);
-    }
-
-    /**
-     * 设置 [部门编号]
-     */
-    public void setDeptsn(Long deptsn) {
-        this.deptsn = deptsn;
-        this.modify("deptsn", deptsn);
     }
 
 

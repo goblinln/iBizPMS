@@ -98,6 +98,16 @@ public class Build extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
+     * 建立时间
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
+    /**
      * 附件
      */
     @TableField(exist = false)
@@ -106,6 +116,14 @@ public class Build extends EntityMP implements Serializable {
     @ApiModelProperty("附件")
     private String files;
     /**
+     * 版本编号
+     */
+    @TableField(value = "`BUILDSN`")
+    @JSONField(name = "buildsn")
+    @JsonProperty("buildsn")
+    @ApiModelProperty("版本编号")
+    private Long buildsn;
+    /**
      * 运行模式
      */
     @TableField(exist = false)
@@ -113,6 +131,15 @@ public class Build extends EntityMP implements Serializable {
     @JsonProperty("releasetype")
     @ApiModelProperty("运行模式")
     private String releasetype;
+    /**
+     * 建立人
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
     /**
      * 构建者（选择）
      */
@@ -138,6 +165,16 @@ public class Build extends EntityMP implements Serializable {
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
     private String org;
+    /**
+     * 更新时间
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
+    @TableField(value = "`UPDATEDATE`")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
     /**
      * 描述
      */
@@ -201,6 +238,15 @@ public class Build extends EntityMP implements Serializable {
     @JsonProperty("scmpath")
     @ApiModelProperty("源代码地址")
     private String scmpath;
+    /**
+     * 更新人
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @TableField(value = "`UPDATEMAN`")
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
+    private String updateman;
     /**
      * 下载地址
      */
@@ -305,52 +351,6 @@ public class Build extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("所属项目")
     private Long project;
-    /**
-     * 版本编号
-     */
-    @TableField(value = "`BUILDSN`")
-    @JSONField(name = "buildsn")
-    @JsonProperty("buildsn")
-    @ApiModelProperty("版本编号")
-    private Long buildsn;
-    /**
-     * 建立人
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
-    /**
-     * 建立时间
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-    /**
-     * 更新人
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @ApiModelProperty("更新人")
-    private String updateman;
-    /**
-     * 更新时间
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
 
     /**
      * 
@@ -392,6 +392,14 @@ public class Build extends EntityMP implements Serializable {
     public void setBuilder(String builder) {
         this.builder = builder;
         this.modify("builder", builder);
+    }
+
+    /**
+     * 设置 [版本编号]
+     */
+    public void setBuildsn(Long buildsn) {
+        this.buildsn = buildsn;
+        this.modify("buildsn", buildsn);
     }
 
     /**
@@ -474,14 +482,6 @@ public class Build extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
-    }
-
-    /**
-     * 设置 [版本编号]
-     */
-    public void setBuildsn(Long buildsn) {
-        this.buildsn = buildsn;
-        this.modify("buildsn", buildsn);
     }
 
 

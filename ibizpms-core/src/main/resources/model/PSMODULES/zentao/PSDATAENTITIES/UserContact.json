@@ -532,6 +532,41 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "USERCONTACTSN",
+      "dBType" : "MYSQL5",
+      "name" : "USERCONTACTSN",
+      "queryCodeExp" : "t1.`USERCONTACTSN`",
+      "standardColumnName" : "`USERCONTACTSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "USERCONTACTSN",
+        "codeName" : "Usercontactsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Usercontactsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "用户联系方式编号",
+    "name" : "USERCONTACTSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "DEPT",
       "dBType" : "MYSQL5",
       "name" : "DEPT",
@@ -627,41 +662,6 @@
     "stringLength" : 30,
     "valueFormat" : "%1$s",
     "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "USERCONTACTSN",
-      "dBType" : "MYSQL5",
-      "name" : "USERCONTACTSN",
-      "queryCodeExp" : "t1.`USERCONTACTSN`",
-      "standardColumnName" : "`USERCONTACTSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "USERCONTACTSN",
-        "codeName" : "Usercontactsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Usercontactsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "用户联系方式编号",
-    "name" : "USERCONTACTSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

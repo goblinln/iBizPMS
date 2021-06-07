@@ -159,6 +159,11 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
+    "codeName" : "Groupsn",
+    "logicName" : "群组编号",
+    "name" : "GROUPSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Acl",
     "logicName" : "acl",
     "name" : "ACL",
@@ -190,11 +195,6 @@
     "name" : "ROLE",
     "stdDataType" : 25,
     "stringLength" : 30
-  }, {
-    "codeName" : "Groupsn",
-    "logicName" : "群组编号",
-    "name" : "GROUPSN",
-    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

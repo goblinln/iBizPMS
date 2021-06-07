@@ -2107,6 +2107,42 @@
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "PRODUCTPLANSN",
+      "dBType" : "MYSQL5",
+      "name" : "PRODUCTPLANSN",
+      "queryCodeExp" : "t1.`PRODUCTPLANSN`",
+      "standardColumnName" : "`PRODUCTPLANSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PRODUCTPLANSN",
+        "codeName" : "Productplansn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Productplansn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "产品计划编号",
+    "name" : "PRODUCTPLANSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true
+  }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2410,42 +2446,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PRODUCTPLANSN",
-      "dBType" : "MYSQL5",
-      "name" : "PRODUCTPLANSN",
-      "queryCodeExp" : "t1.`PRODUCTPLANSN`",
-      "standardColumnName" : "`PRODUCTPLANSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PRODUCTPLANSN",
-        "codeName" : "Productplansn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Productplansn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "产品计划编号",
-    "name" : "PRODUCTPLANSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "ComputeBeginStr",
@@ -3409,6 +3409,9 @@
     "name" : "READ",
     "id" : "ZTProduct__READ"
   }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
     "logicName" : "Project_Read",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
@@ -3418,9 +3421,6 @@
     },
     "name" : "READ",
     "id" : "Project__READ"
-  }, {
-    "logicName" : "读取",
-    "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

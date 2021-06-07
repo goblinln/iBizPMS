@@ -138,13 +138,11 @@
     "stringLength" : 100,
     "keyField" : true
   }, {
-    "codeName" : "DynaFilterName",
-    "logicName" : "动态搜索栏名称",
-    "name" : "DYNAFILTERNAME",
+    "codeName" : "DeptId",
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
     "stdDataType" : 25,
-    "stringLength" : 200,
-    "enableQuickSearch" : true,
-    "majorField" : true
+    "stringLength" : 60
   }, {
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
@@ -152,17 +150,11 @@
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
-    "codeName" : "CreateDate",
-    "logicName" : "建立时间",
-    "name" : "CREATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
-  }, {
-    "codeName" : "CreateMan",
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
+    "codeName" : "Formname",
+    "logicName" : "表单名称",
+    "name" : "FORMNAME",
     "stdDataType" : 25,
-    "stringLength" : 60
+    "stringLength" : 100
   }, {
     "codeName" : "UpdateDate",
     "logicName" : "更新时间",
@@ -176,17 +168,11 @@
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
-    "codeName" : "DeptId",
-    "logicName" : "组织部门标识",
-    "name" : "DEPTID",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "Formname",
-    "logicName" : "表单名称",
-    "name" : "FORMNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
     "codeName" : "Dename",
     "logicName" : "实体名称",
@@ -194,11 +180,25 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "DynaFilterName",
+    "logicName" : "动态搜索栏名称",
+    "name" : "DYNAFILTERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
     "codeName" : "Data",
     "logicName" : "数据",
     "name" : "DATA",
     "stdDataType" : 21,
     "stringLength" : 1048576
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Create",

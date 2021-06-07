@@ -82,6 +82,16 @@ public class TestTask extends EntityMP implements Serializable {
     @ApiModelProperty("负责人（选择）")
     private String ownerpk;
     /**
+     * 更新时间
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
+    @TableField(value = "`UPDATEDATE`")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
+    /**
      * 抄送给
      */
     @DEField(defaultValue = "#EMPTY")
@@ -107,6 +117,15 @@ public class TestTask extends EntityMP implements Serializable {
     @ApiModelProperty("抄送给")
     private String mailtopk;
     /**
+     * 建立人
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
+    /**
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
@@ -115,6 +134,16 @@ public class TestTask extends EntityMP implements Serializable {
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
     private String updateby;
+    /**
+     * 建立时间
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
     /**
      * 归属组织
      */
@@ -205,6 +234,15 @@ public class TestTask extends EntityMP implements Serializable {
     @ApiModelProperty("当前状态")
     private String status;
     /**
+     * 更新人
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @TableField(value = "`UPDATEMAN`")
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
+    private String updateman;
+    /**
      * 联系人
      */
     @TableField(exist = false)
@@ -249,6 +287,14 @@ public class TestTask extends EntityMP implements Serializable {
     @JsonProperty("auto")
     @ApiModelProperty("auto")
     private String auto;
+    /**
+     * 测试版本编号
+     */
+    @TableField(value = "`TESTTASKSN`")
+    @JSONField(name = "testtasksn")
+    @JsonProperty("testtasksn")
+    @ApiModelProperty("测试版本编号")
+    private Long testtasksn;
     /**
      * 名称
      */
@@ -308,52 +354,6 @@ public class TestTask extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("所属项目")
     private Long project;
-    /**
-     * 测试版本编号
-     */
-    @TableField(value = "`TESTTASKSN`")
-    @JSONField(name = "testtasksn")
-    @JsonProperty("testtasksn")
-    @ApiModelProperty("测试版本编号")
-    private Long testtasksn;
-    /**
-     * 建立人
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
-    /**
-     * 建立时间
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-    /**
-     * 更新人
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @ApiModelProperty("更新人")
-    private String updateman;
-    /**
-     * 更新时间
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
 
     /**
      * 
@@ -482,6 +482,14 @@ public class TestTask extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [测试版本编号]
+     */
+    public void setTesttasksn(Long testtasksn) {
+        this.testtasksn = testtasksn;
+        this.modify("testtasksn", testtasksn);
+    }
+
+    /**
      * 设置 [名称]
      */
     public void setName(String name) {
@@ -511,14 +519,6 @@ public class TestTask extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
-    }
-
-    /**
-     * 设置 [测试版本编号]
-     */
-    public void setTesttasksn(Long testtasksn) {
-        this.testtasksn = testtasksn;
-        this.modify("testtasksn", testtasksn);
     }
 
 

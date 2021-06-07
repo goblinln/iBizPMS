@@ -275,45 +275,57 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ChildDocLibModule"
+          "id" : "DocLib"
         },
-        "name" : "文档库模块 - 文档库模块",
+        "name" : "所有文档库 - 文档库",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "DocLibModule"
+        },
+        "name" : "文档库 - 根模块",
         "getParentPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
+          "name" : "ROOT",
+          "codeName" : "Root"
         },
         "getParentPSDER1N" : {
-          "codeName" : "PDocLibModule",
+          "codeName" : "DocLib",
           "dERType" : "DER1N",
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
-          "logicName" : "父模块",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json",
+          "logicName" : "文档分类",
           "getMajorPSDataEntity" : {
             "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
           },
           "masterOrder" : -1,
-          "masterRS" : 0,
+          "masterRS" : 4,
           "getMinorPSDataEntity" : {
             "modelref" : true,
             "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
           },
-          "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
+          "name" : "DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT",
           "orderValue" : 100,
           "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
+            "name" : "ROOT",
+            "codeName" : "Root"
           },
           "getPSPickupTextDEField" : {
-            "name" : "MODULENAME",
-            "codeName" : "Modulename"
+            "name" : "DOCLIBNAME",
+            "codeName" : "Doclibname"
           },
-          "pickupDEFName" : "PARENT",
+          "pickupDEFName" : "ROOT",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ChildDocLibModule"
+          "id" : "DocLib"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -377,57 +389,45 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "DocLibModule"
+          "id" : "ChildDocLibModule"
         },
-        "name" : "文档库 - 根模块",
+        "name" : "文档库模块 - 文档库模块",
         "getParentPSAppDEField" : {
-          "name" : "ROOT",
-          "codeName" : "Root"
+          "name" : "PARENT",
+          "codeName" : "Parent"
         },
         "getParentPSDER1N" : {
-          "codeName" : "DocLib",
+          "codeName" : "PDocLibModule",
           "dERType" : "DER1N",
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json",
-          "logicName" : "文档分类",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+          "logicName" : "父模块",
           "getMajorPSDataEntity" : {
             "modelref" : true,
-            "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
           },
           "masterOrder" : -1,
-          "masterRS" : 4,
+          "masterRS" : 0,
           "getMinorPSDataEntity" : {
             "modelref" : true,
             "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
           },
-          "name" : "DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT",
+          "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
           "orderValue" : 100,
           "getPSPickupDEField" : {
-            "name" : "ROOT",
-            "codeName" : "Root"
+            "name" : "PARENT",
+            "codeName" : "Parent"
           },
           "getPSPickupTextDEField" : {
-            "name" : "DOCLIBNAME",
-            "codeName" : "Doclibname"
+            "name" : "MODULENAME",
+            "codeName" : "Modulename"
           },
-          "pickupDEFName" : "ROOT",
+          "pickupDEFName" : "PARENT",
           "removeActionType" : -1,
           "removeOrder" : 0
         },
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "DocLib"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "DocLib"
-        },
-        "name" : "所有文档库 - 文档库",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
+          "id" : "ChildDocLibModule"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

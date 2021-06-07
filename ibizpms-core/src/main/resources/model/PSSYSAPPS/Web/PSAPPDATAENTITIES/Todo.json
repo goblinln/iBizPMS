@@ -31,6 +31,23 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -45,6 +62,57 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Finish",
+    "methodType" : "DEACTION",
+    "name" : "Finish",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Finish"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -67,40 +135,6 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Finish",
-    "methodType" : "DEACTION",
-    "name" : "Finish",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FINISH"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Finish"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -115,40 +149,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Start",
-    "methodType" : "DEACTION",
-    "name" : "Start",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "START"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -676,6 +676,23 @@
     "stringLength" : 255
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
     "name" : "Update",
@@ -690,6 +707,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Start",
+    "methodType" : "DEACTION",
+    "name" : "Start",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Start"
     },
     "builtinMethod" : false
   }, {
@@ -710,20 +744,37 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchAccount",
-    "methodType" : "FETCH",
-    "name" : "FetchAccount",
-    "getPSDEDataSet" : {
+    "codeName" : "Finish",
+    "methodType" : "DEACTION",
+    "name" : "Finish",
+    "getPSDEAction" : {
       "modelref" : true,
-      "id" : "Account"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "FINISH"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "FetchAccount"
+      "id" : "Finish"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -746,40 +797,6 @@
     "builtinMethod" : false,
     "enableBatchAction" : true
   }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Finish",
-    "methodType" : "DEACTION",
-    "name" : "Finish",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Finish.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FINISH"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Finish"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
     "name" : "GetDraft",
@@ -797,37 +814,20 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Start",
-    "methodType" : "DEACTION",
-    "name" : "Start",
-    "getPSDEAction" : {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "FetchAccount",
+    "getPSDEDataSet" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
+      "id" : "Account"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "START"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Start"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -1102,6 +1102,35 @@
     "uIActionType" : "DEUIACTION",
     "id" : "edit1Cz@Todo"
   }, {
+    "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
+    "caption" : "开始",
+    "codeName" : "Start",
+    "confirmMsg" : "您确定要开始这条待办吗？",
+    "dataAccessAction" : "START",
+    "fullCodeName" : "Todo_Start",
+    "name" : "todo开始",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf01d@FontAwesome",
+      "cssClass" : "fa fa-play-circle-o"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "Start",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "Start@Todo"
+  }, {
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "TodoCreate",
@@ -1174,34 +1203,6 @@
     "uIActionTag" : "finishCz",
     "uIActionType" : "DEUIACTION",
     "id" : "finishCz@Todo"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "开始",
-    "codeName" : "StartCz",
-    "confirmMsg" : "您确定要开始这条待办吗？",
-    "dataAccessAction" : "START",
-    "fullCodeName" : "Todo_StartCz",
-    "name" : "todo开始（操作栏）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "StartCz",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "StartCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "删除",
@@ -1373,35 +1374,6 @@
     "id" : "activateCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "开始",
-    "codeName" : "Start",
-    "confirmMsg" : "您确定要开始这条待办吗？",
-    "dataAccessAction" : "START",
-    "fullCodeName" : "Todo_Start",
-    "name" : "todo开始",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "Start",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "Start@Todo"
-  }, {
-    "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "assignToCz",
     "getFrontPSAppView" : {
@@ -1427,6 +1399,34 @@
     "uIActionType" : "DEUIACTION",
     "reloadData" : true,
     "id" : "assignToCz@Todo"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "开始",
+    "codeName" : "StartCz",
+    "confirmMsg" : "您确定要开始这条待办吗？",
+    "dataAccessAction" : "START",
+    "fullCodeName" : "Todo_StartCz",
+    "name" : "todo开始（操作栏）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Todo.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf01d@FontAwesome",
+      "cssClass" : "fa fa-play-circle-o"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "StartCz",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "StartCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
@@ -1710,6 +1710,13 @@
     "mSTag" : "wait",
     "name" : "wait",
     "getPSDEMainStateActions" : [ {
+      "name" : "Start",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -1763,13 +1770,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Start",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
       },
       "allowMode" : true
     }, {

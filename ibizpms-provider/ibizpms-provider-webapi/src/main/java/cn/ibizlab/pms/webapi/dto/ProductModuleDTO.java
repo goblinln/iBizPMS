@@ -76,6 +76,16 @@ public class ProductModuleDTO extends DTOBase implements Serializable {
     private String name;
 
     /**
+     * 属性 [CREATEBY]
+     *
+     */
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+
+    /**
      * 属性 [BRANCH]
      *
      */
@@ -123,6 +133,16 @@ public class ProductModuleDTO extends DTOBase implements Serializable {
     private String type;
 
     /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+
+    /**
      * 属性 [OWNER]
      *
      */
@@ -131,6 +151,16 @@ public class ProductModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("owner")
     private String owner;
+
+    /**
+     * 属性 [MDEPTNAME]
+     *
+     */
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
 
     /**
      * 属性 [ISLEAF]
@@ -153,6 +183,16 @@ public class ProductModuleDTO extends DTOBase implements Serializable {
     private Long id;
 
     /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+
+    /**
      * 属性 [COLLECTOR]
      *
      */
@@ -161,6 +201,26 @@ public class ProductModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("collector")
     private String collector;
+
+    /**
+     * 属性 [MDEPTID]
+     *
+     */
+    @JSONField(name = "mdeptid")
+    @JsonProperty("mdeptid")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("部门标识")
+    private String mdeptid;
+
+    /**
+     * 属性 [ORGID]
+     *
+     */
+    @JSONField(name = "orgid")
+    @JsonProperty("orgid")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("组织机构标识")
+    private String orgid;
 
     /**
      * 属性 [ROOTNAME]
@@ -201,66 +261,6 @@ public class ProductModuleDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long parent;
-
-    /**
-     * 属性 [MDEPTID]
-     *
-     */
-    @JSONField(name = "mdeptid")
-    @JsonProperty("mdeptid")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("部门标识")
-    private String mdeptid;
-
-    /**
-     * 属性 [MDEPTNAME]
-     *
-     */
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
-
-    /**
-     * 属性 [ORGID]
-     *
-     */
-    @JSONField(name = "orgid")
-    @JsonProperty("orgid")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("组织机构标识")
-    private String orgid;
-
-    /**
-     * 属性 [CREATEBY]
-     *
-     */
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-
-    /**
-     * 属性 [UPDATEBY]
-     *
-     */
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
 
 
     /**

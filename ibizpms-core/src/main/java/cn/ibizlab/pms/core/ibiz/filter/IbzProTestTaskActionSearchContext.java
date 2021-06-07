@@ -28,14 +28,19 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzProTestTaskAction;
 public class IbzProTestTaskActionSearchContext extends QueryWrapperContext<IbzProTestTaskAction> {
 
                 
-	private String n_action_eq;//[动作]
-	public void setN_action_eq(String n_action_eq) {
-        this.n_action_eq = n_action_eq;
-    }
-                
 	private String n_actionmanner_eq;//[操作方式]
 	public void setN_actionmanner_eq(String n_actionmanner_eq) {
         this.n_actionmanner_eq = n_actionmanner_eq;
+    }
+                
+	private String n_objecttype_eq;//[对象类型]
+	public void setN_objecttype_eq(String n_objecttype_eq) {
+        this.n_objecttype_eq = n_objecttype_eq;
+    }
+                
+	private String n_action_eq;//[动作]
+	public void setN_action_eq(String n_action_eq) {
+        this.n_action_eq = n_action_eq;
     }
                 
 	private String n_comment_like;//[备注]
@@ -46,11 +51,6 @@ public class IbzProTestTaskActionSearchContext extends QueryWrapperContext<IbzPr
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
-    }
-                
-	private String n_objecttype_eq;//[对象类型]
-	public void setN_objecttype_eq(String n_objecttype_eq) {
-        this.n_objecttype_eq = n_objecttype_eq;
     }
                 
 	private String n_read_eq;//[已读]

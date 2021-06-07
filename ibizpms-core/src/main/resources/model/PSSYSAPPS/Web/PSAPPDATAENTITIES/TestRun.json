@@ -176,6 +176,11 @@
     "name" : "VERSION",
     "stdDataType" : 9
   }, {
+    "codeName" : "Testrunsn",
+    "logicName" : "测试运行编号",
+    "name" : "TESTRUNSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "LastRunDate",
     "logicName" : "最后执行时间",
     "name" : "LASTRUNDATE",
@@ -246,11 +251,6 @@
     "codeName" : "Task",
     "logicName" : "测试单",
     "name" : "TASK",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Testrunsn",
-    "logicName" : "测试运行编号",
-    "name" : "TESTRUNSN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

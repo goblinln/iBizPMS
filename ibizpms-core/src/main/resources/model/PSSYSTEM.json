@@ -125,6 +125,9 @@
     "path" : "PSMODULES/zentao/PSCODELISTS/TestTask.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizsysmodel/PSCODELISTS/SQLBuild.json"
   }, {
     "modelref" : true,
@@ -135,9 +138,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Testsuite__type.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json"
@@ -191,13 +191,7 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllRepo.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
-  }, {
-    "modelref" : true,
     "path" : "PSCODELISTS/CodeList48.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Story__color.json"
@@ -320,9 +314,6 @@
     "path" : "PSCODELISTS/CodeList86.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
-  }, {
-    "modelref" : true,
     "path" : "PSCODELISTS/CodeList89.json"
   }, {
     "modelref" : true,
@@ -360,6 +351,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__pri.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Product__status.json"
@@ -518,6 +512,9 @@
     "path" : "PSMODULES/ibizplugin/PSCODELISTS/Message__type.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/AllProductPlan.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/TypeAll.json"
   }, {
     "modelref" : true,
@@ -528,6 +525,9 @@
   }, {
     "modelref" : true,
     "path" : "PSCODELISTS/CodeList40.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/TimeEvaluationStatuts.json"
@@ -803,6 +803,9 @@
     "path" : "PSMODULES/zentao/PSCODELISTS/Story__source.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+  }, {
+    "modelref" : true,
     "path" : "PSCODELISTS/CodeList105.json"
   }, {
     "modelref" : true,
@@ -869,6 +872,9 @@
     "path" : "PSCODELISTS/CodeList26.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Bug__type.json"
   }, {
     "modelref" : true,
@@ -918,9 +924,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Product__type.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Project__status.json"
@@ -978,9 +981,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Testrun__result.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/AllProductPlan.json"
   }, {
     "modelref" : true,
     "path" : "PSCODELISTS/CodeList53.json"
@@ -1471,9 +1471,6 @@
   } ],
   "getAllPSSysBackServices" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/report/PSSYSBACKSERVICES/pushProjectWeekly.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json"
   }, {
     "modelref" : true,
@@ -1496,6 +1493,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/report/PSSYSBACKSERVICES/CreateReportUserDailyService.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/pushProjectWeekly.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json"
@@ -1546,214 +1546,214 @@
   "getAllPSSysDataSyncAgents" : [ {
     "agentType" : "ACTIVEMQ",
     "codeName" : "UniData",
-    "dynaModelFilePath" : "PSSYSDATASYNCAGENTS/UniData.json",
-    "name" : "数据推送",
-    "syncDir" : "OUT"
-  }, {
-    "agentType" : "ACTIVEMQ",
-    "codeName" : "UniData",
     "dynaModelFilePath" : "PSMODULES/zentao/PSSYSDATASYNCAGENTS/UniData.json",
     "name" : "数据接收",
     "syncDir" : "IN"
+  }, {
+    "agentType" : "ACTIVEMQ",
+    "codeName" : "UniData",
+    "dynaModelFilePath" : "PSSYSDATASYNCAGENTS/UniData.json",
+    "name" : "数据推送",
+    "syncDir" : "OUT"
   } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProAGENTSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCLIENTSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCOMPILESeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProWEEKLYSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLOGSeq.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCHATSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestRunSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDeptSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProductPlanSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserTplSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProNotifySeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMQUEUESeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBuildSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestSuiteSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCompanySeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCHATUSERSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProModuleSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCaseStepSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOHISTORYSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserContactSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOFILESSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestReportSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProActionSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProFileSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProductSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIM_MESSAGESeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBranchSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProPRODUCTDAILYSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestResultSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSCORESeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocContentSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCRONSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCONFERENCESeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCONFERENCEACTIONSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBLOCKSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLANGSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProJENKINSSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProReleaseSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProjectSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProPRODUCTWEEKLYSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProMONTHLYSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEXTENSIONSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEFFORTSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocLibSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDeptSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProStorySeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLOGSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCompanySeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProPRODUCTDAILYSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIM_MESSAGESeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOHISTORYSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProHistorySeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProPRODUCTMONTHLYIDSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskEstimateSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTeamSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProGroupSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLOGINSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCaseSeq.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDAILYIDSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBuildSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEntrySeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCLIENTSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProActionSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCRONSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCONFERENCEACTIONSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProNotifySeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCaseSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProGroupSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDAILYIDSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPORTLYSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProPRODUCTWEEKLYSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestReportSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProConfigSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocLibSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProRELATIONSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTeamSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEFFORTSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProductSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserQuerySeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCHATUSERSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProReleaseSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserTplSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProRELATIONSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProStorySeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProductPlanSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProJENKINSSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBLOCKSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCOMPILESeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProModuleSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProConfigSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEXTENSIONSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLANGSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProAGENTSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEntrySeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserContactSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProFileSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOFILESSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskEstimateSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocContentSeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestTaskSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLOGINSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestRunSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProjectSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMQUEUESeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestResultSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProPRODUCTMONTHLYIDSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBranchSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProWEEKLYSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSCORESeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCaseStepSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestSuiteSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocSeq.json"
   } ],
   "getAllPSSysTranslators" : [ {
     "modelref" : true,
@@ -1776,10 +1776,6 @@
     "name" : "测试用例（用例确认）",
     "resCode" : "CASE_CASECOF_BUT",
     "id" : "ibiz__CASE_CASECOF_BUT"
-  }, {
-    "name" : "项目关联需求",
-    "resCode" : "PROJ_LINKSTORY_BUT",
-    "id" : "ibiz__PROJ_LINKSTORY_BUT"
   }, {
     "name" : "测试用例删除",
     "resCode" : "CASE_DELETE_BUT",
@@ -2017,10 +2013,6 @@
     "resCode" : "STORY_UNLP_BUT",
     "id" : "ibiz__STORY_UNLP_BUT"
   }, {
-    "name" : "底部_测试资源_移动端",
-    "resCode" : "BOTTOM_PRODUCTTEST_MENU",
-    "id" : "BOTTOM_PRODUCTTEST_MENU"
-  }, {
     "name" : "汇报编辑",
     "resCode" : "REPORTLY_EDIT_BUT",
     "id" : "report__REPORTLY_EDIT_BUT"
@@ -2117,10 +2109,6 @@
     "resCode" : "BUG_CREATECASE_BUT",
     "id" : "ibiz__BUG_CREATECASE_BUT"
   }, {
-    "name" : "底部_项目资源_移动端",
-    "resCode" : "BOTTOM_PROJECT_MENU",
-    "id" : "BOTTOM_PROJECT_MENU"
-  }, {
     "name" : "发布操作列（激活）",
     "resCode" : "RELEASE_ACTIVE",
     "id" : "ibiz__RELEASE_ACTIVE"
@@ -2128,6 +2116,10 @@
     "name" : "项目延期",
     "resCode" : "PROJ_DELAY_BUT",
     "id" : "ibiz__PROJ_DELAY_BUT"
+  }, {
+    "name" : "底部_我的资源_移动端",
+    "resCode" : "BOTTOM_MY_MENU",
+    "id" : "BOTTOM_MY_MENU"
   }, {
     "name" : "项目编辑",
     "resCode" : "PROJ_EDIT_BUT",
@@ -2148,6 +2140,10 @@
     "name" : "系统管理",
     "resCode" : "SYSTEMMANAGER_MENU",
     "id" : "zentao__SYSTEMMANAGER_MENU"
+  }, {
+    "name" : "项目关联需求",
+    "resCode" : "PROJ_LINKSTORY_BUT",
+    "id" : "ibiz__PROJ_LINKSTORY_BUT"
   }, {
     "name" : "顶部_ibz软件生产管理",
     "resCode" : "TOP_IBZAPPMANAGER_MENU",
@@ -2225,10 +2221,6 @@
     "resCode" : "PRODSTA_STORYCRT_BUT",
     "id" : "ibiz__PRODSTA_STORYCRT_BUT"
   }, {
-    "name" : "产品线维护",
-    "resCode" : "PRODUCTLIN_BUT",
-    "id" : "ibiz__PRODUCTLIN_BUT"
-  }, {
     "name" : "Bug待收藏",
     "resCode" : "BUG_NFAVOR_BUT",
     "id" : "ibiz__BUG_NFAVOR_BUT"
@@ -2261,10 +2253,6 @@
     "resCode" : "BUG_TOSTORY_BUT",
     "id" : "ibiz__BUG_TOSTORY_BUT"
   }, {
-    "name" : "底部_产品资源_移动端",
-    "resCode" : "BOTTOM_PRODUCT_MENU",
-    "id" : "BOTTOM_PRODUCT_MENU"
-  }, {
     "name" : "取消收藏文档库分类",
     "resCode" : "DOCLIBMODULE_NFAVOUR_BUT",
     "id" : "ibiz__DOCLIBMODULE_NFAVOUR_BUT"
@@ -2285,13 +2273,13 @@
     "resCode" : "PROP_LBUG_BUT",
     "id" : "ibiz__PROP_LBUG_BUT"
   }, {
+    "name" : "底部_项目资源_移动端",
+    "resCode" : "BOTTOM_PROJECT_MENU",
+    "id" : "BOTTOM_PROJECT_MENU"
+  }, {
     "name" : "测试用例执行",
     "resCode" : "CASE_RUN_BUT",
     "id" : "ibiz__CASE_RUN_BUT"
-  }, {
-    "name" : "底部_我的资源_移动端",
-    "resCode" : "BOTTOM_MY_MENU",
-    "id" : "BOTTOM_MY_MENU"
   }, {
     "name" : "需求变更",
     "resCode" : "STORY_CHANGED_BUT",
@@ -2300,6 +2288,10 @@
     "name" : "顶部_通讯录",
     "resCode" : "TOP_USERCONCAT_MENU",
     "id" : "zentao__TOP_USERCONCAT_MENU"
+  }, {
+    "name" : "产品线维护",
+    "resCode" : "PRODUCTLIN_BUT",
+    "id" : "ibiz__PRODUCTLIN_BUT"
   }, {
     "name" : "项目激活",
     "resCode" : "PROJ_ACTIVATION_BUT",
@@ -2348,6 +2340,14 @@
     "name" : "任务转交",
     "resCode" : "TASK_FORWARD_BUT",
     "id" : "ibiz__TASK_FORWARD_BUT"
+  }, {
+    "name" : "底部_测试资源_移动端",
+    "resCode" : "BOTTOM_PRODUCTTEST_MENU",
+    "id" : "BOTTOM_PRODUCTTEST_MENU"
+  }, {
+    "name" : "底部_产品资源_移动端",
+    "resCode" : "BOTTOM_PRODUCT_MENU",
+    "id" : "BOTTOM_PRODUCT_MENU"
   }, {
     "name" : "用例库模块编辑",
     "resCode" : "LIBM_EDIT_BUT",
@@ -2511,13 +2511,16 @@
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Proxy.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSOPPRIVS/AccessAdmin.json"
+    "path" : "PSSYSOPPRIVS/AccessUser.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/Agent.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VisitorC.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSOPPRIVS/AccessAdmin.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/AgentDebug.json"
@@ -2530,9 +2533,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VisitorB.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSOPPRIVS/AccessUser.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/VicePresident.json"
@@ -2551,19 +2551,43 @@
   } ],
   "getAllPSSysValueRules" : [ {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto6.json"
+    "path" : "PSSYSVALUERULES/Auto7.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto17.json"
+    "path" : "PSSYSVALUERULES/Auto5.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto15.json"
+    "path" : "PSSYSVALUERULES/Auto4.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto2.json"
   }, {
     "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto10.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto15.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto12.json"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto18.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto11.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto8.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto16.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto1.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto6.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto13.json"
@@ -2575,37 +2599,13 @@
     "path" : "PSSYSVALUERULES/Auto3.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto9.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto5.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto12.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto7.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto8.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto10.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto1.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto16.json"
-  }, {
-    "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto19.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto11.json"
+    "path" : "PSSYSVALUERULES/Auto17.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto4.json"
+    "path" : "PSSYSVALUERULES/Auto9.json"
   } ],
   "getAllPSSystemModules" : [ {
     "getAllPSCodeLists" : [ {
@@ -2619,7 +2619,7 @@
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json"
     }, {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json"
@@ -2635,12 +2635,6 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/AllRepo.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/AllCase.json"
@@ -2664,10 +2658,10 @@
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
     }, {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
     }, {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/IsAssigned.json"
@@ -2683,6 +2677,9 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeam.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/Zt__productplan.json"
@@ -2724,6 +2721,9 @@
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProductTeam.json"
     }, {
       "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+    }, {
+      "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/ProductQuickpacket.json"
     }, {
       "modelref" : true,
@@ -2742,13 +2742,13 @@
       "path" : "PSMODULES/ibiz/PSCODELISTS/UserYEAR.json"
     }, {
       "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
+    }, {
+      "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/CloseProduct.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/Bug_type_pie.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSCODELISTS/AllStory.json"
@@ -3147,6 +3147,9 @@
       "path" : "PSMODULES/zentao/PSCODELISTS/Testcase__stage.json"
     }, {
       "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/AllProductPlan.json"
+    }, {
+      "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/TypeAll.json"
     }, {
       "modelref" : true,
@@ -3325,9 +3328,6 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Testrun__result.json"
-    }, {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/AllProductPlan.json"
     } ],
     "getAllPSDataEntities" : [ {
       "modelref" : true,

@@ -672,106 +672,6 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ZT_PRODUCT"
-        },
-        "name" : "所有模块 - 项目产品（动态）",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ALL"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "name" : "非根模块（动态） - 非根模块（动态）",
-        "getParentPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "getParentPSDER1N" : {
-          "codeName" : "ParentModule",
-          "dERType" : "DER1N",
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-          },
-          "masterOrder" : -1,
-          "masterRS" : 0,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-          },
-          "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
-          "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PARENTNAME",
-            "codeName" : "ParentName"
-          },
-          "pickupDEFName" : "PARENT",
-          "removeActionType" : -1,
-          "removeOrder" : 0
-        },
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "MODULE"
-        },
-        "name" : "根模块无分支（动态） - 非根模块（动态）",
-        "getParentPSAppDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "getParentPSDER1N" : {
-          "codeName" : "ParentModule",
-          "dERType" : "DER1N",
-          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
-          "getMajorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-          },
-          "masterOrder" : -1,
-          "masterRS" : 0,
-          "getMinorPSDataEntity" : {
-            "modelref" : true,
-            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-          },
-          "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
-          "orderValue" : 100,
-          "getPSPickupDEField" : {
-            "name" : "PARENT",
-            "codeName" : "Parent"
-          },
-          "getPSPickupTextDEField" : {
-            "name" : "PARENTNAME",
-            "codeName" : "ParentName"
-          },
-          "pickupDEFName" : "PARENT",
-          "removeActionType" : -1,
-          "removeOrder" : 0
-        },
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "Root_NoBranch"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "ROOTMODULE"
         },
         "name" : "平台（动态） - 根模块（动态）",
@@ -790,6 +690,18 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "BRANCHS"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ZT_PRODUCT"
+        },
+        "name" : "所有模块 - 项目产品（动态）",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -840,44 +752,9 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "Root_NoBranch"
-        },
-        "name" : "项目产品（动态） - 根模块无分支（动态）",
-        "getPSNavigateContexts" : [ {
-          "key" : "PRODUCT",
-          "name" : "PRODUCT",
-          "value" : "product",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "n_type_eq",
-          "name" : "n_type_eq",
-          "value" : "story",
-          "rawValue" : true
-        }, {
-          "key" : "n_parent_eq",
-          "name" : "n_parent_eq",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "n_branch_eq",
-          "name" : "n_branch_eq",
-          "value" : "0",
-          "rawValue" : true
-        } ],
-        "parentFilter" : "root",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "ZT_PRODUCT"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "MODULE"
         },
-        "name" : "根模块（动态） - 非根模块（动态）",
+        "name" : "根模块无分支（动态） - 非根模块（动态）",
         "getParentPSAppDEField" : {
           "name" : "PARENT",
           "codeName" : "Parent"
@@ -912,7 +789,42 @@
         },
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ROOTMODULE"
+          "id" : "Root_NoBranch"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "Root_NoBranch"
+        },
+        "name" : "项目产品（动态） - 根模块无分支（动态）",
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "n_type_eq",
+          "name" : "n_type_eq",
+          "value" : "story",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "0",
+          "rawValue" : true
+        }, {
+          "key" : "n_branch_eq",
+          "name" : "n_branch_eq",
+          "value" : "0",
+          "rawValue" : true
+        } ],
+        "parentFilter" : "root",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ZT_PRODUCT"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -975,23 +887,88 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ProjectModule"
+          "id" : "MODULE"
         },
-        "name" : "所有模块 - 项目模块（动态）",
-        "getPSNavigateParams" : [ {
-          "key" : "n_type_eq",
-          "name" : "n_type_eq",
-          "value" : "task",
-          "rawValue" : true
-        }, {
-          "key" : "n_parent_eq",
-          "name" : "n_parent_eq",
-          "value" : "0",
-          "rawValue" : true
-        } ],
+        "name" : "根模块（动态） - 非根模块（动态）",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+          },
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+          },
+          "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
+          "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "pickupDEFName" : "PARENT",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ALL"
+          "id" : "ROOTMODULE"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "MODULE"
+        },
+        "name" : "非根模块（动态） - 非根模块（动态）",
+        "getParentPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getParentPSDER1N" : {
+          "codeName" : "ParentModule",
+          "dERType" : "DER1N",
+          "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT.json",
+          "getMajorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+          },
+          "masterOrder" : -1,
+          "masterRS" : 0,
+          "getMinorPSDataEntity" : {
+            "modelref" : true,
+            "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+          },
+          "name" : "DER1N_IBZ_PROJECTMODULE_IBZ_PROJECTMODULE_PARENT",
+          "orderValue" : 100,
+          "getPSPickupDEField" : {
+            "name" : "PARENT",
+            "codeName" : "Parent"
+          },
+          "getPSPickupTextDEField" : {
+            "name" : "PARENTNAME",
+            "codeName" : "ParentName"
+          },
+          "pickupDEFName" : "PARENT",
+          "removeActionType" : -1,
+          "removeOrder" : 0
+        },
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "MODULE"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -1011,6 +988,29 @@
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ZT_PRODUCT"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ProjectModule"
+        },
+        "name" : "所有模块 - 项目模块（动态）",
+        "getPSNavigateParams" : [ {
+          "key" : "n_type_eq",
+          "name" : "n_type_eq",
+          "value" : "task",
+          "rawValue" : true
+        }, {
+          "key" : "n_parent_eq",
+          "name" : "n_parent_eq",
+          "value" : "0",
+          "rawValue" : true
+        } ],
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ALL"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

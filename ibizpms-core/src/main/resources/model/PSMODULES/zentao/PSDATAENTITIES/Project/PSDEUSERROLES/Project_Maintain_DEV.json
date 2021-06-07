@@ -6,6 +6,13 @@
     "id" : "DeveloperQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "DELETE",
+    "name" : "Project_Maintain_DEV_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "Project_Maintain_DEV_UPDATE",
     "getPSDEOPPriv" : {
@@ -18,13 +25,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
-    }
-  }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "Project_Maintain_DEV_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
     }
   } ],
   "roleTag" : "Project_Maintain_DEV",

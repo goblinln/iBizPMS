@@ -579,10 +579,10 @@
       "name" : "type"
     }, {
       "dataType" : 1,
-      "name" : "id"
+      "name" : "productsn"
     }, {
       "dataType" : 1,
-      "name" : "productsn"
+      "name" : "id"
     }, {
       "dataType" : 9,
       "name" : "releasecnt"

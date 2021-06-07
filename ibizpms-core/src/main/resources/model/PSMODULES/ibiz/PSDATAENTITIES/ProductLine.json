@@ -260,6 +260,42 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORDER",
+      "dBType" : "MYSQL5",
+      "name" : "ORDER",
+      "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`ORDER`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Order",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "logicName" : "排序",
+    "name" : "ORDER",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEDATE",
       "dBType" : "MYSQL5",
       "name" : "UPDATEDATE",
@@ -388,42 +424,6 @@
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
     "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORDER",
-      "dBType" : "MYSQL5",
-      "name" : "ORDER",
-      "queryCodeExp" : "t1.`ORDER`",
-      "standardColumnName" : "`ORDER`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ORDER",
-        "codeName" : "Order"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Order",
-    "dEFType" : 1,
-    "dataType" : "INT",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "logicName" : "排序",
-    "name" : "ORDER",
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

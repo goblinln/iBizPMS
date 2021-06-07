@@ -419,6 +419,11 @@
     "name" : "LAST",
     "stdDataType" : 9
   }, {
+    "codeName" : "Usersn",
+    "logicName" : "用户编号",
+    "name" : "USERSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "ClientStatus",
     "logicName" : "clientStatus",
     "name" : "CLIENTSTATUS",
@@ -512,11 +517,6 @@
     "name" : "QQ",
     "stdDataType" : 25,
     "stringLength" : 20
-  }, {
-    "codeName" : "Usersn",
-    "logicName" : "用户编号",
-    "name" : "USERSN",
-    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

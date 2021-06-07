@@ -191,18 +191,14 @@
   },
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
+    "name" : "title"
+  }, {
+    "dataType" : 25,
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__status.json"
     },
     "name" : "status"
-  }, {
-    "dataType" : 5,
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "name" : "openeddate"
-  }, {
-    "dataType" : 25,
-    "name" : "title"
   }, {
     "dataType" : 25,
     "getFrontPSCodeList" : {
@@ -217,6 +213,10 @@
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__result.json"
     },
     "name" : "lastrunresult"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "openeddate"
   }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {

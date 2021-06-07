@@ -256,6 +256,15 @@ public class Bug extends EntityMP implements Serializable {
     @ApiModelProperty("联系人")
     private String mailtoconact;
     /**
+     * 更新人
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @TableField(value = "`UPDATEMAN`")
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
+    private String updateman;
+    /**
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
@@ -441,6 +450,15 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("bugsn")
     @ApiModelProperty("BUG编号")
     private Long bugsn;
+    /**
+     * 建立人
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
     /**
      * 归属组织
      */
@@ -754,24 +772,6 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("testtask")
     @ApiModelProperty("测试单")
     private Long testtask;
-    /**
-     * 建立人
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
-    /**
-     * 更新人
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @ApiModelProperty("更新人")
-    private String updateman;
 
     /**
      * 
@@ -811,7 +811,7 @@ public class Bug extends EntityMP implements Serializable {
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.pms.core.zentao.domain.Module ztmodule;
+    private cn.ibizlab.pms.core.ibiz.domain.TestModule ztmodule;
 
     /**
      * 

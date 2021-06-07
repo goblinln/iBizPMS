@@ -4,7 +4,7 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_MODULE_MODULE.json",
   "getMajorPSDataEntity" : {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
   },
   "masterOrder" : -1,
   "masterRS" : 0,

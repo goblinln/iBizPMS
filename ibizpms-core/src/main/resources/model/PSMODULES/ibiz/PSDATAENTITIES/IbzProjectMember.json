@@ -326,6 +326,55 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CANCELEDBY",
+      "dBType" : "MYSQL5",
+      "name" : "CANCELEDBY",
+      "queryCodeExp" : "t1.`CANCELEDBY`",
+      "standardColumnName" : "`CANCELEDBY`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CANCELEDBY",
+          "maxValue" : 30,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[30]"
+      },
+      "getPSDEField" : {
+        "name" : "CANCELEDBY",
+        "codeName" : "CanceledBy"
+      },
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CanceledBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "defaultValue" : "#EMPTY",
+    "importOrder" : 1000,
+    "length" : 30,
+    "logicName" : "由谁取消",
+    "name" : "CANCELEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "TEAMEMBERS",
       "dBType" : "MYSQL5",
       "name" : "TEAMEMBERS",
@@ -692,11 +741,12 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "FIFTHMEMBER",
+      "columnName" : "CLOSEDBY",
       "dBType" : "MYSQL5",
-      "name" : "FIFTHMEMBER",
-      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1)",
-      "standardColumnName" : "`FIFTHMEMBER`"
+      "name" : "CLOSEDBY",
+      "queryCodeExp" : "t1.`CLOSEDBY`",
+      "standardColumnName" : "`CLOSEDBY`",
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -707,144 +757,37 @@
         "name" : "默认组",
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
-          "dEFName" : "FIFTHMEMBER",
-          "maxValue" : 200,
+          "dEFName" : "CLOSEDBY",
+          "maxValue" : 30,
           "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[200]",
+          "ruleInfo" : "内容长度必须小于等于[30]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
           "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]"
+        "ruleInfo" : "内容长度必须小于等于[30]"
       },
       "getPSDEField" : {
-        "name" : "FIFTHMEMBER",
-        "codeName" : "Fifthmember"
+        "name" : "CLOSEDBY",
+        "codeName" : "ClosedBy"
       },
-      "ruleInfo" : "内容长度必须小于等于[200]",
+      "ruleInfo" : "内容长度必须小于等于[30]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "Fifthmember",
-    "dEFType" : 2,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 200,
-    "logicName" : "团队成员（五）",
-    "name" : "FIFTHMEMBER",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
-    },
-    "stdDataType" : 25,
-    "stringLength" : 200,
-    "valueFormat" : "%1$s",
-    "formulaDEField" : true,
-    "phisicalDEField" : false
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "SIXTHMEMBER",
-      "dBType" : "MYSQL5",
-      "name" : "SIXTHMEMBER",
-      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1)",
-      "standardColumnName" : "`SIXTHMEMBER`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "SIXTHMEMBER",
-          "maxValue" : 200,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[200]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[200]"
-      },
-      "getPSDEField" : {
-        "name" : "SIXTHMEMBER",
-        "codeName" : "Sixthmember"
-      },
-      "ruleInfo" : "内容长度必须小于等于[200]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Sixthmember",
-    "dEFType" : 2,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 200,
-    "logicName" : "团队成员（六）",
-    "name" : "SIXTHMEMBER",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
-    },
-    "stdDataType" : 25,
-    "stringLength" : 200,
-    "valueFormat" : "%1$s",
-    "formulaDEField" : true,
-    "phisicalDEField" : false
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "NAME",
-      "dBType" : "MYSQL5",
-      "name" : "NAME",
-      "queryCodeExp" : "t1.`NAME`",
-      "standardColumnName" : "`NAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "NAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Name",
+    "codeName" : "ClosedBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
+    "defaultValue" : "#EMPTY",
     "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "项目名称",
-    "name" : "NAME",
+    "length" : 30,
+    "logicName" : "由谁关闭",
+    "name" : "CLOSEDBY",
     "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true,
-    "majorDEField" : true
+    "stringLength" : 30,
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "OPENEDBY",
@@ -955,12 +898,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CLOSEDBY",
+      "columnName" : "FIFTHMEMBER",
       "dBType" : "MYSQL5",
-      "name" : "CLOSEDBY",
-      "queryCodeExp" : "t1.`CLOSEDBY`",
-      "standardColumnName" : "`CLOSEDBY`",
-      "valueAutoGen" : true
+      "name" : "FIFTHMEMBER",
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1)",
+      "standardColumnName" : "`FIFTHMEMBER`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -971,86 +913,42 @@
         "name" : "默认组",
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
-          "dEFName" : "CLOSEDBY",
-          "maxValue" : 30,
+          "dEFName" : "FIFTHMEMBER",
+          "maxValue" : 200,
           "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[30]",
+          "ruleInfo" : "内容长度必须小于等于[200]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
           "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[30]"
+        "ruleInfo" : "内容长度必须小于等于[200]"
       },
       "getPSDEField" : {
-        "name" : "CLOSEDBY",
-        "codeName" : "ClosedBy"
+        "name" : "FIFTHMEMBER",
+        "codeName" : "Fifthmember"
       },
-      "ruleInfo" : "内容长度必须小于等于[30]",
+      "ruleInfo" : "内容长度必须小于等于[200]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "ClosedBy",
-    "dEFType" : 1,
+    "codeName" : "Fifthmember",
+    "dEFType" : 2,
     "dataType" : "TEXT",
-    "defaultValue" : "#EMPTY",
     "importOrder" : 1000,
-    "length" : 30,
-    "logicName" : "由谁关闭",
-    "name" : "CLOSEDBY",
+    "length" : 200,
+    "logicName" : "团队成员（五）",
+    "name" : "FIFTHMEMBER",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+    },
     "stdDataType" : 25,
-    "stringLength" : 30,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CANCELEDBY",
-      "dBType" : "MYSQL5",
-      "name" : "CANCELEDBY",
-      "queryCodeExp" : "t1.`CANCELEDBY`",
-      "standardColumnName" : "`CANCELEDBY`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "CANCELEDBY",
-          "maxValue" : 30,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[30]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[30]"
-      },
-      "getPSDEField" : {
-        "name" : "CANCELEDBY",
-        "codeName" : "CanceledBy"
-      },
-      "ruleInfo" : "内容长度必须小于等于[30]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CanceledBy",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "defaultValue" : "#EMPTY",
-    "importOrder" : 1000,
-    "length" : 30,
-    "logicName" : "由谁取消",
-    "name" : "CANCELEDBY",
-    "stdDataType" : 25,
-    "stringLength" : 30,
-    "valueFormat" : "%1$s"
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "formulaDEField" : true,
+    "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEBY",
@@ -1100,6 +998,108 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s",
     "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "SIXTHMEMBER",
+      "dBType" : "MYSQL5",
+      "name" : "SIXTHMEMBER",
+      "queryCodeExp" : "(select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1)",
+      "standardColumnName" : "`SIXTHMEMBER`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "SIXTHMEMBER",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "getPSDEField" : {
+        "name" : "SIXTHMEMBER",
+        "codeName" : "Sixthmember"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Sixthmember",
+    "dEFType" : 2,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "团队成员（六）",
+    "name" : "SIXTHMEMBER",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+    },
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "formulaDEField" : true,
+    "phisicalDEField" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "NAME",
+      "dBType" : "MYSQL5",
+      "name" : "NAME",
+      "queryCodeExp" : "t1.`NAME`",
+      "standardColumnName" : "`NAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "NAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Name",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "项目名称",
+    "name" : "NAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

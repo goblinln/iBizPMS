@@ -65,6 +65,16 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     private String qd;
 
     /**
+     * 属性 [CANCELEDBY]
+     *
+     */
+    @JSONField(name = "canceledby")
+    @JsonProperty("canceledby")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("由谁取消")
+    private String canceledby;
+
+    /**
      * 属性 [TEAMEMBERS]
      *
      */
@@ -135,34 +145,14 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     private String pm;
 
     /**
-     * 属性 [FIFTHMEMBER]
+     * 属性 [CLOSEDBY]
      *
      */
-    @JSONField(name = "fifthmember")
-    @JsonProperty("fifthmember")
-    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
-    @ApiModelProperty("团队成员（五）")
-    private String fifthmember;
-
-    /**
-     * 属性 [SIXTHMEMBER]
-     *
-     */
-    @JSONField(name = "sixthmember")
-    @JsonProperty("sixthmember")
-    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
-    @ApiModelProperty("团队成员（六）")
-    private String sixthmember;
-
-    /**
-     * 属性 [NAME]
-     *
-     */
-    @JSONField(name = "name")
-    @JsonProperty("name")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("项目名称")
-    private String name;
+    @JSONField(name = "closedby")
+    @JsonProperty("closedby")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("由谁关闭")
+    private String closedby;
 
     /**
      * 属性 [OPENEDBY]
@@ -185,24 +175,14 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     private String acl;
 
     /**
-     * 属性 [CLOSEDBY]
+     * 属性 [FIFTHMEMBER]
      *
      */
-    @JSONField(name = "closedby")
-    @JsonProperty("closedby")
-    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
-    @ApiModelProperty("由谁关闭")
-    private String closedby;
-
-    /**
-     * 属性 [CANCELEDBY]
-     *
-     */
-    @JSONField(name = "canceledby")
-    @JsonProperty("canceledby")
-    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
-    @ApiModelProperty("由谁取消")
-    private String canceledby;
+    @JSONField(name = "fifthmember")
+    @JsonProperty("fifthmember")
+    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
+    @ApiModelProperty("团队成员（五）")
+    private String fifthmember;
 
     /**
      * 属性 [UPDATEBY]
@@ -214,21 +194,33 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
 
+    /**
+     * 属性 [SIXTHMEMBER]
+     *
+     */
+    @JSONField(name = "sixthmember")
+    @JsonProperty("sixthmember")
+    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
+    @ApiModelProperty("团队成员（六）")
+    private String sixthmember;
 
     /**
-     * 设置 [NAME]
+     * 属性 [NAME]
+     *
      */
-    public void setName(String  name){
-        this.name = name ;
-        this.modify("name",name);
-    }
+    @JSONField(name = "name")
+    @JsonProperty("name")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("项目名称")
+    private String name;
+
 
     /**
-     * 设置 [ACL]
+     * 设置 [CANCELEDBY]
      */
-    public void setAcl(String  acl){
-        this.acl = acl ;
-        this.modify("acl",acl);
+    public void setCanceledby(String  canceledby){
+        this.canceledby = canceledby ;
+        this.modify("canceledby",canceledby);
     }
 
     /**
@@ -240,11 +232,19 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     }
 
     /**
-     * 设置 [CANCELEDBY]
+     * 设置 [ACL]
      */
-    public void setCanceledby(String  canceledby){
-        this.canceledby = canceledby ;
-        this.modify("canceledby",canceledby);
+    public void setAcl(String  acl){
+        this.acl = acl ;
+        this.modify("acl",acl);
+    }
+
+    /**
+     * 设置 [NAME]
+     */
+    public void setName(String  name){
+        this.name = name ;
+        this.modify("name",name);
     }
 
 

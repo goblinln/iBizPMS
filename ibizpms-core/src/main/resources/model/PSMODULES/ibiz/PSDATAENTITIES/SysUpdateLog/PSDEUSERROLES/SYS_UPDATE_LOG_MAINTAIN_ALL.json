@@ -3,11 +3,11 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEUSERROLES/SYS_UPDATE_LOG_MAINTAIN_ALL.json",
   "name" : "更新日志维护（全部数据）",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "SYS_UPDATE_LOG_MAINTAIN_ALL_READ",
+    "dataAccessAction" : "UPDATE",
+    "name" : "SYS_UPDATE_LOG_MAINTAIN_ALL_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "UPDATE"
     }
   }, {
     "dataAccessAction" : "DELETE",
@@ -17,18 +17,18 @@
       "id" : "DELETE"
     }
   }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "SYS_UPDATE_LOG_MAINTAIN_ALL_UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    }
-  }, {
     "dataAccessAction" : "CREATE",
     "name" : "SYS_UPDATE_LOG_MAINTAIN_ALL_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "SYS_UPDATE_LOG_MAINTAIN_ALL_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     }
   } ],
   "roleTag" : "SYS_UPDATE_LOG_MAINTAIN_ALL",

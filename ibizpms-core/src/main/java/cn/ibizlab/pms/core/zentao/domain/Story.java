@@ -294,6 +294,14 @@ public class Story extends EntityMP implements Serializable {
     @ApiModelProperty("设置阶段者")
     private String stagedby;
     /**
+     * 所属计划
+     */
+    @TableField(exist = false)
+    @JSONField(name = "planname")
+    @JsonProperty("planname")
+    @ApiModelProperty("所属计划")
+    private String planname;
+    /**
      * 由谁创建
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
@@ -528,6 +536,14 @@ public class Story extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织名")
     private String orgname;
     /**
+     * 需求编号
+     */
+    @TableField(value = "`STORYSN`")
+    @JSONField(name = "storysn")
+    @JsonProperty("storysn")
+    @ApiModelProperty("需求编号")
+    private Long storysn;
+    /**
      * 验收标准
      */
     @TableField(exist = false)
@@ -724,22 +740,6 @@ public class Story extends EntityMP implements Serializable {
     @JsonProperty("tobug")
     @ApiModelProperty("转Bug")
     private Long tobug;
-    /**
-     * 需求编号
-     */
-    @TableField(value = "`STORYSN`")
-    @JSONField(name = "storysn")
-    @JsonProperty("storysn")
-    @ApiModelProperty("需求编号")
-    private Long storysn;
-    /**
-     * 所属计划
-     */
-    @TableField(exist = false)
-    @JSONField(name = "planname")
-    @JsonProperty("planname")
-    @ApiModelProperty("所属计划")
-    private String planname;
 
     /**
      * 
@@ -1114,6 +1114,14 @@ public class Story extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [需求编号]
+     */
+    public void setStorysn(Long storysn) {
+        this.storysn = storysn;
+        this.modify("storysn", storysn);
+    }
+
+    /**
      * 设置 [由谁关闭]
      */
     public void setClosedby(String closedby) {
@@ -1199,14 +1207,6 @@ public class Story extends EntityMP implements Serializable {
     public void setTobug(Long tobug) {
         this.tobug = tobug;
         this.modify("tobug", tobug);
-    }
-
-    /**
-     * 设置 [需求编号]
-     */
-    public void setStorysn(Long storysn) {
-        this.storysn = storysn;
-        this.modify("storysn", storysn);
     }
 
 

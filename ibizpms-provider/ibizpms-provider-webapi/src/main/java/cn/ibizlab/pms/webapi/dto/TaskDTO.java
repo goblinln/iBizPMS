@@ -242,6 +242,16 @@ public class TaskDTO extends DTOBase implements Serializable {
     private Integer replycount;
 
     /**
+     * 属性 [CREATEMAN]
+     *
+     */
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("建立人")
+    private String createman;
+
+    /**
      * 属性 [DEPTNAME]
      *
      */
@@ -299,6 +309,16 @@ public class TaskDTO extends DTOBase implements Serializable {
     @JsonProperty("storyversionnew")
     @ApiModelProperty("相关需求最新版本")
     private Integer storyversionnew;
+
+    /**
+     * 属性 [TASKSN]
+     *
+     */
+    @JSONField(name = "tasksn")
+    @JsonProperty("tasksn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("任务编号")
+    private Long tasksn;
 
     /**
      * 属性 [CURRENTCONSUMED]
@@ -524,6 +544,16 @@ public class TaskDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("延期")
     private String delay;
+
+    /**
+     * 属性 [UPDATEMAN]
+     *
+     */
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("更新人")
+    private String updateman;
 
     /**
      * 属性 [DESC]
@@ -910,36 +940,6 @@ public class TaskDTO extends DTOBase implements Serializable {
     @ApiModelProperty("来源Bug")
     private Long frombug;
 
-    /**
-     * 属性 [TASKSN]
-     *
-     */
-    @JSONField(name = "tasksn")
-    @JsonProperty("tasksn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("任务编号")
-    private Long tasksn;
-
-    /**
-     * 属性 [CREATEMAN]
-     *
-     */
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("建立人")
-    private String createman;
-
-    /**
-     * 属性 [UPDATEMAN]
-     *
-     */
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("更新人")
-    private String updateman;
-
 
     /**
      * 设置 [CANCELEDBY]
@@ -1027,6 +1027,14 @@ public class TaskDTO extends DTOBase implements Serializable {
     public void setClosedby(String  closedby){
         this.closedby = closedby ;
         this.modify("closedby",closedby);
+    }
+
+    /**
+     * 设置 [TASKSN]
+     */
+    public void setTasksn(Long  tasksn){
+        this.tasksn = tasksn ;
+        this.modify("tasksn",tasksn);
     }
 
     /**
@@ -1283,14 +1291,6 @@ public class TaskDTO extends DTOBase implements Serializable {
     public void setFrombug(Long  frombug){
         this.frombug = frombug ;
         this.modify("frombug",frombug);
-    }
-
-    /**
-     * 设置 [TASKSN]
-     */
-    public void setTasksn(Long  tasksn){
-        this.tasksn = tasksn ;
-        this.modify("tasksn",tasksn);
     }
 
 

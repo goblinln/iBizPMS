@@ -819,6 +819,41 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "MODULESN",
+      "dBType" : "MYSQL5",
+      "name" : "MODULESN",
+      "queryCodeExp" : "t1.`MODULESN`",
+      "standardColumnName" : "`MODULESN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "MODULESN",
+        "codeName" : "ModuleSN"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ModuleSN",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "模块编号",
+    "name" : "MODULESN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "MDEPTNAME",
       "dBType" : "MYSQL5",
       "name" : "MDEPTNAME",
@@ -1393,41 +1428,6 @@
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "MODULESN",
-      "dBType" : "MYSQL5",
-      "name" : "MODULESN",
-      "queryCodeExp" : "t1.`MODULESN`",
-      "standardColumnName" : "`MODULESN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "MODULESN",
-        "codeName" : "ModuleSN"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "ModuleSN",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "模块编号",
-    "name" : "MODULESN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -1530,60 +1530,6 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats.json"
     },
     "name" : "DER1N_IBZ_CASESTATS_ZT_MODULE_MODULE",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    },
-    "getPSPickupTextDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
-    },
-    "pickupDEFName" : "MODULE",
-    "removeActionType" : -1,
-    "removeOrder" : 0
-  }, {
-    "codeName" : "ZTModule",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_MODULE_MODULE.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 0,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-    },
-    "name" : "DER1N_ZT_BUG_ZT_MODULE_MODULE",
-    "orderValue" : 100,
-    "getPSPickupDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    },
-    "getPSPickupTextDEField" : {
-      "name" : "MODULENAME",
-      "codeName" : "Modulename"
-    },
-    "pickupDEFName" : "MODULE",
-    "removeActionType" : -1,
-    "removeOrder" : 0
-  }, {
-    "codeName" : "ZTModule",
-    "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_MODULE_MODULE.json",
-    "getMajorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    },
-    "masterOrder" : -1,
-    "masterRS" : 0,
-    "getMinorPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-    },
-    "name" : "DER1N_ZT_CASE_ZT_MODULE_MODULE",
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "MODULE",

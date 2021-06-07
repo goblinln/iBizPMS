@@ -73,6 +73,14 @@ public class Company extends EntityMP implements Serializable {
     @ApiModelProperty("逻辑删除标志")
     private String deleted;
     /**
+     * 公司编号
+     */
+    @TableField(value = "`COMPANYSN`")
+    @JSONField(name = "companysn")
+    @JsonProperty("companysn")
+    @ApiModelProperty("公司编号")
+    private Long companysn;
+    /**
      * 官网
      */
     @TableField(value = "`WEBSITE`")
@@ -137,14 +145,6 @@ public class Company extends EntityMP implements Serializable {
     @JsonProperty("phone")
     @ApiModelProperty("联系电话")
     private String phone;
-    /**
-     * 公司编号
-     */
-    @TableField(value = "`COMPANYSN`")
-    @JSONField(name = "companysn")
-    @JsonProperty("companysn")
-    @ApiModelProperty("公司编号")
-    private Long companysn;
 
 
 
@@ -162,6 +162,14 @@ public class Company extends EntityMP implements Serializable {
     public void setFax(String fax) {
         this.fax = fax;
         this.modify("fax", fax);
+    }
+
+    /**
+     * 设置 [公司编号]
+     */
+    public void setCompanysn(Long companysn) {
+        this.companysn = companysn;
+        this.modify("companysn", companysn);
     }
 
     /**
@@ -218,14 +226,6 @@ public class Company extends EntityMP implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
         this.modify("phone", phone);
-    }
-
-    /**
-     * 设置 [公司编号]
-     */
-    public void setCompanysn(Long companysn) {
-        this.companysn = companysn;
-        this.modify("companysn", companysn);
     }
 
 

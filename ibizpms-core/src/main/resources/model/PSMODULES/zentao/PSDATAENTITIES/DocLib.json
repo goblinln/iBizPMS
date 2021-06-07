@@ -1458,6 +1458,41 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DOCLIBSN",
+      "dBType" : "MYSQL5",
+      "name" : "DOCLIBSN",
+      "queryCodeExp" : "t1.`DOCLIBSN`",
+      "standardColumnName" : "`DOCLIBSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "DOCLIBSN",
+        "codeName" : "Doclibsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Doclibsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "文档库编号",
+    "name" : "DOCLIBSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ORDER",
       "dBType" : "MYSQL5",
       "name" : "ORDER",
@@ -1733,41 +1768,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DOCLIBSN",
-      "dBType" : "MYSQL5",
-      "name" : "DOCLIBSN",
-      "queryCodeExp" : "t1.`DOCLIBSN`",
-      "standardColumnName" : "`DOCLIBSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DOCLIBSN",
-        "codeName" : "Doclibsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Doclibsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "文档库编号",
-    "name" : "DOCLIBSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "CurUserIsF",
@@ -2214,11 +2214,11 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/CURDEPT_RW.json",
     "name" : "当前部门（读写）",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "READ",
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "READ"
+        "id" : "UPDATE"
       }
     }, {
       "dataAccessAction" : "DELETE",
@@ -2228,11 +2228,11 @@
         "id" : "DELETE"
       }
     }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "UPDATE",
+      "dataAccessAction" : "READ",
+      "name" : "READ",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "UPDATE"
+        "id" : "READ"
       }
     } ],
     "roleTag" : "CURDEPT_RW",
@@ -2259,20 +2259,6 @@
     "name" : "当前组织（读写）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "MANAGE",
-      "name" : "MANAGE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "Zt_project__MANAGE"
-      }
-    }, {
-      "dataAccessAction" : "COLLECT",
-      "name" : "COLLECT",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "Zt_project__COLLECT"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "DELETE",
       "getPSDEOPPriv" : {
@@ -2280,11 +2266,11 @@
         "id" : "DELETE"
       }
     }, {
-      "dataAccessAction" : "UNCOLLECT",
-      "name" : "UNCOLLECT",
+      "dataAccessAction" : "MANAGE",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "Zt_project__UNCOLLECT"
+        "id" : "Zt_project__MANAGE"
       }
     }, {
       "dataAccessAction" : "READ",
@@ -2294,6 +2280,20 @@
         "id" : "READ"
       }
     }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_project__CREATE"
+      }
+    }, {
+      "dataAccessAction" : "UNCOLLECT",
+      "name" : "UNCOLLECT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_project__UNCOLLECT"
+      }
+    }, {
       "dataAccessAction" : "UPDATE",
       "name" : "UPDATE",
       "getPSDEOPPriv" : {
@@ -2301,11 +2301,11 @@
         "id" : "UPDATE"
       }
     }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "CREATE",
+      "dataAccessAction" : "COLLECT",
+      "name" : "COLLECT",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "Zt_project__CREATE"
+        "id" : "Zt_project__COLLECT"
       }
     } ],
     "roleTag" : "CURORG_RW",

@@ -236,7 +236,7 @@
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztentry" javaType="cn.ibizlab.pms.core.zentao.domain.Entry" column="entry" select="cn.ibizlab.pms.core.zentao.mapper.EntryMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
-		<association property="ztmodule" javaType="cn.ibizlab.pms.core.zentao.domain.Module" column="module" select="cn.ibizlab.pms.core.zentao.mapper.ModuleMapper.selectById" fetchType="lazy"></association>
+		<association property="ztmodule" javaType="cn.ibizlab.pms.core.ibiz.domain.TestModule" column="module" select="cn.ibizlab.pms.core.ibiz.mapper.TestModuleMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
 		<association property="ztproductplan" javaType="cn.ibizlab.pms.core.zentao.domain.ProductPlan" column="plan" select="cn.ibizlab.pms.core.zentao.mapper.ProductPlanMapper.selectById" fetchType="lazy"></association>
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->

@@ -4,7 +4,7 @@ global cn.ibizlab.pms.core.report.domain.IbzWeekly et;
     no-loop
 
     rule "ibzweeklycreategetlastweekplanandwork"
-    ruleflow-group "FF6E81BD-184F-4672-9C88-76072CE0AC9A"
+    ruleflow-group "ee489dc5e387396966aed140ac9e7218"
     when
     then
     cn.ibizlab.pms.core.report.domain.IbzWeekly actionLogicDE =new cn.ibizlab.pms.core.report.domain.IbzWeekly();

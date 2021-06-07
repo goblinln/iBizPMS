@@ -34,6 +34,13 @@
       "id" : "DELETE"
     }
   }, {
+    "dataAccessAction" : "MANAGE",
+    "name" : "Todo_Maintain_MyTodo_Manage",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "MANAGE"
+    }
+  }, {
     "dataAccessAction" : "CREATE",
     "name" : "Todo_Maintain_MyTodo_Create",
     "getPSDEOPPriv" : {
@@ -53,13 +60,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
-  }, {
-    "dataAccessAction" : "MANAGE",
-    "name" : "Todo_Maintain_MyTodo_Manage",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "MANAGE"
     }
   }, {
     "dataAccessAction" : "CLOSE",

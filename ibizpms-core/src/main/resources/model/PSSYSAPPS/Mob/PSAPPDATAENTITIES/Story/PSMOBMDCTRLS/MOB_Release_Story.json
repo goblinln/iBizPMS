@@ -51,11 +51,18 @@
     "xDataControlName" : "mdctrl"
   } ],
   "getPSDEListDataItems" : [ {
+    "dataType" : 21,
+    "name" : "plan"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "name" : "openedby"
+  }, {
     "dataType" : 7,
     "name" : "estimate"
-  }, {
-    "dataType" : 1,
-    "name" : "product"
   }, {
     "dataType" : 25,
     "getFrontPSCodeList" : {
@@ -73,9 +80,6 @@
   }, {
     "dataType" : 1,
     "name" : "id"
-  }, {
-    "dataType" : 21,
-    "name" : "plan"
   }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {
@@ -95,17 +99,13 @@
     "name" : "assignedto"
   }, {
     "dataType" : 25,
+    "name" : "modulename"
+  }, {
+    "dataType" : 25,
     "name" : "title"
   }, {
-    "dataType" : 25,
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName_Gird.json"
-    },
-    "name" : "openedby"
-  }, {
-    "dataType" : 25,
-    "name" : "modulename"
+    "dataType" : 1,
+    "name" : "product"
   }, {
     "dataType" : 25,
     "name" : "srfkey",

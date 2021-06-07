@@ -6,60 +6,11 @@
     "id" : "MyCreateOrPartake"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "TOBUG",
-    "name" : "Story_Maintain_MyCOrP_TOBUG",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "TOBUG"
-    }
-  }, {
-    "dataAccessAction" : "FAVORITES",
-    "name" : "Story_Maintain_MyCOrP_Favorites",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FAVORITES"
-    }
-  }, {
-    "dataAccessAction" : "ACTIVATE",
-    "name" : "Story_Maintain_MyCOrP_Activate",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ACTIVATE"
-    }
-  }, {
-    "dataAccessAction" : "CHANGE",
-    "name" : "Story_Maintain_MyCOrP_Change",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CHANGE"
-    }
-  }, {
     "dataAccessAction" : "CCASE",
     "name" : "Story_Maintain_MyCOrP_CCASE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CCASE"
-    }
-  }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "Story_Maintain_MyCOrP_UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    }
-  }, {
-    "dataAccessAction" : "READ",
-    "name" : "Story_Maintain_MyCOrP_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    }
-  }, {
-    "dataAccessAction" : "REVIEW",
-    "name" : "Story_Maintain_MyCOrP_Review",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "REVIEW"
     }
   }, {
     "dataAccessAction" : "ASSIGNTO",
@@ -69,11 +20,11 @@
       "id" : "ASSIGNTO"
     }
   }, {
-    "dataAccessAction" : "ISCHILD",
-    "name" : "Story_Maintain_MyCOrP_Ischild",
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "Story_Maintain_MyCOrP_Activate",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ISCHILD"
+      "id" : "ACTIVATE"
     }
   }, {
     "dataAccessAction" : "NFAVORITES",
@@ -83,11 +34,60 @@
       "id" : "NFAVORITES"
     }
   }, {
+    "dataAccessAction" : "CHANGE",
+    "name" : "Story_Maintain_MyCOrP_Change",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHANGE"
+    }
+  }, {
+    "dataAccessAction" : "TOBUG",
+    "name" : "Story_Maintain_MyCOrP_TOBUG",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOBUG"
+    }
+  }, {
     "dataAccessAction" : "CLOSE",
     "name" : "Story_Maintain_MyCOrP_Close",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CLOSE"
+    }
+  }, {
+    "dataAccessAction" : "ISCHILD",
+    "name" : "Story_Maintain_MyCOrP_Ischild",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ISCHILD"
+    }
+  }, {
+    "dataAccessAction" : "FAVORITES",
+    "name" : "Story_Maintain_MyCOrP_Favorites",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Story_Maintain_MyCOrP_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__READ"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Story_Maintain_MyCOrP_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "REVIEW",
+    "name" : "Story_Maintain_MyCOrP_Review",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
     }
   } ],
   "roleTag" : "Story_Maintain_MyCOrP",

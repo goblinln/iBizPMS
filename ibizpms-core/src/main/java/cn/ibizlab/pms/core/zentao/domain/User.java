@@ -199,6 +199,14 @@ public class User extends EntityMP implements Serializable {
     @ApiModelProperty("最后登录")
     private Integer last;
     /**
+     * 用户编号
+     */
+    @TableField(value = "`USERSN`")
+    @JSONField(name = "usersn")
+    @JsonProperty("usersn")
+    @ApiModelProperty("用户编号")
+    private Long usersn;
+    /**
      * clientStatus
      */
     @TableField(value = "`CLIENTSTATUS`")
@@ -334,14 +342,6 @@ public class User extends EntityMP implements Serializable {
     @JsonProperty("qq")
     @ApiModelProperty("QQ")
     private String qq;
-    /**
-     * 用户编号
-     */
-    @TableField(value = "`USERSN`")
-    @JSONField(name = "usersn")
-    @JsonProperty("usersn")
-    @ApiModelProperty("用户编号")
-    private Long usersn;
 
 
 
@@ -492,6 +492,14 @@ public class User extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [用户编号]
+     */
+    public void setUsersn(Long usersn) {
+        this.usersn = usersn;
+        this.modify("usersn", usersn);
+    }
+
+    /**
      * 设置 [clientStatus]
      */
     public void setClientstatus(String clientstatus) {
@@ -629,14 +637,6 @@ public class User extends EntityMP implements Serializable {
     public void setQq(String qq) {
         this.qq = qq;
         this.modify("qq", qq);
-    }
-
-    /**
-     * 设置 [用户编号]
-     */
-    public void setUsersn(Long usersn) {
-        this.usersn = usersn;
-        this.modify("usersn", usersn);
     }
 
 

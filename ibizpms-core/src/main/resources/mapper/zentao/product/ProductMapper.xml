@@ -48,15 +48,15 @@
 		<if test="srf.n_status_isnotnull != null ">
 			<![CDATA[ AND  t1.`status` IS NOT NULL ]]>
         </if>
-		<if test="srf.n_line_eq != null ">
-			<![CDATA[ AND  t1.`line` = #{srf.n_line_eq,jdbcType=BIGINT} ]]>
-        </if>
 		<if test="srf.n_linename_eq != null ">
 			<![CDATA[ AND  t11.`NAME` = #{srf.n_linename_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_linename_like != null ">
             <bind name="bind_n_linename_like" value="'%' + srf.n_linename_like + '%'" />
             <![CDATA[ AND  t11.`NAME` like #{bind_n_linename_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_line_eq != null ">
+			<![CDATA[ AND  t1.`line` = #{srf.n_line_eq,jdbcType=BIGINT} ]]>
         </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}

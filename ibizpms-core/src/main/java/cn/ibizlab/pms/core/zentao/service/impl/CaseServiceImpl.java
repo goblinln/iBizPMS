@@ -74,7 +74,7 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     protected cn.ibizlab.pms.core.zentao.service.IBranchService branchService;
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.zentao.service.IModuleService moduleService;
+    protected cn.ibizlab.pms.core.ibiz.service.ITestModuleService testmoduleService;
     @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
@@ -807,9 +807,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     private void fillParentData(Case et){
         //实体关系[DER1N_ZT_CASE_ZT_MODULE_MODULE]
         if(!ObjectUtils.isEmpty(et.getModule())){
-            cn.ibizlab.pms.core.zentao.domain.Module ztmodule=et.getZtmodule();
+            cn.ibizlab.pms.core.ibiz.domain.TestModule ztmodule=et.getZtmodule();
             if(ObjectUtils.isEmpty(ztmodule)){
-                cn.ibizlab.pms.core.zentao.domain.Module majorEntity=moduleService.get(et.getModule());
+                cn.ibizlab.pms.core.ibiz.domain.TestModule majorEntity=testmoduleService.get(et.getModule());
                 et.setZtmodule(majorEntity);
                 ztmodule=majorEntity;
             }

@@ -10,7 +10,7 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectQuickpacket.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json"
@@ -26,12 +26,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllRepo.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllCase.json"
@@ -55,10 +49,10 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
+    "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/IsAssigned.json"
@@ -74,6 +68,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeam.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/Zt__productplan.json"
@@ -115,6 +112,9 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProductTeam.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProductQuickpacket.json"
   }, {
     "modelref" : true,
@@ -133,13 +133,13 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/UserYEAR.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/CloseProduct.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/Bug_type_pie.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllStory.json"

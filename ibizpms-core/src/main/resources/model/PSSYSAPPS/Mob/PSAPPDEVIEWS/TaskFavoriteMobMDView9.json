@@ -743,6 +743,13 @@
       "dataType" : 25,
       "getFrontPSCodeList" : {
         "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
+      },
+      "name" : "status1"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
       },
       "name" : "assignedto"
@@ -762,13 +769,6 @@
     }, {
       "dataType" : 25,
       "name" : "name"
-    }, {
-      "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
-      },
-      "name" : "status1"
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {

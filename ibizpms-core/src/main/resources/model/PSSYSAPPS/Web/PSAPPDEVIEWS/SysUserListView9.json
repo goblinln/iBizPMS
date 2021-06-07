@@ -625,9 +625,6 @@
       "id" : "LIST"
     },
     "getPSDEListDataItems" : [ {
-      "dataType" : 25,
-      "name" : "personname"
-    }, {
       "dataType" : 9,
       "name" : "mystorys"
     }, {
@@ -637,17 +634,20 @@
       "dataType" : 25,
       "name" : "eprojects"
     }, {
+      "dataType" : 25,
+      "name" : "username"
+    }, {
       "dataType" : 9,
       "name" : "products"
     }, {
       "dataType" : 9,
       "name" : "mybugs"
     }, {
+      "dataType" : 25,
+      "name" : "personname"
+    }, {
       "dataType" : 9,
       "name" : "mytasks"
-    }, {
-      "dataType" : 25,
-      "name" : "username"
     }, {
       "dataType" : 25,
       "name" : "realname"

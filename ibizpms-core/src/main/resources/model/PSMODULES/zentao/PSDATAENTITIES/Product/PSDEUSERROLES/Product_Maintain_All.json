@@ -3,13 +3,6 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_All.json",
   "name" : "产品维护（全部数据）",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "DELETE",
-    "name" : "Prodect_Maintain_All_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    }
-  }, {
     "dataAccessAction" : "READ",
     "name" : "Prodect_Maintain_All_READ",
     "getPSDEOPPriv" : {
@@ -29,6 +22,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Prodect_Maintain_All_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
     }
   } ],
   "roleTag" : "Product_Maintain_All",

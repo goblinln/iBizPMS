@@ -64,6 +64,16 @@ public class TestRunDTO extends DTOBase implements Serializable {
     private Integer version;
 
     /**
+     * 属性 [TESTRUNSN]
+     *
+     */
+    @JSONField(name = "testrunsn")
+    @JsonProperty("testrunsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试运行编号")
+    private Long testrunsn;
+
+    /**
      * 属性 [LASTRUNDATE]
      *
      */
@@ -183,16 +193,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @ApiModelProperty("测试单")
     private Long task;
 
-    /**
-     * 属性 [TESTRUNSN]
-     *
-     */
-    @JSONField(name = "testrunsn")
-    @JsonProperty("testrunsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("测试运行编号")
-    private Long testrunsn;
-
 
     /**
      * 设置 [LASTRUNRESULT]
@@ -208,6 +208,14 @@ public class TestRunDTO extends DTOBase implements Serializable {
     public void setVersion(Integer  version){
         this.version = version ;
         this.modify("version",version);
+    }
+
+    /**
+     * 设置 [TESTRUNSN]
+     */
+    public void setTestrunsn(Long  testrunsn){
+        this.testrunsn = testrunsn ;
+        this.modify("testrunsn",testrunsn);
     }
 
     /**
@@ -256,14 +264,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     public void setTask(Long  task){
         this.task = task ;
         this.modify("task",task);
-    }
-
-    /**
-     * 设置 [TESTRUNSN]
-     */
-    public void setTestrunsn(Long  testrunsn){
-        this.testrunsn = testrunsn ;
-        this.modify("testrunsn",testrunsn);
     }
 
 

@@ -116,6 +116,14 @@ public class UserTpl extends EntityMP implements Serializable {
     @ApiModelProperty("account")
     private String account;
     /**
+     * 用户模板编号
+     */
+    @TableField(value = "`USERTPLSN`")
+    @JSONField(name = "usertplsn")
+    @JsonProperty("usertplsn")
+    @ApiModelProperty("用户模板编号")
+    private Long usertplsn;
+    /**
      * 公开
      */
     @DEField(defaultValue = "0")
@@ -142,14 +150,6 @@ public class UserTpl extends EntityMP implements Serializable {
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
     private String dept;
-    /**
-     * 用户模板编号
-     */
-    @TableField(value = "`USERTPLSN`")
-    @JSONField(name = "usertplsn")
-    @JsonProperty("usertplsn")
-    @ApiModelProperty("用户模板编号")
-    private Long usertplsn;
 
 
 
@@ -178,19 +178,19 @@ public class UserTpl extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [公开]
-     */
-    public void setIbizpublic(String ibizpublic) {
-        this.ibizpublic = ibizpublic;
-        this.modify("public", ibizpublic);
-    }
-
-    /**
      * 设置 [用户模板编号]
      */
     public void setUsertplsn(Long usertplsn) {
         this.usertplsn = usertplsn;
         this.modify("usertplsn", usertplsn);
+    }
+
+    /**
+     * 设置 [公开]
+     */
+    public void setIbizpublic(String ibizpublic) {
+        this.ibizpublic = ibizpublic;
+        this.modify("public", ibizpublic);
     }
 
 

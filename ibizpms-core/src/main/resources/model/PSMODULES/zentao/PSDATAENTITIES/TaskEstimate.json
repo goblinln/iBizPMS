@@ -1335,6 +1335,41 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "TASKESTIMATESN",
+      "dBType" : "MYSQL5",
+      "name" : "TASKESTIMATESN",
+      "queryCodeExp" : "t1.`TASKESTIMATESN`",
+      "standardColumnName" : "`TASKESTIMATESN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "TASKESTIMATESN",
+        "codeName" : "TaskEstimatesn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "TaskEstimatesn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "任务预计编号",
+    "name" : "TASKESTIMATESN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MONTH_EQ",
       "name" : "N_MONTH_EQ",
@@ -1892,41 +1927,6 @@
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "TASKESTIMATESN",
-      "dBType" : "MYSQL5",
-      "name" : "TASKESTIMATESN",
-      "queryCodeExp" : "t1.`TASKESTIMATESN`",
-      "standardColumnName" : "`TASKESTIMATESN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TASKESTIMATESN",
-        "codeName" : "TaskEstimatesn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "TaskEstimatesn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "任务预计编号",
-    "name" : "TASKESTIMATESN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

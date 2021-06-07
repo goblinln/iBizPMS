@@ -98,15 +98,15 @@
     },
     "name" : "stage"
   }, {
+    "dataType" : 25,
+    "name" : "ischild"
+  }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__pri.json"
     },
     "name" : "pri"
-  }, {
-    "dataType" : 25,
-    "name" : "ischild"
   }, {
     "dataType" : 25,
     "name" : "srfkey",

@@ -23,18 +23,6 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ALL"
-    },
-    "name" : "默认根节点 - 所有模块",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "LibRoot"
     },
     "name" : "所有模块 - 根模块",
@@ -52,6 +40,18 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ALL"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ALL"
+    },
+    "name" : "默认根节点 - 所有模块",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

@@ -708,6 +708,18 @@
       "modelref" : true,
       "id" : "ChildModule"
     },
+    "name" : "默认根节点 - 子目录文档库分类",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildModule"
+    },
     "name" : "子目录文档库分类 - 子目录文档库分类",
     "parentFilter" : "parent",
     "getParentPSAppDEField" : {
@@ -746,18 +758,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ChildModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ChildModule"
-    },
-    "name" : "默认根节点 - 子目录文档库分类",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

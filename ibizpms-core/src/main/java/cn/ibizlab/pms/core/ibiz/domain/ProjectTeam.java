@@ -47,6 +47,15 @@ public class ProjectTeam extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+    /**
      * 角色
      */
     @TableField(value = "`ROLE`")
@@ -54,6 +63,15 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @JsonProperty("role")
     @ApiModelProperty("角色")
     private String role;
+    /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "`CREATEBY`")
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @ApiModelProperty("由谁创建")
+    private String createby;
     /**
      * 受限用户
      */
@@ -63,6 +81,15 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @JsonProperty("limited")
     @ApiModelProperty("受限用户")
     private String limited;
+    /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPT`")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
     /**
      * 总计可用
      */
@@ -80,6 +107,15 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @ApiModelProperty("用户")
     private String username;
     /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORG`")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
      * 可用工日
      */
     @DEField(defaultValue = "45")
@@ -88,6 +124,15 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @JsonProperty("days")
     @ApiModelProperty("可用工日")
     private Integer days;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "`UPDATEBY`")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
     /**
      * 退场时间
      */
@@ -124,6 +169,15 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @JsonProperty("id")
     @ApiModelProperty("编号")
     private Long id;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
     /**
      * 总计消耗
      */
@@ -210,60 +264,6 @@ public class ProjectTeam extends EntityMP implements Serializable {
     @JsonProperty("root")
     @ApiModelProperty("项目编号")
     private Long root;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
-     * 由谁创建
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEBY`")
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
     /**
      * 

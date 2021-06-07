@@ -223,10 +223,6 @@ zuul:
       path: /productmodules/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
-    ibz_api__test:
-      path: /tests/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
-      stripPrefix: false
     ibz_report:
       path: /ibzreports/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibizpms-webapi}
@@ -261,6 +257,10 @@ zuul:
       stripPrefix: false
     zt_testtask:
       path: /testtasks/**
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
+      stripPrefix: false
+    ibz_api__test:
+      path: /tests/**
       serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibz_weekly:

@@ -17,18 +17,18 @@
       "id" : "DELETE"
     }
   }, {
-    "dataAccessAction" : "READ",
-    "name" : "READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    }
-  }, {
     "dataAccessAction" : "CREATE",
     "name" : "CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     }
   } ],
   "roleTag" : "CURORG_RW",

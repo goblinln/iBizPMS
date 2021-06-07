@@ -144,6 +144,16 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     private String desc;
 
     /**
+     * 属性 [CASESTEPSN]
+     *
+     */
+    @JSONField(name = "casestepsn")
+    @JsonProperty("casestepsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("用例步骤编号")
+    private Long casestepsn;
+
+    /**
      * 属性 [EXPECT]
      *
      */
@@ -212,16 +222,6 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     @ApiModelProperty("分组用例步骤的组编号")
     private Long parent;
 
-    /**
-     * 属性 [CASESTEPSN]
-     *
-     */
-    @JSONField(name = "casestepsn")
-    @JsonProperty("casestepsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("用例步骤编号")
-    private Long casestepsn;
-
 
     /**
      * 设置 [TYPE]
@@ -248,6 +248,14 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [CASESTEPSN]
+     */
+    public void setCasestepsn(Long  casestepsn){
+        this.casestepsn = casestepsn ;
+        this.modify("casestepsn",casestepsn);
+    }
+
+    /**
      * 设置 [EXPECT]
      */
     public void setExpect(String  expect){
@@ -269,14 +277,6 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     public void setParent(Long  parent){
         this.parent = parent ;
         this.modify("parent",parent);
-    }
-
-    /**
-     * 设置 [CASESTEPSN]
-     */
-    public void setCasestepsn(Long  casestepsn){
-        this.casestepsn = casestepsn ;
-        this.modify("casestepsn",casestepsn);
     }
 
 

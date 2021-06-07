@@ -75,6 +75,16 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     private String ownerpk;
 
     /**
+     * 属性 [UPDATEDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
+
+    /**
      * 属性 [MAILTO]
      *
      */
@@ -104,6 +114,16 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     private String mailtopk;
 
     /**
+     * 属性 [CREATEMAN]
+     *
+     */
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("建立人")
+    private String createman;
+
+    /**
      * 属性 [UPDATEBY]
      *
      */
@@ -112,6 +132,16 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
+
+    /**
+     * 属性 [CREATEDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
 
     /**
      * 属性 [ORG]
@@ -213,6 +243,16 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     private String status;
 
     /**
+     * 属性 [UPDATEMAN]
+     *
+     */
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("更新人")
+    private String updateman;
+
+    /**
      * 属性 [MAILTOCONACT]
      *
      */
@@ -261,6 +301,16 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("auto")
     private String auto;
+
+    /**
+     * 属性 [TESTTASKSN]
+     *
+     */
+    @JSONField(name = "testtasksn")
+    @JsonProperty("testtasksn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试版本编号")
+    private Long testtasksn;
 
     /**
      * 属性 [NAME]
@@ -332,56 +382,6 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属项目")
     private Long project;
-
-    /**
-     * 属性 [TESTTASKSN]
-     *
-     */
-    @JSONField(name = "testtasksn")
-    @JsonProperty("testtasksn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("测试版本编号")
-    private Long testtasksn;
-
-    /**
-     * 属性 [CREATEMAN]
-     *
-     */
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("建立人")
-    private String createman;
-
-    /**
-     * 属性 [CREATEDATE]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-
-    /**
-     * 属性 [UPDATEMAN]
-     *
-     */
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("更新人")
-    private String updateman;
-
-    /**
-     * 属性 [UPDATEDATE]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
 
 
     /**
@@ -465,6 +465,14 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [TESTTASKSN]
+     */
+    public void setTesttasksn(Long  testtasksn){
+        this.testtasksn = testtasksn ;
+        this.modify("testtasksn",testtasksn);
+    }
+
+    /**
      * 设置 [NAME]
      */
     public void setName(String  name){
@@ -494,14 +502,6 @@ public class AccountTestTaskDTO extends DTOBase implements Serializable {
     public void setProject(Long  project){
         this.project = project ;
         this.modify("project",project);
-    }
-
-    /**
-     * 设置 [TESTTASKSN]
-     */
-    public void setTesttasksn(Long  testtasksn){
-        this.testtasksn = testtasksn ;
-        this.modify("testtasksn",testtasksn);
     }
 
 

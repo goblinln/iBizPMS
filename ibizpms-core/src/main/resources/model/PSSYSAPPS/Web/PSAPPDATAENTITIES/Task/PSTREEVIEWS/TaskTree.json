@@ -68,24 +68,24 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ptask"
-    },
-    "name" : "跟 - 跟任务",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "rootinfo"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "rootinfo"
     },
     "name" : "默认根节点 - 跟",
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ptask"
+    },
+    "name" : "跟 - 跟任务",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "rootinfo"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

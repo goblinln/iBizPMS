@@ -96,6 +96,16 @@ public class BuildDTO extends DTOBase implements Serializable {
     private String createby;
 
     /**
+     * 属性 [CREATEDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
+
+    /**
      * 属性 [FILES]
      *
      */
@@ -106,6 +116,16 @@ public class BuildDTO extends DTOBase implements Serializable {
     private String files;
 
     /**
+     * 属性 [BUILDSN]
+     *
+     */
+    @JSONField(name = "buildsn")
+    @JsonProperty("buildsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("版本编号")
+    private Long buildsn;
+
+    /**
      * 属性 [RELEASETYPE]
      *
      */
@@ -114,6 +134,16 @@ public class BuildDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("运行模式")
     private String releasetype;
+
+    /**
+     * 属性 [CREATEMAN]
+     *
+     */
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("建立人")
+    private String createman;
 
     /**
      * 属性 [BUILDERPK]
@@ -143,6 +173,16 @@ public class BuildDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
+
+    /**
+     * 属性 [UPDATEDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
 
     /**
      * 属性 [DESC]
@@ -213,6 +253,16 @@ public class BuildDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("源代码地址")
     private String scmpath;
+
+    /**
+     * 属性 [UPDATEMAN]
+     *
+     */
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("更新人")
+    private String updateman;
 
     /**
      * 属性 [FILEPATH]
@@ -334,56 +384,6 @@ public class BuildDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属项目")
     private Long project;
 
-    /**
-     * 属性 [BUILDSN]
-     *
-     */
-    @JSONField(name = "buildsn")
-    @JsonProperty("buildsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("版本编号")
-    private Long buildsn;
-
-    /**
-     * 属性 [CREATEMAN]
-     *
-     */
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("建立人")
-    private String createman;
-
-    /**
-     * 属性 [CREATEDATE]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-
-    /**
-     * 属性 [UPDATEMAN]
-     *
-     */
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("更新人")
-    private String updateman;
-
-    /**
-     * 属性 [UPDATEDATE]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
-
 
     /**
      * 设置 [NAME]
@@ -399,6 +399,14 @@ public class BuildDTO extends DTOBase implements Serializable {
     public void setBuilder(String  builder){
         this.builder = builder ;
         this.modify("builder",builder);
+    }
+
+    /**
+     * 设置 [BUILDSN]
+     */
+    public void setBuildsn(Long  buildsn){
+        this.buildsn = buildsn ;
+        this.modify("buildsn",buildsn);
     }
 
     /**
@@ -471,14 +479,6 @@ public class BuildDTO extends DTOBase implements Serializable {
     public void setProject(Long  project){
         this.project = project ;
         this.modify("project",project);
-    }
-
-    /**
-     * 设置 [BUILDSN]
-     */
-    public void setBuildsn(Long  buildsn){
-        this.buildsn = buildsn ;
-        this.modify("buildsn",buildsn);
     }
 
 

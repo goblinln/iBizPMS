@@ -84,6 +84,16 @@ public class TestCaseDTO extends DTOBase implements Serializable {
     private Timestamp openeddate;
 
     /**
+     * 属性 [CASESN]
+     *
+     */
+    @JSONField(name = "casesn")
+    @JsonProperty("casesn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试用例编号")
+    private Long casesn;
+
+    /**
      * 属性 [LASTRUNRESULT]
      *
      */
@@ -645,16 +655,6 @@ public class TestCaseDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属模块")
     private Long module;
 
-    /**
-     * 属性 [CASESN]
-     *
-     */
-    @JSONField(name = "casesn")
-    @JsonProperty("casesn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("测试用例编号")
-    private Long casesn;
-
 
     /**
      * 设置 [SCRIPTEDDATE]
@@ -678,6 +678,14 @@ public class TestCaseDTO extends DTOBase implements Serializable {
     public void setPath(Integer  path){
         this.path = path ;
         this.modify("path",path);
+    }
+
+    /**
+     * 设置 [CASESN]
+     */
+    public void setCasesn(Long  casesn){
+        this.casesn = casesn ;
+        this.modify("casesn",casesn);
     }
 
     /**
@@ -934,14 +942,6 @@ public class TestCaseDTO extends DTOBase implements Serializable {
     public void setModule(Long  module){
         this.module = module ;
         this.modify("module",module);
-    }
-
-    /**
-     * 设置 [CASESN]
-     */
-    public void setCasesn(Long  casesn){
-        this.casesn = casesn ;
-        this.modify("casesn",casesn);
     }
 
 

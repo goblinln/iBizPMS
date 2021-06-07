@@ -548,6 +548,16 @@ public class AccountProjectDTO extends DTOBase implements Serializable {
     private String noticeusers;
 
     /**
+     * 属性 [PROJECTSN]
+     *
+     */
+    @JSONField(name = "projectsn")
+    @JsonProperty("projectsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("项目编号")
+    private Long projectsn;
+
+    /**
      * 属性 [STATGE]
      *
      */
@@ -825,16 +835,6 @@ public class AccountProjectDTO extends DTOBase implements Serializable {
     @ApiModelProperty("父项目")
     private Long parent;
 
-    /**
-     * 属性 [PROJECTSN]
-     *
-     */
-    @JSONField(name = "projectsn")
-    @JsonProperty("projectsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("项目编号")
-    private Long projectsn;
-
 
     /**
      * 设置 [OPENEDVERSION]
@@ -965,6 +965,14 @@ public class AccountProjectDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [PROJECTSN]
+     */
+    public void setProjectsn(Long  projectsn){
+        this.projectsn = projectsn ;
+        this.modify("projectsn",projectsn);
+    }
+
+    /**
      * 设置 [STATGE]
      */
     public void setStatge(String  statge){
@@ -1066,14 +1074,6 @@ public class AccountProjectDTO extends DTOBase implements Serializable {
     public void setParent(Long  parent){
         this.parent = parent ;
         this.modify("parent",parent);
-    }
-
-    /**
-     * 设置 [PROJECTSN]
-     */
-    public void setProjectsn(Long  projectsn){
-        this.projectsn = projectsn ;
-        this.modify("projectsn",projectsn);
     }
 
 

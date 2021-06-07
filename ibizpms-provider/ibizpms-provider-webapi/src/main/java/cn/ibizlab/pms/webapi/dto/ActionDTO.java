@@ -65,6 +65,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     private String yesterday;
 
     /**
+     * 属性 [UPDATEDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
+
+    /**
      * 属性 [EXTRA]
      *
      */
@@ -83,6 +93,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("文件")
     private String files;
+
+    /**
+     * 属性 [ACTIONSN]
+     *
+     */
+    @JSONField(name = "actionsn")
+    @JsonProperty("actionsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("系统日志编号")
+    private Long actionsn;
 
     /**
      * 属性 [LASTMONTH]
@@ -195,6 +215,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     private String comment;
 
     /**
+     * 属性 [UPDATEMAN]
+     *
+     */
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("更新人")
+    private String updateman;
+
+    /**
      * 属性 [READ]
      *
      */
@@ -203,6 +233,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已读")
     private String read;
+
+    /**
+     * 属性 [CREATEMAN]
+     *
+     */
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("建立人")
+    private String createman;
 
     /**
      * 属性 [ACTION]
@@ -314,46 +354,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @ApiModelProperty("项目")
     private Long project;
 
-    /**
-     * 属性 [ACTIONSN]
-     *
-     */
-    @JSONField(name = "actionsn")
-    @JsonProperty("actionsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("系统日志编号")
-    private Long actionsn;
-
-    /**
-     * 属性 [CREATEMAN]
-     *
-     */
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("建立人")
-    private String createman;
-
-    /**
-     * 属性 [UPDATEDATE]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
-
-    /**
-     * 属性 [UPDATEMAN]
-     *
-     */
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("更新人")
-    private String updateman;
-
 
     /**
      * 设置 [EXTRA]
@@ -361,6 +361,14 @@ public class ActionDTO extends DTOBase implements Serializable {
     public void setExtra(String  extra){
         this.extra = extra ;
         this.modify("extra",extra);
+    }
+
+    /**
+     * 设置 [ACTIONSN]
+     */
+    public void setActionsn(Long  actionsn){
+        this.actionsn = actionsn ;
+        this.modify("actionsn",actionsn);
     }
 
     /**
@@ -409,14 +417,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     public void setProject(Long  project){
         this.project = project ;
         this.modify("project",project);
-    }
-
-    /**
-     * 设置 [ACTIONSN]
-     */
-    public void setActionsn(Long  actionsn){
-        this.actionsn = actionsn ;
-        this.modify("actionsn",actionsn);
     }
 
 

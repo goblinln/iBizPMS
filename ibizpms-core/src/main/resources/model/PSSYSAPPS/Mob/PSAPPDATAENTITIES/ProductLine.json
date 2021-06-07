@@ -15,6 +15,40 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -80,40 +114,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -234,28 +234,11 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
-    "codeName" : "OrgId",
-    "logicName" : "组织机构标识",
-    "name" : "ORGID",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "Order",
-    "logicName" : "排序",
-    "name" : "ORDER",
-    "stdDataType" : 9
-  }, {
     "codeName" : "Id",
     "logicName" : "id",
     "name" : "ID",
     "stdDataType" : 1,
     "keyField" : true
-  }, {
-    "codeName" : "IBizShort",
-    "logicName" : "简称",
-    "name" : "SHORT",
-    "stdDataType" : 25,
-    "stringLength" : 30
   }, {
     "codeName" : "MdeptId",
     "logicName" : "部门标识",
@@ -263,35 +246,17 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
     "stdDataType" : 25,
-    "stringLength" : 100
+    "stringLength" : 60
   }, {
-    "codeName" : "Type",
-    "logicName" : "类型",
-    "name" : "TYPE",
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "name" : "DELETED",
     "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "MdeptName",
-    "logicName" : "归属部门名",
-    "name" : "MDEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
+    "stringLength" : 1
   }, {
     "codeName" : "Name",
     "logicName" : "产品线名称",
@@ -301,13 +266,99 @@
     "enableQuickSearch" : true,
     "majorField" : true
   }, {
-    "codeName" : "Deleted",
-    "logicName" : "已删除",
-    "name" : "DELETED",
+    "codeName" : "MdeptName",
+    "logicName" : "归属部门名",
+    "name" : "MDEPTNAME",
     "stdDataType" : 25,
-    "stringLength" : 1
+    "stringLength" : 100
+  }, {
+    "codeName" : "Type",
+    "logicName" : "类型",
+    "name" : "TYPE",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "IBizShort",
+    "logicName" : "简称",
+    "name" : "SHORT",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "name" : "ORDER",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -373,57 +424,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Create"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
     },
     "builtinMethod" : false
   }, {

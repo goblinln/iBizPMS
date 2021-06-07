@@ -1001,13 +1001,16 @@
       "name" : "assignedto"
     }, {
       "dataType" : 25,
-      "name" : "tasktype"
+      "name" : "name"
     }, {
       "dataType" : 25,
-      "name" : "name"
+      "name" : "tasktype"
     }, {
       "dataType" : 7,
       "name" : "left"
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites"
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {
@@ -1015,9 +1018,6 @@
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
       },
       "name" : "status1"
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites"
     }, {
       "dataType" : 25,
       "name" : "srfkey",

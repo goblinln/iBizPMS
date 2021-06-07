@@ -639,11 +639,11 @@
     "noSort" : false,
     "singleSelect" : true,
     "name" : "grid",
-    "modelid" : "A45C77A2-210F-4AFC-8A38-885540C2D22D",
+    "modelid" : "0b67cd1e0ddbe82328570945ff622941",
     "modeltype" : "PSDEGRID"
   } ],
   "getPSDEViewCodeName" : "AddEstimateGridView",
-  "getPSDEViewId" : "E3DD1CA8-ED44-498E-A502-0B0C9A1C9C96",
+  "getPSDEViewId" : "6ff434380b07f779600bb9079ef8c74f",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEGRIDVIEW_STYLE2",
@@ -670,7 +670,7 @@
   "enableRowEdit" : true,
   "rowEditDefault" : true,
   "showCaptionBar" : true,
-  "modelid" : "588199de41c6a30f36ae3065d9790e9e",
+  "modelid" : "5cdd180bbc0620552e62f1dc64927d89",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,

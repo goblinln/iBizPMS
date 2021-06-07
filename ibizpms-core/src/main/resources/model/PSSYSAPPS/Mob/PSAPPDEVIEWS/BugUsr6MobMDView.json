@@ -514,16 +514,6 @@
       },
       "name" : "pri"
     }, {
-      "dataType" : 9,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
-      },
-      "name" : "confirmed"
-    }, {
-      "dataType" : 25,
-      "name" : "isfavorites"
-    }, {
       "dataType" : 25,
       "name" : "title"
     }, {
@@ -533,6 +523,16 @@
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__resolution.json"
       },
       "name" : "resolution"
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites"
+    }, {
+      "dataType" : 9,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
+      },
+      "name" : "confirmed"
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {

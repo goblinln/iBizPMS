@@ -3,13 +3,6 @@
   "name" : "当前组织（读写）",
   "orgDR" : 1,
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "DELETE",
     "getPSDEOPPriv" : {
@@ -22,6 +15,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
     }
   } ],
   "roleTag" : "CURORG_RW",

@@ -39,7 +39,7 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "grid_uagridcolumn1_uaeba961_click",
+    "name" : "grid_uagridcolumn1_u95b496c_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
       "id" : "子任务"
@@ -502,7 +502,7 @@
       "name" : "默认表格操作栏",
       "getPSUIActionGroupDetails" : [ {
         "detailType" : "DEUIACTION",
-        "name" : "uaeba961",
+        "name" : "u95b496c",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
           "caption" : "子任务",

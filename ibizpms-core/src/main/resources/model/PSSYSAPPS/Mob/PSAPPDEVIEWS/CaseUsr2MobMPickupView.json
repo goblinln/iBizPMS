@@ -293,11 +293,11 @@
               },
               "getPSAppDEDataSet" : {
                 "modelref" : true,
-                "id" : "FetchBugModule"
+                "id" : "FetchTestModule"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Module.json"
+                "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
               },
               "getPickupPSAppView" : {
                 "modelref" : true,

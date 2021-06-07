@@ -108,6 +108,14 @@ public class UserContact extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
+     * 用户联系方式编号
+     */
+    @TableField(value = "`USERCONTACTSN`")
+    @JSONField(name = "usercontactsn")
+    @JsonProperty("usercontactsn")
+    @ApiModelProperty("用户联系方式编号")
+    private Long usercontactsn;
+    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -125,14 +133,6 @@ public class UserContact extends EntityMP implements Serializable {
     @JsonProperty("account")
     @ApiModelProperty("account")
     private String account;
-    /**
-     * 用户联系方式编号
-     */
-    @TableField(value = "`USERCONTACTSN`")
-    @JSONField(name = "usercontactsn")
-    @JsonProperty("usercontactsn")
-    @ApiModelProperty("用户联系方式编号")
-    private Long usercontactsn;
 
 
 

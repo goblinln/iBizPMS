@@ -358,7 +358,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchBugProject"
+              "id" : "FetchCurProduct"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

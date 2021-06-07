@@ -134,6 +134,16 @@ public class ModuleDTO extends DTOBase implements Serializable {
     private String createby;
 
     /**
+     * 属性 [MODULESN]
+     *
+     */
+    @JSONField(name = "modulesn")
+    @JsonProperty("modulesn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("模块编号")
+    private Long modulesn;
+
+    /**
      * 属性 [MDEPTNAME]
      *
      */
@@ -243,16 +253,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @ApiModelProperty("上级模块")
     private Long parent;
 
-    /**
-     * 属性 [MODULESN]
-     *
-     */
-    @JSONField(name = "modulesn")
-    @JsonProperty("modulesn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("模块编号")
-    private Long modulesn;
-
 
     /**
      * 设置 [ROOT]
@@ -303,6 +303,14 @@ public class ModuleDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [MODULESN]
+     */
+    public void setModulesn(Long  modulesn){
+        this.modulesn = modulesn ;
+        this.modify("modulesn",modulesn);
+    }
+
+    /**
      * 设置 [COLLECTOR]
      */
     public void setCollector(String  collector){
@@ -340,14 +348,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     public void setParent(Long  parent){
         this.parent = parent ;
         this.modify("parent",parent);
-    }
-
-    /**
-     * 设置 [MODULESN]
-     */
-    public void setModulesn(Long  modulesn){
-        this.modulesn = modulesn ;
-        this.modify("modulesn",modulesn);
     }
 
 

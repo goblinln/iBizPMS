@@ -171,10 +171,28 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Grade",
     "logicName" : "级别",
     "name" : "GRADE",
     "stdDataType" : 9
+  }, {
+    "codeName" : "MdeptName",
+    "logicName" : "归属部门名",
+    "name" : "MDEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Collector",
     "logicName" : "collector",
@@ -188,9 +206,21 @@
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Ibiz_storytype",
     "logicName" : "需求模块类型",
     "name" : "IBIZ_STORYTYPE",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "OrgId",
+    "logicName" : "组织机构标识",
+    "name" : "ORGID",
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
@@ -219,6 +249,12 @@
     "stringLength" : 60,
     "enableQuickSearch" : true,
     "majorField" : true
+  }, {
+    "codeName" : "MdeptId",
+    "logicName" : "部门标识",
+    "name" : "MDEPTID",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Deleted",
     "logicName" : "已删除",
@@ -253,42 +289,6 @@
     "logicName" : "id",
     "name" : "PARENT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "MdeptId",
-    "logicName" : "部门标识",
-    "name" : "MDEPTID",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "MdeptName",
-    "logicName" : "归属部门名",
-    "name" : "MDEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgId",
-    "logicName" : "组织机构标识",
-    "name" : "ORGID",
-    "stdDataType" : 25,
-    "stringLength" : 60
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

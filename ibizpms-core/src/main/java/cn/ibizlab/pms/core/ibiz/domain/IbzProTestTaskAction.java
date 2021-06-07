@@ -47,13 +47,63 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 动作
+     * 消息通知用户
      */
-    @TableField(value = "`ACTION`")
-    @JSONField(name = "action")
-    @JsonProperty("action")
-    @ApiModelProperty("动作")
-    private String action;
+    @TableField(exist = false)
+    @JSONField(name = "noticeusers")
+    @JsonProperty("noticeusers")
+    @ApiModelProperty("消息通知用户")
+    private String noticeusers;
+    /**
+     * 附加值
+     */
+    @TableField(value = "`EXTRA`")
+    @JSONField(name = "extra")
+    @JsonProperty("extra")
+    @ApiModelProperty("附加值")
+    private String extra;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+    /**
+     * 上月
+     */
+    @TableField(exist = false)
+    @JSONField(name = "lastmonth")
+    @JsonProperty("lastmonth")
+    @ApiModelProperty("上月")
+    private String lastmonth;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
+     * 当前用户
+     */
+    @TableField(exist = false)
+    @JSONField(name = "isactorss")
+    @JsonProperty("isactorss")
+    @ApiModelProperty("当前用户")
+    private Long isactorss;
+    /**
+     * 昨天
+     */
+    @TableField(exist = false)
+    @JSONField(name = "yesterday")
+    @JsonProperty("yesterday")
+    @ApiModelProperty("昨天")
+    private String yesterday;
     /**
      * 操作方式
      */
@@ -63,21 +113,55 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @ApiModelProperty("操作方式")
     private String actionmanner;
     /**
-     * 系统日志编号
+     * 对象类型
      */
-    @TableField(value = "`ACTIONSN`")
-    @JSONField(name = "actionsn")
-    @JsonProperty("actionsn")
-    @ApiModelProperty("系统日志编号")
-    private Long actionsn;
+    @TableField(value = "`OBJECTTYPE`")
+    @JSONField(name = "objecttype")
+    @JsonProperty("objecttype")
+    @ApiModelProperty("对象类型")
+    private String objecttype;
     /**
-     * 操作者
+     * 项目
      */
-    @TableField(value = "`ACTOR`")
-    @JSONField(name = "actor")
-    @JsonProperty("actor")
-    @ApiModelProperty("操作者")
-    private String actor;
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
+    /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPT`")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
+    /**
+     * 备注
+     */
+    @TableField(exist = false)
+    @JSONField(name = "lastcomment")
+    @JsonProperty("lastcomment")
+    @ApiModelProperty("备注")
+    private String lastcomment;
+    /**
+     * 今天
+     */
+    @TableField(exist = false)
+    @JSONField(name = "today")
+    @JsonProperty("today")
+    @ApiModelProperty("今天")
+    private String today;
+    /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORG`")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
     /**
      * 日期
      */
@@ -89,14 +173,6 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @ApiModelProperty("日期")
     private Timestamp date;
     /**
-     * 备注
-     */
-    @TableField(value = "`COMMENT`")
-    @JSONField(name = "comment")
-    @JsonProperty("comment")
-    @ApiModelProperty("备注")
-    private String comment;
-    /**
      * 显示日期
      */
     @TableField(exist = false)
@@ -105,31 +181,21 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @ApiModelProperty("显示日期")
     private String date1;
     /**
-     * 归属部门名
+     * 动作
      */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
+    @TableField(value = "`ACTION`")
+    @JSONField(name = "action")
+    @JsonProperty("action")
+    @ApiModelProperty("动作")
+    private String action;
     /**
-     * 归属部门
+     * 系统日志编号
      */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
-    /**
-     * 附加值
-     */
-    @TableField(value = "`EXTRA`")
-    @JSONField(name = "extra")
-    @JsonProperty("extra")
-    @ApiModelProperty("附加值")
-    private String extra;
+    @TableField(value = "`ACTIONSN`")
+    @JSONField(name = "actionsn")
+    @JsonProperty("actionsn")
+    @ApiModelProperty("系统日志编号")
+    private Long actionsn;
     /**
      * 文件
      */
@@ -139,13 +205,29 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @ApiModelProperty("文件")
     private String files;
     /**
-     * 当前用户
+     * 产品
+     */
+    @TableField(value = "`PRODUCT`")
+    @JSONField(name = "product")
+    @JsonProperty("product")
+    @ApiModelProperty("产品")
+    private String product;
+    /**
+     * 本周
      */
     @TableField(exist = false)
-    @JSONField(name = "isactorss")
-    @JsonProperty("isactorss")
-    @ApiModelProperty("当前用户")
-    private Long isactorss;
+    @JSONField(name = "thisweek")
+    @JsonProperty("thisweek")
+    @ApiModelProperty("本周")
+    private String thisweek;
+    /**
+     * 备注
+     */
+    @TableField(value = "`COMMENT`")
+    @JSONField(name = "comment")
+    @JsonProperty("comment")
+    @ApiModelProperty("备注")
+    private String comment;
     /**
      * id
      */
@@ -156,22 +238,6 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @ApiModelProperty("id")
     private Long id;
     /**
-     * 上月
-     */
-    @TableField(exist = false)
-    @JSONField(name = "lastmonth")
-    @JsonProperty("lastmonth")
-    @ApiModelProperty("上月")
-    private String lastmonth;
-    /**
-     * 备注
-     */
-    @TableField(exist = false)
-    @JSONField(name = "lastcomment")
-    @JsonProperty("lastcomment")
-    @ApiModelProperty("备注")
-    private String lastcomment;
-    /**
      * 上周
      */
     @TableField(exist = false)
@@ -180,47 +246,13 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @ApiModelProperty("上周")
     private String lastweek;
     /**
-     * 消息通知用户
+     * 操作者
      */
-    @TableField(exist = false)
-    @JSONField(name = "noticeusers")
-    @JsonProperty("noticeusers")
-    @ApiModelProperty("消息通知用户")
-    private String noticeusers;
-    /**
-     * 对象类型
-     */
-    @TableField(value = "`OBJECTTYPE`")
-    @JSONField(name = "objecttype")
-    @JsonProperty("objecttype")
-    @ApiModelProperty("对象类型")
-    private String objecttype;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 产品
-     */
-    @TableField(value = "`PRODUCT`")
-    @JSONField(name = "product")
-    @JsonProperty("product")
-    @ApiModelProperty("产品")
-    private String product;
+    @TableField(value = "`ACTOR`")
+    @JSONField(name = "actor")
+    @JsonProperty("actor")
+    @ApiModelProperty("操作者")
+    private String actor;
     /**
      * 已读
      */
@@ -238,72 +270,8 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     @JsonProperty("thismonth")
     @ApiModelProperty("本月")
     private String thismonth;
-    /**
-     * 今天
-     */
-    @TableField(exist = false)
-    @JSONField(name = "today")
-    @JsonProperty("today")
-    @ApiModelProperty("今天")
-    private String today;
-    /**
-     * 本周
-     */
-    @TableField(exist = false)
-    @JSONField(name = "thisweek")
-    @JsonProperty("thisweek")
-    @ApiModelProperty("本周")
-    private String thisweek;
-    /**
-     * 昨天
-     */
-    @TableField(exist = false)
-    @JSONField(name = "yesterday")
-    @JsonProperty("yesterday")
-    @ApiModelProperty("昨天")
-    private String yesterday;
-    /**
-     * 项目
-     */
-    @TableField(value = "`PROJECT`")
-    @JSONField(name = "project")
-    @JsonProperty("project")
-    @ApiModelProperty("项目")
-    private Long project;
 
 
-
-    /**
-     * 设置 [动作]
-     */
-    public void setAction(String action) {
-        this.action = action;
-        this.modify("action", action);
-    }
-
-    /**
-     * 设置 [系统日志编号]
-     */
-    public void setActionsn(Long actionsn) {
-        this.actionsn = actionsn;
-        this.modify("actionsn", actionsn);
-    }
-
-    /**
-     * 设置 [操作者]
-     */
-    public void setActor(String actor) {
-        this.actor = actor;
-        this.modify("actor", actor);
-    }
-
-    /**
-     * 设置 [备注]
-     */
-    public void setComment(String comment) {
-        this.comment = comment;
-        this.modify("comment", comment);
-    }
 
     /**
      * 设置 [附加值]
@@ -322,6 +290,30 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [项目]
+     */
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
+    }
+
+    /**
+     * 设置 [动作]
+     */
+    public void setAction(String action) {
+        this.action = action;
+        this.modify("action", action);
+    }
+
+    /**
+     * 设置 [系统日志编号]
+     */
+    public void setActionsn(Long actionsn) {
+        this.actionsn = actionsn;
+        this.modify("actionsn", actionsn);
+    }
+
+    /**
      * 设置 [产品]
      */
     public void setProduct(String product) {
@@ -330,19 +322,27 @@ public class IbzProTestTaskAction extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [备注]
+     */
+    public void setComment(String comment) {
+        this.comment = comment;
+        this.modify("comment", comment);
+    }
+
+    /**
+     * 设置 [操作者]
+     */
+    public void setActor(String actor) {
+        this.actor = actor;
+        this.modify("actor", actor);
+    }
+
+    /**
      * 设置 [已读]
      */
     public void setRead(String read) {
         this.read = read;
         this.modify("read", read);
-    }
-
-    /**
-     * 设置 [项目]
-     */
-    public void setProject(Long project) {
-        this.project = project;
-        this.modify("project", project);
     }
 
 

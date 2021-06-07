@@ -44,6 +44,26 @@ public class TaskTeamNestedDTO extends DTOBase implements Serializable {
     private Double estimate;
 
     /**
+     * 属性 [ORG]
+     *
+     */
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织")
+    private String org;
+
+    /**
+     * 属性 [UPDATEBY]
+     *
+     */
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+
+    /**
      * 属性 [USERNAME]
      *
      */
@@ -101,6 +121,26 @@ public class TaskTeamNestedDTO extends DTOBase implements Serializable {
     private Double left;
 
     /**
+     * 属性 [DEPTNAME]
+     *
+     */
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+
+    /**
+     * 属性 [CREATEBY]
+     *
+     */
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+
+    /**
      * 属性 [CONSUMED]
      *
      */
@@ -128,6 +168,16 @@ public class TaskTeamNestedDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("角色")
     private String role;
+
+    /**
+     * 属性 [DEPT]
+     *
+     */
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门")
+    private String dept;
 
     /**
      * 属性 [ID]
@@ -158,6 +208,16 @@ public class TaskTeamNestedDTO extends DTOBase implements Serializable {
     private Integer total;
 
     /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+
+    /**
      * 属性 [TYPE]
      *
      */
@@ -176,66 +236,6 @@ public class TaskTeamNestedDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long root;
-
-    /**
-     * 属性 [DEPTNAME]
-     *
-     */
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-
-    /**
-     * 属性 [ORG]
-     *
-     */
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织")
-    private String org;
-
-    /**
-     * 属性 [DEPT]
-     *
-     */
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门")
-    private String dept;
-
-    /**
-     * 属性 [UPDATEBY]
-     *
-     */
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-
-    /**
-     * 属性 [CREATEBY]
-     *
-     */
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
 
     /**

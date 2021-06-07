@@ -451,6 +451,11 @@
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
+    "codeName" : "Doclibsn",
+    "logicName" : "文档库编号",
+    "name" : "DOCLIBSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Order",
     "logicName" : "排序",
     "name" : "ORDER",
@@ -476,11 +481,6 @@
     "codeName" : "Product",
     "logicName" : "产品库",
     "name" : "PRODUCT",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Doclibsn",
-    "logicName" : "文档库编号",
-    "name" : "DOCLIBSN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

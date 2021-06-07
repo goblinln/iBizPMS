@@ -688,11 +688,10 @@
             "name" : "pri"
           }, {
             "dataType" : 25,
-            "getFrontPSCodeList" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__color.json"
-            },
-            "name" : "color"
+            "name" : "isleaf"
+          }, {
+            "dataType" : 1,
+            "name" : "id"
           }, {
             "dataType" : 25,
             "getFrontPSCodeList" : {
@@ -704,8 +703,8 @@
             "dataType" : 25,
             "name" : "ischild"
           }, {
-            "dataType" : 25,
-            "name" : "isleaf"
+            "dataType" : 7,
+            "name" : "estimate"
           }, {
             "dataType" : 25,
             "getFrontPSCodeList" : {
@@ -714,11 +713,15 @@
             },
             "name" : "status"
           }, {
-            "dataType" : 7,
-            "name" : "estimate"
-          }, {
             "dataType" : 25,
             "name" : "isfavorites"
+          }, {
+            "dataType" : 25,
+            "getFrontPSCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__color.json"
+            },
+            "name" : "color"
           }, {
             "dataType" : 25,
             "getFrontPSCodeList" : {
@@ -726,9 +729,6 @@
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__stage.json"
             },
             "name" : "stage"
-          }, {
-            "dataType" : 1,
-            "name" : "id"
           }, {
             "dataType" : 25,
             "name" : "srfkey",

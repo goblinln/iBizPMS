@@ -1163,6 +1163,32 @@
     "reloadData" : true,
     "id" : "editMob@Todo"
   }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "开始",
+    "codeName" : "StartMob",
+    "dataAccessAction" : "START",
+    "fullCodeName" : "Todo_StartMob",
+    "name" : "todo开始（移动端）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "Start"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "play"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "StartMob",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "StartMob@Todo"
+  }, {
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "TodoCreateMob",
@@ -1213,32 +1239,6 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "finishMob@Todo"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "开始",
-    "codeName" : "StartMob",
-    "dataAccessAction" : "START",
-    "fullCodeName" : "Todo_StartMob",
-    "name" : "todo开始（移动端）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "Start"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Todo.json"
-    },
-    "getPSSysImage" : {
-      "cssClass" : "play"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "StartMob",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "StartMob@Todo"
   } ],
   "getAllPSDEMainStates" : [ {
     "codeName" : "closed",
@@ -1461,6 +1461,13 @@
     "mSTag" : "wait",
     "name" : "wait",
     "getPSDEMainStateActions" : [ {
+      "name" : "Start",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -1514,13 +1521,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Create.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Start",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/Start.json"
       },
       "allowMode" : true
     }, {

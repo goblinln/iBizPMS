@@ -3785,6 +3785,18 @@
                   },
                   "editorType" : "PICKEREX_TRIGGER",
                   "name" : "modulenameeq",
+                  "getPSAppDEACMode" : {
+                    "modelref" : true,
+                    "id" : "Default"
+                  },
+                  "getPSAppDEDataSet" : {
+                    "modelref" : true,
+                    "id" : "FetchTestModule"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+                  },
                   "dropDownView" : false,
                   "enableAC" : true,
                   "enableLinkView" : false,
@@ -3822,6 +3834,18 @@
                   },
                   "editorType" : "PICKEREX_TRIGGER",
                   "name" : "modulenamelike",
+                  "getPSAppDEACMode" : {
+                    "modelref" : true,
+                    "id" : "Default"
+                  },
+                  "getPSAppDEDataSet" : {
+                    "modelref" : true,
+                    "id" : "FetchTestModule"
+                  },
+                  "getPSAppDataEntity" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+                  },
                   "dropDownView" : false,
                   "enableAC" : true,
                   "enableLinkView" : false,
@@ -4118,7 +4142,7 @@
                   },
                   "getPSAppDEDataSet" : {
                     "modelref" : true,
-                    "id" : "FetchBugProject"
+                    "id" : "FetchCurProduct"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -4167,7 +4191,7 @@
                   },
                   "getPSAppDEDataSet" : {
                     "modelref" : true,
-                    "id" : "FetchBugProject"
+                    "id" : "FetchCurProduct"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,

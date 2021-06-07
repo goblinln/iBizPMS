@@ -481,6 +481,41 @@
     "pasteReset" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTSN",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTSN",
+      "queryCodeExp" : "t1.`DEPTSN`",
+      "standardColumnName" : "`DEPTSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "DEPTSN",
+        "codeName" : "Deptsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Deptsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "部门编号",
+    "name" : "DEPTSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "NAME",
       "dBType" : "MYSQL5",
       "name" : "NAME",
@@ -652,41 +687,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPTSN",
-      "dBType" : "MYSQL5",
-      "name" : "DEPTSN",
-      "queryCodeExp" : "t1.`DEPTSN`",
-      "standardColumnName" : "`DEPTSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "DEPTSN",
-        "codeName" : "Deptsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Deptsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "部门编号",
-    "name" : "DEPTSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

@@ -204,6 +204,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "CanceledBy",
+    "logicName" : "由谁取消",
+    "name" : "CANCELEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
     "codeName" : "Teamembers",
     "logicName" : "全部成员",
     "name" : "TEAMEMBERS",
@@ -246,11 +252,35 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "ClosedBy",
+    "logicName" : "由谁关闭",
+    "name" : "CLOSEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "OpenedBy",
+    "logicName" : "由谁创建",
+    "name" : "OPENEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Acl",
+    "logicName" : "访问控制",
+    "name" : "ACL",
+    "stdDataType" : 25,
+    "stringLength" : 7
+  }, {
     "codeName" : "Fifthmember",
     "logicName" : "团队成员（五）",
     "name" : "FIFTHMEMBER",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Sixthmember",
     "logicName" : "团队成员（六）",
@@ -265,36 +295,6 @@
     "stringLength" : 100,
     "enableQuickSearch" : true,
     "majorField" : true
-  }, {
-    "codeName" : "OpenedBy",
-    "logicName" : "由谁创建",
-    "name" : "OPENEDBY",
-    "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
-    "codeName" : "Acl",
-    "logicName" : "访问控制",
-    "name" : "ACL",
-    "stdDataType" : 25,
-    "stringLength" : 7
-  }, {
-    "codeName" : "ClosedBy",
-    "logicName" : "由谁关闭",
-    "name" : "CLOSEDBY",
-    "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
-    "codeName" : "CanceledBy",
-    "logicName" : "由谁取消",
-    "name" : "CANCELEDBY",
-    "stdDataType" : 25,
-    "stringLength" : 30
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

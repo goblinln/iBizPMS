@@ -3,6 +3,20 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Maintain_All.json",
   "name" : "项目维护（全部数据）",
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CREATE",
+    "name" : "Project_Maintain_All_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Project_Maintain_All_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
     "dataAccessAction" : "READ",
     "name" : "Project_Maintain_All_READ",
     "getPSDEOPPriv" : {
@@ -15,20 +29,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
-    }
-  }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "Project_Maintain_All_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    }
-  }, {
-    "dataAccessAction" : "CREATE",
-    "name" : "Project_Maintain_All_CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
     }
   } ],
   "roleTag" : "Project_Maintain_All",

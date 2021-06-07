@@ -71,6 +71,15 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @ApiModelProperty("测试负责人")
     private String qd;
     /**
+     * 由谁取消
+     */
+    @DEField(defaultValue = "#EMPTY")
+    @TableField(value = "`CANCELEDBY`")
+    @JSONField(name = "canceledby")
+    @JsonProperty("canceledby")
+    @ApiModelProperty("由谁取消")
+    private String canceledby;
+    /**
      * 全部成员
      */
     @TableField(exist = false)
@@ -128,29 +137,14 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @ApiModelProperty("项目负责人")
     private String pm;
     /**
-     * 团队成员（五）
+     * 由谁关闭
      */
-    @TableField(exist = false)
-    @JSONField(name = "fifthmember")
-    @JsonProperty("fifthmember")
-    @ApiModelProperty("团队成员（五）")
-    private String fifthmember;
-    /**
-     * 团队成员（六）
-     */
-    @TableField(exist = false)
-    @JSONField(name = "sixthmember")
-    @JsonProperty("sixthmember")
-    @ApiModelProperty("团队成员（六）")
-    private String sixthmember;
-    /**
-     * 项目名称
-     */
-    @TableField(value = "`NAME`")
-    @JSONField(name = "name")
-    @JsonProperty("name")
-    @ApiModelProperty("项目名称")
-    private String name;
+    @DEField(defaultValue = "#EMPTY")
+    @TableField(value = "`CLOSEDBY`")
+    @JSONField(name = "closedby")
+    @JsonProperty("closedby")
+    @ApiModelProperty("由谁关闭")
+    private String closedby;
     /**
      * 由谁创建
      */
@@ -170,23 +164,13 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @ApiModelProperty("访问控制")
     private String acl;
     /**
-     * 由谁关闭
+     * 团队成员（五）
      */
-    @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CLOSEDBY`")
-    @JSONField(name = "closedby")
-    @JsonProperty("closedby")
-    @ApiModelProperty("由谁关闭")
-    private String closedby;
-    /**
-     * 由谁取消
-     */
-    @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CANCELEDBY`")
-    @JSONField(name = "canceledby")
-    @JsonProperty("canceledby")
-    @ApiModelProperty("由谁取消")
-    private String canceledby;
+    @TableField(exist = false)
+    @JSONField(name = "fifthmember")
+    @JsonProperty("fifthmember")
+    @ApiModelProperty("团队成员（五）")
+    private String fifthmember;
     /**
      * 由谁更新
      */
@@ -196,23 +180,31 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
     private String updateby;
+    /**
+     * 团队成员（六）
+     */
+    @TableField(exist = false)
+    @JSONField(name = "sixthmember")
+    @JsonProperty("sixthmember")
+    @ApiModelProperty("团队成员（六）")
+    private String sixthmember;
+    /**
+     * 项目名称
+     */
+    @TableField(value = "`NAME`")
+    @JSONField(name = "name")
+    @JsonProperty("name")
+    @ApiModelProperty("项目名称")
+    private String name;
 
 
 
     /**
-     * 设置 [项目名称]
+     * 设置 [由谁取消]
      */
-    public void setName(String name) {
-        this.name = name;
-        this.modify("name", name);
-    }
-
-    /**
-     * 设置 [访问控制]
-     */
-    public void setAcl(String acl) {
-        this.acl = acl;
-        this.modify("acl", acl);
+    public void setCanceledby(String canceledby) {
+        this.canceledby = canceledby;
+        this.modify("canceledby", canceledby);
     }
 
     /**
@@ -224,11 +216,19 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [由谁取消]
+     * 设置 [访问控制]
      */
-    public void setCanceledby(String canceledby) {
-        this.canceledby = canceledby;
-        this.modify("canceledby", canceledby);
+    public void setAcl(String acl) {
+        this.acl = acl;
+        this.modify("acl", acl);
+    }
+
+    /**
+     * 设置 [项目名称]
+     */
+    public void setName(String name) {
+        this.name = name;
+        this.modify("name", name);
     }
 
 

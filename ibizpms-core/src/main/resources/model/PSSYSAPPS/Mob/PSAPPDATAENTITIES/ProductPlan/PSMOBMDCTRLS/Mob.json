@@ -224,15 +224,15 @@
     "dataType" : 25,
     "name" : "title"
   }, {
-    "dataType" : 25,
-    "name" : "statuss"
-  }, {
     "dataType" : 5,
     "format" : "YYYY-MM-DD",
     "name" : "end"
   }, {
     "dataType" : 9,
     "name" : "bugcnt"
+  }, {
+    "dataType" : 25,
+    "name" : "statuss"
   }, {
     "dataType" : 25,
     "name" : "srfkey",

@@ -872,6 +872,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "Productplansn",
+    "logicName" : "产品计划编号",
+    "name" : "PRODUCTPLANSN",
+    "stdDataType" : 1,
+    "enableQuickSearch" : true
+  }, {
     "codeName" : "FinishedTaskscnt",
     "logicName" : "完成任务数",
     "name" : "FINISHEDTASKSCNT",
@@ -902,12 +908,6 @@
     "logicName" : "产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "Productplansn",
-    "logicName" : "产品计划编号",
-    "name" : "PRODUCTPLANSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
@@ -2164,6 +2164,9 @@
     "name" : "READ",
     "id" : "ZTProduct__READ"
   }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
     "logicName" : "Project_Read",
     "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "READ",
@@ -2173,9 +2176,6 @@
     },
     "name" : "READ",
     "id" : "Project__READ"
-  }, {
-    "logicName" : "读取",
-    "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

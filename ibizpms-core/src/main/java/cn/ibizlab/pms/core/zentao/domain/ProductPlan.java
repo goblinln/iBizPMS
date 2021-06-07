@@ -325,6 +325,14 @@ public class ProductPlan extends EntityMP implements Serializable {
     @ApiModelProperty("周期")
     private String delta;
     /**
+     * 产品计划编号
+     */
+    @TableField(value = "`PRODUCTPLANSN`")
+    @JSONField(name = "productplansn")
+    @JsonProperty("productplansn")
+    @ApiModelProperty("产品计划编号")
+    private Long productplansn;
+    /**
      * 完成任务数
      */
     @TableField(exist = false)
@@ -375,14 +383,6 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品")
     private Long product;
-    /**
-     * 产品计划编号
-     */
-    @TableField(value = "`PRODUCTPLANSN`")
-    @JSONField(name = "productplansn")
-    @JsonProperty("productplansn")
-    @ApiModelProperty("产品计划编号")
-    private Long productplansn;
 
     /**
      * 
@@ -479,6 +479,14 @@ public class ProductPlan extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [产品计划编号]
+     */
+    public void setProductplansn(Long productplansn) {
+        this.productplansn = productplansn;
+        this.modify("productplansn", productplansn);
+    }
+
+    /**
      * 设置 [平台/分支]
      */
     public void setBranch(Long branch) {
@@ -500,14 +508,6 @@ public class ProductPlan extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
-    }
-
-    /**
-     * 设置 [产品计划编号]
-     */
-    public void setProductplansn(Long productplansn) {
-        this.productplansn = productplansn;
-        this.modify("productplansn", productplansn);
     }
 
 

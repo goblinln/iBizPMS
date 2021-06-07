@@ -6,13 +6,6 @@
     "id" : "OpenQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "SUSPEND",
-    "name" : "Project_Manage_Open_suspend",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "SUSPEND"
-    }
-  }, {
     "dataAccessAction" : "ACTIVATE",
     "name" : "Project_Manage_Open_Activate",
     "getPSDEOPPriv" : {
@@ -20,11 +13,11 @@
       "id" : "ACTIVATE"
     }
   }, {
-    "dataAccessAction" : "PUTOFF",
-    "name" : "Project_Manage_Open_Putoff",
+    "dataAccessAction" : "SUSPEND",
+    "name" : "Project_Manage_Open_suspend",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "PUTOFF"
+      "id" : "SUSPEND"
     }
   }, {
     "dataAccessAction" : "START",
@@ -39,6 +32,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CLOSE"
+    }
+  }, {
+    "dataAccessAction" : "PUTOFF",
+    "name" : "Project_Manage_Open_Putoff",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PUTOFF"
     }
   } ],
   "roleTag" : "Project_Manage_Open",

@@ -1244,6 +1244,52 @@
               "enableUpdateDataRS" : false
             } ], [ {
               "actionRSMode" : 1,
+              "codeName" : "Builds",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+              },
+              "name" : "TEST__BUILD",
+              "getParentPSAppDEField" : {
+                "name" : "PRODUCT",
+                "codeName" : "Product"
+              },
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            }, {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "BUILD__ACTION",
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ], [ {
+              "actionRSMode" : 1,
               "codeName" : "TestTasks",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
@@ -2261,7 +2307,7 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "APPVIEWUIACTION",
-              "name" : "dashboard_sysportlet2_uf238318_click",
+              "name" : "dashboard_sysportlet2_u9b28da0_click",
               "getPSAppViewUIAction" : {
                 "modelref" : true,
                 "id" : "todo开始（操作栏）"
@@ -2492,7 +2538,7 @@
                 "showIcon" : true
               }, {
                 "detailType" : "DEUIACTION",
-                "name" : "uf238318",
+                "name" : "u9b28da0",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "开始",

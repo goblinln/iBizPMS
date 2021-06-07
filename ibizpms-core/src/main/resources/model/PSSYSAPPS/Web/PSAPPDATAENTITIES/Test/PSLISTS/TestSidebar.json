@@ -189,11 +189,11 @@
     "dataType" : 1,
     "name" : "id"
   }, {
-    "dataType" : 9,
-    "name" : "istop"
-  }, {
     "dataType" : 1,
     "name" : "productsn"
+  }, {
+    "dataType" : 9,
+    "name" : "istop"
   }, {
     "dataType" : 25,
     "getFrontPSCodeList" : {

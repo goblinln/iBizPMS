@@ -629,6 +629,18 @@
         "editorType" : "PICKEREX_TRIGGER",
         "handlerType" : "PickupText",
         "name" : "modulename",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchTestModule"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+        },
         "getPSNavigateContexts" : [ {
           "key" : "N_ROOT_EQ",
           "name" : "N_ROOT_EQ",

@@ -11,8 +11,8 @@
             </extensionElements>
                 <startEvent id="begin" isInterrupting="true"/>
                 <endEvent id="prepareparam1_end" name="end"/>
-                            <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="FF6E81BD-184F-4672-9C88-76072CE0AC9A" id="FF6E81BD-184F-4672-9C88-76072CE0AC9A" implementation="http://www.jboss.org/drools/rule" name="ibzweeklycreategetlastweekplanandwork"/>
-                        <sequenceFlow id="begin_FF6E81BD-184F-4672-9C88-76072CE0AC9A" sourceRef="begin" targetRef="FF6E81BD-184F-4672-9C88-76072CE0AC9A"/>
-                            <sequenceFlow id="FF6E81BD-184F-4672-9C88-76072CE0AC9A_prepareparam1_end" sourceRef="FF6E81BD-184F-4672-9C88-76072CE0AC9A" targetRef="prepareparam1_end"/>
+                            <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="ee489dc5e387396966aed140ac9e7218" id="ee489dc5e387396966aed140ac9e7218" implementation="http://www.jboss.org/drools/rule" name="ibzweeklycreategetlastweekplanandwork"/>
+                        <sequenceFlow id="begin_ee489dc5e387396966aed140ac9e7218" sourceRef="begin" targetRef="ee489dc5e387396966aed140ac9e7218"/>
+                            <sequenceFlow id="ee489dc5e387396966aed140ac9e7218_prepareparam1_end" sourceRef="ee489dc5e387396966aed140ac9e7218" targetRef="prepareparam1_end"/>
         </process>
     </definitions>

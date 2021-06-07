@@ -254,6 +254,16 @@ public class DocLibDTO extends DTOBase implements Serializable {
     private Timestamp openeddate;
 
     /**
+     * 属性 [DOCLIBSN]
+     *
+     */
+    @JSONField(name = "doclibsn")
+    @JsonProperty("doclibsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("文档库编号")
+    private Long doclibsn;
+
+    /**
      * 属性 [ORDER]
      *
      */
@@ -301,16 +311,6 @@ public class DocLibDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品库")
     private Long product;
-
-    /**
-     * 属性 [DOCLIBSN]
-     *
-     */
-    @JSONField(name = "doclibsn")
-    @JsonProperty("doclibsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("文档库编号")
-    private Long doclibsn;
 
 
     /**
@@ -378,6 +378,14 @@ public class DocLibDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [DOCLIBSN]
+     */
+    public void setDoclibsn(Long  doclibsn){
+        this.doclibsn = doclibsn ;
+        this.modify("doclibsn",doclibsn);
+    }
+
+    /**
      * 设置 [ORDER]
      */
     public void setOrder(Integer  order){
@@ -399,14 +407,6 @@ public class DocLibDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
-    }
-
-    /**
-     * 设置 [DOCLIBSN]
-     */
-    public void setDoclibsn(Long  doclibsn){
-        this.doclibsn = doclibsn ;
-        this.modify("doclibsn",doclibsn);
     }
 
 

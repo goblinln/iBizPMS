@@ -2636,6 +2636,59 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "OPENEDBY",
       "dBType" : "MYSQL5",
       "name" : "OPENEDBY",
@@ -3666,6 +3719,59 @@
     "name" : "BUGSN",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "ORG",
@@ -5252,10 +5358,6 @@
     "length" : 8,
     "logicName" : "所属模块",
     "name" : "MODULE",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/BugModule.json"
-    },
     "getPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_MODULE_MODULE.json"
@@ -5715,112 +5817,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "name" : "CREATEMAN",
-      "standardColumnName" : "`CREATEMAN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "CREATEMAN",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEMAN",
-        "codeName" : "CreateMan"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CreateMan",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSCODELISTS/SysOperator.json"
-    },
-    "predefinedType" : "CREATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEMAN",
-      "standardColumnName" : "`UPDATEMAN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "UPDATEMAN",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEMAN",
-        "codeName" : "UpdateMan"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateMan",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "更新人",
-    "name" : "UPDATEMAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSCODELISTS/SysOperator.json"
-    },
-    "predefinedType" : "UPDATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "systemReserver" : true
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "BugFavorites",
@@ -6353,42 +6349,6 @@
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
           "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "name" : "连接6511",
-        "getPSDELogicLinkGroupCond" : {
-          "groupOP" : "AND",
-          "logicType" : "GROUP",
-          "name" : "连接条件组",
-          "getPSDELogicLinkConds" : [ {
-            "condOP" : "ISNOTNULL",
-            "dstFieldName" : "STORY",
-            "getDstLogicParam" : {
-              "modelref" : true,
-              "id" : "Default"
-            },
-            "logicType" : "SINGLE",
-            "name" : "Default[STORY] 值不为空(NotNil)"
-          }, {
-            "condOP" : "NOTEQ",
-            "dstFieldName" : "STORY",
-            "getDstLogicParam" : {
-              "modelref" : true,
-              "id" : "Default"
-            },
-            "logicType" : "SINGLE",
-            "name" : "Default[STORY] 不等于(<>) (0)",
-            "paramValue" : "0"
-          } ]
-        },
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      }, {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
           "id" : "Prepareparam1"
         },
         "name" : "连接4196",
@@ -6420,6 +6380,42 @@
               "logicType" : "SINGLE",
               "name" : "Default[STORY] 值为空(Nil)"
             } ]
+          } ]
+        },
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
+      }, {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接6511",
+        "getPSDELogicLinkGroupCond" : {
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "name" : "连接条件组",
+          "getPSDELogicLinkConds" : [ {
+            "condOP" : "ISNOTNULL",
+            "dstFieldName" : "STORY",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Default[STORY] 值不为空(NotNil)"
+          }, {
+            "condOP" : "NOTEQ",
+            "dstFieldName" : "STORY",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Default[STORY] 不等于(<>) (0)",
+            "paramValue" : "0"
           } ]
         },
         "getSrcPSDELogicNode" : {
@@ -9105,34 +9101,6 @@
       "id" : "MyCreateOrPartake"
     },
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "FAVORITES",
-      "name" : "FAVORITES",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__FAVORITES"
-      }
-    }, {
-      "dataAccessAction" : "PLANLINK",
-      "name" : "PLANLINK",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "PLANLINK"
-      }
-    }, {
-      "dataAccessAction" : "ASSIGNTO",
-      "name" : "ASSIGNTO",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__ASSIGNTO"
-      }
-    }, {
-      "dataAccessAction" : "BUILDLINK",
-      "name" : "BUILDLINK",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "BUILDLINK"
-      }
-    }, {
       "dataAccessAction" : "CONFIRM",
       "name" : "CONFIRM",
       "getPSDEOPPriv" : {
@@ -9140,18 +9108,18 @@
         "id" : "ZTProduct__CONFIRM"
       }
     }, {
-      "dataAccessAction" : "CLOSE",
-      "name" : "CLOSE",
+      "dataAccessAction" : "ACTIVATE",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "CLOSE"
+        "id" : "ZTProduct__ACTIVATE"
       }
     }, {
-      "dataAccessAction" : "RESOLVE",
-      "name" : "RESOLVE",
+      "dataAccessAction" : "ASSIGNTO",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "ZTProduct__RESOLVE"
+        "id" : "ZTProduct__ASSIGNTO"
       }
     }, {
       "dataAccessAction" : "RELEASELINK",
@@ -9168,11 +9136,39 @@
         "id" : "ZTProduct__NFAVORITES"
       }
     }, {
-      "dataAccessAction" : "ACTIVATE",
-      "name" : "ACTIVATE",
+      "dataAccessAction" : "RESOLVE",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "ZTProduct__ACTIVATE"
+        "id" : "ZTProduct__RESOLVE"
+      }
+    }, {
+      "dataAccessAction" : "PLANLINK",
+      "name" : "PLANLINK",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "PLANLINK"
+      }
+    }, {
+      "dataAccessAction" : "BUILDLINK",
+      "name" : "BUILDLINK",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "BUILDLINK"
+      }
+    }, {
+      "dataAccessAction" : "FAVORITES",
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__FAVORITES"
+      }
+    }, {
+      "dataAccessAction" : "CLOSE",
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
       }
     } ],
     "roleTag" : "Bug_Maintain_OpenBy",
@@ -9325,6 +9321,13 @@
     "name" : "当前组织（读写）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
       "dataAccessAction" : "READ",
       "name" : "READ",
       "getPSDEOPPriv" : {
@@ -9337,13 +9340,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
       }
     } ],
     "roleTag" : "CURORG_RW",
@@ -9645,7 +9641,7 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_MODULE_MODULE.json",
     "getMajorPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
     },
     "masterOrder" : -1,
     "masterRS" : 0,

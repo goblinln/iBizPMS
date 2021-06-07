@@ -393,6 +393,13 @@
     "xDataControlName" : "mdctrl"
   } ],
   "getPSDEListDataItems" : [ {
+    "dataType" : 9,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
+    },
+    "name" : "confirmed"
+  }, {
     "dataType" : 25,
     "name" : "title"
   }, {
@@ -411,21 +418,14 @@
     "name" : "status"
   }, {
     "dataType" : 25,
-    "name" : "isfavorites"
-  }, {
-    "dataType" : 9,
-    "getFrontPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
-    },
-    "name" : "confirmed"
-  }, {
-    "dataType" : 25,
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
     },
     "name" : "assignedto"
+  }, {
+    "dataType" : 25,
+    "name" : "isfavorites"
   }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {

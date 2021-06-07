@@ -298,156 +298,12 @@ public class SysUser extends EntityClient implements Serializable {
     private Integer superuser;
 
     /**
-     * 原密码
-     */
-    @JSONField(name = "originalpassword")
-    @JsonProperty("originalpassword")
-    @ApiModelProperty("原密码")
-    private String originalpassword;
-
-    /**
-     * 新密码
-     */
-    @JSONField(name = "newpassword")
-    @JsonProperty("newpassword")
-    @ApiModelProperty("新密码")
-    private String newpassword;
-
-    /**
-     * 重复密码
-     */
-    @JSONField(name = "repeatpassword")
-    @JsonProperty("repeatpassword")
-    @ApiModelProperty("重复密码")
-    private String repeatpassword;
-
-    /**
-     * 过期项目数
-     */
-    @JSONField(name = "eprojects")
-    @JsonProperty("eprojects")
-    @ApiModelProperty("过期项目数")
-    private String eprojects;
-
-    /**
-     * 项目成员
-     */
-    @JSONField(name = "projectteamcnt")
-    @JsonProperty("projectteamcnt")
-    @ApiModelProperty("项目成员")
-    private Integer projectteamcnt;
-
-    /**
-     * 我的待办数
-     */
-    @JSONField(name = "mytodocnt")
-    @JsonProperty("mytodocnt")
-    @ApiModelProperty("我的待办数")
-    private Integer mytodocnt;
-
-    /**
-     * 我收藏的bugs
-     */
-    @JSONField(name = "myfavoritebugs")
-    @JsonProperty("myfavoritebugs")
-    @ApiModelProperty("我收藏的bugs")
-    private Integer myfavoritebugs;
-
-    /**
-     * 我的bugs
-     */
-    @JSONField(name = "mybugs")
-    @JsonProperty("mybugs")
-    @ApiModelProperty("我的bugs")
-    private Integer mybugs;
-
-    /**
-     * 剩余里程碑
-     */
-    @JSONField(name = "leftlcbcnt")
-    @JsonProperty("leftlcbcnt")
-    @ApiModelProperty("剩余里程碑")
-    private Integer leftlcbcnt;
-
-    /**
-     * 我的任务
-     */
-    @JSONField(name = "mytasks")
-    @JsonProperty("mytasks")
-    @ApiModelProperty("我的任务")
-    private Integer mytasks;
-
-    /**
      * 我的过期bug数
      */
     @JSONField(name = "myebugs")
     @JsonProperty("myebugs")
     @ApiModelProperty("我的过期bug数")
     private String myebugs;
-
-    /**
-     * 我的地盘
-     */
-    @JSONField(name = "myterritorycnt")
-    @JsonProperty("myterritorycnt")
-    @ApiModelProperty("我的地盘")
-    private Integer myterritorycnt;
-
-    /**
-     * 我的收藏
-     */
-    @JSONField(name = "myfavorites")
-    @JsonProperty("myfavorites")
-    @ApiModelProperty("我的收藏")
-    private Integer myfavorites;
-
-    /**
-     * 我的需求数
-     */
-    @JSONField(name = "mystorys")
-    @JsonProperty("mystorys")
-    @ApiModelProperty("我的需求数")
-    private Integer mystorys;
-
-    /**
-     * 今日截止待办
-     */
-    @JSONField(name = "mytodocntjz")
-    @JsonProperty("mytodocntjz")
-    @ApiModelProperty("今日截止待办")
-    private String mytodocntjz;
-
-    /**
-     * 剩余里程碑（今日到期）
-     */
-    @JSONField(name = "leftlcbjzcnt")
-    @JsonProperty("leftlcbjzcnt")
-    @ApiModelProperty("剩余里程碑（今日到期）")
-    private String leftlcbjzcnt;
-
-    /**
-     * 我的过期任务数
-     */
-    @JSONField(name = "myetasks")
-    @JsonProperty("myetasks")
-    @ApiModelProperty("我的过期任务数")
-    private String myetasks;
-
-    /**
-     * 我收藏的需求数
-     */
-    @JSONField(name = "myfavoritestorys")
-    @JsonProperty("myfavoritestorys")
-    @ApiModelProperty("我收藏的需求数")
-    private Integer myfavoritestorys;
-
-    /**
-     * 我收藏的任务
-     */
-    @JSONField(name = "myfavoritetasks")
-    @JsonProperty("myfavoritetasks")
-    @ApiModelProperty("我收藏的任务")
-    private Integer myfavoritetasks;
 
     /**
      * 未关闭产品数
@@ -458,12 +314,156 @@ public class SysUser extends EntityClient implements Serializable {
     private Integer products;
 
     /**
+     * 我的需求数
+     */
+    @JSONField(name = "mystorys")
+    @JsonProperty("mystorys")
+    @ApiModelProperty("我的需求数")
+    private Integer mystorys;
+
+    /**
      * 未关闭项目数
      */
     @JSONField(name = "projects")
     @JsonProperty("projects")
     @ApiModelProperty("未关闭项目数")
     private Integer projects;
+
+    /**
+     * 我的地盘
+     */
+    @JSONField(name = "myterritorycnt")
+    @JsonProperty("myterritorycnt")
+    @ApiModelProperty("我的地盘")
+    private Integer myterritorycnt;
+
+    /**
+     * 原密码
+     */
+    @JSONField(name = "originalpassword")
+    @JsonProperty("originalpassword")
+    @ApiModelProperty("原密码")
+    private String originalpassword;
+
+    /**
+     * 我的收藏
+     */
+    @JSONField(name = "myfavorites")
+    @JsonProperty("myfavorites")
+    @ApiModelProperty("我的收藏")
+    private Integer myfavorites;
+
+    /**
+     * 我的过期任务数
+     */
+    @JSONField(name = "myetasks")
+    @JsonProperty("myetasks")
+    @ApiModelProperty("我的过期任务数")
+    private String myetasks;
+
+    /**
+     * 新密码
+     */
+    @JSONField(name = "newpassword")
+    @JsonProperty("newpassword")
+    @ApiModelProperty("新密码")
+    private String newpassword;
+
+    /**
+     * 过期项目数
+     */
+    @JSONField(name = "eprojects")
+    @JsonProperty("eprojects")
+    @ApiModelProperty("过期项目数")
+    private String eprojects;
+
+    /**
+     * 我收藏的需求数
+     */
+    @JSONField(name = "myfavoritestorys")
+    @JsonProperty("myfavoritestorys")
+    @ApiModelProperty("我收藏的需求数")
+    private Integer myfavoritestorys;
+
+    /**
+     * 项目成员
+     */
+    @JSONField(name = "projectteamcnt")
+    @JsonProperty("projectteamcnt")
+    @ApiModelProperty("项目成员")
+    private Integer projectteamcnt;
+
+    /**
+     * 今日截止待办
+     */
+    @JSONField(name = "mytodocntjz")
+    @JsonProperty("mytodocntjz")
+    @ApiModelProperty("今日截止待办")
+    private String mytodocntjz;
+
+    /**
+     * 我的bugs
+     */
+    @JSONField(name = "mybugs")
+    @JsonProperty("mybugs")
+    @ApiModelProperty("我的bugs")
+    private Integer mybugs;
+
+    /**
+     * 我的待办数
+     */
+    @JSONField(name = "mytodocnt")
+    @JsonProperty("mytodocnt")
+    @ApiModelProperty("我的待办数")
+    private Integer mytodocnt;
+
+    /**
+     * 剩余里程碑
+     */
+    @JSONField(name = "leftlcbcnt")
+    @JsonProperty("leftlcbcnt")
+    @ApiModelProperty("剩余里程碑")
+    private Integer leftlcbcnt;
+
+    /**
+     * 我收藏的bugs
+     */
+    @JSONField(name = "myfavoritebugs")
+    @JsonProperty("myfavoritebugs")
+    @ApiModelProperty("我收藏的bugs")
+    private Integer myfavoritebugs;
+
+    /**
+     * 重复密码
+     */
+    @JSONField(name = "repeatpassword")
+    @JsonProperty("repeatpassword")
+    @ApiModelProperty("重复密码")
+    private String repeatpassword;
+
+    /**
+     * 我的任务
+     */
+    @JSONField(name = "mytasks")
+    @JsonProperty("mytasks")
+    @ApiModelProperty("我的任务")
+    private Integer mytasks;
+
+    /**
+     * 我收藏的任务
+     */
+    @JSONField(name = "myfavoritetasks")
+    @JsonProperty("myfavoritetasks")
+    @ApiModelProperty("我收藏的任务")
+    private Integer myfavoritetasks;
+
+    /**
+     * 剩余里程碑（今日到期）
+     */
+    @JSONField(name = "leftlcbjzcnt")
+    @JsonProperty("leftlcbjzcnt")
+    @ApiModelProperty("剩余里程碑（今日到期）")
+    private String leftlcbjzcnt;
 
 
 

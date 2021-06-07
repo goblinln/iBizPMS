@@ -156,6 +156,14 @@ public class Product extends EntityMP implements Serializable {
     @ApiModelProperty("计划总数")
     private Integer productplancnt;
     /**
+     * 产品编号
+     */
+    @TableField(value = "`productsn`")
+    @JSONField(name = "productsn")
+    @JsonProperty("productsn")
+    @ApiModelProperty("产品编号")
+    private Long productsn;
+    /**
      * 编号
      */
     @DEField(isKeyField = true)
@@ -497,13 +505,13 @@ public class Product extends EntityMP implements Serializable {
     @ApiModelProperty("激活需求数")
     private Integer activestorycnt;
     /**
-     * 产品编号
+     * 产品线
      */
-    @TableField(value = "`productsn`")
-    @JSONField(name = "productsn")
-    @JsonProperty("productsn")
-    @ApiModelProperty("产品编号")
-    private Long productsn;
+    @TableField(exist = false)
+    @JSONField(name = "linename")
+    @JsonProperty("linename")
+    @ApiModelProperty("产品线")
+    private String linename;
     /**
      * id
      */
@@ -512,14 +520,6 @@ public class Product extends EntityMP implements Serializable {
     @JsonProperty("line")
     @ApiModelProperty("id")
     private Long line;
-    /**
-     * 产品线
-     */
-    @TableField(exist = false)
-    @JSONField(name = "linename")
-    @JsonProperty("linename")
-    @ApiModelProperty("产品线")
-    private String linename;
 
     /**
      * 产品线
@@ -569,6 +569,14 @@ public class Product extends EntityMP implements Serializable {
     public void setName(String name) {
         this.name = name;
         this.modify("name", name);
+    }
+
+    /**
+     * 设置 [产品编号]
+     */
+    public void setProductsn(Long productsn) {
+        this.productsn = productsn;
+        this.modify("productsn", productsn);
     }
 
     /**
@@ -665,14 +673,6 @@ public class Product extends EntityMP implements Serializable {
     public void setCode(String code) {
         this.code = code;
         this.modify("code", code);
-    }
-
-    /**
-     * 设置 [产品编号]
-     */
-    public void setProductsn(Long productsn) {
-        this.productsn = productsn;
-        this.modify("productsn", productsn);
     }
 
     /**

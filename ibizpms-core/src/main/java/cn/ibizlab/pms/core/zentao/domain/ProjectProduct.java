@@ -56,6 +56,16 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
+     * 建立时间
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
+    /**
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
@@ -64,6 +74,15 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
     private String deptname;
+    /**
+     * 建立人
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
     /**
      * 由谁更新
      */
@@ -101,6 +120,25 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @ApiModelProperty("主键")
     private String id;
     /**
+     * 更新人
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @TableField(value = "`UPDATEMAN`")
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
+    private String updateman;
+    /**
+     * 更新时间
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
+    @TableField(value = "`UPDATEDATE`")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
+    /**
      * 归属组织名
      */
     @DEField(preType = DEPredefinedFieldType.ORGNAME)
@@ -110,6 +148,15 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织名")
     private String orgname;
     /**
+     * 计划结束时间
+     */
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "end", format = "yyyy-MM-dd")
+    @JsonProperty("end")
+    @ApiModelProperty("计划结束时间")
+    private Timestamp end;
+    /**
      * 产品
      */
     @TableField(exist = false)
@@ -117,6 +164,24 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @JsonProperty("productname")
     @ApiModelProperty("产品")
     private String productname;
+    /**
+     * 结束日期
+     */
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "projectend", format = "yyyy-MM-dd")
+    @JsonProperty("projectend")
+    @ApiModelProperty("结束日期")
+    private Timestamp projectend;
+    /**
+     * 计划开始时间
+     */
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "begin", format = "yyyy-MM-dd")
+    @JsonProperty("begin")
+    @ApiModelProperty("计划开始时间")
+    private Timestamp begin;
     /**
      * 项目名称
      */
@@ -133,6 +198,30 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @JsonProperty("planname")
     @ApiModelProperty("计划名称")
     private String planname;
+    /**
+     * 产品编号
+     */
+    @TableField(exist = false)
+    @JSONField(name = "productcode")
+    @JsonProperty("productcode")
+    @ApiModelProperty("产品编号")
+    private String productcode;
+    /**
+     * 项目状态
+     */
+    @TableField(exist = false)
+    @JSONField(name = "status")
+    @JsonProperty("status")
+    @ApiModelProperty("项目状态")
+    private String status;
+    /**
+     * 项目代号
+     */
+    @TableField(exist = false)
+    @JSONField(name = "projectcode")
+    @JsonProperty("projectcode")
+    @ApiModelProperty("项目代号")
+    private String projectcode;
     /**
      * 产品
      */
@@ -165,95 +254,6 @@ public class ProjectProduct extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("项目编号")
     private Long project;
-    /**
-     * 产品编号
-     */
-    @TableField(exist = false)
-    @JSONField(name = "productcode")
-    @JsonProperty("productcode")
-    @ApiModelProperty("产品编号")
-    private String productcode;
-    /**
-     * 计划开始时间
-     */
-    @TableField(exist = false)
-    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "begin", format = "yyyy-MM-dd")
-    @JsonProperty("begin")
-    @ApiModelProperty("计划开始时间")
-    private Timestamp begin;
-    /**
-     * 计划结束时间
-     */
-    @TableField(exist = false)
-    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "end", format = "yyyy-MM-dd")
-    @JsonProperty("end")
-    @ApiModelProperty("计划结束时间")
-    private Timestamp end;
-    /**
-     * 建立人
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
-    /**
-     * 建立时间
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-    /**
-     * 更新人
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @ApiModelProperty("更新人")
-    private String updateman;
-    /**
-     * 更新时间
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
-    /**
-     * 项目状态
-     */
-    @TableField(exist = false)
-    @JSONField(name = "status")
-    @JsonProperty("status")
-    @ApiModelProperty("项目状态")
-    private String status;
-    /**
-     * 项目代号
-     */
-    @TableField(exist = false)
-    @JSONField(name = "projectcode")
-    @JsonProperty("projectcode")
-    @ApiModelProperty("项目代号")
-    private String projectcode;
-    /**
-     * 结束日期
-     */
-    @TableField(exist = false)
-    @JsonFormat(pattern = "yyyy-MM-dd", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "projectend", format = "yyyy-MM-dd")
-    @JsonProperty("projectend")
-    @ApiModelProperty("结束日期")
-    private Timestamp projectend;
 
     /**
      * 

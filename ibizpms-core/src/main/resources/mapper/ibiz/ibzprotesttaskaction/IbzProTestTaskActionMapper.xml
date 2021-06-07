@@ -11,11 +11,14 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
-		<if test="srf.n_action_eq != null ">
-			<![CDATA[ AND  t1.`ACTION` = #{srf.n_action_eq,jdbcType=VARCHAR} ]]>
-        </if>
 		<if test="srf.n_actionmanner_eq != null ">
 			<![CDATA[ AND  (case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end) = #{srf.n_actionmanner_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_objecttype_eq != null ">
+			<![CDATA[ AND  t1.`OBJECTTYPE` = #{srf.n_objecttype_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_action_eq != null ">
+			<![CDATA[ AND  t1.`ACTION` = #{srf.n_action_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_comment_like != null ">
             <bind name="bind_n_comment_like" value="'%' + srf.n_comment_like + '%'" />
@@ -23,9 +26,6 @@
         </if>
 		<if test="srf.n_id_eq != null ">
 			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="srf.n_objecttype_eq != null ">
-			<![CDATA[ AND  t1.`OBJECTTYPE` = #{srf.n_objecttype_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_read_eq != null ">
 			<![CDATA[ AND  t1.`READ` = #{srf.n_read_eq,jdbcType=VARCHAR} ]]>

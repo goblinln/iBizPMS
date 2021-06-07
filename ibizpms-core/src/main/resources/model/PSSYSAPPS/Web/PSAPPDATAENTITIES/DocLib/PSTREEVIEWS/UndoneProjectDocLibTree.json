@@ -23,25 +23,38 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ALLUnDoneProject"
+      "id" : "ChildDoclibModule"
     },
-    "name" : "默认根节点 - 所有项目",
+    "name" : "子文档库模块 - 子文档库模块",
+    "parentFilter" : "parent",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "ChildDoclibModule"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "RootDoclibModule"
+      "id" : "Project"
     },
-    "name" : "文档库 - 根文档库模块",
-    "parentFilter" : "root",
+    "name" : "所有项目 - 项目",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "DocLib"
+      "id" : "ALLUnDoneProject"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ChildDoclibModule"
+    },
+    "name" : "根文档库模块 - 子文档库模块",
+    "parentFilter" : "parent",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "RootDoclibModule"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -92,38 +105,25 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildDoclibModule"
-    },
-    "name" : "子文档库模块 - 子文档库模块",
-    "parentFilter" : "parent",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ChildDoclibModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Project"
-    },
-    "name" : "所有项目 - 项目",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
       "id" : "ALLUnDoneProject"
     },
+    "name" : "默认根节点 - 所有项目",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
     "parentValueLevel" : 1,
     "searchMode" : 3
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildDoclibModule"
+      "id" : "RootDoclibModule"
     },
-    "name" : "根文档库模块 - 子文档库模块",
-    "parentFilter" : "parent",
+    "name" : "文档库 - 根文档库模块",
+    "parentFilter" : "root",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "RootDoclibModule"
+      "id" : "DocLib"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

@@ -280,6 +280,18 @@
     "name" : "ESTIMATE",
     "stdDataType" : 7
   }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "UpdateBy",
+    "logicName" : "由谁更新",
+    "name" : "UPDATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Username",
     "logicName" : "用户",
     "name" : "USERNAME",
@@ -315,6 +327,18 @@
     "name" : "LEFT",
     "stdDataType" : 7
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "CreateBy",
+    "logicName" : "由谁创建",
+    "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Consumed",
     "logicName" : "总计消耗",
     "name" : "CONSUMED",
@@ -332,6 +356,12 @@
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Id",
     "logicName" : "编号",
     "name" : "ID",
@@ -348,6 +378,12 @@
     "name" : "TOTAL",
     "stdDataType" : 9
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Type",
     "logicName" : "团队类型",
     "name" : "TYPE",
@@ -358,42 +394,6 @@
     "logicName" : "编号",
     "name" : "ROOT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Org",
-    "logicName" : "归属组织",
-    "name" : "ORG",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Dept",
-    "logicName" : "归属部门",
-    "name" : "DEPT",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "UpdateBy",
-    "logicName" : "由谁更新",
-    "name" : "UPDATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "CreateBy",
-    "logicName" : "由谁创建",
-    "name" : "CREATEBY",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Create",

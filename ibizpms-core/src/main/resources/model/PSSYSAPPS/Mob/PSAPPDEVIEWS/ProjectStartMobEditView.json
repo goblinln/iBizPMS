@@ -595,8 +595,12 @@
                   "id" : "MDCTRL"
                 },
                 "getPSDEListDataItems" : [ {
-                  "dataType" : 21,
-                  "name" : "comment"
+                  "dataType" : 25,
+                  "getFrontPSCodeList" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
+                  },
+                  "name" : "objecttype"
                 }, {
                   "dataType" : 25,
                   "getFrontPSCodeList" : {
@@ -612,12 +616,8 @@
                     "codeName" : "Action"
                   }
                 }, {
-                  "dataType" : 25,
-                  "getFrontPSCodeList" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
-                  },
-                  "name" : "objecttype"
+                  "dataType" : 21,
+                  "name" : "comment"
                 }, {
                   "dataType" : 25,
                   "name" : "item"
@@ -1042,7 +1042,7 @@
     "modeltype" : "PSDETOOLBAR"
   } ],
   "getPSDEViewCodeName" : "StartMobEditView",
-  "getPSDEViewId" : "B9567989-242C-47DF-8CEF-30C805DF78A9",
+  "getPSDEViewId" : "1e19987c52a6d2f03b8c33f929bdb05b",
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPDEMOBEDITVIEW",
@@ -1064,6 +1064,6 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "213046c819a2b121740d6f5112f595be",
+  "modelid" : "19645d3ff8665c5d67cdc629dc32935f",
   "modeltype" : "PSAPPDEVIEW"
 }

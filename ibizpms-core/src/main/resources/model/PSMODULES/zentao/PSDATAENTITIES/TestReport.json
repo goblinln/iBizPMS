@@ -703,6 +703,41 @@
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "TESTREPORTSN",
+      "dBType" : "MYSQL5",
+      "name" : "TESTREPORTSN",
+      "queryCodeExp" : "t1.`TESTREPORTSN`",
+      "standardColumnName" : "`TESTREPORTSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "TESTREPORTSN",
+        "codeName" : "Testreportsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Testreportsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "测试报告编号",
+    "name" : "TESTREPORTSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1730,41 +1765,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "TESTREPORTSN",
-      "dBType" : "MYSQL5",
-      "name" : "TESTREPORTSN",
-      "queryCodeExp" : "t1.`TESTREPORTSN`",
-      "standardColumnName" : "`TESTREPORTSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TESTREPORTSN",
-        "codeName" : "Testreportsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Testreportsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "测试报告编号",
-    "name" : "TESTREPORTSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "GetInfoTestTask",

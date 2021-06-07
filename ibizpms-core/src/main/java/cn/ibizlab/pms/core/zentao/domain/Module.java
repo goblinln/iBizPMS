@@ -134,6 +134,14 @@ public class Module extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
+     * 模块编号
+     */
+    @TableField(value = "`MODULESN`")
+    @JSONField(name = "modulesn")
+    @JsonProperty("modulesn")
+    @ApiModelProperty("模块编号")
+    private Long modulesn;
+    /**
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
@@ -231,14 +239,6 @@ public class Module extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("上级模块")
     private Long parent;
-    /**
-     * 模块编号
-     */
-    @TableField(value = "`MODULESN`")
-    @JSONField(name = "modulesn")
-    @JsonProperty("modulesn")
-    @ApiModelProperty("模块编号")
-    private Long modulesn;
 
     /**
      * 
@@ -307,6 +307,14 @@ public class Module extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [模块编号]
+     */
+    public void setModulesn(Long modulesn) {
+        this.modulesn = modulesn;
+        this.modify("modulesn", modulesn);
+    }
+
+    /**
      * 设置 [收藏者]
      */
     public void setCollector(String collector) {
@@ -344,14 +352,6 @@ public class Module extends EntityMP implements Serializable {
     public void setParent(Long parent) {
         this.parent = parent;
         this.modify("parent", parent);
-    }
-
-    /**
-     * 设置 [模块编号]
-     */
-    public void setModulesn(Long modulesn) {
-        this.modulesn = modulesn;
-        this.modify("modulesn", modulesn);
     }
 
 

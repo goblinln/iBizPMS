@@ -238,6 +238,14 @@ public class DocLib extends EntityMP implements Serializable {
     @ApiModelProperty("创建时间")
     private Timestamp openeddate;
     /**
+     * 文档库编号
+     */
+    @TableField(value = "`DOCLIBSN`")
+    @JSONField(name = "doclibsn")
+    @JsonProperty("doclibsn")
+    @ApiModelProperty("文档库编号")
+    private Long doclibsn;
+    /**
      * 排序
      */
     @DEField(defaultValue = "0")
@@ -280,14 +288,6 @@ public class DocLib extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品库")
     private Long product;
-    /**
-     * 文档库编号
-     */
-    @TableField(value = "`DOCLIBSN`")
-    @JSONField(name = "doclibsn")
-    @JsonProperty("doclibsn")
-    @ApiModelProperty("文档库编号")
-    private Long doclibsn;
 
     /**
      * 
@@ -372,6 +372,14 @@ public class DocLib extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [文档库编号]
+     */
+    public void setDoclibsn(Long doclibsn) {
+        this.doclibsn = doclibsn;
+        this.modify("doclibsn", doclibsn);
+    }
+
+    /**
      * 设置 [排序]
      */
     public void setOrder(Integer order) {
@@ -393,14 +401,6 @@ public class DocLib extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
-    }
-
-    /**
-     * 设置 [文档库编号]
-     */
-    public void setDoclibsn(Long doclibsn) {
-        this.doclibsn = doclibsn;
-        this.modify("doclibsn", doclibsn);
     }
 
 

@@ -623,34 +623,6 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "Root_NoBranch"
-    },
-    "name" : "所有模块 - 根模块无分支（动态）",
-    "getPSNavigateParams" : [ {
-      "key" : "n_type_eq",
-      "name" : "n_type_eq",
-      "value" : "story",
-      "rawValue" : true
-    }, {
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "n_branch_eq",
-      "name" : "n_branch_eq",
-      "value" : "0",
-      "rawValue" : true
-    } ],
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ALL"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "MODULE"
     },
     "name" : "非根模块（动态） - 非根模块（动态）",
@@ -739,12 +711,29 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "BRANCHS"
+      "id" : "ROOTMODULE"
     },
-    "name" : "平台 - 平台（动态）",
+    "name" : "平台（动态） - 根模块（动态）",
+    "getPSNavigateParams" : [ {
+      "key" : "n_type_eq",
+      "name" : "n_type_eq",
+      "value" : "story",
+      "rawValue" : true
+    }, {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "n_branch_noteq",
+      "name" : "n_branch_noteq",
+      "value" : "0",
+      "rawValue" : true
+    } ],
+    "parentFilter" : "branch",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "BRANCH"
+      "id" : "BRANCHS"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -795,9 +784,21 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOTMODULE"
+      "id" : "BRANCHS"
     },
-    "name" : "平台（动态） - 根模块（动态）",
+    "name" : "平台 - 平台（动态）",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "BRANCH"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Root_NoBranch"
+    },
+    "name" : "所有模块 - 根模块无分支（动态）",
     "getPSNavigateParams" : [ {
       "key" : "n_type_eq",
       "name" : "n_type_eq",
@@ -809,15 +810,14 @@
       "value" : "0",
       "rawValue" : true
     }, {
-      "key" : "n_branch_noteq",
-      "name" : "n_branch_noteq",
+      "key" : "n_branch_eq",
+      "name" : "n_branch_eq",
       "value" : "0",
       "rawValue" : true
     } ],
-    "parentFilter" : "branch",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "BRANCHS"
+      "id" : "ALL"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

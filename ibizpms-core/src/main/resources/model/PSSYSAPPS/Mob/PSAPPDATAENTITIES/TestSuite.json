@@ -311,6 +311,11 @@
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
+    "codeName" : "Testsuitesn",
+    "logicName" : "测试套件编号",
+    "name" : "TESTSUITESN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Id",
     "logicName" : "编号",
     "name" : "ID",
@@ -361,11 +366,6 @@
     "codeName" : "Product",
     "logicName" : "所属产品",
     "name" : "PRODUCT",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Testsuitesn",
-    "logicName" : "测试套件编号",
-    "name" : "TESTSUITESN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

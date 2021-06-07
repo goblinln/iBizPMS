@@ -604,6 +604,41 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "USERTPLSN",
+      "dBType" : "MYSQL5",
+      "name" : "USERTPLSN",
+      "queryCodeExp" : "t1.`USERTPLSN`",
+      "standardColumnName" : "`USERTPLSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "USERTPLSN",
+        "codeName" : "Usertplsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Usertplsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "用户模板编号",
+    "name" : "USERTPLSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "PUBLIC",
       "dBType" : "MYSQL5",
       "name" : "PUBLIC",
@@ -762,41 +797,6 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "USERTPLSN",
-      "dBType" : "MYSQL5",
-      "name" : "USERTPLSN",
-      "queryCodeExp" : "t1.`USERTPLSN`",
-      "standardColumnName" : "`USERTPLSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "USERTPLSN",
-        "codeName" : "Usertplsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Usertplsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "用户模板编号",
-    "name" : "USERTPLSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -900,6 +900,13 @@
         "id" : "DELETE"
       }
     }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
       "dataAccessAction" : "CREATE",
       "name" : "CREATE",
       "getPSDEOPPriv" : {
@@ -912,13 +919,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "READ"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
       }
     } ],
     "roleTag" : "UserTpl_Maintain_My",

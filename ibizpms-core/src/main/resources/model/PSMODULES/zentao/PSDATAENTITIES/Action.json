@@ -545,6 +545,43 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEDATE",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEDATE",
+      "standardColumnName" : "`UPDATEDATE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEDATE",
+        "codeName" : "UpdateDate"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateDate",
+    "dEFType" : 1,
+    "dataType" : "DATETIME",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "predefinedType" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "EXTRA",
       "dBType" : "MYSQL5",
       "name" : "EXTRA",
@@ -634,6 +671,40 @@
     "phisicalDEField" : false,
     "queryColumn" : false,
     "uIAssistDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ACTIONSN",
+      "dBType" : "MYSQL5",
+      "name" : "ACTIONSN",
+      "standardColumnName" : "`ACTIONSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "ACTIONSN",
+        "codeName" : "Actionsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Actionsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "系统日志编号",
+    "name" : "ACTIONSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "LASTMONTH",
@@ -1181,6 +1252,59 @@
     "majorDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "UPDATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "UPDATEMAN",
+      "standardColumnName" : "`UPDATEMAN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "UPDATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "UPDATEMAN",
+        "codeName" : "UpdateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "UpdateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "READ",
       "dBType" : "MYSQL5",
       "name" : "READ",
@@ -1238,6 +1362,59 @@
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "ACTION",
@@ -1772,183 +1949,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ACTIONSN",
-      "dBType" : "MYSQL5",
-      "name" : "ACTIONSN",
-      "standardColumnName" : "`ACTIONSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "ACTIONSN",
-        "codeName" : "Actionsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Actionsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "系统日志编号",
-    "name" : "ACTIONSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "name" : "CREATEMAN",
-      "standardColumnName" : "`CREATEMAN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "CREATEMAN",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEMAN",
-        "codeName" : "CreateMan"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CreateMan",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSCODELISTS/SysOperator.json"
-    },
-    "predefinedType" : "CREATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEDATE",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEDATE",
-      "standardColumnName" : "`UPDATEDATE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEDATE",
-        "codeName" : "UpdateDate"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateDate",
-    "dEFType" : 1,
-    "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "更新时间",
-    "name" : "UPDATEDATE",
-    "predefinedType" : "UPDATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "UPDATEMAN",
-      "dBType" : "MYSQL5",
-      "name" : "UPDATEMAN",
-      "standardColumnName" : "`UPDATEMAN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "UPDATEMAN",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEMAN",
-        "codeName" : "UpdateMan"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "UpdateMan",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "更新人",
-    "name" : "UPDATEMAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSCODELISTS/SysOperator.json"
-    },
-    "predefinedType" : "UPDATEMAN",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "systemReserver" : true
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "Comment",
@@ -2055,15 +2055,55 @@
     "enableFront" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
-    "logicName" : "需求-创建",
-    "mapPSDEName" : "ZT_STORY",
+    "logicName" : "任务-创建",
+    "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_STORY.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TASK.json"
     },
     "name" : "CREATE",
-    "id" : "Story__CREATE"
+    "id" : "Task__CREATE"
+  }, {
+    "logicName" : "文档-创建",
+    "mapPSDEName" : "ZT_DOC",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOC.json"
+    },
+    "name" : "CREATE",
+    "id" : "Doc__CREATE"
+  }, {
+    "logicName" : "产品计划-创建",
+    "mapPSDEName" : "ZT_PRODUCTPLAN",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCTPLAN.json"
+    },
+    "name" : "CREATE",
+    "id" : "ProductPlan__CREATE"
+  }, {
+    "logicName" : "测试版本-创建",
+    "mapPSDEName" : "ZT_TESTTASK",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
+    },
+    "name" : "CREATE",
+    "id" : "TestTask__CREATE"
+  }, {
+    "logicName" : "月报-创建",
+    "mapPSDEName" : "IBZ_MONTHLY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json"
+    },
+    "name" : "CREATE",
+    "id" : "Monthly__CREATE"
   }, {
     "logicName" : "日报-创建",
     "mapPSDEName" : "IBZ_DAILY",
@@ -2075,36 +2115,6 @@
     "name" : "CREATE",
     "id" : "Daily__CREATE"
   }, {
-    "logicName" : "发布-创建",
-    "mapPSDEName" : "ZT_RELEASE",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_Release.json"
-    },
-    "name" : "CREATE",
-    "id" : "Release__CREATE"
-  }, {
-    "logicName" : "项目-创建",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PROJECT.json"
-    },
-    "name" : "CREATE",
-    "id" : "Project__CREATE"
-  }, {
-    "logicName" : "待办-创建",
-    "mapPSDEName" : "ZT_TODO",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json"
-    },
-    "name" : "CREATE",
-    "id" : "ToDo__CREATE"
-  }, {
     "logicName" : "Bug-创建",
     "mapPSDEName" : "ZT_BUG",
     "mapPSDEOPPrivName" : "CREATE",
@@ -2115,15 +2125,35 @@
     "name" : "CREATE",
     "id" : "Bug__CREATE"
   }, {
-    "logicName" : "测试报告-创建",
-    "mapPSDEName" : "ZT_TESTREPORT",
+    "logicName" : "测试用例-创建",
+    "mapPSDEName" : "ZT_CASE",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_CASE.json"
     },
     "name" : "CREATE",
-    "id" : "TestReport__CREATE"
+    "id" : "Case__CREATE"
+  }, {
+    "logicName" : "测试套件-创建",
+    "mapPSDEName" : "ZT_TESTSUITE",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
+    },
+    "name" : "CREATE",
+    "id" : "testsuite__CREATE"
+  }, {
+    "logicName" : "版本-创建",
+    "mapPSDEName" : "ZT_BUILD",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_BUILD.json"
+    },
+    "name" : "CREATE",
+    "id" : "Build__CREATE"
   }, {
     "logicName" : "产品-创建",
     "mapPSDEName" : "ZT_PRODUCT",
@@ -2145,35 +2175,15 @@
     "name" : "CREATE",
     "id" : "Zt_project__CREATE"
   }, {
-    "logicName" : "测试版本-创建",
-    "mapPSDEName" : "ZT_TESTTASK",
+    "logicName" : "项目-创建",
+    "mapPSDEName" : "ZT_PROJECT",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PROJECT.json"
     },
     "name" : "CREATE",
-    "id" : "TestTask__CREATE"
-  }, {
-    "logicName" : "测试用例-创建",
-    "mapPSDEName" : "ZT_CASE",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_CASE.json"
-    },
-    "name" : "CREATE",
-    "id" : "Case__CREATE"
-  }, {
-    "logicName" : "任务-创建",
-    "mapPSDEName" : "ZT_TASK",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TASK.json"
-    },
-    "name" : "CREATE",
-    "id" : "Task__CREATE"
+    "id" : "Project__CREATE"
   }, {
     "logicName" : "周报-创建",
     "mapPSDEName" : "IBZ_WEEKLY",
@@ -2185,6 +2195,16 @@
     "name" : "CREATE",
     "id" : "Weekly__CREATE"
   }, {
+    "logicName" : "汇报-创建",
+    "mapPSDEName" : "IBZ_REPORTLY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
+    },
+    "name" : "CREATE",
+    "id" : "Reportly__CREATE"
+  }, {
     "logicName" : "文档库-创建",
     "mapPSDEName" : "ZT_DOCLIB",
     "mapPSDEOPPrivName" : "CREATE",
@@ -2194,6 +2214,16 @@
     },
     "name" : "CREATE",
     "id" : "doclib__CREATE"
+  }, {
+    "logicName" : "测试报告-创建",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
+    },
+    "name" : "CREATE",
+    "id" : "TestReport__CREATE"
   }, {
     "logicName" : "用例库-创建",
     "mapPSDEName" : "IBZ_LIB",
@@ -2205,68 +2235,38 @@
     "name" : "CREATE",
     "id" : "IbzLib__CREATE"
   }, {
-    "logicName" : "版本-创建",
-    "mapPSDEName" : "ZT_BUILD",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_BUILD.json"
-    },
-    "name" : "CREATE",
-    "id" : "Build__CREATE"
-  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
-    "logicName" : "产品计划-创建",
-    "mapPSDEName" : "ZT_PRODUCTPLAN",
+    "logicName" : "需求-创建",
+    "mapPSDEName" : "ZT_STORY",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCTPLAN.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_STORY.json"
     },
     "name" : "CREATE",
-    "id" : "ProductPlan__CREATE"
+    "id" : "Story__CREATE"
   }, {
-    "logicName" : "月报-创建",
-    "mapPSDEName" : "IBZ_MONTHLY",
+    "logicName" : "待办-创建",
+    "mapPSDEName" : "ZT_TODO",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json"
     },
     "name" : "CREATE",
-    "id" : "Monthly__CREATE"
+    "id" : "ToDo__CREATE"
   }, {
-    "logicName" : "文档-创建",
-    "mapPSDEName" : "ZT_DOC",
+    "logicName" : "发布-创建",
+    "mapPSDEName" : "ZT_RELEASE",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOC.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_Release.json"
     },
     "name" : "CREATE",
-    "id" : "Doc__CREATE"
-  }, {
-    "logicName" : "测试套件-创建",
-    "mapPSDEName" : "ZT_TESTSUITE",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
-    },
-    "name" : "CREATE",
-    "id" : "testsuite__CREATE"
-  }, {
-    "logicName" : "汇报-创建",
-    "mapPSDEName" : "IBZ_REPORTLY",
-    "mapPSDEOPPrivName" : "CREATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
-    },
-    "name" : "CREATE",
-    "id" : "Reportly__CREATE"
+    "id" : "Release__CREATE"
   }, {
     "logicName" : "删除",
     "mapPSDEName" : "ZT_PROJECT",
@@ -2284,55 +2284,15 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
-    "logicName" : "周报-读取",
-    "mapPSDEName" : "IBZ_WEEKLY",
+    "logicName" : "任务-读取",
+    "mapPSDEName" : "ZT_TASK",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_WEEKLY.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TASK.json"
     },
     "name" : "READ",
-    "id" : "Weekly__READ"
-  }, {
-    "logicName" : "读取",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
-    },
-    "name" : "READ",
-    "id" : "Zt_project__READ"
-  }, {
-    "logicName" : "测试报告-读取",
-    "mapPSDEName" : "ZT_TESTREPORT",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
-    },
-    "name" : "READ",
-    "id" : "TestReport__READ"
-  }, {
-    "logicName" : "需求-读取",
-    "mapPSDEName" : "ZT_STORY",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_STORY.json"
-    },
-    "name" : "READ",
-    "id" : "Story__READ"
-  }, {
-    "logicName" : "汇报-读取",
-    "mapPSDEName" : "IBZ_REPORTLY",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
-    },
-    "name" : "READ",
-    "id" : "Reportly__READ"
+    "id" : "Task__READ"
   }, {
     "logicName" : "测试用例-读取",
     "mapPSDEName" : "ZT_CASE",
@@ -2343,66 +2303,6 @@
     },
     "name" : "READ",
     "id" : "Case__READ"
-  }, {
-    "logicName" : "待办-读取",
-    "mapPSDEName" : "ZT_TODO",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json"
-    },
-    "name" : "READ",
-    "id" : "ToDo__READ"
-  }, {
-    "logicName" : "测试套件-读取",
-    "mapPSDEName" : "ZT_TESTSUITE",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
-    },
-    "name" : "READ",
-    "id" : "testsuite__READ"
-  }, {
-    "logicName" : "项目-读取",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PROJECT.json"
-    },
-    "name" : "READ",
-    "id" : "Project__READ"
-  }, {
-    "logicName" : "发布-读取",
-    "mapPSDEName" : "ZT_RELEASE",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_Release.json"
-    },
-    "name" : "READ",
-    "id" : "Release__READ"
-  }, {
-    "logicName" : "用例库-读取",
-    "mapPSDEName" : "IBZ_LIB",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_LIB.json"
-    },
-    "name" : "READ",
-    "id" : "IbzLib__READ"
-  }, {
-    "logicName" : "测试版本-读取",
-    "mapPSDEName" : "ZT_TESTTASK",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
-    },
-    "name" : "READ",
-    "id" : "TestTask__READ"
   }, {
     "logicName" : "文档-读取",
     "mapPSDEName" : "ZT_DOC",
@@ -2424,6 +2324,16 @@
     "name" : "READ",
     "id" : "Bug__READ"
   }, {
+    "logicName" : "读取",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "Zt_project__READ"
+  }, {
     "logicName" : "日报-读取",
     "mapPSDEName" : "IBZ_DAILY",
     "mapPSDEOPPrivName" : "READ",
@@ -2434,58 +2344,25 @@
     "name" : "READ",
     "id" : "Daily__READ"
   }, {
-    "logicName" : "任务-读取",
-    "mapPSDEName" : "ZT_TASK",
+    "logicName" : "汇报-读取",
+    "mapPSDEName" : "IBZ_REPORTLY",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TASK.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
     },
     "name" : "READ",
-    "id" : "Task__READ"
+    "id" : "Reportly__READ"
   }, {
-    "logicName" : "产品-读取",
-    "mapPSDEName" : "ZT_PRODUCT",
+    "logicName" : "测试报告-读取",
+    "mapPSDEName" : "ZT_TESTREPORT",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
     },
     "name" : "READ",
-    "id" : "Product__READ"
-  }, {
-    "logicName" : "月报-读取",
-    "mapPSDEName" : "IBZ_MONTHLY",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json"
-    },
-    "name" : "READ",
-    "id" : "Monthly__READ"
-  }, {
-    "logicName" : "产品计划-读取",
-    "mapPSDEName" : "ZT_PRODUCTPLAN",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCTPLAN.json"
-    },
-    "name" : "READ",
-    "id" : "ProductPlan__READ"
-  }, {
-    "logicName" : "读取",
-    "name" : "READ"
-  }, {
-    "logicName" : "文档库-读取",
-    "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "READ",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json"
-    },
-    "name" : "READ",
-    "id" : "doclib__READ"
+    "id" : "TestReport__READ"
   }, {
     "logicName" : "版本-读取",
     "mapPSDEName" : "ZT_BUILD",
@@ -2497,75 +2374,128 @@
     "name" : "READ",
     "id" : "Build__READ"
   }, {
-    "logicName" : "测试报告-更新",
-    "mapPSDEName" : "ZT_TESTREPORT",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "logicName" : "发布-读取",
+    "mapPSDEName" : "ZT_RELEASE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_Release.json"
     },
-    "name" : "UPDATE",
-    "id" : "TestReport__UPDATE"
+    "name" : "READ",
+    "id" : "Release__READ"
   }, {
-    "logicName" : "测试版本-更新",
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "Product__READ"
+  }, {
+    "logicName" : "测试版本-读取",
     "mapPSDEName" : "ZT_TESTTASK",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
     },
-    "name" : "UPDATE",
-    "id" : "TestTask__UPDATE"
+    "name" : "READ",
+    "id" : "TestTask__READ"
   }, {
-    "logicName" : "文档库-更新",
-    "mapPSDEName" : "ZT_DOCLIB",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "logicName" : "需求-读取",
+    "mapPSDEName" : "ZT_STORY",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_STORY.json"
     },
-    "name" : "UPDATE",
-    "id" : "doclib__UPDATE"
+    "name" : "READ",
+    "id" : "Story__READ"
   }, {
-    "logicName" : "用例库-更新",
+    "logicName" : "月报-读取",
+    "mapPSDEName" : "IBZ_MONTHLY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_MONTHLY.json"
+    },
+    "name" : "READ",
+    "id" : "Monthly__READ"
+  }, {
+    "logicName" : "用例库-读取",
     "mapPSDEName" : "IBZ_LIB",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_LIB.json"
     },
-    "name" : "UPDATE",
-    "id" : "IbzLib__UPDATE"
+    "name" : "READ",
+    "id" : "IbzLib__READ"
   }, {
-    "logicName" : "版本-更新",
-    "mapPSDEName" : "ZT_BUILD",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "logicName" : "项目-读取",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_BUILD.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PROJECT.json"
     },
-    "name" : "UPDATE",
-    "id" : "Build__UPDATE"
+    "name" : "READ",
+    "id" : "Project__READ"
   }, {
-    "logicName" : "待办-更新",
-    "mapPSDEName" : "ZT_TODO",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "logicName" : "测试套件-读取",
+    "mapPSDEName" : "ZT_TESTSUITE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
     },
-    "name" : "UPDATE",
-    "id" : "ToDo__UPDATE"
+    "name" : "READ",
+    "id" : "testsuite__READ"
   }, {
-    "logicName" : "周报-更新",
+    "logicName" : "产品计划-读取",
+    "mapPSDEName" : "ZT_PRODUCTPLAN",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCTPLAN.json"
+    },
+    "name" : "READ",
+    "id" : "ProductPlan__READ"
+  }, {
+    "logicName" : "周报-读取",
     "mapPSDEName" : "IBZ_WEEKLY",
-    "mapPSDEOPPrivName" : "UPDATE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_WEEKLY.json"
     },
-    "name" : "UPDATE",
-    "id" : "Weekly__UPDATE"
+    "name" : "READ",
+    "id" : "Weekly__READ"
+  }, {
+    "logicName" : "文档库-读取",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json"
+    },
+    "name" : "READ",
+    "id" : "doclib__READ"
+  }, {
+    "logicName" : "待办-读取",
+    "mapPSDEName" : "ZT_TODO",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json"
+    },
+    "name" : "READ",
+    "id" : "ToDo__READ"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
   }, {
     "logicName" : "测试用例-更新",
     "mapPSDEName" : "ZT_CASE",
@@ -2577,15 +2507,45 @@
     "name" : "UPDATE",
     "id" : "Case__UPDATE"
   }, {
-    "logicName" : "产品-更新",
-    "mapPSDEName" : "ZT_PRODUCT",
+    "logicName" : "汇报-更新",
+    "mapPSDEName" : "IBZ_REPORTLY",
     "mapPSDEOPPrivName" : "UPDATE",
     "getMapPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
     },
     "name" : "UPDATE",
-    "id" : "Product__UPDATE"
+    "id" : "Reportly__UPDATE"
+  }, {
+    "logicName" : "测试套件-更新",
+    "mapPSDEName" : "ZT_TESTSUITE",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
+    },
+    "name" : "UPDATE",
+    "id" : "testsuite__UPDATE"
+  }, {
+    "logicName" : "项目-更新",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Project__UPDATE"
+  }, {
+    "logicName" : "周报-更新",
+    "mapPSDEName" : "IBZ_WEEKLY",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_WEEKLY.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Weekly__UPDATE"
   }, {
     "logicName" : "Bug-更新",
     "mapPSDEName" : "ZT_BUG",
@@ -2607,6 +2567,96 @@
     "name" : "UPDATE",
     "id" : "Doc__UPDATE"
   }, {
+    "logicName" : "日报-更新",
+    "mapPSDEName" : "IBZ_DAILY",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_DAILY.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Daily__UPDATE"
+  }, {
+    "logicName" : "文档库-更新",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_DOCLIB.json"
+    },
+    "name" : "UPDATE",
+    "id" : "doclib__UPDATE"
+  }, {
+    "logicName" : "测试报告-更新",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTREPORT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "TestReport__UPDATE"
+  }, {
+    "logicName" : "版本-更新",
+    "mapPSDEName" : "ZT_BUILD",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_BUILD.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Build__UPDATE"
+  }, {
+    "logicName" : "产品-更新",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Product__UPDATE"
+  }, {
+    "logicName" : "需求-更新",
+    "mapPSDEName" : "ZT_STORY",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_STORY.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Story__UPDATE"
+  }, {
+    "logicName" : "任务-更新",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TASK.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Task__UPDATE"
+  }, {
+    "logicName" : "更新",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Zt_project__UPDATE"
+  }, {
+    "logicName" : "待办-更新",
+    "mapPSDEName" : "ZT_TODO",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TODO.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ToDo__UPDATE"
+  }, {
     "logicName" : "发布-更新",
     "mapPSDEName" : "ZT_RELEASE",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -2627,6 +2677,29 @@
     "name" : "UPDATE",
     "id" : "ProductPlan__UPDATE"
   }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
+  }, {
+    "logicName" : "测试版本-更新",
+    "mapPSDEName" : "ZT_TESTTASK",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTTASK.json"
+    },
+    "name" : "UPDATE",
+    "id" : "TestTask__UPDATE"
+  }, {
+    "logicName" : "用例库-更新",
+    "mapPSDEName" : "IBZ_LIB",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_LIB.json"
+    },
+    "name" : "UPDATE",
+    "id" : "IbzLib__UPDATE"
+  }, {
     "logicName" : "月报-更新",
     "mapPSDEName" : "IBZ_MONTHLY",
     "mapPSDEOPPrivName" : "UPDATE",
@@ -2636,79 +2709,6 @@
     },
     "name" : "UPDATE",
     "id" : "Monthly__UPDATE"
-  }, {
-    "logicName" : "更新",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
-    },
-    "name" : "UPDATE",
-    "id" : "Zt_project__UPDATE"
-  }, {
-    "logicName" : "日报-更新",
-    "mapPSDEName" : "IBZ_DAILY",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_DAILY.json"
-    },
-    "name" : "UPDATE",
-    "id" : "Daily__UPDATE"
-  }, {
-    "logicName" : "任务-更新",
-    "mapPSDEName" : "ZT_TASK",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TASK.json"
-    },
-    "name" : "UPDATE",
-    "id" : "Task__UPDATE"
-  }, {
-    "logicName" : "需求-更新",
-    "mapPSDEName" : "ZT_STORY",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_STORY.json"
-    },
-    "name" : "UPDATE",
-    "id" : "Story__UPDATE"
-  }, {
-    "logicName" : "测试套件-更新",
-    "mapPSDEName" : "ZT_TESTSUITE",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_TESTSUITE.json"
-    },
-    "name" : "UPDATE",
-    "id" : "testsuite__UPDATE"
-  }, {
-    "logicName" : "更新",
-    "name" : "UPDATE"
-  }, {
-    "logicName" : "汇报-更新",
-    "mapPSDEName" : "IBZ_REPORTLY",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_IBZ_REPORTLY.json"
-    },
-    "name" : "UPDATE",
-    "id" : "Reportly__UPDATE"
-  }, {
-    "logicName" : "项目-更新",
-    "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "UPDATE",
-    "getMapPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DERCUSTOM_ZT_ACTION_ZT_PROJECT.json"
-    },
-    "name" : "UPDATE",
-    "id" : "Project__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
     "customCond" : "[ (1, '=', 1) ]",

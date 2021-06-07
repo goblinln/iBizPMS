@@ -221,6 +221,11 @@
     "stdDataType" : 1,
     "keyField" : true
   }, {
+    "codeName" : "Deptsn",
+    "logicName" : "部门编号",
+    "name" : "DEPTSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Name",
     "logicName" : "部门名称",
     "name" : "NAME",
@@ -238,11 +243,6 @@
     "codeName" : "Parent",
     "logicName" : "parent",
     "name" : "PARENT",
-    "stdDataType" : 1
-  }, {
-    "codeName" : "Deptsn",
-    "logicName" : "部门编号",
-    "name" : "DEPTSN",
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {

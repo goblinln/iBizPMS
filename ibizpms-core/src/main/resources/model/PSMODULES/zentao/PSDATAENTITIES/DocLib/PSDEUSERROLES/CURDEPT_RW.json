@@ -2,11 +2,11 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/CURDEPT_RW.json",
   "name" : "当前部门（读写）",
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "READ",
+    "dataAccessAction" : "UPDATE",
+    "name" : "UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "UPDATE"
     }
   }, {
     "dataAccessAction" : "DELETE",
@@ -16,11 +16,11 @@
       "id" : "DELETE"
     }
   }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "UPDATE",
+    "dataAccessAction" : "READ",
+    "name" : "READ",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "READ"
     }
   } ],
   "roleTag" : "CURDEPT_RW",

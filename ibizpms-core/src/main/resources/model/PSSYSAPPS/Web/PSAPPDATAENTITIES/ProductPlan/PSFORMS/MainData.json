@@ -4296,6 +4296,18 @@
                 },
                 "editorType" : "PICKEREX_TRIGGER",
                 "name" : "modulenameeq",
+                "getPSAppDEACMode" : {
+                  "modelref" : true,
+                  "id" : "Default"
+                },
+                "getPSAppDEDataSet" : {
+                  "modelref" : true,
+                  "id" : "FetchTestModule"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+                },
                 "dropDownView" : false,
                 "enableAC" : true,
                 "enableLinkView" : false,
@@ -4333,6 +4345,18 @@
                 },
                 "editorType" : "PICKEREX_TRIGGER",
                 "name" : "modulenamelike",
+                "getPSAppDEACMode" : {
+                  "modelref" : true,
+                  "id" : "Default"
+                },
+                "getPSAppDEDataSet" : {
+                  "modelref" : true,
+                  "id" : "FetchTestModule"
+                },
+                "getPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+                },
                 "dropDownView" : false,
                 "enableAC" : true,
                 "enableLinkView" : false,
@@ -4629,7 +4653,7 @@
                 },
                 "getPSAppDEDataSet" : {
                   "modelref" : true,
-                  "id" : "FetchBugProject"
+                  "id" : "FetchCurProduct"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -4678,7 +4702,7 @@
                 },
                 "getPSAppDEDataSet" : {
                   "modelref" : true,
-                  "id" : "FetchBugProject"
+                  "id" : "FetchCurProduct"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -6951,6 +6975,52 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
                 },
                 "name" : "BUG__ACTION",
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              } ], [ {
+                "actionRSMode" : 1,
+                "codeName" : "Builds",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Test.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+                },
+                "name" : "TEST__BUILD",
+                "getParentPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                },
+                "rSMode" : 2,
+                "enableCreateDataRS" : false,
+                "enableDEAction" : true,
+                "enableDEDataSet" : true,
+                "enableGetDataRS" : false,
+                "enableSelect" : true,
+                "enableSelectDataRS" : false,
+                "enableUpdateDataRS" : false
+              }, {
+                "actionRSMode" : 1,
+                "codeName" : "Actions",
+                "dataRSMode" : 0,
+                "getMajorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Build.json"
+                },
+                "getMinorPSAppDataEntity" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                },
+                "name" : "BUILD__ACTION",
                 "rSMode" : 2,
                 "enableCreateDataRS" : false,
                 "enableDEAction" : true,

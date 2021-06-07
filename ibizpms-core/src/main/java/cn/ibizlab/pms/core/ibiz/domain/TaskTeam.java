@@ -56,6 +56,24 @@ public class TaskTeam extends EntityMP implements Serializable {
     @ApiModelProperty("最初预计")
     private Double estimate;
     /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORG`")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
+     * 由谁更新
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
+    @TableField(value = "`UPDATEBY`")
+    @JSONField(name = "updateby")
+    @JsonProperty("updateby")
+    @ApiModelProperty("由谁更新")
+    private String updateby;
+    /**
      * 用户
      */
     @TableField(exist = false)
@@ -109,6 +127,24 @@ public class TaskTeam extends EntityMP implements Serializable {
     @ApiModelProperty("预计剩余")
     private Double left;
     /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+    /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "`CREATEBY`")
+    @JSONField(name = "createby")
+    @JsonProperty("createby")
+    @ApiModelProperty("由谁创建")
+    private String createby;
+    /**
      * 总计消耗
      */
     @DEField(defaultValue = "0.00")
@@ -134,6 +170,15 @@ public class TaskTeam extends EntityMP implements Serializable {
     @JsonProperty("role")
     @ApiModelProperty("角色")
     private String role;
+    /**
+     * 归属部门
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPT`")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
     /**
      * 编号
      */
@@ -161,6 +206,15 @@ public class TaskTeam extends EntityMP implements Serializable {
     @ApiModelProperty("总计可用")
     private Integer total;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 团队类型
      */
     @DEField(defaultValue = "task")
@@ -177,60 +231,6 @@ public class TaskTeam extends EntityMP implements Serializable {
     @JsonProperty("root")
     @ApiModelProperty("编号")
     private Long root;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
-    /**
-     * 由谁更新
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
-    @TableField(value = "`UPDATEBY`")
-    @JSONField(name = "updateby")
-    @JsonProperty("updateby")
-    @ApiModelProperty("由谁更新")
-    private String updateby;
-    /**
-     * 由谁创建
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
-    @TableField(value = "`CREATEBY`")
-    @JSONField(name = "createby")
-    @JsonProperty("createby")
-    @ApiModelProperty("由谁创建")
-    private String createby;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
     /**
      * 

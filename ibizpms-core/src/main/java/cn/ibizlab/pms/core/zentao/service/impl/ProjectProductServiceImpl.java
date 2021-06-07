@@ -359,9 +359,9 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
                 et.setZtproductplan(majorEntity);
                 ztproductplan=majorEntity;
             }
-            et.setPlanname(ztproductplan.getTitle());
-            et.setBegin(ztproductplan.getBegin());
             et.setEnd(ztproductplan.getEnd());
+            et.setBegin(ztproductplan.getBegin());
+            et.setPlanname(ztproductplan.getTitle());
         }
         //实体关系[DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCT_PRODUCT]
         if(!ObjectUtils.isEmpty(et.getProduct())){
@@ -382,10 +382,10 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
                 et.setZtproject(majorEntity);
                 ztproject=majorEntity;
             }
+            et.setProjectend(ztproject.getEnd());
             et.setProjectname(ztproject.getName());
             et.setStatus(ztproject.getStatus());
             et.setProjectcode(ztproject.getCode());
-            et.setProjectend(ztproject.getEnd());
         }
     }
 

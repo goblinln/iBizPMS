@@ -150,6 +150,14 @@ public class File extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
+     * 附件编号
+     */
+    @TableField(value = "`FILESN`")
+    @JSONField(name = "filesn")
+    @JsonProperty("filesn")
+    @ApiModelProperty("附件编号")
+    private Long filesn;
+    /**
      * 添加时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
@@ -212,14 +220,6 @@ public class File extends EntityMP implements Serializable {
     @JsonProperty("extra")
     @ApiModelProperty("备注")
     private String extra;
-    /**
-     * 附件编号
-     */
-    @TableField(value = "`FILESN`")
-    @JSONField(name = "filesn")
-    @JsonProperty("filesn")
-    @ApiModelProperty("附件编号")
-    private Long filesn;
 
 
 
@@ -256,6 +256,14 @@ public class File extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [附件编号]
+     */
+    public void setFilesn(Long filesn) {
+        this.filesn = filesn;
+        this.modify("filesn", filesn);
+    }
+
+    /**
      * 设置 [下载次数]
      */
     public void setDownloads(Integer downloads) {
@@ -277,14 +285,6 @@ public class File extends EntityMP implements Serializable {
     public void setExtra(String extra) {
         this.extra = extra;
         this.modify("extra", extra);
-    }
-
-    /**
-     * 设置 [附件编号]
-     */
-    public void setFilesn(Long filesn) {
-        this.filesn = filesn;
-        this.modify("filesn", filesn);
     }
 
 

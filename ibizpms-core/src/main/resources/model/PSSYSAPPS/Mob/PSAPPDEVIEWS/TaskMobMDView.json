@@ -992,6 +992,16 @@
       "id" : "MDCTRL"
     },
     "getPSDEListDataItems" : [ {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__type.json"
+      },
+      "name" : "type"
+    }, {
+      "dataType" : 25,
+      "name" : "tasktype"
+    }, {
       "dataType" : 9,
       "getFrontPSCodeList" : {
         "modelref" : true,
@@ -1003,11 +1013,7 @@
       "name" : "isfavorites"
     }, {
       "dataType" : 25,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__type.json"
-      },
-      "name" : "type"
+      "name" : "multiple"
     }, {
       "dataType" : 25,
       "groupItem" : "GROUP1",
@@ -1049,13 +1055,7 @@
       "name" : "deadline"
     }, {
       "dataType" : 25,
-      "name" : "tasktype"
-    }, {
-      "dataType" : 25,
       "name" : "name"
-    }, {
-      "dataType" : 25,
-      "name" : "multiple"
     }, {
       "dataType" : 25,
       "name" : "srfkey",

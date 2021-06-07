@@ -1157,7 +1157,7 @@
     "modeltype" : "PSDEKANBAN"
   } ],
   "getPSDEViewCodeName" : "CurProjectKanbanView",
-  "getPSDEViewId" : "B81ED4D1-F5D4-4937-B63D-2B88D7B88207",
+  "getPSDEViewId" : "9ad8b3b8cab74bee8d3ae01e423f7860",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
@@ -1182,7 +1182,7 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "b71074fd6ed8635bd22a051c143204f6",
+  "modelid" : "16f94b62e40ee1e4431b3a0003fe6700",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,

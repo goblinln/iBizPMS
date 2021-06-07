@@ -4,7 +4,7 @@ global cn.ibizlab.pms.core.report.domain.IbzMonthly et;
     no-loop
 
     rule "ibzmonthlycreateusermonthly"
-    ruleflow-group "2F71726D-29FB-456C-BE0E-A5BABD500BA7"
+    ruleflow-group "5f64047ab3a396a4c77aa5cfdab38c52"
     when
     then
     cn.ibizlab.pms.core.report.domain.IbzMonthly actionLogicDE =new cn.ibizlab.pms.core.report.domain.IbzMonthly();

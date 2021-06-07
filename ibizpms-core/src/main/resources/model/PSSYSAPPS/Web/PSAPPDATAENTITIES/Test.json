@@ -31,23 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "TestTop",
-    "methodType" : "DEACTION",
-    "name" : "ProductTop",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TestTop"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "CancelTestTop",
     "methodType" : "DEACTION",
     "name" : "CancelProductTop",
@@ -79,6 +62,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "TestTop",
+    "methodType" : "DEACTION",
+    "name" : "ProductTop",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "TestTop"
     },
     "builtinMethod" : false
   }, {
@@ -416,6 +416,12 @@
     "name" : "PRODUCTPLANCNT",
     "stdDataType" : 9
   }, {
+    "codeName" : "Productsn",
+    "logicName" : "产品编号",
+    "name" : "PRODUCTSN",
+    "stdDataType" : 1,
+    "enableQuickSearch" : true
+  }, {
     "codeName" : "Id",
     "logicName" : "编号",
     "name" : "ID",
@@ -642,22 +648,16 @@
     "name" : "ACTIVESTORYCNT",
     "stdDataType" : 9
   }, {
-    "codeName" : "Productsn",
-    "logicName" : "产品编号",
-    "name" : "PRODUCTSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
-  }, {
-    "codeName" : "Line",
-    "logicName" : "id",
-    "name" : "LINE",
-    "stdDataType" : 1
-  }, {
     "codeName" : "LineName",
     "logicName" : "产品线",
     "name" : "LINENAME",
     "stdDataType" : 25,
     "stringLength" : 60
+  }, {
+    "codeName" : "Line",
+    "logicName" : "id",
+    "name" : "LINE",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "CancelProductTop",
@@ -858,23 +858,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "TestTop",
-    "methodType" : "DEACTION",
-    "name" : "ProductTop",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "TestTop"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "CancelTestTop",
     "methodType" : "DEACTION",
     "name" : "CancelProductTop",
@@ -906,6 +889,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "TestTop",
+    "methodType" : "DEACTION",
+    "name" : "ProductTop",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/ProductTop.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "TestTop"
     },
     "builtinMethod" : false
   }, {
@@ -1675,11 +1675,11 @@
     "name" : "NAME",
     "codeName" : "Name"
   }, {
-    "name" : "CODE",
-    "codeName" : "Code"
-  }, {
     "name" : "PRODUCTSN",
     "codeName" : "Productsn"
+  }, {
+    "name" : "CODE",
+    "codeName" : "Code"
   } ],
   "storageMode" : 0,
   "defaultMode" : false,

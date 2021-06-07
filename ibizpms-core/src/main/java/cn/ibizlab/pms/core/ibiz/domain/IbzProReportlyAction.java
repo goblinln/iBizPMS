@@ -47,21 +47,106 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 动作
-     */
-    @TableField(value = "`ACTION`")
-    @JSONField(name = "action")
-    @JsonProperty("action")
-    @ApiModelProperty("动作")
-    private String action;
-    /**
-     * 操作方式
+     * 当前用户
      */
     @TableField(exist = false)
-    @JSONField(name = "actionmanner")
-    @JsonProperty("actionmanner")
-    @ApiModelProperty("操作方式")
-    private String actionmanner;
+    @JSONField(name = "isactorss")
+    @JsonProperty("isactorss")
+    @ApiModelProperty("当前用户")
+    private Long isactorss;
+    /**
+     * 本周
+     */
+    @TableField(exist = false)
+    @JSONField(name = "thisweek")
+    @JsonProperty("thisweek")
+    @ApiModelProperty("本周")
+    private String thisweek;
+    /**
+     * 备注
+     */
+    @TableField(value = "`COMMENT`")
+    @JSONField(name = "comment")
+    @JsonProperty("comment")
+    @ApiModelProperty("备注")
+    private String comment;
+    /**
+     * 文件
+     */
+    @TableField(exist = false)
+    @JSONField(name = "files")
+    @JsonProperty("files")
+    @ApiModelProperty("文件")
+    private String files;
+    /**
+     * 今天
+     */
+    @TableField(exist = false)
+    @JSONField(name = "today")
+    @JsonProperty("today")
+    @ApiModelProperty("今天")
+    private String today;
+    /**
+     * 备注
+     */
+    @TableField(exist = false)
+    @JSONField(name = "lastcomment")
+    @JsonProperty("lastcomment")
+    @ApiModelProperty("备注")
+    private String lastcomment;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
+     * id
+     */
+    @DEField(isKeyField = true, dupCheck = DupCheck.ALL)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("id")
+    private Long id;
+    /**
+     * 日期
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
+    @TableField(value = "`DATE`", fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("date")
+    @ApiModelProperty("日期")
+    private Timestamp date;
+    /**
+     * 消息通知用户
+     */
+    @TableField(exist = false)
+    @JSONField(name = "noticeusers")
+    @JsonProperty("noticeusers")
+    @ApiModelProperty("消息通知用户")
+    private String noticeusers;
+    /**
+     * 归属组织
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORG`")
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @ApiModelProperty("归属组织")
+    private String org;
+    /**
+     * 附加值
+     */
+    @TableField(value = "`EXTRA`")
+    @JSONField(name = "extra")
+    @JsonProperty("extra")
+    @ApiModelProperty("附加值")
+    private String extra;
     /**
      * 操作者
      */
@@ -79,31 +164,37 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     @ApiModelProperty("系统日志编号")
     private Long actionsn;
     /**
-     * 备注
+     * 动作
      */
-    @TableField(value = "`COMMENT`")
-    @JSONField(name = "comment")
-    @JsonProperty("comment")
-    @ApiModelProperty("备注")
-    private String comment;
+    @TableField(value = "`ACTION`")
+    @JSONField(name = "action")
+    @JsonProperty("action")
+    @ApiModelProperty("动作")
+    private String action;
     /**
-     * 日期
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`DATE`", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "date", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("date")
-    @ApiModelProperty("日期")
-    private Timestamp date;
-    /**
-     * 显示日期
+     * 昨天
      */
     @TableField(exist = false)
-    @JSONField(name = "date1")
-    @JsonProperty("date1")
-    @ApiModelProperty("显示日期")
-    private String date1;
+    @JSONField(name = "yesterday")
+    @JsonProperty("yesterday")
+    @ApiModelProperty("昨天")
+    private String yesterday;
+    /**
+     * 上月
+     */
+    @TableField(exist = false)
+    @JSONField(name = "lastmonth")
+    @JsonProperty("lastmonth")
+    @ApiModelProperty("上月")
+    private String lastmonth;
+    /**
+     * 项目
+     */
+    @TableField(value = "`PROJECT`")
+    @JSONField(name = "project")
+    @JsonProperty("project")
+    @ApiModelProperty("项目")
+    private Long project;
     /**
      * 归属部门名
      */
@@ -114,105 +205,29 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     @ApiModelProperty("归属部门名")
     private String deptname;
     /**
-     * 归属部门
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPT`")
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @ApiModelProperty("归属部门")
-    private String dept;
-    /**
-     * 文件
+     * 操作方式
      */
     @TableField(exist = false)
-    @JSONField(name = "files")
-    @JsonProperty("files")
-    @ApiModelProperty("文件")
-    private String files;
+    @JSONField(name = "actionmanner")
+    @JsonProperty("actionmanner")
+    @ApiModelProperty("操作方式")
+    private String actionmanner;
     /**
-     * 附加值
-     */
-    @TableField(value = "`EXTRA`")
-    @JSONField(name = "extra")
-    @JsonProperty("extra")
-    @ApiModelProperty("附加值")
-    private String extra;
-    /**
-     * 当前用户
+     * 显示日期
      */
     @TableField(exist = false)
-    @JSONField(name = "isactorss")
-    @JsonProperty("isactorss")
-    @ApiModelProperty("当前用户")
-    private Long isactorss;
+    @JSONField(name = "date1")
+    @JsonProperty("date1")
+    @ApiModelProperty("显示日期")
+    private String date1;
     /**
-     * id
-     */
-    @DEField(isKeyField = true, dupCheck = DupCheck.ALL)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("id")
-    private Long id;
-    /**
-     * 备注
+     * 本月
      */
     @TableField(exist = false)
-    @JSONField(name = "lastcomment")
-    @JsonProperty("lastcomment")
-    @ApiModelProperty("备注")
-    private String lastcomment;
-    /**
-     * 上月
-     */
-    @TableField(exist = false)
-    @JSONField(name = "lastmonth")
-    @JsonProperty("lastmonth")
-    @ApiModelProperty("上月")
-    private String lastmonth;
-    /**
-     * 上周
-     */
-    @TableField(exist = false)
-    @JSONField(name = "lastweek")
-    @JsonProperty("lastweek")
-    @ApiModelProperty("上周")
-    private String lastweek;
-    /**
-     * 消息通知用户
-     */
-    @TableField(exist = false)
-    @JSONField(name = "noticeusers")
-    @JsonProperty("noticeusers")
-    @ApiModelProperty("消息通知用户")
-    private String noticeusers;
-    /**
-     * 对象类型
-     */
-    @TableField(value = "`OBJECTTYPE`")
-    @JSONField(name = "objecttype")
-    @JsonProperty("objecttype")
-    @ApiModelProperty("对象类型")
-    private String objecttype;
-    /**
-     * 归属组织
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORG`")
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @ApiModelProperty("归属组织")
-    private String org;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
+    @JSONField(name = "thismonth")
+    @JsonProperty("thismonth")
+    @ApiModelProperty("本月")
+    private String thismonth;
     /**
      * 产品
      */
@@ -222,13 +237,14 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     @ApiModelProperty("产品")
     private String product;
     /**
-     * 本月
+     * 归属部门
      */
-    @TableField(exist = false)
-    @JSONField(name = "thismonth")
-    @JsonProperty("thismonth")
-    @ApiModelProperty("本月")
-    private String thismonth;
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPT`")
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @ApiModelProperty("归属部门")
+    private String dept;
     /**
      * 已读
      */
@@ -239,46 +255,38 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     @ApiModelProperty("已读")
     private String read;
     /**
-     * 本周
+     * 上周
      */
     @TableField(exist = false)
-    @JSONField(name = "thisweek")
-    @JsonProperty("thisweek")
-    @ApiModelProperty("本周")
-    private String thisweek;
+    @JSONField(name = "lastweek")
+    @JsonProperty("lastweek")
+    @ApiModelProperty("上周")
+    private String lastweek;
     /**
-     * 今天
+     * 对象类型
      */
-    @TableField(exist = false)
-    @JSONField(name = "today")
-    @JsonProperty("today")
-    @ApiModelProperty("今天")
-    private String today;
-    /**
-     * 昨天
-     */
-    @TableField(exist = false)
-    @JSONField(name = "yesterday")
-    @JsonProperty("yesterday")
-    @ApiModelProperty("昨天")
-    private String yesterday;
-    /**
-     * 项目
-     */
-    @TableField(value = "`PROJECT`")
-    @JSONField(name = "project")
-    @JsonProperty("project")
-    @ApiModelProperty("项目")
-    private Long project;
+    @TableField(value = "`OBJECTTYPE`")
+    @JSONField(name = "objecttype")
+    @JsonProperty("objecttype")
+    @ApiModelProperty("对象类型")
+    private String objecttype;
 
 
 
     /**
-     * 设置 [动作]
+     * 设置 [备注]
      */
-    public void setAction(String action) {
-        this.action = action;
-        this.modify("action", action);
+    public void setComment(String comment) {
+        this.comment = comment;
+        this.modify("comment", comment);
+    }
+
+    /**
+     * 设置 [附加值]
+     */
+    public void setExtra(String extra) {
+        this.extra = extra;
+        this.modify("extra", extra);
     }
 
     /**
@@ -298,27 +306,19 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [备注]
+     * 设置 [动作]
      */
-    public void setComment(String comment) {
-        this.comment = comment;
-        this.modify("comment", comment);
+    public void setAction(String action) {
+        this.action = action;
+        this.modify("action", action);
     }
 
     /**
-     * 设置 [附加值]
+     * 设置 [项目]
      */
-    public void setExtra(String extra) {
-        this.extra = extra;
-        this.modify("extra", extra);
-    }
-
-    /**
-     * 设置 [对象类型]
-     */
-    public void setObjecttype(String objecttype) {
-        this.objecttype = objecttype;
-        this.modify("objecttype", objecttype);
+    public void setProject(Long project) {
+        this.project = project;
+        this.modify("project", project);
     }
 
     /**
@@ -338,11 +338,11 @@ public class IbzProReportlyAction extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [项目]
+     * 设置 [对象类型]
      */
-    public void setProject(Long project) {
-        this.project = project;
-        this.modify("project", project);
+    public void setObjecttype(String objecttype) {
+        this.objecttype = objecttype;
+        this.modify("objecttype", objecttype);
     }
 
 

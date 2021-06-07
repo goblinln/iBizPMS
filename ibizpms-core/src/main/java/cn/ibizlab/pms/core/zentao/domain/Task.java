@@ -228,6 +228,15 @@ public class Task extends EntityMP implements Serializable {
     @ApiModelProperty("回复数量")
     private Integer replycount;
     /**
+     * 建立人
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
+    /**
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
@@ -280,6 +289,14 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("storyversionnew")
     @ApiModelProperty("相关需求最新版本")
     private Integer storyversionnew;
+    /**
+     * 任务编号
+     */
+    @TableField(value = "`TASKSN`")
+    @JSONField(name = "tasksn")
+    @JsonProperty("tasksn")
+    @ApiModelProperty("任务编号")
+    private Long tasksn;
     /**
      * 本次消耗
      */
@@ -480,6 +497,15 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("delay")
     @ApiModelProperty("延期")
     private String delay;
+    /**
+     * 更新人
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
+    @TableField(value = "`UPDATEMAN`")
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @ApiModelProperty("更新人")
+    private String updateman;
     /**
      * 任务描述
      */
@@ -812,32 +838,6 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")
     private Long frombug;
-    /**
-     * 任务编号
-     */
-    @TableField(value = "`TASKSN`")
-    @JSONField(name = "tasksn")
-    @JsonProperty("tasksn")
-    @ApiModelProperty("任务编号")
-    private Long tasksn;
-    /**
-     * 建立人
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
-    /**
-     * 更新人
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @TableField(value = "`UPDATEMAN`")
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @ApiModelProperty("更新人")
-    private String updateman;
 
     /**
      * 
@@ -1021,6 +1021,14 @@ public class Task extends EntityMP implements Serializable {
     public void setClosedby(String closedby) {
         this.closedby = closedby;
         this.modify("closedby", closedby);
+    }
+
+    /**
+     * 设置 [任务编号]
+     */
+    public void setTasksn(Long tasksn) {
+        this.tasksn = tasksn;
+        this.modify("tasksn", tasksn);
     }
 
     /**
@@ -1337,14 +1345,6 @@ public class Task extends EntityMP implements Serializable {
     public void setFrombug(Long frombug) {
         this.frombug = frombug;
         this.modify("frombug", frombug);
-    }
-
-    /**
-     * 设置 [任务编号]
-     */
-    public void setTasksn(Long tasksn) {
-        this.tasksn = tasksn;
-        this.modify("tasksn", tasksn);
     }
 
 

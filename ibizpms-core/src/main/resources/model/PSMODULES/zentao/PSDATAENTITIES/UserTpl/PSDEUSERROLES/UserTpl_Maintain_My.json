@@ -13,6 +13,13 @@
       "id" : "DELETE"
     }
   }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
     "dataAccessAction" : "CREATE",
     "name" : "CREATE",
     "getPSDEOPPriv" : {
@@ -25,13 +32,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
-    }
-  }, {
-    "dataAccessAction" : "UPDATE",
-    "name" : "UPDATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
     }
   } ],
   "roleTag" : "UserTpl_Maintain_My",

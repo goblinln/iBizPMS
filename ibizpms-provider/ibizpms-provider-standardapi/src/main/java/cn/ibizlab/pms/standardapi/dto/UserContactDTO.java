@@ -105,6 +105,16 @@ public class UserContactDTO extends DTOBase implements Serializable {
     private String updateby;
 
     /**
+     * 属性 [USERCONTACTSN]
+     *
+     */
+    @JSONField(name = "usercontactsn")
+    @JsonProperty("usercontactsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("用户联系方式编号")
+    private Long usercontactsn;
+
+    /**
      * 属性 [DEPT]
      *
      */
@@ -123,16 +133,6 @@ public class UserContactDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("account")
     private String account;
-
-    /**
-     * 属性 [USERCONTACTSN]
-     *
-     */
-    @JSONField(name = "usercontactsn")
-    @JsonProperty("usercontactsn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("用户联系方式编号")
-    private Long usercontactsn;
 
 
     /**

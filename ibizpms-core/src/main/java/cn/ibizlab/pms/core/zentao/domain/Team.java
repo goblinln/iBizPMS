@@ -110,6 +110,14 @@ public class Team extends EntityMP implements Serializable {
     @ApiModelProperty("用户")
     private String account;
     /**
+     * 群组编号
+     */
+    @TableField(value = "`TEAMSN`")
+    @JSONField(name = "teamsn")
+    @JsonProperty("teamsn")
+    @ApiModelProperty("群组编号")
+    private Long teamsn;
+    /**
      * 团队类型
      */
     @DEField(defaultValue = "project")
@@ -217,14 +225,6 @@ public class Team extends EntityMP implements Serializable {
     @JsonProperty("root")
     @ApiModelProperty("关联编号")
     private Long root;
-    /**
-     * 群组编号
-     */
-    @TableField(value = "`TEAMSN`")
-    @JSONField(name = "teamsn")
-    @JsonProperty("teamsn")
-    @ApiModelProperty("群组编号")
-    private Long teamsn;
 
 
 
@@ -266,6 +266,14 @@ public class Team extends EntityMP implements Serializable {
     public void setAccount(String account) {
         this.account = account;
         this.modify("account", account);
+    }
+
+    /**
+     * 设置 [群组编号]
+     */
+    public void setTeamsn(Long teamsn) {
+        this.teamsn = teamsn;
+        this.modify("teamsn", teamsn);
     }
 
     /**
@@ -332,14 +340,6 @@ public class Team extends EntityMP implements Serializable {
     public void setRoot(Long root) {
         this.root = root;
         this.modify("root", root);
-    }
-
-    /**
-     * 设置 [群组编号]
-     */
-    public void setTeamsn(Long teamsn) {
-        this.teamsn = teamsn;
-        this.modify("teamsn", teamsn);
     }
 
 

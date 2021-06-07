@@ -56,13 +56,14 @@ public class DynaFilter extends EntityMP implements Serializable {
     @ApiModelProperty("动态搜索栏标识")
     private String dynafilterid;
     /**
-     * 动态搜索栏名称
+     * 组织部门标识
      */
-    @TableField(value = "`DYNAFILTERNAME`")
-    @JSONField(name = "dynafiltername")
-    @JsonProperty("dynafiltername")
-    @ApiModelProperty("动态搜索栏名称")
-    private String dynafiltername;
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPTID`")
+    @JSONField(name = "deptid")
+    @JsonProperty("deptid")
+    @ApiModelProperty("组织部门标识")
+    private String deptid;
     /**
      * 更新人
      */
@@ -73,24 +74,13 @@ public class DynaFilter extends EntityMP implements Serializable {
     @ApiModelProperty("更新人")
     private String updateman;
     /**
-     * 建立时间
+     * 表单名称
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
-    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-    /**
-     * 建立人
-     */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
+    @TableField(value = "`FORMNAME`")
+    @JSONField(name = "formname")
+    @JsonProperty("formname")
+    @ApiModelProperty("表单名称")
+    private String formname;
     /**
      * 更新时间
      */
@@ -111,22 +101,15 @@ public class DynaFilter extends EntityMP implements Serializable {
     @ApiModelProperty("组织机构标识")
     private String orgid;
     /**
-     * 组织部门标识
+     * 建立时间
      */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPTID`")
-    @JSONField(name = "deptid")
-    @JsonProperty("deptid")
-    @ApiModelProperty("组织部门标识")
-    private String deptid;
-    /**
-     * 表单名称
-     */
-    @TableField(value = "`FORMNAME`")
-    @JSONField(name = "formname")
-    @JsonProperty("formname")
-    @ApiModelProperty("表单名称")
-    private String formname;
+    @DEField(preType = DEPredefinedFieldType.CREATEDATE)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
     /**
      * 实体名称
      */
@@ -136,6 +119,14 @@ public class DynaFilter extends EntityMP implements Serializable {
     @ApiModelProperty("实体名称")
     private String dename;
     /**
+     * 动态搜索栏名称
+     */
+    @TableField(value = "`DYNAFILTERNAME`")
+    @JSONField(name = "dynafiltername")
+    @JsonProperty("dynafiltername")
+    @ApiModelProperty("动态搜索栏名称")
+    private String dynafiltername;
+    /**
      * 数据
      */
     @TableField(value = "`DATA`")
@@ -143,16 +134,17 @@ public class DynaFilter extends EntityMP implements Serializable {
     @JsonProperty("data")
     @ApiModelProperty("数据")
     private String data;
-
-
-
     /**
-     * 设置 [动态搜索栏名称]
+     * 建立人
      */
-    public void setDynafiltername(String dynafiltername) {
-        this.dynafiltername = dynafiltername;
-        this.modify("dynafiltername", dynafiltername);
-    }
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
+
+
 
     /**
      * 设置 [表单名称]
@@ -168,6 +160,14 @@ public class DynaFilter extends EntityMP implements Serializable {
     public void setDename(String dename) {
         this.dename = dename;
         this.modify("dename", dename);
+    }
+
+    /**
+     * 设置 [动态搜索栏名称]
+     */
+    public void setDynafiltername(String dynafiltername) {
+        this.dynafiltername = dynafiltername;
+        this.modify("dynafiltername", dynafiltername);
     }
 
     /**

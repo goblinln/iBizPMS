@@ -649,6 +649,41 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "TESTRESULTSN",
+      "dBType" : "MYSQL5",
+      "name" : "TESTRESULTSN",
+      "queryCodeExp" : "t1.`TESTRESULTSN`",
+      "standardColumnName" : "`TESTRESULTSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "TESTRESULTSN",
+        "codeName" : "Testresultsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Testresultsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "测试结果编号",
+    "name" : "TESTRESULTSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "DURATION",
       "dBType" : "MYSQL5",
       "name" : "DURATION",
@@ -1001,6 +1036,7 @@
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
     "importOrder" : 1000,
+    "length" : 20,
     "logicName" : "所属模块",
     "name" : "MODULE",
     "getPSDER" : {
@@ -1334,41 +1370,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "TESTRESULTSN",
-      "dBType" : "MYSQL5",
-      "name" : "TESTRESULTSN",
-      "queryCodeExp" : "t1.`TESTRESULTSN`",
-      "standardColumnName" : "`TESTRESULTSN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "TESTRESULTSN",
-        "codeName" : "Testresultsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Testresultsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "测试结果编号",
-    "name" : "TESTRESULTSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

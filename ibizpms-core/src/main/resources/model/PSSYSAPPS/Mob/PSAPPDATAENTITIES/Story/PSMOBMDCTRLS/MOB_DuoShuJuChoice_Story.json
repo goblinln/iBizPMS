@@ -39,6 +39,9 @@
     "dataType" : 25,
     "name" : "title"
   }, {
+    "dataType" : 1,
+    "name" : "id"
+  }, {
     "dataType" : 25,
     "getFrontPSCodeList" : {
       "modelref" : true,
@@ -52,9 +55,6 @@
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__stage.json"
     },
     "name" : "stage"
-  }, {
-    "dataType" : 1,
-    "name" : "id"
   }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {

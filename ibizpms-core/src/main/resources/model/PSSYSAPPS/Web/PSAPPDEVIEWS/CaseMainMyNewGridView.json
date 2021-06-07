@@ -774,7 +774,7 @@
     "noSort" : false,
     "singleSelect" : false,
     "name" : "grid",
-    "modelid" : "07458FE4-0DE3-4194-B4CC-7453E6A97689",
+    "modelid" : "f77ffa4655a01986ea9d54eca78d69d6",
     "modeltype" : "PSDEGRID"
   }, {
     "codeName" : "Custom",
@@ -1326,6 +1326,18 @@
         },
         "editorType" : "PICKEREX_TRIGGER",
         "name" : "modulenameeq",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchTestModule"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+        },
         "dropDownView" : false,
         "enableAC" : true,
         "enableLinkView" : false,
@@ -1363,6 +1375,18 @@
         },
         "editorType" : "PICKEREX_TRIGGER",
         "name" : "modulenamelike",
+        "getPSAppDEACMode" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "getPSAppDEDataSet" : {
+          "modelref" : true,
+          "id" : "FetchTestModule"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
+        },
         "dropDownView" : false,
         "enableAC" : true,
         "enableLinkView" : false,

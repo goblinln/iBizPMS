@@ -1281,6 +1281,40 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CASESN",
+      "dBType" : "MYSQL5",
+      "name" : "CASESN",
+      "standardColumnName" : "`CASESN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "CASESN",
+        "codeName" : "Casesn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Casesn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "测试用例编号",
+    "name" : "CASESN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "LASTRUNRESULT",
       "dBType" : "MYSQL5",
       "name" : "LASTRUNRESULT",
@@ -4195,6 +4229,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
+    "length" : 20,
     "logicName" : "所属模块",
     "name" : "MODULE",
     "getPSDER" : {
@@ -4213,40 +4248,6 @@
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CASESN",
-      "dBType" : "MYSQL5",
-      "name" : "CASESN",
-      "standardColumnName" : "`CASESN`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CASESN",
-        "codeName" : "Casesn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Casesn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "测试用例编号",
-    "name" : "CASESN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "CaseNFavorite",
@@ -14240,81 +14241,25 @@
       "id" : "MyCreateOrUpdate"
     },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CASEEDIT",
+      "name" : "Case_Manage_COU_CASEEDIT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CASEEDIT"
+      }
+    }, {
+      "dataAccessAction" : "CASERESULT",
+      "name" : "CASERESULT",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CASERESULT"
+      }
+    }, {
       "dataAccessAction" : "UNLINKCASE",
       "name" : "UNLINKCASE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ZTProduct__UNLINKCASE"
-      }
-    }, {
-      "dataAccessAction" : "EDITSUITE",
-      "name" : "EDITSUITE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__EDITSUITE"
-      }
-    }, {
-      "dataAccessAction" : "MANAGE",
-      "name" : "MANAGE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "MANAGE"
-      }
-    }, {
-      "dataAccessAction" : "FAVORITE",
-      "name" : "FAVORITE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "FAVORITE"
-      }
-    }, {
-      "dataAccessAction" : "TESRUNCASE",
-      "name" : "TESRUNCASE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "TESRUNCASE"
-      }
-    }, {
-      "dataAccessAction" : "LINKCASE",
-      "name" : "LINKCASE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__LINKCASE"
-      }
-    }, {
-      "dataAccessAction" : "RUNCASE",
-      "name" : "RUNCASE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__RUNCASE"
-      }
-    }, {
-      "dataAccessAction" : "NFAVORITE",
-      "name" : "NFAVORITE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__NFAVORITE"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__DELETE"
-      }
-    }, {
-      "dataAccessAction" : "CASECOF",
-      "name" : "CASECOF",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__CASECOF"
-      }
-    }, {
-      "dataAccessAction" : "CONFIRMCHANGE",
-      "name" : "CONFIRMCHANGE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CONFIRMCHANGE"
       }
     }, {
       "dataAccessAction" : "STORYLINK",
@@ -14324,11 +14269,67 @@
         "id" : "STORYLINK"
       }
     }, {
+      "dataAccessAction" : "EDITSUITE",
+      "name" : "EDITSUITE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__EDITSUITE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__DELETE"
+      }
+    }, {
+      "dataAccessAction" : "CONFIRMCHANGE",
+      "name" : "CONFIRMCHANGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CONFIRMCHANGE"
+      }
+    }, {
+      "dataAccessAction" : "FAVORITE",
+      "name" : "FAVORITE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "FAVORITE"
+      }
+    }, {
+      "dataAccessAction" : "CASECOF",
+      "name" : "CASECOF",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__CASECOF"
+      }
+    }, {
+      "dataAccessAction" : "TESRUNCASE",
+      "name" : "TESRUNCASE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "TESRUNCASE"
+      }
+    }, {
+      "dataAccessAction" : "NFAVORITE",
+      "name" : "NFAVORITE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__NFAVORITE"
+      }
+    }, {
       "dataAccessAction" : "CONFIRM",
       "name" : "CONFIRM",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ZTProduct__CONFIRM"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
       }
     }, {
       "dataAccessAction" : "RESULT",
@@ -14345,25 +14346,25 @@
         "id" : "ZTProduct__UNLINKSUITCASE"
       }
     }, {
-      "dataAccessAction" : "CASEEDIT",
-      "name" : "Case_Manage_COU_CASEEDIT",
+      "dataAccessAction" : "MANAGE",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "ZTProduct__CASEEDIT"
+        "id" : "MANAGE"
       }
     }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "UPDATE",
+      "dataAccessAction" : "LINKCASE",
+      "name" : "LINKCASE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "UPDATE"
+        "id" : "ZTProduct__LINKCASE"
       }
     }, {
-      "dataAccessAction" : "CASERESULT",
-      "name" : "CASERESULT",
+      "dataAccessAction" : "RUNCASE",
+      "name" : "RUNCASE",
       "getPSDEOPPriv" : {
         "modelref" : true,
-        "id" : "ZTProduct__CASERESULT"
+        "id" : "ZTProduct__RUNCASE"
       }
     } ],
     "roleTag" : "Case_Manage_COU",
@@ -14758,7 +14759,7 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_MODULE_MODULE.json",
     "getMajorPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
     },
     "masterOrder" : -1,
     "masterRS" : 0,

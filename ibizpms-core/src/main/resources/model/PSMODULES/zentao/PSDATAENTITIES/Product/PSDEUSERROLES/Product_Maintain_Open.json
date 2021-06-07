@@ -13,18 +13,18 @@
       "id" : "CREATE"
     }
   }, {
-    "dataAccessAction" : "DELETE",
-    "name" : "Product_Maintain_Open_DELETE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    }
-  }, {
     "dataAccessAction" : "UPDATE",
     "name" : "Product_Maintain_Open_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Product_Maintain_Open_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
     }
   } ],
   "roleTag" : "Product_Maintain_Open",

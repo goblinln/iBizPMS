@@ -160,17 +160,11 @@
     "pasteReset" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DYNAFILTERNAME",
+      "columnName" : "DEPTID",
       "dBType" : "MYSQL5",
-      "name" : "DYNAFILTERNAME",
-      "queryCodeExp" : "t1.`DYNAFILTERNAME`",
-      "standardColumnName" : "`DYNAFILTERNAME`"
-    } ],
-    "getAllPSDEFSearchModes" : [ {
-      "codeName" : "N_DYNAFILTERNAME_LIKE",
-      "name" : "N_DYNAFILTERNAME_LIKE",
-      "stdDataType" : 25,
-      "valueOP" : "LIKE"
+      "name" : "DEPTID",
+      "queryCodeExp" : "t1.`DEPTID`",
+      "standardColumnName" : "`DEPTID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -181,38 +175,37 @@
         "name" : "默认组",
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
-          "dEFName" : "DYNAFILTERNAME",
-          "maxValue" : 200,
+          "dEFName" : "DEPTID",
+          "maxValue" : 60,
           "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[200]",
+          "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
           "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]"
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
-        "name" : "DYNAFILTERNAME",
-        "codeName" : "DynaFilterName"
+        "name" : "DEPTID",
+        "codeName" : "DeptId"
       },
-      "ruleInfo" : "内容长度必须小于等于[200]",
+      "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "DynaFilterName",
+    "codeName" : "DeptId",
     "dEFType" : 1,
     "dataType" : "TEXT",
     "importOrder" : 1000,
-    "length" : 200,
-    "logicName" : "动态搜索栏名称",
-    "name" : "DYNAFILTERNAME",
+    "length" : 60,
+    "logicName" : "组织部门标识",
+    "name" : "DEPTID",
+    "predefinedType" : "ORGSECTORID",
     "stdDataType" : 25,
-    "stringLength" : 200,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true,
-    "majorDEField" : true
+    "stringLength" : 60,
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEMAN",
@@ -269,49 +262,11 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEDATE",
+      "columnName" : "FORMNAME",
       "dBType" : "MYSQL5",
-      "name" : "CREATEDATE",
-      "queryCodeExp" : "t1.`CREATEDATE`",
-      "standardColumnName" : "`CREATEDATE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CREATEDATE",
-        "codeName" : "CreateDate"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CreateDate",
-    "dEFType" : 1,
-    "dataType" : "DATETIME",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "建立时间",
-    "name" : "CREATEDATE",
-    "predefinedType" : "CREATEDATE",
-    "stdDataType" : 5,
-    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
-    "allowEmpty" : false,
-    "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CREATEMAN",
-      "dBType" : "MYSQL5",
-      "name" : "CREATEMAN",
-      "queryCodeExp" : "t1.`CREATEMAN`",
-      "standardColumnName" : "`CREATEMAN`"
+      "name" : "FORMNAME",
+      "queryCodeExp" : "t1.`FORMNAME`",
+      "standardColumnName" : "`FORMNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -322,43 +277,36 @@
         "name" : "默认组",
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
-          "dEFName" : "CREATEMAN",
-          "maxValue" : 60,
+          "dEFName" : "FORMNAME",
+          "maxValue" : 100,
           "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
+          "ruleInfo" : "内容长度必须小于等于[100]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
           "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
+        "ruleInfo" : "内容长度必须小于等于[100]"
       },
       "getPSDEField" : {
-        "name" : "CREATEMAN",
-        "codeName" : "CreateMan"
+        "name" : "FORMNAME",
+        "codeName" : "Formname"
       },
-      "ruleInfo" : "内容长度必须小于等于[60]",
+      "ruleInfo" : "内容长度必须小于等于[100]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "CreateMan",
+    "codeName" : "Formname",
     "dEFType" : 1,
     "dataType" : "TEXT",
     "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "建立人",
-    "name" : "CREATEMAN",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSCODELISTS/SysOperator.json"
-    },
-    "predefinedType" : "CREATEMAN",
+    "length" : 100,
+    "logicName" : "表单名称",
+    "name" : "FORMNAME",
     "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "systemReserver" : true
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEDATE",
@@ -447,11 +395,11 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPTID",
+      "columnName" : "CREATEDATE",
       "dBType" : "MYSQL5",
-      "name" : "DEPTID",
-      "queryCodeExp" : "t1.`DEPTID`",
-      "standardColumnName" : "`DEPTID`"
+      "name" : "CREATEDATE",
+      "queryCodeExp" : "t1.`CREATEDATE`",
+      "standardColumnName" : "`CREATEDATE`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -459,87 +407,30 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPTID",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
+        "name" : "默认组"
       },
       "getPSDEField" : {
-        "name" : "DEPTID",
-        "codeName" : "DeptId"
+        "name" : "CREATEDATE",
+        "codeName" : "CreateDate"
       },
-      "ruleInfo" : "内容长度必须小于等于[60]",
+      "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "DeptId",
+    "codeName" : "CreateDate",
     "dEFType" : 1,
-    "dataType" : "TEXT",
+    "dataType" : "DATETIME",
     "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "组织部门标识",
-    "name" : "DEPTID",
-    "predefinedType" : "ORGSECTORID",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "FORMNAME",
-      "dBType" : "MYSQL5",
-      "name" : "FORMNAME",
-      "queryCodeExp" : "t1.`FORMNAME`",
-      "standardColumnName" : "`FORMNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "FORMNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "FORMNAME",
-        "codeName" : "Formname"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Formname",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "表单名称",
-    "name" : "FORMNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
+    "length" : 8,
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "predefinedType" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS",
+    "allowEmpty" : false,
+    "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "DENAME",
@@ -589,6 +480,61 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DYNAFILTERNAME",
+      "dBType" : "MYSQL5",
+      "name" : "DYNAFILTERNAME",
+      "queryCodeExp" : "t1.`DYNAFILTERNAME`",
+      "standardColumnName" : "`DYNAFILTERNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DYNAFILTERNAME_LIKE",
+      "name" : "N_DYNAFILTERNAME_LIKE",
+      "stdDataType" : 25,
+      "valueOP" : "LIKE"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DYNAFILTERNAME",
+          "maxValue" : 200,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[200]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[200]"
+      },
+      "getPSDEField" : {
+        "name" : "DYNAFILTERNAME",
+        "codeName" : "DynaFilterName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[200]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DynaFilterName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 200,
+    "logicName" : "动态搜索栏名称",
+    "name" : "DYNAFILTERNAME",
+    "stdDataType" : 25,
+    "stringLength" : 200,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "DATA",
       "dBType" : "MYSQL5",
       "name" : "DATA",
@@ -635,6 +581,60 @@
     "stringLength" : 1048576,
     "valueFormat" : "%1$s",
     "queryColumn" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CREATEMAN",
+      "dBType" : "MYSQL5",
+      "name" : "CREATEMAN",
+      "queryCodeExp" : "t1.`CREATEMAN`",
+      "standardColumnName" : "`CREATEMAN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "CREATEMAN",
+          "maxValue" : 60,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[60]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[60]"
+      },
+      "getPSDEField" : {
+        "name" : "CREATEMAN",
+        "codeName" : "CreateMan"
+      },
+      "ruleInfo" : "内容长度必须小于等于[60]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CreateMan",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 60,
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSCODELISTS/SysOperator.json"
+    },
+    "predefinedType" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "valueFormat" : "%1$s",
+    "allowEmpty" : false,
+    "systemReserver" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -668,13 +668,6 @@
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DynaFilter/PSDEUSERROLES/CURDEPT_RW.json",
     "name" : "当前部门（读写）",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "UPDATE",
-      "name" : "UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
       "dataAccessAction" : "READ",
       "name" : "READ",
       "getPSDEOPPriv" : {
@@ -687,6 +680,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
       }
     } ],
     "roleTag" : "CURDEPT_RW",
@@ -713,13 +713,6 @@
     "name" : "当前组织（读写）",
     "orgDR" : 1,
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "DELETE",
       "getPSDEOPPriv" : {
@@ -732,6 +725,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
       }
     } ],
     "roleTag" : "CURORG_RW",

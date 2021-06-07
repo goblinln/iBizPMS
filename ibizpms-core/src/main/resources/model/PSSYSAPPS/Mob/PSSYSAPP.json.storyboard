@@ -640,6 +640,14 @@
     "psappsbitemid" : "0ec073367bcbf044623f74b38a4a7188",
     "itemtype" : "APPVIEW"
   }, {
+    "psappviewname" : "ProjectStartMobEditView",
+    "psappsbitemname" : "项目移动端编辑视图（开始）",
+    "itemtag2" : "1e19987c52a6d2f03b8c33f929bdb05b",
+    "psappviewid" : "19645d3ff8665c5d67cdc629dc32935f",
+    "itemtag" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectStartMobEditView.json",
+    "psappsbitemid" : "8fb68d03f8d33322eb84170ea247f3c2",
+    "itemtype" : "APPVIEW"
+  }, {
     "psappviewname" : "IbzDailyDailyMobEditView",
     "psappsbitemname" : "日报移动端编辑视图（编辑）",
     "itemtag2" : "5cffef82cb494c983e5075652573f1ef",
@@ -877,14 +885,6 @@
     "psappviewid" : "ca3f4b39c218c2f5fd1aa6471021772a",
     "itemtag" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobTabExpView.json",
     "psappsbitemid" : "2b86e79ae5dcff6db1082e3e28b60c69",
-    "itemtype" : "APPVIEW"
-  }, {
-    "psappviewname" : "ProjectStartMobEditView",
-    "psappsbitemname" : "项目移动端编辑视图（开始）",
-    "itemtag2" : "B9567989-242C-47DF-8CEF-30C805DF78A9",
-    "psappviewid" : "213046c819a2b121740d6f5112f595be",
-    "itemtag" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectStartMobEditView.json",
-    "psappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
     "itemtype" : "APPVIEW"
   }, {
     "psappviewname" : "ProjectActiviteMobEditView",
@@ -5449,29 +5449,29 @@
     "psappsbitemrsname" : "表格界面_删除操作",
     "rstype" : "UIACTION"
   }, {
-    "psappsbitemrsid" : "4fa913e30d75597c9624a2f43ce1ecc9",
+    "psappsbitemrsid" : "859cd17b1ea3e3e79f196a9db9767304",
     "ppsappsbitemname" : "项目移动端编辑视图（开始）",
     "rstag" : "SYS",
     "rstag2" : "系统预定义",
-    "ppsappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
+    "ppsappsbitemid" : "8fb68d03f8d33322eb84170ea247f3c2",
     "psappsbitemrsname" : "编辑界面_保存并退出操作",
     "rstype" : "UIACTION"
   }, {
     "cpsappsbitemname" : "系统日志移动端多数据视图（通用）",
-    "psappsbitemrsid" : "c79c6cb930ba150648ce6eaf031122be",
+    "psappsbitemrsid" : "73ed7211a9f10e1aded8af0bac76c538",
     "ppsappsbitemname" : "项目移动端编辑视图（开始）",
-    "ppsappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
+    "ppsappsbitemid" : "8fb68d03f8d33322eb84170ea247f3c2",
     "cpsappsbitemid" : "b5bb7faf74c163ce0b68f6f00f118a09",
     "psappsbitemrsname" : "嵌入视图",
     "rstype" : "APPVIEWEMBED"
   }, {
     "cpsappsbitemname" : "项目移动端编辑视图（开始）",
-    "psappsbitemrsid" : "f763d2fde35fc1c70250525a379b12ed",
+    "psappsbitemrsid" : "cf4ea66b83dd1593abb868b4c2e1a795",
     "ppsappsbitemname" : "项目移动端编辑视图",
     "rstag" : "FRONT",
     "rstag2" : "前台调用",
     "ppsappsbitemid" : "a8442a9d0e27f7728760bb73e9d10e38",
-    "cpsappsbitemid" : "f5149f53e2eb7468b0794a173d3c5be3",
+    "cpsappsbitemid" : "8fb68d03f8d33322eb84170ea247f3c2",
     "psappsbitemrsname" : "项目开始（移动端）",
     "rstype" : "UIACTION"
   }, {

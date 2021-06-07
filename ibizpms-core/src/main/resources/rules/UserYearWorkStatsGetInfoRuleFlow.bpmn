@@ -24,14 +24,6 @@
      <sequenceFlow id="deaction3_end_line" sourceRef="deaction3" targetRef="deaction3_end"/>
      <sequenceFlow id="begin_deaction1" sourceRef="begin" targetRef="deaction1">
      </sequenceFlow>
-     <sequenceFlow id="gateway-deaction1_deaction2" sourceRef="gateway-deaction1" targetRef="deaction2">
-            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-            $useryearworkstatsgetinfodefault:UserYearWorkStats();
-            eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
-                eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","dev")))
-                ]]>
-            </conditionExpression>
-     </sequenceFlow>
      <sequenceFlow id="gateway-deaction1_deaction4" sourceRef="gateway-deaction1" targetRef="deaction4">
             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
             $useryearworkstatsgetinfodefault:UserYearWorkStats();
@@ -45,6 +37,14 @@
             $useryearworkstatsgetinfodefault:UserYearWorkStats();
             eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
                 eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","qa")))
+                ]]>
+            </conditionExpression>
+     </sequenceFlow>
+     <sequenceFlow id="gateway-deaction1_deaction2" sourceRef="gateway-deaction1" targetRef="deaction2">
+            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+            $useryearworkstatsgetinfodefault:UserYearWorkStats();
+            eval($useryearworkstatsgetinfodefault==useryearworkstatsgetinfodefault);
+                eval((RuleUtils.test($useryearworkstatsgetinfodefault.get("judgerole"),"EQ","dev")))
                 ]]>
             </conditionExpression>
      </sequenceFlow>

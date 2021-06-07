@@ -2,6 +2,13 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyReP.json",
   "name" : "需求维护（我相关产品）（跟随角色）",
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CREATE",
+    "name" : "CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
     "dataAccessAction" : "FAVORITES",
     "name" : "Story_Maintain_MyCOrP_Favorites",
     "getPSDEOPPriv" : {
@@ -49,13 +56,6 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "ZTProduct__ISCHILD"
-    }
-  }, {
-    "dataAccessAction" : "CREATE",
-    "name" : "CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
     }
   }, {
     "dataAccessAction" : "ACTIVATE",

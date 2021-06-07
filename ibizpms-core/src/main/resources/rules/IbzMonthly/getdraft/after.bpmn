@@ -11,8 +11,8 @@
         </extensionElements>
             <startEvent id="begin" isInterrupting="true"/>
             <endEvent id="prepareparam1_end" name="end"/>
-           <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="2F71726D-29FB-456C-BE0E-A5BABD500BA7" id="2F71726D-29FB-456C-BE0E-A5BABD500BA7" implementation="http://www.jboss.org/drools/rule" name="ibzmonthlycreateusermonthly"/>
-           <sequenceFlow id="begin_2F71726D-29FB-456C-BE0E-A5BABD500BA7" sourceRef="begin" targetRef="2F71726D-29FB-456C-BE0E-A5BABD500BA7"/>
-           <sequenceFlow id="2F71726D-29FB-456C-BE0E-A5BABD500BA7_prepareparam1_end" sourceRef="2F71726D-29FB-456C-BE0E-A5BABD500BA7" targetRef="prepareparam1_end"/>
+           <businessRuleTask activiti:exclusive="true" g:ruleFlowGroup="5f64047ab3a396a4c77aa5cfdab38c52" id="5f64047ab3a396a4c77aa5cfdab38c52" implementation="http://www.jboss.org/drools/rule" name="ibzmonthlycreateusermonthly"/>
+           <sequenceFlow id="begin_5f64047ab3a396a4c77aa5cfdab38c52" sourceRef="begin" targetRef="5f64047ab3a396a4c77aa5cfdab38c52"/>
+           <sequenceFlow id="5f64047ab3a396a4c77aa5cfdab38c52_prepareparam1_end" sourceRef="5f64047ab3a396a4c77aa5cfdab38c52" targetRef="prepareparam1_end"/>
     </process>
 </definitions>

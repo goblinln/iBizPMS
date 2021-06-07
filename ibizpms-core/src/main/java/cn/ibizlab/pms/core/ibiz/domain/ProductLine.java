@@ -74,6 +74,15 @@ public class ProductLine extends EntityMP implements Serializable {
     @ApiModelProperty("更新人")
     private String updateman;
     /**
+     * 排序
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`ORDER`")
+    @JSONField(name = "order")
+    @JsonProperty("order")
+    @ApiModelProperty("排序")
+    private Integer order;
+    /**
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
@@ -102,15 +111,6 @@ public class ProductLine extends EntityMP implements Serializable {
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
     private String createman;
-    /**
-     * 排序
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`ORDER`")
-    @JSONField(name = "order")
-    @JsonProperty("order")
-    @ApiModelProperty("排序")
-    private Integer order;
 
 
 

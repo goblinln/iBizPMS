@@ -475,11 +475,11 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchBugModule"
+              "id" : "FetchTestModule"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Module.json"
+              "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json"
             },
             "getPSNavigateContexts" : [ {
               "key" : "N_BRANCH_EQ",
@@ -525,7 +525,7 @@
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ModuleMobPickupView.json",
+              "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestModuleMobPickupView.json",
               "viewType" : "DEMOBPICKUPVIEW"
             },
             "valueItemName" : "module",
@@ -665,7 +665,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchBugProject"
+              "id" : "FetchCurProduct"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

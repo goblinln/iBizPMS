@@ -71,7 +71,7 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     protected cn.ibizlab.pms.core.zentao.service.IEntryService entryService;
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.zentao.service.IModuleService moduleService;
+    protected cn.ibizlab.pms.core.ibiz.service.ITestModuleService testmoduleService;
     @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProductPlanService productplanService;
@@ -1083,9 +1083,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         }
         //实体关系[DER1N_ZT_BUG_ZT_MODULE_MODULE]
         if(!ObjectUtils.isEmpty(et.getModule())){
-            cn.ibizlab.pms.core.zentao.domain.Module ztmodule=et.getZtmodule();
+            cn.ibizlab.pms.core.ibiz.domain.TestModule ztmodule=et.getZtmodule();
             if(ObjectUtils.isEmpty(ztmodule)){
-                cn.ibizlab.pms.core.zentao.domain.Module majorEntity=moduleService.get(et.getModule());
+                cn.ibizlab.pms.core.ibiz.domain.TestModule majorEntity=testmoduleService.get(et.getModule());
                 et.setZtmodule(majorEntity);
                 ztmodule=majorEntity;
             }

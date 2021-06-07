@@ -177,6 +177,11 @@
     "stdDataType" : 25,
     "stringLength" : 1
   }, {
+    "codeName" : "Companysn",
+    "logicName" : "公司编号",
+    "name" : "COMPANYSN",
+    "stdDataType" : 1
+  }, {
     "codeName" : "Website",
     "logicName" : "官网",
     "name" : "WEBSITE",
@@ -226,11 +231,6 @@
     "name" : "PHONE",
     "stdDataType" : 25,
     "stringLength" : 20
-  }, {
-    "codeName" : "Companysn",
-    "logicName" : "公司编号",
-    "name" : "COMPANYSN",
-    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

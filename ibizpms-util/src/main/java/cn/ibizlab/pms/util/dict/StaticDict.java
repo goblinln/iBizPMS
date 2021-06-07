@@ -748,6 +748,52 @@ public class StaticDict {
 
 
 
+    /**
+     * 代码表[系统日志对象类型]
+     */
+    @Getter
+    public enum Action__object_type {
+        PRODUCT("product","产品"),
+        STORY("story","需求"),
+        PRODUCTPLAN("productplan","计划"),
+        RELEASE("release","发布"),
+        PROJECT("project","项目"),
+        TASK("task","任务"),
+        BUILD("build","版本"),
+        BUG("bug","Bug"),
+        CASE("case","用例"),
+        CASERESULT("caseresult","用例结果"),
+        STEPRESULT("stepresult","用例步骤"),
+        TESTTASK("testtask","测试单"),
+        USER("user","用户"),
+        DOC("doc","文档"),
+        DOCLIB("doclib","文档库"),
+        TODO("todo","待办"),
+        BRANCH("branch","分支"),
+        MODULE("module","模块"),
+        TESTSUITE("testsuite","套件"),
+        CASELIB("caselib","用例库"),
+        TESTREPORT("testreport","报告"),
+        ENTRY("entry","应用"),
+        WEBHOOK("webhook","Webhook"),
+        DAILY("daily","日报"),
+        WEEKLY("weekly","周报"),
+        MONTHLY("monthly","月报"),
+        REPORTLY("reportly","汇报");
+
+        private String value;
+        private String text;
+        private String valueSeparator="";
+        private String textSeparator="";
+        private String emptyText="";
+
+        Action__object_type(String value , String text) {
+            this.value=value;
+            this.text = text;
+        }
+    }
+
+
 
     /**
      * 代码表[ZT_USER__GENDER]
@@ -787,27 +833,6 @@ public class StaticDict {
         private String emptyText="";
 
         Testsuite__type(String value , String text) {
-            this.value=value;
-            this.text = text;
-        }
-    }
-
-
-    /**
-     * 代码表[ZT_ACTION__READ]
-     */
-    @Getter
-    public enum Action__read {
-        ITEM_0("0","0"),
-        ITEM_1("1","1");
-
-        private String value;
-        private String text;
-        private String valueSeparator="";
-        private String textSeparator="";
-        private String emptyText="";
-
-        Action__read(String value , String text) {
             this.value=value;
             this.text = text;
         }
@@ -1172,46 +1197,6 @@ public class StaticDict {
 
 
     /**
-     * 代码表[系统日志操作方式]
-     */
-    @Getter
-    public enum ActionManner {
-        STORY_CLOSED_WILLNOTDO("story_closed_willnotdo","不做"),
-        STORY_CLOSED_CANCEL("story_closed_cancel","已取消"),
-        STORY_CLOSED_DONE("story_closed_done","已完成"),
-        STORY_CLOSED_SUBDIVIDED("story_closed_subdivided","已细分"),
-        STORY_CLOSED_POSTPONED("story_closed_postponed","延期"),
-        STORY_CLOSED_BYDESIGN("story_closed_bydesign","设计如此"),
-        STORY_CLOSED_DUPLICATE("story_closed_duplicate","重复"),
-        BUG_RESOLVED_WILLNOTFIX("bug_resolved_willnotfix","不予解决"),
-        BUG_RESOLVED_EXTERNAL("bug_resolved_external","外部原因"),
-        BUG_RESOLVED_FIXED("bug_resolved_fixed","已解决"),
-        BUG_RESOLVED_POSTPONED("bug_resolved_postponed","延期处理"),
-        BUG_RESOLVED_NOTREPRO("bug_resolved_notrepro","无法重现"),
-        BUG_RESOLVED_BYDESIGN("bug_resolved_bydesign","设计如此"),
-        BUG_RESOLVED_TOSTORY("bug_resolved_tostory","转为需求"),
-        BUG_RESOLVED_DUPLICATE("bug_resolved_duplicate","重复Bug"),
-        STORY_REVIEWED_REJECT("story_reviewed_reject","拒绝"),
-        STORY_REVIEWED_REVERT("story_reviewed_revert","撤销变更"),
-        STORY_REVIEWED_CLARIFY("story_reviewed_clarify","有待明确"),
-        STORY_REVIEWED_PASS("story_reviewed_pass","确认通过"),
-        _RELEASE_CHANGESTATUS_TERMINATE(" release_changestatus_terminate","停止维护"),
-        _RELEASE_CHANGESTATUS_NORMAL(" release_changestatus_normal","正常");
-
-        private String value;
-        private String text;
-        private String valueSeparator="";
-        private String textSeparator="";
-        private String emptyText="";
-
-        ActionManner(String value , String text) {
-            this.value=value;
-            this.text = text;
-        }
-    }
-
-
-    /**
      * 代码表[日期类型]
      */
     @Getter
@@ -1226,52 +1211,6 @@ public class StaticDict {
         private String emptyText="";
 
         CodeList48(String value , String text) {
-            this.value=value;
-            this.text = text;
-        }
-    }
-
-
-    /**
-     * 代码表[系统日志对象类型]
-     */
-    @Getter
-    public enum Action__object_type {
-        PRODUCT("product","产品"),
-        STORY("story","需求"),
-        PRODUCTPLAN("productplan","计划"),
-        RELEASE("release","发布"),
-        PROJECT("project","项目"),
-        TASK("task","任务"),
-        BUILD("build","版本"),
-        BUG("bug","Bug"),
-        CASE("case","用例"),
-        CASERESULT("caseresult","用例结果"),
-        STEPRESULT("stepresult","用例步骤"),
-        TESTTASK("testtask","测试单"),
-        USER("user","用户"),
-        DOC("doc","文档"),
-        DOCLIB("doclib","文档库"),
-        TODO("todo","待办"),
-        BRANCH("branch","分支"),
-        MODULE("module","模块"),
-        TESTSUITE("testsuite","套件"),
-        CASELIB("caselib","用例库"),
-        TESTREPORT("testreport","报告"),
-        ENTRY("entry","应用"),
-        WEBHOOK("webhook","Webhook"),
-        DAILY("daily","日报"),
-        WEEKLY("weekly","周报"),
-        MONTHLY("monthly","月报"),
-        REPORTLY("reportly","汇报");
-
-        private String value;
-        private String text;
-        private String valueSeparator="";
-        private String textSeparator="";
-        private String emptyText="";
-
-        Action__object_type(String value , String text) {
             this.value=value;
             this.text = text;
         }
@@ -2041,101 +1980,6 @@ public class StaticDict {
 
 
     /**
-     * 代码表[系统日志操作类型]
-     */
-    @Getter
-    public enum Action__type {
-        CREATED("created","创建"),
-        OPENED("opened","创建"),
-        CHANGED("changed","变更了"),
-        EDITED("edited","编辑了"),
-        ASSIGNED("assigned","指派了"),
-        CLOSED("closed","关闭了"),
-        DELETED("deleted","删除了"),
-        DELETEDFILE("deletedfile","删除附件"),
-        EDITFILE("editfile","编辑附件"),
-        ERASED("erased","删除了"),
-        UNDELETED("undeleted","还原了"),
-        HIDDEN("hidden","隐藏了"),
-        COMMENTED("commented","评论了"),
-        ACTIVATED("activated","激活了"),
-        BLOCKED("blocked","阻塞了"),
-        RESOLVED("resolved","解决了"),
-        REVIEWED("reviewed","评审了"),
-        MOVED("moved","移动了"),
-        CONFIRMED("confirmed","确认了需求"),
-        BUGCONFIRMED("bugconfirmed","确认了"),
-        TOSTORY("tostory","转需求"),
-        FROMBUG("frombug","转需求"),
-        FROMLIB("fromlib","从用例库导入"),
-        TOTASK("totask","转任务"),
-        SVNCOMMITED("svncommited","提交代码"),
-        GITCOMMITED("gitcommited","提交代码"),
-        LINKED2PLAN("linked2plan","关联计划"),
-        UNLINKEDFROMPLAN("unlinkedfromplan","移除计划"),
-        CHANGESTATUS("changestatus","修改状态"),
-        MARKED("marked","编辑了"),
-        LINKED2PROJECT("linked2project","关联项目"),
-        UNLINKEDFROMPROJECT("unlinkedfromproject","移除项目"),
-        UNLINKEDFROMBUILD("unlinkedfrombuild","移除版本"),
-        LINKED2RELEASE("linked2release","关联发布"),
-        UNLINKEDFROMRELEASE("unlinkedfromrelease","移除发布"),
-        LINKRELATEDBUG("linkrelatedbug","关联了相关Bug"),
-        UNLINKRELATEDBUG("unlinkrelatedbug","移除了相关Bug"),
-        LINKRELATEDCASE("linkrelatedcase","关联了相关用例"),
-        UNLINKRELATEDCASE("unlinkrelatedcase","移除了相关用例"),
-        LINKRELATEDSTORY("linkrelatedstory","关联了相关需求"),
-        UNLINKRELATEDSTORY("unlinkrelatedstory","移除了相关需求"),
-        SUBDIVIDESTORY("subdividestory","细分了需求"),
-        UNLINKCHILDSTORY("unlinkchildstory","移除了细分需求"),
-        STARTED("started","开始了"),
-        RESTARTED("restarted","继续了"),
-        RECORDESTIMATE("recordestimate","记录了工时"),
-        EDITESTIMATE("editestimate","编辑了工时"),
-        CANCELED("canceled","取消了"),
-        FINISHED("finished","完成了"),
-        PAUSED("paused","暂停了"),
-        VERIFIED("verified","验收了"),
-        DELAYED("delayed","延期"),
-        SUSPENDED("suspended","挂起"),
-        LOGIN("login","登录系统"),
-        LOGOUT("logout","退出登录"),
-        DELETEESTIMATE("deleteestimate","删除了工时"),
-        LINKED2BUILD("linked2build","关联了"),
-        LINKED2BUG("linked2bug","关联了"),
-        LINKCHILDTASK("linkchildtask","关联子任务"),
-        UNLINKCHILDRENTASK("unlinkchildrentask","取消关联子任务"),
-        LINKPARENTTASK("linkparenttask","关联到父任务"),
-        UNLINKPARENTTASK("unlinkparenttask","从父任务取消关联"),
-        BATCHCREATE("batchcreate","批量创建任务"),
-        CREATECHILDREN("createchildren","创建子任务"),
-        MANAGED("managed","维护"),
-        DELETECHILDRENTASK("deletechildrentask","删除子任务"),
-        CREATECHILDRENSTORY("createchildrenstory","创建子需求"),
-        LINKCHILDSTORY("linkchildstory","关联子需求"),
-        UNLINKCHILDRENSTORY("unlinkchildrenstory","取消关联子需求"),
-        LINKPARENTSTORY("linkparentstory","关联到父需求"),
-        UNLINKPARENTSTORY("unlinkparentstory","从父需求取消关联"),
-        DELETECHILDRENSTORY("deletechildrenstory","删除子需求"),
-        SUBMIT("submit","提交"),
-        READ("read","已读了"),
-        REMIND("remind","提醒"),
-        UNLINKEDFROMBRANCH("unlinkedfrombranch","移除关联平台");
-
-        private String value;
-        private String text;
-        private String valueSeparator="";
-        private String textSeparator="";
-        private String emptyText="";
-
-        Action__type(String value , String text) {
-            this.value=value;
-            this.text = text;
-        }
-    }
-
-
-    /**
      * 代码表[数据库操作]
      */
     @Getter
@@ -2402,6 +2246,27 @@ public class StaticDict {
         private String emptyText="";
 
         Testcase__pri(int value , String text) {
+            this.value=value;
+            this.text = text;
+        }
+    }
+
+
+    /**
+     * 代码表[ZT_ACTION__READ]
+     */
+    @Getter
+    public enum Action__read {
+        ITEM_0("0","0"),
+        ITEM_1("1","1");
+
+        private String value;
+        private String text;
+        private String valueSeparator="";
+        private String textSeparator="";
+        private String emptyText="";
+
+        Action__read(String value , String text) {
             this.value=value;
             this.text = text;
         }
@@ -3478,6 +3343,7 @@ public class StaticDict {
     }
 
 
+
     /**
      * 代码表[待办类型（全部）]
      */
@@ -3542,6 +3408,101 @@ public class StaticDict {
         private String emptyText="";
 
         CodeList40(String value , String text) {
+            this.value=value;
+            this.text = text;
+        }
+    }
+
+
+    /**
+     * 代码表[系统日志操作类型]
+     */
+    @Getter
+    public enum Action__type {
+        CREATED("created","创建"),
+        OPENED("opened","创建"),
+        CHANGED("changed","变更了"),
+        EDITED("edited","编辑了"),
+        ASSIGNED("assigned","指派了"),
+        CLOSED("closed","关闭了"),
+        DELETED("deleted","删除了"),
+        DELETEDFILE("deletedfile","删除附件"),
+        EDITFILE("editfile","编辑附件"),
+        ERASED("erased","删除了"),
+        UNDELETED("undeleted","还原了"),
+        HIDDEN("hidden","隐藏了"),
+        COMMENTED("commented","评论了"),
+        ACTIVATED("activated","激活了"),
+        BLOCKED("blocked","阻塞了"),
+        RESOLVED("resolved","解决了"),
+        REVIEWED("reviewed","评审了"),
+        MOVED("moved","移动了"),
+        CONFIRMED("confirmed","确认了需求"),
+        BUGCONFIRMED("bugconfirmed","确认了"),
+        TOSTORY("tostory","转需求"),
+        FROMBUG("frombug","转需求"),
+        FROMLIB("fromlib","从用例库导入"),
+        TOTASK("totask","转任务"),
+        SVNCOMMITED("svncommited","提交代码"),
+        GITCOMMITED("gitcommited","提交代码"),
+        LINKED2PLAN("linked2plan","关联计划"),
+        UNLINKEDFROMPLAN("unlinkedfromplan","移除计划"),
+        CHANGESTATUS("changestatus","修改状态"),
+        MARKED("marked","编辑了"),
+        LINKED2PROJECT("linked2project","关联项目"),
+        UNLINKEDFROMPROJECT("unlinkedfromproject","移除项目"),
+        UNLINKEDFROMBUILD("unlinkedfrombuild","移除版本"),
+        LINKED2RELEASE("linked2release","关联发布"),
+        UNLINKEDFROMRELEASE("unlinkedfromrelease","移除发布"),
+        LINKRELATEDBUG("linkrelatedbug","关联了相关Bug"),
+        UNLINKRELATEDBUG("unlinkrelatedbug","移除了相关Bug"),
+        LINKRELATEDCASE("linkrelatedcase","关联了相关用例"),
+        UNLINKRELATEDCASE("unlinkrelatedcase","移除了相关用例"),
+        LINKRELATEDSTORY("linkrelatedstory","关联了相关需求"),
+        UNLINKRELATEDSTORY("unlinkrelatedstory","移除了相关需求"),
+        SUBDIVIDESTORY("subdividestory","细分了需求"),
+        UNLINKCHILDSTORY("unlinkchildstory","移除了细分需求"),
+        STARTED("started","开始了"),
+        RESTARTED("restarted","继续了"),
+        RECORDESTIMATE("recordestimate","记录了工时"),
+        EDITESTIMATE("editestimate","编辑了工时"),
+        CANCELED("canceled","取消了"),
+        FINISHED("finished","完成了"),
+        PAUSED("paused","暂停了"),
+        VERIFIED("verified","验收了"),
+        DELAYED("delayed","延期"),
+        SUSPENDED("suspended","挂起"),
+        LOGIN("login","登录系统"),
+        LOGOUT("logout","退出登录"),
+        DELETEESTIMATE("deleteestimate","删除了工时"),
+        LINKED2BUILD("linked2build","关联了"),
+        LINKED2BUG("linked2bug","关联了"),
+        LINKCHILDTASK("linkchildtask","关联子任务"),
+        UNLINKCHILDRENTASK("unlinkchildrentask","取消关联子任务"),
+        LINKPARENTTASK("linkparenttask","关联到父任务"),
+        UNLINKPARENTTASK("unlinkparenttask","从父任务取消关联"),
+        BATCHCREATE("batchcreate","批量创建任务"),
+        CREATECHILDREN("createchildren","创建子任务"),
+        MANAGED("managed","维护"),
+        DELETECHILDRENTASK("deletechildrentask","删除子任务"),
+        CREATECHILDRENSTORY("createchildrenstory","创建子需求"),
+        LINKCHILDSTORY("linkchildstory","关联子需求"),
+        UNLINKCHILDRENSTORY("unlinkchildrenstory","取消关联子需求"),
+        LINKPARENTSTORY("linkparentstory","关联到父需求"),
+        UNLINKPARENTSTORY("unlinkparentstory","从父需求取消关联"),
+        DELETECHILDRENSTORY("deletechildrenstory","删除子需求"),
+        SUBMIT("submit","提交"),
+        READ("read","已读了"),
+        REMIND("remind","提醒"),
+        UNLINKEDFROMBRANCH("unlinkedfrombranch","移除关联平台");
+
+        private String value;
+        private String text;
+        private String valueSeparator="";
+        private String textSeparator="";
+        private String emptyText="";
+
+        Action__type(String value , String text) {
             this.value=value;
             this.text = text;
         }
@@ -5662,6 +5623,7 @@ public class StaticDict {
 
 
 
+
     /**
      * 代码表[页面样式]
      */
@@ -6012,6 +5974,46 @@ public class StaticDict {
         private String emptyText="";
 
         CodeList26(String value , String text) {
+            this.value=value;
+            this.text = text;
+        }
+    }
+
+
+    /**
+     * 代码表[系统日志操作方式]
+     */
+    @Getter
+    public enum ActionManner {
+        STORY_CLOSED_WILLNOTDO("story_closed_willnotdo","不做"),
+        STORY_CLOSED_CANCEL("story_closed_cancel","已取消"),
+        STORY_CLOSED_DONE("story_closed_done","已完成"),
+        STORY_CLOSED_SUBDIVIDED("story_closed_subdivided","已细分"),
+        STORY_CLOSED_POSTPONED("story_closed_postponed","延期"),
+        STORY_CLOSED_BYDESIGN("story_closed_bydesign","设计如此"),
+        STORY_CLOSED_DUPLICATE("story_closed_duplicate","重复"),
+        BUG_RESOLVED_WILLNOTFIX("bug_resolved_willnotfix","不予解决"),
+        BUG_RESOLVED_EXTERNAL("bug_resolved_external","外部原因"),
+        BUG_RESOLVED_FIXED("bug_resolved_fixed","已解决"),
+        BUG_RESOLVED_POSTPONED("bug_resolved_postponed","延期处理"),
+        BUG_RESOLVED_NOTREPRO("bug_resolved_notrepro","无法重现"),
+        BUG_RESOLVED_BYDESIGN("bug_resolved_bydesign","设计如此"),
+        BUG_RESOLVED_TOSTORY("bug_resolved_tostory","转为需求"),
+        BUG_RESOLVED_DUPLICATE("bug_resolved_duplicate","重复Bug"),
+        STORY_REVIEWED_REJECT("story_reviewed_reject","拒绝"),
+        STORY_REVIEWED_REVERT("story_reviewed_revert","撤销变更"),
+        STORY_REVIEWED_CLARIFY("story_reviewed_clarify","有待明确"),
+        STORY_REVIEWED_PASS("story_reviewed_pass","确认通过"),
+        _RELEASE_CHANGESTATUS_TERMINATE(" release_changestatus_terminate","停止维护"),
+        _RELEASE_CHANGESTATUS_NORMAL(" release_changestatus_normal","正常");
+
+        private String value;
+        private String text;
+        private String valueSeparator="";
+        private String textSeparator="";
+        private String emptyText="";
+
+        ActionManner(String value , String text) {
             this.value=value;
             this.text = text;
         }
@@ -6406,7 +6408,6 @@ public class StaticDict {
     }
 
 
-
     /**
      * 代码表[项目状态]
      */
@@ -6756,7 +6757,6 @@ public class StaticDict {
             this.text = text;
         }
     }
-
 
 
     /**

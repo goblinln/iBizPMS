@@ -323,6 +323,16 @@ public class AccountStoryDTO extends DTOBase implements Serializable {
     private String stagedby;
 
     /**
+     * 属性 [PLANNAME]
+     *
+     */
+    @JSONField(name = "planname")
+    @JsonProperty("planname")
+    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
+    @ApiModelProperty("所属计划")
+    private String planname;
+
+    /**
      * 属性 [OPENEDBY]
      *
      */
@@ -593,6 +603,16 @@ public class AccountStoryDTO extends DTOBase implements Serializable {
     private String orgname;
 
     /**
+     * 属性 [STORYSN]
+     *
+     */
+    @JSONField(name = "storysn")
+    @JsonProperty("storysn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("需求编号")
+    private Long storysn;
+
+    /**
      * 属性 [VERIFY]
      *
      */
@@ -820,26 +840,6 @@ public class AccountStoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("转Bug")
     private Long tobug;
-
-    /**
-     * 属性 [STORYSN]
-     *
-     */
-    @JSONField(name = "storysn")
-    @JsonProperty("storysn")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("需求编号")
-    private Long storysn;
-
-    /**
-     * 属性 [PLANNAME]
-     *
-     */
-    @JSONField(name = "planname")
-    @JsonProperty("planname")
-    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
-    @ApiModelProperty("所属计划")
-    private String planname;
 
 
     /**
@@ -1091,6 +1091,14 @@ public class AccountStoryDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [STORYSN]
+     */
+    public void setStorysn(Long  storysn){
+        this.storysn = storysn ;
+        this.modify("storysn",storysn);
+    }
+
+    /**
      * 设置 [CLOSEDBY]
      */
     public void setClosedby(String  closedby){
@@ -1176,14 +1184,6 @@ public class AccountStoryDTO extends DTOBase implements Serializable {
     public void setTobug(Long  tobug){
         this.tobug = tobug ;
         this.modify("tobug",tobug);
-    }
-
-    /**
-     * 设置 [STORYSN]
-     */
-    public void setStorysn(Long  storysn){
-        this.storysn = storysn ;
-        this.modify("storysn",storysn);
     }
 
 

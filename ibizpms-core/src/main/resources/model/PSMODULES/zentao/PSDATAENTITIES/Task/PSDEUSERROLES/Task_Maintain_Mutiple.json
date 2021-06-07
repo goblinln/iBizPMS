@@ -6,6 +6,20 @@
     "id" : "MultipleTaskAction"
   },
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "ASSIGNTO",
+    "name" : "AAIGNTO",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    }
+  }, {
+    "dataAccessAction" : "PAUSE",
+    "name" : "PAUSE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__PAUSE"
+    }
+  }, {
     "dataAccessAction" : "RESTART",
     "name" : "RESTART",
     "getPSDEOPPriv" : {
@@ -20,20 +34,6 @@
       "id" : "ZTProject__ACTIVATE"
     }
   }, {
-    "dataAccessAction" : "FINISH",
-    "name" : "FINISH",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__FINISH"
-    }
-  }, {
-    "dataAccessAction" : "PAUSE",
-    "name" : "PAUSE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProject__PAUSE"
-    }
-  }, {
     "dataAccessAction" : "START",
     "name" : "START",
     "getPSDEOPPriv" : {
@@ -41,11 +41,11 @@
       "id" : "ZTProject__START"
     }
   }, {
-    "dataAccessAction" : "ASSIGNTO",
-    "name" : "AAIGNTO",
+    "dataAccessAction" : "FINISH",
+    "name" : "FINISH",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ASSIGNTO"
+      "id" : "ZTProject__FINISH"
     }
   } ],
   "roleTag" : "Task_Maintain_Mutiple",

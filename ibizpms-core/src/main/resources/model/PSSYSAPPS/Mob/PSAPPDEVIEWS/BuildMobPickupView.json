@@ -376,6 +376,31 @@
         "dataRSMode" : 0,
         "getMajorPSAppDataEntity" : {
           "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+        },
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+        },
+        "name" : "TEST__BUILD",
+        "getParentPSAppDEField" : {
+          "name" : "PRODUCT",
+          "codeName" : "Product"
+        },
+        "rSMode" : 2,
+        "enableCreateDataRS" : false,
+        "enableDEAction" : true,
+        "enableDEDataSet" : true,
+        "enableGetDataRS" : false,
+        "enableSelect" : true,
+        "enableSelectDataRS" : false,
+        "enableUpdateDataRS" : false
+      } ], [ {
+        "actionRSMode" : 1,
+        "codeName" : "Builds",
+        "dataRSMode" : 0,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
         },
         "getMinorPSAppDataEntity" : {
@@ -460,6 +485,31 @@
   "modelid" : "2d40155700cb51211321ae889a0ffc86",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Builds",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Test.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
+    },
+    "name" : "TEST__BUILD",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",
     "dataRSMode" : 0,

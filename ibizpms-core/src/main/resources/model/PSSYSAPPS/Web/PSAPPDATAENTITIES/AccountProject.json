@@ -496,23 +496,6 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchAccount",
-    "methodType" : "FETCH",
-    "name" : "FetchAccount",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Account"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAccount"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
@@ -527,6 +510,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMy"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "FetchAccount",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {
@@ -1001,6 +1001,12 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "Projectsn",
+    "logicName" : "项目编号",
+    "name" : "PROJECTSN",
+    "stdDataType" : 1,
+    "enableQuickSearch" : true
+  }, {
     "codeName" : "Statge",
     "logicName" : "statge",
     "name" : "STATGE",
@@ -1161,12 +1167,6 @@
     "logicName" : "父项目",
     "name" : "PARENT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "Projectsn",
-    "logicName" : "项目编号",
-    "name" : "PROJECTSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "ProjectTaskQCnt",
@@ -1546,23 +1546,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchAccount",
-    "methodType" : "FETCH",
-    "name" : "FetchAccount",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Account"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchAccount"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchMy",
     "methodType" : "FETCH",
     "name" : "FetchMy",
@@ -1577,6 +1560,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMy"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchAccount",
+    "methodType" : "FETCH",
+    "name" : "FetchAccount",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Account"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchAccount"
     },
     "builtinMethod" : false
   }, {

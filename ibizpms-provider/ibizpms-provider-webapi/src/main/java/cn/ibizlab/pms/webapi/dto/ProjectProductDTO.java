@@ -45,6 +45,16 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     private String createby;
 
     /**
+     * 属性 [CREATEDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
+    @ApiModelProperty("建立时间")
+    private Timestamp createdate;
+
+    /**
      * 属性 [DEPTNAME]
      *
      */
@@ -53,6 +63,16 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
+
+    /**
+     * 属性 [CREATEMAN]
+     *
+     */
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("建立人")
+    private String createman;
 
     /**
      * 属性 [UPDATEBY]
@@ -95,6 +115,26 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     private String id;
 
     /**
+     * 属性 [UPDATEMAN]
+     *
+     */
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("更新人")
+    private String updateman;
+
+    /**
+     * 属性 [UPDATEDATE]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
+
+    /**
      * 属性 [ORGNAME]
      *
      */
@@ -105,6 +145,16 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     private String orgname;
 
     /**
+     * 属性 [END]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "end" , format="yyyy-MM-dd")
+    @JsonProperty("end")
+    @ApiModelProperty("计划结束时间")
+    private Timestamp end;
+
+    /**
      * 属性 [PRODUCTNAME]
      *
      */
@@ -113,6 +163,26 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("产品")
     private String productname;
+
+    /**
+     * 属性 [PROJECTEND]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "projectend" , format="yyyy-MM-dd")
+    @JsonProperty("projectend")
+    @ApiModelProperty("结束日期")
+    private Timestamp projectend;
+
+    /**
+     * 属性 [BEGIN]
+     *
+     */
+    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
+    @JSONField(name = "begin" , format="yyyy-MM-dd")
+    @JsonProperty("begin")
+    @ApiModelProperty("计划开始时间")
+    private Timestamp begin;
 
     /**
      * 属性 [PROJECTNAME]
@@ -133,6 +203,36 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("计划名称")
     private String planname;
+
+    /**
+     * 属性 [PRODUCTCODE]
+     *
+     */
+    @JSONField(name = "productcode")
+    @JsonProperty("productcode")
+    @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
+    @ApiModelProperty("产品编号")
+    private String productcode;
+
+    /**
+     * 属性 [STATUS]
+     *
+     */
+    @JSONField(name = "status")
+    @JsonProperty("status")
+    @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
+    @ApiModelProperty("项目状态")
+    private String status;
+
+    /**
+     * 属性 [PROJECTCODE]
+     *
+     */
+    @JSONField(name = "projectcode")
+    @JsonProperty("projectcode")
+    @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
+    @ApiModelProperty("项目代号")
+    private String projectcode;
 
     /**
      * 属性 [PRODUCT]
@@ -175,106 +275,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @NotNull(message = "[项目编号]不允许为空!")
     @ApiModelProperty("项目编号")
     private Long project;
-
-    /**
-     * 属性 [PRODUCTCODE]
-     *
-     */
-    @JSONField(name = "productcode")
-    @JsonProperty("productcode")
-    @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
-    @ApiModelProperty("产品编号")
-    private String productcode;
-
-    /**
-     * 属性 [BEGIN]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "begin" , format="yyyy-MM-dd")
-    @JsonProperty("begin")
-    @ApiModelProperty("计划开始时间")
-    private Timestamp begin;
-
-    /**
-     * 属性 [END]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "end" , format="yyyy-MM-dd")
-    @JsonProperty("end")
-    @ApiModelProperty("计划结束时间")
-    private Timestamp end;
-
-    /**
-     * 属性 [CREATEMAN]
-     *
-     */
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("建立人")
-    private String createman;
-
-    /**
-     * 属性 [CREATEDATE]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "createdate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createdate")
-    @ApiModelProperty("建立时间")
-    private Timestamp createdate;
-
-    /**
-     * 属性 [UPDATEMAN]
-     *
-     */
-    @JSONField(name = "updateman")
-    @JsonProperty("updateman")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("更新人")
-    private String updateman;
-
-    /**
-     * 属性 [UPDATEDATE]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "updatedate" , format="yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
-
-    /**
-     * 属性 [STATUS]
-     *
-     */
-    @JSONField(name = "status")
-    @JsonProperty("status")
-    @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
-    @ApiModelProperty("项目状态")
-    private String status;
-
-    /**
-     * 属性 [PROJECTCODE]
-     *
-     */
-    @JSONField(name = "projectcode")
-    @JsonProperty("projectcode")
-    @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
-    @ApiModelProperty("项目代号")
-    private String projectcode;
-
-    /**
-     * 属性 [PROJECTEND]
-     *
-     */
-    @JsonFormat(pattern="yyyy-MM-dd", locale = "zh" , timezone="GMT+8")
-    @JSONField(name = "projectend" , format="yyyy-MM-dd")
-    @JsonProperty("projectend")
-    @ApiModelProperty("结束日期")
-    private Timestamp projectend;
 
 
     /**

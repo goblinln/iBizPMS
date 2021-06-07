@@ -1537,10 +1537,6 @@
       }
     }, {
       "dataType" : 1,
-      "getFrontPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugModule.json"
-      },
       "name" : "module",
       "getPSAppDEField" : {
         "name" : "MODULE",
@@ -1693,7 +1689,6 @@
       },
       "enableSort" : true
     }, {
-      "cLConvertMode" : "FRONT",
       "caption" : "所属模块",
       "dataItemName" : "module",
       "itemType" : "DATAITEM",
@@ -1701,10 +1696,6 @@
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/BugModule.json"
       },
       "enableSort" : true
     }, {
@@ -1948,7 +1939,7 @@
     "modeltype" : "PSDEKANBAN"
   } ],
   "getPSDEViewCodeName" : "BugProjectKanbanView",
-  "getPSDEViewId" : "C1F3397A-2F86-4CC3-9942-403F65A4E1C7",
+  "getPSDEViewId" : "8349e5f3bac7a0050cc385ae7f506e5a",
   "getPSSysImage" : {
     "glyph" : "xf188@FontAwesome",
     "cssClass" : "fa fa-bug"
@@ -1973,7 +1964,7 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
-  "modelid" : "2d1a3c406df1d563a76a87ceb60ac9b9",
+  "modelid" : "83e2acfed7a916175f8b10ad9fae2292",
   "modeltype" : "PSAPPDEVIEW",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
