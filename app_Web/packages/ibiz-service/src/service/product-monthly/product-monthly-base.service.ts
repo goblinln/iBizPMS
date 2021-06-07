@@ -66,6 +66,17 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return new HttpResponse(entity);
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productmonthlies/fetchdefault`, _data);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -82,17 +93,6 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
             delete _data.srffrontuf;
         }
         return this.http.post(`/productmonthlies`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/fetchdefault`, _data);
     }
     /**
      * Update

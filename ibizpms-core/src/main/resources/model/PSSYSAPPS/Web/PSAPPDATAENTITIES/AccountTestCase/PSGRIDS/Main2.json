@@ -61,6 +61,10 @@
       "name" : "TITLE",
       "codeName" : "Title"
     },
+    "getPSSysPFPlugin" : {
+      "pluginType" : "GRID_COLRENDER",
+      "pluginCode" : "girdCounmColor"
+    },
     "width" : 500,
     "widthUnit" : "STAR",
     "enableLinkView" : true,
@@ -188,6 +192,13 @@
     "getPSAppDEField" : {
       "name" : "LASTRUNRESULT1",
       "codeName" : "Lastrunresult1"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "color",
+    "getPSAppDEField" : {
+      "name" : "COLOR",
+      "codeName" : "Color"
     }
   }, {
     "dataType" : 1,

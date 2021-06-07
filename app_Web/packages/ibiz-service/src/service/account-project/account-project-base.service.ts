@@ -185,6 +185,22 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         return this.condCache.get('view');
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountProjectService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accountproject) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountprojects/${_context.accountproject}`);
+            return res;
+        }
+        const res = await this.http.get(`/accountprojects/${_context.accountproject}`);
+        return res;
+    }
+    /**
      * FetchAccount
      *
      * @param {*} [_context={}]
@@ -211,21 +227,5 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
         }
         return this.http.post(`/accountprojects/fetchmy`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountProjectService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accountproject) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountprojects/${_context.accountproject}`);
-            return res;
-        }
-        const res = await this.http.get(`/accountprojects/${_context.accountproject}`);
-        return res;
     }
 }
