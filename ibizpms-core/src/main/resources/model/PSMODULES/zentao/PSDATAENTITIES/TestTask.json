@@ -185,7 +185,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`OWNER` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OWNER\",\"dename\":\"ZT_TESTTASK\"}')}  OR  t1.`CREATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEBY\",\"dename\":\"ZT_TESTTASK\"}')}  OR  t1.`UPDATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"UPDATEBY\",\"dename\":\"ZT_TESTTASK\"}')} )  AND  ((#{srf.webcontext.calendar} = '1'  and t1.assignedDate <> '0000-00-00 00:00:00' and t1.assignedDate is not null) or (#{srf.webcontext.calendar} is null)) )",
+        "customCond" : "( ( t1.`OWNER` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OWNER\",\"dename\":\"ZT_TESTTASK\"}')}  OR  t1.`CREATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEBY\",\"dename\":\"ZT_TESTTASK\"}')}  OR  t1.`UPDATEBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"UPDATEBY\",\"dename\":\"ZT_TESTTASK\"}')} ) )",
         "name" : "查询条件"
       } ]
     } ],
