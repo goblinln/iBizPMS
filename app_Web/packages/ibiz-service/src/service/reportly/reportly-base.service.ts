@@ -66,6 +66,17 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
         return new HttpResponse(entity);
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReportlyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/reportlies/fetchdefault`, _data);
+    }
+    /**
      * Submit
      *
      * @param {*} [_context={}]
@@ -93,31 +104,6 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/reportlies`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReportlyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/reportlies/fetchdefault`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ReportlyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/reportlies/getdraft`, _data);
-        return res;
     }
     /**
      * Update
@@ -152,6 +138,20 @@ export class ReportlyBaseService extends EntityBaseService<IReportly> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/reportlies/${_context.reportly}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ReportlyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/reportlies/getdraft`, _data);
         return res;
     }
 

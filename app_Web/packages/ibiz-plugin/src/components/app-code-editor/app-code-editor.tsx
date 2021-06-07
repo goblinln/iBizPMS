@@ -58,7 +58,7 @@ export class AppCodeEditor extends Vue {
      * @type {string[]}
      * @memberof AppCodeEditor
      */
-    languages: string[] = ['json', 'javascript', 'typescript', 'css', 'less', 'sass' ,'java'];
+    languages: string[] = ['json', 'javascript', 'typescript', 'css', 'less', 'sass', 'java'];
 
     /**
      * 代码编辑器对象
@@ -266,7 +266,7 @@ export class AppCodeEditor extends Vue {
                         })}
                     </div>
                 </div>
-                <div style='width:100%;height:100%;' ref='codeEditor'></div>
+                <div class='code-editor-wrapper' ref='codeEditor'></div>
             </div>
         );
     }

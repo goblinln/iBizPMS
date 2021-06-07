@@ -1,4 +1,5 @@
 import { notNilEmpty } from "qx-util";
+import { AppServiceBase } from 'ibiz-core';
 
 /**
  * 错误类型申明
@@ -82,28 +83,35 @@ export class AppError {
     public type: any;
 
     /**
+     * i18n
+     * 
+     * @memberof AppError
+     */
+    public i18n: any = AppServiceBase.getInstance().getI18n();
+
+    /**
      * 错误映射
      *
      * @memberof AppError
      */
     public errorMapper: any = {
-        0: ' 成功，无错误',
-        1: ' 内部发生错误',
-        2: ' 访问被拒绝',
-        3: ' 无效的数据',
-        4: ' 无效的数据键',
-        5: ' 输入的信息有误',
-        6: ' 重复的数据键值',
-        7: ' 重复的数据',
-        8: ' 删除限制',
-        9: ' 逻辑处理错误',
-        10: ' 数据不匹配',
-        11: ' 已被删除的数据',
-        19: ' 需要进行确认',
-        20: ' 没有实现指定功能',
-        21: ' 模型错误',
-        1000: ' 用户错误',
-        2000: '系统发生异常',
+        0: 'app.error.ok',
+        1: 'app.error.internalerror',
+        2: 'app.error.accessdeny',
+        3: 'app.error.invaliddata',
+        4: 'app.error.invaliddatakeys',
+        5: 'app.error.inputerror',
+        6: 'app.error.duplicatekey',
+        7: 'app.error.duplicatedata',
+        8: 'app.error.daletereject',
+        9: 'app.error.logicerror',
+        10: 'app.error.datanotmatch',
+        11: 'app.error.daletedata',
+        19: 'app.error.userconfirm',
+        20: 'app.error.notimpl',
+        21: 'app.error.modelerror',
+        1000: 'app.error.usererror',
+        2000: 'app.error.systemerror',
     }
 
     /**
@@ -113,7 +121,7 @@ export class AppError {
      */
     constructor(opts: any) {
         this.code = opts.code;
-        this.message = notNilEmpty(opts.message) ? opts.message : this.errorMapper[this.code];
+        this.message = notNilEmpty(opts.message) ? opts.message : this.i18n.t(this.errorMapper[this.code]);
         this.details = opts.details;
         this.type = opts.type;
         this.handlePreError(opts);

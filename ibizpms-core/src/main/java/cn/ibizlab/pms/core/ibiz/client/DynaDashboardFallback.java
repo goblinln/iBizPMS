@@ -2,6 +2,7 @@ package cn.ibizlab.pms.core.ibiz.client;
 
 import cn.ibizlab.pms.core.ibiz.domain.DynaDashboard;
 import cn.ibizlab.pms.core.ibiz.filter.DynaDashboardSearchContext;
+import com.netflix.hystrix.exception.HystrixTimeoutException;
 import com.alibaba.fastjson.JSONObject;
 import feign.FeignException;
 import feign.hystrix.FallbackFactory;
@@ -24,6 +25,8 @@ public class DynaDashboardFallback implements FallbackFactory<DynaDashboardFeign
         if (cause instanceof FeignException) {
             FeignException ex = (FeignException) cause;
             errorMessage = "[[R7RT标准接口]动态模型]调用异常，错误状态：" + ex.status() + "." + cause.getMessage();
+        } else if (cause instanceof HystrixTimeoutException) {
+            errorMessage = "[RT服务接口]调用超时。";
         } else {
             errorMessage = "[[R7RT标准接口]动态模型]异常，错误：" + cause.getMessage();
         }

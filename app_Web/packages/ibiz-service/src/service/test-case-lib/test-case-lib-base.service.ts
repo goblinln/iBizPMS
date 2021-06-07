@@ -95,29 +95,6 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
         return this.http.delete(`/testcaselibs/${_context.testcaselib}`);
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseLibService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/testcaselibs/${_context.testcaselib}`);
-        return res;
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TestCaseLibService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/testcaselibs/fetchdefault`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -148,6 +125,29 @@ export class TestCaseLibBaseService extends EntityBaseService<ITestCaseLib> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/testcaselibs`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseLibService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/testcaselibs/fetchdefault`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TestCaseLibService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/testcaselibs/${_context.testcaselib}`);
+        return res;
     }
     /**
      * Update

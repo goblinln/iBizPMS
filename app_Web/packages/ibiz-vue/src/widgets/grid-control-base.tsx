@@ -2290,10 +2290,10 @@ export class GridControlBase extends MDControlBase {
             result.then((response: any) => {
                 this.onControlResponse('submitbatch', response);
                 if (!response || response.status !== 200) {
-                    this.$throw((this.$t('app.form.workflow.submiterror') as string) + ', ' + response.data.message,'submitbatch');
+                    this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message,'submitbatch');
                     return;
                 }
-                this.$success((this.$t('app.form.workflow.submitsuccess') as string),'submitbatch');
+                this.$success((this.$t('app.formpage.workflow.submitsuccess') as string),'submitbatch');
                 resolve(response);
             }).catch((response: any) => {
                 this.onControlResponse('submitbatch', response);

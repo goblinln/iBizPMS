@@ -1,5 +1,5 @@
 import { notNilEmpty } from "qx-util";
-
+import { AppServiceBase } from 'ibiz-core';
 
 /**
  * 错误类型申明
@@ -59,16 +59,23 @@ export class EntityFieldError{
     public fieldlogicname: string;
 
     /**
+     * i18n
+     * 
+     * @memberof AppError
+     */
+    public i18n: any = AppServiceBase.getInstance().getI18n();
+
+    /**
      * 错误映射
      *
      * @memberof EntityFieldError
      */
     public errorMapper: any = {
-	    0:'成功，无错误',
-        1:'数据输入为空错误',
-        2:'数据类型不正确错误',
-        3:'值规则错误',
-        4:'值重复错误'
+	    0:'app.error.error_ok',
+        1:'app.error.error_empty',
+        2:'app.error.error_datatype',
+        3:'app.error.error_valuerule',
+        4:'app.error.error_duplicate',
     }
 
     /**
@@ -78,7 +85,7 @@ export class EntityFieldError{
      */
     constructor(opts: any) {
         this.fieldname = opts.fieldname;
-        this.fielderrorinfo = notNilEmpty(opts.fielderrorinfo) ? opts.fielderrorinfo : this.errorMapper[this.fielderrortype];
+        this.fielderrorinfo = notNilEmpty(opts.fielderrorinfo) ? opts.fielderrorinfo : this.i18n.t(this.errorMapper[this.fielderrortype]);
         this.fielderrortype = opts.fielderrortype;
         this.fieldlogicname = opts.fieldlogicname;
     }

@@ -53,6 +53,14 @@ public class ProjectDailyResource {
     public ProjectDailyMapping projectdailyMapping;
 
     @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
+    @ApiOperation(value = "获取项目日报草稿", tags = {"项目日报" },  notes = "获取项目日报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectdailies/getdraft")
+    public ResponseEntity<ProjectDailyDTO> getDraft(ProjectDailyDTO dto) {
+        IbizproProjectDaily domain = projectdailyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
+    }
+
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
     @ApiOperation(value = "新建项目日报", tags = {"项目日报" },  notes = "新建项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectdailies")
     @Transactional
@@ -67,24 +75,23 @@ public class ProjectDailyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #projectdaily_id, 'NONE')")
-    @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectdailies/{projectdaily_id}")
-    public ResponseEntity<ProjectDailyDTO> get(@PathVariable("projectdaily_id") String projectdaily_id) {
-        IbizproProjectDaily domain = ibizproprojectdailyService.get(projectdaily_id);
-        ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
+    @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #projectdaily_id, 'UPDATE')")
+    @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projectdailies/{projectdaily_id}")
+    @Transactional
+    public ResponseEntity<ProjectDailyDTO> update(@PathVariable("projectdaily_id") String projectdaily_id, @RequestBody ProjectDailyDTO projectdailydto) {
+		IbizproProjectDaily domain  = projectdailyMapping.toDomain(projectdailydto);
+        domain.setIbizproprojectdailyid(projectdaily_id);
+		ibizproprojectdailyService.update(domain );
+        if(!ibizproprojectdailyRuntime.test(projectdaily_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(projectdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
-    @ApiOperation(value = "获取项目日报草稿", tags = {"项目日报" },  notes = "获取项目日报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectdailies/getdraft")
-    public ResponseEntity<ProjectDailyDTO> getDraft(ProjectDailyDTO dto) {
-        IbizproProjectDaily domain = projectdailyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DENY')")
     @ApiOperation(value = "汇总项目日报", tags = {"项目日报" },  notes = "汇总项目日报")
@@ -112,23 +119,16 @@ public class ProjectDailyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
-    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #projectdaily_id, 'UPDATE')")
-    @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projectdailies/{projectdaily_id}")
-    @Transactional
-    public ResponseEntity<ProjectDailyDTO> update(@PathVariable("projectdaily_id") String projectdaily_id, @RequestBody ProjectDailyDTO projectdailydto) {
-		IbizproProjectDaily domain  = projectdailyMapping.toDomain(projectdailydto);
-        domain.setIbizproprojectdailyid(projectdaily_id);
-		ibizproprojectdailyService.update(domain );
-        if(!ibizproprojectdailyRuntime.test(projectdaily_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #projectdaily_id, 'NONE')")
+    @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectdailies/{projectdaily_id}")
+    public ResponseEntity<ProjectDailyDTO> get(@PathVariable("projectdaily_id") String projectdaily_id) {
+        IbizproProjectDaily domain = ibizproprojectdailyService.get(projectdaily_id);
+        ProjectDailyDTO dto = projectdailyMapping.toDto(domain);
         Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(projectdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

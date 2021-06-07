@@ -4,6 +4,7 @@ import feign.*;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
 import feign.hystrix.HystrixFeign;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,23 +26,36 @@ public class IBIZProKeywordFeignClientConfiguration {
     @Value("${ibiz.ref.service.pmspro-pluginserviceapi.system:}")
     String serviceSystem;
 
+    @Autowired
+    Feign.Builder builder;
+
     @Bean
     public IBIZProKeywordFeignClient iBIZProKeywordFeignClient(Decoder decoder, Encoder encoder, Client client, Contract contract, List<RequestInterceptor> requestInterceptors) {
         requestInterceptors.add(new RequestInterceptor() {
             @Override
             public void apply(RequestTemplate requestTemplate) {
+                ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
                 requestTemplate.header("srfsystemid", Collections.emptyList());
                 requestTemplate.header("srfsystemid", serviceSystem);
             }
         });
-        ReflectiveFeign.Builder nameBuilder = ReflectiveFeign.builder()
-                .client(client)
-                .encoder(encoder)
-                .decoder(decoder)
-                .contract(contract)
-                .requestInterceptors(requestInterceptors);
-                
-        return nameBuilder.target(IBIZProKeywordFeignClient.class, "http://" + serviceValue);
-        //, new IBIZProKeywordFallback()
+        if (builder instanceof HystrixFeign.Builder) {
+            HystrixFeign.Builder nameBuilder = HystrixFeign.builder()
+                    .client(client)
+                    .encoder(encoder)
+                    .decoder(decoder)
+                    .contract(contract)
+                    .requestInterceptors(requestInterceptors);
+
+            return nameBuilder.target(IBIZProKeywordFeignClient.class, "http://" + serviceValue, new IBIZProKeywordFallback());
+        } else {
+            Feign.Builder nameBuilder = Feign.builder()
+                    .client(client)
+                    .encoder(encoder)
+                    .decoder(decoder)
+                    .contract(contract)
+                    .requestInterceptors(requestInterceptors);
+            return nameBuilder.target(IBIZProKeywordFeignClient.class, "http://" + serviceValue);
+        }
     }
 }

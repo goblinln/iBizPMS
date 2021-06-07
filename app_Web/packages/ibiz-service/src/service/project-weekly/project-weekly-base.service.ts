@@ -66,6 +66,17 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
         return new HttpResponse(entity);
     }
     /**
+     * Summary
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectWeeklyService
+     */
+    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projectweeklies/${_context.projectweekly}/summary`, _data);
+    }
+    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -75,6 +86,20 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/projectweeklies/${_context.projectweekly}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectWeeklyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/projectweeklies/getdraft`, _data);
         return res;
     }
     /**
@@ -88,6 +113,17 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/projectweeklies/${_context.projectweekly}`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectWeeklyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projectweeklies/fetchdefault`, _data);
     }
     /**
      * Create
@@ -106,42 +142,6 @@ export class ProjectWeeklyBaseService extends EntityBaseService<IProjectWeekly> 
             delete _data.srffrontuf;
         }
         return this.http.post(`/projectweeklies`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectWeeklyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectweeklies/fetchdefault`, _data);
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectWeeklyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/projectweeklies/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Summary
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectWeeklyService
-     */
-    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectweeklies/${_context.projectweekly}/summary`, _data);
     }
 
     /**

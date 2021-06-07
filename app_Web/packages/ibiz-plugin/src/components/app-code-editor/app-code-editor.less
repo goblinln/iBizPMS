@@ -1,7 +1,9 @@
 .app-code-editor {
     width: 100%;
-    height: calc(100% - 22px);
+    height: 100%;
     position: relative;
+    overflow: hidden;
+
     > .toolbar {
         height: 22px;
         padding: 5px 15px;
@@ -25,17 +27,24 @@
             > .toolbar-item:hover {
                 background-color: rgba(106, 108, 109, 0.31);
             }
-            .ivu-select-selection,.ivu-select-selected-value{
-                height:22px;
+            .ivu-select-selection,
+            .ivu-select-selected-value {
+                height: 22px;
                 line-height: 22px;
-                border:0px;
-                border-radius:0px;
+                border: 0px;
+                border-radius: 0px;
                 background: transparent;
                 color: rgb(157, 165, 180);
             }
         }
     }
+
     > .toolbar.vs-dark {
         background-color: rgb(33, 37, 43);
+    }
+
+    .code-editor-wrapper {
+        height: calc(100% - 22px);
+        width: 100%;
     }
 }

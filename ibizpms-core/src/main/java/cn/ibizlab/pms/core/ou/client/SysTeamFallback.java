@@ -2,6 +2,7 @@ package cn.ibizlab.pms.core.ou.client;
 
 import cn.ibizlab.pms.core.ou.domain.SysTeam;
 import cn.ibizlab.pms.core.ou.filter.SysTeamSearchContext;
+import com.netflix.hystrix.exception.HystrixTimeoutException;
 import com.alibaba.fastjson.JSONObject;
 import feign.FeignException;
 import feign.hystrix.FallbackFactory;
@@ -24,6 +25,8 @@ public class SysTeamFallback implements FallbackFactory<SysTeamFeignClient> {
         if (cause instanceof FeignException) {
             FeignException ex = (FeignException) cause;
             errorMessage = "[ibzou-api]调用异常，错误状态：" + ex.status() + "." + cause.getMessage();
+        } else if (cause instanceof HystrixTimeoutException) {
+            errorMessage = "[RT服务接口]调用超时。";
         } else {
             errorMessage = "[ibzou-api]异常，错误：" + cause.getMessage();
         }

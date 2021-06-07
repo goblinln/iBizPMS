@@ -415,7 +415,7 @@ export class FormControlBase extends MainControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.loadAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.form.notconfig.loadaction') as string), 'load');
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string), 'load');
             return;
         }
         const arg: any = { ...opt };
