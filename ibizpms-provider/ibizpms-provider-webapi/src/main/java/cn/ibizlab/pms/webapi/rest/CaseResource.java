@@ -778,7 +778,7 @@ public class CaseResource {
         domain = caseService.caseFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -792,7 +792,7 @@ public class CaseResource {
         domain = caseService.caseNFavorite(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -813,7 +813,7 @@ public class CaseResource {
         domain = caseService.confirmChange(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -827,7 +827,7 @@ public class CaseResource {
         domain = caseService.confirmstorychange(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -841,7 +841,7 @@ public class CaseResource {
         domain = caseService.getByTestTask(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -855,7 +855,7 @@ public class CaseResource {
         domain = caseService.getTestTaskCntRun(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -869,7 +869,7 @@ public class CaseResource {
         domain = caseService.linkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -890,7 +890,7 @@ public class CaseResource {
         domain = caseService.mobLinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -904,7 +904,7 @@ public class CaseResource {
         domain = caseService.runCase(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -918,7 +918,7 @@ public class CaseResource {
         domain = caseService.runCases(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -954,7 +954,7 @@ public class CaseResource {
         domain = caseService.testRunCase(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -968,7 +968,7 @@ public class CaseResource {
         domain = caseService.testRunCases(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -982,7 +982,7 @@ public class CaseResource {
         domain = caseService.testsuitelinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -1003,7 +1003,7 @@ public class CaseResource {
         domain = caseService.unlinkCase(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -1017,7 +1017,7 @@ public class CaseResource {
         domain = caseService.unlinkCases(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -1031,7 +1031,7 @@ public class CaseResource {
         domain = caseService.unlinkSuiteCase(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
@@ -1045,7 +1045,7 @@ public class CaseResource {
         domain = caseService.unlinkSuiteCases(domain) ;
         casedto = caseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        casedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 

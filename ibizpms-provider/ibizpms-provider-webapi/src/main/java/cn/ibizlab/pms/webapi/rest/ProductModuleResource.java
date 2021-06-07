@@ -307,7 +307,7 @@ public class ProductModuleResource {
         domain = productmoduleService.fix(domain) ;
         productmoduledto = productmoduleMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productmoduledto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 
@@ -334,7 +334,7 @@ public class ProductModuleResource {
         domain = productmoduleService.syncFromIBIZ(domain) ;
         productmoduledto = productmoduleMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productmoduledto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productmoduledto);
     }
 

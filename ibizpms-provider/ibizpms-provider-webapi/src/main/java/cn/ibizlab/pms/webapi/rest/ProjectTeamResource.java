@@ -298,7 +298,7 @@ public class ProjectTeamResource {
         domain = projectteamService.getUserRole(domain) ;
         projectteamdto = projectteamMapping.toDto(domain);
         Map<String, Integer> opprivsMap = projectteamRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        projectteamdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(projectteamdto);
     }
 

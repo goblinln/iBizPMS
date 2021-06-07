@@ -287,7 +287,7 @@ public class TodoResource {
         domain = todoService.finish(domain) ;
         tododto = todoMapping.toDto(domain);
         Map<String, Integer> opprivsMap = todoRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        tododto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
 
@@ -301,7 +301,7 @@ public class TodoResource {
         domain = todoService.start(domain) ;
         tododto = todoMapping.toDto(domain);
         Map<String, Integer> opprivsMap = todoRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        tododto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(tododto);
     }
 

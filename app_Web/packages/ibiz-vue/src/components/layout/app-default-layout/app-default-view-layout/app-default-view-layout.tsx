@@ -139,7 +139,7 @@ export class AppDefaultViewLayout extends Vue {
                     context={this.context}
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
-                    viewTitle={this.model.srfCaption} />
+                    viewTitle={this.model?.srfCaption} />
                 { this.renderContent()}
             </div>
         );

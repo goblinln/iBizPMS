@@ -63,7 +63,7 @@ public class BugResource {
         domain = bugService.assignTo(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -115,7 +115,7 @@ public class BugResource {
         domain = bugService.bugNFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -129,7 +129,7 @@ public class BugResource {
         domain = bugService.resolve(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -193,7 +193,7 @@ public class BugResource {
         domain = bugService.confirm(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -207,7 +207,7 @@ public class BugResource {
         domain = bugService.activate(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -237,7 +237,7 @@ public class BugResource {
         domain = bugService.bugFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -252,7 +252,7 @@ public class BugResource {
         domain = bugService.assignTo(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -304,7 +304,7 @@ public class BugResource {
         domain = bugService.bugNFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -318,7 +318,7 @@ public class BugResource {
         domain = bugService.resolve(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -382,7 +382,7 @@ public class BugResource {
         domain = bugService.confirm(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -396,7 +396,7 @@ public class BugResource {
         domain = bugService.activate(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
@@ -426,7 +426,7 @@ public class BugResource {
         domain = bugService.bugFavorites(domain) ;
         bugdto = bugMapping.toDto(domain);
         Map<String, Integer> opprivsMap = bugRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        bugdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 

@@ -63,7 +63,7 @@ public class ProductPlanResource {
         domain = productplanService.linkStory(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -77,7 +77,7 @@ public class ProductPlanResource {
         domain = productplanService.unlinkStory(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -129,7 +129,7 @@ public class ProductPlanResource {
         domain = productplanService.linkBug(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -143,7 +143,7 @@ public class ProductPlanResource {
         domain = productplanService.importPlanTemplet(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -209,7 +209,7 @@ public class ProductPlanResource {
         domain = productplanService.unlinkBug(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -224,7 +224,7 @@ public class ProductPlanResource {
         domain = productplanService.linkStory(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -238,7 +238,7 @@ public class ProductPlanResource {
         domain = productplanService.unlinkStory(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -290,7 +290,7 @@ public class ProductPlanResource {
         domain = productplanService.linkBug(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -304,7 +304,7 @@ public class ProductPlanResource {
         domain = productplanService.importPlanTemplet(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
@@ -370,7 +370,7 @@ public class ProductPlanResource {
         domain = productplanService.unlinkBug(domain) ;
         productplandto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 

@@ -381,7 +381,7 @@ public class TestTaskResource {
         domain = testtaskService.activate(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -395,7 +395,7 @@ public class TestTaskResource {
         domain = testtaskService.block(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -416,7 +416,7 @@ public class TestTaskResource {
         domain = testtaskService.close(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -430,7 +430,7 @@ public class TestTaskResource {
         domain = testtaskService.linkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -444,7 +444,7 @@ public class TestTaskResource {
         domain = testtaskService.mobTestTaskCounter(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -469,7 +469,7 @@ public class TestTaskResource {
         domain = testtaskService.start(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -483,7 +483,7 @@ public class TestTaskResource {
         domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -628,7 +628,7 @@ public class TestTaskResource {
         domain = testtaskService.activate(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -642,7 +642,7 @@ public class TestTaskResource {
         domain = testtaskService.block(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -663,7 +663,7 @@ public class TestTaskResource {
         domain = testtaskService.close(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -677,7 +677,7 @@ public class TestTaskResource {
         domain = testtaskService.linkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -691,7 +691,7 @@ public class TestTaskResource {
         domain = testtaskService.mobTestTaskCounter(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -716,7 +716,7 @@ public class TestTaskResource {
         domain = testtaskService.start(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
@@ -730,7 +730,7 @@ public class TestTaskResource {
         domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testtaskdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 

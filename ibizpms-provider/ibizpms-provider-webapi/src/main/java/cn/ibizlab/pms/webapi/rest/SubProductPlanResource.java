@@ -127,7 +127,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchLinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -141,7 +141,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchLinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -155,7 +155,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchUnlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -169,7 +169,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchUnlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -190,7 +190,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeActivePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -204,7 +204,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeCancelPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -218,7 +218,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeClosePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -232,7 +232,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeFinishPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -246,7 +246,7 @@ public class SubProductPlanResource {
         domain = productplanService.eePausePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -260,7 +260,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeRestartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -274,7 +274,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeStartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -288,7 +288,7 @@ public class SubProductPlanResource {
         domain = productplanService.getOldPlanName(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -302,7 +302,7 @@ public class SubProductPlanResource {
         domain = productplanService.importPlanTemplet(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -316,7 +316,7 @@ public class SubProductPlanResource {
         domain = productplanService.linkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -330,7 +330,7 @@ public class SubProductPlanResource {
         domain = productplanService.linkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -344,7 +344,7 @@ public class SubProductPlanResource {
         domain = productplanService.linkTask(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -358,7 +358,7 @@ public class SubProductPlanResource {
         domain = productplanService.mobProductPlanCounter(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -383,7 +383,7 @@ public class SubProductPlanResource {
         domain = productplanService.unlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -397,7 +397,7 @@ public class SubProductPlanResource {
         domain = productplanService.unlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -633,7 +633,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchLinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -647,7 +647,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchLinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -661,7 +661,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchUnlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -675,7 +675,7 @@ public class SubProductPlanResource {
         domain = productplanService.batchUnlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -696,7 +696,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeActivePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -710,7 +710,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeCancelPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -724,7 +724,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeClosePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -738,7 +738,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeFinishPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -752,7 +752,7 @@ public class SubProductPlanResource {
         domain = productplanService.eePausePlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -766,7 +766,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeRestartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -780,7 +780,7 @@ public class SubProductPlanResource {
         domain = productplanService.eeStartPlan(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -794,7 +794,7 @@ public class SubProductPlanResource {
         domain = productplanService.getOldPlanName(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -808,7 +808,7 @@ public class SubProductPlanResource {
         domain = productplanService.importPlanTemplet(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -822,7 +822,7 @@ public class SubProductPlanResource {
         domain = productplanService.linkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -836,7 +836,7 @@ public class SubProductPlanResource {
         domain = productplanService.linkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -850,7 +850,7 @@ public class SubProductPlanResource {
         domain = productplanService.linkTask(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -864,7 +864,7 @@ public class SubProductPlanResource {
         domain = productplanService.mobProductPlanCounter(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -889,7 +889,7 @@ public class SubProductPlanResource {
         domain = productplanService.unlinkBug(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 
@@ -903,7 +903,7 @@ public class SubProductPlanResource {
         domain = productplanService.unlinkStory(domain) ;
         subproductplandto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productplanRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        subproductplandto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
     }
 

@@ -324,7 +324,7 @@ public class TestModuleResource {
         domain = testmoduleService.fix(domain) ;
         testmoduledto = testmoduleMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testmoduledto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 
@@ -338,7 +338,7 @@ public class TestModuleResource {
         domain = testmoduleService.removeModule(domain) ;
         testmoduledto = testmoduleMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testmoduledto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testmoduledto);
     }
 

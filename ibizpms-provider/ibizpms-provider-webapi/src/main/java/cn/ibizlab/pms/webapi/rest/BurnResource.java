@@ -266,7 +266,7 @@ public class BurnResource {
         domain = burnService.computeBurn(domain) ;
         burndto = burnMapping.toDto(domain);
         Map<String, Integer> opprivsMap = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        burndto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
 

@@ -296,7 +296,7 @@ public class TestSuiteResource {
         domain = testsuiteService.linkCase(domain) ;
         testsuitedto = testsuiteMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testsuitedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
@@ -310,7 +310,7 @@ public class TestSuiteResource {
         domain = testsuiteService.mobTestSuiteCount(domain) ;
         testsuitedto = testsuiteMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testsuitedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 
@@ -335,7 +335,7 @@ public class TestSuiteResource {
         domain = testsuiteService.unlinkCase(domain) ;
         testsuitedto = testsuiteMapping.toDto(domain);
         Map<String, Integer> opprivsMap = testsuiteRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testsuitedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
     }
 

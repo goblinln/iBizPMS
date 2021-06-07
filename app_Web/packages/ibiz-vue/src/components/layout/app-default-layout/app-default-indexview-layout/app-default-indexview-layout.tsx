@@ -267,7 +267,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     context={this.context}
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
-                    viewTitle={this.model.srfCaption} />
+                    viewTitle={this.model?.srfCaption} />
                 { (Object.is(this.viewInstance.mainMenuAlign, "LEFT") || !this.viewInstance.mainMenuAlign) ? this.renderContentLeft() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "TOP") ? this.renderContentTop() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "CENTER") ? this.renderContentMiddle() : null}

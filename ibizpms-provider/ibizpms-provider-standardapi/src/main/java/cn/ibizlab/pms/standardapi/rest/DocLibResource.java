@@ -252,7 +252,7 @@ public class DocLibResource {
         domain = doclibService.collect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
         Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        doclibdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
@@ -346,7 +346,7 @@ public class DocLibResource {
         domain = doclibService.unCollect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
         Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        doclibdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
@@ -410,7 +410,7 @@ public class DocLibResource {
         domain = doclibService.collect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
         Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        doclibdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 
@@ -504,7 +504,7 @@ public class DocLibResource {
         domain = doclibService.unCollect(domain) ;
         doclibdto = doclibMapping.toDto(domain);
         Map<String, Integer> opprivsMap = doclibRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        doclibdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(doclibdto);
     }
 

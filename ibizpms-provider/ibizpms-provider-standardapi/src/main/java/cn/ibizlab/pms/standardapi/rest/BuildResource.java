@@ -99,7 +99,7 @@ public class BuildResource {
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -153,7 +153,7 @@ public class BuildResource {
         domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -182,7 +182,7 @@ public class BuildResource {
         domain = buildService.unlinkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -196,7 +196,7 @@ public class BuildResource {
         domain = buildService.linkBug(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -247,7 +247,7 @@ public class BuildResource {
         domain = buildService.unlinkBug(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -301,7 +301,7 @@ public class BuildResource {
         domain = buildService.linkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -330,7 +330,7 @@ public class BuildResource {
         domain = buildService.unlinkStory(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 
@@ -344,7 +344,7 @@ public class BuildResource {
         domain = buildService.linkBug(domain) ;
         builddto = buildMapping.toDto(domain);
         Map<String, Integer> opprivsMap = buildRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        builddto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(builddto);
     }
 

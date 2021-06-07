@@ -94,7 +94,7 @@ public class TestCaseResource {
         domain = caseService.runCases(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testcasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -108,7 +108,7 @@ public class TestCaseResource {
         domain = caseService.testsuitelinkCase(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testcasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -129,7 +129,7 @@ public class TestCaseResource {
         domain = caseService.caseNFavorite(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testcasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -197,7 +197,7 @@ public class TestCaseResource {
         domain = caseService.caseFavorite(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testcasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
@@ -225,7 +225,7 @@ public class TestCaseResource {
         domain = caseService.testRunCases(domain) ;
         testcasedto = testcaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        testcasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 

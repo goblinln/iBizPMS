@@ -275,7 +275,7 @@ public class BranchResource {
         domain = branchService.sort(domain) ;
         branchdto = branchMapping.toDto(domain);
         Map<String, Integer> opprivsMap = branchRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        branchdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(branchdto);
     }
 

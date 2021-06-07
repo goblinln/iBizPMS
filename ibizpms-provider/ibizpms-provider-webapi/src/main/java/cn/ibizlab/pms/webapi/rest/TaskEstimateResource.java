@@ -364,7 +364,7 @@ public class TaskEstimateResource {
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        taskestimatedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
 
@@ -575,7 +575,7 @@ public class TaskEstimateResource {
         domain = taskestimateService.pMEvaluation(domain) ;
         taskestimatedto = taskestimateMapping.toDto(domain);
         Map<String, Integer> opprivsMap = taskestimateRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        taskestimatedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatedto);
     }
 

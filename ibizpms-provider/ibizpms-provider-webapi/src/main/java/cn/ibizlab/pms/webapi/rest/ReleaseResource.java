@@ -409,7 +409,7 @@ public class ReleaseResource {
         domain = releaseService.activate(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -423,7 +423,7 @@ public class ReleaseResource {
         domain = releaseService.batchUnlinkBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -437,7 +437,7 @@ public class ReleaseResource {
         domain = releaseService.changeStatus(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -458,7 +458,7 @@ public class ReleaseResource {
         domain = releaseService.linkBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -472,7 +472,7 @@ public class ReleaseResource {
         domain = releaseService.linkBugbyBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -486,7 +486,7 @@ public class ReleaseResource {
         domain = releaseService.linkBugbyLeftBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -500,7 +500,7 @@ public class ReleaseResource {
         domain = releaseService.linkStory(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -514,7 +514,7 @@ public class ReleaseResource {
         domain = releaseService.mobReleaseCounter(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -528,7 +528,7 @@ public class ReleaseResource {
         domain = releaseService.oneClickRelease(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -555,7 +555,7 @@ public class ReleaseResource {
         domain = releaseService.terminate(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -569,7 +569,7 @@ public class ReleaseResource {
         domain = releaseService.unlinkBug(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 
@@ -583,7 +583,7 @@ public class ReleaseResource {
         domain = releaseService.unlinkStory(domain) ;
         releasedto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivsMap = releaseRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        releasedto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(releasedto);
     }
 

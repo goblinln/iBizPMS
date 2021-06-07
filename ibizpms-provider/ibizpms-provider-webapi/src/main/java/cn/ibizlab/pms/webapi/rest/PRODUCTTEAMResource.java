@@ -298,7 +298,7 @@ public class PRODUCTTEAMResource {
         domain = productteamService.productTeamGuoLv(domain) ;
         productteamdto = productteamMapping.toDto(domain);
         Map<String, Integer> opprivsMap = productteamRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivsMap);
+        productteamdto.setSrfopprivs(opprivsMap);
         return ResponseEntity.status(HttpStatus.OK).body(productteamdto);
     }
 
