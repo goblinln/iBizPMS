@@ -141,9 +141,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchproduct`, _data);
         }
-        if (_context.test && _context.build && true) {
-            return this.http.post(`/tests/${_context.test}/builds/${_context.build}/files/fetchproduct`, _data);
-        }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproduct`, _data);
         }
@@ -259,9 +256,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.test && _context.bug && _context.file) {
             return this.http.delete(`/tests/${_context.test}/bugs/${_context.bug}/files/${_context.file}`);
-        }
-        if (_context.test && _context.build && _context.file) {
-            return this.http.delete(`/tests/${_context.test}/builds/${_context.build}/files/${_context.file}`);
         }
         if (_context.project && _context.testtask && _context.file) {
             return this.http.delete(`/projects/${_context.project}/testtasks/${_context.testtask}/files/${_context.file}`);
@@ -379,9 +373,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchproject`, _data);
         }
-        if (_context.test && _context.build && true) {
-            return this.http.post(`/tests/${_context.test}/builds/${_context.build}/files/fetchproject`, _data);
-        }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchproject`, _data);
         }
@@ -497,9 +488,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
         }
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/files/fetchtype`, _data);
-        }
-        if (_context.test && _context.build && true) {
-            return this.http.post(`/tests/${_context.test}/builds/${_context.build}/files/fetchtype`, _data);
         }
         if (_context.project && _context.testtask && true) {
             return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/files/fetchtype`, _data);
