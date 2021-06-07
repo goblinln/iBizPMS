@@ -810,6 +810,97 @@
     "enableQuickCreate" : false,
     "id" : "ACCOUNTTODO"
   }, {
+    "bKColor" : "rgba(60, 255, 0, 1)",
+    "getBeginTimePSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "color" : "rgba(0, 0, 0, 1)",
+    "getContentPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "getEndTimePSAppDEField" : {
+      "name" : "SUBMITTIME",
+      "codeName" : "Submittime"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "IBZ_DAILYID",
+      "codeName" : "IbzDailyId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "ACCOUNTDAILY",
+    "maxSize" : -1,
+    "name" : "日报",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailyDailyInfoCalendarEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Daily.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "getTipsPSAppDEField" : {
+      "name" : "IBZ_DAILYNAME",
+      "codeName" : "IbzDailyName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "ACCOUNTDAILY"
+  }, {
+    "bKColor" : "rgba(137, 2, 20, 1)",
+    "getBeginTimePSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "getContentPSAppDEField" : {
+      "name" : "IBZ_REPORTLYNAME",
+      "codeName" : "IbzReportlyName"
+    },
+    "getEndTimePSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "getIdPSAppDEField" : {
+      "name" : "IBZ_REPORTLYID",
+      "codeName" : "IbzReportlyId"
+    },
+    "itemStyle" : "DEFAULT",
+    "itemType" : "ACCOUNTREPORTLY",
+    "maxSize" : -1,
+    "name" : "汇报",
+    "getNavPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCalendarEditView.json",
+      "viewType" : "DEEDITVIEW"
+    },
+    "getPSAppDEDataSet" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Reportly.json"
+    },
+    "getTextPSAppDEField" : {
+      "name" : "IBZ_REPORTLYNAME",
+      "codeName" : "IbzReportlyName"
+    },
+    "getTipsPSAppDEField" : {
+      "name" : "IBZ_REPORTLYNAME",
+      "codeName" : "IbzReportlyName"
+    },
+    "enableQuickCreate" : false,
+    "id" : "ACCOUNTREPORTLY"
+  }, {
     "bKColor" : "rgba(95, 132, 245, 1)",
     "getBeginTimePSAppDEField" : {
       "name" : "BEGIN",

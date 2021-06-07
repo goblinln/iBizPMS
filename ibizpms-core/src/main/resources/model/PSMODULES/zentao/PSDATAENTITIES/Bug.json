@@ -780,6 +780,10 @@
         "condType" : "CUSTOM",
         "customCond" : "(t1.assignedTo = #{srf.sessioncontext.srfloginname} or t1.openedBy = #{srf.sessioncontext.srfloginname} or t1.resolvedby = #{srf.sessioncontext.srfloginname} or t1.closedBy = #{srf.sessioncontext.srfloginname} )",
         "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "((#{srf.webcontext.calendar} = '1'  and t1.assigneddate is not null and t1.assigneddate <> '0000-00-00 00:00:00' and  t1.deadline is not null and t1.deadline <> '0000-00-00') or (#{srf.webcontext.calendar} is null))",
+        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "My",

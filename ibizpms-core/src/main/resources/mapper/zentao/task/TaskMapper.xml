@@ -873,6 +873,9 @@
 			<if test="true">
                 <![CDATA[ AND (t1.assignedTo = #{srf.sessioncontext.srfloginname} or t1.openedBy = #{srf.sessioncontext.srfloginname} or t1.finishedBy = #{srf.sessioncontext.srfloginname} or t1.closedBy = #{srf.sessioncontext.srfloginname} or t1.canceledBy = #{srf.sessioncontext.srfloginname}) ]]>
             </if>
+			<if test="true">
+                <![CDATA[ AND ((#{srf.webcontext.calendar} = '1'  and t1.assigneddate is not null and t1.assigneddate <> '0000-00-00 00:00:00' and t1.estStarted is not null and t1.estStarted <> '0000-00-00' and t1.estStarted <> '1970-01-01') or (#{srf.webcontext.calendar} is null)) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

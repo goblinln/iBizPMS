@@ -185,6 +185,10 @@
         "condType" : "CUSTOM",
         "customCond" : "(t1.account = #{srf.sessioncontext.srfloginname} or t1.assignedto =#{srf.sessioncontext.srfloginname})",
         "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "((#{srf.webcontext.calendar} = '1'  and t1.`CYCLE` = 0 and t1.date is not null) or (#{srf.webcontext.calendar} is null))",
+        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "My",
