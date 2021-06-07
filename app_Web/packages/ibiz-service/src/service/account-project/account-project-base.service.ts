@@ -185,18 +185,18 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         return this.condCache.get('view');
     }
     /**
-     * FetchMy
+     * FetchAccount
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountProjectService
      */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchaccount`, _data);
         }
-        return this.http.post(`/accountprojects/fetchmy`, _data);
+        return this.http.post(`/accountprojects/fetchaccount`, _data);
     }
     /**
      * Get
@@ -215,17 +215,17 @@ export class AccountProjectBaseService extends EntityBaseService<IAccountProject
         return res;
     }
     /**
-     * FetchAccount
+     * FetchMy
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountProjectService
      */
-    async FetchAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchaccount`, _data);
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountprojects/fetchmy`, _data);
         }
-        return this.http.post(`/accountprojects/fetchaccount`, _data);
+        return this.http.post(`/accountprojects/fetchmy`, _data);
     }
 }

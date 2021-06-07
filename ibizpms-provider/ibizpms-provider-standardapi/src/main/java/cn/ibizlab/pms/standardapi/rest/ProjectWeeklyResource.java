@@ -52,17 +52,18 @@ public class ProjectWeeklyResource {
     @Lazy
     public ProjectWeeklyMapping projectweeklyMapping;
 
-    @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
-    @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectweeklies/{projectweekly_id}")
-    public ResponseEntity<ProjectWeeklyDTO> get(@PathVariable("projectweekly_id") String projectweekly_id) {
-        IbizproProjectWeekly domain = ibizproprojectweeklyService.get(projectweekly_id);
-        ProjectWeeklyDTO dto = projectweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(projectweekly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
+    @PreAuthorize("quickTest('IBZPRO_PROJECTWEEKLY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"项目周报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/projectweeklies/fetchdefault")
+	public ResponseEntity<List<ProjectWeeklyDTO>> fetchdefault(@RequestBody IbizproProjectWeeklySearchContext context) {
+        Page<IbizproProjectWeekly> domains = ibizproprojectweeklyService.searchDefault(context) ;
+        List<ProjectWeeklyDTO> list = projectweeklyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @VersionCheck(entity = "ibizproprojectweekly" , versionfield = "updatedate")
     @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
     @ApiOperation(value = "更新项目周报", tags = {"项目周报" },  notes = "更新项目周报")
@@ -78,6 +79,17 @@ public class ProjectWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
+    @ApiOperation(value = "获取项目周报", tags = {"项目周报" },  notes = "获取项目周报")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectweeklies/{projectweekly_id}")
+    public ResponseEntity<ProjectWeeklyDTO> get(@PathVariable("projectweekly_id") String projectweekly_id) {
+        IbizproProjectWeekly domain = ibizproprojectweeklyService.get(projectweekly_id);
+        ProjectWeeklyDTO dto = projectweeklyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectweeklyRuntime.getOPPrivs(projectweekly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
     @PreAuthorize("quickTest('IBZPRO_PROJECTWEEKLY', 'NONE')")
     @ApiOperation(value = "获取项目周报草稿", tags = {"项目周报" },  notes = "获取项目周报草稿")
@@ -100,18 +112,6 @@ public class ProjectWeeklyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBZPRO_PROJECTWEEKLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"项目周报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/projectweeklies/fetchdefault")
-	public ResponseEntity<List<ProjectWeeklyDTO>> fetchdefault(@RequestBody IbizproProjectWeeklySearchContext context) {
-        Page<IbizproProjectWeekly> domains = ibizproprojectweeklyService.searchDefault(context) ;
-        List<ProjectWeeklyDTO> list = projectweeklyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('IBZPRO_PROJECTWEEKLY', #projectweekly_id, 'NONE')")
     @ApiOperation(value = "定时推送项目周报", tags = {"项目周报" },  notes = "定时推送项目周报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectweeklies/{projectweekly_id}/pushsumprojectweekly")

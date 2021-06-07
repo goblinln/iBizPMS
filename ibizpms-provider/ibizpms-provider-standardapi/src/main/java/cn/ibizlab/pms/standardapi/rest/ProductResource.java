@@ -52,21 +52,6 @@ public class ProductResource {
     @Lazy
     public ProductMapping productMapping;
 
-    @PreAuthorize("quickTest('ZT_PRODUCT', 'CREATE')")
-    @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/products")
-    @Transactional
-    public ResponseEntity<ProductDTO> create(@Validated @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-		productService.create(domain);
-        if(!productRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ProductDTO dto = productMapping.toDto(domain);
-        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurproject")
@@ -186,6 +171,21 @@ public class ProductResource {
         return ResponseEntity.status(HttpStatus.OK).body(productdto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_PRODUCT', 'CREATE')")
+    @ApiOperation(value = "新建产品", tags = {"产品" },  notes = "新建产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/products")
+    @Transactional
+    public ResponseEntity<ProductDTO> create(@Validated @RequestBody ProductDTO productdto) {
+        Product domain = productMapping.toDomain(productdto);
+		productService.create(domain);
+        if(!productRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ProductDTO dto = productMapping.toDto(domain);
+        Map<String,Integer> opprivs = productRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

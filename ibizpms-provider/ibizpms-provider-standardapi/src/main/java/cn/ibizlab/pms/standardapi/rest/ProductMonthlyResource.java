@@ -52,6 +52,18 @@ public class ProductMonthlyResource {
     @Lazy
     public ProductMonthlyMapping productmonthlyMapping;
 
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTMONTHLY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"产品月报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productmonthlies/fetchdefault")
+	public ResponseEntity<List<ProductMonthlyDTO>> fetchdefault(@RequestBody IbizproProductMonthlySearchContext context) {
+        Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(context) ;
+        List<ProductMonthlyDTO> list = productmonthlyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @VersionCheck(entity = "ibizproproductmonthly" , versionfield = "updatedate")
     @PreAuthorize("test('IBIZPRO_PRODUCTMONTHLY', #productmonthly_id, 'NONE')")
     @ApiOperation(value = "更新产品月报", tags = {"产品月报" },  notes = "更新产品月报")
@@ -68,18 +80,6 @@ public class ProductMonthlyResource {
     }
 
 
-    @PreAuthorize("quickTest('IBIZPRO_PRODUCTMONTHLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"产品月报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/productmonthlies/fetchdefault")
-	public ResponseEntity<List<ProductMonthlyDTO>> fetchdefault(@RequestBody IbizproProductMonthlySearchContext context) {
-        Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(context) ;
-        List<ProductMonthlyDTO> list = productmonthlyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("test('IBIZPRO_PRODUCTMONTHLY', #productmonthly_id, 'NONE')")
     @ApiOperation(value = "获取产品月报", tags = {"产品月报" },  notes = "获取产品月报")
 	@RequestMapping(method = RequestMethod.GET, value = "/productmonthlies/{productmonthly_id}")
@@ -99,6 +99,19 @@ public class ProductMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(productmonthlyMapping.toDto(ibizproproductmonthlyService.getDraft(domain)));
     }
 
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTMONTHLY', 'NONE')")
+    @ApiOperation(value = "新建产品月报", tags = {"产品月报" },  notes = "新建产品月报")
+	@RequestMapping(method = RequestMethod.POST, value = "/productmonthlies")
+    @Transactional
+    public ResponseEntity<ProductMonthlyDTO> create(@Validated @RequestBody ProductMonthlyDTO productmonthlydto) {
+        IbizproProductMonthly domain = productmonthlyMapping.toDomain(productmonthlydto);
+		ibizproproductmonthlyService.create(domain);
+        ProductMonthlyDTO dto = productmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("test('IBIZPRO_PRODUCTMONTHLY', #productmonthly_id, 'NONE')")
     @ApiOperation(value = "手动生成产品月报", tags = {"产品月报" },  notes = "手动生成产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/productmonthlies/{productmonthly_id}/manualcreatemonthly")
@@ -112,19 +125,6 @@ public class ProductMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(productmonthlydto);
     }
 
-
-    @PreAuthorize("quickTest('IBIZPRO_PRODUCTMONTHLY', 'NONE')")
-    @ApiOperation(value = "新建产品月报", tags = {"产品月报" },  notes = "新建产品月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/productmonthlies")
-    @Transactional
-    public ResponseEntity<ProductMonthlyDTO> create(@Validated @RequestBody ProductMonthlyDTO productmonthlydto) {
-        IbizproProductMonthly domain = productmonthlyMapping.toDomain(productmonthlydto);
-		ibizproproductmonthlyService.create(domain);
-        ProductMonthlyDTO dto = productmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(domain.getIbizproproductmonthlyid());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
