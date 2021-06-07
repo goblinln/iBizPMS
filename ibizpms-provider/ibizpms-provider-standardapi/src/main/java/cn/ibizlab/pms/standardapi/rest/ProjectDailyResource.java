@@ -52,18 +52,6 @@ public class ProjectDailyResource {
     @Lazy
     public ProjectDailyMapping projectdailyMapping;
 
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/projectdailies/fetchdefault")
-	public ResponseEntity<List<ProjectDailyDTO>> fetchdefault(@RequestBody IbizproProjectDailySearchContext context) {
-        Page<IbizproProjectDaily> domains = ibizproprojectdailyService.searchDefault(context) ;
-        List<ProjectDailyDTO> list = projectdailyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
     @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DENY')")
     @ApiOperation(value = "汇总项目日报", tags = {"项目日报" },  notes = "汇总项目日报")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectdailies/{projectdaily_id}/sumprojectdaily")
@@ -130,6 +118,18 @@ public class ProjectDailyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/projectdailies/fetchdefault")
+	public ResponseEntity<List<ProjectDailyDTO>> fetchdefault(@RequestBody IbizproProjectDailySearchContext context) {
+        Page<IbizproProjectDaily> domains = ibizproprojectdailyService.searchDefault(context) ;
+        List<ProjectDailyDTO> list = projectdailyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projectdailies/{projectdaily_id}/{action}")

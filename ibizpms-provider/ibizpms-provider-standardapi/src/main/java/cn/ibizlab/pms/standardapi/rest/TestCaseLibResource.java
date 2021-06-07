@@ -93,14 +93,6 @@ public class TestCaseLibResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
-    @ApiOperation(value = "获取用例库草稿", tags = {"用例库" },  notes = "获取用例库草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/getdraft")
-    public ResponseEntity<TestCaseLibDTO> getDraft(TestCaseLibDTO dto) {
-        IbzLib domain = testcaselibMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaselibMapping.toDto(ibzlibService.getDraft(domain)));
-    }
-
     @VersionCheck(entity = "ibzlib" , versionfield = "lastediteddate")
     @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'UPDATE')")
     @ApiOperation(value = "更新用例库", tags = {"用例库" },  notes = "更新用例库")
@@ -118,6 +110,14 @@ public class TestCaseLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
+    @ApiOperation(value = "获取用例库草稿", tags = {"用例库" },  notes = "获取用例库草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/getdraft")
+    public ResponseEntity<TestCaseLibDTO> getDraft(TestCaseLibDTO dto) {
+        IbzLib domain = testcaselibMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(testcaselibMapping.toDto(ibzlibService.getDraft(domain)));
+    }
 
     @PreAuthorize("quickTest('IBZ_LIB', 'READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")

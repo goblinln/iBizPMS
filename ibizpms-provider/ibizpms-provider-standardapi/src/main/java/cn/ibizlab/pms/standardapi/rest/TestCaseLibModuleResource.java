@@ -53,6 +53,22 @@ public class TestCaseLibModuleResource {
     public TestCaseLibModuleMapping testcaselibmoduleMapping;
 
 
+    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
+    @ApiOperation(value = "根据用例库建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库建立用例库模块")
+	@RequestMapping(method = RequestMethod.POST, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules")
+    public ResponseEntity<TestCaseLibModuleDTO> createByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody TestCaseLibModuleDTO testcaselibmoduledto) {
+        IbzLibModule domain = testcaselibmoduleMapping.toDomain(testcaselibmoduledto);
+        domain.setRoot(ibzlib_id);
+		ibzlibmoduleService.create(domain);
+        if(!ibzlibmoduleRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        TestCaseLibModuleDTO dto = testcaselibmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("quickTest('IBZ_LIBMODULE','READ')")
 	@ApiOperation(value = "根据用例库获取DEFAULT", tags = {"用例库模块" } ,notes = "根据用例库获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/testcaselibmodules/fetchdefault")
@@ -67,6 +83,15 @@ public class TestCaseLibModuleResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
+    @ApiOperation(value = "根据用例库获取用例库模块草稿", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/getdraft")
+    public ResponseEntity<TestCaseLibModuleDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, TestCaseLibModuleDTO dto) {
+        IbzLibModule domain = testcaselibmoduleMapping.toDomain(dto);
+        domain.setRoot(ibzlib_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testcaselibmoduleMapping.toDto(ibzlibmoduleService.getDraft(domain)));
+    }
+
     @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'READ')")
     @ApiOperation(value = "根据用例库获取用例库模块", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块")
 	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
@@ -76,15 +101,6 @@ public class TestCaseLibModuleResource {
         Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
-    @ApiOperation(value = "根据用例库获取用例库模块草稿", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/getdraft")
-    public ResponseEntity<TestCaseLibModuleDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, TestCaseLibModuleDTO dto) {
-        IbzLibModule domain = testcaselibmoduleMapping.toDomain(dto);
-        domain.setRoot(ibzlib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaselibmoduleMapping.toDto(ibzlibmoduleService.getDraft(domain)));
     }
 
 
@@ -97,21 +113,6 @@ public class TestCaseLibModuleResource {
              domain.setRoot(ibzlib_id);
         }
         ibzlibmoduleService.saveBatch(domainlist);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'DELETE')")
-    @ApiOperation(value = "根据用例库删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库删除用例库模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
-    public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.remove(testcaselibmodule_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_LIBMODULE','DELETE')")
-    @ApiOperation(value = "根据用例库批量删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量删除用例库模块")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/batch")
-    public ResponseEntity<Boolean> removeBatchByIbzLib(@RequestBody List<Long> ids) {
-        ibzlibmoduleService.removeBatch(ids);
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
@@ -132,21 +133,20 @@ public class TestCaseLibModuleResource {
     }
 
 
-    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
-    @ApiOperation(value = "根据用例库建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库建立用例库模块")
-	@RequestMapping(method = RequestMethod.POST, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules")
-    public ResponseEntity<TestCaseLibModuleDTO> createByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @RequestBody TestCaseLibModuleDTO testcaselibmoduledto) {
-        IbzLibModule domain = testcaselibmoduleMapping.toDomain(testcaselibmoduledto);
-        domain.setRoot(ibzlib_id);
-		ibzlibmoduleService.create(domain);
-        if(!ibzlibmoduleRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        TestCaseLibModuleDTO dto = testcaselibmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'DELETE')")
+    @ApiOperation(value = "根据用例库删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库删除用例库模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
+    public ResponseEntity<Boolean> removeByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzlibmoduleService.remove(testcaselibmodule_id));
     }
 
+    @PreAuthorize("quickTest('IBZ_LIBMODULE','DELETE')")
+    @ApiOperation(value = "根据用例库批量删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库批量删除用例库模块")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/batch")
+    public ResponseEntity<Boolean> removeBatchByIbzLib(@RequestBody List<Long> ids) {
+        ibzlibmoduleService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
 }
 

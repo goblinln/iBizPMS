@@ -66,17 +66,6 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectDailyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectdailies/fetchdefault`, _data);
-    }
-    /**
      * Summary
      *
      * @param {*} [_context={}]
@@ -142,6 +131,17 @@ export class ProjectDailyBaseService extends EntityBaseService<IProjectDaily> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/projectdailies`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectDailyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projectdailies/fetchdefault`, _data);
     }
 
     /**

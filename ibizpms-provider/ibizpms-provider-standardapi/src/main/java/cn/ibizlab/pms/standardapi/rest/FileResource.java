@@ -52,6 +52,32 @@ public class FileResource {
     @Lazy
     public FileMapping fileMapping;
 
+    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
+	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchproject(@RequestBody FileSearchContext context) {
+        fileRuntime.addAuthorityConditions(context,"READ");
+        Page<File> domains = fileService.searchDocLibFile(context) ;
+        List<FileDTO> list = fileMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
+	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchproduct(@RequestBody FileSearchContext context) {
+        fileRuntime.addAuthorityConditions(context,"READ");
+        Page<File> domains = fileService.searchProductDocLibFile(context) ;
+        List<FileDTO> list = fileMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "删除附件", tags = {"附件" },  notes = "删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/files/{file_id}")
@@ -80,32 +106,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
-	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchproject(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchDocLibFile(context) ;
-        List<FileDTO> list = fileMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_FILE', 'READ')")
-	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchproduct(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchProductDocLibFile(context) ;
-        List<FileDTO> list = fileMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/files/{file_id}/{action}")
@@ -115,6 +115,34 @@ public class FileResource {
         return ResponseEntity.status(HttpStatus.OK).body(filedto);
     }
 
+    @PreAuthorize("quickTest('ZT_FILE','READ')")
+	@ApiOperation(value = "根据日报获取文件库查询", tags = {"附件" } ,notes = "根据日报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody FileSearchContext context) {
+        
+        fileRuntime.addAuthorityConditions(context,"READ");
+        Page<File> domains = fileService.searchDocLibFile(context) ;
+        List<FileDTO> list = fileMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_FILE','READ')")
+	@ApiOperation(value = "根据日报获取文件库查询", tags = {"附件" } ,notes = "根据日报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody FileSearchContext context) {
+        
+        fileRuntime.addAuthorityConditions(context,"READ");
+        Page<File> domains = fileService.searchProductDocLibFile(context) ;
+        List<FileDTO> list = fileMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据日报删除附件", tags = {"附件" },  notes = "根据日报删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/dailies/{ibzdaily_id}/files/{file_id}")
@@ -144,10 +172,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据日报获取文件库查询", tags = {"附件" } ,notes = "根据日报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据文档库获取文件库查询", tags = {"附件" } ,notes = "根据文档库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -159,9 +188,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据日报获取文件库查询", tags = {"附件" } ,notes = "根据日报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/dailies/{ibzdaily_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据文档库获取文件库查询", tags = {"附件" } ,notes = "根据文档库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -172,7 +201,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据文档库删除附件", tags = {"附件" },  notes = "根据文档库删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/files/{file_id}")
@@ -202,10 +230,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据文档库获取文件库查询", tags = {"附件" } ,notes = "根据文档库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据文档获取文件库查询", tags = {"附件" } ,notes = "根据文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -217,9 +246,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据文档库获取文件库查询", tags = {"附件" } ,notes = "根据文档库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据文档获取文件库查询", tags = {"附件" } ,notes = "根据文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -230,7 +259,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据文档删除附件", tags = {"附件" },  notes = "根据文档删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}/files/{file_id}")
@@ -260,10 +288,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据文档获取文件库查询", tags = {"附件" } ,notes = "根据文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据月报获取文件库查询", tags = {"附件" } ,notes = "根据月报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -275,9 +304,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据文档获取文件库查询", tags = {"附件" } ,notes = "根据文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/{doc_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByDoc(@PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据月报获取文件库查询", tags = {"附件" } ,notes = "根据月报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -288,7 +317,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据月报删除附件", tags = {"附件" },  notes = "根据月报删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/monthlies/{ibzmonthly_id}/files/{file_id}")
@@ -318,10 +346,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据月报获取文件库查询", tags = {"附件" } ,notes = "根据月报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品获取文件库查询", tags = {"附件" } ,notes = "根据产品获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -333,9 +362,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据月报获取文件库查询", tags = {"附件" } ,notes = "根据月报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/monthlies/{ibzmonthly_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByIbzMonthly(@PathVariable("ibzmonthly_id") Long ibzmonthly_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品获取文件库查询", tags = {"附件" } ,notes = "根据产品获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -346,7 +375,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除附件", tags = {"附件" },  notes = "根据产品删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/files/{file_id}")
@@ -376,10 +404,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品获取文件库查询", tags = {"附件" } ,notes = "根据产品获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProduct(@PathVariable("product_id") Long product_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目获取文件库查询", tags = {"附件" } ,notes = "根据项目获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProject(@PathVariable("project_id") Long project_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -391,9 +420,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品获取文件库查询", tags = {"附件" } ,notes = "根据产品获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目获取文件库查询", tags = {"附件" } ,notes = "根据项目获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProject(@PathVariable("project_id") Long project_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -404,7 +433,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除附件", tags = {"附件" },  notes = "根据项目删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/files/{file_id}")
@@ -434,10 +462,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目获取文件库查询", tags = {"附件" } ,notes = "根据项目获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProject(@PathVariable("project_id") Long project_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据汇报获取文件库查询", tags = {"附件" } ,notes = "根据汇报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -449,9 +478,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目获取文件库查询", tags = {"附件" } ,notes = "根据项目获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProject(@PathVariable("project_id") Long project_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据汇报获取文件库查询", tags = {"附件" } ,notes = "根据汇报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -462,7 +491,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据汇报删除附件", tags = {"附件" },  notes = "根据汇报删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/reportlies/{ibzreportly_id}/files/{file_id}")
@@ -492,10 +520,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据汇报获取文件库查询", tags = {"附件" } ,notes = "根据汇报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据用例库获取文件库查询", tags = {"附件" } ,notes = "根据用例库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -507,9 +536,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据汇报获取文件库查询", tags = {"附件" } ,notes = "根据汇报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/{ibzreportly_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据用例库获取文件库查询", tags = {"附件" } ,notes = "根据用例库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -520,7 +549,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据用例库删除附件", tags = {"附件" },  notes = "根据用例库删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/files/{file_id}")
@@ -550,10 +578,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据用例库获取文件库查询", tags = {"附件" } ,notes = "根据用例库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据测试套件获取文件库查询", tags = {"附件" } ,notes = "根据测试套件获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -565,9 +594,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据用例库获取文件库查询", tags = {"附件" } ,notes = "根据用例库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/testcaselibs/{ibzlib_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据测试套件获取文件库查询", tags = {"附件" } ,notes = "根据测试套件获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -578,7 +607,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据测试套件删除附件", tags = {"附件" },  notes = "根据测试套件删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/{testsuite_id}/files/{file_id}")
@@ -608,10 +636,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据测试套件获取文件库查询", tags = {"附件" } ,notes = "根据测试套件获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据待办获取文件库查询", tags = {"附件" } ,notes = "根据待办获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -623,9 +652,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据测试套件获取文件库查询", tags = {"附件" } ,notes = "根据测试套件获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/testsuites/{testsuite_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByTestSuite(@PathVariable("testsuite_id") Long testsuite_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据待办获取文件库查询", tags = {"附件" } ,notes = "根据待办获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -636,7 +665,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据待办删除附件", tags = {"附件" },  notes = "根据待办删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/todos/{todo_id}/files/{file_id}")
@@ -666,10 +694,11 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据待办获取文件库查询", tags = {"附件" } ,notes = "根据待办获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据周报获取文件库查询", tags = {"附件" } ,notes = "根据周报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -681,9 +710,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据待办获取文件库查询", tags = {"附件" } ,notes = "根据待办获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/todos/{todo_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByTodo(@PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据周报获取文件库查询", tags = {"附件" } ,notes = "根据周报获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -694,7 +723,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据周报删除附件", tags = {"附件" },  notes = "根据周报删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/weeklies/{ibzweekly_id}/files/{file_id}")
@@ -724,10 +752,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据周报获取文件库查询", tags = {"附件" } ,notes = "根据周报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据系统用户文档获取文件库查询", tags = {"附件" } ,notes = "根据系统用户文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -739,9 +769,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据周报获取文件库查询", tags = {"附件" } ,notes = "根据周报获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/weeklies/{ibzweekly_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByIbzWeekly(@PathVariable("ibzweekly_id") Long ibzweekly_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据系统用户文档获取文件库查询", tags = {"附件" } ,notes = "根据系统用户文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -752,8 +782,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户文档删除附件", tags = {"附件" },  notes = "根据系统用户文档删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}/files/{file_id}")
@@ -783,10 +811,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据系统用户文档获取文件库查询", tags = {"附件" } ,notes = "根据系统用户文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据系统用户待办获取文件库查询", tags = {"附件" } ,notes = "根据系统用户待办获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -798,9 +828,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据系统用户文档获取文件库查询", tags = {"附件" } ,notes = "根据系统用户文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/{doc_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductBySysUserDoc(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据系统用户待办获取文件库查询", tags = {"附件" } ,notes = "根据系统用户待办获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -811,8 +841,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据系统用户待办删除附件", tags = {"附件" },  notes = "根据系统用户待办删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/todos/{todo_id}/files/{file_id}")
@@ -842,10 +870,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据系统用户待办获取文件库查询", tags = {"附件" } ,notes = "根据系统用户待办获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据文档库文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -857,9 +887,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据系统用户待办获取文件库查询", tags = {"附件" } ,notes = "根据系统用户待办获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/todos/{todo_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductBySysUserTodo(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("todo_id") Long todo_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据文档库文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -870,8 +900,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据文档库文档删除附件", tags = {"附件" },  notes = "根据文档库文档删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/{doc_id}/files/{file_id}")
@@ -901,10 +929,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据文档库文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试版本获取文件库查询", tags = {"附件" } ,notes = "根据产品测试版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testtasks/{testtask_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -916,9 +946,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据文档库文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByDocLibDoc(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试版本获取文件库查询", tags = {"附件" } ,notes = "根据产品测试版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testtasks/{testtask_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -929,8 +959,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品测试版本删除附件", tags = {"附件" },  notes = "根据产品测试版本删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testtasks/{testtask_id}/files/{file_id}")
@@ -960,10 +988,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试版本获取文件库查询", tags = {"附件" } ,notes = "根据产品测试版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testtasks/{testtask_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品文档库获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -975,9 +1005,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试版本获取文件库查询", tags = {"附件" } ,notes = "根据产品测试版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testtasks/{testtask_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductTestTask(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品文档库获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -988,8 +1018,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品文档库删除附件", tags = {"附件" },  notes = "根据产品文档库删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/files/{file_id}")
@@ -1019,10 +1047,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品文档库获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品版本获取文件库查询", tags = {"附件" } ,notes = "根据产品版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1034,9 +1064,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品文档库获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品版本获取文件库查询", tags = {"附件" } ,notes = "根据产品版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1047,8 +1077,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品版本删除附件", tags = {"附件" },  notes = "根据产品版本删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/builds/{build_id}/files/{file_id}")
@@ -1078,10 +1106,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品版本获取文件库查询", tags = {"附件" } ,notes = "根据产品版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品产品计划获取文件库查询", tags = {"附件" } ,notes = "根据产品产品计划获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1093,9 +1123,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品版本获取文件库查询", tags = {"附件" } ,notes = "根据产品版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/{build_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductBuild(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品产品计划获取文件库查询", tags = {"附件" } ,notes = "根据产品产品计划获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1106,8 +1136,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品产品计划删除附件", tags = {"附件" },  notes = "根据产品产品计划删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/files/{file_id}")
@@ -1137,10 +1165,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品产品计划获取文件库查询", tags = {"附件" } ,notes = "根据产品产品计划获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品发布获取文件库查询", tags = {"附件" } ,notes = "根据产品发布获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1152,9 +1182,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品产品计划获取文件库查询", tags = {"附件" } ,notes = "根据产品产品计划获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品发布获取文件库查询", tags = {"附件" } ,notes = "根据产品发布获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1165,8 +1195,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品发布删除附件", tags = {"附件" },  notes = "根据产品发布删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productreleases/{release_id}/files/{file_id}")
@@ -1196,10 +1224,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品发布获取文件库查询", tags = {"附件" } ,notes = "根据产品发布获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品需求获取文件库查询", tags = {"附件" } ,notes = "根据产品需求获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1211,9 +1241,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品发布获取文件库查询", tags = {"附件" } ,notes = "根据产品发布获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productreleases/{release_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductRelease(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品需求获取文件库查询", tags = {"附件" } ,notes = "根据产品需求获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1224,8 +1254,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品需求删除附件", tags = {"附件" },  notes = "根据产品需求删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/files/{file_id}")
@@ -1255,10 +1283,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品需求获取文件库查询", tags = {"附件" } ,notes = "根据产品需求获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1270,9 +1300,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品需求获取文件库查询", tags = {"附件" } ,notes = "根据产品需求获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1283,8 +1313,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目文档库删除附件", tags = {"附件" },  notes = "根据项目文档库删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/files/{file_id}")
@@ -1314,10 +1342,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目产品计划获取文件库查询", tags = {"附件" } ,notes = "根据项目产品计划获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1329,9 +1359,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目文档库获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目产品计划获取文件库查询", tags = {"附件" } ,notes = "根据项目产品计划获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1342,8 +1372,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目产品计划删除附件", tags = {"附件" },  notes = "根据项目产品计划删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/productplans/{productplan_id}/files/{file_id}")
@@ -1373,10 +1401,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目产品计划获取文件库查询", tags = {"附件" } ,notes = "根据项目产品计划获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目Bug获取文件库查询", tags = {"附件" } ,notes = "根据项目Bug获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1388,9 +1418,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目产品计划获取文件库查询", tags = {"附件" } ,notes = "根据项目产品计划获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/productplans/{productplan_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectProductPlan(@PathVariable("project_id") Long project_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目Bug获取文件库查询", tags = {"附件" } ,notes = "根据项目Bug获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1401,8 +1431,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目Bug删除附件", tags = {"附件" },  notes = "根据项目Bug删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/bugs/{bug_id}/files/{file_id}")
@@ -1432,10 +1460,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目Bug获取文件库查询", tags = {"附件" } ,notes = "根据项目Bug获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目版本获取文件库查询", tags = {"附件" } ,notes = "根据项目版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1447,9 +1477,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目Bug获取文件库查询", tags = {"附件" } ,notes = "根据项目Bug获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/bugs/{bug_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectBug(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目版本获取文件库查询", tags = {"附件" } ,notes = "根据项目版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1460,8 +1490,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目版本删除附件", tags = {"附件" },  notes = "根据项目版本删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/builds/{build_id}/files/{file_id}")
@@ -1491,10 +1519,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目版本获取文件库查询", tags = {"附件" } ,notes = "根据项目版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目任务获取文件库查询", tags = {"附件" } ,notes = "根据项目任务获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1506,9 +1536,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目版本获取文件库查询", tags = {"附件" } ,notes = "根据项目版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/builds/{build_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectBuild(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目任务获取文件库查询", tags = {"附件" } ,notes = "根据项目任务获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1519,8 +1549,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目任务删除附件", tags = {"附件" },  notes = "根据项目任务删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/tasks/{task_id}/files/{file_id}")
@@ -1550,10 +1578,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目任务获取文件库查询", tags = {"附件" } ,notes = "根据项目任务获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目需求获取文件库查询", tags = {"附件" } ,notes = "根据项目需求获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1565,9 +1595,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目任务获取文件库查询", tags = {"附件" } ,notes = "根据项目任务获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目需求获取文件库查询", tags = {"附件" } ,notes = "根据项目需求获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1578,8 +1608,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目需求删除附件", tags = {"附件" },  notes = "根据项目需求删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/stories/{story_id}/files/{file_id}")
@@ -1609,10 +1637,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目需求获取文件库查询", tags = {"附件" } ,notes = "根据项目需求获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目测试报告获取文件库查询", tags = {"附件" } ,notes = "根据项目测试报告获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1624,9 +1654,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目需求获取文件库查询", tags = {"附件" } ,notes = "根据项目需求获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/stories/{story_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectStory(@PathVariable("project_id") Long project_id, @PathVariable("story_id") Long story_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目测试报告获取文件库查询", tags = {"附件" } ,notes = "根据项目测试报告获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1637,8 +1667,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目测试报告删除附件", tags = {"附件" },  notes = "根据项目测试报告删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testreports/{testreport_id}/files/{file_id}")
@@ -1668,10 +1696,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目测试报告获取文件库查询", tags = {"附件" } ,notes = "根据项目测试报告获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目测试版本获取文件库查询", tags = {"附件" } ,notes = "根据项目测试版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1683,9 +1713,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目测试报告获取文件库查询", tags = {"附件" } ,notes = "根据项目测试报告获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testreports/{testreport_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectTestReport(@PathVariable("project_id") Long project_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目测试版本获取文件库查询", tags = {"附件" } ,notes = "根据项目测试版本获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1696,8 +1726,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目测试版本删除附件", tags = {"附件" },  notes = "根据项目测试版本删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}/files/{file_id}")
@@ -1727,10 +1755,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目测试版本获取文件库查询", tags = {"附件" } ,notes = "根据项目测试版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品Bug获取文件库查询", tags = {"附件" } ,notes = "根据产品Bug获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1742,9 +1772,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目测试版本获取文件库查询", tags = {"附件" } ,notes = "根据项目测试版本获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/{testtask_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectTestTask(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品Bug获取文件库查询", tags = {"附件" } ,notes = "根据产品Bug获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1755,8 +1785,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品Bug删除附件", tags = {"附件" },  notes = "根据产品Bug删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/bugs/{bug_id}/files/{file_id}")
@@ -1786,10 +1814,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品Bug获取文件库查询", tags = {"附件" } ,notes = "根据产品Bug获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试用例获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1801,9 +1831,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品Bug获取文件库查询", tags = {"附件" } ,notes = "根据产品Bug获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/bugs/{bug_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductBug(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试用例获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1814,8 +1844,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品测试用例删除附件", tags = {"附件" },  notes = "根据产品测试用例删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{case_id}/files/{file_id}")
@@ -1845,10 +1873,12 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试用例获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试报告获取文件库查询", tags = {"附件" } ,notes = "根据产品测试报告获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1860,9 +1890,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试用例获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试报告获取文件库查询", tags = {"附件" } ,notes = "根据产品测试报告获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1873,8 +1903,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品测试报告删除附件", tags = {"附件" },  notes = "根据产品测试报告删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testreports/{testreport_id}/files/{file_id}")
@@ -1904,10 +1932,13 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试报告获取文件库查询", tags = {"附件" } ,notes = "根据产品测试报告获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1919,9 +1950,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试报告获取文件库查询", tags = {"附件" } ,notes = "根据产品测试报告获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testreports/{testreport_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductTestReport(@PathVariable("product_id") Long product_id, @PathVariable("testreport_id") Long testreport_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1932,9 +1963,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品文档库文档删除附件", tags = {"附件" },  notes = "根据产品文档库文档删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/files/{file_id}")
@@ -1964,10 +1992,13 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -1979,9 +2010,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据产品文档库文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductDocLibDoc(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库文档获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -1992,9 +2023,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据项目文档库文档删除附件", tags = {"附件" },  notes = "根据项目文档库文档删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/{file_id}")
@@ -2024,10 +2052,13 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试用例用例步骤获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例用例步骤获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/{casestep_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductCaseCaseStep(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -2039,9 +2070,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据项目文档库文档获取文件库查询", tags = {"附件" } ,notes = "根据项目文档库文档获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProjectDocLibDoc(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试用例用例步骤获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例用例步骤获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/{casestep_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductCaseCaseStep(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -2052,9 +2083,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品测试用例用例步骤删除附件", tags = {"附件" },  notes = "根据产品测试用例用例步骤删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{case_id}/testcasesteps/{casestep_id}/files/{file_id}")
@@ -2084,10 +2112,13 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+
+
+
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试用例用例步骤获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例用例步骤获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/{casestep_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductCaseCaseStep(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试用例测试结果获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例测试结果获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testreults/{testresult_id}/files/fetchproject")
+	public ResponseEntity<List<FileDTO>> fetchProjectByProductCaseTestResult(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
@@ -2099,9 +2130,9 @@ public class FileResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试用例用例步骤获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例用例步骤获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testcasesteps/{casestep_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductCaseCaseStep(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id,@RequestBody FileSearchContext context) {
+	@ApiOperation(value = "根据产品测试用例测试结果获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例测试结果获取文件库查询")
+    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testreults/{testresult_id}/files/fetchproduct")
+	public ResponseEntity<List<FileDTO>> fetchProductByProductCaseTestResult(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id,@RequestBody FileSearchContext context) {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
@@ -2112,9 +2143,6 @@ public class FileResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-
-
-
     @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
     @ApiOperation(value = "根据产品测试用例测试结果删除附件", tags = {"附件" },  notes = "根据产品测试用例测试结果删除附件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/tests/{product_id}/testcases/{case_id}/testreults/{testresult_id}/files/{file_id}")
@@ -2137,34 +2165,6 @@ public class FileResource {
         
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchType(context) ;
-        List<FileDTO> list = fileMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试用例测试结果获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例测试结果获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testreults/{testresult_id}/files/fetchproject")
-	public ResponseEntity<List<FileDTO>> fetchProjectByProductCaseTestResult(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id,@RequestBody FileSearchContext context) {
-        
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchDocLibFile(context) ;
-        List<FileDTO> list = fileMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_FILE','READ')")
-	@ApiOperation(value = "根据产品测试用例测试结果获取文件库查询", tags = {"附件" } ,notes = "根据产品测试用例测试结果获取文件库查询")
-    @RequestMapping(method= RequestMethod.POST , value="/tests/{product_id}/testcases/{case_id}/testreults/{testresult_id}/files/fetchproduct")
-	public ResponseEntity<List<FileDTO>> fetchProductByProductCaseTestResult(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("testresult_id") Long testresult_id,@RequestBody FileSearchContext context) {
-        
-        fileRuntime.addAuthorityConditions(context,"READ");
-        Page<File> domains = fileService.searchProductDocLibFile(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

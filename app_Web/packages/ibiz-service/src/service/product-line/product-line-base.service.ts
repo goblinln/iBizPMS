@@ -96,6 +96,17 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.condCache.get('view');
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/productlines/${_context.productline}`);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -128,29 +139,6 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
         return this.http.post(`/productlines`, _data);
     }
     /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productlines/${_context.productline}`);
-        return res;
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductLineService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productlines/${_context.productline}`);
-    }
-    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -172,5 +160,17 @@ export class ProductLineBaseService extends EntityBaseService<IProductLine> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/productlines/${_context.productline}`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductLineService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/productlines/${_context.productline}`);
+        return res;
     }
 }
