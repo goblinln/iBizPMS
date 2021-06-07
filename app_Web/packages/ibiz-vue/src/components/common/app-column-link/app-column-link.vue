@@ -5,18 +5,23 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component,Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { ModelTool, Util, ViewTool } from 'ibiz-core';
-import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef, IPSNavigateContext } from '@ibiz/dynamic-model-api';
+import {
+    IPSAppDataEntity,
+    IPSAppDERedirectView,
+    IPSAppDEView,
+    IPSAppView,
+    IPSAppViewRef,
+    IPSNavigateContext,
+} from '@ibiz/dynamic-model-api';
 import { UIServiceRegister } from 'ibiz-service';
 /**
  * 表格列链接
  */
-@Component({
-})
+@Component({})
 export default class AppColumnLink extends Vue {
-
     /**
      * 表格行数据
      *
@@ -35,19 +40,19 @@ export default class AppColumnLink extends Vue {
 
     /**
      * 局部上下文导航参数
-     * 
+     *
      * @type {any}
      * @memberof AppColumnLink
      */
-    @Prop() public localContext!:any;
+    @Prop() public localContext!: any;
 
     /**
      * 局部导航参数
-     * 
+     *
      * @type {any}
      * @memberof AppColumnLink
      */
-    @Prop() public localParam!:any;
+    @Prop() public localParam!: any;
 
     /**
      * 值项名称
@@ -63,7 +68,7 @@ export default class AppColumnLink extends Vue {
      * @type {*}
      * @memberof AppColumnLink
      */
-    @Prop({default:{}}) public context?:any;
+    @Prop({ default: {} }) public context?: any;
 
     /**
      * 导航参数
@@ -71,7 +76,7 @@ export default class AppColumnLink extends Vue {
      * @type {*}
      * @memberof AppColumnLink
      */
-    @Prop({default:{}}) public viewparams?:any;
+    @Prop({ default: {} }) public viewparams?: any;
 
     /**
      * 应用实体主键属性名称
@@ -79,22 +84,22 @@ export default class AppColumnLink extends Vue {
      * @type {string}
      * @memberof AppColumnLink
      */
-    @Prop() public deKeyField!:string;
+    @Prop() public deKeyField!: string;
 
     /**
      * 界面UI服务对象
-     * 
+     *
      * @type {*}
      * @memberof AppDefaultGridColumn
      */
     @Prop() public appUIService!: any;
 
     /**
-    * 模型服务对象
-    * 
-    * @memberof AppStyle2DefaultLayout
-    */
-    @Prop() public modelService!:any;
+     * 模型服务对象
+     *
+     * @memberof AppStyle2DefaultLayout
+     */
+    @Prop() public modelService!: any;
 
     /**
      * 打开链接视图
@@ -104,7 +109,7 @@ export default class AppColumnLink extends Vue {
     public openLinkView($event: any): void {
         $event.stopPropagation();
         if (!this.data || !this.valueitem || !this.data[this.valueitem]) {
-            this.$throw((this.$t('components.appcolumnlink.valueitemexception') as string),'openLinkView');
+            this.$throw(this.$t('components.appcolumnlink.valueitemexception') as string, 'openLinkView');
             return;
         }
         // 公共参数处理
@@ -118,8 +123,6 @@ export default class AppColumnLink extends Vue {
         let _param = data.param;
         Object.assign(_context, { [this.deKeyField]: this.data[this.valueitem] });
         const view = Util.deepCopy(this.linkview);
-        const viewname2: string = this.$util.srfFilePath2(view.viewname);
-        view.viewname = viewname2;
         if (view.isRedirectView) {
             this.openRedirectView($event, _context, _param);
         } else if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
@@ -142,7 +145,14 @@ export default class AppColumnLink extends Vue {
      * @memberof AppColumnLink
      */
     private openIndexViewTab(view: any, context: any, param: any): void {
-        const routePath = this.$viewTool.buildUpRoutePath(this.$route, context, view.deResParameters, view.parameters, [this.data] , param);
+        const routePath = this.$viewTool.buildUpRoutePath(
+            this.$route,
+            context,
+            view.deResParameters,
+            view.parameters,
+            [this.data],
+            param,
+        );
         this.$router.push(routePath);
     }
 
@@ -173,9 +183,9 @@ export default class AppColumnLink extends Vue {
      * @memberof AppColumnLink
      */
     private openDrawer(view: any, context: any, param: any): void {
-        const _conetxt = Util.deepCopy(context)
+        const _conetxt = Util.deepCopy(context);
         _conetxt.viewpath = view.viewpath;
-        let container: Subject<any> = this.$appdrawer.openDrawer(view,Util.getViewProps(_conetxt, param));
+        let container: Subject<any> = this.$appdrawer.openDrawer(view, Util.getViewProps(_conetxt, param));
         container.subscribe((result: any) => {
             if (!result || !Object.is(result.ret, 'OK')) {
                 return;
@@ -226,32 +236,42 @@ export default class AppColumnLink extends Vue {
     private async openRedirectView($event: any, context: any, params: any) {
         let targetRedirectView: IPSAppDERedirectView = this.linkview.viewModel;
         await targetRedirectView.fill(true);
-        if ( targetRedirectView.getRedirectPSAppViewRefs() && targetRedirectView.getRedirectPSAppViewRefs()?.length === 0 ) {
+        if (
+            targetRedirectView.getRedirectPSAppViewRefs() &&
+            targetRedirectView.getRedirectPSAppViewRefs()?.length === 0
+        ) {
             return;
         }
-        const redirectUIService: any = await UIServiceRegister.getInstance().getService(context, (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase());
+        const redirectUIService: any = await UIServiceRegister.getInstance().getService(
+            context,
+            (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase(),
+        );
         await redirectUIService.loaded();
         const redirectAppEntity: IPSAppDataEntity | null = targetRedirectView.getPSAppDataEntity();
-        await ViewTool.calcRedirectContext(context,this.data,redirectAppEntity);
-        let result = await redirectUIService.getRDAppView(context,this.data[this.deKeyField], params);
+        await ViewTool.calcRedirectContext(context, this.data, redirectAppEntity);
+        let result = await redirectUIService.getRDAppView(context, this.data[this.deKeyField], params);
         if (!result) {
             return;
         }
-        let targetOpenViewRef: | IPSAppViewRef | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
-            return item.name === result.param.split(':')[0];
-        });
+        let targetOpenViewRef: IPSAppViewRef | undefined = targetRedirectView
+            .getRedirectPSAppViewRefs()
+            ?.find((item: IPSAppViewRef) => {
+                return item.name === result.param.split(':')[0];
+            });
         if (!targetOpenViewRef) {
             return;
         }
-        if ( targetOpenViewRef.getPSNavigateContexts() && (targetOpenViewRef.getPSNavigateContexts() as IPSNavigateContext[]).length > 0
+        if (
+            targetOpenViewRef.getPSNavigateContexts() &&
+            (targetOpenViewRef.getPSNavigateContexts() as IPSNavigateContext[]).length > 0
         ) {
-            let localContextRef: any = Util.formatNavParam( targetOpenViewRef.getPSNavigateContexts(), true );
+            let localContextRef: any = Util.formatNavParam(targetOpenViewRef.getPSNavigateContexts(), true);
             let _context: any = Util.computedNavData(this.data, context, params, localContextRef);
             Object.assign(context, _context);
         }
         if (result && result.hasOwnProperty('srfsandboxtag')) {
-            Object.assign(context, { 'srfsandboxtag': result['srfsandboxtag'] });
-            Object.assign(params, { 'srfsandboxtag': result['srfsandboxtag'] });
+            Object.assign(context, { srfsandboxtag: result['srfsandboxtag'] });
+            Object.assign(params, { srfsandboxtag: result['srfsandboxtag'] });
         }
         let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
         if (!targetOpenView) {
@@ -277,7 +297,9 @@ export default class AppColumnLink extends Vue {
                         pathName: Util.srfpluralize(
                             (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
                         ).toLowerCase(),
-                        parameterName: (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase(),
+                        parameterName: (
+                            targetOpenView.getPSAppDataEntity() as IPSAppDataEntity
+                        )?.codeName.toLowerCase(),
                     },
                     {
                         pathName: 'views',
@@ -299,7 +321,9 @@ export default class AppColumnLink extends Vue {
                         pathName: Util.srfpluralize(
                             (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
                         ).toLowerCase(),
-                        parameterName: (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase(),
+                        parameterName: (
+                            targetOpenView.getPSAppDataEntity() as IPSAppDataEntity
+                        )?.codeName.toLowerCase(),
                     },
                 ];
             }
@@ -329,7 +353,7 @@ export default class AppColumnLink extends Vue {
         if (result.datas && Array.isArray(result.datas)) {
             Object.assign(item, result.datas[0]);
         }
-        this.$emit('refresh',item);
+        this.$emit('refresh', item);
     }
 
     /**
@@ -341,26 +365,23 @@ export default class AppColumnLink extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$throw((this.$t('components.appcolumnlink.rowdataexception') as string),'handlePublicParams');
+            this.$throw(this.$t('components.appcolumnlink.rowdataexception') as string, 'handlePublicParams');
             return false;
         }
         // 合并表单参数
         arg.param = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
         arg.context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
-         // 附加参数处理
-        if (this.localContext && Object.keys(this.localContext).length >0) {
-            let _context = this.$util.computedNavData(this.data,arg.context,arg.param,this.localContext);
-            Object.assign(arg.context,_context);
+        // 附加参数处理
+        if (this.localContext && Object.keys(this.localContext).length > 0) {
+            let _context = this.$util.computedNavData(this.data, arg.context, arg.param, this.localContext);
+            Object.assign(arg.context, _context);
         }
-        if (this.localParam && Object.keys(this.localParam).length >0) {
-            let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
-            Object.assign(arg.param,_param);
+        if (this.localParam && Object.keys(this.localParam).length > 0) {
+            let _param = this.$util.computedNavData(this.data, arg.param, arg.param, this.localParam);
+            Object.assign(arg.param, _param);
         }
         return true;
     }
-
-
-
 }
 </script>
 

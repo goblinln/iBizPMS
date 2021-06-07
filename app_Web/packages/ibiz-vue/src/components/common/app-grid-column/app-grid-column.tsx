@@ -1,5 +1,5 @@
-import { Vue, Component, Prop } from 'vue-property-decorator';
-import {  DataTypes, ModelTool, Util } from 'ibiz-core';
+import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
+import { DataTypes, ModelTool, Util } from 'ibiz-core';
 import { IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSAppDEView, IPSAppView, IPSDEGrid, IPSDEGridColumn, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEUIAction, IPSEditor } from '@ibiz/dynamic-model-api';
 
 @Component({})
@@ -66,7 +66,7 @@ export class AppDefaultGridColumn extends Vue {
     * 
     * @memberof AppStyle2DefaultLayout
     */
-    @Prop() public modelService!:any;
+    @Prop() public modelService!: any;
 
     /**
      * 绘制
@@ -74,7 +74,7 @@ export class AppDefaultGridColumn extends Vue {
      * @memberof AppDefaultGridColumn
      */
     public render() {
-        const uiAction: IPSDEUIAction | null= (this.columnInstance as IPSDEGridFieldColumn).getPSDEUIAction();
+        const uiAction: IPSDEUIAction | null = (this.columnInstance as IPSDEGridFieldColumn).getPSDEUIAction();
         if (uiAction && uiAction.uIActionTag) {
             return (
                 <a
@@ -115,9 +115,9 @@ export class AppDefaultGridColumn extends Vue {
                 title: this.$tl(linkView.getCapPSLanguageRes()?.lanResTag, linkView.title),
                 isRedirectView: linkView.redirectView ? true : false,
                 placement: linkView.openMode ? linkView.openMode : '',
-                viewpath: linkView.modelFilePath,
+                viewpath: linkView.modelFilePath
             }
-            Object.defineProperty(view,'viewModel', { enumerable: false, writable: true, value: linkView });
+            Object.defineProperty(view, 'viewModel', { enumerable: false, writable: true, value: linkView });
             this.handleLinkViewParams(linkView, view);
             return this.renderLinkView(linkView, view);
         } else {    //常规显示
@@ -207,8 +207,8 @@ export class AppDefaultGridColumn extends Vue {
      * 
      * @memberof AppDefaultGridColumn
      */
-    public renderLinkView(linkView: IPSAppView,view: any) {
-        const linkViewEntity: IPSAppDataEntity | null = linkView.getPSAppDataEntity();
+    public renderLinkView(linkView: IPSAppView, view: any) {
+        const linkViewEntity: IPSAppDataEntity | null = this.gridInstance.getPSAppDataEntity();
         const editInstance: IPSEditor = (ModelTool.getGridItemByCodeName(this.columnInstance.codeName, this.gridInstance) as IPSDEGridEditItem)?.getPSEditor() as IPSEditor;
         const name = this.columnInstance.name.toLowerCase();
         let tempContext: any = Util.deepCopy(this.context);
