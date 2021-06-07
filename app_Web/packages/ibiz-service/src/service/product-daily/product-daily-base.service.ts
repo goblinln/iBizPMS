@@ -66,6 +66,17 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
         return new HttpResponse(entity);
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductDailyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productdailies/fetchdefault`, _data);
+    }
+    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -84,29 +95,6 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
         return this.http.post(`/productdailies`, _data);
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductDailyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productdailies/fetchdefault`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductDailyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productdailies/${_context.productdaily}`, _data);
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -119,6 +107,18 @@ export class ProductDailyBaseService extends EntityBaseService<IProductDaily> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/productdailies/getdraft`, _data);
         return res;
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductDailyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productdailies/${_context.productdaily}`, _data);
     }
     /**
      * Get

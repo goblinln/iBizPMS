@@ -140,111 +140,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.condCache.get('view');
     }
     /**
-     * FetchProduct
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
-        }
-        if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
-        }
-        if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.productplan && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
-        }
-        if (_context.test && _context.testtask && true) {
-            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
-        }
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
-        }
-        if (_context.sysaccount && _context.todo && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchproduct`, _data);
-        }
-        if (_context.sysaccount && _context.doc && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproduct`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproduct`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchproduct`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
-        }
-        if (_context.reportly && true) {
-            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchproduct`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
-        }
-        if (_context.monthly && true) {
-            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchproduct`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchproduct`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
-        }
-        if (_context.daily && true) {
-            return this.http.post(`/dailies/${_context.daily}/actions/fetchproduct`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproduct`, _data);
-        }
-    this.log.warn([`[Action]>>>[FetchProduct函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -378,6 +273,111 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             return this.http.put(`/sysaccounts/${_context.sysaccount}/actions/${_context.action}`, _data);
         }
     this.log.warn([`[Action]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchMyTrends
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.test && _context.testreport && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.testreport && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
+        }
+        if (_context.doclib && _context.doc && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        }
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmytrends`, _data);
+        }
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchmytrends`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchmytrends`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchmytrends`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
+        }
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchmytrends`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmytrends`, _data);
+        }
+    this.log.warn([`[Action]>>>[FetchMyTrends函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -808,111 +808,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchMyTrends
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ActionService
-     */
-    async FetchMyTrends(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib && _context.doc && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
-        }
-        if (_context.product && _context.doclib && _context.doc && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
-        }
-        if (_context.test && _context.testreport && true) {
-            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
-        }
-        if (_context.test && _context.bug && true) {
-            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.testtask && true) {
-            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.testreport && true) {
-            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.story && true) {
-            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.task && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.build && true) {
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.bug && true) {
-            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.productplan && true) {
-            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && _context.doclib && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
-        }
-        if (_context.product && _context.story && true) {
-            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchmytrends`, _data);
-        }
-        if (_context.product && _context.productplan && true) {
-            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchmytrends`, _data);
-        }
-        if (_context.product && _context.build && true) {
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchmytrends`, _data);
-        }
-        if (_context.product && _context.doclib && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
-        }
-        if (_context.test && _context.testtask && true) {
-            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchmytrends`, _data);
-        }
-        if (_context.doclib && _context.doc && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchmytrends`, _data);
-        }
-        if (_context.sysaccount && _context.todo && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchmytrends`, _data);
-        }
-        if (_context.sysaccount && _context.doc && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchmytrends`, _data);
-        }
-        if (_context.ibzweekly && true) {
-            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchmytrends`, _data);
-        }
-        if (_context.todo && true) {
-            return this.http.post(`/todos/${_context.todo}/actions/fetchmytrends`, _data);
-        }
-        if (_context.testsuite && true) {
-            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchmytrends`, _data);
-        }
-        if (_context.reportly && true) {
-            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchmytrends`, _data);
-        }
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/actions/fetchmytrends`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/actions/fetchmytrends`, _data);
-        }
-        if (_context.monthly && true) {
-            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchmytrends`, _data);
-        }
-        if (_context.doc && true) {
-            return this.http.post(`/docs/${_context.doc}/actions/fetchmytrends`, _data);
-        }
-        if (_context.doclib && true) {
-            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchmytrends`, _data);
-        }
-        if (_context.daily && true) {
-            return this.http.post(`/dailies/${_context.daily}/actions/fetchmytrends`, _data);
-        }
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchmytrends`, _data);
-        }
-    this.log.warn([`[Action]>>>[FetchMyTrends函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -1108,6 +1003,111 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             return res;
         }
     this.log.warn([`[Action]>>>[GetDraft函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib && _context.doc && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.doclib && _context.doc && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testreport && true) {
+            return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.bug && true) {
+            return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.testtask && true) {
+            return this.http.post(`/projects/${_context.project}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.testreport && true) {
+            return this.http.post(`/projects/${_context.project}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.story && true) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.task && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.build && true) {
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.bug && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/${_context.bug}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.productplan && true) {
+            return this.http.post(`/projects/${_context.project}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && _context.doclib && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.build && true) {
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && _context.doclib && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.test && _context.testtask && true) {
+            return this.http.post(`/tests/${_context.test}/testtasks/${_context.testtask}/actions/fetchproduct`, _data);
+        }
+        if (_context.doclib && _context.doc && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.sysaccount && _context.todo && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/todos/${_context.todo}/actions/fetchproduct`, _data);
+        }
+        if (_context.sysaccount && _context.doc && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.ibzweekly && true) {
+            return this.http.post(`/ibzweeklies/${_context.ibzweekly}/actions/fetchproduct`, _data);
+        }
+        if (_context.todo && true) {
+            return this.http.post(`/todos/${_context.todo}/actions/fetchproduct`, _data);
+        }
+        if (_context.testsuite && true) {
+            return this.http.post(`/testsuites/${_context.testsuite}/actions/fetchproduct`, _data);
+        }
+        if (_context.reportly && true) {
+            return this.http.post(`/reportlies/${_context.reportly}/actions/fetchproduct`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/actions/fetchproduct`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/actions/fetchproduct`, _data);
+        }
+        if (_context.monthly && true) {
+            return this.http.post(`/monthlies/${_context.monthly}/actions/fetchproduct`, _data);
+        }
+        if (_context.doc && true) {
+            return this.http.post(`/docs/${_context.doc}/actions/fetchproduct`, _data);
+        }
+        if (_context.doclib && true) {
+            return this.http.post(`/doclibs/${_context.doclib}/actions/fetchproduct`, _data);
+        }
+        if (_context.daily && true) {
+            return this.http.post(`/dailies/${_context.daily}/actions/fetchproduct`, _data);
+        }
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/actions/fetchproduct`, _data);
+        }
+    this.log.warn([`[Action]>>>[FetchProduct函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**

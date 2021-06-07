@@ -66,6 +66,17 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
         return new HttpResponse(entity);
     }
     /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectMonthlyService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projectmonthlies/fetchdefault`, _data);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -102,17 +113,6 @@ export class ProjectMonthlyBaseService extends EntityBaseService<IProjectMonthly
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/projectmonthlies/${_context.projectmonthly}`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectMonthlyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projectmonthlies/fetchdefault`, _data);
     }
     /**
      * AutoCreate
