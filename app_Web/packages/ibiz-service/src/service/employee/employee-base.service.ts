@@ -148,6 +148,61 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         return this.condCache.get('view');
     }
     /**
+     * FetchTask
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchtask`, _data);
+    }
+    /**
+     * FetchTaskMulti
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchTaskMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchtaskmulti`, _data);
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchdefault`, _data);
+    }
+    /**
+     * FetchProduct
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchproduct`, _data);
+    }
+    /**
+     * FetchBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmployeeService
+     */
+    async FetchBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/employees/fetchbug`, _data);
+    }
+    /**
      * FetchProject
      *
      * @param {*} [_context={}]
@@ -171,17 +226,6 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
         return res;
     }
     /**
-     * FetchTask
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchTask(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchtask`, _data);
-    }
-    /**
      * FetchContact
      *
      * @param {*} [_context={}]
@@ -191,49 +235,5 @@ export class EmployeeBaseService extends EntityBaseService<IEmployee> {
      */
     async FetchContact(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/employees/fetchcontact`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchdefault`, _data);
-    }
-    /**
-     * FetchTaskMulti
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchTaskMulti(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchtaskmulti`, _data);
-    }
-    /**
-     * FetchProduct
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchProduct(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchproduct`, _data);
-    }
-    /**
-     * FetchBug
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmployeeService
-     */
-    async FetchBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/employees/fetchbug`, _data);
     }
 }

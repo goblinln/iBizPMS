@@ -52,6 +52,21 @@ public class UserContactResource {
     @Lazy
     public UserContactMapping usercontactMapping;
 
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
+    @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/{usercontact_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("usercontact_id") Long usercontact_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
+    @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        usercontactService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
     @ApiOperation(value = "获取用户联系方式草稿", tags = {"用户联系方式" },  notes = "获取用户联系方式草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/getdraft")
@@ -66,19 +81,6 @@ public class UserContactResource {
 	public ResponseEntity<List<UserContactDTO>> fetchaccount(@RequestBody UserContactSearchContext context) {
         usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchAccount(context) ;
-        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
-	@ApiOperation(value = "获取我的数据", tags = {"用户联系方式" } ,notes = "获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmy")
-	public ResponseEntity<List<UserContactDTO>> fetchmy(@RequestBody UserContactSearchContext context) {
-        usercontactRuntime.addAuthorityConditions(context,"READ");
-        Page<UserContact> domains = usercontactService.searchMy(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -111,21 +113,6 @@ public class UserContactResource {
     }
 
     @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
-    @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/{usercontact_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("usercontact_id") Long usercontact_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
-    @ApiOperation(value = "批量删除用户联系方式", tags = {"用户联系方式" },  notes = "批量删除用户联系方式")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usercontacts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        usercontactService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
     @Transactional
@@ -140,6 +127,19 @@ public class UserContactResource {
     }
 
 
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"用户联系方式" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmy")
+	public ResponseEntity<List<UserContactDTO>> fetchmy(@RequestBody UserContactSearchContext context) {
+        usercontactRuntime.addAuthorityConditions(context,"READ");
+        Page<UserContact> domains = usercontactService.searchMy(context) ;
+        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/usercontacts/{usercontact_id}/{action}")
@@ -147,6 +147,21 @@ public class UserContactResource {
         UserContact domain = usercontactService.dynamicCall(usercontact_id, action, usercontactMapping.toDomain(usercontactdto));
         usercontactdto = usercontactMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(usercontactdto);
+    }
+
+    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
+    @ApiOperation(value = "根据系统用户删除用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户删除用户联系方式")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
+    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
+    @ApiOperation(value = "根据系统用户批量删除用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户批量删除用户联系方式")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/usercontacts/batch")
+    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
+        usercontactService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
@@ -165,20 +180,6 @@ public class UserContactResource {
         
         usercontactRuntime.addAuthorityConditions(context,"READ");
         Page<UserContact> domains = usercontactService.searchAccount(context) ;
-        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usercontacts/fetchmy")
-	public ResponseEntity<List<UserContactDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
-        
-        usercontactRuntime.addAuthorityConditions(context,"READ");
-        Page<UserContact> domains = usercontactService.searchMy(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -212,21 +213,6 @@ public class UserContactResource {
 
 
     @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
-    @ApiOperation(value = "根据系统用户删除用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户删除用户联系方式")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
-    public ResponseEntity<Boolean> removeBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id) {
-		return ResponseEntity.status(HttpStatus.OK).body(usercontactService.remove(usercontact_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'NONE')")
-    @ApiOperation(value = "根据系统用户批量删除用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户批量删除用户联系方式")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/usercontacts/batch")
-    public ResponseEntity<Boolean> removeBatchBySysUser(@RequestBody List<Long> ids) {
-        usercontactService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "根据系统用户更新用户联系方式", tags = {"用户联系方式" },  notes = "根据系统用户更新用户联系方式")
 	@RequestMapping(method = RequestMethod.PUT, value = "/sysaccounts/{sysuser_id}/usercontacts/{usercontact_id}")
     public ResponseEntity<UserContactDTO> updateBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
@@ -241,5 +227,19 @@ public class UserContactResource {
     }
 
 
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'READ')")
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"用户联系方式" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/usercontacts/fetchmy")
+	public ResponseEntity<List<UserContactDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody UserContactSearchContext context) {
+        
+        usercontactRuntime.addAuthorityConditions(context,"READ");
+        Page<UserContact> domains = usercontactService.searchMy(context) ;
+        List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 }
 

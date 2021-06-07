@@ -341,23 +341,6 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchProject",
-    "methodType" : "FETCH",
-    "name" : "FetchDocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibFile"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProject"
-    },
-    "builtinMethod" : false
-  }, {
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -376,6 +359,23 @@
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
+  }, {
+    "codeName" : "FetchProject",
+    "methodType" : "FETCH",
+    "name" : "FetchDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "FetchType",
     "methodType" : "FETCH",

@@ -124,6 +124,20 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.condCache.get('view');
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.usercontact) {
+            return this.http.delete(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
+        }
+        return this.http.delete(`/usercontacts/${_context.usercontact}`);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -156,20 +170,6 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchaccount`, _data);
         }
         return this.http.post(`/usercontacts/fetchaccount`, _data);
-    }
-    /**
-     * FetchMy
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
-        }
-        return this.http.post(`/usercontacts/fetchmy`, _data);
     }
     /**
      * Get
@@ -216,20 +216,6 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         return this.http.post(`/usercontacts`, _data);
     }
     /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserContactService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.usercontact) {
-            return this.http.delete(`/sysaccounts/${_context.sysaccount}/usercontacts/${_context.usercontact}`);
-        }
-        return this.http.delete(`/usercontacts/${_context.usercontact}`);
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -244,5 +230,19 @@ export class UserContactBaseService extends EntityBaseService<IUserContact> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/usercontacts/${_context.usercontact}`, _data);
+    }
+    /**
+     * FetchMy
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserContactService
+     */
+    async FetchMy(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/usercontacts/fetchmy`, _data);
+        }
+        return this.http.post(`/usercontacts/fetchmy`, _data);
     }
 }

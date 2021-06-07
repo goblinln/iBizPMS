@@ -21,7 +21,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysDepartment", fallback = SysDepartmentFallback.class)
 public interface SysDepartmentFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/select")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/select")
     Page<SysDepartment> select();
 
 

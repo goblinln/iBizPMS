@@ -21,7 +21,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibzuaa-api:ibzuaa-api}", contextId = "SysUser", fallback = SysUserFallback.class)
 public interface SysUserFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/select")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysusers/select")
     Page<SysUser> select();
 
 
@@ -72,18 +72,18 @@ public interface SysUserFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/fetchdefault")
-    Page<SysUser> searchDefault(@SpringQueryMap SysUserSearchContext context);
+    @RequestMapping(method = RequestMethod.POST, value = "/sysusers/fetchdefault")
+    Page<SysUser> searchDefault(@RequestBody SysUserSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/fetchmywork")
-    Page<SysUser> searchMyWork(@SpringQueryMap SysUserSearchContext context);
+    @RequestMapping(method = RequestMethod.POST, value = "/sysusers/fetchmywork")
+    Page<SysUser> searchMyWork(@RequestBody SysUserSearchContext context);
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysusers/fetchpersoninfo")
-    Page<SysUser> searchPersonInfo(@SpringQueryMap SysUserSearchContext context);
+    @RequestMapping(method = RequestMethod.POST, value = "/sysusers/fetchpersoninfo")
+    Page<SysUser> searchPersonInfo(@RequestBody SysUserSearchContext context);
 
 
 

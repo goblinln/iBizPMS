@@ -21,7 +21,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibzuaa-api:ibzuaa-api}", contextId = "SysUserRole", fallback = SysUserRoleFallback.class)
 public interface SysUserRoleFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/select")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/select")
     Page<SysUserRole> select();
 
 
@@ -68,8 +68,8 @@ public interface SysUserRoleFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysuserroles/fetchdefault")
-    Page<SysUserRole> searchDefault(@SpringQueryMap SysUserRoleSearchContext context);
+    @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/fetchdefault")
+    Page<SysUserRole> searchDefault(@RequestBody SysUserRoleSearchContext context);
 
 
 

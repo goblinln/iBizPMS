@@ -21,7 +21,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysOrganization", fallback = SysOrganizationFallback.class)
 public interface SysOrganizationFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysorganizations/select")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/select")
     Page<SysOrganization> select();
 
 

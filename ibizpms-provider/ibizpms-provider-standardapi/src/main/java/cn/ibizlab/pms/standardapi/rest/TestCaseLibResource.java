@@ -52,21 +52,6 @@ public class TestCaseLibResource {
     @Lazy
     public TestCaseLibMapping testcaselibMapping;
 
-    @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'DELETE')")
-    @ApiOperation(value = "删除用例库", tags = {"用例库" },  notes = "删除用例库")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{testcaselib_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("testcaselib_id") Long testcaselib_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzlibService.remove(testcaselib_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_LIB', 'DELETE')")
-    @ApiOperation(value = "批量删除用例库", tags = {"用例库" },  notes = "批量删除用例库")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzlibService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
     @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'READ')")
     @ApiOperation(value = "获取用例库", tags = {"用例库" },  notes = "获取用例库")
 	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{testcaselib_id}")
@@ -76,14 +61,6 @@ public class TestCaseLibResource {
         Map<String, Integer> opprivs = ibzlibRuntime.getOPPrivs(testcaselib_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
-    @ApiOperation(value = "获取用例库草稿", tags = {"用例库" },  notes = "获取用例库草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/getdraft")
-    public ResponseEntity<TestCaseLibDTO> getDraft(TestCaseLibDTO dto) {
-        IbzLib domain = testcaselibMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaselibMapping.toDto(ibzlibService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
@@ -99,6 +76,14 @@ public class TestCaseLibResource {
         Map<String, Integer> opprivs = ibzlibRuntime.getOPPrivs(domain.getId());
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('IBZ_LIB', 'CREATE')")
+    @ApiOperation(value = "获取用例库草稿", tags = {"用例库" },  notes = "获取用例库草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/getdraft")
+    public ResponseEntity<TestCaseLibDTO> getDraft(TestCaseLibDTO dto) {
+        IbzLib domain = testcaselibMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(testcaselibMapping.toDto(ibzlibService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('IBZ_LIB', 'READ')")
@@ -131,6 +116,21 @@ public class TestCaseLibResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("test('IBZ_LIB', #testcaselib_id, 'DELETE')")
+    @ApiOperation(value = "删除用例库", tags = {"用例库" },  notes = "删除用例库")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{testcaselib_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("testcaselib_id") Long testcaselib_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzlibService.remove(testcaselib_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_LIB', 'DELETE')")
+    @ApiOperation(value = "批量删除用例库", tags = {"用例库" },  notes = "批量删除用例库")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzlibService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
 
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")

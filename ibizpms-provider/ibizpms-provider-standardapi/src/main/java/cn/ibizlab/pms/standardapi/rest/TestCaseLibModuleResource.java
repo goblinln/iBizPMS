@@ -91,23 +91,6 @@ public class TestCaseLibModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'UPDATE')")
-    @ApiOperation(value = "根据用例库更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库更新用例库模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
-    public ResponseEntity<TestCaseLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id, @RequestBody TestCaseLibModuleDTO testcaselibmoduledto) {
-        IbzLibModule domain = testcaselibmoduleMapping.toDomain(testcaselibmoduledto);
-        domain.setRoot(ibzlib_id);
-        domain.setId(testcaselibmodule_id);
-		ibzlibmoduleService.update(domain);
-        if(!ibzlibmoduleRuntime.test(domain.getId(),"UPDATE"))
-            throw new RuntimeException("无权限操作");
-        TestCaseLibModuleDTO dto = testcaselibmoduleMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
     @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
     @ApiOperation(value = "根据用例库建立用例库模块", tags = {"用例库模块" },  notes = "根据用例库建立用例库模块")
 	@RequestMapping(method = RequestMethod.POST, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules")
@@ -124,6 +107,15 @@ public class TestCaseLibModuleResource {
     }
 
 
+    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
+    @ApiOperation(value = "根据用例库获取用例库模块草稿", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/getdraft")
+    public ResponseEntity<TestCaseLibModuleDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, TestCaseLibModuleDTO dto) {
+        IbzLibModule domain = testcaselibmoduleMapping.toDomain(dto);
+        domain.setRoot(ibzlib_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testcaselibmoduleMapping.toDto(ibzlibmoduleService.getDraft(domain)));
+    }
+
     @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'DELETE')")
     @ApiOperation(value = "根据用例库删除用例库模块", tags = {"用例库模块" },  notes = "根据用例库删除用例库模块")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
@@ -139,14 +131,22 @@ public class TestCaseLibModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('IBZ_LIBMODULE','CREATE')")
-    @ApiOperation(value = "根据用例库获取用例库模块草稿", tags = {"用例库模块" },  notes = "根据用例库获取用例库模块草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/getdraft")
-    public ResponseEntity<TestCaseLibModuleDTO> getDraftByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, TestCaseLibModuleDTO dto) {
-        IbzLibModule domain = testcaselibmoduleMapping.toDomain(dto);
+    @PreAuthorize("test('IBZ_LIBMODULE', #testcaselibmodule_id, 'UPDATE')")
+    @ApiOperation(value = "根据用例库更新用例库模块", tags = {"用例库模块" },  notes = "根据用例库更新用例库模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/testcaselibs/{ibzlib_id}/testcaselibmodules/{testcaselibmodule_id}")
+    public ResponseEntity<TestCaseLibModuleDTO> updateByIbzLib(@PathVariable("ibzlib_id") Long ibzlib_id, @PathVariable("testcaselibmodule_id") Long testcaselibmodule_id, @RequestBody TestCaseLibModuleDTO testcaselibmoduledto) {
+        IbzLibModule domain = testcaselibmoduleMapping.toDomain(testcaselibmoduledto);
         domain.setRoot(ibzlib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testcaselibmoduleMapping.toDto(ibzlibmoduleService.getDraft(domain)));
+        domain.setId(testcaselibmodule_id);
+		ibzlibmoduleService.update(domain);
+        if(!ibzlibmoduleRuntime.test(domain.getId(),"UPDATE"))
+            throw new RuntimeException("无权限操作");
+        TestCaseLibModuleDTO dto = testcaselibmoduleMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzlibmoduleRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
 
 }
 

@@ -21,7 +21,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 //@FeignClient(value = "${ibiz.ref.service.ibzou-api:ibzou-api}", contextId = "SysPost", fallback = SysPostFallback.class)
 public interface SysPostFeignClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/select")
+    @RequestMapping(method = RequestMethod.POST, value = "/sysposts/select")
     Page<SysPost> select();
 
 
@@ -68,8 +68,8 @@ public interface SysPostFeignClient {
 
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/sysposts/fetchdefault")
-    Page<SysPost> searchDefault(@SpringQueryMap SysPostSearchContext context);
+    @RequestMapping(method = RequestMethod.POST, value = "/sysposts/fetchdefault")
+    Page<SysPost> searchDefault(@RequestBody SysPostSearchContext context);
 
 
 
