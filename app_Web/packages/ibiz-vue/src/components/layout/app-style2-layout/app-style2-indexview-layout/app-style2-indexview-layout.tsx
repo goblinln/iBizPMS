@@ -148,6 +148,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
                             <template slot="header_right">
                                 {this.$slots.headerMenus}
                                 {this.$topRenderService.rightItemsRenders.map((fun: any) => fun(h))}
+                                <app-lang style='font-size: 15px;padding: 0 10px;'></app-lang>
                                 {<app-orgsector />}
                                 {<app-user viewStyle={this.viewInstance.viewStyle} />}
                                 {/* {<app-custom-theme viewStyle={this.viewInstance.viewStyle}></app-custom-theme>} */}   

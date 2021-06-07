@@ -12,7 +12,7 @@ import { Util } from 'ibiz-core';
  */
 export class TASKTYPEFATHERORCHILD {
 
-	/**
+    /**
      * 绘制部件项内容
      * @param h createElement函数
      * @param ctrlItemModel 部件项模型数据
@@ -21,7 +21,7 @@ export class TASKTYPEFATHERORCHILD {
      * 
      * @memberof TASKTYPEFATHERORCHILD
      */
-    public renderCtrlItem(h:any,ctrlItemModel:any,parentContainer:any,data:any){
+    public renderCtrlItem(h: any, ctrlItemModel: any, parentContainer: any, data: any) {
         const { name, caption, align, width, widthUnit } = ctrlItemModel as IPSDEGridColumn;
         const linkView: IPSAppView = (ctrlItemModel as IPSDEGridFieldColumn)?.getLinkPSAppView?.() as IPSAppView;
         let renderParams: any = {
@@ -47,17 +47,19 @@ export class TASKTYPEFATHERORCHILD {
                 placement: linkView.openMode ? linkView.openMode : '',
                 viewpath: linkView.modelFilePath
             }
+            Object.defineProperty(view, 'viewModel', { enumerable: false, writable: true, value: linkView });
             this.handleLinkViewParams(linkView, view, parentContainer.context);
         }
         let tempContext: any = Util.deepCopy(parentContainer.context);
         let tempViewParam: any = Util.deepCopy(parentContainer.viewparams);
-        const refresh = parentContainer.refresh ? parentContainer.refresh : () => { };
+        const refresh = parentContainer.refresh ? parentContainer.refresh.bind(parentContainer) : () => { };
+        const linkViewEntity: IPSAppDataEntity | null = parentContainer.controlInstance.getPSAppDataEntity();
         return parentContainer.$createElement('el-table-column', {
             props: renderParams,
             scopedSlots: {
                 default: (scope: any) => {
                     return <app-column-link
-                        deKeyField='task'
+                        deKeyField={linkViewEntity && linkViewEntity.codeName ? linkViewEntity.codeName?.toLowerCase() : ""}
                         context={tempContext}
                         viewparams={tempViewParam}
                         linkview={view}
@@ -69,8 +71,8 @@ export class TASKTYPEFATHERORCHILD {
                             scope.row.tasktype === '10' ? <span><span title="多人任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">多人</span>
                                 <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span> : scope.row.tasktype === '20' ? <span><span title="父任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">父</span>
                                     <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span> : scope.row.tasktype === '30' ? <span><span style={scope.row.color ? { color: scope.row.color } : null}>{scope.row.name}</span></span> :
-                                        <span><span title="子任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">子</span>
-                                            <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span>
+                                <span><span title="子任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">子</span>
+                                    <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span>
                         }
                     </app-column-link>
                 },

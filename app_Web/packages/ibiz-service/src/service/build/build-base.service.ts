@@ -152,23 +152,23 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         return this.condCache.get('view');
     }
     /**
-     * UnlinkStory
+     * LinkStory
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BuildService
      */
-    async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/unlinkstory`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/linkstory`, _data);
         }
         if (_context.product && _context.build) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/unlinkstory`, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/linkstory`, _data);
         }
-    this.log.warn([`[Build]>>>[UnlinkStory函数]异常`]);
+    this.log.warn([`[Build]>>>[LinkStory函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -208,63 +208,41 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * LinkStory
+     * UnlinkStory
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BuildService
      */
-    async LinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/linkstory`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/unlinkstory`, _data);
         }
         if (_context.product && _context.build) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/linkstory`, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/unlinkstory`, _data);
         }
-    this.log.warn([`[Build]>>>[LinkStory函数]异常`]);
+    this.log.warn([`[Build]>>>[UnlinkStory函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * LinkBug
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BuildService
      */
-    async LinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.build) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/linkbug`, _data);
+            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}`);
         }
         if (_context.product && _context.build) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/linkbug`, _data);
+            return this.http.delete(`/products/${_context.product}/builds/${_context.build}`);
         }
-    this.log.warn([`[Build]>>>[LinkBug函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * UnlinkBug
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BuildService
-     */
-    async UnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/unlinkbug`, _data);
-        }
-        if (_context.product && _context.build) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/${_context.build}/unlinkbug`, _data);
-        }
-    this.log.warn([`[Build]>>>[UnlinkBug函数]异常`]);
+    this.log.warn([`[Build]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -288,23 +266,23 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
+     * LinkBug
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof BuildService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async LinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.build) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/builds/${_context.build}`, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/linkbug`, _data);
         }
         if (_context.product && _context.build) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/products/${_context.product}/builds/${_context.build}`, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/linkbug`, _data);
         }
-    this.log.warn([`[Build]>>>[Update函数]异常`]);
+    this.log.warn([`[Build]>>>[LinkBug函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -340,6 +318,46 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * UnlinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BuildService
+     */
+    async UnlinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.build) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/unlinkbug`, _data);
+        }
+        if (_context.product && _context.build) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/unlinkbug`, _data);
+        }
+    this.log.warn([`[Build]>>>[UnlinkBug函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BuildService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.build) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/builds/${_context.build}`, _data);
+        }
+        if (_context.product && _context.build) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/builds/${_context.build}`, _data);
+        }
+    this.log.warn([`[Build]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -363,23 +381,27 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     this.log.warn([`[Build]>>>[GetDraft函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
+
     /**
-     * Remove
+     * LinkStoryBatch接口方法
      *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BuildService
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BuildServiceBase
      */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.build) {
-            return this.http.delete(`/projects/${_context.project}/builds/${_context.build}`);
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/linkstorybatch`,_data);
         }
-        if (_context.product && _context.build) {
-            return this.http.delete(`/products/${_context.product}/builds/${_context.build}`);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/linkstorybatch`,_data);
         }
-    this.log.warn([`[Build]>>>[Remove函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+        this.log.warn([`[Build]>>>[LinkStoryBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -401,28 +423,6 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             return this.http.post(`/products/${_context.product}/builds/unlinkstorybatch`,_data);
         }
         this.log.warn([`[Build]>>>[UnlinkStoryBatch函数]异常`]);
-        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * LinkStoryBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof BuildServiceBase
-     */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/builds/linkstorybatch`,_data);
-        }
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/builds/linkstorybatch`,_data);
-        }
-        this.log.warn([`[Build]>>>[LinkStoryBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 

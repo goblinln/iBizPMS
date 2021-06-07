@@ -337,18 +337,20 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         return this.condCache.get('view');
     }
     /**
-     * FetchMyFavorites
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountStoryService
      */
-    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmyfavorites`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && _context.accountstory) {
+            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountstories/${_context.accountstory}`);
+            return res;
         }
-        return this.http.post(`/accountstories/fetchmyfavorites`, _data);
+        const res = await this.http.get(`/accountstories/${_context.accountstory}`);
+        return res;
     }
     /**
      * FetchAccount
@@ -365,20 +367,18 @@ export class AccountStoryBaseService extends EntityBaseService<IAccountStory> {
         return this.http.post(`/accountstories/fetchaccount`, _data);
     }
     /**
-     * Get
+     * FetchMyFavorites
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountStoryService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && _context.accountstory) {
-            const res = await this.http.get(`/sysaccounts/${_context.sysaccount}/accountstories/${_context.accountstory}`);
-            return res;
+    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountstories/fetchmyfavorites`, _data);
         }
-        const res = await this.http.get(`/accountstories/${_context.accountstory}`);
-        return res;
+        return this.http.post(`/accountstories/fetchmyfavorites`, _data);
     }
     /**
      * FetchMy
