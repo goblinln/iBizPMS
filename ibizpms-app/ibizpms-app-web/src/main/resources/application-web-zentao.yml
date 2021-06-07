@@ -2,11 +2,11 @@ zuul:
   routes:
     common:
       path:
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     v7:
       path: /appdata
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     ibizutil:
       path: /ibizutil/**
@@ -14,47 +14,47 @@ zuul:
       stripPrefix: false
     ibizutilpms:
       path: /ibizutilpms/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     recordloginlog:
       path: /recordloginlog
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
     sys_user:
       path: /sysaccounts/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
       stripPrefix: false
 #    dingtalktoken:
 #      path: /uaa/open/dingtalk/access_token
-#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:pms-webapi}
 #      stripPrefix: false
 #    dingtalkjsapisign:
 #      path: /uaa/dingtalk/jsapi/sign
-#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:pms-webapi}
 #      stripPrefix: false
 #    dingtalkauth:
 #      path:  /uaa/open/dingtalk/auth/**
-#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:pms-webapi}
 #      stripPrefix: false
 #    guest:
 #      path:  /login/guest
-#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:pms-webapi}
 #      stripPrefix: false
     loginv7:
       path: /v7/login
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibzuaa-api}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibzuaa-api}
       stripPrefix: false
 #    changepwd:
 #      path: /v7/changepwd
-#      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibzuaa-api}
 #      stripPrefix: false
 #    sys_user:
 #      path: /sysusers/**
-#      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi.name:ibzuaa-api}
 #      stripPrefix: false
     ibzemp:
       path: /employees/**
-      serviceId: ${ibiz.ref.service.ibizpms-standardapi:ibizpms-standardapi}
+      serviceId: ${ibiz.ref.service.ibizpms-standardapi.name:ibizpms-standardapi}
 
 environment:
   - TZ=Asia/Shanghai
@@ -63,11 +63,12 @@ ibiz:
   permitall: true
   ref:
     service:
-      pms-webapi: ibizpms-webapi
-      ibizpms-webapi: ibizpms-webapi
-      ibizpms-standardapi: ibizpms-standardapi
-      uaa: ibizrt4ebsx-rt4ebsx
-      ou: ibizrt4ebsx-rt4ebsx
+      pms-webapi:
+        name: ibizpms-webapi
+      ibizpms-webapi:
+        name: ibizpms-webapi
+      ibizpms-standardapi:
+        name: ibizpms-standardapi
   auth:
     # token:
       # 本地ZT账户认证模式：SimpleTokenUtil
