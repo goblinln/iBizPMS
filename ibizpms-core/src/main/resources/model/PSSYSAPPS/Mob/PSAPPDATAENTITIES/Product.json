@@ -70,7 +70,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -918,7 +918,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1330,6 +1330,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseProductMob",
+    "dataAccessAction" : "CLOSE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductCloseMobEditView.json",
@@ -1473,10 +1474,10 @@
         "name" : "TOP"
       }
     }, {
-      "name" : "MANAGE",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "管理",
-        "name" : "MANAGE"
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     } ],
     "state2Value" : "0",
@@ -1546,10 +1547,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "MANAGE",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "管理",
-        "name" : "MANAGE"
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
       "name" : "NOTOP",
@@ -1755,6 +1756,9 @@
   }, {
     "logicName" : "功能测试管理",
     "name" : "CASEMANAGE"
+  }, {
+    "logicName" : "关闭",
+    "name" : "CLOSE"
   }, {
     "logicName" : "建立",
     "name" : "CREATE"

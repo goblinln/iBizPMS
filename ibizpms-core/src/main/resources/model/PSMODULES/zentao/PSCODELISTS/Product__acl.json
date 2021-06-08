@@ -13,10 +13,6 @@
     "codeName" : "Private",
     "text" : "私有产品(相关负责人和项目团队成员才能访问)",
     "value" : "private"
-  }, {
-    "codeName" : "Custom",
-    "text" : "自定义白名单(团队成员和白名单的成员可以访问)",
-    "value" : "custom"
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",

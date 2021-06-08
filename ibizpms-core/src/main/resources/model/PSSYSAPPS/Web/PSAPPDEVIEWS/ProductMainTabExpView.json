@@ -4217,7 +4217,7 @@
                         "actionTarget" : "SINGLEKEY",
                         "caption" : "关闭",
                         "codeName" : "CloseProduct",
-                        "dataAccessAction" : "MANAGE",
+                        "dataAccessAction" : "CLOSE",
                         "getFrontPSAppView" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView_Close.json",

@@ -18,10 +18,6 @@
     "codeName" : "Private",
     "text" : "私有项目(只有项目团队成员才能访问)",
     "value" : "private"
-  }, {
-    "codeName" : "Custom",
-    "text" : "自定义白名单(团队成员和白名单的成员可以访问)",
-    "value" : "custom"
   } ],
   "enableCache" : true
 }

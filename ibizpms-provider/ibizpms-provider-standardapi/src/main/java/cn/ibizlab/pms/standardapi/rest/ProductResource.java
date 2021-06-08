@@ -125,7 +125,7 @@ public class ProductResource {
     }
 
 
-    @PreAuthorize("test('ZT_PRODUCT', #product_id, 'MANAGE')")
+    @PreAuthorize("test('ZT_PRODUCT', #product_id, 'CLOSE')")
     @ApiOperation(value = "关闭", tags = {"产品" },  notes = "关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/close")
     public ResponseEntity<ProductDTO> close(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {

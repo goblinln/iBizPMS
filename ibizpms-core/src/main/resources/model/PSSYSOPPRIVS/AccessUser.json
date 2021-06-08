@@ -25,13 +25,6 @@
     },
     "sysUniResCode" : "PRODUCTLEFT"
   }, {
-    "name" : "null-顶部_测试主页",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_CASE_MENU"
-    },
-    "sysUniResCode" : "TOP_CASE_MENU"
-  }, {
     "name" : "null-顶部_我的地盘",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -55,5 +48,5 @@
   } ],
   "roleTag" : "AccessUser",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "LEFT_CASE_MENU", "TOP_DOC_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "LEFT_PROJECT_MENU", "TOP_MYFAVOURITE_MENU" ]
+  "uniResTags" : [ "LEFT_CASE_MENU", "TOP_DOC_MENU", "PRODUCTLEFT", "TOP_MYPLACE_MENU", "LEFT_PROJECT_MENU", "TOP_MYFAVOURITE_MENU" ]
 }

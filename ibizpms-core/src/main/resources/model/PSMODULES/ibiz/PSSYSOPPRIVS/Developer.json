@@ -482,13 +482,6 @@
     },
     "sysUniResCode" : "LEFT_PROJECT_MENU"
   }, {
-    "name" : "null-顶部_测试主页",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_CASE_MENU"
-    },
-    "sysUniResCode" : "TOP_CASE_MENU"
-  }, {
     "name" : "null-顶部_我的收藏",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -512,6 +505,6 @@
   } ],
   "roleTag" : "Developer",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "TOP_MYPLACE_MENU", "TOP_DOC_MENU", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "TOP_CASE_MENU", "TOP_MYFAVOURITE_MENU", "TOP_PROJECT_MENU", "PRODUCTLEFT" ],
+  "uniResTags" : [ "TOP_MYPLACE_MENU", "TOP_DOC_MENU", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "TOP_MYFAVOURITE_MENU", "TOP_PROJECT_MENU", "PRODUCTLEFT" ],
   "globalRole" : true
 }

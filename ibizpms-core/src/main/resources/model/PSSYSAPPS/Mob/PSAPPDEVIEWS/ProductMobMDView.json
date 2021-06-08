@@ -751,6 +751,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "CloseProductMob",
+          "dataAccessAction" : "CLOSE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductCloseMobEditView.json",
