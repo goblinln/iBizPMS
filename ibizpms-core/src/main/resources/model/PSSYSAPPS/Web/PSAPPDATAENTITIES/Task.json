@@ -580,6 +580,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskFavorites"
@@ -601,6 +605,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITES"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2417,6 +2425,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskFavorites"
@@ -2438,6 +2450,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITES"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

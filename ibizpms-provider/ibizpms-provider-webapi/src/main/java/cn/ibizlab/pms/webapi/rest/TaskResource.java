@@ -569,7 +569,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
+    @PreAuthorize("test('ZT_TASK', #task_id, 'FAVORITES')")
     @ApiOperation(value = "任务收藏", tags = {"任务" },  notes = "任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskfavorites")
     public ResponseEntity<TaskDTO> taskFavorites(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -597,7 +597,7 @@ public class TaskResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
+    @PreAuthorize("test('ZT_TASK', #task_id, 'NFAVORITES')")
     @ApiOperation(value = "任务收藏", tags = {"任务" },  notes = "任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/tasknfavorites")
     public ResponseEntity<TaskDTO> taskNFavorites(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1687,7 +1687,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'FAVORITES')")
     @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskfavorites")
     public ResponseEntity<TaskDTO> taskFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1696,7 +1696,7 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.taskFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
-        Map<String, Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         taskdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
@@ -1715,7 +1715,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
-    @PreAuthorize("quickTest('ZT_TASK', 'DENY')")
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'NFAVORITES')")
     @ApiOperation(value = "根据项目任务收藏", tags = {"任务" },  notes = "根据项目任务收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/tasknfavorites")
     public ResponseEntity<TaskDTO> taskNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1724,7 +1724,7 @@ public class TaskResource {
         domain.setId(task_id);
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
-        Map<String, Integer> opprivs = taskRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         taskdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
