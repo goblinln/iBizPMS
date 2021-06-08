@@ -566,8 +566,8 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     private openPopupModal(view: any, context: any, param: any): void {
-        if(view.viewModelData){
-            Object.assign(context,{viewModelData:view.viewModelData});
+        if(view.viewpath){
+            Object.assign(context,{viewpath:view.viewpath});
         }
         let container: Subject<any> = this.$appmodal.openModal(view, context, param);
         container.subscribe((result: any) => {
@@ -587,8 +587,8 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     private openDrawer(view: any, context: any, param: any): void {
-        if(view.viewModelData){
-            Object.assign(context,{viewModelData:view.viewModelData});
+        if(view.viewpath){
+            Object.assign(context,{viewpath:view.viewpath});
         }
         let container: Subject<any> = this.$appdrawer.openDrawer(view, Util.getViewProps(context, param));
         container.subscribe((result: any) => {
@@ -609,8 +609,8 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     private openPopOver($event: any, view: any, context: any, param: any): void {
-        if(view.viewModelData){
-            Object.assign(context,{viewModelData:view.viewModelData});
+        if(view.viewpath){
+            Object.assign(context,{viewpath:view.viewpath});
         }
         let container: Subject<any> = this.$apppopover.openPop($event, view, context, param);
         container.subscribe((result: any) => {

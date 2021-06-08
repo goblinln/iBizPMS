@@ -144,7 +144,7 @@ export default class DataPickerEditor extends EditorBase {
                 height: pickupAppView?.height,
                 placement: pickupAppView?.openMode,
                 isRedirectView: pickupAppView.hasOwnProperty('redirectView') ? pickupAppView.redirectView : false,
-                viewModelData: pickupAppView
+                viewpath: pickupAppView?.modelPath
             };
             this.customProps.pickupView = view;
         }
@@ -177,7 +177,7 @@ export default class DataPickerEditor extends EditorBase {
                 placement: linkAppView?.openMode,
                 deResParameters: Util.formatAppDERSPath(this.context, (linkAppView as IPSAppDEView).getPSAppDERSPaths()),
                 isRedirectView: linkAppView.hasOwnProperty('redirectView') ? linkAppView.redirectView : false,
-                viewModelData: linkAppView
+                viewpath: linkAppView?.modelPath
             }
             if (linkAppView?.getPSAppDataEntity()) {
                 Object.assign(view, {

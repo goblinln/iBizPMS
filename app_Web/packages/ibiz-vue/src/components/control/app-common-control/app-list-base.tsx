@@ -154,7 +154,7 @@ export class AppListBase extends ListControlBase {
     public renderHaveItems() {
         return this.items.map((item: any, index: number) => {
             let listItem: IPSDEListItem = this.controlInstance.getPSDEListItems() && (this.controlInstance.getPSDEListItems() as any)?.length > 0 ? (this.controlInstance.getPSDEListItems() as any)[index] : null;
-            return this.controlInstance.enableGroup ? this.renderHaveGroup(item, listItem) : this.renderNoGroup(item, listItem);
+            return this.controlInstance.enableGroup ? this.renderHaveGroup(item, listItem) : this.renderNoGroup(item, listItem,index);
         })
     }
 
@@ -177,9 +177,9 @@ export class AppListBase extends ListControlBase {
      * @returns {*}
      * @memberof AppListBase
      */
-    public renderNoGroup(item: any, listItem: IPSDEListItem) {
+    public renderNoGroup(item: any, listItem: IPSDEListItem,index: number) {
         return <div
-            key={item.srfkey}
+            key={index}
             class={['app-list-item', item.isselected === true ? 'isSelect' : ''].join(' ')}
             on-click={() => debounce(this.handleClick,[item],this)}
             on-dblclick={() => debounce(this.handleDblClick,[item],this)}
