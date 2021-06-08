@@ -623,10 +623,9 @@
           "SRFNAVCTX.n_root_eq" : "%product%",
           "AC" : "TRUE",
           "SRFNAVPARAM.n_root_eq" : "%product%",
-          "TRIGGER" : "TRUE",
-          "PICKUPVIEW" : "FALSE"
+          "PICKUPVIEW" : "TRUE"
         },
-        "editorType" : "PICKEREX_TRIGGER",
+        "editorType" : "PICKER",
         "handlerType" : "PickupText",
         "name" : "modulename",
         "getPSAppDEACMode" : {
@@ -653,11 +652,16 @@
           "value" : "product",
           "rawValue" : false
         } ],
+        "getPickupPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModulePickupView.json",
+          "viewType" : "DEPICKUPVIEW"
+        },
         "valueItemName" : "module",
         "dropDownView" : false,
         "enableAC" : true,
         "enableLinkView" : false,
-        "enablePickupView" : false,
+        "enablePickupView" : true,
         "forceSelection" : true,
         "showTrigger" : true,
         "singleSelect" : true

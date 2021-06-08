@@ -2622,11 +2622,10 @@
               "SRFNAVCTX.allmodules" : "%allmodules%",
               "SRFNAVPARAM.module" : "%module%",
               "SRFNAVCTX.project" : "%project%",
-              "TRIGGER" : "TRUE",
               "SRFNAVPARAM.allmodules" : "%allmodules%",
-              "PICKUPVIEW" : "FALSE"
+              "PICKUPVIEW" : "TRUE"
             },
-            "editorType" : "PICKEREX_TRIGGER",
+            "editorType" : "PICKER",
             "handlerType" : "PickupText",
             "name" : "modulename",
             "getPSAppDEACMode" : {
@@ -2635,7 +2634,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchTaskModules"
+              "id" : "FetchDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -2673,11 +2672,16 @@
               "value" : "allmodules",
               "rawValue" : false
             } ],
+            "getPickupPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModulePickupView.json",
+              "viewType" : "DEPICKUPVIEW"
+            },
             "valueItemName" : "module",
             "dropDownView" : false,
             "enableAC" : true,
             "enableLinkView" : false,
-            "enablePickupView" : false,
+            "enablePickupView" : true,
             "forceSelection" : true,
             "showTrigger" : true,
             "singleSelect" : true
@@ -2906,7 +2910,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchRootTask"
+              "id" : "FetchCurProjectTaskQuery"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

@@ -15,12 +15,85 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
   },
+  "getPSDEGridColumns" : [ {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "名称",
+    "codeName" : "name",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "name",
+    "excelCaption" : "名称",
+    "name" : "name",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    },
+    "width" : 200,
+    "widthUnit" : "STAR",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "简称",
+    "codeName" : "short",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "short",
+    "excelCaption" : "简称",
+    "name" : "short",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "SHORT",
+      "codeName" : "IBizShort"
+    },
+    "width" : 200,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  }, {
+    "align" : "LEFT",
+    "cLConvertMode" : "NONE",
+    "caption" : "排序值",
+    "codeName" : "order",
+    "columnType" : "DEFGRIDCOLUMN",
+    "dataItemName" : "order",
+    "excelCaption" : "排序值",
+    "name" : "order",
+    "noPrivDisplayMode" : 1,
+    "getPSAppDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    },
+    "width" : 100,
+    "widthUnit" : "PX",
+    "enableSort" : true
+  } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 25,
+    "name" : "short",
+    "getPSAppDEField" : {
+      "name" : "SHORT",
+      "codeName" : "IBizShort"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "order",
+    "getPSAppDEField" : {
+      "name" : "ORDER",
+      "codeName" : "Order"
+    }
+  }, {
     "dataType" : 1,
     "name" : "root",
     "getPSAppDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "name",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
     }
   }, {
     "dataType" : 1,

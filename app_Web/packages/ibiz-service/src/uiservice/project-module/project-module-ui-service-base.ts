@@ -83,6 +83,8 @@ export class ProjectModuleUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set('PICKUPVIEW:','PICKUPVIEW');
+        this.allViewFuncMap.set(':','');
     }
 
 }
