@@ -59,8 +59,8 @@
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Util, LogUtil, ModelTool, ViewTool  } from 'ibiz-core';
-import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppViewRef, IPSNavigateContext } from '@ibiz/dynamic-model-api';
-import { IPSAppView, UIServiceRegister } from 'ibiz-service';
+import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppViewRef, IPSNavigateContext, IPSAppView } from '@ibiz/dynamic-model-api';
+import { UIServiceRegister } from 'ibiz-service';
 
 @Component({
 })

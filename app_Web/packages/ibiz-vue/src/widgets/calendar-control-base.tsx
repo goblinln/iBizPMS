@@ -292,6 +292,7 @@ export class CalendarControlBase extends MDControlBase{
         this.initShowLegend();
         this.initActionModel();
         this.initQuickToolbar();
+        this.initEventKey();
         this.calendarType = this.controlInstance?.calendarStyle;
         this.ctrlParams = this.controlInstance?.getPSControlParam()?.ctrlParams;
         if(Object.is(this.calendarType,'WEEK')){
@@ -445,12 +446,20 @@ export class CalendarControlBase extends MDControlBase{
      public isSelectFirst: boolean = false;
 
      /**
-      * 视图uid
+      * 事件id
       *
       * @type {string}
       * @memberof MDControlBase
       */
     public eventid: string = "";
+
+    /**
+      * 事件类型map
+      *
+      * @type {any}
+      * @memberof MDControlBase
+      */
+    public eventKey: any = new Map();
 
     /**
      * 图例点击事件
@@ -485,6 +494,24 @@ export class CalendarControlBase extends MDControlBase{
      */
     public onPanelDataChange(item:any,$event:any) {
         Object.assign(item, $event, {rowDataState:'update'});
+    }
+
+    public initEventKey() {
+      const calendarItems: Array<IPSSysCalendarItem> = (this.controlInstance as IPSSysCalendar).getPSSysCalendarItems() || [];
+      if (calendarItems.length > 0) {
+        calendarItems.forEach((calendarItem) => {
+          let eventKey = ModelTool.getAppEntityKeyField(calendarItem?.getPSAppDataEntity())?.codeName?.toLowerCase() || '';
+          this.eventKey.set(calendarItem.itemType,eventKey);
+        })
+        
+      }
+    }
+
+    public getEventKey(event: any) {
+      if (event?.itemType && this.eventKey.has(event.itemType)) {
+        return this.eventKey.get(event.itemType)
+      }
+      return "";
     }
 
     /**
@@ -607,11 +634,7 @@ export class CalendarControlBase extends MDControlBase{
             }
             this.selectedEventElement = JSelement;
             this.selectedEventElement.classList.add("selected-event");
-            if (Object.is(event.itemType,"ACCOUNTDAILY")) {
-              this.eventid = event.daily;
-            }else {
-              this.eventid = event.curdata.id;
-            }
+            this.eventid = event.curdata[this.getEventKey(event)];
         }
         // 处理上下文数据
         let _this: any = this;
@@ -827,8 +850,8 @@ export class CalendarControlBase extends MDControlBase{
      * @memberof CalendarControlBase
      */
     public eventRender(info?:any,) {
-        let eventid = Object.is(info.event.extendedProps.itemType,"ACCOUNTDAILY")?info.event.extendedProps.daily:info.event.extendedProps.curdata?.id
-        if (this.eventid && eventid == this.eventid) {
+        let eventid = info.event.extendedProps.curdata[this.getEventKey(info.event.extendedProps)];
+        if (!Object.is(this.eventid,"") && eventid == this.eventid) {
           let JSelement:any = info.el;
           if(JSelement){
               if(this.selectedEventElement){

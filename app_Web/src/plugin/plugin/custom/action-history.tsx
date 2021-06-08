@@ -277,7 +277,7 @@ export class ActionHistory extends AppListBase {
      * @memberof ActionHistory
      */
     protected renderHistoryItem(action: any, item: any): any {
-        const fieldText = this.$t(`entities.${action.objecttype.toLowerCase()}.fields.${item.field.toLowerCase()}`);
+        const fieldText = `${item.field}`
         if (item.diff) {
             return <div class="history-content">
                 {action.actionText}&nbsp;<strong>{fieldText}</strong>，区别为：<span><action-history-diff content={item.diff} /></span>

@@ -31,7 +31,9 @@ function getAppLocale(){
                 getdinginfoerror: "钉钉用户信息获取失败",
                 getiderror: "获取企业ID失败",
                 noassign: "未指定应用功能",
-                codelistwarn: "代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配"
+                codelistwarn: "代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配",
+                yes: "是",
+                no: "否",
             },
             local:{
                 new: "新建",
