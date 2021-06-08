@@ -1287,5 +1287,17 @@ public class StoryExService extends StoryServiceImpl {
         }
         return page;
     }
+
+    @Override
+    public Page<Story> searchProjectStories(StorySearchContext context) {
+        Map<String, Object> params = context.getParams();
+        if(params.get("srfparentkey") == null && params.get("project") != null) {
+            context.set("srfparentkey", params.get("project"));
+        }
+        if(params.get("module") != null && !"0".equals(params.get("module"))) {
+            context.setN_module_eq(Long.parseLong(params.get("module").toString()));
+        }
+        return super.searchProjectStories(context);
+    }
 }
 
