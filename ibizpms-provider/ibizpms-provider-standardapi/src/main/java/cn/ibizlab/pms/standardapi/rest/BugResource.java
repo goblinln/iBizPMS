@@ -137,7 +137,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'FAVORITES')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'FAVORITES')")
     @ApiOperation(value = "根据项目Bug收藏", tags = {"Bug" },  notes = "根据项目Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/bugfavorites")
     public ResponseEntity<BugDTO> bugFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -151,7 +151,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'BUGMANAGE', #bug_id, 'NFAVORITES')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PROJECT', #project_id, 'READ', #bug_id, 'NFAVORITES')")
     @ApiOperation(value = "根据项目取消收藏", tags = {"Bug" },  notes = "根据项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/bugnfavorites")
     public ResponseEntity<BugDTO> bugNFavoritesByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -326,7 +326,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'FAVORITES')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', #bug_id, 'FAVORITES')")
     @ApiOperation(value = "根据产品Bug收藏", tags = {"Bug" },  notes = "根据产品Bug收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/bugfavorites")
     public ResponseEntity<BugDTO> bugFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -340,7 +340,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugdto);
     }
 
-    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'BUGMANAGE', #bug_id, 'NFAVORITES')")
+    @PreAuthorize("test('ZT_BUG', 'ZT_PRODUCT', #product_id, 'READ', #bug_id, 'NFAVORITES')")
     @ApiOperation(value = "根据产品取消收藏", tags = {"Bug" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/bugs/{bug_id}/bugnfavorites")
     public ResponseEntity<BugDTO> bugNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {

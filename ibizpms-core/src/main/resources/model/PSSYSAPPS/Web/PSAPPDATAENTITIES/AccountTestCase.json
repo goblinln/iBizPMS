@@ -11122,7 +11122,7 @@
   }, {
     "logicName" : "产品-用例收藏",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
@@ -11158,7 +11158,7 @@
   }, {
     "logicName" : "产品-取消收藏",
     "mapPSDEName" : "ZT_PRODUCT",
-    "mapPSDEOPPrivName" : "CASEMANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"

@@ -114,7 +114,7 @@ public class TestCaseResource {
     }
 
 
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'FAVORITE')")
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', #testcase_id, 'FAVORITE')")
     @ApiOperation(value = "根据产品行为", tags = {"测试用例" },  notes = "根据产品行为")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/casefavorite")
     public ResponseEntity<TestCaseDTO> caseFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {
@@ -128,7 +128,7 @@ public class TestCaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(testcasedto);
     }
 
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #testcase_id, 'NFAVORITE')")
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', #testcase_id, 'NFAVORITE')")
     @ApiOperation(value = "根据产品CaseNFavorite", tags = {"测试用例" },  notes = "根据产品CaseNFavorite")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases/{testcase_id}/casenfavorite")
     public ResponseEntity<TestCaseDTO> caseNFavoriteByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testcase_id") Long testcase_id, @RequestBody TestCaseDTO testcasedto) {

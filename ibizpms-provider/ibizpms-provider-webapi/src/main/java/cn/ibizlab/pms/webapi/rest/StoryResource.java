@@ -1691,7 +1691,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'FAVORITES')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'FAVORITES')")
     @ApiOperation(value = "根据产品需求收藏", tags = {"需求" },  notes = "根据产品需求收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storyfavorites")
     public ResponseEntity<StoryDTO> storyFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
@@ -1705,7 +1705,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'NFAVORITES')")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'NFAVORITES')")
     @ApiOperation(value = "根据产品取消收藏", tags = {"需求" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/storynfavorites")
     public ResponseEntity<StoryDTO> storyNFavoritesByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {

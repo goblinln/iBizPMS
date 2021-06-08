@@ -16573,7 +16573,7 @@
       "getPSDEOPPriv" : {
         "logicName" : "项目-任务取消收藏",
         "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
+        "mapPSDEOPPrivName" : "READ",
         "getMapPSDER" : {
           "modelref" : true,
           "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
@@ -17507,7 +17507,7 @@
       "getPSDEOPPriv" : {
         "logicName" : "项目-任务收藏",
         "mapPSDEName" : "ZT_PROJECT",
-        "mapPSDEOPPrivName" : "TASKMANAGE",
+        "mapPSDEOPPrivName" : "READ",
         "getMapPSDER" : {
           "modelref" : true,
           "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
@@ -19673,7 +19673,7 @@
   }, {
     "logicName" : "项目-任务收藏",
     "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
@@ -19725,7 +19725,7 @@
   }, {
     "logicName" : "项目-任务取消收藏",
     "mapPSDEName" : "ZT_PROJECT",
-    "mapPSDEOPPrivName" : "TASKMANAGE",
+    "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
