@@ -4,13 +4,6 @@
   "dynaModelFilePath" : "PSSYSOPPRIVS/AccessUser.json",
   "name" : "PMS普通用户",
   "getPSSysUserRoleReses" : [ {
-    "name" : "null-顶部_项目主页",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_PROJECT_MENU"
-    },
-    "sysUniResCode" : "TOP_PROJECT_MENU"
-  }, {
     "name" : "null-左侧_测试资源",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -62,5 +55,5 @@
   } ],
   "roleTag" : "AccessUser",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "TOP_PROJECT_MENU", "LEFT_CASE_MENU", "TOP_DOC_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "LEFT_PROJECT_MENU", "TOP_MYFAVOURITE_MENU" ]
+  "uniResTags" : [ "LEFT_CASE_MENU", "TOP_DOC_MENU", "PRODUCTLEFT", "TOP_CASE_MENU", "TOP_MYPLACE_MENU", "LEFT_PROJECT_MENU", "TOP_MYFAVOURITE_MENU" ]
 }

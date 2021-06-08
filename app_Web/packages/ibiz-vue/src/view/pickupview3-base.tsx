@@ -1,22 +1,46 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
-import { debounce, ModelTool, PickupView3Engine, Util } from 'ibiz-core';
+import { PickupView3Engine, Util } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 export class PickupView3Base extends MainViewBase {
 
+    /**
+     * 视图实例对象
+     * 
+     * @type {IPSAppDEPickupView}
+     * @memberof PickupView3Base
+     */
     public viewInstance!: IPSAppDEPickupView;
 
+    /**
+     * 视图引擎对象
+     * 
+     * @type {PickupView3Engine}
+     * @memberof PickupView3Base
+     */
     public engine: PickupView3Engine = new PickupView3Engine();
 
+    /**
+     * 选择视图面板集合
+     * 
+     * @type {Array<IPSDEPickupViewPanel>}
+     * @memberof PickupView3Base
+     */
     public pickupViewPanelModels: Array<IPSDEPickupViewPanel> = [];
 
+    /**
+     * 当前激活选择视图面板名称
+     * 
+     * @type {string}
+     * @memberof PickupView3Base
+     */
     public activedPickupViewPanel: string = '';
 
     /**
      * 选中数据的字符串
      *
      * @type {string}
-     * @memberof PickupViewBase
+     * @memberof PickupView3Base
      */
     public selectedData: string = "";
 
@@ -24,7 +48,7 @@ export class PickupView3Base extends MainViewBase {
      * 视图选中数据
      *
      * @type {any[]}
-     * @memberof PickupViewBase
+     * @memberof PickupView3Base
      */
     public viewSelections: any[] = [];
 
@@ -32,7 +56,7 @@ export class PickupView3Base extends MainViewBase {
      * 是否显示按钮
      *
      * @type {boolean}
-     * @memberof PickupViewBase
+     * @memberof PickupView3Base
      */
     public isShowButton: boolean = true;
 
@@ -55,7 +79,7 @@ export class PickupView3Base extends MainViewBase {
      *
      * @param {*} newVal
      * @param {*} oldVal
-     * @memberof PickupViewBase
+     * @memberof PickupView3Base
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isShowButton = newVal?.isShowButton !== false;
@@ -63,7 +87,7 @@ export class PickupView3Base extends MainViewBase {
     }
 
     /**
-     * 初始化数据选择视图实例
+     * 视图模型初始化
      * 
      * @memberof PickupView3Base
      */
@@ -73,10 +97,20 @@ export class PickupView3Base extends MainViewBase {
         this.initPanelModels();
     }
 
+    /**
+     * 视图初始化
+     * 
+     * @memberof PickupView3Base
+     */
     public viewInit() {
-        this.activedPickupViewPanel = this.pickupViewPanelModels.length > 0 ? this.pickupViewPanelModels[1].name : '';
+        this.activedPickupViewPanel = this.pickupViewPanelModels.length > 0 ? this.pickupViewPanelModels[0].name : '';
     }
 
+    /**
+     * 视图引擎初始化
+     * 
+     * @memberof PickupView3Base
+     */
     public engineInit() {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
@@ -90,6 +124,11 @@ export class PickupView3Base extends MainViewBase {
         });
     }
 
+    /**
+     * 初始化选择视图面板实例
+     * 
+     * @memberof PickupView3Base
+     */
     public initPanelModels() {
         const controls: any[] = this.viewInstance.getPSControls() || [];
         controls.forEach((control: any) => {
@@ -104,7 +143,7 @@ export class PickupView3Base extends MainViewBase {
      *
      * @param {string} [controlType]
      * @returns
-     * @memberof PickupViewBase
+     * @memberof PickupView3Base
      */
     public computeTargetCtrlData(controlInstance:any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
@@ -118,6 +157,11 @@ export class PickupView3Base extends MainViewBase {
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent }
     }
 
+    /**
+     * 分页点击
+     * 
+     * @memberof PickupView3Base
+     */
     public tabPanelClick(event: any) {
         if (!event || Object.is(event, this.activedPickupViewPanel)) {
             return;
@@ -129,7 +173,7 @@ export class PickupView3Base extends MainViewBase {
     /**
      * 确定
      *
-     * @memberof PickupViewBase
+     * @memberof PickupView3Base
      */
     public onClickOk(): void {
         this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: this.viewSelections });
@@ -139,7 +183,7 @@ export class PickupView3Base extends MainViewBase {
     /**
      * 取消
      *
-     * @memberof PickupViewBase
+     * @memberof PickupView3Base
      */
     public onClickCancel(): void {
         this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: null });

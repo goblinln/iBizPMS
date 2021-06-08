@@ -496,6 +496,11 @@ export class CalendarControlBase extends MDControlBase{
         Object.assign(item, $event, {rowDataState:'update'});
     }
 
+    /**
+     * 初始化事件map对象
+     *
+     * @memberof CalendarControlBase
+     */
     public initEventKey() {
       const calendarItems: Array<IPSSysCalendarItem> = (this.controlInstance as IPSSysCalendar).getPSSysCalendarItems() || [];
       if (calendarItems.length > 0) {
@@ -507,6 +512,11 @@ export class CalendarControlBase extends MDControlBase{
       }
     }
 
+    /**
+     * 获取事件key
+     *
+     * @memberof CalendarControlBase
+     */
     public getEventKey(event: any) {
       if (event?.itemType && this.eventKey.has(event.itemType)) {
         return this.eventKey.get(event.itemType)
