@@ -134,6 +134,12 @@
                 #{item}
             </foreach>
         </if>
+		<if test="srf.n_project_isnotnull != null ">
+			<![CDATA[ AND  t1.`PROJECT` IS NOT NULL ]]>
+        </if>
+		<if test="srf.n_project_noteq != null ">
+			<![CDATA[ AND  t1.`PROJECT` <> #{srf.n_project_noteq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_module_eq != null ">
 			<![CDATA[ AND  t1.`MODULE` = #{srf.n_module_eq,jdbcType=BIGINT} ]]>
         </if>

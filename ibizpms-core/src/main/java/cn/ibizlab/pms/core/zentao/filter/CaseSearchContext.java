@@ -168,6 +168,21 @@ public class CaseSearchContext extends QueryWrapperContext<Case> {
         this.n_product_eq = n_product_eq;
     }
                 
+	private Long n_product_gtandeq;//[所属产品]
+	public void setN_product_gtandeq(Long n_product_gtandeq) {
+        this.n_product_gtandeq = n_product_gtandeq;
+    }
+                
+	private String n_product_isnotnull;//[所属产品]
+	public void setN_product_isnotnull(String n_product_isnotnull) {
+        this.n_product_isnotnull = n_product_isnotnull;
+    }
+                
+	private Long n_product_noteq;//[所属产品]
+	public void setN_product_noteq(Long n_product_noteq) {
+        this.n_product_noteq = n_product_noteq;
+    }
+                
 	private Long n_lib_eq;//[所属库]
 	public void setN_lib_eq(Long n_lib_eq) {
         this.n_lib_eq = n_lib_eq;

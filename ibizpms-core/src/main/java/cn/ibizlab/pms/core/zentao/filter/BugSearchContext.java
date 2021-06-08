@@ -282,6 +282,16 @@ public class BugSearchContext extends QueryWrapperContext<Bug> {
         this.n_product_eq = n_product_eq;
     }
                 
+	private String n_product_isnotnull;//[所属产品]
+	public void setN_product_isnotnull(String n_product_isnotnull) {
+        this.n_product_isnotnull = n_product_isnotnull;
+    }
+                
+	private Long n_product_noteq;//[所属产品]
+	public void setN_product_noteq(Long n_product_noteq) {
+        this.n_product_noteq = n_product_noteq;
+    }
+                
 	private Long n_totask_eq;//[转任务]
 	public void setN_totask_eq(Long n_totask_eq) {
         this.n_totask_eq = n_totask_eq;

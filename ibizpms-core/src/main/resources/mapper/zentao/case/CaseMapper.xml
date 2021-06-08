@@ -97,6 +97,15 @@
 		<if test="srf.n_product_eq != null ">
 			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_product_gtandeq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` >= #{srf.n_product_gtandeq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_product_isnotnull != null ">
+			<![CDATA[ AND  t1.`PRODUCT` IS NOT NULL ]]>
+        </if>
+		<if test="srf.n_product_noteq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` <> #{srf.n_product_noteq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_lib_eq != null ">
 			<![CDATA[ AND  t1.`LIB` = #{srf.n_lib_eq,jdbcType=BIGINT} ]]>
         </if>

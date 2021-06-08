@@ -5065,6 +5065,16 @@
               "value" : "srfloginname",
               "rawValue" : false
             }, {
+              "key" : "n_product_noteq",
+              "name" : "n_product_noteq",
+              "value" : "0",
+              "rawValue" : true
+            }, {
+              "key" : "n_product_isnotnull",
+              "name" : "n_product_isnotnull",
+              "value" : "0",
+              "rawValue" : true
+            }, {
               "key" : "size",
               "name" : "size",
               "value" : "5",
@@ -5744,6 +5754,16 @@
               "value" : "srfloginname",
               "rawValue" : false
             }, {
+              "key" : "n_product_noteq",
+              "name" : "n_product_noteq",
+              "value" : "0",
+              "rawValue" : true
+            }, {
+              "key" : "n_product_isnotnull",
+              "name" : "n_product_isnotnull",
+              "value" : "0",
+              "rawValue" : true
+            }, {
               "key" : "size",
               "name" : "size",
               "value" : "5",
@@ -6353,6 +6373,16 @@
               "name" : "n_assignedto_eq",
               "value" : "srfloginname",
               "rawValue" : false
+            }, {
+              "key" : "n_project_noteq",
+              "name" : "n_project_noteq",
+              "value" : "0",
+              "rawValue" : true
+            }, {
+              "key" : "n_project_isnotnull",
+              "name" : "n_project_isnotnull",
+              "value" : "0",
+              "rawValue" : true
             }, {
               "key" : "size",
               "name" : "size",

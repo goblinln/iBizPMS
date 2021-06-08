@@ -135,6 +135,12 @@
 		<if test="srf.n_product_eq != null ">
 			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_product_isnotnull != null ">
+			<![CDATA[ AND  t1.`PRODUCT` IS NOT NULL ]]>
+        </if>
+		<if test="srf.n_product_noteq != null ">
+			<![CDATA[ AND  t1.`PRODUCT` <> #{srf.n_product_noteq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_duplicatestory_eq != null ">
 			<![CDATA[ AND  t1.`DUPLICATESTORY` = #{srf.n_duplicatestory_eq,jdbcType=BIGINT} ]]>
         </if>

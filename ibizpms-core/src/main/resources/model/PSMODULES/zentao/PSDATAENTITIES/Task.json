@@ -6198,6 +6198,16 @@
       "name" : "N_PROJECT_IN",
       "stdDataType" : 1,
       "valueOP" : "IN"
+    }, {
+      "codeName" : "N_PROJECT_ISNOTNULL",
+      "name" : "N_PROJECT_ISNOTNULL",
+      "stdDataType" : 1,
+      "valueOP" : "ISNOTNULL"
+    }, {
+      "codeName" : "N_PROJECT_NOTEQ",
+      "name" : "N_PROJECT_NOTEQ",
+      "stdDataType" : 1,
+      "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

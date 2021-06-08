@@ -253,6 +253,16 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
         this.n_project_in = n_project_in;
     }
                 
+	private String n_project_isnotnull;//[所属项目]
+	public void setN_project_isnotnull(String n_project_isnotnull) {
+        this.n_project_isnotnull = n_project_isnotnull;
+    }
+                
+	private Long n_project_noteq;//[所属项目]
+	public void setN_project_noteq(Long n_project_noteq) {
+        this.n_project_noteq = n_project_noteq;
+    }
+                
 	private Long n_plan_eq;//[编号]
 	public void setN_plan_eq(Long n_plan_eq) {
         this.n_plan_eq = n_plan_eq;

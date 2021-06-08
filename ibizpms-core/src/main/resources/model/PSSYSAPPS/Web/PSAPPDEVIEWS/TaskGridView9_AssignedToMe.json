@@ -82,6 +82,16 @@
     "value" : "srfloginname",
     "rawValue" : false
   }, {
+    "key" : "n_project_noteq",
+    "name" : "n_project_noteq",
+    "value" : "0",
+    "rawValue" : true
+  }, {
+    "key" : "n_project_isnotnull",
+    "name" : "n_project_isnotnull",
+    "value" : "0",
+    "rawValue" : true
+  }, {
     "key" : "size",
     "name" : "size",
     "value" : "5",
