@@ -255,7 +255,7 @@ export class RoadMap extends AppListBase {
                 opt.items = res.data;
             }
         } catch (error) {
-			this.onControlResponse('FetchGetRoadmapS', res);
+			this.onControlResponse('FetchGetRoadmapS', error);
             console.log(error)
          }
     }
