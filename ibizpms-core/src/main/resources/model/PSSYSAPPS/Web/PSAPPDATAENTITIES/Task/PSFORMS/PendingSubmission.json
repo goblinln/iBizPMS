@@ -1351,10 +1351,9 @@
             "SRFNAVPARAM.module" : "%module%",
             "AC" : "TRUE",
             "SRFNAVPARAM.project" : "%project%",
-            "TRIGGER" : "TRUE",
-            "PICKUPVIEW" : "FALSE"
+            "PICKUPVIEW" : "TRUE"
           },
-          "editorType" : "PICKEREX_TRIGGER",
+          "editorType" : "PICKER",
           "handlerType" : "PickupText",
           "name" : "storyname",
           "getPSAppDEACMode" : {
@@ -1391,11 +1390,16 @@
             "value" : "module",
             "rawValue" : false
           } ],
+          "getPickupPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPickupView.json",
+            "viewType" : "DEPICKUPVIEW"
+          },
           "valueItemName" : "story",
           "dropDownView" : false,
           "enableAC" : true,
           "enableLinkView" : false,
-          "enablePickupView" : false,
+          "enablePickupView" : true,
           "forceSelection" : true,
           "showTrigger" : true,
           "singleSelect" : true

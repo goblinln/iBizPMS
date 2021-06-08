@@ -33,3 +33,4 @@ export { AppWfDynaExpGridViewBase } from "./app-wfdynaexpgridview-base";
 export { AppWFDynaStartViewBase } from "./app-wfdynastartview-base";
 export { AppWizardViewBase } from './app-wizardview-base';
 export { AppWFActionViewBase } from './app-wfactionview-base';
+export { AppDeReportViewBase } from './app-dereportview-base';

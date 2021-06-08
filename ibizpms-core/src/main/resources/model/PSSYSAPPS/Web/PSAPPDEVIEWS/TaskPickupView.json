@@ -826,7 +826,7 @@
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
-  "title" : "task数据选择视图",
+  "title" : "任务数据选择视图",
   "viewStyle" : "STYLE2",
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,

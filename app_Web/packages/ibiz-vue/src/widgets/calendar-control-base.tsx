@@ -437,6 +437,22 @@ export class CalendarControlBase extends MDControlBase{
     public isShowlegend: any = {};
 
     /**
+     * 是否已经选中第一条数据
+     *
+     * @type {boolean}
+     * @memberof MDControlBase
+     */
+     public isSelectFirst: boolean = false;
+
+     /**
+      * 视图uid
+      *
+      * @type {string}
+      * @memberof MDControlBase
+      */
+      public eventid: string = "";
+
+    /**
      * 图例点击事件
      *
      * @public
@@ -499,13 +515,8 @@ export class CalendarControlBase extends MDControlBase{
         let _this = this;
         let handleEvents = ()=>{
             if(_this.isSelectFirstDefault){
-                // 模拟$event数据
-                let tempEvent = Util.deepCopy(_this.events.length > 0?_this.events[0]:{});
-                _this.onEventClick(tempEvent,true);
-                if(_this.events.length > 0){
-                    _this.events[0].className = "select-first-event";
-                }
                 _this.calendarClass = "calendar select-first-calendar";
+                _this.isSelectFirst = true;
             }
             let filterEvents = this.events.filter((event:any)=>{
                 return _this.isShowlegend[event.itemType];
@@ -596,6 +607,7 @@ export class CalendarControlBase extends MDControlBase{
             }
             this.selectedEventElement = JSelement;
             this.selectedEventElement.classList.add("selected-event");
+            this.eventid = event.daily;
         }
         // 处理上下文数据
         let _this: any = this;
@@ -811,6 +823,20 @@ export class CalendarControlBase extends MDControlBase{
      * @memberof CalendarControlBase
      */
     public eventRender(info?:any,) {
+        if (info.event.extendedProps.daily == this.eventid) {
+          let JSelement:any = info.el;
+          if(JSelement){
+              if(this.selectedEventElement){
+                  this.selectedEventElement.classList.remove("selected-event");
+              }
+              this.selectedEventElement = JSelement;
+              this.selectedEventElement.classList.add("selected-event");
+          }
+        }
+        if(this.isSelectFirstDefault && this.isSelectFirst) {
+          this.isSelectFirst = false;
+          this.onEventClick(info);
+        }
         let data = Object.assign({title: info.event.title, start: info.event.start, end: info.event.end}, info.event.extendedProps);
         info.el.addEventListener('contextmenu', (event: MouseEvent) => {
             this.copyActionModel = {};

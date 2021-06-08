@@ -47,6 +47,14 @@ export class AppTopDrawerContainer {
     private i18n: any;
 
     /**
+     * 路由对象
+     *
+     * @private
+     * @memberof AppTopDrawerContainer
+     */
+    private router: any;
+
+    /**
      * Vue实例
      *
      * @protected
@@ -73,6 +81,7 @@ export class AppTopDrawerContainer {
         const appService = AppServiceBase.getInstance();
         this.store = appService.getAppStore();
         this.i18n = appService.getI18n();
+        this.router = appService.getRouter();
     }
 
     /**
@@ -84,6 +93,7 @@ export class AppTopDrawerContainer {
     protected init(): void {
         this.vueInstance = new Vue({
             store: this.store,
+            router: this.router,
             i18n: this.i18n,
             render: (h: any) => h(AppTopDrawer, { ref: 'AppTopDrawer' }),
         }).$mount(this.modalContainer);

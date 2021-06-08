@@ -2,7 +2,7 @@ import { AppModelService, GetModelService, ModelTool, Util } from 'ibiz-core';
 import { Component, Prop } from 'vue-property-decorator';
 import { EditorBase } from '../editor-base/editor-base';
 import { VueLifeCycleProcessing } from '../../../decorators';
-import { IPSAppCodeList, IPSAppDEView, IPSAppView, IPSCodeListEditor, IPSDEFormItem, IPSPickerEditor } from '@ibiz/dynamic-model-api';
+import { IPSAppCodeList, IPSAppDEView, IPSAppView, IPSCodeListEditor, IPSDEFormItem, IPSPicker, IPSPickerEditor } from '@ibiz/dynamic-model-api';
 
 /**
  * 自动完成编辑器
@@ -61,7 +61,7 @@ export default class DataPickerEditor extends EditorBase {
             // 数据链接
             case 'PICKEREX_LINKONLY':
                 this.customProps.editorType = 'linkonly';
-                this.initLinkViewParams();
+                await this.initLinkViewParams();
                 break;
             // 数据选择（无按钮）
             case 'PICKEREX_NOBUTTON':
@@ -75,12 +75,12 @@ export default class DataPickerEditor extends EditorBase {
             case 'PICKEREX_NOAC_LINK':
                 this.customProps.editorType = 'pickup-no-ac';
                 this.initPickupViewParams();
-                this.initLinkViewParams();
+                await this.initLinkViewParams();
                 break;
             // 数据选择（下拉、数据链接）
             case 'PICKEREX_TRIGGER_LINK':
                 this.initPickupViewParams();
-                this.initLinkViewParams();
+                await this.initLinkViewParams();
                 this.initAcParams();
                 break;
             // 数据选择（下拉）
@@ -97,7 +97,7 @@ export default class DataPickerEditor extends EditorBase {
             case 'PICKEREX_LINK':
                 this.customProps.editorType = 'linkonly';
                 this.initPickupViewParams();
-                this.initLinkViewParams();
+                await this.initLinkViewParams();
                 this.initAcParams();
                 break;
             // 数据选择（下拉视图）
@@ -107,7 +107,7 @@ export default class DataPickerEditor extends EditorBase {
             // 数据选择（下拉视图、数据链接）
             case 'PICKEREX_DROPDOWNVIEW_LINK':
                 this.initPickupViewParams();
-                this.initLinkViewParams();
+                await this.initLinkViewParams();
                 break;
             // 数据选择（嵌入选择视图）
             case 'PICKUPVIEW':
@@ -165,8 +165,9 @@ export default class DataPickerEditor extends EditorBase {
      *
      * @memberof DataPickerEditor
      */
-    public initLinkViewParams() {
-        let linkAppView = (this.editorInstance as IPSPickerEditor).getPickupPSAppView();
+    public async initLinkViewParams() {
+        let linkAppView = (this.editorInstance as IPSPicker).getLinkPSAppView();
+        await linkAppView?.fill();
         if (linkAppView) {
             const view: any = {
                 viewname: 'app-view-shell',

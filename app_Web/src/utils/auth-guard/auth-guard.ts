@@ -203,6 +203,7 @@ export class AuthGuard {
         AppServiceBase.getInstance().setAppEnvironment(Environment);
         AppServiceBase.getInstance().setAppStore(router.app.$store);
         AppServiceBase.getInstance().setI18n(i18n);
+        AppServiceBase.getInstance().setRouter(router);
         const service = new AppModelService();
         await GlobalHelp.install(service, async (strPath: string, config: DynamicInstanceConfig) => {
             let url: string = '';

@@ -49,6 +49,14 @@ export class AppPopover {
     private i18n: any;
 
     /**
+     * 路由对象
+     *
+     * @private
+     * @memberof AppPopover
+     */
+    private router: any;
+
+    /**
      * PopperJs实例
      *
      * @private
@@ -113,6 +121,7 @@ export class AppPopover {
         const appService = AppServiceBase.getInstance();
         this.store = appService.getAppStore();
         this.i18n = appService.getI18n();
+        this.router = appService.getRouter();
     }
 
     /**
@@ -141,6 +150,7 @@ export class AppPopover {
         this.vueExample = new Vue({
             el: div,
             store: this.store,
+            router: this.router,
             i18n: this.i18n,
             data: { content: null, width: 300, height: 300 },
             methods: {

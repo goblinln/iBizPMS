@@ -32,6 +32,14 @@ export class AppDrawer {
     private i18n: any;
 
     /**
+     * router对象
+     *
+     * @private
+     * @memberof AppDrawer
+     */
+     private router: any;
+
+    /**
      * 构造方法
      * 
      * @memberof AppDrawer
@@ -52,6 +60,7 @@ export class AppDrawer {
         const appService = AppServiceBase.getInstance();
         this.store = appService.getAppStore();
         this.i18n = appService.getI18n();
+        this.router = appService.getRouter();
     }
 
     /**
@@ -95,6 +104,7 @@ export class AppDrawer {
             let component = AppDrawerCompponent;
             const vm = new Vue({
                 store: this.store,
+                router: this.router,
                 i18n: this.i18n,
                 render(h) {
                     return h(component, { props });

@@ -161,6 +161,7 @@ import { AppDefaultWfStepTraceView } from './view/app-default-view/app-default-w
 import { AppDefaultWFDynaEditView3 } from './view/app-default-view/app-default-wfdynaeditview3';
 import { AppDefaultHtmlView } from './view/app-default-view/app-default-htmlview';
 import { AppDefaultMapView } from './view/app-default-view/app-default-mapview';
+import { AppDefaultDeReportView } from './view/app-default-view/app-default-dereportview';
 import { AppStyle2IndexView } from './view/app-style2-view/app-style2-indexview';
 import { AppStyle2EditView } from './view/app-style2-view/app-style2-editview';
 import { AppStyle2EditView3 } from './view/app-style2-view/app-style2-editview3';
@@ -201,6 +202,7 @@ import { AppStyle2WFActionView } from './view/app-style2-view/app-style2-wfactio
 import { AppStyle2DeRedirectView } from './view/app-style2-view/app-style2-deredirectview';
 import { AppStyle2WfStepTraceView } from './view/app-style2-view/app-style2-wfsteptraceview';
 import { AppStyle2WFDynaEditView3 } from './view/app-style2-view/app-style2-wfdynaeditview3';
+import { AppStyle2DeReportView } from './view/app-style2-view/app-style2-dereportview';
 // 部件组件
 import { ViewToolbar } from './control/view-toolbar/view-toolbar';
 import { AppDefaultGrid } from './control/app-default-grid/app-default-grid';
@@ -406,6 +408,7 @@ export const ComponentsRegister = {
         v.component("app-default-wfsteptraceview",AppDefaultWfStepTraceView);
         v.component('app-default-htmlview', AppDefaultHtmlView);
         v.component('app-default-mapview', AppDefaultMapView);
+        v.component('app-default-dereportview', AppDefaultDeReportView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
         v.component('app-style2-editview3', AppStyle2EditView3);
@@ -446,6 +449,7 @@ export const ComponentsRegister = {
         v.component("app-style2-deredirectview",AppStyle2DeRedirectView);
         v.component("app-style2-wfsteptraceview",AppStyle2WfStepTraceView);
         v.component('app-style2-wfdynaeditview3', AppStyle2WFDynaEditView3);
+        v.component('app-style2-dereportview', AppStyle2DeReportView);
         // 部件组件
         v.component('app-default-form', AppDefaultForm);
         v.component('app-default-searchform', AppDefaultSearchForm);

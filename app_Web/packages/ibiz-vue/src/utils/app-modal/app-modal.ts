@@ -41,6 +41,14 @@ export class AppModal {
     private i18n: any;
 
     /**
+     * router对象
+     *
+     * @private
+     * @memberof AppModal
+     */
+     private router: any;
+
+    /**
      * Creates an instance of AppModal.
      * 
      * @memberof AppModal
@@ -75,6 +83,7 @@ export class AppModal {
         const appService = AppServiceBase.getInstance();
         this.store = appService.getAppStore();
         this.i18n = appService.getI18n();
+        this.router = appService.getRouter();
     }
 
     /**
@@ -98,6 +107,7 @@ export class AppModal {
             let component = AppModalCompponent;
             const vm = new Vue({
                 store: this.store,
+                router: this.router,
                 i18n: this.i18n,
                 render(h) {
                     return h(component, { props, class: view.customClass });

@@ -21,7 +21,7 @@ export class AppServiceBase {
     /**
      * 应用模型数据对象
      *
-     * @public
+     * @private
      * @type {(any)}
      * @memberof AppServiceBase
      */
@@ -30,7 +30,7 @@ export class AppServiceBase {
     /**
      * 应用存储对象
      *
-     * @public
+     * @private
      * @type {(any)}
      * @memberof AppServiceBase
      */
@@ -39,7 +39,7 @@ export class AppServiceBase {
     /**
      * 应用消息通知中心
      *
-     * @public
+     * @private
      * @type {(any)}
      * @memberof AppServiceBase
      */
@@ -48,7 +48,7 @@ export class AppServiceBase {
     /**
      * 应用导航中心
      *
-     * @public
+     * @private
      * @type {(any)}
      * @memberof AppServiceBase
      */
@@ -57,7 +57,7 @@ export class AppServiceBase {
     /**
      * 环境配置
      *
-     * @public
+     * @private
      * @type {(any)}
      * @memberof AppServiceBase
      */
@@ -66,11 +66,20 @@ export class AppServiceBase {
     /**
      * 国际化
      *
-     * @public
+     * @private
      * @type {(any)}
      * @memberof AppServiceBase
      */
     private static i18n: any;
+
+    /**
+     * 路由对象
+     *
+     * @private
+     * @type {(any)}
+     * @memberof AppServiceBase
+     */
+    private static router:any;
 
     /**
      * 获取AppServiceBase单例对象
@@ -206,5 +215,24 @@ export class AppServiceBase {
         AppServiceBase.i18n = opts;
     }
 
+    /**
+     * 获取路由对象
+     *
+     * @public
+     * @memberof AppServiceBase
+     */
+     public getRouter() {
+        return AppServiceBase.router;
+    }
+
+    /**
+     * 设置路由对象
+     *
+     * @public
+     * @memberof AppServiceBase
+     */
+    public setRouter(opts: any) {
+        AppServiceBase.router = opts;
+    }
 
 }

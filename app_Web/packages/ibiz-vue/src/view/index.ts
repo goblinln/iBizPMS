@@ -37,3 +37,4 @@ export { WfStepTraceViewBase } from './wfsteptraceview-base';
 export { WFDynaEditView3Base } from './wfdynaeditview3-base';
 export { HtmlViewBase } from './htmlview-base';
 export { MapViewBase } from './mapview-base';
+export { DeReportViewBase } from './dereportview-base';
