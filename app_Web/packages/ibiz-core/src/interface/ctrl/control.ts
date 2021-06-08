@@ -1,7 +1,7 @@
 import { Subject, Subscription } from 'rxjs';
 
 /**
- * 部件接口
+ * 部件基类接口
  *
  * @interface ControlInterface
  */

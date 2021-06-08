@@ -1,2 +1,2 @@
 export * from './control';
-export * from './toolbarItem';
+export * from './grid-control';

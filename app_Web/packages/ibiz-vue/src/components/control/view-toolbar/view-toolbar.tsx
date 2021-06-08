@@ -1,6 +1,5 @@
 import { Vue, Component, Prop, Watch, Emit } from 'vue-property-decorator';
-import { ToolbarItem } from 'ibiz-core/src/interface/ctrl/toolbarItem';
-import { debounce, Util } from 'ibiz-core';
+import { debounce, Util, ToolbarItem } from 'ibiz-core';
 import "./view-toolbar.less";
 
 /**
