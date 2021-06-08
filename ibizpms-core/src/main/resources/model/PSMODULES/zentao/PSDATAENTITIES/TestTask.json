@@ -1960,6 +1960,16 @@
       "name" : "N_PRODUCT_EQ",
       "stdDataType" : 1,
       "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PRODUCT_ISNOTNULL",
+      "name" : "N_PRODUCT_ISNOTNULL",
+      "stdDataType" : 1,
+      "valueOP" : "ISNOTNULL"
+    }, {
+      "codeName" : "N_PRODUCT_NOTEQ",
+      "name" : "N_PRODUCT_NOTEQ",
+      "stdDataType" : 1,
+      "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

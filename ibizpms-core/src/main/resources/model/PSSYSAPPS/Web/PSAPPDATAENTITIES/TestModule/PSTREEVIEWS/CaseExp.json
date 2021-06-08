@@ -167,6 +167,28 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "MODULE",
+      "name" : "MODULE",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    }, {
+      "key" : "MODULENAME",
+      "name" : "MODULENAME",
+      "value" : "name",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "modulename",
+      "name" : "modulename",
+      "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
@@ -266,6 +288,28 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestModule.json"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "MODULE",
+      "name" : "MODULE",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    }, {
+      "key" : "MODULENAME",
+      "name" : "MODULENAME",
+      "value" : "name",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "modulename",
+      "name" : "modulename",
+      "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
     "getTextPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"

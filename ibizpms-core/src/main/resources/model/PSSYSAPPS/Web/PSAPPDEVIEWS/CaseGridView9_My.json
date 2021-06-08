@@ -76,6 +76,17 @@
       "editMode" : true
     }
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_product_noteq",
+    "name" : "n_product_noteq",
+    "value" : "0",
+    "rawValue" : true
+  }, {
+    "key" : "n_product_isnotnull",
+    "name" : "n_product_isnotnull",
+    "value" : "0",
+    "rawValue" : true
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_TOP",
