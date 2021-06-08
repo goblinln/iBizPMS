@@ -340,7 +340,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchRowEditDefaultProductTeam"
+          "id" : "FetchProductTeamInfo"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
