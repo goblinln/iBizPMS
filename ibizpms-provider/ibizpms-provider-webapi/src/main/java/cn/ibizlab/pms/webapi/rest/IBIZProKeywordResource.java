@@ -59,17 +59,13 @@ public class IBIZProKeywordResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "更新关键字", tags = {"关键字" },  notes = "更新关键字")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{ibizprokeyword_id}")
-    @Transactional
-    public ResponseEntity<IBIZProKeywordDTO> update(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id, @RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
-		IBIZProKeyword domain  = ibizprokeywordMapping.toDomain(ibizprokeyworddto);
-        domain.setId(ibizprokeyword_id);
-		ibizprokeywordService.update(domain );
-		IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
+    @ApiOperation(value = "获取关键字", tags = {"关键字" },  notes = "获取关键字")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{ibizprokeyword_id}")
+    public ResponseEntity<IBIZProKeywordDTO> get(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id) {
+        IBIZProKeyword domain = ibizprokeywordService.get(ibizprokeyword_id);
+        IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除关键字", tags = {"关键字" },  notes = "删除关键字")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprokeywords/{ibizprokeyword_id}")
@@ -84,12 +80,22 @@ public class IBIZProKeywordResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取关键字", tags = {"关键字" },  notes = "获取关键字")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizprokeywords/{ibizprokeyword_id}")
-    public ResponseEntity<IBIZProKeywordDTO> get(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id) {
-        IBIZProKeyword domain = ibizprokeywordService.get(ibizprokeyword_id);
-        IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
+    @ApiOperation(value = "更新关键字", tags = {"关键字" },  notes = "更新关键字")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprokeywords/{ibizprokeyword_id}")
+    @Transactional
+    public ResponseEntity<IBIZProKeywordDTO> update(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id, @RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
+		IBIZProKeyword domain  = ibizprokeywordMapping.toDomain(ibizprokeyworddto);
+        domain.setId(ibizprokeyword_id);
+		ibizprokeywordService.update(domain );
+		IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查关键字", tags = {"关键字" },  notes = "检查关键字")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.checkKey(ibizprokeywordMapping.toDomain(ibizprokeyworddto)));
     }
 
     @ApiOperation(value = "获取关键字草稿", tags = {"关键字" },  notes = "获取关键字草稿")
@@ -97,12 +103,6 @@ public class IBIZProKeywordResource {
     public ResponseEntity<IBIZProKeywordDTO> getDraft(IBIZProKeywordDTO dto) {
         IBIZProKeyword domain = ibizprokeywordMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordMapping.toDto(ibizprokeywordService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查关键字", tags = {"关键字" },  notes = "检查关键字")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizprokeywords/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProKeywordDTO ibizprokeyworddto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizprokeywordService.checkKey(ibizprokeywordMapping.toDomain(ibizprokeyworddto)));
     }
 
     @ApiOperation(value = "保存关键字", tags = {"关键字" },  notes = "保存关键字")

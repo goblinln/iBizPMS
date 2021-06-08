@@ -67,6 +67,32 @@ public class FileResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_FILE', #file_id, 'READ')")
+    @ApiOperation(value = "获取附件", tags = {"附件" },  notes = "获取附件")
+	@RequestMapping(method = RequestMethod.GET, value = "/files/{file_id}")
+    public ResponseEntity<FileDTO> get(@PathVariable("file_id") Long file_id) {
+        File domain = fileService.get(file_id);
+        FileDTO dto = fileMapping.toDto(domain);
+        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(file_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
+    @ApiOperation(value = "删除附件", tags = {"附件" },  notes = "删除附件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/files/{file_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("file_id") Long file_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
+    @ApiOperation(value = "批量删除附件", tags = {"附件" },  notes = "批量删除附件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/files/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        fileService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_FILE', #file_id, 'UPDATE')")
     @ApiOperation(value = "更新附件", tags = {"附件" },  notes = "更新附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}")
@@ -84,30 +110,11 @@ public class FileResource {
     }
 
 
-    @PreAuthorize("test('ZT_FILE', #file_id, 'DELETE')")
-    @ApiOperation(value = "删除附件", tags = {"附件" },  notes = "删除附件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/files/{file_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("file_id") Long file_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(fileService.remove(file_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_FILE', 'DELETE')")
-    @ApiOperation(value = "批量删除附件", tags = {"附件" },  notes = "批量删除附件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/files/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        fileService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_FILE', #file_id, 'READ')")
-    @ApiOperation(value = "获取附件", tags = {"附件" },  notes = "获取附件")
-	@RequestMapping(method = RequestMethod.GET, value = "/files/{file_id}")
-    public ResponseEntity<FileDTO> get(@PathVariable("file_id") Long file_id) {
-        File domain = fileService.get(file_id);
-        FileDTO dto = fileMapping.toDto(domain);
-        Map<String, Integer> opprivs = fileRuntime.getOPPrivs(file_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_FILE', 'CREATE')")
+    @ApiOperation(value = "检查附件", tags = {"附件" },  notes = "检查附件")
+	@RequestMapping(method = RequestMethod.POST, value = "/files/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody FileDTO filedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(fileService.checkKey(fileMapping.toDomain(filedto)));
     }
 
     @PreAuthorize("quickTest('ZT_FILE', 'CREATE')")
@@ -116,13 +123,6 @@ public class FileResource {
     public ResponseEntity<FileDTO> getDraft(FileDTO dto) {
         File domain = fileMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(fileMapping.toDto(fileService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_FILE', 'CREATE')")
-    @ApiOperation(value = "检查附件", tags = {"附件" },  notes = "检查附件")
-	@RequestMapping(method = RequestMethod.POST, value = "/files/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody FileDTO filedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(fileService.checkKey(fileMapping.toDomain(filedto)));
     }
 
     @PreAuthorize("quickTest('ZT_FILE', 'DENY')")

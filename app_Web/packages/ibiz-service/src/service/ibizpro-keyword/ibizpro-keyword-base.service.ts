@@ -66,17 +66,6 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBIZProKeywordService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibizprokeywords/${_context.ibizprokeyword}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibizprokeywords`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBIZProKeywordService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibizprokeywords/${_context.ibizprokeyword}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IBIZProKeywordService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibizprokeywords/${_context.ibizprokeyword}`);
     }
     /**
      * Get
@@ -144,6 +110,29 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBIZProKeywordService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibizprokeywords/${_context.ibizprokeyword}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBIZProKeywordService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibizprokeywords/${_context.ibizprokeyword}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -153,5 +142,16 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibizprokeywords/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IBIZProKeywordService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibizprokeywords/${_context.ibizprokeyword}/select`);
     }
 }

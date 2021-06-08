@@ -67,6 +67,32 @@ public class ProductSumResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_PRODUCTSUM', #productsum_id, 'READ')")
+    @ApiOperation(value = "获取产品汇总表", tags = {"产品汇总表" },  notes = "获取产品汇总表")
+	@RequestMapping(method = RequestMethod.GET, value = "/productsums/{productsum_id}")
+    public ResponseEntity<ProductSumDTO> get(@PathVariable("productsum_id") Long productsum_id) {
+        ProductSum domain = productsumService.get(productsum_id);
+        ProductSumDTO dto = productsumMapping.toDto(domain);
+        Map<String, Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_PRODUCTSUM', #productsum_id, 'DELETE')")
+    @ApiOperation(value = "删除产品汇总表", tags = {"产品汇总表" },  notes = "删除产品汇总表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/{productsum_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("productsum_id") Long productsum_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(productsumService.remove(productsum_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_PRODUCTSUM', 'DELETE')")
+    @ApiOperation(value = "批量删除产品汇总表", tags = {"产品汇总表" },  notes = "批量删除产品汇总表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        productsumService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZ_PRODUCTSUM', #productsum_id, 'UPDATE')")
     @ApiOperation(value = "更新产品汇总表", tags = {"产品汇总表" },  notes = "更新产品汇总表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productsums/{productsum_id}")
@@ -84,30 +110,11 @@ public class ProductSumResource {
     }
 
 
-    @PreAuthorize("test('IBZ_PRODUCTSUM', #productsum_id, 'DELETE')")
-    @ApiOperation(value = "删除产品汇总表", tags = {"产品汇总表" },  notes = "删除产品汇总表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/{productsum_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("productsum_id") Long productsum_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(productsumService.remove(productsum_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_PRODUCTSUM', 'DELETE')")
-    @ApiOperation(value = "批量删除产品汇总表", tags = {"产品汇总表" },  notes = "批量删除产品汇总表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productsums/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        productsumService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_PRODUCTSUM', #productsum_id, 'READ')")
-    @ApiOperation(value = "获取产品汇总表", tags = {"产品汇总表" },  notes = "获取产品汇总表")
-	@RequestMapping(method = RequestMethod.GET, value = "/productsums/{productsum_id}")
-    public ResponseEntity<ProductSumDTO> get(@PathVariable("productsum_id") Long productsum_id) {
-        ProductSum domain = productsumService.get(productsum_id);
-        ProductSumDTO dto = productsumMapping.toDto(domain);
-        Map<String, Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_PRODUCTSUM', 'CREATE')")
+    @ApiOperation(value = "检查产品汇总表", tags = {"产品汇总表" },  notes = "检查产品汇总表")
+	@RequestMapping(method = RequestMethod.POST, value = "/productsums/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody ProductSumDTO productsumdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(productsumService.checkKey(productsumMapping.toDomain(productsumdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_PRODUCTSUM', 'CREATE')")
@@ -116,13 +123,6 @@ public class ProductSumResource {
     public ResponseEntity<ProductSumDTO> getDraft(ProductSumDTO dto) {
         ProductSum domain = productsumMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(productsumMapping.toDto(productsumService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_PRODUCTSUM', 'CREATE')")
-    @ApiOperation(value = "检查产品汇总表", tags = {"产品汇总表" },  notes = "检查产品汇总表")
-	@RequestMapping(method = RequestMethod.POST, value = "/productsums/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody ProductSumDTO productsumdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(productsumService.checkKey(productsumMapping.toDomain(productsumdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_PRODUCTSUM', 'DENY')")

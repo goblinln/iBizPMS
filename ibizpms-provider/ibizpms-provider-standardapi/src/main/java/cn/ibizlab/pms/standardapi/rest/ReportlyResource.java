@@ -53,18 +53,6 @@ public class ReportlyResource {
     public ReportlyMapping reportlyMapping;
 
     @PreAuthorize("quickTest('IBZ_REPORTLY', 'NONE')")
-	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/reportlies/fetchdefault")
-	public ResponseEntity<List<ReportlyDTO>> fetchdefault(@RequestBody IbzReportlySearchContext context) {
-        Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
-        List<ReportlyDTO> list = reportlyMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('IBZ_REPORTLY', 'NONE')")
     @ApiOperation(value = "新建汇报", tags = {"汇报" },  notes = "新建汇报")
 	@RequestMapping(method = RequestMethod.POST, value = "/reportlies")
     @Transactional
@@ -104,6 +92,14 @@ public class ReportlyResource {
     }
 
 
+    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
+    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
+    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
+        IbzReportly domain = reportlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
+    }
+
     @PreAuthorize("test('IBZ_REPORTLY', #reportly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"汇报" },  notes = "已读")
 	@RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/haveread")
@@ -132,14 +128,18 @@ public class ReportlyResource {
     }
 
 
-    @PreAuthorize("quickTest('IBZ_REPORTLY', 'CREATE')")
-    @ApiOperation(value = "获取汇报草稿", tags = {"汇报" },  notes = "获取汇报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/reportlies/getdraft")
-    public ResponseEntity<ReportlyDTO> getDraft(ReportlyDTO dto) {
-        IbzReportly domain = reportlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(reportlyMapping.toDto(ibzreportlyService.getDraft(domain)));
-    }
-
+    @PreAuthorize("quickTest('IBZ_REPORTLY', 'NONE')")
+	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/reportlies/fetchdefault")
+	public ResponseEntity<List<ReportlyDTO>> fetchdefault(@RequestBody IbzReportlySearchContext context) {
+        Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
+        List<ReportlyDTO> list = reportlyMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/reportlies/{reportly_id}/{action}")

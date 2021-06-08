@@ -67,6 +67,32 @@ public class BugStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_BUGSTATS', #bugstats_id, 'READ')")
+    @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/{bugstats_id}")
+    public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
+        BugStats domain = bugstatsService.get(bugstats_id);
+        BugStatsDTO dto = bugstatsMapping.toDto(domain);
+        Map<String, Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_BUGSTATS', #bugstats_id, 'DELETE')")
+    @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/{bugstats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("bugstats_id") Long bugstats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_BUGSTATS', 'DELETE')")
+    @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        bugstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZ_BUGSTATS', #bugstats_id, 'UPDATE')")
     @ApiOperation(value = "更新Bug统计", tags = {"Bug统计" },  notes = "更新Bug统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/bugstats/{bugstats_id}")
@@ -84,30 +110,11 @@ public class BugStatsResource {
     }
 
 
-    @PreAuthorize("test('IBZ_BUGSTATS', #bugstats_id, 'DELETE')")
-    @ApiOperation(value = "删除Bug统计", tags = {"Bug统计" },  notes = "删除Bug统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/{bugstats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("bugstats_id") Long bugstats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(bugstatsService.remove(bugstats_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_BUGSTATS', 'DELETE')")
-    @ApiOperation(value = "批量删除Bug统计", tags = {"Bug统计" },  notes = "批量删除Bug统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/bugstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        bugstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_BUGSTATS', #bugstats_id, 'READ')")
-    @ApiOperation(value = "获取Bug统计", tags = {"Bug统计" },  notes = "获取Bug统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/bugstats/{bugstats_id}")
-    public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
-        BugStats domain = bugstatsService.get(bugstats_id);
-        BugStatsDTO dto = bugstatsMapping.toDto(domain);
-        Map<String, Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_BUGSTATS', 'CREATE')")
+    @ApiOperation(value = "检查Bug统计", tags = {"Bug统计" },  notes = "检查Bug统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody BugStatsDTO bugstatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(bugstatsService.checkKey(bugstatsMapping.toDomain(bugstatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_BUGSTATS', 'CREATE')")
@@ -116,13 +123,6 @@ public class BugStatsResource {
     public ResponseEntity<BugStatsDTO> getDraft(BugStatsDTO dto) {
         BugStats domain = bugstatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(bugstatsMapping.toDto(bugstatsService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_BUGSTATS', 'CREATE')")
-    @ApiOperation(value = "检查Bug统计", tags = {"Bug统计" },  notes = "检查Bug统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/bugstats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody BugStatsDTO bugstatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(bugstatsService.checkKey(bugstatsMapping.toDomain(bugstatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_BUGSTATS', 'DENY')")

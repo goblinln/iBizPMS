@@ -59,18 +59,13 @@ public class IBIZProPluginResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "ibizproplugin" , versionfield = "updatedate")
-    @ApiOperation(value = "更新系统插件", tags = {"系统插件" },  notes = "更新系统插件")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/{ibizproplugin_id}")
-    @Transactional
-    public ResponseEntity<IBIZProPluginDTO> update(@PathVariable("ibizproplugin_id") String ibizproplugin_id, @RequestBody IBIZProPluginDTO ibizproplugindto) {
-		IBIZProPlugin domain  = ibizpropluginMapping.toDomain(ibizproplugindto);
-        domain.setIbizpropluginid(ibizproplugin_id);
-		ibizpropluginService.update(domain );
-		IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
+    @ApiOperation(value = "获取系统插件", tags = {"系统插件" },  notes = "获取系统插件")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/{ibizproplugin_id}")
+    public ResponseEntity<IBIZProPluginDTO> get(@PathVariable("ibizproplugin_id") String ibizproplugin_id) {
+        IBIZProPlugin domain = ibizpropluginService.get(ibizproplugin_id);
+        IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除系统插件", tags = {"系统插件" },  notes = "删除系统插件")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproplugins/{ibizproplugin_id}")
@@ -85,12 +80,23 @@ public class IBIZProPluginResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取系统插件", tags = {"系统插件" },  notes = "获取系统插件")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproplugins/{ibizproplugin_id}")
-    public ResponseEntity<IBIZProPluginDTO> get(@PathVariable("ibizproplugin_id") String ibizproplugin_id) {
-        IBIZProPlugin domain = ibizpropluginService.get(ibizproplugin_id);
-        IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
+    @VersionCheck(entity = "ibizproplugin" , versionfield = "updatedate")
+    @ApiOperation(value = "更新系统插件", tags = {"系统插件" },  notes = "更新系统插件")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproplugins/{ibizproplugin_id}")
+    @Transactional
+    public ResponseEntity<IBIZProPluginDTO> update(@PathVariable("ibizproplugin_id") String ibizproplugin_id, @RequestBody IBIZProPluginDTO ibizproplugindto) {
+		IBIZProPlugin domain  = ibizpropluginMapping.toDomain(ibizproplugindto);
+        domain.setIbizpropluginid(ibizproplugin_id);
+		ibizpropluginService.update(domain );
+		IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查系统插件", tags = {"系统插件" },  notes = "检查系统插件")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProPluginDTO ibizproplugindto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.checkKey(ibizpropluginMapping.toDomain(ibizproplugindto)));
     }
 
     @ApiOperation(value = "获取系统插件草稿", tags = {"系统插件" },  notes = "获取系统插件草稿")
@@ -98,12 +104,6 @@ public class IBIZProPluginResource {
     public ResponseEntity<IBIZProPluginDTO> getDraft(IBIZProPluginDTO dto) {
         IBIZProPlugin domain = ibizpropluginMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizpropluginMapping.toDto(ibizpropluginService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查系统插件", tags = {"系统插件" },  notes = "检查系统插件")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproplugins/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProPluginDTO ibizproplugindto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizpropluginService.checkKey(ibizpropluginMapping.toDomain(ibizproplugindto)));
     }
 
     @ApiOperation(value = "保存系统插件", tags = {"系统插件" },  notes = "保存系统插件")

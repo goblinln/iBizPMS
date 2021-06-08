@@ -66,17 +66,6 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BugStatsService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/bugstats/${_context.bugstats}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/bugstats`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BugStatsService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/bugstats/${_context.bugstats}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof BugStatsService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/bugstats/${_context.bugstats}`);
     }
     /**
      * Get
@@ -142,6 +108,29 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/bugstats/getdraft`, _data);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugStatsService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/bugstats/${_context.bugstats}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugStatsService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/bugstats/${_context.bugstats}`, _data);
     }
     /**
      * FetchBugCountInResolution
@@ -241,5 +230,16 @@ export class BugStatsBaseService extends EntityBaseService<IBugStats> {
      */
     async FetchProjectBugStatusCount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/bugstats/fetchprojectbugstatuscount`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugStatsService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/bugstats/${_context.bugstats}/select`);
     }
 }

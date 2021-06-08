@@ -112,17 +112,6 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzProjectMemberService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -139,29 +128,6 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzprojectmembers`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzProjectMemberService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzprojectmembers/${_context.ibzprojectmember}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzProjectMemberService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzprojectmembers/${_context.ibzprojectmember}`);
     }
     /**
      * Get
@@ -190,6 +156,29 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzprojectmembers/${_context.ibzprojectmember}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzprojectmembers/${_context.ibzprojectmember}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -199,5 +188,16 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzprojectmembers/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzprojectmembers/${_context.ibzprojectmember}/select`);
     }
 }

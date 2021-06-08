@@ -66,17 +66,6 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof GroupService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/groups/${_context.group}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/groups`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof GroupService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/groups/${_context.group}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof GroupService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/groups/${_context.group}`);
     }
     /**
      * Get
@@ -144,6 +110,29 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof GroupService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/groups/${_context.group}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof GroupService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/groups/${_context.group}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -153,5 +142,16 @@ export class GroupBaseService extends EntityBaseService<IGroup> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/groups/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof GroupService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/groups/${_context.group}/select`);
     }
 }

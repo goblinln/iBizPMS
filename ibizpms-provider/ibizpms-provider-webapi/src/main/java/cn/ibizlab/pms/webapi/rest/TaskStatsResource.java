@@ -67,6 +67,32 @@ public class TaskStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'READ')")
+    @ApiOperation(value = "获取任务统计", tags = {"任务统计" },  notes = "获取任务统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/{taskstats_id}")
+    public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
+        TaskStats domain = taskstatsService.get(taskstats_id);
+        TaskStatsDTO dto = taskstatsMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskstatsRuntime.getOPPrivs(taskstats_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'DELETE')")
+    @ApiOperation(value = "删除任务统计", tags = {"任务统计" },  notes = "删除任务统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/{taskstats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("taskstats_id") Long taskstats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'DELETE')")
+    @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        taskstatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'UPDATE')")
     @ApiOperation(value = "更新任务统计", tags = {"任务统计" },  notes = "更新任务统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskstats/{taskstats_id}")
@@ -84,30 +110,11 @@ public class TaskStatsResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'DELETE')")
-    @ApiOperation(value = "删除任务统计", tags = {"任务统计" },  notes = "删除任务统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/{taskstats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("taskstats_id") Long taskstats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(taskstatsService.remove(taskstats_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'DELETE')")
-    @ApiOperation(value = "批量删除任务统计", tags = {"任务统计" },  notes = "批量删除任务统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/taskstats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        taskstatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_TASKSTATS', #taskstats_id, 'READ')")
-    @ApiOperation(value = "获取任务统计", tags = {"任务统计" },  notes = "获取任务统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/taskstats/{taskstats_id}")
-    public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
-        TaskStats domain = taskstatsService.get(taskstats_id);
-        TaskStatsDTO dto = taskstatsMapping.toDto(domain);
-        Map<String, Integer> opprivs = taskstatsRuntime.getOPPrivs(taskstats_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'CREATE')")
+    @ApiOperation(value = "检查任务统计", tags = {"任务统计" },  notes = "检查任务统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody TaskStatsDTO taskstatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(taskstatsService.checkKey(taskstatsMapping.toDomain(taskstatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_TASKSTATS', 'CREATE')")
@@ -116,13 +123,6 @@ public class TaskStatsResource {
     public ResponseEntity<TaskStatsDTO> getDraft(TaskStatsDTO dto) {
         TaskStats domain = taskstatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(taskstatsMapping.toDto(taskstatsService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_TASKSTATS', 'CREATE')")
-    @ApiOperation(value = "检查任务统计", tags = {"任务统计" },  notes = "检查任务统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/taskstats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody TaskStatsDTO taskstatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(taskstatsService.checkKey(taskstatsMapping.toDomain(taskstatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_TASKSTATS', 'DENY')")

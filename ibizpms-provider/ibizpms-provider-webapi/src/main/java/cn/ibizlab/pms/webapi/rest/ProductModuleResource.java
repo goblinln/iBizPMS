@@ -67,22 +67,16 @@ public class ProductModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_PRODUCTMODULE', #productmodule_id, 'UPDATE')")
-    @ApiOperation(value = "更新需求模块", tags = {"需求模块" },  notes = "更新需求模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productmodules/{productmodule_id}")
-    @Transactional
-    public ResponseEntity<ProductModuleDTO> update(@PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
-		ProductModule domain  = productmoduleMapping.toDomain(productmoduledto);
-        domain.setId(productmodule_id);
-		productmoduleService.update(domain );
-        if(!productmoduleRuntime.test(productmodule_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+    @PreAuthorize("test('IBZ_PRODUCTMODULE', #productmodule_id, 'READ')")
+    @ApiOperation(value = "获取需求模块", tags = {"需求模块" },  notes = "获取需求模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> get(@PathVariable("productmodule_id") Long productmodule_id) {
+        ProductModule domain = productmoduleService.get(productmodule_id);
+        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
         Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_PRODUCTMODULE', #productmodule_id, 'DELETE')")
     @ApiOperation(value = "删除需求模块", tags = {"需求模块" },  notes = "删除需求模块")
@@ -99,16 +93,22 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_PRODUCTMODULE', #productmodule_id, 'READ')")
-    @ApiOperation(value = "获取需求模块", tags = {"需求模块" },  notes = "获取需求模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> get(@PathVariable("productmodule_id") Long productmodule_id) {
-        ProductModule domain = productmoduleService.get(productmodule_id);
-        ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+    @PreAuthorize("test('IBZ_PRODUCTMODULE', #productmodule_id, 'UPDATE')")
+    @ApiOperation(value = "更新需求模块", tags = {"需求模块" },  notes = "更新需求模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productmodules/{productmodule_id}")
+    @Transactional
+    public ResponseEntity<ProductModuleDTO> update(@PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
+		ProductModule domain  = productmoduleMapping.toDomain(productmoduledto);
+        domain.setId(productmodule_id);
+		productmoduleService.update(domain );
+        if(!productmoduleRuntime.test(productmodule_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ProductModuleDTO dto = productmoduleMapping.toDto(domain);
         Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs(productmodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
 
     @PreAuthorize("quickTest('IBZ_PRODUCTMODULE', 'CREATE')")
     @ApiOperation(value = "检查需求模块", tags = {"需求模块" },  notes = "检查需求模块")
@@ -249,20 +249,16 @@ public class ProductModuleResource {
     }
 
 
-    @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'UPDATE', #productmodule_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新需求模块", tags = {"需求模块" },  notes = "根据产品更新需求模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
-        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
-        domain.setRoot(product_id);
-        domain.setId(productmodule_id);
-		productmoduleService.update(domain);
+    @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'READ', #productmodule_id, 'READ')")
+    @ApiOperation(value = "根据产品获取需求模块", tags = {"需求模块" },  notes = "根据产品获取需求模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
+        ProductModule domain = productmoduleService.get(productmodule_id);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
         Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'DELETE', #productmodule_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除需求模块", tags = {"需求模块" },  notes = "根据产品删除需求模块")
@@ -279,16 +275,20 @@ public class ProductModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'READ', #productmodule_id, 'READ')")
-    @ApiOperation(value = "根据产品获取需求模块", tags = {"需求模块" },  notes = "根据产品获取需求模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productmodules/{productmodule_id}")
-    public ResponseEntity<ProductModuleDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id) {
-        ProductModule domain = productmoduleService.get(productmodule_id);
+    @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'UPDATE', #productmodule_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新需求模块", tags = {"需求模块" },  notes = "根据产品更新需求模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productmodules/{productmodule_id}")
+    public ResponseEntity<ProductModuleDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productmodule_id") Long productmodule_id, @RequestBody ProductModuleDTO productmoduledto) {
+        ProductModule domain = productmoduleMapping.toDomain(productmoduledto);
+        domain.setRoot(product_id);
+        domain.setId(productmodule_id);
+		productmoduleService.update(domain);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
         Map<String, Integer> opprivs = productmoduleRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
+
 
     @PreAuthorize("test('IBZ_PRODUCTMODULE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据产品检查需求模块", tags = {"需求模块" },  notes = "根据产品检查需求模块")

@@ -66,17 +66,6 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysUserRoleService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/sysuserroles/${_context.sysuserrole}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/sysuserroles`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysUserRoleService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/sysuserroles/${_context.sysuserrole}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SysUserRoleService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/sysuserroles/${_context.sysuserrole}`);
     }
     /**
      * Get
@@ -144,6 +110,29 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysUserRoleService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/sysuserroles/${_context.sysuserrole}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysUserRoleService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/sysuserroles/${_context.sysuserrole}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -153,5 +142,16 @@ export class SysUserRoleBaseService extends EntityBaseService<ISysUserRole> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/sysuserroles/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SysUserRoleService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/sysuserroles/${_context.sysuserrole}/select`);
     }
 }

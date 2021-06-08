@@ -31,6 +31,22 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/CheckKey.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -46,40 +62,6 @@
       "id" : "USERCONTACT__DEACTION__CREATE"
     },
     "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "USERCONTACT__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "USERCONTACT__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -113,21 +95,23 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CheckKey",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/CheckKey.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "USERCONTACT__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -138,6 +122,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERCONTACT__DEACTION__UPDATE"
     },
     "builtinMethod" : false
   } ],
@@ -285,15 +285,19 @@
     "stringLength" : 30
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Select",
-    "methodType" : "SELECT",
+    "codeName" : "CheckKey",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/CheckKey.json"
+    },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Select"
+      "id" : "CheckKey"
     },
     "builtinMethod" : false
   }, {
@@ -312,40 +316,6 @@
       "id" : "USERCONTACT__DEACTION__CREATE"
     },
     "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "USERCONTACT__DEACTION__UPDATE"
-    },
-    "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "USERCONTACT__DEACTION__REMOVE"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
@@ -379,21 +349,23 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "CheckKey",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/CheckKey.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "CheckKey"
+      "id" : "USERCONTACT__DEACTION__REMOVE"
     },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
@@ -404,6 +376,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "USERCONTACT__DEACTION__UPDATE"
     },
     "builtinMethod" : false
   }, {
@@ -487,24 +475,19 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FilterUpdate",
+    "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERUPDATE",
+    "name" : "FILTERCREATE",
     "builtinMethod" : true
   }, {
-    "codeName" : "FilterSearch",
+    "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERSEARCH",
+    "name" : "FILTERFETCH",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
-    "builtinMethod" : true
-  }, {
-    "codeName" : "FilterCreate",
-    "methodType" : "FILTERACTION",
-    "name" : "FILTERCREATE",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
@@ -517,10 +500,27 @@
     "name" : "FILTERREMOVE",
     "builtinMethod" : true
   }, {
-    "codeName" : "FilterFetch",
+    "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERFETCH",
+    "name" : "FILTERSEARCH",
     "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "Select",
+    "methodType" : "SELECT",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Select"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

@@ -787,8 +787,7 @@ export class ExpBarControlBase extends MainControlBase {
                 </div>
             </div>,
             <div slot={this.sideBarlayout == "LEFT" ? "right" : "bottom"}>
-                {this.selection && this.selection.view ?
-                    this.renderNavView() : null}
+                {this.renderNavView()}
             </div>
         ];
     }

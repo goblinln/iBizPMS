@@ -67,6 +67,32 @@ public class TestSuiteResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_TESTSUITE', #testsuite_id, 'READ')")
+    @ApiOperation(value = "获取测试套件", tags = {"测试套件" },  notes = "获取测试套件")
+	@RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}")
+    public ResponseEntity<TestSuiteDTO> get(@PathVariable("testsuite_id") Long testsuite_id) {
+        TestSuite domain = testsuiteService.get(testsuite_id);
+        TestSuiteDTO dto = testsuiteMapping.toDto(domain);
+        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(testsuite_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TESTSUITE', #testsuite_id, 'DELETE')")
+    @ApiOperation(value = "删除测试套件", tags = {"测试套件" },  notes = "删除测试套件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/{testsuite_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("testsuite_id") Long testsuite_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DELETE')")
+    @ApiOperation(value = "批量删除测试套件", tags = {"测试套件" },  notes = "批量删除测试套件")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        testsuiteService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
     @PreAuthorize("test('ZT_TESTSUITE', #testsuite_id, 'UPDATE')")
     @ApiOperation(value = "更新测试套件", tags = {"测试套件" },  notes = "更新测试套件")
@@ -85,30 +111,11 @@ public class TestSuiteResource {
     }
 
 
-    @PreAuthorize("test('ZT_TESTSUITE', #testsuite_id, 'DELETE')")
-    @ApiOperation(value = "删除测试套件", tags = {"测试套件" },  notes = "删除测试套件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/{testsuite_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("testsuite_id") Long testsuite_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(testsuiteService.remove(testsuite_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_TESTSUITE', 'DELETE')")
-    @ApiOperation(value = "批量删除测试套件", tags = {"测试套件" },  notes = "批量删除测试套件")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testsuites/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        testsuiteService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_TESTSUITE', #testsuite_id, 'READ')")
-    @ApiOperation(value = "获取测试套件", tags = {"测试套件" },  notes = "获取测试套件")
-	@RequestMapping(method = RequestMethod.GET, value = "/testsuites/{testsuite_id}")
-    public ResponseEntity<TestSuiteDTO> get(@PathVariable("testsuite_id") Long testsuite_id) {
-        TestSuite domain = testsuiteService.get(testsuite_id);
-        TestSuiteDTO dto = testsuiteMapping.toDto(domain);
-        Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs(testsuite_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_TESTSUITE', 'CREATE')")
+    @ApiOperation(value = "检查测试套件", tags = {"测试套件" },  notes = "检查测试套件")
+	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody TestSuiteDTO testsuitedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @PreAuthorize("quickTest('ZT_TESTSUITE', 'CREATE')")
@@ -117,13 +124,6 @@ public class TestSuiteResource {
     public ResponseEntity<TestSuiteDTO> getDraft(TestSuiteDTO dto) {
         TestSuite domain = testsuiteMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_TESTSUITE', 'CREATE')")
-    @ApiOperation(value = "检查测试套件", tags = {"测试套件" },  notes = "检查测试套件")
-	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody TestSuiteDTO testsuitedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")
@@ -228,21 +228,16 @@ public class TestSuiteResource {
     }
 
 
-    @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'UPDATE', #testsuite_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新测试套件", tags = {"测试套件" },  notes = "根据产品更新测试套件")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/{testsuite_id}")
-    public ResponseEntity<TestSuiteDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
-        TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
-        domain.setProduct(product_id);
-        domain.setId(testsuite_id);
-		testsuiteService.update(domain);
+    @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'READ', #testsuite_id, 'READ')")
+    @ApiOperation(value = "根据产品获取测试套件", tags = {"测试套件" },  notes = "根据产品获取测试套件")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}")
+    public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
+        TestSuite domain = testsuiteService.get(testsuite_id);
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
         Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'DELETE', #testsuite_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除测试套件", tags = {"测试套件" },  notes = "根据产品删除测试套件")
@@ -259,15 +254,27 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'READ', #testsuite_id, 'READ')")
-    @ApiOperation(value = "根据产品获取测试套件", tags = {"测试套件" },  notes = "根据产品获取测试套件")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}")
-    public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {
-        TestSuite domain = testsuiteService.get(testsuite_id);
+    @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
+    @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'UPDATE', #testsuite_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新测试套件", tags = {"测试套件" },  notes = "根据产品更新测试套件")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/{testsuite_id}")
+    public ResponseEntity<TestSuiteDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
+        TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
+        domain.setProduct(product_id);
+        domain.setId(testsuite_id);
+		testsuiteService.update(domain);
         TestSuiteDTO dto = testsuiteMapping.toDto(domain);
         Map<String, Integer> opprivs = testsuiteRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品检查测试套件", tags = {"测试套件" },  notes = "根据产品检查测试套件")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
@@ -277,13 +284,6 @@ public class TestSuiteResource {
         TestSuite domain = testsuiteMapping.toDomain(dto);
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(testsuiteMapping.toDto(testsuiteService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('ZT_TESTSUITE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品检查测试套件", tags = {"测试套件" },  notes = "根据产品检查测试套件")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestSuiteDTO testsuitedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
     @PreAuthorize("quickTest('ZT_TESTSUITE', 'DENY')")

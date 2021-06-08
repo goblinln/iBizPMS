@@ -67,6 +67,32 @@ public class DeptResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_DEPT', #dept_id, 'READ')")
+    @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
+	@RequestMapping(method = RequestMethod.GET, value = "/depts/{dept_id}")
+    public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
+        Dept domain = deptService.get(dept_id);
+        DeptDTO dto = deptMapping.toDto(domain);
+        Map<String, Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_DEPT', #dept_id, 'DELETE')")
+    @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/{dept_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("dept_id") Long dept_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(deptService.remove(dept_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_DEPT', 'DELETE')")
+    @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        deptService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_DEPT', #dept_id, 'UPDATE')")
     @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
 	@RequestMapping(method = RequestMethod.PUT, value = "/depts/{dept_id}")
@@ -84,30 +110,11 @@ public class DeptResource {
     }
 
 
-    @PreAuthorize("test('ZT_DEPT', #dept_id, 'DELETE')")
-    @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/{dept_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("dept_id") Long dept_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(deptService.remove(dept_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_DEPT', 'DELETE')")
-    @ApiOperation(value = "批量删除部门", tags = {"部门" },  notes = "批量删除部门")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/depts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        deptService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_DEPT', #dept_id, 'READ')")
-    @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
-	@RequestMapping(method = RequestMethod.GET, value = "/depts/{dept_id}")
-    public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
-        Dept domain = deptService.get(dept_id);
-        DeptDTO dto = deptMapping.toDto(domain);
-        Map<String, Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_DEPT', 'CREATE')")
+    @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
+	@RequestMapping(method = RequestMethod.POST, value = "/depts/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody DeptDTO deptdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(deptService.checkKey(deptMapping.toDomain(deptdto)));
     }
 
     @PreAuthorize("quickTest('ZT_DEPT', 'CREATE')")
@@ -116,13 +123,6 @@ public class DeptResource {
     public ResponseEntity<DeptDTO> getDraft(DeptDTO dto) {
         Dept domain = deptMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(deptMapping.toDto(deptService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_DEPT', 'CREATE')")
-    @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
-	@RequestMapping(method = RequestMethod.POST, value = "/depts/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody DeptDTO deptdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(deptService.checkKey(deptMapping.toDomain(deptdto)));
     }
 
     @PreAuthorize("quickTest('ZT_DEPT', 'DENY')")

@@ -21,6 +21,7 @@ import { AppDefaultPickupViewLayout } from "../../components/layout/app-default-
 import { AppDefaultTabExpViewLayout } from "../../components/layout/app-default-layout/app-default-tabexpview-layout/app-default-tabexpview-layout";
 import { AppDefaultTabSearchViewLayout } from "../../components/layout/app-default-layout/app-default-tabsearchview-layout/app-default-tabsearchview-layout";
 import { AppDefaultMPickupViewLayout } from "../../components/layout/app-default-layout/app-default-mpickupview-layout/app-default-mpickupview-layout";
+import { AppDefaultMPickupView2Layout } from "../../components/layout/app-default-layout/app-default-mpickupview2-layout/app-default-mpickupview2-layout";
 import { AppDefaultGanttViewLayout } from "../../components/layout/app-default-layout/app-default-ganttview-layout/app-default-ganttview-layout";
 import { AppDefaultTreeGridExViewLayout } from "../../components/layout/app-default-layout/app-default-treegridexview-layout/app-default-treegridexview-layout";
 import { AppDefaultPickupTreeViewLayout } from "../../components/layout/app-default-layout/app-default-pickuptreeview-layout/app-default-pickuptreeview-layout";
@@ -125,6 +126,7 @@ export class AppLayoutService {
         this.layoutMap.set("DETABEXPVIEW-DEFAULT", AppDefaultTabExpViewLayout);
         this.layoutMap.set("DETABSEARCHVIEW-DEFAULT", AppDefaultTabSearchViewLayout);
         this.layoutMap.set("DEMPICKUPVIEW-DEFAULT", AppDefaultMPickupViewLayout);
+        this.layoutMap.set("DEMPICKUPVIEW2-DEFAULT", AppDefaultMPickupView2Layout);
         this.layoutMap.set("DEGANTTVIEW-DEFAULT", AppDefaultGanttViewLayout);
         this.layoutMap.set("DETREEGRIDEXVIEW-DEFAULT", AppDefaultTreeGridExViewLayout);
         this.layoutMap.set("DEPICKUPTREEVIEW-DEFAULT", AppDefaultPickupTreeViewLayout);

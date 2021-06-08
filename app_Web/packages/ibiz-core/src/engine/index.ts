@@ -24,6 +24,7 @@ export { ListView9Engine } from './list-view9-engine';
 export { MapViewEngine } from './map-view-engine';
 export { MapView9Engine } from './map-view9-engine';
 export { MPickupViewEngine } from './mpickup-view-engine';
+export { MPickupView2Engine } from './mpickup-view2-engine';
 export { OptionViewEngine } from './option-view-engine';
 export { PickupDataViewEngine } from './pickup-data-view-engine';
 export { PickupGridViewEngine } from './pickup-grid-view-engine'

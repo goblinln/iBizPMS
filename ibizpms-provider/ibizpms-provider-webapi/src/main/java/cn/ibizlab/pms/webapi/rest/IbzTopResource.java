@@ -67,6 +67,32 @@ public class IbzTopResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_TOP', #ibztop_id, 'READ')")
+    @ApiOperation(value = "获取置顶", tags = {"置顶" },  notes = "获取置顶")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibztops/{ibztop_id}")
+    public ResponseEntity<IbzTopDTO> get(@PathVariable("ibztop_id") String ibztop_id) {
+        IbzTop domain = ibztopService.get(ibztop_id);
+        IbzTopDTO dto = ibztopMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibztopRuntime.getOPPrivs(ibztop_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_TOP', #ibztop_id, 'DELETE')")
+    @ApiOperation(value = "删除置顶", tags = {"置顶" },  notes = "删除置顶")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/{ibztop_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibztop_id") String ibztop_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_TOP', 'DELETE')")
+    @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibztopService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibztop" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_TOP', #ibztop_id, 'UPDATE')")
     @ApiOperation(value = "更新置顶", tags = {"置顶" },  notes = "更新置顶")
@@ -85,30 +111,11 @@ public class IbzTopResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TOP', #ibztop_id, 'DELETE')")
-    @ApiOperation(value = "删除置顶", tags = {"置顶" },  notes = "删除置顶")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/{ibztop_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibztop_id") String ibztop_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibztopService.remove(ibztop_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_TOP', 'DELETE')")
-    @ApiOperation(value = "批量删除置顶", tags = {"置顶" },  notes = "批量删除置顶")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztops/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibztopService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_TOP', #ibztop_id, 'READ')")
-    @ApiOperation(value = "获取置顶", tags = {"置顶" },  notes = "获取置顶")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibztops/{ibztop_id}")
-    public ResponseEntity<IbzTopDTO> get(@PathVariable("ibztop_id") String ibztop_id) {
-        IbzTop domain = ibztopService.get(ibztop_id);
-        IbzTopDTO dto = ibztopMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibztopRuntime.getOPPrivs(ibztop_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_TOP', 'CREATE')")
+    @ApiOperation(value = "检查置顶", tags = {"置顶" },  notes = "检查置顶")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzTopDTO ibztopdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibztopService.checkKey(ibztopMapping.toDomain(ibztopdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_TOP', 'CREATE')")
@@ -117,13 +124,6 @@ public class IbzTopResource {
     public ResponseEntity<IbzTopDTO> getDraft(IbzTopDTO dto) {
         IbzTop domain = ibztopMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibztopMapping.toDto(ibztopService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_TOP', 'CREATE')")
-    @ApiOperation(value = "检查置顶", tags = {"置顶" },  notes = "检查置顶")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibztops/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzTopDTO ibztopdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibztopService.checkKey(ibztopMapping.toDomain(ibztopdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_TOP', 'DENY')")

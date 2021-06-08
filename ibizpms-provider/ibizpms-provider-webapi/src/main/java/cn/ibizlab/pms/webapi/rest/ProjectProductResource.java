@@ -67,21 +67,16 @@ public class ProjectProductResource {
     }
 
 
-    @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
-    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'UPDATE')")
-    @ApiOperation(value = "根据产品更新项目产品", tags = {"项目产品" },  notes = "根据产品更新项目产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
-    public ResponseEntity<ProjectProductDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
-        ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
-        domain.setProduct(product_id);
-        domain.setId(projectproduct_id);
-		projectproductService.update(domain);
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', #projectproduct_id, 'READ')")
+    @ApiOperation(value = "根据产品获取项目产品", tags = {"项目产品" },  notes = "根据产品获取项目产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
+    public ResponseEntity<ProjectProductDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
+        ProjectProduct domain = projectproductService.get(projectproduct_id);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
-        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DELETE')")
     @ApiOperation(value = "根据产品删除项目产品", tags = {"项目产品" },  notes = "根据产品删除项目产品")
@@ -98,15 +93,27 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PRODUCT', #product_id, 'READ', #projectproduct_id, 'READ')")
-    @ApiOperation(value = "根据产品获取项目产品", tags = {"项目产品" },  notes = "根据产品获取项目产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
-    public ResponseEntity<ProjectProductDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id) {
-        ProjectProduct domain = projectproductService.get(projectproduct_id);
+    @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'UPDATE')")
+    @ApiOperation(value = "根据产品更新项目产品", tags = {"项目产品" },  notes = "根据产品更新项目产品")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/projectproducts/{projectproduct_id}")
+    public ResponseEntity<ProjectProductDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
+        ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
+        domain.setProduct(product_id);
+        domain.setId(projectproduct_id);
+		projectproductService.update(domain);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
-        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
+    @ApiOperation(value = "根据产品检查项目产品", tags = {"项目产品" },  notes = "根据产品检查项目产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(projectproductService.checkKey(projectproductMapping.toDomain(projectproductdto)));
     }
 
     @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
@@ -116,13 +123,6 @@ public class ProjectProductResource {
         ProjectProduct domain = projectproductMapping.toDomain(dto);
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
-    @ApiOperation(value = "根据产品检查项目产品", tags = {"项目产品" },  notes = "根据产品检查项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/projectproducts/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody ProjectProductDTO projectproductdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(projectproductService.checkKey(projectproductMapping.toDomain(projectproductdto)));
     }
 
     @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DENY')")
@@ -177,21 +177,16 @@ public class ProjectProductResource {
     }
 
 
-    @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
-    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'UPDATE')")
-    @ApiOperation(value = "根据项目更新项目产品", tags = {"项目产品" },  notes = "根据项目更新项目产品")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
-    public ResponseEntity<ProjectProductDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
-        ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
-        domain.setProject(project_id);
-        domain.setId(projectproduct_id);
-		projectproductService.update(domain);
+    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', #projectproduct_id, 'READ')")
+    @ApiOperation(value = "根据项目获取项目产品", tags = {"项目产品" },  notes = "根据项目获取项目产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
+    public ResponseEntity<ProjectProductDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
+        ProjectProduct domain = projectproductService.get(projectproduct_id);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
-        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DELETE')")
     @ApiOperation(value = "根据项目删除项目产品", tags = {"项目产品" },  notes = "根据项目删除项目产品")
@@ -208,15 +203,27 @@ public class ProjectProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PROJECTPRODUCT', 'ZT_PROJECT', #project_id, 'READ', #projectproduct_id, 'READ')")
-    @ApiOperation(value = "根据项目获取项目产品", tags = {"项目产品" },  notes = "根据项目获取项目产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
-    public ResponseEntity<ProjectProductDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id) {
-        ProjectProduct domain = projectproductService.get(projectproduct_id);
+    @VersionCheck(entity = "projectproduct" , versionfield = "updatedate")
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'UPDATE')")
+    @ApiOperation(value = "根据项目更新项目产品", tags = {"项目产品" },  notes = "根据项目更新项目产品")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectproducts/{projectproduct_id}")
+    public ResponseEntity<ProjectProductDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("projectproduct_id") String projectproduct_id, @RequestBody ProjectProductDTO projectproductdto) {
+        ProjectProduct domain = projectproductMapping.toDomain(projectproductdto);
+        domain.setProject(project_id);
+        domain.setId(projectproduct_id);
+		projectproductService.update(domain);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
-        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        Map<String, Integer> opprivs = projectproductRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
+    @ApiOperation(value = "根据项目检查项目产品", tags = {"项目产品" },  notes = "根据项目检查项目产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(projectproductService.checkKey(projectproductMapping.toDomain(projectproductdto)));
     }
 
     @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
@@ -226,13 +233,6 @@ public class ProjectProductResource {
         ProjectProduct domain = projectproductMapping.toDomain(dto);
         domain.setProject(project_id);
         return ResponseEntity.status(HttpStatus.OK).body(projectproductMapping.toDto(projectproductService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'CREATE')")
-    @ApiOperation(value = "根据项目检查项目产品", tags = {"项目产品" },  notes = "根据项目检查项目产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectproducts/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectProductDTO projectproductdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(projectproductService.checkKey(projectproductMapping.toDomain(projectproductdto)));
     }
 
     @PreAuthorize("quickTest('ZT_PROJECTPRODUCT', 'DENY')")

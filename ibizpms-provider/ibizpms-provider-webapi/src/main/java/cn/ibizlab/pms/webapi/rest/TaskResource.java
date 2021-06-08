@@ -86,6 +86,32 @@ public class TaskResource {
         taskService.createBatch(taskMapping.toDomain(taskdtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
+    @PreAuthorize("test('ZT_TASK', #task_id, 'READ')")
+    @ApiOperation(value = "获取任务", tags = {"任务" },  notes = "获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> get(@PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
+        TaskDTO dto = taskMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskRuntime.getOPPrivs(task_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', #task_id, 'DELETE')")
+    @ApiOperation(value = "删除任务", tags = {"任务" },  notes = "删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("task_id") Long task_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_TASK', 'DELETE')")
+    @ApiOperation(value = "批量删除任务", tags = {"任务" },  notes = "批量删除任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        taskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "task" , versionfield = "lastediteddate")
     @PreAuthorize("test('ZT_TASK', #task_id, 'UPDATE')")
     @ApiOperation(value = "更新任务", tags = {"任务" },  notes = "更新任务")
@@ -103,40 +129,6 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("test('ZT_TASK', #task_id, 'DELETE')")
-    @ApiOperation(value = "删除任务", tags = {"任务" },  notes = "删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/{task_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("task_id") Long task_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(taskService.remove(task_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_TASK', 'DELETE')")
-    @ApiOperation(value = "批量删除任务", tags = {"任务" },  notes = "批量删除任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/tasks/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        taskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_TASK', #task_id, 'READ')")
-    @ApiOperation(value = "获取任务", tags = {"任务" },  notes = "获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> get(@PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
-        TaskDTO dto = taskMapping.toDto(domain);
-        Map<String, Integer> opprivs = taskRuntime.getOPPrivs(task_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_TASK', 'CREATE')")
-    @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraft(TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_TASK', #task_id, 'ACTIVATE')")
     @ApiOperation(value = "激活", tags = {"任务" },  notes = "激活")
@@ -340,6 +332,14 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_TASK', 'CREATE')")
+    @ApiOperation(value = "获取任务草稿", tags = {"任务" },  notes = "获取任务草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraft(TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('ZT_TASK', #task_id, 'READ')")
     @ApiOperation(value = "获取下一个团队成员(完成)", tags = {"任务" },  notes = "获取下一个团队成员(完成)")
@@ -1203,21 +1203,16 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @VersionCheck(entity = "task" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'UPDATE')")
-    @ApiOperation(value = "根据项目更新任务", tags = {"任务" },  notes = "根据项目更新任务")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
-        Task domain = taskMapping.toDomain(taskdto);
-        domain.setProject(project_id);
-        domain.setId(task_id);
-		taskService.update(domain);
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")
+    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
+        Task domain = taskService.get(task_id);
         TaskDTO dto = taskMapping.toDto(domain);
         Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除任务", tags = {"任务" },  notes = "根据项目删除任务")
@@ -1234,25 +1229,21 @@ public class TaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")
-    @ApiOperation(value = "根据项目获取任务", tags = {"任务" },  notes = "根据项目获取任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}")
-    public ResponseEntity<TaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id) {
-        Task domain = taskService.get(task_id);
+    @VersionCheck(entity = "task" , versionfield = "lastediteddate")
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'UPDATE')")
+    @ApiOperation(value = "根据项目更新任务", tags = {"任务" },  notes = "根据项目更新任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}")
+    public ResponseEntity<TaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+		taskService.update(domain);
         TaskDTO dto = taskMapping.toDto(domain);
         Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/getdraft")
-    public ResponseEntity<TaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TaskDTO dto) {
-        Task domain = taskMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #task_id, 'ACTIVATE')")
     @ApiOperation(value = "根据项目激活", tags = {"任务" },  notes = "根据项目激活")
@@ -1455,6 +1446,15 @@ public class TaskResource {
         Map<String, Integer> opprivs = taskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         taskdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目获取任务草稿", tags = {"任务" },  notes = "根据项目获取任务草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/getdraft")
+    public ResponseEntity<TaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TaskDTO dto) {
+        Task domain = taskMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_TASK', 'ZT_PROJECT', #project_id, 'READ', #task_id, 'READ')")

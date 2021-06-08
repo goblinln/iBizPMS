@@ -82,6 +82,46 @@ export class AppTreeExpBarBase extends TreeExpBarControlBase {
      * @memberof AppTreeExpBarBase
      */
     public renderNavView() {
+        if (this.pickupViewPanelInstance) {
+            return this.renderPickupViewPanel();
+        } else {
+            return this.renderDefaultNavView();
+        }
+    }
+
+    /**
+     * 绘制选择视图面板
+     * 
+     * @memberof AppTreeExpBarBase
+     */
+    public renderPickupViewPanel() {
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.pickupViewPanelInstance);
+        if (!this.cacheUUID) {
+            this.cacheUUID = Util.createUUID();
+        }
+        Object.assign(targetCtrlParam.dynamicProps, {
+            selectedData: this.dynamicProps?.selectedData,
+            viewdata: JSON.stringify(this.selection.context),
+            viewparam: JSON.stringify(this.selection.viewparam)
+        })
+        Object.assign(targetCtrlParam.staticProps,{
+            isSingleSelect: this.staticProps?.isSingleSelect,
+            isShowButton: this.staticProps?.isShowButton,
+        })
+        return this.$createElement(targetCtrlName, {
+            key: this.cacheUUID,
+            props: targetCtrlParam,
+            ref: this.pickupViewPanelInstance?.name,
+            on: targetCtrlEvent 
+        });
+    }
+
+    /**
+     * 绘制默认导航视图
+     * 
+     * @memberof AppTreeExpBarBase
+     */
+    public renderDefaultNavView() {
         if(this.selection.view.viewname){
             // 如果不是在拖拽状态获取新的UUID,如果在拖拽状态则使用拖拽前的UUID，防止拖拽刷新
             if (!this.dragstate) {

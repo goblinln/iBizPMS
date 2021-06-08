@@ -67,22 +67,16 @@ public class ModuleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_MODULE', #module_id, 'UPDATE')")
-    @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
-	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
-    @Transactional
-    public ResponseEntity<ModuleDTO> update(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
-		Module domain  = moduleMapping.toDomain(moduledto);
-        domain.setId(module_id);
-		moduleService.update(domain );
-        if(!moduleRuntime.test(module_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ModuleDTO dto = moduleMapping.toDto(domain);
+    @PreAuthorize("test('ZT_MODULE', #module_id, 'READ')")
+    @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
+	@RequestMapping(method = RequestMethod.GET, value = "/modules/{module_id}")
+    public ResponseEntity<ModuleDTO> get(@PathVariable("module_id") Long module_id) {
+        Module domain = moduleService.get(module_id);
+        ModuleDTO dto = moduleMapping.toDto(domain);
         Map<String, Integer> opprivs = moduleRuntime.getOPPrivs(module_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_MODULE', #module_id, 'DELETE')")
     @ApiOperation(value = "删除模块", tags = {"模块" },  notes = "删除模块")
@@ -99,24 +93,22 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_MODULE', #module_id, 'READ')")
-    @ApiOperation(value = "获取模块", tags = {"模块" },  notes = "获取模块")
-	@RequestMapping(method = RequestMethod.GET, value = "/modules/{module_id}")
-    public ResponseEntity<ModuleDTO> get(@PathVariable("module_id") Long module_id) {
-        Module domain = moduleService.get(module_id);
-        ModuleDTO dto = moduleMapping.toDto(domain);
+    @PreAuthorize("test('ZT_MODULE', #module_id, 'UPDATE')")
+    @ApiOperation(value = "更新模块", tags = {"模块" },  notes = "更新模块")
+	@RequestMapping(method = RequestMethod.PUT, value = "/modules/{module_id}")
+    @Transactional
+    public ResponseEntity<ModuleDTO> update(@PathVariable("module_id") Long module_id, @RequestBody ModuleDTO moduledto) {
+		Module domain  = moduleMapping.toDomain(moduledto);
+        domain.setId(module_id);
+		moduleService.update(domain );
+        if(!moduleRuntime.test(module_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ModuleDTO dto = moduleMapping.toDto(domain);
         Map<String, Integer> opprivs = moduleRuntime.getOPPrivs(module_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_MODULE', 'CREATE')")
-    @ApiOperation(value = "获取模块草稿", tags = {"模块" },  notes = "获取模块草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/modules/getdraft")
-    public ResponseEntity<ModuleDTO> getDraft(ModuleDTO dto) {
-        Module domain = moduleMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(moduleService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_MODULE', 'CREATE')")
     @ApiOperation(value = "检查模块", tags = {"模块" },  notes = "检查模块")
@@ -138,6 +130,14 @@ public class ModuleResource {
         return ResponseEntity.status(HttpStatus.OK).body(moduledto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_MODULE', 'CREATE')")
+    @ApiOperation(value = "获取模块草稿", tags = {"模块" },  notes = "获取模块草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/modules/getdraft")
+    public ResponseEntity<ModuleDTO> getDraft(ModuleDTO dto) {
+        Module domain = moduleMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(moduleMapping.toDto(moduleService.getDraft(domain)));
+    }
 
     @PreAuthorize("quickTest('ZT_MODULE', 'DENY')")
     @ApiOperation(value = "保存模块", tags = {"模块" },  notes = "保存模块")

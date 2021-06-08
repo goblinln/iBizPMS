@@ -67,6 +67,32 @@ public class CompanyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_COMPANY', #company_id, 'READ')")
+    @ApiOperation(value = "获取公司", tags = {"公司" },  notes = "获取公司")
+	@RequestMapping(method = RequestMethod.GET, value = "/companies/{company_id}")
+    public ResponseEntity<CompanyDTO> get(@PathVariable("company_id") Long company_id) {
+        Company domain = companyService.get(company_id);
+        CompanyDTO dto = companyMapping.toDto(domain);
+        Map<String, Integer> opprivs = companyRuntime.getOPPrivs(company_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_COMPANY', #company_id, 'DELETE')")
+    @ApiOperation(value = "删除公司", tags = {"公司" },  notes = "删除公司")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/{company_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("company_id") Long company_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(companyService.remove(company_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_COMPANY', 'DELETE')")
+    @ApiOperation(value = "批量删除公司", tags = {"公司" },  notes = "批量删除公司")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        companyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_COMPANY', #company_id, 'UPDATE')")
     @ApiOperation(value = "更新公司", tags = {"公司" },  notes = "更新公司")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companies/{company_id}")
@@ -84,30 +110,11 @@ public class CompanyResource {
     }
 
 
-    @PreAuthorize("test('ZT_COMPANY', #company_id, 'DELETE')")
-    @ApiOperation(value = "删除公司", tags = {"公司" },  notes = "删除公司")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/{company_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("company_id") Long company_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(companyService.remove(company_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_COMPANY', 'DELETE')")
-    @ApiOperation(value = "批量删除公司", tags = {"公司" },  notes = "批量删除公司")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/companies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        companyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_COMPANY', #company_id, 'READ')")
-    @ApiOperation(value = "获取公司", tags = {"公司" },  notes = "获取公司")
-	@RequestMapping(method = RequestMethod.GET, value = "/companies/{company_id}")
-    public ResponseEntity<CompanyDTO> get(@PathVariable("company_id") Long company_id) {
-        Company domain = companyService.get(company_id);
-        CompanyDTO dto = companyMapping.toDto(domain);
-        Map<String, Integer> opprivs = companyRuntime.getOPPrivs(company_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_COMPANY', 'CREATE')")
+    @ApiOperation(value = "检查公司", tags = {"公司" },  notes = "检查公司")
+	@RequestMapping(method = RequestMethod.POST, value = "/companies/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody CompanyDTO companydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(companyService.checkKey(companyMapping.toDomain(companydto)));
     }
 
     @PreAuthorize("quickTest('ZT_COMPANY', 'CREATE')")
@@ -116,13 +123,6 @@ public class CompanyResource {
     public ResponseEntity<CompanyDTO> getDraft(CompanyDTO dto) {
         Company domain = companyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(companyMapping.toDto(companyService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_COMPANY', 'CREATE')")
-    @ApiOperation(value = "检查公司", tags = {"公司" },  notes = "检查公司")
-	@RequestMapping(method = RequestMethod.POST, value = "/companies/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody CompanyDTO companydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(companyService.checkKey(companyMapping.toDomain(companydto)));
     }
 
     @PreAuthorize("quickTest('ZT_COMPANY', 'DENY')")

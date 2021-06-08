@@ -67,6 +67,32 @@ public class IbzproProjectUserTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'READ')")
+    @ApiOperation(value = "获取项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "获取项目汇报用户任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
+    public ResponseEntity<IbzproProjectUserTaskDTO> get(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
+        IbzproProjectUserTask domain = ibzproprojectusertaskService.get(ibzproprojectusertask_id);
+        IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(ibzproprojectusertask_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'DELETE')")
+    @ApiOperation(value = "删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "删除项目汇报用户任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.remove(ibzproprojectusertask_id));
+    }
+
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'DELETE')")
+    @ApiOperation(value = "批量删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量删除项目汇报用户任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproprojectusertaskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'UPDATE')")
     @ApiOperation(value = "更新项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "更新项目汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
@@ -84,30 +110,11 @@ public class IbzproProjectUserTaskResource {
     }
 
 
-    @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'DELETE')")
-    @ApiOperation(value = "删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "删除项目汇报用户任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.remove(ibzproprojectusertask_id));
-    }
-
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'DELETE')")
-    @ApiOperation(value = "批量删除项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "批量删除项目汇报用户任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproprojectusertasks/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproprojectusertaskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBIZPRO_PROJECTUSERTASK', #ibzproprojectusertask_id, 'READ')")
-    @ApiOperation(value = "获取项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "获取项目汇报用户任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzproprojectusertasks/{ibzproprojectusertask_id}")
-    public ResponseEntity<IbzproProjectUserTaskDTO> get(@PathVariable("ibzproprojectusertask_id") Long ibzproprojectusertask_id) {
-        IbzproProjectUserTask domain = ibzproprojectusertaskService.get(ibzproprojectusertask_id);
-        IbzproProjectUserTaskDTO dto = ibzproprojectusertaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzproprojectusertaskRuntime.getOPPrivs(ibzproprojectusertask_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'CREATE')")
+    @ApiOperation(value = "检查项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "检查项目汇报用户任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.checkKey(ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto)));
     }
 
     @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'CREATE')")
@@ -116,13 +123,6 @@ public class IbzproProjectUserTaskResource {
     public ResponseEntity<IbzproProjectUserTaskDTO> getDraft(IbzproProjectUserTaskDTO dto) {
         IbzproProjectUserTask domain = ibzproprojectusertaskMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskMapping.toDto(ibzproprojectusertaskService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'CREATE')")
-    @ApiOperation(value = "检查项目汇报用户任务", tags = {"项目汇报用户任务" },  notes = "检查项目汇报用户任务")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectusertasks/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProjectUserTaskDTO ibzproprojectusertaskdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzproprojectusertaskService.checkKey(ibzproprojectusertaskMapping.toDomain(ibzproprojectusertaskdto)));
     }
 
     @PreAuthorize("quickTest('IBIZPRO_PROJECTUSERTASK', 'DENY')")

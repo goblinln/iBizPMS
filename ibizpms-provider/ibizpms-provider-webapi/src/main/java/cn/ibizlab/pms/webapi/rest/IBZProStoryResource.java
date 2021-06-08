@@ -67,6 +67,32 @@ public class IBZProStoryResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZPRO_STORY', #ibzprostory_id, 'READ')")
+    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostories/{ibzprostory_id}")
+    public ResponseEntity<IBZProStoryDTO> get(@PathVariable("ibzprostory_id") Long ibzprostory_id) {
+        IBZProStory domain = ibzprostoryService.get(ibzprostory_id);
+        IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzprostoryRuntime.getOPPrivs(ibzprostory_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZPRO_STORY', #ibzprostory_id, 'DELETE')")
+    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostories/{ibzprostory_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzprostory_id") Long ibzprostory_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryService.remove(ibzprostory_id));
+    }
+
+    @PreAuthorize("quickTest('IBZPRO_STORY', 'DELETE')")
+    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzprostoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZPRO_STORY', #ibzprostory_id, 'UPDATE')")
     @ApiOperation(value = "更新需求", tags = {"需求" },  notes = "更新需求")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzprostories/{ibzprostory_id}")
@@ -84,30 +110,11 @@ public class IBZProStoryResource {
     }
 
 
-    @PreAuthorize("test('IBZPRO_STORY', #ibzprostory_id, 'DELETE')")
-    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostories/{ibzprostory_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzprostory_id") Long ibzprostory_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryService.remove(ibzprostory_id));
-    }
-
-    @PreAuthorize("quickTest('IBZPRO_STORY', 'DELETE')")
-    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzprostories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzprostoryService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZPRO_STORY', #ibzprostory_id, 'READ')")
-    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzprostories/{ibzprostory_id}")
-    public ResponseEntity<IBZProStoryDTO> get(@PathVariable("ibzprostory_id") Long ibzprostory_id) {
-        IBZProStory domain = ibzprostoryService.get(ibzprostory_id);
-        IBZProStoryDTO dto = ibzprostoryMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzprostoryRuntime.getOPPrivs(ibzprostory_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZPRO_STORY', 'CREATE')")
+    @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostories/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBZProStoryDTO ibzprostorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzprostoryService.checkKey(ibzprostoryMapping.toDomain(ibzprostorydto)));
     }
 
     @PreAuthorize("quickTest('IBZPRO_STORY', 'CREATE')")
@@ -116,13 +123,6 @@ public class IBZProStoryResource {
     public ResponseEntity<IBZProStoryDTO> getDraft(IBZProStoryDTO dto) {
         IBZProStory domain = ibzprostoryMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzprostoryMapping.toDto(ibzprostoryService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZPRO_STORY', 'CREATE')")
-    @ApiOperation(value = "检查需求", tags = {"需求" },  notes = "检查需求")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzprostories/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBZProStoryDTO ibzprostorydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzprostoryService.checkKey(ibzprostoryMapping.toDomain(ibzprostorydto)));
     }
 
     @PreAuthorize("quickTest('IBZPRO_STORY', 'DENY')")

@@ -318,38 +318,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.condCache.get('view');
     }
     /**
-     * Start
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/start`, _data);
-        }
-    this.log.warn([`[Task]>>>[Start函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}`, _data);
-        }
-    this.log.warn([`[Task]>>>[Update函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Activate
      *
      * @param {*} [_context={}]
@@ -366,50 +334,19 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Pause
+     * AssignTo
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskService
      */
-    async Pause(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/pause`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/assignto`, _data);
         }
-    this.log.warn([`[Task]>>>[Pause函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * ConfirmStoryChange
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async ConfirmStoryChange(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/confirmstorychange`, _data);
-        }
-    this.log.warn([`[Task]>>>[ConfirmStoryChange函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchGantt
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async FetchGantt(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/fetchgantt`, _data);
-        }
-    this.log.warn([`[Task]>>>[FetchGantt函数]异常`]);
+    this.log.warn([`[Task]>>>[AssignTo函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -429,37 +366,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/fetchdefault`, _data);
-        }
-    this.log.warn([`[Task]>>>[FetchDefault函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Restart
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async Restart(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/restart`, _data);
-        }
-    this.log.warn([`[Task]>>>[Restart函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
      * Close
      *
      * @param {*} [_context={}]
@@ -476,96 +382,19 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchCurProjectTaskQuery
+     * ConfirmStoryChange
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskService
      */
-    async FetchCurProjectTaskQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/fetchcurprojecttaskquery`, _data);
-        }
-    this.log.warn([`[Task]>>>[FetchCurProjectTaskQuery函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * TaskFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async TaskFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async ConfirmStoryChange(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskfavorites`, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/confirmstorychange`, _data);
         }
-    this.log.warn([`[Task]>>>[TaskFavorites函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}`);
-        }
-    this.log.warn([`[Task]>>>[Remove函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * TaskNFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async TaskNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/tasknfavorites`, _data);
-        }
-    this.log.warn([`[Task]>>>[TaskNFavorites函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * FetchReport
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async FetchReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/tasks/fetchreport`, _data);
-        }
-    this.log.warn([`[Task]>>>[FetchReport函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.task) {
-            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}`);
-            return res;
-        }
-    this.log.warn([`[Task]>>>[Get函数]异常`]);
+    this.log.warn([`[Task]>>>[ConfirmStoryChange函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -607,19 +436,19 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * AssignTo
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof TaskService
      */
-    async AssignTo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.task) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/assignto`, _data);
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}`);
+            return res;
         }
-    this.log.warn([`[Task]>>>[AssignTo函数]异常`]);
+    this.log.warn([`[Task]>>>[Get函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -653,23 +482,176 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         _data = await appLogic.onExecute();
         return new HttpResponse(_data);
     }
-
     /**
-     * StartBatch接口方法
+     * Pause
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TaskServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
      */
-    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
+    async Pause(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/startbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/pause`, _data);
         }
-        this.log.warn([`[Task]>>>[StartBatch函数]异常`]);
-        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    this.log.warn([`[Task]>>>[Pause函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+            return this.http.delete(`/projects/${_context.project}/tasks/${_context.task}`);
+        }
+    this.log.warn([`[Task]>>>[Remove函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Restart
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async Restart(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/restart`, _data);
+        }
+    this.log.warn([`[Task]>>>[Restart函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Start
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async Start(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/start`, _data);
+        }
+    this.log.warn([`[Task]>>>[Start函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * TaskFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async TaskFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskfavorites`, _data);
+        }
+    this.log.warn([`[Task]>>>[TaskFavorites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * TaskNFavorites
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async TaskNFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/tasknfavorites`, _data);
+        }
+    this.log.warn([`[Task]>>>[TaskNFavorites函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.task) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}`, _data);
+        }
+    this.log.warn([`[Task]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchCurProjectTaskQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async FetchCurProjectTaskQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchcurprojecttaskquery`, _data);
+        }
+    this.log.warn([`[Task]>>>[FetchCurProjectTaskQuery函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchDefault
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchdefault`, _data);
+        }
+    this.log.warn([`[Task]>>>[FetchDefault函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchGantt
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async FetchGantt(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchgantt`, _data);
+        }
+    this.log.warn([`[Task]>>>[FetchGantt函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchReport
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async FetchReport(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchreport`, _data);
+        }
+    this.log.warn([`[Task]>>>[FetchReport函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -691,7 +673,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     }
 
     /**
-     * PauseBatch接口方法
+     * AssignToBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -699,30 +681,12 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async PauseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/pausebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/assigntobatch`,_data);
         }
-        this.log.warn([`[Task]>>>[PauseBatch函数]异常`]);
-        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
-     * ConfirmStoryChangeBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TaskServiceBase
-     */
-    public async ConfirmStoryChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/confirmstorychangebatch`,_data);
-        }
-        this.log.warn([`[Task]>>>[ConfirmStoryChangeBatch函数]异常`]);
+        this.log.warn([`[Task]>>>[AssignToBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -745,24 +709,6 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     }
 
     /**
-     * RestartBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof TaskServiceBase
-     */
-    public async RestartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/restartbatch`,_data);
-        }
-        this.log.warn([`[Task]>>>[RestartBatch函数]异常`]);
-        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-
-    /**
      * CloseBatch接口方法
      *
      * @param {*} [context={}]
@@ -777,6 +723,24 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             return this.http.post(`/projects/${_context.project}/tasks/closebatch`,_data);
         }
         this.log.warn([`[Task]>>>[CloseBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * ConfirmStoryChangeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async ConfirmStoryChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/confirmstorychangebatch`,_data);
+        }
+        this.log.warn([`[Task]>>>[ConfirmStoryChangeBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 
@@ -799,7 +763,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     }
 
     /**
-     * AssignToBatch接口方法
+     * PauseBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -807,12 +771,48 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async PauseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/tasks/assigntobatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/pausebatch`,_data);
         }
-        this.log.warn([`[Task]>>>[AssignToBatch函数]异常`]);
+        this.log.warn([`[Task]>>>[PauseBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * RestartBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async RestartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/restartbatch`,_data);
+        }
+        this.log.warn([`[Task]>>>[RestartBatch函数]异常`]);
+        return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+
+    /**
+     * StartBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/startbatch`,_data);
+        }
+        this.log.warn([`[Task]>>>[StartBatch函数]异常`]);
         return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

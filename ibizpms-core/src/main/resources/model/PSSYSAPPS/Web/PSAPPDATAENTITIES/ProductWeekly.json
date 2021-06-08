@@ -31,39 +31,18 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Update",
+    "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/CheckKey.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -82,12 +61,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Summary",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "SumProductWeekly",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -95,7 +74,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Summary"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -131,19 +110,6 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION",
-    "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "builtinMethod" : true
-  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -152,6 +118,40 @@
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Save.json"
     },
     "builtinMethod" : true
+  }, {
+    "codeName" : "Summary",
+    "methodType" : "DEACTION",
+    "name" : "SumProductWeekly",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Summary"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -257,56 +257,18 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Update",
+    "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/CheckKey.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "CREATE"
     },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : true
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
@@ -325,12 +287,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Summary",
+    "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "SumProductWeekly",
+    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Get.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -338,7 +300,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Summary"
+      "id" : "Get"
     },
     "builtinMethod" : false
   }, {
@@ -374,19 +336,6 @@
     "builtinMethod" : true,
     "enableBatchAction" : true
   }, {
-    "codeName" : "CheckKey",
-    "methodType" : "DEACTION",
-    "name" : "CheckKey",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/CheckKey.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "builtinMethod" : true
-  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "name" : "Save",
@@ -396,24 +345,70 @@
     },
     "builtinMethod" : true
   }, {
-    "codeName" : "FilterUpdate",
+    "codeName" : "Summary",
+    "methodType" : "DEACTION",
+    "name" : "SumProductWeekly",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/SumProductWeekly.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Summary"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERUPDATE",
+    "name" : "FILTERCREATE",
     "builtinMethod" : true
   }, {
-    "codeName" : "FilterSearch",
+    "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERSEARCH",
+    "name" : "FILTERFETCH",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
-    "builtinMethod" : true
-  }, {
-    "codeName" : "FilterCreate",
-    "methodType" : "FILTERACTION",
-    "name" : "FILTERCREATE",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
@@ -426,9 +421,14 @@
     "name" : "FILTERREMOVE",
     "builtinMethod" : true
   }, {
-    "codeName" : "FilterFetch",
+    "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERFETCH",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
     "builtinMethod" : true
   } ],
   "getAllPSAppDEUIActions" : [ {

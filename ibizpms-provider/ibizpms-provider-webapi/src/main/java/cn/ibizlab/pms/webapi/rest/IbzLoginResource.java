@@ -52,20 +52,6 @@ public class IbzLoginResource {
     @Lazy
     public IbzLoginMapping ibzloginMapping;
 
-    @PreAuthorize("test('IBZ_LOGIN', #ibzlogin_id, 'READ')")
-    @ApiOperation(value = "获取ZT账户登录信息", tags = {"实体" },  notes = "获取ZT账户登录信息")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/{ibzlogin_id}/getuser")
-    public ResponseEntity<IbzLoginDTO> getUser(@PathVariable("ibzlogin_id") Long ibzlogin_id, IbzLoginDTO ibzlogindto) {
-        IbiLogin domain = ibzloginMapping.toDomain(ibzlogindto);
-        domain.setId(ibzlogin_id);
-        domain = ibiloginService.getUser(domain);
-        ibzlogindto = ibzloginMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
-        ibzlogindto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
-    }
-
-
     @PreAuthorize("quickTest('IBZ_LOGIN', 'DENY')")
     @ApiOperation(value = "ZT登录", tags = {"实体" },  notes = "ZT登录")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzlogins/{ibzlogin_id}/ztlogin")
@@ -73,6 +59,20 @@ public class IbzLoginResource {
         IbiLogin domain = ibzloginMapping.toDomain(ibzlogindto);
         domain.setId(ibzlogin_id);
         domain = ibiloginService.ztlogin(domain);
+        ibzlogindto = ibzloginMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
+        ibzlogindto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzlogindto);
+    }
+
+
+    @PreAuthorize("test('IBZ_LOGIN', #ibzlogin_id, 'READ')")
+    @ApiOperation(value = "获取ZT账户登录信息", tags = {"实体" },  notes = "获取ZT账户登录信息")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzlogins/{ibzlogin_id}/getuser")
+    public ResponseEntity<IbzLoginDTO> getUser(@PathVariable("ibzlogin_id") Long ibzlogin_id, IbzLoginDTO ibzlogindto) {
+        IbiLogin domain = ibzloginMapping.toDomain(ibzlogindto);
+        domain.setId(ibzlogin_id);
+        domain = ibiloginService.getUser(domain);
         ibzlogindto = ibzloginMapping.toDto(domain);
         Map<String, Integer> opprivs = ibiloginRuntime.getOPPrivs(domain.getId());
         ibzlogindto.setSrfopprivs(opprivs);

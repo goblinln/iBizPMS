@@ -73,22 +73,16 @@ public class ProjectResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'UPDATE')")
-    @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")
-    @Transactional
-    public ResponseEntity<ProjectDTO> update(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
-		Project domain  = projectMapping.toDomain(projectdto);
-        domain.setId(project_id);
-		projectService.update(domain );
-        if(!projectRuntime.test(project_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ProjectDTO dto = projectMapping.toDto(domain);
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'READ')")
+    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
+    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
+        Project domain = projectService.get(project_id);
+        ProjectDTO dto = projectMapping.toDto(domain);
         Map<String, Integer> opprivs = projectRuntime.getOPPrivs(project_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_PROJECT', #project_id, 'DELETE')")
     @ApiOperation(value = "删除项目", tags = {"项目" },  notes = "删除项目")
@@ -105,24 +99,22 @@ public class ProjectResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PROJECT', #project_id, 'READ')")
-    @ApiOperation(value = "获取项目", tags = {"项目" },  notes = "获取项目")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}")
-    public ResponseEntity<ProjectDTO> get(@PathVariable("project_id") Long project_id) {
-        Project domain = projectService.get(project_id);
-        ProjectDTO dto = projectMapping.toDto(domain);
+    @PreAuthorize("test('ZT_PROJECT', #project_id, 'UPDATE')")
+    @ApiOperation(value = "更新项目", tags = {"项目" },  notes = "更新项目")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}")
+    @Transactional
+    public ResponseEntity<ProjectDTO> update(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+		Project domain  = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+		projectService.update(domain );
+        if(!projectRuntime.test(project_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ProjectDTO dto = projectMapping.toDto(domain);
         Map<String, Integer> opprivs = projectRuntime.getOPPrivs(project_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PROJECT', 'CREATE')")
-    @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/getdraft")
-    public ResponseEntity<ProjectDTO> getDraft(ProjectDTO dto) {
-        Project domain = projectMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_PROJECT', #project_id, 'ACTIVATE')")
     @ApiOperation(value = "激活", tags = {"项目" },  notes = "激活")
@@ -186,6 +178,14 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(projectdto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_PROJECT', 'CREATE')")
+    @ApiOperation(value = "获取项目草稿", tags = {"项目" },  notes = "获取项目草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/getdraft")
+    public ResponseEntity<ProjectDTO> getDraft(ProjectDTO dto) {
+        Project domain = projectMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projectMapping.toDto(projectService.getDraft(domain)));
+    }
 
     @PreAuthorize("quickTest('ZT_PROJECT', 'DENY')")
     @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")

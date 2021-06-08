@@ -73,6 +73,32 @@ public class CaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_CASE', #case_id, 'READ')")
+    @ApiOperation(value = "获取测试用例", tags = {"测试用例" },  notes = "获取测试用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}")
+    public ResponseEntity<CaseDTO> get(@PathVariable("case_id") Long case_id) {
+        Case domain = caseService.get(case_id);
+        CaseDTO dto = caseMapping.toDto(domain);
+        Map<String, Integer> opprivs = caseRuntime.getOPPrivs(case_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_CASE', #case_id, 'DELETE')")
+    @ApiOperation(value = "删除测试用例", tags = {"测试用例" },  notes = "删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("case_id") Long case_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(case_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_CASE', 'DELETE')")
+    @ApiOperation(value = "批量删除测试用例", tags = {"测试用例" },  notes = "批量删除测试用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        caseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "case" , versionfield = "lastediteddate")
     @PreAuthorize("test('ZT_CASE', #case_id, 'UPDATE')")
     @ApiOperation(value = "更新测试用例", tags = {"测试用例" },  notes = "更新测试用例")
@@ -90,40 +116,6 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("test('ZT_CASE', #case_id, 'DELETE')")
-    @ApiOperation(value = "删除测试用例", tags = {"测试用例" },  notes = "删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("case_id") Long case_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(caseService.remove(case_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_CASE', 'DELETE')")
-    @ApiOperation(value = "批量删除测试用例", tags = {"测试用例" },  notes = "批量删除测试用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        caseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_CASE', #case_id, 'READ')")
-    @ApiOperation(value = "获取测试用例", tags = {"测试用例" },  notes = "获取测试用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}")
-    public ResponseEntity<CaseDTO> get(@PathVariable("case_id") Long case_id) {
-        Case domain = caseService.get(case_id);
-        CaseDTO dto = caseMapping.toDto(domain);
-        Map<String, Integer> opprivs = caseRuntime.getOPPrivs(case_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_CASE', 'CREATE')")
-    @ApiOperation(value = "获取测试用例草稿", tags = {"测试用例" },  notes = "获取测试用例草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/cases/getdraft")
-    public ResponseEntity<CaseDTO> getDraft(CaseDTO dto) {
-        Case domain = caseMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(caseMapping.toDto(caseService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_CASE', #case_id, 'FAVORITE')")
     @ApiOperation(value = "行为", tags = {"测试用例" },  notes = "行为")
@@ -201,6 +193,14 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_CASE', 'CREATE')")
+    @ApiOperation(value = "获取测试用例草稿", tags = {"测试用例" },  notes = "获取测试用例草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/cases/getdraft")
+    public ResponseEntity<CaseDTO> getDraft(CaseDTO dto) {
+        Case domain = caseMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(caseMapping.toDto(caseService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('ZT_CASE', #case_id, 'CASERESULT')")
     @ApiOperation(value = "获取测试单执行结果", tags = {"测试用例" },  notes = "获取测试单执行结果")
@@ -717,21 +717,16 @@ public class CaseResource {
     }
 
 
-    @VersionCheck(entity = "case" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #case_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}")
-    public ResponseEntity<CaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
-        Case domain = caseMapping.toDomain(casedto);
-        domain.setProduct(product_id);
-        domain.setId(case_id);
-		caseService.update(domain);
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', #case_id, 'READ')")
+    @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}")
+    public ResponseEntity<CaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
+        Case domain = caseService.get(case_id);
         CaseDTO dto = caseMapping.toDto(domain);
         Map<String, Integer> opprivs = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #case_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除测试用例", tags = {"测试用例" },  notes = "根据产品删除测试用例")
@@ -748,25 +743,21 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'READ', #case_id, 'READ')")
-    @ApiOperation(value = "根据产品获取测试用例", tags = {"测试用例" },  notes = "根据产品获取测试用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}")
-    public ResponseEntity<CaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id) {
-        Case domain = caseService.get(case_id);
+    @VersionCheck(entity = "case" , versionfield = "lastediteddate")
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #case_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新测试用例", tags = {"测试用例" },  notes = "根据产品更新测试用例")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}")
+    public ResponseEntity<CaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
+        Case domain = caseMapping.toDomain(casedto);
+        domain.setProduct(product_id);
+        domain.setId(case_id);
+		caseService.update(domain);
         CaseDTO dto = caseMapping.toDto(domain);
         Map<String, Integer> opprivs = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/getdraft")
-    public ResponseEntity<CaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, CaseDTO dto) {
-        Case domain = caseMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(caseMapping.toDto(caseService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #case_id, 'FAVORITE')")
     @ApiOperation(value = "根据产品行为", tags = {"测试用例" },  notes = "根据产品行为")
@@ -843,6 +834,15 @@ public class CaseResource {
         Map<String, Integer> opprivs = caseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         casedto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(casedto);
+    }
+
+    @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取测试用例草稿", tags = {"测试用例" },  notes = "根据产品获取测试用例草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/getdraft")
+    public ResponseEntity<CaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, CaseDTO dto) {
+        Case domain = caseMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(caseMapping.toDto(caseService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', #case_id, 'CASERESULT')")

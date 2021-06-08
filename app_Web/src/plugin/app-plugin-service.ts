@@ -1,5 +1,5 @@
-import { GridPlanType } from './plugin/grid-colrender/grid-plan-type';
 import { TASKTYPEFATHERORCHILD } from './plugin/grid-colrender/tasktypefatherorchild';
+import { GridPlanType } from './plugin/grid-colrender/grid-plan-type';
 import { GridUserColorRed } from './plugin/grid-colrender/grid-user-color-red';
 import { Gridmilepost } from './plugin/grid-colrender/gridmilepost';
 import { GirdCounmColor } from './plugin/grid-colrender/gird-counm-color';
@@ -83,8 +83,8 @@ export class AppPluginService {
      * @memberof AppPluginService
      */
     private registerControlItemPlugin(){
-        this.controlItemMap.set('gridPlanType',new GridPlanType());
         this.controlItemMap.set('TASKTYPEFATHERORCHILD',new TASKTYPEFATHERORCHILD());
+        this.controlItemMap.set('gridPlanType',new GridPlanType());
         this.controlItemMap.set('gridUserColorRed',new GridUserColorRed());
         this.controlItemMap.set('Gridmilepost',new Gridmilepost());
         this.controlItemMap.set('girdCounmColor',new GirdCounmColor());

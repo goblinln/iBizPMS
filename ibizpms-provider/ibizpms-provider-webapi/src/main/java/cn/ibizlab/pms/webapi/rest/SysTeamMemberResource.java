@@ -59,17 +59,13 @@ public class SysTeamMemberResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "更新组成员", tags = {"组成员" },  notes = "更新组成员")
-	@RequestMapping(method = RequestMethod.PUT, value = "/systeammembers/{systeammember_id}")
-    @Transactional
-    public ResponseEntity<SysTeamMemberDTO> update(@PathVariable("systeammember_id") String systeammember_id, @RequestBody SysTeamMemberDTO systeammemberdto) {
-		SysTeamMember domain  = systeammemberMapping.toDomain(systeammemberdto);
-        domain.setTeammemberid(systeammember_id);
-		systeammemberService.update(domain );
-		SysTeamMemberDTO dto = systeammemberMapping.toDto(domain);
+    @ApiOperation(value = "获取组成员", tags = {"组成员" },  notes = "获取组成员")
+	@RequestMapping(method = RequestMethod.GET, value = "/systeammembers/{systeammember_id}")
+    public ResponseEntity<SysTeamMemberDTO> get(@PathVariable("systeammember_id") String systeammember_id) {
+        SysTeamMember domain = systeammemberService.get(systeammember_id);
+        SysTeamMemberDTO dto = systeammemberMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除组成员", tags = {"组成员" },  notes = "删除组成员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeammembers/{systeammember_id}")
@@ -84,12 +80,22 @@ public class SysTeamMemberResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取组成员", tags = {"组成员" },  notes = "获取组成员")
-	@RequestMapping(method = RequestMethod.GET, value = "/systeammembers/{systeammember_id}")
-    public ResponseEntity<SysTeamMemberDTO> get(@PathVariable("systeammember_id") String systeammember_id) {
-        SysTeamMember domain = systeammemberService.get(systeammember_id);
-        SysTeamMemberDTO dto = systeammemberMapping.toDto(domain);
+    @ApiOperation(value = "更新组成员", tags = {"组成员" },  notes = "更新组成员")
+	@RequestMapping(method = RequestMethod.PUT, value = "/systeammembers/{systeammember_id}")
+    @Transactional
+    public ResponseEntity<SysTeamMemberDTO> update(@PathVariable("systeammember_id") String systeammember_id, @RequestBody SysTeamMemberDTO systeammemberdto) {
+		SysTeamMember domain  = systeammemberMapping.toDomain(systeammemberdto);
+        domain.setTeammemberid(systeammember_id);
+		systeammemberService.update(domain );
+		SysTeamMemberDTO dto = systeammemberMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查组成员", tags = {"组成员" },  notes = "检查组成员")
+	@RequestMapping(method = RequestMethod.POST, value = "/systeammembers/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysTeamMemberDTO systeammemberdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(systeammemberService.checkKey(systeammemberMapping.toDomain(systeammemberdto)));
     }
 
     @ApiOperation(value = "获取组成员草稿", tags = {"组成员" },  notes = "获取组成员草稿")
@@ -97,12 +103,6 @@ public class SysTeamMemberResource {
     public ResponseEntity<SysTeamMemberDTO> getDraft(SysTeamMemberDTO dto) {
         SysTeamMember domain = systeammemberMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(systeammemberMapping.toDto(systeammemberService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查组成员", tags = {"组成员" },  notes = "检查组成员")
-	@RequestMapping(method = RequestMethod.POST, value = "/systeammembers/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysTeamMemberDTO systeammemberdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(systeammemberService.checkKey(systeammemberMapping.toDomain(systeammemberdto)));
     }
 
     @ApiOperation(value = "保存组成员", tags = {"组成员" },  notes = "保存组成员")

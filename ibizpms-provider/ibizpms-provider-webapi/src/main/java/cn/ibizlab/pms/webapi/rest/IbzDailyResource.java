@@ -65,21 +65,16 @@ public class IbzDailyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "ibzdaily" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_DAILY', #ibzdaily_id, 'NONE')")
-    @ApiOperation(value = "更新日报", tags = {"日报" },  notes = "更新日报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}")
-    @Transactional
-    public ResponseEntity<IbzDailyDTO> update(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
-		IbzDaily domain  = ibzdailyMapping.toDomain(ibzdailydto);
-        domain.setIbzdailyid(ibzdaily_id);
-		ibzdailyService.update(domain );
-		IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
+    @ApiOperation(value = "获取日报", tags = {"日报" },  notes = "获取日报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}")
+    public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
+        IbzDaily domain = ibzdailyService.get(ibzdaily_id);
+        IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(ibzdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_DAILY', #ibzdaily_id, 'NONE')")
     @ApiOperation(value = "删除日报", tags = {"日报" },  notes = "删除日报")
@@ -96,24 +91,21 @@ public class IbzDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "ibzdaily" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_DAILY', #ibzdaily_id, 'NONE')")
-    @ApiOperation(value = "获取日报", tags = {"日报" },  notes = "获取日报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}")
-    public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
-        IbzDaily domain = ibzdailyService.get(ibzdaily_id);
-        IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
+    @ApiOperation(value = "更新日报", tags = {"日报" },  notes = "更新日报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}")
+    @Transactional
+    public ResponseEntity<IbzDailyDTO> update(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IbzDailyDTO ibzdailydto) {
+		IbzDaily domain  = ibzdailyMapping.toDomain(ibzdailydto);
+        domain.setIbzdailyid(ibzdaily_id);
+		ibzdailyService.update(domain );
+		IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzdailyRuntime.getOPPrivs(ibzdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBZ_DAILY', 'NONE')")
-    @ApiOperation(value = "获取日报草稿", tags = {"日报" },  notes = "获取日报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/getdraft")
-    public ResponseEntity<IbzDailyDTO> getDraft(IbzDailyDTO dto) {
-        IbzDaily domain = ibzdailyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyMapping.toDto(ibzdailyService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('IBZ_DAILY', 'CREATE')")
     @ApiOperation(value = "检查日报", tags = {"日报" },  notes = "检查日报")
@@ -135,6 +127,14 @@ public class IbzDailyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailydto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_DAILY', 'NONE')")
+    @ApiOperation(value = "获取日报草稿", tags = {"日报" },  notes = "获取日报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/getdraft")
+    public ResponseEntity<IbzDailyDTO> getDraft(IbzDailyDTO dto) {
+        IbzDaily domain = ibzdailyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyMapping.toDto(ibzdailyService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('IBZ_DAILY', #ibzdaily_id, 'NONE')")
     @ApiOperation(value = "获取前一天日报计划参与任务（编辑）", tags = {"日报" },  notes = "获取前一天日报计划参与任务（编辑）")

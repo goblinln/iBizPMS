@@ -437,6 +437,19 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return res;
     }
     /**
+     * GetUserConcat
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof AccountBugService
+     */
+    async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const appLogic = new GetCurUserConcatLogic(_context, _data);
+        _data = await appLogic.onExecute();
+        return new HttpResponse(_data);
+    }
+    /**
      * FetchAccount
      *
      * @param {*} [_context={}]
@@ -449,20 +462,6 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
             return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchaccount`, _data);
         }
         return this.http.post(`/accountbugs/fetchaccount`, _data);
-    }
-    /**
-     * FetchMyFavorites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof AccountBugService
-     */
-    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.sysaccount && true) {
-            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
-        }
-        return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
     }
     /**
      * FetchMy
@@ -479,16 +478,17 @@ export class AccountBugBaseService extends EntityBaseService<IAccountBug> {
         return this.http.post(`/accountbugs/fetchmy`, _data);
     }
     /**
-     * GetUserConcat
+     * FetchMyFavorites
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof AccountBugService
      */
-    async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+    async FetchMyFavorites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.sysaccount && true) {
+            return this.http.post(`/sysaccounts/${_context.sysaccount}/accountbugs/fetchmyfavorites`, _data);
+        }
+        return this.http.post(`/accountbugs/fetchmyfavorites`, _data);
     }
 }

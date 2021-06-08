@@ -66,17 +66,6 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PSSysSFPubService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssyssfpubs/${_context.pssyssfpub}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/pssyssfpubs`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PSSysSFPubService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/pssyssfpubs/${_context.pssyssfpub}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PSSysSFPubService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/pssyssfpubs/${_context.pssyssfpub}`);
     }
     /**
      * Get
@@ -144,6 +110,29 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PSSysSFPubService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/pssyssfpubs/${_context.pssyssfpub}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PSSysSFPubService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/pssyssfpubs/${_context.pssyssfpub}`, _data);
+    }
+    /**
      * FetchBuild
      *
      * @param {*} [_context={}]
@@ -164,5 +153,16 @@ export class PSSysSFPubBaseService extends EntityBaseService<IPSSysSFPub> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/pssyssfpubs/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PSSysSFPubService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/pssyssfpubs/${_context.pssyssfpub}/select`);
     }
 }

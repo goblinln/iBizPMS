@@ -59,18 +59,13 @@ public class SysEmployeeResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "sysemployee" , versionfield = "updatedate")
-    @ApiOperation(value = "更新人员", tags = {"人员" },  notes = "更新人员")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/{sysemployee_id}")
-    @Transactional
-    public ResponseEntity<SysEmployeeDTO> update(@PathVariable("sysemployee_id") String sysemployee_id, @RequestBody SysEmployeeDTO sysemployeedto) {
-		SysEmployee domain  = sysemployeeMapping.toDomain(sysemployeedto);
-        domain.setUserid(sysemployee_id);
-		sysemployeeService.update(domain );
-		SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
+    @ApiOperation(value = "获取人员", tags = {"人员" },  notes = "获取人员")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysemployees/{sysemployee_id}")
+    public ResponseEntity<SysEmployeeDTO> get(@PathVariable("sysemployee_id") String sysemployee_id) {
+        SysEmployee domain = sysemployeeService.get(sysemployee_id);
+        SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除人员", tags = {"人员" },  notes = "删除人员")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysemployees/{sysemployee_id}")
@@ -85,12 +80,23 @@ public class SysEmployeeResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取人员", tags = {"人员" },  notes = "获取人员")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysemployees/{sysemployee_id}")
-    public ResponseEntity<SysEmployeeDTO> get(@PathVariable("sysemployee_id") String sysemployee_id) {
-        SysEmployee domain = sysemployeeService.get(sysemployee_id);
-        SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
+    @VersionCheck(entity = "sysemployee" , versionfield = "updatedate")
+    @ApiOperation(value = "更新人员", tags = {"人员" },  notes = "更新人员")
+	@RequestMapping(method = RequestMethod.PUT, value = "/sysemployees/{sysemployee_id}")
+    @Transactional
+    public ResponseEntity<SysEmployeeDTO> update(@PathVariable("sysemployee_id") String sysemployee_id, @RequestBody SysEmployeeDTO sysemployeedto) {
+		SysEmployee domain  = sysemployeeMapping.toDomain(sysemployeedto);
+        domain.setUserid(sysemployee_id);
+		sysemployeeService.update(domain );
+		SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查人员", tags = {"人员" },  notes = "检查人员")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysEmployeeDTO sysemployeedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.checkKey(sysemployeeMapping.toDomain(sysemployeedto)));
     }
 
     @ApiOperation(value = "获取人员草稿", tags = {"人员" },  notes = "获取人员草稿")
@@ -98,12 +104,6 @@ public class SysEmployeeResource {
     public ResponseEntity<SysEmployeeDTO> getDraft(SysEmployeeDTO dto) {
         SysEmployee domain = sysemployeeMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(sysemployeeMapping.toDto(sysemployeeService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查人员", tags = {"人员" },  notes = "检查人员")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysemployees/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysEmployeeDTO sysemployeedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(sysemployeeService.checkKey(sysemployeeMapping.toDomain(sysemployeedto)));
     }
 
     @ApiOperation(value = "保存人员", tags = {"人员" },  notes = "保存人员")

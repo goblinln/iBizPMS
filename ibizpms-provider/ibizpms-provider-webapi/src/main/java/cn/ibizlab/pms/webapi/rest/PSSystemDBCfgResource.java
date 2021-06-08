@@ -59,18 +59,13 @@ public class PSSystemDBCfgResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "pssystemdbcfg" , versionfield = "updatedate")
-    @ApiOperation(value = "更新系统数据库", tags = {"系统数据库" },  notes = "更新系统数据库")
-	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
-    @Transactional
-    public ResponseEntity<PSSystemDBCfgDTO> update(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id, @RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
-		PSSystemDBCfg domain  = pssystemdbcfgMapping.toDomain(pssystemdbcfgdto);
-        domain.setPssystemdbcfgid(pssystemdbcfg_id);
-		pssystemdbcfgService.update(domain );
-		PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
+    @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")
+	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
+    public ResponseEntity<PSSystemDBCfgDTO> get(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
+        PSSystemDBCfg domain = pssystemdbcfgService.get(pssystemdbcfg_id);
+        PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除系统数据库", tags = {"系统数据库" },  notes = "删除系统数据库")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
@@ -85,12 +80,23 @@ public class PSSystemDBCfgResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取系统数据库", tags = {"系统数据库" },  notes = "获取系统数据库")
-	@RequestMapping(method = RequestMethod.GET, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
-    public ResponseEntity<PSSystemDBCfgDTO> get(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
-        PSSystemDBCfg domain = pssystemdbcfgService.get(pssystemdbcfg_id);
-        PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
+    @VersionCheck(entity = "pssystemdbcfg" , versionfield = "updatedate")
+    @ApiOperation(value = "更新系统数据库", tags = {"系统数据库" },  notes = "更新系统数据库")
+	@RequestMapping(method = RequestMethod.PUT, value = "/pssystemdbcfgs/{pssystemdbcfg_id}")
+    @Transactional
+    public ResponseEntity<PSSystemDBCfgDTO> update(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id, @RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
+		PSSystemDBCfg domain  = pssystemdbcfgMapping.toDomain(pssystemdbcfgdto);
+        domain.setPssystemdbcfgid(pssystemdbcfg_id);
+		pssystemdbcfgService.update(domain );
+		PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查系统数据库", tags = {"系统数据库" },  notes = "检查系统数据库")
+	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.checkKey(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
     }
 
     @ApiOperation(value = "获取系统数据库草稿", tags = {"系统数据库" },  notes = "获取系统数据库草稿")
@@ -98,12 +104,6 @@ public class PSSystemDBCfgResource {
     public ResponseEntity<PSSystemDBCfgDTO> getDraft(PSSystemDBCfgDTO dto) {
         PSSystemDBCfg domain = pssystemdbcfgMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgMapping.toDto(pssystemdbcfgService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查系统数据库", tags = {"系统数据库" },  notes = "检查系统数据库")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody PSSystemDBCfgDTO pssystemdbcfgdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(pssystemdbcfgService.checkKey(pssystemdbcfgMapping.toDomain(pssystemdbcfgdto)));
     }
 
     @ApiOperation(value = "保存系统数据库", tags = {"系统数据库" },  notes = "保存系统数据库")

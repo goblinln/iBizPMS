@@ -66,15 +66,16 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
         return new HttpResponse(entity);
     }
     /**
-     * CountMyWork
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysAccountService
      */
-    async CountMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysaccounts/countmywork`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/sysaccounts/${_context.sysaccount}`);
+        return res;
     }
     /**
      * CountMyContribution
@@ -88,15 +89,14 @@ export class SysAccountBaseService extends EntityBaseService<ISysAccount> {
         return this.http.post(`/sysaccounts/countmycontribution`, _data);
     }
     /**
-     * Get
+     * CountMyWork
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SysAccountService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/sysaccounts/${_context.sysaccount}`);
-        return res;
+    async CountMyWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/sysaccounts/countmywork`, _data);
     }
 }

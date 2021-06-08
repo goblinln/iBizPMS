@@ -67,22 +67,16 @@ public class BurnResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_BURN', #burn_id, 'UPDATE')")
-    @ApiOperation(value = "更新burn", tags = {"burn" },  notes = "更新burn")
-	@RequestMapping(method = RequestMethod.PUT, value = "/burns/{burn_id}")
-    @Transactional
-    public ResponseEntity<BurnDTO> update(@PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
-		Burn domain  = burnMapping.toDomain(burndto);
-        domain.setId(burn_id);
-		burnService.update(domain );
-        if(!burnRuntime.test(burn_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		BurnDTO dto = burnMapping.toDto(domain);
+    @PreAuthorize("test('ZT_BURN', #burn_id, 'READ')")
+    @ApiOperation(value = "获取burn", tags = {"burn" },  notes = "获取burn")
+	@RequestMapping(method = RequestMethod.GET, value = "/burns/{burn_id}")
+    public ResponseEntity<BurnDTO> get(@PathVariable("burn_id") String burn_id) {
+        Burn domain = burnService.get(burn_id);
+        BurnDTO dto = burnMapping.toDto(domain);
         Map<String, Integer> opprivs = burnRuntime.getOPPrivs(burn_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_BURN', #burn_id, 'DELETE')")
     @ApiOperation(value = "删除burn", tags = {"burn" },  notes = "删除burn")
@@ -99,24 +93,22 @@ public class BurnResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BURN', #burn_id, 'READ')")
-    @ApiOperation(value = "获取burn", tags = {"burn" },  notes = "获取burn")
-	@RequestMapping(method = RequestMethod.GET, value = "/burns/{burn_id}")
-    public ResponseEntity<BurnDTO> get(@PathVariable("burn_id") String burn_id) {
-        Burn domain = burnService.get(burn_id);
-        BurnDTO dto = burnMapping.toDto(domain);
+    @PreAuthorize("test('ZT_BURN', #burn_id, 'UPDATE')")
+    @ApiOperation(value = "更新burn", tags = {"burn" },  notes = "更新burn")
+	@RequestMapping(method = RequestMethod.PUT, value = "/burns/{burn_id}")
+    @Transactional
+    public ResponseEntity<BurnDTO> update(@PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
+		Burn domain  = burnMapping.toDomain(burndto);
+        domain.setId(burn_id);
+		burnService.update(domain );
+        if(!burnRuntime.test(burn_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		BurnDTO dto = burnMapping.toDto(domain);
         Map<String, Integer> opprivs = burnRuntime.getOPPrivs(burn_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_BURN', 'CREATE')")
-    @ApiOperation(value = "获取burn草稿", tags = {"burn" },  notes = "获取burn草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/burns/getdraft")
-    public ResponseEntity<BurnDTO> getDraft(BurnDTO dto) {
-        Burn domain = burnMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_BURN', 'CREATE')")
     @ApiOperation(value = "检查burn", tags = {"burn" },  notes = "检查burn")
@@ -138,6 +130,14 @@ public class BurnResource {
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_BURN', 'CREATE')")
+    @ApiOperation(value = "获取burn草稿", tags = {"burn" },  notes = "获取burn草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/burns/getdraft")
+    public ResponseEntity<BurnDTO> getDraft(BurnDTO dto) {
+        Burn domain = burnMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
+    }
 
     @PreAuthorize("quickTest('ZT_BURN', 'DENY')")
     @ApiOperation(value = "保存burn", tags = {"burn" },  notes = "保存burn")
@@ -199,20 +199,16 @@ public class BurnResource {
     }
 
 
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'UPDATE', #burn_id, 'UPDATE')")
-    @ApiOperation(value = "根据项目更新burn", tags = {"burn" },  notes = "根据项目更新burn")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/burns/{burn_id}")
-    public ResponseEntity<BurnDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
-        Burn domain = burnMapping.toDomain(burndto);
-        domain.setProject(project_id);
-        domain.setId(burn_id);
-		burnService.update(domain);
+    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'READ', #burn_id, 'READ')")
+    @ApiOperation(value = "根据项目获取burn", tags = {"burn" },  notes = "根据项目获取burn")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/{burn_id}")
+    public ResponseEntity<BurnDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
+        Burn domain = burnService.get(burn_id);
         BurnDTO dto = burnMapping.toDto(domain);
         Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'DELETE', #burn_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除burn", tags = {"burn" },  notes = "根据项目删除burn")
@@ -229,25 +225,20 @@ public class BurnResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'READ', #burn_id, 'READ')")
-    @ApiOperation(value = "根据项目获取burn", tags = {"burn" },  notes = "根据项目获取burn")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/{burn_id}")
-    public ResponseEntity<BurnDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id) {
-        Burn domain = burnService.get(burn_id);
+    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'UPDATE', #burn_id, 'UPDATE')")
+    @ApiOperation(value = "根据项目更新burn", tags = {"burn" },  notes = "根据项目更新burn")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/burns/{burn_id}")
+    public ResponseEntity<BurnDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("burn_id") String burn_id, @RequestBody BurnDTO burndto) {
+        Burn domain = burnMapping.toDomain(burndto);
+        domain.setProject(project_id);
+        domain.setId(burn_id);
+		burnService.update(domain);
         BurnDTO dto = burnMapping.toDto(domain);
         Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据项目获取burn草稿", tags = {"burn" },  notes = "根据项目获取burn草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/getdraft")
-    public ResponseEntity<BurnDTO> getDraftByProject(@PathVariable("project_id") Long project_id, BurnDTO dto) {
-        Burn domain = burnMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
     @ApiOperation(value = "根据项目检查burn", tags = {"burn" },  notes = "根据项目检查burn")
@@ -268,6 +259,15 @@ public class BurnResource {
         Map<String, Integer> opprivs = burnRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         burndto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(burndto);
+    }
+
+    @PreAuthorize("test('ZT_BURN', 'ZT_PROJECT', #project_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据项目获取burn草稿", tags = {"burn" },  notes = "根据项目获取burn草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/burns/getdraft")
+    public ResponseEntity<BurnDTO> getDraftByProject(@PathVariable("project_id") Long project_id, BurnDTO dto) {
+        Burn domain = burnMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(burnMapping.toDto(burnService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('ZT_BURN', 'DENY')")

@@ -59,17 +59,13 @@ public class IBIZProTagResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "更新标签", tags = {"标签" },  notes = "更新标签")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{ibizprotag_id}")
-    @Transactional
-    public ResponseEntity<IBIZProTagDTO> update(@PathVariable("ibizprotag_id") String ibizprotag_id, @RequestBody IBIZProTagDTO ibizprotagdto) {
-		IBIZProTag domain  = ibizprotagMapping.toDomain(ibizprotagdto);
-        domain.setId(ibizprotag_id);
-		ibizprotagService.update(domain );
-		IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
+    @ApiOperation(value = "获取标签", tags = {"标签" },  notes = "获取标签")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/{ibizprotag_id}")
+    public ResponseEntity<IBIZProTagDTO> get(@PathVariable("ibizprotag_id") String ibizprotag_id) {
+        IBIZProTag domain = ibizprotagService.get(ibizprotag_id);
+        IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除标签", tags = {"标签" },  notes = "删除标签")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizprotags/{ibizprotag_id}")
@@ -84,12 +80,22 @@ public class IBIZProTagResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取标签", tags = {"标签" },  notes = "获取标签")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizprotags/{ibizprotag_id}")
-    public ResponseEntity<IBIZProTagDTO> get(@PathVariable("ibizprotag_id") String ibizprotag_id) {
-        IBIZProTag domain = ibizprotagService.get(ibizprotag_id);
-        IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
+    @ApiOperation(value = "更新标签", tags = {"标签" },  notes = "更新标签")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibizprotags/{ibizprotag_id}")
+    @Transactional
+    public ResponseEntity<IBIZProTagDTO> update(@PathVariable("ibizprotag_id") String ibizprotag_id, @RequestBody IBIZProTagDTO ibizprotagdto) {
+		IBIZProTag domain  = ibizprotagMapping.toDomain(ibizprotagdto);
+        domain.setId(ibizprotag_id);
+		ibizprotagService.update(domain );
+		IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查标签", tags = {"标签" },  notes = "检查标签")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProTagDTO ibizprotagdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.checkKey(ibizprotagMapping.toDomain(ibizprotagdto)));
     }
 
     @ApiOperation(value = "获取标签草稿", tags = {"标签" },  notes = "获取标签草稿")
@@ -97,12 +103,6 @@ public class IBIZProTagResource {
     public ResponseEntity<IBIZProTagDTO> getDraft(IBIZProTagDTO dto) {
         IBIZProTag domain = ibizprotagMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizprotagMapping.toDto(ibizprotagService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查标签", tags = {"标签" },  notes = "检查标签")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProTagDTO ibizprotagdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizprotagService.checkKey(ibizprotagMapping.toDomain(ibizprotagdto)));
     }
 
     @ApiOperation(value = "保存标签", tags = {"标签" },  notes = "保存标签")

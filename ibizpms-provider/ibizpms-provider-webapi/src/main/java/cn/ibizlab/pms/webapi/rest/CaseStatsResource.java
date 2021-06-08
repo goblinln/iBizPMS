@@ -67,6 +67,32 @@ public class CaseStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'READ')")
+    @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
+    public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
+        CaseStats domain = casestatsService.get(casestats_id);
+        CaseStatsDTO dto = casestatsMapping.toDto(domain);
+        Map<String, Integer> opprivs = casestatsRuntime.getOPPrivs(casestats_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'DELETE')")
+    @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'DELETE')")
+    @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        casestatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'UPDATE')")
     @ApiOperation(value = "更新测试用例统计", tags = {"测试用例统计" },  notes = "更新测试用例统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casestats/{casestats_id}")
@@ -84,30 +110,11 @@ public class CaseStatsResource {
     }
 
 
-    @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'DELETE')")
-    @ApiOperation(value = "删除测试用例统计", tags = {"测试用例统计" },  notes = "删除测试用例统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/{casestats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("casestats_id") Long casestats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(casestatsService.remove(casestats_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_CASESTATS', 'DELETE')")
-    @ApiOperation(value = "批量删除测试用例统计", tags = {"测试用例统计" },  notes = "批量删除测试用例统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casestats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        casestatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_CASESTATS', #casestats_id, 'READ')")
-    @ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" },  notes = "获取测试用例统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/casestats/{casestats_id}")
-    public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
-        CaseStats domain = casestatsService.get(casestats_id);
-        CaseStatsDTO dto = casestatsMapping.toDto(domain);
-        Map<String, Integer> opprivs = casestatsRuntime.getOPPrivs(casestats_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_CASESTATS', 'CREATE')")
+    @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_CASESTATS', 'CREATE')")
@@ -116,13 +123,6 @@ public class CaseStatsResource {
     public ResponseEntity<CaseStatsDTO> getDraft(CaseStatsDTO dto) {
         CaseStats domain = casestatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(casestatsMapping.toDto(casestatsService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_CASESTATS', 'CREATE')")
-    @ApiOperation(value = "检查测试用例统计", tags = {"测试用例统计" },  notes = "检查测试用例统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/casestats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody CaseStatsDTO casestatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(casestatsService.checkKey(casestatsMapping.toDomain(casestatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_CASESTATS', 'DENY')")

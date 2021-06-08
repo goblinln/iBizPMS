@@ -65,21 +65,16 @@ public class IbzMonthlyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "ibzmonthly" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_MONTHLY', #ibzmonthly_id, 'NONE')")
-    @ApiOperation(value = "更新月报", tags = {"月报" },  notes = "更新月报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmonthlies/{ibzmonthly_id}")
-    @Transactional
-    public ResponseEntity<IbzMonthlyDTO> update(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
-		IbzMonthly domain  = ibzmonthlyMapping.toDomain(ibzmonthlydto);
-        domain.setIbzmonthlyid(ibzmonthly_id);
-		ibzmonthlyService.update(domain );
-		IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
+    @ApiOperation(value = "获取月报", tags = {"月报" },  notes = "获取月报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/{ibzmonthly_id}")
+    public ResponseEntity<IbzMonthlyDTO> get(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
+        IbzMonthly domain = ibzmonthlyService.get(ibzmonthly_id);
+        IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(ibzmonthly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_MONTHLY', #ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "删除月报", tags = {"月报" },  notes = "删除月报")
@@ -96,24 +91,21 @@ public class IbzMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "ibzmonthly" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_MONTHLY', #ibzmonthly_id, 'NONE')")
-    @ApiOperation(value = "获取月报", tags = {"月报" },  notes = "获取月报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/{ibzmonthly_id}")
-    public ResponseEntity<IbzMonthlyDTO> get(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
-        IbzMonthly domain = ibzmonthlyService.get(ibzmonthly_id);
-        IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
+    @ApiOperation(value = "更新月报", tags = {"月报" },  notes = "更新月报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzmonthlies/{ibzmonthly_id}")
+    @Transactional
+    public ResponseEntity<IbzMonthlyDTO> update(@PathVariable("ibzmonthly_id") Long ibzmonthly_id, @RequestBody IbzMonthlyDTO ibzmonthlydto) {
+		IbzMonthly domain  = ibzmonthlyMapping.toDomain(ibzmonthlydto);
+        domain.setIbzmonthlyid(ibzmonthly_id);
+		ibzmonthlyService.update(domain );
+		IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzmonthlyRuntime.getOPPrivs(ibzmonthly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBZ_MONTHLY', 'NONE')")
-    @ApiOperation(value = "获取月报草稿", tags = {"月报" },  notes = "获取月报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/getdraft")
-    public ResponseEntity<IbzMonthlyDTO> getDraft(IbzMonthlyDTO dto) {
-        IbzMonthly domain = ibzmonthlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyMapping.toDto(ibzmonthlyService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('IBZ_MONTHLY', 'CREATE')")
     @ApiOperation(value = "检查月报", tags = {"月报" },  notes = "检查月报")
@@ -163,6 +155,14 @@ public class IbzMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlydto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_MONTHLY', 'NONE')")
+    @ApiOperation(value = "获取月报草稿", tags = {"月报" },  notes = "获取月报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzmonthlies/getdraft")
+    public ResponseEntity<IbzMonthlyDTO> getDraft(IbzMonthlyDTO dto) {
+        IbzMonthly domain = ibzmonthlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzmonthlyMapping.toDto(ibzmonthlyService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('IBZ_MONTHLY', #ibzmonthly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"月报" },  notes = "已读")

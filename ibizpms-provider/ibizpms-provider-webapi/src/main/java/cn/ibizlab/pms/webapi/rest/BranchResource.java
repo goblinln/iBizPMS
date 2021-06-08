@@ -67,6 +67,32 @@ public class BranchResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_BRANCH', #branch_id, 'READ')")
+    @ApiOperation(value = "获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.GET, value = "/branches/{branch_id}")
+    public ResponseEntity<BranchDTO> get(@PathVariable("branch_id") Long branch_id) {
+        Branch domain = branchService.get(branch_id);
+        BranchDTO dto = branchMapping.toDto(domain);
+        Map<String, Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_BRANCH', #branch_id, 'DELETE')")
+    @ApiOperation(value = "删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/{branch_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("branch_id") Long branch_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_BRANCH', 'DELETE')")
+    @ApiOperation(value = "批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量删除产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        branchService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_BRANCH', #branch_id, 'UPDATE')")
     @ApiOperation(value = "更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "更新产品的分支和平台信息")
 	@RequestMapping(method = RequestMethod.PUT, value = "/branches/{branch_id}")
@@ -84,30 +110,11 @@ public class BranchResource {
     }
 
 
-    @PreAuthorize("test('ZT_BRANCH', #branch_id, 'DELETE')")
-    @ApiOperation(value = "删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/{branch_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("branch_id") Long branch_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(branchService.remove(branch_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_BRANCH', 'DELETE')")
-    @ApiOperation(value = "批量删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "批量删除产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/branches/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        branchService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_BRANCH', #branch_id, 'READ')")
-    @ApiOperation(value = "获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "获取产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.GET, value = "/branches/{branch_id}")
-    public ResponseEntity<BranchDTO> get(@PathVariable("branch_id") Long branch_id) {
-        Branch domain = branchService.get(branch_id);
-        BranchDTO dto = branchMapping.toDto(domain);
-        Map<String, Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_BRANCH', 'CREATE')")
+    @ApiOperation(value = "检查产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "检查产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/branches/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody BranchDTO branchdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(branchService.checkKey(branchMapping.toDomain(branchdto)));
     }
 
     @PreAuthorize("quickTest('ZT_BRANCH', 'CREATE')")
@@ -116,13 +123,6 @@ public class BranchResource {
     public ResponseEntity<BranchDTO> getDraft(BranchDTO dto) {
         Branch domain = branchMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_BRANCH', 'CREATE')")
-    @ApiOperation(value = "检查产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "检查产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/branches/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody BranchDTO branchdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(branchService.checkKey(branchMapping.toDomain(branchdto)));
     }
 
 
@@ -195,20 +195,16 @@ public class BranchResource {
     }
 
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'UPDATE', #branch_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/{branch_id}")
-    public ResponseEntity<BranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
-        Branch domain = branchMapping.toDomain(branchdto);
-        domain.setProduct(product_id);
-        domain.setId(branch_id);
-		branchService.update(domain);
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', #branch_id, 'READ')")
+    @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/{branch_id}")
+    public ResponseEntity<BranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
+        Branch domain = branchService.get(branch_id);
         BranchDTO dto = branchMapping.toDto(domain);
         Map<String, Integer> opprivs = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'DELETE', #branch_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品删除产品的分支和平台信息")
@@ -225,15 +221,26 @@ public class BranchResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'READ', #branch_id, 'READ')")
-    @ApiOperation(value = "根据产品获取产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品获取产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/branches/{branch_id}")
-    public ResponseEntity<BranchDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id) {
-        Branch domain = branchService.get(branch_id);
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'UPDATE', #branch_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品更新产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/branches/{branch_id}")
+    public ResponseEntity<BranchDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("branch_id") Long branch_id, @RequestBody BranchDTO branchdto) {
+        Branch domain = branchMapping.toDomain(branchdto);
+        domain.setProduct(product_id);
+        domain.setId(branch_id);
+		branchService.update(domain);
         BranchDTO dto = branchMapping.toDto(domain);
         Map<String, Integer> opprivs = branchRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品检查产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品检查产品的分支和平台信息")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(branchService.checkKey(branchMapping.toDomain(branchdto)));
     }
 
     @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
@@ -243,13 +250,6 @@ public class BranchResource {
         Branch domain = branchMapping.toDomain(dto);
         domain.setProduct(product_id);
         return ResponseEntity.status(HttpStatus.OK).body(branchMapping.toDto(branchService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('ZT_BRANCH', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品检查产品的分支和平台信息", tags = {"产品的分支和平台信息" },  notes = "根据产品检查产品的分支和平台信息")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/branches/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchDTO branchdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(branchService.checkKey(branchMapping.toDomain(branchdto)));
     }
 
 

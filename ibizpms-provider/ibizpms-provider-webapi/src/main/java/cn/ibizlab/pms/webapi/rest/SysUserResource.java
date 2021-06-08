@@ -59,17 +59,13 @@ public class SysUserResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "更新系统用户", tags = {"系统用户" },  notes = "更新系统用户")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysusers/{sysuser_id}")
-    @Transactional
-    public ResponseEntity<SysUserDTO> update(@PathVariable("sysuser_id") String sysuser_id, @RequestBody SysUserDTO sysuserdto) {
-		SysUser domain  = sysuserMapping.toDomain(sysuserdto);
-        domain.setUserid(sysuser_id);
-		sysuserService.update(domain );
-		SysUserDTO dto = sysuserMapping.toDto(domain);
+    @ApiOperation(value = "获取系统用户", tags = {"系统用户" },  notes = "获取系统用户")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysusers/{sysuser_id}")
+    public ResponseEntity<SysUserDTO> get(@PathVariable("sysuser_id") String sysuser_id) {
+        SysUser domain = sysuserService.get(sysuser_id);
+        SysUserDTO dto = sysuserMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除系统用户", tags = {"系统用户" },  notes = "删除系统用户")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysusers/{sysuser_id}")
@@ -84,20 +80,17 @@ public class SysUserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取系统用户", tags = {"系统用户" },  notes = "获取系统用户")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysusers/{sysuser_id}")
-    public ResponseEntity<SysUserDTO> get(@PathVariable("sysuser_id") String sysuser_id) {
-        SysUser domain = sysuserService.get(sysuser_id);
-        SysUserDTO dto = sysuserMapping.toDto(domain);
+    @ApiOperation(value = "更新系统用户", tags = {"系统用户" },  notes = "更新系统用户")
+	@RequestMapping(method = RequestMethod.PUT, value = "/sysusers/{sysuser_id}")
+    @Transactional
+    public ResponseEntity<SysUserDTO> update(@PathVariable("sysuser_id") String sysuser_id, @RequestBody SysUserDTO sysuserdto) {
+		SysUser domain  = sysuserMapping.toDomain(sysuserdto);
+        domain.setUserid(sysuser_id);
+		sysuserService.update(domain );
+		SysUserDTO dto = sysuserMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取系统用户草稿", tags = {"系统用户" },  notes = "获取系统用户草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysusers/getdraft")
-    public ResponseEntity<SysUserDTO> getDraft(SysUserDTO dto) {
-        SysUser domain = sysuserMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(sysuserMapping.toDto(sysuserService.getDraft(domain)));
-    }
 
     @ApiOperation(value = "修改密码", tags = {"系统用户" },  notes = "修改密码")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/{sysuser_id}/changepwd")
@@ -114,6 +107,13 @@ public class SysUserResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/sysusers/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody SysUserDTO sysuserdto) {
         return  ResponseEntity.status(HttpStatus.OK).body(sysuserService.checkKey(sysuserMapping.toDomain(sysuserdto)));
+    }
+
+    @ApiOperation(value = "获取系统用户草稿", tags = {"系统用户" },  notes = "获取系统用户草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysusers/getdraft")
+    public ResponseEntity<SysUserDTO> getDraft(SysUserDTO dto) {
+        SysUser domain = sysuserMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(sysuserMapping.toDto(sysuserService.getDraft(domain)));
     }
 
     @ApiOperation(value = "保存系统用户", tags = {"系统用户" },  notes = "保存系统用户")

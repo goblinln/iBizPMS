@@ -67,6 +67,32 @@ public class IBZProProductResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZPRO_PRODUCT', #ibzproproduct_id, 'READ')")
+    @ApiOperation(value = "获取平台产品", tags = {"平台产品" },  notes = "获取平台产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproducts/{ibzproproduct_id}")
+    public ResponseEntity<IBZProProductDTO> get(@PathVariable("ibzproproduct_id") Long ibzproproduct_id) {
+        IBZProProduct domain = ibzproproductService.get(ibzproproduct_id);
+        IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzproproductRuntime.getOPPrivs(ibzproproduct_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZPRO_PRODUCT', #ibzproproduct_id, 'DELETE')")
+    @ApiOperation(value = "删除平台产品", tags = {"平台产品" },  notes = "删除平台产品")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproducts/{ibzproproduct_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzproproduct_id") Long ibzproproduct_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.remove(ibzproproduct_id));
+    }
+
+    @PreAuthorize("quickTest('IBZPRO_PRODUCT', 'DELETE')")
+    @ApiOperation(value = "批量删除平台产品", tags = {"平台产品" },  notes = "批量删除平台产品")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproducts/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproproductService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZPRO_PRODUCT', #ibzproproduct_id, 'UPDATE')")
     @ApiOperation(value = "更新平台产品", tags = {"平台产品" },  notes = "更新平台产品")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproducts/{ibzproproduct_id}")
@@ -84,30 +110,11 @@ public class IBZProProductResource {
     }
 
 
-    @PreAuthorize("test('IBZPRO_PRODUCT', #ibzproproduct_id, 'DELETE')")
-    @ApiOperation(value = "删除平台产品", tags = {"平台产品" },  notes = "删除平台产品")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproducts/{ibzproproduct_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzproproduct_id") Long ibzproproduct_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.remove(ibzproproduct_id));
-    }
-
-    @PreAuthorize("quickTest('IBZPRO_PRODUCT', 'DELETE')")
-    @ApiOperation(value = "批量删除平台产品", tags = {"平台产品" },  notes = "批量删除平台产品")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproducts/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproproductService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZPRO_PRODUCT', #ibzproproduct_id, 'READ')")
-    @ApiOperation(value = "获取平台产品", tags = {"平台产品" },  notes = "获取平台产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproducts/{ibzproproduct_id}")
-    public ResponseEntity<IBZProProductDTO> get(@PathVariable("ibzproproduct_id") Long ibzproproduct_id) {
-        IBZProProduct domain = ibzproproductService.get(ibzproproduct_id);
-        IBZProProductDTO dto = ibzproproductMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzproproductRuntime.getOPPrivs(ibzproproduct_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZPRO_PRODUCT', 'CREATE')")
+    @ApiOperation(value = "检查平台产品", tags = {"平台产品" },  notes = "检查平台产品")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProductDTO ibzproproductdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.checkKey(ibzproproductMapping.toDomain(ibzproproductdto)));
     }
 
     @PreAuthorize("quickTest('IBZPRO_PRODUCT', 'CREATE')")
@@ -116,13 +123,6 @@ public class IBZProProductResource {
     public ResponseEntity<IBZProProductDTO> getDraft(IBZProProductDTO dto) {
         IBZProProduct domain = ibzproproductMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductMapping.toDto(ibzproproductService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZPRO_PRODUCT', 'CREATE')")
-    @ApiOperation(value = "检查平台产品", tags = {"平台产品" },  notes = "检查平台产品")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproducts/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBZProProductDTO ibzproproductdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductService.checkKey(ibzproproductMapping.toDomain(ibzproproductdto)));
     }
 
     @PreAuthorize("quickTest('IBZPRO_PRODUCT', 'DENY')")

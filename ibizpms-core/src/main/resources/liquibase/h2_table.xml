@@ -125,7 +125,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-9-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-15-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -350,7 +350,7 @@
 
 
     <!--输出实体[ZT_CASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_case-6-9">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_case-7-9">
         <createTable tableName="zt_case">
                 <column name="LASTEDITEDDATE" remarks="" type="DATETIME">
                 </column>

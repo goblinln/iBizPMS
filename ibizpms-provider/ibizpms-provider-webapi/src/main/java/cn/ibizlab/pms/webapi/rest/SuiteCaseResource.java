@@ -67,6 +67,32 @@ public class SuiteCaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_SUITECASE', #suitecase_id, 'READ')")
+    @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
+	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
+    public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
+        SuiteCase domain = suitecaseService.get(suitecase_id);
+        SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
+        Map<String, Integer> opprivs = suitecaseRuntime.getOPPrivs(suitecase_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_SUITECASE', #suitecase_id, 'DELETE')")
+    @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/{suitecase_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("suitecase_id") String suitecase_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_SUITECASE', 'DELETE')")
+    @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        suitecaseService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_SUITECASE', #suitecase_id, 'UPDATE')")
     @ApiOperation(value = "更新套件用例", tags = {"套件用例" },  notes = "更新套件用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/suitecases/{suitecase_id}")
@@ -84,30 +110,11 @@ public class SuiteCaseResource {
     }
 
 
-    @PreAuthorize("test('ZT_SUITECASE', #suitecase_id, 'DELETE')")
-    @ApiOperation(value = "删除套件用例", tags = {"套件用例" },  notes = "删除套件用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/{suitecase_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("suitecase_id") String suitecase_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(suitecaseService.remove(suitecase_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_SUITECASE', 'DELETE')")
-    @ApiOperation(value = "批量删除套件用例", tags = {"套件用例" },  notes = "批量删除套件用例")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/suitecases/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        suitecaseService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_SUITECASE', #suitecase_id, 'READ')")
-    @ApiOperation(value = "获取套件用例", tags = {"套件用例" },  notes = "获取套件用例")
-	@RequestMapping(method = RequestMethod.GET, value = "/suitecases/{suitecase_id}")
-    public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
-        SuiteCase domain = suitecaseService.get(suitecase_id);
-        SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
-        Map<String, Integer> opprivs = suitecaseRuntime.getOPPrivs(suitecase_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_SUITECASE', 'CREATE')")
+    @ApiOperation(value = "检查套件用例", tags = {"套件用例" },  notes = "检查套件用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SuiteCaseDTO suitecasedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
     @PreAuthorize("quickTest('ZT_SUITECASE', 'CREATE')")
@@ -116,13 +123,6 @@ public class SuiteCaseResource {
     public ResponseEntity<SuiteCaseDTO> getDraft(SuiteCaseDTO dto) {
         SuiteCase domain = suitecaseMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(suitecaseMapping.toDto(suitecaseService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_SUITECASE', 'CREATE')")
-    @ApiOperation(value = "检查套件用例", tags = {"套件用例" },  notes = "检查套件用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/suitecases/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SuiteCaseDTO suitecasedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(suitecaseService.checkKey(suitecaseMapping.toDomain(suitecasedto)));
     }
 
     @PreAuthorize("quickTest('ZT_SUITECASE', 'DENY')")

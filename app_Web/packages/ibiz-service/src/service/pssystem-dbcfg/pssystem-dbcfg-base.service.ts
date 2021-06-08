@@ -66,17 +66,6 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PSSystemDBCfgService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/pssystemdbcfgs/${_context.pssystemdbcfg}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
             delete _data.srffrontuf;
         }
         return this.http.post(`/pssystemdbcfgs`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PSSystemDBCfgService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/pssystemdbcfgs/${_context.pssystemdbcfg}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof PSSystemDBCfgService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/pssystemdbcfgs/${_context.pssystemdbcfg}`);
     }
     /**
      * Get
@@ -144,6 +110,29 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PSSystemDBCfgService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/pssystemdbcfgs/${_context.pssystemdbcfg}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PSSystemDBCfgService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/pssystemdbcfgs/${_context.pssystemdbcfg}`, _data);
+    }
+    /**
      * FetchBuild
      *
      * @param {*} [_context={}]
@@ -164,5 +153,16 @@ export class PSSystemDBCfgBaseService extends EntityBaseService<IPSSystemDBCfg> 
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/pssystemdbcfgs/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof PSSystemDBCfgService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/pssystemdbcfgs/${_context.pssystemdbcfg}/select`);
     }
 }

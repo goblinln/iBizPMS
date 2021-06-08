@@ -67,6 +67,32 @@ public class IbzReportRoleConfigResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'READ')")
+    @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
+    public ResponseEntity<IbzReportRoleConfigDTO> get(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
+        IbzReportRoleConfig domain = ibzreportroleconfigService.get(ibzreportroleconfig_id);
+        IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(ibzreportroleconfig_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'DELETE')")
+    @ApiOperation(value = "删除汇报角色配置", tags = {"汇报角色配置" },  notes = "删除汇报角色配置")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.remove(ibzreportroleconfig_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'DELETE')")
+    @ApiOperation(value = "批量删除汇报角色配置", tags = {"汇报角色配置" },  notes = "批量删除汇报角色配置")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibzreportroleconfigService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibzreportroleconfig" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'UPDATE')")
     @ApiOperation(value = "更新汇报角色配置", tags = {"汇报角色配置" },  notes = "更新汇报角色配置")
@@ -85,30 +111,11 @@ public class IbzReportRoleConfigResource {
     }
 
 
-    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'DELETE')")
-    @ApiOperation(value = "删除汇报角色配置", tags = {"汇报角色配置" },  notes = "删除汇报角色配置")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.remove(ibzreportroleconfig_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'DELETE')")
-    @ApiOperation(value = "批量删除汇报角色配置", tags = {"汇报角色配置" },  notes = "批量删除汇报角色配置")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportroleconfigs/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibzreportroleconfigService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_REPORT_ROLE_CONFIG', #ibzreportroleconfig_id, 'READ')")
-    @ApiOperation(value = "获取汇报角色配置", tags = {"汇报角色配置" },  notes = "获取汇报角色配置")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportroleconfigs/{ibzreportroleconfig_id}")
-    public ResponseEntity<IbzReportRoleConfigDTO> get(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
-        IbzReportRoleConfig domain = ibzreportroleconfigService.get(ibzreportroleconfig_id);
-        IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs(ibzreportroleconfig_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
+    @ApiOperation(value = "检查汇报角色配置", tags = {"汇报角色配置" },  notes = "检查汇报角色配置")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.checkKey(ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
@@ -117,13 +124,6 @@ public class IbzReportRoleConfigResource {
     public ResponseEntity<IbzReportRoleConfigDTO> getDraft(IbzReportRoleConfigDTO dto) {
         IbzReportRoleConfig domain = ibzreportroleconfigMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigMapping.toDto(ibzreportroleconfigService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'CREATE')")
-    @ApiOperation(value = "检查汇报角色配置", tags = {"汇报角色配置" },  notes = "检查汇报角色配置")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportroleconfigs/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzReportRoleConfigDTO ibzreportroleconfigdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzreportroleconfigService.checkKey(ibzreportroleconfigMapping.toDomain(ibzreportroleconfigdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_REPORT_ROLE_CONFIG', 'DENY')")

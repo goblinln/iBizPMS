@@ -67,6 +67,32 @@ public class TestResultResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'READ')")
+    @ApiOperation(value = "获取测试结果", tags = {"测试结果" },  notes = "获取测试结果")
+	@RequestMapping(method = RequestMethod.GET, value = "/testresults/{testresult_id}")
+    public ResponseEntity<TestResultDTO> get(@PathVariable("testresult_id") Long testresult_id) {
+        TestResult domain = testresultService.get(testresult_id);
+        TestResultDTO dto = testresultMapping.toDto(domain);
+        Map<String, Integer> opprivs = testresultRuntime.getOPPrivs(testresult_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'DELETE')")
+    @ApiOperation(value = "删除测试结果", tags = {"测试结果" },  notes = "删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/{testresult_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("testresult_id") Long testresult_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'DELETE')")
+    @ApiOperation(value = "批量删除测试结果", tags = {"测试结果" },  notes = "批量删除测试结果")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        testresultService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'UPDATE')")
     @ApiOperation(value = "更新测试结果", tags = {"测试结果" },  notes = "更新测试结果")
 	@RequestMapping(method = RequestMethod.PUT, value = "/testresults/{testresult_id}")
@@ -84,30 +110,11 @@ public class TestResultResource {
     }
 
 
-    @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'DELETE')")
-    @ApiOperation(value = "删除测试结果", tags = {"测试结果" },  notes = "删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/{testresult_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("testresult_id") Long testresult_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(testresultService.remove(testresult_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_TESTRESULT', 'DELETE')")
-    @ApiOperation(value = "批量删除测试结果", tags = {"测试结果" },  notes = "批量删除测试结果")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/testresults/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        testresultService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_TESTRESULT', #testresult_id, 'READ')")
-    @ApiOperation(value = "获取测试结果", tags = {"测试结果" },  notes = "获取测试结果")
-	@RequestMapping(method = RequestMethod.GET, value = "/testresults/{testresult_id}")
-    public ResponseEntity<TestResultDTO> get(@PathVariable("testresult_id") Long testresult_id) {
-        TestResult domain = testresultService.get(testresult_id);
-        TestResultDTO dto = testresultMapping.toDto(domain);
-        Map<String, Integer> opprivs = testresultRuntime.getOPPrivs(testresult_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_TESTRESULT', 'CREATE')")
+    @ApiOperation(value = "检查测试结果", tags = {"测试结果" },  notes = "检查测试结果")
+	@RequestMapping(method = RequestMethod.POST, value = "/testresults/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody TestResultDTO testresultdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @PreAuthorize("quickTest('ZT_TESTRESULT', 'CREATE')")
@@ -116,13 +123,6 @@ public class TestResultResource {
     public ResponseEntity<TestResultDTO> getDraft(TestResultDTO dto) {
         TestResult domain = testresultMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(testresultMapping.toDto(testresultService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_TESTRESULT', 'CREATE')")
-    @ApiOperation(value = "检查测试结果", tags = {"测试结果" },  notes = "检查测试结果")
-	@RequestMapping(method = RequestMethod.POST, value = "/testresults/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody TestResultDTO testresultdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(testresultService.checkKey(testresultMapping.toDomain(testresultdto)));
     }
 
     @PreAuthorize("quickTest('ZT_TESTRESULT', 'DENY')")

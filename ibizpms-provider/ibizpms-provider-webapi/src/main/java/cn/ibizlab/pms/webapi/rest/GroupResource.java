@@ -67,6 +67,32 @@ public class GroupResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_GROUP', #group_id, 'READ')")
+    @ApiOperation(value = "获取群组", tags = {"群组" },  notes = "获取群组")
+	@RequestMapping(method = RequestMethod.GET, value = "/groups/{group_id}")
+    public ResponseEntity<GroupDTO> get(@PathVariable("group_id") Long group_id) {
+        Group domain = groupService.get(group_id);
+        GroupDTO dto = groupMapping.toDto(domain);
+        Map<String, Integer> opprivs = groupRuntime.getOPPrivs(group_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_GROUP', #group_id, 'DELETE')")
+    @ApiOperation(value = "删除群组", tags = {"群组" },  notes = "删除群组")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/{group_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("group_id") Long group_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(groupService.remove(group_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_GROUP', 'DELETE')")
+    @ApiOperation(value = "批量删除群组", tags = {"群组" },  notes = "批量删除群组")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        groupService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_GROUP', #group_id, 'UPDATE')")
     @ApiOperation(value = "更新群组", tags = {"群组" },  notes = "更新群组")
 	@RequestMapping(method = RequestMethod.PUT, value = "/groups/{group_id}")
@@ -84,30 +110,11 @@ public class GroupResource {
     }
 
 
-    @PreAuthorize("test('ZT_GROUP', #group_id, 'DELETE')")
-    @ApiOperation(value = "删除群组", tags = {"群组" },  notes = "删除群组")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/{group_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("group_id") Long group_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(groupService.remove(group_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_GROUP', 'DELETE')")
-    @ApiOperation(value = "批量删除群组", tags = {"群组" },  notes = "批量删除群组")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/groups/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        groupService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_GROUP', #group_id, 'READ')")
-    @ApiOperation(value = "获取群组", tags = {"群组" },  notes = "获取群组")
-	@RequestMapping(method = RequestMethod.GET, value = "/groups/{group_id}")
-    public ResponseEntity<GroupDTO> get(@PathVariable("group_id") Long group_id) {
-        Group domain = groupService.get(group_id);
-        GroupDTO dto = groupMapping.toDto(domain);
-        Map<String, Integer> opprivs = groupRuntime.getOPPrivs(group_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_GROUP', 'CREATE')")
+    @ApiOperation(value = "检查群组", tags = {"群组" },  notes = "检查群组")
+	@RequestMapping(method = RequestMethod.POST, value = "/groups/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody GroupDTO groupdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(groupService.checkKey(groupMapping.toDomain(groupdto)));
     }
 
     @PreAuthorize("quickTest('ZT_GROUP', 'CREATE')")
@@ -116,13 +123,6 @@ public class GroupResource {
     public ResponseEntity<GroupDTO> getDraft(GroupDTO dto) {
         Group domain = groupMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(groupMapping.toDto(groupService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_GROUP', 'CREATE')")
-    @ApiOperation(value = "检查群组", tags = {"群组" },  notes = "检查群组")
-	@RequestMapping(method = RequestMethod.POST, value = "/groups/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody GroupDTO groupdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(groupService.checkKey(groupMapping.toDomain(groupdto)));
     }
 
     @PreAuthorize("quickTest('ZT_GROUP', 'DENY')")

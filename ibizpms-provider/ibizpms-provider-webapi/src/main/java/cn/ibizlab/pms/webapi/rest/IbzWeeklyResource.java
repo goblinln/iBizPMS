@@ -65,21 +65,16 @@ public class IbzWeeklyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "ibzweekly" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
-    @ApiOperation(value = "更新周报", tags = {"周报" },  notes = "更新周报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/{ibzweekly_id}")
-    @Transactional
-    public ResponseEntity<IbzWeeklyDTO> update(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
-		IbzWeekly domain  = ibzweeklyMapping.toDomain(ibzweeklydto);
-        domain.setIbzweeklyid(ibzweekly_id);
-		ibzweeklyService.update(domain );
-		IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
+    @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}")
+    public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
+        IbzWeekly domain = ibzweeklyService.get(ibzweekly_id);
+        IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "删除周报", tags = {"周报" },  notes = "删除周报")
@@ -96,24 +91,21 @@ public class IbzWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @VersionCheck(entity = "ibzweekly" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
-    @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}")
-    public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
-        IbzWeekly domain = ibzweeklyService.get(ibzweekly_id);
-        IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
+    @ApiOperation(value = "更新周报", tags = {"周报" },  notes = "更新周报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzweeklies/{ibzweekly_id}")
+    @Transactional
+    public ResponseEntity<IbzWeeklyDTO> update(@PathVariable("ibzweekly_id") Long ibzweekly_id, @RequestBody IbzWeeklyDTO ibzweeklydto) {
+		IbzWeekly domain  = ibzweeklyMapping.toDomain(ibzweeklydto);
+        domain.setIbzweeklyid(ibzweekly_id);
+		ibzweeklyService.update(domain );
+		IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
         Map<String, Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
-    @ApiOperation(value = "获取周报草稿", tags = {"周报" },  notes = "获取周报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/getdraft")
-    public ResponseEntity<IbzWeeklyDTO> getDraft(IbzWeeklyDTO dto) {
-        IbzWeekly domain = ibzweeklyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('IBZ_WEEKLY', 'CREATE')")
     @ApiOperation(value = "检查周报", tags = {"周报" },  notes = "检查周报")
@@ -163,6 +155,14 @@ public class IbzWeeklyResource {
         return ResponseEntity.status(HttpStatus.OK).body(ibzweeklydto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_WEEKLY', 'NONE')")
+    @ApiOperation(value = "获取周报草稿", tags = {"周报" },  notes = "获取周报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/getdraft")
+    public ResponseEntity<IbzWeeklyDTO> getDraft(IbzWeeklyDTO dto) {
+        IbzWeekly domain = ibzweeklyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzweeklyMapping.toDto(ibzweeklyService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('IBZ_WEEKLY', #ibzweekly_id, 'NONE')")
     @ApiOperation(value = "已读", tags = {"周报" },  notes = "已读")

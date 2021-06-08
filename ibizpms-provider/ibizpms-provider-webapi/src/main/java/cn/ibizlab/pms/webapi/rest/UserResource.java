@@ -67,22 +67,16 @@ public class UserResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_USER', #user_id, 'UPDATE')")
-    @ApiOperation(value = "更新用户", tags = {"用户" },  notes = "更新用户")
-	@RequestMapping(method = RequestMethod.PUT, value = "/users/{user_id}")
-    @Transactional
-    public ResponseEntity<UserDTO> update(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {
-		User domain  = userMapping.toDomain(userdto);
-        domain.setId(user_id);
-		userService.update(domain );
-        if(!userRuntime.test(user_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		UserDTO dto = userMapping.toDto(domain);
+    @PreAuthorize("test('ZT_USER', #user_id, 'READ')")
+    @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
+	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}")
+    public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
+        User domain = userService.get(user_id);
+        UserDTO dto = userMapping.toDto(domain);
         Map<String, Integer> opprivs = userRuntime.getOPPrivs(user_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_USER', #user_id, 'DELETE')")
     @ApiOperation(value = "删除用户", tags = {"用户" },  notes = "删除用户")
@@ -99,24 +93,22 @@ public class UserResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_USER', #user_id, 'READ')")
-    @ApiOperation(value = "获取用户", tags = {"用户" },  notes = "获取用户")
-	@RequestMapping(method = RequestMethod.GET, value = "/users/{user_id}")
-    public ResponseEntity<UserDTO> get(@PathVariable("user_id") Long user_id) {
-        User domain = userService.get(user_id);
-        UserDTO dto = userMapping.toDto(domain);
+    @PreAuthorize("test('ZT_USER', #user_id, 'UPDATE')")
+    @ApiOperation(value = "更新用户", tags = {"用户" },  notes = "更新用户")
+	@RequestMapping(method = RequestMethod.PUT, value = "/users/{user_id}")
+    @Transactional
+    public ResponseEntity<UserDTO> update(@PathVariable("user_id") Long user_id, @RequestBody UserDTO userdto) {
+		User domain  = userMapping.toDomain(userdto);
+        domain.setId(user_id);
+		userService.update(domain );
+        if(!userRuntime.test(user_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		UserDTO dto = userMapping.toDto(domain);
         Map<String, Integer> opprivs = userRuntime.getOPPrivs(user_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_USER', 'CREATE')")
-    @ApiOperation(value = "获取用户草稿", tags = {"用户" },  notes = "获取用户草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/users/getdraft")
-    public ResponseEntity<UserDTO> getDraft(UserDTO dto) {
-        User domain = userMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(userService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_USER', 'CREATE')")
     @ApiOperation(value = "检查用户", tags = {"用户" },  notes = "检查用户")
@@ -138,6 +130,14 @@ public class UserResource {
         return ResponseEntity.status(HttpStatus.OK).body(userdto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_USER', 'CREATE')")
+    @ApiOperation(value = "获取用户草稿", tags = {"用户" },  notes = "获取用户草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/users/getdraft")
+    public ResponseEntity<UserDTO> getDraft(UserDTO dto) {
+        User domain = userMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(userMapping.toDto(userService.getDraft(domain)));
+    }
 
     @PreAuthorize("quickTest('ZT_USER', 'DENY')")
     @ApiOperation(value = "保存用户", tags = {"用户" },  notes = "保存用户")

@@ -108,15 +108,33 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         return this.condCache.get('view');
     }
     /**
-     * Submit
+     * AutoCreate
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof MonthlyService
      */
-    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/submit`, _data);
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/monthlies/${_context.monthly}/autocreate`, _data);
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof MonthlyService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/monthlies`, _data);
     }
     /**
      * Get
@@ -131,26 +149,18 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         return res;
     }
     /**
-     * AutoCreate
+     * GetDraft
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof MonthlyService
      */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/autocreate`, _data);
-    }
-    /**
-     * FetchDefault
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof MonthlyService
-     */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/fetchdefault`, _data);
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/monthlies/getdraft`, _data);
+        return res;
     }
     /**
      * Notice
@@ -175,36 +185,15 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         return this.http.post(`/monthlies/${_context.monthly}/read`, _data);
     }
     /**
-     * GetDraft
+     * Submit
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof MonthlyService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/monthlies/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof MonthlyService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/monthlies`, _data);
+    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/monthlies/${_context.monthly}/submit`, _data);
     }
     /**
      * Update
@@ -218,19 +207,16 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/monthlies/${_context.monthly}`, _data);
     }
-
     /**
-     * SubmitBatch接口方法
+     * FetchDefault
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof MonthlyServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof MonthlyService
      */
-    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/monthlies/submitbatch`,_data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/monthlies/fetchdefault`, _data);
     }
 
     /**
@@ -273,5 +259,19 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
     public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/monthlies/readbatch`,_data);
+    }
+
+    /**
+     * SubmitBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof MonthlyServiceBase
+     */
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/monthlies/submitbatch`,_data);
     }
 }

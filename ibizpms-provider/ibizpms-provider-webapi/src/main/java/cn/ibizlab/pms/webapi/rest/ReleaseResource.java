@@ -67,22 +67,16 @@ public class ReleaseResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_RELEASE', #release_id, 'UPDATE')")
-    @ApiOperation(value = "更新发布", tags = {"发布" },  notes = "更新发布")
-	@RequestMapping(method = RequestMethod.PUT, value = "/releases/{release_id}")
-    @Transactional
-    public ResponseEntity<ReleaseDTO> update(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
-		Release domain  = releaseMapping.toDomain(releasedto);
-        domain.setId(release_id);
-		releaseService.update(domain );
-        if(!releaseRuntime.test(release_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ReleaseDTO dto = releaseMapping.toDto(domain);
+    @PreAuthorize("test('ZT_RELEASE', #release_id, 'READ')")
+    @ApiOperation(value = "获取发布", tags = {"发布" },  notes = "获取发布")
+	@RequestMapping(method = RequestMethod.GET, value = "/releases/{release_id}")
+    public ResponseEntity<ReleaseDTO> get(@PathVariable("release_id") Long release_id) {
+        Release domain = releaseService.get(release_id);
+        ReleaseDTO dto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivs = releaseRuntime.getOPPrivs(release_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_RELEASE', #release_id, 'DELETE')")
     @ApiOperation(value = "删除发布", tags = {"发布" },  notes = "删除发布")
@@ -99,24 +93,22 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_RELEASE', #release_id, 'READ')")
-    @ApiOperation(value = "获取发布", tags = {"发布" },  notes = "获取发布")
-	@RequestMapping(method = RequestMethod.GET, value = "/releases/{release_id}")
-    public ResponseEntity<ReleaseDTO> get(@PathVariable("release_id") Long release_id) {
-        Release domain = releaseService.get(release_id);
-        ReleaseDTO dto = releaseMapping.toDto(domain);
+    @PreAuthorize("test('ZT_RELEASE', #release_id, 'UPDATE')")
+    @ApiOperation(value = "更新发布", tags = {"发布" },  notes = "更新发布")
+	@RequestMapping(method = RequestMethod.PUT, value = "/releases/{release_id}")
+    @Transactional
+    public ResponseEntity<ReleaseDTO> update(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
+		Release domain  = releaseMapping.toDomain(releasedto);
+        domain.setId(release_id);
+		releaseService.update(domain );
+        if(!releaseRuntime.test(release_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ReleaseDTO dto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivs = releaseRuntime.getOPPrivs(release_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_RELEASE', 'CREATE')")
-    @ApiOperation(value = "获取发布草稿", tags = {"发布" },  notes = "获取发布草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/releases/getdraft")
-    public ResponseEntity<ReleaseDTO> getDraft(ReleaseDTO dto) {
-        Release domain = releaseMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(releaseService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_RELEASE', #release_id, 'ACTIVATE')")
     @ApiOperation(value = "状态变更（激活）", tags = {"发布" },  notes = "状态变更（激活）")
@@ -165,6 +157,14 @@ public class ReleaseResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody ReleaseDTO releasedto) {
         return  ResponseEntity.status(HttpStatus.OK).body(releaseService.checkKey(releaseMapping.toDomain(releasedto)));
+    }
+
+    @PreAuthorize("quickTest('ZT_RELEASE', 'CREATE')")
+    @ApiOperation(value = "获取发布草稿", tags = {"发布" },  notes = "获取发布草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/releases/getdraft")
+    public ResponseEntity<ReleaseDTO> getDraft(ReleaseDTO dto) {
+        Release domain = releaseMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(releaseService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_RELEASE', #release_id, 'LINKBUG')")
@@ -349,20 +349,16 @@ public class ReleaseResource {
     }
 
 
-    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'UPDATE', #release_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新发布", tags = {"发布" },  notes = "根据产品更新发布")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}")
-    public ResponseEntity<ReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
-        Release domain = releaseMapping.toDomain(releasedto);
-        domain.setProduct(product_id);
-        domain.setId(release_id);
-		releaseService.update(domain);
+    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'READ', #release_id, 'READ')")
+    @ApiOperation(value = "根据产品获取发布", tags = {"发布" },  notes = "根据产品获取发布")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}")
+    public ResponseEntity<ReleaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
+        Release domain = releaseService.get(release_id);
         ReleaseDTO dto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivs = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'DELETE', #release_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除发布", tags = {"发布" },  notes = "根据产品删除发布")
@@ -379,25 +375,20 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'READ', #release_id, 'READ')")
-    @ApiOperation(value = "根据产品获取发布", tags = {"发布" },  notes = "根据产品获取发布")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/{release_id}")
-    public ResponseEntity<ReleaseDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id) {
-        Release domain = releaseService.get(release_id);
+    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'UPDATE', #release_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新发布", tags = {"发布" },  notes = "根据产品更新发布")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/releases/{release_id}")
+    public ResponseEntity<ReleaseDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
+        Release domain = releaseMapping.toDomain(releasedto);
+        domain.setProduct(product_id);
+        domain.setId(release_id);
+		releaseService.update(domain);
         ReleaseDTO dto = releaseMapping.toDto(domain);
         Map<String, Integer> opprivs = releaseRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取发布草稿", tags = {"发布" },  notes = "根据产品获取发布草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/getdraft")
-    public ResponseEntity<ReleaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ReleaseDTO dto) {
-        Release domain = releaseMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(releaseService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'MANAGE', #release_id, 'ACTIVATE')")
     @ApiOperation(value = "根据产品状态变更（激活）", tags = {"发布" },  notes = "根据产品状态变更（激活）")
@@ -446,6 +437,15 @@ public class ReleaseResource {
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/checkkey")
     public ResponseEntity<Boolean> checkKeyByProduct(@PathVariable("product_id") Long product_id, @RequestBody ReleaseDTO releasedto) {
         return  ResponseEntity.status(HttpStatus.OK).body(releaseService.checkKey(releaseMapping.toDomain(releasedto)));
+    }
+
+    @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取发布草稿", tags = {"发布" },  notes = "根据产品获取发布草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/releases/getdraft")
+    public ResponseEntity<ReleaseDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ReleaseDTO dto) {
+        Release domain = releaseMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(releaseService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_RELEASE', 'ZT_PRODUCT', #product_id, 'MANAGE', #release_id, 'LINKBUG')")

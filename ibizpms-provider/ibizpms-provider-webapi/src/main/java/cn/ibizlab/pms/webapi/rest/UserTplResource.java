@@ -67,6 +67,32 @@ public class UserTplResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'READ')")
+    @ApiOperation(value = "获取用户模板", tags = {"用户模板" },  notes = "获取用户模板")
+	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/{usertpl_id}")
+    public ResponseEntity<UserTplDTO> get(@PathVariable("usertpl_id") Long usertpl_id) {
+        UserTpl domain = usertplService.get(usertpl_id);
+        UserTplDTO dto = usertplMapping.toDto(domain);
+        Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(usertpl_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'DELETE')")
+    @ApiOperation(value = "删除用户模板", tags = {"用户模板" },  notes = "删除用户模板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/{usertpl_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("usertpl_id") Long usertpl_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(usertplService.remove(usertpl_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_USERTPL', 'DELETE')")
+    @ApiOperation(value = "批量删除用户模板", tags = {"用户模板" },  notes = "批量删除用户模板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        usertplService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'UPDATE')")
     @ApiOperation(value = "更新用户模板", tags = {"用户模板" },  notes = "更新用户模板")
 	@RequestMapping(method = RequestMethod.PUT, value = "/usertpls/{usertpl_id}")
@@ -84,30 +110,11 @@ public class UserTplResource {
     }
 
 
-    @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'DELETE')")
-    @ApiOperation(value = "删除用户模板", tags = {"用户模板" },  notes = "删除用户模板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/{usertpl_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("usertpl_id") Long usertpl_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(usertplService.remove(usertpl_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_USERTPL', 'DELETE')")
-    @ApiOperation(value = "批量删除用户模板", tags = {"用户模板" },  notes = "批量删除用户模板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/usertpls/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        usertplService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_USERTPL', #usertpl_id, 'READ')")
-    @ApiOperation(value = "获取用户模板", tags = {"用户模板" },  notes = "获取用户模板")
-	@RequestMapping(method = RequestMethod.GET, value = "/usertpls/{usertpl_id}")
-    public ResponseEntity<UserTplDTO> get(@PathVariable("usertpl_id") Long usertpl_id) {
-        UserTpl domain = usertplService.get(usertpl_id);
-        UserTplDTO dto = usertplMapping.toDto(domain);
-        Map<String, Integer> opprivs = usertplRuntime.getOPPrivs(usertpl_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_USERTPL', 'CREATE')")
+    @ApiOperation(value = "检查用户模板", tags = {"用户模板" },  notes = "检查用户模板")
+	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody UserTplDTO usertpldto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(usertplService.checkKey(usertplMapping.toDomain(usertpldto)));
     }
 
     @PreAuthorize("quickTest('ZT_USERTPL', 'CREATE')")
@@ -116,13 +123,6 @@ public class UserTplResource {
     public ResponseEntity<UserTplDTO> getDraft(UserTplDTO dto) {
         UserTpl domain = usertplMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(usertplMapping.toDto(usertplService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_USERTPL', 'CREATE')")
-    @ApiOperation(value = "检查用户模板", tags = {"用户模板" },  notes = "检查用户模板")
-	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody UserTplDTO usertpldto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(usertplService.checkKey(usertplMapping.toDomain(usertpldto)));
     }
 
     @PreAuthorize("quickTest('ZT_USERTPL', 'DENY')")

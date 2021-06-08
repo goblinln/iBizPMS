@@ -74,6 +74,32 @@ public class StoryResource {
         storyService.createBatch(storyMapping.toDomain(storydtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
+    @PreAuthorize("test('ZT_STORY', #story_id, 'READ')")
+    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}")
+    public ResponseEntity<StoryDTO> get(@PathVariable("story_id") Long story_id) {
+        Story domain = storyService.get(story_id);
+        StoryDTO dto = storyMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(story_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_STORY', #story_id, 'DELETE')")
+    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("story_id") Long story_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
+    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("test('ZT_STORY', #story_id, 'UPDATE')")
     @ApiOperation(value = "更新需求", tags = {"需求" },  notes = "更新需求")
@@ -91,40 +117,6 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("test('ZT_STORY', #story_id, 'DELETE')")
-    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("story_id") Long story_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(story_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
-    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_STORY', #story_id, 'READ')")
-    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}")
-    public ResponseEntity<StoryDTO> get(@PathVariable("story_id") Long story_id) {
-        Story domain = storyService.get(story_id);
-        StoryDTO dto = storyMapping.toDto(domain);
-        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(story_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
-    @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/stories/getdraft")
-    public ResponseEntity<StoryDTO> getDraft(StoryDTO dto) {
-        Story domain = storyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_STORY', #story_id, 'ACTIVATE')")
     @ApiOperation(value = "激活", tags = {"需求" },  notes = "激活")
@@ -398,6 +390,14 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
+    @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/stories/getdraft")
+    public ResponseEntity<StoryDTO> getDraft(StoryDTO dto) {
+        Story domain = storyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('ZT_STORY', #story_id, 'READ')")
     @ApiOperation(value = "获取需求描述", tags = {"需求" },  notes = "获取需求描述")
@@ -1107,21 +1107,16 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @VersionCheck(entity = "story" , versionfield = "lastediteddate")
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'UPDATE', #story_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新需求", tags = {"需求" },  notes = "根据产品更新需求")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}")
-    public ResponseEntity<StoryDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
-        Story domain = storyMapping.toDomain(storydto);
-        domain.setProduct(product_id);
-        domain.setId(story_id);
-		storyService.update(domain);
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'READ')")
+    @ApiOperation(value = "根据产品获取需求", tags = {"需求" },  notes = "根据产品获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}")
+    public ResponseEntity<StoryDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
+        Story domain = storyService.get(story_id);
         StoryDTO dto = storyMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'DELETE', #story_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除需求", tags = {"需求" },  notes = "根据产品删除需求")
@@ -1138,25 +1133,21 @@ public class StoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'READ')")
-    @ApiOperation(value = "根据产品获取需求", tags = {"需求" },  notes = "根据产品获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}")
-    public ResponseEntity<StoryDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id) {
-        Story domain = storyService.get(story_id);
+    @VersionCheck(entity = "story" , versionfield = "lastediteddate")
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'UPDATE', #story_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新需求", tags = {"需求" },  notes = "根据产品更新需求")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}")
+    public ResponseEntity<StoryDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+		storyService.update(domain);
         StoryDTO dto = storyMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取需求草稿", tags = {"需求" },  notes = "根据产品获取需求草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/getdraft")
-    public ResponseEntity<StoryDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, StoryDTO dto) {
-        Story domain = storyMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'MANAGE', #story_id, 'ACTIVATE')")
     @ApiOperation(value = "根据产品激活", tags = {"需求" },  notes = "根据产品激活")
@@ -1429,6 +1420,15 @@ public class StoryResource {
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         storydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+
+    @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取需求草稿", tags = {"需求" },  notes = "根据产品获取需求草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/getdraft")
+    public ResponseEntity<StoryDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, StoryDTO dto) {
+        Story domain = storyMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(storyService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_STORY', 'ZT_PRODUCT', #product_id, 'READ', #story_id, 'READ')")

@@ -59,18 +59,13 @@ public class SysRoleResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "sysrole" , versionfield = "updatedate")
-    @ApiOperation(value = "更新系统角色", tags = {"系统角色" },  notes = "更新系统角色")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysroles/{sysrole_id}")
-    @Transactional
-    public ResponseEntity<SysRoleDTO> update(@PathVariable("sysrole_id") String sysrole_id, @RequestBody SysRoleDTO sysroledto) {
-		SysRole domain  = sysroleMapping.toDomain(sysroledto);
-        domain.setRoleid(sysrole_id);
-		sysroleService.update(domain );
-		SysRoleDTO dto = sysroleMapping.toDto(domain);
+    @ApiOperation(value = "获取系统角色", tags = {"系统角色" },  notes = "获取系统角色")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysroles/{sysrole_id}")
+    public ResponseEntity<SysRoleDTO> get(@PathVariable("sysrole_id") String sysrole_id) {
+        SysRole domain = sysroleService.get(sysrole_id);
+        SysRoleDTO dto = sysroleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除系统角色", tags = {"系统角色" },  notes = "删除系统角色")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysroles/{sysrole_id}")
@@ -85,12 +80,23 @@ public class SysRoleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取系统角色", tags = {"系统角色" },  notes = "获取系统角色")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysroles/{sysrole_id}")
-    public ResponseEntity<SysRoleDTO> get(@PathVariable("sysrole_id") String sysrole_id) {
-        SysRole domain = sysroleService.get(sysrole_id);
-        SysRoleDTO dto = sysroleMapping.toDto(domain);
+    @VersionCheck(entity = "sysrole" , versionfield = "updatedate")
+    @ApiOperation(value = "更新系统角色", tags = {"系统角色" },  notes = "更新系统角色")
+	@RequestMapping(method = RequestMethod.PUT, value = "/sysroles/{sysrole_id}")
+    @Transactional
+    public ResponseEntity<SysRoleDTO> update(@PathVariable("sysrole_id") String sysrole_id, @RequestBody SysRoleDTO sysroledto) {
+		SysRole domain  = sysroleMapping.toDomain(sysroledto);
+        domain.setRoleid(sysrole_id);
+		sysroleService.update(domain );
+		SysRoleDTO dto = sysroleMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查系统角色", tags = {"系统角色" },  notes = "检查系统角色")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysRoleDTO sysroledto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(sysroleService.checkKey(sysroleMapping.toDomain(sysroledto)));
     }
 
     @ApiOperation(value = "获取系统角色草稿", tags = {"系统角色" },  notes = "获取系统角色草稿")
@@ -98,12 +104,6 @@ public class SysRoleResource {
     public ResponseEntity<SysRoleDTO> getDraft(SysRoleDTO dto) {
         SysRole domain = sysroleMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(sysroleMapping.toDto(sysroleService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查系统角色", tags = {"系统角色" },  notes = "检查系统角色")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysroles/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysRoleDTO sysroledto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(sysroleService.checkKey(sysroleMapping.toDomain(sysroledto)));
     }
 
     @ApiOperation(value = "保存系统角色", tags = {"系统角色" },  notes = "保存系统角色")

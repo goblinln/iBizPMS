@@ -67,6 +67,32 @@ public class EmpLoyeeloadResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'READ')")
+    @ApiOperation(value = "获取员工负载表", tags = {"员工负载表" },  notes = "获取员工负载表")
+	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/{employeeload_id}")
+    public ResponseEntity<EmpLoyeeloadDTO> get(@PathVariable("employeeload_id") Long employeeload_id) {
+        EmpLoyeeload domain = employeeloadService.get(employeeload_id);
+        EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
+        Map<String, Integer> opprivs = employeeloadRuntime.getOPPrivs(employeeload_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'DELETE')")
+    @ApiOperation(value = "删除员工负载表", tags = {"员工负载表" },  notes = "删除员工负载表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/{employeeload_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("employeeload_id") Long employeeload_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.remove(employeeload_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'DELETE')")
+    @ApiOperation(value = "批量删除员工负载表", tags = {"员工负载表" },  notes = "批量删除员工负载表")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        employeeloadService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'UPDATE')")
     @ApiOperation(value = "更新员工负载表", tags = {"员工负载表" },  notes = "更新员工负载表")
 	@RequestMapping(method = RequestMethod.PUT, value = "/employeeloads/{employeeload_id}")
@@ -84,30 +110,11 @@ public class EmpLoyeeloadResource {
     }
 
 
-    @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'DELETE')")
-    @ApiOperation(value = "删除员工负载表", tags = {"员工负载表" },  notes = "删除员工负载表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/{employeeload_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("employeeload_id") Long employeeload_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(employeeloadService.remove(employeeload_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'DELETE')")
-    @ApiOperation(value = "批量删除员工负载表", tags = {"员工负载表" },  notes = "批量删除员工负载表")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/employeeloads/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        employeeloadService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_EMPLOYEELOAD', #employeeload_id, 'READ')")
-    @ApiOperation(value = "获取员工负载表", tags = {"员工负载表" },  notes = "获取员工负载表")
-	@RequestMapping(method = RequestMethod.GET, value = "/employeeloads/{employeeload_id}")
-    public ResponseEntity<EmpLoyeeloadDTO> get(@PathVariable("employeeload_id") Long employeeload_id) {
-        EmpLoyeeload domain = employeeloadService.get(employeeload_id);
-        EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
-        Map<String, Integer> opprivs = employeeloadRuntime.getOPPrivs(employeeload_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'CREATE')")
+    @ApiOperation(value = "检查员工负载表", tags = {"员工负载表" },  notes = "检查员工负载表")
+	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(employeeloadService.checkKey(employeeloadMapping.toDomain(employeeloaddto)));
     }
 
     @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'CREATE')")
@@ -116,13 +123,6 @@ public class EmpLoyeeloadResource {
     public ResponseEntity<EmpLoyeeloadDTO> getDraft(EmpLoyeeloadDTO dto) {
         EmpLoyeeload domain = employeeloadMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(employeeloadMapping.toDto(employeeloadService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'CREATE')")
-    @ApiOperation(value = "检查员工负载表", tags = {"员工负载表" },  notes = "检查员工负载表")
-	@RequestMapping(method = RequestMethod.POST, value = "/employeeloads/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody EmpLoyeeloadDTO employeeloaddto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(employeeloadService.checkKey(employeeloadMapping.toDomain(employeeloaddto)));
     }
 
     @PreAuthorize("quickTest('IBZ_EMPLOYEELOAD', 'DENY')")

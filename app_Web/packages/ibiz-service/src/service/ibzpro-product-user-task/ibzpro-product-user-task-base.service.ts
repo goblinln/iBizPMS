@@ -66,17 +66,6 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzproProductUserTaskService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzproproductusertasks/${_context.ibzproproductusertask}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzproproductusertasks`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzproProductUserTaskService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzproproductusertasks/${_context.ibzproproductusertask}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzproProductUserTaskService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzproproductusertasks/${_context.ibzproproductusertask}`);
     }
     /**
      * Get
@@ -142,6 +108,29 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/ibzproproductusertasks/getdraft`, _data);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzproProductUserTaskService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzproproductusertasks/${_context.ibzproproductusertask}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzproProductUserTaskService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzproproductusertasks/${_context.ibzproproductusertask}`, _data);
     }
     /**
      * FetchDefault
@@ -186,5 +175,16 @@ export class IbzproProductUserTaskBaseService extends EntityBaseService<IIbzproP
      */
     async FetchProductWeeklyUserTaskStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzproproductusertasks/fetchproductweeklyusertaskstats`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzproProductUserTaskService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzproproductusertasks/${_context.ibzproproductusertask}/select`);
     }
 }

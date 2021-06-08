@@ -88,17 +88,6 @@ export class DeptBaseService extends EntityBaseService<IDept> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DeptService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/depts/${_context.dept}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -115,29 +104,6 @@ export class DeptBaseService extends EntityBaseService<IDept> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/depts`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DeptService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/depts/${_context.dept}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DeptService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/depts/${_context.dept}`);
     }
     /**
      * Get
@@ -166,6 +132,29 @@ export class DeptBaseService extends EntityBaseService<IDept> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DeptService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/depts/${_context.dept}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DeptService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/depts/${_context.dept}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -186,5 +175,16 @@ export class DeptBaseService extends EntityBaseService<IDept> {
      */
     async FetchRoot(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/depts/fetchroot`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DeptService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/depts/${_context.dept}/select`);
     }
 }

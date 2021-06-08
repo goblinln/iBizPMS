@@ -66,6 +66,7 @@ export class AppComponentService {
         this.viewMap.set("DEDATAVIEWEXPVIEW_DEFAULT", 'app-default-dataviewexpview');
         this.viewMap.set("DEPICKUPGRIDVIEW_DEFAULT", 'app-default-pickupgridview');
         this.viewMap.set("DEMPICKUPVIEW_DEFAULT", 'app-default-mpickupview');
+        this.viewMap.set("DEMPICKUPVIEW2_DEFAULT", 'app-default-mpickupview2');
         this.viewMap.set("DEPICKUPVIEW_DEFAULT", 'app-default-pickupview');
         this.viewMap.set("DECALENDAREXPVIEW_DEFAULT", 'app-default-calendarexpview');
         this.viewMap.set("DETREEEXPVIEW_DEFAULT", 'app-default-treeexpview');
@@ -204,8 +205,8 @@ export class AppComponentService {
         this.controlMap.set("MAP_DEFAULT", 'app-default-map');
         // 注册部件插件标识
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
-        this.controlMap.set("CHART_RENDER_NEW", 'app-chart-render-new');
         this.controlMap.set("GRID_RENDER_TreeGrid", 'app-grid-render-tree-grid');
+        this.controlMap.set("CHART_RENDER_NEW", 'app-chart-render-new');
         this.controlMap.set("CHART_RENDER_BurnoutFigure", 'app-chart-render-burnout-figure');
         this.controlMap.set("LIST_ITEMRENDER_listDownload", 'app-list-itemrender-list-download');
         this.controlMap.set("GRID_RENDER_StepTable", 'app-grid-render-step-table');

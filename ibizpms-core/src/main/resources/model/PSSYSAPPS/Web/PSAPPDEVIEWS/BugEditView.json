@@ -705,13 +705,12 @@
                 "valFormat" : "{0: '/'}",
                 "AC" : "TRUE",
                 "SRFNAVPARAM.product" : "%product%",
-                "TRIGGER" : "TRUE",
                 "SRFNAVCTX.product" : "%product%",
                 "SRFNAVCTX.N_ROOT_EQ" : "%product%",
-                "PICKUPVIEW" : "FALSE",
+                "PICKUPVIEW" : "TRUE",
                 "SRFNAVCTX.branch" : "%branch%"
               },
-              "editorType" : "PICKEREX_TRIGGER",
+              "editorType" : "PICKER",
               "handlerType" : "PickupText",
               "name" : "modulename",
               "getPSAppDEACMode" : {
@@ -768,11 +767,16 @@
                 "value" : "branch",
                 "rawValue" : false
               } ],
+              "getPickupPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModulePickupView.json",
+                "viewType" : "DEPICKUPVIEW"
+              },
               "valueItemName" : "module",
               "dropDownView" : false,
               "enableAC" : true,
               "enableLinkView" : false,
-              "enablePickupView" : false,
+              "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,
               "singleSelect" : true
@@ -1496,12 +1500,11 @@
                 "AC" : "TRUE",
                 "SRFNAVPARAM.product" : "%product%",
                 "SRFNAVCTX.project" : "%project%",
-                "TRIGGER" : "TRUE",
                 "SRFNAVCTX.product" : "%product%",
-                "PICKUPVIEW" : "FALSE",
+                "PICKUPVIEW" : "TRUE",
                 "SRFNAVCTX.n_module_eq" : "%module%"
               },
-              "editorType" : "PICKEREX_TRIGGER",
+              "editorType" : "PICKER",
               "handlerType" : "PickupText",
               "itemParamJO" : {
                 "fetchcond" : {
@@ -1570,11 +1573,16 @@
                 "rawValue" : false
               } ],
               "paramJOString" : "{\"n_product_eq\":\"%product%\"}",
+              "getPickupPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPickupView.json",
+                "viewType" : "DEPICKUPVIEW"
+              },
               "valueItemName" : "story",
               "dropDownView" : false,
               "enableAC" : true,
               "enableLinkView" : false,
-              "enablePickupView" : false,
+              "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,
               "singleSelect" : true
@@ -1616,11 +1624,10 @@
                 "AC" : "TRUE",
                 "SRFNAVPARAM.project" : "%project%",
                 "valFormat" : "{0: '/'}",
-                "TRIGGER" : "TRUE",
                 "SRFNAVCTX.size" : "1000",
-                "PICKUPVIEW" : "FALSE"
+                "PICKUPVIEW" : "TRUE"
               },
-              "editorType" : "PICKEREX_TRIGGER",
+              "editorType" : "PICKER",
               "handlerType" : "PickupText",
               "itemParamJO" : {
                 "fetchcond" : {
@@ -1679,11 +1686,16 @@
                 "rawValue" : true
               } ],
               "paramJOString" : "{\"n_project_eq\":\"%project%\"}",
+              "getPickupPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPickupView.json",
+                "viewType" : "DEPICKUPVIEW"
+              },
               "valueItemName" : "task",
               "dropDownView" : false,
               "enableAC" : true,
               "enableLinkView" : false,
-              "enablePickupView" : false,
+              "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,
               "singleSelect" : true

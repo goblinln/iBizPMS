@@ -67,6 +67,32 @@ public class DynaDashboardResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('DYNADASHBOARD', #dynadashboard_id, 'READ')")
+    @ApiOperation(value = "获取动态数据看板", tags = {"动态数据看板" },  notes = "获取动态数据看板")
+	@RequestMapping(method = RequestMethod.GET, value = "/dynadashboards/{dynadashboard_id}")
+    public ResponseEntity<DynaDashboardDTO> get(@PathVariable("dynadashboard_id") String dynadashboard_id) {
+        DynaDashboard domain = dynadashboardService.get(dynadashboard_id);
+        DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
+        Map<String, Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('DYNADASHBOARD', #dynadashboard_id, 'DELETE')")
+    @ApiOperation(value = "删除动态数据看板", tags = {"动态数据看板" },  notes = "删除动态数据看板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/{dynadashboard_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("dynadashboard_id") String dynadashboard_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.remove(dynadashboard_id));
+    }
+
+    @PreAuthorize("quickTest('DYNADASHBOARD', 'DELETE')")
+    @ApiOperation(value = "批量删除动态数据看板", tags = {"动态数据看板" },  notes = "批量删除动态数据看板")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        dynadashboardService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "dynadashboard" , versionfield = "updatedate")
     @PreAuthorize("test('DYNADASHBOARD', #dynadashboard_id, 'UPDATE')")
     @ApiOperation(value = "更新动态数据看板", tags = {"动态数据看板" },  notes = "更新动态数据看板")
@@ -85,30 +111,11 @@ public class DynaDashboardResource {
     }
 
 
-    @PreAuthorize("test('DYNADASHBOARD', #dynadashboard_id, 'DELETE')")
-    @ApiOperation(value = "删除动态数据看板", tags = {"动态数据看板" },  notes = "删除动态数据看板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/{dynadashboard_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("dynadashboard_id") String dynadashboard_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.remove(dynadashboard_id));
-    }
-
-    @PreAuthorize("quickTest('DYNADASHBOARD', 'DELETE')")
-    @ApiOperation(value = "批量删除动态数据看板", tags = {"动态数据看板" },  notes = "批量删除动态数据看板")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/dynadashboards/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        dynadashboardService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('DYNADASHBOARD', #dynadashboard_id, 'READ')")
-    @ApiOperation(value = "获取动态数据看板", tags = {"动态数据看板" },  notes = "获取动态数据看板")
-	@RequestMapping(method = RequestMethod.GET, value = "/dynadashboards/{dynadashboard_id}")
-    public ResponseEntity<DynaDashboardDTO> get(@PathVariable("dynadashboard_id") String dynadashboard_id) {
-        DynaDashboard domain = dynadashboardService.get(dynadashboard_id);
-        DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
-        Map<String, Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('DYNADASHBOARD', 'CREATE')")
+    @ApiOperation(value = "检查动态数据看板", tags = {"动态数据看板" },  notes = "检查动态数据看板")
+	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody DynaDashboardDTO dynadashboarddto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.checkKey(dynadashboardMapping.toDomain(dynadashboarddto)));
     }
 
     @PreAuthorize("quickTest('DYNADASHBOARD', 'CREATE')")
@@ -117,13 +124,6 @@ public class DynaDashboardResource {
     public ResponseEntity<DynaDashboardDTO> getDraft(DynaDashboardDTO dto) {
         DynaDashboard domain = dynadashboardMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(dynadashboardMapping.toDto(dynadashboardService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('DYNADASHBOARD', 'CREATE')")
-    @ApiOperation(value = "检查动态数据看板", tags = {"动态数据看板" },  notes = "检查动态数据看板")
-	@RequestMapping(method = RequestMethod.POST, value = "/dynadashboards/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody DynaDashboardDTO dynadashboarddto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(dynadashboardService.checkKey(dynadashboardMapping.toDomain(dynadashboarddto)));
     }
 
     @PreAuthorize("quickTest('DYNADASHBOARD', 'DENY')")

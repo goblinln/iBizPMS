@@ -66,17 +66,6 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductSumService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productsums/${_context.productsum}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/productsums`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductSumService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productsums/${_context.productsum}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductSumService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productsums/${_context.productsum}`);
     }
     /**
      * Get
@@ -142,6 +108,29 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/productsums/getdraft`, _data);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductSumService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/productsums/${_context.productsum}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductSumService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productsums/${_context.productsum}`, _data);
     }
     /**
      * FetchDefault
@@ -219,5 +208,16 @@ export class ProductSumBaseService extends EntityBaseService<IProductSum> {
      */
     async FetchProductSumBugType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/productsums/fetchproductsumbugtype`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductSumService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/productsums/${_context.productsum}/select`);
     }
 }

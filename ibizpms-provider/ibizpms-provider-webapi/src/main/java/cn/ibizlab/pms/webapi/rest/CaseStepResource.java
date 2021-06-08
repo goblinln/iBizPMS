@@ -67,6 +67,32 @@ public class CaseStepResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('ZT_CASESTEP', #casestep_id, 'READ')")
+    @ApiOperation(value = "获取用例步骤", tags = {"用例步骤" },  notes = "获取用例步骤")
+	@RequestMapping(method = RequestMethod.GET, value = "/casesteps/{casestep_id}")
+    public ResponseEntity<CaseStepDTO> get(@PathVariable("casestep_id") Long casestep_id) {
+        CaseStep domain = casestepService.get(casestep_id);
+        CaseStepDTO dto = casestepMapping.toDto(domain);
+        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs(casestep_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_CASESTEP', #casestep_id, 'DELETE')")
+    @ApiOperation(value = "删除用例步骤", tags = {"用例步骤" },  notes = "删除用例步骤")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/casesteps/{casestep_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("casestep_id") Long casestep_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'DELETE')")
+    @ApiOperation(value = "批量删除用例步骤", tags = {"用例步骤" },  notes = "批量删除用例步骤")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/casesteps/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        casestepService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('ZT_CASESTEP', #casestep_id, 'UPDATE')")
     @ApiOperation(value = "更新用例步骤", tags = {"用例步骤" },  notes = "更新用例步骤")
 	@RequestMapping(method = RequestMethod.PUT, value = "/casesteps/{casestep_id}")
@@ -84,30 +110,11 @@ public class CaseStepResource {
     }
 
 
-    @PreAuthorize("test('ZT_CASESTEP', #casestep_id, 'DELETE')")
-    @ApiOperation(value = "删除用例步骤", tags = {"用例步骤" },  notes = "删除用例步骤")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casesteps/{casestep_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("casestep_id") Long casestep_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(casestepService.remove(casestep_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'DELETE')")
-    @ApiOperation(value = "批量删除用例步骤", tags = {"用例步骤" },  notes = "批量删除用例步骤")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/casesteps/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        casestepService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_CASESTEP', #casestep_id, 'READ')")
-    @ApiOperation(value = "获取用例步骤", tags = {"用例步骤" },  notes = "获取用例步骤")
-	@RequestMapping(method = RequestMethod.GET, value = "/casesteps/{casestep_id}")
-    public ResponseEntity<CaseStepDTO> get(@PathVariable("casestep_id") Long casestep_id) {
-        CaseStep domain = casestepService.get(casestep_id);
-        CaseStepDTO dto = casestepMapping.toDto(domain);
-        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs(casestep_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
+    @ApiOperation(value = "检查用例步骤", tags = {"用例步骤" },  notes = "检查用例步骤")
+	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody CaseStepDTO casestepdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
@@ -116,13 +123,6 @@ public class CaseStepResource {
     public ResponseEntity<CaseStepDTO> getDraft(CaseStepDTO dto) {
         CaseStep domain = casestepMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(casestepService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
-    @ApiOperation(value = "检查用例步骤", tags = {"用例步骤" },  notes = "检查用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/casesteps/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody CaseStepDTO casestepdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'DENY')")
@@ -233,20 +233,16 @@ public class CaseStepResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'UPDATE')")
-    @ApiOperation(value = "根据测试用例更新用例步骤", tags = {"用例步骤" },  notes = "根据测试用例更新用例步骤")
-	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/casesteps/{casestep_id}")
-    public ResponseEntity<CaseStepDTO> updateByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
-        CaseStep domain = casestepMapping.toDomain(casestepdto);
-        domain.setIbizcase(case_id);
-        domain.setId(casestep_id);
-		casestepService.update(domain);
+    @PreAuthorize("test('ZT_CASESTEP', 'ZT_CASE', #case_id, 'READ', #casestep_id, 'READ')")
+    @ApiOperation(value = "根据测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据测试用例获取用例步骤")
+	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/casesteps/{casestep_id}")
+    public ResponseEntity<CaseStepDTO> getByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
+        CaseStep domain = casestepService.get(casestep_id);
         CaseStepDTO dto = casestepMapping.toDto(domain);
-        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs("ZT_CASE", case_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'DELETE')")
     @ApiOperation(value = "根据测试用例删除用例步骤", tags = {"用例步骤" },  notes = "根据测试用例删除用例步骤")
@@ -263,15 +259,26 @@ public class CaseStepResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_CASESTEP', 'ZT_CASE', #case_id, 'READ', #casestep_id, 'READ')")
-    @ApiOperation(value = "根据测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据测试用例获取用例步骤")
-	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/casesteps/{casestep_id}")
-    public ResponseEntity<CaseStepDTO> getByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
-        CaseStep domain = casestepService.get(casestep_id);
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'UPDATE')")
+    @ApiOperation(value = "根据测试用例更新用例步骤", tags = {"用例步骤" },  notes = "根据测试用例更新用例步骤")
+	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/casesteps/{casestep_id}")
+    public ResponseEntity<CaseStepDTO> updateByCase(@PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
+        CaseStep domain = casestepMapping.toDomain(casestepdto);
+        domain.setIbizcase(case_id);
+        domain.setId(casestep_id);
+		casestepService.update(domain);
         CaseStepDTO dto = casestepMapping.toDto(domain);
-        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs("ZT_CASE", case_id, domain.getId());    
+        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
+    @ApiOperation(value = "根据测试用例检查用例步骤", tags = {"用例步骤" },  notes = "根据测试用例检查用例步骤")
+	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casesteps/checkkey")
+    public ResponseEntity<Boolean> checkKeyByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
@@ -281,13 +288,6 @@ public class CaseStepResource {
         CaseStep domain = casestepMapping.toDomain(dto);
         domain.setIbizcase(case_id);
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(casestepService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
-    @ApiOperation(value = "根据测试用例检查用例步骤", tags = {"用例步骤" },  notes = "根据测试用例检查用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/casesteps/checkkey")
-    public ResponseEntity<Boolean> checkKeyByCase(@PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'DENY')")
@@ -395,20 +395,16 @@ public class CaseStepResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'UPDATE')")
-    @ApiOperation(value = "根据产品测试用例更新用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例更新用例步骤")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/casesteps/{casestep_id}")
-    public ResponseEntity<CaseStepDTO> updateByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
-        CaseStep domain = casestepMapping.toDomain(casestepdto);
-        domain.setIbizcase(case_id);
-        domain.setId(casestep_id);
-		casestepService.update(domain);
+    @PreAuthorize("test('ZT_CASESTEP', 'ZT_PRODUCT', #product_id, 'READ', #casestep_id, 'READ')")
+    @ApiOperation(value = "根据产品测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例获取用例步骤")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/casesteps/{casestep_id}")
+    public ResponseEntity<CaseStepDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
+        CaseStep domain = casestepService.get(casestep_id);
         CaseStepDTO dto = casestepMapping.toDto(domain);
-        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs(domain.getId());    
+        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'DELETE')")
     @ApiOperation(value = "根据产品测试用例删除用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例删除用例步骤")
@@ -425,15 +421,26 @@ public class CaseStepResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_CASESTEP', 'ZT_PRODUCT', #product_id, 'READ', #casestep_id, 'READ')")
-    @ApiOperation(value = "根据产品测试用例获取用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例获取用例步骤")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/casesteps/{casestep_id}")
-    public ResponseEntity<CaseStepDTO> getByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id) {
-        CaseStep domain = casestepService.get(casestep_id);
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'UPDATE')")
+    @ApiOperation(value = "根据产品测试用例更新用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例更新用例步骤")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/casesteps/{casestep_id}")
+    public ResponseEntity<CaseStepDTO> updateByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("casestep_id") Long casestep_id, @RequestBody CaseStepDTO casestepdto) {
+        CaseStep domain = casestepMapping.toDomain(casestepdto);
+        domain.setIbizcase(case_id);
+        domain.setId(casestep_id);
+		casestepService.update(domain);
         CaseStepDTO dto = casestepMapping.toDto(domain);
-        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        Map<String, Integer> opprivs = casestepRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
+    @ApiOperation(value = "根据产品测试用例检查用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例检查用例步骤")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casesteps/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
@@ -443,13 +450,6 @@ public class CaseStepResource {
         CaseStep domain = casestepMapping.toDomain(dto);
         domain.setIbizcase(case_id);
         return ResponseEntity.status(HttpStatus.OK).body(casestepMapping.toDto(casestepService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_CASESTEP', 'CREATE')")
-    @ApiOperation(value = "根据产品测试用例检查用例步骤", tags = {"用例步骤" },  notes = "根据产品测试用例检查用例步骤")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/casesteps/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProductCase(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseStepDTO casestepdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(casestepService.checkKey(casestepMapping.toDomain(casestepdto)));
     }
 
     @PreAuthorize("quickTest('ZT_CASESTEP', 'DENY')")

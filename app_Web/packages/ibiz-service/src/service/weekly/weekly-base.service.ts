@@ -66,49 +66,15 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return new HttpResponse(entity);
     }
     /**
-     * FetchDefault
+     * AutoCreate
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof WeeklyService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/fetchdefault`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof WeeklyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/weeklies/${_context.weekly}`);
-        return res;
-    }
-    /**
-     * Notice
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof WeeklyService
-     */
-    async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/notice`, _data);
-    }
-    /**
-     * Submit
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof WeeklyService
-     */
-    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/weeklies/${_context.weekly}/autocreate`, _data);
     }
     /**
      * Create
@@ -129,6 +95,18 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return this.http.post(`/weeklies`, _data);
     }
     /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof WeeklyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/weeklies/${_context.weekly}`);
+        return res;
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -143,6 +121,17 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return res;
     }
     /**
+     * Notice
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof WeeklyService
+     */
+    async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/weeklies/${_context.weekly}/notice`, _data);
+    }
+    /**
      * Read
      *
      * @param {*} [_context={}]
@@ -152,6 +141,17 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/weeklies/${_context.weekly}/read`, _data);
+    }
+    /**
+     * Submit
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof WeeklyService
+     */
+    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
     }
     /**
      * Update
@@ -166,15 +166,29 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return this.http.put(`/weeklies/${_context.weekly}`, _data);
     }
     /**
-     * AutoCreate
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof WeeklyService
      */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/autocreate`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/weeklies/fetchdefault`, _data);
+    }
+
+    /**
+     * AutoCreateBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof WeeklyServiceBase
+     */
+    public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/weeklies/autocreatebatch`,_data);
     }
 
     /**
@@ -192,20 +206,6 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
     }
 
     /**
-     * SubmitBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof WeeklyServiceBase
-     */
-    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/weeklies/submitbatch`,_data);
-    }
-
-    /**
      * ReadBatch接口方法
      *
      * @param {*} [context={}]
@@ -220,7 +220,7 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
     }
 
     /**
-     * AutoCreateBatch接口方法
+     * SubmitBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -228,8 +228,8 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      * @returns {Promise<any>}
      * @memberof WeeklyServiceBase
      */
-    public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/weeklies/autocreatebatch`,_data);
+        return this.http.post(`/weeklies/submitbatch`,_data);
     }
 }

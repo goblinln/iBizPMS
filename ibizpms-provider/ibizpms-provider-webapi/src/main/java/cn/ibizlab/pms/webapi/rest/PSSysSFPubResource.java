@@ -59,18 +59,13 @@ public class PSSysSFPubResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "pssyssfpub" , versionfield = "updatedate")
-    @ApiOperation(value = "更新后台服务架构", tags = {"后台服务架构" },  notes = "更新后台服务架构")
-	@RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpub_id}")
-    @Transactional
-    public ResponseEntity<PSSysSFPubDTO> update(@PathVariable("pssyssfpub_id") String pssyssfpub_id, @RequestBody PSSysSFPubDTO pssyssfpubdto) {
-		PSSysSFPub domain  = pssyssfpubMapping.toDomain(pssyssfpubdto);
-        domain.setPssyssfpubid(pssyssfpub_id);
-		pssyssfpubService.update(domain );
-		PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
+    @ApiOperation(value = "获取后台服务架构", tags = {"后台服务架构" },  notes = "获取后台服务架构")
+	@RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpub_id}")
+    public ResponseEntity<PSSysSFPubDTO> get(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
+        PSSysSFPub domain = pssyssfpubService.get(pssyssfpub_id);
+        PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除后台服务架构", tags = {"后台服务架构" },  notes = "删除后台服务架构")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/pssyssfpubs/{pssyssfpub_id}")
@@ -85,12 +80,23 @@ public class PSSysSFPubResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取后台服务架构", tags = {"后台服务架构" },  notes = "获取后台服务架构")
-	@RequestMapping(method = RequestMethod.GET, value = "/pssyssfpubs/{pssyssfpub_id}")
-    public ResponseEntity<PSSysSFPubDTO> get(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
-        PSSysSFPub domain = pssyssfpubService.get(pssyssfpub_id);
-        PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
+    @VersionCheck(entity = "pssyssfpub" , versionfield = "updatedate")
+    @ApiOperation(value = "更新后台服务架构", tags = {"后台服务架构" },  notes = "更新后台服务架构")
+	@RequestMapping(method = RequestMethod.PUT, value = "/pssyssfpubs/{pssyssfpub_id}")
+    @Transactional
+    public ResponseEntity<PSSysSFPubDTO> update(@PathVariable("pssyssfpub_id") String pssyssfpub_id, @RequestBody PSSysSFPubDTO pssyssfpubdto) {
+		PSSysSFPub domain  = pssyssfpubMapping.toDomain(pssyssfpubdto);
+        domain.setPssyssfpubid(pssyssfpub_id);
+		pssyssfpubService.update(domain );
+		PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查后台服务架构", tags = {"后台服务架构" },  notes = "检查后台服务架构")
+	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.checkKey(pssyssfpubMapping.toDomain(pssyssfpubdto)));
     }
 
     @ApiOperation(value = "获取后台服务架构草稿", tags = {"后台服务架构" },  notes = "获取后台服务架构草稿")
@@ -98,12 +104,6 @@ public class PSSysSFPubResource {
     public ResponseEntity<PSSysSFPubDTO> getDraft(PSSysSFPubDTO dto) {
         PSSysSFPub domain = pssyssfpubMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(pssyssfpubMapping.toDto(pssyssfpubService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查后台服务架构", tags = {"后台服务架构" },  notes = "检查后台服务架构")
-	@RequestMapping(method = RequestMethod.POST, value = "/pssyssfpubs/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody PSSysSFPubDTO pssyssfpubdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(pssyssfpubService.checkKey(pssyssfpubMapping.toDomain(pssyssfpubdto)));
     }
 
     @ApiOperation(value = "保存后台服务架构", tags = {"后台服务架构" },  notes = "保存后台服务架构")

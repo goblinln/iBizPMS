@@ -67,22 +67,16 @@ public class ProductPlanResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', #productplan_id, 'UPDATE')")
-    @ApiOperation(value = "更新产品计划", tags = {"产品计划" },  notes = "更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}")
-    @Transactional
-    public ResponseEntity<ProductPlanDTO> update(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-		ProductPlan domain  = productplanMapping.toDomain(productplandto);
-        domain.setId(productplan_id);
-		productplanService.update(domain );
-        if(!productplanRuntime.test(productplan_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		ProductPlanDTO dto = productplanMapping.toDto(domain);
+    @PreAuthorize("test('ZT_PRODUCTPLAN', #productplan_id, 'READ')")
+    @ApiOperation(value = "获取产品计划", tags = {"产品计划" },  notes = "获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> get(@PathVariable("productplan_id") Long productplan_id) {
+        ProductPlan domain = productplanService.get(productplan_id);
+        ProductPlanDTO dto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(productplan_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_PRODUCTPLAN', #productplan_id, 'DELETE')")
     @ApiOperation(value = "删除产品计划", tags = {"产品计划" },  notes = "删除产品计划")
@@ -99,24 +93,22 @@ public class ProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', #productplan_id, 'READ')")
-    @ApiOperation(value = "获取产品计划", tags = {"产品计划" },  notes = "获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> get(@PathVariable("productplan_id") Long productplan_id) {
-        ProductPlan domain = productplanService.get(productplan_id);
-        ProductPlanDTO dto = productplanMapping.toDto(domain);
+    @PreAuthorize("test('ZT_PRODUCTPLAN', #productplan_id, 'UPDATE')")
+    @ApiOperation(value = "更新产品计划", tags = {"产品计划" },  notes = "更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}")
+    @Transactional
+    public ResponseEntity<ProductPlanDTO> update(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+		ProductPlan domain  = productplanMapping.toDomain(productplandto);
+        domain.setId(productplan_id);
+		productplanService.update(domain );
+        if(!productplanRuntime.test(productplan_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		ProductPlanDTO dto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(productplan_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'CREATE')")
-    @ApiOperation(value = "获取产品计划草稿", tags = {"产品计划" },  notes = "获取产品计划草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraft(ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "批关联BUG", tags = {"产品计划" },  notes = "批关联BUG")
@@ -278,6 +270,14 @@ public class ProductPlanResource {
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'CREATE')")
+    @ApiOperation(value = "获取产品计划草稿", tags = {"产品计划" },  notes = "获取产品计划草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraft(ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('ZT_PRODUCTPLAN', #productplan_id, 'READ')")
     @ApiOperation(value = "获取上一个计划的名称", tags = {"产品计划" },  notes = "获取上一个计划的名称")
@@ -571,20 +571,16 @@ public class ProductPlanResource {
     }
 
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'UPDATE', #productplan_id, 'UPDATE')")
-    @ApiOperation(value = "根据产品更新产品计划", tags = {"产品计划" },  notes = "根据产品更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
-        ProductPlan domain = productplanMapping.toDomain(productplandto);
-        domain.setProduct(product_id);
-        domain.setId(productplan_id);
-		productplanService.update(domain);
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', #productplan_id, 'READ')")
+    @ApiOperation(value = "根据产品获取产品计划", tags = {"产品计划" },  notes = "根据产品获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
+        ProductPlan domain = productplanService.get(productplan_id);
         ProductPlanDTO dto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'DELETE', #productplan_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除产品计划", tags = {"产品计划" },  notes = "根据产品删除产品计划")
@@ -601,25 +597,20 @@ public class ProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', #productplan_id, 'READ')")
-    @ApiOperation(value = "根据产品获取产品计划", tags = {"产品计划" },  notes = "根据产品获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}")
-    public ResponseEntity<ProductPlanDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id) {
-        ProductPlan domain = productplanService.get(productplan_id);
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'UPDATE', #productplan_id, 'UPDATE')")
+    @ApiOperation(value = "根据产品更新产品计划", tags = {"产品计划" },  notes = "根据产品更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}")
+    public ResponseEntity<ProductPlanDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanDTO productplandto) {
+        ProductPlan domain = productplanMapping.toDomain(productplandto);
+        domain.setProduct(product_id);
+        domain.setId(productplan_id);
+		productplanService.update(domain);
         ProductPlanDTO dto = productplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/getdraft")
-    public ResponseEntity<ProductPlanDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
-        ProductPlan domain = productplanMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品批关联BUG", tags = {"产品计划" },  notes = "根据产品批关联BUG")
@@ -780,6 +771,15 @@ public class ProductPlanResource {
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         productplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(productplandto);
+    }
+
+    @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/getdraft")
+    public ResponseEntity<ProductPlanDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, ProductPlanDTO dto) {
+        ProductPlan domain = productplanMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_PRODUCTPLAN', 'ZT_PRODUCT', #product_id, 'READ', #productplan_id, 'READ')")

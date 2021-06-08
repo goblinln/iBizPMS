@@ -31,127 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CLOSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "StoryNFavorites",
-    "methodType" : "DEACTION",
-    "name" : "StoryNFavorites",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NFAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryNFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Review",
-    "methodType" : "DEACTION",
-    "name" : "Review",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "REVIEW"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Review"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AssignTo",
-    "methodType" : "DEACTION",
-    "name" : "AssignTo",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "activate",
@@ -169,76 +48,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Change",
-    "methodType" : "DEACTION",
-    "name" : "Change",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CHANGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Change"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "StoryFavorites",
-    "methodType" : "DEACTION",
-    "name" : "StoryFavorites",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryFavorites"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "name" : "AllPush",
@@ -249,6 +58,23 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AssignTo"
     },
     "builtinMethod" : false
   }, {
@@ -412,6 +238,23 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "Change",
+    "methodType" : "DEACTION",
+    "name" : "Change",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHANGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Change"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -424,6 +267,76 @@
       "id" : "CREATE"
     },
     "builtinMethod" : true
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Close"
+    },
+    "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
@@ -593,6 +506,25 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "name" : "ResetReviewedBy",
@@ -603,6 +535,23 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Review",
+    "methodType" : "DEACTION",
+    "name" : "Review",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Review"
     },
     "builtinMethod" : false
   }, {
@@ -647,6 +596,40 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "StoryFavorites",
+    "methodType" : "DEACTION",
+    "name" : "StoryFavorites",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "StoryFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "StoryNFavorites",
+    "methodType" : "DEACTION",
+    "name" : "StoryNFavorites",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITES"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "StoryNFavorites"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "name" : "SyncFromIbiz",
@@ -681,6 +664,23 @@
       "id" : "ZTProduct__PLANLINK"
     },
     "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -842,74 +842,6 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchProjectStories",
-    "methodType" : "FETCH",
-    "name" : "FetchProjectStories",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchStoryRelated",
-    "methodType" : "FETCH",
-    "name" : "FetchStoryRelated",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "StoryRelated"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchStoryRelated"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchParentDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchParentDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchAccount",
     "methodType" : "FETCH",
     "name" : "Account",
@@ -997,6 +929,23 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildMore"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
@@ -1090,6 +1039,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchParentDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchParentDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentDefault"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchParentDefault"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchParentDefaultQ",
     "methodType" : "FETCH",
     "name" : "ParentDefaultQ",
@@ -1105,6 +1071,23 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ProjectLinkStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStories",
+    "methodType" : "FETCH",
+    "name" : "FetchProjectStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStories"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectStories"
     },
     "builtinMethod" : false
   }, {
@@ -1141,6 +1124,23 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "StoryChild"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryRelated",
+    "methodType" : "FETCH",
+    "name" : "FetchStoryRelated",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryRelated"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchStoryRelated"
     },
     "builtinMethod" : false
   }, {
@@ -1707,161 +1707,6 @@
     "enableFront" : true
   } ],
   "getAllPSAppDEMethods" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "Close",
-    "methodType" : "DEACTION",
-    "name" : "Close",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CLOSE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Close"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "UPDATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "StoryNFavorites",
-    "methodType" : "DEACTION",
-    "name" : "StoryNFavorites",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NFAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryNFavorites"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchProjectStories",
-    "methodType" : "FETCH",
-    "name" : "FetchProjectStories",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProjectStories"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ZTProduct__READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProjectStories"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchStoryRelated",
-    "methodType" : "FETCH",
-    "name" : "FetchStoryRelated",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "StoryRelated"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchStoryRelated"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Review",
-    "methodType" : "DEACTION",
-    "name" : "Review",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "REVIEW"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Review"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "AssignTo",
-    "methodType" : "DEACTION",
-    "name" : "AssignTo",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "ASSIGNTO"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "AssignTo"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Activate",
     "methodType" : "DEACTION",
     "name" : "activate",
@@ -1879,110 +1724,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Change",
-    "methodType" : "DEACTION",
-    "name" : "Change",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CHANGE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Change"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchParentDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchParentDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ParentDefault"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchParentDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
-    "methodType" : "DEACTION",
-    "name" : "Remove",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Remove.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "DELETE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Remove"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "StoryFavorites",
-    "methodType" : "DEACTION",
-    "name" : "StoryFavorites",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "FAVORITES"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "StoryFavorites"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "AllPush",
     "methodType" : "DEACTION",
     "name" : "AllPush",
@@ -1993,6 +1734,23 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "AssignTo",
+    "methodType" : "DEACTION",
+    "name" : "AssignTo",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "AssignTo"
     },
     "builtinMethod" : false
   }, {
@@ -2156,6 +1914,23 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "Change",
+    "methodType" : "DEACTION",
+    "name" : "Change",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHANGE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Change"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
     "name" : "CheckKey",
@@ -2168,6 +1943,76 @@
       "id" : "CREATE"
     },
     "builtinMethod" : true
+  }, {
+    "codeName" : "Close",
+    "methodType" : "DEACTION",
+    "name" : "Close",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Close"
+    },
+    "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "GetStorySpec",
     "methodType" : "DEACTION",
@@ -2337,6 +2182,25 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
+  }, {
     "codeName" : "ResetReviewedBy",
     "methodType" : "DEACTION",
     "name" : "ResetReviewedBy",
@@ -2347,6 +2211,23 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "MANAGE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Review",
+    "methodType" : "DEACTION",
+    "name" : "Review",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Review"
     },
     "builtinMethod" : false
   }, {
@@ -2391,6 +2272,40 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "StoryFavorites",
+    "methodType" : "DEACTION",
+    "name" : "StoryFavorites",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "StoryFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "StoryNFavorites",
+    "methodType" : "DEACTION",
+    "name" : "StoryNFavorites",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITES"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "StoryNFavorites"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "SyncFromIbiz",
     "methodType" : "DEACTION",
     "name" : "SyncFromIbiz",
@@ -2425,6 +2340,23 @@
       "id" : "ZTProduct__PLANLINK"
     },
     "userCat" : "CAT1",
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
     "builtinMethod" : false
   }, {
     "codeName" : "FetchAccount",
@@ -2514,6 +2446,23 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildMore"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
@@ -2607,6 +2556,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchParentDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchParentDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ParentDefault"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchParentDefault"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchParentDefaultQ",
     "methodType" : "FETCH",
     "name" : "ParentDefaultQ",
@@ -2622,6 +2588,23 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ProjectLinkStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProjectStories",
+    "methodType" : "FETCH",
+    "name" : "FetchProjectStories",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProjectStories"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProjectStories"
     },
     "builtinMethod" : false
   }, {
@@ -2661,6 +2644,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchStoryRelated",
+    "methodType" : "FETCH",
+    "name" : "FetchStoryRelated",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryRelated"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchStoryRelated"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchSubStory",
     "methodType" : "FETCH",
     "name" : "SubStory",
@@ -2688,24 +2688,19 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FilterUpdate",
+    "codeName" : "FilterCreate",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERUPDATE",
+    "name" : "FILTERCREATE",
     "builtinMethod" : true
   }, {
-    "codeName" : "FilterSearch",
+    "codeName" : "FilterFetch",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERSEARCH",
+    "name" : "FILTERFETCH",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGet",
     "methodType" : "FILTERACTION",
     "name" : "FILTERGET",
-    "builtinMethod" : true
-  }, {
-    "codeName" : "FilterCreate",
-    "methodType" : "FILTERACTION",
-    "name" : "FILTERCREATE",
     "builtinMethod" : true
   }, {
     "codeName" : "FilterGetDraft",
@@ -2718,12 +2713,46 @@
     "name" : "FILTERREMOVE",
     "builtinMethod" : true
   }, {
-    "codeName" : "FilterFetch",
+    "codeName" : "FilterSearch",
     "methodType" : "FILTERACTION",
-    "name" : "FILTERFETCH",
+    "name" : "FILTERSEARCH",
+    "builtinMethod" : true
+  }, {
+    "codeName" : "FilterUpdate",
+    "methodType" : "FILTERACTION",
+    "name" : "FILTERUPDATE",
     "builtinMethod" : true
   } ],
   "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "关闭",
+    "codeName" : "CloseStoryDash",
+    "dataAccessAction" : "CLOSE",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Story_CloseStoryDash",
+    "name" : "关闭需求 （操作栏）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf011@FontAwesome",
+      "cssClass" : "fa fa-power-off"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "CloseStoryDash",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "CloseStoryDash@Story"
+  }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "批量分解",
     "codeName" : "BatchBreakdowntasks",
@@ -2807,35 +2836,6 @@
     "uIActionType" : "DEUIACTION",
     "reloadData" : true,
     "id" : "BatchBreakdowntasks@Story"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "关闭",
-    "codeName" : "CloseStoryDash",
-    "dataAccessAction" : "CLOSE",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Story_CloseStoryDash",
-    "name" : "关闭需求 （操作栏）",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf011@FontAwesome",
-      "cssClass" : "fa fa-power-off"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "CloseStoryDash",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "CloseStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "noPrivDisplayMode" : 1,
@@ -3121,6 +3121,35 @@
     "reloadData" : true,
     "id" : "StoryFavorites@Story"
   }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "指派",
+    "codeName" : "AssignToDash",
+    "dataAccessAction" : "ASSIGNTO",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Story_AssignToDash",
+    "name" : "指派给 (操作栏)",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf0a4@FontAwesome",
+      "cssClass" : "fa fa-hand-o-right"
+    },
+    "refreshMode" : 1,
+    "successMsg" : "指派成功",
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "AssignToDash",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "AssignToDash@Story"
+  }, {
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "buildLinkStories",
@@ -3185,35 +3214,6 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "buildLinkStories@Story"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "指派",
-    "codeName" : "AssignToDash",
-    "dataAccessAction" : "ASSIGNTO",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Story_AssignToDash",
-    "name" : "指派给 (操作栏)",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf0a4@FontAwesome",
-      "cssClass" : "fa fa-hand-o-right"
-    },
-    "refreshMode" : 1,
-    "successMsg" : "指派成功",
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "AssignToDash",
-    "uIActionType" : "DEUIACTION",
-    "reloadData" : true,
-    "id" : "AssignToDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "变更",
@@ -3327,6 +3327,25 @@
     "reloadData" : true,
     "id" : "UnlinkStory@Story"
   }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "下载",
+    "codeName" : "BatchDownload",
+    "frontProcessType" : "OTHER",
+    "fullCodeName" : "Story_BatchDownload",
+    "name" : "下载",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "download"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "BatchDownload",
+    "uIActionType" : "DEUIACTION",
+    "id" : "BatchDownload@Story"
+  }, {
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
@@ -3371,25 +3390,6 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "projectLinkStories@Story"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "下载",
-    "codeName" : "BatchDownload",
-    "frontProcessType" : "OTHER",
-    "fullCodeName" : "Story_BatchDownload",
-    "name" : "下载",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSSysImage" : {
-      "cssClass" : "download"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "BatchDownload",
-    "uIActionType" : "DEUIACTION",
-    "id" : "BatchDownload@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "退出",
@@ -3772,46 +3772,6 @@
     "reloadData" : true,
     "id" : "Breakdowntasks@Story"
   }, {
-    "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "移除关联",
-    "codeName" : "releaseUnlinkStory",
-    "dataAccessAction" : "RELEASELINK",
-    "fullCodeName" : "Story_releaseUnlinkStory",
-    "name" : "移除关联（发布—需求）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "ReleaseUnlinkStory"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "RELEASE",
-      "name" : "RELEASE",
-      "value" : "release",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "release",
-      "name" : "release",
-      "value" : "release",
-      "rawValue" : false
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf127@FontAwesome",
-      "cssClass" : "fa fa-unlink"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "releaseUnlinkStory",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "releaseUnlinkStory@Story"
-  }, {
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreateView",
@@ -3861,6 +3821,46 @@
     "uIActionType" : "DEUIACTION",
     "reloadData" : true,
     "id" : "ProjectCreateView@Story"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
+    "caption" : "移除关联",
+    "codeName" : "releaseUnlinkStory",
+    "dataAccessAction" : "RELEASELINK",
+    "fullCodeName" : "Story_releaseUnlinkStory",
+    "name" : "移除关联（发布—需求）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "ReleaseUnlinkStory"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "RELEASE",
+      "name" : "RELEASE",
+      "value" : "release",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "release",
+      "name" : "release",
+      "value" : "release",
+      "rawValue" : false
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf127@FontAwesome",
+      "cssClass" : "fa fa-unlink"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "releaseUnlinkStory",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "releaseUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "noPrivDisplayMode" : 1,
@@ -4000,42 +4000,6 @@
     "reloadData" : true,
     "id" : "Create@Story"
   }, {
-    "actionTarget" : "NONE",
-    "caption" : "按照计划关联",
-    "codeName" : "ProjecPlanLink",
-    "dataAccessAction" : "PROJECTLINK",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
-      "viewType" : "DEOPTVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Story_ProjecPlanLink",
-    "name" : "按照计划关联",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "PROJECT",
-      "name" : "PROJECT",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "project",
-      "name" : "project",
-      "value" : "project",
-      "rawValue" : false
-    } ],
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "ProjecPlanLink",
-    "uIActionType" : "DEUIACTION",
-    "reloadData" : true,
-    "id" : "ProjecPlanLink@Story"
-  }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "删除",
     "codeName" : "delete",
@@ -4074,6 +4038,42 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "delete@Story"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "按照计划关联",
+    "codeName" : "ProjecPlanLink",
+    "dataAccessAction" : "PROJECTLINK",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Story_ProjecPlanLink",
+    "name" : "按照计划关联",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "PROJECT",
+      "name" : "PROJECT",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "project",
+      "name" : "project",
+      "value" : "project",
+      "rawValue" : false
+    } ],
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "ProjecPlanLink",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "ProjecPlanLink@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",

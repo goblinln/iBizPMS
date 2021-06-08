@@ -67,6 +67,32 @@ public class taskestimatestatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'READ')")
+    @ApiOperation(value = "获取任务工时统计", tags = {"任务工时统计" },  notes = "获取任务工时统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/{taskestimatestats_id}")
+    public ResponseEntity<taskestimatestatsDTO> get(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
+        TaskEstimateStats domain = taskestimatestatsService.get(taskestimatestats_id);
+        taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
+        Map<String, Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(taskestimatestats_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'DELETE')")
+    @ApiOperation(value = "删除任务工时统计", tags = {"任务工时统计" },  notes = "删除任务工时统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/{taskestimatestats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.remove(taskestimatestats_id));
+    }
+
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'DELETE')")
+    @ApiOperation(value = "批量删除任务工时统计", tags = {"任务工时统计" },  notes = "批量删除任务工时统计")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        taskestimatestatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'UPDATE')")
     @ApiOperation(value = "更新任务工时统计", tags = {"任务工时统计" },  notes = "更新任务工时统计")
 	@RequestMapping(method = RequestMethod.PUT, value = "/taskestimatestats/{taskestimatestats_id}")
@@ -84,30 +110,11 @@ public class taskestimatestatsResource {
     }
 
 
-    @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'DELETE')")
-    @ApiOperation(value = "删除任务工时统计", tags = {"任务工时统计" },  notes = "删除任务工时统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/{taskestimatestats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.remove(taskestimatestats_id));
-    }
-
-    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'DELETE')")
-    @ApiOperation(value = "批量删除任务工时统计", tags = {"任务工时统计" },  notes = "批量删除任务工时统计")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/taskestimatestats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        taskestimatestatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('TASKESTIMATESTATS', #taskestimatestats_id, 'READ')")
-    @ApiOperation(value = "获取任务工时统计", tags = {"任务工时统计" },  notes = "获取任务工时统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/taskestimatestats/{taskestimatestats_id}")
-    public ResponseEntity<taskestimatestatsDTO> get(@PathVariable("taskestimatestats_id") Long taskestimatestats_id) {
-        TaskEstimateStats domain = taskestimatestatsService.get(taskestimatestats_id);
-        taskestimatestatsDTO dto = taskestimatestatsMapping.toDto(domain);
-        Map<String, Integer> opprivs = taskestimatestatsRuntime.getOPPrivs(taskestimatestats_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'CREATE')")
+    @ApiOperation(value = "检查任务工时统计", tags = {"任务工时统计" },  notes = "检查任务工时统计")
+	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.checkKey(taskestimatestatsMapping.toDomain(taskestimatestatsdto)));
     }
 
     @PreAuthorize("quickTest('TASKESTIMATESTATS', 'CREATE')")
@@ -116,13 +123,6 @@ public class taskestimatestatsResource {
     public ResponseEntity<taskestimatestatsDTO> getDraft(taskestimatestatsDTO dto) {
         TaskEstimateStats domain = taskestimatestatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsMapping.toDto(taskestimatestatsService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('TASKESTIMATESTATS', 'CREATE')")
-    @ApiOperation(value = "检查任务工时统计", tags = {"任务工时统计" },  notes = "检查任务工时统计")
-	@RequestMapping(method = RequestMethod.POST, value = "/taskestimatestats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody taskestimatestatsDTO taskestimatestatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(taskestimatestatsService.checkKey(taskestimatestatsMapping.toDomain(taskestimatestatsdto)));
     }
 
     @PreAuthorize("quickTest('TASKESTIMATESTATS', 'DENY')")

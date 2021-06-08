@@ -67,6 +67,32 @@ public class CompanyStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'READ')")
+    @ApiOperation(value = "获取公司动态汇总", tags = {"公司动态汇总" },  notes = "获取公司动态汇总")
+	@RequestMapping(method = RequestMethod.GET, value = "/companystats/{companystats_id}")
+    public ResponseEntity<CompanyStatsDTO> get(@PathVariable("companystats_id") Long companystats_id) {
+        CompanyStats domain = companystatsService.get(companystats_id);
+        CompanyStatsDTO dto = companystatsMapping.toDto(domain);
+        Map<String, Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'DELETE')")
+    @ApiOperation(value = "删除公司动态汇总", tags = {"公司动态汇总" },  notes = "删除公司动态汇总")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/{companystats_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("companystats_id") Long companystats_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(companystatsService.remove(companystats_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'DELETE')")
+    @ApiOperation(value = "批量删除公司动态汇总", tags = {"公司动态汇总" },  notes = "批量删除公司动态汇总")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        companystatsService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'UPDATE')")
     @ApiOperation(value = "更新公司动态汇总", tags = {"公司动态汇总" },  notes = "更新公司动态汇总")
 	@RequestMapping(method = RequestMethod.PUT, value = "/companystats/{companystats_id}")
@@ -84,30 +110,11 @@ public class CompanyStatsResource {
     }
 
 
-    @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'DELETE')")
-    @ApiOperation(value = "删除公司动态汇总", tags = {"公司动态汇总" },  notes = "删除公司动态汇总")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/{companystats_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("companystats_id") Long companystats_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(companystatsService.remove(companystats_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'DELETE')")
-    @ApiOperation(value = "批量删除公司动态汇总", tags = {"公司动态汇总" },  notes = "批量删除公司动态汇总")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/companystats/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        companystatsService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_COMPANYSTATS', #companystats_id, 'READ')")
-    @ApiOperation(value = "获取公司动态汇总", tags = {"公司动态汇总" },  notes = "获取公司动态汇总")
-	@RequestMapping(method = RequestMethod.GET, value = "/companystats/{companystats_id}")
-    public ResponseEntity<CompanyStatsDTO> get(@PathVariable("companystats_id") Long companystats_id) {
-        CompanyStats domain = companystatsService.get(companystats_id);
-        CompanyStatsDTO dto = companystatsMapping.toDto(domain);
-        Map<String, Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'CREATE')")
+    @ApiOperation(value = "检查公司动态汇总", tags = {"公司动态汇总" },  notes = "检查公司动态汇总")
+	@RequestMapping(method = RequestMethod.POST, value = "/companystats/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody CompanyStatsDTO companystatsdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(companystatsService.checkKey(companystatsMapping.toDomain(companystatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'CREATE')")
@@ -116,13 +123,6 @@ public class CompanyStatsResource {
     public ResponseEntity<CompanyStatsDTO> getDraft(CompanyStatsDTO dto) {
         CompanyStats domain = companystatsMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(companystatsMapping.toDto(companystatsService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'CREATE')")
-    @ApiOperation(value = "检查公司动态汇总", tags = {"公司动态汇总" },  notes = "检查公司动态汇总")
-	@RequestMapping(method = RequestMethod.POST, value = "/companystats/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody CompanyStatsDTO companystatsdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(companystatsService.checkKey(companystatsMapping.toDomain(companystatsdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_COMPANYSTATS', 'DENY')")

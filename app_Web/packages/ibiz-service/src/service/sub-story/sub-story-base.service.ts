@@ -337,84 +337,6 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubStoryService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/substories/${_context.substory}/select`);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubStoryService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/substories`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubStoryService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/substories/${_context.substory}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubStoryService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/substories/${_context.substory}`);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubStoryService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/substories/${_context.substory}`);
-        return res;
-    }
-    /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof SubStoryService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/substories/getdraft`, _data);
-        return res;
-    }
-    /**
      * Activate
      *
      * @param {*} [_context={}]
@@ -613,6 +535,24 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.http.post(`/substories/${_context.substory}/close`, _data);
     }
     /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/substories`, _data);
+    }
+    /**
      * CreateTasks
      *
      * @param {*} [_context={}]
@@ -622,6 +562,32 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async CreateTasks(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/substories/${_context.substory}/createtasks`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/substories/${_context.substory}`);
+        return res;
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/substories/getdraft`, _data);
+        return res;
     }
     /**
      * GetStorySpec
@@ -645,6 +611,19 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
     async GetStorySpecs(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/substories/${_context.substory}/getstoryspecs`);
         return res;
+    }
+    /**
+     * GetUserConcat
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const appLogic = new GetCurUserConcatLogic(_context, _data);
+        _data = await appLogic.onExecute();
+        return new HttpResponse(_data);
     }
     /**
      * ImportPlanStories
@@ -757,6 +736,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.http.post(`/substories/${_context.substory}/releaseunlinkstory`, _data);
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/substories/${_context.substory}`);
+    }
+    /**
      * ResetReviewedBy
      *
      * @param {*} [_context={}]
@@ -854,6 +844,18 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      */
     async UnlinkStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/substories/${_context.substory}/unlinkstory`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/substories/${_context.substory}`, _data);
     }
     /**
      * FetchAccount
@@ -1186,17 +1188,15 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.http.post(`/substories/fetchview`, _data);
     }
     /**
-     * GetUserConcat
+     * Select
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof SubStoryService
      */
-    async GetUserConcat(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const appLogic = new GetCurUserConcatLogic(_context, _data);
-        _data = await appLogic.onExecute();
-        return new HttpResponse(_data);
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/substories/${_context.substory}/select`);
     }
 
     /**

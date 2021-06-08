@@ -67,20 +67,16 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'UPDATE', #taskteam_id, 'UPDATE')")
-    @ApiOperation(value = "根据任务更新任务团队", tags = {"任务团队" },  notes = "根据任务更新任务团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
-    public ResponseEntity<TaskTeamDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
-        TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
-        domain.setRoot(task_id);
-        domain.setId(taskteam_id);
-		taskteamService.update(domain);
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'READ', #taskteam_id, 'READ')")
+    @ApiOperation(value = "根据任务获取任务团队", tags = {"任务团队" },  notes = "根据任务获取任务团队")
+	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
+    public ResponseEntity<TaskTeamDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
+        TaskTeam domain = taskteamService.get(taskteam_id);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
         Map<String, Integer> opprivs = taskteamRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'DELETE', #taskteam_id, 'DELETE')")
     @ApiOperation(value = "根据任务删除任务团队", tags = {"任务团队" },  notes = "根据任务删除任务团队")
@@ -97,15 +93,26 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'READ', #taskteam_id, 'READ')")
-    @ApiOperation(value = "根据任务获取任务团队", tags = {"任务团队" },  notes = "根据任务获取任务团队")
-	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
-    public ResponseEntity<TaskTeamDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
-        TaskTeam domain = taskteamService.get(taskteam_id);
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'UPDATE', #taskteam_id, 'UPDATE')")
+    @ApiOperation(value = "根据任务更新任务团队", tags = {"任务团队" },  notes = "根据任务更新任务团队")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
+    public ResponseEntity<TaskTeamDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
+        TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
+        domain.setRoot(task_id);
+        domain.setId(taskteam_id);
+		taskteamService.update(domain);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
         Map<String, Integer> opprivs = taskteamRuntime.getOPPrivs("ZT_TASK", task_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据任务检查任务团队", tags = {"任务团队" },  notes = "根据任务检查任务团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams/checkkey")
+    public ResponseEntity<Boolean> checkKeyByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(taskteamService.checkKey(taskteamMapping.toDomain(taskteamdto)));
     }
 
     @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'CREATE')")
@@ -115,13 +122,6 @@ public class TaskTeamResource {
         TaskTeam domain = taskteamMapping.toDomain(dto);
         domain.setRoot(task_id);
         return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(taskteamService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_TASK', #task_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据任务检查任务团队", tags = {"任务团队" },  notes = "根据任务检查任务团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/taskteams/checkkey")
-    public ResponseEntity<Boolean> checkKeyByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(taskteamService.checkKey(taskteamMapping.toDomain(taskteamdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_TASKTEAM', 'DENY')")
@@ -164,20 +164,16 @@ public class TaskTeamResource {
     }
 
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #taskteam_id, 'UPDATE')")
-    @ApiOperation(value = "根据项目任务更新任务团队", tags = {"任务团队" },  notes = "根据项目任务更新任务团队")
-	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
-    public ResponseEntity<TaskTeamDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
-        TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
-        domain.setRoot(task_id);
-        domain.setId(taskteam_id);
-		taskteamService.update(domain);
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', #taskteam_id, 'READ')")
+    @ApiOperation(value = "根据项目任务获取任务团队", tags = {"任务团队" },  notes = "根据项目任务获取任务团队")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
+    public ResponseEntity<TaskTeamDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
+        TaskTeam domain = taskteamService.get(taskteam_id);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
         Map<String, Integer> opprivs = taskteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #taskteam_id, 'DELETE')")
     @ApiOperation(value = "根据项目任务删除任务团队", tags = {"任务团队" },  notes = "根据项目任务删除任务团队")
@@ -194,15 +190,26 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'READ', #taskteam_id, 'READ')")
-    @ApiOperation(value = "根据项目任务获取任务团队", tags = {"任务团队" },  notes = "根据项目任务获取任务团队")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
-    public ResponseEntity<TaskTeamDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
-        TaskTeam domain = taskteamService.get(taskteam_id);
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', #taskteam_id, 'UPDATE')")
+    @ApiOperation(value = "根据项目任务更新任务团队", tags = {"任务团队" },  notes = "根据项目任务更新任务团队")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
+    public ResponseEntity<TaskTeamDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
+        TaskTeam domain = taskteamMapping.toDomain(taskteamdto);
+        domain.setRoot(task_id);
+        domain.setId(taskteam_id);
+		taskteamService.update(domain);
         TaskTeamDTO dto = taskteamMapping.toDto(domain);
         Map<String, Integer> opprivs = taskteamRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目任务检查任务团队", tags = {"任务团队" },  notes = "根据项目任务检查任务团队")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(taskteamService.checkKey(taskteamMapping.toDomain(taskteamdto)));
     }
 
     @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
@@ -212,13 +219,6 @@ public class TaskTeamResource {
         TaskTeam domain = taskteamMapping.toDomain(dto);
         domain.setRoot(task_id);
         return ResponseEntity.status(HttpStatus.OK).body(taskteamMapping.toDto(taskteamService.getDraft(domain)));
-    }
-
-    @PreAuthorize("test('IBZ_TASKTEAM', 'ZT_PROJECT', #project_id, 'TASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目任务检查任务团队", tags = {"任务团队" },  notes = "根据项目任务检查任务团队")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/taskteams/checkkey")
-    public ResponseEntity<Boolean> checkKeyByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskTeamDTO taskteamdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(taskteamService.checkKey(taskteamMapping.toDomain(taskteamdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_TASKTEAM', 'DENY')")

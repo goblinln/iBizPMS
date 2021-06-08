@@ -59,17 +59,13 @@ public class IBIZProMessageResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "更新消息", tags = {"消息" },  notes = "更新消息")
-	@RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessage_id}")
-    @Transactional
-    public ResponseEntity<IBIZProMessageDTO> update(@PathVariable("ibizpromessage_id") String ibizpromessage_id, @RequestBody IBIZProMessageDTO ibizpromessagedto) {
-		IBIZProMessage domain  = ibizpromessageMapping.toDomain(ibizpromessagedto);
-        domain.setIbizpromessageid(ibizpromessage_id);
-		ibizpromessageService.update(domain );
-		IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
+    @ApiOperation(value = "获取消息", tags = {"消息" },  notes = "获取消息")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/{ibizpromessage_id}")
+    public ResponseEntity<IBIZProMessageDTO> get(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
+        IBIZProMessage domain = ibizpromessageService.get(ibizpromessage_id);
+        IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除消息", tags = {"消息" },  notes = "删除消息")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizpromessages/{ibizpromessage_id}")
@@ -84,12 +80,22 @@ public class IBIZProMessageResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取消息", tags = {"消息" },  notes = "获取消息")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizpromessages/{ibizpromessage_id}")
-    public ResponseEntity<IBIZProMessageDTO> get(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
-        IBIZProMessage domain = ibizpromessageService.get(ibizpromessage_id);
-        IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
+    @ApiOperation(value = "更新消息", tags = {"消息" },  notes = "更新消息")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibizpromessages/{ibizpromessage_id}")
+    @Transactional
+    public ResponseEntity<IBIZProMessageDTO> update(@PathVariable("ibizpromessage_id") String ibizpromessage_id, @RequestBody IBIZProMessageDTO ibizpromessagedto) {
+		IBIZProMessage domain  = ibizpromessageMapping.toDomain(ibizpromessagedto);
+        domain.setIbizpromessageid(ibizpromessage_id);
+		ibizpromessageService.update(domain );
+		IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查消息", tags = {"消息" },  notes = "检查消息")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.checkKey(ibizpromessageMapping.toDomain(ibizpromessagedto)));
     }
 
     @ApiOperation(value = "获取消息草稿", tags = {"消息" },  notes = "获取消息草稿")
@@ -97,12 +103,6 @@ public class IBIZProMessageResource {
     public ResponseEntity<IBIZProMessageDTO> getDraft(IBIZProMessageDTO dto) {
         IBIZProMessage domain = ibizpromessageMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizpromessageMapping.toDto(ibizpromessageService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查消息", tags = {"消息" },  notes = "检查消息")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizpromessages/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IBIZProMessageDTO ibizpromessagedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizpromessageService.checkKey(ibizpromessageMapping.toDomain(ibizpromessagedto)));
     }
 
     @ApiOperation(value = "标记已完成", tags = {"消息" },  notes = "标记已完成")

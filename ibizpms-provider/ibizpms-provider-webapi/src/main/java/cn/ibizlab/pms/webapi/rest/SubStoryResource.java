@@ -74,6 +74,32 @@ public class SubStoryResource {
         storyService.createBatch(substoryMapping.toDomain(substorydtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
+    @PreAuthorize("test('ZT_STORY', #substory_id, 'READ')")
+    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> get(@PathVariable("substory_id") Long substory_id) {
+        Story domain = storyService.get(substory_id);
+        SubStoryDTO dto = substoryMapping.toDto(domain);
+        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(substory_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_STORY', #substory_id, 'DELETE')")
+    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/{substory_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("substory_id") Long substory_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
+    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        storyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "story" , versionfield = "lastediteddate")
     @PreAuthorize("test('ZT_STORY', #substory_id, 'UPDATE')")
     @ApiOperation(value = "更新需求", tags = {"需求" },  notes = "更新需求")
@@ -91,40 +117,6 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-
-    @PreAuthorize("test('ZT_STORY', #substory_id, 'DELETE')")
-    @ApiOperation(value = "删除需求", tags = {"需求" },  notes = "删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/{substory_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("substory_id") Long substory_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(storyService.remove(substory_id));
-    }
-
-    @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
-    @ApiOperation(value = "批量删除需求", tags = {"需求" },  notes = "批量删除需求")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/substories/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        storyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('ZT_STORY', #substory_id, 'READ')")
-    @ApiOperation(value = "获取需求", tags = {"需求" },  notes = "获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> get(@PathVariable("substory_id") Long substory_id) {
-        Story domain = storyService.get(substory_id);
-        SubStoryDTO dto = substoryMapping.toDto(domain);
-        Map<String, Integer> opprivs = storyRuntime.getOPPrivs(substory_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
-    @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/substories/getdraft")
-    public ResponseEntity<SubStoryDTO> getDraft(SubStoryDTO dto) {
-        Story domain = substoryMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
-    }
 
     @PreAuthorize("test('ZT_STORY', #substory_id, 'ACTIVATE')")
     @ApiOperation(value = "激活", tags = {"需求" },  notes = "激活")
@@ -398,6 +390,14 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
+    @ApiOperation(value = "获取需求草稿", tags = {"需求" },  notes = "获取需求草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/substories/getdraft")
+    public ResponseEntity<SubStoryDTO> getDraft(SubStoryDTO dto) {
+        Story domain = substoryMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('ZT_STORY', #substory_id, 'READ')")
     @ApiOperation(value = "获取需求描述", tags = {"需求" },  notes = "获取需求描述")
@@ -1107,21 +1107,16 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @VersionCheck(entity = "story" , versionfield = "lastediteddate")
-    @PreAuthorize("quickTest('ZT_STORY', 'UPDATE')")
-    @ApiOperation(value = "根据需求更新需求", tags = {"需求" },  notes = "根据需求更新需求")
-	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
-        Story domain = substoryMapping.toDomain(substorydto);
-        domain.setParent(story_id);
-        domain.setId(substory_id);
-		storyService.update(domain);
+    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
+    @ApiOperation(value = "根据需求获取需求", tags = {"需求" },  notes = "根据需求获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+        Story domain = storyService.get(substory_id);
         SubStoryDTO dto = substoryMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
     @ApiOperation(value = "根据需求删除需求", tags = {"需求" },  notes = "根据需求删除需求")
@@ -1138,25 +1133,21 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-    @ApiOperation(value = "根据需求获取需求", tags = {"需求" },  notes = "根据需求获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
-        Story domain = storyService.get(substory_id);
+    @VersionCheck(entity = "story" , versionfield = "lastediteddate")
+    @PreAuthorize("quickTest('ZT_STORY', 'UPDATE')")
+    @ApiOperation(value = "根据需求更新需求", tags = {"需求" },  notes = "根据需求更新需求")
+	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        domain.setParent(story_id);
+        domain.setId(substory_id);
+		storyService.update(domain);
         SubStoryDTO dto = substoryMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
-    @ApiOperation(value = "根据需求获取需求草稿", tags = {"需求" },  notes = "根据需求获取需求草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/getdraft")
-    public ResponseEntity<SubStoryDTO> getDraftByStory(@PathVariable("story_id") Long story_id, SubStoryDTO dto) {
-        Story domain = substoryMapping.toDomain(dto);
-        domain.setParent(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_STORY', 'ACTIVATE')")
     @ApiOperation(value = "根据需求激活", tags = {"需求" },  notes = "根据需求激活")
@@ -1429,6 +1420,15 @@ public class SubStoryResource {
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
+    @ApiOperation(value = "根据需求获取需求草稿", tags = {"需求" },  notes = "根据需求获取需求草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/substories/getdraft")
+    public ResponseEntity<SubStoryDTO> getDraftByStory(@PathVariable("story_id") Long story_id, SubStoryDTO dto) {
+        Story domain = substoryMapping.toDomain(dto);
+        domain.setParent(story_id);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")
@@ -2164,21 +2164,16 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @VersionCheck(entity = "story" , versionfield = "lastediteddate")
-    @PreAuthorize("quickTest('ZT_STORY', 'UPDATE')")
-    @ApiOperation(value = "根据产品需求更新需求", tags = {"需求" },  notes = "根据产品需求更新需求")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
-        Story domain = substoryMapping.toDomain(substorydto);
-        domain.setParent(story_id);
-        domain.setId(substory_id);
-		storyService.update(domain);
+    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
+    @ApiOperation(value = "根据产品需求获取需求", tags = {"需求" },  notes = "根据产品需求获取需求")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
+        Story domain = storyService.get(substory_id);
         SubStoryDTO dto = substoryMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_STORY', 'DELETE')")
     @ApiOperation(value = "根据产品需求删除需求", tags = {"需求" },  notes = "根据产品需求删除需求")
@@ -2195,25 +2190,21 @@ public class SubStoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'READ')")
-    @ApiOperation(value = "根据产品需求获取需求", tags = {"需求" },  notes = "根据产品需求获取需求")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
-    public ResponseEntity<SubStoryDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id) {
-        Story domain = storyService.get(substory_id);
+    @VersionCheck(entity = "story" , versionfield = "lastediteddate")
+    @PreAuthorize("quickTest('ZT_STORY', 'UPDATE')")
+    @ApiOperation(value = "根据产品需求更新需求", tags = {"需求" },  notes = "根据产品需求更新需求")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}")
+    public ResponseEntity<SubStoryDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        domain.setParent(story_id);
+        domain.setId(substory_id);
+		storyService.update(domain);
         SubStoryDTO dto = substoryMapping.toDto(domain);
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
-    @ApiOperation(value = "根据产品需求获取需求草稿", tags = {"需求" },  notes = "根据产品需求获取需求草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/getdraft")
-    public ResponseEntity<SubStoryDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, SubStoryDTO dto) {
-        Story domain = substoryMapping.toDomain(dto);
-        domain.setParent(story_id);
-        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_STORY', 'ACTIVATE')")
     @ApiOperation(value = "根据产品需求激活", tags = {"需求" },  notes = "根据产品需求激活")
@@ -2486,6 +2477,15 @@ public class SubStoryResource {
         Map<String, Integer> opprivs = storyRuntime.getOPPrivs(domain.getId());    
         substorydto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(substorydto);
+    }
+
+    @PreAuthorize("quickTest('ZT_STORY', 'CREATE')")
+    @ApiOperation(value = "根据产品需求获取需求草稿", tags = {"需求" },  notes = "根据产品需求获取需求草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/substories/getdraft")
+    public ResponseEntity<SubStoryDTO> getDraftByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, SubStoryDTO dto) {
+        Story domain = substoryMapping.toDomain(dto);
+        domain.setParent(story_id);
+        return ResponseEntity.status(HttpStatus.OK).body(substoryMapping.toDto(storyService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('ZT_STORY', 'READ')")

@@ -66,19 +66,15 @@ public class UserContactResource {
     }
 
     @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
-    @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
-	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
-    @Transactional
-    public ResponseEntity<UserContactDTO> update(@PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
-		UserContact domain  = usercontactMapping.toDomain(usercontactdto);
-        domain.setId(usercontact_id);
-		usercontactService.update(domain );
-		UserContactDTO dto = usercontactMapping.toDto(domain);
+    @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
+	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
+    public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
+        UserContact domain = usercontactService.get(usercontact_id);
+        UserContactDTO dto = usercontactMapping.toDto(domain);
         Map<String, Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
     @ApiOperation(value = "删除用户联系方式", tags = {"用户联系方式" },  notes = "删除用户联系方式")
@@ -96,14 +92,25 @@ public class UserContactResource {
     }
 
     @PreAuthorize("test('ZT_USERCONTACT', #usercontact_id, 'NONE')")
-    @ApiOperation(value = "获取用户联系方式", tags = {"用户联系方式" },  notes = "获取用户联系方式")
-	@RequestMapping(method = RequestMethod.GET, value = "/usercontacts/{usercontact_id}")
-    public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
-        UserContact domain = usercontactService.get(usercontact_id);
-        UserContactDTO dto = usercontactMapping.toDto(domain);
+    @ApiOperation(value = "更新用户联系方式", tags = {"用户联系方式" },  notes = "更新用户联系方式")
+	@RequestMapping(method = RequestMethod.PUT, value = "/usercontacts/{usercontact_id}")
+    @Transactional
+    public ResponseEntity<UserContactDTO> update(@PathVariable("usercontact_id") Long usercontact_id, @RequestBody UserContactDTO usercontactdto) {
+		UserContact domain  = usercontactMapping.toDomain(usercontactdto);
+        domain.setId(usercontact_id);
+		usercontactService.update(domain );
+		UserContactDTO dto = usercontactMapping.toDto(domain);
         Map<String, Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
+    @ApiOperation(value = "检查用户联系方式", tags = {"用户联系方式" },  notes = "检查用户联系方式")
+	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody UserContactDTO usercontactdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(usercontactService.checkKey(usercontactMapping.toDomain(usercontactdto)));
     }
 
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
@@ -112,13 +119,6 @@ public class UserContactResource {
     public ResponseEntity<UserContactDTO> getDraft(UserContactDTO dto) {
         UserContact domain = usercontactMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(usercontactMapping.toDto(usercontactService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('ZT_USERCONTACT', 'CREATE')")
-    @ApiOperation(value = "检查用户联系方式", tags = {"用户联系方式" },  notes = "检查用户联系方式")
-	@RequestMapping(method = RequestMethod.POST, value = "/usercontacts/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody UserContactDTO usercontactdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(usercontactService.checkKey(usercontactMapping.toDomain(usercontactdto)));
     }
 
     @PreAuthorize("quickTest('ZT_USERCONTACT', 'DENY')")

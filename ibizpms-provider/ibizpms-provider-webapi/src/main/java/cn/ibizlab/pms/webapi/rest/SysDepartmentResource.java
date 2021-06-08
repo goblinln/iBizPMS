@@ -59,18 +59,13 @@ public class SysDepartmentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @VersionCheck(entity = "sysdepartment" , versionfield = "updatedate")
-    @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{sysdepartment_id}")
-    @Transactional
-    public ResponseEntity<SysDepartmentDTO> update(@PathVariable("sysdepartment_id") String sysdepartment_id, @RequestBody SysDepartmentDTO sysdepartmentdto) {
-		SysDepartment domain  = sysdepartmentMapping.toDomain(sysdepartmentdto);
-        domain.setDeptid(sysdepartment_id);
-		sysdepartmentService.update(domain );
-		SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
+    @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/{sysdepartment_id}")
+    public ResponseEntity<SysDepartmentDTO> get(@PathVariable("sysdepartment_id") String sysdepartment_id) {
+        SysDepartment domain = sysdepartmentService.get(sysdepartment_id);
+        SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除部门", tags = {"部门" },  notes = "删除部门")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysdepartments/{sysdepartment_id}")
@@ -85,12 +80,23 @@ public class SysDepartmentResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取部门", tags = {"部门" },  notes = "获取部门")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysdepartments/{sysdepartment_id}")
-    public ResponseEntity<SysDepartmentDTO> get(@PathVariable("sysdepartment_id") String sysdepartment_id) {
-        SysDepartment domain = sysdepartmentService.get(sysdepartment_id);
-        SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
+    @VersionCheck(entity = "sysdepartment" , versionfield = "updatedate")
+    @ApiOperation(value = "更新部门", tags = {"部门" },  notes = "更新部门")
+	@RequestMapping(method = RequestMethod.PUT, value = "/sysdepartments/{sysdepartment_id}")
+    @Transactional
+    public ResponseEntity<SysDepartmentDTO> update(@PathVariable("sysdepartment_id") String sysdepartment_id, @RequestBody SysDepartmentDTO sysdepartmentdto) {
+		SysDepartment domain  = sysdepartmentMapping.toDomain(sysdepartmentdto);
+        domain.setDeptid(sysdepartment_id);
+		sysdepartmentService.update(domain );
+		SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysDepartmentDTO sysdepartmentdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.checkKey(sysdepartmentMapping.toDomain(sysdepartmentdto)));
     }
 
     @ApiOperation(value = "获取部门草稿", tags = {"部门" },  notes = "获取部门草稿")
@@ -98,12 +104,6 @@ public class SysDepartmentResource {
     public ResponseEntity<SysDepartmentDTO> getDraft(SysDepartmentDTO dto) {
         SysDepartment domain = sysdepartmentMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(sysdepartmentMapping.toDto(sysdepartmentService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查部门", tags = {"部门" },  notes = "检查部门")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysdepartments/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysDepartmentDTO sysdepartmentdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(sysdepartmentService.checkKey(sysdepartmentMapping.toDomain(sysdepartmentdto)));
     }
 
     @ApiOperation(value = "保存部门", tags = {"部门" },  notes = "保存部门")

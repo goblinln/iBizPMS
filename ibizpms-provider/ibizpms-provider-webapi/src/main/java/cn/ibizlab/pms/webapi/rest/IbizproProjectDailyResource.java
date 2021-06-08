@@ -67,6 +67,32 @@ public class IbizproProjectDailyResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'NONE')")
+    @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
+    public ResponseEntity<IbizproProjectDailyDTO> get(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
+        IbizproProjectDaily domain = ibizproprojectdailyService.get(ibizproprojectdaily_id);
+        IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'DELETE')")
+    @ApiOperation(value = "删除项目日报", tags = {"项目日报" },  notes = "删除项目日报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.remove(ibizproprojectdaily_id));
+    }
+
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DELETE')")
+    @ApiOperation(value = "批量删除项目日报", tags = {"项目日报" },  notes = "批量删除项目日报")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        ibizproprojectdailyService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibizproprojectdaily" , versionfield = "updatedate")
     @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'UPDATE')")
     @ApiOperation(value = "更新项目日报", tags = {"项目日报" },  notes = "更新项目日报")
@@ -85,30 +111,11 @@ public class IbizproProjectDailyResource {
     }
 
 
-    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'DELETE')")
-    @ApiOperation(value = "删除项目日报", tags = {"项目日报" },  notes = "删除项目日报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.remove(ibizproprojectdaily_id));
-    }
-
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DELETE')")
-    @ApiOperation(value = "批量删除项目日报", tags = {"项目日报" },  notes = "批量删除项目日报")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproprojectdailies/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        ibizproprojectdailyService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBIZPRO_PROJECTDAILY', #ibizproprojectdaily_id, 'NONE')")
-    @ApiOperation(value = "获取项目日报", tags = {"项目日报" },  notes = "获取项目日报")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibizproprojectdailies/{ibizproprojectdaily_id}")
-    public ResponseEntity<IbizproProjectDailyDTO> get(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
-        IbizproProjectDaily domain = ibizproprojectdailyService.get(ibizproprojectdaily_id);
-        IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
+    @ApiOperation(value = "检查项目日报", tags = {"项目日报" },  notes = "检查项目日报")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.checkKey(ibizproprojectdailyMapping.toDomain(ibizproprojectdailydto)));
     }
 
     @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
@@ -117,13 +124,6 @@ public class IbizproProjectDailyResource {
     public ResponseEntity<IbizproProjectDailyDTO> getDraft(IbizproProjectDailyDTO dto) {
         IbizproProjectDaily domain = ibizproprojectdailyMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyMapping.toDto(ibizproprojectdailyService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'CREATE')")
-    @ApiOperation(value = "检查项目日报", tags = {"项目日报" },  notes = "检查项目日报")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibizproprojectdailies/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbizproProjectDailyDTO ibizproprojectdailydto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibizproprojectdailyService.checkKey(ibizproprojectdailyMapping.toDomain(ibizproprojectdailydto)));
     }
 
     @PreAuthorize("quickTest('IBIZPRO_PROJECTDAILY', 'DENY')")

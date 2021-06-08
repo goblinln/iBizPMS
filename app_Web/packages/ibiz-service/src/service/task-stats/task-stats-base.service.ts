@@ -66,17 +66,6 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskStatsService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskstats/${_context.taskstats}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/taskstats`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskStatsService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/taskstats/${_context.taskstats}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskStatsService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/taskstats/${_context.taskstats}`);
     }
     /**
      * Get
@@ -142,6 +108,29 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/taskstats/getdraft`, _data);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskStatsService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/taskstats/${_context.taskstats}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskStatsService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/taskstats/${_context.taskstats}`, _data);
     }
     /**
      * FetchDefault
@@ -175,5 +164,16 @@ export class TaskStatsBaseService extends EntityBaseService<ITaskStats> {
      */
     async FetchUserFinishTaskSum(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/taskstats/fetchuserfinishtasksum`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskStatsService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/taskstats/${_context.taskstats}/select`);
     }
 }

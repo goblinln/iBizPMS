@@ -67,22 +67,16 @@ public class UserYearWorkStatsResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'UPDATE')")
-    @ApiOperation(value = "更新用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "更新用户年度工作内容统计")
-	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}")
-    @Transactional
-    public ResponseEntity<UserYearWorkStatsDTO> update(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
-		UserYearWorkStats domain  = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
-        domain.setId(useryearworkstats_id);
-		useryearworkstatsService.update(domain );
-        if(!useryearworkstatsRuntime.test(useryearworkstats_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
-		UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
+    @ApiOperation(value = "获取用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计")
+	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}")
+    public ResponseEntity<UserYearWorkStatsDTO> get(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
+        UserYearWorkStats domain = useryearworkstatsService.get(useryearworkstats_id);
+        UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
         Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'DELETE')")
     @ApiOperation(value = "删除用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "删除用户年度工作内容统计")
@@ -99,24 +93,22 @@ public class UserYearWorkStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
-    @ApiOperation(value = "获取用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计")
-	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/{useryearworkstats_id}")
-    public ResponseEntity<UserYearWorkStatsDTO> get(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
-        UserYearWorkStats domain = useryearworkstatsService.get(useryearworkstats_id);
-        UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
+    @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'UPDATE')")
+    @ApiOperation(value = "更新用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "更新用户年度工作内容统计")
+	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}")
+    @Transactional
+    public ResponseEntity<UserYearWorkStatsDTO> update(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
+		UserYearWorkStats domain  = useryearworkstatsMapping.toDomain(useryearworkstatsdto);
+        domain.setId(useryearworkstats_id);
+		useryearworkstatsService.update(domain );
+        if(!useryearworkstatsRuntime.test(useryearworkstats_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
+		UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
         Map<String, Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'CREATE')")
-    @ApiOperation(value = "获取用户年度工作内容统计草稿", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/getdraft")
-    public ResponseEntity<UserYearWorkStatsDTO> getDraft(UserYearWorkStatsDTO dto) {
-        UserYearWorkStats domain = useryearworkstatsMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsMapping.toDto(useryearworkstatsService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'CREATE')")
     @ApiOperation(value = "检查用户年度工作内容统计", tags = {"用户年度工作内容统计" },  notes = "检查用户年度工作内容统计")
@@ -138,6 +130,14 @@ public class UserYearWorkStatsResource {
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
 
+
+    @PreAuthorize("quickTest('IBZ_USERYEARWORKSTATS', 'CREATE')")
+    @ApiOperation(value = "获取用户年度工作内容统计草稿", tags = {"用户年度工作内容统计" },  notes = "获取用户年度工作内容统计草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/useryearworkstats/getdraft")
+    public ResponseEntity<UserYearWorkStatsDTO> getDraft(UserYearWorkStatsDTO dto) {
+        UserYearWorkStats domain = useryearworkstatsMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsMapping.toDto(useryearworkstatsService.getDraft(domain)));
+    }
 
     @PreAuthorize("test('IBZ_USERYEARWORKSTATS', #useryearworkstats_id, 'READ')")
     @ApiOperation(value = "获取产品经理相关数据", tags = {"用户年度工作内容统计" },  notes = "获取产品经理相关数据")

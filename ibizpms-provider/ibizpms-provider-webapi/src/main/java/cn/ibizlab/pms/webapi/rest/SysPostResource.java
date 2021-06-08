@@ -59,17 +59,13 @@ public class SysPostResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "更新岗位", tags = {"岗位" },  notes = "更新岗位")
-	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{syspost_id}")
-    @Transactional
-    public ResponseEntity<SysPostDTO> update(@PathVariable("syspost_id") String syspost_id, @RequestBody SysPostDTO syspostdto) {
-		SysPost domain  = syspostMapping.toDomain(syspostdto);
-        domain.setPostid(syspost_id);
-		syspostService.update(domain );
-		SysPostDTO dto = syspostMapping.toDto(domain);
+    @ApiOperation(value = "获取岗位", tags = {"岗位" },  notes = "获取岗位")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysposts/{syspost_id}")
+    public ResponseEntity<SysPostDTO> get(@PathVariable("syspost_id") String syspost_id) {
+        SysPost domain = syspostService.get(syspost_id);
+        SysPostDTO dto = syspostMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除岗位", tags = {"岗位" },  notes = "删除岗位")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysposts/{syspost_id}")
@@ -84,12 +80,22 @@ public class SysPostResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取岗位", tags = {"岗位" },  notes = "获取岗位")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysposts/{syspost_id}")
-    public ResponseEntity<SysPostDTO> get(@PathVariable("syspost_id") String syspost_id) {
-        SysPost domain = syspostService.get(syspost_id);
-        SysPostDTO dto = syspostMapping.toDto(domain);
+    @ApiOperation(value = "更新岗位", tags = {"岗位" },  notes = "更新岗位")
+	@RequestMapping(method = RequestMethod.PUT, value = "/sysposts/{syspost_id}")
+    @Transactional
+    public ResponseEntity<SysPostDTO> update(@PathVariable("syspost_id") String syspost_id, @RequestBody SysPostDTO syspostdto) {
+		SysPost domain  = syspostMapping.toDomain(syspostdto);
+        domain.setPostid(syspost_id);
+		syspostService.update(domain );
+		SysPostDTO dto = syspostMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查岗位", tags = {"岗位" },  notes = "检查岗位")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysPostDTO syspostdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(syspostService.checkKey(syspostMapping.toDomain(syspostdto)));
     }
 
     @ApiOperation(value = "获取岗位草稿", tags = {"岗位" },  notes = "获取岗位草稿")
@@ -97,12 +103,6 @@ public class SysPostResource {
     public ResponseEntity<SysPostDTO> getDraft(SysPostDTO dto) {
         SysPost domain = syspostMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(syspostMapping.toDto(syspostService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查岗位", tags = {"岗位" },  notes = "检查岗位")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysposts/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysPostDTO syspostdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(syspostService.checkKey(syspostMapping.toDomain(syspostdto)));
     }
 
     @ApiOperation(value = "保存岗位", tags = {"岗位" },  notes = "保存岗位")

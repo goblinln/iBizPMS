@@ -116,17 +116,6 @@ export class UserBaseService extends EntityBaseService<IUser> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/users/${_context.user}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -145,29 +134,6 @@ export class UserBaseService extends EntityBaseService<IUser> {
         return this.http.post(`/users`, _data);
     }
     /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/users/${_context.user}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof UserService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/users/${_context.user}`);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -177,6 +143,18 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/users/${_context.user}`);
+        return res;
+    }
+    /**
+     * GetByCommiter
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserService
+     */
+    async GetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/users/${_context.user}/getbycommiter`);
         return res;
     }
     /**
@@ -194,16 +172,15 @@ export class UserBaseService extends EntityBaseService<IUser> {
         return res;
     }
     /**
-     * GetByCommiter
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof UserService
      */
-    async GetByCommiter(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/users/${_context.user}/getbycommiter`);
-        return res;
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/users/${_context.user}`);
     }
     /**
      * SyncAccount
@@ -215,6 +192,18 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async SyncAccount(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/users/${_context.user}/syncaccount`, _data);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/users/${_context.user}`, _data);
     }
     /**
      * FetchBugUser
@@ -292,6 +281,17 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/users/fetchtaskteam`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/users/${_context.user}/select`);
     }
 
     /**

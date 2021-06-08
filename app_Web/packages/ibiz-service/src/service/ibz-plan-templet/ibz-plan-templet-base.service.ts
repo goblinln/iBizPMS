@@ -88,17 +88,6 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzPlanTempletService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -115,29 +104,6 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
             delete _data.srffrontuf;
         }
         return this.http.post(`/ibzplantemplets`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzPlanTempletService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/ibzplantemplets/${_context.ibzplantemplet}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof IbzPlanTempletService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/ibzplantemplets/${_context.ibzplantemplet}`);
     }
     /**
      * Get
@@ -187,6 +153,29 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzPlanTempletService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/ibzplantemplets/${_context.ibzplantemplet}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzPlanTempletService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/ibzplantemplets/${_context.ibzplantemplet}`, _data);
+    }
+    /**
      * FetchCurUserTemplet
      *
      * @param {*} [_context={}]
@@ -207,6 +196,17 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzplantemplets/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzPlanTempletService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/ibzplantemplets/${_context.ibzplantemplet}/select`);
     }
 
     /**

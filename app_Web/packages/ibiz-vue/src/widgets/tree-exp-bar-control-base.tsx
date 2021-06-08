@@ -1,4 +1,4 @@
-import { IPSAppViewRef, IPSDETree, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
+import { IPSAppViewRef, IPSDETree, IPSTreeExpBar, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
 import { ModelTool } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 /**
@@ -13,10 +13,18 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 部件模型实例对象
      *
-     * @type {*}
+     * @type {IPSTreeExpBar}
      * @memberof TreeExpBarControlBase
      */
     public controlInstance!: IPSTreeExpBar;
+
+    /**
+     * 选择视图面板实例对象
+     *
+     * @type {IPSDEPickupViewPanel}
+     * @memberof TreeExpBarControlBase
+     */
+    public pickupViewPanelInstance?: IPSDEPickupViewPanel;
 
     /**
      * 数据部件
@@ -42,6 +50,20 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
      * @memberof TreeExpBarControlBase
      */
     public split: number = 0.15;
+
+    /**
+     * 监听部件静态参数变化
+     *
+     * @public
+     * @type {number}
+     * @memberof TreeExpBarControlBase
+     */
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        if (newVal.pickupviewpanel) {
+            this.pickupViewPanelInstance = newVal.pickupviewpanel;
+        }
+        super.onStaticPropsChange(newVal, oldVal);
+    }
     
     /**
     * 处理数据部件参数
@@ -231,6 +253,23 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
      */
     public onViewLoad($event: any): void {
         this.$emit("ctrl-event", { controlName: this.controlInstance.name, action: "load", data: $event });
+    }
+
+    /**
+     * 部件事件处理
+     *
+     * @param {*} $event
+     * @memberof TreeExpBarControlBase
+     */
+    public onCtrlEvent(controlname: any, action: any, data: any) {
+        if (this.pickupViewPanelInstance && controlname == this.pickupViewPanelInstance.name) {
+            if (action == 'selectionchange') {
+                this.dragstate = false;
+            }
+            this.ctrlEvent({ controlname, action, data });
+        } else {
+            super.onCtrlEvent(controlname, action, data);
+        }
     }
 
 }

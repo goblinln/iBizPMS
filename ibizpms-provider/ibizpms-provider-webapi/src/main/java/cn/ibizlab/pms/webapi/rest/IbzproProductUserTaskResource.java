@@ -67,6 +67,32 @@ public class IbzproProductUserTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'READ')")
+    @ApiOperation(value = "获取产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "获取产品汇报用户任务")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
+    public ResponseEntity<IbzproProductUserTaskDTO> get(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
+        IbzproProductUserTask domain = ibzproproductusertaskService.get(ibzproproductusertask_id);
+        IbzproProductUserTaskDTO dto = ibzproproductusertaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzproproductusertaskRuntime.getOPPrivs(ibzproproductusertask_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'DELETE')")
+    @ApiOperation(value = "删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "删除产品汇报用户任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskService.remove(ibzproproductusertask_id));
+    }
+
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'DELETE')")
+    @ApiOperation(value = "批量删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "批量删除产品汇报用户任务")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzproproductusertaskService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'UPDATE')")
     @ApiOperation(value = "更新产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "更新产品汇报用户任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
@@ -84,30 +110,11 @@ public class IbzproProductUserTaskResource {
     }
 
 
-    @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'DELETE')")
-    @ApiOperation(value = "删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "删除产品汇报用户任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskService.remove(ibzproproductusertask_id));
-    }
-
-    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'DELETE')")
-    @ApiOperation(value = "批量删除产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "批量删除产品汇报用户任务")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzproproductusertasks/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzproproductusertaskService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBIZPRO_PRODUCTUSERTASK', #ibzproproductusertask_id, 'READ')")
-    @ApiOperation(value = "获取产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "获取产品汇报用户任务")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzproproductusertasks/{ibzproproductusertask_id}")
-    public ResponseEntity<IbzproProductUserTaskDTO> get(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
-        IbzproProductUserTask domain = ibzproproductusertaskService.get(ibzproproductusertask_id);
-        IbzproProductUserTaskDTO dto = ibzproproductusertaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzproproductusertaskRuntime.getOPPrivs(ibzproproductusertask_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'CREATE')")
+    @ApiOperation(value = "检查产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "检查产品汇报用户任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProductUserTaskDTO ibzproproductusertaskdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskService.checkKey(ibzproproductusertaskMapping.toDomain(ibzproproductusertaskdto)));
     }
 
     @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'CREATE')")
@@ -116,13 +123,6 @@ public class IbzproProductUserTaskResource {
     public ResponseEntity<IbzproProductUserTaskDTO> getDraft(IbzproProductUserTaskDTO dto) {
         IbzproProductUserTask domain = ibzproproductusertaskMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskMapping.toDto(ibzproproductusertaskService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'CREATE')")
-    @ApiOperation(value = "检查产品汇报用户任务", tags = {"产品汇报用户任务" },  notes = "检查产品汇报用户任务")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzproproductusertasks/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzproProductUserTaskDTO ibzproproductusertaskdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzproproductusertaskService.checkKey(ibzproproductusertaskMapping.toDomain(ibzproproductusertaskdto)));
     }
 
     @PreAuthorize("quickTest('IBIZPRO_PRODUCTUSERTASK', 'DENY')")

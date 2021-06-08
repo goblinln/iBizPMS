@@ -67,6 +67,32 @@ public class IbzAgentResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_AGENT', #ibzagent_id, 'READ')")
+    @ApiOperation(value = "获取代理", tags = {"代理" },  notes = "获取代理")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzagents/{ibzagent_id}")
+    public ResponseEntity<IbzAgentDTO> get(@PathVariable("ibzagent_id") Long ibzagent_id) {
+        IbzAgent domain = ibzagentService.get(ibzagent_id);
+        IbzAgentDTO dto = ibzagentMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibzagentRuntime.getOPPrivs(ibzagent_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_AGENT', #ibzagent_id, 'DELETE')")
+    @ApiOperation(value = "删除代理", tags = {"代理" },  notes = "删除代理")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/{ibzagent_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("ibzagent_id") Long ibzagent_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(ibzagentService.remove(ibzagent_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_AGENT', 'DELETE')")
+    @ApiOperation(value = "批量删除代理", tags = {"代理" },  notes = "批量删除代理")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
+        ibzagentService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "ibzagent" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_AGENT', #ibzagent_id, 'UPDATE')")
     @ApiOperation(value = "更新代理", tags = {"代理" },  notes = "更新代理")
@@ -85,30 +111,11 @@ public class IbzAgentResource {
     }
 
 
-    @PreAuthorize("test('IBZ_AGENT', #ibzagent_id, 'DELETE')")
-    @ApiOperation(value = "删除代理", tags = {"代理" },  notes = "删除代理")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/{ibzagent_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("ibzagent_id") Long ibzagent_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(ibzagentService.remove(ibzagent_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_AGENT', 'DELETE')")
-    @ApiOperation(value = "批量删除代理", tags = {"代理" },  notes = "批量删除代理")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzagents/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
-        ibzagentService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_AGENT', #ibzagent_id, 'READ')")
-    @ApiOperation(value = "获取代理", tags = {"代理" },  notes = "获取代理")
-	@RequestMapping(method = RequestMethod.GET, value = "/ibzagents/{ibzagent_id}")
-    public ResponseEntity<IbzAgentDTO> get(@PathVariable("ibzagent_id") Long ibzagent_id) {
-        IbzAgent domain = ibzagentService.get(ibzagent_id);
-        IbzAgentDTO dto = ibzagentMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibzagentRuntime.getOPPrivs(ibzagent_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_AGENT', 'CREATE')")
+    @ApiOperation(value = "检查代理", tags = {"代理" },  notes = "检查代理")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody IbzAgentDTO ibzagentdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzagentService.checkKey(ibzagentMapping.toDomain(ibzagentdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_AGENT', 'CREATE')")
@@ -117,13 +124,6 @@ public class IbzAgentResource {
     public ResponseEntity<IbzAgentDTO> getDraft(IbzAgentDTO dto) {
         IbzAgent domain = ibzagentMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzagentMapping.toDto(ibzagentService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_AGENT', 'CREATE')")
-    @ApiOperation(value = "检查代理", tags = {"代理" },  notes = "检查代理")
-	@RequestMapping(method = RequestMethod.POST, value = "/ibzagents/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody IbzAgentDTO ibzagentdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(ibzagentService.checkKey(ibzagentMapping.toDomain(ibzagentdto)));
     }
 
     @PreAuthorize("quickTest('IBZ_AGENT', 'DENY')")

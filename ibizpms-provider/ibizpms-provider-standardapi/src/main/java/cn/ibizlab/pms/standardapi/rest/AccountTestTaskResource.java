@@ -52,18 +52,17 @@ public class AccountTestTaskResource {
     @Lazy
     public AccountTestTaskMapping accounttesttaskMapping;
 
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
-	@ApiOperation(value = "获取我的数据", tags = {"测试版本" } ,notes = "获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/accounttesttasks/fetchmy")
-	public ResponseEntity<List<AccountTestTaskDTO>> fetchmy(@RequestBody TestTaskSearchContext context) {
-        Page<TestTask> domains = testtaskService.searchMy(context) ;
-        List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @PreAuthorize("test('ZT_TESTTASK', #accounttesttask_id, 'READ')")
+    @ApiOperation(value = "获取测试版本", tags = {"测试版本" },  notes = "获取测试版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/accounttesttasks/{accounttesttask_id}")
+    public ResponseEntity<AccountTestTaskDTO> get(@PathVariable("accounttesttask_id") Long accounttesttask_id) {
+        TestTask domain = testtaskService.get(accounttesttask_id);
+        AccountTestTaskDTO dto = accounttesttaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(accounttesttask_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
 	@ApiOperation(value = "获取指定用户数据", tags = {"测试版本" } ,notes = "获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/accounttesttasks/fetchaccount")
@@ -76,17 +75,18 @@ public class AccountTestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_TESTTASK', #accounttesttask_id, 'READ')")
-    @ApiOperation(value = "获取测试版本", tags = {"测试版本" },  notes = "获取测试版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/accounttesttasks/{accounttesttask_id}")
-    public ResponseEntity<AccountTestTaskDTO> get(@PathVariable("accounttesttask_id") Long accounttesttask_id) {
-        TestTask domain = testtaskService.get(accounttesttask_id);
-        AccountTestTaskDTO dto = accounttesttaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(accounttesttask_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
+	@ApiOperation(value = "获取我的数据", tags = {"测试版本" } ,notes = "获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/accounttesttasks/fetchmy")
+	public ResponseEntity<List<AccountTestTaskDTO>> fetchmy(@RequestBody TestTaskSearchContext context) {
+        Page<TestTask> domains = testtaskService.searchMy(context) ;
+        List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/accounttesttasks/{accounttesttask_id}/{action}")
@@ -97,18 +97,16 @@ public class AccountTestTaskResource {
     }
 
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"测试版本" } ,notes = "根据系统用户获取我的数据")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttesttasks/fetchmy")
-	public ResponseEntity<List<AccountTestTaskDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TestTaskSearchContext context) {
-        
-        Page<TestTask> domains = testtaskService.searchMy(context) ;
-        List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
+    @ApiOperation(value = "根据系统用户获取测试版本", tags = {"测试版本" },  notes = "根据系统用户获取测试版本")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accounttesttasks/{accounttesttask_id}")
+    public ResponseEntity<AccountTestTaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accounttesttask_id") Long accounttesttask_id) {
+        TestTask domain = testtaskService.get(accounttesttask_id);
+        AccountTestTaskDTO dto = accounttesttaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
 	@ApiOperation(value = "根据系统用户获取指定用户数据", tags = {"测试版本" } ,notes = "根据系统用户获取指定用户数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttesttasks/fetchaccount")
@@ -123,16 +121,18 @@ public class AccountTestTaskResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_TESTTASK', 'READ')")
-    @ApiOperation(value = "根据系统用户获取测试版本", tags = {"测试版本" },  notes = "根据系统用户获取测试版本")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accounttesttasks/{accounttesttask_id}")
-    public ResponseEntity<AccountTestTaskDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accounttesttask_id") Long accounttesttask_id) {
-        TestTask domain = testtaskService.get(accounttesttask_id);
-        AccountTestTaskDTO dto = accounttesttaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
+	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"测试版本" } ,notes = "根据系统用户获取我的数据")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accounttesttasks/fetchmy")
+	public ResponseEntity<List<AccountTestTaskDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody TestTaskSearchContext context) {
+        
+        Page<TestTask> domains = testtaskService.searchMy(context) ;
+        List<AccountTestTaskDTO> list = accounttesttaskMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @Autowired
     cn.ibizlab.pms.core.zentao.mapping.TestTaskDataImport dataimportImpMapping;
     @RequestMapping(method = RequestMethod.POST, value = "/accounttesttasks/import")

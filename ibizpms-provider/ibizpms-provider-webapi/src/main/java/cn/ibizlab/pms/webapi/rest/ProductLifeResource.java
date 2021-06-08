@@ -67,6 +67,32 @@ public class ProductLifeResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("test('IBZ_PRODUCTLIFE', #productlife_id, 'READ')")
+    @ApiOperation(value = "获取产品生命周期", tags = {"产品生命周期" },  notes = "获取产品生命周期")
+	@RequestMapping(method = RequestMethod.GET, value = "/productlives/{productlife_id}")
+    public ResponseEntity<ProductLifeDTO> get(@PathVariable("productlife_id") String productlife_id) {
+        ProductLife domain = productlifeService.get(productlife_id);
+        ProductLifeDTO dto = productlifeMapping.toDto(domain);
+        Map<String, Integer> opprivs = productlifeRuntime.getOPPrivs(productlife_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('IBZ_PRODUCTLIFE', #productlife_id, 'DELETE')")
+    @ApiOperation(value = "删除产品生命周期", tags = {"产品生命周期" },  notes = "删除产品生命周期")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlives/{productlife_id}")
+    public ResponseEntity<Boolean> remove(@PathVariable("productlife_id") String productlife_id) {
+         return ResponseEntity.status(HttpStatus.OK).body(productlifeService.remove(productlife_id));
+    }
+
+    @PreAuthorize("quickTest('IBZ_PRODUCTLIFE', 'DELETE')")
+    @ApiOperation(value = "批量删除产品生命周期", tags = {"产品生命周期" },  notes = "批量删除产品生命周期")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productlives/batch")
+    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
+        productlifeService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
     @VersionCheck(entity = "productlife" , versionfield = "updatedate")
     @PreAuthorize("test('IBZ_PRODUCTLIFE', #productlife_id, 'UPDATE')")
     @ApiOperation(value = "更新产品生命周期", tags = {"产品生命周期" },  notes = "更新产品生命周期")
@@ -85,30 +111,11 @@ public class ProductLifeResource {
     }
 
 
-    @PreAuthorize("test('IBZ_PRODUCTLIFE', #productlife_id, 'DELETE')")
-    @ApiOperation(value = "删除产品生命周期", tags = {"产品生命周期" },  notes = "删除产品生命周期")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlives/{productlife_id}")
-    public ResponseEntity<Boolean> remove(@PathVariable("productlife_id") String productlife_id) {
-         return ResponseEntity.status(HttpStatus.OK).body(productlifeService.remove(productlife_id));
-    }
-
-    @PreAuthorize("quickTest('IBZ_PRODUCTLIFE', 'DELETE')")
-    @ApiOperation(value = "批量删除产品生命周期", tags = {"产品生命周期" },  notes = "批量删除产品生命周期")
-	@RequestMapping(method = RequestMethod.DELETE, value = "/productlives/batch")
-    public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
-        productlifeService.removeBatch(ids);
-        return  ResponseEntity.status(HttpStatus.OK).body(true);
-    }
-
-    @PreAuthorize("test('IBZ_PRODUCTLIFE', #productlife_id, 'READ')")
-    @ApiOperation(value = "获取产品生命周期", tags = {"产品生命周期" },  notes = "获取产品生命周期")
-	@RequestMapping(method = RequestMethod.GET, value = "/productlives/{productlife_id}")
-    public ResponseEntity<ProductLifeDTO> get(@PathVariable("productlife_id") String productlife_id) {
-        ProductLife domain = productlifeService.get(productlife_id);
-        ProductLifeDTO dto = productlifeMapping.toDto(domain);
-        Map<String, Integer> opprivs = productlifeRuntime.getOPPrivs(productlife_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @PreAuthorize("quickTest('IBZ_PRODUCTLIFE', 'CREATE')")
+    @ApiOperation(value = "检查产品生命周期", tags = {"产品生命周期" },  notes = "检查产品生命周期")
+	@RequestMapping(method = RequestMethod.POST, value = "/productlives/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody ProductLifeDTO productlifedto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(productlifeService.checkKey(productlifeMapping.toDomain(productlifedto)));
     }
 
     @PreAuthorize("quickTest('IBZ_PRODUCTLIFE', 'CREATE')")
@@ -117,13 +124,6 @@ public class ProductLifeResource {
     public ResponseEntity<ProductLifeDTO> getDraft(ProductLifeDTO dto) {
         ProductLife domain = productlifeMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(productlifeMapping.toDto(productlifeService.getDraft(domain)));
-    }
-
-    @PreAuthorize("quickTest('IBZ_PRODUCTLIFE', 'CREATE')")
-    @ApiOperation(value = "检查产品生命周期", tags = {"产品生命周期" },  notes = "检查产品生命周期")
-	@RequestMapping(method = RequestMethod.POST, value = "/productlives/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody ProductLifeDTO productlifedto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(productlifeService.checkKey(productlifeMapping.toDomain(productlifedto)));
     }
 
     @PreAuthorize("quickTest('IBZ_PRODUCTLIFE', 'DENY')")

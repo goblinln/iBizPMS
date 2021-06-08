@@ -100,17 +100,6 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
         return this.condCache.get('view');
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStatsService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/productstats/${_context.productstats}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -127,29 +116,6 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/productstats`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStatsService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productstats/${_context.productstats}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductStatsService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/productstats/${_context.productstats}`);
     }
     /**
      * Get
@@ -188,6 +154,29 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
     async GetTestStats(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         const res = await this.http.get(`/productstats/${_context.productstats}/getteststats`);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStatsService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/productstats/${_context.productstats}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStatsService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productstats/${_context.productstats}`, _data);
     }
     /**
      * FetchDefault
@@ -243,5 +232,16 @@ export class ProductStatsBaseService extends EntityBaseService<IProductStats> {
      */
     async FetchProductcompletionstatistics(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/productstats/fetchproductcompletionstatistics`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductStatsService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/productstats/${_context.productstats}/select`);
     }
 }

@@ -66,17 +66,6 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskestimatestatsService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/taskestimatestats/${_context.taskestimatestats}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
             delete _data.srffrontuf;
         }
         return this.http.post(`/taskestimatestats`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskestimatestatsService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/taskestimatestats/${_context.taskestimatestats}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof TaskestimatestatsService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/taskestimatestats/${_context.taskestimatestats}`);
     }
     /**
      * Get
@@ -142,6 +108,29 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
         _data[this.APPDEKEY] = undefined;
         const res = await this.http.get(`/taskestimatestats/getdraft`, _data);
         return res;
+    }
+    /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskestimatestatsService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/taskestimatestats/${_context.taskestimatestats}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskestimatestatsService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/taskestimatestats/${_context.taskestimatestats}`, _data);
     }
     /**
      * FetchActionMonth
@@ -175,5 +164,16 @@ export class TaskestimatestatsBaseService extends EntityBaseService<ITaskestimat
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/taskestimatestats/fetchdefault`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskestimatestatsService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/taskestimatestats/${_context.taskestimatestats}/select`);
     }
 }

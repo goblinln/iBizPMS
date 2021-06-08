@@ -67,20 +67,16 @@ public class SubProductPlanResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'UPDATE')")
-    @ApiOperation(value = "根据产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品计划更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
-    public ResponseEntity<SubProductPlanDTO> updateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
-        ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
-        domain.setParent(productplan_id);
-        domain.setId(subproductplan_id);
-		productplanService.update(domain);
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'READ')")
+    @ApiOperation(value = "根据产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品计划获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
+    public ResponseEntity<SubProductPlanDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
+        ProductPlan domain = productplanService.get(subproductplan_id);
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DELETE')")
     @ApiOperation(value = "根据产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品计划删除产品计划")
@@ -97,25 +93,20 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'READ')")
-    @ApiOperation(value = "根据产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品计划获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
-    public ResponseEntity<SubProductPlanDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
-        ProductPlan domain = productplanService.get(subproductplan_id);
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'UPDATE')")
+    @ApiOperation(value = "根据产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品计划更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
+    public ResponseEntity<SubProductPlanDTO> updateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+        ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
+        domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
+		productplanService.update(domain);
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'CREATE')")
-    @ApiOperation(value = "根据产品计划获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品计划获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/subproductplans/getdraft")
-    public ResponseEntity<SubProductPlanDTO> getDraftByProductPlan(@PathVariable("productplan_id") Long productplan_id, SubProductPlanDTO dto) {
-        ProductPlan domain = subproductplanMapping.toDomain(dto);
-        domain.setParent(productplan_id);
-        return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品计划批关联BUG", tags = {"产品计划" },  notes = "根据产品计划批关联BUG")
@@ -276,6 +267,15 @@ public class SubProductPlanResource {
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         subproductplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
+    }
+
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'CREATE')")
+    @ApiOperation(value = "根据产品计划获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品计划获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/subproductplans/getdraft")
+    public ResponseEntity<SubProductPlanDTO> getDraftByProductPlan(@PathVariable("productplan_id") Long productplan_id, SubProductPlanDTO dto) {
+        ProductPlan domain = subproductplanMapping.toDomain(dto);
+        domain.setParent(productplan_id);
+        return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'READ')")
@@ -573,20 +573,16 @@ public class SubProductPlanResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'UPDATE')")
-    @ApiOperation(value = "根据产品产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品产品计划更新产品计划")
-	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
-    public ResponseEntity<SubProductPlanDTO> updateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
-        ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
-        domain.setParent(productplan_id);
-        domain.setId(subproductplan_id);
-		productplanService.update(domain);
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'READ')")
+    @ApiOperation(value = "根据产品产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品产品计划获取产品计划")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
+    public ResponseEntity<SubProductPlanDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
+        ProductPlan domain = productplanService.get(subproductplan_id);
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DELETE')")
     @ApiOperation(value = "根据产品产品计划删除产品计划", tags = {"产品计划" },  notes = "根据产品产品计划删除产品计划")
@@ -603,25 +599,20 @@ public class SubProductPlanResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'READ')")
-    @ApiOperation(value = "根据产品产品计划获取产品计划", tags = {"产品计划" },  notes = "根据产品产品计划获取产品计划")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
-    public ResponseEntity<SubProductPlanDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id) {
-        ProductPlan domain = productplanService.get(subproductplan_id);
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'UPDATE')")
+    @ApiOperation(value = "根据产品产品计划更新产品计划", tags = {"产品计划" },  notes = "根据产品产品计划更新产品计划")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/{subproductplan_id}")
+    public ResponseEntity<SubProductPlanDTO> updateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("subproductplan_id") Long subproductplan_id, @RequestBody SubProductPlanDTO subproductplandto) {
+        ProductPlan domain = subproductplanMapping.toDomain(subproductplandto);
+        domain.setParent(productplan_id);
+        domain.setId(subproductplan_id);
+		productplanService.update(domain);
         SubProductPlanDTO dto = subproductplanMapping.toDto(domain);
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'CREATE')")
-    @ApiOperation(value = "根据产品产品计划获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品产品计划获取产品计划草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/getdraft")
-    public ResponseEntity<SubProductPlanDTO> getDraftByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, SubProductPlanDTO dto) {
-        ProductPlan domain = subproductplanMapping.toDomain(dto);
-        domain.setParent(productplan_id);
-        return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
-    }
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'DENY')")
     @ApiOperation(value = "根据产品产品计划批关联BUG", tags = {"产品计划" },  notes = "根据产品产品计划批关联BUG")
@@ -782,6 +773,15 @@ public class SubProductPlanResource {
         Map<String, Integer> opprivs = productplanRuntime.getOPPrivs(domain.getId());    
         subproductplandto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(subproductplandto);
+    }
+
+    @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'CREATE')")
+    @ApiOperation(value = "根据产品产品计划获取产品计划草稿", tags = {"产品计划" },  notes = "根据产品产品计划获取产品计划草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/subproductplans/getdraft")
+    public ResponseEntity<SubProductPlanDTO> getDraftByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, SubProductPlanDTO dto) {
+        ProductPlan domain = subproductplanMapping.toDomain(dto);
+        domain.setParent(productplan_id);
+        return ResponseEntity.status(HttpStatus.OK).body(subproductplanMapping.toDto(productplanService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('ZT_PRODUCTPLAN', 'READ')")

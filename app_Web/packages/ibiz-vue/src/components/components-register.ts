@@ -143,6 +143,7 @@ import { AppDefaultDataViewExpView } from './view/app-default-view/app-default-d
 import { AppDefaultCalendarExpView } from './view/app-default-view/app-default-calendarexpview';
 import { AppDefaultPickupGridView } from './view/app-default-view/app-default-pickupgridview';
 import { AppDefaultMPickUpView } from './view/app-default-view/app-default-mpickupview';
+import { AppDefaultMPickUpView2 } from './view/app-default-view/app-default-mpickupview2';
 import { AppDefaultPickupView } from './view/app-default-view/app-default-pickupview';
 import { AppDefaultTreeExpView } from './view/app-default-view/app-default-treeexpview';
 import { AppDefaultPickupTreeView } from './view/app-default-view/app-default-pickuptreeview';
@@ -388,6 +389,7 @@ export const ComponentsRegister = {
         v.component('app-default-pickupgridview', AppDefaultPickupGridView);
         v.component('app-default-pickupview', AppDefaultPickupView);
         v.component('app-default-mpickupview', AppDefaultMPickUpView);
+        v.component('app-default-mpickupview2', AppDefaultMPickUpView2);
         v.component('app-default-treeexpview', AppDefaultTreeExpView);
         v.component('app-default-pickuptreeview', AppDefaultPickupTreeView);
         v.component('app-default-customview', AppDefaultCustomView);

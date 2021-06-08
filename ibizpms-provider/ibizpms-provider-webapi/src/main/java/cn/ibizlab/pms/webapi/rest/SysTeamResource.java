@@ -59,17 +59,13 @@ public class SysTeamResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "更新组", tags = {"组" },  notes = "更新组")
-	@RequestMapping(method = RequestMethod.PUT, value = "/systeams/{systeam_id}")
-    @Transactional
-    public ResponseEntity<SysTeamDTO> update(@PathVariable("systeam_id") String systeam_id, @RequestBody SysTeamDTO systeamdto) {
-		SysTeam domain  = systeamMapping.toDomain(systeamdto);
-        domain.setTeamid(systeam_id);
-		systeamService.update(domain );
-		SysTeamDTO dto = systeamMapping.toDto(domain);
+    @ApiOperation(value = "获取组", tags = {"组" },  notes = "获取组")
+	@RequestMapping(method = RequestMethod.GET, value = "/systeams/{systeam_id}")
+    public ResponseEntity<SysTeamDTO> get(@PathVariable("systeam_id") String systeam_id) {
+        SysTeam domain = systeamService.get(systeam_id);
+        SysTeamDTO dto = systeamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
 
     @ApiOperation(value = "删除组", tags = {"组" },  notes = "删除组")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/systeams/{systeam_id}")
@@ -84,12 +80,22 @@ public class SysTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取组", tags = {"组" },  notes = "获取组")
-	@RequestMapping(method = RequestMethod.GET, value = "/systeams/{systeam_id}")
-    public ResponseEntity<SysTeamDTO> get(@PathVariable("systeam_id") String systeam_id) {
-        SysTeam domain = systeamService.get(systeam_id);
-        SysTeamDTO dto = systeamMapping.toDto(domain);
+    @ApiOperation(value = "更新组", tags = {"组" },  notes = "更新组")
+	@RequestMapping(method = RequestMethod.PUT, value = "/systeams/{systeam_id}")
+    @Transactional
+    public ResponseEntity<SysTeamDTO> update(@PathVariable("systeam_id") String systeam_id, @RequestBody SysTeamDTO systeamdto) {
+		SysTeam domain  = systeamMapping.toDomain(systeamdto);
+        domain.setTeamid(systeam_id);
+		systeamService.update(domain );
+		SysTeamDTO dto = systeamMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
+    @ApiOperation(value = "检查组", tags = {"组" },  notes = "检查组")
+	@RequestMapping(method = RequestMethod.POST, value = "/systeams/checkkey")
+    public ResponseEntity<Boolean> checkKey(@RequestBody SysTeamDTO systeamdto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(systeamService.checkKey(systeamMapping.toDomain(systeamdto)));
     }
 
     @ApiOperation(value = "获取组草稿", tags = {"组" },  notes = "获取组草稿")
@@ -97,12 +103,6 @@ public class SysTeamResource {
     public ResponseEntity<SysTeamDTO> getDraft(SysTeamDTO dto) {
         SysTeam domain = systeamMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(systeamMapping.toDto(systeamService.getDraft(domain)));
-    }
-
-    @ApiOperation(value = "检查组", tags = {"组" },  notes = "检查组")
-	@RequestMapping(method = RequestMethod.POST, value = "/systeams/checkkey")
-    public ResponseEntity<Boolean> checkKey(@RequestBody SysTeamDTO systeamdto) {
-        return  ResponseEntity.status(HttpStatus.OK).body(systeamService.checkKey(systeamMapping.toDomain(systeamdto)));
     }
 
     @ApiOperation(value = "保存组", tags = {"组" },  notes = "保存组")

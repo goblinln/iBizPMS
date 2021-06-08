@@ -66,17 +66,6 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
         return new HttpResponse(entity);
     }
     /**
-     * Select
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmpLoyeeloadService
-     */
-    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.get(`/employeeloads/${_context.employeeload}/select`);
-    }
-    /**
      * Create
      *
      * @param {*} [_context={}]
@@ -93,29 +82,6 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
             delete _data.srffrontuf;
         }
         return this.http.post(`/employeeloads`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmpLoyeeloadService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/employeeloads/${_context.employeeload}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof EmpLoyeeloadService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.delete(`/employeeloads/${_context.employeeload}`);
     }
     /**
      * Get
@@ -144,6 +110,29 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
         return res;
     }
     /**
+     * Remove
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmpLoyeeloadService
+     */
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.delete(`/employeeloads/${_context.employeeload}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmpLoyeeloadService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/employeeloads/${_context.employeeload}`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -164,5 +153,16 @@ export class EmpLoyeeloadBaseService extends EntityBaseService<IEmpLoyeeload> {
      */
     async FetchGETWOERKLOAD(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/employeeloads/fetchgetwoerkload`, _data);
+    }
+    /**
+     * Select
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof EmpLoyeeloadService
+     */
+    async Select(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.get(`/employeeloads/${_context.employeeload}/select`);
     }
 }
