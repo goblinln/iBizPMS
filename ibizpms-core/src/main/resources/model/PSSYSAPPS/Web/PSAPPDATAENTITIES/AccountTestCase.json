@@ -574,14 +574,6 @@
         "codeName" : "ResultCNT"
       }
     }, {
-      "caption" : "S",
-      "format" : "%1$s",
-      "name" : "casesteps",
-      "getPSAppDEField" : {
-        "name" : "CASESTEPS",
-        "codeName" : "CaseSteps"
-      }
-    }, {
       "caption" : "测试用例结果",
       "format" : "%1$s",
       "name" : "lastrunresult1",
@@ -926,12 +918,6 @@
     "name" : "LINKCASE",
     "stdDataType" : 25,
     "stringLength" : 255
-  }, {
-    "codeName" : "CaseSteps",
-    "logicName" : "用例步骤集合",
-    "name" : "CASESTEPS",
-    "stdDataType" : 21,
-    "stringLength" : 1048576
   }, {
     "codeName" : "Task",
     "logicName" : "属性",

@@ -74,10 +74,6 @@ export abstract class TestCaseBase extends EntityBase implements ITestCase {
      */
     linkcase?: any;
     /**
-     * 用例步骤集合
-     */
-    casesteps?: any;
-    /**
      * 属性
      */
     task?: any;

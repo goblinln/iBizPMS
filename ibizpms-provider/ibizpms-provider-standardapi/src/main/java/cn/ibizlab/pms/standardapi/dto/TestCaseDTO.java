@@ -114,15 +114,6 @@ public class TestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("相关用例")
     private String linkcase;
-        
-    /**
-     * 用例步骤集合
-     */
-    @JSONField(name = "casesteps")
-    @JsonProperty("casesteps")
-    @ApiModelProperty("用例步骤集合")
-    private List<cn.ibizlab.pms.standardapi.dto.CaseStepDTO> casesteps;   
-
     /**
      * 属性 [TASK]
      *

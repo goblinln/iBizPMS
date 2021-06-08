@@ -830,23 +830,6 @@
       "widthUnit" : "PX",
       "enableSort" : false
     }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "S",
-      "codeName" : "casesteps",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "casesteps",
-      "excelCaption" : "S",
-      "name" : "casesteps",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "CASESTEPS",
-        "codeName" : "CaseSteps"
-      },
-      "width" : 50,
-      "widthUnit" : "PX",
-      "enableSort" : false
-    }, {
       "align" : "CENTER",
       "caption" : "操作",
       "codeName" : "uagridcolumn1",
@@ -1164,6 +1147,13 @@
         "codeName" : "Id"
       }
     }, {
+      "dataType" : 25,
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
+      }
+    }, {
       "dataType" : 1,
       "name" : "story",
       "getPSAppDEField" : {
@@ -1172,24 +1162,10 @@
       }
     }, {
       "dataType" : 25,
-      "name" : "assignedto",
-      "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
-      }
-    }, {
-      "dataType" : 25,
       "name" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
-      }
-    }, {
-      "dataType" : 21,
-      "name" : "casesteps",
-      "getPSAppDEField" : {
-        "name" : "CASESTEPS",
-        "codeName" : "CaseSteps"
       }
     }, {
       "dataType" : 1,

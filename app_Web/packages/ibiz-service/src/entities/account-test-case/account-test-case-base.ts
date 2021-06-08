@@ -74,10 +74,6 @@ export abstract class AccountTestCaseBase extends EntityBase implements IAccount
      */
     linkcase?: any;
     /**
-     * 用例步骤集合
-     */
-    casesteps?: any;
-    /**
      * 属性
      */
     task?: any;

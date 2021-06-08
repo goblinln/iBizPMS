@@ -247,24 +247,6 @@
     "hideDefault" : true
   }, {
     "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "S",
-    "codeName" : "casesteps",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "casesteps",
-    "excelCaption" : "S",
-    "name" : "casesteps",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "CASESTEPS",
-      "codeName" : "CaseSteps"
-    },
-    "width" : 50,
-    "widthUnit" : "PX",
-    "enableSort" : false,
-    "hideDefault" : true
-  }, {
-    "align" : "LEFT",
     "cLConvertMode" : "FRONT",
     "caption" : "测试用例结果",
     "codeName" : "lastrunresult1",
@@ -375,13 +357,6 @@
       "codeName" : "Title"
     }
   }, {
-    "dataType" : 21,
-    "name" : "casesteps",
-    "getPSAppDEField" : {
-      "name" : "CASESTEPS",
-      "codeName" : "CaseSteps"
-    }
-  }, {
     "dataType" : 1,
     "name" : "fromcaseid",
     "getPSAppDEField" : {
@@ -432,18 +407,18 @@
       "codeName" : "Pri"
     }
   }, {
-    "dataType" : 1,
-    "name" : "lib",
-    "getPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
-    }
-  }, {
     "dataType" : 25,
     "name" : "lastrunresult1",
     "getPSAppDEField" : {
       "name" : "LASTRUNRESULT1",
       "codeName" : "Lastrunresult1"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "lib",
+    "getPSAppDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
     }
   }, {
     "dataType" : 25,

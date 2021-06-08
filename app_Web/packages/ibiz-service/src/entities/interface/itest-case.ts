@@ -49,10 +49,6 @@ export interface ITestCase extends IEntityBase {
      */
     linkcase?: any;
     /**
-     * 用例步骤集合
-     */
-    casesteps?: any;
-    /**
      * 属性
      */
     task?: any;

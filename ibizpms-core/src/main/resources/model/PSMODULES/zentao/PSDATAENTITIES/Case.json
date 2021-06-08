@@ -1479,53 +1479,6 @@
         "name" : "默认组",
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
-          "dEFName" : "CASESTEPS",
-          "maxValue" : 1048576,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[1048576]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]"
-      },
-      "getPSDEField" : {
-        "name" : "CASESTEPS",
-        "codeName" : "CaseSteps"
-      },
-      "ruleInfo" : "内容长度必须小于等于[1048576]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CaseSteps",
-    "dEFType" : 5,
-    "dataType" : "ONE2MANYDATA",
-    "importOrder" : 1000,
-    "length" : 1048576,
-    "logicName" : "用例步骤集合",
-    "name" : "CASESTEPS",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDERS/DER1N_ZT_CASESTEP_ZT_CASE_CASE.json"
-    },
-    "stdDataType" : 21,
-    "stringLength" : 1048576,
-    "valueFormat" : "%1$s",
-    "phisicalDEField" : false,
-    "queryColumn" : false,
-    "uIAssistDEField" : true
-  }, {
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
           "dEFName" : "TASK",
           "maxValue" : 100,
           "name" : "默认字符串长度",
@@ -14531,10 +14484,6 @@
     },
     "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
     "orderValue" : 100,
-    "getPSOne2ManyDataDEField" : {
-      "name" : "CASESTEPS",
-      "codeName" : "CaseSteps"
-    },
     "getPSPickupDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"

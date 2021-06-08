@@ -8,7 +8,6 @@ export default [
     'lastrunresult',
     'modulename1',
     'linkcase',
-    'casesteps',
     'task',
     'order',
     'orgname',
