@@ -93,7 +93,7 @@ function getLocaleResourceBase(){
           save:'关系数据保存完成',
           change:'关系数据值变化',
           change1:'视图数据变化',
-          loadComp:'视图加载完成',
+          loadcomp:'视图加载完成',
         },
         appheadermenus: {
           ibizlab:{
