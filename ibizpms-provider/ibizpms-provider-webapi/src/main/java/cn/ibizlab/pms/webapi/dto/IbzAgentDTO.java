@@ -43,7 +43,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [CREATEMANNAME]
      *
@@ -53,7 +52,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("创建人姓名")
     private String createmanname;
-
     /**
      * 属性 [AGENTEND]
      *
@@ -63,7 +61,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @JsonProperty("agentend")
     @ApiModelProperty("代理结束日期")
     private Timestamp agentend;
-
     /**
      * 属性 [IBZ_AGENTID]
      *
@@ -73,7 +70,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("代理标识")
     private Long ibzagentid;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -83,7 +79,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -93,7 +88,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [AGENTUSER]
      *
@@ -103,7 +97,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("代理用户")
     private String agentuser;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -113,7 +106,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [AGENTBEGIN]
      *
@@ -123,7 +115,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @JsonProperty("agentbegin")
     @ApiModelProperty("代理开始日期")
     private Timestamp agentbegin;
-
     /**
      * 属性 [IBZ_AGENTNAME]
      *
@@ -133,7 +124,6 @@ public class IbzAgentDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("代理名称")
     private String ibzagentname;
-
 
     /**
      * 设置 [AGENTEND]

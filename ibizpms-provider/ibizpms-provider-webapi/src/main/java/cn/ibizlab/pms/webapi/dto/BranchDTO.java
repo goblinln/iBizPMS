@@ -44,7 +44,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("名称")
     private String name;
-
     /**
      * 属性 [DEPT]
      *
@@ -54,7 +53,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -64,7 +62,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -74,7 +71,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [DELETED]
      *
@@ -84,7 +80,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -94,7 +89,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [ID]
      *
@@ -104,7 +98,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [ORDER]
      *
@@ -113,7 +106,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
-
     /**
      * 属性 [ORG]
      *
@@ -123,7 +115,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [BRANCHSN]
      *
@@ -133,7 +124,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品的分支和平台信息编号")
     private Long branchsn;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -143,7 +133,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -153,7 +142,6 @@ public class BranchDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属产品")
     private Long product;
-
 
     /**
      * 设置 [NAME]

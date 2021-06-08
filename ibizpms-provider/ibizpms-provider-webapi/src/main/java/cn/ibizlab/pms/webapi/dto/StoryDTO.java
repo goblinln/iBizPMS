@@ -43,7 +43,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("指派给")
     private String assignedto;
-
     /**
      * 属性 [MODULENAME1]
      *
@@ -53,7 +52,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("所属模块名称")
     private String modulename1;
-
     /**
      * 属性 [FILES]
      *
@@ -63,7 +61,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1000, message = "内容长度必须小于等于[1000]")
     @ApiModelProperty("附件")
     private String files;
-
     /**
      * 属性 [CHILDSTORIES]
      *
@@ -73,7 +70,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("细分需求")
     private String childstories;
-
     /**
      * 属性 [IBIZ_ID]
      *
@@ -83,7 +79,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("IBIZ标识")
     private String ibizId;
-
     /**
      * 属性 [PLAN]
      *
@@ -93,7 +88,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("所属计划")
     private String plan;
-
     /**
      * 属性 [VERSION]
      *
@@ -102,7 +96,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("版本号")
     private Integer version;
-
     /**
      * 属性 [ASSIGNEDDATE]
      *
@@ -112,7 +105,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("assigneddate")
     @ApiModelProperty("指派日期")
     private Timestamp assigneddate;
-
     /**
      * 属性 [STORYPOINTS]
      *
@@ -122,7 +114,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("故事点")
     private String storypoints;
-
     /**
      * 属性 [SOURCENAME]
      *
@@ -132,7 +123,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("来源对象名称")
     private String sourcename;
-
     /**
      * 属性 [STORYPROVIDEDATE]
      *
@@ -142,7 +132,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("storyprovidedate")
     @ApiModelProperty("需求提供时间")
     private Timestamp storyprovidedate;
-
     /**
      * 属性 [ISLEAF]
      *
@@ -152,7 +141,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("是否子需求")
     private String isleaf;
-
     /**
      * 属性 [PRI]
      *
@@ -161,7 +149,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
     private Integer pri;
-
     /**
      * 属性 [SOURCEID]
      *
@@ -171,7 +158,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("来源对象标识")
     private String sourceid;
-
     /**
      * 属性 [LINKSTORIES]
      *
@@ -181,7 +167,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("相关需求")
     private String linkstories;
-
     /**
      * 属性 [ASSESSRESULT]
      *
@@ -191,7 +176,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("评审结果")
     private String assessresult;
-
     /**
      * 属性 [STATUS]
      *
@@ -201,7 +185,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("当前状态")
     private String status;
-
     /**
      * 属性 [MAILTOPK]
      *
@@ -211,7 +194,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("抄送给")
     private String mailtopk;
-
     /**
      * 属性 [ESTIMATE]
      *
@@ -220,7 +202,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("estimate")
     @ApiModelProperty("预计工时")
     private Double estimate;
-
     /**
      * 属性 [NOTICEUSERS]
      *
@@ -230,7 +211,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
-
     /**
      * 属性 [REVIEWEDDATE]
      *
@@ -240,7 +220,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("revieweddate")
     @ApiModelProperty("评审时间")
     private Timestamp revieweddate;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -250,7 +229,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [TITLE]
      *
@@ -261,7 +239,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("需求名称")
     private String title;
-
     /**
      * 属性 [MAILTOCONACT]
      *
@@ -271,7 +248,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("联系人")
     private String mailtoconact;
-
     /**
      * 属性 [SOURCENOTE]
      *
@@ -281,7 +257,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("来源备注")
     private String sourcenote;
-
     /**
      * 属性 [VERSIONC]
      *
@@ -291,7 +266,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("版本号")
     private String versionc;
-
     /**
      * 属性 [REVIEWEDBY]
      *
@@ -301,7 +275,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("由谁评审")
     private String reviewedby;
-
     /**
      * 属性 [SUBSTATUS]
      *
@@ -311,7 +284,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("子状态")
     private String substatus;
-
     /**
      * 属性 [STAGEDBY]
      *
@@ -321,7 +293,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("设置阶段者")
     private String stagedby;
-
     /**
      * 属性 [PLANNAME]
      *
@@ -331,7 +302,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("所属计划")
     private String planname;
-
     /**
      * 属性 [OPENEDBY]
      *
@@ -341,7 +311,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("由谁创建")
     private String openedby;
-
     /**
      * 属性 [OPENEDDATE]
      *
@@ -351,7 +320,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("openeddate")
     @ApiModelProperty("创建日期")
     private Timestamp openeddate;
-
     /**
      * 属性 [ID]
      *
@@ -361,7 +329,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [IBIZ_SOURCEOBJECT]
      *
@@ -371,7 +338,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("来源对象")
     private String ibizSourceobject;
-
     /**
      * 属性 [SOURCE]
      *
@@ -381,7 +347,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("需求来源")
     private String source;
-
     /**
      * 属性 [STORYLATESTFINISHEDDATE]
      *
@@ -391,7 +356,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("storylatestfinisheddate")
     @ApiModelProperty("需求最晚完成时间")
     private Timestamp storylatestfinisheddate;
-
     /**
      * 属性 [NEEDNOTREVIEW]
      *
@@ -401,7 +365,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 4000, message = "内容长度必须小于等于[4000]")
     @ApiModelProperty("不需要评审")
     private String neednotreview;
-
     /**
      * 属性 [ISCHILD]
      *
@@ -411,7 +374,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("是否可以细分")
     private String ischild;
-
     /**
      * 属性 [CLOSEDREASON]
      *
@@ -421,7 +383,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("关闭原因")
     private String closedreason;
-
     /**
      * 属性 [COLOR]
      *
@@ -431,7 +392,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
     @ApiModelProperty("标题颜色")
     private String color;
-
     /**
      * 属性 [ORGID]
      *
@@ -441,7 +401,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("orgid")
     private String orgid;
-
     /**
      * 属性 [MAILTO]
      *
@@ -451,7 +410,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("抄送给")
     private String mailto;
-
     /**
      * 属性 [ISFAVORITES]
      *
@@ -461,7 +419,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("是否收藏")
     private String isfavorites;
-
     /**
      * 属性 [DEPT]
      *
@@ -471,7 +428,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [SOURCEOBJECT]
      *
@@ -481,7 +437,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("来源对象")
     private String sourceobject;
-
     /**
      * 属性 [DELETED]
      *
@@ -491,7 +446,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [KEYWORDS]
      *
@@ -501,7 +455,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("关键词")
     private String keywords;
-
     /**
      * 属性 [LASTEDITEDBY]
      *
@@ -511,7 +464,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("最后修改")
     private String lasteditedby;
-
     /**
      * 属性 [STAGE]
      *
@@ -521,7 +473,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("所处阶段")
     private String stage;
-
     /**
      * 属性 [PROJECT]
      *
@@ -531,7 +482,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目")
     private Long project;
-
     /**
      * 属性 [CLOSEDDATE]
      *
@@ -541,7 +491,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("closeddate")
     @ApiModelProperty("关闭日期	")
     private Timestamp closeddate;
-
     /**
      * 属性 [SPEC]
      *
@@ -551,7 +500,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("需求描述")
     private String spec;
-
     /**
      * 属性 [IBIZ_SOURCENAME]
      *
@@ -561,7 +509,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("来源对象名称")
     private String ibizSourcename;
-
     /**
      * 属性 [ASSIGNEDTOPK]
      *
@@ -571,7 +518,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("指派给（选择）")
     private String assignedtopk;
-
     /**
      * 属性 [COMMENT]
      *
@@ -581,7 +527,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("备注")
     private String comment;
-
     /**
      * 属性 [ACLLIST]
      *
@@ -591,7 +536,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("acllist")
     private String acllist;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -601,7 +545,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [STORYSN]
      *
@@ -611,7 +554,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("需求编号")
     private Long storysn;
-
     /**
      * 属性 [VERIFY]
      *
@@ -621,7 +563,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("验收标准")
     private String verify;
-
     /**
      * 属性 [CLOSEDBY]
      *
@@ -631,7 +572,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("由谁关闭")
     private String closedby;
-
     /**
      * 属性 [ACL]
      *
@@ -641,7 +581,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("acl")
     private String acl;
-
     /**
      * 属性 [RESULT]
      *
@@ -651,7 +590,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("评审结果")
     private String result;
-
     /**
      * 属性 [ORG]
      *
@@ -661,7 +599,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [TYPE]
      *
@@ -671,7 +608,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("需求类型")
     private String type;
-
     /**
      * 属性 [LASTEDITEDDATE]
      *
@@ -681,7 +617,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("lastediteddate")
     @ApiModelProperty("最后修改日期")
     private Timestamp lastediteddate;
-
     /**
      * 属性 [IBIZ_SOURCEID]
      *
@@ -691,7 +626,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("来源对象标识")
     private String ibizSourceid;
-
     /**
      * 属性 [PREVERSION]
      *
@@ -700,7 +634,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonProperty("preversion")
     @ApiModelProperty("之前的版本")
     private Integer preversion;
-
     /**
      * 属性 [STORYPROVIDER]
      *
@@ -710,7 +643,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("需求提供人")
     private String storyprovider;
-
     /**
      * 属性 [MDEPTID]
      *
@@ -720,7 +652,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("MDEPTID")
     private String mdeptid;
-
     /**
      * 属性 [PATH]
      *
@@ -730,7 +661,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("模块路径")
     private String path;
-
     /**
      * 属性 [PARENTNAME]
      *
@@ -740,7 +670,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("父需求名称")
     private String parentname;
-
     /**
      * 属性 [MODULENAME]
      *
@@ -750,7 +679,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("所属模块名称")
     private String modulename;
-
     /**
      * 属性 [PRODOCTNAME]
      *
@@ -760,7 +688,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("产品名称")
     private String productname;
-
     /**
      * 属性 [BRANCHNAME]
      *
@@ -770,7 +697,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("平台/分支")
     private String branchname;
-
     /**
      * 属性 [FROMBUG]
      *
@@ -780,7 +706,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("来源Bug")
     private Long frombug;
-
     /**
      * 属性 [PARENT]
      *
@@ -790,7 +715,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("父需求")
     private Long parent;
-
     /**
      * 属性 [MODULE]
      *
@@ -800,7 +724,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属模块")
     private Long module;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -810,7 +733,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属产品")
     private Long product;
-
     /**
      * 属性 [DUPLICATESTORY]
      *
@@ -820,7 +742,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("重复需求ID")
     private Long duplicatestory;
-
     /**
      * 属性 [BRANCH]
      *
@@ -830,7 +751,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("平台/分支")
     private Long branch;
-
     /**
      * 属性 [TOBUG]
      *
@@ -840,7 +760,6 @@ public class StoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("转Bug")
     private Long tobug;
-
 
     /**
      * 设置 [ASSIGNEDTO]

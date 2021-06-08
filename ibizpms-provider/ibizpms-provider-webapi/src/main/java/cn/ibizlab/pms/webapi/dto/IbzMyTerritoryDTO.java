@@ -43,7 +43,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("我的过期bug数")
     private String myebugs;
-
     /**
      * 属性 [NICKNAME]
      *
@@ -53,7 +52,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("nickname")
     private String nickname;
-
     /**
      * 属性 [FAILS]
      *
@@ -62,7 +60,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("fails")
     @ApiModelProperty("fails")
     private Integer fails;
-
     /**
      * 属性 [VISITS]
      *
@@ -71,7 +68,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("visits")
     @ApiModelProperty("访问次数")
     private Integer visits;
-
     /**
      * 属性 [PHONE]
      *
@@ -81,7 +77,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("电话")
     private String phone;
-
     /**
      * 属性 [MYTODOCNT]
      *
@@ -90,7 +85,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("mytodocnt")
     @ApiModelProperty("我的待办数")
     private Integer mytodocnt;
-
     /**
      * 属性 [MYTERRITORYCNT]
      *
@@ -99,7 +93,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("myterritorycnt")
     @ApiModelProperty("我的地盘")
     private Integer myterritorycnt;
-
     /**
      * 属性 [MYBUGS]
      *
@@ -108,7 +101,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("mybugs")
     @ApiModelProperty("我的bugs")
     private Integer mybugs;
-
     /**
      * 属性 [ROLE]
      *
@@ -118,7 +110,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("职位")
     private String role;
-
     /**
      * 属性 [REALNAME]
      *
@@ -128,7 +119,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("真实姓名")
     private String realname;
-
     /**
      * 属性 [CLIENTSTATUS]
      *
@@ -138,7 +128,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("clientStatus")
     private String clientstatus;
-
     /**
      * 属性 [LAST]
      *
@@ -147,7 +136,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("last")
     @ApiModelProperty("最后登录")
     private Integer last;
-
     /**
      * 属性 [ZIPCODE]
      *
@@ -157,7 +145,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("zipcode")
     private String zipcode;
-
     /**
      * 属性 [SKYPE]
      *
@@ -167,7 +154,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("skype")
     private String skype;
-
     /**
      * 属性 [MYFAVORITEBUGS]
      *
@@ -176,7 +162,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavoritebugs")
     @ApiModelProperty("我收藏的bugs")
     private Integer myfavoritebugs;
-
     /**
      * 属性 [JOIN]
      *
@@ -186,7 +171,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("join")
     @ApiModelProperty("入职日期")
     private Timestamp join;
-
     /**
      * 属性 [SCORE]
      *
@@ -195,7 +179,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("score")
     @ApiModelProperty("score")
     private Integer score;
-
     /**
      * 属性 [DEPT]
      *
@@ -204,7 +187,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("dept")
     @ApiModelProperty("所属部门")
     private Integer dept;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -214,7 +196,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("账户")
     private String account;
-
     /**
      * 属性 [MYFAVORITES]
      *
@@ -223,7 +204,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavorites")
     @ApiModelProperty("我的收藏")
     private Integer myfavorites;
-
     /**
      * 属性 [MYSTORYS]
      *
@@ -232,7 +212,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("mystorys")
     @ApiModelProperty("我的需求数")
     private Integer mystorys;
-
     /**
      * 属性 [COMMITER]
      *
@@ -242,7 +221,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("源代码账户")
     private String commiter;
-
     /**
      * 属性 [MOBILE]
      *
@@ -252,7 +230,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 11, message = "内容长度必须小于等于[11]")
     @ApiModelProperty("手机")
     private String mobile;
-
     /**
      * 属性 [LOCKED]
      *
@@ -262,7 +239,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("locked")
     @ApiModelProperty("locked")
     private Timestamp locked;
-
     /**
      * 属性 [PROJECTTEAMCNT]
      *
@@ -271,7 +247,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("projectteamcnt")
     @ApiModelProperty("项目成员")
     private Integer projectteamcnt;
-
     /**
      * 属性 [ADDRESS]
      *
@@ -281,7 +256,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 120, message = "内容长度必须小于等于[120]")
     @ApiModelProperty("通讯地址")
     private String address;
-
     /**
      * 属性 [MYTASKS]
      *
@@ -290,7 +264,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("mytasks")
     @ApiModelProperty("我的任务")
     private Integer mytasks;
-
     /**
      * 属性 [SCORELEVEL]
      *
@@ -299,7 +272,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("scorelevel")
     @ApiModelProperty("scoreLevel")
     private Integer scorelevel;
-
     /**
      * 属性 [PASSWORD]
      *
@@ -309,7 +281,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 32, message = "内容长度必须小于等于[32]")
     @ApiModelProperty("密码")
     private String password;
-
     /**
      * 属性 [LEFTLCBJZCNT]
      *
@@ -319,7 +290,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("剩余里程碑（今日到期）")
     private String leftlcbjzcnt;
-
     /**
      * 属性 [RANZHI]
      *
@@ -329,7 +299,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("ranzhi")
     private String ranzhi;
-
     /**
      * 属性 [MYTODOCNTJZ]
      *
@@ -339,7 +308,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("今日截止待办")
     private String mytodocntjz;
-
     /**
      * 属性 [PROJECTS]
      *
@@ -348,7 +316,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("projects")
     @ApiModelProperty("未关闭项目数")
     private Integer projects;
-
     /**
      * 属性 [SLACK]
      *
@@ -358,7 +325,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("slack")
     private String slack;
-
     /**
      * 属性 [PRODUCTS]
      *
@@ -367,7 +333,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("products")
     @ApiModelProperty("未关闭产品数")
     private Integer products;
-
     /**
      * 属性 [WEIXIN]
      *
@@ -377,7 +342,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("微信")
     private String weixin;
-
     /**
      * 属性 [MYETASKS]
      *
@@ -387,7 +351,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("我的过期任务数")
     private String myetasks;
-
     /**
      * 属性 [EPROJECTS]
      *
@@ -397,7 +360,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("过期项目数")
     private String eprojects;
-
     /**
      * 属性 [WHATSAPP]
      *
@@ -407,7 +369,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("whatsapp")
     private String whatsapp;
-
     /**
      * 属性 [QQ]
      *
@@ -417,7 +378,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("QQ")
     private String qq;
-
     /**
      * 属性 [GENDER]
      *
@@ -427,7 +387,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("男女")
     private String gender;
-
     /**
      * 属性 [CLIENTLANG]
      *
@@ -437,7 +396,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("clientLang")
     private String clientlang;
-
     /**
      * 属性 [DELETED]
      *
@@ -447,7 +405,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("逻辑删除标志")
     private String deleted;
-
     /**
      * 属性 [MYFAVORITETASKS]
      *
@@ -456,7 +413,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavoritetasks")
     @ApiModelProperty("我收藏的任务")
     private Integer myfavoritetasks;
-
     /**
      * 属性 [BIRTHDAY]
      *
@@ -466,7 +422,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("birthday")
     @ApiModelProperty("birthday")
     private Timestamp birthday;
-
     /**
      * 属性 [IP]
      *
@@ -476,7 +431,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 15, message = "内容长度必须小于等于[15]")
     @ApiModelProperty("ip")
     private String ip;
-
     /**
      * 属性 [MYFAVORITESTORYS]
      *
@@ -485,7 +439,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavoritestorys")
     @ApiModelProperty("我收藏的需求数")
     private Integer myfavoritestorys;
-
     /**
      * 属性 [EMAIL]
      *
@@ -495,7 +448,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("邮箱")
     private String email;
-
     /**
      * 属性 [DINGDING]
      *
@@ -505,7 +457,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("钉钉")
     private String dingding;
-
     /**
      * 属性 [AVATAR]
      *
@@ -515,7 +466,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("avatar")
     private String avatar;
-
     /**
      * 属性 [ID]
      *
@@ -525,7 +475,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("ID")
     private Long id;
-
     /**
      * 属性 [LEFTLCBCNT]
      *
@@ -534,7 +483,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @JsonProperty("leftlcbcnt")
     @ApiModelProperty("剩余里程碑")
     private Integer leftlcbcnt;
-
     /**
      * 属性 [PROJECTTEAMJZCNT]
      *
@@ -544,7 +492,6 @@ public class IbzMyTerritoryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目成员（今日截止）")
     private String projectteamjzcnt;
-
 
     /**
      * 设置 [NICKNAME]

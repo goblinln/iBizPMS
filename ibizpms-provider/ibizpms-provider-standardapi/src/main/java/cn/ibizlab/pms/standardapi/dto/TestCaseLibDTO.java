@@ -43,7 +43,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("描述")
     private String desc;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -53,7 +52,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品")
     private Long product;
-
     /**
      * 属性 [ADDEDDATE]
      *
@@ -63,7 +61,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @JsonProperty("addeddate")
     @ApiModelProperty("创建时间")
     private Timestamp addeddate;
-
     /**
      * 属性 [ID]
      *
@@ -73,7 +70,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [LASTEDITEDDATE]
      *
@@ -83,7 +79,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @JsonProperty("lastediteddate")
     @ApiModelProperty("最后编辑时间")
     private Timestamp lastediteddate;
-
     /**
      * 属性 [ADDEDBY]
      *
@@ -93,7 +88,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("由谁创建")
     private String addedby;
-
     /**
      * 属性 [DELETED]
      *
@@ -103,7 +97,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [NAME]
      *
@@ -114,7 +107,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("名称")
     private String name;
-
     /**
      * 属性 [TYPE]
      *
@@ -124,7 +116,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [LASTEDITEDBY]
      *
@@ -134,7 +125,6 @@ public class TestCaseLibDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("最后编辑人")
     private String lasteditedby;
-
 
     /**
      * 设置 [DESC]

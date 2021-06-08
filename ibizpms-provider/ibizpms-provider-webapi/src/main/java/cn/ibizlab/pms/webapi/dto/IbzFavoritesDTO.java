@@ -43,7 +43,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -53,7 +52,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [IBZ_FAVORITESID]
      *
@@ -63,7 +61,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("收藏标识")
     private String ibzfavoritesid;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -73,7 +70,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -83,7 +79,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [OBJECTID]
      *
@@ -93,7 +88,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("数据对象标识")
     private Long objectid;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -103,7 +97,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("收藏用户")
     private String account;
-
     /**
      * 属性 [IBZ_FAVORITESNAME]
      *
@@ -113,7 +106,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("收藏名称")
     private String ibzfavoritesname;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -123,7 +115,6 @@ public class IbzFavoritesDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
 
     /**
      * 设置 [TYPE]

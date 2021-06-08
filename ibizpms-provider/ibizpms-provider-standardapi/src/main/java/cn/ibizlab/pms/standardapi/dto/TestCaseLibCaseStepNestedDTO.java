@@ -43,7 +43,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("实际情况")
     private String reals;
-
     /**
      * 属性 [EXPECT]
      *
@@ -53,7 +52,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("预期")
     private String expect;
-
     /**
      * 属性 [DESC]
      *
@@ -63,7 +61,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("步骤")
     private String desc;
-
     /**
      * 属性 [FILES]
      *
@@ -73,7 +70,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("附件")
     private String files;
-
     /**
      * 属性 [ID]
      *
@@ -83,7 +79,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [TYPE]
      *
@@ -93,7 +88,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [VERSION]
      *
@@ -102,7 +96,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @JsonProperty("version")
     @ApiModelProperty("版本")
     private Integer version;
-
     /**
      * 属性 [PARENT]
      *
@@ -112,7 +105,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long parent;
-
     /**
      * 属性 [CASE]
      *
@@ -122,7 +114,6 @@ public class TestCaseLibCaseStepNestedDTO extends DTOBase implements Serializabl
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例编号")
     private Long ibizcase;
-
 
     /**
      * 设置 [EXPECT]

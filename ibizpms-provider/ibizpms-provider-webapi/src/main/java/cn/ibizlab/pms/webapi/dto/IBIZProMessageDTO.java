@@ -43,7 +43,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("发送代理标识")
     private String sendproxyid;
-
     /**
      * 属性 [IBIZPRO_MESSAGENAME]
      *
@@ -53,7 +52,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息名称")
     private String ibizpromessagename;
-
     /**
      * 属性 [ISLINK]
      *
@@ -62,7 +60,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("islink")
     @ApiModelProperty("是否是链接消息")
     private Integer islink;
-
     /**
      * 属性 [SUBJECT]
      *
@@ -72,7 +69,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("标题")
     private String subject;
-
     /**
      * 属性 [RETRYINTERVALTIME]
      *
@@ -81,7 +77,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("retryintervaltime")
     @ApiModelProperty("重发间隔时间")
     private Integer retryintervaltime;
-
     /**
      * 属性 [BCC]
      *
@@ -91,7 +86,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("密件抄送方")
     private String bcc;
-
     /**
      * 属性 [ISDONE]
      *
@@ -100,7 +94,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("isdone")
     @ApiModelProperty("是否完成")
     private Integer isdone;
-
     /**
      * 属性 [PARAM]
      *
@@ -110,7 +103,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("消息参数")
     private String param;
-
     /**
      * 属性 [IBIZPRO_MESSAGEID]
      *
@@ -120,7 +112,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息标识")
     private String ibizpromessageid;
-
     /**
      * 属性 [RETRYTIMES]
      *
@@ -129,7 +120,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("retrytimes")
     @ApiModelProperty("重发次数")
     private Integer retrytimes;
-
     /**
      * 属性 [ISSYNC]
      *
@@ -138,7 +128,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("issync")
     @ApiModelProperty("是否同步")
     private Integer issync;
-
     /**
      * 属性 [FROM]
      *
@@ -148,7 +137,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("发送方")
     private String from;
-
     /**
      * 属性 [CC]
      *
@@ -158,7 +146,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("抄送方")
     private String cc;
-
     /**
      * 属性 [SENDTIME]
      *
@@ -168,7 +155,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("sendtime")
     @ApiModelProperty("发送时间")
     private Timestamp sendtime;
-
     /**
      * 属性 [CONTENT]
      *
@@ -178,7 +164,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("内容")
     private String content;
-
     /**
      * 属性 [LINKURL]
      *
@@ -188,7 +173,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("链接地址")
     private String linkurl;
-
     /**
      * 属性 [ISREAD]
      *
@@ -197,7 +181,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("isread")
     @ApiModelProperty("是否已读")
     private Integer isread;
-
     /**
      * 属性 [ISRETRY]
      *
@@ -206,7 +189,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @JsonProperty("isretry")
     @ApiModelProperty("是否重发")
     private Integer isretry;
-
     /**
      * 属性 [TYPE]
      *
@@ -216,7 +198,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("消息类型")
     private String type;
-
     /**
      * 属性 [TO]
      *
@@ -226,7 +207,6 @@ public class IBIZProMessageDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("接收方")
     private String to;
-
 
     /**
      * 设置 [IBIZPRO_MESSAGENAME]

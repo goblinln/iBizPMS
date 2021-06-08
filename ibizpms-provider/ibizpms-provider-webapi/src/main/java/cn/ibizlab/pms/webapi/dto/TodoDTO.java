@@ -43,7 +43,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -53,7 +52,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("所有者")
     private String account;
-
     /**
      * 属性 [CONFIG_DAY]
      *
@@ -62,7 +60,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("config_day")
     @ApiModelProperty("间隔天数")
     private Integer configDay;
-
     /**
      * 属性 [ASSIGNEDTOPK]
      *
@@ -72,7 +69,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("指派给（选择）")
     private String assignedtopk;
-
     /**
      * 属性 [DATE1]
      *
@@ -82,7 +78,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("日期")
     private String date1;
-
     /**
      * 属性 [CONFIG_TYPE]
      *
@@ -92,7 +87,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("周期类型")
     private String configType;
-
     /**
      * 属性 [TODOSN]
      *
@@ -102,7 +96,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("待办编号")
     private Long todosn;
-
     /**
      * 属性 [CLOSEDDATE]
      *
@@ -112,7 +105,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("closeddate")
     @ApiModelProperty("关闭时间")
     private Timestamp closeddate;
-
     /**
      * 属性 [CLOSEDBY]
      *
@@ -122,7 +114,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁关闭")
     private String closedby;
-
     /**
      * 属性 [TYPE]
      *
@@ -132,7 +123,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [END]
      *
@@ -141,7 +131,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("end")
     @ApiModelProperty("结束")
     private Integer end;
-
     /**
      * 属性 [DESC]
      *
@@ -151,7 +140,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("描述")
     private String desc;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -161,7 +149,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [NOTICEUSERS]
      *
@@ -171,7 +158,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -181,7 +167,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [ORG]
      *
@@ -191,7 +176,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [FINISHEDBY]
      *
@@ -201,7 +185,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁完成")
     private String finishedby;
-
     /**
      * 属性 [BEGIN]
      *
@@ -210,7 +193,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("begin")
     @ApiModelProperty("开始")
     private Integer begin;
-
     /**
      * 属性 [IDVALUE]
      *
@@ -220,7 +202,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("关联编号")
     private Long idvalue;
-
     /**
      * 属性 [ASSIGNEDBY]
      *
@@ -230,7 +211,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁指派")
     private String assignedby;
-
     /**
      * 属性 [DEPT]
      *
@@ -240,7 +220,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [CONFIG_MONTH]
      *
@@ -250,7 +229,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 4000, message = "内容长度必须小于等于[4000]")
     @ApiModelProperty("周期设置月")
     private String configMonth;
-
     /**
      * 属性 [TASK]
      *
@@ -260,7 +238,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("待办名称")
     private String task;
-
     /**
      * 属性 [BUG]
      *
@@ -270,7 +247,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("待办名称")
     private String bug;
-
     /**
      * 属性 [FINISHEDDATE]
      *
@@ -280,7 +256,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("finisheddate")
     @ApiModelProperty("完成时间")
     private Timestamp finisheddate;
-
     /**
      * 属性 [CYCLE]
      *
@@ -289,7 +264,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("cycle")
     @ApiModelProperty("周期")
     private Integer cycle;
-
     /**
      * 属性 [DATE_DISABLE]
      *
@@ -299,7 +273,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("待定")
     private String dateDisable;
-
     /**
      * 属性 [CONFIG_WEEK]
      *
@@ -309,7 +282,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 4000, message = "内容长度必须小于等于[4000]")
     @ApiModelProperty("周期设置周几")
     private String configWeek;
-
     /**
      * 属性 [ASSIGNEDTO]
      *
@@ -319,7 +291,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("指派给")
     private String assignedto;
-
     /**
      * 属性 [STATUS]
      *
@@ -329,7 +300,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 6, message = "内容长度必须小于等于[6]")
     @ApiModelProperty("状态")
     private String status;
-
     /**
      * 属性 [CONFIG_BEFOREDAYS]
      *
@@ -338,7 +308,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("config_beforedays")
     @ApiModelProperty("提前")
     private Integer configBeforedays;
-
     /**
      * 属性 [NAME]
      *
@@ -348,7 +317,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 150, message = "内容长度必须小于等于[150]")
     @ApiModelProperty("待办名称")
     private String name;
-
     /**
      * 属性 [ASSIGNEDDATE]
      *
@@ -358,7 +326,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("assigneddate")
     @ApiModelProperty("指派日期")
     private Timestamp assigneddate;
-
     /**
      * 属性 [CONFIG_END]
      *
@@ -368,7 +335,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("config_end")
     @ApiModelProperty("过期时间")
     private Timestamp configEnd;
-
     /**
      * 属性 [COST]
      *
@@ -377,7 +343,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("cost")
     @ApiModelProperty("费用")
     private Integer cost;
-
     /**
      * 属性 [PRI]
      *
@@ -386,7 +351,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
     private Integer pri;
-
     /**
      * 属性 [DATE]
      *
@@ -396,7 +360,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [STORY]
      *
@@ -406,7 +369,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("待办名称")
     private String story;
-
     /**
      * 属性 [PRIVATE]
      *
@@ -416,7 +378,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 4000, message = "内容长度必须小于等于[4000]")
     @ApiModelProperty("私人事务")
     private String ibizprivate;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -426,7 +387,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [CONFIG]
      *
@@ -436,7 +396,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("config")
     private String config;
-
 
     /**
      * 设置 [TODOSN]

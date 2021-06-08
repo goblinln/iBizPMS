@@ -42,7 +42,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("版本")
     private Integer version;
-
     /**
      * 属性 [TYPE]
      *
@@ -52,7 +51,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -62,7 +60,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [DOWNLOADCOUNT]
      *
@@ -71,7 +68,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @JsonProperty("downloadcount")
     @ApiModelProperty("总下载量")
     private Integer downloadcount;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -81,7 +77,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [DOWNLOADURL]
      *
@@ -91,7 +86,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("最新版本下载地址")
     private String downloadurl;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -101,7 +95,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [TAG]
      *
@@ -111,7 +104,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("标签")
     private String tag;
-
     /**
      * 属性 [SCORE]
      *
@@ -120,7 +112,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @JsonProperty("score")
     @ApiModelProperty("总评分")
     private Integer score;
-
     /**
      * 属性 [IBIZPRO_PLUGINNAME]
      *
@@ -130,7 +121,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("系统插件名称")
     private String ibizpropluginname;
-
     /**
      * 属性 [IBIZPRO_PLUGINID]
      *
@@ -140,7 +130,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("系统插件标识")
     private String ibizpropluginid;
-
     /**
      * 属性 [KEYWORD]
      *
@@ -150,7 +139,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("关键字")
     private String keyword;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -160,7 +148,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [COMMENTCOUNT]
      *
@@ -169,7 +156,6 @@ public class IBIZProPluginDTO extends DTOBase implements Serializable {
     @JsonProperty("commentcount")
     @ApiModelProperty("总评论数")
     private Integer commentcount;
-
 
     /**
      * 设置 [VERSION]

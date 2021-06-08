@@ -43,7 +43,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("任务名")
     private String name;
-
     /**
      * 属性 [TASKCNT]
      *
@@ -52,7 +51,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonProperty("taskcnt")
     @ApiModelProperty("任务数")
     private Integer taskcnt;
-
     /**
      * 属性 [DEPT]
      *
@@ -62,7 +60,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("部门")
     private String dept;
-
     /**
      * 属性 [ID]
      *
@@ -72,7 +69,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("主键")
     private Long id;
-
     /**
      * 属性 [WORKDAY]
      *
@@ -81,7 +77,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonProperty("workday")
     @ApiModelProperty("工作日天数")
     private Integer workday;
-
     /**
      * 属性 [TOTALTASKCNT]
      *
@@ -90,7 +85,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonProperty("totaltaskcnt")
     @ApiModelProperty("总任务数")
     private Integer totaltaskcnt;
-
     /**
      * 属性 [ASSIGNEDTO]
      *
@@ -100,7 +94,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("指派给")
     private String assignedto;
-
     /**
      * 属性 [LEFT]
      *
@@ -109,7 +102,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonProperty("left")
     @ApiModelProperty("剩余工时")
     private Integer left;
-
     /**
      * 属性 [ASSIGN]
      *
@@ -119,7 +111,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("是否指派")
     private String assign;
-
     /**
      * 属性 [BEGIN]
      *
@@ -129,7 +120,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonProperty("begin")
     @ApiModelProperty("属性")
     private Timestamp begin;
-
     /**
      * 属性 [TOTALLEFT]
      *
@@ -138,7 +128,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonProperty("totalleft")
     @ApiModelProperty("总工时")
     private Integer totalleft;
-
     /**
      * 属性 [WORKLOAD]
      *
@@ -148,7 +137,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("工作负载")
     private String workload;
-
     /**
      * 属性 [END]
      *
@@ -158,7 +146,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonProperty("end")
     @ApiModelProperty("结束")
     private Timestamp end;
-
     /**
      * 属性 [PROJECTNAME]
      *
@@ -168,7 +155,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("项目")
     private String projectname;
-
     /**
      * 属性 [PROJECT]
      *
@@ -178,7 +164,6 @@ public class EmpLoyeeloadDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目编号")
     private Long project;
-
 
     /**
      * 设置 [NAME]

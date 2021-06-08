@@ -43,7 +43,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("汇报角色配置名称")
     private String ibzreportroleconfigname;
-
     /**
      * 属性 [IBZ_REPORT_ROLE_CONFIGID]
      *
@@ -53,7 +52,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("汇报角色配置标识")
     private String ibzreportroleconfigid;
-
     /**
      * 属性 [REPORT_ROLE]
      *
@@ -63,7 +61,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("角色")
     private String reportRole;
-
     /**
      * 属性 [TYPE]
      *
@@ -73,7 +70,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -83,7 +79,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -93,7 +88,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -103,7 +97,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -113,7 +106,6 @@ public class ReportRoleConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
 
     /**
      * 设置 [IBZ_REPORT_ROLE_CONFIGNAME]

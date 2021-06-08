@@ -45,7 +45,6 @@ public class IBIZProKeywordDTO extends DTOBase implements Serializable {
     private String id;
 
 
-
 }
 
 

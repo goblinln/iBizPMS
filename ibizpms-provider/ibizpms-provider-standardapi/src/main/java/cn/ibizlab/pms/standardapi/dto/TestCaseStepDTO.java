@@ -43,7 +43,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例步骤编号")
     private Long casestepid;
-
     /**
      * 属性 [DEPT]
      *
@@ -53,7 +52,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [REALS]
      *
@@ -63,7 +61,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("实际情况")
     private String reals;
-
     /**
      * 属性 [STEPS]
      *
@@ -73,7 +70,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("测试结果")
     private String steps;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -83,7 +79,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -93,7 +88,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [TYPE]
      *
@@ -103,7 +97,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("用例步骤类型")
     private String type;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -113,7 +106,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [VERSION]
      *
@@ -122,7 +114,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
     private Integer version;
-
     /**
      * 属性 [ID]
      *
@@ -132,7 +123,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [DESC]
      *
@@ -142,7 +132,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("步骤")
     private String desc;
-
     /**
      * 属性 [CASESTEPSN]
      *
@@ -152,7 +141,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例步骤编号")
     private Long casestepsn;
-
     /**
      * 属性 [EXPECT]
      *
@@ -162,7 +150,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("预期")
     private String expect;
-
     /**
      * 属性 [FILES]
      *
@@ -172,7 +159,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("附件")
     private String files;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -182,7 +168,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [RUNID]
      *
@@ -191,7 +176,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @JsonProperty("runid")
     @ApiModelProperty("执行编号")
     private Integer runid;
-
     /**
      * 属性 [ORG]
      *
@@ -201,7 +185,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [CASE]
      *
@@ -211,7 +194,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例")
     private Long ibizcase;
-
     /**
      * 属性 [PARENT]
      *
@@ -221,7 +203,6 @@ public class TestCaseStepDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("分组用例步骤的组编号")
     private Long parent;
-
 
     /**
      * 设置 [TYPE]

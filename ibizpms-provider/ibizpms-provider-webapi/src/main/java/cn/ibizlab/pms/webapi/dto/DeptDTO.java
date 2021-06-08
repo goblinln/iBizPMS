@@ -43,7 +43,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("负责人")
     private String manager;
-
     /**
      * 属性 [ISLEAF]
      *
@@ -53,7 +52,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("无子部门")
     private String isleaf;
-
     /**
      * 属性 [GRADE]
      *
@@ -62,7 +60,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @JsonProperty("grade")
     @ApiModelProperty("grade")
     private Integer grade;
-
     /**
      * 属性 [FUNCTION]
      *
@@ -72,7 +69,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("function")
     private String function;
-
     /**
      * 属性 [ORDER]
      *
@@ -81,7 +77,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("order")
     private Integer order;
-
     /**
      * 属性 [PATH]
      *
@@ -91,7 +86,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("path")
     private String path;
-
     /**
      * 属性 [POSITION]
      *
@@ -101,7 +95,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("position")
     private String position;
-
     /**
      * 属性 [ID]
      *
@@ -111,7 +104,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
     /**
      * 属性 [DEPTSN]
      *
@@ -121,7 +113,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("部门编号")
     private Long deptsn;
-
     /**
      * 属性 [NAME]
      *
@@ -132,7 +123,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("部门名称")
     private String name;
-
     /**
      * 属性 [PARENTNAME]
      *
@@ -142,7 +132,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("上级部门")
     private String parentname;
-
     /**
      * 属性 [PARENT]
      *
@@ -152,7 +141,6 @@ public class DeptDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("parent")
     private Long parent;
-
 
     /**
      * 设置 [MANAGER]

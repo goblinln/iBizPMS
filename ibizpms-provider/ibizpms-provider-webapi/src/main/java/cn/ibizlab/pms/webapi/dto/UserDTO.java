@@ -43,7 +43,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 32, message = "内容长度必须小于等于[32]")
     @ApiModelProperty("密码")
     private String password;
-
     /**
      * 属性 [ADDRESS]
      *
@@ -53,7 +52,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 120, message = "内容长度必须小于等于[120]")
     @ApiModelProperty("通讯地址")
     private String address;
-
     /**
      * 属性 [WEIXIN]
      *
@@ -63,7 +61,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("微信")
     private String weixin;
-
     /**
      * 属性 [DINGDING]
      *
@@ -73,7 +70,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("钉钉")
     private String dingding;
-
     /**
      * 属性 [FAILS]
      *
@@ -82,7 +78,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("fails")
     @ApiModelProperty("fails")
     private Integer fails;
-
     /**
      * 属性 [SLACK]
      *
@@ -92,7 +87,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("slack")
     private String slack;
-
     /**
      * 属性 [RANZHI]
      *
@@ -102,7 +96,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("ranzhi")
     private String ranzhi;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -112,7 +105,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("账户")
     private String account;
-
     /**
      * 属性 [LOCKED]
      *
@@ -122,7 +114,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("locked")
     @ApiModelProperty("locked")
     private Timestamp locked;
-
     /**
      * 属性 [AVATAR]
      *
@@ -132,7 +123,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("avatar")
     private String avatar;
-
     /**
      * 属性 [SCORELEVEL]
      *
@@ -141,7 +131,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("scorelevel")
     @ApiModelProperty("scoreLevel")
     private Integer scorelevel;
-
     /**
      * 属性 [REALNAME]
      *
@@ -151,7 +140,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("真实姓名")
     private String realname;
-
     /**
      * 属性 [ZIPCODE]
      *
@@ -161,7 +149,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("zipcode")
     private String zipcode;
-
     /**
      * 属性 [DEPT]
      *
@@ -170,7 +157,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("dept")
     @ApiModelProperty("所属部门")
     private Integer dept;
-
     /**
      * 属性 [COMMITER]
      *
@@ -180,7 +166,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("源代码账户")
     private String commiter;
-
     /**
      * 属性 [ROLE]
      *
@@ -190,7 +175,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("职位")
     private String role;
-
     /**
      * 属性 [DELETED]
      *
@@ -200,7 +184,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("逻辑删除标志")
     private String deleted;
-
     /**
      * 属性 [LAST]
      *
@@ -209,7 +192,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("last")
     @ApiModelProperty("最后登录")
     private Integer last;
-
     /**
      * 属性 [USERSN]
      *
@@ -219,7 +201,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用户编号")
     private Long usersn;
-
     /**
      * 属性 [CLIENTSTATUS]
      *
@@ -229,7 +210,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
     @ApiModelProperty("clientStatus")
     private String clientstatus;
-
     /**
      * 属性 [SKYPE]
      *
@@ -239,7 +219,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("skype")
     private String skype;
-
     /**
      * 属性 [WHATSAPP]
      *
@@ -249,7 +228,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("whatsapp")
     private String whatsapp;
-
     /**
      * 属性 [SCORE]
      *
@@ -258,7 +236,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("score")
     @ApiModelProperty("score")
     private Integer score;
-
     /**
      * 属性 [GENDER]
      *
@@ -268,7 +245,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("性别")
     private String gender;
-
     /**
      * 属性 [MOBILE]
      *
@@ -278,7 +254,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 11, message = "内容长度必须小于等于[11]")
     @ApiModelProperty("手机")
     private String mobile;
-
     /**
      * 属性 [CLIENTLANG]
      *
@@ -288,7 +263,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("clientLang")
     private String clientlang;
-
     /**
      * 属性 [VISITS]
      *
@@ -297,7 +271,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("visits")
     @ApiModelProperty("访问次数")
     private Integer visits;
-
     /**
      * 属性 [JOIN]
      *
@@ -307,7 +280,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("join")
     @ApiModelProperty("入职日期")
     private Timestamp join;
-
     /**
      * 属性 [EMAIL]
      *
@@ -317,7 +289,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("邮箱")
     private String email;
-
     /**
      * 属性 [IP]
      *
@@ -327,7 +298,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 15, message = "内容长度必须小于等于[15]")
     @ApiModelProperty("ip")
     private String ip;
-
     /**
      * 属性 [BIRTHDAY]
      *
@@ -337,7 +307,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonProperty("birthday")
     @ApiModelProperty("birthday")
     private Timestamp birthday;
-
     /**
      * 属性 [NICKNAME]
      *
@@ -347,7 +316,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("nickname")
     private String nickname;
-
     /**
      * 属性 [PHONE]
      *
@@ -357,7 +325,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("电话")
     private String phone;
-
     /**
      * 属性 [ID]
      *
@@ -367,7 +334,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("ID")
     private Long id;
-
     /**
      * 属性 [QQ]
      *
@@ -377,7 +343,6 @@ public class UserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("QQ")
     private String qq;
-
 
     /**
      * 设置 [PASSWORD]

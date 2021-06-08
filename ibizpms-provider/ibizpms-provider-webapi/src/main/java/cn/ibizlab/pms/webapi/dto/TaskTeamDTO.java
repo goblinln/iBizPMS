@@ -42,7 +42,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("estimate")
     @ApiModelProperty("最初预计")
     private Double estimate;
-
     /**
      * 属性 [ORG]
      *
@@ -52,7 +51,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -62,7 +60,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [USERNAME]
      *
@@ -72,7 +69,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("用户")
     private String username;
-
     /**
      * 属性 [JOIN]
      *
@@ -82,7 +78,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("join")
     @ApiModelProperty("加盟日")
     private Timestamp join;
-
     /**
      * 属性 [HOURS]
      *
@@ -91,7 +86,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("hours")
     @ApiModelProperty("可用工时/天")
     private Double hours;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -101,7 +95,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("用户")
     private String account;
-
     /**
      * 属性 [ORDER]
      *
@@ -110,7 +103,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
-
     /**
      * 属性 [LEFT]
      *
@@ -119,7 +111,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("left")
     @ApiModelProperty("预计剩余")
     private Double left;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -129,7 +120,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -139,7 +129,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [CONSUMED]
      *
@@ -148,7 +137,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("consumed")
     @ApiModelProperty("总计消耗")
     private Double consumed;
-
     /**
      * 属性 [LIMITED]
      *
@@ -158,7 +146,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 8, message = "内容长度必须小于等于[8]")
     @ApiModelProperty("受限用户")
     private String limited;
-
     /**
      * 属性 [ROLE]
      *
@@ -168,7 +155,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("角色")
     private String role;
-
     /**
      * 属性 [DEPT]
      *
@@ -178,7 +164,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [ID]
      *
@@ -188,7 +173,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [DAYS]
      *
@@ -197,7 +181,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("days")
     @ApiModelProperty("可用工日")
     private Integer days;
-
     /**
      * 属性 [TOTAL]
      *
@@ -206,7 +189,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonProperty("total")
     @ApiModelProperty("总计可用")
     private Integer total;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -216,7 +198,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [TYPE]
      *
@@ -226,7 +207,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
     @ApiModelProperty("团队类型")
     private String type;
-
     /**
      * 属性 [ROOT]
      *
@@ -236,7 +216,6 @@ public class TaskTeamDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long root;
-
 
     /**
      * 设置 [ESTIMATE]

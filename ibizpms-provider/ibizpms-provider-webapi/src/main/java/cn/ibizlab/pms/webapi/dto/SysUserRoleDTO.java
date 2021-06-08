@@ -43,7 +43,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户角色关系标识")
     private String userroleid;
-
     /**
      * 属性 [SYS_ROLEID]
      *
@@ -53,7 +52,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("角色标识")
     private String roleid;
-
     /**
      * 属性 [SYS_ROLENAME]
      *
@@ -63,7 +61,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("角色名称")
     private String rolename;
-
     /**
      * 属性 [SYS_USERID]
      *
@@ -73,7 +70,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户标识")
     private String userid;
-
     /**
      * 属性 [SYS_USERNAME]
      *
@@ -83,7 +79,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户名称")
     private String personname;
-
     /**
      * 属性 [LOGINNAME]
      *
@@ -93,7 +88,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("登录名")
     private String loginname;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -103,7 +97,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("单位")
     private String orgname;
-
     /**
      * 属性 [MDEPTNAME]
      *
@@ -113,7 +106,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("主部门")
     private String mdeptname;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -123,7 +115,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -133,7 +124,6 @@ public class SysUserRoleDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
 
     /**
      * 设置 [SYS_ROLEID]

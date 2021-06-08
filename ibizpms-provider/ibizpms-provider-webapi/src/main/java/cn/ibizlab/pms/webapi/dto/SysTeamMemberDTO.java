@@ -43,7 +43,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("组成员标识")
     private String teammemberid;
-
     /**
      * 属性 [TEAMNAME]
      *
@@ -54,7 +53,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("组名称")
     private String teamname;
-
     /**
      * 属性 [POSTNAME]
      *
@@ -64,7 +62,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位")
     private String postname;
-
     /**
      * 属性 [DOMAINS]
      *
@@ -74,7 +71,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("区属")
     private String domains;
-
     /**
      * 属性 [USERICON]
      *
@@ -84,7 +80,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("头像")
     private String usericon;
-
     /**
      * 属性 [PERSONNAME]
      *
@@ -94,7 +89,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("姓名")
     private String personname;
-
     /**
      * 属性 [USERNAME]
      *
@@ -104,7 +98,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("账号")
     private String username;
-
     /**
      * 属性 [POSTID]
      *
@@ -114,7 +107,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位标识")
     private String postid;
-
     /**
      * 属性 [TEAMID]
      *
@@ -124,7 +116,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("组标识")
     private String teamid;
-
     /**
      * 属性 [USERID]
      *
@@ -134,7 +125,6 @@ public class SysTeamMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户标识")
     private String userid;
-
 
     /**
      * 设置 [DOMAINS]

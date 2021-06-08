@@ -42,7 +42,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugactive")
     @ApiModelProperty("激活Bug")
     private Integer bugactive;
-
     /**
      * 属性 [BUGWILLNOTFIX]
      *
@@ -51,7 +50,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugwillnotfix")
     @ApiModelProperty("不予解决")
     private Integer bugwillnotfix;
-
     /**
      * 属性 [RESOLVEDBY]
      *
@@ -61,7 +59,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁解决")
     private String resolvedby;
-
     /**
      * 属性 [BUGRESOLUTION]
      *
@@ -71,7 +68,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("Bug解决方案")
     private String bugresolution;
-
     /**
      * 属性 [DEPT]
      *
@@ -81,7 +77,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("部门")
     private String dept;
-
     /**
      * 属性 [BUGBYDESIGN]
      *
@@ -90,7 +85,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugbydesign")
     @ApiModelProperty("设计如此")
     private Integer bugbydesign;
-
     /**
      * 属性 [BUGOPENEDBY]
      *
@@ -100,7 +94,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("bug创建人")
     private String bugopenedby;
-
     /**
      * 属性 [BUGSTATUS]
      *
@@ -110,7 +103,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("Bug状态")
     private String bugstatus;
-
     /**
      * 属性 [BUGCLOSED]
      *
@@ -119,7 +111,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugclosed")
     @ApiModelProperty("已关闭Bug")
     private Integer bugclosed;
-
     /**
      * 属性 [ASSIGNEDTO]
      *
@@ -129,7 +120,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("指派给")
     private String assignedto;
-
     /**
      * 属性 [BUGEXTERNAL]
      *
@@ -138,7 +128,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugexternal")
     @ApiModelProperty("外部原因")
     private Integer bugexternal;
-
     /**
      * 属性 [BEGIN]
      *
@@ -148,7 +137,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("begin")
     @ApiModelProperty("开始")
     private Timestamp begin;
-
     /**
      * 属性 [BUGRESOLVEDDATE]
      *
@@ -158,7 +146,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugresolveddate")
     @ApiModelProperty("bug解决日期")
     private Timestamp bugresolveddate;
-
     /**
      * 属性 [END]
      *
@@ -168,7 +155,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("end")
     @ApiModelProperty("结束")
     private Timestamp end;
-
     /**
      * 属性 [BUGID]
      *
@@ -177,7 +163,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugid")
     @ApiModelProperty("Bug编号")
     private Integer bugid;
-
     /**
      * 属性 [PROJECTNAME]
      *
@@ -187,7 +172,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目名称")
     private String projectname;
-
     /**
      * 属性 [BUGFIXED]
      *
@@ -196,7 +180,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugfixed")
     @ApiModelProperty("已解决")
     private Integer bugfixed;
-
     /**
      * 属性 [ID]
      *
@@ -206,7 +189,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("标识")
     private Long id;
-
     /**
      * 属性 [BUGPOSTPONED]
      *
@@ -215,7 +197,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugpostponed")
     @ApiModelProperty("延期处理")
     private Integer bugpostponed;
-
     /**
      * 属性 [BUGTITLE]
      *
@@ -225,7 +206,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("Bug标题")
     private String bugtitle;
-
     /**
      * 属性 [BUGCNT]
      *
@@ -234,7 +214,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugcnt")
     @ApiModelProperty("Bug")
     private Integer bugcnt;
-
     /**
      * 属性 [BUGOPENEDDATE]
      *
@@ -244,7 +223,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugopeneddate")
     @ApiModelProperty("Bug创建日期")
     private Timestamp bugopeneddate;
-
     /**
      * 属性 [BUGWJJ]
      *
@@ -253,7 +231,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugwjj")
     @ApiModelProperty("未解决")
     private Integer bugwjj;
-
     /**
      * 属性 [TITLE]
      *
@@ -263,7 +240,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("名称")
     private String title;
-
     /**
      * 属性 [BUGPRI]
      *
@@ -272,7 +248,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugpri")
     @ApiModelProperty("Bug优先级")
     private Integer bugpri;
-
     /**
      * 属性 [BUGNOTREPRO]
      *
@@ -281,7 +256,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugnotrepro")
     @ApiModelProperty("无法重现")
     private Integer bugnotrepro;
-
     /**
      * 属性 [PROJECTNAME1]
      *
@@ -291,7 +265,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目名称")
     private String projectname1;
-
     /**
      * 属性 [BUGRESOLVED]
      *
@@ -300,7 +273,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugresolved")
     @ApiModelProperty("已解决Bug")
     private Integer bugresolved;
-
     /**
      * 属性 [BUGDUPLICATE]
      *
@@ -309,7 +281,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugduplicate")
     @ApiModelProperty("重复Bug")
     private Integer bugduplicate;
-
     /**
      * 属性 [OPENEDBY]
      *
@@ -319,7 +290,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("由谁创建")
     private String openedby;
-
     /**
      * 属性 [BUGEFFICIENT]
      *
@@ -329,7 +299,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("有效率")
     private String bugefficient;
-
     /**
      * 属性 [BUGTOSTORY]
      *
@@ -338,7 +307,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugtostory")
     @ApiModelProperty("转为需求")
     private Integer bugtostory;
-
     /**
      * 属性 [BUGSEVERITY]
      *
@@ -347,7 +315,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugseverity")
     @ApiModelProperty("Bug严重程度")
     private Integer bugseverity;
-
     /**
      * 属性 [BUGTOTAL]
      *
@@ -356,7 +323,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugtotal")
     @ApiModelProperty("总计")
     private Integer bugtotal;
-
     /**
      * 属性 [PRODUCTNAME]
      *
@@ -366,7 +332,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("产品名称")
     private String productname;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -376,7 +341,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long product;
-
     /**
      * 属性 [PROJECT]
      *
@@ -386,7 +350,6 @@ public class BugStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目编号")
     private Long project;
-
 
     /**
      * 设置 [RESOLVEDBY]

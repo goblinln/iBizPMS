@@ -43,7 +43,6 @@ public class SysTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("组标识")
     private String teamid;
-
     /**
      * 属性 [TEAMNAME]
      *
@@ -54,7 +53,6 @@ public class SysTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("组名称")
     private String teamname;
-
     /**
      * 属性 [MEMO]
      *
@@ -64,7 +62,6 @@ public class SysTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("备注")
     private String memo;
-
     /**
      * 属性 [DOMAINS]
      *
@@ -74,7 +71,6 @@ public class SysTeamDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("区属")
     private String domains;
-
 
     /**
      * 设置 [TEAMNAME]

@@ -43,7 +43,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("团队成员（二）")
     private String secondmember;
-
     /**
      * 属性 [RD]
      *
@@ -53,7 +52,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("发布负责人")
     private String rd;
-
     /**
      * 属性 [QD]
      *
@@ -63,7 +61,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("测试负责人")
     private String qd;
-
     /**
      * 属性 [CANCELEDBY]
      *
@@ -73,7 +70,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁取消")
     private String canceledby;
-
     /**
      * 属性 [TEAMEMBERS]
      *
@@ -83,7 +79,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("全部成员")
     private String teamembers;
-
     /**
      * 属性 [THIRDMEMBER]
      *
@@ -93,7 +88,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("团队成员（三）")
     private String thirdmember;
-
     /**
      * 属性 [ID]
      *
@@ -103,7 +97,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [FRISTMEMBER]
      *
@@ -113,7 +106,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("团队成员（一）")
     private String fristmember;
-
     /**
      * 属性 [PO]
      *
@@ -123,7 +115,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("产品负责人")
     private String po;
-
     /**
      * 属性 [FOURTHMEMBER]
      *
@@ -133,7 +124,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("团队成员（四）")
     private String fourthmember;
-
     /**
      * 属性 [PM]
      *
@@ -143,7 +133,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("项目负责人")
     private String pm;
-
     /**
      * 属性 [CLOSEDBY]
      *
@@ -153,7 +142,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁关闭")
     private String closedby;
-
     /**
      * 属性 [OPENEDBY]
      *
@@ -163,7 +151,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁创建")
     private String openedby;
-
     /**
      * 属性 [ACL]
      *
@@ -173,7 +160,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
     @ApiModelProperty("访问控制")
     private String acl;
-
     /**
      * 属性 [FIFTHMEMBER]
      *
@@ -183,7 +169,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("团队成员（五）")
     private String fifthmember;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -193,7 +178,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [SIXTHMEMBER]
      *
@@ -203,7 +187,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("团队成员（六）")
     private String sixthmember;
-
     /**
      * 属性 [NAME]
      *
@@ -213,7 +196,6 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目名称")
     private String name;
-
 
     /**
      * 设置 [CANCELEDBY]

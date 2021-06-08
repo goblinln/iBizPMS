@@ -43,7 +43,6 @@ public class GroupDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("群组编号")
     private Long groupsn;
-
     /**
      * 属性 [ACL]
      *
@@ -53,7 +52,6 @@ public class GroupDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("acl")
     private String acl;
-
     /**
      * 属性 [DESC]
      *
@@ -63,7 +61,6 @@ public class GroupDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("分组描述")
     private String desc;
-
     /**
      * 属性 [ID]
      *
@@ -73,7 +70,6 @@ public class GroupDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("ID")
     private Long id;
-
     /**
      * 属性 [NAME]
      *
@@ -84,7 +80,6 @@ public class GroupDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("分组名称")
     private String name;
-
     /**
      * 属性 [ROLE]
      *
@@ -94,7 +89,6 @@ public class GroupDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("role")
     private String role;
-
 
     /**
      * 设置 [GROUPSN]

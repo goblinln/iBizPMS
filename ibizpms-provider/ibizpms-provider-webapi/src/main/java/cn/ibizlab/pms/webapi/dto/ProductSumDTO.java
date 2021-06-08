@@ -42,7 +42,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("designdefect")
     @ApiModelProperty("设计缺陷")
     private Integer designdefect;
-
     /**
      * 属性 [CHANGEDSTORYCNT]
      *
@@ -51,7 +50,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("changedstorycnt")
     @ApiModelProperty("已变更")
     private Integer changedstorycnt;
-
     /**
      * 属性 [DEVELOPINGSTAGESTORYHOURS]
      *
@@ -60,7 +58,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("developingstagestoryhours")
     @ApiModelProperty("研发中阶段需求工时")
     private Integer developingstagestoryhours;
-
     /**
      * 属性 [STORYCNT]
      *
@@ -69,7 +66,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("storycnt")
     @ApiModelProperty("总计")
     private Integer storycnt;
-
     /**
      * 属性 [OTHERS]
      *
@@ -78,7 +74,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("others")
     @ApiModelProperty("其他")
     private Integer others;
-
     /**
      * 属性 [CONFIG]
      *
@@ -87,7 +82,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("config")
     @ApiModelProperty("配置相关")
     private Integer config;
-
     /**
      * 属性 [CODEERROR]
      *
@@ -96,7 +90,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("codeerror")
     @ApiModelProperty("代码错误")
     private Integer codeerror;
-
     /**
      * 属性 [BUGSUM]
      *
@@ -105,7 +98,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("bugsum")
     @ApiModelProperty("bug总计")
     private Integer bugsum;
-
     /**
      * 属性 [PERFORMANCE]
      *
@@ -114,7 +106,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("performance")
     @ApiModelProperty("性能问题")
     private Integer performance;
-
     /**
      * 属性 [END]
      *
@@ -124,7 +115,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("结束日期")
     private String end;
-
     /**
      * 属性 [CLOSEDSTORYCNT]
      *
@@ -133,7 +123,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("closedstorycnt")
     @ApiModelProperty("已关闭")
     private Integer closedstorycnt;
-
     /**
      * 属性 [CLOSEDSTAGESTORYHOURS]
      *
@@ -142,7 +131,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("closedstagestoryhours")
     @ApiModelProperty("已关闭阶段需求工时")
     private Integer closedstagestoryhours;
-
     /**
      * 属性 [TESTEDSTAGESTORYHOURS]
      *
@@ -151,7 +139,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("testedstagestoryhours")
     @ApiModelProperty("测试完毕阶段需求工时")
     private Integer testedstagestoryhours;
-
     /**
      * 属性 [WAITSTAGESTORYHOURS]
      *
@@ -160,7 +147,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("waitstagestoryhours")
     @ApiModelProperty("未开始阶段需求工时")
     private Integer waitstagestoryhours;
-
     /**
      * 属性 [PO]
      *
@@ -170,7 +156,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("产品负责人")
     private String po;
-
     /**
      * 属性 [TESTINGSTAGESTORYHOURS]
      *
@@ -179,7 +164,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("testingstagestoryhours")
     @ApiModelProperty("测试中阶段需求工时")
     private Integer testingstagestoryhours;
-
     /**
      * 属性 [PROJECTEDSTAGESTORYHOURS]
      *
@@ -188,7 +172,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("projectedstagestoryhours")
     @ApiModelProperty("已立项阶段需求工时")
     private Integer projectedstagestoryhours;
-
     /**
      * 属性 [PROJECTEDSTAGESTORYCNT]
      *
@@ -197,7 +180,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("projectedstagestorycnt")
     @ApiModelProperty("已立项阶段需求数量")
     private Integer projectedstagestorycnt;
-
     /**
      * 属性 [VERIFIEDSTAGESTORYCNT]
      *
@@ -206,7 +188,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("verifiedstagestorycnt")
     @ApiModelProperty("已验收阶段需求数量")
     private Integer verifiedstagestorycnt;
-
     /**
      * 属性 [ID]
      *
@@ -216,7 +197,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("主键标识")
     private Long id;
-
     /**
      * 属性 [TOTALHOURS]
      *
@@ -225,7 +205,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("totalhours")
     @ApiModelProperty("总工时")
     private Integer totalhours;
-
     /**
      * 属性 [PLANEDSTAGESTORYCNT]
      *
@@ -234,7 +213,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("planedstagestorycnt")
     @ApiModelProperty("已计划阶段需求数量")
     private Integer planedstagestorycnt;
-
     /**
      * 属性 [DEVELOPINGSTAGESTORYCNT]
      *
@@ -243,7 +221,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("developingstagestorycnt")
     @ApiModelProperty("研发中阶段需求数量")
     private Integer developingstagestorycnt;
-
     /**
      * 属性 [ACTIVESTORYCNT]
      *
@@ -252,7 +229,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("activestorycnt")
     @ApiModelProperty("激活")
     private Integer activestorycnt;
-
     /**
      * 属性 [BUGCNT]
      *
@@ -261,7 +237,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("bugcnt")
     @ApiModelProperty("Bug数")
     private Integer bugcnt;
-
     /**
      * 属性 [WAITSTAGESTORYCNT]
      *
@@ -270,7 +245,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("waitstagestorycnt")
     @ApiModelProperty("未开始阶段需求数量")
     private Integer waitstagestorycnt;
-
     /**
      * 属性 [VERIFIEDSTAGESTORYHOURS]
      *
@@ -279,7 +253,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("verifiedstagestoryhours")
     @ApiModelProperty("已验收阶段需求工时")
     private Integer verifiedstagestoryhours;
-
     /**
      * 属性 [WAITSTORYCNT]
      *
@@ -288,7 +261,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("waitstorycnt")
     @ApiModelProperty("草稿")
     private Integer waitstorycnt;
-
     /**
      * 属性 [TESTINGSTAGESTORYCNT]
      *
@@ -297,7 +269,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("testingstagestorycnt")
     @ApiModelProperty("测试中阶段需求数量")
     private Integer testingstagestorycnt;
-
     /**
      * 属性 [BEGIN]
      *
@@ -307,7 +278,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("开始日期")
     private String begin;
-
     /**
      * 属性 [PLAN]
      *
@@ -317,7 +287,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("计划")
     private Long plan;
-
     /**
      * 属性 [RELEASEDSTAGESTORYHOURS]
      *
@@ -326,7 +295,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("releasedstagestoryhours")
     @ApiModelProperty("已发布阶段需求工时")
     private Integer releasedstagestoryhours;
-
     /**
      * 属性 [DEVELOPEDSTAGESTORYHOURS]
      *
@@ -335,7 +303,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("developedstagestoryhours")
     @ApiModelProperty("研发完毕阶段需求工时")
     private Integer developedstagestoryhours;
-
     /**
      * 属性 [NAME]
      *
@@ -345,7 +312,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("产品名称")
     private String name;
-
     /**
      * 属性 [DEVELOPEDSTAGESTORYCNT]
      *
@@ -354,7 +320,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("developedstagestorycnt")
     @ApiModelProperty("研发完毕阶段需求数量")
     private Integer developedstagestorycnt;
-
     /**
      * 属性 [AUTOMATION]
      *
@@ -363,7 +328,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("automation")
     @ApiModelProperty("测试脚本")
     private Integer automation;
-
     /**
      * 属性 [PLANEDSTAGESTORYHOURS]
      *
@@ -372,7 +336,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("planedstagestoryhours")
     @ApiModelProperty("已计划阶段需求工时")
     private Integer planedstagestoryhours;
-
     /**
      * 属性 [INSTALL]
      *
@@ -381,7 +344,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("install")
     @ApiModelProperty("安装部署")
     private Integer install;
-
     /**
      * 属性 [SECURITY]
      *
@@ -390,7 +352,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("security")
     @ApiModelProperty("安全相关")
     private Integer security;
-
     /**
      * 属性 [RELEASEDSTAGESTORYCNT]
      *
@@ -399,7 +360,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("releasedstagestorycnt")
     @ApiModelProperty("已发布阶段需求数量")
     private Integer releasedstagestorycnt;
-
     /**
      * 属性 [TESTEDSTAGESTORYCNT]
      *
@@ -408,7 +368,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("testedstagestorycnt")
     @ApiModelProperty("测试完毕阶段需求数量")
     private Integer testedstagestorycnt;
-
     /**
      * 属性 [STANDARD]
      *
@@ -417,7 +376,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("standard")
     @ApiModelProperty("标准规范")
     private Integer standard;
-
     /**
      * 属性 [CLOSEDSTAGESTORYCNT]
      *
@@ -426,7 +384,6 @@ public class ProductSumDTO extends DTOBase implements Serializable {
     @JsonProperty("closedstagestorycnt")
     @ApiModelProperty("已关闭阶段需求数量")
     private Integer closedstagestorycnt;
-
 
     /**
      * 设置 [PO]

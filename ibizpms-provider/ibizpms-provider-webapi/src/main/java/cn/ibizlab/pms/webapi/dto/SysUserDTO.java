@@ -43,7 +43,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户标识")
     private String userid;
-
     /**
      * 属性 [USERNAME]
      *
@@ -53,7 +52,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("用户全局名")
     private String username;
-
     /**
      * 属性 [PERSONNAME]
      *
@@ -63,7 +61,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户姓名")
     private String personname;
-
     /**
      * 属性 [USERCODE]
      *
@@ -74,7 +71,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户工号")
     private String usercode;
-
     /**
      * 属性 [PASSWORD]
      *
@@ -84,7 +80,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("密码")
     private String password;
-
     /**
      * 属性 [LOGINNAME]
      *
@@ -95,7 +90,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("登录名")
     private String loginname;
-
     /**
      * 属性 [DOMAINS]
      *
@@ -105,7 +99,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("区属")
     private String domains;
-
     /**
      * 属性 [MDEPTID]
      *
@@ -115,7 +108,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("主部门")
     private String mdeptid;
-
     /**
      * 属性 [MDEPTCODE]
      *
@@ -125,7 +117,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("主部门代码")
     private String mdeptcode;
-
     /**
      * 属性 [MDEPTNAME]
      *
@@ -135,7 +126,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("主部门名称")
     private String mdeptname;
-
     /**
      * 属性 [BCODE]
      *
@@ -145,7 +135,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("业务编码")
     private String bcode;
-
     /**
      * 属性 [POSTID]
      *
@@ -155,7 +144,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位标识")
     private String postid;
-
     /**
      * 属性 [POSTCODE]
      *
@@ -165,7 +153,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位代码")
     private String postcode;
-
     /**
      * 属性 [POSTNAME]
      *
@@ -175,7 +162,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位名称")
     private String postname;
-
     /**
      * 属性 [ORGID]
      *
@@ -185,7 +171,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("单位")
     private String orgid;
-
     /**
      * 属性 [ORGCODE]
      *
@@ -195,7 +180,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("单位代码")
     private String orgcode;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -205,7 +189,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("单位名称")
     private String orgname;
-
     /**
      * 属性 [NICKNAME]
      *
@@ -215,7 +198,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("昵称别名")
     private String nickname;
-
     /**
      * 属性 [SEX]
      *
@@ -225,7 +207,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("性别")
     private String sex;
-
     /**
      * 属性 [BIRTHDAY]
      *
@@ -235,7 +216,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("birthday")
     @ApiModelProperty("出生日期")
     private Timestamp birthday;
-
     /**
      * 属性 [CERTCODE]
      *
@@ -245,7 +225,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("证件号码")
     private String certcode;
-
     /**
      * 属性 [PHONE]
      *
@@ -255,7 +234,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("联系方式")
     private String phone;
-
     /**
      * 属性 [EMAIL]
      *
@@ -265,7 +243,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("邮件")
     private String email;
-
     /**
      * 属性 [AVATAR]
      *
@@ -275,7 +252,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("社交账号")
     private String avatar;
-
     /**
      * 属性 [ADDR]
      *
@@ -285,7 +261,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("地址")
     private String addr;
-
     /**
      * 属性 [USERICON]
      *
@@ -295,7 +270,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("照片")
     private String usericon;
-
     /**
      * 属性 [THEME]
      *
@@ -305,7 +279,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("样式")
     private String theme;
-
     /**
      * 属性 [LANG]
      *
@@ -315,7 +288,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("语言")
     private String lang;
-
     /**
      * 属性 [FONTSIZE]
      *
@@ -325,7 +297,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("字号")
     private String fontsize;
-
     /**
      * 属性 [MEMO]
      *
@@ -335,7 +306,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("备注")
     private String memo;
-
     /**
      * 属性 [RESERVER]
      *
@@ -345,7 +315,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("保留")
     private String reserver;
-
     /**
      * 属性 [SUPERUSER]
      *
@@ -354,7 +323,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("superuser")
     @ApiModelProperty("超级管理员")
     private Integer superuser;
-
     /**
      * 属性 [MYEBUGS]
      *
@@ -364,7 +332,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("我的过期bug数")
     private String myebugs;
-
     /**
      * 属性 [PRODUCTS]
      *
@@ -373,7 +340,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("products")
     @ApiModelProperty("未关闭产品数")
     private Integer products;
-
     /**
      * 属性 [MYSTORYS]
      *
@@ -382,7 +348,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("mystorys")
     @ApiModelProperty("我的需求数")
     private Integer mystorys;
-
     /**
      * 属性 [PROJECTS]
      *
@@ -391,7 +356,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("projects")
     @ApiModelProperty("未关闭项目数")
     private Integer projects;
-
     /**
      * 属性 [MYTERRITORYCNT]
      *
@@ -400,7 +364,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("myterritorycnt")
     @ApiModelProperty("我的地盘")
     private Integer myterritorycnt;
-
     /**
      * 属性 [ORIGINALPASSWORD]
      *
@@ -410,7 +373,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("原密码")
     private String originalpassword;
-
     /**
      * 属性 [MYFAVORITES]
      *
@@ -419,7 +381,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavorites")
     @ApiModelProperty("我的收藏")
     private Integer myfavorites;
-
     /**
      * 属性 [MYETASKS]
      *
@@ -429,7 +390,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("我的过期任务数")
     private String myetasks;
-
     /**
      * 属性 [NEWPASSWORD]
      *
@@ -439,7 +399,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("新密码")
     private String newpassword;
-
     /**
      * 属性 [EPROJECTS]
      *
@@ -449,7 +408,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("过期项目数")
     private String eprojects;
-
     /**
      * 属性 [MYFAVORITESTORYS]
      *
@@ -458,7 +416,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavoritestorys")
     @ApiModelProperty("我收藏的需求数")
     private Integer myfavoritestorys;
-
     /**
      * 属性 [PROJECTTEAMCNT]
      *
@@ -467,7 +424,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("projectteamcnt")
     @ApiModelProperty("项目成员")
     private Integer projectteamcnt;
-
     /**
      * 属性 [MYTODOCNTJZ]
      *
@@ -477,7 +433,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("今日截止待办")
     private String mytodocntjz;
-
     /**
      * 属性 [MYBUGS]
      *
@@ -486,7 +441,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("mybugs")
     @ApiModelProperty("我的bugs")
     private Integer mybugs;
-
     /**
      * 属性 [MYTODOCNT]
      *
@@ -495,7 +449,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("mytodocnt")
     @ApiModelProperty("我的待办数")
     private Integer mytodocnt;
-
     /**
      * 属性 [LEFTLCBCNT]
      *
@@ -504,7 +457,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("leftlcbcnt")
     @ApiModelProperty("剩余里程碑")
     private Integer leftlcbcnt;
-
     /**
      * 属性 [MYFAVORITEBUGS]
      *
@@ -513,7 +465,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavoritebugs")
     @ApiModelProperty("我收藏的bugs")
     private Integer myfavoritebugs;
-
     /**
      * 属性 [REPEATPASSWORD]
      *
@@ -523,7 +474,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("重复密码")
     private String repeatpassword;
-
     /**
      * 属性 [MYTASKS]
      *
@@ -532,7 +482,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("mytasks")
     @ApiModelProperty("我的任务")
     private Integer mytasks;
-
     /**
      * 属性 [MYFAVORITETASKS]
      *
@@ -541,7 +490,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @JsonProperty("myfavoritetasks")
     @ApiModelProperty("我收藏的任务")
     private Integer myfavoritetasks;
-
     /**
      * 属性 [LEFTLCBJZCNT]
      *
@@ -551,7 +499,6 @@ public class SysUserDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("剩余里程碑（今日到期）")
     private String leftlcbjzcnt;
-
 
     /**
      * 设置 [USERNAME]

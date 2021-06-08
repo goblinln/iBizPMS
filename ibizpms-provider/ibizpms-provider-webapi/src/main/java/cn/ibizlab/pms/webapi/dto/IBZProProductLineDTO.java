@@ -43,7 +43,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
     /**
      * 属性 [MDEPTID]
      *
@@ -53,7 +52,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("部门标识")
     private String mdeptid;
-
     /**
      * 属性 [ORGID]
      *
@@ -63,7 +61,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("组织机构标识")
     private String orgid;
-
     /**
      * 属性 [DELETED]
      *
@@ -73,7 +70,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [NAME]
      *
@@ -84,7 +80,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("产品线名称")
     private String name;
-
     /**
      * 属性 [MDEPTNAME]
      *
@@ -94,7 +89,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String mdeptname;
-
     /**
      * 属性 [TYPE]
      *
@@ -104,7 +98,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [SHORT]
      *
@@ -114,7 +107,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("简称")
     private String ibizshort;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -124,7 +116,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [ORDER]
      *
@@ -133,7 +124,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -143,7 +133,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -153,7 +142,6 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
 
     /**
      * 设置 [NAME]

@@ -42,7 +42,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("logincnt")
     @ApiModelProperty("登录次数")
     private Integer logincnt;
-
     /**
      * 属性 [OPENEDSTORYCNT]
      *
@@ -51,7 +50,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("openedstorycnt")
     @ApiModelProperty("新增需求数")
     private Integer openedstorycnt;
-
     /**
      * 属性 [ZTDATE]
      *
@@ -61,7 +59,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("ztdate")
     @ApiModelProperty("日期")
     private Timestamp ztdate;
-
     /**
      * 属性 [DATE]
      *
@@ -71,7 +68,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日志日期")
     private Timestamp date;
-
     /**
      * 属性 [CLOSEDSTORYCNT]
      *
@@ -80,7 +76,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("closedstorycnt")
     @ApiModelProperty("关闭需求数")
     private Integer closedstorycnt;
-
     /**
      * 属性 [OPENEDBUGCNT]
      *
@@ -89,7 +84,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("openedbugcnt")
     @ApiModelProperty("新增Bug数")
     private Integer openedbugcnt;
-
     /**
      * 属性 [LOGHOURS]
      *
@@ -98,7 +92,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("loghours")
     @ApiModelProperty("日志工时")
     private Integer loghours;
-
     /**
      * 属性 [DYNAMICCNT]
      *
@@ -107,7 +100,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("dynamiccnt")
     @ApiModelProperty("动态数")
     private Integer dynamiccnt;
-
     /**
      * 属性 [FINISHEDTASKCNT]
      *
@@ -116,7 +108,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("finishedtaskcnt")
     @ApiModelProperty("完成任务数")
     private Integer finishedtaskcnt;
-
     /**
      * 属性 [RESOLVEDBUGCNT]
      *
@@ -125,7 +116,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("resolvedbugcnt")
     @ApiModelProperty("解决Bug数")
     private Integer resolvedbugcnt;
-
     /**
      * 属性 [COMMENT]
      *
@@ -135,7 +125,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("备注")
     private String comment;
-
     /**
      * 属性 [OPENEDTASKCNT]
      *
@@ -144,7 +133,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("openedtaskcnt")
     @ApiModelProperty("新增任务数")
     private Integer openedtaskcnt;
-
     /**
      * 属性 [ID]
      *
@@ -154,7 +142,6 @@ public class CompanyStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("标识")
     private Long id;
-
 
     /**
      * 设置 [DATE]

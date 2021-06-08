@@ -43,7 +43,6 @@ public class IBZProProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("IBIZ标识")
     private String ibizid;
-
     /**
      * 属性 [CODE]
      *
@@ -53,7 +52,6 @@ public class IBZProProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
     @ApiModelProperty("产品代号")
     private String code;
-
     /**
      * 属性 [NAME]
      *
@@ -64,7 +62,6 @@ public class IBZProProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("产品名称")
     private String name;
-
     /**
      * 属性 [ID]
      *
@@ -74,7 +71,6 @@ public class IBZProProductDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
 
     /**
      * 设置 [IBIZ_ID]

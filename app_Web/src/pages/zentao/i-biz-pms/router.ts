@@ -14227,6 +14227,62 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/stories/:story?/views/mainpickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'mainpickupview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/views/mainpickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'mainpickupview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/mainpickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'mainpickupview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/stories/:story?/views/gridview9_substory',
                     meta: {
                         captionTag: '',
@@ -16236,6 +16292,62 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'stories', parameterName: 'story' },
                             { pathName: 'views', parameterName: 'reportsubgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/stories/:story?/views/mainpickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'mainpickupgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/views/mainpickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'mainpickupgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/mainpickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'mainpickupgridview' },
                         ],
                         resource:'story',
                         requireAuth: true,
@@ -34764,6 +34876,22 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/storymainpickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'storymainpickupview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/testresultgridview9',
                     meta: {
                         captionTag: '',
@@ -41040,6 +41168,22 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'taskmoretabexpview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/storymainpickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'storymainpickupgridview' },
                         ],
                         requireAuth: true,
                     },

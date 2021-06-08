@@ -43,7 +43,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("项目日报名称")
     private String ibizproprojectdailyname;
-
     /**
      * 属性 [TASKS]
      *
@@ -53,7 +52,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("任务")
     private String tasks;
-
     /**
      * 属性 [BEGIN]
      *
@@ -63,7 +61,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @JsonProperty("begin")
     @ApiModelProperty("开始日期")
     private Timestamp begin;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -73,7 +70,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [END]
      *
@@ -83,7 +79,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @JsonProperty("end")
     @ApiModelProperty("结束日期")
     private Timestamp end;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -93,7 +88,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [DATE]
      *
@@ -103,7 +97,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [TOTALESTIMATES]
      *
@@ -112,7 +105,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @JsonProperty("totalestimates")
     @ApiModelProperty("总工时")
     private Double totalestimates;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -122,7 +114,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [PM]
      *
@@ -132,7 +123,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目负责人")
     private String pm;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -142,7 +132,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [IBIZPRO_PROJECTDAILYID]
      *
@@ -152,7 +141,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目日报标识")
     private String ibizproprojectdailyid;
-
     /**
      * 属性 [PROJECTNAME]
      *
@@ -162,7 +150,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("项目名称")
     private String projectname;
-
     /**
      * 属性 [PROJECT]
      *
@@ -172,7 +159,6 @@ public class IbizproProjectDailyDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目编号")
     private Long project;
-
 
     /**
      * 设置 [IBIZPRO_PROJECTDAILYNAME]

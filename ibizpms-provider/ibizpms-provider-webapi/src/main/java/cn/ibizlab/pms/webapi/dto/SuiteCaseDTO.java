@@ -43,7 +43,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -53,7 +52,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -63,7 +61,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [ID]
      *
@@ -73,7 +70,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("主键")
     private String id;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -83,7 +79,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [ORG]
      *
@@ -93,7 +88,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -103,7 +97,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [VERSION]
      *
@@ -112,7 +105,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
     private Integer version;
-
     /**
      * 属性 [SUITE]
      *
@@ -122,7 +114,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("测试套件")
     private Long suite;
-
     /**
      * 属性 [CASE]
      *
@@ -132,7 +123,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例")
     private Long ibizcase;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -142,7 +132,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属产品")
     private Long product;
-
 
     /**
      * 设置 [VERSION]

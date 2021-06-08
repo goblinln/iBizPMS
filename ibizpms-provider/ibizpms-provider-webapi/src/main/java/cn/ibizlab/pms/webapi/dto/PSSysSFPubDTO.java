@@ -43,7 +43,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("用户标记")
     private String usertag;
-
     /**
      * 属性 [PSSYSTEMID]
      *
@@ -53,7 +52,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("系统")
     private String pssystemid;
-
     /**
      * 属性 [PUBFOLDER]
      *
@@ -63,7 +61,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 500, message = "内容长度必须小于等于[500]")
     @ApiModelProperty("服务目录")
     private String pubfolder;
-
     /**
      * 属性 [PSSFSTYLEVERID]
      *
@@ -73,7 +70,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("服务框架扩展")
     private String pssfstyleverid;
-
     /**
      * 属性 [USERTAG4]
      *
@@ -83,7 +79,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 50, message = "内容长度必须小于等于[50]")
     @ApiModelProperty("用户标记4")
     private String usertag4;
-
     /**
      * 属性 [PUBTAG4]
      *
@@ -93,7 +88,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("发布标记4")
     private String pubtag4;
-
     /**
      * 属性 [PSSFSTYLEID]
      *
@@ -103,7 +97,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("服务框架")
     private String pssfstyleid;
-
     /**
      * 属性 [REMOVEFLAG]
      *
@@ -112,7 +105,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @JsonProperty("removeflag")
     @ApiModelProperty("删除模式")
     private Integer removeflag;
-
     /**
      * 属性 [SUBSYSPKGFLAG]
      *
@@ -121,7 +113,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @JsonProperty("subsyspkgflag")
     @ApiModelProperty("引用系统组件")
     private Integer subsyspkgflag;
-
     /**
      * 属性 [DEFAULTPUB]
      *
@@ -130,7 +121,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @JsonProperty("defaultpub")
     @ApiModelProperty("默认后台服务")
     private Integer defaultpub;
-
     /**
      * 属性 [DOCPSSFSTYLENAME]
      *
@@ -140,7 +130,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("文档模板样式")
     private String docpssfstylename;
-
     /**
      * 属性 [USERTAG3]
      *
@@ -150,7 +139,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 50, message = "内容长度必须小于等于[50]")
     @ApiModelProperty("用户标记3")
     private String usertag3;
-
     /**
      * 属性 [PSSFSTYLEPARAMNAME]
      *
@@ -160,7 +148,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("服务框架参数")
     private String pssfstyleparamname;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -170,7 +157,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [CODENAME]
      *
@@ -180,7 +166,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("代码名称")
     private String codename;
-
     /**
      * 属性 [USERTAG2]
      *
@@ -190,7 +175,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("用户标记2")
     private String usertag2;
-
     /**
      * 属性 [PSSYSSFPUBNAME]
      *
@@ -200,7 +184,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("后台服务架构名称")
     private String pssyssfpubname;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -210,7 +193,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [PUBTAG]
      *
@@ -220,7 +202,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("发布标记")
     private String pubtag;
-
     /**
      * 属性 [BASECLSPKGCODENAME]
      *
@@ -230,7 +211,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("基类代码包名")
     private String baseclspkgcodename;
-
     /**
      * 属性 [VERSTR]
      *
@@ -240,7 +220,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 50, message = "内容长度必须小于等于[50]")
     @ApiModelProperty("版本号")
     private String verstr;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -250,7 +229,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [PUBTAG3]
      *
@@ -260,7 +238,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("发布标记3")
     private String pubtag3;
-
     /**
      * 属性 [PSSFSTYLEPARAMID]
      *
@@ -270,7 +247,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("服务框架参数")
     private String pssfstyleparamid;
-
     /**
      * 属性 [DOCPSSFSTYLEID]
      *
@@ -280,7 +256,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("文档模板样式")
     private String docpssfstyleid;
-
     /**
      * 属性 [MEMO]
      *
@@ -290,7 +265,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("备注")
     private String memo;
-
     /**
      * 属性 [PKGCODENAME]
      *
@@ -300,7 +274,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("代码包名")
     private String pkgcodename;
-
     /**
      * 属性 [PSSYSSFPUBID]
      *
@@ -310,7 +283,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("后台服务架构标识")
     private String pssyssfpubid;
-
     /**
      * 属性 [PSSYSTEMNAME]
      *
@@ -320,7 +292,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("系统")
     private String pssystemname;
-
     /**
      * 属性 [CONTENTTYPE]
      *
@@ -330,7 +301,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("发布内容类型")
     private String contenttype;
-
     /**
      * 属性 [USERCAT]
      *
@@ -340,7 +310,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("用户分类")
     private String usercat;
-
     /**
      * 属性 [PUBTAG2]
      *
@@ -350,7 +319,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("发布标记2")
     private String pubtag2;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -360,7 +328,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [STYLEPARAMS]
      *
@@ -370,7 +337,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 4000, message = "内容长度必须小于等于[4000]")
     @ApiModelProperty("服务框架参数")
     private String styleparams;
-
     /**
      * 属性 [PPSSYSSFPUBNAME]
      *
@@ -380,7 +346,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("父后台服务体系")
     private String ppssyssfpubname;
-
     /**
      * 属性 [PPSSYSSFPUBID]
      *
@@ -390,7 +355,6 @@ public class PSSysSFPubDTO extends DTOClient implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("父后台服务体系")
     private String ppssyssfpubid;
-
 
     /**
      * 设置 [USERTAG]

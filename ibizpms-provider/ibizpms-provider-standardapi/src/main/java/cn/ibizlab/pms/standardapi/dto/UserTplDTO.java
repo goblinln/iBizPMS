@@ -44,7 +44,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 150, message = "内容长度必须小于等于[150]")
     @ApiModelProperty("模板标题")
     private String title;
-
     /**
      * 属性 [ID]
      *
@@ -54,7 +53,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -64,7 +62,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [ORG]
      *
@@ -74,7 +71,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [CONTENT]
      *
@@ -84,7 +80,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("content")
     private String content;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -94,7 +89,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [TYPE]
      *
@@ -104,7 +98,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("type")
     private String type;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -114,7 +107,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("account")
     private String account;
-
     /**
      * 属性 [USERTPLSN]
      *
@@ -124,7 +116,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用户模板编号")
     private Long usertplsn;
-
     /**
      * 属性 [PUBLIC]
      *
@@ -134,7 +125,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("公开")
     private String ibizpublic;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -144,7 +134,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [DEPT]
      *
@@ -154,7 +143,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
 
     /**
      * 设置 [TITLE]

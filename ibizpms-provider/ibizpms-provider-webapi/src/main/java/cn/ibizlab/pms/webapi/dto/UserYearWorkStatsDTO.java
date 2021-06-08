@@ -43,7 +43,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 32, message = "内容长度必须小于等于[32]")
     @ApiModelProperty("密码")
     private String password;
-
     /**
      * 属性 [YEARPRODUCTCNT]
      *
@@ -52,7 +51,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearproductcnt")
     @ApiModelProperty("累计参与产品数")
     private Integer yearproductcnt;
-
     /**
      * 属性 [YEARBUGCNT]
      *
@@ -61,7 +59,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearbugcnt")
     @ApiModelProperty("累计创建Bug数")
     private Integer yearbugcnt;
-
     /**
      * 属性 [WEIXIN]
      *
@@ -71,7 +68,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("微信")
     private String weixin;
-
     /**
      * 属性 [YEARCASECNT]
      *
@@ -80,7 +76,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearcasecnt")
     @ApiModelProperty("累计创建用例数")
     private Integer yearcasecnt;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -90,7 +85,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("账号")
     private String account;
-
     /**
      * 属性 [QQ]
      *
@@ -100,7 +94,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("QQ")
     private String qq;
-
     /**
      * 属性 [RANZHI]
      *
@@ -110,7 +103,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("ranzhi")
     private String ranzhi;
-
     /**
      * 属性 [NICKNAME]
      *
@@ -120,7 +112,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("nickname")
     private String nickname;
-
     /**
      * 属性 [AVATAR]
      *
@@ -130,7 +121,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("avatar")
     private String avatar;
-
     /**
      * 属性 [MONTHFINISHTASK]
      *
@@ -139,7 +129,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("monthfinishtask")
     @ApiModelProperty("月完成任务数")
     private Integer monthfinishtask;
-
     /**
      * 属性 [FAILS]
      *
@@ -148,7 +137,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("fails")
     @ApiModelProperty("fails")
     private Integer fails;
-
     /**
      * 属性 [JOIN]
      *
@@ -158,7 +146,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("join")
     @ApiModelProperty("入职日期")
     private Timestamp join;
-
     /**
      * 属性 [YEARSTORYCNT]
      *
@@ -167,7 +154,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearstorycnt")
     @ApiModelProperty("累计创建需求数")
     private Integer yearstorycnt;
-
     /**
      * 属性 [YEARPLANCNT]
      *
@@ -176,7 +162,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearplancnt")
     @ApiModelProperty("累计创建计划数")
     private Integer yearplancnt;
-
     /**
      * 属性 [DINGDING]
      *
@@ -186,7 +171,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("钉钉")
     private String dingding;
-
     /**
      * 属性 [IP]
      *
@@ -196,7 +180,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 15, message = "内容长度必须小于等于[15]")
     @ApiModelProperty("ip")
     private String ip;
-
     /**
      * 属性 [YEARACTIONCNT]
      *
@@ -205,7 +188,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearactioncnt")
     @ApiModelProperty("累计动态数")
     private Integer yearactioncnt;
-
     /**
      * 属性 [MOBILE]
      *
@@ -215,7 +197,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 11, message = "内容长度必须小于等于[11]")
     @ApiModelProperty("手机")
     private String mobile;
-
     /**
      * 属性 [WHATSAPP]
      *
@@ -225,7 +206,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("whatsapp")
     private String whatsapp;
-
     /**
      * 属性 [ID]
      *
@@ -235,7 +215,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用户编号")
     private Long id;
-
     /**
      * 属性 [EMAIL]
      *
@@ -245,7 +224,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("邮箱")
     private String email;
-
     /**
      * 属性 [YEARESTIMATECNT]
      *
@@ -254,7 +232,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearestimatecnt")
     @ApiModelProperty("累计工时数")
     private Integer yearestimatecnt;
-
     /**
      * 属性 [CLIENTLANG]
      *
@@ -264,7 +241,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("clientLang")
     private String clientlang;
-
     /**
      * 属性 [MONTESTIMATE]
      *
@@ -273,7 +249,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("montestimate")
     @ApiModelProperty("月累计工时")
     private Integer montestimate;
-
     /**
      * 属性 [REALNAME]
      *
@@ -283,7 +258,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("真实用户名")
     private String realname;
-
     /**
      * 属性 [COMMITER]
      *
@@ -293,7 +267,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("源代码账户")
     private String commiter;
-
     /**
      * 属性 [SLACK]
      *
@@ -303,7 +276,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("slack")
     private String slack;
-
     /**
      * 属性 [DELETED]
      *
@@ -313,7 +285,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("逻辑删除标志")
     private String deleted;
-
     /**
      * 属性 [LAST]
      *
@@ -322,7 +293,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("last")
     @ApiModelProperty("最后登录")
     private Integer last;
-
     /**
      * 属性 [CURYEAR]
      *
@@ -332,7 +302,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("年度")
     private String curyear;
-
     /**
      * 属性 [JUDGEROLE]
      *
@@ -342,7 +311,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("判断角色")
     private String judgerole;
-
     /**
      * 属性 [SKYPE]
      *
@@ -352,7 +320,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("skype")
     private String skype;
-
     /**
      * 属性 [BIRTHDAY]
      *
@@ -362,7 +329,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("birthday")
     @ApiModelProperty("birthday")
     private Timestamp birthday;
-
     /**
      * 属性 [PHONE]
      *
@@ -372,7 +338,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("电话")
     private String phone;
-
     /**
      * 属性 [YEARVISITS]
      *
@@ -381,7 +346,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearvisits")
     @ApiModelProperty("累计登录次数")
     private Integer yearvisits;
-
     /**
      * 属性 [SCORE]
      *
@@ -390,7 +354,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("score")
     @ApiModelProperty("score")
     private Integer score;
-
     /**
      * 属性 [ROLE]
      *
@@ -400,7 +363,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("角色")
     private String role;
-
     /**
      * 属性 [CLIENTSTATUS]
      *
@@ -410,7 +372,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
     @ApiModelProperty("clientStatus")
     private String clientstatus;
-
     /**
      * 属性 [DEPT]
      *
@@ -420,7 +381,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("部门编号")
     private String dept;
-
     /**
      * 属性 [TITLE]
      *
@@ -430,7 +390,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("标题")
     private String title;
-
     /**
      * 属性 [CURMONTH]
      *
@@ -440,7 +399,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("当前月")
     private String curmonth;
-
     /**
      * 属性 [MONTRESOLVEDBUG]
      *
@@ -449,7 +407,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("montresolvedbug")
     @ApiModelProperty("月解决Bug数")
     private Integer montresolvedbug;
-
     /**
      * 属性 [ADDRESS]
      *
@@ -459,7 +416,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 120, message = "内容长度必须小于等于[120]")
     @ApiModelProperty("通讯地址")
     private String address;
-
     /**
      * 属性 [SCORELEVEL]
      *
@@ -468,7 +424,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("scorelevel")
     @ApiModelProperty("scoreLevel")
     private Integer scorelevel;
-
     /**
      * 属性 [VISITS]
      *
@@ -477,7 +432,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("visits")
     @ApiModelProperty("累计登录次数")
     private Integer visits;
-
     /**
      * 属性 [YEARLOGCNT]
      *
@@ -486,7 +440,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yearlogcnt")
     @ApiModelProperty("累计日志数")
     private Integer yearlogcnt;
-
     /**
      * 属性 [LOCKED]
      *
@@ -496,7 +449,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("locked")
     @ApiModelProperty("locked")
     private Timestamp locked;
-
     /**
      * 属性 [GENDER]
      *
@@ -506,7 +458,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("性别")
     private String gender;
-
     /**
      * 属性 [ZIPCODE]
      *
@@ -516,7 +467,6 @@ public class UserYearWorkStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("zipcode")
     private String zipcode;
-
 
     /**
      * 设置 [PASSWORD]

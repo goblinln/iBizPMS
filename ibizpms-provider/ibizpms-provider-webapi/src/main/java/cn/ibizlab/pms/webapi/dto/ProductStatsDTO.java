@@ -43,7 +43,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
     @ApiModelProperty("产品代号")
     private String code;
-
     /**
      * 属性 [ID]
      *
@@ -53,7 +52,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品编号")
     private Long id;
-
     /**
      * 属性 [FINISHEDSTORYCNT]
      *
@@ -62,7 +60,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("finishedstorycnt")
     @ApiModelProperty("已完成的需求数")
     private Integer finishedstorycnt;
-
     /**
      * 属性 [RELEASEDSTORYCNT]
      *
@@ -71,7 +68,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("releasedstorycnt")
     @ApiModelProperty("已发布需求数")
     private Integer releasedstorycnt;
-
     /**
      * 属性 [IMPORTANTBUGPERCENT]
      *
@@ -81,7 +77,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("严重bug比")
     private String importantbugpercent;
-
     /**
      * 属性 [UNDONERESPROJECTCNT]
      *
@@ -90,7 +85,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("undoneresprojectcnt")
     @ApiModelProperty("未完成关联项目数")
     private Integer undoneresprojectcnt;
-
     /**
      * 属性 [ASSIGNTOMEBUGCNT]
      *
@@ -99,7 +93,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("assigntomebugcnt")
     @ApiModelProperty("指派给我的Bug数")
     private Integer assigntomebugcnt;
-
     /**
      * 属性 [DELETED]
      *
@@ -109,7 +102,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [ISTOP]
      *
@@ -118,7 +110,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("istop")
     @ApiModelProperty("是否置顶")
     private Integer istop;
-
     /**
      * 属性 [RESPROJECTCNT]
      *
@@ -127,7 +118,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("resprojectcnt")
     @ApiModelProperty("关联项目数")
     private Integer resprojectcnt;
-
     /**
      * 属性 [BUGCNT]
      *
@@ -136,7 +126,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugcnt")
     @ApiModelProperty("所有Bug数")
     private Integer bugcnt;
-
     /**
      * 属性 [HAVECONSUMED]
      *
@@ -145,7 +134,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("haveconsumed")
     @ApiModelProperty("已消耗工时")
     private Double haveconsumed;
-
     /**
      * 属性 [TYPE]
      *
@@ -155,7 +143,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("产品类型")
     private String type;
-
     /**
      * 属性 [WAITSTORYCNT]
      *
@@ -164,7 +151,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("waitstorycnt")
     @ApiModelProperty("未开始需求数")
     private Integer waitstorycnt;
-
     /**
      * 属性 [BUGSTORY]
      *
@@ -173,7 +159,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("bugstory")
     @ApiModelProperty("需求所提bug数")
     private Integer bugstory;
-
     /**
      * 属性 [STORYCNT]
      *
@@ -182,7 +167,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("storycnt")
     @ApiModelProperty("需求总数")
     private Integer storycnt;
-
     /**
      * 属性 [NAME]
      *
@@ -193,7 +177,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("产品名称")
     private String name;
-
     /**
      * 属性 [IMPORTANTBUGCNT]
      *
@@ -202,7 +185,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("importantbugcnt")
     @ApiModelProperty("重要的Bug数")
     private Integer importantbugcnt;
-
     /**
      * 属性 [YESTERDAYCLOSEDBUGCNT]
      *
@@ -211,7 +193,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yesterdayclosedbugcnt")
     @ApiModelProperty("昨天关闭Bug数")
     private Integer yesterdayclosedbugcnt;
-
     /**
      * 属性 [STATUS]
      *
@@ -221,7 +202,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("状态")
     private String status;
-
     /**
      * 属性 [YESTERDAYRESOLVEDBUGCNT]
      *
@@ -230,7 +210,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yesterdayresolvedbugcnt")
     @ApiModelProperty("昨天解决Bug数")
     private Integer yesterdayresolvedbugcnt;
-
     /**
      * 属性 [DEVELOPINGSTORYCNT]
      *
@@ -239,7 +218,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("developingstorycnt")
     @ApiModelProperty("开发中需求数")
     private Integer developingstorycnt;
-
     /**
      * 属性 [ACTIVESTORYCNT]
      *
@@ -248,7 +226,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("activestorycnt")
     @ApiModelProperty("激活需求数")
     private Integer activestorycnt;
-
     /**
      * 属性 [NOTCLOSEDBUGCNT]
      *
@@ -257,7 +234,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("notclosedbugcnt")
     @ApiModelProperty("未关闭Bug数")
     private Integer notclosedbugcnt;
-
     /**
      * 属性 [NORMALRELEASECNT]
      *
@@ -266,7 +242,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("normalreleasecnt")
     @ApiModelProperty("维护中发布数")
     private Integer normalreleasecnt;
-
     /**
      * 属性 [ORDER1]
      *
@@ -275,7 +250,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("order1")
     @ApiModelProperty("产品排序")
     private Integer order1;
-
     /**
      * 属性 [CURRPROJECT]
      *
@@ -285,7 +259,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("当前项目")
     private String currproject;
-
     /**
      * 属性 [TESTINGSTORYCNT]
      *
@@ -294,7 +267,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("testingstorycnt")
     @ApiModelProperty("测试中需求数")
     private Integer testingstorycnt;
-
     /**
      * 属性 [PRODUCTPLANCNT]
      *
@@ -303,7 +275,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("productplancnt")
     @ApiModelProperty("计划总数")
     private Integer productplancnt;
-
     /**
      * 属性 [RELEASECNT]
      *
@@ -312,7 +283,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("releasecnt")
     @ApiModelProperty("发布总数")
     private Integer releasecnt;
-
     /**
      * 属性 [YESTERDAYCONFIRMBUGCNT]
      *
@@ -321,7 +291,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("yesterdayconfirmbugcnt")
     @ApiModelProperty("昨天确认Bug数")
     private Integer yesterdayconfirmbugcnt;
-
     /**
      * 属性 [POSTPONEDPROJECTCNT]
      *
@@ -330,7 +299,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("postponedprojectcnt")
     @ApiModelProperty("已延期")
     private Integer postponedprojectcnt;
-
     /**
      * 属性 [UNENDPRODUCTPLANCNT]
      *
@@ -339,7 +307,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("unendproductplancnt")
     @ApiModelProperty("未过期计划数")
     private Integer unendproductplancnt;
-
     /**
      * 属性 [RESOLVEDBUGCNT]
      *
@@ -348,7 +315,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("resolvedbugcnt")
     @ApiModelProperty("解决Bug数")
     private Integer resolvedbugcnt;
-
     /**
      * 属性 [PLANNEDSTORYCNT]
      *
@@ -357,7 +323,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("plannedstorycnt")
     @ApiModelProperty("已计划需求数")
     private Integer plannedstorycnt;
-
     /**
      * 属性 [UNCONFIRMBUGCNT]
      *
@@ -366,7 +331,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("unconfirmbugcnt")
     @ApiModelProperty("未确认Bug数")
     private Integer unconfirmbugcnt;
-
     /**
      * 属性 [ACTIVEBUGCNT]
      *
@@ -375,7 +339,6 @@ public class ProductStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("activebugcnt")
     @ApiModelProperty("未解决Bug数")
     private Integer activebugcnt;
-
 
     /**
      * 设置 [CODE]

@@ -43,7 +43,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("本月")
     private String thismonth;
-
     /**
      * 属性 [DEPT]
      *
@@ -53,7 +52,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [YESTERDAY]
      *
@@ -63,7 +61,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("昨天")
     private String yesterday;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -73,7 +70,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [EXTRA]
      *
@@ -83,7 +79,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("附加值")
     private String extra;
-
     /**
      * 属性 [FILES]
      *
@@ -93,7 +88,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("文件")
     private String files;
-
     /**
      * 属性 [ACTIONSN]
      *
@@ -103,7 +97,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("系统日志编号")
     private Long actionsn;
-
     /**
      * 属性 [LASTMONTH]
      *
@@ -113,7 +106,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("上月")
     private String lastmonth;
-
     /**
      * 属性 [ISACTORSS]
      *
@@ -123,7 +115,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("当前用户")
     private Long isactorss;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -133,7 +124,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [THISWEEK]
      *
@@ -143,7 +133,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("本周")
     private String thisweek;
-
     /**
      * 属性 [TODAY]
      *
@@ -153,7 +142,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("今天")
     private String today;
-
     /**
      * 属性 [DATE1]
      *
@@ -163,7 +151,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("显示日期")
     private String date1;
-
     /**
      * 属性 [OBJECTTYPE]
      *
@@ -173,7 +160,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("对象类型")
     private String objecttype;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -183,7 +169,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [ID]
      *
@@ -193,7 +178,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
     /**
      * 属性 [NOTICEUSERS]
      *
@@ -203,7 +187,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
-
     /**
      * 属性 [COMMENT]
      *
@@ -213,7 +196,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("备注")
     private String comment;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -223,7 +205,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [READ]
      *
@@ -233,7 +214,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已读")
     private String read;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -243,7 +223,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [ACTION]
      *
@@ -253,7 +232,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("动作")
     private String action;
-
     /**
      * 属性 [DATE]
      *
@@ -263,7 +241,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -273,7 +250,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("产品")
     private String product;
-
     /**
      * 属性 [LASTCOMMENT]
      *
@@ -283,7 +259,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("备注")
     private String lastcomment;
-
     /**
      * 属性 [SRFKEY]
      *
@@ -293,7 +268,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("前端键值")
     private Long srfkey;
-
     /**
      * 属性 [ACTIONMANNER]
      *
@@ -303,7 +277,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("操作方式")
     private String actionmanner;
-
     /**
      * 属性 [ORG]
      *
@@ -313,7 +286,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [LASTWEEK]
      *
@@ -323,7 +295,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("上周")
     private String lastweek;
-
     /**
      * 属性 [OBJECTID]
      *
@@ -333,7 +304,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("对象ID")
     private Long objectid;
-
     /**
      * 属性 [ACTOR]
      *
@@ -343,7 +313,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("操作者")
     private String actor;
-
     /**
      * 属性 [PROJECT]
      *
@@ -353,7 +322,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目")
     private Long project;
-
 
     /**
      * 设置 [EXTRA]

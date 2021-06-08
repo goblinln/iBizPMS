@@ -43,7 +43,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("是否提交")
     private String issubmit;
-
     /**
      * 属性 [PLANNEXTWEEK]
      *
@@ -53,7 +52,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("下周计划")
     private String plannextweek;
-
     /**
      * 属性 [IBZ_WEEKLYNAME]
      *
@@ -63,7 +61,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("周报名称")
     private String ibzweeklyname;
-
     /**
      * 属性 [MAILTO]
      *
@@ -73,7 +70,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("抄送给")
     private String mailto;
-
     /**
      * 属性 [REPORTTOPK]
      *
@@ -83,7 +79,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("汇报给(选择)")
     private String reporttopk;
-
     /**
      * 属性 [NEXTWEEKTASK]
      *
@@ -93,7 +88,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("下周计划任务")
     private String nextweektask;
-
     /**
      * 属性 [IBZ_WEEKLYID]
      *
@@ -103,7 +97,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("周报标识")
     private Long ibzweeklyid;
-
     /**
      * 属性 [SUBMITTIME]
      *
@@ -113,7 +106,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("submittime")
     @ApiModelProperty("提交时间")
     private Timestamp submittime;
-
     /**
      * 属性 [MAILTOPK]
      *
@@ -123,7 +115,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("抄送给(选择)")
     private String mailtopk;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -133,7 +124,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [REPORTSTATUS]
      *
@@ -143,7 +133,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("状态")
     private String reportstatus;
-
     /**
      * 属性 [FILES]
      *
@@ -153,7 +142,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("附件")
     private String files;
-
     /**
      * 属性 [WORKTHISWEEK]
      *
@@ -163,7 +151,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("本周工作")
     private String workthisweek;
-
     /**
      * 属性 [REPORTTO]
      *
@@ -173,7 +160,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("汇报给")
     private String reportto;
-
     /**
      * 属性 [UPDATEMANNAME]
      *
@@ -183,7 +169,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人名称")
     private String updatemanname;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -193,7 +178,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("用户")
     private String account;
-
     /**
      * 属性 [THISWEEKTASK]
      *
@@ -203,7 +187,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("本周完成任务")
     private String thisweektask;
-
     /**
      * 属性 [COMMENT]
      *
@@ -213,7 +196,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("其他事项")
     private String comment;
-
     /**
      * 属性 [DATE]
      *
@@ -223,7 +205,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -233,7 +214,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [CREATEMANNAME]
      *
@@ -243,7 +223,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人名称")
     private String createmanname;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -253,7 +232,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -263,7 +241,6 @@ public class IbzWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
 
     /**
      * 设置 [ISSUBMIT]

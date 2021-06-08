@@ -43,7 +43,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("路径")
     private String pathname;
-
     /**
      * 属性 [OBJECTID]
      *
@@ -53,7 +52,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("对象ID")
     private Long objectid;
-
     /**
      * 属性 [ORG]
      *
@@ -63,7 +61,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [STRSIZE]
      *
@@ -73,7 +70,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("显示大小")
     private String strsize;
-
     /**
      * 属性 [DOCLIBTYPE]
      *
@@ -83,7 +79,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("文档类型")
     private String doclibtype;
-
     /**
      * 属性 [DELETED]
      *
@@ -93,7 +88,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [EXTENSION]
      *
@@ -103,7 +97,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("文件类型")
     private String extension;
-
     /**
      * 属性 [OBJECTTYPE]
      *
@@ -113,7 +106,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("对象类型")
     private String objecttype;
-
     /**
      * 属性 [ADDEDBY]
      *
@@ -123,7 +115,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁添加")
     private String addedby;
-
     /**
      * 属性 [TITLE]
      *
@@ -134,7 +125,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("标题")
     private String title;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -144,7 +134,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -154,7 +143,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [FILESN]
      *
@@ -164,7 +152,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("附件编号")
     private Long filesn;
-
     /**
      * 属性 [ADDEDDATE]
      *
@@ -174,7 +161,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @JsonProperty("addeddate")
     @ApiModelProperty("添加时间")
     private Timestamp addeddate;
-
     /**
      * 属性 [DOWNLOADS]
      *
@@ -183,7 +169,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @JsonProperty("downloads")
     @ApiModelProperty("下载次数")
     private Integer downloads;
-
     /**
      * 属性 [DEPT]
      *
@@ -193,7 +178,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [SIZE]
      *
@@ -202,7 +186,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @JsonProperty("size")
     @ApiModelProperty("大小")
     private Integer size;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -212,7 +195,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [ID]
      *
@@ -222,7 +204,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
     /**
      * 属性 [EXTRA]
      *
@@ -232,7 +213,6 @@ public class FileDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("备注")
     private String extra;
-
 
     /**
      * 设置 [PATHNAME]

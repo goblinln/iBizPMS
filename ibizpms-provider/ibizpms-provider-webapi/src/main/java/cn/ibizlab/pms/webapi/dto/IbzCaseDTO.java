@@ -43,7 +43,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("最后修改者")
     private String lasteditedby;
-
     /**
      * 属性 [PATH]
      *
@@ -52,7 +51,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("path")
     @ApiModelProperty("path")
     private Integer path;
-
     /**
      * 属性 [ID]
      *
@@ -62,7 +60,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例编号")
     private Long id;
-
     /**
      * 属性 [SCRIPTEDBY]
      *
@@ -72,7 +69,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("scriptedBy")
     private String scriptedby;
-
     /**
      * 属性 [TYPE]
      *
@@ -82,7 +78,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("用例类型")
     private String type;
-
     /**
      * 属性 [SCRIPTSTATUS]
      *
@@ -92,7 +87,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("scriptStatus")
     private String scriptstatus;
-
     /**
      * 属性 [STAGE]
      *
@@ -102,7 +96,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("适用阶段")
     private String stage;
-
     /**
      * 属性 [OPENEDDATE]
      *
@@ -112,7 +105,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("openeddate")
     @ApiModelProperty("创建日期")
     private Timestamp openeddate;
-
     /**
      * 属性 [LASTEDITEDDATE]
      *
@@ -122,7 +114,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("lastediteddate")
     @ApiModelProperty("修改日期")
     private Timestamp lastediteddate;
-
     /**
      * 属性 [AUTO]
      *
@@ -132,7 +123,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("auto")
     private String auto;
-
     /**
      * 属性 [TITLE]
      *
@@ -143,7 +133,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("用例标题")
     private String title;
-
     /**
      * 属性 [HOWRUN]
      *
@@ -153,7 +142,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("howRun")
     private String howrun;
-
     /**
      * 属性 [PRI]
      *
@@ -163,7 +151,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("优先级")
     private String pri;
-
     /**
      * 属性 [COMMENT]
      *
@@ -173,7 +160,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("备注")
     private String comment;
-
     /**
      * 属性 [KEYWORDS]
      *
@@ -183,7 +169,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("关键词")
     private String keywords;
-
     /**
      * 属性 [SCRIPTLOCATION]
      *
@@ -193,7 +178,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("scriptLocation")
     private String scriptlocation;
-
     /**
      * 属性 [VERSION]
      *
@@ -202,7 +186,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
     private Integer version;
-
     /**
      * 属性 [STATUS]
      *
@@ -212,7 +195,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("状态")
     private String status;
-
     /**
      * 属性 [PRECONDITION]
      *
@@ -222,7 +204,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("前置条件")
     private String precondition;
-
     /**
      * 属性 [DELETED]
      *
@@ -232,7 +213,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [ORDER]
      *
@@ -241,7 +221,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
-
     /**
      * 属性 [OPENEDBY]
      *
@@ -251,7 +230,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("由谁创建")
     private String openedby;
-
     /**
      * 属性 [SCRIPTEDDATE]
      *
@@ -261,7 +239,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("scripteddate")
     @ApiModelProperty("scriptedDate")
     private Timestamp scripteddate;
-
     /**
      * 属性 [LIBNAME]
      *
@@ -271,7 +248,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("用例库")
     private String libname;
-
     /**
      * 属性 [MODULENAME]
      *
@@ -281,7 +257,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("所属模块")
     private String modulename;
-
     /**
      * 属性 [MODULE]
      *
@@ -291,7 +266,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long module;
-
     /**
      * 属性 [LIB]
      *
@@ -301,7 +275,6 @@ public class IbzCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long lib;
-
 
     /**
      * 设置 [LASTEDITEDBY]

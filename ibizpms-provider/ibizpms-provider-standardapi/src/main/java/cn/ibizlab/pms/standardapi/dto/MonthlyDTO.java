@@ -43,7 +43,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [REPORTSTATUS]
      *
@@ -53,7 +52,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("状态")
     private String reportstatus;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -63,7 +61,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [PLANSNEXTMONTH]
      *
@@ -73,7 +70,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("下月计划")
     private String plansnextmonth;
-
     /**
      * 属性 [REPORTTOPK]
      *
@@ -83,7 +79,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("汇报给（选择）")
     private String reporttopk;
-
     /**
      * 属性 [ISSUBMIT]
      *
@@ -93,7 +88,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("是否提交")
     private String issubmit;
-
     /**
      * 属性 [MAILTOPK]
      *
@@ -103,7 +97,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("抄送给（选择）")
     private String mailtopk;
-
     /**
      * 属性 [UPDATEMANNAME]
      *
@@ -113,7 +106,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人名称")
     private String updatemanname;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -123,7 +115,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [DATE]
      *
@@ -133,7 +124,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [SUBMITTIME]
      *
@@ -143,7 +133,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @JsonProperty("submittime")
     @ApiModelProperty("提交时间")
     private Timestamp submittime;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -153,7 +142,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [CREATEMANNAME]
      *
@@ -163,7 +151,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人名称")
     private String createmanname;
-
     /**
      * 属性 [FILES]
      *
@@ -173,7 +160,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("附件")
     private String files;
-
     /**
      * 属性 [IBZ_MONTHLYID]
      *
@@ -183,7 +169,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("月报标识")
     private Long ibzmonthlyid;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -193,7 +178,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户")
     private String account;
-
     /**
      * 属性 [NEXTMONTHPLANSTASK]
      *
@@ -203,7 +187,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("下月计划任务")
     private String nextmonthplanstask;
-
     /**
      * 属性 [THISMONTHTASK]
      *
@@ -213,7 +196,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("本月完成任务")
     private String thismonthtask;
-
     /**
      * 属性 [WORKTHISMONTH]
      *
@@ -223,7 +205,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("本月工作")
     private String workthismonth;
-
     /**
      * 属性 [REPORTTO]
      *
@@ -233,7 +214,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("汇报给")
     private String reportto;
-
     /**
      * 属性 [IBZ_MONTHLYNAME]
      *
@@ -243,7 +223,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("月报名称")
     private String ibzmonthlyname;
-
     /**
      * 属性 [COMMENT]
      *
@@ -253,7 +232,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("其他事项")
     private String comment;
-
     /**
      * 属性 [MAILTO]
      *
@@ -263,7 +241,6 @@ public class MonthlyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("抄送给")
     private String mailto;
-
 
     /**
      * 设置 [REPORTSTATUS]

@@ -43,7 +43,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户标识")
     private String userid;
-
     /**
      * 属性 [DYNADASHBOARDID]
      *
@@ -53,7 +52,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("动态数据看板标识")
     private String dynadashboardid;
-
     /**
      * 属性 [DYNADASHBOARDNAME]
      *
@@ -63,7 +61,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("动态数据看板名称")
     private String dynadashboardname;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -73,7 +70,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -83,7 +79,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [MODELID]
      *
@@ -93,7 +88,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("模型标识")
     private String modelid;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -103,7 +97,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [APPID]
      *
@@ -113,7 +106,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("应用标识")
     private String appid;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -123,7 +115,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [MODEL]
      *
@@ -133,7 +124,6 @@ public class DynaDashboardDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("模型")
     private String model;
-
 
     /**
      * 设置 [USERID]

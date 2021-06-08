@@ -43,7 +43,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("主键")
     private Long indexid;
-
     /**
      * 属性 [ACL]
      *
@@ -53,7 +52,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("权限")
     private String acl;
-
     /**
      * 属性 [DOCID]
      *
@@ -63,7 +61,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("docid")
     private String docid;
-
     /**
      * 属性 [INDEXNAME]
      *
@@ -73,7 +70,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("标题[需求、任务等]")
     private String indexname;
-
     /**
      * 属性 [COLOR]
      *
@@ -83,7 +79,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("颜色")
     private String color;
-
     /**
      * 属性 [DELETED]
      *
@@ -93,7 +88,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("逻辑标识")
     private String deleted;
-
     /**
      * 属性 [ACLLIST]
      *
@@ -103,7 +97,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("权限列表")
     private String acllist;
-
     /**
      * 属性 [INDEXDESC]
      *
@@ -113,7 +106,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("内容[需求、任务等]")
     private String indexdesc;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -123,7 +115,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品")
     private Long product;
-
     /**
      * 属性 [INDEX_TYPE]
      *
@@ -133,7 +124,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("类型")
     private String indextype;
-
     /**
      * 属性 [MDEPTID]
      *
@@ -143,7 +133,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("部门标识")
     private String mdeptid;
-
     /**
      * 属性 [PROJECT]
      *
@@ -153,7 +142,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目")
     private Long project;
-
     /**
      * 属性 [ORGID]
      *
@@ -163,7 +151,6 @@ public class IbizproIndexDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("组织标识")
     private String orgid;
-
 
 
 }

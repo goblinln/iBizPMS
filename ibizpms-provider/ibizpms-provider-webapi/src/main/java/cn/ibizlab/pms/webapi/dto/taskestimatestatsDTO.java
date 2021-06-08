@@ -43,7 +43,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("日期")
     private String date;
-
     /**
      * 属性 [YEAR]
      *
@@ -53,7 +52,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("年")
     private String year;
-
     /**
      * 属性 [CONSUMED]
      *
@@ -62,7 +60,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @JsonProperty("consumed")
     @ApiModelProperty("消耗的工时")
     private Double consumed;
-
     /**
      * 属性 [EVALUATIONSTATUS]
      *
@@ -72,7 +69,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("评估状态")
     private String evaluationstatus;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -82,7 +78,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户")
     private String account;
-
     /**
      * 属性 [ID]
      *
@@ -92,7 +87,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [MONTHNAME]
      *
@@ -102,7 +96,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("月（显示）")
     private String monthname;
-
     /**
      * 属性 [NAME]
      *
@@ -112,7 +105,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目名称")
     private String name;
-
     /**
      * 属性 [YEARNAME]
      *
@@ -122,7 +114,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("年（显示）")
     private String yearname;
-
     /**
      * 属性 [EVALUATIONTIME]
      *
@@ -131,7 +122,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @JsonProperty("evaluationtime")
     @ApiModelProperty("评估工时")
     private Double evaluationtime;
-
     /**
      * 属性 [EVALUATIONCOST]
      *
@@ -140,7 +130,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @JsonProperty("evaluationcost")
     @ApiModelProperty("评估成本")
     private Double evaluationcost;
-
     /**
      * 属性 [INPUTCOST]
      *
@@ -149,7 +138,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @JsonProperty("inputcost")
     @ApiModelProperty("投入成本")
     private Double inputcost;
-
     /**
      * 属性 [MONTH]
      *
@@ -159,7 +147,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("月")
     private String month;
-
     /**
      * 属性 [TASKCNT]
      *
@@ -168,7 +155,6 @@ public class taskestimatestatsDTO extends DTOBase implements Serializable {
     @JsonProperty("taskcnt")
     @ApiModelProperty("任务数")
     private Integer taskcnt;
-
 
     /**
      * 设置 [DATE]

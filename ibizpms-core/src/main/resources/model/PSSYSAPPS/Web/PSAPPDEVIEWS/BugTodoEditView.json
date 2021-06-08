@@ -1238,7 +1238,7 @@
               },
               "getPSAppDEDataSet" : {
                 "modelref" : true,
-                "id" : "FetchParentDefault"
+                "id" : "FetchDefault"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -1289,7 +1289,7 @@
               "paramJOString" : "{\"n_product_eq\":\"%product%\"}",
               "getPickupPSAppView" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPickupView.json",
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainPickupView.json",
                 "viewType" : "DEPICKUPVIEW"
               },
               "valueItemName" : "story",

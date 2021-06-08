@@ -45,7 +45,6 @@ public class IBIZProTagDTO extends DTOBase implements Serializable {
     private String id;
 
 
-
 }
 
 

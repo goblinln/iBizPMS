@@ -43,7 +43,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目名称")
     private String projectname;
-
     /**
      * 属性 [SEVENCONSUMED]
      *
@@ -52,7 +51,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sevenconsumed")
     @ApiModelProperty("七号工时")
     private Double sevenconsumed;
-
     /**
      * 属性 [SEVENEVALUATIONTIME]
      *
@@ -61,7 +59,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sevenevaluationtime")
     @ApiModelProperty("七号评估工时")
     private Double sevenevaluationtime;
-
     /**
      * 属性 [FOURTEENEVALUATIONTIME]
      *
@@ -70,7 +67,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fourteenevaluationtime")
     @ApiModelProperty("十四号评估工时")
     private Double fourteenevaluationtime;
-
     /**
      * 属性 [TENCONSUMED]
      *
@@ -79,7 +75,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("tenconsumed")
     @ApiModelProperty("十号工时")
     private Double tenconsumed;
-
     /**
      * 属性 [NINECONSUMED]
      *
@@ -88,7 +83,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("nineconsumed")
     @ApiModelProperty("九号工时")
     private Double nineconsumed;
-
     /**
      * 属性 [TWENTYCONSUMED]
      *
@@ -97,7 +91,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyconsumed")
     @ApiModelProperty("二十号工时")
     private Double twentyconsumed;
-
     /**
      * 属性 [SIXCONSUMED]
      *
@@ -106,7 +99,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sixconsumed")
     @ApiModelProperty("六号工时")
     private Double sixconsumed;
-
     /**
      * 属性 [THIRTYEVALUATIONTIME]
      *
@@ -115,7 +107,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirtyevaluationtime")
     @ApiModelProperty("三十号评估工时")
     private Double thirtyevaluationtime;
-
     /**
      * 属性 [THIRTEENCONSUMED]
      *
@@ -124,7 +115,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirteenconsumed")
     @ApiModelProperty("十三号工时")
     private Double thirteenconsumed;
-
     /**
      * 属性 [EIGHTEVALUATIONCOST]
      *
@@ -133,7 +123,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("eightevaluationcost")
     @ApiModelProperty("八号评估成本")
     private Double eightevaluationcost;
-
     /**
      * 属性 [NINETEENEVALUATIONTIME]
      *
@@ -142,7 +131,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("nineteenevaluationtime")
     @ApiModelProperty("十九号评估工时")
     private Double nineteenevaluationtime;
-
     /**
      * 属性 [TWENTYNINEEVALUATIONTIME]
      *
@@ -151,7 +139,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentynineevaluationtime")
     @ApiModelProperty("二十九号评估工时")
     private Double twentynineevaluationtime;
-
     /**
      * 属性 [SEVENTEENEVALUATIONTIME]
      *
@@ -160,7 +147,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("seventeenevaluationtime")
     @ApiModelProperty("十七号评估工时")
     private Double seventeenevaluationtime;
-
     /**
      * 属性 [TWELVEEVALUATIONCOST]
      *
@@ -169,7 +155,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twelveevaluationcost")
     @ApiModelProperty("十二号评估成本")
     private Double twelveevaluationcost;
-
     /**
      * 属性 [TWENTYNINEEVALUATIONCOST]
      *
@@ -178,7 +163,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentynineevaluationcost")
     @ApiModelProperty("二十九号评估成本")
     private Double twentynineevaluationcost;
-
     /**
      * 属性 [THREEEVALUATIONCOST]
      *
@@ -187,7 +171,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("threeevaluationcost")
     @ApiModelProperty("三号评估成本")
     private Double threeevaluationcost;
-
     /**
      * 属性 [TWENTYSIXEVALUATIONTIME]
      *
@@ -196,7 +179,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentysixevaluationtime")
     @ApiModelProperty("二十六号评估工时")
     private Double twentysixevaluationtime;
-
     /**
      * 属性 [FOURTEENEVALUATIONCOST]
      *
@@ -205,7 +187,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fourteenevaluationcost")
     @ApiModelProperty("十四号评估成本")
     private Double fourteenevaluationcost;
-
     /**
      * 属性 [EIGHTEENEVALUATIONCOST]
      *
@@ -214,7 +195,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("eighteenevaluationcost")
     @ApiModelProperty("十八号评估成本")
     private Double eighteenevaluationcost;
-
     /**
      * 属性 [ONEEVALUATIONTIME]
      *
@@ -223,7 +203,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("oneevaluationtime")
     @ApiModelProperty("一号评估工时")
     private Double oneevaluationtime;
-
     /**
      * 属性 [MONTH]
      *
@@ -233,7 +212,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("月")
     private String month;
-
     /**
      * 属性 [DATE]
      *
@@ -243,7 +221,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [TWENTYNINECONSUMED]
      *
@@ -252,7 +229,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentynineconsumed")
     @ApiModelProperty("二十九号工时")
     private Double twentynineconsumed;
-
     /**
      * 属性 [EVALUATIONTIME]
      *
@@ -261,7 +237,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("evaluationtime")
     @ApiModelProperty("评估工时")
     private Double evaluationtime;
-
     /**
      * 属性 [EVALUATIONCOST]
      *
@@ -270,7 +245,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("evaluationcost")
     @ApiModelProperty("评估成本")
     private Double evaluationcost;
-
     /**
      * 属性 [ELEVENEVALUATIONTIME]
      *
@@ -279,7 +253,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("elevenevaluationtime")
     @ApiModelProperty("十一号评估工时")
     private Double elevenevaluationtime;
-
     /**
      * 属性 [TENEVALUATIONTIME]
      *
@@ -288,7 +261,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("tenevaluationtime")
     @ApiModelProperty("十号评估工时")
     private Double tenevaluationtime;
-
     /**
      * 属性 [THIRTYONEEVALUATIONCOST]
      *
@@ -297,7 +269,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirtyoneevaluationcost")
     @ApiModelProperty("三十一号评估成本")
     private Double thirtyoneevaluationcost;
-
     /**
      * 属性 [FOUREVALUATIONTIME]
      *
@@ -306,7 +277,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fourevaluationtime")
     @ApiModelProperty("四号评估工时")
     private Double fourevaluationtime;
-
     /**
      * 属性 [TWENTYTWOCONSUMED]
      *
@@ -315,7 +285,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentytwoconsumed")
     @ApiModelProperty("二十二号工时")
     private Double twentytwoconsumed;
-
     /**
      * 属性 [TWENTYONECONSUMED]
      *
@@ -324,7 +293,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyoneconsumed")
     @ApiModelProperty("二十一号工时")
     private Double twentyoneconsumed;
-
     /**
      * 属性 [THIRTEENEVALUATIONTIME]
      *
@@ -333,7 +301,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirteenevaluationtime")
     @ApiModelProperty("十三号评估工时")
     private Double thirteenevaluationtime;
-
     /**
      * 属性 [SEVENTEENCONSUMED]
      *
@@ -342,7 +309,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("seventeenconsumed")
     @ApiModelProperty("十七号工时")
     private Double seventeenconsumed;
-
     /**
      * 属性 [NINEEVALUATIONTIME]
      *
@@ -351,7 +317,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("nineevaluationtime")
     @ApiModelProperty("九号评估工时")
     private Double nineevaluationtime;
-
     /**
      * 属性 [TWOCONSUMED]
      *
@@ -360,7 +325,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twoconsumed")
     @ApiModelProperty("二号工时")
     private Double twoconsumed;
-
     /**
      * 属性 [TWENTYSEVENCONSUMED]
      *
@@ -369,7 +333,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentysevenconsumed")
     @ApiModelProperty("二十七号工时")
     private Double twentysevenconsumed;
-
     /**
      * 属性 [INPUTCOST]
      *
@@ -378,7 +341,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("inputcost")
     @ApiModelProperty("投入成本")
     private Double inputcost;
-
     /**
      * 属性 [FOURTEENCONSUMED]
      *
@@ -387,7 +349,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fourteenconsumed")
     @ApiModelProperty("十四号工时")
     private Double fourteenconsumed;
-
     /**
      * 属性 [TWENTYEIGHTCONSUMED]
      *
@@ -396,7 +357,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyeightconsumed")
     @ApiModelProperty("二十八号工时")
     private Double twentyeightconsumed;
-
     /**
      * 属性 [CONSUMED]
      *
@@ -405,7 +365,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("consumed")
     @ApiModelProperty("工时")
     private Double consumed;
-
     /**
      * 属性 [THIRTEENEVALUATIONCOST]
      *
@@ -414,7 +373,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirteenevaluationcost")
     @ApiModelProperty("十三号评估成本")
     private Double thirteenevaluationcost;
-
     /**
      * 属性 [ELEVENCONSUMED]
      *
@@ -423,7 +381,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("elevenconsumed")
     @ApiModelProperty("十一号工时")
     private Double elevenconsumed;
-
     /**
      * 属性 [TWENTYONEEVALUATIONTIME]
      *
@@ -432,7 +389,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyoneevaluationtime")
     @ApiModelProperty("二十一号评估工时")
     private Double twentyoneevaluationtime;
-
     /**
      * 属性 [TWELVECONSUMED]
      *
@@ -441,7 +397,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twelveconsumed")
     @ApiModelProperty("十二号工时")
     private Double twelveconsumed;
-
     /**
      * 属性 [THIRTYONECONSUMED]
      *
@@ -450,7 +405,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirtyoneconsumed")
     @ApiModelProperty("三十一号工时")
     private Double thirtyoneconsumed;
-
     /**
      * 属性 [FIVECONSUMED]
      *
@@ -459,7 +413,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fiveconsumed")
     @ApiModelProperty("五号工时")
     private Double fiveconsumed;
-
     /**
      * 属性 [TWENTYFOURCONSUMED]
      *
@@ -468,7 +421,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyfourconsumed")
     @ApiModelProperty("二十四号工时")
     private Double twentyfourconsumed;
-
     /**
      * 属性 [TWENTYEIGHTEVALUATIONCOST]
      *
@@ -477,7 +429,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyeightevaluationcost")
     @ApiModelProperty("二十八号评估成本")
     private Double twentyeightevaluationcost;
-
     /**
      * 属性 [TWENTYTHREEEVALUATIONTIME]
      *
@@ -486,7 +437,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentythreeevaluationtime")
     @ApiModelProperty("二十三号评估工时")
     private Double twentythreeevaluationtime;
-
     /**
      * 属性 [NINETEENEVALUATIONCOST]
      *
@@ -495,7 +445,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("nineteenevaluationcost")
     @ApiModelProperty("十九号评估成本")
     private Double nineteenevaluationcost;
-
     /**
      * 属性 [THIRTYCONSUMED]
      *
@@ -504,7 +453,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirtyconsumed")
     @ApiModelProperty("三十号工时")
     private Double thirtyconsumed;
-
     /**
      * 属性 [TWENTYONEEVALUATIONCOST]
      *
@@ -513,7 +461,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyoneevaluationcost")
     @ApiModelProperty("二十一号评估成本")
     private Double twentyoneevaluationcost;
-
     /**
      * 属性 [TWENTYEVALUATIONTIME]
      *
@@ -522,7 +469,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyevaluationtime")
     @ApiModelProperty("二十号评估工时")
     private Double twentyevaluationtime;
-
     /**
      * 属性 [SIXEVALUATIONCOST]
      *
@@ -531,7 +477,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sixevaluationcost")
     @ApiModelProperty("六号评估成本")
     private Double sixevaluationcost;
-
     /**
      * 属性 [NINETEENCONSUMED]
      *
@@ -540,7 +485,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("nineteenconsumed")
     @ApiModelProperty("十九号工时")
     private Double nineteenconsumed;
-
     /**
      * 属性 [EIGHTCONSUMED]
      *
@@ -549,7 +493,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("eightconsumed")
     @ApiModelProperty("八号工时")
     private Double eightconsumed;
-
     /**
      * 属性 [SEVENTEENEVALUATIONCOST]
      *
@@ -558,7 +501,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("seventeenevaluationcost")
     @ApiModelProperty("十七号评估成本")
     private Double seventeenevaluationcost;
-
     /**
      * 属性 [TWELVEEVALUATIONTIME]
      *
@@ -567,7 +509,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twelveevaluationtime")
     @ApiModelProperty("十二号评估工时")
     private Double twelveevaluationtime;
-
     /**
      * 属性 [TWENTYTWOEVALUATIONCOST]
      *
@@ -576,7 +517,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentytwoevaluationcost")
     @ApiModelProperty("二十二号评估成本")
     private Double twentytwoevaluationcost;
-
     /**
      * 属性 [TWENTYEIGHTEVALUATIONTIME]
      *
@@ -585,7 +525,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyeightevaluationtime")
     @ApiModelProperty("二十八号评估工时")
     private Double twentyeightevaluationtime;
-
     /**
      * 属性 [FIFTEENCONSUMED]
      *
@@ -594,7 +533,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fifteenconsumed")
     @ApiModelProperty("十五号工时")
     private Double fifteenconsumed;
-
     /**
      * 属性 [THREEEVALUATIONTIME]
      *
@@ -603,7 +541,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("threeevaluationtime")
     @ApiModelProperty("三号评估工时")
     private Double threeevaluationtime;
-
     /**
      * 属性 [EIGHTEENEVALUATIONTIME]
      *
@@ -612,7 +549,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("eighteenevaluationtime")
     @ApiModelProperty("十八号评估工时")
     private Double eighteenevaluationtime;
-
     /**
      * 属性 [THIRTYEVALUATIONCOST]
      *
@@ -621,7 +557,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirtyevaluationcost")
     @ApiModelProperty("三十号评估成本")
     private Double thirtyevaluationcost;
-
     /**
      * 属性 [SIXEVALUATIONTIME]
      *
@@ -630,7 +565,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sixevaluationtime")
     @ApiModelProperty("六号评估工时")
     private Double sixevaluationtime;
-
     /**
      * 属性 [ID]
      *
@@ -640,7 +574,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("主键")
     private String id;
-
     /**
      * 属性 [TWENTYTHREEEVALUATIONCOST]
      *
@@ -649,7 +582,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentythreeevaluationcost")
     @ApiModelProperty("二十三号评估成本")
     private Double twentythreeevaluationcost;
-
     /**
      * 属性 [TWENTYSIXEVALUATIONCOST]
      *
@@ -658,7 +590,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentysixevaluationcost")
     @ApiModelProperty("二十六号评估成本")
     private Double twentysixevaluationcost;
-
     /**
      * 属性 [TWENTYSEVENEVALUATIONTIME]
      *
@@ -667,7 +598,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentysevenevaluationtime")
     @ApiModelProperty("二十七号评估工时")
     private Double twentysevenevaluationtime;
-
     /**
      * 属性 [ONECONSUMED]
      *
@@ -676,7 +606,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("oneconsumed")
     @ApiModelProperty("一号工时")
     private Double oneconsumed;
-
     /**
      * 属性 [TWENTYTWOEVALUATIONTIME]
      *
@@ -685,7 +614,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentytwoevaluationtime")
     @ApiModelProperty("二十二号评估工时")
     private Double twentytwoevaluationtime;
-
     /**
      * 属性 [EIGHTEVALUATIONTIME]
      *
@@ -694,7 +622,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("eightevaluationtime")
     @ApiModelProperty("八号评估工时")
     private Double eightevaluationtime;
-
     /**
      * 属性 [TWENTYFIVEEVALUATIONCOST]
      *
@@ -703,7 +630,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyfiveevaluationcost")
     @ApiModelProperty("二十五号评估成本")
     private Double twentyfiveevaluationcost;
-
     /**
      * 属性 [SEVENEVALUATIONCOST]
      *
@@ -712,7 +638,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sevenevaluationcost")
     @ApiModelProperty("七号评估成本")
     private Double sevenevaluationcost;
-
     /**
      * 属性 [SIXTEENEVALUATIONTIME]
      *
@@ -721,7 +646,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sixteenevaluationtime")
     @ApiModelProperty("十六号评估工时")
     private Double sixteenevaluationtime;
-
     /**
      * 属性 [EIGHTEENCONSUMED]
      *
@@ -730,7 +654,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("eighteenconsumed")
     @ApiModelProperty("十八号工时")
     private Double eighteenconsumed;
-
     /**
      * 属性 [FIVEEVALUATIONCOST]
      *
@@ -739,7 +662,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fiveevaluationcost")
     @ApiModelProperty("五号评估成本")
     private Double fiveevaluationcost;
-
     /**
      * 属性 [TWOEVALUATIONCOST]
      *
@@ -748,7 +670,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twoevaluationcost")
     @ApiModelProperty("二号评估成本")
     private Double twoevaluationcost;
-
     /**
      * 属性 [ELEVENEVALUATIONCOST]
      *
@@ -757,7 +678,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("elevenevaluationcost")
     @ApiModelProperty("十一号评估成本")
     private Double elevenevaluationcost;
-
     /**
      * 属性 [TWOEVALUATIONTIME]
      *
@@ -766,7 +686,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twoevaluationtime")
     @ApiModelProperty("二号评估工时")
     private Double twoevaluationtime;
-
     /**
      * 属性 [FIFTEENEVALUATIONCOST]
      *
@@ -775,7 +694,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fifteenevaluationcost")
     @ApiModelProperty("十五号评估成本")
     private Double fifteenevaluationcost;
-
     /**
      * 属性 [TWENTYEVALUATIONCOST]
      *
@@ -784,7 +702,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyevaluationcost")
     @ApiModelProperty("二十号评估成本")
     private Double twentyevaluationcost;
-
     /**
      * 属性 [TWENTYTHREECONSUMED]
      *
@@ -793,7 +710,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentythreeconsumed")
     @ApiModelProperty("二十三号工时")
     private Double twentythreeconsumed;
-
     /**
      * 属性 [THIRTYONEEVALUATIONTIME]
      *
@@ -802,7 +718,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("thirtyoneevaluationtime")
     @ApiModelProperty("三十一号评估工时")
     private Double thirtyoneevaluationtime;
-
     /**
      * 属性 [NINEEVALUATIONCOST]
      *
@@ -811,7 +726,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("nineevaluationcost")
     @ApiModelProperty("九号评估成本")
     private Double nineevaluationcost;
-
     /**
      * 属性 [TWENTYSEVENEVALUATIONCOST]
      *
@@ -820,7 +734,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentysevenevaluationcost")
     @ApiModelProperty("二十七号评估成本")
     private Double twentysevenevaluationcost;
-
     /**
      * 属性 [TWENTYFIVEEVALUATIONTIME]
      *
@@ -829,7 +742,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyfiveevaluationtime")
     @ApiModelProperty("二十五号评估工时")
     private Double twentyfiveevaluationtime;
-
     /**
      * 属性 [TWENTYFIVECONSUMED]
      *
@@ -838,7 +750,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyfiveconsumed")
     @ApiModelProperty("二十五号工时")
     private Double twentyfiveconsumed;
-
     /**
      * 属性 [YEAR]
      *
@@ -848,7 +759,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("年")
     private String year;
-
     /**
      * 属性 [TWENTYFOUREVALUATIONTIME]
      *
@@ -857,7 +767,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyfourevaluationtime")
     @ApiModelProperty("二十四号评估工时")
     private Double twentyfourevaluationtime;
-
     /**
      * 属性 [TWENTYFOUREVALUATIONCOST]
      *
@@ -866,7 +775,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentyfourevaluationcost")
     @ApiModelProperty("二十四号评估成本")
     private Double twentyfourevaluationcost;
-
     /**
      * 属性 [PROJECT]
      *
@@ -876,7 +784,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目标识")
     private Long project;
-
     /**
      * 属性 [FIFTEENEVALUATIONTIME]
      *
@@ -885,7 +792,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fifteenevaluationtime")
     @ApiModelProperty("十五号评估工时")
     private Double fifteenevaluationtime;
-
     /**
      * 属性 [TENEVALUATIONCOST]
      *
@@ -894,7 +800,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("tenevaluationcost")
     @ApiModelProperty("十号评估成本")
     private Double tenevaluationcost;
-
     /**
      * 属性 [THREECONSUMED]
      *
@@ -903,7 +808,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("threeconsumed")
     @ApiModelProperty("三号工时")
     private Double threeconsumed;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -913,7 +817,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用户")
     private String account;
-
     /**
      * 属性 [TWENTYSIXCONSUMED]
      *
@@ -922,7 +825,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("twentysixconsumed")
     @ApiModelProperty("二十六号工时")
     private Double twentysixconsumed;
-
     /**
      * 属性 [SIXTEENEVALUATIONCOST]
      *
@@ -931,7 +833,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sixteenevaluationcost")
     @ApiModelProperty("十六号评估成本")
     private Double sixteenevaluationcost;
-
     /**
      * 属性 [ONEEVALUATIONCOST]
      *
@@ -940,7 +841,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("oneevaluationcost")
     @ApiModelProperty("一号评估成本")
     private Double oneevaluationcost;
-
     /**
      * 属性 [FOUREVALUATIONCOST]
      *
@@ -949,7 +849,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fourevaluationcost")
     @ApiModelProperty("四号评估成本")
     private Double fourevaluationcost;
-
     /**
      * 属性 [FIVEEVALUATIONTIME]
      *
@@ -958,7 +857,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fiveevaluationtime")
     @ApiModelProperty("五号评估工时")
     private Double fiveevaluationtime;
-
     /**
      * 属性 [FOURONSUMED]
      *
@@ -967,7 +865,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("fourconsumed")
     @ApiModelProperty("四号工时")
     private Double fourconsumed;
-
     /**
      * 属性 [SIXTEENCONSUMED]
      *
@@ -976,7 +873,6 @@ public class AccountTaskestimateDTO extends DTOBase implements Serializable {
     @JsonProperty("sixteenconsumed")
     @ApiModelProperty("十六号工时")
     private Double sixteenconsumed;
-
 
     /**
      * 设置 [DATE]

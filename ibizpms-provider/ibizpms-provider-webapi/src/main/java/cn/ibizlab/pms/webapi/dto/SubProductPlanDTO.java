@@ -42,7 +42,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("taskscnt")
     @ApiModelProperty("总任务数")
     private Integer taskscnt;
-
     /**
      * 属性 [ESTIMATECNT]
      *
@@ -51,7 +50,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("estimatecnt")
     @ApiModelProperty("工时数")
     private Integer estimatecnt;
-
     /**
      * 属性 [COMMENT]
      *
@@ -61,7 +59,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("备注")
     private String comment;
-
     /**
      * 属性 [TITLE]
      *
@@ -72,7 +69,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("名称")
     private String title;
-
     /**
      * 属性 [DELAYTASKSCNT]
      *
@@ -81,7 +77,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("delaytaskscnt")
     @ApiModelProperty("延迟任务数")
     private Integer delaytaskscnt;
-
     /**
      * 属性 [OLDTITLE]
      *
@@ -91,7 +86,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("上一次计划名称")
     private String oldtitle;
-
     /**
      * 属性 [ID]
      *
@@ -101,7 +95,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [ORG]
      *
@@ -111,7 +104,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [BEGIN]
      *
@@ -121,7 +113,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("begin")
     @ApiModelProperty("开始日期")
     private Timestamp begin;
-
     /**
      * 属性 [STATUSS]
      *
@@ -131,7 +122,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("状态")
     private String statuss;
-
     /**
      * 属性 [DESC]
      *
@@ -141,7 +131,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("描述")
     private String desc;
-
     /**
      * 属性 [END]
      *
@@ -151,7 +140,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("end")
     @ApiModelProperty("结束日期")
     private Timestamp end;
-
     /**
      * 属性 [DELAY]
      *
@@ -161,7 +149,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("延期")
     private String delay;
-
     /**
      * 属性 [DURATION]
      *
@@ -171,7 +158,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("持续时间")
     private String duration;
-
     /**
      * 属性 [BEGINSTR]
      *
@@ -181,7 +167,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("开始日期")
     private String beginstr;
-
     /**
      * 属性 [LEFTESTIMATE]
      *
@@ -190,7 +175,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("leftestimate")
     @ApiModelProperty("剩余工时")
     private Double leftestimate;
-
     /**
      * 属性 [PLANTEMPLET]
      *
@@ -200,7 +184,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("计划模板")
     private String plantemplet;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -210,7 +193,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [UNFINISHEDTASKSCNT]
      *
@@ -219,7 +201,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("unfinishedtaskscnt")
     @ApiModelProperty("未完成任务数")
     private Integer unfinishedtaskscnt;
-
     /**
      * 属性 [ENDSTR]
      *
@@ -229,7 +210,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("结束日期")
     private String endstr;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -239,7 +219,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [STATUS]
      *
@@ -249,7 +228,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("计划状态")
     private String status;
-
     /**
      * 属性 [ISEXPIRED]
      *
@@ -259,7 +237,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("是否过期")
     private String isexpired;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -269,7 +246,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -279,7 +255,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [DELETED]
      *
@@ -289,7 +264,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [CONSUMEDESTIMATE]
      *
@@ -298,7 +272,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("consumedestimate")
     @ApiModelProperty("消耗工时")
     private Double consumedestimate;
-
     /**
      * 属性 [ORDER]
      *
@@ -308,7 +281,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("排序")
     private String order;
-
     /**
      * 属性 [ISLEAF]
      *
@@ -317,7 +289,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("isleaf")
     @ApiModelProperty("叶子节点")
     private Integer isleaf;
-
     /**
      * 属性 [FUTURE]
      *
@@ -327,7 +298,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("待定")
     private String future;
-
     /**
      * 属性 [DEPT]
      *
@@ -337,7 +307,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [STORYCNT]
      *
@@ -346,7 +315,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("storycnt")
     @ApiModelProperty("需求数")
     private Integer storycnt;
-
     /**
      * 属性 [DELTA]
      *
@@ -356,7 +324,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("周期")
     private String delta;
-
     /**
      * 属性 [PRODUCTPLANSN]
      *
@@ -366,7 +333,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品计划编号")
     private Long productplansn;
-
     /**
      * 属性 [FINISHEDTASKSCNT]
      *
@@ -375,7 +341,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("finishedtaskscnt")
     @ApiModelProperty("完成任务数")
     private Integer finishedtaskscnt;
-
     /**
      * 属性 [BUGCNT]
      *
@@ -384,7 +349,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonProperty("bugcnt")
     @ApiModelProperty("bug数")
     private Integer bugcnt;
-
     /**
      * 属性 [PARENTNAME]
      *
@@ -394,7 +358,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("父计划名称")
     private String parentname;
-
     /**
      * 属性 [BRANCH]
      *
@@ -404,7 +367,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("平台/分支")
     private Long branch;
-
     /**
      * 属性 [PARENT]
      *
@@ -414,7 +376,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("父计划")
     private Long parent;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -424,7 +385,6 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品")
     private Long product;
-
 
     /**
      * 设置 [TITLE]

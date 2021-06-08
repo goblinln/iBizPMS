@@ -43,7 +43,6 @@ public class IbzLoginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("真实姓名")
     private String realname;
-
     /**
      * 属性 [ID]
      *
@@ -53,7 +52,6 @@ public class IbzLoginDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("ID")
     private Long id;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -63,7 +61,6 @@ public class IbzLoginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("账户")
     private String account;
-
     /**
      * 属性 [TOKEN]
      *
@@ -73,7 +70,6 @@ public class IbzLoginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("token")
     private String token;
-
     /**
      * 属性 [COMMITER]
      *
@@ -83,7 +79,6 @@ public class IbzLoginDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("源代码账户")
     private String commiter;
-
 
     /**
      * 设置 [REALNAME]

@@ -43,7 +43,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [SPEC]
      *
@@ -53,7 +52,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("需求描述	")
     private String spec;
-
     /**
      * 属性 [TITLE]
      *
@@ -63,7 +61,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("需求名称")
     private String title;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -73,7 +70,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -83,7 +79,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -93,7 +88,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [VERIFY]
      *
@@ -103,7 +97,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("验收标准")
     private String verify;
-
     /**
      * 属性 [ORG]
      *
@@ -113,7 +106,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [ID]
      *
@@ -123,7 +115,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("主键")
     private String id;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -133,7 +124,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [VERSION]
      *
@@ -142,7 +132,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("版本号")
     private Integer version;
-
     /**
      * 属性 [STORY]
      *
@@ -152,7 +141,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("需求")
     private Long story;
-
 
     /**
      * 设置 [SPEC]

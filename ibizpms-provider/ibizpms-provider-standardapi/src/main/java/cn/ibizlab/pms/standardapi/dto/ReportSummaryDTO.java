@@ -43,7 +43,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人名称")
     private String updatemanname;
-
     /**
      * 属性 [MAILTO]
      *
@@ -53,7 +52,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("抄送给")
     private String mailto;
-
     /**
      * 属性 [IBZ_DAILYID]
      *
@@ -63,7 +61,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("汇报标识")
     private Long ibzdailyid;
-
     /**
      * 属性 [REPORTLYCNT]
      *
@@ -72,7 +69,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @JsonProperty("reportlycnt")
     @ApiModelProperty("未读汇报数")
     private Integer reportlycnt;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -82,7 +78,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [WORKTODAY]
      *
@@ -92,7 +87,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("工作")
     private String worktoday;
-
     /**
      * 属性 [MONTHLYCNT]
      *
@@ -101,7 +95,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @JsonProperty("monthlycnt")
     @ApiModelProperty("未读月报数")
     private Integer monthlycnt;
-
     /**
      * 属性 [DAILYCNT]
      *
@@ -110,7 +103,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @JsonProperty("dailycnt")
     @ApiModelProperty("未读日报数")
     private Integer dailycnt;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -120,7 +112,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [TODAYTASK]
      *
@@ -130,7 +121,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("完成任务")
     private String todaytask;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -140,7 +130,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("用户")
     private String account;
-
     /**
      * 属性 [TYPE]
      *
@@ -150,7 +139,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -160,7 +148,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -170,7 +157,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [IBZ_DAILYNAME]
      *
@@ -180,7 +166,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("汇报名称")
     private String ibzdailyname;
-
     /**
      * 属性 [REPORTTO]
      *
@@ -190,7 +175,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("汇报给")
     private String reportto;
-
     /**
      * 属性 [SUBMITTIME]
      *
@@ -200,7 +184,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("提交时间")
     private String submittime;
-
     /**
      * 属性 [FILES]
      *
@@ -210,7 +193,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("附件")
     private String files;
-
     /**
      * 属性 [CREATEMANNAME]
      *
@@ -220,7 +202,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人名称")
     private String createmanname;
-
     /**
      * 属性 [PLANSTOMORROW]
      *
@@ -230,7 +211,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("计划")
     private String planstomorrow;
-
     /**
      * 属性 [REPORTSTATUS]
      *
@@ -240,7 +220,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("状态")
     private String reportstatus;
-
     /**
      * 属性 [DATE]
      *
@@ -250,7 +229,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [ISSUBMIT]
      *
@@ -260,7 +238,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("是否提交")
     private String issubmit;
-
     /**
      * 属性 [COMMENT]
      *
@@ -270,7 +247,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("其他事项")
     private String comment;
-
     /**
      * 属性 [TOMORROWPLANSTASK]
      *
@@ -280,7 +256,6 @@ public class ReportSummaryDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("计划任务")
     private String tomorrowplanstask;
-
 
     /**
      * 设置 [MAILTO]

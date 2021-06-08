@@ -43,7 +43,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [IBZPRO_CONFIGNAME]
      *
@@ -53,7 +52,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("系统配置表名称")
     private String ibzproconfigname;
-
     /**
      * 属性 [MEMO]
      *
@@ -63,7 +61,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("描述")
     private String memo;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -73,7 +70,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -83,7 +79,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [IBZPRO_CONFIGID]
      *
@@ -93,7 +88,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("系统配置表标识")
     private String ibzproconfigid;
-
     /**
      * 属性 [SCOPE]
      *
@@ -103,7 +97,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("范围")
     private String scope;
-
     /**
      * 属性 [TYPE]
      *
@@ -113,7 +106,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [MANAGEMENTSTATUS]
      *
@@ -123,7 +115,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("管理现状")
     private String managementstatus;
-
     /**
      * 属性 [VAILD]
      *
@@ -133,7 +124,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("是否启用")
     private String vaild;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -143,7 +133,6 @@ public class IbzproConfigDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
 
     /**
      * 设置 [IBZPRO_CONFIGNAME]

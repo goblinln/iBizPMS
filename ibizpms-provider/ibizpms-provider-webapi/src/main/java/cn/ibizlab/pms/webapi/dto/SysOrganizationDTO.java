@@ -43,7 +43,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("单位标识")
     private String orgid;
-
     /**
      * 属性 [ORGCODE]
      *
@@ -53,7 +52,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("单位代码")
     private String orgcode;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -63,7 +61,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("名称")
     private String orgname;
-
     /**
      * 属性 [PORGID]
      *
@@ -73,7 +70,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("上级单位")
     private String parentorgid;
-
     /**
      * 属性 [SHORTNAME]
      *
@@ -83,7 +79,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("单位简称")
     private String shortname;
-
     /**
      * 属性 [ORGLEVEL]
      *
@@ -92,7 +87,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @JsonProperty("orglevel")
     @ApiModelProperty("单位级别")
     private Integer orglevel;
-
     /**
      * 属性 [SHOWORDER]
      *
@@ -101,7 +95,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @JsonProperty("showorder")
     @ApiModelProperty("排序")
     private Integer showorder;
-
     /**
      * 属性 [PORGNAME]
      *
@@ -111,7 +104,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("上级单位")
     private String parentorgname;
-
     /**
      * 属性 [DOMAINS]
      *
@@ -121,7 +113,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("区属")
     private String domains;
-
     /**
      * 属性 [ENABLE]
      *
@@ -130,7 +121,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @JsonProperty("enable")
     @ApiModelProperty("逻辑有效")
     private Integer enable;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -140,7 +130,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("创建时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -150,7 +139,6 @@ public class SysOrganizationDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("最后修改时间")
     private Timestamp updatedate;
-
 
     /**
      * 设置 [ORGCODE]

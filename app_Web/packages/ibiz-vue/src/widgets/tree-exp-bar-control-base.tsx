@@ -132,12 +132,45 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
         }
         const nodetype = arg.id.split(';')[0];
         const refview: any = await this.getExpItemView({ nodetype: nodetype });
-        if (!refview) {
-            this.calcToolbarItemState(true);
-            return;
+        if (this.pickupViewPanelInstance) {
+            this.onSelectionChangeByPickupViewPanel(arg);
+        } else {
+            if (!refview) {
+                this.calcToolbarItemState(true);
+                return;
+            }
+            let { tempContext, tempViewparam } = this.computeNavParams(arg);
+            this.selection = {};
+            Object.assign(tempContext, { viewpath: refview.viewModelData.modelFilePath });
+            Object.assign(this.selection, { view: { viewname: 'app-view-shell' }, context: tempContext, viewparam: tempViewparam });
+            this.calcToolbarItemState(false);
+            this.$forceUpdate();
         }
-        let tempViewparam: any = {};
+    }
+
+    /**
+     * 树导航选中（选择视图面板处理逻辑）
+     * 
+     * @param arg 
+     * @memberof TreeExpBarControlBase
+     */
+    public onSelectionChangeByPickupViewPanel(arg: any) {
+        this.selection = {};
+        let { tempContext, tempViewparam } = this.computeNavParams(arg);
+        Object.assign(this.selection, { context: tempContext, viewparam: tempViewparam });
+        this.calcToolbarItemState(false);
+        this.viewState.next({ tag: this.pickupViewPanelInstance?.name, action: 'load', data: tempViewparam });
+    }
+
+    /**
+     * 计算导航参数
+     * 
+     * @param arg 
+     * @memberof TreeExpBarControlBase
+     */
+    public computeNavParams(arg: any) {
         let tempContext: any = {};
+        let tempViewparam: any = {};
         if (arg && arg.navfilter) {
             this.counter += 1;
             Object.defineProperty(tempViewparam, arg.navfilter, {
@@ -177,11 +210,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
             this.counter += 1;
             Object.assign(tempContext, { srfcounter: this.counter });
         }
-        this.selection = {};
-        Object.assign(tempContext, { viewpath: refview.viewModelData.modelFilePath });
-        Object.assign(this.selection, { view: { viewname: 'app-view-shell' }, context: tempContext, viewparam: tempViewparam });
-        this.calcToolbarItemState(false);
-        this.$forceUpdate();
+        return { tempContext, tempViewparam };
     }
 
     /**

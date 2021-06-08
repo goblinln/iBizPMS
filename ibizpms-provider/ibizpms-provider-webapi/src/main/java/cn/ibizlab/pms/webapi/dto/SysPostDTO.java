@@ -43,7 +43,6 @@ public class SysPostDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位标识")
     private String postid;
-
     /**
      * 属性 [POSTCODE]
      *
@@ -54,7 +53,6 @@ public class SysPostDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位编码")
     private String postcode;
-
     /**
      * 属性 [POSTNAME]
      *
@@ -65,7 +63,6 @@ public class SysPostDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("岗位名称")
     private String postname;
-
     /**
      * 属性 [DOMAINS]
      *
@@ -75,7 +72,6 @@ public class SysPostDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("区属")
     private String domains;
-
     /**
      * 属性 [MEMO]
      *
@@ -85,7 +81,6 @@ public class SysPostDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("备注")
     private String memo;
-
 
     /**
      * 设置 [POSTCODE]

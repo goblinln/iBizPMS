@@ -43,7 +43,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -53,7 +52,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -63,7 +61,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -73,7 +70,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -83,7 +79,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [ORG]
      *
@@ -93,7 +88,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [DEPT]
      *
@@ -103,7 +97,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [ID]
      *
@@ -113,7 +106,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("主键")
     private String id;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -123,7 +115,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -133,7 +124,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -143,7 +133,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [END]
      *
@@ -153,7 +142,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @JsonProperty("end")
     @ApiModelProperty("计划结束时间")
     private Timestamp end;
-
     /**
      * 属性 [PRODUCTNAME]
      *
@@ -163,7 +151,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("产品")
     private String productname;
-
     /**
      * 属性 [PROJECTEND]
      *
@@ -173,7 +160,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @JsonProperty("projectend")
     @ApiModelProperty("结束日期")
     private Timestamp projectend;
-
     /**
      * 属性 [BEGIN]
      *
@@ -183,7 +169,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @JsonProperty("begin")
     @ApiModelProperty("计划开始时间")
     private Timestamp begin;
-
     /**
      * 属性 [PROJECTNAME]
      *
@@ -193,7 +178,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("项目名称")
     private String projectname;
-
     /**
      * 属性 [PLANNAME]
      *
@@ -203,7 +187,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("计划名称")
     private String planname;
-
     /**
      * 属性 [PRODUCTCODE]
      *
@@ -213,7 +196,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
     @ApiModelProperty("产品编号")
     private String productcode;
-
     /**
      * 属性 [STATUS]
      *
@@ -223,7 +205,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("项目状态")
     private String status;
-
     /**
      * 属性 [PROJECTCODE]
      *
@@ -233,7 +214,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
     @ApiModelProperty("项目代号")
     private String projectcode;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -244,7 +224,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @NotNull(message = "[产品]不允许为空!")
     @ApiModelProperty("产品")
     private Long product;
-
     /**
      * 属性 [PLAN]
      *
@@ -254,7 +233,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品计划")
     private Long plan;
-
     /**
      * 属性 [BRANCH]
      *
@@ -264,7 +242,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("平台/分支")
     private Long branch;
-
     /**
      * 属性 [PROJECT]
      *
@@ -275,7 +252,6 @@ public class ProjectProductDTO extends DTOBase implements Serializable {
     @NotNull(message = "[项目编号]不允许为空!")
     @ApiModelProperty("项目编号")
     private Long project;
-
 
     /**
      * 设置 [PRODUCT]

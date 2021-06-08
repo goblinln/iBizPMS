@@ -27,6 +27,17 @@ export class PickUpViewPanelControlBase extends MainControlBase {
     public selectedData?: string;
 
     /**
+     * 视图模式
+     * 0: 默认模式（选择视图，多项数据选择视图）
+     * 1：左右关系（选择视图[左右关系], 多项数据选择视图[左右关系]）
+     * 2: 分页关系（选择视图[分页关系], 多项数据选择视图[分页关系]）
+     *
+     * @type {string}
+     * @memberof PickUpViewPanelControlBase
+     */
+    public viewMode: number = 0;
+
+    /**
      * 获取多项数据
      *
      * @returns {any[]}
@@ -147,9 +158,23 @@ export class PickUpViewPanelControlBase extends MainControlBase {
                 if (Object.is('load', action)) {
                     this.viewdata = JSON.stringify(this.context);
                     this.viewparam = JSON.stringify(Object.assign(data, this.viewparams));
+                    this.handleLoad();
                     this.inited = true;
                 }
             });
+        }
+    }
+
+    public handleLoad() {
+        if (!this.inited || this.viewMode == 0) {
+            return;
+        }
+        const viewname = this.controlInstance.getEmbeddedPSAppDEView()?.name;
+        if (viewname && this.viewMode == 1) {
+            const viewDom: any = (this.$refs[viewname] as any)?.$children[0];
+            if (viewDom && viewDom.engine) {
+                viewDom.engine.load();
+            }
         }
     }
 
@@ -193,8 +218,9 @@ export class PickUpViewPanelControlBase extends MainControlBase {
      * @memberof PickUpViewPanelControlBase
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        this.isShowButton = this.staticProps?.isShowButton;
-        this.isSingleSelect = this.staticProps?.isSingleSelect;
+        this.isShowButton = newVal.isShowButton;
+        this.isSingleSelect = newVal.isSingleSelect;
+        this.viewMode = newVal.viewMode || 0;
         super.onStaticPropsChange(newVal, oldVal)
     }
 

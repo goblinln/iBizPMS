@@ -41,7 +41,6 @@ export class MPickupView2Engine extends ViewEngine {
      * @memberof MPickupView2Engine
      */
     public init(options: any): void {
-        this.pickupViewPanel = options.pickupViewPanel;
         this.treeExpBar = options.treeExpBar;
         if (options.view.viewdata) {
             const isStr: boolean = typeof options.view.viewdata == 'string';
@@ -63,10 +62,6 @@ export class MPickupView2Engine extends ViewEngine {
      */
     public load(): void {
         super.load();
-        if (this.getPickupViewPanel()) {
-            const tag = this.getPickupViewPanel().name;
-            this.setViewState2({ tag: tag, action: 'load', viewdata: this.view.viewparams });
-        }
         if (this.getTreeExpBar()) {
             const tag = this.getTreeExpBar().name;
             this.setViewState2({ tag: tag, action: 'load', viewdata: this.view.viewparams });

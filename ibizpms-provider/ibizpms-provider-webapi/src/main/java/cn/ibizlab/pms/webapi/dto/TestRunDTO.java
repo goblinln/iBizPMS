@@ -43,7 +43,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [LASTRUNRESULT]
      *
@@ -53,7 +52,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("结果")
     private String lastrunresult;
-
     /**
      * 属性 [VERSION]
      *
@@ -62,7 +60,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
     private Integer version;
-
     /**
      * 属性 [TESTRUNSN]
      *
@@ -72,7 +69,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("测试运行编号")
     private Long testrunsn;
-
     /**
      * 属性 [LASTRUNDATE]
      *
@@ -82,7 +78,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @JsonProperty("lastrundate")
     @ApiModelProperty("最后执行时间")
     private Timestamp lastrundate;
-
     /**
      * 属性 [ORG]
      *
@@ -92,7 +87,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -102,7 +96,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [ASSIGNEDTO]
      *
@@ -112,7 +105,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("指派给")
     private String assignedto;
-
     /**
      * 属性 [DEPT]
      *
@@ -122,7 +114,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [LASTRUNNER]
      *
@@ -132,7 +123,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("最后执行人")
     private String lastrunner;
-
     /**
      * 属性 [STATUS]
      *
@@ -142,7 +132,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("当前状态")
     private String status;
-
     /**
      * 属性 [ID]
      *
@@ -152,7 +141,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -162,7 +150,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -172,7 +159,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [CASE]
      *
@@ -182,7 +168,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("测试用例")
     private Long ibizcase;
-
     /**
      * 属性 [TASK]
      *
@@ -192,7 +177,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("测试单")
     private Long task;
-
 
     /**
      * 设置 [LASTRUNRESULT]

@@ -42,7 +42,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("passcase")
     @ApiModelProperty("通过用例数")
     private Integer passcase;
-
     /**
      * 属性 [BLOCKEDCASE]
      *
@@ -51,7 +50,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("blockedcase")
     @ApiModelProperty("阻塞用例数")
     private Integer blockedcase;
-
     /**
      * 属性 [TOTALRUNCASE]
      *
@@ -60,7 +58,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("totalruncase")
     @ApiModelProperty("总执行数")
     private Integer totalruncase;
-
     /**
      * 属性 [FAILCASE]
      *
@@ -69,7 +66,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("failcase")
     @ApiModelProperty("失败用例数")
     private Integer failcase;
-
     /**
      * 属性 [TITLE]
      *
@@ -79,7 +75,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用例标题")
     private String title;
-
     /**
      * 属性 [TOTALCASE]
      *
@@ -88,7 +83,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonProperty("totalcase")
     @ApiModelProperty("总用例数")
     private Integer totalcase;
-
     /**
      * 属性 [PASSRATE]
      *
@@ -98,7 +92,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("用例通过率")
     private String passrate;
-
     /**
      * 属性 [ID]
      *
@@ -108,7 +101,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例编号")
     private Long id;
-
     /**
      * 属性 [MODULENAME]
      *
@@ -118,7 +110,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("模块名称")
     private String modulename;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -128,7 +119,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品")
     private Long product;
-
     /**
      * 属性 [MODULE]
      *
@@ -138,7 +128,6 @@ public class CaseStatsDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("模块")
     private Long module;
-
 
     /**
      * 设置 [TITLE]

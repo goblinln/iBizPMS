@@ -43,7 +43,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("admins")
     private String admins;
-
     /**
      * 属性 [FAX]
      *
@@ -53,7 +52,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("传真")
     private String fax;
-
     /**
      * 属性 [DELETED]
      *
@@ -63,7 +61,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("逻辑删除标志")
     private String deleted;
-
     /**
      * 属性 [COMPANYSN]
      *
@@ -73,7 +70,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("公司编号")
     private Long companysn;
-
     /**
      * 属性 [WEBSITE]
      *
@@ -83,7 +79,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 120, message = "内容长度必须小于等于[120]")
     @ApiModelProperty("官网")
     private String website;
-
     /**
      * 属性 [ID]
      *
@@ -93,7 +88,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
     /**
      * 属性 [ZIPCODE]
      *
@@ -103,7 +97,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("邮政编码")
     private String zipcode;
-
     /**
      * 属性 [ADDRESS]
      *
@@ -113,7 +106,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 120, message = "内容长度必须小于等于[120]")
     @ApiModelProperty("通讯地址")
     private String address;
-
     /**
      * 属性 [BACKYARD]
      *
@@ -123,7 +115,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 120, message = "内容长度必须小于等于[120]")
     @ApiModelProperty("内网")
     private String backyard;
-
     /**
      * 属性 [NAME]
      *
@@ -134,7 +125,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 120, message = "内容长度必须小于等于[120]")
     @ApiModelProperty("公司名称")
     private String name;
-
     /**
      * 属性 [GUEST]
      *
@@ -144,7 +134,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("匿名登陆")
     private String guest;
-
     /**
      * 属性 [PHONE]
      *
@@ -154,7 +143,6 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("联系电话")
     private String phone;
-
 
     /**
      * 设置 [ADMINS]

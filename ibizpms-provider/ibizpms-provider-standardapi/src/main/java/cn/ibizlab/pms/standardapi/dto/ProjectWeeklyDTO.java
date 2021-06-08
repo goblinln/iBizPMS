@@ -43,7 +43,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -53,7 +52,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [YEAR]
      *
@@ -63,7 +61,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("年")
     private String year;
-
     /**
      * 属性 [ENDDATESTATS]
      *
@@ -73,7 +70,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("结束统计")
     private String enddatestats;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -83,7 +79,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [TASKS]
      *
@@ -93,7 +88,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 2000, message = "内容长度必须小于等于[2000]")
     @ApiModelProperty("任务")
     private String tasks;
-
     /**
      * 属性 [IBZPRO_PROJECTWEEKLYNAME]
      *
@@ -103,7 +97,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("项目周报名称")
     private String projectweeklyname;
-
     /**
      * 属性 [WEEK]
      *
@@ -113,7 +106,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("周")
     private String week;
-
     /**
      * 属性 [IBZPRO_PROJECTWEEKLYID]
      *
@@ -123,7 +115,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目周报标识")
     private String projectweeklyid;
-
     /**
      * 属性 [PM]
      *
@@ -133,7 +124,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目负责人")
     private String pm;
-
     /**
      * 属性 [DATE]
      *
@@ -143,7 +133,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("日期")
     private Timestamp date;
-
     /**
      * 属性 [TOTALESTIMATES]
      *
@@ -152,7 +141,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("totalestimates")
     @ApiModelProperty("总工时")
     private Double totalestimates;
-
     /**
      * 属性 [BEGINDATESTATS]
      *
@@ -162,7 +150,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("开始统计")
     private String begindatestats;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -172,7 +159,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [MONTH]
      *
@@ -182,7 +168,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("月")
     private String month;
-
     /**
      * 属性 [PROJECTNAME]
      *
@@ -192,7 +177,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("项目名称")
     private String projectname;
-
     /**
      * 属性 [PROJECT]
      *
@@ -202,7 +186,6 @@ public class ProjectWeeklyDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目编号")
     private Long project;
-
 
     /**
      * 设置 [YEAR]

@@ -43,7 +43,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -53,7 +52,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -63,7 +61,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -73,7 +70,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [SYS_UPDATE_LOGID]
      *
@@ -83,7 +79,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("系统更新日志标识")
     private String sysupdatelogid;
-
     /**
      * 属性 [UPDATEBRANCH]
      *
@@ -93,6 +88,14 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新平台")
     private String updatebranch;
+        
+    /**
+     * 更新功能列表详情
+     */
+    @JSONField(name = "updatefeatures")
+    @JsonProperty("updatefeatures")
+    @ApiModelProperty("更新功能列表详情")
+    private List<cn.ibizlab.pms.webapi.dto.SysUpdateFeaturesDTO> updatefeatures;   
 
     /**
      * 属性 [UPDESC]
@@ -103,7 +106,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("更新说明")
     private String updesc;
-
     /**
      * 属性 [SYS_UPDATE_LOGNAME]
      *
@@ -113,7 +115,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("更新名称")
     private String sysupdatelogname;
-
     /**
      * 属性 [LATESTUPDATE]
      *
@@ -122,7 +123,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @JsonProperty("latestupdate")
     @ApiModelProperty("最新更新")
     private Integer latestupdate;
-
     /**
      * 属性 [UPDATE]
      *
@@ -132,7 +132,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @JsonProperty("update")
     @ApiModelProperty("更新日期")
     private Timestamp update;
-
 
     /**
      * 设置 [UPDATEBRANCH]

@@ -43,7 +43,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("lastediteddate")
     @ApiModelProperty("修改日期")
     private Timestamp lastediteddate;
-
     /**
      * 属性 [SCRIPTEDDATE]
      *
@@ -53,7 +52,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("scripteddate")
     @ApiModelProperty("scriptedDate")
     private Timestamp scripteddate;
-
     /**
      * 属性 [COLOR]
      *
@@ -63,7 +61,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
     @ApiModelProperty("标题颜色")
     private String color;
-
     /**
      * 属性 [PATH]
      *
@@ -72,7 +69,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("path")
     @ApiModelProperty("path")
     private Integer path;
-
     /**
      * 属性 [OPENEDDATE]
      *
@@ -82,7 +78,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("openeddate")
     @ApiModelProperty("创建日期")
     private Timestamp openeddate;
-
     /**
      * 属性 [CASESN]
      *
@@ -92,7 +87,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("测试用例编号")
     private Long casesn;
-
     /**
      * 属性 [LASTRUNRESULT]
      *
@@ -102,7 +96,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("结果")
     private String lastrunresult;
-
     /**
      * 属性 [MODULENAME1]
      *
@@ -112,7 +105,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("模块名称")
     private String modulename1;
-
     /**
      * 属性 [LINKCASE]
      *
@@ -122,6 +114,14 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("相关用例")
     private String linkcase;
+        
+    /**
+     * 用例步骤集合
+     */
+    @JSONField(name = "casesteps")
+    @JsonProperty("casesteps")
+    @ApiModelProperty("用例步骤集合")
+    private List<cn.ibizlab.pms.standardapi.dto.CaseStepDTO> casesteps;   
 
     /**
      * 属性 [TASK]
@@ -132,7 +132,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("属性")
     private String task;
-
     /**
      * 属性 [ORDER]
      *
@@ -141,7 +140,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -151,7 +149,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [HOWRUN]
      *
@@ -161,7 +158,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("howRun")
     private String howrun;
-
     /**
      * 属性 [RESULTCNT]
      *
@@ -170,7 +166,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("resultcnt")
     @ApiModelProperty("测试结果数")
     private Integer resultcnt;
-
     /**
      * 属性 [NOTICEUSERS]
      *
@@ -180,7 +175,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
-
     /**
      * 属性 [FROMCASEVERSION]
      *
@@ -189,7 +183,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("fromcaseversion")
     @ApiModelProperty("来源用例版本")
     private Integer fromcaseversion;
-
     /**
      * 属性 [VERSION]
      *
@@ -198,7 +191,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("version")
     @ApiModelProperty("用例版本")
     private Integer version;
-
     /**
      * 属性 [SCRIPTEDBY]
      *
@@ -208,7 +200,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("scriptedBy")
     private String scriptedby;
-
     /**
      * 属性 [OPENEDBY]
      *
@@ -218,7 +209,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁创建")
     private String openedby;
-
     /**
      * 属性 [TYPE]
      *
@@ -228,7 +218,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("用例类型")
     private String type;
-
     /**
      * 属性 [RESULTFALICNT]
      *
@@ -237,7 +226,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("resultfalicnt")
     @ApiModelProperty("测试失败数")
     private Integer resultfalicnt;
-
     /**
      * 属性 [STATUS]
      *
@@ -247,7 +235,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("用例状态")
     private String status;
-
     /**
      * 属性 [COMMENT]
      *
@@ -257,7 +244,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("备注")
     private String comment;
-
     /**
      * 属性 [AUTO]
      *
@@ -267,7 +253,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("auto")
     private String auto;
-
     /**
      * 属性 [ISFAVORITES]
      *
@@ -277,7 +262,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("是否收藏")
     private String isfavorites;
-
     /**
      * 属性 [DEPTNAME]
      *
@@ -287,7 +271,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
-
     /**
      * 属性 [DEPT]
      *
@@ -297,7 +280,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
     /**
      * 属性 [FREQUENCY]
      *
@@ -307,7 +289,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("frequency")
     private String frequency;
-
     /**
      * 属性 [TITLE]
      *
@@ -318,7 +299,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("用例标题")
     private String title;
-
     /**
      * 属性 [LASTEDITEDBY]
      *
@@ -328,7 +308,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("最后修改者")
     private String lasteditedby;
-
     /**
      * 属性 [ORG]
      *
@@ -338,7 +317,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织")
     private String org;
-
     /**
      * 属性 [REVIEWEDBY]
      *
@@ -348,7 +326,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("由谁评审")
     private String reviewedby;
-
     /**
      * 属性 [FILES]
      *
@@ -358,7 +335,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1000, message = "内容长度必须小于等于[1000]")
     @ApiModelProperty("附件")
     private String files;
-
     /**
      * 属性 [TOBUGCNT]
      *
@@ -367,7 +343,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("tobugcnt")
     @ApiModelProperty("转bug数")
     private Integer tobugcnt;
-
     /**
      * 属性 [ASSIGNEDTO]
      *
@@ -377,7 +352,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("指派给")
     private String assignedto;
-
     /**
      * 属性 [DELETED]
      *
@@ -387,7 +361,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [STORYVERSION]
      *
@@ -396,7 +369,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("storyversion")
     @ApiModelProperty("需求版本")
     private Integer storyversion;
-
     /**
      * 属性 [REVIEWEDDATE]
      *
@@ -406,7 +378,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("revieweddate")
     @ApiModelProperty("评审时间")
     private Timestamp revieweddate;
-
     /**
      * 属性 [PRI]
      *
@@ -415,7 +386,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("pri")
     @ApiModelProperty("优先级")
     private Integer pri;
-
     /**
      * 属性 [STAGE]
      *
@@ -425,7 +395,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("适用阶段")
     private String stage;
-
     /**
      * 属性 [SCRIPTLOCATION]
      *
@@ -435,7 +404,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("scriptLocation")
     private String scriptlocation;
-
     /**
      * 属性 [STATUS1]
      *
@@ -445,7 +413,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("用例状态")
     private String status1;
-
     /**
      * 属性 [LASTRUNDATE]
      *
@@ -455,7 +422,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("lastrundate")
     @ApiModelProperty("执行时间")
     private Timestamp lastrundate;
-
     /**
      * 属性 [KEYWORDS]
      *
@@ -465,7 +431,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("关键词")
     private String keywords;
-
     /**
      * 属性 [SCRIPTSTATUS]
      *
@@ -475,7 +440,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("scriptStatus")
     private String scriptstatus;
-
     /**
      * 属性 [FRAME]
      *
@@ -485,7 +449,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("工具/框架")
     private String frame;
-
     /**
      * 属性 [LASTRUNRESULT1]
      *
@@ -495,7 +458,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("测试用例结果")
     private String lastrunresult1;
-
     /**
      * 属性 [STEPCNT]
      *
@@ -504,7 +466,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonProperty("stepcnt")
     @ApiModelProperty("用例步骤数")
     private Integer stepcnt;
-
     /**
      * 属性 [SUBSTATUS]
      *
@@ -514,7 +475,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("子状态")
     private String substatus;
-
     /**
      * 属性 [ID]
      *
@@ -524,7 +484,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("用例编号")
     private Long id;
-
     /**
      * 属性 [PRECONDITION]
      *
@@ -534,7 +493,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("前置条件")
     private String precondition;
-
     /**
      * 属性 [LASTRUNNER]
      *
@@ -544,7 +502,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("执行人")
     private String lastrunner;
-
     /**
      * 属性 [LIBNAME]
      *
@@ -554,7 +511,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("用例库")
     private String libname;
-
     /**
      * 属性 [STORYNAME]
      *
@@ -564,7 +520,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("需求名称")
     private String storyname;
-
     /**
      * 属性 [MODULENAME]
      *
@@ -574,7 +529,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("模块名称")
     private String modulename;
-
     /**
      * 属性 [PRODUCTNAME]
      *
@@ -584,7 +538,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("产品名称")
     private String productname;
-
     /**
      * 属性 [FROMCASEID]
      *
@@ -594,7 +547,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("来源用例")
     private Long fromcaseid;
-
     /**
      * 属性 [BRANCH]
      *
@@ -604,7 +556,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("平台/分支")
     private Long branch;
-
     /**
      * 属性 [FROMBUG]
      *
@@ -614,7 +565,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("来源Bug")
     private Long frombug;
-
     /**
      * 属性 [STORY]
      *
@@ -624,7 +574,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("相关需求")
     private Long story;
-
     /**
      * 属性 [PRODUCT]
      *
@@ -634,7 +583,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属产品")
     private Long product;
-
     /**
      * 属性 [LIB]
      *
@@ -644,7 +592,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属库")
     private Long lib;
-
     /**
      * 属性 [MODULE]
      *
@@ -654,7 +601,6 @@ public class AccountTestCaseDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("所属模块")
     private Long module;
-
 
     /**
      * 设置 [SCRIPTEDDATE]

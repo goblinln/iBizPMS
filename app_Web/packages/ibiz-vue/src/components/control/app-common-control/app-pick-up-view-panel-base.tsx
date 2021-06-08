@@ -117,6 +117,7 @@ export class AppPickUpViewPanelBase extends PickUpViewPanelControlBase {
             <div class={{ ...this.renderOptions?.controlClassNames, 'pickupviewpanel': true}}>
                 {
                     this.$createElement(this.view.viewName, {
+                        ref: this.controlInstance.getEmbeddedPSAppDEView()?.name,
                         props: targetViewParam,
                         on: targetViewEvent,
                         class: 'viewcontainer3'

@@ -43,7 +43,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -53,7 +52,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [OBJECTORDER]
      *
@@ -62,7 +60,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @JsonProperty("objectorder")
     @ApiModelProperty("排序")
     private Integer objectorder;
-
     /**
      * 属性 [IBZ_TOPID]
      *
@@ -72,7 +69,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("标识")
     private String ibztopid;
-
     /**
      * 属性 [OBJECTID]
      *
@@ -81,7 +77,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @JsonProperty("objectid")
     @ApiModelProperty("数据对象标识")
     private Integer objectid;
-
     /**
      * 属性 [IBZ_TOPNAME]
      *
@@ -91,7 +86,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("置顶名称")
     private String ibztopname;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -101,7 +95,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -111,7 +104,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -121,7 +113,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("置顶用户")
     private String account;
-
     /**
      * 属性 [TYPE]
      *
@@ -131,7 +122,6 @@ public class IbzTopDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("类型")
     private String type;
-
 
     /**
      * 设置 [OBJECTORDER]

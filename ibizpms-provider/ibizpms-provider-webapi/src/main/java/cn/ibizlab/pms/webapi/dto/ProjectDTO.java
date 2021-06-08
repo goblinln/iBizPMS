@@ -43,7 +43,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("当前系统版本")
     private String openedversion;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -53,7 +52,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [BEGIN]
      *
@@ -64,7 +62,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @NotNull(message = "[开始时间]不允许为空!")
     @ApiModelProperty("开始时间")
     private Timestamp begin;
-
     /**
      * 属性 [HOURS]
      *
@@ -73,7 +70,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("hours")
     @ApiModelProperty("可用工时/天")
     private BigDecimal hours;
-
     /**
      * 属性 [PMSEEPROJECTINFO]
      *
@@ -83,7 +79,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("项目立项信息")
     private String pmseeprojectinfo;
-
     /**
      * 属性 [ACL]
      *
@@ -93,7 +88,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
     @ApiModelProperty("访问控制")
     private String acl;
-
     /**
      * 属性 [DELETED]
      *
@@ -103,7 +97,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [TOTALCONSUMED]
      *
@@ -112,7 +105,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("totalconsumed")
     @ApiModelProperty("任务消耗总工时")
     private Double totalconsumed;
-
     /**
      * 属性 [PRODUCTS]
      *
@@ -122,7 +114,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("关联产品")
     private String products;
-
     /**
      * 属性 [YCOMPLETETASKCNT]
      *
@@ -131,7 +122,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("ycompletetaskcnt")
     @ApiModelProperty("已完成任务数")
     private Integer ycompletetaskcnt;
-
     /**
      * 属性 [PLANS]
      *
@@ -141,7 +131,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("关联计划")
     private String plans;
-
     /**
      * 属性 [DESC]
      *
@@ -151,7 +140,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("项目描述")
     private String desc;
-
     /**
      * 属性 [TEMPTASKCNT]
      *
@@ -160,7 +148,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("temptaskcnt")
     @ApiModelProperty("临时任务数")
     private Integer temptaskcnt;
-
     /**
      * 属性 [DOCLIBCNT]
      *
@@ -169,7 +156,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("doclibcnt")
     @ApiModelProperty("文档数量")
     private Integer doclibcnt;
-
     /**
      * 属性 [MYCOMPLETETASKCNT]
      *
@@ -178,7 +164,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("mycompletetaskcnt")
     @ApiModelProperty("我完成任务数")
     private Integer mycompletetaskcnt;
-
     /**
      * 属性 [ISTOP]
      *
@@ -187,7 +172,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("istop")
     @ApiModelProperty("是否置顶")
     private Integer istop;
-
     /**
      * 属性 [UNCOMPLETETASKCNT]
      *
@@ -196,7 +180,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("uncompletetaskcnt")
     @ApiModelProperty("未完成任务数")
     private Integer uncompletetaskcnt;
-
     /**
      * 属性 [MDEPTNAME]
      *
@@ -206,7 +189,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String mdeptname;
-
     /**
      * 属性 [TEAMCNT]
      *
@@ -215,7 +197,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("teamcnt")
     @ApiModelProperty("团队成员总数")
     private Integer teamcnt;
-
     /**
      * 属性 [PM]
      *
@@ -225,7 +206,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("项目负责人")
     private String pm;
-
     /**
      * 属性 [DEPT]
      *
@@ -235,7 +215,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("选择部门")
     private String dept;
-
     /**
      * 属性 [ID]
      *
@@ -245,7 +224,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目编号")
     private Long id;
-
     /**
      * 属性 [NAME]
      *
@@ -256,7 +234,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("项目名称")
     private String name;
-
     /**
      * 属性 [SUBSTATUS]
      *
@@ -266,7 +243,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("子状态")
     private String substatus;
-
     /**
      * 属性 [ROLE]
      *
@@ -276,7 +252,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("角色")
     private String role;
-
     /**
      * 属性 [ORDER]
      *
@@ -285,7 +260,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("项目排序")
     private Integer order;
-
     /**
      * 属性 [BUGCNT]
      *
@@ -294,7 +268,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("bugcnt")
     @ApiModelProperty("Bug总数")
     private Integer bugcnt;
-
     /**
      * 属性 [RD]
      *
@@ -304,7 +277,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("发布负责人")
     private String rd;
-
     /**
      * 属性 [MANAGEMEMBERS]
      *
@@ -314,7 +286,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("复制团队")
     private String managemembers;
-
     /**
      * 属性 [YSTARTASKCNT]
      *
@@ -323,7 +294,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("ystarttaskcnt")
     @ApiModelProperty("进行中任务数")
     private Integer ystarttaskcnt;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -333,7 +303,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [WHITELIST]
      *
@@ -343,7 +312,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("分组白名单")
     private String whitelist;
-
     /**
      * 属性 [MOBIMAGE]
      *
@@ -353,7 +321,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 4000, message = "内容长度必须小于等于[4000]")
     @ApiModelProperty("移动端图片")
     private String mobimage;
-
     /**
      * 属性 [TOTALWH]
      *
@@ -362,6 +329,14 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("totalwh")
     @ApiModelProperty("总工时")
     private Integer totalwh;
+        
+    /**
+     * 项目团队成员
+     */
+    @JSONField(name = "projectteams")
+    @JsonProperty("projectteams")
+    @ApiModelProperty("项目团队成员")
+    private List<cn.ibizlab.pms.webapi.dto.ProjectTeamDTO> projectteams;   
 
     /**
      * 属性 [TOTALHOURS]
@@ -371,7 +346,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("totalhours")
     @ApiModelProperty("可用工时")
     private BigDecimal totalhours;
-
     /**
      * 属性 [PRI]
      *
@@ -381,7 +355,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("优先级")
     private String pri;
-
     /**
      * 属性 [END]
      *
@@ -392,7 +365,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @NotNull(message = "[结束日期]不允许为空!")
     @ApiModelProperty("结束日期")
     private Timestamp end;
-
     /**
      * 属性 [CANCELEDDATE]
      *
@@ -402,7 +374,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("canceleddate")
     @ApiModelProperty("取消日期")
     private Timestamp canceleddate;
-
     /**
      * 属性 [PLANTASKCNT]
      *
@@ -411,7 +382,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("plantaskcnt")
     @ApiModelProperty("计划任务数")
     private Integer plantaskcnt;
-
     /**
      * 属性 [JOIN]
      *
@@ -421,7 +391,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("join")
     @ApiModelProperty("加盟日")
     private Timestamp join;
-
     /**
      * 属性 [TOTALESTIMATE]
      *
@@ -430,7 +399,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("totalestimate")
     @ApiModelProperty("任务最初预计总工时")
     private Double totalestimate;
-
     /**
      * 属性 [MDEPTID]
      *
@@ -440,7 +408,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("部门标识")
     private String mdeptid;
-
     /**
      * 属性 [TOTALLEFT]
      *
@@ -449,7 +416,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("totalleft")
     @ApiModelProperty("任务预计剩余总工时")
     private Double totalleft;
-
     /**
      * 属性 [SRFARRAY]
      *
@@ -459,7 +425,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("关联数据数组")
     private String srfarray;
-
     /**
      * 属性 [CODE]
      *
@@ -469,7 +434,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 45, message = "内容长度必须小于等于[45]")
     @ApiModelProperty("项目代号")
     private String code;
-
     /**
      * 属性 [PERIOD]
      *
@@ -479,7 +443,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("时间段")
     private String period;
-
     /**
      * 属性 [CLOSETASKCNT]
      *
@@ -488,7 +451,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("closetaskcnt")
     @ApiModelProperty("关闭任务数")
     private Integer closetaskcnt;
-
     /**
      * 属性 [BRANCHS]
      *
@@ -498,7 +460,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("关联产品平台集合")
     private String branchs;
-
     /**
      * 属性 [CATID]
      *
@@ -507,7 +468,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("catid")
     @ApiModelProperty("catID")
     private Integer catid;
-
     /**
      * 属性 [ORGID]
      *
@@ -517,7 +477,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("组织标识")
     private String orgid;
-
     /**
      * 属性 [UNSTARTTASKCNT]
      *
@@ -526,7 +485,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("unstarttaskcnt")
     @ApiModelProperty("未开始任务数")
     private Integer unstarttaskcnt;
-
     /**
      * 属性 [ACCOUNTS]
      *
@@ -536,7 +494,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("项目团队相关成员")
     private String accounts;
-
     /**
      * 属性 [NOTICEUSERS]
      *
@@ -546,7 +503,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
-
     /**
      * 属性 [PROJECTSN]
      *
@@ -556,7 +512,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目编号")
     private Long projectsn;
-
     /**
      * 属性 [STATGE]
      *
@@ -566,7 +521,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("statge")
     private String statge;
-
     /**
      * 属性 [CANCELTASKCNT]
      *
@@ -575,7 +529,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("canceltaskcnt")
     @ApiModelProperty("取消任务数")
     private Integer canceltaskcnt;
-
     /**
      * 属性 [TASKCNT]
      *
@@ -584,7 +537,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("taskcnt")
     @ApiModelProperty("任务总数")
     private Integer taskcnt;
-
     /**
      * 属性 [ALLTASKCNT]
      *
@@ -593,7 +545,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("alltaskcnt")
     @ApiModelProperty("所有任务数")
     private Integer alltaskcnt;
-
     /**
      * 属性 [SUPPROREPORT]
      *
@@ -603,7 +554,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("支持项目汇报")
     private String supproreport;
-
     /**
      * 属性 [CANCELEDBY]
      *
@@ -613,7 +563,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁取消")
     private String canceledby;
-
     /**
      * 属性 [ISCAT]
      *
@@ -623,7 +572,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("isCat")
     private String iscat;
-
     /**
      * 属性 [OPENEDDATE]
      *
@@ -633,7 +581,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("openeddate")
     @ApiModelProperty("创建日期")
     private Timestamp openeddate;
-
     /**
      * 属性 [UNCLOSETASKCNT]
      *
@@ -642,7 +589,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("unclosetaskcnt")
     @ApiModelProperty("未关闭任务数")
     private Integer unclosetaskcnt;
-
     /**
      * 属性 [STORYCHANGECNT]
      *
@@ -651,7 +597,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("storychangecnt")
     @ApiModelProperty("需求变更数")
     private Integer storychangecnt;
-
     /**
      * 属性 [CLOSEDBY]
      *
@@ -661,7 +606,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁关闭")
     private String closedby;
-
     /**
      * 属性 [TYPE]
      *
@@ -671,7 +615,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 20, message = "内容长度必须小于等于[20]")
     @ApiModelProperty("项目类型")
     private String type;
-
     /**
      * 属性 [BUILDCNT]
      *
@@ -680,7 +623,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("buildcnt")
     @ApiModelProperty("版本总数")
     private Integer buildcnt;
-
     /**
      * 属性 [ACCOUNT]
      *
@@ -690,7 +632,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("项目团队成员")
     private String account;
-
     /**
      * 属性 [PO]
      *
@@ -700,7 +641,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("产品负责人")
     private String po;
-
     /**
      * 属性 [ASSTOMYTASKCNT]
      *
@@ -709,7 +649,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("asstomytaskcnt")
     @ApiModelProperty("指派给我任务数")
     private Integer asstomytaskcnt;
-
     /**
      * 属性 [ORDER1]
      *
@@ -718,7 +657,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("order1")
     @ApiModelProperty("项目排序")
     private Integer order1;
-
     /**
      * 属性 [STATUS]
      *
@@ -728,7 +666,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 10, message = "内容长度必须小于等于[10]")
     @ApiModelProperty("项目状态")
     private String status;
-
     /**
      * 属性 [MORETASKCNT]
      *
@@ -737,7 +674,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("moretaskcnt")
     @ApiModelProperty("更多任务数")
     private Integer moretaskcnt;
-
     /**
      * 属性 [DAYS]
      *
@@ -746,7 +682,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("days")
     @ApiModelProperty("可用工作日")
     private Integer days;
-
     /**
      * 属性 [CYCLETASKCNT]
      *
@@ -755,7 +690,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("cycletaskcnt")
     @ApiModelProperty("周期任务数")
     private Integer cycletaskcnt;
-
     /**
      * 属性 [TEAM]
      *
@@ -765,7 +699,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("团队名称")
     private String team;
-
     /**
      * 属性 [CLOSEDDATE]
      *
@@ -775,7 +708,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("closeddate")
     @ApiModelProperty("关闭日期")
     private Timestamp closeddate;
-
     /**
      * 属性 [COMMENT]
      *
@@ -785,7 +717,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("备注")
     private String comment;
-
     /**
      * 属性 [OPENEDBY]
      *
@@ -795,7 +726,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁创建")
     private String openedby;
-
     /**
      * 属性 [STORYCNT]
      *
@@ -804,7 +734,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("storycnt")
     @ApiModelProperty("需求总数")
     private Integer storycnt;
-
     /**
      * 属性 [QD]
      *
@@ -814,7 +743,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("测试负责人")
     private String qd;
-
     /**
      * 属性 [PARENTNAME]
      *
@@ -824,7 +752,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 90, message = "内容长度必须小于等于[90]")
     @ApiModelProperty("parent")
     private String parentname;
-
     /**
      * 属性 [PARENT]
      *
@@ -834,7 +761,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("父项目")
     private Long parent;
-
 
     /**
      * 设置 [OPENEDVERSION]

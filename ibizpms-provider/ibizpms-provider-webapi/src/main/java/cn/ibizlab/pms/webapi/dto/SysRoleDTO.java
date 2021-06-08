@@ -43,7 +43,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("角色标识")
     private String roleid;
-
     /**
      * 属性 [SYS_ROLENAME]
      *
@@ -53,7 +52,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("角色名称")
     private String rolename;
-
     /**
      * 属性 [MEMO]
      *
@@ -63,7 +61,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("备注")
     private String memo;
-
     /**
      * 属性 [PROLEID]
      *
@@ -73,7 +70,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("父角色标识")
     private String proleid;
-
     /**
      * 属性 [PROLENAME]
      *
@@ -83,7 +79,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("父角色名称")
     private String prolename;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -93,7 +88,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -103,7 +97,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -113,7 +106,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -123,7 +115,6 @@ public class SysRoleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
 
     /**
      * 设置 [SYS_ROLENAME]

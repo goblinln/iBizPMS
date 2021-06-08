@@ -43,7 +43,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 8, message = "内容长度必须小于等于[8]")
     @ApiModelProperty("所属根")
     private String root;
-
     /**
      * 属性 [ORGNAME]
      *
@@ -53,7 +52,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-
     /**
      * 属性 [GRADE]
      *
@@ -62,7 +60,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @JsonProperty("grade")
     @ApiModelProperty("级别")
     private Integer grade;
-
     /**
      * 属性 [TYPE]
      *
@@ -72,7 +69,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [NAME]
      *
@@ -83,7 +79,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("模块名称")
     private String name;
-
     /**
      * 属性 [ORDER]
      *
@@ -92,7 +87,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
-
     /**
      * 属性 [OWNER]
      *
@@ -102,7 +96,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("负责人")
     private String owner;
-
     /**
      * 属性 [ID]
      *
@@ -112,7 +105,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("id")
     private Long id;
-
     /**
      * 属性 [ORDERPK]
      *
@@ -122,7 +114,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("数据选择排序")
     private String orderpk;
-
     /**
      * 属性 [CREATEBY]
      *
@@ -132,7 +123,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁创建")
     private String createby;
-
     /**
      * 属性 [MODULESN]
      *
@@ -142,7 +132,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("模块编号")
     private Long modulesn;
-
     /**
      * 属性 [MDEPTNAME]
      *
@@ -152,7 +141,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String mdeptname;
-
     /**
      * 属性 [COLLECTOR]
      *
@@ -162,7 +150,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("收藏者")
     private String collector;
-
     /**
      * 属性 [UPDATEBY]
      *
@@ -172,7 +159,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("由谁更新")
     private String updateby;
-
     /**
      * 属性 [SHORT]
      *
@@ -182,7 +168,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("简称")
     private String ibizshort;
-
     /**
      * 属性 [PATH]
      *
@@ -192,7 +177,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("路径")
     private String path;
-
     /**
      * 属性 [MDEPTID]
      *
@@ -202,7 +186,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("部门标识")
     private String mdeptid;
-
     /**
      * 属性 [ORGID]
      *
@@ -212,7 +195,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("组织标识")
     private String orgid;
-
     /**
      * 属性 [DELETED]
      *
@@ -222,7 +204,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
     @ApiModelProperty("已删除")
     private String deleted;
-
     /**
      * 属性 [PARENTNAME]
      *
@@ -232,7 +213,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("上级模块")
     private String parentname;
-
     /**
      * 属性 [BRANCH]
      *
@@ -242,7 +222,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("平台/分支")
     private Long branch;
-
     /**
      * 属性 [PARENT]
      *
@@ -252,7 +231,6 @@ public class ModuleDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("上级模块")
     private Long parent;
-
 
     /**
      * 设置 [ROOT]

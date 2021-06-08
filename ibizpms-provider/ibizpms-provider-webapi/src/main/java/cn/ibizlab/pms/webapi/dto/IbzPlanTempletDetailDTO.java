@@ -43,7 +43,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("类型")
     private String type;
-
     /**
      * 属性 [PLANCODE]
      *
@@ -53,7 +52,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("计划编号")
     private String plancode;
-
     /**
      * 属性 [DESC]
      *
@@ -63,7 +61,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("计划名称")
     private String desc;
-
     /**
      * 属性 [ORDER]
      *
@@ -72,7 +69,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @JsonProperty("order")
     @ApiModelProperty("排序")
     private Integer order;
-
     /**
      * 属性 [IBZ_PLANTEMPLETDETAILID]
      *
@@ -82,7 +78,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("计划模板详情标识")
     private String ibzplantempletdetailid;
-
     /**
      * 属性 [IBZ_PLANTEMPLETDETAILNAME]
      *
@@ -92,7 +87,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
     @ApiModelProperty("计划模板详情名称")
     private String ibzplantempletdetailname;
-
     /**
      * 属性 [CREATEMAN]
      *
@@ -102,7 +96,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("建立人")
     private String createman;
-
     /**
      * 属性 [CREATEDATE]
      *
@@ -112,7 +105,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 属性 [UPDATEMAN]
      *
@@ -122,7 +114,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 属性 [EXPECT]
      *
@@ -132,7 +123,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 1048576, message = "内容长度必须小于等于[1048576]")
     @ApiModelProperty("描述")
     private String expect;
-
     /**
      * 属性 [UPDATEDATE]
      *
@@ -142,7 +132,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 属性 [PLANTEMPLETID]
      *
@@ -152,7 +141,6 @@ public class IbzPlanTempletDetailDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("产品计划模板标识")
     private String plantempletid;
-
 
     /**
      * 设置 [TYPE]
