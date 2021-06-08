@@ -52,29 +52,6 @@ public class ProjectMonthlyResource {
     @Lazy
     public ProjectMonthlyMapping projectmonthlyMapping;
 
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
-    @ApiOperation(value = "新建项目月报", tags = {"项目月报" },  notes = "新建项目月报")
-	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies")
-    @Transactional
-    public ResponseEntity<ProjectMonthlyDTO> create(@Validated @RequestBody ProjectMonthlyDTO projectmonthlydto) {
-        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(projectmonthlydto);
-		ibizproprojectmonthlyService.create(domain);
-        if(!ibizproprojectmonthlyRuntime.test(domain.getIbizproprojectmonthlyid(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        ProjectMonthlyDTO dto = projectmonthlyMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(domain.getIbizproprojectmonthlyid());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
-    @ApiOperation(value = "获取项目月报草稿", tags = {"项目月报" },  notes = "获取项目月报草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/projectmonthlies/getdraft")
-    public ResponseEntity<ProjectMonthlyDTO> getDraft(ProjectMonthlyDTO dto) {
-        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(projectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
-    }
-
     @VersionCheck(entity = "ibizproprojectmonthly" , versionfield = "updatedate")
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'UPDATE')")
     @ApiOperation(value = "更新项目月报", tags = {"项目月报" },  notes = "更新项目月报")
@@ -92,6 +69,21 @@ public class ProjectMonthlyResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
+    @ApiOperation(value = "新建项目月报", tags = {"项目月报" },  notes = "新建项目月报")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies")
+    @Transactional
+    public ResponseEntity<ProjectMonthlyDTO> create(@Validated @RequestBody ProjectMonthlyDTO projectmonthlydto) {
+        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(projectmonthlydto);
+		ibizproprojectmonthlyService.create(domain);
+        if(!ibizproprojectmonthlyRuntime.test(domain.getIbizproprojectmonthlyid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        ProjectMonthlyDTO dto = projectmonthlyMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs(domain.getIbizproprojectmonthlyid());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
     @PreAuthorize("test('IBIZPRO_PROJECTMONTHLY', #projectmonthly_id, 'NONE')")
     @ApiOperation(value = "获取项目月报", tags = {"项目月报" },  notes = "获取项目月报")
@@ -130,6 +122,14 @@ public class ProjectMonthlyResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("quickTest('IBIZPRO_PROJECTMONTHLY', 'CREATE')")
+    @ApiOperation(value = "获取项目月报草稿", tags = {"项目月报" },  notes = "获取项目月报草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/projectmonthlies/getdraft")
+    public ResponseEntity<ProjectMonthlyDTO> getDraft(ProjectMonthlyDTO dto) {
+        IbizproProjectMonthly domain = projectmonthlyMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(projectmonthlyMapping.toDto(ibizproprojectmonthlyService.getDraft(domain)));
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/projectmonthlies/{projectmonthly_id}/{action}")

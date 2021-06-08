@@ -52,6 +52,22 @@ public class ProductWeeklyResource {
     @Lazy
     public ProductWeeklyMapping productweeklyMapping;
 
+    @VersionCheck(entity = "ibizproproductweekly" , versionfield = "updatedate")
+    @PreAuthorize("test('IBIZPRO_PRODUCTWEEKLY', #productweekly_id, 'NONE')")
+    @ApiOperation(value = "更新产品周报", tags = {"产品周报" },  notes = "更新产品周报")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productweeklies/{productweekly_id}")
+    @Transactional
+    public ResponseEntity<ProductWeeklyDTO> update(@PathVariable("productweekly_id") Long productweekly_id, @RequestBody ProductWeeklyDTO productweeklydto) {
+		IbizproProductWeekly domain  = productweeklyMapping.toDomain(productweeklydto);
+        domain.setIbizproProductweeklyid(productweekly_id);
+		ibizproproductweeklyService.update(domain );
+		ProductWeeklyDTO dto = productweeklyMapping.toDto(domain);
+        Map<String, Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(productweekly_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+
     @PreAuthorize("quickTest('IBIZPRO_PRODUCTWEEKLY', 'NONE')")
     @ApiOperation(value = "获取产品周报草稿", tags = {"产品周报" },  notes = "获取产品周报草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/productweeklies/getdraft")
@@ -86,22 +102,6 @@ public class ProductWeeklyResource {
         dto.setSrfopprivs(opprivs);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
-
-    @VersionCheck(entity = "ibizproproductweekly" , versionfield = "updatedate")
-    @PreAuthorize("test('IBIZPRO_PRODUCTWEEKLY', #productweekly_id, 'NONE')")
-    @ApiOperation(value = "更新产品周报", tags = {"产品周报" },  notes = "更新产品周报")
-	@RequestMapping(method = RequestMethod.PUT, value = "/productweeklies/{productweekly_id}")
-    @Transactional
-    public ResponseEntity<ProductWeeklyDTO> update(@PathVariable("productweekly_id") Long productweekly_id, @RequestBody ProductWeeklyDTO productweeklydto) {
-		IbizproProductWeekly domain  = productweeklyMapping.toDomain(productweeklydto);
-        domain.setIbizproProductweeklyid(productweekly_id);
-		ibizproproductweeklyService.update(domain );
-		ProductWeeklyDTO dto = productweeklyMapping.toDto(domain);
-        Map<String, Integer> opprivs = ibizproproductweeklyRuntime.getOPPrivs(productweekly_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
 
     @PreAuthorize("test('IBIZPRO_PRODUCTWEEKLY', #productweekly_id, 'NONE')")
     @ApiOperation(value = "获取产品周报", tags = {"产品周报" },  notes = "获取产品周报")

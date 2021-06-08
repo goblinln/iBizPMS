@@ -178,57 +178,47 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.condCache.get('view');
     }
     /**
-     * FetchByCustom
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DocLibService
      */
-    async FetchByCustom(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/fetchbycustom`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/fetchbycustom`, _data);
-        }
-        return this.http.post(`/doclibs/fetchbycustom`, _data);
-    }
-    /**
-     * FetchMyFavourites
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibService
-     */
-    async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/doclibs/fetchmyfavourites`, _data);
-        }
-        if (_context.product && true) {
-            return this.http.post(`/products/${_context.product}/doclibs/fetchmyfavourites`, _data);
-        }
-        return this.http.post(`/doclibs/fetchmyfavourites`, _data);
-    }
-    /**
-     * UnCollect
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibService
-     */
-    async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.doclib) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/uncollect`, _data);
+            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}`);
         }
         if (_context.product && _context.doclib) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/uncollect`, _data);
+            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}`);
         }
-        return this.http.post(`/doclibs/${_context.doclib}/uncollect`, _data);
+        return this.http.delete(`/doclibs/${_context.doclib}`);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/doclibs/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/doclibs/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/doclibs/getdraft`, _data);
+        return res;
     }
     /**
      * Create
@@ -323,32 +313,6 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.http.post(`/doclibs/fetchbyproduct`, _data);
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/doclibs/getdraft`, _data);
-            return res;
-        }
-        if (_context.product && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/products/${_context.product}/doclibs/getdraft`, _data);
-            return res;
-        }
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/doclibs/getdraft`, _data);
-        return res;
-    }
-    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -367,23 +331,6 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/doclibs/${_context.doclib}`, _data);
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DocLibService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.doclib) {
-            return this.http.delete(`/projects/${_context.project}/doclibs/${_context.doclib}`);
-        }
-        if (_context.product && _context.doclib) {
-            return this.http.delete(`/products/${_context.product}/doclibs/${_context.doclib}`);
-        }
-        return this.http.delete(`/doclibs/${_context.doclib}`);
     }
     /**
      * Collect
@@ -405,6 +352,42 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         return this.http.post(`/doclibs/${_context.doclib}/collect`, _data);
     }
     /**
+     * UnCollect
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibService
+     */
+    async UnCollect(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.doclib) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/${_context.doclib}/uncollect`, _data);
+        }
+        if (_context.product && _context.doclib) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/${_context.doclib}/uncollect`, _data);
+        }
+        return this.http.post(`/doclibs/${_context.doclib}/uncollect`, _data);
+    }
+    /**
+     * FetchByCustom
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibService
+     */
+    async FetchByCustom(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/fetchbycustom`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/fetchbycustom`, _data);
+        }
+        return this.http.post(`/doclibs/fetchbycustom`, _data);
+    }
+    /**
      * FetchByProject
      *
      * @param {*} [_context={}]
@@ -421,27 +404,22 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         }
         return this.http.post(`/doclibs/fetchbyproject`, _data);
     }
-
     /**
-     * UnCollectBatch接口方法
+     * FetchMyFavourites
      *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DocLibServiceBase
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DocLibService
      */
-    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        if(_context.project && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/projects/${_context.project}/doclibs/uncollectbatch`,_data);
+    async FetchMyFavourites(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/doclibs/fetchmyfavourites`, _data);
         }
-        if(_context.product && true){
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.post(`/products/${_context.product}/doclibs/uncollectbatch`,_data);
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/doclibs/fetchmyfavourites`, _data);
         }
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/doclibs/uncollectbatch`,_data);
+        return this.http.post(`/doclibs/fetchmyfavourites`, _data);
     }
 
     /**
@@ -464,5 +442,27 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
         }
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/doclibs/collectbatch`,_data);
+    }
+
+    /**
+     * UnCollectBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibServiceBase
+     */
+    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/doclibs/uncollectbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/doclibs/uncollectbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/doclibs/uncollectbatch`,_data);
     }
 }

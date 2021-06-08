@@ -143,23 +143,6 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchProduct",
-    "methodType" : "FETCH",
-    "name" : "FetchProductDocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductDocLibFile"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProduct"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchProject",
     "methodType" : "FETCH",
     "name" : "FetchDocLibFile",
@@ -174,6 +157,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProject"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProduct",
+    "methodType" : "FETCH",
+    "name" : "FetchProductDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductDocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProduct"
     },
     "builtinMethod" : false
   }, {
@@ -341,6 +341,23 @@
     "stringLength" : 255
   } ],
   "getAllPSAppDEMethods" : [ {
+    "codeName" : "FetchProject",
+    "methodType" : "FETCH",
+    "name" : "FetchDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProject"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProduct",
     "methodType" : "FETCH",
     "name" : "FetchProductDocLibFile",
@@ -376,23 +393,6 @@
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
-  }, {
-    "codeName" : "FetchProject",
-    "methodType" : "FETCH",
-    "name" : "FetchDocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "DocLibFile"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProject"
-    },
-    "builtinMethod" : false
   }, {
     "codeName" : "FetchType",
     "methodType" : "FETCH",

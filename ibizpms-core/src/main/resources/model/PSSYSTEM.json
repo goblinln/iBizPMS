@@ -2551,43 +2551,19 @@
   } ],
   "getAllPSSysValueRules" : [ {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto7.json"
+    "path" : "PSSYSVALUERULES/Auto6.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto5.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto4.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto2.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto10.json"
+    "path" : "PSSYSVALUERULES/Auto17.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto15.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto12.json"
+    "path" : "PSSYSVALUERULES/Auto2.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto18.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto11.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto8.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto16.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto1.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto6.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto13.json"
@@ -2599,13 +2575,37 @@
     "path" : "PSSYSVALUERULES/Auto3.json"
   }, {
     "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto9.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto5.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto12.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto7.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto8.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto10.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto1.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSVALUERULES/Auto16.json"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSVALUERULES/Auto19.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto17.json"
+    "path" : "PSSYSVALUERULES/Auto11.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSVALUERULES/Auto9.json"
+    "path" : "PSSYSVALUERULES/Auto4.json"
   } ],
   "getAllPSSystemModules" : [ {
     "getAllPSCodeLists" : [ {

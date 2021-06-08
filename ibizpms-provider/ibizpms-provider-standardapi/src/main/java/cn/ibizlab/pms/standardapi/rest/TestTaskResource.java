@@ -69,20 +69,6 @@ public class TestTaskResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据产品关联测试用例", tags = {"测试版本" },  notes = "根据产品关联测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks/{testtask_id}/unlinkcase")
-    public ResponseEntity<TestTaskDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProduct(product_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.unlinkCase(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
-        testtaskdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
-    }
-
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', #testtask_id, 'READ')")
     @ApiOperation(value = "根据产品获取测试版本", tags = {"测试版本" },  notes = "根据产品获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testtasks/{testtask_id}")
@@ -92,6 +78,29 @@ public class TestTaskResource {
         Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据产品获取测试版本草稿", tags = {"测试版本" },  notes = "根据产品获取测试版本草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testtasks/getdraft")
+    public ResponseEntity<TestTaskDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestTaskDTO dto) {
+        TestTask domain = testtaskMapping.toDomain(dto);
+        domain.setProduct(product_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(testtaskService.getDraft(domain)));
+    }
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据产品关联测试用例", tags = {"测试版本" },  notes = "根据产品关联测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks/{testtask_id}/linkcase")
+    public ResponseEntity<TestTaskDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProduct(product_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.linkCase(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
+        testtaskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
@@ -107,20 +116,6 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据产品关闭", tags = {"测试版本" },  notes = "根据产品关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks/{testtask_id}/close")
-    public ResponseEntity<TestTaskDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProduct(product_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.close(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
-        testtaskdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
-    }
-
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品建立测试版本", tags = {"测试版本" },  notes = "根据产品建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks")
@@ -134,6 +129,20 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据产品关闭", tags = {"测试版本" },  notes = "根据产品关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks/{testtask_id}/close")
+    public ResponseEntity<TestTaskDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProduct(product_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.close(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
+        testtaskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    }
 
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', #testtask_id, 'DELETE')")
     @ApiOperation(value = "根据产品删除测试版本", tags = {"测试版本" },  notes = "根据产品删除测试版本")
@@ -150,15 +159,6 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PRODUCT', #product_id, 'TESTTASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据产品获取测试版本草稿", tags = {"测试版本" },  notes = "根据产品获取测试版本草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/tests/{product_id}/testtasks/getdraft")
-    public ResponseEntity<TestTaskDTO> getDraftByProduct(@PathVariable("product_id") Long product_id, TestTaskDTO dto) {
-        TestTask domain = testtaskMapping.toDomain(dto);
-        domain.setProduct(product_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(testtaskService.getDraft(domain)));
-    }
-
     @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
     @ApiOperation(value = "根据产品激活", tags = {"测试版本" },  notes = "根据产品激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks/{testtask_id}/activate")
@@ -167,6 +167,20 @@ public class TestTaskResource {
         domain.setProduct(product_id);
         domain.setId(testtask_id);
         domain = testtaskService.activate(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
+        testtaskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    }
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据产品关联测试用例", tags = {"测试版本" },  notes = "根据产品关联测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks/{testtask_id}/unlinkcase")
+    public ResponseEntity<TestTaskDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProduct(product_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
         testtaskdto.setSrfopprivs(opprivs);
@@ -214,20 +228,6 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据产品关联测试用例", tags = {"测试版本" },  notes = "根据产品关联测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testtasks/{testtask_id}/linkcase")
-    public ResponseEntity<TestTaskDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProduct(product_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.linkCase(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
-        testtaskdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
-    }
-
 
     @VersionCheck(entity = "testtask" , versionfield = "updatedate")
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'UPDATE')")
@@ -245,20 +245,6 @@ public class TestTaskResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/unlinkcase")
-    public ResponseEntity<TestTaskDTO> unlinkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProject(project_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.unlinkCase(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
-        testtaskdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
-    }
-
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', #testtask_id, 'READ')")
     @ApiOperation(value = "根据项目获取测试版本", tags = {"测试版本" },  notes = "根据项目获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}")
@@ -268,6 +254,29 @@ public class TestTaskResource {
         Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目获取测试版本草稿", tags = {"测试版本" },  notes = "根据项目获取测试版本草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/getdraft")
+    public ResponseEntity<TestTaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TestTaskDTO dto) {
+        TestTask domain = testtaskMapping.toDomain(dto);
+        domain.setProject(project_id);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(testtaskService.getDraft(domain)));
+    }
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/linkcase")
+    public ResponseEntity<TestTaskDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProject(project_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.linkCase(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
+        testtaskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
 
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'READ', 'READ')")
@@ -283,20 +292,6 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据项目关闭", tags = {"测试版本" },  notes = "根据项目关闭")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/close")
-    public ResponseEntity<TestTaskDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProject(project_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.close(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
-        testtaskdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
-    }
-
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
     @ApiOperation(value = "根据项目建立测试版本", tags = {"测试版本" },  notes = "根据项目建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks")
@@ -310,6 +305,20 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据项目关闭", tags = {"测试版本" },  notes = "根据项目关闭")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/close")
+    public ResponseEntity<TestTaskDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProject(project_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.close(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
+        testtaskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    }
 
     @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', #testtask_id, 'DELETE')")
     @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
@@ -326,15 +335,6 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("test('ZT_TESTTASK', 'ZT_PROJECT', #project_id, 'TESTTASKMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目获取测试版本草稿", tags = {"测试版本" },  notes = "根据项目获取测试版本草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/getdraft")
-    public ResponseEntity<TestTaskDTO> getDraftByProject(@PathVariable("project_id") Long project_id, TestTaskDTO dto) {
-        TestTask domain = testtaskMapping.toDomain(dto);
-        domain.setProject(project_id);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskMapping.toDto(testtaskService.getDraft(domain)));
-    }
-
     @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
     @ApiOperation(value = "根据项目激活", tags = {"测试版本" },  notes = "根据项目激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/activate")
@@ -343,6 +343,20 @@ public class TestTaskResource {
         domain.setProject(project_id);
         domain.setId(testtask_id);
         domain = testtaskService.activate(domain) ;
+        testtaskdto = testtaskMapping.toDto(domain);
+        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
+        testtaskdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
+    }
+
+    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
+    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/unlinkcase")
+    public ResponseEntity<TestTaskDTO> unlinkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
+        TestTask domain = testtaskMapping.toDomain(testtaskdto);
+        domain.setProject(project_id);
+        domain.setId(testtask_id);
+        domain = testtaskService.unlinkCase(domain) ;
         testtaskdto = testtaskMapping.toDto(domain);
         Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
         testtaskdto.setSrfopprivs(opprivs);
@@ -390,20 +404,6 @@ public class TestTaskResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("quickTest('ZT_TESTTASK', 'DENY')")
-    @ApiOperation(value = "根据项目关联测试用例", tags = {"测试版本" },  notes = "根据项目关联测试用例")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/{testtask_id}/linkcase")
-    public ResponseEntity<TestTaskDTO> linkCaseByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
-        TestTask domain = testtaskMapping.toDomain(testtaskdto);
-        domain.setProject(project_id);
-        domain.setId(testtask_id);
-        domain = testtaskService.linkCase(domain) ;
-        testtaskdto = testtaskMapping.toDto(domain);
-        Map<String, Integer> opprivs = testtaskRuntime.getOPPrivs(domain.getId());    
-        testtaskdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
-    }
-
     @Autowired
     cn.ibizlab.pms.core.zentao.mapping.TestTaskDataImport dataimportImpMapping;
     @RequestMapping(method = RequestMethod.POST, value = "/testtasks/import")

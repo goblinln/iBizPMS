@@ -249,7 +249,7 @@
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
-            "id" : "FetchTestModule"
+            "id" : "FetchDefault"
           },
           "getPSAppDataEntity" : {
             "modelref" : true,

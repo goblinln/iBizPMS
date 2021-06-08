@@ -66,6 +66,18 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
         return new HttpResponse(entity);
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductWeeklyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/productweeklies/${_context.productweekly}`, _data);
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
@@ -107,18 +119,6 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
             delete _data.srffrontuf;
         }
         return this.http.post(`/productweeklies`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductWeeklyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/productweeklies/${_context.productweekly}`, _data);
     }
     /**
      * Get

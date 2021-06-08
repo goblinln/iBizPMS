@@ -125,23 +125,6 @@
     "builtinMethod" : true
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "FetchContact",
-    "methodType" : "FETCH",
-    "name" : "FetchContActList",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ContActList"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchContact"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchTaskMulti",
     "methodType" : "FETCH",
     "name" : "FetchTaskMTeam",
@@ -241,6 +224,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchContact",
+    "methodType" : "FETCH",
+    "name" : "FetchContActList",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ContActList"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchContact"
     },
     "builtinMethod" : false
   }, {
@@ -493,23 +493,6 @@
     "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchContact",
-    "methodType" : "FETCH",
-    "name" : "FetchContActList",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ContActList"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchContact"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchTaskMulti",
     "methodType" : "FETCH",
     "name" : "FetchTaskMTeam",
@@ -626,6 +609,23 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchContact",
+    "methodType" : "FETCH",
+    "name" : "FetchContActList",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ContActList"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchContact"
     },
     "builtinMethod" : false
   }, {

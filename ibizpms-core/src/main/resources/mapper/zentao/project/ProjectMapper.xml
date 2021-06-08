@@ -495,10 +495,10 @@
 		<![CDATA[ SELECT         t1.MDEPTID,         t1.orgid, 	t1.`ACL`, 	t1.`BEGIN`, 	( SELECT COUNT( 1 ) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `BUGCNT`, 	t1.`CANCELEDBY`, 	t1.`CANCELEDDATE`, 	t1.`CATID`, 	t1.`CLOSEDBY`, 	t1.`CLOSEDDATE`, 	t1.`CODE`, 	t1.`DAYS`, 	t1.`DELETED`, 	t1.`END`, 	t1.`ID`, 	t1.`ISCAT`, 	t1.`NAME`, 	t1.`OPENEDBY`, 	t1.`OPENEDDATE`, 	t1.`OPENEDVERSION`, 	t1.`ORDER`, 	t1.`ORDER` AS `ORDER1`, 	t1.`PARENT`, 	t11.`NAME` AS `PARENTNAME`, 	t1.`PM`, 	t1.`PO`, 	t1.`PRI`, 	t1.`QD`, 	t1.`RD`, 	t1.`STATGE`, 	t1.`STATUS`, 	( SELECT 	COUNT( 1 )  FROM 	ZT_STORY 	LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY  WHERE 	PROJECT = t1.`ID`  	AND DELETED = '0'  	) AS `STORYCNT`, 	t1.`SUBSTATUS`, 	( SELECT COUNT( 1 ) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' ) AS `TASKCNT`, 	t1.`TEAM`, 	t1.`TYPE` , 	t21.role, 	t21.account, 	t21.`join`, 	t21.hours, 	t1.PROJECTSN FROM 	`zt_project` t1 	LEFT JOIN zt_project t11 ON t1.PARENT = t11.id 	INNER JOIN zt_team t21 on t1.id = t21.root and t21.type= 'project' ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-                <![CDATA[ AND t21.`account` =#{srf.sessioncontext.srfloginname} ]]>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
             </if>
 			<if test="true">
-                <![CDATA[ AND t1.DELETED = '0' ]]>
+                <![CDATA[ AND t21.`account` =#{srf.sessioncontext.srfloginname} ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>
