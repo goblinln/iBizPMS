@@ -1,16 +1,17 @@
 import { CreateElement } from 'vue';
 import { Prop, Watch } from 'vue-property-decorator';
-import { Util, debounce } from 'ibiz-core';
-import { PickupView2Base } from '../../../view/pickupview2-base';
-import { AppLayoutService } from '../../..';
+import { debounce, Util } from 'ibiz-core';
+import { PickupView3Base } from '../../../view/pickupview3-base';
+import { AppLayoutService } from '../../../app-service';
+import { IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
 
-export class AppPickupView2Base extends PickupView2Base {
-
+export class AppPickupView3Base extends PickupView3Base {
+    
     /**
      * 视图动态参数
      *
      * @type {string}
-     * @memberof AppPickupView2Base
+     * @memberof AppPickupViewBase
      */
     @Prop() public dynamicProps!: any;
 
@@ -18,7 +19,7 @@ export class AppPickupView2Base extends PickupView2Base {
      * 视图静态参数
      *
      * @type {string}
-     * @memberof AppPickupView2Base
+     * @memberof AppPickupViewBase
      */
     @Prop() public staticProps!: any;
 
@@ -27,7 +28,7 @@ export class AppPickupView2Base extends PickupView2Base {
      *
      * @param {*} newVal
      * @param {*} oldVal
-     * @memberof AppPickupView2Base
+     * @memberof AppPickupViewBase
      */
     @Watch('dynamicProps',{
         immediate: true,
@@ -41,7 +42,7 @@ export class AppPickupView2Base extends PickupView2Base {
     /**
      * 监听视图静态参数变化
      * 
-     * @memberof AppPickupView2Base
+     * @memberof AppPickupViewBase
      */
     @Watch('staticProps', {
         immediate: true,
@@ -55,27 +56,16 @@ export class AppPickupView2Base extends PickupView2Base {
     /**
      * 销毁视图回调
      *
-     * @memberof AppPickupView2Base
+     * @memberof AppPickupViewBase
      */
     public destroyed(){
         this.viewDestroyed();
     }
 
     /**
-     * 渲染选择视图面板
-     * 
-     * @memberof AppPickupView2Base
-     */
-    public renderMainContent() {
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.treeExpBarInstance);
-        Object.assign(targetCtrlParam.staticProps, { pickupviewpanel: this.pickupViewInstance })
-        return this.$createElement(targetCtrlName, { slot: 'default', props: targetCtrlParam, ref: this.treeExpBarInstance?.name, on: targetCtrlEvent });
-    }
-
-    /**
      * 渲染选择视图按钮
      * 
-     * @memberof AppPickupView2Base
+     * @memberof PickupViewBase
      */
     public renderPickButton() {
         if(this.isShowButton){
@@ -91,10 +81,37 @@ export class AppPickupView2Base extends PickupView2Base {
         }
     }
 
+    public renderPickupViewPanel(panel: IPSDEPickupViewPanel) {
+        let { targetCtrlParam, targetCtrlEvent, targetCtrlName } = this.computeTargetCtrlData(panel);
+        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: panel.name, on: targetCtrlEvent });
+    }
+
+    public renderPickupViewPanelTab(panel: IPSDEPickupViewPanel, tabName: string) {
+        const name = panel.name || panel.codeName;
+        return (
+            <tab-pane lazy={true} name={name} tab={tabName} label={this.$tl(panel.getCapPSLanguageRes()?.lanResTag, panel.caption)}>
+                {this.renderPickupViewPanel(panel)}
+            </tab-pane>
+        )
+    }
+    
+    public renderMainContent() {
+        const tabName = `${this.appDeCodeName}_${this.viewInstance.viewType}_${this.viewInstance.name}`;
+        return (
+            <div class="pickupview3-tabs-container" slot="default">
+                <tabs value={this.activedPickupViewPanel} class="pickupview3-tabs" name={tabName} on-on-click={($event: any) => debounce(this.tabPanelClick,[$event],this)} >
+                    {this.pickupViewPanelModels.map((panel: IPSDEPickupViewPanel) => {
+                        return this.renderPickupViewPanelTab(panel, tabName);
+                    })}
+                </tabs>
+            </div>
+        )
+    }
+
     /**
      * 数据视图渲染
      * 
-     * @memberof AppPickupView2Base
+     * @memberof AppPickupViewBase
      */
     render(h: CreateElement) {
         if (!this.viewIsLoaded) {

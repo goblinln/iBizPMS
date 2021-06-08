@@ -19,6 +19,7 @@ import { AppDefaultMEditViewLayout } from '../../components/layout/app-default-l
 import { AppDefaultDataViewExpViewLayout } from "../../components/layout/app-default-layout/app-default-dataviewexpview-layout/app-default-dataviewexpview-layout";
 import { AppDefaultPickupViewLayout } from "../../components/layout/app-default-layout/app-default-pickupview-layout/app-default-pickupview-layout";
 import { AppDefaultPickupView2Layout } from "../../components/layout/app-default-layout/app-default-pickupview2-layout/app-default-pickupview2-layout";
+import { AppDefaultPickupView3Layout } from '../../components/layout/app-default-layout/app-default-pickupview3-layout/app-default-pickupview3-layout';
 import { AppDefaultTabExpViewLayout } from "../../components/layout/app-default-layout/app-default-tabexpview-layout/app-default-tabexpview-layout";
 import { AppDefaultTabSearchViewLayout } from "../../components/layout/app-default-layout/app-default-tabsearchview-layout/app-default-tabsearchview-layout";
 import { AppDefaultMPickupViewLayout } from "../../components/layout/app-default-layout/app-default-mpickupview-layout/app-default-mpickupview-layout";
@@ -126,6 +127,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEDATAVIEWEXPVIEW-DEFAULT", AppDefaultDataViewExpViewLayout);
         this.layoutMap.set("DEPICKUPVIEW-DEFAULT", AppDefaultPickupViewLayout);
         this.layoutMap.set("DEPICKUPVIEW2-DEFAULT", AppDefaultPickupView2Layout);
+        this.layoutMap.set("DEPICKUPVIEW3-DEFAULT", AppDefaultPickupView3Layout);
         this.layoutMap.set("DETABEXPVIEW-DEFAULT", AppDefaultTabExpViewLayout);
         this.layoutMap.set("DETABSEARCHVIEW-DEFAULT", AppDefaultTabSearchViewLayout);
         this.layoutMap.set("DEMPICKUPVIEW-DEFAULT", AppDefaultMPickupViewLayout);

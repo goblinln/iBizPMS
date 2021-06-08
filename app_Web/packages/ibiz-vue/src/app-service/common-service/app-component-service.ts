@@ -69,6 +69,7 @@ export class AppComponentService {
         this.viewMap.set("DEMPICKUPVIEW2_DEFAULT", 'app-default-mpickupview2');
         this.viewMap.set("DEPICKUPVIEW_DEFAULT", 'app-default-pickupview');
         this.viewMap.set("DEPICKUPVIEW2_DEFAULT", 'app-default-pickupview2');
+        this.viewMap.set("DEPICKUPVIEW3_DEFAULT", 'app-default-pickupview3');
         this.viewMap.set("DECALENDAREXPVIEW_DEFAULT", 'app-default-calendarexpview');
         this.viewMap.set("DETREEEXPVIEW_DEFAULT", 'app-default-treeexpview');
         this.viewMap.set("DEPICKUPTREEVIEW_DEFAULT", 'app-default-pickuptreeview');

@@ -167,7 +167,7 @@ export default class DataPickerEditor extends EditorBase {
      */
     public async initLinkViewParams() {
         let linkAppView = (this.editorInstance as IPSPicker).getLinkPSAppView();
-        await linkAppView?.fill();
+        await linkAppView?.fill(true);
         if (linkAppView) {
             const view: any = {
                 viewname: 'app-view-shell',
@@ -176,9 +176,10 @@ export default class DataPickerEditor extends EditorBase {
                 height: linkAppView?.height,
                 placement: linkAppView?.openMode,
                 deResParameters: Util.formatAppDERSPath(this.context, (linkAppView as IPSAppDEView).getPSAppDERSPaths()),
-                isRedirectView: linkAppView.hasOwnProperty('redirectView') ? linkAppView.redirectView : false,
+                isRedirectView: linkAppView.redirectView,
                 viewpath: linkAppView?.modelPath
             }
+            Object.defineProperty(view, 'viewModel', { enumerable: false, writable: true, value: linkAppView });
             if (linkAppView?.getPSAppDataEntity()) {
                 Object.assign(view, {
                     parameters: [

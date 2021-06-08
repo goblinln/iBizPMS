@@ -450,7 +450,7 @@ export class CalendarControlBase extends MDControlBase{
       * @type {string}
       * @memberof MDControlBase
       */
-      public eventid: string = "";
+    public eventid: string = "";
 
     /**
      * 图例点击事件
@@ -607,7 +607,11 @@ export class CalendarControlBase extends MDControlBase{
             }
             this.selectedEventElement = JSelement;
             this.selectedEventElement.classList.add("selected-event");
-            this.eventid = event.daily;
+            if (Object.is(event.itemType,"ACCOUNTDAILY")) {
+              this.eventid = event.daily;
+            }else {
+              this.eventid = event.curdata.id;
+            }
         }
         // 处理上下文数据
         let _this: any = this;
@@ -823,7 +827,8 @@ export class CalendarControlBase extends MDControlBase{
      * @memberof CalendarControlBase
      */
     public eventRender(info?:any,) {
-        if (info.event.extendedProps.daily == this.eventid) {
+        let eventid = Object.is(info.event.extendedProps.itemType,"ACCOUNTDAILY")?info.event.extendedProps.daily:info.event.extendedProps.curdata?.id
+        if (this.eventid && eventid == this.eventid) {
           let JSelement:any = info.el;
           if(JSelement){
               if(this.selectedEventElement){
