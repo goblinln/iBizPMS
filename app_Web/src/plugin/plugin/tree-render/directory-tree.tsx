@@ -144,10 +144,10 @@ export class DirectoryTree extends AppDefaultTree {
             Object.assign(tempViewParams,{srfparentkey:curNode.data.srfparentkey});
         }
         Object.assign(params,{viewparams:tempViewParams});
-		this.ctrlBeginLoading();
+		this.onControlRequset('load', tempContext, params);
 		try {
 			const response = await this.service.getNodes(tempContext,params)
-			this.ctrlEndLoading();
+			this.onControlResponse('load', response);
 			if (!response || response.status !== 200) {
 				this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
 				return;
@@ -158,7 +158,7 @@ export class DirectoryTree extends AppDefaultTree {
 			await this.computeCurPageNodeState();
 			this.$emit("load", _items);
 		} catch (error) {
-			this.ctrlEndLoading();
+			this.onControlResponse('load', error);
         }
     }
 

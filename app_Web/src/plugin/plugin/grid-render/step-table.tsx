@@ -33,10 +33,11 @@ export class StepTable extends AppDefaultGrid {
         let _this = this;
         let param: any = {};
         Object.assign(param,{viewparams:this.viewparams});
-		this.ctrlBeginLoading();
-        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, JSON.parse(JSON.stringify(this.context)), param, this.showBusyIndicator);
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('create', tempContext, param);
+        let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, param, this.showBusyIndicator);
         post.then((response: any) => {
-			this.ctrlEndLoading();
+			this.onControlResponse('create', response);
             if (!response.status || response.status !== 200) {
                 if (response.errorMessage) {
                     this.$Notice.error({ title: '错误', desc: response.errorMessage });
@@ -58,7 +59,7 @@ export class StepTable extends AppDefaultGrid {
             }
             _this.gridItemsModel.push(_this.getGridRowModel());
         }).catch((response: any) => {
-			this.ctrlEndLoading();
+			this.onControlResponse('create', response);
             if (response && response.status === 401) {
                 return;
             }

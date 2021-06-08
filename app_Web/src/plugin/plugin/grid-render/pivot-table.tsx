@@ -94,10 +94,11 @@ export class PivotTable extends AppDefaultGrid {
         let tempViewParams:any = parentdata.viewparams?parentdata.viewparams:{};
         Object.assign(tempViewParams,JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(arg,{viewparams:tempViewParams});
-        this.ctrlBeginLoading();
-        const post: Promise<any> = this.service.search(this.fetchAction,JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);  
+        const post: Promise<any> = this.service.search(this.fetchAction,tempContext, arg, this.showBusyIndicator);
         post.then(async (response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
                 if (response.errorMessage) {
                     this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.errorMessage });
@@ -158,7 +159,7 @@ export class PivotTable extends AppDefaultGrid {
                 this.getAggData();
             }          
         }).catch((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (response && response.status === 401) {
                 return;
             }

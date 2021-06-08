@@ -143,15 +143,16 @@ export class NewDynamicTimeLine extends AppListBase {
             Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         }
         Object.assign(arg, { viewparams: tempViewParams });
-        this.ctrlBeginLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
         const post: Promise<any> = this.service.search(
             this.fetchAction,
-            this.context ? JSON.parse(JSON.stringify(this.context)) : {},
+            tempContext,
             arg,
             this.showBusyIndicator
         );
         post.then((response: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', response);
             if (!response || response.status !== 200) {
                 if (response.errorMessage) {
                     this.$Notice.error({ title: '错误', desc: response.errorMessage });
@@ -192,7 +193,7 @@ export class NewDynamicTimeLine extends AppListBase {
                 this.formatData(this.items);
             }
         },(response: any) => {
-                this.ctrlEndLoading();
+                this.onControlResponse('load', response);
                 if (response && response.status === 401) {
                     return;
                 }

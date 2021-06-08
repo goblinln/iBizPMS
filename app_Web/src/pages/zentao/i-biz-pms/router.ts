@@ -6524,6 +6524,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/historylistview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'historylistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'tests/:test?/bugs/:bug?/actions/:action?/views/historylistview',
                     meta: {
                         captionTag: '',
@@ -7080,6 +7098,24 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
                             { pathName: 'testreports', parameterName: 'testreport' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'addcommenthistorylistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/addcommenthistorylistview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'addcommenthistorylistview' },
                         ],
@@ -7654,6 +7690,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/alltrendslistview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'alltrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'tests/:test?/bugs/:bug?/actions/:action?/views/alltrendslistview',
                     meta: {
                         captionTag: '',
@@ -8210,6 +8264,24 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
                             { pathName: 'testreports', parameterName: 'testreport' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'projecttrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/projecttrendslistview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'projecttrendslistview' },
                         ],
@@ -8784,6 +8856,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/projecttrendslistview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'projecttrendslistview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'tests/:test?/bugs/:bug?/actions/:action?/views/projecttrendslistview9',
                     meta: {
                         captionTag: '',
@@ -9340,6 +9430,24 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
                             { pathName: 'testreports', parameterName: 'testreport' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'producttrendslistview9' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/producttrendslistview9',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'producttrendslistview9' },
                         ],
@@ -9914,6 +10022,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/myalltrendslistview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'myalltrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'tests/:test?/bugs/:bug?/actions/:action?/views/myalltrendslistview',
                     meta: {
                         captionTag: '',
@@ -10470,6 +10596,24 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
                             { pathName: 'testreports', parameterName: 'testreport' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'mytrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/mytrendslistview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'mytrendslistview' },
                         ],
@@ -11044,6 +11188,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/optionview',
+                    meta: {
+                        captionTag: '',
+                        caption: '添加备注',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'tests/:test?/bugs/:bug?/actions/:action?/views/optionview',
                     meta: {
                         captionTag: '',
@@ -11609,6 +11771,24 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/producttrendslistview',
+                    meta: {
+                        captionTag: '',
+                        caption: '系统日志',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'producttrendslistview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
                     path: 'tests/:test?/bugs/:bug?/actions/:action?/views/producttrendslistview',
                     meta: {
                         captionTag: '',
@@ -12165,6 +12345,24 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tests', parameterName: 'test' },
                             { pathName: 'testreports', parameterName: 'testreport' },
+                            { pathName: 'actions', parameterName: 'action' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'action',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tests/:test?/testcases/:testcase?/actions/:action?/views/editview',
+                    meta: {
+                        captionTag: '',
+                        caption: '备注',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tests', parameterName: 'test' },
+                            { pathName: 'testcases', parameterName: 'testcase' },
                             { pathName: 'actions', parameterName: 'action' },
                             { pathName: 'views', parameterName: 'editview' },
                         ],
