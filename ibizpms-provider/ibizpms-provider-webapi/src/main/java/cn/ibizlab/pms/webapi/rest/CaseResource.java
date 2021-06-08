@@ -57,7 +57,6 @@ public class CaseResource {
 
     @Autowired
     private ICaseStepService casestepService;
-
     @PreAuthorize("quickTest('ZT_CASE', 'CREATE')")
     @ApiOperation(value = "新建测试用例", tags = {"测试用例" },  notes = "新建测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases")

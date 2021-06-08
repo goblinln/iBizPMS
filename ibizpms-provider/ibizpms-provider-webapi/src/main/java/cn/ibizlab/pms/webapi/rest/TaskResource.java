@@ -60,10 +60,8 @@ public class TaskResource {
 
     @Autowired
     private ITaskTeamService taskteamService;
-
     @Autowired
     private ITaskEstimateService taskestimateService;
-
     @PreAuthorize("quickTest('ZT_TASK', 'CREATE')")
     @ApiOperation(value = "新建任务", tags = {"任务" },  notes = "新建任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks")

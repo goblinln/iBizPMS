@@ -57,7 +57,6 @@ public class ProjectResource {
 
     @Autowired
     private IProjectTeamService projectteamService;
-
     @PreAuthorize("quickTest('ZT_PROJECT', 'CREATE')")
     @ApiOperation(value = "新建项目", tags = {"项目" },  notes = "新建项目")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects")

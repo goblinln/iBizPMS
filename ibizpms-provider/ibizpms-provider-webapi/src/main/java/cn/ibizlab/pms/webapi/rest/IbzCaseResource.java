@@ -57,7 +57,6 @@ public class IbzCaseResource {
 
     @Autowired
     private IIbzLibCaseStepsService ibzlibcasestepsService;
-
     @PreAuthorize("quickTest('IBZ_CASE', 'CREATE')")
     @ApiOperation(value = "新建测试用例", tags = {"测试用例" },  notes = "新建测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcases")
