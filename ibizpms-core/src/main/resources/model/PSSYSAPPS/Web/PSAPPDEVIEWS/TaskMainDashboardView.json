@@ -9121,7 +9121,7 @@
                       },
                       "getPSAppDEDataSet" : {
                         "modelref" : true,
-                        "id" : "FetchTaskRelatedStory"
+                        "id" : "FetchProjectStories"
                       },
                       "getPSAppDataEntity" : {
                         "modelref" : true,

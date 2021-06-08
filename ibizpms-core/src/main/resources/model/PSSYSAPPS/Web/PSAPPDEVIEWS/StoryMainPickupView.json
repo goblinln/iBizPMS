@@ -747,7 +747,7 @@
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
-  "title" : "需求数据选择视图（默认选择）",
+  "title" : "需求数据选择视图",
   "viewStyle" : "STYLE2",
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
