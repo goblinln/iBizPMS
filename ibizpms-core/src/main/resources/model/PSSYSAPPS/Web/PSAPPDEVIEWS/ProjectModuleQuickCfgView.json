@@ -214,19 +214,19 @@
         "codeName" : "IBizShort"
       }
     }, {
-      "id" : "order",
-      "dataType" : 9,
-      "getPSAppDEField" : {
-        "name" : "ORDER",
-        "codeName" : "Order"
-      }
-    }, {
       "id" : "id",
       "hidden" : true,
       "dataType" : 1,
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
+      }
+    }, {
+      "id" : "order",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "ORDER",
+        "codeName" : "Order"
       }
     } ],
     "getPSDEFormPages" : [ {
@@ -374,14 +374,16 @@
           },
           "getPSEditor" : {
             "editorParams" : {
-              "SRFNAVPARAM.n_type_eq" : "task",
-              "SRFNAVCTX.n_root_eq" : "%root%",
               "SRFNAVCTX.n_type_eq" : "task",
-              "AC" : "TRUE",
+              "SRFNAVCTX.n_root_eq" : "%root%",
               "valFormat" : "{0: '/'}",
-              "SRFNAVPARAM.n_root_eq" : "%root%",
+              "AC" : "TRUE",
               "TRIGGER" : "TRUE",
-              "PICKUPVIEW" : "FALSE"
+              "SRFNAVPARAM.n_root_eq" : "%root%",
+              "SRFNAVPARAM.n_type_eq" : "task",
+              "SRFNAVPARAM.action" : "update",
+              "PICKUPVIEW" : "FALSE",
+              "SRFNAVPARAM.id" : "%id%"
             },
             "editorType" : "PICKEREX_TRIGGER",
             "handlerType" : "PickupText",
@@ -410,9 +412,19 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "id",
+              "name" : "id",
+              "value" : "id",
+              "rawValue" : false
+            }, {
               "key" : "n_type_eq",
               "name" : "n_type_eq",
               "value" : "task",
+              "rawValue" : true
+            }, {
+              "key" : "action",
+              "name" : "action",
+              "value" : "update",
               "rawValue" : true
             }, {
               "key" : "n_root_eq",
@@ -497,6 +509,35 @@
           "allowEmpty" : true,
           "emptyCaption" : false,
           "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "id",
+          "codeName" : "id",
+          "dataType" : 1,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 0,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 100,
+          "name" : "id",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "id"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
           "inputTipClosable" : false,
           "showCaption" : true
         }, {

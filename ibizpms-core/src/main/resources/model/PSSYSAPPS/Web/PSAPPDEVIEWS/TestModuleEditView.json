@@ -304,20 +304,20 @@
         "codeName" : "Order"
       }
     }, {
-      "id" : "id",
-      "hidden" : true,
-      "dataType" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "id" : "parent",
       "hidden" : true,
       "dataType" : 1,
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
+      }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     } ],
     "getPSDEFormPages" : [ {
@@ -526,7 +526,9 @@
               "TRIGGER" : "TRUE",
               "SRFNAVPARAM.n_root_eq" : "%root%",
               "SRFNAVPARAM.n_type_eq" : "story",
-              "PICKUPVIEW" : "FALSE"
+              "SRFNAVPARAM.action" : "update",
+              "PICKUPVIEW" : "FALSE",
+              "SRFNAVPARAM.id" : "%id%"
             },
             "editorType" : "PICKEREX_TRIGGER",
             "handlerType" : "PickupText",
@@ -560,9 +562,19 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "id",
+              "name" : "id",
+              "value" : "id",
+              "rawValue" : false
+            }, {
               "key" : "n_type_eq",
               "name" : "n_type_eq",
               "value" : "story",
+              "rawValue" : true
+            }, {
+              "key" : "action",
+              "name" : "action",
+              "value" : "update",
               "rawValue" : true
             }, {
               "key" : "n_root_eq",
@@ -694,6 +706,64 @@
         },
         "infoGroupMode" : false,
         "showCaption" : false
+      }, {
+        "caption" : "id",
+        "codeName" : "parent",
+        "dataType" : 1,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "parent",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "parent"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "id",
+        "codeName" : "id",
+        "dataType" : 1,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 0,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 130,
+        "name" : "id",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "id"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
       } ],
       "getPSLayout" : {
         "columnCount" : 24,
