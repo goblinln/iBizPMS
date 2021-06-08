@@ -2666,14 +2666,6 @@
                           }, {
                             "logicTrigger" : "CUSTOM",
                             "logicType" : "APPVIEWUIACTION",
-                            "name" : "grid_uagridcolumn1_u0f557af_click",
-                            "getPSAppViewUIAction" : {
-                              "modelref" : true,
-                              "id" : "表格界面_拷贝操作"
-                            }
-                          }, {
-                            "logicTrigger" : "CUSTOM",
-                            "logicType" : "APPVIEWUIACTION",
                             "name" : "grid_uagridcolumn1_u27be842_click",
                             "getPSAppViewUIAction" : {
                               "modelref" : true,
@@ -2757,14 +2749,6 @@
                               },
                               "modelref" : true,
                               "id" : "SubStory@Story"
-                            },
-                            "uIActionTarget" : "SINGLEKEY",
-                            "xDataControlName" : "grid"
-                          }, {
-                            "name" : "表格界面_拷贝操作",
-                            "getPSUIAction" : {
-                              "modelref" : true,
-                              "id" : "Copy"
                             },
                             "uIActionTarget" : "SINGLEKEY",
                             "xDataControlName" : "grid"
@@ -3344,33 +3328,6 @@
                                   "uIActionType" : "DEUIACTION",
                                   "reloadData" : true,
                                   "id" : "SubStory@Story"
-                                },
-                                "addSeparator" : false,
-                                "showCaption" : false,
-                                "showIcon" : true
-                              }, {
-                                "detailType" : "DEUIACTION",
-                                "name" : "u0f557af",
-                                "getPSUIAction" : {
-                                  "actionTarget" : "SINGLEKEY",
-                                  "getCapPSLanguageRes" : {
-                                    "lanResTag" : "TBB.TEXT.*.COPY"
-                                  },
-                                  "caption" : "拷贝",
-                                  "codeName" : "Copy",
-                                  "fullCodeName" : "Copy",
-                                  "name" : "表格界面_拷贝操作",
-                                  "getPSSysImage" : {
-                                    "glyph" : "xf0c5@FontAwesome",
-                                    "cssClass" : "fa fa-copy"
-                                  },
-                                  "timeout" : 60000,
-                                  "getTooltipPSLanguageRes" : {
-                                    "lanResTag" : "TBB.TOOLTIP.*.COPY"
-                                  },
-                                  "uIActionMode" : "SYS",
-                                  "uIActionTag" : "Copy",
-                                  "uIActionType" : "DEUIACTION"
                                 },
                                 "addSeparator" : false,
                                 "showCaption" : false,
