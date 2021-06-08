@@ -3230,11 +3230,10 @@
                 "SRFNAVPARAM.product" : "%product%",
                 "AC" : "TRUE",
                 "valFormat" : "{0: '/'}",
-                "TRIGGER" : "TRUE",
                 "SRFNAVCTX.product" : "%product%",
-                "PICKUPVIEW" : "FALSE"
+                "PICKUPVIEW" : "TRUE"
               },
-              "editorType" : "PICKEREX_TRIGGER",
+              "editorType" : "PICKER",
               "handlerType" : "PickupText",
               "name" : "storyname",
               "getPSAppDEACMode" : {
@@ -3243,7 +3242,7 @@
               },
               "getPSAppDEDataSet" : {
                 "modelref" : true,
-                "id" : "FetchParentDefault"
+                "id" : "FetchDefault"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
@@ -3271,11 +3270,16 @@
                 "value" : "module",
                 "rawValue" : false
               } ],
+              "getPickupPSAppView" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainPickupView.json",
+                "viewType" : "DEPICKUPVIEW"
+              },
               "valueItemName" : "story",
               "dropDownView" : false,
               "enableAC" : true,
               "enableLinkView" : false,
-              "enablePickupView" : false,
+              "enablePickupView" : true,
               "forceSelection" : true,
               "showTrigger" : true,
               "singleSelect" : true

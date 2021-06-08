@@ -1500,7 +1500,7 @@
             } ],
             "getPickupPSAppView" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPickupView.json",
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryTaskPickupView.json",
               "viewType" : "DEPICKUPVIEW"
             },
             "valueItemName" : "story",
