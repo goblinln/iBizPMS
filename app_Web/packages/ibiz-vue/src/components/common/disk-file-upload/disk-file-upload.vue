@@ -383,6 +383,12 @@ export default class DiskFileUpload extends Vue {
             if(getSessionStorage("srfdynaorgid")){
                 this.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
             }
+        } else {
+            this.headers['srforgid'] = undefined;
+            this.headers['srfsystemid'] = undefined;
+            if(getSessionStorage("srfdynaorgid")){
+                this.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
+            }
         }
         if (getCookie('ibzuaa-token')) {
             this.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;

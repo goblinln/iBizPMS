@@ -57,7 +57,6 @@ public class IbzPlanTempletResource {
 
     @Autowired
     private IIbzPlanTempletDetailService ibzplantempletdetailService;
-
     @PreAuthorize("quickTest('IBZ_PLANTEMPLET', 'CREATE')")
     @ApiOperation(value = "新建计划模板", tags = {"计划模板" },  notes = "新建计划模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzplantemplets")

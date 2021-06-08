@@ -58,7 +58,6 @@ public class TestCaseResource {
     @Autowired
     private ICaseStepService casestepService;
 
-
     @PreAuthorize("test('ZT_CASE', 'ZT_PRODUCT', #product_id, 'CASEMANAGE', 'CREATE')")
     @ApiOperation(value = "根据产品建立测试用例", tags = {"测试用例" },  notes = "根据产品建立测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/tests/{product_id}/testcases")

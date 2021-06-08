@@ -58,7 +58,9 @@
 <script lang = 'ts'>
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import { Util, LogUtil  } from 'ibiz-core';
+import { Util, LogUtil, ModelTool, ViewTool  } from 'ibiz-core';
+import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppViewRef, IPSNavigateContext, IPSAppView } from '@ibiz/dynamic-model-api';
+import { UIServiceRegister } from 'ibiz-service';
 
 @Component({
 })
@@ -641,8 +643,113 @@ export default class AppPicker extends Vue {
      * @param {*} data
      * @memberof AppPicker
      */
-    private openRedirectView($event: any, view: any, data: any): void {
-        LogUtil.warn(this.$t('components.apppicker.nosupport'));
+    private async openRedirectView($event: any,context:any, params: any) {
+        let targetRedirectView: IPSAppDERedirectView = this.linkview.viewModel;
+        await targetRedirectView.fill(true);
+        if (
+            targetRedirectView.getRedirectPSAppViewRefs() &&
+            targetRedirectView.getRedirectPSAppViewRefs()?.length === 0
+        ) {
+            return;
+        }
+        const redirectUIService: any = await UIServiceRegister.getInstance().getService(
+            context,
+            (ModelTool.getViewAppEntityCodeName(targetRedirectView) as string)?.toLowerCase(),
+        );
+        await redirectUIService.loaded();
+        const redirectAppEntity: IPSAppDataEntity | null = targetRedirectView.getPSAppDataEntity();
+        await ViewTool.calcRedirectContext(context, this.data, redirectAppEntity);
+        let result = await redirectUIService.getRDAppView(context, this.data['srfkey'], params);
+        if (!result) {
+            return;
+        }
+        let targetOpenViewRef: IPSAppViewRef | undefined = targetRedirectView
+            .getRedirectPSAppViewRefs()
+            ?.find((item: IPSAppViewRef) => {
+                return item.name === result.param.split(':')[0];
+            });
+        if (!targetOpenViewRef) {
+            return;
+        }
+        if (
+            targetOpenViewRef.getPSNavigateContexts() &&
+            (targetOpenViewRef.getPSNavigateContexts() as IPSNavigateContext[]).length > 0
+        ) {
+            let localContextRef: any = Util.formatNavParam(targetOpenViewRef.getPSNavigateContexts(), true);
+            let _context: any = Util.computedNavData(this.data, context, params, localContextRef);
+            Object.assign(context, _context);
+        }
+        if (result && result.hasOwnProperty('srfsandboxtag')) {
+            Object.assign(context, { srfsandboxtag: result['srfsandboxtag'] });
+            Object.assign(params, { srfsandboxtag: result['srfsandboxtag'] });
+        }
+        let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
+        if (!targetOpenView) {
+            return;
+        }
+        await targetOpenView.fill(true);
+        const view: any = {
+            viewname: Util.srfFilePath2(targetOpenView.codeName),
+            height: targetOpenView.height,
+            width: targetOpenView.width,
+            title: this.$tl(targetOpenView.getCapPSLanguageRes()?.lanResTag, targetOpenView.title),
+            placement: targetOpenView.openMode ? targetOpenView.openMode : '',
+            viewpath: targetOpenView.modelFilePath,
+        };
+        if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
+            if (targetOpenView.getPSAppDataEntity()) {
+                view.deResParameters = Util.formatAppDERSPath(
+                    context,
+                    (targetOpenView as IPSAppDEView).getPSAppDERSPaths(),
+                );
+                view.parameters = [
+                    {
+                        pathName: Util.srfpluralize(
+                            (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                        ).toLowerCase(),
+                        parameterName: (
+                            targetOpenView.getPSAppDataEntity() as IPSAppDataEntity
+                        )?.codeName.toLowerCase(),
+                    },
+                    {
+                        pathName: 'views',
+                        parameterName: ((targetOpenView as IPSAppDEView).getPSDEViewCodeName() as string).toLowerCase(),
+                    },
+                ];
+            } else {
+                view.parameters = [
+                    {
+                        pathName: targetOpenView.codeName.toLowerCase(),
+                        parameterName: targetOpenView.codeName.toLowerCase(),
+                    },
+                ];
+            }
+        } else {
+            if (targetOpenView.getPSAppDataEntity()) {
+                view.parameters = [
+                    {
+                        pathName: Util.srfpluralize(
+                            (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                        ).toLowerCase(),
+                        parameterName: (
+                            targetOpenView.getPSAppDataEntity() as IPSAppDataEntity
+                        )?.codeName.toLowerCase(),
+                    },
+                ];
+            }
+            if (targetOpenView && targetOpenView.modelPath) {
+                Object.assign(context, { viewpath: targetOpenView.modelPath });
+            }
+        }
+        if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
+            this.openIndexViewTab(view, context, params);
+        } else if (Object.is(view.placement, 'POPOVER')) {
+            this.openPopOver($event, view, context, params);
+        } else if (Object.is(view.placement, 'POPUPMODAL')) {
+            this.openPopupModal(view, context, params);
+        } else if (view.placement.startsWith('DRAWER')) {
+            this.openDrawer(view, context, params);
+        }
     }
 
     /**
@@ -669,7 +776,7 @@ export default class AppPicker extends Vue {
         const viewname2: string = view.viewname;
         view.viewname = viewname2;
         if (view.isRedirectView) {
-            this.openRedirectView($event, view, data);
+            this.openRedirectView($event, _context,_param);
         } else if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
             this.openIndexViewTab(view, _context, _param);
         } else if (Object.is(view.placement, 'POPOVER')) {

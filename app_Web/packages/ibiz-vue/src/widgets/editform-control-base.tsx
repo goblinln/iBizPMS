@@ -913,7 +913,7 @@ export class EditFormControlBase extends FormControlBase {
         let _this = this;
         this.drcounter--;
         if (this.drcounter === 0) {
-            this.save(this.drsaveopt, false, false).then((res) => {
+            this.save(this.drsaveopt, true, false).then((res) => {
                 this.saveState(res);
                 this.drsaveopt = {};
                 if (Object.is(_this.currentAction, "saveAndNew")) {

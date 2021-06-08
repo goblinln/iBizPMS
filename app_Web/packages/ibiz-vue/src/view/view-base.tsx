@@ -515,7 +515,15 @@ export class ViewBase extends Vue {
         if (!modeldata) {
             return;
         }
-        if (Object.is(modeldata.viewType, 'DEPICKUPVIEW') || Object.is(modeldata.viewType, 'DEPICKUPVIEW2') || Object.is(modeldata.viewType, 'DEMPICKUPVIEW') || Object.is(modeldata.viewType, 'DEMPICKUPVIEW2') || Object.is(modeldata.viewType, 'DEOPTVIEW') || Object.is(modeldata.viewType, 'DEWFSTARTVIEW') || Object.is(modeldata.viewType, 'DEWFACTIONVIEW')) {
+        if (Object.is(modeldata.viewType, 'DEPICKUPVIEW')
+            || Object.is(modeldata.viewType, 'DEPICKUPVIEW2')
+            || Object.is(modeldata.viewType, 'DEPICKUPVIEW3')
+            || Object.is(modeldata.viewType, 'DEMPICKUPVIEW')
+            || Object.is(modeldata.viewType, 'DEMPICKUPVIEW2')
+            || Object.is(modeldata.viewType, 'DEOPTVIEW')
+            || Object.is(modeldata.viewType, 'DEWFSTARTVIEW')
+            || Object.is(modeldata.viewType, 'DEWFACTIONVIEW'))
+        {
             this.containerModel = {
                 view_okbtn: { name: 'okbtn', type: 'button', text: this.$t('app.commonwords.ok'), disabled: true },
                 view_cancelbtn: { name: 'cancelbtn', type: 'button', text: this.$t('app.commonwords.cancel'), disabled: false },
@@ -1209,7 +1217,7 @@ export class ViewBase extends Vue {
         const currentViewKey = `${this.viewInstance.codeName}`;
         const el: any = currentViewKey ? document.getElementById(currentViewKey) : null;
         if (el) {
-            el.setAttribute('class', 'no-authority-shade');
+            el.classList.add('no-authority-shade');
             const shade = document.createElement('div');
             shade.setAttribute('class', 'no-authority-shade-child');
             el.appendChild(shade);

@@ -116,17 +116,16 @@ export class SaveBatch extends AppGridBase {
         let _context = JSON.parse(JSON.stringify(this.context));
         let result: Array<any> = [];
         for(const item of this.items){
-			
             let { data: Data,context: Context } = this.service.handleRequestData(action, _context, item, true);
             if (Object.is(item.rowDataState, 'create')){
                 Data.id = null;
             }
             result.push(Data);
         }
-		this.ctrlBeginLoading();
+		   this.onControlRequset('saveBatch', _context, result);
         const post: Promise<any> = this.appEntityService.saveBatch(_context, result, true);
         post.then((response:any) =>{
-			this.ctrlEndLoading();
+			this.onControlResponse('saveBatch', response);
             if (response && response.status === 200) {
                 this.$Notice.success({ 
                     title: (this.$t('app.commonWords.saveSuccess') as string),
@@ -135,7 +134,7 @@ export class SaveBatch extends AppGridBase {
                 this.closeView(response.data);
             }
         }).catch((error: any) =>{
-			this.ctrlEndLoading();
+			this.onControlResponse('saveBatch', error);
             this.$Notice.error({
                 title: (this.$t('app.commonWords.wrong') as string),
                 desc: error.data.message,

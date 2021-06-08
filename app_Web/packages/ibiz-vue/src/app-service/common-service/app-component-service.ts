@@ -69,6 +69,7 @@ export class AppComponentService {
         this.viewMap.set("DEMPICKUPVIEW2_DEFAULT", 'app-default-mpickupview2');
         this.viewMap.set("DEPICKUPVIEW_DEFAULT", 'app-default-pickupview');
         this.viewMap.set("DEPICKUPVIEW2_DEFAULT", 'app-default-pickupview2');
+        this.viewMap.set("DEPICKUPVIEW3_DEFAULT", 'app-default-pickupview3');
         this.viewMap.set("DECALENDAREXPVIEW_DEFAULT", 'app-default-calendarexpview');
         this.viewMap.set("DETREEEXPVIEW_DEFAULT", 'app-default-treeexpview');
         this.viewMap.set("DEPICKUPTREEVIEW_DEFAULT", 'app-default-pickuptreeview');
@@ -94,6 +95,7 @@ export class AppComponentService {
         this.viewMap.set("DEEDITVIEW3_DEFAULT", 'app-default-editview3');
         this.viewMap.set("DEHTMLVIEW_DEFAULT", 'app-default-htmlview');
         this.viewMap.set("DEMAPVIEW_DEFAULT", 'app-default-mapview');
+        this.viewMap.set("DEREPORTVIEW_DEFAULT",'app-default-dereportview');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');
@@ -142,6 +144,7 @@ export class AppComponentService {
         this.viewMap.set("DEWFACTIONVIEW_STYLE2", 'app-style2-wfactionview');
         this.viewMap.set("DEREDIRECTVIEW_STYLE2", 'app-style2-deredirectview');
         this.viewMap.set("APPWFSTEPTRACEVIEW_STYLE2", 'app-style2-wfsteptraceview');
+        this.viewMap.set("DEREPORTVIEW_STYLE2",'app-style2-dereportview');
         // STYLE3 样式
         this.viewMap.set("APPINDEXVIEW_STYLE3", 'app-style2-indexview');
         // STYLE4 样式

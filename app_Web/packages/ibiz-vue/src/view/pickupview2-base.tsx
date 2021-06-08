@@ -1,5 +1,5 @@
 import { IPSAppDEPickupView, IPSDEPickupViewPanel, IPSTreeExpBar } from '@ibiz/dynamic-model-api';
-import { debounce, ModelTool, PickupView2Engine } from 'ibiz-core';
+import { ModelTool, PickupView2Engine } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 
 export class PickupView2Base extends MainViewBase {
@@ -7,12 +7,22 @@ export class PickupView2Base extends MainViewBase {
     /**
      * 视图实例
      * 
-     * @memberof GridViewBase
+     * @memberof PickupView2Base
      */
     public viewInstance!: IPSAppDEPickupView;
 
+    /**
+     * 选择视图面板实例对象
+     * 
+     * @memberof PickupView2Base
+     */
     public pickupViewInstance!: IPSDEPickupViewPanel;
 
+    /**
+     * 树导航实例对象
+     * 
+     * @memberof PickupView2Base
+     */
     public treeExpBarInstance!: IPSTreeExpBar;
 
     /**
@@ -20,7 +30,7 @@ export class PickupView2Base extends MainViewBase {
      *
      * @public
      * @type {Engine}
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public engine: PickupView2Engine = new PickupView2Engine();
 
@@ -28,7 +38,7 @@ export class PickupView2Base extends MainViewBase {
      * 选中数据的字符串
      *
      * @type {string}
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public selectedData: string = "";
 
@@ -36,7 +46,7 @@ export class PickupView2Base extends MainViewBase {
      * 视图选中数据
      *
      * @type {any[]}
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public viewSelections: any[] = [];
 
@@ -44,11 +54,11 @@ export class PickupView2Base extends MainViewBase {
      * 是否显示按钮
      *
      * @type {boolean}
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public isShowButton: boolean = true;
 
-        /**
+    /**
      * 监听部件动态参数变化
      *
      * @param {*} newVal
@@ -67,7 +77,7 @@ export class PickupView2Base extends MainViewBase {
      *
      * @param {*} newVal
      * @param {*} oldVal
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isShowButton = newVal?.isShowButton !== false;
@@ -78,7 +88,7 @@ export class PickupView2Base extends MainViewBase {
      * 引擎初始化
      *
      * @public
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public engineInit(): void {
         if (this.Environment && this.Environment.isPreviewMode) {
@@ -96,7 +106,7 @@ export class PickupView2Base extends MainViewBase {
     /**
      * 确定
      *
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public onClickOk(): void {
         this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: this.viewSelections });
@@ -106,7 +116,7 @@ export class PickupView2Base extends MainViewBase {
     /**
      * 取消
      *
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public onClickCancel(): void {
         this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: null });
@@ -116,7 +126,7 @@ export class PickupView2Base extends MainViewBase {
     /**
      *  视图挂载
      *
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public async viewMounted() {
         super.viewMounted();
@@ -133,7 +143,7 @@ export class PickupView2Base extends MainViewBase {
     /**
      * 初始化数据选择视图实例
      * 
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public async viewModelInit() {
         this.viewInstance = (this.staticProps?.modeldata) as IPSAppDEPickupView;
@@ -147,7 +157,7 @@ export class PickupView2Base extends MainViewBase {
      *
      * @param {string} [controlType]
      * @returns
-     * @memberof PickupViewBase
+     * @memberof PickupView2Base
      */
     public computeTargetCtrlData(controlInstance:any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
@@ -159,35 +169,5 @@ export class PickupView2Base extends MainViewBase {
             isShowButton: this.isShowButton,
         })
         return { targetCtrlName, targetCtrlParam, targetCtrlEvent }
-    }
-
-    /**
-     * 渲染选择视图面板
-     * 
-     * @memberof PickupViewBase
-     */
-    public renderMainContent() {
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.treeExpBarInstance);
-        Object.assign(targetCtrlParam.staticProps, { pickupviewpanel: this.pickupViewInstance })
-        return this.$createElement(targetCtrlName, { slot: 'default', props: targetCtrlParam, ref: this.treeExpBarInstance?.name, on: targetCtrlEvent });
-    }
-
-    /**
-     * 渲染选择视图按钮
-     * 
-     * @memberof PickupViewBase
-     */
-    public renderPickButton() {
-        if(this.isShowButton){
-            return (
-                <card dis-hover={true} bordered={false} class="footer">
-                    <row style={{ "textAlign": 'right' }}>
-                        <i-button type="primary" disabled={this.viewSelections.length > 0 ? false : true} on-click={(...params: any[]) => debounce(this.onClickOk,params,this)}>{this.containerModel?.view_okbtn?.text}</i-button>
-                            &nbsp;&nbsp;
-                        <i-button on-click={(...params: any[]) => debounce(this.onClickCancel,params,this)}>{this.containerModel?.view_cancelbtn?.text}</i-button>
-                    </row>
-                </card>
-            )
-        }
     }
 }

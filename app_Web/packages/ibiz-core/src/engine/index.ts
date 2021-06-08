@@ -31,6 +31,7 @@ export { PickupGridViewEngine } from './pickup-grid-view-engine'
 export { PickupTreeViewEngine } from './pickup-tree-view-engine';
 export { PickupViewEngine } from './pickup-view-engine';
 export { PickupView2Engine } from './pickup-view2-engine';
+export { PickupView3Engine } from './pickup-view3-engine';
 export { PortalViewEngine } from './portal-view-engine';
 export { PortalView9Engine } from './portal-view9-engine';
 export { SearchViewEngine } from './search-view-engine';

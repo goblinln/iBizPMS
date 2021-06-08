@@ -181,10 +181,11 @@ export class RoadMap extends AppListBase {
         let tempViewParams:any = parentdata.viewparams?parentdata.viewparams:{};
         Object.assign(tempViewParams,JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(arg,{viewparams:tempViewParams});
-		this.ctrlBeginLoading();
-        const post: Promise<any> = this.service.search(this.fetchAction, this.context?JSON.parse(JSON.stringify(this.context)):{}, arg, this.showBusyIndicator);
+		   let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
+        const post: Promise<any> = this.service.search(this.fetchAction, tempContext, arg, this.showBusyIndicator);
         post.then(async (response: any) => {
-			this.ctrlEndLoading();
+			    this.onControlResponse('load', response);
             if (!response || response.status !== 200) {
                 if (response.errorMessage) {
                     this.$Notice.error({ title: '错误', desc: response.errorMessage });
@@ -194,7 +195,6 @@ export class RoadMap extends AppListBase {
             const items: any = response.data;
             this.items = [];
             if (items&& items.length > 0) {
-
                 for (let index = 0; index < items.length; index++) {
                     const item = items[index];
                     Object.assign(item, { isselected: false });
@@ -218,7 +218,7 @@ export class RoadMap extends AppListBase {
                 this.formatData();
             }
         }, (response: any) => {
-			this.ctrlEndLoading();
+			    this.onControlResponse('load', response);
             if (response && response.status === 401) {
                 return;
             }
@@ -248,14 +248,14 @@ export class RoadMap extends AppListBase {
         arg.viewparams.year = opt.year;
         const context = { ...(this.context || {}) };
         try {
-			this.ctrlBeginLoading();
+			this.onControlRequset('FetchGetRoadmapS', context, arg);
             const res = await this.service.search('FetchGetRoadmapS', context, arg, this.showBusyIndicator);
-			this.ctrlEndLoading();
+			this.onControlResponse('FetchGetRoadmapS', res);
             if (res && res.status === 200) {
                 opt.items = res.data;
             }
         } catch (error) {
-			this.ctrlEndLoading();
+			this.onControlResponse('FetchGetRoadmapS', error);
             console.log(error)
          }
     }

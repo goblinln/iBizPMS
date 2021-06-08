@@ -118,16 +118,17 @@ export class ActionHistory extends AppListBase {
             Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         }
         Object.assign(arg, { viewparams: tempViewParams });
-		this.ctrlBeginLoading()
+		   let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
         const post: Promise<any> = this.service.search(
             this.fetchAction,
-            this.context ? JSON.parse(JSON.stringify(this.context)) : {},
+            tempContext,
             arg,
             this.showBusyIndicator
         );
         post.then(
             (response: any) => {
-			    this.ctrlEndLoading();
+			    this.onControlResponse('load', response);
                 if (!response || response.status !== 200) {
                     if (response.errorMessage) {
                         this.$Notice.error({ title: '错误', desc: response.errorMessage });
@@ -170,7 +171,7 @@ export class ActionHistory extends AppListBase {
                 }
             },
             (response: any) => {
-				this.ctrlEndLoading();
+				this.onControlResponse('load', response);
                 if (response && response.status === 401) {
                     return;
                 }
@@ -276,7 +277,7 @@ export class ActionHistory extends AppListBase {
      * @memberof ActionHistory
      */
     protected renderHistoryItem(action: any, item: any): any {
-        const fieldText = this.$t(`entities.${action.objecttype.toLowerCase()}.fields.${item.field.toLowerCase()}`);
+        const fieldText = `${item.field}`
         if (item.diff) {
             return <div class="history-content">
                 {action.actionText}&nbsp;<strong>{fieldText}</strong>，区别为：<span><action-history-diff content={item.diff} /></span>

@@ -32,7 +32,9 @@ function getAppLocale(){
                 getdinginfoerror: "Failed to retrieve user information",
                 getiderror: "Failed to get the enterprise ID",
                 noassign: "No application functionality specified",
-                codelistwarn: "Code table value type and property type do not match, automatic cast exception, please correct code table value type and property type match"
+                codelistwarn: "Code table value type and property type do not match, automatic cast exception, please correct code table value type and property type match",
+                yes: "yes",
+                no: "no",
             },
             local:{
                 new: "New",

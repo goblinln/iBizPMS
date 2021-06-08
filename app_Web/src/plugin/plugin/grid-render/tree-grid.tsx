@@ -417,24 +417,25 @@ export class TreeGrid extends AppDefaultGrid {
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(arg, { viewparams: tempViewParams });
         let post: any;
-		this.ctrlBeginLoading();
+		   let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('exportExcel', tempContext, arg);
         if (isDeExport) {
             post = this.service.searchDEExportData(
                 this.fetchAction,
-                JSON.parse(JSON.stringify(this.context)),
+                tempContext,
                 arg,
                 this.showBusyIndicator
             );
         } else {
             post = this.service.search(
                 this.fetchAction,
-                JSON.parse(JSON.stringify(this.context)),
+                tempContext,
                 arg,
                 this.showBusyIndicator
             );
         }
         post.then((response: any) => {
-			this.ctrlEndLoading();
+			this.onControlResponse('exportExcel', response);
             if (!response || response.status !== 200) {
                 this.$Notice.error({
                     title: '',
@@ -458,7 +459,7 @@ export class TreeGrid extends AppDefaultGrid {
                 console.error(error);
             }
         }).catch((response: any) => {
-			this.ctrlEndLoading();
+			this.onControlResponse('exportExcel', response);
             if (response && response.status === 401) {
                 return;
             }

@@ -1760,7 +1760,7 @@
 
 
     <!--输出实体[IBZ_PLANTEMPLET]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_plantemplet-1-58">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_plantemplet-2-58">
         <createTable tableName="T_IBZ_PLANTEMPLET">
                 <column name="CREATEDATE" remarks="" type="DATETIME">
                 </column>
@@ -2995,7 +2995,7 @@
 
 
     <!--输出实体[SYS_UPDATE_LOG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-sys_update_log-1-112">
+    <changeSet author="a_A_23e8aa361" id="tab-sys_update_log-2-112">
         <createTable tableName="T_SYS_UPDATE_LOG">
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>

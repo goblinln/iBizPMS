@@ -4,10 +4,10 @@ import { AppPickupView2Base } from '../app-common-view/app-pickupview2-base';
 
 
 /**
- * 应用实体数据选择视图
+ * 应用实体数据选择视图（左右关系）
  *
  * @export
- * @class AppDefaultPickupView
+ * @class AppDefaultPickupView2
  * @extends {AppPickupViewBase}
  */
 @Component({})

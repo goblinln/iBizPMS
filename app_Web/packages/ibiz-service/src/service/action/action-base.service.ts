@@ -178,6 +178,16 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             }
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions`, _data);
         }
+        if (_context.test && _context.testcase && true) {
+        _data = await this.obtainMinor(_context, _data);
+            if (!_data.srffrontuf || _data.srffrontuf != 1) {
+                _data[this.APPDEKEY] = null;
+            }
+            if (_data.srffrontuf != null) {
+                delete _data.srffrontuf;
+            }
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions`, _data);
+        }
         if (_context.test && _context.bug && true) {
         _data = await this.obtainMinor(_context, _data);
             if (!_data.srffrontuf || _data.srffrontuf != 1) {
@@ -482,6 +492,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}`);
             return res;
         }
+        if (_context.test && _context.testcase && _context.action) {
+            const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/actions/${_context.action}`);
+            return res;
+        }
         if (_context.test && _context.bug && _context.action) {
             const res = await this.http.get(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`);
             return res;
@@ -622,6 +636,12 @@ export class ActionBaseService extends EntityBaseService<IAction> {
             _data[this.APPDENAME?.toLowerCase()] = undefined;
             _data[this.APPDEKEY] = undefined;
             const res = await this.http.get(`/tests/${_context.test}/testreports/${_context.testreport}/actions/getdraft`, _data);
+            return res;
+        }
+        if (_context.test && _context.testcase && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tests/${_context.test}/testcases/${_context.testcase}/actions/getdraft`, _data);
             return res;
         }
         if (_context.test && _context.bug && true) {
@@ -816,6 +836,10 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/tests/${_context.test}/testreports/${_context.testreport}/actions/${_context.action}`, _data);
         }
+        if (_context.test && _context.testcase && _context.action) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tests/${_context.test}/testcases/${_context.testcase}/actions/${_context.action}`, _data);
+        }
         if (_context.test && _context.bug && _context.action) {
         _data = await this.obtainMinor(_context, _data);
             return this.http.put(`/tests/${_context.test}/bugs/${_context.bug}/actions/${_context.action}`, _data);
@@ -949,6 +973,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.test && _context.testreport && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchaccount`, _data);
         }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchaccount`, _data);
+        }
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchaccount`, _data);
         }
@@ -1053,6 +1080,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.test && _context.testreport && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmain`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmain`, _data);
         }
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmain`, _data);
@@ -1159,6 +1189,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.test && _context.testreport && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmy`, _data);
         }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmy`, _data);
+        }
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmy`, _data);
         }
@@ -1263,6 +1296,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.test && _context.testreport && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchmytrends`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchmytrends`, _data);
         }
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchmytrends`, _data);
@@ -1369,6 +1405,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         if (_context.test && _context.testreport && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproduct`, _data);
         }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchproduct`, _data);
+        }
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproduct`, _data);
         }
@@ -1473,6 +1512,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         }
         if (_context.test && _context.testreport && true) {
             return this.http.post(`/tests/${_context.test}/testreports/${_context.testreport}/actions/fetchproject`, _data);
+        }
+        if (_context.test && _context.testcase && true) {
+            return this.http.post(`/tests/${_context.test}/testcases/${_context.testcase}/actions/fetchproject`, _data);
         }
         if (_context.test && _context.bug && true) {
             return this.http.post(`/tests/${_context.test}/bugs/${_context.bug}/actions/fetchproject`, _data);

@@ -124,6 +124,7 @@ export class PickupTreeViewBase extends MDViewBase {
      */
     public renderMainContent() {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.treeInstance);
+        Object.assign(targetCtrlParam.staticProps, { isSelectFirstDefault: false });
         return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.treeInstance.name, on: targetCtrlEvent });
     }
 

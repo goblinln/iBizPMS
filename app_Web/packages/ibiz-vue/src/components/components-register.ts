@@ -146,6 +146,7 @@ import { AppDefaultMPickUpView } from './view/app-default-view/app-default-mpick
 import { AppDefaultMPickUpView2 } from './view/app-default-view/app-default-mpickupview2';
 import { AppDefaultPickupView } from './view/app-default-view/app-default-pickupview';
 import { AppDefaultPickupView2 } from './view/app-default-view/app-default-pickupview2';
+import { AppDefaultPickupView3 } from './view/app-default-view/app-default-pickupview3';
 import { AppDefaultTreeExpView } from './view/app-default-view/app-default-treeexpview';
 import { AppDefaultPickupTreeView } from './view/app-default-view/app-default-pickuptreeview';
 import { AppDefaultCustomView } from './view/app-default-view/app-default-customview';
@@ -392,6 +393,7 @@ export const ComponentsRegister = {
         v.component('app-default-pickupgridview', AppDefaultPickupGridView);
         v.component('app-default-pickupview', AppDefaultPickupView);
         v.component('app-default-pickupview2', AppDefaultPickupView2);
+        v.component('app-default-pickupview3', AppDefaultPickupView3);
         v.component('app-default-mpickupview', AppDefaultMPickUpView);
         v.component('app-default-mpickupview2', AppDefaultMPickUpView2);
         v.component('app-default-treeexpview', AppDefaultTreeExpView);

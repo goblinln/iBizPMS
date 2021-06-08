@@ -1,26 +1,26 @@
 import { ViewEngine } from './view-engine';
 
 /**
- * 实体选择视图
+ * 实体选择视图(左右关系)
  *
  * @export
- * @class PickupViewEngine
+ * @class PickupView2Engine
  * @extends {ViewEngine}
  */
 export class PickupView2Engine extends ViewEngine {
 
     /**
-     * 选择视图面板
+     * 树导航
      *
      * @type {*}
-     * @memberof PickupViewEngine
+     * @memberof PickupView2Engine
      */
     public treeExpBar: any = null;
 
     /**
-     * Creates an instance of PickupViewEngine.
+     * Creates an instance of PickupView2Engine.
      * 
-     * @memberof PickupViewEngine
+     * @memberof PickupView2Engine
      */
     constructor() {
         super();
@@ -30,7 +30,7 @@ export class PickupView2Engine extends ViewEngine {
      * 初始化引擎
      *
      * @param {*} options
-     * @memberof PickupViewEngine
+     * @memberof PickupView2Engine
      */
     public init(options: any): void {
         this.treeExpBar = options.treeExpBar;
@@ -41,7 +41,7 @@ export class PickupView2Engine extends ViewEngine {
     /**
      * 引擎加载
      *
-     * @memberof PickupViewEngine
+     * @memberof PickupView2Engine
      */
     public load(): void {
         this.view.viewSelections = [];
@@ -58,7 +58,7 @@ export class PickupView2Engine extends ViewEngine {
      * @param {string} ctrlName
      * @param {string} eventName
      * @param {*} args
-     * @memberof PickupViewEngine
+     * @memberof PickupView2Engine
      */
     public onCtrlEvent(ctrlName: string, eventName: string, args: any): void {
         super.onCtrlEvent(ctrlName, eventName, args);
@@ -75,7 +75,7 @@ export class PickupView2Engine extends ViewEngine {
      * 值选中变化
      *
      * @param {any[]} args
-     * @memberof PickupViewEngine
+     * @memberof PickupView2Engine
      */
     public onSelectionChange(args: any[]): void {
         this.view.viewSelections = [];
@@ -88,10 +88,10 @@ export class PickupView2Engine extends ViewEngine {
     }
 
     /**
-     * 获取选择视图面板
+     * 获取树导航
      *
      * @returns {*}
-     * @memberof PickupViewEngine
+     * @memberof PickupView2Engine
      */
     public getTreeExpBar(): any {
         return this.treeExpBar;
