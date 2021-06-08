@@ -461,7 +461,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchParentModule"
+              "id" : "FetchDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,

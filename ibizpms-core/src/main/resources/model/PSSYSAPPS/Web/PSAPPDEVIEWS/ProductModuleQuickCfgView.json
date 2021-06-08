@@ -220,20 +220,20 @@
         "codeName" : "Root"
       }
     }, {
-      "id" : "id",
-      "hidden" : true,
-      "dataType" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "id" : "parent",
       "hidden" : true,
       "dataType" : 1,
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
+      }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     } ],
     "getPSDEFormPages" : [ {
@@ -376,13 +376,14 @@
           },
           "getPSEditor" : {
             "editorParams" : {
-              "SRFNAVPARAM.n_type_eq" : "story",
-              "SRFNAVCTX.n_root_eq" : "%root%",
               "SRFNAVCTX.n_type_eq" : "story",
-              "AC" : "TRUE",
+              "SRFNAVCTX.n_root_eq" : "%root%",
               "valFormat" : "{0: '/'}",
-              "SRFNAVPARAM.n_root_eq" : "%root%",
+              "AC" : "TRUE",
               "TRIGGER" : "TRUE",
+              "SRFNAVPARAM.n_root_eq" : "%root%",
+              "SRFNAVPARAM.n_type_eq" : "story",
+              "SRFNAVPARAM.action" : "update",
               "PICKUPVIEW" : "FALSE"
             },
             "editorType" : "PICKEREX_TRIGGER",
@@ -394,7 +395,7 @@
             },
             "getPSAppDEDataSet" : {
               "modelref" : true,
-              "id" : "FetchParentModule"
+              "id" : "FetchDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -415,6 +416,11 @@
               "key" : "n_type_eq",
               "name" : "n_type_eq",
               "value" : "story",
+              "rawValue" : true
+            }, {
+              "key" : "action",
+              "name" : "action",
+              "value" : "update",
               "rawValue" : true
             }, {
               "key" : "n_root_eq",
@@ -560,6 +566,35 @@
         "getPSEditor" : {
           "editorType" : "HIDDEN",
           "name" : "root"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "id",
+        "codeName" : "parent",
+        "dataType" : 1,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "parent",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "parent"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,

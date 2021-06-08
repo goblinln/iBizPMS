@@ -64,9 +64,9 @@ export abstract class AccountProductBase extends EntityBase implements IAccountP
     /**
      * 访问控制
      *
-     * @type {('open' | 'private' | 'custom')} open: 默认设置(有产品视图权限，即可访问), private: 私有产品(相关负责人和项目团队成员才能访问), custom: 自定义白名单(团队成员和白名单的成员可以访问)
+     * @type {('open' | 'private')} open: 默认设置(有产品视图权限，即可访问), private: 私有产品(相关负责人和项目团队成员才能访问)
      */
-    acl?: 'open' | 'private' | 'custom';
+    acl?: 'open' | 'private';
     /**
      * 产品名称
      */
