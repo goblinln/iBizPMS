@@ -1631,6 +1631,7 @@
               "AC" : "TRUE",
               "SRFNAVPARAM.project" : "%project%",
               "valFormat" : "{0: '/'}",
+              "SRFNAVPARAM.srfparentkey" : "%project%",
               "PICKUPVIEW" : "TRUE"
             },
             "editorType" : "PICKER",
@@ -1660,6 +1661,11 @@
               "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "srfparentkey",
+              "name" : "srfparentkey",
+              "value" : "project",
+              "rawValue" : false
+            }, {
               "key" : "project",
               "name" : "project",
               "value" : "project",
