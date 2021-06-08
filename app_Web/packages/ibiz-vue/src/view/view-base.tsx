@@ -1217,7 +1217,7 @@ export class ViewBase extends Vue {
         const currentViewKey = `${this.viewInstance.codeName}`;
         const el: any = currentViewKey ? document.getElementById(currentViewKey) : null;
         if (el) {
-            el.setAttribute('class', 'no-authority-shade');
+            el.classList.add('no-authority-shade');
             const shade = document.createElement('div');
             shade.setAttribute('class', 'no-authority-shade-child');
             el.appendChild(shade);
