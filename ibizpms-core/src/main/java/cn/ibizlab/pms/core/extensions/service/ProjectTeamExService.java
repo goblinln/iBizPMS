@@ -1,8 +1,10 @@
 package cn.ibizlab.pms.core.extensions.service;
 
+import cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext;
 import cn.ibizlab.pms.core.ibiz.service.impl.ProjectTeamServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.ibiz.domain.ProjectTeam;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -30,6 +32,15 @@ public class ProjectTeamExService extends ProjectTeamServiceImpl {
     @Transactional
     public ProjectTeam getUserRole(ProjectTeam et) {
         return super.getUserRole(et);
+    }
+
+    @Override
+    public Page<ProjectTeam> searchTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context) {
+        Map<String, Object> params = context.getParams();
+        if(params.get("dept") != null && params.get("teams") != null) {
+            return super.searchRowEditDefault(context);
+        }
+        return super.searchTaskCntEstimateConsumedLeft(context);
     }
 }
 
