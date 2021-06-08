@@ -85,6 +85,8 @@ export class ProductModuleUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set('PICKUPVIEW:','PICKUPVIEW');
     }
 
 }

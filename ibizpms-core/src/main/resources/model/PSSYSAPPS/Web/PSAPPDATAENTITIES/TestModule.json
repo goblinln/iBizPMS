@@ -31,39 +31,24 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "codeName" : "Update",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
@@ -114,24 +99,39 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Remove.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
+      "id" : "Update"
     },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
@@ -340,39 +340,24 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "Update",
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Update",
+    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Remove.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Update"
+      "id" : "Remove"
     },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Get",
-    "methodType" : "DEACTION",
-    "name" : "Get",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Get.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Get"
-    },
-    "builtinMethod" : false
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
@@ -388,23 +373,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "GetDraft"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchDefault",
-    "methodType" : "FETCH",
-    "name" : "FetchDefault",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "Default"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
@@ -440,24 +408,56 @@
     },
     "builtinMethod" : false
   }, {
-    "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Remove.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
+      "id" : "Update"
     },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchDefault",
+    "methodType" : "FETCH",
+    "name" : "FetchDefault",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Get",
+    "methodType" : "DEACTION",
+    "name" : "Get",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEACTIONS/Get.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",

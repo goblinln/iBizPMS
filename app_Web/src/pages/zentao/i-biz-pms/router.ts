@@ -19561,6 +19561,72 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/productmodules/:productmodule?/views/pickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productmodules', parameterName: 'productmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'productmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productmodules/:productmodule?/views/pickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productmodules', parameterName: 'productmodule' },
+                            { pathName: 'views', parameterName: 'pickupgridview' },
+                        ],
+                        resource:'productmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/productmodules/:productmodule?/views/pickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productmodules', parameterName: 'productmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'productmodule',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productmodules/:productmodule?/views/pickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productmodules', parameterName: 'productmodule' },
+                            { pathName: 'views', parameterName: 'pickupview' },
+                        ],
+                        resource:'productmodule',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/productteams/:productteam?/views/productteamlistview',
                     meta: {
                         captionTag: '',
@@ -41002,6 +41068,20 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
+                    path: 'views/productmodulepickupgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'productmodulepickupgridview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
                     path: 'views/storycurprojectgridview',
                     meta: {
                         captionTag: '',
@@ -42214,6 +42294,20 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'testmodulegridviewmain' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/productmodulepickupview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求模块',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'productmodulepickupview' },
                         ],
                         requireAuth: true,
                     },

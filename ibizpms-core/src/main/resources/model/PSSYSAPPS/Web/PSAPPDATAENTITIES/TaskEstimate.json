@@ -31,25 +31,6 @@
     "enablePagingBar" : false
   } ],
   "getAllPSAppDEActions" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -68,20 +49,20 @@
     "builtinMethod" : false
   }, {
     "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
+      "id" : "Create"
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
@@ -119,6 +100,25 @@
       "id" : "GetDraft"
     },
     "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",
@@ -562,25 +562,6 @@
     "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
-    "batchActionMode" : 1,
-    "codeName" : "Create",
-    "methodType" : "DEACTION",
-    "name" : "Create",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "builtinMethod" : false,
-    "enableBatchAction" : true
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -599,20 +580,20 @@
     "builtinMethod" : false
   }, {
     "batchActionMode" : 1,
-    "codeName" : "Remove",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Remove",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Remove"
+      "id" : "Create"
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
@@ -667,6 +648,25 @@
       "id" : "FetchDefault"
     },
     "builtinMethod" : false
+  }, {
+    "batchActionMode" : 1,
+    "codeName" : "Remove",
+    "methodType" : "DEACTION",
+    "name" : "Remove",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/Remove.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "builtinMethod" : false,
+    "enableBatchAction" : true
   }, {
     "codeName" : "CreateTemp",
     "methodType" : "DEACTION",

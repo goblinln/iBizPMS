@@ -53,17 +53,6 @@ public class DocResource {
     public DocMapping docMapping;
 
     @PreAuthorize("test('ZT_DOC', #doc_id, 'READ')")
-    @ApiOperation(value = "获取文档", tags = {"文档" },  notes = "获取文档")
-	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}")
-    public ResponseEntity<DocDTO> get(@PathVariable("doc_id") Long doc_id) {
-        Doc domain = docService.get(doc_id);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(doc_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('ZT_DOC', #doc_id, 'READ')")
     @ApiOperation(value = "取消收藏", tags = {"文档" },  notes = "取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollect(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -76,6 +65,32 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+
+    @PreAuthorize("test('ZT_DOC', #doc_id, 'READ')")
+    @ApiOperation(value = "获取文档", tags = {"文档" },  notes = "获取文档")
+	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}")
+    public ResponseEntity<DocDTO> get(@PathVariable("doc_id") Long doc_id) {
+        Doc domain = docService.get(doc_id);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(doc_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('ZT_DOC', 'CREATE')")
+    @ApiOperation(value = "新建文档", tags = {"文档" },  notes = "新建文档")
+	@RequestMapping(method = RequestMethod.POST, value = "/docs")
+    @Transactional
+    public ResponseEntity<DocDTO> create(@Validated @RequestBody DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
+		docService.create(domain);
+        if(!docRuntime.test(domain.getId(),"CREATE"))
+            throw new RuntimeException("无权限操作");
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
 
     @PreAuthorize("test('ZT_DOC', #doc_id, 'UPDATE')")
     @ApiOperation(value = "更新文档", tags = {"文档" },  notes = "更新文档")
@@ -94,14 +109,44 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_DOC', 'CREATE')")
-    @ApiOperation(value = "获取文档草稿", tags = {"文档" },  notes = "获取文档草稿")
-	@RequestMapping(method = RequestMethod.GET, value = "/docs/getdraft")
-    public ResponseEntity<DocDTO> getDraft(DocDTO dto) {
-        Doc domain = docMapping.toDomain(dto);
-        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
+    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
+    @ApiOperation(value = "行为", tags = {"文档" },  notes = "行为")
+	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/getdocstatus")
+    public ResponseEntity<DocDTO> getDocStatus(@PathVariable("doc_id") Long doc_id, DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
+        domain.setId(doc_id);
+        domain = docService.getDocStatus(domain);
+        docdto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
+        docdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+
+    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
+	@ApiOperation(value = "获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "获取我创建或更新文档（权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmy")
+	public ResponseEntity<List<DocDTO>> fetchmy(@RequestBody DocSearchContext context) {
+        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
+	@ApiOperation(value = "获取我的收藏", tags = {"文档" } ,notes = "获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmyfavourites")
+	public ResponseEntity<List<DocDTO>> fetchmyfavourites(@RequestBody DocSearchContext context) {
+        Page<Doc> domains = docService.searchMyFavourite(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_DOC', #doc_id, 'DELETE')")
     @ApiOperation(value = "删除文档", tags = {"文档" },  notes = "删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/docs/{doc_id}")
@@ -142,57 +187,12 @@ public class DocResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_DOC', 'CREATE')")
-    @ApiOperation(value = "新建文档", tags = {"文档" },  notes = "新建文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/docs")
-    @Transactional
-    public ResponseEntity<DocDTO> create(@Validated @RequestBody DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
-		docService.create(domain);
-        if(!docRuntime.test(domain.getId(),"CREATE"))
-            throw new RuntimeException("无权限操作");
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    @ApiOperation(value = "获取文档草稿", tags = {"文档" },  notes = "获取文档草稿")
+	@RequestMapping(method = RequestMethod.GET, value = "/docs/getdraft")
+    public ResponseEntity<DocDTO> getDraft(DocDTO dto) {
+        Doc domain = docMapping.toDomain(dto);
+        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
-
-    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
-	@ApiOperation(value = "获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "获取我创建或更新文档（权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmy")
-	public ResponseEntity<List<DocDTO>> fetchmy(@RequestBody DocSearchContext context) {
-        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
-	@ApiOperation(value = "获取我的收藏", tags = {"文档" } ,notes = "获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmyfavourites")
-	public ResponseEntity<List<DocDTO>> fetchmyfavourites(@RequestBody DocSearchContext context) {
-        Page<Doc> domains = docService.searchMyFavourite(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
-    @ApiOperation(value = "行为", tags = {"文档" },  notes = "行为")
-	@RequestMapping(method = RequestMethod.GET, value = "/docs/{doc_id}/getdocstatus")
-    public ResponseEntity<DocDTO> getDocStatus(@PathVariable("doc_id") Long doc_id, DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
-        domain.setId(doc_id);
-        domain = docService.getDocStatus(domain);
-        docdto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());
-        docdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(docdto);
-    }
-
 
     @PreAuthorize("test('ZT_DOC', #doc_id, 'READ')")
     @ApiOperation(value = "收藏", tags = {"文档" },  notes = "收藏")
@@ -218,17 +218,6 @@ public class DocResource {
     }
 
     @PreAuthorize("quickTest('ZT_DOC', 'READ')")
-    @ApiOperation(value = "根据系统用户获取文档", tags = {"文档" },  notes = "根据系统用户获取文档")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}")
-    public ResponseEntity<DocDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id) {
-        Doc domain = docService.get(doc_id);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
     @ApiOperation(value = "根据系统用户取消收藏", tags = {"文档" },  notes = "根据系统用户取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -241,6 +230,31 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+
+    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
+    @ApiOperation(value = "根据系统用户获取文档", tags = {"文档" },  notes = "根据系统用户获取文档")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}")
+    public ResponseEntity<DocDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id) {
+        Doc domain = docService.get(doc_id);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("quickTest('ZT_DOC', 'CREATE')")
+    @ApiOperation(value = "根据系统用户建立文档", tags = {"文档" },  notes = "根据系统用户建立文档")
+	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/docs")
+    public ResponseEntity<DocDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
+        
+		docService.create(domain);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("quickTest('ZT_DOC', 'UPDATE')")
     @ApiOperation(value = "根据系统用户更新文档", tags = {"文档" },  notes = "根据系统用户更新文档")
@@ -257,15 +271,46 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("quickTest('ZT_DOC', 'CREATE')")
-    @ApiOperation(value = "根据系统用户获取文档草稿", tags = {"文档" },  notes = "根据系统用户获取文档草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/docs/getdraft")
-    public ResponseEntity<DocDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, DocDTO dto) {
-        Doc domain = docMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
+    @ApiOperation(value = "根据系统用户行为", tags = {"文档" },  notes = "根据系统用户行为")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}/getdocstatus")
+    public ResponseEntity<DocDTO> getDocStatusBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
         
-        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
+        domain.setId(doc_id);
+        domain = docService.getDocStatus(domain) ;
+        docdto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
+        docdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
+	@ApiOperation(value = "根据系统用户获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据系统用户获取我创建或更新文档（权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/fetchmy")
+	public ResponseEntity<List<DocDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody DocSearchContext context) {
+        
+        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
+	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"文档" } ,notes = "根据系统用户获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/fetchmyfavourites")
+	public ResponseEntity<List<DocDTO>> fetchMyFavouritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody DocSearchContext context) {
+        
+        Page<Doc> domains = docService.searchMyFavourite(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("quickTest('ZT_DOC', 'DELETE')")
     @ApiOperation(value = "根据系统用户删除文档", tags = {"文档" },  notes = "根据系统用户删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}")
@@ -308,57 +353,12 @@ public class DocResource {
                 .body(list);
 	}
     @PreAuthorize("quickTest('ZT_DOC', 'CREATE')")
-    @ApiOperation(value = "根据系统用户建立文档", tags = {"文档" },  notes = "根据系统用户建立文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/sysaccounts/{sysuser_id}/docs")
-    public ResponseEntity<DocDTO> createBySysUser(@PathVariable("sysuser_id") String sysuser_id, @RequestBody DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
+    @ApiOperation(value = "根据系统用户获取文档草稿", tags = {"文档" },  notes = "根据系统用户获取文档草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/docs/getdraft")
+    public ResponseEntity<DocDTO> getDraftBySysUser(@PathVariable("sysuser_id") String sysuser_id, DocDTO dto) {
+        Doc domain = docMapping.toDomain(dto);
         
-		docService.create(domain);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据系统用户获取我创建或更新文档（权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/fetchmy")
-	public ResponseEntity<List<DocDTO>> fetchMyBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody DocSearchContext context) {
-        
-        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("quickTest('ZT_DOC', 'READ')")
-	@ApiOperation(value = "根据系统用户获取我的收藏", tags = {"文档" } ,notes = "根据系统用户获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/docs/fetchmyfavourites")
-	public ResponseEntity<List<DocDTO>> fetchMyFavouritesBySysUser(@PathVariable("sysuser_id") String sysuser_id,@RequestBody DocSearchContext context) {
-        
-        Page<Doc> domains = docService.searchMyFavourite(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
-    @ApiOperation(value = "根据系统用户行为", tags = {"文档" },  notes = "根据系统用户行为")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/docs/{doc_id}/getdocstatus")
-    public ResponseEntity<DocDTO> getDocStatusBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
-        
-        domain.setId(doc_id);
-        domain = docService.getDocStatus(domain) ;
-        docdto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
-        docdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(docdto);
+        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
     @PreAuthorize("quickTest('ZT_DOC', 'READ')")
@@ -377,17 +377,6 @@ public class DocResource {
 
 
     @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', #doc_id, 'READ')")
-    @ApiOperation(value = "根据文档库获取文档", tags = {"文档" },  notes = "根据文档库获取文档")
-	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}")
-    public ResponseEntity<DocDTO> getByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
-        Doc domain = docService.get(doc_id);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', #doc_id, 'READ')")
     @ApiOperation(value = "根据文档库取消收藏", tags = {"文档" },  notes = "根据文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -400,6 +389,31 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+
+    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', #doc_id, 'READ')")
+    @ApiOperation(value = "根据文档库获取文档", tags = {"文档" },  notes = "根据文档库获取文档")
+	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}")
+    public ResponseEntity<DocDTO> getByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
+        Doc domain = docService.get(doc_id);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据文档库建立文档", tags = {"文档" },  notes = "根据文档库建立文档")
+	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs")
+    public ResponseEntity<DocDTO> createByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
+        domain.setLib(doclib_id);
+		docService.create(domain);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'UPDATE', #doc_id, 'UPDATE')")
     @ApiOperation(value = "根据文档库更新文档", tags = {"文档" },  notes = "根据文档库更新文档")
@@ -416,15 +430,46 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据文档库获取文档草稿", tags = {"文档" },  notes = "根据文档库获取文档草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/getdraft")
-    public ResponseEntity<DocDTO> getDraftByDocLib(@PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
-        Doc domain = docMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
+    @ApiOperation(value = "根据文档库行为", tags = {"文档" },  notes = "根据文档库行为")
+	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
+    public ResponseEntity<DocDTO> getDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
         domain.setLib(doclib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
+        domain.setId(doc_id);
+        domain = docService.getDocStatus(domain) ;
+        docdto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
+        docdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档库获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据文档库获取我创建或更新文档（权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchmy")
+	public ResponseEntity<List<DocDTO>> fetchMyByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据文档库获取我的收藏", tags = {"文档" } ,notes = "根据文档库获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchmyfavourites")
+	public ResponseEntity<List<DocDTO>> fetchMyFavouritesByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchMyFavourite(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'DELETE', #doc_id, 'DELETE')")
     @ApiOperation(value = "根据文档库删除文档", tags = {"文档" },  notes = "根据文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/doclibs/{doclib_id}/docs/{doc_id}")
@@ -467,57 +512,12 @@ public class DocResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据文档库建立文档", tags = {"文档" },  notes = "根据文档库建立文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/doclibs/{doclib_id}/docs")
-    public ResponseEntity<DocDTO> createByDocLib(@PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
+    @ApiOperation(value = "根据文档库获取文档草稿", tags = {"文档" },  notes = "根据文档库获取文档草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/getdraft")
+    public ResponseEntity<DocDTO> getDraftByDocLib(@PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
+        Doc domain = docMapping.toDomain(dto);
         domain.setLib(doclib_id);
-		docService.create(domain);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_DOCLIB", doclib_id, domain.getId());    
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据文档库获取我创建或更新文档（权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchmy")
-	public ResponseEntity<List<DocDTO>> fetchMyByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
-        context.setN_lib_eq(doclib_id);
-        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据文档库获取我的收藏", tags = {"文档" } ,notes = "根据文档库获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/doclibs/{doclib_id}/docs/fetchmyfavourites")
-	public ResponseEntity<List<DocDTO>> fetchMyFavouritesByDocLib(@PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
-        context.setN_lib_eq(doclib_id);
-        Page<Doc> domains = docService.searchMyFavourite(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
-    @ApiOperation(value = "根据文档库行为", tags = {"文档" },  notes = "根据文档库行为")
-	@RequestMapping(method = RequestMethod.GET, value = "/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
-    public ResponseEntity<DocDTO> getDocStatusByDocLib(@PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
-        domain.setLib(doclib_id);
-        domain.setId(doc_id);
-        domain = docService.getDocStatus(domain) ;
-        docdto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
-        docdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(docdto);
+        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_DOC', 'ZT_DOCLIB', #doclib_id, 'READ', #doc_id, 'READ')")
@@ -537,17 +537,6 @@ public class DocResource {
 
 
     @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', #doc_id, 'READ')")
-    @ApiOperation(value = "根据产品文档库获取文档", tags = {"文档" },  notes = "根据产品文档库获取文档")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
-    public ResponseEntity<DocDTO> getByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
-        Doc domain = docService.get(doc_id);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', #doc_id, 'READ')")
     @ApiOperation(value = "根据产品文档库取消收藏", tags = {"文档" },  notes = "根据产品文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -560,6 +549,31 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+
+    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', #doc_id, 'READ')")
+    @ApiOperation(value = "根据产品文档库获取文档", tags = {"文档" },  notes = "根据产品文档库获取文档")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
+    public ResponseEntity<DocDTO> getByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
+        Doc domain = docService.get(doc_id);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
+    @ApiOperation(value = "根据产品文档库建立文档", tags = {"文档" },  notes = "根据产品文档库建立文档")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs")
+    public ResponseEntity<DocDTO> createByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
+        domain.setLib(doclib_id);
+		docService.create(domain);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'UPDATE', #doc_id, 'UPDATE')")
     @ApiOperation(value = "根据产品文档库更新文档", tags = {"文档" },  notes = "根据产品文档库更新文档")
@@ -576,15 +590,46 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品文档库获取文档草稿", tags = {"文档" },  notes = "根据产品文档库获取文档草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/getdraft")
-    public ResponseEntity<DocDTO> getDraftByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
-        Doc domain = docMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
+    @ApiOperation(value = "根据产品文档库行为", tags = {"文档" },  notes = "根据产品文档库行为")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
+    public ResponseEntity<DocDTO> getDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
         domain.setLib(doclib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
+        domain.setId(doc_id);
+        domain = docService.getDocStatus(domain) ;
+        docdto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
+        docdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品文档库获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据产品文档库获取我创建或更新文档（权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmy")
+	public ResponseEntity<List<DocDTO>> fetchMyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
+	@ApiOperation(value = "根据产品文档库获取我的收藏", tags = {"文档" } ,notes = "根据产品文档库获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmyfavourites")
+	public ResponseEntity<List<DocDTO>> fetchMyFavouritesByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchMyFavourite(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'DELETE', #doc_id, 'DELETE')")
     @ApiOperation(value = "根据产品文档库删除文档", tags = {"文档" },  notes = "根据产品文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}")
@@ -627,57 +672,12 @@ public class DocResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'CREATE', 'CREATE')")
-    @ApiOperation(value = "根据产品文档库建立文档", tags = {"文档" },  notes = "根据产品文档库建立文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/docs")
-    public ResponseEntity<DocDTO> createByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
+    @ApiOperation(value = "根据产品文档库获取文档草稿", tags = {"文档" },  notes = "根据产品文档库获取文档草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/getdraft")
+    public ResponseEntity<DocDTO> getDraftByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
+        Doc domain = docMapping.toDomain(dto);
         domain.setLib(doclib_id);
-		docService.create(domain);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PRODUCT", product_id, domain.getId());    
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据产品文档库获取我创建或更新文档（权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmy")
-	public ResponseEntity<List<DocDTO>> fetchMyByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
-        context.setN_lib_eq(doclib_id);
-        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', 'READ')")
-	@ApiOperation(value = "根据产品文档库获取我的收藏", tags = {"文档" } ,notes = "根据产品文档库获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/doclibs/{doclib_id}/docs/fetchmyfavourites")
-	public ResponseEntity<List<DocDTO>> fetchMyFavouritesByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
-        context.setN_lib_eq(doclib_id);
-        Page<Doc> domains = docService.searchMyFavourite(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
-    @ApiOperation(value = "根据产品文档库行为", tags = {"文档" },  notes = "根据产品文档库行为")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
-    public ResponseEntity<DocDTO> getDocStatusByProductDocLib(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
-        domain.setLib(doclib_id);
-        domain.setId(doc_id);
-        domain = docService.getDocStatus(domain) ;
-        docdto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
-        docdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(docdto);
+        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_DOC', 'ZT_PRODUCT', #product_id, 'READ', #doc_id, 'READ')")
@@ -697,17 +697,6 @@ public class DocResource {
 
 
     @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doc_id, 'READ')")
-    @ApiOperation(value = "根据项目文档库获取文档", tags = {"文档" },  notes = "根据项目文档库获取文档")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
-    public ResponseEntity<DocDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
-        Doc domain = docService.get(doc_id);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doc_id, 'READ')")
     @ApiOperation(value = "根据项目文档库取消收藏", tags = {"文档" },  notes = "根据项目文档库取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/uncollect")
     public ResponseEntity<DocDTO> unCollectByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -720,6 +709,31 @@ public class DocResource {
         docdto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
+
+    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doc_id, 'READ')")
+    @ApiOperation(value = "根据项目文档库获取文档", tags = {"文档" },  notes = "根据项目文档库获取文档")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
+    public ResponseEntity<DocDTO> getByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id) {
+        Doc domain = docService.get(doc_id);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'CREATE')")
+    @ApiOperation(value = "根据项目文档库建立文档", tags = {"文档" },  notes = "根据项目文档库建立文档")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs")
+    public ResponseEntity<DocDTO> createByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
+        domain.setLib(doclib_id);
+		docService.create(domain);
+        DocDTO dto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
+        dto.setSrfopprivs(opprivs);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
     @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doc_id, 'UPDATE')")
     @ApiOperation(value = "根据项目文档库更新文档", tags = {"文档" },  notes = "根据项目文档库更新文档")
@@ -736,15 +750,46 @@ public class DocResource {
     }
 
 
-    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目文档库获取文档草稿", tags = {"文档" },  notes = "根据项目文档库获取文档草稿")
-    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/getdraft")
-    public ResponseEntity<DocDTO> getDraftByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
-        Doc domain = docMapping.toDomain(dto);
+    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
+    @ApiOperation(value = "根据项目文档库行为", tags = {"文档" },  notes = "根据项目文档库行为")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
+    public ResponseEntity<DocDTO> getDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
+        Doc domain = docMapping.toDomain(docdto);
         domain.setLib(doclib_id);
-        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
+        domain.setId(doc_id);
+        domain = docService.getDocStatus(domain) ;
+        docdto = docMapping.toDto(domain);
+        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
+        docdto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
 
+    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据项目文档库获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据项目文档库获取我创建或更新文档（权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchmy")
+	public ResponseEntity<List<DocDTO>> fetchMyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
+	@ApiOperation(value = "根据项目文档库获取我的收藏", tags = {"文档" } ,notes = "根据项目文档库获取我的收藏")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchmyfavourites")
+	public ResponseEntity<List<DocDTO>> fetchMyFavouritesByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
+        context.setN_lib_eq(doclib_id);
+        Page<Doc> domains = docService.searchMyFavourite(context) ;
+        List<DocDTO> list = docMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
     @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doc_id, 'DELETE')")
     @ApiOperation(value = "根据项目文档库删除文档", tags = {"文档" },  notes = "根据项目文档库删除文档")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}")
@@ -787,57 +832,12 @@ public class DocResource {
                 .body(list);
 	}
     @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'CREATE')")
-    @ApiOperation(value = "根据项目文档库建立文档", tags = {"文档" },  notes = "根据项目文档库建立文档")
-	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/docs")
-    public ResponseEntity<DocDTO> createByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
+    @ApiOperation(value = "根据项目文档库获取文档草稿", tags = {"文档" },  notes = "根据项目文档库获取文档草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/getdraft")
+    public ResponseEntity<DocDTO> getDraftByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, DocDTO dto) {
+        Doc domain = docMapping.toDomain(dto);
         domain.setLib(doclib_id);
-		docService.create(domain);
-        DocDTO dto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs("ZT_PROJECT", project_id, domain.getId());    
-        dto.setSrfopprivs(opprivs);
-		return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
-
-    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库获取我创建或更新文档（权限）", tags = {"文档" } ,notes = "根据项目文档库获取我创建或更新文档（权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchmy")
-	public ResponseEntity<List<DocDTO>> fetchMyByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
-        context.setN_lib_eq(doclib_id);
-        Page<Doc> domains = docService.searchMyCreateOrUpdateDoc(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', 'READ')")
-	@ApiOperation(value = "根据项目文档库获取我的收藏", tags = {"文档" } ,notes = "根据项目文档库获取我的收藏")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/doclibs/{doclib_id}/docs/fetchmyfavourites")
-	public ResponseEntity<List<DocDTO>> fetchMyFavouritesByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id,@RequestBody DocSearchContext context) {
-        context.setN_lib_eq(doclib_id);
-        Page<Doc> domains = docService.searchMyFavourite(context) ;
-        List<DocDTO> list = docMapping.toDto(domains.getContent());
-	    return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-    @PreAuthorize("test('ZT_DOC', #doc_id, 'NONE')")
-    @ApiOperation(value = "根据项目文档库行为", tags = {"文档" },  notes = "根据项目文档库行为")
-	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/doclibs/{doclib_id}/docs/{doc_id}/getdocstatus")
-    public ResponseEntity<DocDTO> getDocStatusByProjectDocLib(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @PathVariable("doc_id") Long doc_id, DocDTO docdto) {
-        Doc domain = docMapping.toDomain(docdto);
-        domain.setLib(doclib_id);
-        domain.setId(doc_id);
-        domain = docService.getDocStatus(domain) ;
-        docdto = docMapping.toDto(domain);
-        Map<String, Integer> opprivs = docRuntime.getOPPrivs(domain.getId());    
-        docdto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(docdto);
+        return ResponseEntity.status(HttpStatus.OK).body(docMapping.toDto(docService.getDraft(domain)));
     }
 
     @PreAuthorize("test('ZT_DOC', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doc_id, 'READ')")

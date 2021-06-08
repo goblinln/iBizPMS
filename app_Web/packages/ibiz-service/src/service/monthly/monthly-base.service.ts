@@ -108,16 +108,27 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         return this.condCache.get('view');
     }
     /**
-     * Update
+     * Submit
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof MonthlyService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/monthlies/${_context.monthly}`, _data);
+    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/monthlies/${_context.monthly}/submit`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof MonthlyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/monthlies/${_context.monthly}`);
+        return res;
     }
     /**
      * AutoCreate
@@ -131,15 +142,15 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         return this.http.post(`/monthlies/${_context.monthly}/autocreate`, _data);
     }
     /**
-     * Read
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof MonthlyService
      */
-    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/read`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/monthlies/fetchdefault`, _data);
     }
     /**
      * Notice
@@ -151,6 +162,17 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/monthlies/${_context.monthly}/notice`, _data);
+    }
+    /**
+     * Read
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof MonthlyService
+     */
+    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/monthlies/${_context.monthly}/read`, _data);
     }
     /**
      * GetDraft
@@ -185,38 +207,30 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
         return this.http.post(`/monthlies`, _data);
     }
     /**
-     * Get
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof MonthlyService
      */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/monthlies/${_context.monthly}`);
-        return res;
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/monthlies/${_context.monthly}`, _data);
     }
+
     /**
-     * FetchDefault
+     * SubmitBatch接口方法
      *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof MonthlyService
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof MonthlyServiceBase
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/fetchdefault`, _data);
-    }
-    /**
-     * Submit
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof MonthlyService
-     */
-    async Submit(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/monthlies/${_context.monthly}/submit`, _data);
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/monthlies/submitbatch`,_data);
     }
 
     /**
@@ -234,20 +248,6 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
     }
 
     /**
-     * ReadBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof MonthlyServiceBase
-     */
-    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/monthlies/readbatch`,_data);
-    }
-
-    /**
      * NoticeBatch接口方法
      *
      * @param {*} [context={}]
@@ -262,7 +262,7 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
     }
 
     /**
-     * SubmitBatch接口方法
+     * ReadBatch接口方法
      *
      * @param {*} [context={}]
      * @param {*} [data={}]
@@ -270,8 +270,8 @@ export class MonthlyBaseService extends EntityBaseService<IMonthly> {
      * @returns {Promise<any>}
      * @memberof MonthlyServiceBase
      */
-    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/monthlies/submitbatch`,_data);
+        return this.http.post(`/monthlies/readbatch`,_data);
     }
 }

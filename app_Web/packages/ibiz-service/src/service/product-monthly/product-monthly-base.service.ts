@@ -66,15 +66,45 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return new HttpResponse(entity);
     }
     /**
-     * FetchDefault
+     * Get
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductMonthlyService
      */
-    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/fetchdefault`, _data);
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/productmonthlies/${_context.productmonthly}`);
+        return res;
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/productmonthlies`, _data);
+    }
+    /**
+     * AutoCreate
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductMonthlyService
+     */
+    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
     }
     /**
      * Update
@@ -103,45 +133,15 @@ export class ProductMonthlyBaseService extends EntityBaseService<IProductMonthly
         return res;
     }
     /**
-     * Create
+     * FetchDefault
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductMonthlyService
      */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/productmonthlies`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/productmonthlies/${_context.productmonthly}`);
-        return res;
-    }
-    /**
-     * AutoCreate
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductMonthlyService
-     */
-    async AutoCreate(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productmonthlies/${_context.productmonthly}/autocreate`, _data);
+    async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productmonthlies/fetchdefault`, _data);
     }
 
     /**

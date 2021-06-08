@@ -182,17 +182,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('view');
     }
     /**
-     * FetchCurProject
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/fetchcurproject`, _data);
-    }
-    /**
      * Remove
      *
      * @param {*} [_context={}]
@@ -202,6 +191,18 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.delete(`/products/${_context.product}`);
+    }
+    /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/products/${_context.product}`, _data);
     }
     /**
      * ProductTop
@@ -238,17 +239,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     async FetchCurDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/products/fetchcurdefault`, _data);
-    }
-    /**
-     * CancelProductTop
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductService
-     */
-    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
     }
     /**
      * Get
@@ -292,16 +282,26 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.http.post(`/products`, _data);
     }
     /**
-     * Update
+     * CancelProductTop
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProductService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/products/${_context.product}`, _data);
+    async CancelProductTop(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/${_context.product}/cancelproducttop`, _data);
+    }
+    /**
+     * FetchCurProject
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductService
+     */
+    async FetchCurProject(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/products/fetchcurproject`, _data);
     }
 
     /**

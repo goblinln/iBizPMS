@@ -65,17 +65,6 @@ public class AccountProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PRODUCT', #accountproduct_id, 'READ')")
-    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/accountproducts/{accountproduct_id}")
-    public ResponseEntity<AccountProductDTO> get(@PathVariable("accountproduct_id") Long accountproduct_id) {
-        Product domain = productService.get(accountproduct_id);
-        AccountProductDTO dto = accountproductMapping.toDto(domain);
-        Map<String, Integer> opprivs = productRuntime.getOPPrivs(accountproduct_id);
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('ZT_PRODUCT', 'READ')")
 	@ApiOperation(value = "获取我的数据", tags = {"产品" } ,notes = "获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/accountproducts/fetchmy")
@@ -89,6 +78,17 @@ public class AccountProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('ZT_PRODUCT', #accountproduct_id, 'READ')")
+    @ApiOperation(value = "获取产品", tags = {"产品" },  notes = "获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/accountproducts/{accountproduct_id}")
+    public ResponseEntity<AccountProductDTO> get(@PathVariable("accountproduct_id") Long accountproduct_id) {
+        Product domain = productService.get(accountproduct_id);
+        AccountProductDTO dto = accountproductMapping.toDto(domain);
+        Map<String, Integer> opprivs = productRuntime.getOPPrivs(accountproduct_id);
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/accountproducts/{accountproduct_id}/{action}")
@@ -112,17 +112,6 @@ public class AccountProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-    @PreAuthorize("test('ZT_PRODUCT', #accountproduct_id, 'READ')")
-    @ApiOperation(value = "根据系统用户获取产品", tags = {"产品" },  notes = "根据系统用户获取产品")
-	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountproducts/{accountproduct_id}")
-    public ResponseEntity<AccountProductDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountproduct_id") Long accountproduct_id) {
-        Product domain = productService.get(accountproduct_id);
-        AccountProductDTO dto = accountproductMapping.toDto(domain);
-        Map<String, Integer> opprivs = productRuntime.getOPPrivs(domain.getId());    
-        dto.setSrfopprivs(opprivs);
-        return ResponseEntity.status(HttpStatus.OK).body(dto);
-    }
-
     @PreAuthorize("quickTest('ZT_PRODUCT','READ')")
 	@ApiOperation(value = "根据系统用户获取我的数据", tags = {"产品" } ,notes = "根据系统用户获取我的数据")
     @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/{sysuser_id}/accountproducts/fetchmy")
@@ -137,5 +126,16 @@ public class AccountProductResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
+    @PreAuthorize("test('ZT_PRODUCT', #accountproduct_id, 'READ')")
+    @ApiOperation(value = "根据系统用户获取产品", tags = {"产品" },  notes = "根据系统用户获取产品")
+	@RequestMapping(method = RequestMethod.GET, value = "/sysaccounts/{sysuser_id}/accountproducts/{accountproduct_id}")
+    public ResponseEntity<AccountProductDTO> getBySysUser(@PathVariable("sysuser_id") String sysuser_id, @PathVariable("accountproduct_id") Long accountproduct_id) {
+        Product domain = productService.get(accountproduct_id);
+        AccountProductDTO dto = accountproductMapping.toDto(domain);
+        Map<String, Integer> opprivs = productRuntime.getOPPrivs(domain.getId());    
+        dto.setSrfopprivs(opprivs);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
 }
 

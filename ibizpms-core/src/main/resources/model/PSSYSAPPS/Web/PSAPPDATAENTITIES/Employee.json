@@ -142,23 +142,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchTask",
-    "methodType" : "FETCH",
-    "name" : "FetchTaskTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTask"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "FetchProduct",
     "methodType" : "FETCH",
     "name" : "FetchProductTeamM",
@@ -173,23 +156,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProduct"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchBug",
-    "methodType" : "FETCH",
-    "name" : "FetchBugUser",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BugUser"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBug"
     },
     "builtinMethod" : false
   }, {
@@ -224,6 +190,40 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBug",
+    "methodType" : "FETCH",
+    "name" : "FetchBugUser",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugUser"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTask",
+    "methodType" : "FETCH",
+    "name" : "FetchTaskTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTask"
     },
     "builtinMethod" : false
   }, {
@@ -493,40 +493,6 @@
     "stringLength" : 60
   } ],
   "getAllPSAppDEMethods" : [ {
-    "codeName" : "FetchTaskMulti",
-    "methodType" : "FETCH",
-    "name" : "FetchTaskMTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskMTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTaskMulti"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTask",
-    "methodType" : "FETCH",
-    "name" : "FetchTaskTeam",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "TaskTeam"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchTask"
-    },
-    "builtinMethod" : false
-  }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
     "name" : "Get",
@@ -544,6 +510,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchTaskMulti",
+    "methodType" : "FETCH",
+    "name" : "FetchTaskMTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskMTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTaskMulti"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProduct",
     "methodType" : "FETCH",
     "name" : "FetchProductTeamM",
@@ -558,23 +541,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchProduct"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchBug",
-    "methodType" : "FETCH",
-    "name" : "FetchBugUser",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "BugUser"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchBug"
     },
     "builtinMethod" : false
   }, {
@@ -609,6 +575,40 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBug",
+    "methodType" : "FETCH",
+    "name" : "FetchBugUser",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugUser"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchBug"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTask",
+    "methodType" : "FETCH",
+    "name" : "FetchTaskTeam",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "TaskTeam"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchTask"
     },
     "builtinMethod" : false
   }, {

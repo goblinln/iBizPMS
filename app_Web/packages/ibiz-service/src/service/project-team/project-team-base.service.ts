@@ -135,37 +135,33 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
         return this.condCache.get('view');
     }
     /**
-     * GetDraft
+     * FetchCntEst
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && true) {
-            _data[this.APPDENAME?.toLowerCase()] = undefined;
-            _data[this.APPDEKEY] = undefined;
-            const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
-            return res;
+            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
         }
-    this.log.warn([`[ProjectTeam]>>>[GetDraft函数]异常`]);
+    this.log.warn([`[ProjectTeam]>>>[FetchCntEst函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * Update
+     * Remove
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         if (_context.project && _context.projectteam) {
-        _data = await this.obtainMinor(_context, _data);
-            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
+            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
         }
-    this.log.warn([`[ProjectTeam]>>>[Update函数]异常`]);
+    this.log.warn([`[ProjectTeam]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -200,18 +196,37 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
-     * FetchCntEst
+     * Update
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof ProjectTeamService
      */
-    async FetchCntEst(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && true) {
-            return this.http.post(`/projects/${_context.project}/projectteams/fetchcntest`, _data);
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectteam) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projectteams/${_context.projectteam}`, _data);
         }
-    this.log.warn([`[ProjectTeam]>>>[FetchCntEst函数]异常`]);
+    this.log.warn([`[ProjectTeam]>>>[Update函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectTeamService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/projectteams/getdraft`, _data);
+            return res;
+        }
+    this.log.warn([`[ProjectTeam]>>>[GetDraft函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
@@ -234,21 +249,6 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             return this.http.post(`/projects/${_context.project}/projectteams`, _data);
         }
     this.log.warn([`[ProjectTeam]>>>[Create函数]异常`]);
-    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
-    }
-    /**
-     * Remove
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectTeamService
-     */
-    async Remove(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        if (_context.project && _context.projectteam) {
-            return this.http.delete(`/projects/${_context.project}/projectteams/${_context.projectteam}`);
-        }
-    this.log.warn([`[ProjectTeam]>>>[Remove函数]异常`]);
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
 }

@@ -48,12 +48,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -61,7 +61,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -82,12 +82,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -95,7 +95,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Create"
     },
     "builtinMethod" : false
   }, {
@@ -357,12 +357,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Create",
+    "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "Create",
+    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/GetDraft.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -370,7 +370,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Create"
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -391,6 +391,23 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Create",
+    "methodType" : "DEACTION",
+    "name" : "Create",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/Create.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchPublicTestSuite",
     "methodType" : "FETCH",
     "name" : "FetchPublicTestSuite",
@@ -405,23 +422,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchPublicTestSuite"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "GetDraft",
-    "methodType" : "DEACTION",
-    "name" : "GetDraft",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/GetDraft.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {

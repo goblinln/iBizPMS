@@ -65,12 +65,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "Read",
+    "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "HaveRead",
+    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Update.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -78,7 +78,24 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "Read"
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
     },
     "builtinMethod" : false
   }, {
@@ -116,12 +133,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Read",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "HaveRead",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -129,7 +146,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Read"
     },
     "builtinMethod" : false
   }, {
@@ -147,23 +164,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Notice"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
     },
     "builtinMethod" : false
   }, {
@@ -558,6 +558,40 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Update",
+    "methodType" : "DEACTION",
+    "name" : "Update",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Update.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "GetDraft",
+    "methodType" : "DEACTION",
+    "name" : "GetDraft",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetDraft.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "name" : "FetchDefault",
@@ -572,23 +606,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchDefault"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Read",
-    "methodType" : "DEACTION",
-    "name" : "HaveRead",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Read"
     },
     "builtinMethod" : false
   }, {
@@ -626,12 +643,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "GetDraft",
+    "codeName" : "Read",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
+    "name" : "HaveRead",
     "getPSDEAction" : {
       "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetDraft.json"
+      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json"
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
@@ -639,7 +656,7 @@
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "GetDraft"
+      "id" : "Read"
     },
     "builtinMethod" : false
   }, {
@@ -657,23 +674,6 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Notice"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "Update",
-    "methodType" : "DEACTION",
-    "name" : "Update",
-    "getPSDEAction" : {
-      "modelref" : true,
-      "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Update.json"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "NONE"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "Update"
     },
     "builtinMethod" : false
   }, {

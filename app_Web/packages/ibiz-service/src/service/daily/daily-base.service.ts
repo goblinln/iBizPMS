@@ -138,6 +138,32 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
         return this.http.post(`/dailies`, _data);
     }
     /**
+     * Update
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DailyService
+     */
+    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.put(`/dailies/${_context.daily}`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof DailyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/dailies/getdraft`, _data);
+        return res;
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -147,17 +173,6 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/dailies/fetchdefault`, _data);
-    }
-    /**
-     * Read
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DailyService
-     */
-    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/dailies/${_context.daily}/read`, _data);
     }
     /**
      * Submit
@@ -182,18 +197,15 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
         return this.http.post(`/dailies/${_context.daily}/autocreate`, _data);
     }
     /**
-     * GetDraft
+     * Read
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof DailyService
      */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/dailies/getdraft`, _data);
-        return res;
+    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/dailies/${_context.daily}/read`, _data);
     }
     /**
      * Notice
@@ -205,32 +217,6 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
      */
     async Notice(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/dailies/${_context.daily}/notice`, _data);
-    }
-    /**
-     * Update
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof DailyService
-     */
-    async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.put(`/dailies/${_context.daily}`, _data);
-    }
-
-    /**
-     * ReadBatch接口方法
-     *
-     * @param {*} [context={}]
-     * @param {*} [data={}]
-     * @param {boolean} [isloading]
-     * @returns {Promise<any>}
-     * @memberof DailyServiceBase
-     */
-    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        return this.http.post(`/dailies/readbatch`,_data);
     }
 
     /**
@@ -259,6 +245,20 @@ export class DailyBaseService extends EntityBaseService<IDaily> {
     public async AutoCreateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.post(`/dailies/autocreatebatch`,_data);
+    }
+
+    /**
+     * ReadBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DailyServiceBase
+     */
+    public async ReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/dailies/readbatch`,_data);
     }
 
     /**

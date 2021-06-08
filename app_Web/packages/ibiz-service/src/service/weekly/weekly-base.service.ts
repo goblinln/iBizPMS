@@ -66,24 +66,6 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return new HttpResponse(entity);
     }
     /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof WeeklyService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/weeklies`, _data);
-    }
-    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
@@ -93,6 +75,18 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/weeklies/fetchdefault`, _data);
+    }
+    /**
+     * Get
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof WeeklyService
+     */
+    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        const res = await this.http.get(`/weeklies/${_context.weekly}`);
+        return res;
     }
     /**
      * Notice
@@ -117,15 +111,22 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return this.http.post(`/weeklies/${_context.weekly}/submit`, _data);
     }
     /**
-     * Read
+     * Create
      *
      * @param {*} [_context={}]
      * @param {*} [_data = {}]
      * @returns {Promise<HttpResponse>}
      * @memberof WeeklyService
      */
-    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/weeklies/${_context.weekly}/read`, _data);
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/weeklies`, _data);
     }
     /**
      * GetDraft
@@ -142,6 +143,17 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
         return res;
     }
     /**
+     * Read
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof WeeklyService
+     */
+    async Read(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/weeklies/${_context.weekly}/read`, _data);
+    }
+    /**
      * Update
      *
      * @param {*} [_context={}]
@@ -152,18 +164,6 @@ export class WeeklyBaseService extends EntityBaseService<IWeekly> {
     async Update(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
         return this.http.put(`/weeklies/${_context.weekly}`, _data);
-    }
-    /**
-     * Get
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof WeeklyService
-     */
-    async Get(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        const res = await this.http.get(`/weeklies/${_context.weekly}`);
-        return res;
     }
     /**
      * AutoCreate

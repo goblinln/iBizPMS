@@ -78,49 +78,6 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
         return this.http.put(`/productweeklies/${_context.productweekly}`, _data);
     }
     /**
-     * GetDraft
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductWeeklyService
-     */
-    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data[this.APPDENAME?.toLowerCase()] = undefined;
-        _data[this.APPDEKEY] = undefined;
-        const res = await this.http.get(`/productweeklies/getdraft`, _data);
-        return res;
-    }
-    /**
-     * Summary
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductWeeklyService
-     */
-    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
-    }
-    /**
-     * Create
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProductWeeklyService
-     */
-    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        _data = await this.obtainMinor(_context, _data);
-        if (!_data.srffrontuf || _data.srffrontuf != 1) {
-            _data[this.APPDEKEY] = null;
-        }
-        if (_data.srffrontuf != null) {
-            delete _data.srffrontuf;
-        }
-        return this.http.post(`/productweeklies`, _data);
-    }
-    /**
      * Get
      *
      * @param {*} [_context={}]
@@ -142,6 +99,49 @@ export class ProductWeeklyBaseService extends EntityBaseService<IProductWeekly> 
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/productweeklies/fetchdefault`, _data);
+    }
+    /**
+     * Create
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductWeeklyService
+     */
+    async Create(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        if (!_data.srffrontuf || _data.srffrontuf != 1) {
+            _data[this.APPDEKEY] = null;
+        }
+        if (_data.srffrontuf != null) {
+            delete _data.srffrontuf;
+        }
+        return this.http.post(`/productweeklies`, _data);
+    }
+    /**
+     * Summary
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductWeeklyService
+     */
+    async Summary(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/productweeklies/${_context.productweekly}/summary`, _data);
+    }
+    /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductWeeklyService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/productweeklies/getdraft`, _data);
+        return res;
     }
 
     /**

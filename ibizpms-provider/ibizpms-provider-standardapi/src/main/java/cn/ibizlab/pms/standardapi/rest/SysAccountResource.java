@@ -49,10 +49,10 @@ public class SysAccountResource {
     @Lazy
     public SysAccountMapping sysaccountMapping;
 
-	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"系统用户" } ,notes = "获取个人信息-个人贡献")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmycontribution")
-	public ResponseEntity<List<SysAccountDTO>> countmycontribution(@RequestBody SysUserSearchContext context) {
-        Page<SysUser> domains = sysuserService.searchPersonInfo(context) ;
+	@ApiOperation(value = "获取我的工作", tags = {"系统用户" } ,notes = "获取我的工作")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmywork")
+	public ResponseEntity<List<SysAccountDTO>> countmywork(@RequestBody SysUserSearchContext context) {
+        Page<SysUser> domains = sysuserService.searchMyWork(context) ;
         List<SysAccountDTO> list = sysaccountMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
@@ -60,10 +60,10 @@ public class SysAccountResource {
                 .header("x-total", String.valueOf(domains.getTotalElements()))
                 .body(list);
 	}
-	@ApiOperation(value = "获取我的工作", tags = {"系统用户" } ,notes = "获取我的工作")
-    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmywork")
-	public ResponseEntity<List<SysAccountDTO>> countmywork(@RequestBody SysUserSearchContext context) {
-        Page<SysUser> domains = sysuserService.searchMyWork(context) ;
+	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"系统用户" } ,notes = "获取个人信息-个人贡献")
+    @RequestMapping(method= RequestMethod.POST , value="/sysaccounts/countmycontribution")
+	public ResponseEntity<List<SysAccountDTO>> countmycontribution(@RequestBody SysUserSearchContext context) {
+        Page<SysUser> domains = sysuserService.searchPersonInfo(context) ;
         List<SysAccountDTO> list = sysaccountMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
                 .header("x-page", String.valueOf(context.getPageable().getPageNumber()))

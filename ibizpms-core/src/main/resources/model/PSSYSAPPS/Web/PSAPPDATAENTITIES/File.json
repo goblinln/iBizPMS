@@ -358,23 +358,6 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchProduct",
-    "methodType" : "FETCH",
-    "name" : "FetchProductDocLibFile",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductDocLibFile"
-    },
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    },
-    "getPSDEServiceAPIMethod" : {
-      "modelref" : true,
-      "id" : "FetchProduct"
-    },
-    "builtinMethod" : false
-  }, {
     "batchActionMode" : 1,
     "codeName" : "Remove",
     "methodType" : "DEACTION",
@@ -393,6 +376,23 @@
     },
     "builtinMethod" : false,
     "enableBatchAction" : true
+  }, {
+    "codeName" : "FetchProduct",
+    "methodType" : "FETCH",
+    "name" : "FetchProductDocLibFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductDocLibFile"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProduct"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "FetchType",
     "methodType" : "FETCH",
