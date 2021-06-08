@@ -6,6 +6,13 @@
     "id" : "DeveloperQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CLOSE",
+    "name" : "CLOSE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    }
+  }, {
     "dataAccessAction" : "MANAGE",
     "name" : "Product_Manage_DEV_MANAGE",
     "getPSDEOPPriv" : {

@@ -42,7 +42,7 @@
   }, {
     "key" : "SRFPARENTKEY",
     "name" : "SRFPARENTKEY",
-    "value" : "case",
+    "value" : "testcase",
     "rawValue" : false
   } ],
   "getPSAppViewUIActions" : [ {

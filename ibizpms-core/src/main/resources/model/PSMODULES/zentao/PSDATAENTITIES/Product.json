@@ -4558,6 +4558,13 @@
       "id" : "ProductManagerQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CLOSE",
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
+      }
+    }, {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_CreateBy_MANAGE",
       "getPSDEOPPriv" : {
@@ -4577,6 +4584,13 @@
       "id" : "DeveloperQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CLOSE",
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
+      }
+    }, {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_DEV_MANAGE",
       "getPSDEOPPriv" : {
@@ -4596,6 +4610,13 @@
       "id" : "OpenQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "CLOSE",
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
+      }
+    }, {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_Open_MANAGE",
       "getPSDEOPPriv" : {

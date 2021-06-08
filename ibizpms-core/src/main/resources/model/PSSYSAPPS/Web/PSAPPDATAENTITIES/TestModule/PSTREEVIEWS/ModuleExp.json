@@ -324,6 +324,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -416,6 +417,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -508,6 +510,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -896,6 +899,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -1152,6 +1156,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -1294,6 +1299,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",

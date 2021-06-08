@@ -574,6 +574,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleQuickCfgView.json",
@@ -666,6 +667,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "OpenQuickCfgView",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleQuickCfgView.json",
@@ -886,18 +888,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "MODULE2"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ZT_PRODUCT"
-    },
-    "name" : "所有模块 - 项目产品（动态）",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ALL"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -1722,6 +1712,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleQuickCfgView.json",
@@ -2173,6 +2164,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "OpenQuickCfgView",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleQuickCfgView.json",
