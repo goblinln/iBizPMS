@@ -3541,6 +3541,7 @@
                 "SRFNAVPARAM.product" : "%product%",
                 "SRFNAVCTX.product" : "%product%",
                 "PICKUPVIEW" : "TRUE",
+                "SRFNAVPARAM.storytype" : "%bug%",
                 "SRFNAVCTX.n_project_eq" : "%project%",
                 "SRFNAVCTX.n_module_eq" : "%module%"
               },
@@ -3605,6 +3606,11 @@
                 "key" : "n_project_eq",
                 "name" : "n_project_eq",
                 "value" : "project",
+                "rawValue" : false
+              }, {
+                "key" : "storytype",
+                "name" : "storytype",
+                "value" : "bug",
                 "rawValue" : false
               }, {
                 "key" : "n_module_eq",

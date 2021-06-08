@@ -1328,6 +1328,7 @@
               "AC" : "TRUE",
               "SRFNAVPARAM.project" : "%project%",
               "valFormat" : "{0: '/'}",
+              "SRFNAVPARAM.storytype" : "%bug%",
               "PICKUPVIEW" : "TRUE"
             },
             "editorType" : "PICKER",
@@ -1381,6 +1382,11 @@
               "key" : "n_product_eq",
               "name" : "n_product_eq",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "storytype",
+              "name" : "storytype",
+              "value" : "bug",
               "rawValue" : false
             }, {
               "key" : "n_module_eq",

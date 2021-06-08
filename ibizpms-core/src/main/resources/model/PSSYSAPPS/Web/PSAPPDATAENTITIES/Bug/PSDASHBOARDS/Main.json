@@ -6167,6 +6167,7 @@
                       "LINKVIEW" : "TRUE",
                       "AC" : "FALSE",
                       "TRIGGER" : "FALSE",
+                      "SRFNAVPARAM.storytype" : "%bug%",
                       "PICKUPVIEW" : "FALSE"
                     },
                     "editorType" : "PICKEREX_LINKONLY",
@@ -6209,6 +6210,11 @@
                       "key" : "n_product_eq",
                       "name" : "n_product_eq",
                       "value" : "product",
+                      "rawValue" : false
+                    }, {
+                      "key" : "storytype",
+                      "name" : "storytype",
+                      "value" : "bug",
                       "rawValue" : false
                     } ],
                     "paramJOString" : "{\"n_product_eq\":\"%product%\"}",

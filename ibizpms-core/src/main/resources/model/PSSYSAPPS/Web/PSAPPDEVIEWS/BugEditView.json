@@ -1502,6 +1502,7 @@
                 "SRFNAVCTX.project" : "%project%",
                 "SRFNAVCTX.product" : "%product%",
                 "PICKUPVIEW" : "TRUE",
+                "SRFNAVPARAM.storytype" : "%bug%",
                 "SRFNAVCTX.n_module_eq" : "%module%"
               },
               "editorType" : "PICKER",
@@ -1565,6 +1566,11 @@
                 "key" : "n_product_eq",
                 "name" : "n_product_eq",
                 "value" : "product",
+                "rawValue" : false
+              }, {
+                "key" : "storytype",
+                "name" : "storytype",
+                "value" : "bug",
                 "rawValue" : false
               }, {
                 "key" : "n_module_eq",
