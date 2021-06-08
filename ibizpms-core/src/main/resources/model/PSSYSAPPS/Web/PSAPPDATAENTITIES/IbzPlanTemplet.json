@@ -393,12 +393,6 @@
     "stringLength" : 100,
     "keyField" : true
   }, {
-    "codeName" : "Plantempletdetail",
-    "logicName" : "计划项",
-    "name" : "PLANTEMPLETDETAIL",
-    "stdDataType" : 21,
-    "stringLength" : 1048576
-  }, {
     "codeName" : "UpdateMan",
     "logicName" : "更新人",
     "name" : "UPDATEMAN",

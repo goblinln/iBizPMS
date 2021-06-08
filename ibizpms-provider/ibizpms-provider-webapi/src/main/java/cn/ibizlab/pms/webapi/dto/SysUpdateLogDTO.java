@@ -88,15 +88,6 @@ public class SysUpdateLogDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("更新平台")
     private String updatebranch;
-        
-    /**
-     * 更新功能列表详情
-     */
-    @JSONField(name = "updatefeatures")
-    @JsonProperty("updatefeatures")
-    @ApiModelProperty("更新功能列表详情")
-    private List<cn.ibizlab.pms.webapi.dto.SysUpdateFeaturesDTO> updatefeatures;   
-
     /**
      * 属性 [UPDESC]
      *

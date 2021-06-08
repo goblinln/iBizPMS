@@ -21370,12 +21370,6 @@
         "stdDataType" : 25,
         "stringLength" : 60
       }, {
-        "codeName" : "Updatefeatures",
-        "logicName" : "更新功能列表详情",
-        "name" : "UPDATEFEATURES",
-        "stdDataType" : 21,
-        "stringLength" : 1048576
-      }, {
         "codeName" : "Updesc",
         "logicName" : "更新说明",
         "name" : "UPDESC",
@@ -27902,12 +27896,6 @@
         "logicName" : "总工时",
         "name" : "TOTALWH",
         "stdDataType" : 9
-      }, {
-        "codeName" : "Projectteams",
-        "logicName" : "项目团队成员",
-        "name" : "PROJECTTEAMS",
-        "stdDataType" : 21,
-        "stringLength" : 1048576
       }, {
         "codeName" : "Totalhours",
         "logicName" : "可用工时",

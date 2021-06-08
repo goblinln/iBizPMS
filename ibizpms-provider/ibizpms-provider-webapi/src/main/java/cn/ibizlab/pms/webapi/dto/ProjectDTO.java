@@ -329,15 +329,6 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @JsonProperty("totalwh")
     @ApiModelProperty("总工时")
     private Integer totalwh;
-        
-    /**
-     * 项目团队成员
-     */
-    @JSONField(name = "projectteams")
-    @JsonProperty("projectteams")
-    @ApiModelProperty("项目团队成员")
-    private List<cn.ibizlab.pms.webapi.dto.ProjectTeamDTO> projectteams;   
-
     /**
      * 属性 [TOTALHOURS]
      *

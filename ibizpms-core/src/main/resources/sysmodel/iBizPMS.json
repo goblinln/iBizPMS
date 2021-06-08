@@ -19169,20 +19169,6 @@
     "major_field":0
     },
     {
-    "fieldname":"PLANTEMPLETDETAIL" ,
-    "codename":"Plantempletdetail",
-    "field_logic_name":"计划项",
-    "entity_name":"IBZ_PLANTEMPLET",
-    "field_type":"ONE2MANYDATA",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"TEXT",
-    "data_length":1048576,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"UPDATEMAN" ,
     "codename":"UpdateMan",
     "field_logic_name":"更新人",
@@ -37135,20 +37121,6 @@
     "major_field":0
     },
     {
-    "fieldname":"PROJECTTEAMS" ,
-    "codename":"Projectteams",
-    "field_logic_name":"项目团队成员",
-    "entity_name":"ZT_PROJECT",
-    "field_type":"ONE2MANYDATA",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"TEXT",
-    "data_length":1048576,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"TOTALHOURS" ,
     "codename":"Totalhours",
     "field_logic_name":"可用工时",
@@ -47313,20 +47285,6 @@
     "major_field":0
     },
     {
-    "fieldname":"UPDATEFEATURES" ,
-    "codename":"Updatefeatures",
-    "field_logic_name":"更新功能列表详情",
-    "entity_name":"SYS_UPDATE_LOG",
-    "field_type":"ONE2MANYDATA",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"TEXT",
-    "data_length":1048576,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"UPDESC" ,
     "codename":"Updesc",
     "field_logic_name":"更新说明",
@@ -48390,20 +48348,6 @@
     "major_field":0
     },
     {
-    "fieldname":"TASKTEAMS" ,
-    "codename":"Taskteams",
-    "field_logic_name":"项目团队成员",
-    "entity_name":"ZT_TASK",
-    "field_type":"ONE2MANYDATA",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"TEXT",
-    "data_length":1048576,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"STORYSTATUS" ,
     "codename":"Storystatus",
     "field_logic_name":"需求状态",
@@ -49084,20 +49028,6 @@
     "data_type":"VARCHAR",
     "data_length":100,
     "predefined":"ORGNAME",
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
-    "fieldname":"IBZTASKESTIMATES" ,
-    "codename":"Ibztaskestimates",
-    "field_logic_name":"工时",
-    "entity_name":"ZT_TASK",
-    "field_type":"ONE2MANYDATA",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"TEXT",
-    "data_length":1048576,
     "key_field":0,
     "show_order":1000,
     "major_field":0

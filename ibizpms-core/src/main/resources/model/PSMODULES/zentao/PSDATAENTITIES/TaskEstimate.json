@@ -2083,10 +2083,6 @@
     },
     "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
     "orderValue" : 100,
-    "getPSOne2ManyDataDEField" : {
-      "name" : "IBZTASKESTIMATES",
-      "codeName" : "Ibztaskestimates"
-    },
     "getPSPickupDEField" : {
       "name" : "TASK",
       "codeName" : "Task"

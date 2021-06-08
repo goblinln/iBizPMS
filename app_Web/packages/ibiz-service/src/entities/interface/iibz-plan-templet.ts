@@ -35,10 +35,6 @@ export interface IIbzPlanTemplet extends IEntityBase {
      */
     ibzplantempletid?: any;
     /**
-     * 计划项
-     */
-    plantempletdetail?: any;
-    /**
      * 更新人
      */
     updateman?: any;

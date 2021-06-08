@@ -417,53 +417,6 @@
     "stringLength" : 60,
     "valueFormat" : "%1$s"
   }, {
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "UPDATEFEATURES",
-          "maxValue" : 1048576,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[1048576]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]"
-      },
-      "getPSDEField" : {
-        "name" : "UPDATEFEATURES",
-        "codeName" : "Updatefeatures"
-      },
-      "ruleInfo" : "内容长度必须小于等于[1048576]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Updatefeatures",
-    "dEFType" : 5,
-    "dataType" : "ONE2MANYDATA",
-    "importOrder" : 1000,
-    "length" : 1048576,
-    "logicName" : "更新功能列表详情",
-    "name" : "UPDATEFEATURES",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures/PSDERS/DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID.json"
-    },
-    "stdDataType" : 21,
-    "stringLength" : 1048576,
-    "valueFormat" : "%1$s",
-    "phisicalDEField" : false,
-    "queryColumn" : false,
-    "uIAssistDEField" : true
-  }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDESC",
       "dBType" : "MYSQL5",
@@ -821,10 +774,6 @@
     },
     "name" : "DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID",
     "orderValue" : 100,
-    "getPSOne2ManyDataDEField" : {
-      "name" : "UPDATEFEATURES",
-      "codeName" : "Updatefeatures"
-    },
     "getPSPickupDEField" : {
       "name" : "SYS_UPDATE_LOGID",
       "codeName" : "SysUpdateLogId"

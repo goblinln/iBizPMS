@@ -15,10 +15,6 @@
   },
   "name" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID",
   "orderValue" : 100,
-  "getPSOne2ManyDataDEField" : {
-    "name" : "PLANTEMPLETDETAIL",
-    "codeName" : "Plantempletdetail"
-  },
   "getPSPickupDEField" : {
     "name" : "PLANTEMPLETID",
     "codeName" : "Plantempletid"

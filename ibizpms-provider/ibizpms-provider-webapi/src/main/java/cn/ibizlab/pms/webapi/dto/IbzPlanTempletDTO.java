@@ -88,15 +88,6 @@ public class IbzPlanTempletDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("产品计划模板标识")
     private String ibzplantempletid;
-        
-    /**
-     * 计划项
-     */
-    @JSONField(name = "plantempletdetail")
-    @JsonProperty("plantempletdetail")
-    @ApiModelProperty("计划项")
-    private List<cn.ibizlab.pms.webapi.dto.IbzPlanTempletDetailDTO> plantempletdetail;   
-
     /**
      * 属性 [UPDATEMAN]
      *

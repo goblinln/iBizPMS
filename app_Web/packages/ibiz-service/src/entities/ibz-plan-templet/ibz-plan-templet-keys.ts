@@ -5,7 +5,6 @@ export default [
     'createmanname',
     'product',
     'ibzplantempletid',
-    'plantempletdetail',
     'updateman',
     'ibzplantempletname',
     'updatedate',

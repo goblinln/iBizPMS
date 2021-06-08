@@ -1190,12 +1190,6 @@
     "stdDataType" : 25,
     "stringLength" : 60
   }, {
-    "codeName" : "Taskteams",
-    "logicName" : "项目团队成员",
-    "name" : "TASKTEAMS",
-    "stdDataType" : 21,
-    "stringLength" : 1048576
-  }, {
     "codeName" : "Storystatus",
     "logicName" : "需求状态",
     "name" : "STORYSTATUS",
@@ -1476,12 +1470,6 @@
     "name" : "ORGNAME",
     "stdDataType" : 25,
     "stringLength" : 100
-  }, {
-    "codeName" : "Ibztaskestimates",
-    "logicName" : "工时",
-    "name" : "IBZTASKESTIMATES",
-    "stdDataType" : 21,
-    "stringLength" : 1048576
   }, {
     "codeName" : "StoryVersion",
     "logicName" : "需求版本",

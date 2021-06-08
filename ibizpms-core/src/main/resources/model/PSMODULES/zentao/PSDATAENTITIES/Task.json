@@ -2007,53 +2007,6 @@
         "name" : "默认组",
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
-          "dEFName" : "TASKTEAMS",
-          "maxValue" : 1048576,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[1048576]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]"
-      },
-      "getPSDEField" : {
-        "name" : "TASKTEAMS",
-        "codeName" : "Taskteams"
-      },
-      "ruleInfo" : "内容长度必须小于等于[1048576]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Taskteams",
-    "dEFType" : 5,
-    "dataType" : "ONE2MANYDATA",
-    "importOrder" : 1000,
-    "length" : 1048576,
-    "logicName" : "项目团队成员",
-    "name" : "TASKTEAMS",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json"
-    },
-    "stdDataType" : 21,
-    "stringLength" : 1048576,
-    "valueFormat" : "%1$s",
-    "phisicalDEField" : false,
-    "queryColumn" : false,
-    "uIAssistDEField" : true
-  }, {
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
           "dEFName" : "STORYSTATUS",
           "maxValue" : 100,
           "name" : "默认字符串长度",
@@ -4342,53 +4295,6 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "IBZTASKESTIMATES",
-          "maxValue" : 1048576,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[1048576]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]"
-      },
-      "getPSDEField" : {
-        "name" : "IBZTASKESTIMATES",
-        "codeName" : "Ibztaskestimates"
-      },
-      "ruleInfo" : "内容长度必须小于等于[1048576]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Ibztaskestimates",
-    "dEFType" : 5,
-    "dataType" : "ONE2MANYDATA",
-    "importOrder" : 1000,
-    "length" : 1048576,
-    "logicName" : "工时",
-    "name" : "IBZTASKESTIMATES",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDERS/DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK.json"
-    },
-    "stdDataType" : 21,
-    "stringLength" : 1048576,
-    "valueFormat" : "%1$s",
-    "phisicalDEField" : false,
-    "queryColumn" : false,
-    "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "STORYVERSION",
@@ -24311,10 +24217,6 @@
     },
     "name" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT",
     "orderValue" : 100,
-    "getPSOne2ManyDataDEField" : {
-      "name" : "TASKTEAMS",
-      "codeName" : "Taskteams"
-    },
     "getPSPickupDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
@@ -24431,10 +24333,6 @@
     },
     "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
     "orderValue" : 100,
-    "getPSOne2ManyDataDEField" : {
-      "name" : "IBZTASKESTIMATES",
-      "codeName" : "Ibztaskestimates"
-    },
     "getPSPickupDEField" : {
       "name" : "TASK",
       "codeName" : "Task"

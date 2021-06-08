@@ -1392,10 +1392,6 @@
     },
     "name" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT",
     "orderValue" : 100,
-    "getPSOne2ManyDataDEField" : {
-      "name" : "TASKTEAMS",
-      "codeName" : "Taskteams"
-    },
     "getPSPickupDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

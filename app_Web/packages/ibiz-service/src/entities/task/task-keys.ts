@@ -1,7 +1,6 @@
 export default [
     'canceledby',
     'configtype',
-    'taskteams',
     'storystatus',
     'left',
     'isfavorites',
@@ -50,7 +49,6 @@ export default [
     'type',
     'assignedto',
     'orgname',
-    'ibztaskestimates',
     'storyversion',
     'delay',
     'updateman',

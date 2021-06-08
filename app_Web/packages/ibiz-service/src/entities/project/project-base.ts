@@ -172,10 +172,6 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      */
     totalwh?: any;
     /**
-     * 项目团队成员
-     */
-    projectteams?: any;
-    /**
      * 可用工时
      */
     totalhours?: any;

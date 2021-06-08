@@ -959,12 +959,6 @@
     "name" : "TOTALWH",
     "stdDataType" : 9
   }, {
-    "codeName" : "Projectteams",
-    "logicName" : "项目团队成员",
-    "name" : "PROJECTTEAMS",
-    "stdDataType" : 21,
-    "stringLength" : 1048576
-  }, {
     "codeName" : "Totalhours",
     "logicName" : "可用工时",
     "name" : "TOTALHOURS",

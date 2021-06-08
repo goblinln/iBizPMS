@@ -33,10 +33,10 @@ export class BurnoutFigure extends AppDefaultChart {
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
         Object.assign(arg, { viewparams: tempViewParams });
         Object.assign(arg, { page: 0, size: 1000 });
-        // zktodo 排序
-        this.ctrlBeginLoading()
-        this.service.search(this.fetchAction,JSON.parse(JSON.stringify(this.context)),arg,this.showBusyIndicator).then((res: any) => {
-            this.ctrlEndLoading();
+        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        this.onControlRequset('load', tempContext, arg);
+        this.service.search(this.fetchAction,tempContext,arg,this.showBusyIndicator).then((res: any) => {
+            this.onControlResponse('load', res);
             if (res) {
                 if(parentdata && parentdata.isweekend){
                     this.chartOption.xAxis.forEach((xAix: any)=>{
@@ -46,7 +46,7 @@ export class BurnoutFigure extends AppDefaultChart {
                 this.transformToBasicChartSetData(res.data,(codelist:any) =>{_this.drawCharts()});
             }
         }).catch((error: any) => {
-            this.ctrlEndLoading();
+            this.onControlResponse('load', error);
             console.error(error);
         });
     }

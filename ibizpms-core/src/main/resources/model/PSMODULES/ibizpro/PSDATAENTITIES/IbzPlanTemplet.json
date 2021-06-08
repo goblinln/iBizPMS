@@ -528,53 +528,6 @@
     "keyDEField" : true,
     "pasteReset" : true
   }, {
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "PLANTEMPLETDETAIL",
-          "maxValue" : 1048576,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[1048576]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[1048576]"
-      },
-      "getPSDEField" : {
-        "name" : "PLANTEMPLETDETAIL",
-        "codeName" : "Plantempletdetail"
-      },
-      "ruleInfo" : "内容长度必须小于等于[1048576]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Plantempletdetail",
-    "dEFType" : 5,
-    "dataType" : "ONE2MANYDATA",
-    "importOrder" : 1000,
-    "length" : 1048576,
-    "logicName" : "计划项",
-    "name" : "PLANTEMPLETDETAIL",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbzPlanTempletDetail/PSDERS/DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID.json"
-    },
-    "stdDataType" : 21,
-    "stringLength" : 1048576,
-    "valueFormat" : "%1$s",
-    "phisicalDEField" : false,
-    "queryColumn" : false,
-    "uIAssistDEField" : true
-  }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEMAN",
       "dBType" : "MYSQL5",
@@ -824,10 +777,6 @@
     },
     "name" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID",
     "orderValue" : 100,
-    "getPSOne2ManyDataDEField" : {
-      "name" : "PLANTEMPLETDETAIL",
-      "codeName" : "Plantempletdetail"
-    },
     "getPSPickupDEField" : {
       "name" : "PLANTEMPLETID",
       "codeName" : "Plantempletid"

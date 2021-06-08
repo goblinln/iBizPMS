@@ -33,7 +33,6 @@ export default [
     'whitelist',
     'mobimage',
     'totalwh',
-    'projectteams',
     'totalhours',
     'pri',
     'end',

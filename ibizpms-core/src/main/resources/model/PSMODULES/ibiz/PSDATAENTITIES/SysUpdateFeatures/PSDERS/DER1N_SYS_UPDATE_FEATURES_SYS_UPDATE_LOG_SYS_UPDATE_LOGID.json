@@ -15,10 +15,6 @@
   },
   "name" : "DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID",
   "orderValue" : 100,
-  "getPSOne2ManyDataDEField" : {
-    "name" : "UPDATEFEATURES",
-    "codeName" : "Updatefeatures"
-  },
   "getPSPickupDEField" : {
     "name" : "SYS_UPDATE_LOGID",
     "codeName" : "SysUpdateLogId"

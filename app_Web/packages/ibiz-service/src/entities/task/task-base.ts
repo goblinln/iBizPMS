@@ -44,10 +44,6 @@ export abstract class TaskBase extends EntityBase implements ITask {
      */
     configtype?: 'day' | 'week' | 'month';
     /**
-     * 项目团队成员
-     */
-    taskteams?: any;
-    /**
      * 需求状态
      */
     storystatus?: any;
@@ -253,10 +249,6 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 归属组织名
      */
     orgname?: any;
-    /**
-     * 工时
-     */
-    ibztaskestimates?: any;
     /**
      * 需求版本
      */

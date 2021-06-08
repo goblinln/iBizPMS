@@ -60,10 +60,6 @@ export abstract class IbzPlanTempletBase extends EntityBase implements IIbzPlanT
      */
     ibzplantempletid?: any;
     /**
-     * 计划项
-     */
-    plantempletdetail?: any;
-    /**
      * 更新人
      */
     updateman?: any;

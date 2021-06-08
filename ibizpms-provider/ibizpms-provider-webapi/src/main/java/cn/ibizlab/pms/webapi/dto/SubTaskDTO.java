@@ -52,15 +52,6 @@ public class SubTaskDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("周期类型")
     private String configtype;
-        
-    /**
-     * 项目团队成员
-     */
-    @JSONField(name = "taskteams")
-    @JsonProperty("taskteams")
-    @ApiModelProperty("项目团队成员")
-    private List<cn.ibizlab.pms.webapi.dto.TaskTeamDTO> taskteams;   
-
     /**
      * 属性 [STORYSTATUS]
      *
@@ -485,15 +476,6 @@ public class SubTaskDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
-        
-    /**
-     * 工时
-     */
-    @JSONField(name = "ibztaskestimates")
-    @JsonProperty("ibztaskestimates")
-    @ApiModelProperty("工时")
-    private List<cn.ibizlab.pms.webapi.dto.TaskEstimateDTO> ibztaskestimates;   
-
     /**
      * 属性 [STORYVERSION]
      *
