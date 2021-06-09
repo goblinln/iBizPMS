@@ -1192,6 +1192,8 @@ public class StoryExService extends StoryServiceImpl {
             StorySpec oldStorySpec = iStorySpecService.getOne(new QueryWrapper<StorySpec>().eq(StaticDict.Action__object_type.STORY.getValue(), old.getId()).eq("version", et.getPreversion()));
             et.setTitle(oldStorySpec.getTitle());
             et.setVersion(oldStorySpec.getVersion());
+            // List<StorySpec> list = iStorySpecService.list(new QueryWrapper<StorySpec>().eq(StaticDict.Action__object_type.STORY.getValue(), old.getId()).gt("version", et.getPreversion()));
+            iStorySpecService.remove(new QueryWrapper<StorySpec>().eq(StaticDict.Action__object_type.STORY.getValue(), old.getId()).gt("version", et.getPreversion()));
         }
         String noticeusers = et.getNoticeusers();
         this.sysUpdate(et);
