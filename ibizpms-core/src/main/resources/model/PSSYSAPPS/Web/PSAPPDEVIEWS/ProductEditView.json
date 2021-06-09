@@ -35,6 +35,12 @@
     },
     "getPSViewCtrlName" : "toolbar"
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "SYSACCOUNT",
+    "name" : "SYSACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction1",
     "getPSUIAction" : {

@@ -40,6 +40,11 @@
     "value" : "project",
     "rawValue" : false
   }, {
+    "key" : "SYSACCOUNT",
+    "name" : "SYSACCOUNT",
+    "value" : "srfuserid",
+    "rawValue" : false
+  }, {
     "key" : "SRFPARENTDENAME",
     "name" : "SRFPARENTDENAME",
     "value" : "Project",
@@ -51,20 +56,20 @@
     "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "srfparentdename",
-    "name" : "srfparentdename",
-    "value" : "Project",
-    "rawValue" : true
+    "key" : "modulename",
+    "name" : "modulename",
+    "value" : "modulename",
+    "rawValue" : false
   }, {
     "key" : "project",
     "name" : "project",
     "value" : "project",
     "rawValue" : false
   }, {
-    "key" : "modulename",
-    "name" : "modulename",
-    "value" : "modulename",
-    "rawValue" : false
+    "key" : "srfparentdename",
+    "name" : "srfparentdename",
+    "value" : "Project",
+    "rawValue" : true
   }, {
     "key" : "productmodule",
     "name" : "productmodule",
