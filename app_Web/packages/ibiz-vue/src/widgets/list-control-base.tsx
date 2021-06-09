@@ -287,7 +287,7 @@ export class ListControlBase extends MDControlBase {
             Object.assign(page, { page: this.curPage - 1, size: size ? size : 20 });
         }
         // 设置排序
-        if (!Object.is(this.minorSortDir, '') && !Object.is(this.minorSortPSDEF, '')) {
+        if (Util.isExistAndNotEmpty(this.minorSortDir) && Util.isExistAndNotEmpty(this.minorSortPSDEF)) {
             const sort: string = this.minorSortPSDEF + ',' + this.minorSortDir;
             Object.assign(page, { sort: sort });
         }
