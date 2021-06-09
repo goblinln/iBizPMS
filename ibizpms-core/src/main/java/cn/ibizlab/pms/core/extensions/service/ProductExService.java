@@ -147,7 +147,7 @@ public class ProductExService extends ProductServiceImpl {
         Product old = this.get(et.getId());
 
         et.setStatus(StaticDict.Product__status.CLOSED.getValue());
-        this.update(et);
+        super.update(et);
         List<History> changes = ChangeUtil.diff(old, et);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
 
