@@ -161,7 +161,7 @@ public class ProjectExService extends ProjectServiceImpl {
 
     @Override
     public boolean update(Project et) {
-        String sql = "select * from zt_project where (`name` = #{et.name} or `code` = #{et.code}) and `id` <> #{et.id}";
+        String sql = "select * from zt_project where deleted = '0' and (`name` = #{et.name} or `code` = #{et.code}) and `id` <> #{et.id}";
         Map<String,Object> param = new HashMap<>();
         param.put("name", et.getName());
         param.put("code", et.getCode());

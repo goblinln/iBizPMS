@@ -105,7 +105,7 @@ public class ProductExService extends ProductServiceImpl {
     @Override
     public boolean update(Product et) {
         // 校验产品名称和产品代号
-        String sql = "select * from zt_product where (`name` = #{et.name} or `code` = #{et.code}) and `id` <> #{et.id}";
+        String sql = "select * from zt_product where deleted = '0' and (`name` = #{et.name} or `code` = #{et.code}) and `id` <> #{et.id}";
         Map<String,Object> param = new HashMap<>();
         param.put("name", et.getName());
         param.put("code", et.getCode());
