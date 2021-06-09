@@ -1,9 +1,12 @@
 package cn.ibizlab.pms.core.extensions.service;
 
+import cn.ibizlab.pms.core.ibiz.domain.DocLibModule;
+import cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.DocContent;
 import cn.ibizlab.pms.core.zentao.domain.DocLib;
 import cn.ibizlab.pms.core.zentao.domain.File;
+import cn.ibizlab.pms.core.zentao.filter.DocSearchContext;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.DocServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
@@ -36,6 +39,9 @@ public class DocExService extends DocServiceImpl {
     IDocLibService iDocLibService;
 
     @Autowired
+    IDocLibModuleService iDocLibModuleService;
+
+    @Autowired
     IFileService iFileService;
 
     @Autowired
@@ -49,64 +55,144 @@ public class DocExService extends DocServiceImpl {
     }
 
     /**
-     * [ByVersionUpdateContext:根据版本更新正文信息] 行为扩展
+     * 自定义行为[ByVersionUpdateContext]用户扩展
      * @param et
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Doc byVersionUpdateContext(Doc et) {
+        List<DocContent> list = iDocContentService.list(new QueryWrapper<DocContent>().eq("doc", et.getId()).eq("version", et.getVersion()));
+        if(list.size() > 0) {
+            DocContent docContent = list.get(0);
+            et.setContent(docContent.getContent());
+            et.setTitle(docContent.getTitle());
+        }
         return super.byVersionUpdateContext(et);
     }
-    /**
-     * [Collect:收藏] 行为扩展
-     * @param et
-     * @return
-     */
+
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
+    public Doc get(Long key) {
+        Doc et = super.get(key);
+        if(et==null){
+            et=new Doc();
+            et.setId(key);
+        }
+        else{
+            byVersionUpdateContext(et);
+        }
+        return et;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
     public Doc collect(Doc et) {
+        if (StaticDict.DOCQTYPE.DOC.getValue().equals(et.getDocqtype())) {
+            String collector = this.get(et.getId()).getCollector();
+            if ("".equals(collector) || "/".equals(collector)) {
+                collector += ",";
+            }
+            collector += AuthenticationUser.getAuthenticationUser().getUsername() + ",";
+            et.setCollector(collector);
+            this.updateById(et);
+        }
+        else if (StaticDict.DOCQTYPE.MODULE.getValue().equals(et.getDocqtype())) {
+            String collector = iDocLibModuleService.get(et.getId()).getCollector();
+            if ("".equals(collector) || "/".equals(collector)) {
+                collector += ",";
+            }
+            collector += AuthenticationUser.getAuthenticationUser().getUsername() + ",";
+            DocLibModule docLibModule = new DocLibModule();
+            docLibModule.setId(et.getId());
+            docLibModule.setCollector(collector);
+            iDocLibModuleService.updateById(docLibModule);
+        }
+        else if (StaticDict.DOCQTYPE.DOCLIB.getValue().equals(et.getDocqtype())) {
+            String collector = iDocLibService.get(et.getId()).getCollector();
+            if ("".equals(collector) || "/".equals(collector)) {
+                collector += ",";
+            }
+            collector += AuthenticationUser.getAuthenticationUser().getUsername() + ",";
+            DocLib docLib = new DocLib();
+            docLib.setId(et.getId());
+            docLib.setCollector(collector);
+            iDocLibService.updateById(docLib);
+        }
+
         return super.collect(et);
     }
-    /**
-     * [GetDocStatus:行为] 行为扩展
-     * @param et
-     * @return
-     */
+
     @Override
-    @Transactional
-    public Doc getDocStatus(Doc et) {
-        return super.getDocStatus(et);
+    @Transactional(rollbackFor = Exception.class)
+    public Doc unCollect(Doc et) {
+        if (StaticDict.DOCQTYPE.DOC.getValue().equals(et.getDocqtype())) {
+            String collector = this.get(et.getId()).getCollector();
+            collector = collector.replaceFirst(AuthenticationUser.getAuthenticationUser().getUsername() + ",", "");
+            if (",".equals(collector)) {
+                collector = "";
+            }
+            et.setCollector(collector);
+            this.updateById(et);
+        }
+        else if (StaticDict.DOCQTYPE.MODULE.getValue().equals(et.getDocqtype())) {
+            String collector = iDocLibModuleService.get(et.getId()).getCollector();
+            collector = collector.replaceFirst(AuthenticationUser.getAuthenticationUser().getUsername() + ",", "");
+            if (",".equals(collector)) {
+                collector = "";
+            }
+            DocLibModule docLibModule = new DocLibModule();
+            docLibModule.setId(et.getId());
+            docLibModule.setCollector(collector);
+            iDocLibModuleService.updateById(docLibModule);
+        }
+        else if (StaticDict.DOCQTYPE.DOCLIB.getValue().equals(et.getDocqtype())) {
+            String collector = iDocLibService.get(et.getId()).getCollector();
+            collector = collector.replaceFirst(AuthenticationUser.getAuthenticationUser().getUsername() + ",", "");
+            if (",".equals(collector)) {
+                collector = "";
+            }
+            DocLib docLib = new DocLib();
+            docLib.setId(et.getId());
+            docLib.setCollector(collector);
+            iDocLibService.updateById(docLib);
+        }
+
+        return super.unCollect(et);
     }
-    /**
-     * [OnlyCollectDoc:仅收藏文档] 行为扩展
-     * @param et
-     * @return
-     */
+
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Doc onlyCollectDoc(Doc et) {
+        String collector = this.get(et.getId()).getCollector();
+        if ("".equals(collector) || "/".equals(collector)) {
+            collector += ",";
+        }
+        collector += AuthenticationUser.getAuthenticationUser().getUsername() + ",";
+        et.setCollector(collector);
+        this.updateById(et);
         return super.onlyCollectDoc(et);
     }
-    /**
-     * [OnlyUnCollectDoc:仅取消收藏文档] 行为扩展
-     * @param et
-     * @return
-     */
+
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Doc onlyUnCollectDoc(Doc et) {
+        String collector = this.get(et.getId()).getCollector();
+        collector = collector.replaceFirst(AuthenticationUser.getAuthenticationUser().getUsername() + ",", "");
+        if (",".equals(collector)) {
+            collector = "";
+        }
+        et.setCollector(collector);
+        this.updateById(et);
         return super.onlyUnCollectDoc(et);
     }
-    /**
-     * [UnCollect:取消收藏] 行为扩展
-     * @param et
-     * @return
-     */
+
     @Override
-    @Transactional
-    public Doc unCollect(Doc et) {
-        return super.unCollect(et);
+    @Transactional(rollbackFor = Exception.class)
+    public Doc getDocStatus(Doc et) {
+        DocSearchContext docSearchContext = new DocSearchContext();
+
+        return this.searchDocStatus(docSearchContext).getContent().get(0);
     }
 
     @Override

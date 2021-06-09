@@ -36,23 +36,42 @@ public class DocLibExService extends DocLibServiceImpl {
     }
 
     /**
-     * [Collect:收藏] 行为扩展
+     * 自定义行为[Collect]用户扩展
      * @param et
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public DocLib collect(DocLib et) {
+        DocLib docLib = this.get(et.getId());
+        String collector = docLib.getCollector();
+        if ("".equals(collector) || "/".equals(collector)) {
+            collector += ",";
+        }
+        collector += AuthenticationUser.getAuthenticationUser().getUsername() + ",";
+        et.setCollector(collector);
+        this.updateById(et);
+
         return super.collect(et);
     }
+
     /**
-     * [UnCollect:取消收藏] 行为扩展
+     * 自定义行为[UnCollect]用户扩展
      * @param et
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public DocLib unCollect(DocLib et) {
+        DocLib docLib = this.get(et.getId());
+        String collector = docLib.getCollector();
+        collector = collector.replaceFirst(AuthenticationUser.getAuthenticationUser().getUsername() + ",", "");
+        if (",".equals(collector)) {
+            collector = "";
+        }
+        et.setCollector(collector);
+        this.updateById(et);
+
         return super.unCollect(et);
     }
 
