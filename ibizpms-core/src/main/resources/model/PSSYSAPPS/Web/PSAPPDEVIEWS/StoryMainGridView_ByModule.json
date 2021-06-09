@@ -536,7 +536,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchByModule"
+          "id" : "FetchParentDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
