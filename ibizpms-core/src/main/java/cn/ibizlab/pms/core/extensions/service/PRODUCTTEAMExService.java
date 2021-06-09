@@ -37,7 +37,7 @@ public class PRODUCTTEAMExService extends PRODUCTTEAMServiceImpl {
     @Override
     public Page<PRODUCTTEAM> searchProductTeamInfo(PRODUCTTEAMSearchContext context) {
         Map<String, Object> params = context.getParams();
-        if(params.get("dept") != null && params.get("teams") != null) {
+        if(params.get("dept") != null || params.get("teams") != null) {
             return super.searchRowEditDefaultProductTeam(context);
         }
         return super.searchProductTeamInfo(context);

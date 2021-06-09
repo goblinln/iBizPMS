@@ -37,7 +37,7 @@ public class ProjectTeamExService extends ProjectTeamServiceImpl {
     @Override
     public Page<ProjectTeam> searchTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context) {
         Map<String, Object> params = context.getParams();
-        if(params.get("dept") != null && params.get("teams") != null) {
+        if(params.get("dept") != null || params.get("teams") != null) {
             return super.searchRowEditDefault(context);
         }
         return super.searchTaskCntEstimateConsumedLeft(context);
