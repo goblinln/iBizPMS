@@ -31,7 +31,7 @@ export class Associatedform {
             if (item.name != 'srfarray' && item.getPSAppDEField()) {
                 let tempProp: any = {
                     name: item.caption,
-                    localetag: getItemLocaleTag(item),
+                    localetag: item.caption,
                     prop: item.getPSAppDEField().codeName.toLowerCase(),
                 };
                 if (item.userTag && (item.userTag == 'unique' || item.userTag == 'hidden')) {
