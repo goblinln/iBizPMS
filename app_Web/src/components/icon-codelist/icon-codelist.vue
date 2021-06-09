@@ -207,7 +207,7 @@ export default class IconCodeList extends Vue {
                     _this.setItems(items, _this);
                 })
                 .catch((error: any) => {
-                    console.log(`----${_this.tag}----${this.$t('app.commonWords.codeNotExist') as string}`);
+                    console.log(`----${_this.tag}----${this.$t('app.commonwords.codenotexist') as string}`);
                 });
             // 静态处理
         } else if (Object.is(this.codelistType, 'STATIC')) {
