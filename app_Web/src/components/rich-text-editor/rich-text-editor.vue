@@ -10,8 +10,8 @@
                         <Input v-model="templateTitle" placeholder="请输入模板标题" />
                         <div style="margin-top: 5px;">
                             <Checkbox v-model="single">公开的</Checkbox>
-                            <Button @click="saveTemplate()">{{ $t('app.commonWords.save') }}</Button>&nbsp;
-                            <Button @click="onCancel()">{{ $t('app.commonWords.cancel') }}</Button>
+                            <Button @click="saveTemplate()">{{ $t('app.commonwords.save') }}</Button>&nbsp;
+                            <Button @click="onCancel()">{{ $t('app.commonwords.cancel') }}</Button>
                         </div>
                     </div>
                 </template>
@@ -59,7 +59,7 @@ import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
 import axios from 'axios';
-import { ImgurlBase64 } from 'ibiz-core';
+import { ImgurlBase64, Util } from 'ibiz-core';
 import tinymce from "tinymce/tinymce";
 // import 'tinymce/themes/modern';
 import 'tinymce/themes/silver';
@@ -1009,11 +1009,9 @@ export default class RichTextEditor extends Vue {
         }
         templParams.title = templateTitle;
         templParams.content = templateContent;
-        const response: any = await this.userTplService.Create({}, templParams);
+        const response: any = await this.userTplService.Create(this.context, templParams);
         if(response && response.status === 200){
-            this.$Notice.success({
-                title: '保存模板成功!!!',
-            });
+            this.$success('保存模板成功!!!');
         }else{
             this.$throw('保存模板失败!!!');
         }
@@ -1046,13 +1044,11 @@ export default class RichTextEditor extends Vue {
      * @param event 选中的应用模板
      */
     public async removeAppTemplate(event: any){
-        let context: any = {};
+        let context: any = Util.deepCopy(this.context);
         context.usertpl = event.id;
         const response: any = await this.userTplService.Remove(context,{});
         if(response && response.status === 200){
-            this.$Notice.success({
-                title: '删除模板成功!!!',
-            });
+            this.$success('删除模板成功!!!');
         }else{
             this.$throw('删除模板失败!!!');
         }
