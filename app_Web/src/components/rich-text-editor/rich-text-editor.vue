@@ -967,7 +967,7 @@ export default class RichTextEditor extends Vue {
     public async appTemplateData() {
         const templParams = this.getTemplParams();
         let appTemplate: Array<any> = []
-        const response: any = await this.userTplService.FetchDefault({},templParams);
+        const response: any = await this.userTplService.FetchAccount(this.context,templParams);
         if(response && response.status === 200){
             const { data: _data } = response;
             _data.forEach((item:any)=>{
