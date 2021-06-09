@@ -756,15 +756,235 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "计划-读取",
+    "mapPSDEName" : "ZT_PRODUCTPLAN",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PRODUCTPLAN.json"
+    },
+    "name" : "READ",
+    "id" : "productplan__READ"
+  }, {
+    "logicName" : "周报-读取",
+    "mapPSDEName" : "IBZ_WEEKLY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_WEEKLY.json"
+    },
+    "name" : "READ",
+    "id" : "weekly__READ"
+  }, {
+    "logicName" : "测试用例-读取",
+    "mapPSDEName" : "ZT_CASE",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_CASE.json"
+    },
+    "name" : "READ",
+    "id" : "case__READ"
+  }, {
+    "logicName" : "用例库-读取",
+    "mapPSDEName" : "IBZ_LIB",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_LIB.json"
+    },
+    "name" : "READ",
+    "id" : "caselib__READ"
+  }, {
+    "logicName" : "月报-读取",
+    "mapPSDEName" : "IBZ_MONTHLY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_MONTHLY.json"
+    },
+    "name" : "READ",
+    "id" : "monthly__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "待办-读取",
+    "mapPSDEName" : "ZT_TODO",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TODO.json"
+    },
+    "name" : "READ",
+    "id" : "todo__READ"
+  }, {
+    "logicName" : "文档-读取",
+    "mapPSDEName" : "ZT_DOC",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_DOC.json"
+    },
+    "name" : "READ",
+    "id" : "doc__READ"
+  }, {
+    "logicName" : "执行结果-读取",
+    "mapPSDEName" : "ZT_TESTRESULT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTRESULT.json"
+    },
+    "name" : "READ",
+    "id" : "caseresult__READ"
+  }, {
+    "logicName" : "文档库-读取",
+    "mapPSDEName" : "ZT_DOCLIB",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_DOCLIB.json"
+    },
+    "name" : "READ",
+    "id" : "doclib__READ"
+  }, {
+    "logicName" : "Bug-读取",
+    "mapPSDEName" : "ZT_BUG",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_BUG.json"
+    },
+    "name" : "READ",
+    "id" : "bug__READ"
+  }, {
+    "logicName" : "测试报告-读取",
+    "mapPSDEName" : "ZT_TESTREPORT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTREPORT.json"
+    },
+    "name" : "READ",
+    "id" : "testreport__READ"
+  }, {
+    "logicName" : "产品-读取",
+    "mapPSDEName" : "ZT_PRODUCT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "product__READ"
+  }, {
+    "logicName" : "版本-读取",
+    "mapPSDEName" : "ZT_BUILD",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_BUILD.json"
+    },
+    "name" : "READ",
+    "id" : "build__READ"
+  }, {
+    "logicName" : "套件-读取",
+    "mapPSDEName" : "ZT_TESTSUITE",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTSUITE.json"
+    },
+    "name" : "READ",
+    "id" : "testsuite__READ"
+  }, {
+    "logicName" : "任务-读取",
+    "mapPSDEName" : "ZT_TASK",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TASK.json"
+    },
+    "name" : "READ",
+    "id" : "task__READ"
+  }, {
+    "logicName" : "发布-读取",
+    "mapPSDEName" : "ZT_RELEASE",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_RELEASE.json"
+    },
+    "name" : "READ",
+    "id" : "release__READ"
+  }, {
+    "logicName" : "汇报-读取",
+    "mapPSDEName" : "IBZ_REPORTLY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_REPORTLY.json"
+    },
+    "name" : "READ",
+    "id" : "reportly__READ"
+  }, {
+    "logicName" : "项目-读取",
+    "mapPSDEName" : "ZT_PROJECT",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "project__READ"
+  }, {
+    "logicName" : "测试单-读取",
+    "mapPSDEName" : "ZT_TESTTASK",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_TESTTASK.json"
+    },
+    "name" : "READ",
+    "id" : "testtask__READ"
+  }, {
+    "logicName" : "日报-读取",
+    "mapPSDEName" : "IBZ_DAILY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_IBZ_DAILY.json"
+    },
+    "name" : "READ",
+    "id" : "daily__READ"
+  }, {
+    "logicName" : "用例步骤-读取",
+    "mapPSDEName" : "ZT_CASESTEP",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_CASESTEP.json"
+    },
+    "name" : "READ",
+    "id" : "stepresult__READ"
+  }, {
+    "logicName" : "需求-读取",
+    "mapPSDEName" : "ZT_STORY",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDERS/DERCUSTOM_ZT_FILE_ZT_STORY.json"
+    },
+    "name" : "READ",
+    "id" : "story__READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
   "codeName" : "File",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/File.json",
   "enableUIActions" : 15,
   "logicName" : "附件",

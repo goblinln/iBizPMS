@@ -7,7 +7,7 @@
   "openMode" : "DRAWER_RIGHT",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -34,6 +34,12 @@
     },
     "getPSViewCtrlName" : "toolbar"
   } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "parent",
+    "name" : "parent",
+    "value" : "parent",
+    "rawValue" : false
+  } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction1",
     "getPSUIAction" : {
@@ -50,7 +56,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -106,7 +112,7 @@
       "modelref" : true,
       "id" : "create"
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan/PSFORMS/MainSubPlan.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan/PSFORMS/MainSubPlan.json",
     "getGetDraftFromPSControlAction" : {
       "modelref" : true,
       "id" : "loaddraftfrom"
@@ -123,7 +129,7 @@
     "logicName" : "子计划主编辑表单",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -137,7 +143,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         }
       }, {
         "actionName" : "GETDRAFTFROM",
@@ -146,7 +152,7 @@
         "name" : "loaddraftfrom",
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         }
       }, {
         "actionName" : "Remove",
@@ -159,7 +165,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -172,7 +178,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         }
       }, {
         "actionName" : "Get",
@@ -185,7 +191,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         }
       }, {
         "actionName" : "Create",
@@ -198,7 +204,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         }
       } ],
       "enableDEFieldPrivilege" : false,
@@ -268,6 +274,8 @@
       "id" : "parent",
       "hidden" : true,
       "dataType" : 1,
+      "createDVT" : "CONTEXT",
+      "createDV" : "parent",
       "getPSAppDEField" : {
         "name" : "PARENT",
         "codeName" : "Parent"
@@ -382,6 +390,8 @@
           }, {
             "caption" : "父计划",
             "codeName" : "parent",
+            "createDV" : "parent",
+            "createDVT" : "CONTEXT",
             "dataType" : 1,
             "detailStyle" : "DEFAULT",
             "detailType" : "FORMITEM",
@@ -771,7 +781,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubProductPlan.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -785,5 +795,52 @@
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
   "modelid" : "727ff5c540998137c588dff49ca7f17b",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "ProductPlans",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "name" : "PROJECT__PRODUCT_PLAN",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "ProductPlans",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "name" : "PRODUCT__PRODUCT_PLAN",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

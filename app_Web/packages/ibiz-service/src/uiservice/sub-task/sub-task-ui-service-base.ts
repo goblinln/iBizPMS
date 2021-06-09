@@ -80,7 +80,6 @@ export class SubTaskUIServiceBase extends UIServiceBase {
      * @memberof  SubTaskUIServiceBase
      */  
     protected initViewFuncMap(){
-        this.allViewFuncMap.set(':','');
     }
 
 }

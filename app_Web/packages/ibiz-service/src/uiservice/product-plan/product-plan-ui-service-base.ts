@@ -82,6 +82,7 @@ export class ProductPlanUIServiceBase extends UIServiceBase {
     protected initViewFuncMap(){
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MDATAVIEW:','MDATAVIEW');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('EDITVIEW:','EDITVIEW');

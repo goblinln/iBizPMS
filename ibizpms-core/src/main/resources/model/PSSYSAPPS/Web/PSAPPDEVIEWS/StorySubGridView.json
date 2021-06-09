@@ -8,7 +8,7 @@
   "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
@@ -102,7 +102,7 @@
   "getPSAppViewNavContexts" : [ {
     "key" : "PARENT",
     "name" : "PARENT",
-    "value" : "id",
+    "value" : "parent",
     "rawValue" : false
   }, {
     "key" : "PRODUCT",
@@ -113,7 +113,7 @@
   "getPSAppViewNavParams" : [ {
     "key" : "parent",
     "name" : "parent",
-    "value" : "id",
+    "value" : "parent",
     "rawValue" : false
   } ],
   "getPSAppViewRefs" : [ {
@@ -158,7 +158,7 @@
     "name" : "toolbar",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSControlParam" : {
       "id" : "TOOLBAR"
@@ -244,10 +244,10 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       }
     },
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory/PSGRIDS/SubStoryNew.json",
+    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story/PSGRIDS/SubStoryNew.json",
     "getFetchPSControlAction" : {
       "modelref" : true,
       "id" : "fetch"
@@ -263,7 +263,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       }
     },
     "getGetPSControlAction" : {
@@ -277,7 +277,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       }
     },
     "groupMode" : "NONE",
@@ -285,7 +285,7 @@
     "logicName" : "细分需求（行编辑）",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
@@ -299,7 +299,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionType" : "DEDATASET",
@@ -310,7 +310,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "Remove",
@@ -323,7 +323,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "Get",
@@ -336,7 +336,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "GetDraft",
@@ -349,7 +349,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       }, {
         "actionName" : "Create",
@@ -362,7 +362,7 @@
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
         }
       } ],
       "userDRAction" : "READ",
@@ -422,6 +422,12 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "title",
       "excelCaption" : "需求名称",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView.json",
+        "viewType" : "DEPORTALVIEW"
+      },
+      "linkValueItem" : "srfkey",
       "name" : "title",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
@@ -430,6 +436,7 @@
       },
       "width" : 500,
       "widthUnit" : "STAR",
+      "enableLinkView" : true,
       "enableRowEdit" : true,
       "enableSort" : false
     }, {
@@ -1024,7 +1031,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       }
     },
     "sortMode" : "REMOTE",
@@ -1039,7 +1046,7 @@
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
       }
     },
     "hasWFDataItems" : false,
@@ -1071,7 +1078,7 @@
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SubStory.json"
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
     "getPSControlParam" : { },
     "layoutPanel" : true,
@@ -1089,5 +1096,52 @@
   "rowEditDefault" : true,
   "showCaptionBar" : true,
   "modelid" : "85897eeca4e1fb9fd7e7fe5c4fa28fa0",
-  "modeltype" : "PSAPPDEVIEW"
+  "modeltype" : "PSAPPDEVIEW",
+  "getPSAppDERSPaths" : [ [ {
+    "actionRSMode" : 1,
+    "codeName" : "Stories",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "name" : "PROJECT__STORY",
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ], [ {
+    "actionRSMode" : 1,
+    "codeName" : "Stories",
+    "dataRSMode" : 0,
+    "getMajorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+    },
+    "getMinorPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "name" : "PRODUCT__PRODUCT_STORY",
+    "getParentPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    },
+    "rSMode" : 2,
+    "enableCreateDataRS" : false,
+    "enableDEAction" : true,
+    "enableDEDataSet" : true,
+    "enableGetDataRS" : false,
+    "enableSelect" : true,
+    "enableSelectDataRS" : false,
+    "enableUpdateDataRS" : false
+  } ] ]
 }

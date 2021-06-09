@@ -788,6 +788,18 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
           },
+          "getPSNavigateContexts" : [ {
+            "key" : "VERSION",
+            "name" : "VERSION",
+            "value" : "version",
+            "rawValue" : false
+          } ],
+          "getPSNavigateParams" : [ {
+            "key" : "version",
+            "name" : "version",
+            "value" : "version",
+            "rawValue" : false
+          } ],
           "getPSSysImage" : {
             "glyph" : "xf002@FontAwesome",
             "cssClass" : "fa fa-search"

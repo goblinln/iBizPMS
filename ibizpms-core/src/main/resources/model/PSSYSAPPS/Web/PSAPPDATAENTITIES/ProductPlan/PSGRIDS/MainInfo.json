@@ -488,6 +488,18 @@
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
           },
+          "getPSNavigateContexts" : [ {
+            "key" : "PARENT",
+            "name" : "PARENT",
+            "value" : "id",
+            "rawValue" : false
+          } ],
+          "getPSNavigateParams" : [ {
+            "key" : "parent",
+            "name" : "parent",
+            "value" : "id",
+            "rawValue" : false
+          } ],
           "getPSSysImage" : {
             "glyph" : "xf0e8@FontAwesome",
             "cssClass" : "fa fa-sitemap"

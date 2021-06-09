@@ -80,7 +80,6 @@ export class SubStoryUIServiceBase extends UIServiceBase {
      * @memberof  SubStoryUIServiceBase
      */  
     protected initViewFuncMap(){
-        this.allViewFuncMap.set(':','');
     }
 
 }

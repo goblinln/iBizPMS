@@ -83,6 +83,8 @@
     "id" : "parent",
     "hidden" : true,
     "dataType" : 1,
+    "createDVT" : "CONTEXT",
+    "createDV" : "parent",
     "getPSAppDEField" : {
       "name" : "PARENT",
       "codeName" : "Parent"
@@ -197,6 +199,8 @@
         }, {
           "caption" : "父计划",
           "codeName" : "parent",
+          "createDV" : "parent",
+          "createDVT" : "CONTEXT",
           "dataType" : 1,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",

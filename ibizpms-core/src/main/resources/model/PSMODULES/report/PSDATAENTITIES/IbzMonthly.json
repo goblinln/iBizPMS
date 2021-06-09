@@ -1649,7 +1649,7 @@
       "modelref" : true,
       "path" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly.json"
     },
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"

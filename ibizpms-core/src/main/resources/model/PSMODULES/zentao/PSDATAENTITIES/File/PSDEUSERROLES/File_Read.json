@@ -11,6 +11,5 @@
     }
   } ],
   "roleTag" : "File_Read",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userDRAction" : "READ"
 }

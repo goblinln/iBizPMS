@@ -139,6 +139,56 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/productplans/:productplan?/views/subplancreateview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品计划',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'views', parameterName: 'subplancreateview' },
+                        ],
+                        resource:'productplan',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/productplans/:productplan?/views/subplancreateview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品计划',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'views', parameterName: 'subplancreateview' },
+                        ],
+                        resource:'productplan',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'productplans/:productplan?/views/subplancreateview',
+                    meta: {
+                        captionTag: '',
+                        caption: '产品计划',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'productplans', parameterName: 'productplan' },
+                            { pathName: 'views', parameterName: 'subplancreateview' },
+                        ],
+                        resource:'productplan',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/productplans/:productplan?/views/gridview',
                     meta: {
                         captionTag: '',
@@ -15713,6 +15763,62 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/stories/:story?/views/subgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求细分',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'subgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/stories/:story?/views/subgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求细分',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'subgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/subgridview',
+                    meta: {
+                        captionTag: '',
+                        caption: '需求细分',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'subgridview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/stories/:story?/views/pickupview',
                     meta: {
                         captionTag: '',
@@ -17852,22 +17958,6 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'subproductplans/:subproductplan?/views/subplancreateview',
-                    meta: {
-                        captionTag: '',
-                        caption: '产品计划',
-                        info:'',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'subproductplans', parameterName: 'subproductplan' },
-                            { pathName: 'views', parameterName: 'subplancreateview' },
-                        ],
-                        resource:'subproductplan',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
                     path: 'projects/:project?/views/tasktreeexpview',
                     meta: {
                         captionTag: '',
@@ -18455,24 +18545,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'createeditview' },
                         ],
                         resource:'reportly',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'subtasks/:subtask?/views/subtasknewview',
-                    meta: {
-                        captionTag: '',
-                        caption: '子任务',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-tasks',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'subtasks', parameterName: 'subtask' },
-                            { pathName: 'views', parameterName: 'subtasknewview' },
-                        ],
-                        resource:'subtask',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -20463,24 +20535,6 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'gridviewmain' },
                         ],
                         resource:'testmodule',
-                        requireAuth: true,
-                    },
-                    component: AppViewShell
-                    },
-                    {
-                    path: 'substories/:substory?/views/subgridview',
-                    meta: {
-                        captionTag: '',
-                        caption: '需求细分',
-                        info:'',
-                        imgPath: '',
-                        iconCls: 'fa fa-star-o',
-                        parameters: [
-                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'substories', parameterName: 'substory' },
-                            { pathName: 'views', parameterName: 'subgridview' },
-                        ],
-                        resource:'substory',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -23416,6 +23470,43 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'tasks', parameterName: 'task' },
                             { pathName: 'views', parameterName: 'treeeditview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/tasks/:task?/views/subtasknewview',
+                    meta: {
+                        captionTag: '',
+                        caption: '子任务',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'subtasknewview' },
+                        ],
+                        resource:'task',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'tasks/:task?/views/subtasknewview',
+                    meta: {
+                        captionTag: '',
+                        caption: '子任务',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-tasks',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'tasks', parameterName: 'task' },
+                            { pathName: 'views', parameterName: 'subtasknewview' },
                         ],
                         resource:'task',
                         requireAuth: true,

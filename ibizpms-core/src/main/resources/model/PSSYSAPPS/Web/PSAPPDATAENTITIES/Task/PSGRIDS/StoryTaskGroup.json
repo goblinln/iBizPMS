@@ -893,6 +893,11 @@
             "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
           },
           "getPSNavigateContexts" : [ {
+            "key" : "PARENT",
+            "name" : "PARENT",
+            "value" : "id",
+            "rawValue" : false
+          }, {
             "key" : "PROJECT",
             "name" : "PROJECT",
             "value" : "project",
@@ -912,6 +917,11 @@
             "key" : "module",
             "name" : "module",
             "value" : "module",
+            "rawValue" : false
+          }, {
+            "key" : "parent",
+            "name" : "parent",
+            "value" : "id",
             "rawValue" : false
           } ],
           "getPSSysImage" : {

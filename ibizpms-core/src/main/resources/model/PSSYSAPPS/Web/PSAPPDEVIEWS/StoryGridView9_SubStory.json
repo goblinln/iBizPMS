@@ -698,6 +698,18 @@
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
+            "getPSNavigateContexts" : [ {
+              "key" : "VERSION",
+              "name" : "VERSION",
+              "value" : "version",
+              "rawValue" : false
+            } ],
+            "getPSNavigateParams" : [ {
+              "key" : "version",
+              "name" : "version",
+              "value" : "version",
+              "rawValue" : false
+            } ],
             "getPSSysImage" : {
               "glyph" : "xf002@FontAwesome",
               "cssClass" : "fa fa-search"
@@ -826,6 +838,11 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
+              "key" : "PARENT",
+              "name" : "PARENT",
+              "value" : "id",
+              "rawValue" : false
+            }, {
               "key" : "MODULE",
               "name" : "MODULE",
               "value" : "module",
@@ -845,6 +862,11 @@
               "key" : "module",
               "name" : "module",
               "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "parent",
+              "name" : "parent",
+              "value" : "id",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
