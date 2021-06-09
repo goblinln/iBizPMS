@@ -884,7 +884,7 @@ public class StoryExService extends StoryServiceImpl {
         }
 
 
-        if (!old.getTitle().equals(et.getTitle()) || ((et.getSpec() == null && old.getSpec() != null) || (et.getSpec() != null && !et.getSpec().equals(old.getSpec()))) || ((et.getVerify() == null && old.getVerify() != null) || (et.getVerify() != null && !et.getVerify().equals(old.getVerify())))) {
+        if (!old.getTitle().equals(et.getTitle()) || ((StringUtils.isBlank(et.getSpec()) && !StringUtils.isBlank(old.getSpec())) || (!StringUtils.isBlank(et.getSpec()) && !et.getSpec().equals(old.getSpec()))) || ((StringUtils.isBlank(et.getVerify()) && !StringUtils.isBlank(old.getVerify())) || (!StringUtils.isBlank(et.getVerify()) && !et.getVerify().equals(old.getVerify())))) {
             et.setVersion(oldStorySpec != null ? oldStorySpec.getVersion() + 1 : et.getVersion() + 1);
 
             //相关 spec 处理
