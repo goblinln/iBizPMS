@@ -41,6 +41,20 @@ public class DocLibModuleExService extends DocLibModuleServiceImpl {
         return super.collect(et);
     }
 
+    @Override
+    public DocLibModule sysGet(Long key) {
+        if (key == 0){
+            return null;
+        }
+        DocLibModule docLibModule = super.sysGet(key);
+        if(docLibModule.getCollector() != null && docLibModule.getCollector().contains(AuthenticationUser.getAuthenticationUser().getUsername())) {
+            docLibModule.setIsfavourites("1");
+        }else {
+            docLibModule.setIsfavourites("0");
+        }
+        return docLibModule;
+    }
+
     /**
      * [UnCollect:取消收藏] 行为扩展
      * @param et

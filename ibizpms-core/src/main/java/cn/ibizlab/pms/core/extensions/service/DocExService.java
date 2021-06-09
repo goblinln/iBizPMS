@@ -124,6 +124,20 @@ public class DocExService extends DocServiceImpl {
     }
 
     @Override
+    public Doc sysGet(Long key) {
+        if (key == 0){
+            return null;
+        }
+        Doc doc = sysGet(key);
+        if(doc.getCollector() != null && doc.getCollector().contains(AuthenticationUser.getAuthenticationUser().getUsername())) {
+            doc.setIsfavourites("1");
+        }else {
+            doc.setIsfavourites("0");
+        }
+        return doc;
+    }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public Doc unCollect(Doc et) {
         if (StaticDict.DOCQTYPE.DOC.getValue().equals(et.getDocqtype())) {

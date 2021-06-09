@@ -111,5 +111,20 @@ public class DocLibExService extends DocLibServiceImpl {
         }
         return flag;
     }
+
+    @Override
+    public DocLib sysGet(Long key) {
+        if (key == 0){
+            return null;
+        }
+        DocLib docLib = super.sysGet(key);
+        if(docLib.getCollector() != null && docLib.getCollector().contains(AuthenticationUser.getAuthenticationUser().getUsername())) {
+            docLib.setIsfavourites("1");
+        }else {
+            docLib.setIsfavourites("0");
+        }
+
+        return docLib;
+    }
 }
 
