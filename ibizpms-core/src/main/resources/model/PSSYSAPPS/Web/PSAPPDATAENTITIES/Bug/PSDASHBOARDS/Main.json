@@ -4642,6 +4642,18 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
                 },
+                "getPSNavigateContexts" : [ {
+                  "key" : "PRODUCT",
+                  "name" : "PRODUCT",
+                  "value" : "test",
+                  "rawValue" : false
+                } ],
+                "getPSNavigateParams" : [ {
+                  "key" : "product",
+                  "name" : "product",
+                  "value" : "test",
+                  "rawValue" : false
+                } ],
                 "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",

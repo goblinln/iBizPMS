@@ -1386,6 +1386,7 @@
     "actionTarget" : "NONE",
     "caption" : "导入模板",
     "codeName" : "AddPlanTemplet",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanOptionView.json",
