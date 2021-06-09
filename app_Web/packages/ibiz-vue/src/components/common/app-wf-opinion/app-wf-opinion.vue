@@ -211,6 +211,10 @@ export default class AppWFOpinion extends Vue {
             this.isShow = true;
             this.computePosition();
         })
+        //窗口变化重新计算容器宽度
+        window.addEventListener('resize', () => {
+            this.computePosition();
+        })
     }
 
     /**
@@ -318,7 +322,7 @@ export default class AppWFOpinion extends Vue {
         this.isShow = true;
         this.initData();
         this.computePosition();
-        this.scrollToContainer();
+        // this.scrollToContainer();
     }
 
     /**

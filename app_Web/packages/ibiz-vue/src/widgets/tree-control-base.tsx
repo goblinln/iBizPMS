@@ -719,7 +719,7 @@ export class TreeControlBase extends MDControlBase {
      */
     public onCtrlEvent(controlname: string, action: string, data: any, selectedNode?: any) {
         if(action == 'contextMenuItemClick'){
-            AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data}_click`, undefined, this, selectedNode, this.controlInstance?.getPSAppViewLogics() || []);
+            AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data}_click`, undefined, this, selectedNode.curData, this.controlInstance?.getPSAppViewLogics() || []);
         }else{
             this.ctrlEvent({ controlname, action, data });
         }
