@@ -14,6 +14,10 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/SysDepartment.json"
   },
+  "getPValuePSAppDEField" : {
+    "name" : "PDEPTID",
+    "codeName" : "ParentDeptid"
+  },
   "getTextPSAppDEField" : {
     "name" : "DEPTNAME",
     "codeName" : "DeptName"

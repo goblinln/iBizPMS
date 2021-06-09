@@ -113,7 +113,7 @@ export default class RealDept {
                 Object.assign(itemdata,{value:item.deptid});
                 Object.assign(itemdata,{text:item.deptname});
                 Object.assign(itemdata,{label:item.deptname});
-                
+                Object.assign(itemdata,{pvalue:item.parentdeptid});
                 
                 
                 _items.push(itemdata);
