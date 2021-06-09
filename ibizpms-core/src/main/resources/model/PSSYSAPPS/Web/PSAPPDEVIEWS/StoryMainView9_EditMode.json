@@ -6510,7 +6510,8 @@
             "getPSEditor" : {
               "editorParams" : {
                 "SRFNAVPARAM.product" : "%product%",
-                "SRFNAVCTX.product" : "%product%"
+                "SRFNAVCTX.product" : "%product%",
+                "SRFNAVPARAM.n_id_noteq" : "%story%"
               },
               "editorType" : "MDROPDOWNLIST",
               "name" : "linkstories",
@@ -6528,6 +6529,11 @@
                 "key" : "product",
                 "name" : "product",
                 "value" : "product",
+                "rawValue" : false
+              }, {
+                "key" : "n_id_noteq",
+                "name" : "n_id_noteq",
+                "value" : "story",
                 "rawValue" : false
               } ],
               "singleSelect" : false
