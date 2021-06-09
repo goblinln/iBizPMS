@@ -115,14 +115,14 @@
                             </template>
                             <div v-if="usertask.identitylinks.length > 0" class="timeline-draw timeline" style="height: auto;">
                                 <div class="timeline-wrapper" style="height: auto;">
-                                    <div class="timeline-index">
+                                    <div class="timeline-index" style="width: 60px;height: auto;">
                                         <div v-if="usertask.index < usertasksLength" class="icon-line"></div>
                                     </div>
-                                    <div class="usertaskname" style="width: 200px;">
+                                    <div class="usertaskname" style="width: 100px;">
                                         {{ $t('components.timeline.inhand') }}
                                     </div>
                                     <div class="authorname" style="display: flex;width: 100%;height: auto;flex-wrap: wrap;">
-                                        <div v-for="(identitylink, index) in usertask.identitylinks" :key="index" style="width: 100px">
+                                        <div v-for="(identitylink, index) in usertask.identitylinks" :key="index" style="width: 110px">
                                             {{ identitylink.displayname }}
                                         </div>
                                     </div>
