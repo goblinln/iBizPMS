@@ -5247,6 +5247,14 @@
     "psappsbitemrsname" : "需求细分",
     "rstype" : "UIACTION"
   }, {
+    "psappsbitemrsid" : "797759a0721c51b32d906b62c96fd802",
+    "ppsappsbitemname" : "子需求",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "c84e9fb5c9a50e307f17f0a763e11417",
+    "psappsbitemrsname" : "表格界面_拷贝操作",
+    "rstype" : "UIACTION"
+  }, {
     "psappsbitemrsid" : "8678c138bafcf0efbe20e66bb11191e7",
     "ppsappsbitemname" : "子需求",
     "rstag" : "BACKEND",
@@ -7547,6 +7555,14 @@
     "psappsbitemrsname" : "主信息编辑",
     "rstype" : "UIACTION"
   }, {
+    "psappsbitemrsid" : "f8a3e9c3cd178a1184c7aeaa310a5e82",
+    "ppsappsbitemname" : "Bug实体表格视图(项目遗留得Bug)",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "d2e053b6b5b04c1d38e92392d7e172d4",
+    "psappsbitemrsname" : "表格界面_拷贝操作",
+    "rstype" : "UIACTION"
+  }, {
     "psappsbitemrsid" : "caefb5b42a520db297754bea83ddf73e",
     "ppsappsbitemname" : "Bug实体表格视图(项目遗留得Bug)",
     "rstag" : "BACKEND",
@@ -8825,6 +8841,14 @@
     "ppsappsbitemid" : "7c0ebaf06d0c21cfca88b6c3f17fbef1",
     "cpsappsbitemid" : "a8582798baec01993c2318c7f304921d",
     "psappsbitemrsname" : "主信息编辑",
+    "rstype" : "UIACTION"
+  }, {
+    "psappsbitemrsid" : "5ca4cf6e5690f02d1acb0cf44475ef24",
+    "ppsappsbitemname" : "bug表格视图（项目）",
+    "rstag" : "SYS",
+    "rstag2" : "系统预定义",
+    "ppsappsbitemid" : "7c0ebaf06d0c21cfca88b6c3f17fbef1",
+    "psappsbitemrsname" : "表格界面_拷贝操作",
     "rstype" : "UIACTION"
   }, {
     "psappsbitemrsid" : "b92928bc10f2eb8b99ac70b9798170de",
