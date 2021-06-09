@@ -1440,10 +1440,6 @@
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "Product_CloseProduct",
     "name" : "关闭产品",
-    "getNextPSUIAction" : {
-      "modelref" : true,
-      "id" : "Refresh"
-    },
     "getPSAppDataEntity" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
