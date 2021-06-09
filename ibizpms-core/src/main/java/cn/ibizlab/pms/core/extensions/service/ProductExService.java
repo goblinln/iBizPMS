@@ -143,7 +143,7 @@ public class ProductExService extends ProductServiceImpl {
     @Override
     @Transactional
     public Product close(Product et) {
-        String comment = et.getComment();
+        String comment = et.getComment() == null ? "" : et.getComment();
         Product old = this.get(et.getId());
 
         et.setStatus(StaticDict.Product__status.CLOSED.getValue());
