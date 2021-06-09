@@ -149,11 +149,11 @@ public class ProductExService extends ProductServiceImpl {
         et.setStatus(StaticDict.Product__status.CLOSED.getValue());
         super.update(et);
         List<History> changes = ChangeUtil.diff(old, et);
-        if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
+        // if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
 
-            ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.PRODUCT.getValue(), changes,  StaticDict.Action__type.CLOSED.getValue(), "","", null, iActionService);
+        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.PRODUCT.getValue(), changes,  StaticDict.Action__type.CLOSED.getValue(), comment,"", null, iActionService);
 
-        }
+        // }
         return et;
     }
 
