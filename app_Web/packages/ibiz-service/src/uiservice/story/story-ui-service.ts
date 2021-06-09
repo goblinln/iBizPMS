@@ -1,3 +1,4 @@
+import { AppCenterService } from 'ibiz-vue';
 import { StoryUIServiceBase } from './story-ui-service-base';
 
 /**
@@ -54,6 +55,37 @@ export default class StoryUIService extends StoryUIServiceBase {
             }
             return StoryUIService.UIServiceMap.get(context.srfdynainstid);
         }
+    }
+
+    /**
+     * 执行界面行为统一入口
+     *
+     * @param {string} uIActionTag 界面行为tag
+     * @param {any[]} args 当前数据
+     * @param {any} context 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {*} [srfParentDeName] 父实体名称
+     * 
+     * @memberof StoryUIService
+     */
+    protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+      if (Object.is(uIActionTag, "ReturnEdit")) {
+          this.ReturnEdit();
+      } else {
+          super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
+      }
+    }
+
+    /**
+     * 退出
+     * 
+     * @memberof StoryUIService
+     */
+    public async ReturnEdit() {
+      AppCenterService.notifyMessage({ name: 'Story', action: 'appRefresh', data: undefined });
     }
 
 }

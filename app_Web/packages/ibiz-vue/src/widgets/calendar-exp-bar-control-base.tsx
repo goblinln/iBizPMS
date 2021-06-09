@@ -1,13 +1,13 @@
 import { IPSCalendarExpBar, IPSDERBase, IPSSysCalendar, IPSSysCalendarItem } from '@ibiz/dynamic-model-api';
 import { IPSAppDataEntity } from '@ibiz/dynamic-model-api/dist/types/app/dataentity/ipsapp-data-entity';
-import { Util } from 'ibiz-core';
+import { CalendarExpBarControlInterface, Util } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 /**
  * 日历导航部件基类
  * 
  * 
  */
-export class CalendarExpBarControlBase extends ExpBarControlBase {
+export class CalendarExpBarControlBase extends ExpBarControlBase implements CalendarExpBarControlInterface {
 
     /**
      * 导航栏部件模型对象
@@ -153,7 +153,7 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
      *
      * @memberof CalendarExpBarControlBase
      */
-    public onSearch($event: any) {
+    public onSearch() {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
         }
@@ -168,7 +168,7 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
      *
      * @memberof CalendarExpBarControlBase
      */
-    public refresh(args?: any): void {
+    public refresh(): void {
         if (this.$xDataControl) {
             const calendarContainer: any = (this.$refs[this.xDataControlName] as any).ctrl;
             calendarContainer.refresh();
@@ -178,9 +178,12 @@ export class CalendarExpBarControlBase extends ExpBarControlBase {
     /**
      * 日历部件的选中数据事件
      * 
+     *
+     * @param {any[]} args 选中数据
+     * @return {*}  {void}
      * @memberof CalendarExpBarControlBase
      */
-    public onSelectionChange(args: any[], tag?: string, $event2?: any): void {
+    public onSelectionChange(args: any[]): void {
         let tempContext: any = {};
         let tempViewParam: any = {};
         if (args.length === 0) {

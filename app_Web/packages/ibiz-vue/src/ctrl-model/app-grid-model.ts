@@ -119,8 +119,8 @@ export class AppGridModel {
                   name: majorAppDataEntity.codeName?.toLowerCase(),
                   dataType: 'FRONTKEY',
               };
-              if (majorAppDataEntity.getPSDER1N()) {
-                  obj.prop = (majorAppDataEntity.getPSDER1N() as any)?.getPSPickupDEField?.()?.codeName.toLowerCase();
+              if (minorAppDERSs.getParentPSAppDEField()) {
+                  obj.prop = minorAppDERSs.getParentPSAppDEField()?.codeName.toLowerCase();
               } else {
                 obj.prop = (ModelTool.getAppEntityKeyField(majorAppDataEntity) as IPSAppDEField)?.codeName || '';
               }

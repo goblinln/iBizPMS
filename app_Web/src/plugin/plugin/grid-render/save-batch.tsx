@@ -106,9 +106,9 @@ export class SaveBatch extends AppGridBase {
     public async save() {
         if (!await this.validateAll()) {
             if(this.errorMessages && this.errorMessages.length > 0) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: this.errorMessages[0] });
+                this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: this.errorMessages[0] });
             } else {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.rulesException') as string) });
+                this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: (this.$t('app.commonwords.rulesexception') as string) });
             }
             return [];
         }
@@ -128,7 +128,7 @@ export class SaveBatch extends AppGridBase {
 			this.onControlResponse('saveBatch', response);
             if (response && response.status === 200) {
                 this.$Notice.success({ 
-                    title: (this.$t('app.commonWords.saveSuccess') as string),
+                    title: (this.$t('app.commonwords.savesuccess') as string),
                     duration: 3
                 });
                 this.closeView(response.data);
@@ -136,7 +136,7 @@ export class SaveBatch extends AppGridBase {
         }).catch((error: any) =>{
 			this.onControlResponse('saveBatch', error);
             this.$Notice.error({
-                title: (this.$t('app.commonWords.wrong') as string),
+                title: (this.$t('app.commonwords.wrong') as string),
                 desc: error.data.message,
                 duration: 3
             });

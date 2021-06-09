@@ -71,7 +71,7 @@ export class PivotTable extends AppDefaultGrid {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
         if(!this.fetchAction){
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.gridpage.notConfig.fetchAction') as string) });
+            this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: (this.$t('app.gridpage.notConfig.fetchAction') as string) });
             return;
         }
         if(pageReset){
@@ -101,7 +101,7 @@ export class PivotTable extends AppDefaultGrid {
             this.onControlResponse('load', response);
             if (!response.status || response.status !== 200) {
                 if (response.errorMessage) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.errorMessage });
+                    this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: response.errorMessage });
                 }
                 return;
             }
@@ -163,7 +163,7 @@ export class PivotTable extends AppDefaultGrid {
             if (response && response.status === 401) {
                 return;
             }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.errorMessage });
+            this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: response.errorMessage });
         });
     }
 

@@ -1,3 +1,4 @@
+import { DrtabControlInterface } from "ibiz-core";
 import { MainControlBase } from "./main-control-base";
 
 /**
@@ -7,7 +8,7 @@ import { MainControlBase } from "./main-control-base";
  * @class DrtabControlBase
  * @extends {MainControlBase}
  */
-export class DrtabControlBase extends MainControlBase {
+export class DrtabControlBase extends MainControlBase implements DrtabControlInterface{
     
     /**
      * 选中节点

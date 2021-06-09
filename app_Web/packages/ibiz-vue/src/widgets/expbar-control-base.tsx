@@ -328,6 +328,8 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * 处理快速分组模型动态数据部分(%xxx%)
      *
+     * @param {Array<any>} inputArray 代码表数组
+     * @return {*} 
      * @memberof ExpBarControlBase
      */
     public handleDynamicData(inputArray: Array<any>) {
@@ -436,7 +438,7 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * 部件挂载
      * 
-     * @param args 
+     * @param args 额外参数
      * @memberof ExpBarControlBase
      */
     public ctrlMounted(args?: any) {
@@ -474,8 +476,8 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * 计算目标部件所需参数
      *
-     * @param {string} [controlType]
-     * @returns
+     * @param {*} controlInstance 数据部件
+     * @return {*} 
      * @memberof ExpBarControlBase
      */
     public computeTargetCtrlData(controlInstance: any) {
@@ -492,7 +494,7 @@ export class ExpBarControlBase extends MainControlBase {
     *
     * @memberof ExpBarControlBase
     */
-    public onSearch($event?: any) { }
+    public onSearch() { }
 
     /**
      * 绘制快速搜索
@@ -518,7 +520,7 @@ export class ExpBarControlBase extends MainControlBase {
                     search={true}
                     on-on-change={($event: any) => { this.searchText = $event.target.value; }}
                     placeholder={getQuickSearchPlaceholader(appDataEntity)}
-                    on-on-search={($event: any) => this.onSearch($event)}>
+                    on-on-search={($event: any) => this.onSearch()}>
                 </i-input>
             </div>
         );
@@ -556,6 +558,9 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * 工具栏点击
      * 
+     * @param {*} data 事件数据
+     * @param {*} $event 事件对象
+     * @return {*} 
      * @memberof ExpBarControlBase
      */
     public handleItemClick(data: any, $event: any) {
@@ -568,6 +573,8 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * 快速分组值变化
      *
+     * @param {*} $event 分组事件源
+     * @return {*} 
      * @memberof ExpBarControlBase
      */
     public quickGroupValueChange($event: any) {
@@ -590,7 +597,7 @@ export class ExpBarControlBase extends MainControlBase {
             }
         }
         if (this.isEmitQuickGroupValue) {
-            this.onSearch($event);
+            this.onSearch();
         }
         this.isEmitQuickGroupValue = true;
     }
@@ -612,7 +619,7 @@ export class ExpBarControlBase extends MainControlBase {
      *
      * @memberof ExpBarControlBase
      */
-    public refresh(args?: any): void {
+    public refresh(): void {
         if (this.$xDataControl) {
             const xDataControl: any = (this.$refs[`${(this.xDataControlName)?.toLowerCase()}`] as any).ctrl;
             if (xDataControl && xDataControl.refresh && xDataControl.refresh instanceof Function) {
@@ -624,9 +631,12 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * 选中数据事件
      * 
+     *
+     * @param {any[]} args 选中数据
+     * @return {*}  {void}
      * @memberof ExpBarControlBase
      */
-    public onSelectionChange(args: any[], tag?: string, $event2?: any): void {
+    public onSelectionChange(args: any[]): void {
         this.dragstate = false;
         let tempContext: any = {};
         let tempViewParam: any = {};
@@ -673,6 +683,9 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * load完成事件
      * 
+     * @param {*} args 加载数据
+     * @param {string} [tag]
+     * @param {*} [$event2]
      * @memberof ExpBarControlBase
      */
     public onLoad(args: any, tag?: string, $event2?: any) {
@@ -682,11 +695,19 @@ export class ExpBarControlBase extends MainControlBase {
         }
     }
 
+    /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof ExpBarControlBase
+     */
     public onCtrlEvent(controlname: any, action: any, data: any) {
         if (controlname && Object.is(controlname, this.xDataControlName)) {
             switch (action) {
                 case "selectionchange":
-                    this.onSelectionChange(data, action);
+                    this.onSelectionChange(data);
                     return;
                 case "load":
                     this.onLoad(data, action);
@@ -701,7 +722,7 @@ export class ExpBarControlBase extends MainControlBase {
      * 
      * @memberof ExpBarControlBase
      */
-    public close(data: any) {
+    public close() {
         this.expDom = document.getElementsByClassName('ivu-split-horizontal')[1];
         if (this.expDom) {
             this.expDom.className = 'ivu-split-horizontal closeedit';
@@ -752,7 +773,7 @@ export class ExpBarControlBase extends MainControlBase {
                 key: this.cacheUUID,
                 class: "viewcontainer2",
                 props: targetCtrlParam,
-                on: { close: (data: any) => { this.close(data) } }
+                on: { close: (data: any) => { this.close() } }
             });
         }
     }
@@ -760,6 +781,8 @@ export class ExpBarControlBase extends MainControlBase {
     /**
      * 绘制内容
      * 
+     * @param {*} [otherClassNames] 额外类名
+     * @return {*} 
      * @memberof ExpBarControlBase
      */
     public renderContent(otherClassNames?: any) {

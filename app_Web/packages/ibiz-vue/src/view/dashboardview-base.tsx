@@ -138,6 +138,9 @@ export class DashboardViewBase extends MainViewBase {
      * @memberof DashboardViewBase
      */
     public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (action == 'refreshAll') {
+            this.loadModel();
+        }
         super.onCtrlEvent(controlname, action, data);
     }
 

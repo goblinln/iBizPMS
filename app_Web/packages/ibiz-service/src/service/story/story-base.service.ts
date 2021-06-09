@@ -486,6 +486,24 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * GetByVersion
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async GetByVersion(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.story) {
+            return this.http.post(`/projects/${_context.project}/stories/${_context.story}/getbyversion`, _data);
+        }
+        if (_context.product && _context.story) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/getbyversion`, _data);
+        }
+    this.log.warn([`[Story]>>>[GetByVersion函数]异常`]);
+    return new HttpResponse({message:'无匹配请求地址'}, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * GetDraft
      *
      * @param {*} [_context={}]
