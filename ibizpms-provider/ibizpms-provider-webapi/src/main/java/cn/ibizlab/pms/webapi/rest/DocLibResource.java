@@ -345,7 +345,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibService.checkKey(doclibMapping.toDomain(doclibdto)));
     }
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PRODUCT', #product_id, 'MANAGE', #doclib_id, 'COLLECT')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PRODUCT', #product_id, 'READ', #doclib_id, 'COLLECT')")
     @ApiOperation(value = "根据产品收藏", tags = {"文档库" },  notes = "根据产品收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -379,7 +379,7 @@ public class DocLibResource {
     }
 
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PRODUCT', #product_id, 'MANAGE', #doclib_id, 'UNCOLLECT')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PRODUCT', #product_id, 'READ', #doclib_id, 'UNCOLLECT')")
     @ApiOperation(value = "根据产品取消收藏", tags = {"文档库" },  notes = "根据产品取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollectByProduct(@PathVariable("product_id") Long product_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -573,7 +573,7 @@ public class DocLibResource {
         return  ResponseEntity.status(HttpStatus.OK).body(doclibService.checkKey(doclibMapping.toDomain(doclibdto)));
     }
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclib_id, 'COLLECT')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', #doclib_id, 'COLLECT')")
     @ApiOperation(value = "根据项目收藏", tags = {"文档库" },  notes = "根据项目收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/collect")
     public ResponseEntity<DocLibDTO> collectByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
@@ -607,7 +607,7 @@ public class DocLibResource {
     }
 
 
-    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'DOCLIBMANAGE', #doclib_id, 'UNCOLLECT')")
+    @PreAuthorize("test('ZT_DOCLIB', 'ZT_PROJECT', #project_id, 'READ', #doclib_id, 'UNCOLLECT')")
     @ApiOperation(value = "根据项目取消收藏", tags = {"文档库" },  notes = "根据项目取消收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/doclibs/{doclib_id}/uncollect")
     public ResponseEntity<DocLibDTO> unCollectByProject(@PathVariable("project_id") Long project_id, @PathVariable("doclib_id") Long doclib_id, @RequestBody DocLibDTO doclibdto) {
