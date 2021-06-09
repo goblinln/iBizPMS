@@ -1,7 +1,7 @@
 <template>
     <div :class="['app-wf-opinion', isShow ? 'is-show' : '']" ref='wf-opinion'>
-        <el-button v-if="!isShow" type="primary" size="small" @click="click">意见</el-button>
-        <template>
+        <el-button v-popover:popover type="primary" size="small" @click="click">意见</el-button>
+        <el-popover ref="popover" popper-class="wf-opinion-popover" :value="isShow" :width="width" :visible-arrow="false" placement="left" trigger="manual">
             <div v-show="isShow" ref="wf-opinion-container" class="wf-opinion-container" :style="{ 'height': containerHeight + 'px' }">
                 <div class="header">
                     <span class="title">意见</span>
@@ -11,8 +11,10 @@
                     </div>
                 </div>
                 <div class="content">
-                    <div class="textarea">
-                        <input-box v-model="value" @change="valueChange" :placeholder="placeholder || '请输入...'" type="textarea"/>
+                    <div :class="['textarea', error ? 'error' : '']">
+                        <form-item :rules="rules" :error="error" :ref="name" :prop="name">
+                            <input-box v-model="currentVal" @change="valueChange" :placeholder="placeholder || '请输入...'" type="textarea"/>
+                        </form-item>
                     </div>
                     <div class="navbar">
                         <div class="navbar-header">
@@ -20,19 +22,19 @@
                         </div>
                         <div class="navbar-items">
                             <template v-for="(filter, index) in filterItems">
-                                <span :class="getClass(filter)" :key="index" @click="filterItemClick(filter, $event)">{{ filter }}</span>
+                                <span :class="getClass(filter)" :key="index" @dblclick="filterItemDBClick(filter, $event)">{{ filter }}</span>
                             </template>
                         </div>
                     </div>
                 </div>
             </div>
-        </template>
+        </el-popover>
     </div>
 </template>
 
 
 <script lang="ts">
-import { Vue, Prop, Component } from 'vue-property-decorator';
+import { Vue, Prop, Component, Model, Watch } from 'vue-property-decorator';
 
 @Component({})
 export default class AppWFOpinion extends Vue {
@@ -51,7 +53,7 @@ export default class AppWFOpinion extends Vue {
      * @type {*}
      * @memberof AppWFOpinion
      */
-    @Prop() public value!: any;
+    @Model('change') readonly value!: any;
 
     /**
      * 是否禁用
@@ -94,12 +96,12 @@ export default class AppWFOpinion extends Vue {
     @Prop() public textareaId: any;
 
     /**
-     * 父容器id
+     * 父容器
      * 
      * @type {*}
      * @memberof AppWFOpinion
      */
-    @Prop() public parentContainerId: any;
+    @Prop() public parentContainer: any;
 
     /**
      * 容器高度
@@ -115,7 +117,7 @@ export default class AppWFOpinion extends Vue {
      * @type {boolean}
      * @memberof AppWFOpinion
      */
-    public isShow: boolean = true;
+    public isShow: boolean = false;
 
     /**
      * 过滤选中项
@@ -142,12 +144,61 @@ export default class AppWFOpinion extends Vue {
     public enableClick: boolean = false;
 
     /**
+     * 容器宽度
+     * 
+     * @type {number}
+     * @memberof AppWFOpinion
+     */
+    public width: number = 700;
+
+    /**
+     * 获取输入框绑定值
+     * 
+     * @type {*}
+     * @memberof AppWFOpinion
+     */
+    get currentVal() {
+        return this.value;
+    }
+
+    /**
+     * 设置输入框绑定值
+     * 
+     * @type {*}
+     * @memberof AppWFOpinion
+     */
+    set currentVal(value: any) {
+        this.$emit('change', value);
+    }
+
+    /**
+     * 值规则
+     * 
+     * @type {any[]}
+     * @memberof AppWFOpinion
+     */
+    get rules() {
+        return [...this.parentContainer.rules?.[this.name]] || [];
+    }
+
+    /**
+     * 错误消息提示
+     * 
+     * @type {*}
+     * @memberof AppWFOpinion
+     */
+    get error() {
+        return this.parentContainer.detailsModel?.[this.name]?.error;
+    }
+
+    /**
      * Vue生命周期 -- created
      * 
      * @memberof AppWFOpinion
      */
     public created() {
         this.handleFilterItems();
+        this.initData();
     }
 
     /**
@@ -157,12 +208,35 @@ export default class AppWFOpinion extends Vue {
      */
     public mounted() {
         this.$nextTick(() => {
-            const dom: any = this.$refs['wf-opinion'];
-            if (dom && dom.parentNode) {
-                dom.parentNode.style.position = 'sticky';
-                dom.parentNode.style.bottom = '0px';
-            }
+            this.isShow = true;
+            this.computePosition();
         })
+    }
+
+    /**
+     * 数据初始化
+     * 
+     * @memberof AppWFOpinion
+     */
+    public initData(value: any = this.value) {
+        if (value && this.filterItems.find((item: any) => { return Object.is(item, value); })) {
+            this.selectItem = value;
+        } else {
+            this.selectItem = null;
+        }
+    }
+
+    /**
+     * 位置计算
+     * 
+     * @memberof AppWFOpinion
+     */
+    public computePosition() {
+        const dom: any = this.$refs['wf-opinion'];
+        if (this.parentContainer && dom) {
+            this.width = this.parentContainer.$el.offsetWidth;
+            dom.style.height = this.isShow ? `${this.containerHeight}px` : '0px';
+        }
     }
 
     /**
@@ -182,10 +256,22 @@ export default class AppWFOpinion extends Vue {
      * @memberof AppWFOpinion
      */
     public filterItemClick(item: any, event: any) {
-        if (!item) {
+        if (!item || Object.is(this.selectItem, item)) {
             return;
         }
         this.selectItem = item;
+    }
+
+    /**
+     * 过滤项双击
+     * 
+     * @memberof AppWFOpinion
+     */
+    public filterItemDBClick(item: any, event: any) {
+        if (!item) {
+            return;
+        }
+        this.valueChange(item);
     }
 
     /**
@@ -219,6 +305,7 @@ export default class AppWFOpinion extends Vue {
     public minusClick() {
         if (!this.enableClick) {
             this.isShow = false;
+            this.computePosition();
         }
     }
 
@@ -229,6 +316,8 @@ export default class AppWFOpinion extends Vue {
      */
     public click() {
         this.isShow = true;
+        this.initData();
+        this.computePosition();
         this.scrollToContainer();
     }
 
@@ -242,7 +331,7 @@ export default class AppWFOpinion extends Vue {
         const easeInOutCubic = (value: any) => value > 0.5
             ? 1 - cubic((1 - value) * 2) / 2
             : cubic(value * 2) / 2;
-        const el: any = document.querySelector(`#${this.parentContainerId} .ivu-row .ivu-tabs-content`);
+        const el = this.parentContainer?.$el;
         if (!el) {
             return;
         }
@@ -268,7 +357,8 @@ export default class AppWFOpinion extends Vue {
      * @memberof AppWFOpinion
      */
     public valueChange(value: any) {
-        this.$emit('change', value);
+        this.initData(value);
+        this.$emit('valueChange', { name: this.name, value: value });
     }
 
 }    

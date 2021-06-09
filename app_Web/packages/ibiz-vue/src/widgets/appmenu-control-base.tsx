@@ -1,5 +1,5 @@
 import { IPSAppMenu } from '@ibiz/dynamic-model-api';
-import { AuthServiceBase, LogUtil, Util } from 'ibiz-core';
+import { AuthServiceBase, LogUtil, MenuControlInterface, Util } from 'ibiz-core';
 import { ControlBase } from "./control-base";
 import { AppFuncService, NavDataService } from '../app-service';
 import { AppMenuService } from "../ctrl-service";
@@ -11,7 +11,7 @@ import { AppMenuService } from "../ctrl-service";
  * @class AppMenuControlBase
  * @extends {ControlBase}
  */
-export class AppMenuControlBase extends ControlBase {
+export class AppMenuControlBase extends ControlBase implements MenuControlInterface {
 
     /**
      * 菜单部件实例
@@ -182,7 +182,7 @@ export class AppMenuControlBase extends ControlBase {
      * @memberof AppMenuControlBase
      */
     public onDynamicPropsChange(newVal: any, oldVal: any) {
-        super.onDynamicPropsChange(newVal,oldVal);
+        super.onDynamicPropsChange(newVal, oldVal);
         this.collapseChange = newVal.collapseChange;
         this.$forceUpdate();
     }
@@ -208,10 +208,10 @@ export class AppMenuControlBase extends ControlBase {
      *
      * @memberof AppMenuControlBase
      */
-    public async ctrlModelInit(args?:any) {
+    public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
         this.service = new AppMenuService(this.controlInstance);
-        await this.service.initServiceParam(this.context,this.controlInstance);
+        await this.service.initServiceParam(this.context, this.controlInstance);
     }
 
     /**
@@ -219,12 +219,12 @@ export class AppMenuControlBase extends ControlBase {
      *
      * @memberof AppMenuControlBase
      */
-    public ctrlInit(args?:any){
+    public ctrlInit(args?: any) {
         super.ctrlInit();
         let _this: any = this;
         this.authService = new AuthServiceBase({ $store: _this.$store })
         if (this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data } : any) => {
+            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
                 if (!Object.is(tag, this.name)) {
                     return;
                 }
@@ -236,10 +236,9 @@ export class AppMenuControlBase extends ControlBase {
     /**
      * 数据加载
      *  
-     * @param {*} data
      * @memberof AppMenuControlBase
      */
-    public load(){
+    public load() {
         this.handleMenusResource(this.service.getAllMenuItems());
         this.isControlLoaded = true;
     }
@@ -247,8 +246,7 @@ export class AppMenuControlBase extends ControlBase {
     /**
      * 菜单项选中处理
      *
-     * @param {*} index
-     * @param {any[]} indexs
+     * @param {menuName } 选中菜单名称
      * @returns
      * @memberof AppMenuControlBase
      */
@@ -293,7 +291,7 @@ export class AppMenuControlBase extends ControlBase {
         if (Object.keys(item).length === 0) {
             return;
         }
-        if(!item.hidden){
+        if (!item.hidden) {
             this.click(item);
         }
     }
@@ -302,9 +300,9 @@ export class AppMenuControlBase extends ControlBase {
      * 计算菜单选中项
      *
      * @public
-     * @param {any[]} items
-     * @param {string} appfunctag
-     * @returns {boolean}
+     * @param {Array<any>} items 菜单数据
+     * @param {string} appfunctag 应用功能tag
+     * @return {*}  {boolean}
      * @memberof AppMenuControlBase
      */
     public computeMenuSelect(items: Array<any>, appfunctag: string): boolean {
@@ -379,18 +377,18 @@ export class AppMenuControlBase extends ControlBase {
     /**
      * 菜单点击
      *  
-     * @param menuItem
+     * @param {*} item 点击项
      * @memberof AppMenuControlBase
      */
-    public click(item: any){
-        if(Object.is((this.controlInstance as any)?.parentModel?.viewStyle,'STYLE4') && (!this.mode || Object.is(this.mode,'LEFT'))){
+    public click(item: any) {
+        if (Object.is((this.controlInstance as any)?.parentModel?.viewStyle, 'STYLE4') && (!this.mode || Object.is(this.mode, 'LEFT'))) {
             this.$store.commit('removeAllPage');
             this.navDataService.removeNavDataFrist();
         }
-        let tempContext:any = Util.deepCopy(this.context);
-        if(item.getPSNavigateContexts){
+        let tempContext: any = Util.deepCopy(this.context);
+        if (item.getPSNavigateContexts) {
             const localContext = Util.formatNavParam(item.getPSNavigateContexts);
-            Object.assign(tempContext,localContext);
+            Object.assign(tempContext, localContext);
         } else {
             if (tempContext.hasOwnProperty("srfdynainstid")) {
                 delete tempContext.srfdynainstid;
@@ -398,11 +396,11 @@ export class AppMenuControlBase extends ControlBase {
         }
         if (item.getPSAppFunc) {
             const appFuncs: Array<any> = this.service.getAllFuncs();
-            const appFunc = appFuncs.find((element:any) =>{
+            const appFunc = appFuncs.find((element: any) => {
                 return element.appfunctag === item.getPSAppFunc.codeName;
             });
             if (appFunc) {
-                AppFuncService.getInstance().executeApplication(appFunc,tempContext);
+                AppFuncService.getInstance().executeApplication(appFunc, tempContext);
             }
         } else {
             LogUtil.warn(this.$t('app.commonwords.noassign'));
@@ -415,9 +413,9 @@ export class AppMenuControlBase extends ControlBase {
      * @param {*} data
      * @memberof AppMenuControlBase
      */
-    public handleMenusResource(inputMenus: Array<any>){
+    public handleMenusResource(inputMenus: Array<any>) {
         let _this: any = this;
-        if(_this.$store.getters['authresource/getEnablePermissionValid']){
+        if (_this.$store.getters['authresource/getEnablePermissionValid']) {
             this.computedEffectiveMenus(inputMenus);
             // this.computeParentMenus(inputMenus);
         }
@@ -432,9 +430,9 @@ export class AppMenuControlBase extends ControlBase {
      * @param {*} inputMenus
      * @memberof AppMenuControlBase
      */
-    public computedEffectiveMenus(inputMenus:Array<any>){
-        inputMenus.forEach((_item:any) =>{
-            if(!this.authService.getMenusPermission(_item)){
+    public computedEffectiveMenus(inputMenus: Array<any>) {
+        inputMenus.forEach((_item: any) => {
+            if (!this.authService.getMenusPermission(_item)) {
                 _item.hidden = true;
             }
             if (_item.getPSAppMenuItems && _item.getPSAppMenuItems.length > 0) {

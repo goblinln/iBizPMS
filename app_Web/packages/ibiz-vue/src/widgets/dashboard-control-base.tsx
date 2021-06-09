@@ -1,5 +1,5 @@
 import { IPSAppPortlet, IPSDEDashboard } from "@ibiz/dynamic-model-api";
-import { AppServiceBase, LogUtil, ModelTool, Util } from "ibiz-core";
+import { AppServiceBase, DashboardControlInterface, LogUtil, ModelTool, Util } from "ibiz-core";
 import { UtilServiceRegister } from "ibiz-service";
 import { MainControlBase } from "./main-control-base";
 
@@ -10,7 +10,7 @@ import { MainControlBase } from "./main-control-base";
  * @class ControlBase
  * @extends {DashboardControlBase}
  */
-export class DashboardControlBase extends MainControlBase {
+export class DashboardControlBase extends MainControlBase implements DashboardControlInterface{
     /**
      * 部件模型实例对象
      *
@@ -26,7 +26,7 @@ export class DashboardControlBase extends MainControlBase {
      * @type {(boolean)}
      * @memberof DashboardControlBase
      */
-    public isEnableCustomized!:boolean;
+    public isEnableCustomized!: boolean;
 
     /**
      * 看板定制状态描述
@@ -34,7 +34,7 @@ export class DashboardControlBase extends MainControlBase {
      * @type {string} unknown 未确定， default 默认， custom 自定义
      * @memberof DashboardControlBase
      */
-    public dashboardType:string = 'unknown';
+    public dashboardType: string = 'unknown';
 
     /**
      * 自定义模型数据
@@ -43,7 +43,7 @@ export class DashboardControlBase extends MainControlBase {
      * @type {(*)}
      * @memberof DashboardControlBase
      */
-    public customModelData:any;
+    public customModelData: any;
 
     /**
      * modleId
@@ -51,7 +51,7 @@ export class DashboardControlBase extends MainControlBase {
      * @type {string}
      * @memberof DashboardControlBase
      */
-    public modelId:string = "";
+    public modelId: string = "";
 
     /**
      * 功能服务名称
@@ -59,21 +59,21 @@ export class DashboardControlBase extends MainControlBase {
      * @type {string}
      * @memberof DashboardControlBase
      */
-    public utilServiceName:string = "dynadashboard";
+    public utilServiceName: string = "dynadashboard";
 
     /**
      * 动态设计水平列数
      *
      *  @memberof DashboardControlBase
-     */   
-    public layoutColNum:number = 12;
+     */
+    public layoutColNum: number = 12;
 
     /**
      * 动态设计单元格高度，80px
      *
      *  @memberof DashboardControlBase
-     */ 
-    public layoutRowH:number = 80;
+     */
+    public layoutRowH: number = 80;
 
     /**
      * 所有的门户部件实例集合
@@ -81,14 +81,14 @@ export class DashboardControlBase extends MainControlBase {
      * @type {*}
      * @memberof DashboardControlBase
      */
-    public portletList:any = [];
+    public portletList: any = [];
 
     /**
      * 看板初始化时
      *
      * @memberof DashboardControlBase
      */
-    public initMountedMap(){
+    public initMountedMap() {
         this.mountedMap.set('self', false);
     }
 
@@ -111,9 +111,9 @@ export class DashboardControlBase extends MainControlBase {
      *
      * @memberof ControlBase
      */
-     public initDynamicMountedMap() {
+    public initDynamicMountedMap() {
         this.mountedMap.clear();
-        this.customModelData.forEach((item: any)=>{
+        this.customModelData.forEach((item: any) => {
             let portlet = item.modelData;
             this.mountedMap.set(portlet.name, false)
         })
@@ -145,8 +145,8 @@ export class DashboardControlBase extends MainControlBase {
         this.isEnableCustomized = this.controlInstance.enableCustomized;
         const { codeName } = this.controlInstance;
         this.modelId = `dashboard_${this.appDeCodeName.toLowerCase() || 'app'}_${codeName?.toLowerCase()}`;
-        if(this.isEnableCustomized){
-            await this.loadPortletList(this.context,this.viewparams);
+        if (this.isEnableCustomized) {
+            await this.loadPortletList();
         }
     }
 
@@ -155,11 +155,11 @@ export class DashboardControlBase extends MainControlBase {
      *
      * @memberof AppDashboardDesignService
      */
-    public async loadPortletList(context: any, viewparams: any): Promise<any> {
+    public async loadPortletList(): Promise<any> {
         const app = AppServiceBase.getInstance().getAppModelDataObject();
         let list: any = [];
-        if(app.getAllPSAppPortlets?.()?.length){
-            for(const portlet of app.getAllPSAppPortlets() as IPSAppPortlet[]){
+        if (app.getAllPSAppPortlets?.()?.length) {
+            for (const portlet of app.getAllPSAppPortlets() as IPSAppPortlet[]) {
                 // 门户部件实例
                 const portletInstance = portlet.getPSControl()
                 let temp: any = {
@@ -179,8 +179,8 @@ export class DashboardControlBase extends MainControlBase {
      * @returns
      * @memberof DashboardControlBase
      */
-    public getPortletInstance(layoutModel: any){
-        return this.portletList.find((item: any)=>{ return layoutModel.i === item.portletCodeName})?.modelData;
+    public getPortletInstance(layoutModel: any) {
+        return this.portletList.find((item: any) => { return layoutModel.i === item.portletCodeName })?.modelData;
     }
 
     /**
@@ -189,7 +189,7 @@ export class DashboardControlBase extends MainControlBase {
      * @param {*} [args]
      * @memberof DashboardControlBase
      */
-    public ctrlInit(args?: any){
+    public ctrlInit(args?: any) {
         super.ctrlInit(args);
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
@@ -203,10 +203,15 @@ export class DashboardControlBase extends MainControlBase {
         }
     }
 
-    public ctrlMounted(args?: any){
+    /**
+     * 部件挂载
+     *
+     * @memberof DashboardControlBase
+     */
+    public ctrlMounted(args?: any) {
         super.ctrlMounted(args);
         // 不支持自定义时为默认看板
-        if(!this.isEnableCustomized){
+        if (!this.isEnableCustomized) {
             this.dashboardType = 'default';
         }
     }
@@ -216,19 +221,19 @@ export class DashboardControlBase extends MainControlBase {
      *  通知状态
      *
      *  @memberof DashboardControlBase
-     */    
-    public notifyState(){
+     */
+    public notifyState() {
         setTimeout(() => {
-          if (this.viewState) {
-            const refs: any = this.$refs;
-            Object.keys(refs).forEach((name: string) => {
-              this.viewState.next({
-                tag: name,
-                action: "load",
-                data: JSON.parse(JSON.stringify(this.viewparams))
-              });
-            });
-          }
+            if (this.viewState) {
+                const refs: any = this.$refs;
+                Object.keys(refs).forEach((name: string) => {
+                    this.viewState.next({
+                        tag: name,
+                        action: "load",
+                        data: JSON.parse(JSON.stringify(this.viewparams))
+                    });
+                });
+            }
         }, 0);
     }
 
@@ -237,30 +242,30 @@ export class DashboardControlBase extends MainControlBase {
      *
      * @memberof DashboardControlBase
      */
-    public async loadModel(){
+    public async loadModel() {
         try {
-            if(this.isEnableCustomized){
-                let service = await UtilServiceRegister.getInstance().getService(this.context,this.utilServiceName);
-                let res = await service.loadModelData(JSON.parse(JSON.stringify(this.context)),{modelid:this.modelId,utilServiceName:this.utilServiceName});
-                if(res && res.status == 200){
-                    const data:any = res.data;
-                    if(data && data.length >0){
-                        for(const model of data){
+            if (this.isEnableCustomized) {
+                let service = await UtilServiceRegister.getInstance().getService(this.context, this.utilServiceName);
+                let res = await service.loadModelData(JSON.parse(JSON.stringify(this.context)), { modelid: this.modelId, utilServiceName: this.utilServiceName });
+                if (res && res.status == 200) {
+                    const data: any = res.data;
+                    if (data && data.length > 0) {
+                        for (const model of data) {
                             model.modelData = this.getPortletInstance(model);
                         }
                         this.customModelData = data;
                         this.initDynamicMountedMap();
                         this.dashboardType = 'custom';
                         this.$forceUpdate();
-                    }else{
-                      throw new Error(this.$t('app.dashboard.dataerror') as string);
+                    } else {
+                        throw new Error(this.$t('app.dashboard.dataerror') as string);
                     }
-                }else{
-                  throw new Error(this.$t('app.dashboard.serviceerror') as string);
+                } else {
+                    throw new Error(this.$t('app.dashboard.serviceerror') as string);
                 }
             }
         } catch (error) {
-            LogUtil.warn(this.$t('app.dashboard.loaderror')+error);
+            LogUtil.warn(this.$t('app.dashboard.loaderror') + error);
             this.initStaticMountedMap();
             this.dashboardType = "default";
         }
@@ -271,14 +276,14 @@ export class DashboardControlBase extends MainControlBase {
      *
      * @memberof DashboardControlBase
      */
-    public handleClick(){
-        const view:any ={
+    public handleClick() {
+        const view: any = {
             viewname: 'app-portal-design',
             title: (this.$t('app.dashboard.handleclick.title')),
             width: 1600,
             placement: 'DRAWER_RIGHT'
         }
-        const viewparams:any ={
+        const viewparams: any = {
             modelid: this.modelId,
             utilServiceName: this.utilServiceName,
             appdeNamePath: this.controlInstance?.getPSAppDataEntity()?.codeName || 'app',
@@ -289,15 +294,15 @@ export class DashboardControlBase extends MainControlBase {
         }
         const appdrawer = this.$appdrawer.openDrawer(view, dynamicProps);
         appdrawer.subscribe((result: any) => {
-            if(Object.is(result.ret,'OK')){
-                if(result?.datas.length > 0){
-                    for(const model of result.datas){
+            if (Object.is(result.ret, 'OK')) {
+                if (result?.datas.length > 0) {
+                    for (const model of result.datas) {
                         model.modelData = this.getPortletInstance(model);
                     }
                     this.customModelData = [...result.datas];
                     this.initDynamicMountedMap();
                     this.dashboardType = 'custom';
-                }else{
+                } else {
                     this.initStaticMountedMap();
                     this.dashboardType = "default";
                 }
@@ -321,7 +326,7 @@ export class DashboardControlBase extends MainControlBase {
                 action: "refreshAll",
                 data: data
             });
-        }else{
+        } else {
             super.onCtrlEvent(controlname, action, data);
         }
     }

@@ -1,6 +1,6 @@
 import schema from 'async-validator';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameModel, FormItemModel, FormPageModel, FormPartModel, FormRawItemModel, FormTabPageModel, FormTabPanelModel, FormUserControlModel, ModelTool, Util, Verify, ViewTool } from 'ibiz-core';
+import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameModel, FormItemModel, FormPageModel, FormPartModel, FormRawItemModel, FormTabPageModel, FormTabPanelModel, FormUserControlModel, ModelTool, Util, Verify, ViewTool, EditFormControlInterface } from 'ibiz-core';
 import { FormControlBase } from './form-control-base';
 import { AppFormService } from '../ctrl-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
@@ -13,7 +13,7 @@ import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogi
  * @class EditFormControlBase
  * @extends {FormControlBase}
  */
-export class EditFormControlBase extends FormControlBase {
+export class EditFormControlBase extends FormControlBase implements EditFormControlInterface {
 
     /**
      * 表单的模型对象
@@ -289,23 +289,23 @@ export class EditFormControlBase extends FormControlBase {
      * 表单值变化
      *
      * @public
-     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal }
+     * @param {{ name: string}} { name}
      * @returns {void}
      * @memberof EditFormControlBase
      */
-    public formDataChange({ name, newVal, oldVal }: { name: string, newVal: any, oldVal: any }): void {
+    public formDataChange({ name }: { name: string }): void {
         if (this.ignorefieldvaluechange) {
             return;
         }
-        this.resetFormData({ name: name, newVal: newVal, oldVal: oldVal });
-        this.formLogic({ name: name, newVal: newVal, oldVal: oldVal });
+        this.resetFormData({ name: name });
+        this.formLogic({ name: name });
         this.dataChang.next(JSON.stringify(this.data));
     }
 
     /**
      * 加载草稿
      *
-     * @param {*} [opt={}]
+     * @param {*} opt 额外参数
      * @memberof EditFormControlBase
      */
     public loadDraft(opt: any = {}): void {
@@ -321,11 +321,11 @@ export class EditFormControlBase extends FormControlBase {
         }
         const arg: any = { ...opt };
         let viewparamResult: any = Object.assign(arg, this.viewparams);
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('loadDraft', tempContext, viewparamResult);
         let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, { viewparams: viewparamResult }, this.showBusyIndicator);
         post.then((response: any) => {
-            this.onControlResponse('loadDraft',response);
+            this.onControlResponse('loadDraft', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response, 'loadDraft');
                 return;
@@ -361,7 +361,7 @@ export class EditFormControlBase extends FormControlBase {
                 }
             });
         }).catch((response: any) => {
-            this.onControlResponse('loadDraft',response);
+            this.onControlResponse('loadDraft', response);
             this.$throw(response, 'loadDraft');
         });
     }
@@ -369,7 +369,7 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 自动保存
      *
-     * @param {*} [opt={}]
+     * @param {*} opt 额外参数
      * @memberof EditFormControlBase
      */
     public autoSave(opt: any = {}): void {
@@ -387,11 +387,11 @@ export class EditFormControlBase extends FormControlBase {
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('autoSave', tempContext, arg);
         const post: Promise<any> = this.service.add(action, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
-            this.onControlResponse('autoSave',response);
+            this.onControlResponse('autoSave', response);
             if (!response.status || response.status !== 200) {
                 this.$throw(response, 'autoSave');
                 return;
@@ -408,7 +408,7 @@ export class EditFormControlBase extends FormControlBase {
                 this.formState.next({ type: 'save', data: data });
             });
         }).catch((response: any) => {
-            this.onControlResponse('autoSave',response);
+            this.onControlResponse('autoSave', response);
             if (response && response.status && response.data) {
                 this.$throw(response, 'autoSave', { dangerouslyUseHTMLString: true });
             } else {
@@ -420,10 +420,10 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 保存
      *
-     * @param {*} [opt={}]
-     * @param {boolean} [showResultInfo] 
-     * @param {boolean} [isStateNext] formState是否下发通知
-     * @returns {Promise<any>}
+     * @param {*} opt 额外参数
+     * @param {boolean} showResultInfo 是否显示提示信息
+     * @param {boolean} isStateNext formState是否下发通知
+     * @return {*}  {Promise<any>}
      * @memberof EditFormControlBase
      */
     public async save(opt: any = {}, showResultInfo: boolean = true, isStateNext: boolean = true): Promise<any> {
@@ -454,11 +454,11 @@ export class EditFormControlBase extends FormControlBase {
                 return;
             }
             Object.assign(arg, { viewparams: this.viewparams });
-            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            let tempContext: any = JSON.parse(JSON.stringify(this.context));
             this.onControlRequset('save', tempContext, arg);
             const post: Promise<any> = Object.is(data.srfuf, '1') ? this.service.update(action, tempContext, arg, this.showBusyIndicator) : this.service.add(action, tempContext, arg, this.showBusyIndicator);
             post.then((response: any) => {
-                this.onControlResponse('save',response);
+                this.onControlResponse('save', response);
                 if (!response.status || response.status !== 200) {
                     this.$throw(response, 'save');
                     return;
@@ -480,7 +480,7 @@ export class EditFormControlBase extends FormControlBase {
                 }
                 resolve(response);
             }).catch((response: any) => {
-                this.onControlResponse('save',response);
+                this.onControlResponse('save', response);
                 if (response && response.status && response.data) {
                     this.$throw(response, 'save', { dangerouslyUseHTMLString: true });
                     reject(response);
@@ -496,8 +496,9 @@ export class EditFormControlBase extends FormControlBase {
     /**
     * 删除
     *
-    * @public
-    * @param {*} [opt={}]
+    * @param {Array<any>} [opt=[]] 额外参数 
+    * @param {boolean} [showResultInfo] 是否显示提示信息
+    * @return {*}  {Promise<any>}
     * @memberof EditFormControlBase
     */
     public async remove(opt: Array<any> = [], showResultInfo?: boolean): Promise<any> {
@@ -509,7 +510,7 @@ export class EditFormControlBase extends FormControlBase {
             const arg: any = opt[0];
             const _this: any = this;
             Object.assign(arg, { viewparams: this.viewparams });
-            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            let tempContext: any = JSON.parse(JSON.stringify(this.context));
             this.onControlRequset('remove', tempContext, arg);
             this.service.delete(_this.removeAction, tempContext, arg, showResultInfo).then((response: any) => {
                 this.onControlResponse('remove', response);
@@ -537,9 +538,9 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 工作流启动
      *
-     * @param {*} [data={}]
-     * @param {*} [localdata={}]
-     * @returns {Promise<any>}
+     * @param {*} data  表单数据
+     * @param {*} [localdata] 补充逻辑完成参数
+     * @return {*}  {Promise<any>}
      * @memberof EditFormControlBase
      */
     public async wfstart(data: any, localdata?: any): Promise<any> {
@@ -552,7 +553,7 @@ export class EditFormControlBase extends FormControlBase {
             const formData: any = this.getData();
             const copyData: any = Util.deepCopy(data[0]);
             Object.assign(formData, { viewparams: copyData });
-            let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            let tempContext: any = JSON.parse(JSON.stringify(this.context));
             this.onControlRequset('save', tempContext, formData);
             const post: Promise<any> = Object.is(formData.srfuf, '1') ? this.service.update(this.updateAction, tempContext, formData, this.showBusyIndicator, true) : this.service.add(this.createAction, tempContext, formData, this.showBusyIndicator, true);
             post.then((response: any) => {
@@ -597,7 +598,7 @@ export class EditFormControlBase extends FormControlBase {
                 if (copyData.srfwfmemo) {
                     Object.assign(arg, { srfwfmemo: copyData.srfwfmemo });
                 }
-                let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                let tempContext: any = JSON.parse(JSON.stringify(this.context));
                 this.onControlRequset('wfstart', tempContext, arg);
                 const result: Promise<any> = this.service.wfstart(_this.WFStartAction, tempContext, arg, this.showBusyIndicator, localdata);
                 result.then((response: any) => {
@@ -624,9 +625,9 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 工作流提交
      *
-     * @param {*} [data={}]
-     * @param {*} [localdata={}]
-     * @returns {Promise<any>}
+     * @param {*} data  表单数据
+     * @param {*} [localdata] 补充逻辑完成参数
+     * @return {*}  {Promise<any>}
      * @memberof EditFormControlBase
      */
     public async wfsubmit(data: any, localdata?: any): Promise<any> {
@@ -643,7 +644,7 @@ export class EditFormControlBase extends FormControlBase {
             if (!arg[this.appDeKeyFieldName.toLowerCase()]) {
                 return;
             }
-            const submitData:Function = (arg:any,responseData:any) =>{
+            const submitData: Function = (arg: any, responseData: any) => {
                 // 准备工作流数据,填充未存库数据
                 let tempWFData: any = {};
                 if (copyData && Object.keys(copyData).length > 0) {
@@ -669,7 +670,7 @@ export class EditFormControlBase extends FormControlBase {
                 if (copyData.srfwfmemo) {
                     Object.assign(arg, { srfwfmemo: copyData.srfwfmemo });
                 }
-                let tempContext:any = JSON.parse(JSON.stringify(this.context));
+                let tempContext: any = JSON.parse(JSON.stringify(this.context));
                 this.onControlRequset('wfsubmit', tempContext, arg);
                 const result: Promise<any> = this.service.wfsubmit(_this.WFSubmitAction, tempContext, arg, this.showBusyIndicator, localdata);
                 result.then((response: any) => {
@@ -688,8 +689,8 @@ export class EditFormControlBase extends FormControlBase {
                     reject(response);
                 });
             }
-            if(this.isEditable){
-                let tempContext:any = JSON.parse(JSON.stringify(this.context));
+            if (this.isEditable) {
+                let tempContext: any = JSON.parse(JSON.stringify(this.context));
                 this.onControlRequset('save', tempContext, arg);
                 const post: Promise<any> = Object.is(arg.srfuf, '1') ? this.service.update(this.updateAction, tempContext, arg, this.showBusyIndicator, true) : this.service.add(this.createAction, tempContext, arg, this.showBusyIndicator, true);
                 post.then((response: any) => {
@@ -708,15 +709,15 @@ export class EditFormControlBase extends FormControlBase {
                     this.$nextTick(() => {
                         this.formState.next({ type: 'save', data: arg });
                     });
-                    submitData(arg,responseData);
+                    submitData(arg, responseData);
                 }).catch((response: any) => {
                     this.onControlResponse('save', response);
                     this.$throw(response, 'wfsubmit');
                     reject(response);
                 })
-            }else{
+            } else {
                 const responseData: any = this.getData();
-                submitData(arg,responseData);
+                submitData(arg, responseData);
             }
         })
     }
@@ -724,7 +725,7 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 表单刷新数据
      *
-     * @param {any} args
+     * @param {any} args 额外参数
      * @memberof EditFormControlBase
      */
     public refresh(args: any = {}): void {
@@ -758,7 +759,7 @@ export class EditFormControlBase extends FormControlBase {
         const formdata = this.getData();
         Object.assign(arg, formdata);
         Object.assign(arg, this.viewparams);
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         if (data[this.appDeCodeName.toLowerCase()]) {
             Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: data[this.appDeCodeName.toLowerCase()] });
         }
@@ -801,7 +802,7 @@ export class EditFormControlBase extends FormControlBase {
             return;
         }
         const arg: any = Object.assign(data, Util.deepCopy(this.viewparams));
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('updateFormItems', tempContext, arg);
         const post: Promise<any> = this.service.frontLogic(mode, tempContext, arg, showloading);
         post.then((response: any) => {
@@ -820,7 +821,7 @@ export class EditFormControlBase extends FormControlBase {
             });
             this.setFormEnableCond(_data);
             this.fillForm(_data, 'updateFormItem');
-            this.formLogic({ name: '', newVal: null, oldVal: null });
+            this.formLogic({ name: '' });
             this.dataChang.next(JSON.stringify(this.data));
             this.$nextTick(() => {
                 this.formState.next({ type: 'updateformitem', ufimode: arg.srfufimode, data: _data });
@@ -834,7 +835,8 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 保存并退出
      *
-     * @param {any[]} args
+     * @param {any[]} data 额外参数
+     * @return {*}  {Promise<any>}
      * @memberof EditFormControlBase
      */
     public saveAndExit(data: any[]): Promise<any> {
@@ -859,7 +861,8 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 保存并新建
      *
-     * @param {any[]} args
+     * @param {any[]} data 额外参数
+     * @return {*}  {Promise<any>}
      * @memberof EditFormControlBase
      */
     public saveAndNew(data: any[]): Promise<any> {
@@ -882,7 +885,8 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 删除并退出
      *
-     * @param {any[]} args
+     * @param {any[]} data 额外参数
+     * @return {*}  {Promise<any>}
      * @memberof EditFormControlBase
      */
     public removeAndExit(data: any[]): Promise<any> {
@@ -950,7 +954,7 @@ export class EditFormControlBase extends FormControlBase {
         this.oldData = {};
         Object.assign(this.oldData, Util.deepCopy(this.data));
         // this.$store.commit('viewaction/setViewDataChange', { viewtag: this.viewtag, viewdatachange: false });
-        this.formLogic({ name: '', newVal: null, oldVal: null });
+        this.formLogic({ name: '' });
     }
 
     /**
@@ -981,8 +985,8 @@ export class EditFormControlBase extends FormControlBase {
     /**
       * 置空对象
       *
-      * @param {any[]} args
-     * @memberof EditFormControlBase
+      * @param {*} _datas 滞空对象属性
+      * @memberof EditFormControlBase
       */
     public ResetData(_datas: any) {
         if (Object.keys(_datas).length > 0) {
@@ -998,7 +1002,8 @@ export class EditFormControlBase extends FormControlBase {
      * 表单项检查逻辑
      *
      * @public
-     * @param name 属性名
+     * @param {string} name 属性名
+     * @return {*}  {Promise<any>}
      * @memberof EditFormControlBase
      */
     public checkItem(name: string): Promise<any> {
@@ -1040,7 +1045,7 @@ export class EditFormControlBase extends FormControlBase {
      * @returns {void}
      * @memberof EditFormControlBase
      */
-     public async onFormItemActionClick({ formdetail, event }: any) {
+    public async onFormItemActionClick({ formdetail, event }: any) {
         if (formdetail && formdetail.actionType && Object.is(formdetail.actionType, 'FIUPDATE')) {
             const itemUpdate = formdetail.getPSDEFormItemUpdate();
             const showBusyIndicator = itemUpdate?.showBusyIndicator;
@@ -1058,11 +1063,11 @@ export class EditFormControlBase extends FormControlBase {
                 } else {
                     const tempContext: any = Util.deepCopy(this.context);
                     const data: any = Util.deepCopy(this.viewparams);
-                    if (formdetail?.getPSNavigateContexts() && (formdetail.getPSNavigateContexts().length >0)) {
+                    if (formdetail?.getPSNavigateContexts() && (formdetail.getPSNavigateContexts().length > 0)) {
                         let _context: any = Util.computedNavData(this.data, tempContext, data, formdetail.getPSNavigateContexts());
                         Object.assign(tempContext, _context);
                     }
-                    if(formdetail?.getPSNavigateParams() && (formdetail.getPSNavigateParams().length >0)){
+                    if (formdetail?.getPSNavigateParams() && (formdetail.getPSNavigateParams().length > 0)) {
                         let _param: any = Util.computedNavData(this.data, tempContext, data, formdetail.getPSNavigateParams());
                         Object.assign(data, _param);
                     }
@@ -1203,7 +1208,7 @@ export class EditFormControlBase extends FormControlBase {
     /**
      * 显示更多模式切换操作
      *
-     * @type {string}
+     * @param {string} name 名称
      * @memberof EditFormControlBase
      */
     public manageContainerClick(name: string) {
@@ -1220,8 +1225,9 @@ export class EditFormControlBase extends FormControlBase {
     }
 
     /**
-     *打印
-     *@memberof @memberof EditFormControlBase
+     * 打印
+     *
+     * @memberof EditFormControlBase
      */
     public print() {
         let _this: any = this;
@@ -1596,10 +1602,10 @@ export class EditFormControlBase extends FormControlBase {
      * 重置表单项值
      *
      * @public
-     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal }
+     * @param {{ name: string }} { name } 名称
      * @memberof AppDefaultForm
      */
-    public resetFormData({ name, newVal, oldVal }: { name: string, newVal: any, oldVal: any }): void {
+    public resetFormData({ name }: { name: string }): void {
         const formItems: IPSDEEditFormItem[] = ModelTool.getAllFormItems(this.controlInstance);
         if (formItems && formItems.length > 0) {
             for (const item of formItems) {
@@ -1615,12 +1621,12 @@ export class EditFormControlBase extends FormControlBase {
 
     /**
      * 表单逻辑
-     *
+     * 
      * @public
-     * @param {{ name: string, newVal: any, oldVal: any }} { name, newVal, oldVal }
+     * @param {{ name: string }} { name } 名称
      * @memberof FormControlBase
      */
-    public async formLogic({ name, newVal, oldVal }: { name: string, newVal: any, oldVal: any }) {
+    public async formLogic({ name }: { name: string }) {
         const allFormDetails: IPSDEFormDetail[] = ModelTool.getAllFormDetails(this.controlInstance);
         // 表单动态逻辑
         allFormDetails?.forEach((detail: IPSDEFormDetail) => {

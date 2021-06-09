@@ -1,7 +1,7 @@
 import { IPSApplication, IPSAppUtil, IPSControlHandler } from '@ibiz/dynamic-model-api';
 import { EditFormControlBase } from './editform-control-base';
 import moment from 'moment';
-import { GetModelService, LogUtil } from 'ibiz-core';
+import { GetModelService, LogUtil, SearchFormControlInterface } from 'ibiz-core';
 /**
  * 搜索表单部件基类
  *
@@ -9,7 +9,7 @@ import { GetModelService, LogUtil } from 'ibiz-core';
  * @class SearchFormControlBase
  * @extends {EditFormControlBase}
  */
-export class SearchFormControlBase extends EditFormControlBase {
+export class SearchFormControlBase extends EditFormControlBase implements SearchFormControlInterface {
 
     /**
      * 是否展开搜索表单
@@ -143,18 +143,18 @@ export class SearchFormControlBase extends EditFormControlBase {
             utilServiceName: this.utilServiceName,
             ...this.viewparams
         });
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('load', tempContext, param);
         let post = this.service.loadModel(this.utilServiceName, tempContext, param);
-		post.then((response: any) => {
+        post.then((response: any) => {
             this.onControlResponse('load', response);
-			if(response.status == 200 && response.data) {
+            if (response.status == 200 && response.data) {
                 this.historyItems = response.data;
-			}
-		}).catch((response: any) => {
+            }
+        }).catch((response: any) => {
             this.onControlResponse('load', response);
-			LogUtil.log(response);
-		});
+            LogUtil.log(response);
+        });
     }
 
     /**
@@ -162,7 +162,7 @@ export class SearchFormControlBase extends EditFormControlBase {
      *
      * @memberof SearchFormControlBase
      */
-    public handleDataChange(){
+    public handleDataChange() {
         if (this.isAutoSave) {
             this.ctrlEvent({
                 controlname: this.name,
@@ -175,29 +175,29 @@ export class SearchFormControlBase extends EditFormControlBase {
     /**
      * 加载草稿
      *
-     * @param {*} [opt={}]
+     * @param {*} opt 额外参数
      * @memberof SearchFormControlBase
      */
-    public loadDraft(opt: any = {},mode?:string): void {
-        if(!this.loaddraftAction){
-            this.$throw('视图' + (this.$t('app.searchform.notconfig.loaddraftaction') as string),'loadDraft');
+    public loadDraft(opt: any = {}, mode?: string): void {
+        if (!this.loaddraftAction) {
+            this.$throw('视图' + (this.$t('app.searchform.notconfig.loaddraftaction') as string), 'loadDraft');
             return;
         }
-        const arg: any = { ...opt } ;
-        Object.assign(arg,{viewparams:this.viewparams});
-        let tempContext:any = JSON.parse(JSON.stringify(this.context));
+        const arg: any = { ...opt };
+        Object.assign(arg, { viewparams: this.viewparams });
+        let tempContext: any = JSON.parse(JSON.stringify(this.context));
         this.onControlRequset('loadDraft', tempContext, arg);
         let post: Promise<any> = this.service.loadDraft(this.loaddraftAction, tempContext, arg, this.showBusyIndicator);
         post.then((response: any) => {
             this.onControlResponse('loadDraft', response);
             if (!response.status || response.status !== 200) {
-                this.$throw(response,'loadDraft');
+                this.$throw(response, 'loadDraft');
                 return;
             }
 
             const data = response.data;
             this.resetDraftFormStates();
-            this.onFormLoad(data,'loadDraft');
+            this.onFormLoad(data, 'loadDraft');
             setTimeout(() => {
                 const form: any = this.$refs[this.name];
                 if (form) {
@@ -208,7 +208,7 @@ export class SearchFormControlBase extends EditFormControlBase {
                     });
                 }
             });
-            if(Object.is(mode,'RESET')){
+            if (Object.is(mode, 'RESET')) {
                 if (!this.formValidateStatus()) {
                     return;
                 }
@@ -223,7 +223,7 @@ export class SearchFormControlBase extends EditFormControlBase {
             });
         }).catch((response: any) => {
             this.onControlResponse('loadDraft', response);
-            this.$throw(response,'loadDraft');
+            this.$throw(response, 'loadDraft');
         });
     }
 
@@ -252,7 +252,7 @@ export class SearchFormControlBase extends EditFormControlBase {
     public onFormLoad(data: any = {}, action: string): void {
         this.setFormEnableCond(data);
         this.fillForm(data, action);
-        this.formLogic({ name: '', newVal: null, oldVal: null });
+        this.formLogic({ name: '' });
     }
 
     /**
@@ -371,19 +371,19 @@ export class SearchFormControlBase extends EditFormControlBase {
         })
         this.selectItem = time.unix().toString();
         let param: any = {};
-		Object.assign(param, {
+        Object.assign(param, {
             model: JSON.parse(JSON.stringify(this.historyItems)),
             appdeName: this.appDeCodeName,
             modelid: this.modelId,
             utilServiceName: this.utilServiceName,
-			...this.viewparams
-		});
-		let post = this.service.saveModel(this.utilServiceName, this.context, param);
-		post.then((response: any) => {
+            ...this.viewparams
+        });
+        let post = this.service.saveModel(this.utilServiceName, this.context, param);
+        post.then((response: any) => {
             this.ctrlEvent({ controlname: this.controlInstance.name, action: "save", data: response.data });
-		}).catch((response: any) => {
-			LogUtil.log(response);
-		});
+        }).catch((response: any) => {
+            LogUtil.log(response);
+        });
     }
 
     /**
@@ -394,7 +394,7 @@ export class SearchFormControlBase extends EditFormControlBase {
      */
     public onFilterChange(evt: any) {
         let item: any = this.historyItems.find((item: any) => Object.is(evt, item.value));
-        if(item) {
+        if (item) {
             this.selectItem = item.value;
             this.data = JSON.parse(JSON.stringify(item.data));
         }
@@ -406,6 +406,6 @@ export class SearchFormControlBase extends EditFormControlBase {
      * @memberof SearchFormControlBase
      */
     public onReset() {
-        this.loadDraft({},'RESET');
+        this.loadDraft({}, 'RESET');
     }
 }

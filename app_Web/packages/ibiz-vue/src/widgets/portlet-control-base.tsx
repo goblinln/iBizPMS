@@ -1,4 +1,5 @@
 import { IPSAppDEUIAction, IPSDBAppViewPortletPart, IPSDBPortletPart, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSLanguageRes, IPSUIActionGroupDetail } from "@ibiz/dynamic-model-api";
+import { PortletControlInterface } from "ibiz-core";
 import { AppViewLogicService } from '../app-service/logic-service/app-viewlogic-service';
 import { MainControlBase } from "./main-control-base";
 
@@ -9,7 +10,7 @@ import { MainControlBase } from "./main-control-base";
  * @class ControlBase
  * @extends {PortletControlBase}
  */
-export class PortletControlBase extends MainControlBase {
+export class PortletControlBase extends MainControlBase implements PortletControlInterface {
 
     /**
      * 部件模型实例对象
@@ -42,7 +43,7 @@ export class PortletControlBase extends MainControlBase {
      * @memberof PortletControlBase
      */
     public isAdaptiveSize?: boolean;
-    
+
 
     /**
      * 初始化工具栏数据
@@ -55,21 +56,21 @@ export class PortletControlBase extends MainControlBase {
         if (toolbar && toolbar.getPSDEToolbarItems()?.length) {
             toolbar.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
                 targetToolbarItems.push({
-                        name: item.name,
-                        showCaption: item.showCaption,
-                        showIcon: item.showIcon,
-                        tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
-                        iconcls: item.getPSSysImage?.()?.cssClass,
-                        icon: item.getPSSysImage?.()?.imagePath,
-                        actiontarget: (item as IPSDETBUIActionItem).uIActionTarget,
-                        caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
-                        disabled: false,
-                        itemType: item.itemType,
-                        visabled: true,
-                        noprivdisplaymode: (item as IPSDETBUIActionItem).noPrivDisplayMode,
-                        dataaccaction: '',
-                        uiaction: {}
-                    });
+                    name: item.name,
+                    showCaption: item.showCaption,
+                    showIcon: item.showIcon,
+                    tooltip: this.$tl((item.getTooltipPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.tooltip),
+                    iconcls: item.getPSSysImage?.()?.cssClass,
+                    icon: item.getPSSysImage?.()?.imagePath,
+                    actiontarget: (item as IPSDETBUIActionItem).uIActionTarget,
+                    caption: this.$tl((item.getCapPSLanguageRes() as IPSLanguageRes)?.lanResTag, item.caption),
+                    disabled: false,
+                    itemType: item.itemType,
+                    visabled: true,
+                    noprivdisplaymode: (item as IPSDETBUIActionItem).noPrivDisplayMode,
+                    dataaccaction: '',
+                    uiaction: {}
+                });
             })
         }
         this.toolbarModels = targetToolbarItems;
@@ -97,17 +98,17 @@ export class PortletControlBase extends MainControlBase {
         if (groupDetails?.length) {
             groupDetails.forEach((item: IPSUIActionGroupDetail, index: number) => {
                 let appUIAction = item.getPSUIAction() as IPSAppDEUIAction;
-                if(appUIAction){
-                    this.actionBarModelData[appUIAction.uIActionTag] = Object.assign(appUIAction, { 
+                if (appUIAction) {
+                    this.actionBarModelData[appUIAction.uIActionTag] = Object.assign(appUIAction, {
                         viewlogicname: item.name,
-                        actionName: this.$tl(appUIAction?.getCapPSLanguageRes()?.lanResTag ,appUIAction?.caption), 
+                        actionName: this.$tl(appUIAction?.getCapPSLanguageRes()?.lanResTag, appUIAction?.caption),
                         icon: appUIAction?.getPSSysImage?.()?.cssClass,
                         // todo 计数器
                         // counterService: null,
                         // counterId: null, 
-                        disabled: false,  
-                        visabled: true, 
-                        getNoPrivDisplayMode: appUIAction.noPrivDisplayMode || 6 
+                        disabled: false,
+                        visabled: true,
+                        getNoPrivDisplayMode: appUIAction.noPrivDisplayMode || 6
                     });
                 }
             })
@@ -117,16 +118,17 @@ export class PortletControlBase extends MainControlBase {
     /**
      * 触发界面行为
      *
-     * @param {*} $event
+     * @param {*} data 触发数据源
+     * @param {*} $event 事件对象
      * @memberof PortletControlBase
      */
     public handleItemClick(data: any, $event: any) {
         let tag = `${this.controlInstance.name?.toLowerCase()}_${data.tag}_click`;
-        if(this.controlInstance?.portletType == 'TOOLBAR'){
+        if (this.controlInstance?.portletType == 'TOOLBAR') {
             // 工具栏要用工具栏的name
             tag = `${this.controlInstance.getPSControls()?.[0]?.name?.toLowerCase()}_${data.tag}_click`;
         }
-        AppViewLogicService.getInstance().executeViewLogic(tag, $event?$event:data.event, this, data.params?data.params:data, this.controlInstance.getPSAppViewLogics() as any[]);
+        AppViewLogicService.getInstance().executeViewLogic(tag, $event ? $event : data.event, this, data.params ? data.params : data, this.controlInstance.getPSAppViewLogics() as any[]);
     }
 
     /**
@@ -134,10 +136,10 @@ export class PortletControlBase extends MainControlBase {
      *
      * @memberof PortletControlBase
      */
-    public initMountedMap(){
+    public initMountedMap() {
         super.initMountedMap();
         let portletAppView = (this.controlInstance as IPSDBAppViewPortletPart)?.getPortletPSAppView?.();
-        if(portletAppView){
+        if (portletAppView) {
             this.mountedMap.set(portletAppView.name, false);
         }
     }
@@ -147,7 +149,7 @@ export class PortletControlBase extends MainControlBase {
      *
      * @memberof ViewBase
      */
-     public async ctrlModelLoad(){ 
+    public async ctrlModelLoad() {
         switch (this.controlInstance.portletType) {
             case 'VIEW':
                 await (this.controlInstance as IPSDBAppViewPortletPart)?.getPortletPSAppView()?.fill(true);
@@ -162,7 +164,7 @@ export class PortletControlBase extends MainControlBase {
             default:
                 await this.controlInstance.getPSControls()?.[0]?.fill(true);
         }
-     }
+    }
 
     /**
      * 初始化门户部件
@@ -208,7 +210,7 @@ export class PortletControlBase extends MainControlBase {
                 if (Object.is(tag, "all-portlet") && Object.is(action, 'loadmodel')) {
                     this.calcUIActionAuthState(data);
                 }
-                if (tag == 'all-portlet' && action == 'refreshAll'){
+                if (tag == 'all-portlet' && action == 'refreshAll') {
                     this.handleRefreshAll(data);
                 }
                 if (!Object.is(tag, this.name)) {
@@ -237,7 +239,7 @@ export class PortletControlBase extends MainControlBase {
         if (portletType == "CHART" || portletType == "LIST") {
             this.viewState.next({ tag: controls?.[0].name, action: 'refresh', data: args });
         }
-        if ( portletType == 'ACTIONBAR' ){
+        if (portletType == 'ACTIONBAR') {
             this.ctrlEvent({ controlname: this.controlInstance.name, action: 'refreshAll', data: args })
         }
     }

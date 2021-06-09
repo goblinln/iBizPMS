@@ -1,72 +1,58 @@
-.pickup-view {
-    >.translate-contant {
-        overflow: auto;
-        flex-grow: 1;
-        display: flex;
-        justify-content: flex-end;
-        height: calc(100% - 64px);
-        .translate-buttons {
-            width: 80px;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            button {
-                margin-bottom: 5px;
-            }
-        }
-        .left, .right {
-            width: 300px;
-        }
-        .right {
-            border: 1px solid var(--view-font-color);
-            .mpicker-select {
-                font-family: helvetica, sans-serif;
-                font-size: 16px;
-                text-align: justify; 
-                word-spacing: -3.8pt;
-                line-height: 1.6;
-                font-weight: bold;
-                word-spacing: 10px;
-                height: 100%;
-                overflow: auto;
-            }
-            .mpicker-select > div {
-                padding: 3px 10px;
-                font-size: 14px;
-                color: var(--view-font-color);
-                font-weight: initial;
-                cursor: pointer;
-                min-height: 28px;
-                border: 1px solid var(--view-font-color-light);
-                margin: 4px 4px;
-                transition: all .3s;
-            }
-            .mpicker-select > div:hover {
-                background: var(--view-background-color-bright);
-            }
-            .mpicker-select > .select{
-                color: var(--view-font-color-light);
-                background: var(--view-background-color-bright);
-            }
-        }
-        .center{
-            width: calc(100% - 380px);
-            .pickupviewpanel {
-                width: 100%;
-                height: 100%;
+.view-default.view-container.dempickupview2 {
+    >.ivu-card >.ivu-card-body {
+        >.content-container.pickup-view {
+            .footer {
+                height: 58px;
+                .ivu-card-body {
+                    padding: 10px;
+                }
+            } 
+            >.translate-contant {
+                overflow: hidden;
+                .center {
+                    padding: 8px 10px;
+                    background-color: #f6f6f6;
+                    border-radius: 2px;
+                    width: calc(100% - 354px);
+                    .app-tree-exp-bar {
+                        .left-pane, .right-pane {
+                            background: #fff;
+                        }
+                        .left-pane {
+                            padding-top: 6px;
+                            padding-left: 8px;
+                        }
+                    }
+                }
+                .translate-buttons .buttons button {
+                    width: 32px;
+                    height: 32px;
+                    padding: 0;
+                    span i {
+                        line-height: 2;
+                    }
+                }
+                .translate-buttons {
+                    width: 56px;
+                }
+                .right {
+                    background-color: #f6f6f6;
+                    border: none;
+                    border-radius: 2px;
+                    .mpicker-select .picker-item {
+                        height: 32px;
+                        background: #FFFFFF;
+                        border-radius: 2px;
+                        color: #666666;
+                        border: none;
+                        line-height: 32px;
+                        font-size: 12px;
+                        font-weight: 400;
+                        padding: 0 0 0 20px;
+                        margin: 10px;
+                    }
+                }
             }
         }
     }
-    >.footer {
-        height: 64px;
-    }
-}
-
-// studio版里footer是放在插槽里的
-.view-style2{
-  .pickup-view {
-    >.footer {
-      display: none;
-    }
-  }
 }

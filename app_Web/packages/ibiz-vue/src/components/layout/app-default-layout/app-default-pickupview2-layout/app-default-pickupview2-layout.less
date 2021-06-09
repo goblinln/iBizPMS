@@ -1,11 +1,59 @@
-.pickup-view {
-    > .pickupviewpanel {
-        flex-grow: 1;
-        display: flex;
-        justify-content: flex-end;
-        height: calc(100% - 64px);
-    }
-    > .footer {
-        height: 64px;
+.view-default.view-container.depickupview2 {
+    >.ivu-card >.ivu-card-body {
+        >.content-container.pickup-view {
+            .app-tree-exp-bar .right-pane >div >.pickupviewpanel {
+                height: 100%;
+            }
+            .footer .ivu-card-body {
+                padding: 10px 12px;
+            }
+            >.expbarcontrol {
+                //水平布局
+                >.ivu-split-horizontal {
+                  >.left-pane {
+                    padding: 0px;
+                    margin: 4px 10px 12px 4px;
+                    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+                    border-radius: 4px;
+                    >div {
+                      padding: 0 10px 10px 10px;
+                    }
+                    .container-header >.search-container {
+                      padding-top: 10px;
+                    }
+                  }
+                  >.right-pane {
+                    padding: 4px 10px 12px 16px;
+                    >div {
+                      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+                      border-radius: 4px;
+                      padding: 0;
+                      >.view-container.view-default {
+                        padding: 0 12px;
+                      }
+                    }
+                  }
+                }
+                //垂直布局
+                >.ivu-split-vertical {
+                  >.top-pane {
+                    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+                    border-radius: 4px;
+                    margin: 0 4px 10px 4px;
+                    >div {
+                      padding: 0 10px 10px 10px;
+                    }
+                  }
+                  >.bottom-pane {
+                    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
+                    border-radius: 4px;
+                    margin: 16px 4px 4px 4px;
+                    >div {
+                      padding: 0 10px 10px 10px;
+                    }
+                  }
+                }
+              } 
+        }
     }
 }
