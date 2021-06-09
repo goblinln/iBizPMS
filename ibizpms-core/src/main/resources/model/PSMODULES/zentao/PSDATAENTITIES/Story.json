@@ -2948,6 +2948,11 @@
       "stdDataType" : 1,
       "valueOP" : "EQ"
     }, {
+      "codeName" : "N_ID_ISNULL",
+      "name" : "N_ID_ISNULL",
+      "stdDataType" : 1,
+      "valueOP" : "ISNULL"
+    }, {
       "codeName" : "N_ID_NOTEQ",
       "name" : "N_ID_NOTEQ",
       "stdDataType" : 1,

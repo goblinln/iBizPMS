@@ -48,6 +48,11 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
         this.n_color_eq = n_color_eq;
     }
                 
+	private String n_id_isnull;//[编号]
+	public void setN_id_isnull(String n_id_isnull) {
+        this.n_id_isnull = n_id_isnull;
+    }
+                
 	private Long n_id_noteq;//[编号]
 	public void setN_id_noteq(Long n_id_noteq) {
         this.n_id_noteq = n_id_noteq;

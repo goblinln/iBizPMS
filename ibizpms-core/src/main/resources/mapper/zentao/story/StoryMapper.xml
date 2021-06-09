@@ -51,6 +51,9 @@
 		<if test="srf.n_id_eq != null ">
 			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_id_isnull != null ">
+			<![CDATA[ AND  t1.`ID` IS NULL ]]>
+        </if>
 		<if test="srf.n_id_noteq != null ">
 			<![CDATA[ AND  t1.`ID` <> #{srf.n_id_noteq,jdbcType=BIGINT} ]]>
         </if>

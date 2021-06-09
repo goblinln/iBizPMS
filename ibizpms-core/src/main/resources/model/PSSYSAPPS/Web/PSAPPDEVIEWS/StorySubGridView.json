@@ -115,6 +115,11 @@
     "name" : "parent",
     "value" : "parent",
     "rawValue" : false
+  }, {
+    "key" : "n_id_isnull",
+    "name" : "n_id_isnull",
+    "value" : "0",
+    "rawValue" : true
   } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
@@ -306,7 +311,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchSubStory"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
