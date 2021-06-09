@@ -950,6 +950,7 @@
     },
     "maxSize" : -1,
     "name" : "根模块（动态）",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainGridView_ByModule.json",
@@ -1013,6 +1014,11 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "MODULE",
+      "name" : "MODULE",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    }, {
       "key" : "MODULENAME",
       "name" : "MODULENAME",
       "value" : "name",
@@ -1027,6 +1033,11 @@
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfparentkey",
       "rawValue" : false
     }, {
       "key" : "branch",
@@ -1068,6 +1079,7 @@
     },
     "maxSize" : -1,
     "name" : "非根模块（动态）",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainGridView_ByModule.json",
@@ -1131,6 +1143,11 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "MODULE",
+      "name" : "MODULE",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    }, {
       "key" : "MODULENAME",
       "name" : "MODULENAME",
       "value" : "name",
@@ -1145,6 +1162,11 @@
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfparentkey",
       "rawValue" : false
     }, {
       "key" : "branch",
@@ -1186,6 +1208,7 @@
     },
     "maxSize" : -1,
     "name" : "根模块无分支（动态）",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainGridView_ByModule.json",
@@ -1249,6 +1272,11 @@
       "modeltype" : "PSDETOOLBAR"
     },
     "getPSNavigateContexts" : [ {
+      "key" : "MODULE",
+      "name" : "MODULE",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    }, {
       "key" : "MODULENAME",
       "name" : "MODULENAME",
       "value" : "name",
@@ -1263,6 +1291,11 @@
       "key" : "modulename",
       "name" : "modulename",
       "value" : "name",
+      "rawValue" : false
+    }, {
+      "key" : "module",
+      "name" : "module",
+      "value" : "srfparentkey",
       "rawValue" : false
     }, {
       "key" : "branch",

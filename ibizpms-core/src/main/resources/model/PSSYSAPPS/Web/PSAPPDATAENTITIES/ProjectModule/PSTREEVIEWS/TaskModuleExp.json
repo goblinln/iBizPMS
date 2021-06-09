@@ -1143,6 +1143,7 @@
     },
     "maxSize" : -1,
     "name" : "项目根模块（动态）",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
@@ -1266,6 +1267,7 @@
     },
     "maxSize" : -1,
     "name" : "产品根模块（动态）",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
@@ -1389,6 +1391,7 @@
     },
     "maxSize" : -1,
     "name" : "产品非跟模块(动态)",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
@@ -1485,6 +1488,7 @@
     },
     "maxSize" : -1,
     "name" : "非根模块（动态）",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",
@@ -1608,6 +1612,7 @@
     },
     "maxSize" : -1,
     "name" : "产品根模块无分支（动态）",
+    "navFilter" : "n_module_eq",
     "getNavPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainGridView_ByModule.json",

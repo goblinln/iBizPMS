@@ -93,6 +93,16 @@ public class TestTaskSearchContext extends QueryWrapperContext<TestTask> {
         this.n_product_eq = n_product_eq;
     }
                 
+	private String n_product_isnotnull;//[所属产品]
+	public void setN_product_isnotnull(String n_product_isnotnull) {
+        this.n_product_isnotnull = n_product_isnotnull;
+    }
+                
+	private Long n_product_noteq;//[所属产品]
+	public void setN_product_noteq(Long n_product_noteq) {
+        this.n_product_noteq = n_product_noteq;
+    }
+                
 	private Long n_build_eq;//[版本]
 	public void setN_build_eq(Long n_build_eq) {
         this.n_build_eq = n_build_eq;
