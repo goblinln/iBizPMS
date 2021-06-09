@@ -326,6 +326,7 @@ export class DashboardControlBase extends MainControlBase implements DashboardCo
                 action: "refreshAll",
                 data: data
             });
+            this.ctrlEvent({ controlname: this.controlInstance.name, action: 'refreshAll', data: data });
         } else {
             super.onCtrlEvent(controlname, action, data);
         }

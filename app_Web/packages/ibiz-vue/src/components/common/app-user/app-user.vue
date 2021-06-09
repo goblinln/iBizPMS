@@ -31,7 +31,7 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
-import { removeSessionStorage } from 'ibiz-core';
+import { AppServiceBase, removeSessionStorage } from 'ibiz-core';
 import { clearCookie, getCookie } from 'qx-util';
 @Component({})
 export default class AppUser extends Vue {
@@ -157,6 +157,9 @@ export default class AppUser extends Vue {
         removeSessionStorage('srfdynaorgid');
         removeSessionStorage('dcsystem');
         removeSessionStorage('orgsData');
+        // 重置路由缓存
+        const navHistory: any = AppServiceBase.getInstance().getAppNavDataService();
+        navHistory.reset();  
     }
 }
 </script>
