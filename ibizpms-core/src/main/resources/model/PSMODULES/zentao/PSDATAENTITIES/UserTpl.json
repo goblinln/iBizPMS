@@ -819,36 +819,16 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain.json",
     "name" : "模板维护",
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "UserTpl_Maintain_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "CREATE",
       "name" : "UserTpl_Maintain_CREATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CREATE"
       }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "UserTpl_Maintain_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "UserTpl_Maintain_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
     } ],
     "roleTag" : "UserTpl_Maintain",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain_CO.json",
     "name" : "模板维护（当前机构）",
