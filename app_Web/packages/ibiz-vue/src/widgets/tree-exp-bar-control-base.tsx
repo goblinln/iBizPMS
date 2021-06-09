@@ -1,5 +1,5 @@
 import { IPSAppViewRef, IPSDETree, IPSTreeExpBar, IPSDEPickupViewPanel } from '@ibiz/dynamic-model-api';
-import { ModelTool } from 'ibiz-core';
+import { ModelTool, TreeExpBarControlInterface } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 /**
  * 树视图导航栏部件基类
@@ -8,7 +8,7 @@ import { ExpBarControlBase } from './expbar-control-base';
  * @class TreeExpBarControlBase
  * @extends {ExpBarControlBase}
  */
-export class TreeExpBarControlBase extends ExpBarControlBase {
+export class TreeExpBarControlBase extends ExpBarControlBase implements TreeExpBarControlInterface {
 
     /**
      * 部件模型实例对象
@@ -64,7 +64,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
         }
         super.onStaticPropsChange(newVal, oldVal);
     }
-    
+
     /**
     * 处理数据部件参数
     *
@@ -77,14 +77,14 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 获取关系项视图
      *
-     * @param {*} [arg={}]
+     * @param {*} [arg={}] 额外参数
      * @returns {*}
      * @memberof TreeExpBarControlBase
      */
     public async getExpItemView(arg: any = {}) {
         let expmode = 'EXPITEM:' + arg.nodetype.toUpperCase();
-        if(this.controlInstance?.getPSAppViewRefs()){
-            for(let viewRef of (this.controlInstance?.getPSAppViewRefs()) as IPSAppViewRef[]){
+        if (this.controlInstance?.getPSAppViewRefs()) {
+            for (let viewRef of (this.controlInstance?.getPSAppViewRefs()) as IPSAppViewRef[]) {
                 if (Object.is(expmode, viewRef.name.toUpperCase())) {
                     let view = {
                         viewModelData: viewRef.getRefPSAppView(),
@@ -113,7 +113,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 树导航选中
      *
-     * @param {any []} args
+     * @param {any []} args 选中数据
      * @param {string} [tag]
      * @param {*} [$event2]
      * @returns {void}
@@ -151,7 +151,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 树导航选中（选择视图面板处理逻辑）
      * 
-     * @param arg 
+     * @param arg 选中数据
      * @memberof TreeExpBarControlBase
      */
     public onSelectionChangeByPickupViewPanel(arg: any) {
@@ -165,7 +165,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 计算导航参数
      * 
-     * @param arg 
+     * @param arg  选中数据
      * @memberof TreeExpBarControlBase
      */
     public computeNavParams(arg: any) {
@@ -216,7 +216,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 计算目标部件所需参数
      *
-     * @param {string} [controlType]
+     * @param {string} [controlInstance] 部件模型类型
      * @returns
      * @memberof TreeExpBarControlBase
      */
@@ -255,7 +255,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 视图数据变化
      *
-     * @param {*} $event
+     * @param {*} $event 事件数据
      * @memberof TreeExpBarControlBase
      */
     public onDrViewDatasChange($event: any): void {
@@ -267,7 +267,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 视图数据被激活
      *
-     * @param {*} $event
+     * @param {*} $event 事件数据
      * @memberof TreeExpBarControlBase
      */
     public viewDatasActivated($event: any): void {
@@ -277,7 +277,7 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 视图数据加载完成
      *
-     * @param {*} $event
+     * @param {*} $event 事件数据
      * @memberof TreeExpBarControlBase
      */
     public onViewLoad($event: any): void {
@@ -287,7 +287,9 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
     /**
      * 部件事件处理
      *
-     * @param {*} $event
+     * @param {*} controlname 部件名称
+     * @param {*} action 事件
+     * @param {*} data 数据
      * @memberof TreeExpBarControlBase
      */
     public onCtrlEvent(controlname: any, action: any, data: any) {

@@ -43760,6 +43760,7 @@ const router = new Router({
             meta: {
                 caption: '应用分享页',
                 requireAuth: true,
+                ignoreAddPage: true
             },
             component: () => import('@components/app-share-page/app-share-page.vue')
         },

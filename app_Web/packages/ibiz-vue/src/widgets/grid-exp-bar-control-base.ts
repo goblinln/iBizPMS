@@ -1,5 +1,5 @@
 import { IPSAppView, IPSDEGrid, IPSGridExpBar } from '@ibiz/dynamic-model-api';
-import { Util } from 'ibiz-core';
+import { GridExpBarControlInterface } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 
 /**
@@ -9,7 +9,7 @@ import { ExpBarControlBase } from './expbar-control-base';
  * @class GridExpControlBase
  * @extends {MDControlBase}
  */
-export class GridExpBarControlBase extends ExpBarControlBase {
+export class GridExpBarControlBase extends ExpBarControlBase implements GridExpBarControlInterface {
 
     /**
      * 表格导航模型对象
@@ -43,6 +43,9 @@ export class GridExpBarControlBase extends ExpBarControlBase {
     /**
      * 处理快速分组模型动态数据部分(%xxx%)
      *
+     *
+     * @param {Array<any>} inputArray 代码表数组
+     * @return {*} 
      * @memberof GridExpBarControlBase
      */
     public handleDynamicData(inputArray:Array<any>){
@@ -67,6 +70,11 @@ export class GridExpBarControlBase extends ExpBarControlBase {
         return inputArray;
     }
 
+   /**
+    * 执行搜索
+    *
+    * @memberof GridExpBarControlBase
+    */
     public onSearch() {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;

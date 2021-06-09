@@ -1,5 +1,5 @@
 import { IPSAppView, IPSDEList, IPSListExpBar } from '@ibiz/dynamic-model-api';
-import { Util } from 'ibiz-core';
+import { ListExpBarControlInterface } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 /**
  * 列表导航栏部件基类
@@ -8,8 +8,8 @@ import { ExpBarControlBase } from './expbar-control-base';
  * @class ListExpBarControlBase
  * @extends {MainControlBase}
  */
-export class ListExpBarControlBase extends ExpBarControlBase {
-    
+export class ListExpBarControlBase extends ExpBarControlBase implements ListExpBarControlInterface {
+
     /**
      * 列表导航栏的模型对象
      *
@@ -45,13 +45,13 @@ export class ListExpBarControlBase extends ExpBarControlBase {
     *
     * @memberof ListExpBarControlBase
     */
-    public onSearch($event: any) {
+    public onSearch() {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
         }
         const list: any = (this.$refs[`${this.xDataControlName.toLowerCase()}`] as any).ctrl;
-        if(list) {
-            this.viewState.next({ tag: this.xDataControlName, action: "load", data: {query : this.searchText}});
+        if (list) {
+            this.viewState.next({ tag: this.xDataControlName, action: "load", data: { query: this.searchText } });
         }
     }
 

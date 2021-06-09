@@ -1,5 +1,5 @@
 import { IPSDataViewExpBar, IPSDEDataView } from '@ibiz/dynamic-model-api';
-import { Util } from 'ibiz-core';
+import { DataViewExpBarControlInterface } from 'ibiz-core';
 import { ExpBarControlBase } from './expbar-control-base';
 /**
  * 卡片导航栏部件基类
@@ -8,7 +8,7 @@ import { ExpBarControlBase } from './expbar-control-base';
  * @class FormControlBase
  * @extends {MainControlBase}
  */
-export class DataViewExpBarControlBase extends ExpBarControlBase {
+export class DataViewExpBarControlBase extends ExpBarControlBase implements DataViewExpBarControlInterface {
     /**
      * 卡片视图导航栏的模型对象
      *
@@ -27,13 +27,13 @@ export class DataViewExpBarControlBase extends ExpBarControlBase {
     /**
      * 部件事件处理
      *
-     * @param {string} controlname
-     * @param {string} action
-     * @param {*} data
+     * @param {string} controlname 部件
+     * @param {string} action 行为
+     * @param {*} data 数据
      * @memberof DataViewExpBarControlBase
      */
     public onCtrlEvent(controlname: string, action: string, data: any) {
-        if(controlname != this.xDataControlName) {
+        if (controlname != this.xDataControlName) {
             return;
         }
         super.onCtrlEvent(controlname, action, data);
@@ -44,14 +44,14 @@ export class DataViewExpBarControlBase extends ExpBarControlBase {
     *
     * @memberof DataViewExpBarControlBase
     */
-    public onSearch($event: any) {
+    public onSearch() {
         if (this.Environment && this.Environment.isPreviewMode) {
             return;
         }
         const dataview: any = (this.$refs[this.xDataControlName?.toLowerCase()] as any).ctrl;
-        if(dataview) {
-            this.viewState.next({ tag: this.xDataControlName, action: "filter", data: {query : this.searchText}});
+        if (dataview) {
+            this.viewState.next({ tag: this.xDataControlName, action: "filter", data: { query: this.searchText } });
         }
     }
-    
+
 }
