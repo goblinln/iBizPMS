@@ -1,3 +1,4 @@
+import { Http } from 'ibiz-core';
 import { ProductTeamBaseService } from './product-team-base.service';
 
 /**
@@ -34,5 +35,21 @@ export class ProductTeamService extends ProductTeamBaseService {
         }
         return ___ibz___.sc.get('ProductTeamService');
     }
+
+    /**
+     * saveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectTeamService
+     */
+    public async saveBatch(context: any = {}, data: any, isloading?: boolean): Promise<any> {
+        if (context['product']) {
+            return Http.getInstance().post(`/products/${context['product']}/${this.APPDENAMEPLURAL.toLowerCase()}/savebatch`, data, isloading);
+        }
+    }
+
 }
 export default ProductTeamService;
