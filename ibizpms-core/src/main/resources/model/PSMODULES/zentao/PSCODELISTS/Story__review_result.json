@@ -21,7 +21,8 @@
   }, {
     "codeName" : "Reject",
     "text" : "拒绝",
-    "value" : "reject"
+    "value" : "reject",
+    "disableSelect" : true
   } ],
   "refFlag" : true,
   "systemTag" : "iBizPMS",
