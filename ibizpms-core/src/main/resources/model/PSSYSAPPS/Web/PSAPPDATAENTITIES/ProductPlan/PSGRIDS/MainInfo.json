@@ -412,12 +412,14 @@
             "glyph" : "xf0c1@FontAwesome",
             "cssClass" : "fa fa-link"
           },
+          "refreshMode" : 1,
           "timeout" : 60000,
           "uIActionMode" : "BACKEND",
           "uIActionTag" : "RelationStory",
           "uIActionType" : "DEUIACTION",
           "enableConfirm" : true,
           "globalUIAction" : true,
+          "reloadData" : true,
           "id" : "RelationStory@ProductPlan"
         },
         "addSeparator" : false,
@@ -469,12 +471,14 @@
             "glyph" : "xf188@FontAwesome",
             "cssClass" : "fa fa-bug"
           },
+          "refreshMode" : 1,
           "timeout" : 60000,
           "uIActionMode" : "BACKEND",
           "uIActionTag" : "RelationBug",
           "uIActionType" : "DEUIACTION",
           "enableConfirm" : true,
           "globalUIAction" : true,
+          "reloadData" : true,
           "id" : "RelationBug@ProductPlan"
         },
         "addSeparator" : false,
