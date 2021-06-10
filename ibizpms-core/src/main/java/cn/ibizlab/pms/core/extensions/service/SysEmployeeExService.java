@@ -142,7 +142,7 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
         }
         if(params.get("root") != null && !"0".equals(params.get("root"))) {
             // 产品团队
-            context.setN_username_notin(getAccounts(StaticDict.Team__type.PRODUCT.getValue(), params.get("root"), params.get("account") != null ?  params.get("account").toString() : null));
+            context.setN_username_in(getAccounts(StaticDict.Team__type.PRODUCT.getValue(), params.get("root"), params.get("account") != null ?  params.get("account").toString() : null));
 
         }
         return this.searchDefault(context);
