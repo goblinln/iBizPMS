@@ -66,8 +66,10 @@ export class AppTabExpViewBase extends TabExpViewBase {
      * @memberof AppTabExpViewBase
      */
     public renderDataPanel() {
-        let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.dataPanelInstance);
-        return this.$createElement(targetCtrlName, { slot: 'datapanel', ref: this.dataPanelInstance?.name, props: targetCtrlParam, on: targetCtrlEvent });
+        if (this.dataPanelInstance) {
+            let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.dataPanelInstance);
+            return this.$createElement(targetCtrlName, { slot: 'datapanel', ref: this.dataPanelInstance?.name, props: targetCtrlParam, on: targetCtrlEvent });
+        }
     }
 
     /**
