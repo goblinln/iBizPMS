@@ -1473,37 +1473,6 @@
   }, {
     "actionTarget" : "SINGLEKEY",
     "noPrivDisplayMode" : 1,
-    "caption" : "关联需求",
-    "codeName" : "RelationStory",
-    "dataAccessAction" : "LINKSTORY",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
-      "viewType" : "DEMPICKUPVIEW"
-    },
-    "fullCodeName" : "ProductPlan_RelationStory",
-    "name" : "关联需求",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "LinkStory"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
-    },
-    "getPSSysImage" : {
-      "glyph" : "xf0c1@FontAwesome",
-      "cssClass" : "fa fa-link"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "RelationStory",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "id" : "RelationStory@ProductPlan"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "添加项目",
     "codeName" : "AddProject",
     "dataAccessAction" : "ADDPROJ",
@@ -1585,6 +1554,38 @@
   }, {
     "actionTarget" : "SINGLEKEY",
     "noPrivDisplayMode" : 1,
+    "caption" : "关联需求",
+    "codeName" : "RelationStory",
+    "dataAccessAction" : "LINKSTORY",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
+      "viewType" : "DEMPICKUPVIEW"
+    },
+    "fullCodeName" : "ProductPlan_RelationStory",
+    "name" : "关联需求（计划）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "LinkStory"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf0c1@FontAwesome",
+      "cssClass" : "fa fa-link"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "RelationStory",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "globalUIAction" : true,
+    "id" : "RelationStory@ProductPlan"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "关联Bug",
     "codeName" : "RelationBug",
     "dataAccessAction" : "LINKBUG",
@@ -1595,7 +1596,7 @@
     },
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "ProductPlan_RelationBug",
-    "name" : "关联Bug",
+    "name" : "关联Bug（计划）",
     "getPSAppDEMethod" : {
       "modelref" : true,
       "id" : "LinkBug"
@@ -1619,6 +1620,7 @@
     "uIActionTag" : "RelationBug",
     "uIActionType" : "DEUIACTION",
     "enableConfirm" : true,
+    "globalUIAction" : true,
     "id" : "RelationBug@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",

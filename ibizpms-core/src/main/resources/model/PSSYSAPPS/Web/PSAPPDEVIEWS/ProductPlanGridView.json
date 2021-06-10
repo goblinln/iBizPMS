@@ -470,7 +470,7 @@
       "name" : "grid_actions_u54b2dce_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "关联需求"
+        "id" : "关联需求（计划）"
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -478,7 +478,7 @@
       "name" : "grid_actions_u02b47f0_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "关联Bug"
+        "id" : "关联Bug（计划）"
       }
     }, {
       "logicTrigger" : "CUSTOM",
@@ -526,7 +526,7 @@
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
     }, {
-      "name" : "关联需求",
+      "name" : "关联需求（计划）",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -538,7 +538,7 @@
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
     }, {
-      "name" : "关联Bug",
+      "name" : "关联Bug（计划）",
       "getPSUIAction" : {
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -910,7 +910,7 @@
               "viewType" : "DEMPICKUPVIEW"
             },
             "fullCodeName" : "ProductPlan_RelationStory",
-            "name" : "关联需求",
+            "name" : "关联需求（计划）",
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "LinkStory"
@@ -928,6 +928,7 @@
             "uIActionTag" : "RelationStory",
             "uIActionType" : "DEUIACTION",
             "enableConfirm" : true,
+            "globalUIAction" : true,
             "id" : "RelationStory@ProductPlan"
           },
           "addSeparator" : false,
@@ -949,7 +950,7 @@
             },
             "frontProcessType" : "WIZARD",
             "fullCodeName" : "ProductPlan_RelationBug",
-            "name" : "关联Bug",
+            "name" : "关联Bug（计划）",
             "getPSAppDEMethod" : {
               "modelref" : true,
               "id" : "LinkBug"
@@ -973,6 +974,7 @@
             "uIActionTag" : "RelationBug",
             "uIActionType" : "DEUIACTION",
             "enableConfirm" : true,
+            "globalUIAction" : true,
             "id" : "RelationBug@ProductPlan"
           },
           "addSeparator" : false,

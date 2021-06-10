@@ -1321,6 +1321,69 @@
     "id" : "MobCreate@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
+    "caption" : "关联需求",
+    "codeName" : "RelationStory",
+    "dataAccessAction" : "LINKSTORY",
+    "frontPSAppView" : "无法获取指定应用视图，标识为[e1fa5ae78ef36b0bc617e2317c9f7940]，请确认实体视图[ZT_STORY][计划下属需求实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
+    "fullCodeName" : "ProductPlan_RelationStory",
+    "name" : "关联需求（计划）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "LinkStory"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf0c1@FontAwesome",
+      "cssClass" : "fa fa-link"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "RelationStory",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "globalUIAction" : true,
+    "id" : "RelationStory@ProductPlan"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
+    "caption" : "关联Bug",
+    "codeName" : "RelationBug",
+    "dataAccessAction" : "LINKBUG",
+    "frontPSAppView" : "无法获取指定应用视图，标识为[bd6a3b865835b3f7436487e4cfd30393]，请确认实体视图[ZT_BUG][bug实体数据多项选择视图]已经添加到应用[iBiz软件生产管理（Mob）]中",
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "ProductPlan_RelationBug",
+    "name" : "关联Bug（计划）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "LinkBug"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+    },
+    "getPSNavigateContexts" : [ {
+      "key" : "TEST",
+      "name" : "TEST",
+      "value" : "product",
+      "rawValue" : false
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf188@FontAwesome",
+      "cssClass" : "fa fa-bug"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "RelationBug",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "globalUIAction" : true,
+    "id" : "RelationBug@ProductPlan"
+  }, {
+    "actionTarget" : "SINGLEKEY",
     "caption" : "删除",
     "codeName" : "MobDelete",
     "confirmMsg" : "您确认删除该计划吗？",

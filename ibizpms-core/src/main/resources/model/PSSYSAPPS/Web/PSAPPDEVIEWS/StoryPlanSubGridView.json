@@ -36,14 +36,14 @@
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
-    "eventArg" : "deuiaction3_planrelationstory",
+    "eventArg" : "deuiaction3_relationstory",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
     "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction3_planrelationstory_click",
+    "name" : "toolbar_deuiaction3_relationstory_click",
     "getPSAppViewUIAction" : {
       "modelref" : true,
-      "id" : "toolbar_deuiaction3_planrelationstory"
+      "id" : "toolbar_deuiaction3_relationstory"
     },
     "getPSViewCtrlName" : "toolbar"
   }, {
@@ -180,16 +180,16 @@
     "uIActionTarget" : "NONE",
     "xDataControlName" : "grid"
   }, {
-    "name" : "toolbar_deuiaction3_planrelationstory",
+    "name" : "toolbar_deuiaction3_relationstory",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
       },
       "modelref" : true,
-      "id" : "PlanRelationStory@Story"
+      "id" : "RelationStory@ProductPlan"
     },
-    "uIActionTarget" : "NONE",
+    "uIActionTarget" : "SINGLEKEY",
     "xDataControlName" : "grid"
   }, {
     "name" : "toolbar_deuiaction2",
@@ -288,61 +288,48 @@
       "caption" : "关联需求",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
-      "name" : "deuiaction3_planrelationstory",
-      "noPrivDisplayMode" : 2,
+      "name" : "deuiaction3_relationstory",
+      "noPrivDisplayMode" : 1,
       "getPSAppViewUIAction" : {
         "modelref" : true,
-        "id" : "toolbar_deuiaction3_planrelationstory"
+        "id" : "toolbar_deuiaction3_relationstory"
       },
       "getPSSysImage" : {
         "glyph" : "xf0c1@FontAwesome",
-        "cssClass" : "fa fa-chain"
+        "cssClass" : "fa fa-link"
       },
       "getPSUIAction" : {
-        "actionTarget" : "NONE",
+        "actionTarget" : "SINGLEKEY",
+        "noPrivDisplayMode" : 1,
         "caption" : "关联需求",
-        "codeName" : "PlanRelationStory",
-        "dataAccessAction" : "PLANLINK",
+        "codeName" : "RelationStory",
+        "dataAccessAction" : "LINKSTORY",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
           "viewType" : "DEMPICKUPVIEW"
         },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "Story_PlanRelationStory",
-        "name" : "计划-关联需求",
+        "fullCodeName" : "ProductPlan_RelationStory",
+        "name" : "关联需求（计划）",
         "getPSAppDEMethod" : {
           "modelref" : true,
           "id" : "LinkStory"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
         },
-        "getPSNavigateContexts" : [ {
-          "key" : "STORY",
-          "name" : "STORY",
-          "value" : "0",
-          "rawValue" : true
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "productplan",
-          "name" : "productplan",
-          "value" : "productplan",
-          "rawValue" : false
-        } ],
         "getPSSysImage" : {
           "glyph" : "xf0c1@FontAwesome",
-          "cssClass" : "fa fa-chain"
+          "cssClass" : "fa fa-link"
         },
-        "refreshMode" : 1,
         "timeout" : 60000,
         "uIActionMode" : "BACKEND",
-        "uIActionTag" : "PlanRelationStory",
+        "uIActionTag" : "RelationStory",
         "uIActionType" : "DEUIACTION",
         "enableConfirm" : true,
-        "reloadData" : true,
-        "id" : "PlanRelationStory@Story"
+        "globalUIAction" : true,
+        "id" : "RelationStory@ProductPlan"
       },
       "tooltip" : "关联需求",
       "showCaption" : true,
