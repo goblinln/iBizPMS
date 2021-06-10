@@ -31,7 +31,7 @@ public class DynaFilterFeignClientConfiguration {
     @Value("${ibiz.ref.service.r7rt-dyna.system:}")
     String serviceSystem;
 
-    @Value("${ibiz.ref.service.r7rt-dyna.super:}")
+    @Value("${ibiz.ref.service.r7rt-dyna.super:false}")
     boolean superapi;
 
     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")

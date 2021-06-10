@@ -1088,7 +1088,7 @@
     "getPSNavigateContexts" : [ {
       "key" : "RELEASE",
       "name" : "RELEASE",
-      "value" : "release",
+      "value" : "id",
       "rawValue" : false
     }, {
       "key" : "PRODUCT",
@@ -1104,7 +1104,7 @@
     }, {
       "key" : "release",
       "name" : "release",
-      "value" : "release",
+      "value" : "id",
       "rawValue" : false
     } ],
     "getPSSysImage" : {

@@ -31,7 +31,7 @@ public class PSSysReqModuleFeignClientConfiguration {
     @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.system:}")
     String serviceSystem;
 
-    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.super:}")
+    @Value("${ibiz.ref.service.ibizpssysmodelapi-sysmodelapi.super:false}")
     boolean superapi;
 
     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")

@@ -3,7 +3,7 @@ package cn.ibizlab.pms.web.config;
 import cn.ibizlab.pms.util.client.SuperLoginClient;
 import cn.ibizlab.pms.util.helper.OutsideAccessorUtils;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
-import cn.ibizlab.pms.util.web.SuperLoginInterceptor;
+import cn.ibizlab.pms.util.web.IgnorePrivInterceptor;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;

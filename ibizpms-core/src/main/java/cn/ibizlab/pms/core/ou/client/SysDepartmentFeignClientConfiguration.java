@@ -31,7 +31,7 @@ public class SysDepartmentFeignClientConfiguration {
     @Value("${ibiz.ref.service.ibzou-api.system:f7ad7e05-9031-11eb-b882-00163e06e68c}")
     String serviceSystem;
 
-    @Value("${ibiz.ref.service.ibzou-api.super:}")
+    @Value("${ibiz.ref.service.ibzou-api.super:false}")
     boolean superapi;
 
     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")

@@ -31,7 +31,7 @@ public class IBIZProPluginFeignClientConfiguration {
     @Value("${ibiz.ref.service.pmspro-pluginserviceapi.system:}")
     String serviceSystem;
 
-    @Value("${ibiz.ref.service.pmspro-pluginserviceapi.super:}")
+    @Value("${ibiz.ref.service.pmspro-pluginserviceapi.super:false}")
     boolean superapi;
 
     @Value("${ibiz.ref.service.uaa:ibizrt4ebsx-rt4ebsx}")
