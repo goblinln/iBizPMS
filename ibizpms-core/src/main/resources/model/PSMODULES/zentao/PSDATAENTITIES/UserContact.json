@@ -713,7 +713,8 @@
       }
     } ],
     "roleTag" : "UserContact_Maintain",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEUSERROLES/UserContact_Read.json",
@@ -727,7 +728,8 @@
       }
     } ],
     "roleTag" : "UserContact_Read",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "UserContact",
   "dEType" : 1,

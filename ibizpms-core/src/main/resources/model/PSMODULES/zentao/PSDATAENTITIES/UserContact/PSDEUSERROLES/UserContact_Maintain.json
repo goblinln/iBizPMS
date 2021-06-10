@@ -32,5 +32,6 @@
     }
   } ],
   "roleTag" : "UserContact_Maintain",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

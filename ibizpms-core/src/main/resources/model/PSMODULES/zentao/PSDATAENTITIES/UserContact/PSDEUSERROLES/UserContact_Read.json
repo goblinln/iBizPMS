@@ -11,5 +11,6 @@
     }
   } ],
   "roleTag" : "UserContact_Read",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

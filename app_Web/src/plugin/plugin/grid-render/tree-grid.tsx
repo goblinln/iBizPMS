@@ -230,7 +230,7 @@ export class TreeGrid extends AppDefaultGrid {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
     	if (!this.fetchAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.fetchAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.fetchaction') as string), 'load');
             return;
         }
         if (pageReset) {

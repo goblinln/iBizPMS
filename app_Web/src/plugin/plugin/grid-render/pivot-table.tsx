@@ -71,7 +71,7 @@ export class PivotTable extends AppDefaultGrid {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
         if(!this.fetchAction){
-            this.$Notice.error({ title: (this.$t('app.commonwords.wrong') as string), desc: (this.$t('app.gridpage.notConfig.fetchAction') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.grid.notconfig.fetchaction') as string), 'load');
             return;
         }
         if(pageReset){
