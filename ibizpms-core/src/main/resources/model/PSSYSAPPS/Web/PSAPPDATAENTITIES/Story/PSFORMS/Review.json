@@ -158,6 +158,8 @@
   }, {
     "id" : "reviewedby",
     "dataType" : 25,
+    "updateDVT" : "SESSION",
+    "updateDV" : "srfloginname",
     "getPSAppDEField" : {
       "name" : "REVIEWEDBY",
       "codeName" : "ReviewedBy"
@@ -852,6 +854,8 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
+        "updateDV" : "srfloginname",
+        "updateDVT" : "SESSION",
         "allowEmpty" : false,
         "emptyCaption" : false,
         "hidden" : false,

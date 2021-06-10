@@ -67,6 +67,11 @@
         "name" : "n_parent_gtandeq",
         "value" : "0",
         "rawValue" : true
+      }, {
+        "key" : "type",
+        "name" : "type",
+        "value" : "projectLinkStory",
+        "rawValue" : true
       } ],
       "getPSControls" : [ {
         "aggMode" : "NONE",
@@ -109,7 +114,7 @@
             "name" : "fetch",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FetchProjectLinkStory"
+              "id" : "FetchDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
