@@ -212,6 +212,11 @@
           "name" : "project",
           "value" : "project",
           "rawValue" : false
+        }, {
+          "key" : "type",
+          "name" : "type",
+          "value" : "BuildStories",
+          "rawValue" : true
         } ],
         "getPSAppViewRefs" : [ {
           "name" : "NEWDATA",
@@ -459,7 +464,7 @@
               "name" : "fetch",
               "getPSAppDEMethod" : {
                 "modelref" : true,
-                "id" : "FetchBuildStories"
+                "id" : "FetchDefault"
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,

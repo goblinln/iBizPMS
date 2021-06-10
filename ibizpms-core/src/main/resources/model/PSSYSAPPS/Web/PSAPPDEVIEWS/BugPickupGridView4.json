@@ -19,6 +19,11 @@
     } ]
   } ],
   "getPSAppViewNavParams" : [ {
+    "key" : "type",
+    "name" : "type",
+    "value" : "ReleaseLinkableResolvedBug",
+    "rawValue" : true
+  }, {
     "key" : "release",
     "name" : "release",
     "value" : "release",

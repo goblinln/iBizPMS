@@ -47,14 +47,21 @@
           "paramType" : "CTRL"
         } ]
       } ],
-      "getPSAppViewParams" : [ {
-        "key" : "ID",
-        "name" : "ID",
-        "value" : "id"
+      "getPSAppViewNavParams" : [ {
+        "key" : "id",
+        "name" : "id",
+        "value" : "id",
+        "rawValue" : true
       }, {
-        "key" : "PROJECT",
-        "name" : "PROJECT",
-        "value" : "%project%"
+        "key" : "project",
+        "name" : "project",
+        "value" : "project",
+        "rawValue" : false
+      }, {
+        "key" : "type",
+        "name" : "type",
+        "value" : "buildLinkCompletedStories",
+        "rawValue" : true
       } ],
       "getPSControls" : [ {
         "aggMode" : "NONE",
@@ -97,7 +104,7 @@
             "name" : "fetch",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FetchBuildLinkCompletedStories"
+              "id" : "FetchDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
