@@ -427,6 +427,7 @@
         "getPSEditor" : {
           "editorParams" : {
             "SRFNAVPARAM.product" : "%product%",
+            "valFormat" : "{0: '所有平台'}",
             "SRFNAVCTX.product" : "%product%"
           },
           "editorType" : "DROPDOWNLIST",
