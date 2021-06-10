@@ -153,6 +153,14 @@ public class Branch extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
     private Long product;
+    /**
+     * 实际排序
+     */
+    @TableField(exist = false)
+    @JSONField(name = "realorder")
+    @JsonProperty("realorder")
+    @ApiModelProperty("实际排序")
+    private Integer realorder;
 
     /**
      * 

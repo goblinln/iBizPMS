@@ -12,8 +12,9 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import { Http, LogUtil } from 'ibiz-core';
+import { LogUtil } from 'ibiz-core';
 import { CodeListService } from "ibiz-service";
+import axios from 'axios';
 
 @Component({})
 export default class AppDepartmentPersonnel extends Vue {
@@ -121,6 +122,15 @@ export default class AppDepartmentPersonnel extends Vue {
     @Prop() public fillMap: any;
 
     /**
+     * 请求方式
+     *
+     * @type {stinr}
+     * @memberof AppDepartmentPersonnel
+     */ 
+    @Prop({ default: 'get'})
+    public requestMode!: 'get' | 'post' | 'delete' | 'put';
+
+    /**
      * 选中项对象集合
      *
      * @type {*}
@@ -186,8 +196,7 @@ export default class AppDepartmentPersonnel extends Vue {
                 this.getDepertmentId();
                 if(this.treeurl){
                     let tempUrl = this.treeurl.replace('{deptId}',this.filtervalue);
-                    let get = Http.getInstance().get(tempUrl, true);
-                    get.then((response: any)=>{
+                    axios({method: this.requestMode, url: tempUrl, data: {}}).then((response: any)=>{
                         if(response.status === 200) {
                             this.getTreeItems(response.data);
                         }
@@ -221,8 +230,7 @@ export default class AppDepartmentPersonnel extends Vue {
      */
     public getPersonnelItems($event: string){
         let tempUrl = this.url.replace('{deptId}',$event);
-        let get = Http.getInstance().get(tempUrl, true);
-        get.then((response: any) => {
+        axios({method: this.requestMode, url: tempUrl, data: {}}).then((response: any) => {
             if(response.status === 200 && response.data.length > 0) {
                 response.data.forEach((item: any)=>{
                     this.items.push(item);
@@ -336,6 +344,7 @@ export default class AppDepartmentPersonnel extends Vue {
             multiple: this.multiple,
             selects: this.selects,
             selectType: 'dept',
+            requestMode: this.requestMode,
         });
         let container: Subject<any> = this.$appmodal.openModal(view, context, param);
         container.subscribe((result: any) => {

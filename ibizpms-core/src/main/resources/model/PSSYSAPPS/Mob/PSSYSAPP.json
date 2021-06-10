@@ -507,6 +507,11 @@
     "dynaInstMode" : 1,
     "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ProductBranch_Cache.json",
     "emptyText" : "未定义",
+    "minorSortDir" : "ASC",
+    "getMinorSortPSAppDEField" : {
+      "name" : "REALORDER",
+      "codeName" : "Realorder"
+    },
     "name" : "产品平台（动态）_缓存",
     "getPSAppDEDataSet" : {
       "modelref" : true,
@@ -1644,6 +1649,11 @@
     "dynaInstMode" : 1,
     "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ProductBranch.json",
     "emptyText" : "未定义",
+    "minorSortDir" : "ASC",
+    "getMinorSortPSAppDEField" : {
+      "name" : "REALORDER",
+      "codeName" : "Realorder"
+    },
     "name" : "产品平台（动态）",
     "getPSAppDEDataSet" : {
       "modelref" : true,

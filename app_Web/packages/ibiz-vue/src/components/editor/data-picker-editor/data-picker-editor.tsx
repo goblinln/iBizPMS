@@ -394,6 +394,7 @@ export default class DataPickerEditor extends EditorBase {
             multiple: this.editorInstance.editorParams?.['multiple'] ? JSON.parse(this.editorInstance.editorParams['multiple'] as string) : false,
             url: this.editorInstance.editorParams?.['url'],
             filter: this.editorInstance.editorParams?.['filter'],
+            requestMode: this.editorInstance.editorParams?.['requestMode']?.toLowerCase(),
             fillMap: this.editorInstance.editorParams?.['fillMap'] ? eval('(' + this.editorInstance.editorParams['fillMap'] + ')') : { id: this.parentItem?.valueItemName || '', label: this.editorInstance.name },
             disabled: this.disabled,
             data: this.contextData,

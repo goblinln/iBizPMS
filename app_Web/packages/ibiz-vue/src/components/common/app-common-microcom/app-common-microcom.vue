@@ -19,7 +19,8 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-import { Util, Http, LogUtil  } from 'ibiz-core';
+import { LogUtil  } from 'ibiz-core';
+import axios from 'axios';
 
 @Component({})
 export default class AppCommonMicrocom extends Vue {
@@ -113,6 +114,15 @@ export default class AppCommonMicrocom extends Vue {
      */ 
     @Prop()
     public filter!: string;
+
+    /**
+     * 请求方式
+     *
+     * @type {string}
+     * @memberof AppCommonMicrocom
+     */ 
+    @Prop({ default: 'get'})
+    public requestMode!: 'get' | 'post' | 'delete' | 'put';
 
     /**
      * 选中项集合
@@ -254,7 +264,7 @@ export default class AppCommonMicrocom extends Vue {
     public load(url: string) {
         if(url){
             this.datas = [];
-            Http.getInstance().get(url).then((response: any) => {
+            axios({method: this.requestMode, url: url, data: {}}).then((response: any) => {
                 if (response && response.status == 200) {
                     if(response.data.length > 0){
                         let item: any;

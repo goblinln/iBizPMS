@@ -300,6 +300,11 @@
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Realorder",
+    "logicName" : "实际排序",
+    "name" : "REALORDER",
+    "stdDataType" : 9
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "CheckKey",

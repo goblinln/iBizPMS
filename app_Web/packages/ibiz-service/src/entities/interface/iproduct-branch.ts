@@ -56,4 +56,8 @@ export interface IProductBranch extends IEntityBase {
      * 所属产品
      */
     product?: any;
+    /**
+     * 实际排序
+     */
+    realorder?: any;
 }

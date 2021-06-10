@@ -8,6 +8,8 @@
 import { Vue, Component, Watch, Prop, Model } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
 import { LogUtil } from 'ibiz-core';
+import axios from 'axios';
+
 @Component({
 })
 export default class AppDepartmentSelect extends Vue {
@@ -83,6 +85,15 @@ export default class AppDepartmentSelect extends Vue {
     @Prop() public context!: any;
 
     /**
+     * 请求方式
+     *
+     * @type {string}
+     * @memberof AppDepartmentSelect
+     */ 
+    @Prop({ default: 'get'})
+    public requestMode!: 'get' | 'post' | 'delete' | 'put';
+
+    /**
      * 选中数值
      *
      * @type {*}
@@ -142,7 +153,7 @@ export default class AppDepartmentSelect extends Vue {
         this.Nodesdata = result;
         return;
       }
-      this.$http.get(_url).then((response: any) => {
+      axios({method: this.requestMode, url: _url, data: {}}).then((response: any) => {
           this.Nodesdata = response.data;
           this.$store.commit('addDepData', { srfkey: _url, depData: response.data });
       }).catch((response: any) => {

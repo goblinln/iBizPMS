@@ -21,7 +21,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import {CodeListService} from "ibiz-service";
+import { CodeListService } from "ibiz-service";
 import { LogUtil } from 'ibiz-core';
 
 @Component({})
@@ -129,6 +129,15 @@ export default class AppGroupSelect extends Vue {
     @Prop() fillMap: any;
 
     /**
+     * 请求方式
+     *
+     * @type {stinr}
+     * @memberof AppGroupSelect
+     */ 
+    @Prop({ default: 'get'})
+    public requestMode!: 'get' | 'post' | 'delete' | 'put';
+
+    /**
      * 选中项集合
      *
      * @type {*}
@@ -219,6 +228,7 @@ export default class AppGroupSelect extends Vue {
             filtervalue: filtervalue,
             multiple: this.multiple,
             selects: this.selects,
+            requestMode: this.requestMode,
         });
         let container: Subject<any> = this.$appmodal.openModal(view, context, param);
         container.subscribe((result: any) => {

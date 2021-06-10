@@ -5,9 +5,10 @@
 </template>
 <script lang = 'ts'>
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-import { Http, LogUtil  } from 'ibiz-core';
+import { LogUtil  } from 'ibiz-core';
 import {CodeListService} from "ibiz-service";
-import { observable } from 'rxjs';
+import axios from 'axios';
+
 @Component({})
 export default class AppOrgSelect extends Vue {
 
@@ -74,6 +75,15 @@ export default class AppOrgSelect extends Vue {
    * @memberof AppOrgSelect
    */
   @Prop() public url!:string;
+
+  /**
+   * 请求方式
+   *
+   * @type {stinr}
+   * @memberof AppOrgSelect
+   */ 
+  @Prop({ default: 'get'})
+  public requestMode!: 'get' | 'post' | 'delete' | 'put';
 
   /**
    * 监听表单数据变化
@@ -225,7 +235,7 @@ export default class AppOrgSelect extends Vue {
         return;
       }
     }
-    Http.getInstance().get(requestUrl).then((res:any) =>{
+    axios({method: this.requestMode, url: requestUrl, data: {}}).then((res:any) =>{
       if(!res.status && res.status !== 200){
         this.$throw((this.$t('components.apporgselect.loadfail') as string),'loadTreeData');
         return;

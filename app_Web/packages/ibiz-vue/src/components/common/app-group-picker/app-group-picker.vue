@@ -16,9 +16,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
-import { Subject } from 'rxjs';
-import { Http, LogUtil } from 'ibiz-core';
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import { LogUtil } from 'ibiz-core';
+import axios from 'axios';
+
 @Component({})
 export default class AppGroupPicker extends Vue {
 
@@ -28,6 +29,14 @@ export default class AppGroupPicker extends Vue {
      * @memberof AppGroupPicker
      */
     @Prop() dynamicProps?:any;
+
+    /**
+     * 请求方式
+     *
+     * @type {stinr}
+     * @memberof AppGroupSelect
+     */ 
+    public requestMode: 'get' | 'post' | 'delete' | 'put' = 'get';
 
     /**
      * 多选
@@ -136,6 +145,7 @@ export default class AppGroupPicker extends Vue {
         this.multiple = this.viewParam.multiple;
         this.treeurl = this.viewParam.treeurl;
         this.url = this.viewParam.url;
+        this.requestMode = this.viewParam.requestMode;
         if (this.viewParam.selects) {
             this.viewParam.selects.forEach((select: any) => {
                 this.selects.push(select);
@@ -173,8 +183,7 @@ export default class AppGroupPicker extends Vue {
         }else{
             tempTreeUrl = this.treeurl.replace('${orgid}',orgid);
         }
-        let get = Http.getInstance().get(tempTreeUrl, true);
-        get.then((response: any) => {
+        axios({method: this.requestMode, url: tempTreeUrl, data: {}}).then((response: any) => {
             if(response.status === 200) {
                 this.treeItems = response.data;
             }
@@ -196,8 +205,7 @@ export default class AppGroupPicker extends Vue {
         }else{
             tempUrl = this.url.replace('${selected-orgid}',key);
         }
-        let get = Http.getInstance().get(tempUrl, true);
-        get.then((response: any) => {
+        axios({method: this.requestMode, url: tempUrl, data: {}}).then((response: any) => {
             if(response.status === 200) {
                 this.cardItems = response.data;
             }
@@ -277,7 +285,7 @@ export default class AppGroupPicker extends Vue {
 <style lang="less">
 .ibiz-group-picker{
   width: 100%;
-  height: 100%;
+  height: calc(100% - 37px);
   .ibiz-group-container {
       display: flex;
       height: calc(100% - 65px);

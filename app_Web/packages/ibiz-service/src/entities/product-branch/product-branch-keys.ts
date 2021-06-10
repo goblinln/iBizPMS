@@ -11,4 +11,5 @@ export default [
     'branchsn',
     'deptname',
     'product',
+    'realorder',
 ];

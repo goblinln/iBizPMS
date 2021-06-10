@@ -132,11 +132,6 @@
   "getAllPSDEDataSets" : [ {
     "codeName" : "CurProduct",
     "logicName" : "CurProduct",
-    "majorSortDir" : "ASC",
-    "getMajorSortPSDEField" : {
-      "name" : "ORDER",
-      "codeName" : "Order"
-    },
     "name" : "CurProduct",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
@@ -742,6 +737,42 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "REALORDER",
+      "dBType" : "MYSQL5",
+      "name" : "REALORDER",
+      "queryCodeExp" : "t1.`ORDER`",
+      "standardColumnName" : "`REALORDER`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "REALORDER",
+        "codeName" : "Realorder"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Realorder",
+    "dEFType" : 2,
+    "dataType" : "INT",
+    "importOrder" : 1000,
+    "logicName" : "实际排序",
+    "name" : "REALORDER",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s",
+    "formulaDEField" : true,
+    "phisicalDEField" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

@@ -2460,6 +2460,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"REALORDER" ,
+    "codename":"Realorder",
+    "field_logic_name":"实际排序",
+    "entity_name":"ZT_BRANCH",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"INT",
+    "expression":"t1.`ORDER`",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
