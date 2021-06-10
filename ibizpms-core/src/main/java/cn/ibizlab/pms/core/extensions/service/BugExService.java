@@ -3,6 +3,7 @@ package cn.ibizlab.pms.core.extensions.service;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.*;
+import cn.ibizlab.pms.core.zentao.filter.BugSearchContext;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.BugServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
@@ -13,6 +14,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -58,6 +60,27 @@ public class BugExService extends BugServiceImpl {
     @Override
     protected Class currentModelClass() {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
+    }
+
+    @Override
+    public Page<Bug> searchDefault(BugSearchContext context) {
+        Map<String,Object> params = context.getParams();
+        if(params.get("type") != null) {
+            if("ReleaseLinkableResolvedBug".equals(params.get("type"))) {
+                return super.searchReleaseLinkableResolvedBug(context);
+            }else if("ReleaseBugs".equals(params.get("type"))){
+                return super.searchReleaseBugs(context);
+            }else if("ReleaseLeftBugs".equals(params.get("type"))){
+                return super.searchReleaseLeftBugs(context);
+            }else if("BuildBugs".equals(params.get("type"))){
+                return super.searchBuildBugs(context);
+            }else if("BuildOpenBugs".equals(params.get("type"))){
+                return super.searchBuildOpenBugs(context);
+            }else if("BuildOpenBugs".equals(params.get("type"))){
+                return super.searchBuildOpenBugs(context);
+            }
+        }
+        return super.searchDefault(context);
     }
 
     @Override

@@ -83,6 +83,25 @@ public class StoryExService extends StoryServiceImpl {
     String[] ignores = {"lasteditedby", "lastediteddate", "versionc", "assignedtopk", "mailtopk"};
 
     @Override
+    public Page<Story> searchDefault(StorySearchContext context) {
+        Map<String,Object> params = context.getParams();
+        if(params.get("type") != null) {
+            if("ReleaseLinkableStories".equals(params.get("type"))) {
+                return super.searchReleaseLinkableStories(context);
+            }else if("projectLinkStory".equals(params.get("type"))) {
+                return super.searchProjectLinkStory(context);
+            }else if("buildLinkCompletedStories".equals(params.get("type"))) {
+                return super.searchBuildLinkCompletedStories(context);
+            }else if("BuildStories".equals(params.get("type"))) {
+                return super.searchBuildStories(context);
+            }else if("ReleaseStories".equals(params.get("type"))) {
+                return super.searchReleaseStories(context);
+            }
+        }
+        return super.searchDefault(context);
+    }
+
+    @Override
     public Story sysGet(Long key) {
         if(key == null || key == 0L) {
             Story story = new Story();
