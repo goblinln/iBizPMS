@@ -111,9 +111,15 @@ ibiz:
       ibzou-api:
         name: ibizrt4ebsx-rt4ebsx
         system: f7ad7e05-9031-11eb-b882-00163e06e68c
+        super: true
+        login: superapi
+        password: 123456
       ibzuaa-api:
         name: ibizrt4ebsx-rt4ebsx
         system: f7ad7e05-9031-11eb-b882-00163e06e68c
+        super: true
+        login: superapi
+        password: 123456
   saas: 
     column: SRFDCID
     sys-tables: ACT_RU_TASK,act_re_procdef,databasechangelog,databasechangeloglock,dual,DUAL
